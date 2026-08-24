@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Isquemia Mesentérica — Referência CV 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d1117;--panel:#161b22;--panel2:#1c232c;--line:#2a323c;--tx:#e6edf3;--mut:#8b949e;--or:#ff7a18;--or2:#ff9a4d;--orbg:rgba(255,122,24,.10);--pu:#b083f0;--pu2:#c9a7ff;--pubg:rgba(176,131,240,.12);--cy:#3dd6d0;--cy2:#5fe3dd;--cybg:rgba(61,214,208,.10);--red:#ff5f56;--grn:#3fb950}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font-family:'IBM Plex Sans',sans-serif;line-height:1.55;padding:0 0 60px}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px}
+header{padding:30px 0 14px;border-bottom:1px solid var(--line)}
+h1{font-size:30px;font-weight:700;letter-spacing:-.5px}h1 .b{color:var(--or)}
+.sub{color:var(--mut);font-size:14px;margin-top:6px;font-family:'IBM Plex Mono',monospace}
+nav{position:sticky;top:0;background:var(--bg);z-index:10;border-bottom:1px solid var(--line);overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch}
+nav .inner{max-width:920px;margin:0 auto;padding:0 12px;display:flex;gap:2px}
+nav button{background:none;border:none;color:var(--mut);font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.5px;text-transform:uppercase;padding:14px 11px;cursor:pointer;border-bottom:2px solid transparent;transition:.15s}
+nav button:hover{color:var(--tx)}nav button.on{color:var(--or);border-bottom-color:var(--or)}
+section{display:none;padding:26px 0;animation:f .25s}section.on{display:block}
+@keyframes f{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+h2{font-size:20px;color:var(--or);margin:26px 0 12px;font-weight:600;border-bottom:1px solid var(--line);padding-bottom:6px}h2:first-child{margin-top:0}
+h3{font-size:15px;margin:18px 0 8px;font-weight:600;color:var(--or2)}
+p,li{font-size:14.5px}
+ul{margin:8px 0 8px 4px;list-style:none}li{padding:3px 0 3px 24px;position:relative}li .em{position:absolute;left:0}
+.lay{color:var(--cy2);font-style:italic;font-size:13.5px}
+.box{border-left:3px solid var(--or);background:var(--orbg);border-radius:0 8px 8px 0;padding:12px 16px;margin:14px 0}
+.box.pu{border-color:var(--pu);background:var(--pubg)}.box.cy{border-color:var(--cy);background:var(--cybg)}
+.box .lbl{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--or);margin-bottom:6px;font-weight:600}
+.box.pu .lbl{color:var(--pu2)}.box.cy .lbl{color:var(--cy2)}
+.box li::before{content:"▸";color:var(--or);position:absolute;left:6px}.box li{padding-left:22px}
+.box.pu li::before{color:var(--pu)}.box.cy li::before{color:var(--cy)}.box li .em{display:none}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.5px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--panel2);color:var(--or2);font-weight:600;font-family:'IBM Plex Mono',monospace;font-size:12px}
+.hi{color:var(--pu2);font-weight:600}.mn{font-family:'IBM Plex Mono',monospace;color:var(--cy2)}
+.steps{counter-reset:s;list-style:none;margin:6px 0}
+.steps li{padding:8px 8px 8px 40px;border-bottom:1px solid var(--line)}
+.steps li::before{counter-increment:s;content:counter(s);background:var(--or);color:#0d1117;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:12px;width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;position:absolute;left:4px;top:8px}
+.steps li .em{display:none}.steps li:last-child{border-bottom:none}
+.hand{font-family:'IBM Plex Mono',monospace;font-size:11px;padding:1px 6px;border-radius:4px;margin-right:4px}
+.hL{background:rgba(63,185,80,.15);color:#56d364}.hR{background:rgba(255,122,24,.15);color:var(--or2)}
+.kbd{font-family:'IBM Plex Mono',monospace;background:var(--panel2);padding:1px 6px;border-radius:4px;font-size:12.5px;color:var(--or2)}
+.q{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:16px 0}
+.q .src{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--pu2);letter-spacing:1px;text-transform:uppercase}
+.q .stem{margin:8px 0 10px;font-weight:500}
+.q .alt{padding:4px 0 4px 24px;position:relative;font-size:14px}.q .alt .let{position:absolute;left:0;font-family:'IBM Plex Mono',monospace;color:var(--mut)}
+.q .alt.ok{color:var(--grn)}.q .alt.ok .let{color:var(--grn)}
+.q details{margin-top:10px;border-top:1px dashed var(--line);padding-top:10px}
+.q summary{cursor:pointer;color:var(--cy2);font-size:13px;font-family:'IBM Plex Mono',monospace}
+.q .exp{font-size:13.5px;color:var(--mut);margin-top:8px}
+.svgwrap{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px;margin:14px 0;text-align:center}
+.svgwrap figcaption{color:var(--mut);font-size:12px;margin-top:8px;font-family:'IBM Plex Mono',monospace}
+.pill{display:inline-block;background:var(--panel2);border:1px solid var(--line);border-radius:20px;padding:3px 12px;margin:3px 4px 3px 0;font-size:12.5px;font-family:'IBM Plex Mono',monospace}.pill .hi{color:var(--pu2)}
+.note{font-size:12px;color:var(--mut);border-top:1px solid var(--line);margin-top:30px;padding-top:14px;font-family:'IBM Plex Mono',monospace}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<h1>💩 Isquemia <span class="b">Mesentérica</span></h1>
+<div class="sub">Isquemia Intestinal · CV 2026 · WSES 2022 (aguda) + ESVS 2024 Mesenteric/Renal Guidelines</div>
+</div></header>
+<nav><div class="inner" id="nav"></div></nav>
+<div class="wrap">
+
+<section id="geral" class="on">
+<h2>🧭 Definição &amp; formas clínicas</h2>
+<p>Isquemia mesentérica = comprometimento do fluxo sanguíneo intestinal, podendo ser <span class="hi">aguda</span> (emergência, alta mortalidade ~50%) ou <span class="hi">crônica</span> ("angina intestinal", mais insidiosa). <span class="lay">(o intestino é um "motor" que precisa de combustível constante — quando a mangueira de gasolina entope, o motor para de funcionar e, se demorar, queima de vez)</span></p>
+<h3>Isquemia Mesentérica Aguda (IMA) — 4 mecanismos</h3>
+<table>
+<tr><th>Tipo</th><th>Frequência</th><th>Mecanismo</th></tr>
+<tr><td><b>Embólica</b></td><td>~40-50%</td><td>Êmbolo cardíaco (FA) para a AMS, tipicamente <b>distal à cólica média</b> (poupando o início do jejuno proximal)</td></tr>
+<tr><td><b>Trombótica arterial</b></td><td>~15-25%</td><td>Trombose sobre placa aterosclerótica <b>na origem da AMS</b> — geralmente paciente com "angina intestinal" prévia</td></tr>
+<tr><td><b>Não oclusiva (NOMI)</b></td><td>~20-30%</td><td>Vasoespasmo esplâncnico por baixo débito (choque, drogas vasoativas, hemodiálise) — sem obstrução mecânica</td></tr>
+<tr><td><b>Trombose venosa mesentérica</b></td><td>~5-15%</td><td>Trombofilias, hipertensão portal, estados de hipercoagulabilidade — quadro mais insidioso</td></tr>
+</table>
+<div class="box pu"><div class="lbl">⚠️ Pega-ratão de prova</div>
+<p>Êmbolo geralmente impacta <span class="hi">distal à origem da cólica média</span> (poupa proximal do jejuno) — diferente da trombose, que ocorre <span class="hi">na própria origem da AMS</span> (afeta todo o território, geralmente mais extenso e grave).</p></div>
+</section>
+
+<section id="clinica">
+<h2>🩺 Quadro clínico</h2>
+<div class="box pu"><div class="lbl">🚨 Achado clássico da IMA</div>
+<p><span class="hi">Dor abdominal desproporcional ao exame físico</span> — dor intensa, súbita (embólica) ou progressiva (trombótica/NOMI), com abdome inicialmente <b>flácido e pouco doloroso à palpação</b>. Essa dissociação é a chave diagnóstica precoce.</p></div>
+<ul>
+<li><span class="em">💩</span>Náuseas, vômitos, diarreia (às vezes sanguinolenta em fases avançadas).</li>
+<li><span class="em">🚨</span>Sinais de <b>peritonite</b> (defesa, descompressão dolorosa) já indicam <b>necrose transmural</b> — fase tardia, pior prognóstico.</li>
+<li><span class="em">❤️</span>Fatores de risco: FA, IAM recente, baixo débito/choque, DAOP/aterosclerose sistêmica.</li>
+</ul>
+<h3>Isquemia Mesentérica Crônica ("angina intestinal")</h3>
+<ul>
+<li><span class="em">🍽️</span><b>Dor pós-prandial</b> (15-30 min após comer, dura 1-3h) — o intestino "pede mais sangue" para digerir e não recebe.</li>
+<li><span class="em">📉</span><b>Medo de comer (sitofobia)</b> e perda de peso significativa — consequência do padrão de dor pós-prandial.</li>
+<li><span class="em">🩺</span>Geralmente requer <b>doença de pelo menos 2 dos 3 troncos</b> (tronco celíaco, AMS, AMI) pela rica rede de colaterais entre eles.</li>
+</ul>
+</section>
+
+<section id="anatomia">
+<h2>🫀 Anatomia vascular &amp; colaterais</h2>
+<table>
+<tr><th>Tronco</th><th>Território</th></tr>
+<tr><td><b>Tronco celíaco</b></td><td>Estômago, duodeno proximal, fígado, baço, pâncreas</td></tr>
+<tr><td><b>Artéria mesentérica superior (AMS)</b></td><td>Duodeno distal ao delgado, até 2/3 proximais do cólon transverso</td></tr>
+<tr><td><b>Artéria mesentérica inferior (AMI)</b></td><td>1/3 distal do cólon transverso até o reto superior</td></tr>
+</table>
+<div class="box pu"><div class="lbl">🔗 Colaterais que explicam a clínica</div>
+<ul>
+<li><span class="hi">Arcada pancreatoduodenal</span> (superior/inferior): conecta tronco celíaco ↔ AMS.</li>
+<li><span class="hi">Artéria marginal de Drummond</span> + <span class="hi">arco de Riolan</span>: conectam AMS ↔ AMI ao longo do cólon.</li>
+<li>Por isso a <b>isquemia crônica exige geralmente ≥2 troncos acometidos</b> — com apenas um obstruído, as colaterais compensam.</li>
+</ul></div>
+<div class="box cy"><div class="lbl">📍 Pontos de watershed (baixo fluxo colateral)</div>
+<p><span class="hi">Ponto de Griffiths</span> (flexura esplênica — entre AMS/AMI) e <span class="hi">ponto de Sudeck</span> (retossigmoide — entre AMI/hipogástricas) são as áreas mais vulneráveis à isquemia colônica (ex.: pós-EVAR/reparo aórtico).</p></div>
+</section>
+
+<section id="dx">
+<h2>🔬 Diagnóstico</h2>
+<div class="box"><div class="lbl">🎯 Exame de escolha</div>
+<p><span class="hi">AngioTC de abdome</span> sem demora — define oclusão arterial/venosa, sinais de sofrimento de alça (pneumatose, gás portal) e é indicada em qualquer suspeita clínica (WSES 2022: sem atraso).</p></div>
+<ul>
+<li><span class="em">🩻</span>RX simples — <b>não recomendado</b> para avaliação (baixa sensibilidade, atrasa diagnóstico).</li>
+<li><span class="em">🧪</span>Lactato elevado e acidose metabólica — sinais tardios/inespecíficos, <b>não devem atrasar</b> a angioTC quando a suspeita é alta.</li>
+<li><span class="em">📡</span>Angiografia — hoje mais terapêutica (embolização/trombólise/angioplastia) do que puramente diagnóstica.</li>
+</ul>
+</section>
+
+<section id="conduta">
+<h2>📐 Conduta — manejo inicial (todo paciente com suspeita)</h2>
+<div class="box pu"><div class="lbl">🚑 Bundle inicial (WSES 2022)</div>
+<ul>
+<li>Ressuscitação volêmica imediata; correção de distúrbios eletrolíticos.</li>
+<li>Descompressão nasogástrica.</li>
+<li><span class="hi">Antibioticoterapia de amplo espectro</span> imediata (translocação bacteriana).</li>
+<li><span class="hi">Peritonite franca</span> → laparotomia/laparoscopia exploradora <b>sem demora</b> — não esperar revascularização.</li>
+</ul></div>
+<h3>Conduta por tipo</h3>
+<table>
+<tr><th>Tipo</th><th>1ª linha</th></tr>
+<tr><td>Embólica/trombótica arterial, sem peritonite</td><td><span class="hi">Revascularização endovascular</span> (trombectomia/trombólise/angioplastia) quando expertise disponível; cirurgia aberta se não</td></tr>
+<tr><td>Com peritonite/necrose</td><td>Laparotomia — ressecção do segmento necrótico ± revascularização</td></tr>
+<tr><td>NOMI</td><td>Corrigir causa de base (otimizar débito, retirar vasoconstritor); vasodilatador intra-arterial (papaverina) em casos selecionados</td></tr>
+<tr><td>Trombose venosa mesentérica</td><td><span class="hi">Anticoagulação</span> é a base do tratamento; cirurgia só se sinais de necrose/peritonite</td></tr>
+</table>
+<h3>Damage control / "second-look"</h3>
+<p>Em cirurgia por necrose extensa, considerar <b>ressecção limitada + reavaliação em 24-48h ("second-look")</b> antes de anastomose definitiva, para reduzir o risco de deixar intestino inviável ou ressecar excessivamente tecido ainda viável.</p>
+<h3>Crônica</h3>
+<p>Revascularização (endovascular — angioplastia/stent — ou cirúrgica — bypass aortomesentérico) indicada em <b>sintomáticos</b>, visando alívio da dor e prevenção de progressão para forma aguda/infarto.</p>
+</section>
+
+<section id="tecnica">
+<h2>🔪 Técnica cirúrgica</h2>
+<p class="note" style="border:none;margin:0 0 6px;padding:0"><span class="hand hL">ESQ</span> mão esquerda · <span class="hand hR">DIR</span> mão direita.</p>
+<h3>Embolectomia da AMS (aberta)</h3>
+<p><b>Posição:</b> supino. <b>Acesso:</b> laparotomia mediana.</p>
+<ol class="steps">
+<li>Inventário da cavidade; avaliar viabilidade das alças (cor, peristalse, pulso mesentérico — Doppler intraoperatório se disponível).</li>
+<li>Expor a AMS na raiz do mesentério, próximo à borda inferior do pâncreas. <span class="hand hL">ESQ</span> DeBakey · <span class="hand hR">DIR</span> tesoura.</li>
+<li>Heparinização sistêmica; controle vascular proximal e distal <span class="kbd">bulldog</span>.</li>
+<li>Arteriotomia transversa; passagem de <b>cateter de Fogarty</b> proximal e distalmente para remover o êmbolo/trombo.</li>
+<li>Checar refluxo pulsátil; fechar arteriotomia com <span class="kbd">prolene 6-0</span>.</li>
+<li>Reavaliar a perfusão intestinal após revascularização antes de decidir ressecções.</li>
+</ol>
+<h3>Ressecção intestinal (segmento necrótico)</h3>
+<ol class="steps">
+<li>Delimitar margens de tecido viável (cor rósea, peristalse, sangramento à secção da borda).</li>
+<li>Ressecar o segmento necrótico com margens em tecido viável.</li>
+<li>Se dúvida quanto à viabilidade das margens ou extensão: <b>não anastomosar</b> — grampear as extremidades, deixar em <b>damage control</b> e reoperar em 24-48h ("second-look").</li>
+<li>Se viabilidade clara: anastomose primária em plano único ou duplo, conforme preferência do serviço.</li>
+</ol>
+</section>
+
+<section id="complic">
+<h2>⚠️ Complicações</h2>
+<ul>
+<li><span class="em">💀</span>Necrose intestinal extensa / síndrome do intestino curto (ressecções muito extensas).</li>
+<li><span class="em">🦠</span>Sepse abdominal / translocação bacteriana.</li>
+<li><span class="em">🔁</span>Reoclusão do segmento revascularizado.</li>
+<li><span class="em">💔</span>Falência de múltiplos órgãos (mortalidade global da IMA ainda ~50%, mesmo tratada).</li>
+<li><span class="em">🩹</span>Fístulas/deiscências em anastomoses feitas em tecido de viabilidade duvidosa.</li>
+</ul>
+</section>
+
+<section id="pegas">
+<h2>🪤 Pega-ratões</h2>
+<div class="box pu"><div class="lbl">Os erros favoritos das bancas</div>
+<ul>
+<li><b>Dor desproporcional ao exame</b> é o achado-chave precoce — abdome ainda "manso" ao exame não exclui isquemia.</li>
+<li><b>Êmbolo</b> = distal à cólica média (poupa proximal) · <b>Trombose</b> = na origem da AMS (mais extensa).</li>
+<li><b>AngioTC sem demora</b> — não atrasar por RX simples (baixa sensibilidade) ou aguardar lactato subir.</li>
+<li><b>Peritonite = cirurgia já</b>, não esperar revascularização isolada.</li>
+<li><b>NOMI não é obstrução mecânica</b> — tratar a causa de baixo débito, não adianta só revascularizar.</li>
+<li>Trombose <b>venosa</b> mesentérica trata-se com <b>anticoagulação</b>, cirurgia é exceção (só se necrose).</li>
+<li>Crônica geralmente precisa de <b>≥2 troncos</b> acometidos pela rede de colaterais (celíaco-AMS-AMI).</li>
+<li><b>Second-look em 24-48h</b> é estratégia válida e recomendada em caso de viabilidade intestinal duvidosa — não é "erro" deixar de anastomosar de imediato.</li>
+<li>Watershed: <b>Griffiths</b> (flexura esplênica) e <b>Sudeck</b> (retossigmoide) — áreas clássicas de isquemia colônica pós-cirurgia aórtica.</li>
+</ul></div>
+</section>
+
+<section id="mnemo">
+<h2>🧠 Mnemônicos</h2>
+<div class="box cy"><div class="lbl">Coleção Isquemia Mesentérica</div>
+<ul>
+<li><span class="mn">"Dor grita, barriga cochila" — dor desproporcional ao exame</span>.</li>
+<li><span class="mn">4 tipos: Embolia, Trombose, NOMI, Venosa — "E-T-N-V"</span>.</li>
+<li><span class="mn">Êmbolo poupa o início (distal à cólica média); trombose pega tudo (na origem)</span>.</li>
+<li><span class="mn">Crônica = "angina intestinal" — dor pós-prandial + sitofobia + emagrecimento</span>.</li>
+<li><span class="mn">Griffiths (esplênica) e Sudeck (retossigmoide) = watershed</span>.</li>
+</ul></div>
+</section>
+
+<section id="questoes">
+<h2>📝 Questões — itens originais no estilo das bancas</h2>
+<p class="note" style="border:none;padding:0;margin:0 0 10px">Itens <b>originais</b> no padrão de cada banca (não reprodução literal).</p>
+
+<div class="q"><div class="src">HCPA · estilo</div>
+<div class="stem">Mulher de 78 anos, portadora de fibrilação atrial, apresenta dor abdominal súbita e intensa, com exame físico revelando abdome flácido e discretamente doloroso à palpação, desproporcional à intensidade da dor referida. A hipótese diagnóstica mais provável e a conduta imediata são:</div>
+<div class="alt"><span class="let">A)</span> Gastroenterite aguda — hidratação e observação</div>
+<div class="alt ok"><span class="let">B)</span> Isquemia mesentérica aguda embólica — angioTC de abdome sem demora</div>
+<div class="alt"><span class="let">C)</span> Diverticulite — antibioticoterapia ambulatorial</div>
+<div class="alt"><span class="let">D)</span> Cólica biliar — analgesia e alta</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> Dor desproporcional ao exame físico em paciente com FA (fonte embólica) é o quadro clássico de isquemia mesentérica aguda — angioTC deve ser solicitada sem demora, sem esperar elevação de lactato.</div></details>
+</div>
+
+<div class="q"><div class="src">GHC · estilo</div>
+<div class="stem">Sobre a localização típica da oclusão embólica da artéria mesentérica superior na isquemia mesentérica aguda, é correto afirmar que:</div>
+<div class="alt"><span class="let">A)</span> Ocorre sempre na origem da AMS, comprometendo todo o território</div>
+<div class="alt ok"><span class="let">B)</span> Tende a impactar distalmente à origem da artéria cólica média, poupando o jejuno proximal</div>
+<div class="alt"><span class="let">C)</span> Sempre poupa completamente o território da AMS</div>
+<div class="alt"><span class="let">D)</span> Ocorre exclusivamente no tronco celíaco</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> O êmbolo tipicamente impacta distal à origem da cólica média, poupando o jejuno proximal — diferente da trombose arterial, que ocorre na própria origem da AMS e tende a ser mais extensa.</div></details>
+</div>
+
+<div class="q"><div class="src">Santa Casa POA · estilo</div>
+<div class="stem">Paciente em choque séptico, em uso de noradrenalina em altas doses, evolui com distensão abdominal e piora do lactato. A hipótese de isquemia mesentérica não oclusiva (NOMI) é levantada. A conduta prioritária nesse cenário é:</div>
+<div class="alt"><span class="let">A)</span> Embolectomia cirúrgica de urgência</div>
+<div class="alt ok"><span class="let">B)</span> Otimizar o débito cardíaco e reduzir/ajustar vasoconstritores, associada a angioTC</div>
+<div class="alt"><span class="let">C)</span> Anticoagulação plena isolada</div>
+<div class="alt"><span class="let">D)</span> Trombólise sistêmica</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> NOMI decorre de vasoespasmo esplâncnico por baixo débito/vasoconstritores, sem obstrução mecânica — o tratamento prioriza corrigir a causa hemodinâmica de base, não a revascularização mecânica isolada.</div></details>
+</div>
+
+<div class="q"><div class="src">PUC-RS · estilo</div>
+<div class="stem">Homem de 65 anos com história de dor abdominal pós-prandial há 3 meses, iniciando 20 minutos após as refeições e durando cerca de 1 hora, associada a medo de se alimentar e perda de 8 kg. O diagnóstico mais provável e o achado anatômico frequentemente associado são:</div>
+<div class="alt"><span class="let">A)</span> Úlcera péptica — acometimento isolado da artéria gástrica esquerda</div>
+<div class="alt ok"><span class="let">B)</span> Isquemia mesentérica crônica — geralmente acometimento de pelo menos 2 dos 3 troncos viscerais</div>
+<div class="alt"><span class="let">C)</span> Pancreatite crônica — obstrução isolada da AMI</div>
+<div class="alt"><span class="let">D)</span> Doença de Crohn — sem relação vascular</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> O quadro de "angina intestinal" (dor pós-prandial, sitofobia, emagrecimento) é típico de isquemia mesentérica crônica, geralmente exigindo acometimento de ao menos 2 dos 3 troncos (celíaco, AMS, AMI) pela compensação por colaterais.</div></details>
+</div>
+
+<div class="q"><div class="src">AMRIGS · estilo</div>
+<div class="stem">Paciente com isquemia mesentérica aguda e sinais de peritonite franca ao exame. A conduta correta é:</div>
+<div class="alt"><span class="let">A)</span> Aguardar resultado da angioTC antes de qualquer decisão cirúrgica</div>
+<div class="alt ok"><span class="let">B)</span> Laparotomia/laparoscopia exploradora sem demora</div>
+<div class="alt"><span class="let">C)</span> Revascularização endovascular isolada, sem avaliação cirúrgica</div>
+<div class="alt"><span class="let">D)</span> Observação clínica com reavaliação em 24h</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> Peritonite franca indica necrose intestinal estabelecida — exploração cirúrgica não deve ser postergada em favor de estudos de imagem ou tentativa isolada de revascularização.</div></details>
+</div>
+
+<div class="q"><div class="src">HCPA · estilo</div>
+<div class="stem">No manejo cirúrgico de isquemia mesentérica aguda com extensa área de viabilidade intestinal duvidosa após ressecção do segmento claramente necrótico, a conduta tecnicamente mais apropriada é:</div>
+<div class="alt"><span class="let">A)</span> Anastomose primária imediata, independentemente da dúvida</div>
+<div class="alt ok"><span class="let">B)</span> Grampear as extremidades, adotar damage control e reavaliar em cirurgia de second-look em 24-48h</div>
+<div class="alt"><span class="let">C)</span> Ressecar todo o intestino delgado por segurança</div>
+<div class="alt"><span class="let">D)</span> Fechar a cavidade sem ressecção e reoperar em 7 dias</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> Diante de viabilidade duvidosa, a estratégia de damage control com reavaliação em second-look (24-48h) evita anastomoses em tecido isquêmico e ressecções desnecessariamente extensas.</div></details>
+</div>
+
+<div class="q"><div class="src">GHC · estilo</div>
+<div class="stem">Paciente jovem, com trombofilia conhecida, apresenta dor abdominal progressiva há 5 dias, sem sinais de peritonite. AngioTC evidencia trombose de veia mesentérica superior, sem sinais de necrose intestinal. A conduta inicial mais apropriada é:</div>
+<div class="alt"><span class="let">A)</span> Laparotomia exploradora imediata</div>
+<div class="alt ok"><span class="let">B)</span> Anticoagulação plena como tratamento de base</div>
+<div class="alt"><span class="let">C)</span> Trombectomia cirúrgica de rotina</div>
+<div class="alt"><span class="let">D)</span> Observação sem qualquer intervenção</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> Na trombose venosa mesentérica sem sinais de necrose/peritonite, a anticoagulação é a base do tratamento; a cirurgia é reservada para casos com sinais de comprometimento intestinal.</div></details>
+</div>
+
+<div class="q"><div class="src">Santa Casa POA · estilo</div>
+<div class="stem">As duas regiões do cólon classicamente descritas como "zonas de watershed", mais vulneráveis à isquemia por baixo fluxo colateral, são:</div>
+<div class="alt"><span class="let">A)</span> Ceco e reto médio</div>
+<div class="alt ok"><span class="let">B)</span> Flexura esplênica (ponto de Griffiths) e retossigmoide (ponto de Sudeck)</div>
+<div class="alt"><span class="let">C)</span> Flexura hepática e sigmoide proximal</div>
+<div class="alt"><span class="let">D)</span> Cólon transverso e ceco</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> Griffiths (flexura esplênica, entre território AMS/AMI) e Sudeck (retossigmoide, entre AMI/hipogástricas) são os pontos clássicos de watershed, vulneráveis especialmente após cirurgia aórtica.</div></details>
+</div>
+
+<div class="q"><div class="src">PUC-RS · estilo</div>
+<div class="stem">Sobre o exame de imagem na suspeita de isquemia mesentérica aguda, é correto afirmar que:</div>
+<div class="alt"><span class="let">A)</span> A radiografia simples de abdome é o exame de escolha inicial</div>
+<div class="alt ok"><span class="let">B)</span> A angioTC de abdome deve ser realizada sem demora em qualquer paciente com suspeita clínica</div>
+<div class="alt"><span class="let">C)</span> O diagnóstico deve aguardar elevação do lactato sérico</div>
+<div class="alt"><span class="let">D)</span> A ressonância magnética é superior e deve substituir a angioTC na urgência</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> A angioTC deve ser solicitada sem demora diante de suspeita clínica; RX simples tem baixa sensibilidade e o lactato é marcador tardio/inespecífico que não deve atrasar a investigação de imagem.</div></details>
+</div>
+
+<div class="q"><div class="src">AMRIGS · estilo</div>
+<div class="stem">Paciente com isquemia mesentérica crônica sintomática (angina intestinal), sem sinais de infarto intestinal, é encaminhado para tratamento definitivo. As opções terapêuticas atualmente aceitas incluem:</div>
+<div class="alt"><span class="let">A)</span> Apenas tratamento clínico com dieta fracionada, sem intervenção vascular</div>
+<div class="alt ok"><span class="let">B)</span> Revascularização endovascular (angioplastia/stent) ou cirúrgica (bypass aortomesentérico), conforme anatomia e risco</div>
+<div class="alt"><span class="let">C)</span> Ressecção intestinal profilática de rotina</div>
+<div class="alt"><span class="let">D)</span> Anticoagulação plena isolada, sem revascularização</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> Na forma crônica sintomática, a revascularização (endovascular ou cirúrgica) é indicada para alívio da dor e prevenção de progressão para isquemia aguda/infarto intestinal.</div></details>
+</div>
+</section>
+
+<div class="note">Fontes: WSES 2022 (Acute Mesenteric Ischemia Guidelines) · ESVS 2024 Clinical Practice Guidelines on Mesenteric and Renal Artery/Vein Disease · Rutherford's Vascular Surgery · Sabiston. Questões originais para estudo. — carolzita · CV 2026</div>
+</div>
+<script>
+var secs=[['geral','🧭 Geral'],['clinica','🩺 Clínica'],['anatomia','🫀 Anatomia'],['dx','🔬 Diagnóstico'],['conduta','📐 Conduta'],['tecnica','🔪 Técnica'],['complic','⚠️ Complicações'],['pegas','🪤 Pega-ratões'],['mnemo','🧠 Mnemônicos'],['questoes','📝 Questões']];
+var nav=document.getElementById('nav');
+secs.forEach(function(s,i){var b=document.createElement('button');b.textContent=s[1];if(i===0)b.className='on';b.onclick=function(){document.querySelectorAll('nav button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');document.querySelectorAll('section').forEach(function(x){x.classList.remove('on')});document.getElementById(s[0]).classList.add('on');window.scrollTo({top:0,behavior:'smooth'})};nav.appendChild(b)});
+</script>
+</body>
+</html>

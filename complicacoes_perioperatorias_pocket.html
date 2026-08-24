@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Complicações Pré &amp; Pós-op · pocket</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d1117;--card:#16161f;--card2:#1c1c27;--line:#2a2a38;
+  --txt:#ececf4;--muted:#9a9ab0;
+  --laranja:#f97316;--roxo:#a855f7;--ciano:#22d3ee;--vermelho:#f87171;--amarelo:#fbbf24;--verde:#34d399;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{overflow-x:hidden}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;font-size:17px;line-height:1.6;padding-bottom:30px}
+.top{padding:22px 18px 12px;position:sticky;top:0;background:linear-gradient(180deg,var(--bg) 70%,transparent);z-index:5}
+.kick{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:24px;line-height:1.15;margin-top:4px}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:6px 18px 12px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;padding:9px 15px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted);white-space:nowrap;cursor:pointer;transition:.15s}
+.tab.on{background:var(--laranja);border-color:var(--laranja);color:#0a0a0f}
+.panel{display:none;padding:6px 18px 40px;animation:f .25s}
+.panel.on{display:block}
+@keyframes f{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+h2{font-family:'Syne',sans-serif;font-size:21px;color:var(--laranja);margin:18px 0 10px}
+h3{font-family:'Syne',sans-serif;font-size:16px;color:#fff;margin:16px 0 6px}
+p{margin:10px 0}
+ul{list-style:none;margin:8px 0}
+li{padding:6px 0 6px 22px;position:relative}
+li::before{content:"▸";position:absolute;left:0;top:7px;color:var(--laranja);font-size:13px}
+strong{color:#fff;font-weight:600}
+.s{color:var(--ciano);font-style:italic;font-size:.92em}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0}
+.box{border-radius:12px;padding:13px 15px;margin:13px 0;border:1px solid;font-size:15px}
+.prova{background:rgba(168,85,247,.1);border-color:rgba(168,85,247,.4)}
+.prova .l{color:var(--roxo)}
+.mac{background:rgba(34,211,238,.1);border-color:rgba(34,211,238,.4)}
+.mac .l{color:var(--ciano)}
+.warn{background:rgba(248,113,113,.1);border-color:rgba(248,113,113,.4)}
+.warn .l{color:var(--vermelho)}
+.l{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-size:10px;background:rgba(168,85,247,.25);color:var(--roxo);padding:2px 6px;border-radius:5px;margin-left:5px;font-family:'JetBrains Mono',monospace}
+.kv{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)}
+.kv:last-child{border:none}
+.kv .k{flex:0 0 42%;color:var(--ciano);font-family:'JetBrains Mono',monospace;font-size:13px}
+.kv .v{flex:1;font-size:15px}
+.step{display:flex;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line)}
+.step:last-child{border:none}
+.step .n{flex:0 0 30px;height:30px;border-radius:9px;background:rgba(249,115,22,.15);border:1px solid rgba(249,115,22,.45);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;display:grid;place-items:center;font-size:14px}
+.step .x{flex:1}
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="kick">carolzita · pocket 🚑</div>
+  <h1>Complicações Pré &amp; Pós-op ⚕️</h1>
+</div>
+<div class="tabs">
+  <div class="tab on" data-t="0">❤️ Risco CV</div>
+  <div class="tab" data-t="1">🍽️ Otimização</div>
+  <div class="tab" data-t="2">🌡️ 5 W's</div>
+  <div class="tab" data-t="3">🩹 Deiscência</div>
+  <div class="tab" data-t="4">🩸 TEV</div>
+  <div class="tab" data-t="5">☠️ Traps</div>
+</div>
+
+<!-- 0 RISCO CV -->
+<div class="panel on" data-p="0">
+  <h2>❤️ ACC/AHA 2024</h2>
+  <div class="box prova"><span class="l">alto rendimento</span>🆕 Não recomenda <strong>uma calculadora específica</strong> mais — RCRI/MICA/ACS-SRC todas aceitáveis + nova etapa de "modificadores de risco".</div>
+  <h3>🪜 Algoritmo</h3>
+  <div class="card">
+    <div class="step"><div class="n">1</div><div class="x">Urgência? Se sim, opera direto</div></div>
+    <div class="step"><div class="n">2</div><div class="x">Estimar risco (RCRI etc)</div></div>
+    <div class="step"><div class="n">3</div><div class="x">🆕 Modificadores de risco</div></div>
+    <div class="step"><div class="n">4</div><div class="x">Capacidade funcional (METs)</div></div>
+  </div>
+  <div class="box mac"><span class="l">🧠 RCRI (6 critérios)</span>Cirurgia alto risco · isquêmica · ICC · AVC/AIT · DM insulina · Cr&gt;2. ≥3 = risco elevado.</div>
+  <h3>🏃 Capacidade funcional</h3>
+  <p><strong>≥4 METs</strong> = sobe 2 lances de escada sem sintomas 🪜</p>
+</div>
+
+<!-- 1 OTIMIZACAO -->
+<div class="panel" data-p="1">
+  <h2>🍽️ Jejum (ERAS/ACERTO)</h2>
+  <div class="card">
+    <div class="kv"><div class="k">💧 Líquido claro</div><div class="v">até <strong>2h</strong> antes</div></div>
+    <div class="kv"><div class="k">🍖 Sólidos</div><div class="v">6-8h (leve/gordurosa)</div></div>
+  </div>
+  <h3>🎯 Otimizar antes de eletiva</h3>
+  <ul>
+    <li>🩸 Anemia</li>
+    <li>🍬 Glicemia (HbA1c)</li>
+    <li>🚬 Tabagismo (≥4 sem antes)</li>
+    <li>🍗 Nutrição</li>
+    <li>💊 Medicações crônicas</li>
+    <li>🧴 Descolonização (clorexidina/mupirocina)</li>
+  </ul>
+</div>
+
+<!-- 2 5 W's -->
+<div class="panel" data-p="2">
+  <h2>🌡️ Febre pós-op — 5(+2) W's</h2>
+  <div class="card">
+    <div class="kv"><div class="k">💨 Wind (24-48h)</div><div class="v">Atelectasia/pneumonia</div></div>
+    <div class="kv"><div class="k">💧 Water (48-72h)</div><div class="v">ITU</div></div>
+    <div class="kv"><div class="k">🚶 Walking (&gt;72h)</div><div class="v">TVP/TEP</div></div>
+    <div class="kv"><div class="k">🩹 Wound (5-7d)</div><div class="v">Infecção de ferida</div></div>
+    <div class="kv"><div class="k">💊 Wonder drugs</div><div class="v">Febre medicamentosa</div></div>
+    <div class="kv"><div class="k">🧫 Whopper (&gt;7d)</div><div class="v">Abscesso profundo</div></div>
+  </div>
+  <div class="box warn"><span class="l">☠️ pega-ratão</span>Febre <strong>precoce + toxemia</strong> ≠ automaticamente Wind! Descartar infecção necrotizante/fasciite.</div>
+  <p class="s">Evidência atual questiona se atelectasia realmente causa febre — mas ainda é "resposta esperada" na maioria das provas.</p>
+</div>
+
+<!-- 3 DEISCENCIA -->
+<div class="panel" data-p="3">
+  <h2>🩹 Deiscência fascial</h2>
+  <div class="box prova"><span class="l">alto rendimento</span>🎯 Drenagem <strong>"em salmão"</strong> pela incisão (5-8º dia) = deiscência iminente, mesmo com pele íntegra!</div>
+  <h3>🚨 Evisceração — conduta</h3>
+  <div class="card">
+    <div class="step"><div class="n">1</div><div class="x">Cobrir com compressa estéril + SF <strong>morno</strong></div></div>
+    <div class="step"><div class="n">2</div><div class="x"><strong>NUNCA</strong> reduzir às cegas</div></div>
+    <div class="step"><div class="n">3</div><div class="x">NPO + decúbito joelhos fletidos</div></div>
+    <div class="step"><div class="n">4</div><div class="x">Reoperação de urgência</div></div>
+  </div>
+  <h3>⚠️ Fatores de risco</h3>
+  <ul>
+    <li>🦠 Infecção · 💪 tensão · 🩸 hematoma</li>
+    <li>🍗 Desnutrição · 💊 corticoide · 🚬 tabaco</li>
+    <li>😮‍💨 Tosse · 🎈 distensão/íleo</li>
+  </ul>
+</div>
+
+<!-- 4 TEV -->
+<div class="panel" data-p="4">
+  <h2>🩸 Profilaxia TEV — Caprini</h2>
+  <div class="card">
+    <div class="kv"><div class="k">0</div><div class="v">Só deambulação</div></div>
+    <div class="kv"><div class="k">1-2</div><div class="v">Mecânica OU farmacológica</div></div>
+    <div class="kv"><div class="k">3-4</div><div class="v">Farmacológica ± mecânica</div></div>
+    <div class="kv"><div class="k">≥5</div><div class="v">Farmacológica <strong>+</strong> mecânica</div></div>
+  </div>
+  <div class="box warn"><span class="l">☠️ pega-ratão</span>Alto risco de <strong>sangramento</strong> ≠ sem profilaxia! Priorizar mecânica até reduzir risco hemorrágico.</div>
+  <div class="box mac"><span class="l">🧠 duração estendida</span>Oncológica abdominopélvica/bariátrica → considerar até <strong>4 semanas</strong> pós-alta.</div>
+</div>
+
+<!-- 5 TRAPS -->
+<div class="panel" data-p="5">
+  <h2>☠️ Pega-ratões</h2>
+  <div class="box warn"><span class="l">trap 1</span>ACC/AHA 2024 não recomenda calculadora única ❤️</div>
+  <div class="box warn"><span class="l">trap 2</span>Drenagem salmão = investigar deiscência 🩹</div>
+  <div class="box warn"><span class="l">trap 3</span>Evisceração: nunca reduzir às cegas 🚨</div>
+  <div class="box warn"><span class="l">trap 4</span>Sangramento alto ≠ sem TEV profilaxia 🩸</div>
+  <div class="box warn"><span class="l">trap 5</span>Febre precoce+toxemia ≠ só Wind 🌡️</div>
+  <div class="box warn"><span class="l">trap 6</span>Jejum sólido: 6-8h basta, não precisa "meia-noite" 🍽️</div>
+  <div class="box warn"><span class="l">trap 7</span>4 METs é o corte — não confundir com outras escalas 🏃</div>
+  <div class="box warn"><span class="l">trap 8</span>Caprini 0 ainda exige deambulação ativa 🚶</div>
+  <div class="box mac"><span class="l">✅ resumo de bolso</span>ACC/AHA24=sem calc única+modificador+4METs · RCRI=6critérios≥3 · 5W's cronológicos · Salmão=deiscência · Evisceração=cobre+não reduz · Caprini 0→só deambular, ≥5→farmaco+mecânica 🎓</div>
+</div>
+
+<script>
+var tabs=document.querySelectorAll('.tab'),panels=document.querySelectorAll('.panel');
+tabs.forEach(function(t){t.addEventListener('click',function(){
+  tabs.forEach(function(x){x.classList.remove('on')});
+  panels.forEach(function(x){x.classList.remove('on')});
+  t.classList.add('on');
+  document.querySelector('.panel[data-p="'+t.dataset.t+'"]').classList.add('on');
+})});
+</script>
+</body>
+</html>

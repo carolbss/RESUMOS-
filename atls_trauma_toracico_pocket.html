@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>POCKET | ATLS & Trauma</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0f172a;--sf:#1e293b;--br:#334155;--tx:#f8fafc;--mt:#94a3b8;
+  --re:#ef4444;--rd:rgba(239,68,68,.14);
+  --or:#f97316;--od:rgba(249,115,22,.14);
+  --pu:#a855f7;--pd:rgba(168,85,247,.14);
+  --cy:#22d3ee;--cd:rgba(34,211,238,.12);
+  --gn:#22c55e;--gd:rgba(34,197,94,.12);
+  --ye:#eab308;--yd:rgba(234,179,8,.13);
+}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--tx);height:100dvh;overflow:hidden;display:flex;flex-direction:column;font-size:14px}
+.hdr{background:var(--sf);border-bottom:2px solid var(--re);padding:.6rem 1rem;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.hdr-title{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:800}
+.hdr-title span{color:var(--re)}
+.hdr-sub{font-family:'JetBrains Mono',monospace;font-size:.6rem;color:var(--mt);margin-top:.1rem}
+.tab-idx{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--re);background:var(--rd);padding:.2rem .5rem;border-radius:.3rem;border:1px solid rgba(239,68,68,.3)}
+.swipe-wrap{flex:1;overflow:hidden;position:relative}
+.swipe-track{display:flex;height:100%;transition:transform .3s cubic-bezier(.4,0,.2,1);will-change:transform}
+.tab-pane{flex-shrink:0;width:100%;height:100%;overflow-y:auto;padding:1rem;-webkit-overflow-scrolling:touch}
+.bnav{background:var(--sf);border-top:1px solid var(--br);display:flex;flex-shrink:0;overflow-x:auto;scrollbar-width:none}
+.bnav::-webkit-scrollbar{display:none}
+.bnav-btn{flex-shrink:0;flex:1;min-width:55px;padding:.5rem .2rem;background:none;border:none;color:var(--mt);font-family:'Syne',sans-serif;font-size:.58rem;font-weight:700;cursor:pointer;text-transform:uppercase;letter-spacing:.05em;display:flex;flex-direction:column;align-items:center;gap:.12rem;border-top:2px solid transparent;transition:all .2s;white-space:nowrap}
+.bnav-btn .ico{font-size:1rem}
+.bnav-btn.active{color:var(--re);border-top-color:var(--re)}
+.card{border-radius:.5rem;padding:.7rem .85rem;margin-bottom:.6rem;border-left:3px solid}
+.co{background:var(--od);border-color:var(--or)}.cp{background:var(--pd);border-color:var(--pu)}
+.cc{background:var(--cd);border-color:var(--cy)}.cg{background:var(--gd);border-color:var(--gn)}
+.cr{background:var(--rd);border-color:var(--re)}.cy{background:var(--yd);border-color:var(--ye)}
+.ct{font-family:'Syne',sans-serif;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.4rem}
+.co .ct{color:var(--or)}.cp .ct{color:var(--pu)}.cc .ct{color:var(--cy)}
+.cg .ct{color:var(--gn)}.cr .ct{color:var(--re)}.cy .ct{color:var(--ye)}
+ul.l,ol.l{padding-left:1.1rem;font-size:.8rem;line-height:1.85}
+ul.l li,ol.l li{margin-bottom:.12rem}
+.mn{font-family:'JetBrains Mono',monospace;background:var(--cd);border:1px solid rgba(34,211,238,.25);border-radius:.45rem;padding:.65rem .85rem;font-size:.78rem;color:var(--cy);margin-bottom:.6rem}
+.pq{border-left:3px solid var(--pu,#a855f7);background:var(--pd,rgba(168,85,247,.13));border-radius:0 .45rem .45rem 0;padding:.55rem .8rem;margin:.4rem 0 .7rem;font-size:.78rem}
+.pq b{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--pu,#a855f7);display:block;margin-bottom:.15rem}
+.grn{background:rgba(34,197,94,.09);border:1px solid rgba(34,197,94,.28);border-radius:.5rem;padding:.6rem .85rem;margin:.5rem 0;color:#86efac;font-style:italic;font-size:.8rem}
+.grn b{color:#a7f3d0;font-style:normal;font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:.2rem}
+
+.mn strong{color:#fff}
+.ar{background:var(--rd);border:1px solid rgba(239,68,68,.3);color:#fca5a5;border-radius:.45rem;padding:.6rem .85rem;margin-bottom:.6rem;font-size:.78rem;display:flex;gap:.4rem}
+.ay{background:var(--yd);border:1px solid rgba(234,179,8,.3);color:#fef08a;border-radius:.45rem;padding:.6rem .85rem;margin-bottom:.6rem;font-size:.78rem;display:flex;gap:.4rem}
+.st{font-family:'Syne',sans-serif;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--re);margin:1rem 0 .35rem;border-bottom:1px solid rgba(239,68,68,.2);padding-bottom:.25rem}
+.tw{overflow-x:auto;margin-bottom:.6rem}
+table{width:100%;border-collapse:collapse;font-size:.73rem}
+th{background:rgba(255,255,255,.05);padding:.4rem .6rem;text-align:left;font-family:'JetBrains Mono',monospace;font-size:.62rem;text-transform:uppercase;color:var(--mt);border-bottom:1px solid var(--br)}
+td{padding:.4rem .6rem;border-bottom:1px solid rgba(255,255,255,.04);vertical-align:top;line-height:1.45}
+tr:last-child td{border-bottom:none}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:.55rem;margin-bottom:.6rem}
+.abrow{display:grid;grid-template-columns:28px 1fr;gap:.5rem 1rem;margin-bottom:.6rem;align-items:start}
+.abl{font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;color:var(--re);line-height:1;text-align:center;margin-top:.15rem}
+.abt{font-family:'Syne',sans-serif;font-size:.73rem;font-weight:700;color:#fff;margin-bottom:.2rem;text-transform:uppercase}
+.abb{font-size:.77rem;line-height:1.75;color:#cbd5e1}
+.hl-r{color:var(--re);font-weight:600}.hl-g{color:var(--gn);font-weight:600}.hl-y{color:var(--ye);font-weight:600}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div>
+    <div class="hdr-title">ATLS & <span>TRAUMA</span></div>
+    <div class="hdr-sub">POCKET · carolzita · HED 2026</div>
+  </div>
+  <div class="tab-idx" id="tab-idx">1 / 6</div>
+</div>
+
+<div class="swipe-wrap">
+<div class="swipe-track" id="track">
+
+<!-- PANE 1: ABCDE -->
+<div class="tab-pane">
+  <div class="mn"><strong>ABCDE:</strong> Airway+C-spine · Breathing · Circulation · Disability · Exposure</div>
+  <div class="abrow"><div class="abl">A</div><div><div class="abt">Via Aérea + C-spine</div><div class="abb">Jaw thrust · aspiração · imobilização cervical em linha<br>IOT se GCS ≤8 · cricotireoidostomia se falha IOT</div></div></div>
+  <div class="grn"><b>cricotireoidostomia — tradução simples</b>Não é a via aérea perfeita, é o buraco mais rápido e seguro até a traqueia. Vence a traqueostomia na emergência porque a membrana é superficial e quase sem vasos grandes.</div>
+  <div class="pq"><b>por quê 1/3 inferior</b>As artérias cricotireoideanas cruzam a parte superior — incisar embaixo evita sangrar justo onde se precisa ver.</div>
+  <div class="pq"><b>por quê capnografia confirma</b>Ausculta engana num tórax já comprometido — capnografia é a prova objetiva de que o ar vai e volta do pulmão.</div>
+  <div class="abrow"><div class="abl">B</div><div><div class="abt">Breathing — Tórax</div><div class="abb">Big 6: PTX hiper → punção 2°EIC LHC · PTX aberto → 3 lados<br>Hemotórax maciço → dreno LAM · Tamponamento → pericard.</div></div></div>
+  <div class="abrow"><div class="abl">C</div><div><div class="abt">Circulação — Hemorragia</div><div class="abb">2 acessos 14–16G · Classes I–IV · PTM 1:1:1<br>Ácido tranexâmico &lt;3h · hipotensão permissiva 80–90 mmHg</div></div></div>
+  <div class="abrow"><div class="abl">D</div><div><div class="abt">Disability — Neurológico</div><div class="abb">GCS antes da sedação · AVDI · pupilas<br>GCS ≤8 = IOT obrigatória</div></div></div>
+  <div class="abrow"><div class="abl">E</div><div><div class="abt">Exposição + Temperatura</div><div class="abb">Despir completamente + logroll (dorso!)<br>Manta térmica — tríade da morte: Hipotermia+Acidose+Coagulopatia</div></div></div>
+  <div class="st">Avaliação Secundária</div>
+  <div class="mn"><strong>AMPLE:</strong> Alergias · Medicamentos · Passado médico · Last meal · Eventos</div>
+  <div class="card co">
+    <div class="ct">Sondas</div>
+    <ul class="l">
+      <li>Gástrica: descompressão (nasal SE suspeita de fratura de base)</li>
+      <li>Vesical: contraindicada se sangue no meato ou próstata alta</li>
+    </ul>
+  </div>
+</div>
+
+<!-- PANE 2: CHOQUE -->
+<div class="tab-pane">
+  <div class="st">Classes do Choque (ATLS)</div>
+  <div class="tw"><table>
+    <thead><tr><th></th><th class="hl-g">I</th><th class="hl-y">II</th><th class="hl-r">III</th><th style="color:var(--re);font-weight:700">IV</th></tr></thead>
+    <tbody>
+      <tr><td>Perda (%)</td><td>&lt;15%</td><td>15–30%</td><td>30–40%</td><td>&gt;40%</td></tr>
+      <tr><td>FC</td><td>&lt;100</td><td>100–120</td><td>120–140</td><td>&gt;140</td></tr>
+      <tr><td>PAS</td><td>Normal</td><td>Normal</td><td>↓</td><td>↓↓</td></tr>
+      <tr><td>DU (mL/h)</td><td>&gt;30</td><td>20–30</td><td>5–15</td><td>↓↓</td></tr>
+      <tr><td>NC</td><td>Ansioso</td><td>Agitado</td><td>Confuso</td><td>Letárgico</td></tr>
+    </tbody>
+  </table></div>
+  <div class="mn"><strong>PTM 1:1:1:</strong> CH : PFC : Plaquetas<br>Ácido tranexâmico 1g IV em 10min — &lt;3h do trauma!</div>
+  <div class="card cr">
+    <div class="ct">Acesso Vascular</div>
+    <ul class="l">
+      <li>1ª opção: 2× periférico 14G (antecubital)</li>
+      <li>Intraósseo se falha (tíbia proximal, úmero, esterno)</li>
+      <li>Femoral se central (mais seguro no trauma)</li>
+      <li>NUNCA subclávia se suspeita PTX</li>
+    </ul>
+  </div>
+  <div class="card cy">
+    <div class="ct">Hipotensão Permissiva</div>
+    <ul class="l">
+      <li>Penetrante sem TCE: PAS alvo 80–90 mmHg</li>
+      <li>TCE associado: PAS ≥110 mmHg (manter PPC)</li>
+    </ul>
+  </div>
+</div>
+
+<!-- PANE 3: TCE -->
+<div class="tab-pane">
+  <div class="st">GCS</div>
+  <div class="tw"><table>
+    <thead><tr><th>Componente</th><th>Resposta</th><th>Pts</th></tr></thead>
+    <tbody>
+      <tr><td rowspan="4">E (Eye)</td><td>Espontânea</td><td>4</td></tr>
+      <tr><td>Voz</td><td>3</td></tr>
+      <tr><td>Dor</td><td>2</td></tr>
+      <tr><td>Ausente</td><td>1</td></tr>
+      <tr><td rowspan="5">V (Verbal)</td><td>Orientado</td><td>5</td></tr>
+      <tr><td>Confuso</td><td>4</td></tr>
+      <tr><td>Palavras</td><td>3</td></tr>
+      <tr><td>Sons</td><td>2</td></tr>
+      <tr><td>Ausente</td><td>1</td></tr>
+      <tr><td rowspan="6">M (Motor)</td><td>Obedece</td><td>6</td></tr>
+      <tr><td>Localiza</td><td>5</td></tr>
+      <tr><td>Retirada</td><td>4</td></tr>
+      <tr><td>Decorticação</td><td>3</td></tr>
+      <tr><td>Descerebração</td><td>2</td></tr>
+      <tr><td>Ausente</td><td>1</td></tr>
+    </tbody>
+  </table></div>
+  <div class="mn"><strong>TCE:</strong> Leve 13–15 · Moderado 9–12 · Grave ≤8 (IOT!)</div>
+  <div class="ar"><span>🚨</span><span><strong>Cushing:</strong> HAS + bradicardia + FR irregular = HIC → manitol 0,25–0,5 g/kg + hiperventilação transitória (PaCO₂ 30–35) → neuro emergência</span></div>
+  <div class="st">Metas TCE Grave</div>
+  <div class="card co">
+    <div class="ct">Alvos</div>
+    <ul class="l">
+      <li>PAM ≥80 mmHg (PPC ≥60 mmHg)</li>
+      <li>PaO₂ &gt;100 mmHg | PaCO₂ 35–40 mmHg</li>
+      <li>Glicemia 80–180 mg/dL | Temp 36–37,5°C</li>
+      <li>Cabeceira 30°</li>
+    </ul>
+  </div>
+  <div class="card cp">
+    <div class="ct">Hematomas — TC</div>
+    <ul class="l">
+      <li>Epidural: lenticular (biconvexa), não cruza suturas</li>
+      <li>Subdural: côncavo (crescente), segue contorno cerebral</li>
+    </ul>
+  </div>
+</div>
+
+<!-- PANE 4: ABDOME -->
+<div class="tab-pane">
+  <div class="ar"><span>🚨</span><span><strong>FAST + + instável → Laparotomia imediata</strong> (não ir para TC)</span></div>
+  <div class="st">Decisão Cirúrgica</div>
+  <div class="tw"><table>
+    <thead><tr><th>Situação</th><th>Conduta</th></tr></thead>
+    <tbody>
+      <tr><td><span class="hl-r">Instável + FAST +</span></td><td>Laparotomia imediata</td></tr>
+      <tr><td><span class="hl-r">PAF abdominal</span></td><td>Laparotomia imediata</td></tr>
+      <tr><td>Estável + FAST ±</td><td>TC com contraste → NOM ou cirurgia</td></tr>
+      <tr><td>Arma branca penetrou fáscia</td><td>Laparotomia ou laparoscopia diagnóstica</td></tr>
+    </tbody>
+  </table></div>
+  <div class="mn"><strong>NOM:</strong> Estável + grau ≤III + sem peritonite + TC feita + UTI disponível</div>
+  <div class="g2">
+    <div class="card cg">
+      <div class="ct">NOM Falha</div>
+      <ul class="l">
+        <li>Instabilidade após ressuscitação</li>
+        <li>Peritonite</li>
+        <li>&gt;4 CH/24h</li>
+        <li>Progressão na TC</li>
+      </ul>
+    </div>
+    <div class="card co">
+      <div class="ct">Pelve</div>
+      <ul class="l">
+        <li>Cinta no TROCÂNTER maior</li>
+        <li>PPP se instável</li>
+        <li>Embolização se arterial</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card cr">
+    <div class="ct">ISR — Sequência</div>
+    <ol class="l">
+      <li>Pré-oxigenação O₂ 100% × 3–5 min</li>
+      <li>Cetamina 1–2 mg/kg (instável) ou etomidato 0,3 mg/kg</li>
+      <li>Succinilcolina 1,5 mg/kg (ação 45–60s)</li>
+      <li>Laringoscopia → IOT → confirmar</li>
+    </ol>
+  </div>
+</div>
+
+<!-- PANE 5: DAMAGE CONTROL -->
+<div class="tab-pane">
+  <div class="mn"><strong>Tríade da Morte:</strong> Hipotermia (&lt;35°C) + Acidose (pH &lt;7,2) + Coagulopatia → DCS</div>
+  <div class="st">Damage Control — Fases</div>
+  <div class="tw"><table>
+    <thead><tr><th>Fase</th><th>O que fazer</th><th>Tempo</th></tr></thead>
+    <tbody>
+      <tr><td><strong>0 Ressc.</strong></td><td>PTM + ATX + hipotensão permissiva</td><td>Emerg.</td></tr>
+      <tr><td><strong>I Cirurgia</strong></td><td>Controle hemorragia (packing) + contaminação (staplar) → laparostomia</td><td>&lt;90 min</td></tr>
+      <tr><td><strong>II UTI</strong></td><td>Reverter tríade: aquecer + corrigir coagul. + hemocomp.</td><td>24–72h</td></tr>
+      <tr><td><strong>III Definitivo</strong></td><td>Reconstrução + fechamento da parede</td><td>Após estab.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="card cr">
+    <div class="ct">Indicações DCS</div>
+    <ul class="l">
+      <li>Temp &lt;34°C · pH &lt;7,2 · INR &gt;1,5</li>
+      <li>Instabilidade refratária</li>
+      <li>Tempo cirúrgico previsto &gt;90 min</li>
+    </ul>
+  </div>
+  <div class="card co">
+    <div class="ct">Compartimento — Delta P</div>
+    <ul class="l">
+      <li>Delta P = PAD − Pcomp &lt;30 mmHg → fasciotomia</li>
+      <li>Ou Pcomp &gt;30 mmHg</li>
+      <li>6 Ps: Pain · Pressure · Paresthesia · Pallor · Paralysis · Pulselessness</li>
+    </ul>
+  </div>
+
+  <div class="st">Toracotomia de Ressuscitação</div>
+  <div class="grn"><b>tradução simples</b>Última tentativa antes da morte declarada: abrir o tórax pra fazer manualmente o que o coração parou de fazer — aliviar a pressão em volta dele e bombear por fora.</div>
+  <div class="card cr">
+    <div class="ct">Indicações</div>
+    <ul class="l">
+      <li>Penetrante: PCR &lt;10 min com sinais de vida</li>
+      <li>Contuso: PCR &lt;5 min (sobrevida &lt;2%)</li>
+    </ul>
+    <div class="pq"><b>por quê o prazo</b>Depois disso a lesão cerebral hipóxica já é praticamente certa — a toracotomia deixa de salvar o paciente.</div>
+  </div>
+  <div class="card co">
+    <div class="ct">Técnica</div>
+    <ol class="l">
+      <li>Antero-lateral esquerda (5°EIC)</li>
+      <li>Drenar tamponamento</li>
+      <li>Suturar lacerações cardíacas</li>
+      <li>Massagem interna</li>
+      <li>Cross-clamp aorta descendente</li>
+    </ol>
+    <div class="pq"><b>por quê antero-lateral E</b>Acesso mais rápido ao coração, sem decúbito lateral — cada segundo conta.</div>
+    <div class="pq"><b>por quê drenar antes de suturar</b>Tamponamento é a causa reversível mais comum — sem aliviá-lo, a massagem comprime um coração ainda esmagado por fora.</div>
+    <div class="pq"><b>por quê cross-clamp aorta</b>Redistribui o volume limitado pra cérebro e coração, sacrificando abdome/MMII — aceitável por minutos, nunca por horas.</div>
+  </div>
+</div>
+
+<!-- PANE 6: PROVAS -->
+<div class="tab-pane">
+  <div class="st">Mnemonicos Rápidos</div>
+  <div class="mn"><strong>ABCDE</strong> · <strong>AMPLE</strong> · <strong>GCS E+V+M</strong> · <strong>PTM 1:1:1</strong></div>
+  <div class="mn"><strong>FAST +instável → Lap imediata</strong><br><strong>NOM:</strong> estável+grau≤III+TC+UTI</div>
+  <div class="mn"><strong>Tríade da Morte → DCS</strong><br>Hipotermia+Acidose+Coagulopatia</div>
+  <div class="mn"><strong>Pelve = TROCÂNTER maior</strong> (nunca crista ilíaca!)</div>
+  <div class="mn"><strong>Choque neurogênico:</strong> bradicardia+hipotensão+extrem. quentes → excluir hemorrágico!</div>
+  <div class="st">Tópicos por Banca</div>
+  <div class="tw"><table>
+    <thead><tr><th>Banca</th><th>Foco</th></tr></thead>
+    <tbody>
+      <tr><td><strong>AMRIGS</strong></td><td>Classes choque + GCS + PTM + tríade</td></tr>
+      <tr><td><strong>HCPA</strong></td><td>ISR + metas TCE + hematomas TC</td></tr>
+      <tr><td><strong>GHC</strong></td><td>eFAST + NOM + síndrome compart.</td></tr>
+      <tr><td><strong>Santa Casa</strong></td><td>Baço/fígado graus + cricotireoid.</td></tr>
+      <tr><td><strong>PUC-RS</strong></td><td>GCS + DCS fases + choque neurogênico</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+</div><!-- /track -->
+</div><!-- /swipe-wrap -->
+
+<nav class="bnav">
+  <button class="bnav-btn active" data-i="0"><span class="ico">🔴</span>ABCDE</button>
+  <button class="bnav-btn" data-i="1"><span class="ico">🩸</span>Choque</button>
+  <button class="bnav-btn" data-i="2"><span class="ico">🧠</span>TCE</button>
+  <button class="bnav-btn" data-i="3"><span class="ico">🔪</span>Abdome</button>
+  <button class="bnav-btn" data-i="4"><span class="ico">⚡</span>DCS</button>
+  <button class="bnav-btn" data-i="5"><span class="ico">🎯</span>Provas</button>
+</nav>
+
+<script>
+const track=document.getElementById('track');
+const btns=document.querySelectorAll('.bnav-btn');
+const idx=document.getElementById('tab-idx');
+let cur=0,startX=0,isDragging=false;
+function goTo(n){
+  cur=Math.max(0,Math.min(5,n));
+  track.style.transform=`translateX(-${cur*100}%)`;
+  btns.forEach((b,i)=>b.classList.toggle('active',i===cur));
+  idx.textContent=`${cur+1} / 6`;
+  track.querySelectorAll('.tab-pane')[cur].scrollTop=0;
+}
+btns.forEach(b=>b.addEventListener('click',()=>goTo(+b.dataset.i)));
+track.addEventListener('touchstart',e=>{startX=e.touches[0].clientX;isDragging=true},{passive:true});
+track.addEventListener('touchend',e=>{
+  if(!isDragging)return;
+  const dx=e.changedTouches[0].clientX-startX;
+  if(Math.abs(dx)>50)goTo(dx<0?cur+1:cur-1);
+  isDragging=false;
+},{passive:true});
+</script>
+</body>
+</html>

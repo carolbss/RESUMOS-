@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Choque &amp; Transfusão — carolzita</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0f; --bg2:#12121a; --card:#16161f; --card2:#1c1c27;
+  --line:#2a2a38; --txt:#e6e6ef; --muted:#9a9ab0;
+  --laranja:#f97316; --laranja-bg:rgba(249,115,22,.10);
+  --roxo:#a855f7; --roxo-bg:rgba(168,85,247,.10);
+  --ciano:#22d3ee; --ciano-bg:rgba(34,211,238,.10);
+  --verde:#34d399; --vermelho:#f87171; --amarelo:#fbbf24;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(1200px 600px at 50% -10%,#15151f 0%,var(--bg) 60%);color:var(--txt);font-family:'Inter',sans-serif;line-height:1.55;padding:0 0 80px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px}
+header{padding:40px 0 24px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(30px,6vw,46px);line-height:1.05;margin:8px 0 6px;letter-spacing:-.02em}
+.sub{color:var(--muted);font-size:15px;max-width:700px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tag{font-family:'JetBrains Mono',monospace;font-size:11px;padding:5px 10px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted)}
+.tag.r{color:var(--roxo);border-color:rgba(168,85,247,.35);background:var(--roxo-bg)}
+section{margin-top:14px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:12px;overflow:hidden;transition:border-color .2s}
+details[open]{border-color:rgba(249,115,22,.30)}
+summary{cursor:pointer;list-style:none;padding:18px 20px;display:flex;align-items:center;gap:13px;font-family:'Syne',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em;user-select:none}
+summary::-webkit-details-marker{display:none}
+.num{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--bg);background:var(--laranja);width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:0 0 auto}
+.chev{margin-left:auto;color:var(--muted);transition:transform .25s;font-size:14px}
+details[open] .chev{transform:rotate(90deg)}
+.body{padding:4px 22px 24px;font-size:15px}
+.body p{margin:10px 0}
+.body h4{font-family:'Syne',sans-serif;font-size:16px;color:var(--laranja);margin:20px 0 8px;letter-spacing:-.01em}
+.body ul{margin:8px 0 8px 4px;list-style:none}
+.body li{padding:4px 0 4px 20px;position:relative}
+.body li::before{content:"▸";position:absolute;left:0;color:var(--laranja);font-size:12px;top:6px}
+.body strong{color:#fff;font-weight:600}
+.simple{color:var(--ciano);font-style:italic;font-size:.94em}
+.box{border-radius:12px;padding:13px 15px;margin:14px 0;font-size:14px;border:1px solid}
+.box.prova{background:var(--roxo-bg);border-color:rgba(168,85,247,.35)}
+.box.prova .lbl{color:var(--roxo)}
+.box.mac{background:var(--ciano-bg);border-color:rgba(34,211,238,.35)}
+.box.mac .lbl{color:var(--ciano)}
+.box.warn{background:rgba(248,113,113,.08);border-color:rgba(248,113,113,.3)}
+.box.warn .lbl{color:var(--vermelho)}
+.lbl{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-family:'JetBrains Mono',monospace;font-size:10px;background:rgba(168,85,247,.2);color:var(--roxo);padding:2px 7px;border-radius:6px;margin-left:6px;white-space:nowrap}
+.tbl{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
+.tbl table{width:100%;border-collapse:collapse;min-width:520px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--laranja);background:var(--card2)}
+td strong{color:#fff}
+.fio td:first-child{color:var(--ciano);font-family:'JetBrains Mono',monospace;font-weight:500}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin:14px 0}
+.gcard{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+.gcard .t{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--ciano);margin-bottom:4px}
+.gcard .d{font-size:13px;color:var(--muted)}
+.hands{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.hand{border-radius:12px;padding:14px;border:1px solid var(--line)}
+.hand.e{background:rgba(34,211,238,.06);border-color:rgba(34,211,238,.25)}
+.hand.d{background:rgba(249,115,22,.06);border-color:rgba(249,115,22,.25)}
+.hand .ht{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;font-weight:700}
+.hand.e .ht{color:var(--ciano)} .hand.d .ht{color:var(--laranja)}
+.hand li{font-size:13px}
+.steps{counter-reset:s;margin:10px 0}
+.step{counter-increment:s;position:relative;padding:11px 0 11px 46px;border-bottom:1px dashed var(--line)}
+.step:last-child{border-bottom:none}
+.step::before{content:counter(s);position:absolute;left:0;top:9px;width:30px;height:30px;border-radius:9px;background:var(--laranja-bg);border:1px solid rgba(249,115,22,.4);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:grid;place-items:center}
+.step b{color:#fff}
+svg{max-width:100%;height:auto;display:block;margin:16px auto}
+.fig{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.fig .cap{font-size:12px;color:var(--muted);text-align:center;margin-top:8px;font-family:'JetBrains Mono',monospace}
+footer{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+footer .ref{font-family:'JetBrains Mono',monospace;font-size:12px;margin-top:8px}
+a{color:var(--laranja)}
+@media(max-width:560px){.hands{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">carolzita · cirurgia geral · fisiologia do choque</div>
+  <h1>Choque &amp; Transfusão</h1>
+  <p class="sub">Os 4 tipos de choque (hipovolêmico, cardiogênico, obstrutivo, distributivo) · classes I-IV de choque hemorrágico (ATLS) · reanimação para controle de danos e transfusão maciça 1:1:1 · choque séptico — <strong>Surviving Sepsis Campaign</strong> (edição mais recente). Base: ATLS 11ª ed., Surviving Sepsis Campaign, European Guideline on Major Bleeding, e pegadinhas das bancas do RS.</p>
+  <div class="tags">
+    <span class="tag">4 tipos de choque</span>
+    <span class="tag">Classes I-IV</span>
+    <span class="tag">MTP 1:1:1</span>
+    <span class="tag">Surviving Sepsis</span>
+    <span class="tag">Norepinefrina</span>
+    <span class="tag r">HCPA · GHC · SC-POA · PUC · AMRIGS</span>
+  </div>
+</header>
+
+<!-- 1 OS 4 TIPOS -->
+<details open>
+  <summary><span class="num">1</span> Os 4 tipos de choque <span class="chev">▶</span></summary>
+  <div class="body">
+    <p><strong>Choque</strong> = falência da perfusão tecidual adequada para suprir a demanda metabólica — não é sinônimo de hipotensão (pode haver choque com PA normal em fase compensada). <span class="simple">(é quando o sangue não está entregando oxigênio suficiente para os órgãos, mesmo que a pressão ainda pareça "normal" no início)</span></p>
+
+    <div class="fig">
+      <svg viewBox="0 0 640 260" xmlns="http://www.w3.org/2000/svg">
+        <text x="320" y="20" fill="#9a9ab0" font-size="11" font-family="monospace" text-anchor="middle">parâmetros hemodinâmicos por tipo de choque</text>
+        <g font-family="monospace" font-size="12" text-anchor="middle">
+          <!-- hipovolemico -->
+          <rect x="30" y="40" width="135" height="190" rx="10" fill="#22d3ee" opacity=".12" stroke="#22d3ee" stroke-width="1.5"/>
+          <text x="97" y="60" fill="#22d3ee" font-weight="bold">Hipovolêmico</text>
+          <text x="97" y="95" fill="#f87171" font-size="18">↓↓</text><text x="97" y="112" fill="#9a9ab0" font-size="10">DC</text>
+          <text x="97" y="140" fill="#34d399" font-size="18">↑↑</text><text x="97" y="157" fill="#9a9ab0" font-size="10">RVS</text>
+          <text x="97" y="185" fill="#f87171" font-size="18">↓↓</text><text x="97" y="202" fill="#9a9ab0" font-size="10">PCWP/PVC</text>
+
+          <!-- cardiogenico -->
+          <rect x="175" y="40" width="135" height="190" rx="10" fill="#f97316" opacity=".12" stroke="#f97316" stroke-width="1.5"/>
+          <text x="242" y="60" fill="#f97316" font-weight="bold">Cardiogênico</text>
+          <text x="242" y="95" fill="#f87171" font-size="18">↓↓</text><text x="242" y="112" fill="#9a9ab0" font-size="10">DC</text>
+          <text x="242" y="140" fill="#34d399" font-size="18">↑</text><text x="242" y="157" fill="#9a9ab0" font-size="10">RVS</text>
+          <text x="242" y="185" fill="#34d399" font-size="18">↑↑</text><text x="242" y="202" fill="#9a9ab0" font-size="10">PCWP/PVC</text>
+
+          <!-- obstrutivo -->
+          <rect x="320" y="40" width="135" height="190" rx="10" fill="#a855f7" opacity=".12" stroke="#a855f7" stroke-width="1.5"/>
+          <text x="387" y="60" fill="#a855f7" font-weight="bold">Obstrutivo</text>
+          <text x="387" y="95" fill="#f87171" font-size="18">↓↓</text><text x="387" y="112" fill="#9a9ab0" font-size="10">DC</text>
+          <text x="387" y="140" fill="#34d399" font-size="18">↑</text><text x="387" y="157" fill="#9a9ab0" font-size="10">RVS</text>
+          <text x="387" y="185" fill="#34d399" font-size="18">↑</text><text x="387" y="202" fill="#9a9ab0" font-size="10">PCWP/PVC*</text>
+
+          <!-- distributivo -->
+          <rect x="465" y="40" width="145" height="190" rx="10" fill="#f87171" opacity=".12" stroke="#f87171" stroke-width="1.5"/>
+          <text x="537" y="60" fill="#f87171" font-weight="bold">Distributivo</text>
+          <text x="537" y="95" fill="#34d399" font-size="18">↑ (ou N)</text><text x="537" y="112" fill="#9a9ab0" font-size="10">DC</text>
+          <text x="537" y="140" fill="#f87171" font-size="18">↓↓</text><text x="537" y="157" fill="#9a9ab0" font-size="10">RVS</text>
+          <text x="537" y="185" fill="#f87171" font-size="18">↓</text><text x="537" y="202" fill="#9a9ab0" font-size="10">PCWP/PVC</text>
+        </g>
+        <text x="320" y="248" fill="#9a9ab0" font-size="9" font-family="monospace" text-anchor="middle">*obstrutivo: PVC alta em tamponamento/pneumo HTX; PCWP pode ser baixa no TEP</text>
+      </svg>
+      <div class="cap">DC = débito cardíaco, RVS = resistência vascular sistêmica, PCWP/PVC = pressão de enchimento. O distributivo é o único com RVS baixa e DC normal/alto — os outros três têm DC baixo.</div>
+    </div>
+
+    <div class="tbl"><table>
+      <tr><th>Tipo</th><th>Causa clássica</th><th>Mecanismo</th></tr>
+      <tr><td><strong>Hipovolêmico</strong></td><td>Hemorragia, desidratação, queimadura</td><td>Perda de volume circulante</td></tr>
+      <tr><td><strong>Cardiogênico</strong></td><td>IAM extenso, arritmia, miocardiopatia</td><td>Falência da bomba cardíaca</td></tr>
+      <tr><td><strong>Obstrutivo</strong></td><td>Tamponamento, pneumotórax hipertensivo, TEP maciço</td><td>Obstrução mecânica ao fluxo/enchimento</td></tr>
+      <tr><td><strong>Distributivo</strong></td><td>Séptico, anafilático, neurogênico</td><td>Vasodilatação periférica maciça</td></tr>
+    </table></div>
+
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">todas as bancas</span></span>O <strong>choque distributivo</strong> é o único com <strong>extremidades quentas</strong> (vasodilatação) na fase inicial — os outros três cursam com <strong>extremidades frias</strong> (vasoconstrição compensatória). "Choque quente" praticamente fecha diagnóstico de distributivo (séptico é o mais comum).</div>
+  </div>
+</details>
+
+<!-- 2 CHOQUE HEMORRAGICO -->
+<details>
+  <summary><span class="num">2</span> Choque hemorrágico — classes I-IV (ATLS) <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>Classificação baseada em um paciente adulto padrão de 70 kg (~5L de volemia total) — <strong>referência didática</strong>, com limitações reconhecidas na prática real (não é sensível/específica o suficiente para guiar sozinha a decisão clínica).</p>
+
+    <div class="fig">
+      <svg viewBox="0 0 640 220" xmlns="http://www.w3.org/2000/svg">
+        <line x1="60" y1="190" x2="600" y2="190" stroke="#2a2a38" stroke-width="1.5"/>
+        <rect x="60"  y="40" width="130" height="150" fill="#34d399" opacity=".14" stroke="#34d399" stroke-width="1.5"/>
+        <text x="125" y="60" fill="#34d399" font-size="13" font-family="monospace" text-anchor="middle" font-weight="bold">Classe I</text>
+        <text x="125" y="78" fill="#9a9ab0" font-size="9" font-family="monospace" text-anchor="middle">&lt;15% · &lt;750mL</text>
+        <text x="125" y="100" fill="#9a9ab0" font-size="9" font-family="monospace" text-anchor="middle">FC normal</text>
+        <text x="125" y="115" fill="#9a9ab0" font-size="9" font-family="monospace" text-anchor="middle">PA normal</text>
+
+        <rect x="190" y="40" width="130" height="150" fill="#fbbf24" opacity=".14" stroke="#fbbf24" stroke-width="1.5"/>
+        <text x="255" y="60" fill="#fbbf24" font-size="13" font-family="monospace" text-anchor="middle" font-weight="bold">Classe II</text>
+        <text x="255" y="78" fill="#9a9ab0" font-size="9" font-family="monospace" text-anchor="middle">15-30% · 750-1500mL</text>
+        <text x="255" y="100" fill="#9a9ab0" font-size="9" font-family="monospace" text-anchor="middle">FC 100-120</text>
+        <text x="255" y="115" fill="#9a9ab0" font-size="9" font-family="monospace" text-anchor="middle">PP estreita</text>
+
+        <rect x="320" y="40" width="130" height="150" fill="#f97316" opacity=".18" stroke="#f97316" stroke-width="1.5"/>
+        <text x="385" y="60" fill="#f97316" font-size="13" font-family="monospace" text-anchor="middle" font-weight="bold">Classe III</text>
+        <text x="385" y="78" fill="#9a9ab0" font-size="9" font-family="monospace" text-anchor="middle">30-40% · 1500-2000mL</text>
+        <text x="385" y="100" fill="#9a9ab0" font-size="9" font-family="monospace" text-anchor="middle">FC 120-140</text>
+        <text x="385" y="115" fill="#9a9ab0" font-size="9" font-family="monospace" text-anchor="middle">PA ↓, confuso</text>
+
+        <rect x="450" y="40" width="150" height="150" fill="#dc2626" opacity=".22" stroke="#dc2626" stroke-width="1.5"/>
+        <text x="525" y="60" fill="#f87171" font-size="13" font-family="monospace" text-anchor="middle" font-weight="bold">Classe IV</text>
+        <text x="525" y="78" fill="#9a9ab0" font-size="9" font-family="monospace" text-anchor="middle">&gt;40% · &gt;2000mL</text>
+        <text x="525" y="100" fill="#9a9ab0" font-size="9" font-family="monospace" text-anchor="middle">FC&gt;140</text>
+        <text x="525" y="115" fill="#9a9ab0" font-size="9" font-family="monospace" text-anchor="middle">letárgico</text>
+
+        <text x="125" y="208" fill="#34d399" font-size="9" font-family="monospace" text-anchor="middle">cristaloide</text>
+        <text x="255" y="208" fill="#fbbf24" font-size="9" font-family="monospace" text-anchor="middle">cristaloide ± sangue</text>
+        <text x="385" y="208" fill="#f97316" font-size="9" font-family="monospace" text-anchor="middle">sangue (60 min)</text>
+        <text x="525" y="208" fill="#f87171" font-size="9" font-family="monospace" text-anchor="middle">MTP + cirurgia</text>
+      </svg>
+      <div class="cap">Classes I-IV do choque hemorrágico: progressão de perda volêmica e resposta fisiológica. Classes III-IV exigem transfusão e controle cirúrgico da hemorragia — não respondem de forma sustentada a cristaloide isolado.</div>
+    </div>
+
+    <div class="box warn"><span class="lbl">⚠ limitação da classificação</span>A classificação por classes é <strong>didática</strong>, mas pouco sensível/específica na prática — não considera o <strong>padrão de resposta à reanimação inicial</strong>, que é clinicamente mais relevante (ver abaixo). Idosos em uso de betabloqueador ou atletas condicionados podem não taquicardizar apesar de choque significativo.</div>
+
+    <h4>Padrão de resposta à reanimação — mais útil que a classe isolada</h4>
+    <div class="tbl"><table>
+      <tr><th>Padrão</th><th>Significado</th><th>Conduta</th></tr>
+      <tr><td><strong>Respondedor rápido</strong></td><td>Sinais vitais normalizam e mantêm-se estáveis</td><td>Geralmente classe I-II; sangramento cessou/mínimo</td></tr>
+      <tr><td><strong>Respondedor transitório</strong></td><td>Melhora inicial, depois deteriora</td><td>Sangramento ativo em curso — intervenção cirúrgica imediata</td></tr>
+      <tr><td><strong>Não respondedor</strong></td><td>Instabilidade persistente apesar da reanimação</td><td>Hemorragia grave contínua — cirurgia de emergência</td></tr>
+    </table></div>
+  </div>
+</details>
+
+<!-- 3 REANIMACAO E TRANSFUSAO MACICA -->
+<details>
+  <summary><span class="num">3</span> Reanimação para controle de danos &amp; transfusão maciça <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Princípios da reanimação para controle de danos</h4>
+    <ul>
+      <li><strong>Hipotensão permissiva</strong>: PAS-alvo ~80-90 mmHg (ou PAM ~50-60) até controle cirúrgico da hemorragia — <strong>exceto em TCE</strong>, onde a perfusão cerebral exige pressão mais alta.</li>
+      <li><strong>Minimizar cristaloide</strong> (idealmente ≤1L) enquanto se aguarda hemocomponentes — excesso de cristaloide na transfusão maciça associa-se a mais falência de múltiplos órgãos, SDRA e síndrome compartimental abdominal.</li>
+      <li><strong>Reanimação hemostática precoce</strong>: hemocomponentes assim que disponíveis, priorizando plasma e plaquetas junto com hemácias (não só concentrado de hemácias isolado).</li>
+      <li><strong>Vasopressores precoces são potencialmente deletérios</strong> no choque hemorrágico não controlado — priorizar controle da fonte de sangramento e reposição volêmica/hemocomponentes.</li>
+    </ul>
+
+    <div class="fig">
+      <svg viewBox="0 0 640 160" xmlns="http://www.w3.org/2000/svg">
+        <text x="320" y="20" fill="#9a9ab0" font-size="11" font-family="monospace" text-anchor="middle">protocolo de transfusão maciça — proporção 1:1:1</text>
+        <g font-family="monospace" font-size="14" text-anchor="middle" font-weight="bold">
+          <rect x="120" y="45" width="90" height="70" rx="10" fill="#f87171" opacity=".25" stroke="#f87171" stroke-width="1.5"/>
+          <text x="165" y="85" fill="#f87171">1</text>
+          <text x="165" y="130" fill="#9a9ab0" font-size="10" font-weight="normal">hemácias</text>
+
+          <text x="230" y="90" fill="#9a9ab0" font-size="20">:</text>
+
+          <rect x="250" y="45" width="90" height="70" rx="10" fill="#fbbf24" opacity=".25" stroke="#fbbf24" stroke-width="1.5"/>
+          <text x="295" y="85" fill="#fbbf24">1</text>
+          <text x="295" y="130" fill="#9a9ab0" font-size="10" font-weight="normal">plasma</text>
+
+          <text x="360" y="90" fill="#9a9ab0" font-size="20">:</text>
+
+          <rect x="380" y="45" width="90" height="70" rx="10" fill="#22d3ee" opacity=".25" stroke="#22d3ee" stroke-width="1.5"/>
+          <text x="425" y="85" fill="#22d3ee">1</text>
+          <text x="425" y="130" fill="#9a9ab0" font-size="10" font-weight="normal">plaquetas</text>
+        </g>
+      </svg>
+      <div class="cap">Proporção 1:1:1 (hemácias:plasma:plaquetas) simula o sangue total, reduzindo coagulopatia dilucional — se plaquetas por aférese, a proporção equivalente é 6:6:1.</div>
+    </div>
+
+    <h4>Definição de transfusão maciça</h4>
+    <p>≥10 unidades de concentrado de hemácias em 24h, <strong>ou</strong> ≥4 unidades em 1 hora com sangramento ativo contínuo, <strong>ou</strong> reposição de mais de uma volemia em 24h.</p>
+
+    <h4>Adjuntos importantes</h4>
+    <ul>
+      <li><strong>Ácido tranexâmico (TXA)</strong>: 1g EV em até 3h do trauma — reduz mortalidade por sangramento quando administrado precocemente.</li>
+      <li><strong>Cálcio ionizado</strong>: monitorar e repor — transfusão maciça com citrato (anticoagulante dos hemocomponentes) causa hipocalcemia, que piora a coagulopatia.</li>
+      <li><strong>Testes viscoelásticos (TEG/ROTEM)</strong>: guiam reposição direcionada por componente específico (fibrinogênio, plaquetas) quando disponíveis, mais precisos que coagulograma convencional na fase aguda.</li>
+    </ul>
+    <div class="box warn"><span class="lbl">⚠ pegadinha</span>Cristaloide em proporção <strong>&gt;1,5:1</strong> por unidade de hemácia transfundida associa-se a <strong>pior desfecho</strong> (mais falência de múltiplos órgãos, SDRA, síndrome compartimental) — a tendência atual é hemocomponentes precoces, não "hidratar generosamente" enquanto aguarda sangue.</div>
+  </div>
+</details>
+
+<!-- 4 CHOQUE SEPTICO -->
+<details>
+  <summary><span class="num">4</span> Choque séptico — Surviving Sepsis Campaign <span class="chev">▶</span></summary>
+  <div class="body">
+    <p><strong>Choque séptico</strong> = sepse + hipotensão persistente apesar de reanimação volêmica adequada, exigindo vasopressor para manter <strong>PAM ≥65 mmHg</strong>, associada a lactato elevado (&gt;2 mmol/L).</p>
+
+    <h4>Reanimação inicial</h4>
+    <ul>
+      <li><strong>Cristaloide balanceado</strong>, ao menos <strong>30 mL/kg nas primeiras 3h</strong> — ponto de partida, individualizado pelo contexto do paciente (não é "número mágico fixo" para todos).</li>
+      <li>Reavaliação contínua da resposta — evitar tanto sub quanto sobrerreposição volêmica.</li>
+      <li><strong>Lactato sérico</strong> como marcador de hipoperfusão — meta é normalização, não apenas dosagem isolada.</li>
+    </ul>
+
+    <div class="fig">
+      <svg viewBox="0 0 640 180" xmlns="http://www.w3.org/2000/svg">
+        <text x="320" y="20" fill="#9a9ab0" font-size="11" font-family="monospace" text-anchor="middle">escalonamento de vasopressor no choque séptico</text>
+        <g font-family="monospace" font-size="12" text-anchor="middle">
+          <rect x="40" y="45" width="160" height="60" rx="10" fill="#f97316" opacity=".22" stroke="#f97316" stroke-width="1.5"/>
+          <text x="120" y="70" fill="#f97316" font-weight="bold">1ª linha</text>
+          <text x="120" y="90" fill="#fff" font-size="11">Norepinefrina</text>
+
+          <path d="M200 75 L235 75" stroke="#9a9ab0" stroke-width="2"/>
+          <rect x="235" y="45" width="160" height="60" rx="10" fill="#a855f7" opacity=".22" stroke="#a855f7" stroke-width="1.5"/>
+          <text x="315" y="70" fill="#a855f7" font-weight="bold">se MAP inadequada</text>
+          <text x="315" y="90" fill="#fff" font-size="11">+ Vasopressina</text>
+
+          <path d="M395 75 L430 75" stroke="#9a9ab0" stroke-width="2"/>
+          <rect x="430" y="45" width="170" height="60" rx="10" fill="#f87171" opacity=".22" stroke="#f87171" stroke-width="1.5"/>
+          <text x="515" y="70" fill="#f87171" font-weight="bold">refratário</text>
+          <text x="515" y="90" fill="#fff" font-size="11">+ Epinefrina</text>
+        </g>
+        <text x="320" y="140" fill="#9a9ab0" font-size="10" font-family="monospace" text-anchor="middle">disfunção cardíaca concomitante → norepinefrina OU epinefrina como 1ª linha</text>
+        <text x="320" y="160" fill="#9a9ab0" font-size="10" font-family="monospace" text-anchor="middle">meta: PAM ≥ 65 mmHg</text>
+      </svg>
+      <div class="cap">Norepinefrina continua como vasopressor de 1ª linha. Vasopressina é adicionada (não substitui) quando a dose de norepinefrina não atinge a meta — evitar escalar norepinefrina indefinidamente sem associar um segundo agente.</div>
+    </div>
+
+    <h4>Pontos que mudaram/foram reforçados nas revisões mais recentes</h4>
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">Surviving Sepsis Campaign — edição mais recente</span></span><strong>Norepinefrina segue como vasopressor de escolha</strong>, preferida sobre dopamina, epinefrina isolada, vasopressina isolada ou angiotensina II como agente inicial. O cálculo do volume de reposição deve considerar <strong>peso corporal ajustado ou ideal em pacientes com IMC &gt;30</strong> — não usar peso real cru nesse grupo, para evitar sobrecarga volêmica.</div>
+    <div class="box warn"><span class="lbl">⚠ pegadinha</span>Betabloqueadores (mesmo os de curta ação IV) <strong>não</strong> são recomendados como tratamento do choque séptico — não confundir com o manejo de taquiarritmias em outros contextos.</div>
+
+    <h4>Corticoide no choque séptico</h4>
+    <p>Considerar <strong>hidrocortisona EV</strong> em pacientes que permanecem com necessidade persistente de vasopressor apesar de reanimação volêmica e vasopressor adequados (choque refratário) — não é terapia de 1ª linha universal.</p>
+  </div>
+</details>
+
+<!-- 5 OUTROS TIPOS DE CHOQUE -->
+<details>
+  <summary><span class="num">5</span> Choque anafilático, neurogênico &amp; obstrutivo <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Choque anafilático</h4>
+    <ul>
+      <li><strong>Epinefrina IM</strong> (face lateral da coxa) é o tratamento de <strong>1ª linha imediata</strong> — não atrasar por anti-histamínico ou corticoide isoladamente.</li>
+      <li>Mecanismo: degranulação maciça de mastócitos/basófilos → vasodilatação + aumento de permeabilidade capilar + broncoespasmo.</li>
+    </ul>
+
+    <h4>Choque neurogênico</h4>
+    <ul>
+      <li>Lesão medular alta (acima de T6, tipicamente cervical/torácica alta) → perda do tônus simpático → <strong>vasodilatação + bradicardia</strong> (diferente do hipovolêmico, que cursa com taquicardia compensatória).</li>
+    </ul>
+    <div class="box warn"><span class="lbl">⚠ pegadinha</span><strong>Não confundir</strong> choque neurogênico (hemodinâmico, hipotensão+bradicardia) com <strong>choque medular</strong> (fenômeno neurológico de perda transitória de reflexos abaixo da lesão) — são conceitos diferentes que compartilham o mesmo contexto de trauma raquimedular.</div>
+
+    <h4>Choque obstrutivo — revisão rápida</h4>
+    <p>Causas principais: <strong>tamponamento cardíaco</strong>, <strong>pneumotórax hipertensivo</strong>, <strong>TEP maciço</strong> — tratamento é sempre o <strong>alívio mecânico da obstrução</strong> (pericardiocentese/janela pericárdica, descompressão torácica, trombólise/embolectomia), não reposição volêmica isolada.</p>
+  </div>
+</details>
+
+<!-- 6 QUESTOES / PEGA-RATOES -->
+<details>
+  <summary><span class="num">6</span> Questões de banca, pega-ratões &amp; mnemônicos <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>10 questões representativas (originais, estilo das 5 bancas)</h4>
+
+    <div class="box prova"><span class="lbl">Q1 <span class="banca">HCPA</span></span><strong>Paciente com extremidades quentas, taquicárdico e hipotenso. Qual tipo de choque é mais provável?</strong><br>Resposta: <strong>distributivo</strong> (séptico é o mais comum) — extremidades quentas é a pista-chave.</div>
+
+    <div class="box prova"><span class="lbl">Q2 <span class="banca">GHC</span></span><strong>Paciente com melhora inicial da PA após cristaloide, seguida de nova deterioração. Padrão de resposta e conduta?</strong><br>Resposta: <strong>respondedor transitório</strong> — sangramento ativo em curso, indicação de intervenção cirúrgica imediata.</div>
+
+    <div class="box prova"><span class="lbl">Q3 <span class="banca">AMRIGS</span></span><strong>Qual a proporção recomendada de hemocomponentes na transfusão maciça?</strong><br>Resposta: <strong>1:1:1</strong> (hemácias:plasma:plaquetas), simulando sangue total.</div>
+
+    <div class="box prova"><span class="lbl">Q4 <span class="banca">PUC-RS</span></span><strong>Por que a reposição excessiva de cristaloide na transfusão maciça é prejudicial?</strong><br>Resposta: proporção &gt;1,5:1 por unidade de hemácia associa-se a <strong>mais falência de múltiplos órgãos, SDRA e síndrome compartimental</strong>.</div>
+
+    <div class="box prova"><span class="lbl">Q5 <span class="banca">SC-POA</span></span><strong>Qual o vasopressor de primeira linha no choque séptico segundo a Surviving Sepsis Campaign?</strong><br>Resposta: <strong>norepinefrina</strong>.</div>
+
+    <div class="box prova"><span class="lbl">Q6 <span class="banca">HCPA</span></span><strong>Paciente em choque séptico já em norepinefrina em dose crescente, sem atingir PAM-alvo. Próximo passo?</strong><br>Resposta: <strong>adicionar vasopressina</strong> — não escalar indefinidamente a norepinefrina isolada.</div>
+
+    <div class="box prova"><span class="lbl">Q7 <span class="banca">GHC</span></span><strong>Trauma raquimedular cervical com hipotensão e bradicardia. Diagnóstico?</strong><br>Resposta: <strong>choque neurogênico</strong> — perda do tônus simpático; diferente de choque medular (fenômeno neurológico, não hemodinâmico).</div>
+
+    <div class="box prova"><span class="lbl">Q8 <span class="banca">AMRIGS</span></span><strong>Paciente com reação anafilática. Qual a primeira droga e via de administração?</strong><br>Resposta: <strong>epinefrina intramuscular</strong>, face lateral da coxa — não atrasar por anti-histamínico/corticoide.</div>
+
+    <div class="box prova"><span class="lbl">Q9 <span class="banca">PUC-RS</span></span><strong>Choque obstrutivo por tamponamento cardíaco. Reposição volêmica isolada resolve?</strong><br>Resposta: <strong>não</strong> — o tratamento definitivo é o <strong>alívio mecânico</strong> (pericardiocentese/janela pericárdica).</div>
+
+    <div class="box prova"><span class="lbl">Q10 <span class="banca">SC-POA</span></span><strong>No cálculo do volume de reposição em choque séptico, o que considerar em paciente com IMC &gt;30?</strong><br>Resposta: usar <strong>peso ajustado ou ideal</strong>, não o peso real cru, para evitar sobrecarga volêmica.</div>
+
+    <h4>Pega-ratões (as armadilhas clássicas)</h4>
+    <div class="box warn"><span class="lbl">☠ trap 1</span>Choque com PA <strong>normal</strong> ainda pode existir (fase compensada) — não esperar hipotensão para suspeitar.</div>
+    <div class="box warn"><span class="lbl">☠ trap 2</span>Distributivo é o único com <strong>extremidades quentas</strong> — os outros três são frios.</div>
+    <div class="box warn"><span class="lbl">☠ trap 3</span>Vasopressor precoce no choque hemorrágico <strong>não controlado</strong> pode ser deletério — priorizar controle da fonte.</div>
+    <div class="box warn"><span class="lbl">☠ trap 4</span>Vasopressina <strong>soma-se</strong> à norepinefrina, não a substitui.</div>
+    <div class="box warn"><span class="lbl">☠ trap 5</span>Choque neurogênico ≠ choque medular — conceitos diferentes, mesma origem de trauma.</div>
+    <div class="box warn"><span class="lbl">☠ trap 6</span>Betabloqueador não é tratamento de choque séptico.</div>
+    <div class="box warn"><span class="lbl">☠ trap 7</span>Classificação de classes I-IV é <strong>didática</strong> — resposta clínica à reanimação é mais confiável na prática.</div>
+    <div class="box warn"><span class="lbl">☠ trap 8</span>Idoso betabloqueado/atleta pode <strong>não taquicardizar</strong> mesmo em choque significativo.</div>
+
+    <h4>Mnemônicos-resumo</h4>
+    <div class="box mac"><span class="lbl">macete geral</span>4 tipos: Hipo(↓DC↑RVS↓enchimento) · Cardiogênico(↓DC↑RVS↑enchimento) · Obstrutivo(mecânico) · Distributivo(↑/N DC↓↓RVS, quente) · Classes I-IV = 15%·30%·40%·>40% · MTP=1:1:1 · Sepse: norepi→+vasopressina→+epinefrina, PAM≥65.</div>
+  </div>
+</details>
+
+<footer>
+  <div><strong>carolzita</strong> · Choque &amp; Transfusão · referência completa</div>
+  <div class="ref">Fontes: ATLS 11th Edition (ACS, 2025) · Surviving Sepsis Campaign International Guidelines (SCCM, edição mais recente) · European Guideline on Management of Major Bleeding and Coagulopathy Following Trauma, 6th edition · Sabiston · Zollinger. Conteúdo educacional; questões são itens representativos originais.</div>
+</footer>
+</div>
+</body>
+</html>

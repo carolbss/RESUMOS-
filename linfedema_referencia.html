@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Linfedema — carolzita</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0f; --bg2:#12121a; --card:#16161f; --card2:#1c1c27;
+  --line:#2a2a38; --txt:#e6e6ef; --muted:#9a9ab0;
+  --laranja:#f97316; --laranja-bg:rgba(249,115,22,.10);
+  --roxo:#a855f7; --roxo-bg:rgba(168,85,247,.10);
+  --ciano:#22d3ee; --ciano-bg:rgba(34,211,238,.10);
+  --verde:#34d399; --vermelho:#f87171; --amarelo:#fbbf24;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(1200px 600px at 50% -10%,#15151f 0%,var(--bg) 60%);color:var(--txt);font-family:'Inter',sans-serif;line-height:1.55;padding:0 0 80px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px}
+header{padding:40px 0 24px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(28px,6vw,44px);line-height:1.05;margin:8px 0 6px;letter-spacing:-.02em}
+.sub{color:var(--muted);font-size:15px;max-width:730px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tag{font-family:'JetBrains Mono',monospace;font-size:11px;padding:5px 10px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted)}
+.tag.r{color:var(--roxo);border-color:rgba(168,85,247,.35);background:var(--roxo-bg)}
+section{margin-top:14px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:12px;overflow:hidden;transition:border-color .2s}
+details[open]{border-color:rgba(249,115,22,.30)}
+summary{cursor:pointer;list-style:none;padding:18px 20px;display:flex;align-items:center;gap:13px;font-family:'Syne',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em;user-select:none}
+summary::-webkit-details-marker{display:none}
+.num{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--bg);background:var(--laranja);width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:0 0 auto}
+.chev{margin-left:auto;color:var(--muted);transition:transform .25s;font-size:14px}
+details[open] .chev{transform:rotate(90deg)}
+.body{padding:4px 22px 24px;font-size:15px}
+.body p{margin:10px 0}
+.body h4{font-family:'Syne',sans-serif;font-size:16px;color:var(--laranja);margin:20px 0 8px;letter-spacing:-.01em}
+.body ul{margin:8px 0 8px 4px;list-style:none}
+.body li{padding:4px 0 4px 20px;position:relative}
+.body li::before{content:"▸";position:absolute;left:0;color:var(--laranja);font-size:12px;top:6px}
+.body strong{color:#fff;font-weight:600}
+.simple{color:var(--ciano);font-style:italic;font-size:.94em}
+.box{border-radius:12px;padding:13px 15px;margin:14px 0;font-size:14px;border:1px solid}
+.box.prova{background:var(--roxo-bg);border-color:rgba(168,85,247,.35)}
+.box.prova .lbl{color:var(--roxo)}
+.box.mac{background:var(--ciano-bg);border-color:rgba(34,211,238,.35)}
+.box.mac .lbl{color:var(--ciano)}
+.box.warn{background:rgba(248,113,113,.08);border-color:rgba(248,113,113,.3)}
+.box.warn .lbl{color:var(--vermelho)}
+.lbl{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-family:'JetBrains Mono',monospace;font-size:10px;background:rgba(168,85,247,.2);color:var(--roxo);padding:2px 7px;border-radius:6px;margin-left:6px;white-space:nowrap}
+.tbl{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
+.tbl table{width:100%;border-collapse:collapse;min-width:520px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--laranja);background:var(--card2)}
+td strong{color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin:14px 0}
+.gcard{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+.gcard .t{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--ciano);margin-bottom:4px}
+.gcard .d{font-size:13px;color:var(--muted)}
+.hands{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.hand{border-radius:12px;padding:14px;border:1px solid var(--line)}
+.hand.e{background:rgba(34,211,238,.06);border-color:rgba(34,211,238,.25)}
+.hand.d{background:rgba(249,115,22,.06);border-color:rgba(249,115,22,.25)}
+.hand .ht{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;font-weight:700}
+.hand.e .ht{color:var(--ciano)} .hand.d .ht{color:var(--laranja)}
+.hand li{font-size:13px}
+.steps{counter-reset:s;margin:10px 0}
+.step{counter-increment:s;position:relative;padding:11px 0 11px 46px;border-bottom:1px dashed var(--line)}
+.step:last-child{border-bottom:none}
+.step::before{content:counter(s);position:absolute;left:0;top:9px;width:30px;height:30px;border-radius:9px;background:var(--laranja-bg);border:1px solid rgba(249,115,22,.4);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:grid;place-items:center}
+.step b{color:#fff}
+svg{max-width:100%;height:auto;display:block;margin:16px auto}
+.fig{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.fig .cap{font-size:12px;color:var(--muted);text-align:center;margin-top:8px;font-family:'JetBrains Mono',monospace}
+footer{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+footer .ref{font-family:'JetBrains Mono',monospace;font-size:12px;margin-top:8px}
+a{color:var(--laranja)}
+@media(max-width:560px){.hands{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">carolzita · cirurgia vascular · sistema linfático</div>
+  <h1>Linfedema</h1>
+  <p class="sub">Acúmulo de <strong>fluido rico em proteína</strong> por falha da drenagem linfática. Primário (genético) × secundário (o mais comum — <strong>filariose no mundo; câncer/linfadenectomia + RT no meio desenvolvido</strong>). Estadiamento <strong>ISL 0–III</strong>, <strong>sinal de Stemmer</strong>, e o tratamento-pilar é a <strong>terapia física complexa/descongestiva (CDT)</strong> — cirurgia (LVA, VLNT, lipoaspiração) nos refratários. Base: consenso ISL, guidelines atuais e pegadinhas das 5 bancas do RS.</p>
+  <div class="tags">
+    <span class="tag">ISL 0–III</span>
+    <span class="tag">Sinal de Stemmer</span>
+    <span class="tag">CDT</span>
+    <span class="tag">LVA / VLNT</span>
+    <span class="tag">Stewart-Treves</span>
+    <span class="tag r">HCPA · GHC · SC-POA · PUC · AMRIGS</span>
+  </div>
+</header>
+
+<!-- 1 DEFINICAO & CLASSIF -->
+<details open>
+  <summary><span class="num">1</span> Definição, fisiopatologia &amp; classificação <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>Linfedema é o <strong>edema crônico por insuficiência do sistema linfático</strong>: o líquido intersticial <strong>rico em proteínas</strong> não é drenado e se acumula <span class="simple">(o "encanamento" que recolhe o excesso de água e proteína dos tecidos entope; a proteína retida puxa mais água e inflama, endurecendo com o tempo)</span>. A proteína estagnada gera <strong>inflamação crônica → fibrose e proliferação de gordura</strong>, tornando o edema progressivamente irreversível.</p>
+
+    <h4>Primário (intrínseco, genético)</h4>
+    <div class="tbl"><table>
+      <tr><th>Tipo</th><th>Início</th><th>Nota</th></tr>
+      <tr><td><strong>Congênito (Milroy)</strong></td><td>Ao nascer / &lt;2 anos</td><td>Hereditário, mutação de VEGFR3</td></tr>
+      <tr><td><strong>Precoce (praecox / Meige)</strong></td><td>Puberdade a &lt;35 anos</td><td><strong>O mais comum</strong> dos primários; mulheres</td></tr>
+      <tr><td><strong>Tardio (tarda)</strong></td><td>&gt;35 anos</td><td>Menos frequente</td></tr>
+    </table></div>
+
+    <h4>Secundário (adquirido — o mais comum no geral)</h4>
+    <ul>
+      <li><strong>Filariose (Wuchereria bancrofti)</strong> — <strong>causa nº 1 no mundo</strong>; transmitida por mosquito, endêmica em regiões tropicais.</li>
+      <li><strong>Tratamento oncológico</strong> — <strong>causa nº 1 nos países desenvolvidos</strong>: <strong>linfadenectomia axilar + radioterapia</strong> por câncer de mama → linfedema de <strong>membro superior</strong>; dissecção inguino-pélvica → <strong>membro inferior</strong>.</li>
+      <li>Infecção/erisipela de repetição, trauma, obesidade, insuficiência venosa crônica avançada (flebolinfedema).</li>
+    </ul>
+
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">HCPA · GHC</span></span>Duas respostas de ouro: <strong>filariose</strong> é a causa mais comum de linfedema secundário <strong>no mundo</strong>; <strong>câncer/linfadenectomia + RT</strong> (mama → braço) é a mais comum <strong>no meio desenvolvido</strong>.</div>
+  </div>
+</details>
+
+<!-- 2 ESTADIAMENTO & DX -->
+<details>
+  <summary><span class="num">2</span> Estadiamento ISL &amp; diagnóstico <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Estadiamento da International Society of Lymphology (ISL)</h4>
+    <div class="tbl"><table>
+      <tr><th>Estágio</th><th>Achado</th></tr>
+      <tr><td><strong>0 (latente/subclínico)</strong></td><td>Linfático já lesado, <strong>sem edema visível</strong>; risco presente</td></tr>
+      <tr><td><strong>I</strong></td><td>Edema <strong>mole, com cacifo (godet)</strong>, que <strong>reduz com elevação</strong></td></tr>
+      <tr><td><strong>II</strong></td><td><strong>Não reduz</strong> com elevação; cacifo no início e depois some (fibrose); <strong>Stemmer +</strong>, hiperceratose/papilomatose</td></tr>
+      <tr><td><strong>III</strong></td><td><strong>Elefantíase linfostática</strong>: sem cacifo, fibrose intensa, pele em lóbulos, verrucosidades, úlceras</td></tr>
+    </table></div>
+
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">SC-POA · AMRIGS</span></span>Chave do estágio: <strong>I reduz com elevação; II não reduz</strong> (fibrose se instalando). <strong>III = elefantíase</strong>. O <strong>estágio 0 é subclínico</strong> (linfático lesado, sem edema).</div>
+
+    <h4>Sinal de Stemmer &amp; exame</h4>
+    <ul>
+      <li><strong>Sinal de Stemmer positivo</strong> = <strong>incapacidade de pinçar a prega cutânea na base do 2º dedo do pé</strong> (pele espessada) — característico de linfedema.</li>
+      <li>Edema que acomete o <strong>dorso do pé/mão</strong> ("dedos em salsicha"), unilateral, ascendente.</li>
+    </ul>
+
+    <h4>Exames de imagem</h4>
+    <div class="grid">
+      <div class="gcard"><div class="t">Linfocintilografia</div><div class="d">Padrão-ouro para confirmar e avaliar a função linfática (fluxo, refluxo dérmico, tempo de trânsito).</div></div>
+      <div class="gcard"><div class="t">Linfografia com ICG (verde de indocianina)</div><div class="d">Mapeia canais funcionantes; <strong>planejamento cirúrgico</strong> (padrão linear × refluxo dérmico).</div></div>
+      <div class="gcard"><div class="t">US / RM</div><div class="d">Avaliam componente líquido × fibrogorduroso e afastam causas.</div></div>
+    </div>
+    <div class="box mac"><span class="lbl">macete diagnóstico</span>Diagnóstico é <strong>clínico</strong> (Stemmer +, dorso do pé, unilateral, não reduz total). <strong>Linfocintilografia</strong> confirma; <strong>ICG</strong> planeja cirurgia.</div>
+  </div>
+</details>
+
+<!-- 3 DDX & COMPLICACOES -->
+<details>
+  <summary><span class="num">3</span> Diagnóstico diferencial &amp; complicações <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Diferenciar de outros edemas (muito cobrado)</h4>
+    <div class="tbl"><table>
+      <tr><th></th><th>Linfedema</th><th>Lipedema</th><th>Edema venoso</th></tr>
+      <tr><td>Lado</td><td>Uni (ou assimétrico)</td><td><strong>Bilateral simétrico</strong></td><td>Uni/bilateral</td></tr>
+      <tr><td>Pé</td><td><strong>Acomete o pé</strong> (Stemmer +)</td><td><strong>Poupa o pé</strong> ("tornozelo em anel")</td><td>Acomete, com dermatite ocre</td></tr>
+      <tr><td>Pele</td><td>Espessa, fibrose tardia</td><td>Gordura dolorosa, hematomas</td><td>Hiperpigmentação, varizes, úlcera maleolar</td></tr>
+      <tr><td>Stemmer</td><td><strong>Positivo</strong></td><td>Negativo</td><td>Negativo</td></tr>
+    </table></div>
+    <div class="box warn"><span class="lbl">⚠ pegadinha</span><strong>Lipedema poupa o pé e é bilateral/simétrico</strong> (Stemmer negativo); linfedema <strong>acomete o pé</strong> e tem <strong>Stemmer positivo</strong>. Edema bilateral súbito → pensar também em causa sistêmica (cardíaca, renal, hepática).</div>
+
+    <h4>Complicações</h4>
+    <ul>
+      <li><strong>Celulite / erisipela / linfangite de repetição</strong> — complicação mais comum; cada surto piora a fibrose (círculo vicioso). Profilaxia antibiótica em surtos recorrentes.</li>
+      <li>Limitação funcional, dor, impacto psicossocial, dermatite/verrucosidades, úlceras.</li>
+      <li><strong>Síndrome de Stewart-Treves</strong> — <strong>linfangiossarcoma</strong> em linfedema crônico (classicamente no <strong>braço pós-mastectomia</strong>); raro, agressivo. Lesão violácea/nodular que não cicatriza no membro linfedematoso.</li>
+    </ul>
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">PUC-RS</span></span><strong>Stewart-Treves = linfangiossarcoma sobre linfedema crônico</strong> (braço pós-mastectomia). Nódulo/mancha violácea que não cicatriza no membro edemaciado exige biópsia.</div>
+  </div>
+</details>
+
+<!-- 4 CONSERVADOR -->
+<details>
+  <summary><span class="num">4</span> Tratamento conservador — terapia descongestiva (CDT) <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>A <strong>terapia física complexa / descongestiva (CDT)</strong> é o <strong>padrão-ouro e primeira linha</strong> para todos os estágios. Não é curativa — o linfedema é crônico e exige <strong>manutenção vitalícia</strong>.</p>
+
+    <h4>Os 4 pilares da CDT</h4>
+    <div class="grid">
+      <div class="gcard"><div class="t">1 · Drenagem linfática manual</div><div class="d">Massagem específica que redireciona a linfa para territórios sadios.</div></div>
+      <div class="gcard"><div class="t">2 · Compressão</div><div class="d">Enfaixamento inelástico (curto estiramento) na fase intensiva; malha de compressão na manutenção.</div></div>
+      <div class="gcard"><div class="t">3 · Exercícios</div><div class="d">Contração muscular sob compressão bombeia a linfa.</div></div>
+      <div class="gcard"><div class="t">4 · Cuidado da pele</div><div class="d">Higiene e hidratação rigorosas — previnem celulite/erisipela.</div></div>
+    </div>
+
+    <h4>Duas fases</h4>
+    <ul>
+      <li><strong>Fase intensiva (descongestiva)</strong> — drenagem manual diária + enfaixamento, até reduzir o volume ao platô.</li>
+      <li><strong>Fase de manutenção</strong> — malha de compressão, autocuidado, exercícios, drenagem conforme necessidade.</li>
+    </ul>
+
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">todas as bancas</span></span><strong>DIURÉTICO NÃO trata linfedema</strong> — o líquido é rico em proteína e não se mobiliza para o intravascular; o uso crônico é ineficaz e potencialmente danoso. O tratamento é a <strong>CDT</strong>, não o diurético.</div>
+    <div class="box warn"><span class="lbl">⚠ pegadinha</span>A <strong>compressão pneumática intermitente</strong> é adjuvante (não substitui a CDT). Não há fármaco comprovadamente eficaz; laser e medicamentos não são padrão.</div>
+  </div>
+</details>
+
+<!-- 5 CIRURGICO -->
+<details>
+  <summary><span class="num">5</span> Tratamento cirúrgico — fisiológico × excisional <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>A cirurgia é indicada nos <strong>refratários à CDT bem conduzida</strong>. Divide-se em <strong>fisiológica</strong> (restaura drenagem — estágios iniciais, líquido predominante) e <strong>excisional/redutora</strong> (retira tecido fibrogorduroso — avançados).</p>
+
+    <h4>Fisiológicas (microcirurgia)</h4>
+    <ul>
+      <li><strong>Anastomose linfovenosa (LVA / LVB)</strong> — supermicrocirurgia: conecta linfáticos distais (0,3–0,8 mm) a vênulas subdérmicas, desviando a linfa para o sistema venoso. <strong>Melhor para estágios I–II com padrão linear no ICG</strong> (linfáticos funcionantes).</li>
+      <li><strong>Transferência de linfonodo vascularizado (VLNT)</strong> — transplanta linfonodos com pedículo para o membro afetado; útil quando há <strong>refluxo dérmico</strong> no ICG.</li>
+    </ul>
+
+    <h4>Excisionais / redutoras</h4>
+    <ul>
+      <li><strong>Lipoaspiração (SAPL)</strong> — remove o componente <strong>fibrogorduroso</strong> dos estágios avançados (IIb–III) sólidos; costuma preceder ou complementar a LVA.</li>
+      <li><strong>Ressecção radical (operação de Charles)</strong> — excisão de pele/subcutâneo + enxertia; reservada à <strong>elefantíase grave</strong>.</li>
+    </ul>
+
+    <h4>Técnica da LVA (supermicrocirurgia) — instrumentação</h4>
+    <div class="hands">
+      <div class="hand e">
+        <div class="ht">Mão esquerda (não dominante)</div>
+        <ul>
+          <li><strong>Micropinça</strong> apreende a adventícia do linfático/vênula (nunca a íntima)</li>
+          <li>Dilatador/haste para "flutuar" o vaso com soro heparinizado</li>
+        </ul>
+      </div>
+      <div class="hand d">
+        <div class="ht">Mão direita (dominante)</div>
+        <ul>
+          <li><strong>Microporta-agulha</strong> com <strong>náilon 11-0/12-0</strong> nos pontos</li>
+          <li>Microtesoura; pode-se <strong>estentar com Prolene 6-0</strong> para evitar pegar a parede posterior</li>
+        </ul>
+      </div>
+    </div>
+    <div class="steps">
+      <div class="step"><b>ICG pré-operatório</b> — marca canais funcionantes (padrão linear) e incisões.</div>
+      <div class="step"><b>Injeção de azul (isosulfan)</b> distal à incisão para corar os linfáticos.</div>
+      <div class="step"><b>Dissecção sob microscópio</b> — identificar linfático e vênula subdérmica de calibre compatível.</div>
+      <div class="step"><b>Anastomose término-terminal</b> linfático-vênula com náilon 11-0/12-0, pontos totais.</div>
+      <div class="step"><b>Testar patência</b> (fluxo de linfa/azul para a veia) e fechar.</div>
+    </div>
+    <div class="box mac"><span class="lbl">macete cirúrgico</span>ICG <strong>linear</strong> → <strong>LVA</strong>; ICG com <strong>refluxo dérmico</strong> → <strong>VLNT</strong>; membro <strong>sólido/fibrogorduroso</strong> → <strong>lipoaspiração</strong> (e Charles na elefantíase).</div>
+  </div>
+</details>
+
+<!-- 6 QUESTOES -->
+<details>
+  <summary><span class="num">6</span> Questões de banca, pega-ratões &amp; mnemônicos <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>10 questões representativas (originais, estilo das 5 bancas)</h4>
+
+    <div class="box prova"><span class="lbl">Q1 <span class="banca">HCPA</span></span><strong>Causa mais comum de linfedema secundário no mundo?</strong><br>Resposta: <strong>filariose (Wuchereria bancrofti)</strong>.</div>
+    <div class="box prova"><span class="lbl">Q2 <span class="banca">GHC</span></span><strong>Causa mais comum de linfedema de membro superior em país desenvolvido?</strong><br>Resposta: <strong>tratamento do câncer de mama</strong> (linfadenectomia axilar + radioterapia).</div>
+    <div class="box prova"><span class="lbl">Q3 <span class="banca">AMRIGS</span></span><strong>O que é o sinal de Stemmer?</strong><br>Resposta: <strong>incapacidade de pinçar a prega cutânea na base do 2º pododáctilo</strong> — positivo no linfedema.</div>
+    <div class="box prova"><span class="lbl">Q4 <span class="banca">PUC-RS</span></span><strong>Diferença entre ISL estágio I e II?</strong><br>Resposta: <strong>estágio I reduz com elevação; estágio II não reduz</strong> (fibrose).</div>
+    <div class="box prova"><span class="lbl">Q5 <span class="banca">SC-POA</span></span><strong>Tratamento de primeira linha (padrão-ouro) do linfedema?</strong><br>Resposta: <strong>terapia física complexa/descongestiva (CDT)</strong>.</div>
+    <div class="box prova"><span class="lbl">Q6 <span class="banca">HCPA</span></span><strong>Diurético é indicado no linfedema?</strong><br>Resposta: <strong>não</strong> — o fluido é rico em proteína e não se mobiliza; ineficaz.</div>
+    <div class="box prova"><span class="lbl">Q7 <span class="banca">GHC</span></span><strong>Complicação infecciosa mais frequente do linfedema?</strong><br>Resposta: <strong>celulite/erisipela (linfangite) de repetição</strong>.</div>
+    <div class="box prova"><span class="lbl">Q8 <span class="banca">AMRIGS</span></span><strong>Nódulo violáceo que não cicatriza em braço linfedematoso pós-mastectomia. Diagnóstico?</strong><br>Resposta: <strong>síndrome de Stewart-Treves (linfangiossarcoma)</strong>.</div>
+    <div class="box prova"><span class="lbl">Q9 <span class="banca">PUC-RS</span></span><strong>Edema bilateral que poupa o pé, com Stemmer negativo. Diagnóstico?</strong><br>Resposta: <strong>lipedema</strong>.</div>
+    <div class="box prova"><span class="lbl">Q10 <span class="banca">SC-POA</span></span><strong>Qual procedimento fisiológico para linfedema estágio I–II com linfáticos funcionantes?</strong><br>Resposta: <strong>anastomose linfovenosa (LVA)</strong>.</div>
+
+    <h4>Pega-ratões (as armadilhas clássicas)</h4>
+    <div class="box warn"><span class="lbl">☠ trap 1</span><strong>Diurético não trata linfedema</strong> (líquido proteico).</div>
+    <div class="box warn"><span class="lbl">☠ trap 2</span>Filariose = #1 no mundo; câncer/RT = #1 no desenvolvido.</div>
+    <div class="box warn"><span class="lbl">☠ trap 3</span>Estágio <strong>I reduz</strong> com elevação, <strong>II não</strong>.</div>
+    <div class="box warn"><span class="lbl">☠ trap 4</span><strong>Lipedema poupa o pé</strong> e é bilateral (Stemmer −); linfedema acomete o pé (Stemmer +).</div>
+    <div class="box warn"><span class="lbl">☠ trap 5</span>Stewart-Treves = <strong>linfangiossarcoma</strong> (não carcinoma) em linfedema crônico.</div>
+    <div class="box warn"><span class="lbl">☠ trap 6</span>Padrão-ouro é <strong>CDT</strong> (conservador); cirurgia só nos refratários.</div>
+    <div class="box warn"><span class="lbl">☠ trap 7</span>Linfocintilografia = diagnóstico; <strong>ICG</strong> = planejamento cirúrgico.</div>
+    <div class="box warn"><span class="lbl">☠ trap 8</span>ICG linear → <strong>LVA</strong>; refluxo dérmico → <strong>VLNT</strong>; sólido → lipoaspiração.</div>
+
+    <h4>Mnemônicos-resumo</h4>
+    <div class="box mac"><span class="lbl">macete geral</span>Líquido <strong>proteico</strong> → fibrose · primário: Milroy(congênito)/praecox(comum)/tarda · secundário: <strong>filariose (mundo) / câncer-RT (desenvolvido)</strong> · ISL: 0 subclínico · I reduz · II não reduz · III elefantíase · <strong>Stemmer +</strong> (base do 2º dedo) · dx clínico + linfocintilografia; ICG planeja · trata: <strong>CDT</strong> (drenagem+compressão+exercício+pele), <strong>sem diurético</strong> · cirurgia: LVA/VLNT (fisiológica) · lipoaspiração/Charles (excisional) · complicação: erisipela; <strong>Stewart-Treves</strong>.</div>
+  </div>
+</details>
+
+<footer>
+  <div><strong>carolzita</strong> · Linfedema · referência completa</div>
+  <div class="ref">Fontes: Consenso da International Society of Lymphology (ISL) — estadiamento e CDT · UpToDate (management of peripheral lymphedema) · revisões de tratamento cirúrgico (LVA/VLNT, J Vasc Surg / PMC) · Rutherford's Vascular Surgery · Sabiston. Conteúdo educacional; questões são itens representativos originais.</div>
+</footer>
+</div>
+</body>
+</html>

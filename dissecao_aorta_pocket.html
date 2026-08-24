@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💥 Dissecção Aorta — Pocket</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d1117;--panel:#161b22;--panel2:#1c232c;--line:#2a323c;--tx:#e6edf3;--mut:#8b949e;--or:#ff7a18;--or2:#ff9a4d;--orbg:rgba(255,122,24,.10);--pu:#b083f0;--pu2:#c9a7ff;--pubg:rgba(176,131,240,.12);--cy:#3dd6d0;--cy2:#5fe3dd;--cybg:rgba(61,214,208,.10);--grn:#3fb950}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font-family:'IBM Plex Sans',sans-serif;line-height:1.5;padding:0 0 40px}
+.sheet{max-width:430px;margin:0 auto;min-height:100vh;background:var(--bg)}
+header{padding:22px 20px 0;display:flex;justify-content:space-between;align-items:baseline}
+.logo{font-size:23px;font-weight:700;letter-spacing:-.5px}.logo .b{color:var(--or)}
+.kick{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--or);text-transform:uppercase}
+nav{position:sticky;top:0;background:var(--bg);z-index:5;border-bottom:1px solid var(--line);overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;margin-top:14px}
+nav .in{display:flex;padding:0 16px}
+nav button{background:none;border:none;color:var(--mut);font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.5px;text-transform:uppercase;padding:13px 11px;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px}
+nav button.on{color:var(--or);border-bottom-color:var(--or)}
+section{display:none;padding:20px;animation:f .2s}section.on{display:block}
+@keyframes f{from{opacity:0}to{opacity:1}}
+h2{font-size:18px;color:var(--or);font-weight:600;padding-bottom:8px;border-bottom:1px solid var(--line);margin-bottom:14px}
+h3{font-size:13px;margin:16px 0 6px;font-weight:600;color:var(--or2)}
+p,li{font-size:14px}
+.step{display:flex;align-items:flex-start;gap:10px;padding:7px 0}
+.num{flex:0 0 auto;width:24px;height:24px;border-radius:6px;background:var(--or);color:#0d1117;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:13px;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.it{color:var(--cy2);font-style:italic;font-size:13px}
+.step{flex-direction:column;gap:6px;align-items:stretch;padding:9px 0;border-bottom:1px dashed var(--line)}
+.step:last-child{border:none}
+.hd2{display:flex;gap:10px;align-items:flex-start}
+.sc{flex:1;font-size:14px}
+.fase{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:1.3px;text-transform:uppercase;color:var(--or);display:block}
+.pq{border-left:2px solid var(--pu);background:var(--pubg);border-radius:0 7px 7px 0;padding:7px 10px;font-size:13px}
+.pq b{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1.2px;text-transform:uppercase;color:var(--pu2);display:block}
+.box.gr{border-color:var(--grn);background:rgba(63,185,80,.10);color:var(--grn);font-style:italic}
+.box.gr .lbl{color:var(--grn);font-style:normal}
+.box.gr b,.box.gr strong,.box.gr .hi{color:#8ee79a;font-style:normal}
+.box{border-left:3px solid var(--or);background:var(--orbg);border-radius:0 8px 8px 0;padding:11px 14px;margin:14px 0}
+.box.pu{border-color:var(--pu);background:var(--pubg)}.box.cy{border-color:var(--cy);background:var(--cybg)}
+.box .lbl{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--or);margin-bottom:6px;font-weight:600}
+.box.pu .lbl{color:var(--pu2)}.box.cy .lbl{color:var(--cy2)}
+.big{font-size:16px;font-weight:600}
+.tbl{border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:12px 0;background:var(--panel)}
+.row{display:flex;align-items:center;gap:10px;padding:10px 13px;border-bottom:1px solid var(--line);font-size:13.5px}.row:last-child{border-bottom:none}
+.row .v{flex:0 0 auto;color:var(--or2);font-weight:700;font-family:'IBM Plex Mono',monospace;min-width:34px}
+.hand{font-family:'IBM Plex Mono',monospace;font-size:11px;padding:1px 6px;border-radius:5px;font-weight:600}
+.L{background:rgba(63,185,80,.15);color:#56d364}.R{background:rgba(255,122,24,.15);color:var(--or2)}
+ul{list-style:none;margin:4px 0}li{padding:4px 0 4px 24px;position:relative}li .em{position:absolute;left:0}
+.hi{color:var(--pu2);font-weight:600}.mn{font-family:'IBM Plex Mono',monospace;color:var(--cy2);font-weight:600}
+.foot{text-align:center;color:var(--mut);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1px;padding:18px;border-top:1px solid var(--line);margin-top:10px}
+</style>
+</head>
+<body>
+<div class="sheet">
+<header><div class="logo">💥 <span class="b">Diss. Aorta</span></div><div class="kick">Pocket</div></header>
+<nav><div class="in" id="nav"></div></nav>
+
+<section id="def" class="on">
+<h2>🧭 Definição</h2>
+<div class="box"><div class="lbl">📏 Conceito</div>
+<p class="big">Rasgo na íntima → falso lúmen na parede aórtica</p>
+<p class="it">síndrome aórtica aguda — emergência 🆘</p></div>
+<ul>
+<li><span class="em">💊</span><span class="hi">HAS mal controlada</span> = principal fator</li>
+<li><span class="em">🧬</span>Marfan, Ehlers-Danlos, bicúspide</li>
+<li><span class="em">🤰</span>3º trimestre gestacional (predispostas)</li>
+</ul>
+</section>
+
+<section id="class">
+<h2>📊 Stanford × DeBakey</h2>
+<div class="tbl">
+<div class="row"><span class="v">A</span><span>ascendente (±resto) — DeBakey I/II — <span class="hi">CIRURGIA</span> 🔪</span></div>
+<div class="row"><span class="v">B</span><span>só descendente — DeBakey III — <span class="hi">clínico</span> 💊</span></div>
+</div>
+<div class="box pu"><div class="lbl">⭐ Regra de ouro</div>
+<p>Envolveu ascendente = A = cirurgia de urgência, sempre</p></div>
+<p class="it">Mortalidade tipo A: ~1-2%/hora sem tratamento</p>
+</section>
+
+<section id="clin">
+<h2>🩺 Clínica</h2>
+<div class="box pu"><div class="lbl">⚡ Dor clássica</div>
+<p>Súbita + lancinante + <span class="hi">migratória</span> + máxima já no início</p></div>
+<ul>
+<li><span class="em">🩺</span>Assimetria de pulsos/PA entre membros</li>
+<li><span class="em">🫀</span>Sopro diastólico (IAo aguda)</li>
+<li><span class="em">💔</span>Síncope/choque → pensar tamponamento</li>
+<li><span class="em">💩</span>Dor abdominal = malperfusão mesentérica</li>
+</ul>
+</section>
+
+<section id="dx">
+<h2>🔬 Diagnóstico</h2>
+<div class="tbl">
+<div class="row"><span class="v">🖥️ AngioTC</span><span>escolha se estável</span></div>
+<div class="row"><span class="v">🫀 ETE</span><span>beira-leito se instável</span></div>
+</div>
+<p class="it">Flap intimal + lúmen verdadeiro/falso ("beak sign")</p>
+</section>
+
+<section id="cond">
+<h2>📐 Conduta</h2>
+<div class="box pu"><div class="lbl">🚑 SEMPRE nessa ordem</div>
+<p>1️⃣ <span class="hi">Betabloqueador IV</span> → 2️⃣ vasodilatador se precisar<br>Meta: FC ≤60 · PAS 100-120</p></div>
+<div class="box cy"><div class="lbl">🚨 B complicado = intervir</div>
+<p>Malperfusão · Ruptura/iminente · dor/HAS refratária → <span class="hi">TEVAR 1ª linha</span></p></div>
+<p class="it">B não complicado = só clínico + seguimento por imagem</p>
+</section>
+
+<section id="tec">
+<h2>🔪 Técnica</h2>
+<div class="box gr"><div class="lbl">🟢 tradução simples</div><p>A dissecção rasgou a parede em <b>duas camadas</b> — verdadeira e falsa via. Toda a técnica é sobre <b>devolver o sangue ao lúmen verdadeiro</b> sem trabalhar num tecido que se desfaz ao manusear. Por isso: canula longe da aorta doente, reforça toda sutura, e tapa por dentro (TEVAR) sempre que a anatomia permite.</p></div>
+
+<h3>Tipo A (aberta) — 5 passos</h3>
+<div class="step"><div class="hd2"><span class="num">1</span><div class="sc"><span class="fase">acesso/canulação</span>🫁 Esternotomia + CEC via <span class="hi">femoral/axilar</span></div></div>
+<div class="pq"><b>por quê</b>Canular a aorta dissecada é entrar às cegas no <b>falso lúmen</b> — a bomba perfundiria o compartimento errado. Periférico entra num segmento ainda íntegro.</div></div>
+
+<div class="step"><div class="hd2"><span class="num">2</span><div class="sc"><span class="fase">proteção cerebral</span>❄️ Parada circulatória hipotérmica</div></div>
+<div class="pq"><b>por quê</b>Não há segmento de arco "livre" pra clampear sem incluir vasos cerebrais. Parar sob hipotermia permite operar sem clampe, protegendo o cérebro pelo metabolismo reduzido.</div></div>
+
+<div class="step"><div class="hd2"><span class="num">3</span><div class="sc"><span class="fase">ressecção</span>Ressecar o rasgo primário + avaliar valva (Bentall se raiz)</div></div>
+<div class="pq"><b>por quê</b>O rasgo é a <b>porta de entrada</b> — removê-lo interrompe a progressão. A dissecção costuma desinserir as comissuras: ignorar a valva deixa IAo aguda não tratada.</div></div>
+
+<div class="step"><div class="hd2"><span class="num">4</span><div class="sc"><span class="fase">o cuidado com o tecido</span>Tubo de Dacron, anastomoses <b>reforçadas com felt</b></div></div>
+<div class="pq"><b>por quê</b>Tecido dissecado é friável — ponto direto não segura. Felt é uma "arruela": distribui a tensão numa área maior, em vez do fio cortar a parede fina.</div></div>
+
+<div class="step"><div class="hd2"><span class="num">5</span><div class="sc"><span class="fase">encerramento</span>Reaquecer, sair de CEC, <b>hemostasia meticulosa</b></div></div>
+<div class="pq"><b>por quê</b>Tecido friável + coagulopatia de bypass longo = combinação que mais sangra em cardíaca. Apressar aqui é a causa nº1 de reoperar por sangramento.</div></div>
+
+<h3>Tipo B complicado (TEVAR) — 4 passos</h3>
+<div class="step"><div class="hd2"><span class="num">1</span><div class="sc"><span class="fase">acesso</span>Femoral → fio no <b>lúmen verdadeiro</b> (confirmar com IVUS/angio)</div></div>
+<div class="pq"><b>por quê</b>Fio no falso lúmen = prótese sela o compartimento errado e pode <b>agravar</b> a malperfusão.</div></div>
+
+<div class="step"><div class="hd2"><span class="num">2</span><div class="sc"><span class="fase">o alvo é o rasgo, não o tubo todo</span>Endoprótese sobre o <b>entry tear</b>, selagem após a subclávia E</div></div>
+<div class="pq"><b>por quê</b>Não precisa cobrir toda a dissecção — só a entrada. Fechada a porta, o falso lúmen despressuriza, trombosa, e o verdadeiro reassume o fluxo. 🎯</div></div>
+
+<div class="step"><div class="hd2"><span class="num">3</span><div class="sc"><span class="fase">terapêutica</span>Excluir o falso lúmen · redirecionar fluxo</div></div>
+<div class="pq"><b>por quê</b>Malperfusão de ramos resolve quando o verdadeiro volta a dominar — os óstios costumam nascer dele.</div></div>
+
+<div class="step"><div class="hd2"><span class="num">4</span><div class="sc"><span class="fase">verificação</span>Angiografia de controle · fenestração se persistir</div></div>
+<div class="pq"><b>por quê</b>Cobrir o rasgo proximal não resolve rasgos secundários distais — a fenestração é o recurso se a malperfusão continuar.</div></div>
+</section>
+
+<section id="comp">
+<h2>⚠️ Complicações</h2>
+<ul>
+<li><span class="em">💔</span>Tamponamento — 1ª causa de óbito precoce em A</li>
+<li><span class="em">🫀</span>IAo aguda / IAM (óstio coronário)</li>
+<li><span class="em">🧠</span>AVC (malperfusão carotídea)</li>
+<li><span class="em">💩</span>Isquemia mesentérica</li>
+</ul>
+</section>
+
+<section id="peg">
+<h2>🪤 Pega-ratões</h2>
+<ul>
+<li><span class="em">🅰️</span>Qualquer ascendente = A = cirurgia</li>
+<li><span class="em">💊</span>Beta SEMPRE antes do vasodilatador</li>
+<li><span class="em">⚡</span>Dor migratória e máxima já no início</li>
+<li><span class="em">🩸</span>CEC: femoral/axilar, não aorta doente</li>
+<li><span class="em">🎈</span>TEVAR = 1ª linha no B complicado</li>
+<li><span class="em">🧪</span>D-dímero não substitui angioTC</li>
+</ul>
+</section>
+
+<section id="mn">
+<h2>🧠 Mnemônicos</h2>
+<div class="box cy"><div class="lbl">🅰️🅱️ Classe</div><p class="mn">"A de Ascendente e Ação (cirurgia)"</p></div>
+<div class="box cy"><div class="lbl">💊 Ordem</div><p class="mn">"trava o motor (beta) antes de abrir a mangueira (vaso)"</p></div>
+<div class="box cy"><div class="lbl">🚨 B complicado</div><p class="mn">M-R-R: Malperfusão, Ruptura, dor/HAS Refratária</p></div>
+</section>
+
+<div class="foot">← deslize as abas →</div>
+</div>
+<script>
+var s=[['def','🧭 Def'],['class','📊 Classe'],['clin','🩺 Clínica'],['dx','🔬 Dx'],['cond','📐 Conduta'],['tec','🔪 Técnica'],['comp','⚠️ Complic'],['peg','🪤 Pegas'],['mn','🧠 Mnem']];
+var n=document.getElementById('nav');
+s.forEach(function(x,i){var b=document.createElement('button');b.textContent=x[1];if(i===0)b.className='on';b.onclick=function(){document.querySelectorAll('nav button').forEach(function(y){y.classList.remove('on')});b.classList.add('on');document.querySelectorAll('section').forEach(function(y){y.classList.remove('on')});document.getElementById(x[0]).classList.add('on');document.querySelector('.sheet').scrollIntoView()};n.appendChild(b)});
+</script>
+</body>
+</html>

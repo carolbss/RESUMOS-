@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>TEP &amp; Anticoagulação · pocket</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d1117;--card:#16161f;--card2:#1c1c27;--line:#2a2a38;
+  --txt:#ececf4;--muted:#9a9ab0;
+  --laranja:#f97316;--roxo:#a855f7;--ciano:#22d3ee;--vermelho:#f87171;--amarelo:#fbbf24;--verde:#34d399;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{overflow-x:hidden}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;font-size:17px;line-height:1.6;padding-bottom:30px}
+.top{padding:22px 18px 12px;position:sticky;top:0;background:linear-gradient(180deg,var(--bg) 70%,transparent);z-index:5}
+.kick{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:26px;line-height:1.1;margin-top:4px}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:6px 18px 12px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;padding:9px 15px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted);white-space:nowrap;cursor:pointer;transition:.15s}
+.tab.on{background:var(--laranja);border-color:var(--laranja);color:#0a0a0f}
+.panel{display:none;padding:6px 18px 40px;animation:f .25s}
+.panel.on{display:block}
+@keyframes f{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+h2{font-family:'Syne',sans-serif;font-size:21px;color:var(--laranja);margin:18px 0 10px}
+h3{font-family:'Syne',sans-serif;font-size:16px;color:#fff;margin:16px 0 6px}
+p{margin:10px 0}
+ul{list-style:none;margin:8px 0}
+li{padding:6px 0 6px 22px;position:relative}
+li::before{content:"▸";position:absolute;left:0;top:7px;color:var(--laranja);font-size:13px}
+strong{color:#fff;font-weight:600}
+.s{color:var(--ciano);font-style:italic;font-size:.92em}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0}
+.box{border-radius:12px;padding:13px 15px;margin:13px 0;border:1px solid;font-size:15px}
+.prova{background:rgba(168,85,247,.1);border-color:rgba(168,85,247,.4)}
+.prova .l{color:var(--roxo)}
+.mac{background:rgba(34,211,238,.1);border-color:rgba(34,211,238,.4)}
+.mac .l{color:var(--ciano)}
+.warn{background:rgba(248,113,113,.1);border-color:rgba(248,113,113,.4)}
+.warn .l{color:var(--vermelho)}
+.l{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-size:10px;background:rgba(168,85,247,.25);color:var(--roxo);padding:2px 6px;border-radius:5px;margin-left:5px;font-family:'JetBrains Mono',monospace}
+.kv{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)}
+.kv:last-child{border:none}
+.kv .k{flex:0 0 42%;color:var(--ciano);font-family:'JetBrains Mono',monospace;font-size:13px}
+.kv .v{flex:1;font-size:15px}
+.step{display:flex;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line)}
+.step:last-child{border:none}
+.step .n{flex:0 0 30px;height:30px;border-radius:9px;background:rgba(249,115,22,.15);border:1px solid rgba(249,115,22,.45);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;display:grid;place-items:center;font-size:14px}
+.step .x{flex:1}
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="kick">carolzita · pocket 🚑</div>
+  <h1>TEP &amp; Anticoagulação 🫁</h1>
+</div>
+<div class="tabs">
+  <div class="tab on" data-t="0">🔍 Diagnóstico</div>
+  <div class="tab" data-t="1">📊 Risco</div>
+  <div class="tab" data-t="2">💊 Tratamento</div>
+  <div class="tab" data-t="3">⏱️ Duração</div>
+  <div class="tab" data-t="4">🔬 Especiais</div>
+  <div class="tab" data-t="5">☠️ Traps</div>
+</div>
+
+<!-- 0 DIAGNOSTICO -->
+<div class="panel on" data-p="0">
+  <h2>🔍 Probabilidade pré-teste</h2>
+  <div class="card">
+    <div class="kv"><div class="k">🟢 Baixa/intermediária</div><div class="v">D-dímero → se +, angio-TC</div></div>
+    <div class="kv"><div class="k">🔴 Alta</div><div class="v">Direto pra <strong>angio-TC</strong>!</div></div>
+  </div>
+  <div class="box warn"><span class="l">☠️ pega-ratão</span>D-dímero negativo <strong>NÃO exclui</strong> TEP se probabilidade for alta!</div>
+</div>
+
+<!-- 1 RISCO -->
+<div class="panel" data-p="1">
+  <h2>📊 Estratificação (ESC)</h2>
+  <div class="card">
+    <div class="kv"><div class="k">🔴 Alto</div><div class="v">Instabilidade hemodinâmica</div></div>
+    <div class="kv"><div class="k">🟠 Int-alto</div><div class="v">Estável+PESI alto+RV E troponina alteradas</div></div>
+    <div class="kv"><div class="k">🟡 Int-baixo</div><div class="v">Estável+PESI alto+só 1 alterado</div></div>
+    <div class="kv"><div class="k">🟢 Baixo</div><div class="v">Estável+PESI baixo+tudo normal</div></div>
+  </div>
+  <div class="box prova"><span class="l">alto rendimento</span>🆕 <strong>AHA/ACC 2026</strong> criou "Categorias A-E" — se a prova citar isso, é referência atualizada!</div>
+</div>
+
+<!-- 2 TRATAMENTO -->
+<div class="panel" data-p="2">
+  <h2>💊 Por estrato</h2>
+  <div class="card">
+    <div class="kv"><div class="k">🔴 Alto</div><div class="v">Trombólise/embolectomia</div></div>
+    <div class="kv"><div class="k">🟠 Int-alto</div><div class="v">Anticoag+monitorizar (trombólise só resgate!)</div></div>
+    <div class="kv"><div class="k">🟡🟢 Baixo</div><div class="v">Anticoag isolada, considerar ambulatorial</div></div>
+  </div>
+  <div class="box warn"><span class="l">☠️ pega-ratão PEITHO</span>Trombólise de rotina no int-alto <strong>não é padrão</strong> — reduz descompensação mas aumenta sangramento/AVCh!</div>
+  <p>🎯 Filtro de VCI: única indicação sólida = <strong>contraindicação absoluta</strong> à anticoagulação.</p>
+</div>
+
+<!-- 3 DURACAO -->
+<div class="panel" data-p="3">
+  <h2>⏱️ Anticoagulação</h2>
+  <ul>
+    <li>💊 <strong>DOAC</strong> = 1ª escolha maioria</li>
+    <li>💉 <strong>VKA</strong> = prótese mecânica, SAF, DRC grave</li>
+    <li>🤰 Gestante = <strong>heparina</strong> (nem DOAC nem VKA)</li>
+  </ul>
+  <div class="card">
+    <div class="kv"><div class="k">Fase inicial</div><div class="v">3-6 meses</div></div>
+    <div class="kv"><div class="k">Fase estendida</div><div class="v">Se não-provocado/fator persistente</div></div>
+  </div>
+  <div class="box prova"><span class="l">alto rendimento</span>🎯 TEP não-provocado → considerar <strong>estendida</strong>, não parar automaticamente aos 3 meses!</div>
+</div>
+
+<!-- 4 ESPECIAIS -->
+<div class="panel" data-p="4">
+  <h2>🔬 Casos especiais</h2>
+  <div class="box warn"><span class="l">☠️ pega-ratão</span>TEP prévio → perguntar sintomas/dispneia por <strong>≥1 ano</strong> → rastrear <strong>HPTEC</strong>!</div>
+  <p>👥 PERT (time de resposta) ainda tem evidência limitada de melhora de desfecho.</p>
+  <div class="box mac"><span class="l">🧠 macete</span>Anticoagulação é a <strong>base</strong> quase sempre — trombólise/embolectomia/filtro são exceção, não regra.</div>
+</div>
+
+<!-- 5 TRAPS -->
+<div class="panel" data-p="5">
+  <h2>☠️ Pega-ratões</h2>
+  <div class="box warn"><span class="l">trap 1</span>D-dímero neg não exclui TEP em alta probabilidade 🔍</div>
+  <div class="box warn"><span class="l">trap 2</span>Trombólise não é rotina no int-alto 💊</div>
+  <div class="box warn"><span class="l">trap 3</span>Filtro VCI só se contraindicação à anticoag 🚫</div>
+  <div class="box warn"><span class="l">trap 4</span>Gestante = heparina, nunca DOAC/VKA 🤰</div>
+  <div class="box warn"><span class="l">trap 5</span>Não-provocado → considerar estendida ⏱️</div>
+  <div class="box warn"><span class="l">trap 6</span>PERT ainda sem evidência robusta de desfecho 👥</div>
+  <div class="box warn"><span class="l">trap 7</span>Categorias A-E (2026) podem aparecer atualizadas 🆕</div>
+  <div class="box warn"><span class="l">trap 8</span>Rastrear HPTEC por pelo menos 1 ano 🫁</div>
+  <div class="box mac"><span class="l">✅ resumo de bolso</span>Alta prob→TC direto · Risco=instabilidade+PESI+RV+troponina · AHA/ACC26=categorias A-E · Alto=trombólise · Int-alto=anticoag(trombólise só resgate) · DOAC 1ªlinha · 3-6m ou estendida 🎓</div>
+</div>
+
+<script>
+var tabs=document.querySelectorAll('.tab'),panels=document.querySelectorAll('.panel');
+tabs.forEach(function(t){t.addEventListener('click',function(){
+  tabs.forEach(function(x){x.classList.remove('on')});
+  panels.forEach(function(x){x.classList.remove('on')});
+  t.classList.add('on');
+  document.querySelector('.panel[data-p="'+t.dataset.t+'"]').classList.add('on');
+})});
+</script>
+</body>
+</html>

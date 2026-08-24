@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🔪 Apendicectomia — Pocket</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d1117;--panel:#161b22;--panel2:#1c232c;--line:#2a323c;--tx:#e6edf3;--mut:#8b949e;--or:#ff7a18;--or2:#ff9a4d;--orbg:rgba(255,122,24,.10);--pu:#b083f0;--pu2:#c9a7ff;--pubg:rgba(176,131,240,.12);--cy:#3dd6d0;--cy2:#5fe3dd;--cybg:rgba(61,214,208,.10);--grn:#3fb950;--grnbg:rgba(63,185,80,.10);--red:#f85149;--redbg:rgba(248,81,73,.10);--am:#e3b341}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font-family:'IBM Plex Sans',sans-serif;line-height:1.5;padding:0 0 40px}
+.sheet{max-width:430px;margin:0 auto;min-height:100vh;background:var(--bg)}
+header{padding:22px 20px 0;display:flex;justify-content:space-between;align-items:baseline}
+.logo{font-size:22px;font-weight:700;letter-spacing:-.5px}.logo .b{color:var(--or)}
+.kick{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--or);text-transform:uppercase}
+nav{position:sticky;top:0;background:var(--bg);z-index:5;border-bottom:1px solid var(--line);overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;margin-top:14px}
+nav .in{display:flex;padding:0 16px}
+nav button{background:none;border:none;color:var(--mut);font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.5px;text-transform:uppercase;padding:13px 11px;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px}
+nav button.on{color:var(--or);border-bottom-color:var(--or)}
+section{display:none;padding:20px;animation:f .2s}section.on{display:block}
+@keyframes f{from{opacity:0}to{opacity:1}}
+h2{font-size:18px;color:var(--or);font-weight:600;padding-bottom:8px;border-bottom:1px solid var(--line);margin-bottom:14px}
+h3{font-size:13px;margin:16px 0 6px;font-weight:600;color:var(--or2);font-family:'IBM Plex Mono',monospace;letter-spacing:.5px;text-transform:uppercase}
+p,li{font-size:14px}
+.step{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-bottom:1px dashed var(--line)}
+.step:last-child{border-bottom:none}
+.num{flex:0 0 auto;width:24px;height:24px;border-radius:6px;background:var(--or);color:#0d1117;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:13px;display:flex;align-items:center;justify-content:center;margin-top:2px}
+.sc{flex:1}
+.fase{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:1.3px;text-transform:uppercase;color:var(--or);display:block}
+.pq{border-left:2px solid var(--pu);background:var(--pubg);border-radius:0 6px 6px 0;padding:6px 10px;margin-top:6px;font-size:12.5px;color:#e0d0f7}
+.pq b{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1.2px;text-transform:uppercase;color:var(--pu2);display:block}
+.it{color:var(--cy2);font-style:italic;font-size:13px}
+.box{border-left:3px solid var(--or);background:var(--orbg);border-radius:0 8px 8px 0;padding:11px 14px;margin:14px 0}
+.box.pu{border-color:var(--pu);background:var(--pubg)}.box.cy{border-color:var(--cy);background:var(--cybg)}
+.box.rd{border-color:var(--red);background:var(--redbg)}
+.box.gr{border-color:var(--grn);background:var(--grnbg)}
+.box .lbl{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--or);margin-bottom:6px;font-weight:600}
+.box.pu .lbl{color:var(--pu2)}.box.cy .lbl{color:var(--cy2)}.box.rd .lbl{color:var(--red)}.box.gr .lbl{color:var(--grn)}
+.box.gr p{color:var(--grn);font-style:italic}.box.gr p b{color:#8ee79a;font-style:normal}
+.big{font-size:16px;font-weight:600}
+.kv{border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:12px 0;background:var(--panel)}
+.row{display:flex;align-items:flex-start;gap:10px;padding:10px 13px;border-bottom:1px solid var(--line);font-size:13.5px}.row:last-child{border-bottom:none}
+.row .v{flex:0 0 auto;color:var(--or2);font-weight:700;font-family:'IBM Plex Mono',monospace;min-width:38px}
+.hand{font-family:'IBM Plex Mono',monospace;font-size:11px;padding:1px 6px;border-radius:5px;font-weight:600}
+.L{background:rgba(63,185,80,.15);color:#56d364}.R{background:rgba(255,122,24,.15);color:var(--or2)}
+ul{list-style:none;margin:4px 0}li{padding:4px 0 4px 24px;position:relative}li .em{position:absolute;left:0}
+.hi{color:var(--pu2);font-weight:600}.mn{font-family:'IBM Plex Mono',monospace;color:var(--cy2);font-weight:600}
+.fio{font-family:'IBM Plex Mono',monospace;font-size:11.5px;background:var(--pubg);color:var(--pu2);border:1px solid rgba(176,131,240,.3);padding:1px 6px;border-radius:5px;white-space:nowrap}
+.foot{text-align:center;color:var(--mut);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1px;padding:18px;border-top:1px solid var(--line);margin-top:10px;line-height:1.7}
+.bolso{border:1px dashed var(--or);border-radius:12px;padding:14px;margin:16px 0 4px;background:var(--orbg)}
+.bolso .lbl{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--or);margin-bottom:8px;font-weight:600}
+.bolso p{margin:5px 0;font-size:13.5px}
+.sc-b{color:var(--grn);font-weight:600}.sc-w{color:var(--am);font-weight:600}.sc-m{color:var(--red);font-weight:600}
+</style>
+</head>
+<body>
+<div class="sheet">
+<header><div class="logo">🔪 <span class="b">Apendicectomia</span></div><div class="kick">Pocket</div></header>
+<nav><div class="in" id="nav"></div></nav>
+
+<!-- 1 -->
+<section id="dx" class="on">
+<h2>🩺 Quadro &amp; Alvarado</h2>
+<div class="box pu"><div class="lbl">⭐ a sequência que define</div><p class="big">Dor periumbilical → migra para FID</p><p class="it">Anorexia (quase universal) · náusea e vômito <b>DEPOIS</b> da dor · febre baixa 37,5–38,5 °C</p></div>
+<div class="box rd"><div class="lbl">☠️ sequência invertida</div><p>Vômito <b>ANTES</b> da dor + diarreia proeminente = pense em <b>gastroenterite</b>, não apendicite. 🤢</p></div>
+
+<h3>Fisiopatologia em 1 linha</h3>
+<div class="kv">
+<div class="row"><span class="v">1️⃣</span><span><b>Obstrução do lúmen</b> — fecalito (35–40%), linfadenite na criança, carcinoide</span></div>
+<div class="row"><span class="v">2️⃣</span><span>Distensão → <b>isquemia</b> → translocação bacteriana</span></div>
+<div class="row"><span class="v">3️⃣</span><span>Edema → gangrena → <b>perfuração em 12–72 h</b></span></div>
+</div>
+<div class="box rd"><div class="lbl">☠️ o detalhe que explica tudo</div><p>A <b>artéria apendicular é TERMINAL</b>, sem colaterais. Por isso a isquemia é rápida — e por isso, se ela escapa no meso, o sangramento é feio. 🩸</p></div>
+
+<h3>Score de Alvarado — MANTRELS</h3>
+<div class="kv">
+<div class="row"><span class="v">M</span><span>Migração da dor p/ FID — <b>1</b></span></div>
+<div class="row"><span class="v">A</span><span>Anorexia — <b>1</b></span></div>
+<div class="row"><span class="v">N</span><span>Náusea/vômito — <b>1</b></span></div>
+<div class="row"><span class="v">T</span><span><b>T</b>enderness em FID — <b>2</b> ⭐</span></div>
+<div class="row"><span class="v">R</span><span>Rigidez (descompressão) — <b>1</b></span></div>
+<div class="row"><span class="v">E</span><span>Elevação da temperatura — <b>1</b></span></div>
+<div class="row"><span class="v">L</span><span>Leucocitose &gt;10.000 — <b>2</b> ⭐</span></div>
+<div class="row"><span class="v">S</span><span>Shift (desvio à esquerda) — <b>1</b></span></div>
+</div>
+<div class="kv">
+<div class="row"><span class="v">≥7</span><span class="sc-m">Alta probabilidade → <b>OPERAR</b></span></div>
+<div class="row"><span class="v">5–6</span><span class="sc-w">Moderada → <b>observar + imagem</b></span></div>
+<div class="row"><span class="v">≤4</span><span class="sc-b">Baixa → improvável</span></div>
+</div>
+<div class="box cy"><div class="lbl">🧠 os dois que valem 2</div><p class="mn">T e L — Tenderness e Leucocitose</p></div>
+
+<h3>Sinais no exame</h3>
+<div class="kv">
+<div class="row"><span class="v">📍</span><span><b>McBurney</b> — 1/3 lateral da linha EIAS–umbigo</span></div>
+<div class="row"><span class="v">✋</span><span><b>Blumberg</b> — descompressão brusca dolorosa em FID</span></div>
+<div class="row"><span class="v">🦵</span><span><b>Psoas +</b> → apêndice <b>retrocecal</b> (extensão do quadril D)</span></div>
+<div class="row"><span class="v">🔄</span><span><b>Obturador +</b> → apêndice <b>pélvico</b> (rotação interna do quadril D)</span></div>
+<div class="row"><span class="v">↔️</span><span><b>Rovsing</b> — palpar FIE dói na FID</span></div>
+</div>
+<div class="box gr"><div class="lbl">🟢 tradução simples</div><p>Cada sinal é uma forma de <b>esticar ou empurrar</b> o músculo que está encostado no apêndice inflamado. Se doer ao esticar o psoas, o apêndice está <b>atrás</b> do ceco, deitado nesse músculo.</p></div>
+</section>
+
+<!-- 2 -->
+<section id="dd">
+<h2>🔍 DD &amp; imagem</h2>
+<div class="box rd"><div class="lbl">☠️ obrigatório</div><p class="big">β-hCG em TODA mulher em idade fértil</p><p class="it">Ectópica rota = instabilidade + cirurgia imediata. Não existe exceção. 🚨</p></div>
+
+<h3>DD na mulher</h3>
+<div class="kv">
+<div class="row"><span class="v">🦠</span><span><b>DIP</b> — dor <b>bilateral</b>, corrimento, Chandelier +</span></div>
+<div class="row"><span class="v">💧</span><span><b>Cisto roto</b> — dor aguda + alívio parcial espontâneo</span></div>
+<div class="row"><span class="v">🌀</span><span><b>Torção ovariana</b> — dor intermitente + náusea intensa · <b>Doppler sem fluxo</b></span></div>
+<div class="row"><span class="v">🚨</span><span><b>Ectópica rota</b> — amenorreia + instabilidade + β-hCG +</span></div>
+<div class="row"><span class="v">🩸</span><span><b>Endometriose</b> — dor <b>cíclica</b>, piora na menstruação</span></div>
+</div>
+<div class="box pu"><div class="lbl">⭐ número de prova</div><p>Apendicectomia <b>negativa</b>: 15–25% nas mulheres × 5–10% nos homens. É o que justifica TC pré-op na mulher com quadro atípico.</p></div>
+
+<h3>DD geral</h3>
+<div class="kv">
+<div class="row"><span class="v">👶</span><span><b>Linfadenite mesentérica</b> — criança, dor difusa, viral prévia</span></div>
+<div class="row"><span class="v">🤢</span><span><b>Gastroenterite</b> — vômito antes da dor</span></div>
+<div class="row"><span class="v">🔵</span><span><b>Meckel</b> — clínica idêntica; só se descobre na cirurgia</span></div>
+<div class="row"><span class="v">🔥</span><span><b>Crohn de íleo terminal</b> — massa, diarreia crônica, história</span></div>
+</div>
+
+<h3>Imagem</h3>
+<div class="kv">
+<div class="row"><span class="v">👶</span><span>Criança → <b>USG</b> (sem radiação)</span></div>
+<div class="row"><span class="v">🤰</span><span>Gestante → <b>RNM</b></span></div>
+<div class="row"><span class="v">🧓</span><span>Idoso → <b>TC</b> (avalia DD: diverticulite, tumor de ceco)</span></div>
+</div>
+<div class="box"><div class="lbl">🖥️ critérios de TC</div><p>Apêndice <b>&gt;6 mm</b> · parede espessada · gordura periapendicular borrada (<b>chama de vela</b>) · fecalito calcificado · líquido livre.</p></div>
+</section>
+
+<!-- 3 -->
+<section id="trat">
+<h2>💊 Tratamento</h2>
+<div class="box rd"><div class="lbl">☠️ plastrão / abscesso</div><p class="big">NÃO operar de imediato</p><p class="it"><b>ATB + drenagem percutânea</b> → apendicectomia de intervalo em <b>6–8 semanas</b> → colonoscopia no adulto (excluir neoplasia de ceco).<br>Exceção: instabilidade, peritonite difusa, falha do conservador.</p></div>
+
+<h3>TNO — não operatório</h3>
+<div class="kv">
+<div class="row"><span class="v">✅</span><span>Apendicite <b>não complicada</b>, paciente estável, sem fecalito</span></div>
+<div class="row"><span class="v">💉</span><span>Ceftriaxona + metronidazol IV 48–72 h → oral 7–10 d</span></div>
+<div class="row"><span class="v">📈</span><span>Sucesso inicial <b>70–80%</b> · recorrência em 1 ano <b>20–30%</b></span></div>
+</div>
+
+<h3>Laparo × aberta</h3>
+<div class="kv">
+<div class="row"><span class="v">🟢</span><span><b>ISC</b>: laparo <b>MENOR</b> (1–3% × 5–10%)</span></div>
+<div class="row"><span class="v">🔴</span><span><b>Abscesso intracavitário</b>: laparo <b>MAIOR</b> (3–5% × 1–2%)</span></div>
+<div class="row"><span class="v">⏱️</span><span>Internação e retorno ao trabalho: laparo melhor</span></div>
+<div class="row"><span class="v">💰</span><span>Custo: aberta melhor</span></div>
+</div>
+<div class="box cy"><div class="lbl">🧠 a inversão que sempre cai</div><p class="mn">Laparo: abscesso ⬆ · ISC ⬇</p><p class="it">Cai em TODAS as bancas do RS.</p></div>
+
+<h3>Antibiótico</h3>
+<div class="kv">
+<div class="row"><span class="v">🟢</span><span><b>Não complicada</b> → cefazolina 2 g + metronidazol, <b>dose única</b> na indução</span></div>
+<div class="row"><span class="v">🔴</span><span><b>Complicada</b> (perfurada/gangrenosa) → 3–5 d IV, depois oral</span></div>
+<div class="row"><span class="v">🟠</span><span><b>Abscesso</b> → 7–14 d + drenagem percutânea</span></div>
+</div>
+</section>
+
+<!-- 4 -->
+<section id="anat">
+<h2>🩸 Anatomia</h2>
+<div class="box pu"><div class="lbl">⭐ a referência que nunca falha</div><p class="big">Seguir a tênia livre até a base</p><p class="it">As três tênias <b>convergem na base do apêndice</b>. A ponta varia — a base, nunca.</p></div>
+<div class="box gr"><div class="lbl">🟢 tradução simples</div><p>As tênias são três "faixas" que correm ao longo do intestino grosso, como as <b>costuras de uma bola</b>. Elas se juntam num ponto só — e esse ponto é sempre a raiz do apêndice.</p></div>
+
+<h3>As 5 posições</h3>
+<div class="kv">
+<div class="row"><span class="v">65%</span><span><b>Retrocecal</b> — Psoas + · dor mais lateral/lombar</span></div>
+<div class="row"><span class="v">30%</span><span><b>Pélvica</b> — Obturador + · disúria, tenesmo, dor ao toque</span></div>
+<div class="row"><span class="v">~2%</span><span><b>Subcecal</b></span></div>
+<div class="row"><span class="v">~1%</span><span><b>Pré-ileal</b> / <b>Retroileal</b></span></div>
+</div>
+
+<h3>Vascularização</h3>
+<div class="kv">
+<div class="row"><span class="v">🩸</span><span><b>A. apendicular</b> ← <b>a. ileocólica</b> ← <b>AMS</b></span></div>
+<div class="row"><span class="v">📍</span><span>Corre na <b>borda livre do mesoapêndice</b></span></div>
+<div class="row"><span class="v">⚠️</span><span><b>Terminal, sem colaterais</b> — base da gangrena precoce</span></div>
+</div>
+<div class="box rd"><div class="lbl">☠️ carcinoide — regra dos 2 cm</div><p><b>&lt;2 cm</b> → apendicectomia simples (curativa em 95%)<br><b>&gt;2 cm</b> ou base comprometida → <b>hemicolectomia direita</b> 🎯</p></div>
+<div class="box"><div class="lbl">🫧 mucocele</div><p>Dilatação por muco · risco de cistoadeno(carcino)ma · rompimento = <b>pseudomixoma peritonei</b>.<br><b>Nunca puncionar por via percutânea.</b></p></div>
+</section>
+
+<!-- 5 -->
+<section id="lap">
+<h2>🔪 Laparo — 8 passos</h2>
+<div class="box gr"><div class="lbl">🟢 tradução simples</div><p>Duas metades: primeiro se <b>acha e se solta</b> o apêndice do que o prende; depois se <b>fecha e se tira</b>. Tudo antes de ligar a base ainda é reversível.</p></div>
+
+<div class="step"><span class="num">1</span><div class="sc"><span class="fase">acesso</span><b>Pneumoperitônio + 1º portal</b> — Veress ou Hasson umbilical, 12–15 mmHg, óptica de 30°.
+<div class="pq"><b>por quê</b>No umbigo a aponeurose, a fáscia transversalis e o peritônio se <b>fundem</b> — parede mais fina, caminho mais curto.</div></div></div>
+
+<div class="step"><span class="num">2</span><div class="sc"><span class="fase">inventário</span><b>Inspeção sistemática</b> — varredura horária; na mulher, <b>obrigatório</b> avaliar útero, trompas e ovários. Aspirar e observar o líquido.
+<div class="pq"><b>por quê</b>10–20% revelam <b>outra causa</b>. É o momento de mudar o diagnóstico e evitar uma apendicectomia inútil.</div></div></div>
+
+<div class="step"><span class="num">3</span><div class="sc"><span class="fase">exposição</span><b>Seguir a tênia livre</b> — rebater alças, achar o ceco, seguir a tênia até a base. Mobilizar pela <b>linha de Toldt</b> se retrocecal.
+<div class="pq"><b>por quê</b>Funciona em <b>qualquer das 5 posições</b> — a ponta varia, a base não.</div></div></div>
+
+<div class="step"><span class="num">4</span><div class="sc"><span class="fase">liberação</span><b>Janela no mesoapêndice</b> — tracionar "em bandeira" pela ponta e abrir janela avascular <b>junto à base</b>.
+<div class="pq"><b>por quê</b>Janela na base permite ligar o meso <b>em bloco</b>. Longe da base, obriga a ligaduras seriadas e sangra mais.</div></div></div>
+
+<div class="step"><span class="num">5</span><div class="sc"><span class="fase">vascular</span><b>Controle do meso</b> — bipolar avançado, clipes ou grampeador vascular sobre a a. apendicular.
+<div class="pq"><b>por quê</b>Artéria <b>terminal</b>: se escapa e retrai para dentro do meso, o campo se perde rápido. Meso espesso e friável → <b>clipe ou grampeador</b>, não monopolar.</div></div></div>
+
+<div class="step"><span class="num">6</span><div class="sc"><span class="fase">secção — decisivo</span><b>Ligadura da base</b> — <b>endoloop duplo</b> (base sadia) · <b>grampeador</b> (base edemaciada/gangrenosa) · Hem-o-lok (base fina).
+<div class="pq"><b>por quê</b>Passo <b>irreversível</b> e origem da fístula de coto. A ligadura precisa cair em <b>tecido viável</b> — se a necrose chega ao ceco, ressecar além (cecorrafia ou ileocecectomia).</div></div></div>
+
+<div class="step"><span class="num">7</span><div class="sc"><span class="fase">extração</span><b>Bolsa protetora sempre</b> — endobag ou dedo de luva, pelo portal de maior calibre.
+<div class="pq"><b>por quê</b>Contato direto com o portal é a <b>causa nº 1 de ISC</b> na laparo — e ISC é justamente a vantagem da via. Perder isso apaga o benefício.</div></div></div>
+
+<div class="step"><span class="num">8</span><div class="sc"><span class="fase">encerramento</span><b>Aspirar sem irrigar</b> · portais retirados <b>sob visão</b> · fechar aponeurose <span class="fio">≥10 mm</span> com <span class="fio">Vicryl 0</span>.
+<div class="pq"><b>por quê</b>Irrigação ampla <b>dissemina</b> a contaminação e aumenta abscesso. Portal de 10–12 mm sem fáscia fechada = <b>hérnia de trocarte</b>. Retirar sem visão esconde sangramento dos <b>epigástricos inferiores</b>.</div></div></div>
+
+<div class="box pu"><div class="lbl">⭐ 3 checagens antes de ligar a base</div><p>1️⃣ Base em tecido <b>viável</b>?<br>2️⃣ Meso controlado e artéria selada?<br>3️⃣ Diagnóstico confirmado (ou outro achado)?<br><b>3 "sim" → liga.</b></p></div>
+<div class="box cy"><div class="lbl">🧠 bolsa de tabaco</div><p>Sepultar o coto <b>não é necessário</b> e não reduz complicação. Prática histórica — cai como pegadinha.</p></div>
+</section>
+
+<!-- 6 -->
+<section id="ab">
+<h2>✂️ Aberta — 6 passos</h2>
+<div class="box gr"><div class="lbl">🟢 tradução simples</div><p>Em vez de cortar a parede em linha reta, você <b>afasta cada camada de músculo no sentido das fibras dela</b> — como abrir uma cortina em vez de rasgá-la. Por isso quase não dá hérnia.</p></div>
+
+<div class="step"><span class="num">1</span><div class="sc"><span class="fase">acesso</span><b>McBurney (oblíqua)</b> ou <b>Rocky-Davis (transversa)</b> — 4–6 cm centrados no ponto de McBurney.
+<div class="pq"><b>por quê</b>Centra sobre o <b>ceco</b>, não sobre o apêndice — que pode estar em qualquer posição. Traz-se o ceco; o apêndice vem junto.</div></div></div>
+
+<div class="step"><span class="num">2</span><div class="sc"><span class="fase">parede — divulsão</span><b><i>Grid-iron</i></b> — seccionar a aponeurose do <b>oblíquo externo</b> no sentido das fibras; divulsão romba do <b>oblíquo interno</b> e do <b>transverso</b>; peritônio aberto <b>entre pinças</b>.
+<div class="pq"><b>por quê</b>Afastar em vez de cortar preserva músculo e inervação — é isso que torna a <b>hérnia incisional</b> mínima. Abrir entre pinças evita lesar alça aderida.</div></div></div>
+
+<div class="step"><span class="num">3</span><div class="sc"><span class="fase">exposição</span><b>Exteriorizar o ceco</b> — identificar por tênias e apêndices epiplóicos, trazer com Babcock, seguir a tênia livre.
+<div class="pq"><b>por quê</b>Transforma cirurgia profunda em cirurgia de superfície — e a contaminação, se houver, ocorre <b>fora</b> do abdome.</div></div></div>
+
+<div class="step"><span class="num">4</span><div class="sc"><span class="fase">vascular</span><b>Ligar o mesoapêndice</b> — ligaduras seriadas da ponta para a base com <span class="fio">seda 3-0</span>.
+<div class="pq"><b>por quê</b>Coto de meso mal ligado <b>retrai para o retroperitônio</b> — sangramento difícil de achar depois da parede fechada.</div></div></div>
+
+<div class="step"><span class="num">5</span><div class="sc"><span class="fase">secção</span><b>Esmagar → deslocar 1 cm → ligar no sulco</b> com <span class="fio">Vicryl 2-0/3-0</span>; seccionar e cauterizar a mucosa.
+<div class="pq"><b>por quê</b>O esmagamento cria um <b>sulco comprimido</b> onde a ligadura não escorrega. Cauterizar reduz contaminação residual.</div></div></div>
+
+<div class="step"><span class="num">6</span><div class="sc"><span class="fase">encerramento</span><b>Fechar por planos</b> — aponeurose do oblíquo externo com <span class="fio">Vicryl 0/2-0</span>; pele conforme contaminação.
+<div class="pq"><b>por quê</b>Em ferida <b>contaminada/infectada</b>, fechamento primário da pele aumenta ISC → considerar fechamento retardado. É a razão de a aberta ter mais ISC.</div></div></div>
+</section>
+
+<!-- 7 -->
+<section id="maos">
+<h2>✋ Mãos &amp; fios</h2>
+<div class="box"><div class="lbl">🧰 princípio</div><p>A <b>esquerda</b> faz exposição e tração — ela <b>cria o plano</b>. A <b>direita</b> corta, disseca e liga.</p></div>
+<div class="box gr"><div class="lbl">🟢 tradução simples</div><p>É como cortar uma folha de papel: se ninguém <b>segura o papel esticado</b>, a tesoura só amassa.</p></div>
+
+<h3>Por momento</h3>
+<div class="kv">
+<div class="row"><span class="hand L">ESQ</span><span><b>Laparo</b>: Johann rebate o ceco · preensão da ponta em bandeira · mantém tensão do meso</span></div>
+<div class="row"><span class="hand R">DIR</span><span><b>Laparo</b>: Maryland na janela · bipolar/clipe no meso · endoloop ou grampeador na base</span></div>
+<div class="row"><span class="hand L">ESQ</span><span><b>Aberta</b>: Farabeuf nas camadas · Babcock tracionando pela ponta · ceco estabilizado</span></div>
+<div class="row"><span class="hand R">DIR</span><span><b>Aberta</b>: bisturi na aponeurose · Kelly na divulsão e sob o meso · pinça de esmagamento na base</span></div>
+</div>
+
+<h3>Fios</h3>
+<div class="kv">
+<div class="row"><span class="v">🩸</span><span>Meso (aberta) — <span class="fio">seda 3-0</span> · trançado, nó seguro em vaso terminal</span></div>
+<div class="row"><span class="v">🔻</span><span>Base (aberta) — <span class="fio">Vicryl 2-0/3-0</span> · absorvível: campo contaminado</span></div>
+<div class="row"><span class="v">🪢</span><span>Base (laparo) — <span class="fio">endoloop</span> · grampeador · Hem-o-lok</span></div>
+<div class="row"><span class="v">🧱</span><span>Aponeurose — <span class="fio">Vicryl 0/2-0</span></span></div>
+<div class="row"><span class="v">⚠️</span><span>Portais <b>≥10 mm</b> — <span class="fio">Vicryl 0</span> <b>obrigatório</b></span></div>
+<div class="row"><span class="v">🧵</span><span>Pele — <span class="fio">mononáilon 3-0/4-0</span> ou intradérmico</span></div>
+</div>
+<div class="box cy"><div class="lbl">🧠 regra dos fios aqui</div><p class="mn">Coto contaminado = absorvível</p><p class="it">E a única sutura realmente obrigatória da laparo é a aponeurose dos portais de 10–12 mm.</p></div>
+</section>
+
+<!-- 8 -->
+<section id="comp">
+<h2>⚠️ Complicações</h2>
+<div class="kv">
+<div class="row"><span class="v">💥</span><span><b>Perfuração</b> — 15–30% ao diagnóstico · mortalidade até 5%</span></div>
+<div class="row"><span class="v">🦠</span><span><b>Abscesso intracavitário</b> — mais após laparo · febre no <b>DPO 5–7</b> → TC → drenagem percutânea</span></div>
+<div class="row"><span class="v">🔥</span><span><b>ISC</b> — mais após aberta · abrir a ferida + curativo</span></div>
+<div class="row"><span class="v">🕳️</span><span><b>Hérnia de trocarte</b> — portal ≥10 mm sem fáscia fechada</span></div>
+<div class="row"><span class="v">💧</span><span><b>Fístula de coto</b> — ligadura em tecido necrosado</span></div>
+</div>
+
+<h3>Achados incidentais</h3>
+<div class="kv">
+<div class="row"><span class="v">🎯</span><span><b>Carcinoide</b> — o mais comum (0,3–0,5%) · regra dos <b>2 cm</b></span></div>
+<div class="row"><span class="v">🫧</span><span><b>Mucocele</b> — nunca puncionar · risco de pseudomixoma</span></div>
+<div class="row"><span class="v">🔵</span><span><b>Meckel</b> — regra dos 2</span></div>
+</div>
+
+<h3>Grupos especiais</h3>
+<div class="kv">
+<div class="row"><span class="v">🤰</span><span><b>Gestante</b> — RNM · 2º trimestre é a janela · <b>suspeita = operar em qualquer trimestre</b></span></div>
+<div class="row"><span class="v">👶</span><span><b>&lt;5 anos</b> — perfuração 50–80% (epíplon pouco desenvolvido)</span></div>
+<div class="row"><span class="v">🧓</span><span><b>&gt;65 anos</b> — sintomas atenuados · perfuração 30–50% · <b>pesquisar tumor de ceco</b></span></div>
+<div class="row"><span class="v">💊</span><span><b>Imunossuprimido</b> — leucocitose pode faltar · limiar menor p/ operar</span></div>
+</div>
+</section>
+
+<!-- 9 -->
+<section id="traps">
+<h2>☠️ Traps &amp; mnemônicos</h2>
+<div class="box rd"><div class="lbl">1</div><p><b>Laparo tem MAIS abscesso e MENOS ISC.</b> A inversão que cai em toda banca do RS.</p></div>
+<div class="box rd"><div class="lbl">2</div><p><b>Plastrão não se opera de imediato</b> — ATB + drenagem + intervalo de 6–8 semanas.</p></div>
+<div class="box rd"><div class="lbl">3</div><p><b>Vômito antes da dor</b> não é apendicite — a sequência é dor → anorexia → vômito.</p></div>
+<div class="box rd"><div class="lbl">4</div><p><b>Carcinoide &gt;2 cm</b> = hemicolectomia direita, não apendicectomia.</p></div>
+<div class="box rd"><div class="lbl">5</div><p><b>Não achou o apêndice?</b> Siga a tênia livre. Nunca procure a ponta.</p></div>
+<div class="box rd"><div class="lbl">6</div><p><b>Bolsa de tabaco não é obrigatória</b> — sem benefício comprovado.</p></div>
+<div class="box rd"><div class="lbl">7</div><p><b>Não irrigar amplamente</b> — dissemina contaminação e aumenta abscesso.</p></div>
+<div class="box rd"><div class="lbl">8</div><p><b>Portal ≥10 mm sem fechar a fáscia</b> = hérnia de trocarte com alça encarcerada.</p></div>
+<div class="box rd"><div class="lbl">9</div><p><b>Mucocele nunca se punciona</b> — risco de pseudomixoma peritonei.</p></div>
+<div class="box rd"><div class="lbl">10</div><p><b>Idoso com apendicite</b> → pesquisar neoplasia de ceco depois.</p></div>
+
+<div class="box cy"><div class="lbl">🧠 MANTRELS</div><p class="mn">T e L valem 2</p><p class="it">≥7 opera · 5–6 observa · ≤4 improvável</p></div>
+<div class="box cy"><div class="lbl">🧠 tênia = GPS</div><p class="mn">A tênia livre sempre leva à base</p></div>
+<div class="box cy"><div class="lbl">🧠 regra dos 2 — Meckel</div><p class="mn">2% · 2 pés (60 cm) do ileocecal · 2 mucosas · 2 anos</p></div>
+<div class="box cy"><div class="lbl">🧠 carcinoide</div><p class="mn">&lt;2 cm apendicectomia · &gt;2 cm hemicolectomia D</p></div>
+
+<div class="bolso"><div class="lbl">📌 resumo de bolso</div>
+<p>🩺 Alvarado <b>≥7 opera</b> · T e L valem 2</p>
+<p>🤰 β-hCG em <b>toda</b> mulher em idade fértil</p>
+<p>🔪 Achou o ceco → <b>siga a tênia livre</b></p>
+<p>🩸 A. apendicular = <b>terminal</b>, ramo da ileocólica</p>
+<p>🛑 Antes de ligar: <b>base viável · meso selado · diagnóstico confirmado</b></p>
+<p>🧵 Base: <b>endoloop duplo</b> ou grampeador se edemaciada</p>
+<p>👜 Peça <b>sempre em bolsa</b> · não irrigar · fechar fáscia ≥10 mm</p>
+<p>⚠️ Laparo: <b>abscesso ⬆ · ISC ⬇</b></p>
+<p>🎯 Carcinoide <b>&gt;2 cm</b> = hemicolectomia D</p>
+</div>
+</section>
+
+<div class="foot">← deslize as abas → · carolzita CV 2026<br>🟢 verde = tradução simples · 🟣 roxo = prova · 🔵 ciano = mnemônico<br>Sabiston 51 · Zollinger 77 · Netter 267-270 · WSES · SAGES</div>
+</div>
+<script>
+var s=[['dx','🩺 Quadro'],['dd','🔍 DD/Imagem'],['trat','💊 Tratamento'],['anat','🩸 Anatomia'],['lap','🔪 Laparo'],['ab','✂️ Aberta'],['maos','✋ Mãos/Fios'],['comp','⚠️ Complic'],['traps','☠️ Traps']];
+var n=document.getElementById('nav');
+s.forEach(function(x,i){var b=document.createElement('button');b.textContent=x[1];if(i===0)b.className='on';b.onclick=function(){document.querySelectorAll('nav button').forEach(function(y){y.classList.remove('on')});b.classList.add('on');document.querySelectorAll('section').forEach(function(y){y.classList.remove('on')});document.getElementById(x[0]).classList.add('on');document.querySelector('.sheet').scrollIntoView()};n.appendChild(b)});
+</script>
+</body>
+</html>

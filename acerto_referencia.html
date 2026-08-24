@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projeto ACERTO — Referência CV 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d1117; --bg2:#161b22; --bg3:#1c2230; --line:#2a3038;
+  --txt:#c9d1d9; --txt2:#8b949e; --txt3:#6e7681;
+  --orange:#ff7b29; --orange-d:#3a2410;
+  --purple:#a371f7; --purple-d:#241a3a;
+  --cyan:#39c5cf; --cyan-d:#0f2e30;
+  --red:#f85149; --green:#3fb950; --yellow:#d29922;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font-family:'IBM Plex Sans',sans-serif;line-height:1.6;font-size:15px;padding-bottom:60px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 18px}
+header{padding:30px 0 16px;border-bottom:1px solid var(--line)}
+h1{font-family:'IBM Plex Serif',serif;font-size:26px;font-weight:600;letter-spacing:-.3px}
+h1 .accent{color:var(--orange)}
+.sub{color:var(--txt2);font-size:13px;margin-top:6px;font-family:'IBM Plex Mono',monospace}
+.tabs{position:sticky;top:0;z-index:20;background:var(--bg);display:flex;gap:4px;overflow-x:auto;padding:10px 18px;border-bottom:1px solid var(--line);scrollbar-width:thin}
+.tabs::-webkit-scrollbar{height:5px}.tabs::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
+.tab{flex:0 0 auto;background:var(--bg2);border:1px solid var(--line);color:var(--txt2);padding:8px 14px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;font-family:'IBM Plex Mono',monospace;transition:.15s}
+.tab:hover{color:var(--txt);border-color:var(--orange)}
+.tab.active{background:var(--orange);color:#0d1117;border-color:var(--orange)}
+.panel{display:none;padding:24px 0;animation:fade .25s}
+.panel.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1}}
+h2{font-family:'IBM Plex Serif',serif;font-size:20px;color:var(--orange);margin:26px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+h2:first-child{margin-top:0}
+h3{font-size:16px;color:var(--txt);margin:18px 0 8px;font-weight:600}
+p{margin:8px 0}
+.lay{color:var(--cyan);font-style:italic;font-size:.93em}
+ul,ol{margin:8px 0 8px 22px}li{margin:4px 0}
+strong{color:#fff;font-weight:600}
+code{font-family:'IBM Plex Mono',monospace;background:var(--bg3);padding:1px 6px;border-radius:4px;font-size:.88em;color:var(--orange)}
+.card{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0}
+.box{border-left:4px solid var(--orange);background:var(--orange-d);border-radius:0 10px 10px 0;padding:12px 16px;margin:14px 0}
+.box.hy{border-left-color:var(--purple);background:var(--purple-d)}
+.box.mn{border-left-color:var(--cyan);background:var(--cyan-d)}
+.box .lbl{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;font-weight:600;margin-bottom:6px;display:block}
+.box .lbl{color:var(--orange)}.box.hy .lbl{color:var(--purple)}.box.mn .lbl{color:var(--cyan)}
+.banca{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:600;padding:1px 7px;border-radius:20px;background:#2a1f44;color:var(--purple);border:1px solid #3a2a5a;margin-left:6px;vertical-align:middle}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--bg3);color:var(--orange);font-family:'IBM Plex Mono',monospace;font-size:11.5px;text-transform:uppercase;letter-spacing:.5px;position:sticky;top:0}
+td strong{color:var(--cyan)}
+.tag{font-family:'IBM Plex Mono',monospace;font-size:11px;padding:2px 8px;border-radius:5px;font-weight:600}
+.t-b{background:#0f2a16;color:var(--green)}
+.t-m{background:#3a1414;color:var(--red)}
+.t-w{background:#3a2e0d;color:var(--yellow)}
+svg{max-width:100%;height:auto;display:block;margin:16px auto;background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:10px}
+.q{background:var(--bg2);border:1px solid var(--line);border-left:4px solid var(--purple);border-radius:0 10px 10px 0;padding:14px 16px;margin:16px 0}
+.q .stem{font-weight:500}
+.alt{margin:8px 0 0 0;padding-left:4px}
+.alt div{padding:3px 0;color:var(--txt2)}
+details{margin-top:10px;border-top:1px dashed var(--line);padding-top:8px}
+summary{cursor:pointer;color:var(--cyan);font-weight:600;font-size:13px;font-family:'IBM Plex Mono',monospace}
+details[open] summary{margin-bottom:6px}
+.ans{color:var(--green);font-weight:600}
+.foot{color:var(--txt3);font-size:11px;text-align:center;margin-top:30px;font-family:'IBM Plex Mono',monospace}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:640px){.grid2{grid-template-columns:1fr}h1{font-size:21px}}
+.pill{display:inline-block;width:11px;height:11px;border-radius:3px;vertical-align:middle;margin-right:5px}
+.legend{font-size:12px;color:var(--txt2);font-family:'IBM Plex Mono',monospace;margin-top:10px}
+</style>
+</head>
+<body>
+<header class="wrap"><h1>Projeto <span class="accent">ACERTO</span></h1><div class="sub">Referência CV 2026 · Aceleração da Recuperação Total Pós-Operatória · UFMT 2005 · Diretriz CBC/BRASPEN 2017</div><div class="legend"><span class="pill" style="background:var(--orange)"></span>conteúdo geral<span class="pill" style="background:var(--purple);margin-left:14px"></span>alto rendimento / prova<span class="pill" style="background:var(--cyan);margin-left:14px"></span>analogia &amp; mnemônico</div></header>
+<nav class="tabs">
+  <button class="tab active" data-t="vg">🗺️ Visão Geral</button>
+  <button class="tab" data-t="pre">🩺 Pré-operatório</button>
+  <button class="tab" data-t="intra">🔪 Intraoperatório</button>
+  <button class="tab" data-t="pos">🛌 Pós-operatório</button>
+  <button class="tab" data-t="nut">🥣 Nutrição</button>
+  <button class="tab" data-t="ev">📊 Pilares &amp; Evidências</button>
+  <button class="tab" data-t="quest">📝 Questões</button>
+  <button class="tab" data-t="pega">🪤 Pega-ratão</button>
+  <button class="tab" data-t="mn">🧠 Mnemônicos</button>
+</nav>
+<main class="wrap">
+
+<section class="panel active" id="vg">
+<h2>O que é o Projeto ACERTO</h2>
+<p>O <strong>Projeto ACERTO</strong> (<strong>A</strong>celeração da <strong>R</strong>ecuperação <strong>T</strong>otal Pós-<strong>O</strong>peratória) é um protocolo multimodal brasileiro de cuidados perioperatórios, criado em <strong>2005</strong> por José Eduardo de Aguilar-Nascimento e colaboradores no Hospital Universitário Júlio Müller, vinculado à <strong>Universidade Federal do Mato Grosso (UFMT)</strong>. É a vertente nacional/latino-americana do movimento internacional de recuperação acelerada, cujo equivalente europeu é o <strong>ERAS</strong> (Enhanced Recovery After Surgery).</p>
+<p class="lay">(Pense no ACERTO como um "checklist de boas práticas" que troca hábitos antigos — jejum longo, sonda em todo mundo, repouso prolongado — por condutas baseadas em evidência que fazem o paciente se recuperar mais rápido e com menos complicações.)</p>
+<div class="box hy"><span class="lbl">★ Conceito-chave</span>É um protocolo <strong>multimodal e multiprofissional</strong> (cirurgiões, anestesistas, nutricionistas, enfermeiros, fisioterapeutas), aplicado do pré ao pós-operatório, com objetivo de <strong>reduzir a resposta ao estresse cirúrgico</strong>, o tempo de internação, as complicações e os custos hospitalares — <strong>sem aumentar reinternações</strong>. <span class="banca">HCPA</span></div>
+<h3>ACERTO × ERAS</h3>
+<table>
+<tr><th>Aspecto</th><th>ERAS</th><th>ACERTO</th></tr>
+<tr><td>Origem</td><td>Norte da Europa (Kehlet, "fast-track surgery", anos 1990s; ERAS Society fundada em 2010)</td><td>Brasil, UFMT, 2005</td></tr>
+<tr><td>Foco inicial</td><td>Cirurgia colorretal</td><td>Cirurgia geral eletiva (colecistectomia, herniorrafia), expandido a urologia, bariátrica, oncológica, ginecológica</td></tr>
+<tr><td>Princípios</td><td colspan="2">Convergentes: jejum abreviado, analgesia multimodal, mobilização e realimentação precoces, restrição de fluidos, abordagem minimamente invasiva</td></tr>
+</table>
+<div class="box"><span class="lbl">aplicada</span>Ambos compartilham a mesma base fisiopatológica: <strong>reduzir a resposta neuroendócrina ao trauma</strong> (cortisol, catecolaminas, resistência à insulina) evitando jejum prolongado, hipotermia, dor mal controlada e imobilização.</div>
+</section>
+
+<section class="panel" id="pre">
+<h2>Cuidados pré-operatórios</h2>
+<h3>Avaliação e otimização nutricional</h3>
+<p>Triagem de risco nutricional em <strong>todo paciente cirúrgico eletivo</strong> (perda ponderal, IMC, ingesta reduzida). Pacientes desnutridos ou com <strong>câncer</strong> submetidos a grandes cirurgias do TGI se beneficiam de <strong>imunonutrição pré-operatória</strong> (fórmulas com arginina, ômega-3 e nucleotídeos) por <strong>5–7 dias antes</strong> da operação, mesmo sem desnutrição franca.</p>
+<h3>Jejum abreviado</h3>
+<div class="box hy"><span class="lbl">★ Regra central — cai muito em prova</span>
+Jejum de <strong>sólidos: 6–8 horas</strong> antes da cirurgia (não mais 8–12h tradicionais) · <strong>líquidos claros: até 2 horas antes</strong>, idealmente enriquecidos com <strong>carboidrato</strong> (solução de <strong>dextrinomaltose a 12,5%</strong>), administrados <strong>2–6h antes</strong> do procedimento. Reduz resistência periférica à insulina, catabolismo proteico, sede, fome, ansiedade e náusea/vômito pós-operatórios — <strong>sem aumentar</strong> o risco de broncoaspiração. <span class="banca">GHC</span> <span class="banca">PUC-RS</span></div>
+<p class="lay">(É como reabastecer o carro antes de uma viagem longa em vez de deixá-lo rodar com o tanque vazio: o corpo entra na cirurgia com reservas, não em modo de "fome/pânico metabólico".)</p>
+<div class="box mn"><span class="lbl">contraindicações ao carboidrato oral</span>Gastroparesia, obstrução do trato de saída gástrico/suboclusão intestinal, cirurgia de emergência, refluxo gastroesofágico grave não controlado.</div>
+<h3>Outras medidas pré-operatórias</h3>
+<ul>
+<li><strong>Preparo mecânico de cólon NÃO é rotina</strong> — reservado a situações específicas (ex.: necessidade de colonoscopia intraoperatória, cirurgias muito baixas do reto); quando indicado, associar antibiótico oral.</li>
+<li><strong>Antibioticoprofilaxia</strong> em dose única, no momento correto (30–60 min antes da incisão), sem prolongar no pós-operatório sem indicação.</li>
+<li>Evitar <strong>sedativos/hipnóticos noturnos</strong> de rotina — favorecer sono fisiológico e menor confusão pós-operatória.</li>
+<li>Orientação e informação pré-operatória do paciente (reduz ansiedade e tempo de internação).</li>
+</ul>
+</section>
+
+<section class="panel" id="intra">
+<h2>Cuidados intraoperatórios</h2>
+<ul>
+<li><strong>Via minimamente invasiva</strong> sempre que possível (videolaparoscopia/robótica) — menor trauma tecidual, menor íleo, alta mais precoce.</li>
+<li><strong>Anestesia multimodal</strong> — combinar técnicas (bloqueios regionais, anestesia locorregional) para reduzir opioide sistêmico.</li>
+<li><strong>Normotermia</strong> ativa (mantas térmicas, fluidos aquecidos) — hipotermia aumenta sangramento, infecção de sítio cirúrgico e tempo de recuperação.</li>
+<li><strong>Restrição/racionalização de fluidos intravenosos</strong> — terapia guiada por metas, evitando sobrecarga hídrica (associada a íleo, edema de anastomose, complicações pulmonares).</li>
+<li><strong>Profilaxia de náusea e vômito pós-operatório (NVPO)</strong> multimodal conforme fatores de risco (sexo feminino, não tabagista, história de NVPO/cinetose, uso de opioide).</li>
+<li>Evitar <strong>sonda nasogástrica e drenos abdominais de rotina</strong> — uso seletivo, não sistemático.</li>
+</ul>
+<div class="box"><span class="lbl">aplicada</span>O fio condutor intraoperatório do ACERTO é <strong>minimizar agressão</strong>: menos incisão, menos fluido, menos frio, menos tubo — cada elemento reduz um pedaço da resposta inflamatória/catabólica.</div>
+</section>
+
+<section class="panel" id="pos">
+<h2>Cuidados pós-operatórios</h2>
+<h3>Realimentação precoce — tabela-chave</h3>
+<table>
+<tr><th>Tipo de cirurgia</th><th>Quando iniciar dieta</th><th>Via</th></tr>
+<tr><td>Colecistectomia, herniorrafia, cirurgias ano-orificiais e demais operações do TGI <strong>sem anastomose</strong></td><td><strong>Mesmo dia</strong> (3–12h de pós-operatório)</td><td>Dieta oral branda</td></tr>
+<tr><td>Anastomose <strong>gastrintestinal, enteroentérica, enterocólica ou colorretal</strong></td><td>Até <strong>24h</strong> de pós-operatório</td><td>Dieta líquida oral</td></tr>
+<tr><td>Anastomose <strong>esofágica</strong></td><td><strong>12–24h</strong> de pós-operatório</td><td>Sonda nasoenteral ou jejunostomia</td></tr>
+</table>
+<div class="box hy"><span class="lbl">★ Pega-ratão de tabela</span>A realimentação precoce <strong>não espera a eliminação de flatos/fezes</strong> como critério — é iniciada por tempo predefinido, independente do retorno do trânsito. <span class="banca">Santa Casa</span> <span class="banca">AMRIGS</span></div>
+<h3>Outras medidas pós-operatórias</h3>
+<ul>
+<li><strong>Mobilização precoce</strong> — sentar/deambular já nas primeiras horas do pós-operatório.</li>
+<li><strong>Analgesia multimodal poupadora de opioide</strong> (AINEs, dipirona, bloqueios), reduzindo íleo e sedação.</li>
+<li><strong>Retirada precoce</strong> de sonda vesical, cateteres e drenos assim que não houver indicação de mantê-los.</li>
+<li><strong>Alta precoce</strong> baseada em critérios clínicos objetivos (não em "dia fixo de internação").</li>
+</ul>
+</section>
+
+<section class="panel" id="nut">
+<h2>Terapia nutricional no protocolo</h2>
+<p>A nutrição é considerada o <strong>pilar central</strong> do ACERTO — a maioria das diretrizes formais publicadas (Rev. Col. Bras. Cir. 2017) trata especificamente das intervenções nutricionais perioperatórias.</p>
+<div class="grid2">
+<div class="card"><h3>Pré-operatório</h3><ul><li>Triagem nutricional universal</li><li>Imunonutrição 5–7 dias antes (desnutridos/oncológicos, cirurgia grande do TGI)</li><li>Jejum abreviado + carboidrato 2h antes</li></ul></div>
+<div class="card"><h3>Pós-operatório</h3><ul><li>Realimentação precoce (ver tabela)</li><li>Suplementação oral se ingesta &lt;60% da meta</li><li>Terapia nutricional enteral precoce se via oral inviável</li></ul></div>
+</div>
+<div class="box mn"><span class="lbl">analogia</span>(Pense no jejum longo tradicional como deixar a "fábrica" — o corpo — parada e depois exigir produção máxima de uma vez: ele reage entrando em modo de estresse. Alimentar cedo e de forma escalonada é manter a fábrica em ritmo constante.)</div>
+</section>
+
+<section class="panel" id="ev">
+<h2>Pilares do protocolo &amp; evidências</h2>
+<h3>Os 10 pilares clássicos do ACERTO</h3>
+<ol>
+<li>Informação/educação pré-operatória do paciente</li>
+<li>Abreviação do jejum pré-operatório com carboidrato</li>
+<li>Ausência de preparo mecânico de cólon de rotina</li>
+<li>Antibioticoprofilaxia racional (dose única)</li>
+<li>Anestesia multimodal / abordagem minimamente invasiva</li>
+<li>Controle da normotermia intraoperatória</li>
+<li>Restrição de fluidos intravenosos</li>
+<li>Analgesia multimodal poupadora de opioide + profilaxia de NVPO</li>
+<li>Realimentação oral precoce</li>
+<li>Mobilização precoce e retirada precoce de sondas/drenos/cateteres</li>
+</ol>
+<h3>O que a evidência mostra</h3>
+<p>Estudos prospectivos brasileiros (implantação do protocolo em cirurgia geral, bariátrica, urológica e oncológica) demonstram <strong>redução do tempo de internação, das complicações pós-operatórias e dos custos hospitalares</strong>, com adesão elevada às recomendações e <strong>sem aumento das taxas de reinternação</strong>. A abreviação do jejum com carboidrato não aumentou complicações anestésicas (nenhum caso de broncoaspiração em coortes prospectivas) e melhorou o conforto pós-operatório (menos sede, fome, náusea e vômito).</p>
+<div class="box"><span class="lbl">aplicada</span>Bases usadas nas diretrizes: revisões sistemáticas, metanálises e ensaios randomizados (GRADE), consolidadas na <strong>Diretriz ACERTO de Intervenções Nutricionais no Perioperatório em Cirurgia Geral Eletiva</strong> (Colégio Brasileiro de Cirurgiões + BRASPEN, Rev. Col. Bras. Cir. 2017;44(6):633-648), com atualizações posteriores (BRASPEN 2022/2024).</div>
+</section>
+
+<section class="panel" id="quest"><h2>Questões — estilo das bancas RS</h2><p class="sub" style="margin-bottom:14px">Itens originais no estilo das bancas (não reprodução literal de provas).</p>
+<div class="q"><div class="stem"><span class="banca">HCPA</span> O Projeto ACERTO foi desenvolvido no Brasil, em 2005, tendo como instituição de origem:</div><div class="alt"><div>A) USP</div><div>B) UFMT (Cuiabá)</div><div>C) UFRGS</div><div>D) UNIFESP</div></div><details><summary>Ver resposta</summary><p class="ans">B.</p><p>O ACERTO foi criado no <strong>Hospital Universitário Júlio Müller, UFMT</strong>, por José Eduardo de Aguilar-Nascimento, sendo a vertente brasileira do conceito de recuperação acelerada.</p></details></div>
+<div class="q"><div class="stem"><span class="banca">GHC</span> Segundo o protocolo ACERTO, o jejum pré-operatório para líquidos claros contendo carboidrato deve ser abreviado para:</div><div class="alt"><div>A) 8 horas</div><div>B) 6 horas</div><div>C) 2 horas</div><div>D) 12 horas</div></div><details><summary>Ver resposta</summary><p class="ans">C.</p><p>Líquidos claros (idealmente com carboidrato) até <strong>2 horas</strong> antes; sólidos, 6–8 horas.</p></details></div>
+<div class="q"><div class="stem"><span class="banca">Santa Casa</span> Paciente submetido a colecistectomia videolaparoscópica sem intercorrências. Segundo o ACERTO, a dieta oral branda deve ser oferecida:</div><div class="alt"><div>A) Apenas após eliminação de flatos</div><div>B) No mesmo dia da cirurgia (3–12h de PO)</div><div>C) Em jejum por 24h e reavaliação</div><div>D) Somente no 2º dia pós-operatório</div></div><details><summary>Ver resposta</summary><p class="ans">B.</p><p>Cirurgias sem anastomose (colecistectomia, herniorrafia, ano-orificiais) → dieta <strong>no mesmo dia</strong>, independentemente do retorno do trânsito intestinal.</p></details></div>
+<div class="q"><div class="stem"><span class="banca">PUC-RS</span> Em paciente submetido a anastomose colorretal, o protocolo ACERTO recomenda início da dieta líquida oral em até:</div><div class="alt"><div>A) 6 horas</div><div>B) 12 horas</div><div>C) 24 horas</div><div>D) 72 horas, aguardando flatos</div></div><details><summary>Ver resposta</summary><p class="ans">C.</p><p>Anastomoses GI/entero-entéricas/entero-cólicas/colorretais: dieta líquida <strong>até 24h</strong> de pós-operatório.</p></details></div>
+<div class="q"><div class="stem"><span class="banca">AMRIGS</span> Sobre o preparo mecânico de cólon no contexto do ACERTO, é correto afirmar que:</div><div class="alt"><div>A) É obrigatório em toda cirurgia colorretal eletiva</div><div>B) Não deve ser realizado de rotina</div><div>C) Substitui a antibioticoprofilaxia</div><div>D) Deve ser feito isoladamente sem antibiótico oral quando indicado</div></div><details><summary>Ver resposta</summary><p class="ans">B.</p><p>O preparo mecânico de rotina <strong>não é recomendado</strong>; quando indicado por razão específica, deve ser associado a antibiótico oral.</p></details></div>
+<div class="q"><div class="stem"><span class="banca">HCPA</span> A solução de carboidrato utilizada na abreviação do jejum pré-operatório no ACERTO é composta tipicamente por:</div><div class="alt"><div>A) Glicose hipertônica a 50%</div><div>B) Dextrinomaltose a 12,5%</div><div>C) Solução salina isotônica</div><div>D) Manitol a 20%</div></div><details><summary>Ver resposta</summary><p class="ans">B.</p><p><strong>Dextrinomaltose 12,5%</strong>, administrada de 2 a 6 horas antes do procedimento.</p></details></div>
+<div class="q"><div class="stem"><span class="banca">GHC</span> Um dos objetivos centrais dos protocolos multimodais de recuperação acelerada (ACERTO/ERAS) é:</div><div class="alt"><div>A) Prolongar o jejum para reduzir risco anestésico</div><div>B) Atenuar a resposta neuroendócrina ao trauma cirúrgico</div><div>C) Aumentar o uso rotineiro de sonda nasogástrica</div><div>D) Priorizar internação prolongada para observação</div></div><details><summary>Ver resposta</summary><p class="ans">B.</p><p>O racional fisiopatológico é <strong>reduzir a resposta ao estresse</strong> (catabolismo, resistência insulínica), acelerando a recuperação funcional.</p></details></div>
+<div class="q"><div class="stem"><span class="banca">Santa Casa</span> Paciente oncológico desnutrido, candidato a gastrectomia. Segundo o ACERTO, a conduta nutricional pré-operatória mais adequada é:</div><div class="alt"><div>A) Jejum de 12h e nutrição parenteral no pós-operatório</div><div>B) Imunonutrição oral por 5–7 dias antes da cirurgia</div><div>C) Apenas suplementação proteica no dia da cirurgia</div><div>D) Nutrição enteral por sonda apenas no pós-operatório</div></div><details><summary>Ver resposta</summary><p class="ans">B.</p><p>Pacientes desnutridos/oncológicos com grande cirurgia do TGI: <strong>imunonutrição pré-operatória por 5–7 dias</strong> (arginina, ômega-3, nucleotídeos).</p></details></div>
+<div class="q"><div class="stem"><span class="banca">PUC-RS</span> Em relação ao uso de sonda nasogástrica no protocolo ACERTO, é correto afirmar:</div><div class="alt"><div>A) Deve ser mantida de rotina em todas as laparotomias</div><div>B) Seu uso deve ser seletivo, não sistemático</div><div>C) É obrigatória até o retorno de flatos</div><div>D) Substitui a necessidade de jejum abreviado</div></div><details><summary>Ver resposta</summary><p class="ans">B.</p><p>Sondas e drenos abdominais devem ter <strong>uso seletivo</strong>, evitando-se a colocação rotineira.</p></details></div>
+<div class="q"><div class="stem"><span class="banca">AMRIGS</span> Sobre a relação entre ACERTO e ERAS, é correto afirmar:</div><div class="alt"><div>A) São o mesmo protocolo com nomes diferentes, criados simultaneamente na Europa</div><div>B) O ACERTO é a vertente brasileira independente, criada na UFMT em 2005, com princípios convergentes ao ERAS europeu</div><div>C) O ERAS deriva diretamente do ACERTO</div><div>D) O ACERTO se aplica apenas à cirurgia vascular</div></div><details><summary>Ver resposta</summary><p class="ans">B.</p><p>Protocolos desenvolvidos <strong>independentemente</strong>, com base fisiopatológica comum; o ACERTO é brasileiro (UFMT, 2005) e hoje aplicado a múltiplas especialidades cirúrgicas.</p></details></div>
+</section>
+
+<section class="panel" id="pega">
+<h2>Pega-ratões clássicos</h2>
+<ul>
+<li><span class="em">⏱️</span>Jejum de <strong>sólidos = 6–8h</strong> (não 8–12h); <strong>líquidos claros com carboidrato = até 2h</strong> antes.</li>
+<li><span class="em">🍽️</span>Realimentação <strong>não depende</strong> de eliminação de flatos/fezes — é guiada por tempo predefinido.</li>
+<li><span class="em">🔪</span>Colecistectomia/hérnia/ano-orificial = dieta no <strong>mesmo dia</strong> (3–12h); anastomose GI = <strong>até 24h</strong>; anastomose esofágica = <strong>12–24h por sonda</strong>.</li>
+<li><span class="em">🚫</span>Preparo mecânico de cólon <strong>não é rotina</strong>.</li>
+<li><span class="em">🚫</span>Sonda nasogástrica e drenos: <strong>uso seletivo</strong>, não sistemático.</li>
+<li><span class="em">🍬</span>Carboidrato oral pré-operatório <strong>não contraindicado em diabético compensado</strong>; contraindicado em gastroparesia/obstrução/emergência.</li>
+<li><span class="em">🌍</span>ACERTO ≠ cópia do ERAS: é protocolo <strong>brasileiro independente</strong> (UFMT, 2005), princípios convergentes.</li>
+<li><span class="em">💉</span>Antibioticoprofilaxia = <strong>dose única</strong>, não prolongar sem indicação.</li>
+</ul>
+</section>
+
+<section class="panel" id="mn">
+<h2>Mnemônicos</h2>
+<div class="box mn"><span class="lbl">🍽️ Realimentação — regra dos 3 tempos</span><p><strong>Sem anastomose</strong> → mesmo dia · <strong>Anastomose GI/colorretal</strong> → 24h · <strong>Anastomose esofágica</strong> → 12–24h por sonda.</p></div>
+<div class="box mn"><span class="lbl">⏱️ Jejum ACERTO</span><p><strong>6–8h sólidos · 2h líquido c/ carboidrato</strong> (dextrinomaltose 12,5%, 2–6h antes).</p></div>
+<div class="box mn"><span class="lbl">🧩 10 pilares (resumo)</span><p>Informar · Jejum curto · Sem preparo de cólon de rotina · ATB dose única · Anestesia multimodal/MIS · Normotermia · Restringir fluido · Analgesia multimodal · Comer cedo · Mover e tirar sonda cedo.</p></div>
+<p class="foot">// projeto ACERTO · carolzita · CV 2026 · Diretriz ACERTO CBC/BRASPEN 2017 · BRASPEN 2022/2024 · Sabiston</p>
+</section>
+</main>
+
+<script>
+document.querySelectorAll('.tab').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    document.getElementById(b.dataset.t).classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+});
+</script>
+</body>
+</html>

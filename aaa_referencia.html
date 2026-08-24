@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AAA — Referência CV 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d1117;--panel:#161b22;--panel2:#1c232c;--line:#2a323c;--tx:#e6edf3;--mut:#8b949e;--or:#ff7a18;--or2:#ff9a4d;--orbg:rgba(255,122,24,.10);--pu:#b083f0;--pu2:#c9a7ff;--pubg:rgba(176,131,240,.12);--cy:#3dd6d0;--cy2:#5fe3dd;--cybg:rgba(61,214,208,.10);--red:#ff5f56;--grn:#3fb950}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font-family:'IBM Plex Sans',sans-serif;line-height:1.55;padding:0 0 60px}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px}
+header{padding:30px 0 14px;border-bottom:1px solid var(--line)}
+h1{font-size:30px;font-weight:700;letter-spacing:-.5px}h1 .b{color:var(--or)}
+.sub{color:var(--mut);font-size:14px;margin-top:6px;font-family:'IBM Plex Mono',monospace}
+nav{position:sticky;top:0;background:var(--bg);z-index:10;border-bottom:1px solid var(--line);overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch}
+nav .inner{max-width:920px;margin:0 auto;padding:0 12px;display:flex;gap:2px}
+nav button{background:none;border:none;color:var(--mut);font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.5px;text-transform:uppercase;padding:14px 11px;cursor:pointer;border-bottom:2px solid transparent;transition:.15s}
+nav button:hover{color:var(--tx)}nav button.on{color:var(--or);border-bottom-color:var(--or)}
+section{display:none;padding:26px 0;animation:f .25s}section.on{display:block}
+@keyframes f{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+h2{font-size:20px;color:var(--or);margin:26px 0 12px;font-weight:600;border-bottom:1px solid var(--line);padding-bottom:6px}h2:first-child{margin-top:0}
+h3{font-size:15px;margin:18px 0 8px;font-weight:600;color:var(--or2)}
+p,li{font-size:14.5px}
+ul{margin:8px 0 8px 4px;list-style:none}li{padding:3px 0 3px 24px;position:relative}li .em{position:absolute;left:0}
+.lay{color:var(--cy2);font-style:italic;font-size:13.5px}
+.box{border-left:3px solid var(--or);background:var(--orbg);border-radius:0 8px 8px 0;padding:12px 16px;margin:14px 0}
+.box.pu{border-color:var(--pu);background:var(--pubg)}.box.cy{border-color:var(--cy);background:var(--cybg)}
+.box .lbl{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--or);margin-bottom:6px;font-weight:600}
+.stx{counter-reset:st;margin:14px 0}
+.st{counter-increment:st;background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:13px 15px 13px 50px;margin:11px 0;position:relative}
+.st::before{content:counter(st);position:absolute;left:13px;top:13px;width:25px;height:25px;border-radius:7px;background:var(--or);color:#0d1117;font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:12.5px;display:flex;align-items:center;justify-content:center}
+.st .fase{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1.3px;text-transform:uppercase;color:var(--or);display:block}
+.st .ttl{font-weight:700;font-size:15px;color:#fff;margin-bottom:3px}
+.st p{margin:4px 0;font-size:13.8px}
+.pq{border-left:3px solid var(--pu);background:var(--pubg);border-radius:0 8px 8px 0;padding:8px 12px;margin:8px 0;font-size:13.3px}
+.pq b{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;color:var(--pu2);display:block}
+.mh2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+.mh{border-radius:9px;padding:8px 11px;font-size:12.5px;border:1px solid var(--line)}
+.mh.e{background:rgba(63,185,80,.07);border-color:rgba(63,185,80,.3)}
+.mh.d{background:var(--orbg);border-color:rgba(255,122,24,.3)}
+.mh b{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1.1px;text-transform:uppercase;display:block}
+.mh.e b{color:var(--grn)} .mh.d b{color:var(--or2)}
+.box.gr{border-left-color:var(--grn);background:rgba(63,185,80,.09);color:var(--grn);font-style:italic}
+.box.gr .lbl{color:var(--grn);font-style:normal}
+.box.gr b,.box.gr strong{color:#8ee79a;font-style:normal}
+@media(max-width:640px){.mh2{grid-template-columns:1fr}}
+
+.box.pu .lbl{color:var(--pu2)}.box.cy .lbl{color:var(--cy2)}
+.box li::before{content:"▸";color:var(--or);position:absolute;left:6px}.box li{padding-left:22px}
+.box.pu li::before{color:var(--pu)}.box.cy li::before{color:var(--cy)}.box li .em{display:none}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.5px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--panel2);color:var(--or2);font-weight:600;font-family:'IBM Plex Mono',monospace;font-size:12px}
+.hi{color:var(--pu2);font-weight:600}.mn{font-family:'IBM Plex Mono',monospace;color:var(--cy2)}
+.steps{counter-reset:s;list-style:none;margin:6px 0}
+.steps li{padding:8px 8px 8px 40px;border-bottom:1px solid var(--line)}
+.steps li::before{counter-increment:s;content:counter(s);background:var(--or);color:#0d1117;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:12px;width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;position:absolute;left:4px;top:8px}
+.steps li .em{display:none}.steps li:last-child{border-bottom:none}
+.hand{font-family:'IBM Plex Mono',monospace;font-size:11px;padding:1px 6px;border-radius:4px;margin-right:4px}
+.hL{background:rgba(63,185,80,.15);color:#56d364}.hR{background:rgba(255,122,24,.15);color:var(--or2)}
+.kbd{font-family:'IBM Plex Mono',monospace;background:var(--panel2);padding:1px 6px;border-radius:4px;font-size:12.5px;color:var(--or2)}
+.q{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:16px 0}
+.q .src{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--pu2);letter-spacing:1px;text-transform:uppercase}
+.q .stem{margin:8px 0 10px;font-weight:500}
+.q .alt{padding:4px 0 4px 24px;position:relative;font-size:14px}.q .alt .let{position:absolute;left:0;font-family:'IBM Plex Mono',monospace;color:var(--mut)}
+.q .alt.ok{color:var(--grn)}.q .alt.ok .let{color:var(--grn)}
+.q details{margin-top:10px;border-top:1px dashed var(--line);padding-top:10px}
+.q summary{cursor:pointer;color:var(--cy2);font-size:13px;font-family:'IBM Plex Mono',monospace}
+.q .exp{font-size:13.5px;color:var(--mut);margin-top:8px}
+.svgwrap{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px;margin:14px 0;text-align:center}
+.svgwrap figcaption{color:var(--mut);font-size:12px;margin-top:8px;font-family:'IBM Plex Mono',monospace}
+.pill{display:inline-block;background:var(--panel2);border:1px solid var(--line);border-radius:20px;padding:3px 12px;margin:3px 4px 3px 0;font-size:12.5px;font-family:'IBM Plex Mono',monospace}.pill .hi{color:var(--pu2)}
+.note{font-size:12px;color:var(--mut);border-top:1px solid var(--line);margin-top:30px;padding-top:14px;font-family:'IBM Plex Mono',monospace}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<h1>🎈 Aneurisma de <span class="b">Aorta Abdominal</span></h1>
+<div class="sub">AAA · CV 2026 · ESVS 2024 + SVS + Rutherford/Sabiston</div>
+</div></header>
+<nav><div class="inner" id="nav"></div></nav>
+<div class="wrap">
+
+<section id="geral" class="on">
+<h2>🧭 Definição &amp; fatores</h2>
+<p>AAA = dilatação <span class="hi">permanente e localizada</span> da aorta ≥ 1,5× o diâmetro normal, na prática <span class="hi">≥ 3 cm</span>. A grande maioria é <b>infrarrenal</b>. <span class="lay">(a parede da "mangueira" enfraquece e estufa como uma bexiga; se estufar demais, estoura)</span></p>
+<h3>Fatores de risco</h3>
+<div class="pill"><span class="hi">Tabagismo</span> (o mais forte)</div>
+<div class="pill">Sexo masculino</div>
+<div class="pill">Idade &gt; 65</div>
+<div class="pill">HAS / aterosclerose</div>
+<div class="pill">História familiar</div>
+<div class="box pu"><div class="lbl">⚠️ Curiosidade que cai em prova</div>
+<p>O <span class="hi">diabetes é PROTETOR</span> para AAA (menor incidência e crescimento) — pega-ratão clássico.</p></div>
+<h3>Etiologia</h3>
+<ul>
+<li><span class="em">🧱</span>Degenerativa/aterosclerótica (maioria).</li>
+<li><span class="em">🦠</span>Micótica (infecciosa — sacular, febre, hemoculturas +).</li>
+<li><span class="em">🔥</span>Inflamatória (espessamento, fibrose, pode englobar ureteres → hidronefrose).</li>
+<li><span class="em">🧬</span>Genética: Marfan, Ehlers-Danlos vascular.</li>
+</ul>
+</section>
+
+<section id="clinica">
+<h2>🩺 Quadro clínico</h2>
+<ul>
+<li><span class="em">🤫</span>Maioria <b>assintomático</b> — achado incidental (USG, TC, massa pulsátil ao exame).</li>
+<li><span class="em">⚡</span>Sintomático: dor abdominal/lombar, massa pulsátil dolorosa → risco iminente de rotura.</li>
+<li><span class="em">🦶</span>Embolização distal ("blue toe"), trombose.</li>
+</ul>
+<div class="box pu"><div class="lbl">🚨 Tríade clássica da ROTURA</div>
+<ul>
+<li><span class="hi">Dor abdominal/lombar súbita</span></li>
+<li><span class="hi">Massa abdominal pulsátil</span></li>
+<li><span class="hi">Hipotensão / choque</span></li>
+</ul>
+<p style="margin-top:6px">Rotura mais comum: <b>retroperitoneal à esquerda</b> (tamponada, dá tempo). Rotura livre intraperitoneal → colapso imediato.</p></div>
+</section>
+
+<section id="anatomia">
+<h2>🫀 Anatomia &amp; relações</h2>
+<p>Aorta abdominal: do hiato diafragmático (T12) até a <b>bifurcação em ilíacas comuns (L4)</b>.</p>
+<table>
+<tr><th>Ramo</th><th>Nível</th></tr>
+<tr><td>Tronco celíaco</td><td>T12</td></tr>
+<tr><td>A. mesentérica superior (AMS)</td><td>L1</td></tr>
+<tr><td>Artérias renais</td><td>L1–L2</td></tr>
+<tr><td>A. mesentérica inferior (AMI)</td><td>L3</td></tr>
+<tr><td>Bifurcação</td><td>L4</td></tr>
+</table>
+<div class="box pu"><div class="lbl">⚠️ Relações cirúrgicas que viram pega-ratão</div>
+<ul>
+<li><span class="hi">Veia renal esquerda cruza ANTERIOR à aorta</span> — cuidado ao expor o colo proximal.</li>
+<li><span class="hi">3ª porção do duodeno é anterior</span> à aorta → risco de <b>fístula aortoentérica</b> tardia (proteger o enxerto com o saco aneurismático).</li>
+<li>Sigmoide depende da AMI → risco de <b>isquemia colônica</b> pós-reparo.</li>
+</ul></div>
+<figure class="svgwrap">
+<svg viewBox="0 0 360 240" xmlns="http://www.w3.org/2000/svg" style="max-width:100%">
+<rect x="160" y="20" width="22" height="60" fill="#ff5f56" opacity=".6"/>
+<ellipse cx="171" cy="120" rx="42" ry="48" fill="#ff5f56" opacity=".45"/>
+<rect x="160" y="165" width="22" height="20" fill="#ff5f56" opacity=".6"/>
+<line x1="171" y1="185" x2="120" y2="225" stroke="#ff5f56" stroke-width="8"/>
+<line x1="171" y1="185" x2="222" y2="225" stroke="#ff5f56" stroke-width="8"/>
+<text x="200" y="55" fill="#b083f0" font-family="IBM Plex Mono" font-size="11">renais (L1-2)</text>
+<line x1="182" y1="55" x2="198" y2="50" stroke="#b083f0" stroke-width="2"/>
+<text x="215" y="120" fill="#e6edf3" font-family="IBM Plex Mono" font-size="12">AAA infrarrenal</text>
+<text x="200" y="180" fill="#5fe3dd" font-family="IBM Plex Mono" font-size="11">AMI (L3)</text>
+<text x="95" y="238" fill="#8b949e" font-family="IBM Plex Mono" font-size="11">ilíacas comuns (L4)</text>
+</svg>
+<figcaption>AAA infrarrenal típico (abaixo das artérias renais)</figcaption>
+</figure>
+</section>
+
+<section id="dx">
+<h2>🔬 Diagnóstico &amp; rastreio</h2>
+<table>
+<tr><th>Exame</th><th>Papel</th></tr>
+<tr><td><span class="hi">USG abdominal</span></td><td>Rastreio e seguimento (barato, sem radiação/contraste)</td></tr>
+<tr><td><span class="hi">AngioTC</span></td><td>Padrão para planejamento (mede colo, ilíacas, anatomia para EVAR)</td></tr>
+<tr><td>RM/angioRM</td><td>Alternativa quando contraste iodado é contraindicado</td></tr>
+</table>
+<div class="box"><div class="lbl">🎯 Rastreio (ESVS / USPSTF)</div>
+<p><span class="hi">Homens 65–75 anos que já fumaram → USG única.</span> Considerar em homens não fumantes selecionados e em mulheres/familiares conforme a diretriz e história familiar.</p></div>
+</section>
+
+<section id="conduta">
+<h2>📐 Indicação de reparo &amp; vigilância</h2>
+<div class="box pu"><div class="lbl">⭐ Indicações de reparo eletivo</div>
+<ul>
+<li><span class="hi">Diâmetro ≥ 5,5 cm (homens)</span></li>
+<li><span class="hi">Diâmetro ≥ 5,0 cm (mulheres)</span></li>
+<li><span class="hi">Crescimento rápido &gt; 1 cm/ano</span></li>
+<li>AAA <b>sintomático</b> ou complicado (independe do tamanho)</li>
+</ul></div>
+<h3>AAA pequeno (3–5,4 cm) → vigilância + otimização</h3>
+<ul>
+<li><span class="em">🚭</span>Parar de fumar (reduz crescimento e rotura), controlar PA, estatina, antiplaquetário.</li>
+<li><span class="em">📅</span>Intervalos (ESVS): 3,0–3,9 cm ~a cada 3 anos · 4,0–4,9 cm anual · 5,0–5,4 cm a cada 3–6 meses.</li>
+<li><span class="em">📚</span><span class="hi">Reparo precoce de AAA pequeno NÃO reduz mortalidade</span> (UKSAT, ADAM) — só vigiar.</li>
+</ul>
+<h3>Modalidade: EVAR × aberto (OSR)</h3>
+<table>
+<tr><th>&nbsp;</th><th>EVAR (endovascular)</th><th>Aberto (OSR)</th></tr>
+<tr><td>Mortalidade precoce</td><td>⬇️ menor</td><td>⬆️ maior</td></tr>
+<tr><td>Durabilidade</td><td>Menor (reintervenção, endoleak)</td><td>Maior</td></tr>
+<tr><td>Seguimento</td><td><span class="hi">Vigilância vitalícia por imagem</span></td><td>Mínimo</td></tr>
+<tr><td>Requisito</td><td>Anatomia favorável (colo, ilíacas)</td><td>Bom risco cirúrgico / jovem</td></tr>
+</table>
+<p class="lay">EVAR (coloca uma prótese por dentro, via virilha) tem recuperação mais fácil, mas precisa de "revisões" para o resto da vida; a cirurgia aberta é mais "definitiva", porém mais pesada. A vantagem de sobrevida do EVAR se iguala com o tempo (EVAR-1, DREAM).</p>
+<p style="margin-top:6px">ESVS 2024: usar dispositivos com <b>durabilidade comprovada</b>, não usar EVAR fora da IFU em eletivo; <b>F/B-EVAR</b> (fenestrado/ramificado) para AAA complexo (justarrenal/toracoabdominal); <b>contra</b> parallel grafting de rotina.</p>
+</section>
+
+<section id="tecnica">
+<h2>🔪 Técnica</h2>
+<div class="box gr"><div class="lbl">tradução simples</div>O AAA não é tratado por dentro — o cirurgião <strong>troca o cano</strong>. Toda a técnica aberta é sobre isso: expor o segmento doente sem lesar as estruturas que <strong>o abraçam</strong> (veia renal, ureter, duodeno), interromper o fluxo o mínimo de tempo possível, e costurar o novo cano de dentro do saco velho — sem nunca abrir mão da proteção que esse saco vai dar depois.</div>
+
+<h3>A · Reparo aberto (OSR)</h3>
+<p class="note" style="border:none;margin:0 0 6px;padding:0"><span class="hand hL">ESQ</span> mão esquerda · <span class="hand hR">DIR</span> mão direita.</p>
+<p><b>Posição:</b> supino. <b>Acesso:</b> laparotomia mediana xifopúbica (transperitoneal) ou retroperitoneal pelo flanco esquerdo.</p>
+
+<div class="stx">
+
+<div class="st">
+  <span class="fase">fase de acesso</span>
+  <div class="ttl">Laparotomia e abertura do retroperitônio</div>
+  <p>Afastar o delgado à direita; abrir o retroperitônio sobre a aorta.</p>
+  <div class="pq"><b>por quê</b>A via transperitoneal expõe rapidamente toda a aorta infrarrenal e ambas as ilíacas — essencial se houver necessidade de controle proximal alto em emergência. A retroperitoneal poupa a cavidade peritoneal e é preferida no eletivo com comorbidade pulmonar, ao custo de menos exposição do lado direito.</div>
+  <div class="mh2">
+    <div class="mh e"><b>mão esquerda</b>Afastador mantendo o campo, expondo o retroperitônio</div>
+    <div class="mh d"><b>mão direita</b>Cautério na abertura do plano</div>
+  </div>
+</div>
+
+<div class="st">
+  <span class="fase">fase crítica — o que não se pode lesar</span>
+  <div class="ttl">Preservar a veia renal esquerda; expor colo e ilíacas</div>
+  <p>Identificar e <strong>preservar a veia renal esquerda</strong>, que cruza a aorta anteriormente logo abaixo das renais; expor o colo infrarrenal e as ilíacas.</p>
+  <div class="pq"><b>por quê</b>A veia renal esquerda é a estrutura que mais frequentemente atrapalha o acesso ao colo — ela cruza <strong>na frente</strong> da aorta exatamente onde o clampe proximal vai ser colocado. Lesá-la causa sangramento venoso difícil de controlar e compromete a drenagem renal esquerda. É por isso que "identificar a veia renal" é sempre o primeiro marco anatômico citado antes de clampear.</div>
+  <div class="mh2">
+    <div class="mh e"><b>mão esquerda</b>DeBakey afastando delicadamente a veia</div>
+    <div class="mh d"><b>mão direita</b>Metzenbaum dissecando o colo infrarrenal</div>
+  </div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de controle</span>
+  <div class="ttl">Heparinizar e clampear proximal e distal</div>
+  <p>Heparinização sistêmica; clampe proximal (infrarrenal) e distal (ilíacas), avisando a anestesia antes de cada clampeamento.</p>
+  <div class="pq"><b>por quê</b>Avisar a anestesia <strong>antes</strong>, não depois, porque o clampeamento aórtico proximal aumenta abruptamente a pós-carga do ventrículo esquerdo — o anestesista precisa ajustar a hemodinâmica <em>enquanto</em> você clampeia, não reagir a uma queda de pressão já instalada.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de abertura</span>
+  <div class="ttl">Aortotomia e controle dos óstios lombares</div>
+  <p>Aortotomia longitudinal; <strong>suturar por dentro</strong> os óstios lombares sangrantes com <span class="kbd">prolene 2-0</span>. Reimplantar a AMI apenas se houver isquemia colônica ou má perfusão pélvica evidente — não é rotina.</p>
+  <div class="pq"><b>por quê</b>As lombares sangram <em>de dentro para fora</em> do saco aneurismático — por isso se sutura pelo lúmen, não por fora. E a AMI costuma já estar ocluída cronicamente pela própria doença aterosclerótica no AAA; religá-la sempre expõe o paciente a uma anastomose extra sem necessidade na maioria dos casos, porque a circulação colateral (marginal de Drummond, pélvica) geralmente já supre o território.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de reconstrução</span>
+  <div class="ttl">Enxerto de Dacron ou PTFE</div>
+  <p>Anastomose proximal término-terminal com <span class="kbd">prolene 3-0</span>; depois a distal.</p>
+  <div class="pq"><b>por quê</b>A proximal vem primeiro porque, uma vez completa, ela já permite testar a hemostasia do segmento crítico antes de avançar — e reduz o tempo total de isquemia distal, já que só falta uma anastomose depois dela.</div>
+  <div class="mh2">
+    <div class="mh e"><b>mão esquerda</b>DeBakey estabilizando a borda da aorta nativa</div>
+    <div class="mh d"><b>mão direita</b>Porta-agulha nos pontos contínuos</div>
+  </div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de desclampeamento — o momento mais instável</span>
+  <div class="ttl">Desclampear lentamente</div>
+  <p>Desclampear devagar, comunicando a anestesia; checar perfusão dos membros e do cólon.</p>
+  <div class="pq"><b>por quê</b>A hipotensão de desclampeamento é real e previsível: o leito vascular que estava fechado se abre de uma vez, e o retorno de sangue ácido e rico em potássio do segmento isquêmico some com o tônus vascular sistêmico — a mesma lógica da síndrome de reperfusão da isquemia aguda de membro, agora em escala de tronco.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de proteção — a regra de ouro</span>
+  <div class="ttl">Fechar o saco aneurismático sobre o enxerto</div>
+  <p><span class="hi">Fechar o saco sobre a prótese</span>, interpondo tecido entre o enxerto e o duodeno.</p>
+  <div class="pq"><b>por quê</b>O duodeno terceira porção cruza logo à frente da aorta. Sem essa camada de tecido nativo entre ele e a prótese, o atrito crônico dos dois — batimento arterial contra parede intestinal — erode a parede duodenal ao longo dos anos e produz <strong>fístula aortoentérica</strong>, uma das complicações tardias mais letais de toda a cirurgia vascular.</div>
+</div>
+
+</div>
+
+<div class="box cy"><div class="lbl">as 4 checagens do OSR</div>
+<b>1)</b> A veia renal esquerda foi <strong>preservada</strong>?<br>
+<b>2)</b> Os óstios lombares foram controlados por dentro?<br>
+<b>3)</b> Perfusão de membros e cólon confirmada após desclampear?<br>
+<b>4)</b> O saco foi fechado <strong>sobre</strong> o enxerto?</div>
+
+<h3>B · EVAR (endovascular)</h3>
+<div class="stx">
+
+<div class="st">
+  <span class="fase">fase de acesso</span>
+  <div class="ttl">Acesso femoral bilateral</div>
+  <p>Percutâneo ou por dissecção.</p>
+  <div class="pq"><b>por quê</b>Bilateral porque o corpo principal da endoprótese entra por um lado e o módulo ilíaco contralateral precisa ser cateterizado pelo outro — é um procedimento que, por desenho, exige os dois acessos desde o início.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de posicionamento — o passo que decide a durabilidade</span>
+  <div class="ttl">Fixação no colo infrarrenal</div>
+  <p>Sob fluoroscopia, posicionar o corpo principal com fixação abaixo das renais.</p>
+  <div class="pq"><b>por quê</b>O colo é a única porção de aorta ainda saudável disponível para "selar" a prótese. Um colo curto, anguloso ou já dilatado é a principal razão de EVAR ser tecnicamente inviável ou de resultar em endoleak tipo I precoce — a anatomia do colo é, mais que o tamanho do aneurisma, o que decide se o paciente é candidato.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de liberação</span>
+  <div class="ttl">Cateterizar o ramo contralateral e liberar os módulos ilíacos</div>
+  <p>Completar a bifurcação com os módulos ilíacos.</p>
+  <div class="pq"><b>por quê</b>É o passo tecnicamente mais delicado do procedimento — cateterizar a "gate" contralateral de dentro de um dispositivo já implantado, sem visão direta, guiado só por fluoroscopia.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de verificação</span>
+  <div class="ttl">Angiografia de controle</div>
+  <p>Checar endoleak e patência dos ramos.</p>
+  <div class="pq"><b>por quê</b>É a única forma de saber, ainda na sala, se há vazamento residual — e por isso o EVAR troca a durabilidade do OSR por uma <strong>vigilância vitalícia</strong>: a mesma pergunta que a angiografia responde na mesa precisa ser respondida de novo a cada exame de imagem de seguimento.</div>
+</div>
+
+</div>
+</section>
+
+<section id="roto">
+<h2>🚨 AAA roto</h2>
+<ul>
+<li><span class="em">⚠️</span>Emergência: tríade dor + massa pulsátil + hipotensão.</li>
+<li><span class="em">🩸</span><span class="hi">Hipotensão permissiva</span> (PAS ~70–90 mmHg): não reanimar agressivamente para não romper o tampão / piorar o sangramento.</li>
+<li><span class="em">🎈</span>Balão de oclusão aórtica se colapso hemodinâmico.</li>
+<li><span class="em">🔧</span><b>rEVAR</b> preferível quando a anatomia permite (menor mortalidade); senão reparo aberto.</li>
+</ul>
+<div class="box"><div class="lbl">📌 Pós-operatório do roto — vigiar</div>
+<ul>
+<li><span class="hi">Síndrome compartimental abdominal</span> (medir pressão vesical; tratar com laparostomia).</li>
+<li><span class="hi">Isquemia colônica</span> (sigmoide / AMI) — diarreia sanguinolenta; fazer retossigmoidoscopia.</li>
+</ul></div>
+</section>
+
+<section id="complic">
+<h2>⚠️ Complicações</h2>
+<h3>Reparo aberto</h3>
+<ul>
+<li><span class="em">❤️</span><b>Cardíaca (IAM)</b> — principal causa de morte perioperatória.</li>
+<li><span class="em">💩</span>Isquemia colônica (sigmoide), isquemia de membros/embolização ("trash foot").</li>
+<li><span class="em">🩸</span>Lesão da veia renal esquerda; insuficiência renal.</li>
+<li><span class="em">🍝</span>Fístula aortoentérica (tardia); infecção de enxerto.</li>
+<li><span class="em">🚹</span>Disfunção sexual/ejaculação retrógrada (lesão do plexo hipogástrico).</li>
+</ul>
+<h3>EVAR — endoleaks</h3>
+<table>
+<tr><th>Tipo</th><th>Origem</th><th>Conduta</th></tr>
+<tr><td><span class="hi">I</span></td><td>Vedação proximal/distal (colo/ilíaca)</td><td>Tratar (alto risco)</td></tr>
+<tr><td><span class="hi">II</span></td><td>Fluxo retrógrado de ramo (lombar/AMI) — <b>o mais comum</b></td><td>Observar; tratar se ⬆️ saco</td></tr>
+<tr><td><span class="hi">III</span></td><td>Defeito/desconexão dos módulos</td><td>Tratar</td></tr>
+<tr><td>IV</td><td>Porosidade do enxerto</td><td>Autolimitado</td></tr>
+<tr><td>V</td><td>Endotensão (sem leak visível)</td><td>Individualizar</td></tr>
+</table>
+<p class="mn">Regra: tipo <span class="hi">I e III conserta</span> · tipo <span class="hi">II observa</span>.</p>
+</section>
+
+<section id="pegas">
+<h2>🪤 Pega-ratões</h2>
+<div class="box pu"><div class="lbl">Os erros favoritos das bancas</div>
+<ul>
+<li>Definição: <b>≥ 3 cm</b>; maioria <b>infrarrenal</b>.</li>
+<li><b>Tabagismo</b> = fator mais forte; <b>diabetes é PROTETOR</b>.</li>
+<li>Reparo eletivo: <b>♂ ≥5,5 · ♀ ≥5,0 · &gt;1 cm/ano · sintomático</b>.</li>
+<li>AAA pequeno → <b>vigilância</b>; reparo precoce NÃO reduz mortalidade (UKSAT/ADAM).</li>
+<li>Roto → <b>hipotensão permissiva</b>, não encher de volume.</li>
+<li>Endoleak <b>tipo II é o mais comum</b>; <b>I e III</b> precisam tratar.</li>
+<li><b>Veia renal esquerda anterior</b>; <b>duodeno anterior</b> → fístula aortoentérica.</li>
+<li>Isquemia colônica do <b>sigmoide</b> (AMI) — diarreia sanguinolenta pós-op.</li>
+<li><b>EVAR</b> ⬇️ mortalidade precoce mas exige <b>vigilância vitalícia</b>; sobrevida se iguala com o tempo.</li>
+<li>AAA + dor + <b>hidronefrose/fibrose</b> → pensar AAA <b>inflamatório</b>.</li>
+</ul></div>
+</section>
+
+<section id="mnemo">
+<h2>🧠 Mnemônicos</h2>
+<div class="box cy"><div class="lbl">Coleção AAA</div>
+<ul>
+<li><span class="mn">"3 = aneurisma"</span> (≥ 3 cm).</li>
+<li><span class="mn">5,5 ♂ · 5,0 ♀ · 1 cm/ano</span> — gatilhos de reparo.</li>
+<li><span class="mn">Tríade da rotura: Dor + Massa + Hipotensão (D-M-H)</span>.</li>
+<li><span class="mn">Endoleak: "1 e 3 conserta · 2 observa"</span>.</li>
+<li><span class="mn">"Veia Renal E na frente, Duodeno na frente"</span> — relações anteriores à aorta.</li>
+<li><span class="mn">DM proteGE</span> — diabetes é fator protetor.</li>
+</ul></div>
+</section>
+
+<section id="questoes">
+<h2>📝 Questões — itens originais no estilo das bancas</h2>
+<p class="note" style="border:none;padding:0;margin:0 0 10px">Itens <b>originais</b> no padrão de cada banca (não reprodução literal).</p>
+
+<div class="q"><div class="src">HCPA · estilo</div>
+<div class="stem">Homem de 70 anos, ex-tabagista, assintomático, com AAA infrarrenal de 4,2 cm em USG de rastreio. A conduta mais adequada é:</div>
+<div class="alt"><span class="let">A)</span> Reparo aberto imediato</div>
+<div class="alt"><span class="let">B)</span> EVAR eletivo nas próximas semanas</div>
+<div class="alt ok"><span class="let">C)</span> Vigilância com imagem + cessação do tabagismo e controle de risco</div>
+<div class="alt"><span class="let">D)</span> Anticoagulação plena</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>C.</b> AAA pequeno (&lt;5,5 cm no homem) → vigilância. Reparo precoce não reduz mortalidade (UKSAT/ADAM). Otimizar fatores; seguimento ~anual nessa faixa.</div></details>
+</div>
+
+<div class="q"><div class="src">GHC · estilo</div>
+<div class="stem">Qual o diâmetro que, isoladamente, indica reparo eletivo de AAA em homens e mulheres, respectivamente?</div>
+<div class="alt"><span class="let">A)</span> 4,0 cm e 3,5 cm</div>
+<div class="alt ok"><span class="let">B)</span> 5,5 cm e 5,0 cm</div>
+<div class="alt"><span class="let">C)</span> 6,0 cm e 6,0 cm</div>
+<div class="alt"><span class="let">D)</span> 5,0 cm e 5,5 cm</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> 5,5 cm (homens) e 5,0 cm (mulheres). Também indicam reparo: crescimento &gt;1 cm/ano e sintomas.</div></details>
+</div>
+
+<div class="q"><div class="src">Santa Casa POA · estilo</div>
+<div class="stem">Paciente com AAA roto e PAS de 80 mmHg, consciente. Sobre a ressuscitação volêmica pré-controle do sangramento:</div>
+<div class="alt"><span class="let">A)</span> Infundir cristaloide agressivamente até PAS &gt; 120</div>
+<div class="alt ok"><span class="let">B)</span> Hipotensão permissiva (PAS ~70–90) até o controle cirúrgico</div>
+<div class="alt"><span class="let">C)</span> Vasopressor para manter PAM &gt; 100</div>
+<div class="alt"><span class="let">D)</span> Adiar a cirurgia para estabilização completa</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> Reanimação agressiva eleva a pressão e rompe o tampão, aumentando o sangramento. Mantém-se hipotensão permissiva até o clampe/balão.</div></details>
+</div>
+
+<div class="q"><div class="src">PUC-RS · estilo</div>
+<div class="stem">No reparo aberto de AAA, dois cuidados anatômicos clássicos para evitar complicações graves são:</div>
+<div class="alt"><span class="let">A)</span> Ligar a veia cava e a AMS de rotina</div>
+<div class="alt ok"><span class="let">B)</span> Preservar a veia renal esquerda e fechar o saco aneurismático sobre o enxerto</div>
+<div class="alt"><span class="let">C)</span> Reimplantar sempre a AMI</div>
+<div class="alt"><span class="let">D)</span> Clampear acima do tronco celíaco</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> A veia renal E cruza anterior (lesão = sangramento); cobrir o enxerto com o saco interpõe tecido entre prótese e duodeno, prevenindo fístula aortoentérica. Reimplante da AMI não é rotineiro (ESVS).</div></details>
+</div>
+
+<div class="q"><div class="src">AMRIGS · estilo</div>
+<div class="stem">Após EVAR de AAA, a TC de controle mostra fluxo no saco aneurismático proveniente de artéria lombar, sem aumento do diâmetro do saco. Trata-se de:</div>
+<div class="alt"><span class="let">A)</span> Endoleak tipo I — tratar imediatamente</div>
+<div class="alt ok"><span class="let">B)</span> Endoleak tipo II — observar, tratar se o saco crescer</div>
+<div class="alt"><span class="let">C)</span> Endoleak tipo III — tratar imediatamente</div>
+<div class="alt"><span class="let">D)</span> Migração da endoprótese</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> Fluxo retrógrado de ramo (lombar/AMI) = tipo II, o mais comum; conduta expectante se o saco não cresce. Tipos I e III exigem tratamento.</div></details>
+</div>
+</section>
+
+<div class="note">Fontes: ESVS 2024 (AAA aorto-ilíaco) · SVS · Rutherford's Vascular Surgery · Sabiston · trials UKSAT/ADAM/EVAR-1/DREAM. Questões originais para estudo. — carolzita · CV 2026</div>
+</div>
+<script>
+var secs=[['geral','🧭 Geral'],['clinica','🩺 Clínica'],['anatomia','🫀 Anatomia'],['dx','🔬 Diagnóstico'],['conduta','📐 Conduta'],['tecnica','🔪 Técnica'],['roto','🚨 Roto'],['complic','⚠️ Complicações'],['pegas','🪤 Pega-ratões'],['mnemo','🧠 Mnemônicos'],['questoes','📝 Questões']];
+var nav=document.getElementById('nav');
+secs.forEach(function(s,i){var b=document.createElement('button');b.textContent=s[1];if(i===0)b.className='on';b.onclick=function(){document.querySelectorAll('nav button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');document.querySelectorAll('section').forEach(function(x){x.classList.remove('on')});document.getElementById(s[0]).classList.add('on');window.scrollTo({top:0,behavior:'smooth'})};nav.appendChild(b)});
+</script>
+</body>
+</html>

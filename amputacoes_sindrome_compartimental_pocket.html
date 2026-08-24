@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Amputações &amp; Síndrome Compartimental · pocket</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d1117;--card:#16161f;--card2:#1c1c27;--line:#2a2a38;
+  --txt:#ececf4;--muted:#9a9ab0;
+  --laranja:#f97316;--roxo:#a855f7;--ciano:#22d3ee;--vermelho:#f87171;--amarelo:#fbbf24;--verde:#34d399;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{overflow-x:hidden}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;font-size:17px;line-height:1.6;padding-bottom:30px}
+.top{padding:22px 18px 12px;position:sticky;top:0;background:linear-gradient(180deg,var(--bg) 70%,transparent);z-index:5}
+.kick{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:22px;line-height:1.15;margin-top:4px}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:6px 18px 12px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;padding:9px 15px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted);white-space:nowrap;cursor:pointer;transition:.15s}
+.tab.on{background:var(--laranja);border-color:var(--laranja);color:#0a0a0f}
+.panel{display:none;padding:6px 18px 40px;animation:f .25s}
+.panel.on{display:block}
+@keyframes f{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+h2{font-family:'Syne',sans-serif;font-size:21px;color:var(--laranja);margin:18px 0 10px}
+h3{font-family:'Syne',sans-serif;font-size:16px;color:#fff;margin:16px 0 6px}
+p{margin:10px 0}
+ul{list-style:none;margin:8px 0}
+li{padding:6px 0 6px 22px;position:relative}
+li::before{content:"▸";position:absolute;left:0;top:7px;color:var(--laranja);font-size:13px}
+strong{color:#fff;font-weight:600}
+.s{color:var(--verde);font-style:italic;font-size:.92em}
+.gr{background:rgba(52,211,153,.10);border-color:rgba(52,211,153,.4);color:var(--verde);font-style:italic}
+.gr .l{color:var(--verde);font-style:normal}
+.gr strong,.gr b{color:#7fe8c0;font-style:normal}
+.step{display:flex;flex-direction:column;gap:6px;padding:10px 0;border-bottom:1px dashed var(--line)}
+.step:last-child{border:none}
+.hd2{display:flex;gap:10px;align-items:flex-start}
+.n{flex:0 0 26px;height:26px;border-radius:8px;background:rgba(249,115,22,.15);border:1px solid rgba(249,115,22,.45);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;display:grid;place-items:center;font-size:12.5px}
+.fase{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--laranja);display:block}
+.pq{border-left:2px solid var(--roxo);background:rgba(168,85,247,.10);border-radius:0 7px 7px 0;padding:7px 10px;font-size:13.5px;width:100%}
+.pq b{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--roxo);display:block}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0}
+.box{border-radius:12px;padding:13px 15px;margin:13px 0;border:1px solid;font-size:15px}
+.prova{background:rgba(168,85,247,.1);border-color:rgba(168,85,247,.4)}
+.prova .l{color:var(--roxo)}
+.mac{background:rgba(34,211,238,.1);border-color:rgba(34,211,238,.4)}
+.mac .l{color:var(--ciano)}
+.warn{background:rgba(248,113,113,.1);border-color:rgba(248,113,113,.4)}
+.warn .l{color:var(--vermelho)}
+.l{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-size:10px;background:rgba(168,85,247,.25);color:var(--roxo);padding:2px 6px;border-radius:5px;margin-left:5px;font-family:'JetBrains Mono',monospace}
+.kv{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)}
+.kv:last-child{border:none}
+.kv .k{flex:0 0 42%;color:var(--ciano);font-family:'JetBrains Mono',monospace;font-size:13px}
+.kv .v{flex:1;font-size:15px}
+.step{display:flex;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line)}
+.step:last-child{border:none}
+.step .n{flex:0 0 30px;height:30px;border-radius:9px;background:rgba(249,115,22,.15);border:1px solid rgba(249,115,22,.45);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;display:grid;place-items:center;font-size:14px}
+.step .x{flex:1}
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="kick">carolzita · pocket 🚑</div>
+  <h1>Amputações &amp; Sínd. Compartimental 🦵</h1>
+</div>
+<div class="tabs">
+  <div class="tab on" data-t="0">🩺 Diagnóstico</div>
+  <div class="tab" data-t="1">✂️ Fasciotomia</div>
+  <div class="tab" data-t="2">🔍 Nível</div>
+  <div class="tab" data-t="3">⚖️ Transtibial×Femoral</div>
+  <div class="tab" data-t="4">☠️ Traps</div>
+</div>
+
+<!-- 0 DIAGNOSTICO -->
+<div class="panel on" data-p="0">
+  <h2>🩺 Síndrome compartimental</h2>
+  <div class="box prova"><span class="l">alto rendimento</span>🎯 <strong>Dor desproporcional + dor à extensão passiva</strong> = sinal mais precoce e confiável!</div>
+  <div class="box warn"><span class="l">☠️ pega-ratão</span>5 Ps são <strong>TARDIOS</strong>! Pulso presente <strong>NÃO exclui</strong> síndrome compartimental.</div>
+  <h3>📏 AAOS 2025 — Delta-P</h3>
+  <div class="card">
+    <div class="kv"><div class="k">Δ &gt; 30 mmHg</div><div class="v">Ajuda a excluir</div></div>
+    <div class="kv"><div class="k">Δ &lt; 30 mmHg</div><div class="v">Fasciotomia indicada</div></div>
+  </div>
+  <p class="s">Δ = PA diastólica − pressão intracompartimental. Sem biomarcador sérico útil!</p>
+</div>
+
+<!-- 1 FASCIOTOMIA -->
+<div class="panel" data-p="1">
+  <h2>✂️ Técnica e timing</h2>
+  <div class="box warn"><span class="l">☠️ pega-ratão</span><strong>NUNCA elevar</strong> o membro! Piora fluxo arterial. Manter no nível do coração.</div>
+  <h3>🔪 Fasciotomia de perna — 6 passos</h3>
+  <div class="box gr"><div class="l">🟢 tradução simples</div><p>O músculo incha dentro de uma <b>bolsa fechada</b> (fáscia) que não estica. A cirurgia <b>corta a bolsa</b> pra dar espaço, não conserta o músculo. Fechar antes do edema passar recria a bolsa e mata o músculo de novo.</p></div>
+
+  <div class="step"><div class="hd2"><div class="n">1</div><div class="x"><span class="fase">decisão</span>Confirmar: dor desproporcional, dor à extensão, ou <b>Δ-P &lt;30</b></div></div>
+  <div class="pq"><b>por quê</b>Última checagem antes de um corte sem volta. Esperar os 5 Ps é esperar demais — são sinais tardios.</div></div>
+
+  <div class="step"><div class="hd2"><div class="n">2</div><div class="x"><span class="fase">acesso lateral</span>Incisão entre crista tibial e fíbula → <b>anterior + lateral</b></div></div>
+  <div class="pq"><b>por quê</b>O septo entre eles é fino, logo abaixo da pele — acessa 2 compartimentos de uma vez.</div></div>
+
+  <div class="step"><div class="hd2"><div class="n">3</div><div class="x"><span class="fase">acesso medial</span>Incisão medial, poupando a safena → <b>2 posteriores</b></div></div>
+  <div class="pq"><b>por quê</b>Os posteriores não são alcançáveis pela lateral sem atravessar a tíbia — daí a dupla incisão.</div></div>
+
+  <div class="step"><div class="hd2"><div class="n">4</div><div class="x"><span class="fase">crítico — o esquecido</span>Abrir <b>explicitamente</b> a fáscia do posterior <b>profundo</b></div></div>
+  <div class="pq"><b>por quê</b>Fica escondido atrás do superficial. Parar na primeira fáscia deixa tibial posterior e flexores comprimidos — <b>o erro técnico mais citado</b> em fasciotomia malsucedida. ⚠️</div></div>
+
+  <div class="step"><div class="hd2"><div class="n">5</div><div class="x"><span class="fase">verificação</span>Palpar os 4 · músculo <b>abaúla livre</b></div></div>
+  <div class="pq"><b>por quê</b>Não importa 1 ou 2 incisões — importa a <b>descompressão completa</b>. Uma bem feita libera os 4; duas mal feitas podem deixar um intocado.</div></div>
+
+  <div class="step"><div class="hd2"><div class="n">6</div><div class="x"><span class="fase">a decisão errada mais comum</span><b>Deixar a pele aberta</b> · curativo/VAC</div></div>
+  <div class="pq"><b>por quê</b>O edema ainda não passou — fechar agora recria a mesma bolsa. Fechamento tardio só dias depois, quando ceder.</div></div>
+
+  <div class="box mac"><div class="l">🧠 resume tudo</div><p>Não é 1 ou 2 incisões — é os <b>4 compartimentos</b> liberados, atenção redobrada ao <b>posterior profundo</b>.</p></div>
+  <div class="box warn"><span class="l">☠️ pega-ratão</span>Dano <strong>irreversível</strong> = fasciotomia <strong>NÃO</strong> indicada! Usar fixador externo se precisar estabilizar.</div>
+  <p>⏰ Fasciotomia tardia = mais infecção + amputação.</p>
+</div>
+
+<!-- 2 NIVEL -->
+<div class="panel" data-p="2">
+  <h2>🔍 Seleção do nível</h2>
+  <div class="card">
+    <div class="kv"><div class="k">Pulso femoral</div><div class="v">Favorece transtibial</div></div>
+    <div class="kv"><div class="k">TcPO2</div><div class="v">&gt;40mmHg = boa cicatrização</div></div>
+    <div class="kv"><div class="k">SPP</div><div class="v">&gt;30mmHg = adequada</div></div>
+    <div class="kv"><div class="k">ITB</div><div class="v">Limitado no diabético (calcificação)</div></div>
+  </div>
+  <div class="box warn"><span class="l">☠️ pega-ratão</span>Só pulso <strong>NÃO</strong> decide! Ausência não exclui — completar com TcPO2/SPP.</div>
+</div>
+
+<!-- 3 TRANSTIBIAL -->
+<div class="panel" data-p="3">
+  <h2>⚖️ Por que preservar joelho</h2>
+  <div class="card">
+    <div class="kv"><div class="k">Normal</div><div class="v">Baseline</div></div>
+    <div class="kv"><div class="k">Transtibial</div><div class="v">+25-40% energia</div></div>
+    <div class="kv"><div class="k">Transfemoral</div><div class="v"><strong>+65-100%+</strong> energia</div></div>
+  </div>
+  <div class="box prova"><span class="l">alto rendimento</span>🎯 Vale tolerar <strong>mais risco de complicação local</strong> pra preservar comprimento tibial — ganho funcional compensa!</div>
+  <p class="s">Idosos com transfemoral frequentemente ficam dependentes de cadeira de rodas.</p>
+  <div class="box warn"><span class="l">☠️ pega-ratão</span>Transmetatársica tem <strong>taxa de revisão alta</strong> — não é garantia definitiva, exige seguimento.</div>
+</div>
+
+<!-- 4 TRAPS -->
+<div class="panel" data-p="4">
+  <h2>☠️ Pega-ratões</h2>
+  <div class="box warn"><span class="l">trap 1</span>Pulso presente não exclui sínd. compartimental 🩺</div>
+  <div class="box warn"><span class="l">trap 2</span>Elevar o membro piora perfusão! ⬆️</div>
+  <div class="box warn"><span class="l">trap 3</span>Técnica de incisão importa menos que descompressão completa ✂️</div>
+  <div class="box warn"><span class="l">trap 4</span>Dano irreversível = não fasciotomizar 🚫</div>
+  <div class="box warn"><span class="l">trap 5</span>Ausência de pulso isolada não exclui nível distal 🔍</div>
+  <div class="box warn"><span class="l">trap 6</span>Sem biomarcador sérico confiável 🧪</div>
+  <div class="box warn"><span class="l">trap 7</span>Anterior/posterior profundo = mais liberados incompletos 🦵</div>
+  <div class="box warn"><span class="l">trap 8</span>Preservar joelho vale o risco local ⚖️</div>
+  <div class="box mac"><span class="l">✅ resumo de bolso</span>Dor desproporcional=sinal precoce · 5Ps tardios · Nunca elevar · Δ-P&lt;30=fasciotomia · Sem biomarcador · Nível=pulso+TcPO2+SPP · Preservar joelho=menos energia 🎓</div>
+</div>
+
+<script>
+var tabs=document.querySelectorAll('.tab'),panels=document.querySelectorAll('.panel');
+tabs.forEach(function(t){t.addEventListener('click',function(){
+  tabs.forEach(function(x){x.classList.remove('on')});
+  panels.forEach(function(x){x.classList.remove('on')});
+  t.classList.add('on');
+  document.querySelector('.panel[data-p="'+t.dataset.t+'"]').classList.add('on');
+})});
+</script>
+</body>
+</html>

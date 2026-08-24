@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Cirurgia Bariátrica · pocket</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d1117;--card:#16161f;--card2:#1c1c27;--line:#2a2a38;
+  --txt:#ececf4;--muted:#9a9ab0;
+  --laranja:#f97316;--roxo:#a855f7;--ciano:#22d3ee;--vermelho:#f87171;--amarelo:#fbbf24;--verde:#34d399;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{overflow-x:hidden}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;font-size:17px;line-height:1.6;padding-bottom:30px}
+.top{padding:22px 18px 12px;position:sticky;top:0;background:linear-gradient(180deg,var(--bg) 70%,transparent);z-index:5}
+.kick{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:26px;line-height:1.1;margin-top:4px}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:6px 18px 12px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;padding:9px 15px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted);white-space:nowrap;cursor:pointer;transition:.15s}
+.tab.on{background:var(--laranja);border-color:var(--laranja);color:#0a0a0f}
+.panel{display:none;padding:6px 18px 40px;animation:f .25s}
+.panel.on{display:block}
+@keyframes f{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+h2{font-family:'Syne',sans-serif;font-size:21px;color:var(--laranja);margin:18px 0 10px}
+h3{font-family:'Syne',sans-serif;font-size:16px;color:#fff;margin:16px 0 6px}
+p{margin:10px 0}
+ul{list-style:none;margin:8px 0}
+li{padding:6px 0 6px 22px;position:relative}
+li::before{content:"▸";position:absolute;left:0;top:7px;color:var(--laranja);font-size:13px}
+strong{color:#fff;font-weight:600}
+.s{color:var(--verde);font-style:italic;font-size:.92em}
+.gr{background:rgba(52,211,153,.10);border-color:rgba(52,211,153,.4);color:var(--verde);font-style:italic}
+.gr .l{color:var(--verde);font-style:normal}
+.gr strong,.gr b{color:#7fe8c0;font-style:normal}
+.step{flex-direction:column;gap:6px}
+.hd2{display:flex;gap:12px;align-items:flex-start}
+.fase{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--laranja);display:block}
+.pq{border-left:2px solid var(--roxo);background:rgba(168,85,247,.10);border-radius:0 7px 7px 0;padding:7px 10px;font-size:14px;width:100%}
+.pq b{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--roxo);display:block}
+.fio{font-family:'JetBrains Mono',monospace;font-size:12px;background:rgba(168,85,247,.14);color:var(--roxo);border:1px solid var(--roxo);padding:1px 6px;border-radius:5px;white-space:nowrap}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0}
+.box{border-radius:12px;padding:13px 15px;margin:13px 0;border:1px solid;font-size:15px}
+.prova{background:rgba(168,85,247,.1);border-color:rgba(168,85,247,.4)}
+.prova .l{color:var(--roxo)}
+.mac{background:rgba(34,211,238,.1);border-color:rgba(34,211,238,.4)}
+.mac .l{color:var(--ciano)}
+.warn{background:rgba(248,113,113,.1);border-color:rgba(248,113,113,.4)}
+.warn .l{color:var(--vermelho)}
+.l{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-size:10px;background:rgba(168,85,247,.25);color:var(--roxo);padding:2px 6px;border-radius:5px;margin-left:5px;font-family:'JetBrains Mono',monospace}
+.kv{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)}
+.kv:last-child{border:none}
+.kv .k{flex:0 0 42%;color:var(--ciano);font-family:'JetBrains Mono',monospace;font-size:13px}
+.kv .v{flex:1;font-size:15px}
+.step{display:flex;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line)}
+.step:last-child{border:none}
+.step .n{flex:0 0 30px;height:30px;border-radius:9px;background:rgba(249,115,22,.15);border:1px solid rgba(249,115,22,.45);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;display:grid;place-items:center;font-size:14px}
+.step .x{flex:1}
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="kick">carolzita · pocket 🚑</div>
+  <h1>Cirurgia Bariátrica ⚖️</h1>
+</div>
+<div class="tabs">
+  <div class="tab on" data-t="0">📊 Indicações</div>
+  <div class="tab" data-t="1">🔪 Técnicas</div>
+  <div class="tab" data-t="2">⚠️ Complicações</div>
+  <div class="tab" data-t="3">💊 Nutrição</div>
+  <div class="tab" data-t="4">👥 Multidisciplinar</div>
+  <div class="tab" data-t="5">☠️ Traps</div>
+</div>
+
+<!-- 0 INDICACOES -->
+<div class="panel on" data-p="0">
+  <h2>📊 ASMBS/IFSO 2022</h2>
+  <div class="box prova"><span class="l">alto rendimento</span>🆕 Substituiu NIH 1991! Limiares <strong>caíram ~5 pontos</strong> de BMI.</div>
+  <div class="card">
+    <div class="kv"><div class="k">BMI≥35</div><div class="v">Recomendada, <strong>sem</strong> precisar comorbidade</div></div>
+    <div class="kv"><div class="k">BMI 30-34,9</div><div class="v">+ doença metabólica (DM2,HAS,SAOS...)</div></div>
+    <div class="kv"><div class="k">DM2 + BMI≥30</div><div class="v">Recomendada</div></div>
+    <div class="kv"><div class="k">Asiático</div><div class="v">Obesidade≥25, cirurgia≥27,5</div></div>
+  </div>
+  <div class="box warn"><span class="l">☠️ pega-ratão</span>"BMI≥40 ou 35+comorbidade" é o critério <strong>ANTIGO</strong> (1991)!</div>
+</div>
+
+<!-- 1 TECNICAS -->
+<div class="panel" data-p="1">
+  <h2>🔪 Sleeve × Bypass</h2>
+  <div class="card">
+    <div class="kv"><div class="k">🟩 Sleeve</div><div class="v">Restritivo + ↓grelina · pode <strong>piorar</strong> DRGE · menos déficit · <strong>1 linha de grampos, 0 anastomose</strong></div></div>
+    <div class="kv"><div class="k">🟥 Bypass</div><div class="v">Restritivo + disabsortivo · <strong>melhora</strong> DRGE · mais déficit · <strong>2 anastomoses, 3 brechas</strong></div></div>
+  </div>
+  <div class="box mac"><span class="l">🧠 macete</span>DRGE importante → <strong>bypass</strong>. Vigilância gástrica futura → <strong>sleeve</strong> (mantém acesso endoscópico).</div>
+
+  <h3>🛏️ Preparo</h3>
+  <ul>
+    <li>Posição <strong>francesa</strong> + <strong>anti-Trendelenburg acentuado</strong> · apoio para os pés 🦶</li>
+    <li><strong>TEV reforçada</strong> — HBPM por peso + compressão + deambulação (<strong>TEP = principal causa de morte</strong>) 🚨</li>
+    <li>EDA pré-op · erradicar H. pylori</li>
+  </ul>
+  <div class="box gr"><span class="l">🟢 tradução simples</span>O proclive acentuado faz o <strong>fígado gorduroso e as vísceras "descerem"</strong> e liberarem o hiato — sem isso o lobo esquerdo cobre exatamente o campo.</div>
+
+  <h3>🟩 Sleeve — 4 passos</h3>
+  <div class="box gr"><span class="l">🟢 tradução simples</span>Transformar o estômago de <strong>bolsa</strong> em <strong>mangueira</strong>. Nada é desviado: a comida segue o caminho normal, só que por um tubo. Por isso não tem hérnia interna nem alça cega.</div>
+
+  <div class="step"><div class="hd2"><div class="n">1</div><div class="x"><span class="fase">exposição</span>Liberar a grande curvatura do <strong>antro até o ângulo de His</strong> · gástricos curtos</div></div>
+  <div class="pq"><b>por quê</b>Fundo mal liberado = <strong>fundo residual</strong> → continua produzindo <strong>grelina</strong>, mantém o apetite, <strong>reganho de peso</strong>. Não é estética, é o resultado hormonal. 🎈</div></div>
+
+  <div class="step"><div class="hd2"><div class="n">2</div><div class="x"><span class="fase">calibração</span><span class="fio">Bougie 32–40 Fr</span> encostado na pequena curvatura · <strong>conferir se não há outra sonda</strong></div></div>
+  <div class="pq"><b>por quê</b>Largo = restrição insuficiente e reganho. <strong>Estreito = ↑ pressão intraluminal</strong>, o principal fator de <strong>fístula</strong>. E grampear a sonda é acidente descrito. ⚠️</div></div>
+
+  <div class="step"><div class="hd2"><div class="n">3</div><div class="x"><span class="fase">secção — decisivo</span>Grampear de <strong>4–6 cm do piloro</strong> ao His · cargas <strong>decrescentes</strong> · <strong>afastar do esôfago</strong> na última</div></div>
+  <div class="pq"><b>por quê</b>Longe do piloro <strong>preserva o esvaziamento</strong>. Carga alta em parede fina não sela; baixa em parede espessa não fecha. E o <strong>ângulo de His concentra 80–90% das fístulas</strong> — menor perfusão + maior pressão. 🔥</div></div>
+
+  <div class="step"><div class="hd2"><div class="n">4</div><div class="x"><span class="fase">verificação</span>Hemostasia · teste de estanqueidade · retirar a peça</div></div>
+  <div class="pq"><b>por quê</b>Teste negativo <strong>não exclui</strong> fístula tardia — a maioria aparece no <strong>DPO 5–10</strong>, por isquemia progressiva, não falha mecânica. Tranquiliza, mas não substitui vigilância.</div></div>
+
+  <div class="box mac"><span class="l">🧠 3 checagens do sleeve</span>① Fundo liberado até o His? ② Tubo calibrado e sem torção? ③ Última carga <strong>longe</strong> do esôfago?</div>
+
+  <h3>🟥 Bypass Y de Roux — 5 passos</h3>
+  <div class="box gr"><span class="l">🟢 tradução simples</span>Um <strong>estomaguinho de 30 mL</strong> ligado direto ao intestino. O resto do estômago e o duodeno ficam <strong>fora do caminho da comida</strong>, mas vivos, produzindo suco que se junta lá adiante. Daí as <strong>3 alças</strong>.</div>
+  <div class="card">
+    <div class="kv"><div class="k">Alimentar (Roux)</div><div class="v">Comida · <strong>100–150 cm</strong></div></div>
+    <div class="kv"><div class="k">Biliopancreática</div><div class="v">Bile + suco · <strong>50–100 cm</strong></div></div>
+    <div class="kv"><div class="k">Comum</div><div class="v">Onde se juntam — <strong>digestão real</strong></div></div>
+  </div>
+
+  <div class="step"><div class="hd2"><div class="n">1</div><div class="x"><span class="fase">gástrica</span>Bolsa de <strong>~30 mL</strong>, estreita e <strong>verticalizada</strong>, na pequena curvatura</div></div>
+  <div class="pq"><b>por quê</b>Pequena curvatura = parede <strong>menos distensível</strong> + perfusão da gástrica esquerda. Bolsa grande/horizontal <strong>dilata</strong> → reganho. Separar bem evita <strong>fístula gastro-gástrica</strong>, que anula a cirurgia.</div></div>
+
+  <div class="step"><div class="hd2"><div class="n">2</div><div class="x"><span class="fase">intestinal</span>Achar o <strong>Treitz</strong>, medir as alças, seccionar o jejuno</div></div>
+  <div class="pq"><b>por quê</b>A medida <strong>dosa</strong> a operação: comum longa = pouco efeito · curta = <strong>desnutrição proteico-calórica</strong> e diarreia. Único momento de calibrar o disabsortivo — sem correção posterior. 📏</div></div>
+
+  <div class="step"><div class="hd2"><div class="n">3</div><div class="x"><span class="fase">1ª anastomose</span><strong>Gastrojejunostomia</strong> calibrada em ~12 mm</div></div>
+  <div class="pq"><b>por quê</b>Larga = sem restrição · estreita = <strong>estenose</strong> (complicação tardia mais comum → dilatação endoscópica). É também o sítio da <strong>úlcera marginal</strong>, no lado jejunal, que não tem defesa contra ácido — daí proibir tabaco e AINE. 🚬</div></div>
+
+  <div class="step"><div class="hd2"><div class="n">4</div><div class="x"><span class="fase">2ª anastomose</span><strong>Jejunojejunostomia</strong> — o "pé da alça"</div></div>
+  <div class="pq"><b>por quê</b>Estenose aqui = <strong>obstrução da alça biliopancreática</strong>: grave e traiçoeira porque o paciente <strong>NÃO VOMITA</strong> (a alça está fora do trânsito) e pode perfurar o estômago excluído. 💀</div></div>
+
+  <div class="step"><div class="hd2"><div class="n">5</div><div class="x"><span class="fase">prevenção — o passo esquecido</span><strong>Fechar as 3 brechas</strong>: pé da alça · <strong>Petersen</strong> · mesocólon <span class="fio">inabsorvível</span></div></div>
+  <div class="pq"><b>por quê</b>São os <strong>3 sítios de hérnia interna</strong>. Aparece <strong>anos depois</strong>, após grande perda de peso: o <strong>mesentério emagrece e as brechas se alargam</strong>. Dor intermitente + <strong>TC normal</strong> → a suspeita vale mais que a imagem → <strong>laparoscopia diagnóstica</strong>. 🚨</div></div>
+
+  <div class="box mac"><span class="l">🧠 3 checagens do bypass</span>① Bolsa pequena, vertical e <strong>separada</strong>? ② Alças <strong>medidas</strong>? ③ <strong>TODAS</strong> as brechas fechadas?</div>
+
+  <h3>✋ Mãos &amp; materiais</h3>
+  <div class="card">
+    <div class="kv"><div class="k">🫲 Esquerda</div><div class="v">Grasper apresentando <strong>sem tração excessiva</strong> (tração = sanfona = tubo torcido) · 2 graspers "caminhando" na medida</div></div>
+    <div class="kv"><div class="k">🫱 Direita</div><div class="v">Selante · grampeador linear (cargas decrescentes) · porta-agulha nas brechas</div></div>
+    <div class="kv"><div class="k">📎 Cargas</div><div class="v"><strong>Altas</strong> no antro · <strong>baixas</strong> no fundo</div></div>
+  </div>
+</div>
+
+<!-- 2 COMPLICACOES -->
+<div class="panel" data-p="2">
+  <h2>⚠️ Precoces</h2>
+  <div class="box warn"><span class="l">☠️ pega-ratão</span>Taquicardia &gt;120 PO = <strong>fístula até provar contrário</strong>! Primeiro sinal, antes de febre.</div>
+  <h3>🕰️ Tardias</h3>
+  <ul>
+    <li>🔍 Estenose anastomose (bypass) → dilatação endoscópica</li>
+    <li>🩸 Úlcera marginal → tabaco/AINE/H.pylori</li>
+    <li>🚨 <strong>Hérnia interna</strong> → dor intermitente, TC pode ser normal!</li>
+    <li>🪨 Colelitíase (perda rápida de peso)</li>
+  </ul>
+  <div class="box prova"><span class="l">alto rendimento</span>🎯 Sítios de hérnia interna: mesocolon transverso, <strong>Petersen</strong>, pé da alça (jejunojejunostomia).</div>
+</div>
+
+<!-- 3 NUTRICAO -->
+<div class="panel" data-p="3">
+  <h2>💊 Déficits nutricionais</h2>
+  <div class="card">
+    <div class="kv"><div class="k">B12</div><div class="v">↓fator intrínseco</div></div>
+    <div class="kv"><div class="k">Ferro</div><div class="v">↓absorção duodenal</div></div>
+    <div class="kv"><div class="k">Ca+VitD</div><div class="v">Risco de doença óssea</div></div>
+    <div class="kv"><div class="k">🚨 Tiamina (B1)</div><div class="v">Vômito persistente = risco!</div></div>
+  </div>
+  <div class="box warn"><span class="l">☠️ pega-ratão grave</span>Vômito+confusão+ataxia = <strong>Wernicke</strong>! Repor tiamina <strong>ANTES</strong> da glicose!</div>
+  <p>💊 Suplementação é <strong>vitalícia</strong>, não só nos primeiros meses.</p>
+</div>
+
+<!-- 4 MULTI -->
+<div class="panel" data-p="4">
+  <h2>👥 Avaliação pré-op</h2>
+  <ul>
+    <li>🧠 Psicossocial (TA não tratado, expectativas)</li>
+    <li>🔬 EDA de rotina (H.pylori)</li>
+    <li>🩺 Otimizar comorbidades</li>
+  </ul>
+  <div class="box mac"><span class="l">🧠 macete</span>Idade isolada <strong>NÃO</strong> contraindica — <strong>fragilidade</strong> é o que importa.</div>
+</div>
+
+<!-- 5 TRAPS -->
+<div class="panel" data-p="5">
+  <h2>☠️ Pega-ratões</h2>
+  <div class="box warn"><span class="l">trap 1</span>Critério "35+comorbidade" é antigo (1991) 📊</div>
+  <div class="box warn"><span class="l">trap 2</span>Sleeve pode piorar DRGE 🔥</div>
+  <div class="box warn"><span class="l">trap 3</span>Taquicardia PO = fístula primeiro 💓</div>
+  <div class="box warn"><span class="l">trap 4</span>Hérnia interna: TC normal não descarta 🚨</div>
+  <div class="box warn"><span class="l">trap 5</span>Glicose antes de tiamina = Wernicke pior 💉</div>
+  <div class="box warn"><span class="l">trap 6</span>Idade não contraindica, fragilidade sim 👴</div>
+  <div class="box warn"><span class="l">trap 7</span>Asiático tem limiar menor (27,5) 🌏</div>
+  <div class="box warn"><span class="l">trap 8</span>Suplementação é vitalícia 💊</div>
+  <div class="box warn"><span class="l">trap 9</span><strong>Ângulo de His</strong> = 80–90% das fístulas do sleeve 🔥</div>
+  <div class="box warn"><span class="l">trap 10</span>Fundo residual = grelina mantida = <strong>reganho</strong> 🎈</div>
+  <div class="box warn"><span class="l">trap 11</span>Obstrução da alça biliopancreática: o paciente <strong>NÃO vomita</strong> 💀</div>
+  <div class="box warn"><span class="l">trap 12</span>Teste de estanqueidade negativo <strong>não exclui</strong> fístula tardia (DPO 5–10) 🕰️</div>
+  <div class="box mac"><span class="l">✅ resumo de bolso</span>BMI≥35 só · 30-34,9+metabólica · DM2+30 · Asiático 27,5 · DRGE→bypass · Taquicardia=fístula · Hérnia=Petersen+mesocolo+pé alça · Vômito=tiamina antes glicose 🎓</div>
+</div>
+
+<script>
+var tabs=document.querySelectorAll('.tab'),panels=document.querySelectorAll('.panel');
+tabs.forEach(function(t){t.addEventListener('click',function(){
+  tabs.forEach(function(x){x.classList.remove('on')});
+  panels.forEach(function(x){x.classList.remove('on')});
+  t.classList.add('on');
+  document.querySelector('.panel[data-p="'+t.dataset.t+'"]').classList.add('on');
+})});
+</script>
+</body>
+</html>

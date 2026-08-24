@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Colecistite · pocket</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d1117;--card:#16161f;--card2:#1c1c27;--line:#2a2a38;
+  --txt:#ececf4;--muted:#9a9ab0;
+  --laranja:#f97316;--roxo:#a855f7;--ciano:#22d3ee;--vermelho:#f87171;--amarelo:#fbbf24;--verde:#34d399;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{overflow-x:hidden}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;font-size:17px;line-height:1.6;padding-bottom:30px}
+.top{padding:22px 18px 12px;position:sticky;top:0;background:linear-gradient(180deg,var(--bg) 70%,transparent);z-index:5}
+.kick{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:26px;line-height:1.1;margin-top:4px}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:6px 18px 12px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;padding:9px 15px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted);white-space:nowrap;cursor:pointer;transition:.15s}
+.tab.on{background:var(--laranja);border-color:var(--laranja);color:#0a0a0f}
+.panel{display:none;padding:6px 18px 40px;animation:f .25s}
+.panel.on{display:block}
+@keyframes f{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+h2{font-family:'Syne',sans-serif;font-size:21px;color:var(--laranja);margin:18px 0 10px}
+h3{font-family:'Syne',sans-serif;font-size:16px;color:#fff;margin:16px 0 6px}
+p{margin:10px 0}
+ul{list-style:none;margin:8px 0}
+li{padding:6px 0 6px 22px;position:relative}
+li::before{content:"▸";position:absolute;left:0;top:7px;color:var(--laranja);font-size:13px}
+strong{color:#fff;font-weight:600}
+.s{color:var(--ciano);font-style:italic;font-size:.92em}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0}
+.box{border-radius:12px;padding:13px 15px;margin:13px 0;border:1px solid;font-size:15px}
+.prova{background:rgba(168,85,247,.1);border-color:rgba(168,85,247,.4)}
+.prova .l{color:var(--roxo)}
+.mac{background:rgba(34,211,238,.1);border-color:rgba(34,211,238,.4)}
+.mac .l{color:var(--ciano)}
+.warn{background:rgba(248,113,113,.1);border-color:rgba(248,113,113,.4)}
+.warn .l{color:var(--vermelho)}
+.l{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-size:10px;background:rgba(168,85,247,.25);color:var(--roxo);padding:2px 6px;border-radius:5px;margin-left:5px;font-family:'JetBrains Mono',monospace}
+.step{display:flex;gap:10px;padding:10px 0;border-bottom:1px dashed var(--line)}
+.step:last-child{border-bottom:none}
+.snum{flex:0 0 auto;width:24px;height:24px;border-radius:7px;background:var(--laranja);color:#0d1117;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;margin-top:2px}
+.sc{flex:1;font-size:14.5px}
+.fase{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--laranja);display:block}
+.pq{border-left:2px solid var(--roxo);background:rgba(168,85,247,.10);border-radius:0 7px 7px 0;padding:7px 10px;margin-top:6px;font-size:13px}
+.pq b{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--roxo);display:block}
+.box.gr{background:rgba(52,211,153,.09);border-color:rgba(52,211,153,.32);color:var(--verde);font-style:italic}
+.box.gr .l{color:var(--verde)}
+.box.gr strong{color:#7fe8c0;font-style:normal}
+.kv{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)}
+.kv:last-child{border:none}
+.kv .k{flex:0 0 38%;color:var(--ciano);font-family:'JetBrains Mono',monospace;font-size:13px}
+.kv .v{flex:1;font-size:15px}
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="kick">carolzita · pocket 🚑</div>
+  <h1>Colecistite 🫃</h1>
+</div>
+<div class="tabs">
+  <div class="tab on" data-t="0">📋 Quadro</div>
+  <div class="tab" data-t="1">🔬 TG18</div>
+  <div class="tab" data-t="2">⏱️ Timing</div>
+  <div class="tab" data-t="3">🔺 Calot/CVS</div>
+  <div class="tab" data-t="4">🔪 Laparo</div>
+  <div class="tab" data-t="5">✂️ Aberta</div>
+  <div class="tab" data-t="6">⚠️ Difícil</div>
+  <div class="tab" data-t="7">☠️ Traps</div>
+</div>
+
+<!-- 0 -->
+<div class="panel on" data-p="0">
+  <h2>📋 Litíase → colecistite</h2>
+  <ul>
+    <li>👩 <strong>4 Fs</strong>: Female · Fat · Forty · Fertile</li>
+    <li>🥩 Cólica biliar: dor HD pós-gordura, &lt;6h</li>
+    <li>🔥 Colecistite = obstrução do cístico + <strong>dor &gt;6h + Murphy + febre</strong></li>
+  </ul>
+  <h3>⚡ Complicações (nomes!)</h3>
+  <div class="card">
+    <div class="kv"><div class="k">🟡 Mirizzi</div><div class="v">cálculo comprime <strong>hepático comum</strong></div></div>
+    <div class="kv"><div class="k">🪨 Íleo biliar</div><div class="v">tríade <strong>Rigler</strong> · obstrui íleo terminal</div></div>
+    <div class="kv"><div class="k">🍽️ Bouveret</div><div class="v">cálculo obstrui o duodeno</div></div>
+    <div class="kv"><div class="k">🏺 Porcelana</div><div class="v">risco de <strong>câncer</strong> → operar</div></div>
+  </div>
+  <div class="box prova"><span class="l">alto rendimento <span class="banca">HCPA·GHC</span></span>Mirizzi = hepático comum · Íleo biliar = íleo terminal (Rigler). Não trocar! 🔀</div>
+</div>
+
+<!-- 1 -->
+<div class="panel" data-p="1">
+  <h2>🔬 TG18</h2>
+  <h3>🩺 Diagnóstico (A+B+C)</h3>
+  <div class="card">
+    <div class="kv"><div class="k">A local</div><div class="v">Murphy · massa/dor HD</div></div>
+    <div class="kv"><div class="k">B sistêmico</div><div class="v">febre · PCR↑ · leuco↑</div></div>
+    <div class="kv"><div class="k">C imagem</div><div class="v">US: parede &gt;4mm, líquido, cálculo</div></div>
+  </div>
+  <p>🔎 Suspeita = 1A+1B · Definitivo = 1A+1B+C</p>
+  <h3>📊 Gravidade</h3>
+  <div class="card">
+    <div class="kv"><div class="k">🟢 I leve</div><div class="v">sem critério de II/III</div></div>
+    <div class="kv"><div class="k">🟡 II mod.</div><div class="v"><strong>leuco&gt;18mil · &gt;72h · massa</strong> · inflamação grave</div></div>
+    <div class="kv"><div class="k">🔴 III grave</div><div class="v"><strong>disfunção orgânica</strong></div></div>
+  </div>
+  <div class="box prova"><span class="l">alto rendimento</span>Grau II = &gt;18mil / &gt;72h / massa / gangrena. Grau III = falência de órgão ⚠️</div>
+</div>
+
+<!-- 2 -->
+<div class="panel" data-p="2">
+  <h2>⏱️ Timing</h2>
+  <div class="box prova"><span class="l">alto rendimento <span class="banca">GHC·SC-POA·PUC</span></span>🚀 <strong>LC precoce ≤7 dias da admissão / ≤10 dias dos sintomas</strong> (WSES). Precoce &gt; esfriar!</div>
+  <div class="card">
+    <div class="kv"><div class="k">🟢🟡 Grau I/II</div><div class="v">LC precoce se tolera cirurgia</div></div>
+    <div class="kv"><div class="k">🔴 Grau III inapto</div><div class="v"><strong>colecistostomia percutânea</strong> → chole depois</div></div>
+  </div>
+  <h3>💤 Assintomática — operar se:</h3>
+  <ul>
+    <li>🏺 vesícula em porcelana</li>
+    <li>🔵 pólipo &gt;10 mm · cálculo &gt;3 cm</li>
+    <li>🩸 anemia hemolítica · pré-transplante</li>
+  </ul>
+  <div class="box warn"><span class="l">☠️ pega-ratão</span>Litíase assintomática comum <strong>NÃO</strong> se opera de rotina! 🚫</div>
+</div>
+
+<!-- 3 -->
+<div class="panel" data-p="3">
+  <h2>🔺 Calot & CVS</h2>
+  <div class="card">
+    <div class="kv"><div class="k">Triângulo</div><div class="v">cístico + hepático comum + (fígado/artéria)</div></div>
+    <div class="kv"><div class="k">Conteúdo</div><div class="v"><strong>artéria cística</strong> 🔴</div></div>
+    <div class="kv"><div class="k">🛡️ Rouvière</div><div class="v">dissecar ventral ao sulco</div></div>
+  </div>
+  <div class="box prova"><span class="l">alto rendimento <span class="banca">HCPA·GHC·SC-POA</span></span>🎯 <strong>CVS — 3 critérios</strong>: ① triângulo LIMPO ② terço inferior da vesícula SOLTO do leito ③ só <strong>2 estruturas</strong> entrando</div>
+  <div class="box mac"><span class="l">🧠 macete</span>CVS = <strong>"LIMPO · SOLTO · 2"</strong>. Sem os 3 → NÃO clipa! ✋</div>
+</div>
+
+<!-- 4 -->
+<div class="panel" data-p="4">
+  <h2>🔪 Laparo — 7 passos</h2>
+  <div class="box gr"><span class="l">🟢 tradução simples</span>Duas metades: primeiro se <strong>prova quem é quem</strong>; só depois se corta. Toda lesão de via biliar acontece quando as duas se invertem.</div>
+
+  <div class="step"><span class="snum">1</span><div class="sc"><span class="fase">acesso</span><strong>Portais</strong> — 12–14 mmHg, óptica 30°, <strong>4 portais</strong>: umbilical · epigástrico (à <strong>direita</strong> do falciforme) · 2 subcostais D.
+  <div class="pq"><b>por quê</b>À direita do falciforme o instrumento fica <strong>alinhado com o eixo do pedículo</strong>. À esquerda, trabalha em ângulo contra a anatomia.</div></div></div>
+
+  <div class="step"><span class="snum">2</span><div class="sc"><span class="fase">exposição — decisivo</span><strong>Tração em 2 direções</strong> — proclive + rotação à esquerda. Fundo → <strong>cranial</strong>. Infundíbulo → <strong>ínfero-lateral</strong>.
+  <div class="pq"><b>por quê</b>Puxar o infundíbulo para <strong>cima e medial</strong> alinha o cístico <em>paralelo</em> ao hepático comum — os dois viram um só. É a origem da <strong>lesão Strasberg E</strong>. A tração ínfero-lateral abre o ângulo. 🎯</div></div></div>
+
+  <div class="step"><span class="snum">3</span><div class="sc"><span class="fase">dissecção</span><strong>Peritônio do triângulo</strong> — anterior e posterior, varrendo a gordura. Sempre <strong>alto, junto à vesícula</strong>.
+  <div class="pq"><b>por quê</b>Quanto mais longe da vesícula, mais perto do hepatocoledoco e da <strong>hepática direita</strong> — que pode fazer alça no triângulo (<em>caterpillar hump</em>) e passar por cística.</div></div></div>
+
+  <div class="step"><span class="snum">4</span><div class="sc"><span class="fase">segurança — critério de parada</span><strong>CVS: limpo · solto · 2</strong> — ① triângulo limpo ② <strong>terço inferior</strong> descolado do leito ③ só 2 estruturas entrando.
+  <div class="pq"><b>por quê</b>Não é passo técnico, é <strong>critério de parada</strong>. Com o terço inferior solto, é <em>anatomicamente impossível</em> uma estrutura entrar sem ter sido vista. Sem os 3 → <strong>bailout</strong>. ✋</div></div></div>
+
+  <div class="step"><span class="snum">5</span><div class="sc"><span class="fase">vascular e ductal</span><strong>Artéria primeiro, ducto depois</strong> — clipes <strong>2+1</strong>, coto <strong>&lt;1 cm</strong>. Cístico largo/friável → <strong>endoloop</strong>, não clipe.
+  <div class="pq"><b>por quê</b>Artéria antes porque sangramento arterial <em>depois</em> de seccionar o ducto obriga a manobras às cegas no hilo. Coto longo = <strong>cálculo residual</strong>. Clipe em cístico edemaciado <strong>escorrega</strong> → fístula.</div></div></div>
+
+  <div class="step"><span class="snum">6</span><div class="sc"><span class="fase">descolamento</span><strong>Retrógrado</strong>, do infundíbulo ao fundo, no plano da <strong>placa cística</strong>. Conferir <strong>ductos de Luschka</strong>.
+  <div class="pq"><b>por quê</b>Entrar fundo demais sangra e abre Luschka — <strong>fístula biliar com CVS perfeita e clipes íntegros</strong>.</div></div></div>
+
+  <div class="step"><span class="snum">7</span><div class="sc"><span class="fase">extração</span><strong>Sempre em saco</strong> pelo umbilical. Revisar com a pressão <strong>reduzida</strong>. Recuperar cálculos derramados.
+  <div class="pq"><b>por quê</b>Baixar a pressão revela sangramento venoso que os 14 mmHg estavam <strong>tamponando</strong>. Cálculo perdido = abscesso tardio meses depois.</div></div></div>
+
+  <div class="box prova"><span class="l">⭐ 3 checagens antes de clipar</span>① Triângulo limpo? ② Terço inferior solto? ③ Exatamente 2 estruturas?<br><strong>3 "sim" → clipa. Qualquer "não" → bailout.</strong></div>
+</div>
+
+<div class="panel" data-p="5">
+  <h2>✂️ Aberta — 6 passos</h2>
+  <div class="box gr"><span class="l">🟢 tradução simples</span>Na aberta você troca a câmera pela <strong>mão</strong>. O que orienta é o <strong>tato</strong> — palpar o pedículo e sentir onde está o colédoco. Por isso ela é <em>mais</em> segura na vesícula hostil, não menos.</div>
+
+  <div class="step"><span class="snum">1</span><div class="sc"><span class="fase">acesso</span><strong>Kocher</strong> (2 dedos abaixo do rebordo D) <strong>ou mediana</strong>.
+  <div class="pq"><b>por quê</b>Kocher expõe o hilo direto, mas é janela fixa. <strong>Mediana</strong> se pode virar hepatectomia ou derivação — ela se estende.</div></div></div>
+
+  <div class="step"><span class="snum">2</span><div class="sc"><span class="fase">exposição</span><strong>Gosset/Balfour</strong> + válvula no fígado. Compressas rebatendo <strong>cólon e duodeno</strong>. Mesma tração em 2 direções.
+  <div class="pq"><b>por quê</b>Rebater o duodeno é o que <strong>protege o colédoco</strong> — sem isso a 1ª porção sobe sobre o pedículo e o campo fica cego.</div></div></div>
+
+  <div class="step"><span class="snum">3</span><div class="sc"><span class="fase">dissecção</span><strong>Calot + CVS</strong> (vale igual na aberta). <strong>Pringle digital</strong>: palpar o hepatoduodenal entre polegar e indicador.
+  <div class="pq"><b>por quê</b>A vantagem real da aberta é a <strong>palpação</strong>: sente o cálculo impactado, sente o colédoco e pode ocluir o pedículo com os dedos. Nada disso existe na laparo. ✋</div></div></div>
+
+  <div class="step"><span class="snum">4</span><div class="sc"><span class="fase">vascular e ductal</span><strong>Artéria</strong>: ligar/transfixar <span style="color:var(--roxo)">seda 2-0/3-0</span>. <strong>Ducto</strong>: ligadura dupla. <strong>Colangiografia</strong> se dúvida.
+  <div class="pq"><b>por quê</b>Fio trançado segura melhor em vaso curto e retrátil. E se você já pensou em colangiografia, <strong>faça</strong> — ela define a anatomia em tempo real.</div></div></div>
+
+  <div class="step"><span class="snum">5</span><div class="sc"><span class="fase">descolamento</span><strong>Retrógrada</strong> (colo→fundo) é o padrão · <strong><em>fundus-first</em></strong> se o triângulo está hostil.
+  <div class="pq"><b>por quê</b><em>Fundus-first</em> evita dissecar às cegas — mas no cirrótico pode <strong>arrastar para dentro da placa cística</strong> e daí ao hilo. Se ele também estiver difícil → <strong>subtotal</strong>, não insistência.</div></div></div>
+
+  <div class="step"><span class="snum">6</span><div class="sc"><span class="fase">encerramento</span>Hemostasia do leito · revisar <strong>Luschka</strong> · <strong>dreno só</strong> se contaminação, dúvida, bile ou subtotal.
+  <div class="pq"><b>por quê</b>Dreno de rotina não previne coleção — mas na <strong>subtotal fenestrante é obrigatório</strong>, porque o coto foi deixado aberto de propósito.</div></div></div>
+</div>
+
+<div class="panel" data-p="6">
+  <h2>⚠️ Vesícula difícil</h2>
+  <div class="box prova"><span class="l">alto rendimento <span class="banca">GHC·SC-POA</span></span>🆘 CVS inalcançável → <strong>bailout</strong>, nunca "dissecar com cuidado". Recomendação <strong>SAGES</strong>.</div>
+
+  <h3>🔄 Converter — gatilhos</h3>
+  <ul>
+    <li>🧊 Anatomia não identificável (triângulo congelado)</li>
+    <li>🩸 Sangramento incontrolável</li>
+    <li>🩹 Suspeita de <strong>lesão de via biliar</strong></li>
+    <li>🟡 Mirizzi · aderências densas · suspeita de câncer</li>
+  </ul>
+  <h3>📊 Preditores de conversão</h3>
+  <div class="card">
+    <div class="kv"><div class="k">🔥 Gangrenosa</div><div class="v">o mais forte</div></div>
+    <div class="kv"><div class="k">👨 Sexo masculino</div><div class="v">—</div></div>
+    <div class="kv"><div class="k">📏 Parede</div><div class="v"><strong>&gt;4–5 mm</strong> no US</div></div>
+    <div class="kv"><div class="k">⏳ Sintomas</div><div class="v"><strong>&gt;72 h</strong></div></div>
+    <div class="kv"><div class="k">🔪 Cirurgia prévia</div><div class="v">—</div></div>
+  </div>
+
+  <h3>🆘 Cardápio de bailouts</h3>
+  <ul>
+    <li>⬇️ <strong>Fundus-first</strong> (dome-down)</li>
+    <li>✂️ <strong>Subtotal</strong> — o mais eficaz</li>
+    <li>💧 <strong>Colecistostomia</strong> — paciente crítico</li>
+    <li>🔄 <strong>Conversão</strong></li>
+    <li>🏥 <strong>Parar e encaminhar</strong> — decisão legítima</li>
+  </ul>
+
+  <h3>✂️ Subtotal (Strasberg 2016)</h3>
+  <div class="card">
+    <div class="kv"><div class="k">Fenestrante</div><div class="v">coto <strong>aberto</strong> + ablação da mucosa + <strong>dreno</strong> · menos recidiva · <strong>mais fístula</strong></div></div>
+    <div class="kv"><div class="k">Reconstituinte</div><div class="v"><strong>fecha</strong> o remanescente · menos fístula · <strong>mais recidiva</strong> de cálculo</div></div>
+  </div>
+  <div class="box mac"><span class="l">🧠 macete</span><strong>Fenestrante = aberta = drena</strong> · <strong>Reconstituinte = fechada = guarda</strong></div>
+  <div class="box gr"><span class="l">🟢 tradução simples</span>É desistir de tirar a vesícula inteira e deixar de propósito a <strong>parte colada no fígado</strong> — a que fica perto dos canos importantes. Tira o que dá; não encosta onde não enxerga.</div>
+
+  <h3>🩹 Lesão biliar (Strasberg)</h3>
+  <div class="card">
+    <div class="kv"><div class="k">A</div><div class="v">coto cístico/Luschka (+comum) → CPRE+stent</div></div>
+    <div class="kv"><div class="k">B/C</div><div class="v">hepático D aberrante</div></div>
+    <div class="kv"><div class="k">D</div><div class="v">lesão lateral da via principal</div></div>
+    <div class="kv"><div class="k">E</div><div class="v">secção da via principal → <strong>hepaticojejuno Y-Roux</strong></div></div>
+  </div>
+  <div class="box warn"><span class="l">☠️ pega-ratão</span>Suspeita de lesão → <strong>parar</strong>, colangiografia, chamar HBP! 🆘</div>
+</div>
+
+
+<!-- 6 -->
+<div class="panel" data-p="7">
+  <h2>☠️ Pega-ratões</h2>
+  <div class="box warn"><span class="l">trap 1</span>Conversão ≠ fracasso, é segurança 🔄</div>
+  <div class="box warn"><span class="l">trap 2</span>Clipar antes da CVS = lesão biliar ✋</div>
+  <div class="box warn"><span class="l">trap 3</span>Precoce &gt; esfriar (≤7d/≤10d) 🚀</div>
+  <div class="box warn"><span class="l">trap 4</span>Grau III inapto → colecistostomia 💧</div>
+  <div class="box warn"><span class="l">trap 5</span>Mirizzi (hepático comum) ≠ íleo biliar (íleo terminal) 🔀</div>
+  <div class="box warn"><span class="l">trap 6</span>Assintomática não opera de rotina 🚫</div>
+  <div class="box warn"><span class="l">trap 7</span>Strasberg A=coto · E=via principal 🩹</div>
+  <div class="box warn"><span class="l">trap 8</span>Calot contém a artéria cística 🔴</div>
+  <div class="box warn"><span class="l">trap 9</span>Tração do infundíbulo p/ <strong>cima</strong> alinha cístico e hepático = lesão E. Puxe <strong>ínfero-lateral</strong> ↘️</div>
+  <div class="box warn"><span class="l">trap 10</span>Fístula biliar com CVS perfeita e clipes íntegros = <strong>ducto de Luschka</strong> 💧</div>
+  <div class="box mac"><span class="l">✅ resumo de bolso</span>4Fs · Murphy · TG18 (A+B+C; II=&gt;18mil/&gt;72h/massa; III=falência) · LC precoce ≤7d/≤10d, III inapto→colecistostomia · Calot=a. cística · <strong>tração ínfero-lateral abre o ângulo</strong> · CVS "limpo-solto-2" + Rouvière · <strong>artéria antes do ducto, coto &lt;1cm</strong> · peça em saco, revisar com pressão baixa · difícil→<strong>bailout</strong> (fundus-first/subtotal/colecistostomia/conversão) · fenestrante drena, reconstituinte guarda · Mirizzi/Csendes · Strasberg A→E 🎓</div>
+</div>
+
+<script>
+var tabs=document.querySelectorAll('.tab'),panels=document.querySelectorAll('.panel');
+tabs.forEach(function(t){t.addEventListener('click',function(){
+  tabs.forEach(function(x){x.classList.remove('on')});
+  panels.forEach(function(x){x.classList.remove('on')});
+  t.classList.add('on');
+  document.querySelector('.panel[data-p="'+t.dataset.t+'"]').classList.add('on');
+})});
+</script>
+</body>
+</html>

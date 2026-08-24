@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🚑 Trauma Vascular — Pocket</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d1117;--panel:#161b22;--panel2:#1c232c;--line:#2a323c;--tx:#e6edf3;--mut:#8b949e;--or:#ff7a18;--or2:#ff9a4d;--orbg:rgba(255,122,24,.10);--pu:#b083f0;--pu2:#c9a7ff;--pubg:rgba(176,131,240,.12);--cy:#3dd6d0;--cy2:#5fe3dd;--cybg:rgba(61,214,208,.10);--grn:#3fb950}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font-family:'IBM Plex Sans',sans-serif;line-height:1.5;padding:0 0 40px}
+.sheet{max-width:430px;margin:0 auto;min-height:100vh;background:var(--bg)}
+header{padding:22px 20px 0;display:flex;justify-content:space-between;align-items:baseline}
+.logo{font-size:23px;font-weight:700;letter-spacing:-.5px}.logo .b{color:var(--or)}
+.kick{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--or);text-transform:uppercase}
+nav{position:sticky;top:0;background:var(--bg);z-index:5;border-bottom:1px solid var(--line);overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;margin-top:14px}
+nav .in{display:flex;padding:0 16px}
+nav button{background:none;border:none;color:var(--mut);font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.5px;text-transform:uppercase;padding:13px 11px;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px}
+nav button.on{color:var(--or);border-bottom-color:var(--or)}
+section{display:none;padding:20px;animation:f .2s}section.on{display:block}
+@keyframes f{from{opacity:0}to{opacity:1}}
+h2{font-size:18px;color:var(--or);font-weight:600;padding-bottom:8px;border-bottom:1px solid var(--line);margin-bottom:14px}
+h3{font-size:13px;margin:16px 0 6px;font-weight:600;color:var(--or2)}
+p,li{font-size:14px}
+.step{display:flex;align-items:flex-start;gap:10px;padding:7px 0}
+.num{flex:0 0 auto;width:24px;height:24px;border-radius:6px;background:var(--or);color:#0d1117;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:13px;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.it{color:var(--cy2);font-style:italic;font-size:13px}
+.box{border-left:3px solid var(--or);background:var(--orbg);border-radius:0 8px 8px 0;padding:11px 14px;margin:14px 0}
+.box.pu{border-color:var(--pu);background:var(--pubg)}.box.cy{border-color:var(--cy);background:var(--cybg)}
+.box .lbl{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--or);margin-bottom:6px;font-weight:600}
+.box.pu .lbl{color:var(--pu2)}.box.cy .lbl{color:var(--cy2)}
+.big{font-size:16px;font-weight:600}
+.tbl{border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:12px 0;background:var(--panel)}
+.row{display:flex;align-items:center;gap:10px;padding:10px 13px;border-bottom:1px solid var(--line);font-size:13.5px}.row:last-child{border-bottom:none}
+.row .v{flex:0 0 auto;color:var(--or2);font-weight:700;font-family:'IBM Plex Mono',monospace;min-width:56px}
+.hand{font-family:'IBM Plex Mono',monospace;font-size:11px;padding:1px 6px;border-radius:5px;font-weight:600}
+.L{background:rgba(63,185,80,.15);color:#56d364}.R{background:rgba(255,122,24,.15);color:var(--or2)}
+ul{list-style:none;margin:4px 0}li{padding:4px 0 4px 24px;position:relative}li .em{position:absolute;left:0}
+.hi{color:var(--pu2);font-weight:600}.mn{font-family:'IBM Plex Mono',monospace;color:var(--cy2);font-weight:600}
+.foot{text-align:center;color:var(--mut);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1px;padding:18px;border-top:1px solid var(--line);margin-top:10px}
+</style>
+</head>
+<body>
+<div class="sheet">
+<header><div class="logo">🚑 <span class="b">Trauma Vascular</span></div><div class="kick">Pocket</div></header>
+<nav><div class="in" id="nav"></div></nav>
+
+<section id="def" class="on">
+<h2>🧭 Definição</h2>
+<div class="box"><div class="lbl">📏 Conceito</div>
+<p class="big">Lesão vascular por trauma penetrante ou contuso</p>
+<p class="it">penetrante = sangra na hora · contuso = rasga por dentro (íntima) 🌀</p></div>
+</section>
+
+<section id="sinais">
+<h2>🩺 Hard × Soft signs</h2>
+<div class="box pu"><div class="lbl">🚨 Hard = sala direto</div>
+<ul>
+<li><span class="em">🩸</span>Hemorragia ativa pulsátil</li>
+<li><span class="em">🎈</span>Hematoma expansivo</li>
+<li><span class="em">🚫</span>Ausência de pulso distal</li>
+<li><span class="em">👂</span>Frêmito/sopro</li>
+<li><span class="em">⚡</span>6 P's de isquemia</li>
+</ul></div>
+<div class="box cy"><div class="lbl">🔍 Soft = investigar</div>
+<ul>
+<li><span class="em">📖</span>História de sangramento moderado</li>
+<li><span class="em">〰️</span>Pulso diminuído, mas presente</li>
+<li><span class="em">🧠</span>Déficit neuro periférico</li>
+<li><span class="em">📍</span>Ferimento perto de trajeto vascular</li>
+</ul></div>
+</section>
+
+<section id="dx">
+<h2>🔬 Diagnóstico</h2>
+<div class="box"><div class="lbl">📐 ITB</div>
+<p><span class="hi">&lt;0,9</span> no membro lesado = suspeita, mesmo sem hard sign</p></div>
+<p><span class="hi">AngioTC</span> = escolha em estável com soft sign</p>
+<p class="it">RX tórax NÃO exclui lesão aórtica contusa</p>
+</section>
+
+<section id="cond">
+<h2>📐 Conduta inicial</h2>
+<div class="box pu"><div class="lbl">🚑 Damage control</div>
+<p>Compressão direta → torniquete se necessário<br>Hipotensão permissiva + transfusão 1:1:1</p></div>
+<div class="box"><div class="lbl">🎈 REBOA</div>
+<p>Ponte, <span class="hi">NÃO rotina</span> — RCT não mostrou benefício de mortalidade</p></div>
+<p class="it">Torniquete: reavaliar sangramento/reperfusão ao retirar — NÃO heparinizar de rotina</p>
+</section>
+
+<section id="tec">
+<h2>🔪 Técnica</h2>
+<p class="it">Princípio: controle proximal + distal ANTES de tocar a lesão</p>
+<div class="tbl">
+<div class="row"><span class="v">Rafia</span><span>lesão parcial pequena</span></div>
+<div class="row"><span class="v">T-T</span><span>transecção sem perda, sem tensão</span></div>
+<div class="row"><span class="v">Interposição</span><span>perda maior — veia autóloga é 1ª escolha</span></div>
+<div class="row"><span class="v">Ligadura</span><span>vaso não essencial ou damage control</span></div>
+</div>
+<div class="box cy"><div class="lbl">🦵 Shunt temporário</div>
+<p>Lesão vasculo-ortopédica complexa (Gustilo IIIC) — perfunde antes da fixação óssea</p></div>
+</section>
+
+<section id="regi">
+<h2>📍 Por região</h2>
+<div class="tbl">
+<div class="row"><span class="v">Pescoço</span><span>zona II = explora direto se hard sign</span></div>
+<div class="row"><span class="v">Tórax</span><span>TEVAR = 1ª linha na aórtica contusa</span></div>
+<div class="row"><span class="v">Extremidade</span><span>local mais comum de trauma vascular</span></div>
+</div>
+</section>
+
+<section id="comp">
+<h2>⚠️ Complicações</h2>
+<ul>
+<li><span class="em">🦵</span>Síndrome compartimental</li>
+<li><span class="em">🧊</span>Trombose do reparo</li>
+<li><span class="em">🦶</span>Amputação (diagnóstico tardio)</li>
+</ul>
+<div class="box pu"><div class="lbl">🔥 Fasciotomia</div>
+<p>Liberal/profilática se isquemia &gt;4-6h — não espera sinal clássico</p></div>
+</section>
+
+<section id="peg">
+<h2>🪤 Pega-ratões</h2>
+<ul>
+<li><span class="em">🚨</span>Hard sign = sala já, sem imagem</li>
+<li><span class="em">🎈</span>REBOA não é rotina</li>
+<li><span class="em">💉</span>Torniquete não exige heparinizar</li>
+<li><span class="em">🩻</span>RX tórax não exclui lesão aórtica</li>
+<li><span class="em">🩸</span>Veia autóloga > prótese (campo contaminado)</li>
+<li><span class="em">✈️</span>TEVAR = 1ª linha na aórtica contusa</li>
+</ul>
+</section>
+
+<section id="mn">
+<h2>🧠 Mnemônicos</h2>
+<div class="box cy"><div class="lbl">🚨 Hard</div><p class="mn">Hemorragia, Hematoma, sem pulso, frêmito, 6P's</p></div>
+<div class="box cy"><div class="lbl">🎈 REBOA</div><p class="mn">"ponte, não solução"</p></div>
+<div class="box cy"><div class="lbl">Contuso×Penetrante</div><p class="mn">"contuso rasga por dentro, penetrante sangra na hora"</p></div>
+</section>
+
+<div class="foot">← deslize as abas →</div>
+</div>
+<script>
+var s=[['def','🧭 Def'],['sinais','🩺 Sinais'],['dx','🔬 Dx'],['cond','📐 Conduta'],['tec','🔪 Técnica'],['regi','📍 Regiões'],['comp','⚠️ Complic'],['peg','🪤 Pegas'],['mn','🧠 Mnem']];
+var n=document.getElementById('nav');
+s.forEach(function(x,i){var b=document.createElement('button');b.textContent=x[1];if(i===0)b.className='on';b.onclick=function(){document.querySelectorAll('nav button').forEach(function(y){y.classList.remove('on')});b.classList.add('on');document.querySelectorAll('section').forEach(function(y){y.classList.remove('on')});document.getElementById(x[0]).classList.add('on');document.querySelector('.sheet').scrollIntoView()};n.appendChild(b)});
+</script>
+</body>
+</html>

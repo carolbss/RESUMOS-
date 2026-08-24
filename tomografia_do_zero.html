@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TC do Zero — Aprendendo a ver tomografia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0a0f;
+    --bg2:#12121a;
+    --card:#16161f;
+    --line:#26263a;
+    --txt:#e6e6ee;
+    --dim:#9a9ab0;
+    --orange:#f97316;
+    --purple:#a855f7;
+    --cyan:#22d3ee;
+    --green:#34d399;
+    --red:#f87171;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--bg);
+    color:var(--txt);
+    font-family:'Inter',system-ui,sans-serif;
+    line-height:1.6;
+    padding:0 0 80px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:920px;margin:0 auto;padding:0 20px}
+
+  header{
+    text-align:center;
+    padding:56px 20px 40px;
+    border-bottom:1px solid var(--line);
+    background:radial-gradient(ellipse at top,rgba(249,115,22,.10),transparent 60%);
+  }
+  header .kicker{
+    font-family:'JetBrains Mono',monospace;
+    color:var(--orange);
+    letter-spacing:3px;
+    font-size:12px;
+    text-transform:uppercase;
+  }
+  header h1{
+    font-family:'Syne',sans-serif;
+    font-weight:800;
+    font-size:clamp(30px,6vw,50px);
+    line-height:1.05;
+    margin:12px 0 10px;
+    background:linear-gradient(120deg,#fff,#f97316);
+    -webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;
+  }
+  header p{color:var(--dim);max-width:560px;margin:0 auto;font-size:15px}
+
+  /* legenda de cores */
+  .legend{
+    display:flex;gap:14px;flex-wrap:wrap;justify-content:center;
+    margin:26px auto 0;max-width:640px;
+  }
+  .legend span{
+    display:inline-flex;align-items:center;gap:7px;
+    font-size:12px;font-family:'JetBrains Mono',monospace;color:var(--dim);
+  }
+  .dot{width:11px;height:11px;border-radius:3px;display:inline-block}
+
+  section{margin-top:34px}
+  .num{
+    font-family:'JetBrains Mono',monospace;
+    color:var(--orange);font-size:13px;font-weight:600;
+    letter-spacing:1px;
+  }
+  h2{
+    font-family:'Syne',sans-serif;font-weight:700;
+    font-size:clamp(21px,4vw,28px);
+    margin:4px 0 16px;line-height:1.15;
+  }
+  h3{
+    font-family:'Syne',sans-serif;font-weight:600;
+    font-size:18px;margin:22px 0 8px;color:#fff;
+  }
+  p{margin:10px 0}
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:22px 22px;
+    margin:14px 0;
+  }
+
+  /* explicação criança */
+  .kid{
+    display:block;
+    color:var(--cyan);
+    font-size:13.5px;
+    font-style:italic;
+    border-left:2px solid var(--cyan);
+    padding-left:12px;
+    margin:8px 0 4px;
+  }
+  .kid b{color:var(--cyan);font-style:normal}
+
+  /* box high-yield prova */
+  .prova{
+    background:rgba(168,85,247,.09);
+    border:1px solid rgba(168,85,247,.35);
+    border-radius:12px;
+    padding:14px 16px;
+    margin:14px 0;
+    font-size:14px;
+  }
+  .prova .tag{
+    font-family:'JetBrains Mono',monospace;
+    color:var(--purple);font-size:11px;font-weight:600;
+    letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:5px;
+  }
+  /* box mnemônico */
+  .mne{
+    background:rgba(34,211,238,.08);
+    border:1px solid rgba(34,211,238,.35);
+    border-radius:12px;padding:14px 16px;margin:14px 0;font-size:14px;
+  }
+  .mne .tag{
+    font-family:'JetBrains Mono',monospace;color:var(--cyan);
+    font-size:11px;font-weight:600;letter-spacing:1px;
+    text-transform:uppercase;display:block;margin-bottom:5px;
+  }
+  /* alerta */
+  .alert{
+    background:rgba(248,113,113,.09);
+    border:1px solid rgba(248,113,113,.35);
+    border-radius:12px;padding:14px 16px;margin:14px 0;font-size:14px;
+  }
+  .alert .tag{
+    font-family:'JetBrains Mono',monospace;color:var(--red);
+    font-size:11px;font-weight:600;letter-spacing:1px;
+    text-transform:uppercase;display:block;margin-bottom:5px;
+  }
+
+  b,strong{color:#fff}
+  .orange{color:var(--orange)}
+  .cyan{color:var(--cyan)}
+  .purple{color:var(--purple)}
+
+  ul{margin:10px 0 10px 4px;padding-left:18px}
+  li{margin:6px 0}
+
+  .fig{
+    background:#0d0d14;
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:18px;margin:16px 0;
+    text-align:center;
+  }
+  .fig svg{max-width:100%;height:auto}
+  .fig figcaption{
+    color:var(--dim);font-size:12.5px;margin-top:10px;
+    font-family:'JetBrains Mono',monospace;
+  }
+
+  /* tabela */
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px}
+  th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+  th{background:var(--bg2);font-family:'Syne',sans-serif;color:var(--orange);font-weight:600}
+  td .sw{display:inline-block;width:13px;height:13px;border-radius:3px;margin-right:6px;vertical-align:middle;border:1px solid #333}
+
+  /* collapse */
+  details{border:1px solid var(--line);border-radius:12px;margin:10px 0;background:var(--bg2);overflow:hidden}
+  summary{
+    cursor:pointer;padding:14px 16px;font-family:'Syne',sans-serif;
+    font-weight:600;font-size:15px;list-style:none;display:flex;
+    align-items:center;justify-content:space-between;
+  }
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:'+';color:var(--orange);font-size:20px;font-weight:700}
+  details[open] summary::after{content:'−'}
+  details .body{padding:0 16px 16px}
+
+  .step{
+    display:flex;gap:14px;margin:12px 0;align-items:flex-start;
+  }
+  .step .n{
+    flex:none;width:30px;height:30px;border-radius:9px;
+    background:var(--orange);color:#12121a;font-family:'Syne',sans-serif;
+    font-weight:800;display:flex;align-items:center;justify-content:center;font-size:15px;
+  }
+  .step .t{flex:1}
+  .step .t b{display:block;color:#fff;font-size:15px;margin-bottom:2px}
+
+  footer{
+    text-align:center;color:var(--dim);font-size:12px;
+    margin-top:50px;padding-top:24px;border-top:1px solid var(--line);
+    font-family:'JetBrains Mono',monospace;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="kicker">carolzita · radiologia básica</div>
+  <h1>Tomografia do Zero</h1>
+  <p>Aprender a olhar uma TC do jeito certo: sem decoreba, entendendo o que cada tom de cinza significa. Do zero, passo a passo.</p>
+  <div class="legend">
+    <span><i class="dot" style="background:#f97316"></i> conteúdo</span>
+    <span><i class="dot" style="background:#a855f7"></i> cai na prova</span>
+    <span><i class="dot" style="background:#22d3ee"></i> mnemônico / explicação simples</span>
+    <span><i class="dot" style="background:#f87171"></i> não pode perder</span>
+  </div>
+</header>
+
+<div class="wrap">
+
+<!-- ============ 1 ============ -->
+<section>
+  <div class="num">01</div>
+  <h2>O que é uma TC (e por que ela é cinza)</h2>
+  <div class="card">
+    <p>A tomografia é uma <b>máquina de raio-X que gira 360° em volta do paciente</b>. Em vez de uma única foto "achatada" como no raio-X comum, o computador junta centenas de ângulos e reconstrói <b>fatias</b> do corpo — como se você cortasse um pão de forma e olhasse cada fatia por dentro.</p>
+    <span class="kid"><b>Tipo criança:</b> imagina uma câmera que dá voltas em você tirando mil fotos, e depois o computador cola tudo pra mostrar você "fatiado", igual pão.</span>
+
+    <p>Cada pontinho da imagem (pixel) recebe um número que mede <b>o quanto aquele tecido barrou o raio-X</b>. Tecido que barra muito (osso) fica <b>branco</b>. Tecido que deixa passar quase tudo (ar) fica <b>preto</b>. O resto é escala de cinza no meio.</p>
+
+    <div class="mne">
+      <span class="tag">A regra de ouro que resolve tudo</span>
+      <b>Branco = denso (barra o raio-X). Preto = pouco denso (deixa passar).</b> Se você entender só isso, já sabe ler 80% de uma TC. Todo o resto é aprender <i>quão</i> branco ou preto cada coisa deveria ser.
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2 ============ -->
+<section>
+  <div class="num">02</div>
+  <h2>Orientação: de que lado você está olhando?</h2>
+  <div class="card">
+    <p>Este é o erro nº1 de quem começa. A fatia (corte <b>axial</b>) é vista <b>de baixo pra cima</b>, como se você estivesse nos pés do paciente olhando na direção da cabeça dele. Consequência:</p>
+    <ul>
+      <li><b>A direita do paciente aparece na SUA esquerda</b> (e vice-versa).</li>
+      <li>O que está <b>em cima na tela = anterior</b> (barriga/peito).</li>
+      <li>O que está <b>embaixo na tela = posterior</b> (costas/coluna). A coluna é seu ponto de referência que nunca falha — está sempre embaixo, no meio.</li>
+    </ul>
+
+    <figure class="fig">
+      <svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Corte axial mostrando orientação direita-esquerda">
+        <!-- corpo -->
+        <ellipse cx="210" cy="150" rx="150" ry="105" fill="#20202e" stroke="#3a3a52" stroke-width="2"/>
+        <!-- coluna posterior -->
+        <circle cx="210" cy="235" r="16" fill="#e8e8f0"/>
+        <text x="210" y="240" text-anchor="middle" font-size="11" fill="#0a0a0f" font-family="JetBrains Mono">osso</text>
+        <!-- anterior label -->
+        <text x="210" y="30" text-anchor="middle" font-size="13" fill="#f97316" font-family="JetBrains Mono">ANTERIOR (em cima na tela)</text>
+        <text x="210" y="292" text-anchor="middle" font-size="13" fill="#22d3ee" font-family="JetBrains Mono">POSTERIOR / coluna</text>
+        <!-- direita do paciente = esquerda da tela -->
+        <text x="70" y="150" text-anchor="middle" font-size="15" fill="#34d399" font-family="Syne" font-weight="700">D</text>
+        <text x="70" y="172" text-anchor="middle" font-size="10.5" fill="#9a9ab0" font-family="JetBrains Mono">direita do</text>
+        <text x="70" y="184" text-anchor="middle" font-size="10.5" fill="#9a9ab0" font-family="JetBrains Mono">PACIENTE</text>
+        <text x="350" y="150" text-anchor="middle" font-size="15" fill="#a855f7" font-family="Syne" font-weight="700">E</text>
+        <text x="350" y="172" text-anchor="middle" font-size="10.5" fill="#9a9ab0" font-family="JetBrains Mono">esquerda do</text>
+        <text x="350" y="184" text-anchor="middle" font-size="10.5" fill="#9a9ab0" font-family="JetBrains Mono">PACIENTE</text>
+        <!-- seta olho -->
+        <text x="210" y="150" text-anchor="middle" font-size="30">👁️</text>
+        <text x="210" y="128" text-anchor="middle" font-size="10" fill="#9a9ab0" font-family="JetBrains Mono">você olha dos pés → cabeça</text>
+      </svg>
+      <figcaption>Corte axial: você olha de baixo. Direita do paciente à SUA esquerda.</figcaption>
+    </figure>
+
+    <div class="prova">
+      <span class="tag">Alto rendimento</span>
+      Reconhecer lado é básico de laudo. Se descreverem "lesão no lobo hepático <b>direito</b>", ela vai estar na <b>esquerda da imagem</b>. Fígado grande à esquerda da tela = fígado direito. Baço pequeno à direita da tela = lado esquerdo do paciente.
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3 ============ -->
+<section>
+  <div class="num">03</div>
+  <h2>Os 3 planos de corte</h2>
+  <div class="card">
+    <p>A mesma TC pode ser "remontada" em três direções. Você vai usar principalmente o <b>axial</b>, mas coronal e sagital ajudam a entender relações de altura e profundidade.</p>
+    <figure class="fig">
+      <svg viewBox="0 0 480 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Três planos anatômicos">
+        <!-- AXIAL -->
+        <g transform="translate(20,20)">
+          <rect x="0" y="0" width="120" height="150" rx="10" fill="#20202e" stroke="#3a3a52"/>
+          <line x1="10" y1="75" x2="110" y2="75" stroke="#f97316" stroke-width="3"/>
+          <ellipse cx="60" cy="75" rx="8" ry="20" fill="none" stroke="#9a9ab0"/>
+          <text x="60" y="175" text-anchor="middle" font-size="13" fill="#f97316" font-family="Syne" font-weight="700">AXIAL</text>
+          <text x="60" y="193" text-anchor="middle" font-size="10" fill="#9a9ab0" font-family="JetBrains Mono">fatias de baixo↑</text>
+        </g>
+        <!-- CORONAL -->
+        <g transform="translate(180,20)">
+          <rect x="0" y="0" width="120" height="150" rx="10" fill="#20202e" stroke="#3a3a52"/>
+          <line x1="60" y1="10" x2="60" y2="140" stroke="#a855f7" stroke-width="3"/>
+          <ellipse cx="60" cy="75" rx="20" ry="55" fill="none" stroke="#9a9ab0"/>
+          <text x="60" y="175" text-anchor="middle" font-size="13" fill="#a855f7" font-family="Syne" font-weight="700">CORONAL</text>
+          <text x="60" y="193" text-anchor="middle" font-size="10" fill="#9a9ab0" font-family="JetBrains Mono">frente/trás</text>
+        </g>
+        <!-- SAGITAL -->
+        <g transform="translate(340,20)">
+          <rect x="0" y="0" width="120" height="150" rx="10" fill="#20202e" stroke="#3a3a52"/>
+          <line x1="60" y1="10" x2="60" y2="140" stroke="#22d3ee" stroke-width="3"/>
+          <path d="M45 20 q25 55 0 120" fill="none" stroke="#9a9ab0"/>
+          <text x="60" y="175" text-anchor="middle" font-size="13" fill="#22d3ee" font-family="Syne" font-weight="700">SAGITAL</text>
+          <text x="60" y="193" text-anchor="middle" font-size="10" fill="#9a9ab0" font-family="JetBrains Mono">perfil (lado)</text>
+        </g>
+      </svg>
+      <figcaption>Axial = fatia horizontal · Coronal = corte de frente · Sagital = corte de perfil</figcaption>
+    </figure>
+    <span class="kid"><b>Tipo criança:</b> axial é cortar o pão em rodelas; coronal é abrir o pão como um livro; sagital é cortar de lado, do nariz até a nuca.</span>
+  </div>
+</section>
+
+<!-- ============ 4 ============ -->
+<section>
+  <div class="num">04</div>
+  <h2>A escala de densidade (Unidades Hounsfield)</h2>
+  <div class="card">
+    <p>Aquele número de cada pixel tem nome: <b>Unidade Hounsfield (UH)</b>. É a régua que define o cinza. Foi calibrada assim: <b>água = 0</b>, <b>ar = −1000</b>, <b>osso denso = +1000</b>. Todo o resto se encaixa nessa régua. Decorar essa escala é literalmente aprender a "ler cor" na TC.</p>
+
+    <figure class="fig">
+      <svg viewBox="0 0 460 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Escala de densidade Hounsfield">
+        <defs>
+          <linearGradient id="hu" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#000000"/>
+            <stop offset="25%" stop-color="#3a3a3a"/>
+            <stop offset="45%" stop-color="#5c5c5c"/>
+            <stop offset="60%" stop-color="#8a8a8a"/>
+            <stop offset="80%" stop-color="#cfcfcf"/>
+            <stop offset="100%" stop-color="#ffffff"/>
+          </linearGradient>
+        </defs>
+        <rect x="20" y="30" width="420" height="34" rx="6" fill="url(#hu)" stroke="#3a3a52"/>
+        <!-- marcadores -->
+        <g font-family="JetBrains Mono" font-size="10" fill="#e6e6ee" text-anchor="middle">
+          <line x1="30" y1="26" x2="30" y2="68" stroke="#f87171" stroke-width="1.5"/>
+          <text x="30" y="20" fill="#f87171">-1000</text>
+          <text x="30" y="84" fill="#f87171">AR</text>
+
+          <line x1="120" y1="26" x2="120" y2="68" stroke="#fbbf24" stroke-width="1.5"/>
+          <text x="120" y="20" fill="#fbbf24">-100/-50</text>
+          <text x="120" y="84" fill="#fbbf24">GORDURA</text>
+
+          <line x1="215" y1="26" x2="215" y2="68" stroke="#22d3ee" stroke-width="1.5"/>
+          <text x="215" y="20" fill="#22d3ee">0</text>
+          <text x="215" y="84" fill="#22d3ee">ÁGUA</text>
+
+          <line x1="285" y1="26" x2="285" y2="68" stroke="#34d399" stroke-width="1.5"/>
+          <text x="285" y="20" fill="#34d399">+30/+45</text>
+          <text x="285" y="84" fill="#34d399">MÚSCULO</text>
+
+          <line x1="330" y1="26" x2="330" y2="68" stroke="#f97316" stroke-width="1.5"/>
+          <text x="345" y="20" fill="#f97316">+50/+80</text>
+          <text x="330" y="98" fill="#f97316">SANGUE</text>
+
+          <line x1="430" y1="26" x2="430" y2="68" stroke="#ffffff" stroke-width="1.5"/>
+          <text x="418" y="20" fill="#fff">+1000</text>
+          <text x="425" y="84" fill="#fff">OSSO</text>
+        </g>
+      </svg>
+      <figcaption>Da esquerda (preto/ar) para a direita (branco/osso). Água no meio, no zero.</figcaption>
+    </figure>
+
+    <table>
+      <tr><th>Tecido</th><th>UH aproximado</th><th>Como aparece</th></tr>
+      <tr><td><span class="sw" style="background:#000"></span>Ar (pulmão, alça intestinal)</td><td>−1000 a −800</td><td>Preto total</td></tr>
+      <tr><td><span class="sw" style="background:#3a3a3a"></span>Gordura</td><td>−100 a −50</td><td>Cinza bem escuro</td></tr>
+      <tr><td><span class="sw" style="background:#22d3ee"></span>Água / bile / urina / líquido</td><td>0 (−10 a +15)</td><td>Cinza escuro</td></tr>
+      <tr><td><span class="sw" style="background:#8a8a8a"></span>Músculo / vísceras / partes moles</td><td>+20 a +50</td><td>Cinza médio</td></tr>
+      <tr><td><span class="sw" style="background:#c0c0c0"></span>Sangue agudo (coágulo fresco)</td><td>+50 a +80</td><td>Cinza claro (brilha!)</td></tr>
+      <tr><td><span class="sw" style="background:#fff"></span>Osso / cálcio / contraste / metal</td><td>+300 a +3000</td><td>Branco</td></tr>
+    </table>
+
+    <div class="alert">
+      <span class="tag">Não pode perder — cirurgião</span>
+      <b>Sangue agudo fica CLARO (~+50-80 UH), líquido simples fica ESCURO (~0 UH).</b> Isso separa "líquido livre inocente" de <b>hemoperitônio</b>. No trauma, coleção clara na pelve/goteira = sangue até prova em contrário.
+    </div>
+
+    <div class="mne">
+      <span class="tag">Mnemônico da escala</span>
+      Do mais preto ao mais branco: <b>"Ar, Gordura, Água, Músculo, Sangue, Osso"</b> → <span class="cyan">"A Garota Água-Marinha Sempre Ousa"</span>. A ordem é sempre essa, do −1000 ao +1000.
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5 ============ -->
+<section>
+  <div class="num">05</div>
+  <h2>Janelas (windows): a mesma imagem, olhares diferentes</h2>
+  <div class="card">
+    <p>O olho humano só distingue ~20 tons de cinza, mas a TC tem ~2000 valores. A <b>janela</b> é um "zoom de brilho/contraste" que escolhe qual faixa da régua você quer enxergar bem. A imagem é a mesma — muda só o que fica visível. Por isma que o mesmo exame é aberto em várias janelas.</p>
+    <span class="kid"><b>Tipo criança:</b> é como ajustar o brilho da TV pra enxergar o que estava muito escuro ou muito claro. A cena não muda, só o ajuste.</span>
+
+    <figure class="fig">
+      <svg viewBox="0 0 460 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Três janelas de TC">
+        <!-- janela pulmonar -->
+        <g transform="translate(15,20)">
+          <rect x="0" y="0" width="130" height="130" rx="10" fill="#0d0d14" stroke="#3a3a52"/>
+          <ellipse cx="65" cy="65" rx="52" ry="48" fill="#101018"/>
+          <ellipse cx="42" cy="62" rx="20" ry="34" fill="#000"/>
+          <ellipse cx="88" cy="62" rx="20" ry="34" fill="#000"/>
+          <path d="M42 40 q3 25 0 44 M42 45 q6 5 0 10" stroke="#fff" stroke-width="0.7" fill="none"/>
+          <circle cx="65" cy="100" r="9" fill="#e8e8f0"/>
+          <text x="65" y="152" text-anchor="middle" font-size="12" fill="#f97316" font-family="Syne" font-weight="700">PULMONAR</text>
+          <text x="65" y="168" text-anchor="middle" font-size="9" fill="#9a9ab0" font-family="JetBrains Mono">vê ar/alvéolo</text>
+        </g>
+        <!-- janela partes moles -->
+        <g transform="translate(165,20)">
+          <rect x="0" y="0" width="130" height="130" rx="10" fill="#0d0d14" stroke="#3a3a52"/>
+          <ellipse cx="65" cy="65" rx="52" ry="48" fill="#6a6a6a"/>
+          <ellipse cx="42" cy="62" rx="20" ry="34" fill="#3a3a3a"/>
+          <ellipse cx="88" cy="62" rx="20" ry="34" fill="#3a3a3a"/>
+          <circle cx="65" cy="70" r="12" fill="#8f8f8f"/>
+          <circle cx="65" cy="100" r="9" fill="#e8e8f0"/>
+          <text x="65" y="152" text-anchor="middle" font-size="12" fill="#a855f7" font-family="Syne" font-weight="700">PARTES MOLES</text>
+          <text x="65" y="168" text-anchor="middle" font-size="9" fill="#9a9ab0" font-family="JetBrains Mono">vê órgãos/vasos</text>
+        </g>
+        <!-- janela óssea -->
+        <g transform="translate(315,20)">
+          <rect x="0" y="0" width="130" height="130" rx="10" fill="#0d0d14" stroke="#3a3a52"/>
+          <ellipse cx="65" cy="65" rx="52" ry="48" fill="#141414"/>
+          <path d="M20 65 q45 -30 90 0 q-45 30 -90 0" fill="none" stroke="#fff" stroke-width="2"/>
+          <circle cx="65" cy="100" r="11" fill="#fff"/>
+          <rect x="60" y="94" width="10" height="12" fill="#141414"/>
+          <text x="65" y="152" text-anchor="middle" font-size="12" fill="#22d3ee" font-family="Syne" font-weight="700">ÓSSEA</text>
+          <text x="65" y="168" text-anchor="middle" font-size="9" fill="#9a9ab0" font-family="JetBrains Mono">vê osso/fratura</text>
+        </g>
+      </svg>
+      <figcaption>Mesmo tórax, três janelas. Cada uma "acende" um tipo de tecido.</figcaption>
+    </figure>
+
+    <table>
+      <tr><th>Janela</th><th>Serve para ver</th><th>Regra prática</th></tr>
+      <tr><td><b>Partes moles / mediastinal</b></td><td>Órgãos, vasos, músculos, coleções, sangue</td><td>Sua janela padrão no abdome</td></tr>
+      <tr><td><b>Pulmonar</b></td><td>Parênquima do pulmão, nódulos, pneumotórax</td><td>Tudo fica preto e branco de alto contraste</td></tr>
+      <tr><td><b>Óssea</b></td><td>Fraturas, cortical, lesões ósseas</td><td>Osso branco nítido, resto some</td></tr>
+    </table>
+
+    <div class="alert">
+      <span class="tag">Não pode perder</span>
+      <b>Pneumoperitônio</b> (ar livre = víscera perfurada) e <b>pneumotórax</b> podem passar batido na janela de partes moles e SÓ aparecer na <b>janela pulmonar</b>. Sempre olhe abdome também em janela de pulmão procurando ar onde não deveria ter.
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6 ============ -->
+<section>
+  <div class="num">06</div>
+  <h2>Contraste: com ou sem, e por quê</h2>
+  <div class="card">
+    <p>O <b>contraste iodado endovenoso</b> é um líquido que fica <b>branco</b> na TC e circula pelo sangue. Ele "pinta" os vasos e os órgãos conforme o sangue chega neles. Serve pra: ver vasos, ver se um órgão está bem perfundido, destacar tumores, achar sangramento ativo e abscessos.</p>
+    <span class="kid"><b>Tipo criança:</b> é uma tinta que anda no sangue e acende de branco tudo por onde o sangue passa, ajudando a ver o que estava escondido no cinza.</span>
+
+    <h3>As fases (o timing importa muito)</h3>
+    <figure class="fig">
+      <svg viewBox="0 0 460 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Fases do contraste">
+        <line x1="30" y1="70" x2="440" y2="70" stroke="#3a3a52" stroke-width="2"/>
+        <g font-family="JetBrains Mono" font-size="10" text-anchor="middle">
+          <!-- sem contraste -->
+          <circle cx="55" cy="70" r="8" fill="#5c5c5c"/>
+          <text x="55" y="45" fill="#9a9ab0">0s</text>
+          <text x="55" y="100" fill="#9a9ab0">sem</text>
+          <text x="55" y="113" fill="#9a9ab0">contraste</text>
+          <!-- arterial -->
+          <circle cx="170" cy="70" r="10" fill="#f87171"/>
+          <text x="170" y="45" fill="#f87171">~25-35s</text>
+          <text x="170" y="100" fill="#f87171">ARTERIAL</text>
+          <text x="170" y="113" fill="#9a9ab0">artérias brilham</text>
+          <!-- portal/venoso -->
+          <circle cx="290" cy="70" r="10" fill="#a855f7"/>
+          <text x="290" y="45" fill="#a855f7">~60-70s</text>
+          <text x="290" y="100" fill="#a855f7">PORTAL/VENOSA</text>
+          <text x="290" y="113" fill="#9a9ab0">órgãos "coram"</text>
+          <!-- tardia -->
+          <circle cx="410" cy="70" r="9" fill="#fbbf24"/>
+          <text x="410" y="45" fill="#fbbf24">~3-5min</text>
+          <text x="410" y="100" fill="#fbbf24">TARDIA</text>
+          <text x="410" y="113" fill="#9a9ab0">rim/ureter/xixi</text>
+        </g>
+      </svg>
+      <figcaption>O contraste é o mesmo — muda só o segundo em que você tira a foto.</figcaption>
+    </figure>
+
+    <ul>
+      <li><b>Sem contraste (fase simples):</b> boa pra ver <b>cálculo</b> (rim, ureter), <b>sangramento agudo</b> (que já é branco sozinho) e calcificações. Trauma de crânio e cólica renal geralmente começam sem contraste.</li>
+      <li><b>Arterial:</b> artérias acesas. Ideal pra <b>aneurisma, dissecção, sangramento arterial ativo</b> e caracterizar tumores hipervasculares (ex.: hepatocarcinoma). <span class="purple">→ pra vascular, essa é a sua fase.</span></li>
+      <li><b>Portal / venosa:</b> fígado e vísceras no pico de realce. É a fase mais usada no <b>abdome agudo</b> geral e pra ver a maioria das lesões e coleções.</li>
+      <li><b>Tardia / excretora:</b> contraste já foi filtrado pro rim e vias urinárias. Serve pra ver <b>ureter, bexiga e vazamento urinário</b>.</li>
+    </ul>
+
+    <div class="prova">
+      <span class="tag">Alto rendimento</span>
+      <b>Cálculo urinário se vê MELHOR SEM contraste</b> (o contraste branco na via urinária "esconde" a pedra também branca). Já <b>sangramento arterial ativo</b> aparece como um borrão de contraste que "vaza" na fase arterial e aumenta na venosa (<i>blush</i>).
+    </div>
+
+    <div class="alert">
+      <span class="tag">Não pode perder — antes de pedir contraste</span>
+      Contraste iodado exige cuidado com <b>função renal</b> e <b>alergia prévia</b>. Cheque isso: é pergunta de prova e conduta de plantão.
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7 ============ -->
+<section>
+  <div class="num">07</div>
+  <h2>O método: como olhar sem se perder</h2>
+  <div class="card">
+    <p>Nunca olhe uma TC "no geral". Todo mundo que lê bem segue <b>sempre a mesma sequência</b>, órgão por órgão, pra não pular nada. Um roteiro simples pro abdome:</p>
+
+    <div class="step"><div class="n">1</div><div class="t"><b>Confira o cabeçalho</b>Nome, região, tem contraste?, qual fase, qual janela. Já se oriente: coluna embaixo, direita do paciente à sua esquerda.</div></div>
+    <div class="step"><div class="n">2</div><div class="t"><b>Role a rolagem inteira 1x</b>Suba e desça as fatias só pra ter o "mapa", sem laudar nada ainda.</div></div>
+    <div class="step"><div class="n">3</div><div class="t"><b>Vá órgão por órgão, de cima pra baixo</b>Fígado → vesícula/vias biliares → baço → pâncreas → adrenais → rins → aorta e vasos → alças intestinais → bexiga/pelve.</div></div>
+    <div class="step"><div class="n">4</div><div class="t"><b>Procure o que NÃO deveria estar lá</b>Ar fora da alça (preto onde devia ser cinza), líquido livre, coleção, massa, borramento de gordura (a gordura fica "suja", enevoada = inflamação).</div></div>
+    <div class="step"><div class="n">5</div><div class="t"><b>Feche na janela de pulmão e óssea</b>Bases pulmonares (derrame, pneumonia), ar livre, e ossos (fratura, metástase).</div></div>
+
+    <div class="mne">
+      <span class="tag">Mnemônico do roteiro abdominal</span>
+      <b>"Fui Ver Baço, Pâncreas, Aorta, Rim, Alça, Bexiga"</b> — a ordem de checagem pra não esquecer órgão nenhum.
+    </div>
+
+    <p><b>Sinal de inflamação que você VAI usar direto:</b> a gordura normal é preta e homogênea. Quando um órgão inflama (apêndice, diverticulite, colecistite), a gordura ao redor fica com <b>listras/borramento cinza</b> — chamamos de "densificação da gordura" ou <i>fat stranding</i>. Ache o órgão mais "sujo" ao redor e você achou o foco.</p>
+    <span class="kid"><b>Tipo criança:</b> gordura saudável é um fundo pretinho liso. Quando algo inflama do lado, fica tudo embaçado e riscado, como fumaça — e a fumaça aponta pro problema.</span>
+  </div>
+</section>
+
+<!-- ============ 8 ============ -->
+<section>
+  <div class="num">08</div>
+  <h2>Anatomia normal — um corte do abdome pra guardar</h2>
+  <div class="card">
+    <p>Vale ter na cabeça um corte "de referência" na altura do <b>fígado / hilo hepático</b>. Se você souber onde cada coisa fica nesse nível, reconhece o resto por vizinhança.</p>
+
+    <figure class="fig">
+      <svg viewBox="0 0 460 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Corte axial abdominal normal esquemático">
+        <!-- contorno corpo -->
+        <ellipse cx="230" cy="170" rx="200" ry="140" fill="#1a1a26" stroke="#3a3a52" stroke-width="2"/>
+        <!-- gordura subcutânea (anel) -->
+        <ellipse cx="230" cy="170" rx="200" ry="140" fill="none" stroke="#2a2a1a" stroke-width="14"/>
+
+        <!-- FÍGADO (direita do paciente = esquerda da tela), grande -->
+        <path d="M40 120 Q70 70 180 90 Q230 100 220 200 Q150 240 70 210 Q35 180 40 120 Z" fill="#8a7a5a" opacity="0.85"/>
+        <text x="120" y="150" font-size="13" fill="#0a0a0f" font-family="Syne" font-weight="700">FÍGADO</text>
+
+        <!-- vesícula -->
+        <ellipse cx="175" cy="205" rx="16" ry="12" fill="#2f5f3f"/>
+        <text x="175" y="235" font-size="9" fill="#34d399" font-family="JetBrains Mono" text-anchor="middle">vesícula</text>
+
+        <!-- ESTÔMAGO -->
+        <ellipse cx="270" cy="120" rx="34" ry="24" fill="#3a3a3a" stroke="#5c5c5c"/>
+        <text x="270" y="123" font-size="10" fill="#cfcfcf" font-family="JetBrains Mono" text-anchor="middle">estômago</text>
+
+        <!-- BAÇO (esquerda paciente = direita tela) -->
+        <path d="M420 130 Q440 180 400 220 Q360 210 360 160 Q370 125 420 130 Z" fill="#6a4a5a" opacity="0.9"/>
+        <text x="392" y="175" font-size="11" fill="#fff" font-family="Syne" font-weight="700" text-anchor="middle">BAÇO</text>
+
+        <!-- PÂNCREAS (faixa horizontal atrás do estômago) -->
+        <path d="M175 175 Q270 155 360 185" stroke="#c99a6a" stroke-width="16" fill="none" stroke-linecap="round"/>
+        <text x="270" y="172" font-size="10" fill="#f97316" font-family="JetBrains Mono" text-anchor="middle">pâncreas</text>
+
+        <!-- AORTA + VCI (na frente da coluna) -->
+        <circle cx="215" cy="255" r="12" fill="#f87171"/>
+        <text x="215" y="290" font-size="9" fill="#f87171" font-family="JetBrains Mono" text-anchor="middle">aorta</text>
+        <ellipse cx="248" cy="255" rx="13" ry="10" fill="#a855f7"/>
+        <text x="252" y="230" font-size="9" fill="#a855f7" font-family="JetBrains Mono" text-anchor="middle">VCI</text>
+
+        <!-- RINS -->
+        <ellipse cx="120" cy="255" rx="22" ry="15" fill="#7a5a4a" transform="rotate(-20 120 255)"/>
+        <text x="105" y="285" font-size="9" fill="#e6e6ee" font-family="JetBrains Mono" text-anchor="middle">rim D</text>
+        <ellipse cx="345" cy="255" rx="22" ry="15" fill="#7a5a4a" transform="rotate(20 345 255)"/>
+        <text x="360" y="285" font-size="9" fill="#e6e6ee" font-family="JetBrains Mono" text-anchor="middle">rim E</text>
+
+        <!-- CORPO VERTEBRAL -->
+        <circle cx="230" cy="290" r="20" fill="#e8e8f0"/>
+        <text x="230" y="294" font-size="9" fill="#0a0a0f" font-family="JetBrains Mono" text-anchor="middle">vértebra</text>
+
+        <!-- labels lado -->
+        <text x="35" y="60" font-size="12" fill="#34d399" font-family="Syne" font-weight="700">← DIREITA do paciente</text>
+        <text x="300" y="60" font-size="12" fill="#a855f7" font-family="Syne" font-weight="700">ESQUERDA →</text>
+        <text x="230" y="28" font-size="11" fill="#f97316" font-family="JetBrains Mono" text-anchor="middle">ANTERIOR</text>
+        <text x="230" y="332" font-size="11" fill="#22d3ee" font-family="JetBrains Mono" text-anchor="middle">POSTERIOR</text>
+      </svg>
+      <figcaption>Esquema (não é foto real): posições relativas dos órgãos num corte alto do abdome.</figcaption>
+    </figure>
+
+    <p>Pontos de referência que quase nunca mudam:</p>
+    <ul>
+      <li><b>Fígado</b> grande, ocupa a direita do paciente (esquerda da tela).</li>
+      <li><b>Baço</b> pequeno, atrás/lateral à esquerda do paciente (direita da tela).</li>
+      <li><b>Aorta</b> (redonda, à esquerda) e <b>veia cava</b> (ovalada, à direita) sentadas na frente da <b>coluna</b>.</li>
+      <li><b>Rins</b> atrás (retroperitônio), um de cada lado da coluna.</li>
+      <li><b>Pâncreas</b> atravessado no meio, atrás do estômago — o mais "escondido", olhe com atenção.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ macetes ============ -->
+<section>
+  <div class="num">🎯</div>
+  <h2>Pontos de referência &amp; macetes pra caçar cada estrutura</h2>
+  <div class="card">
+    <p>Saber <b>onde</b> o órgão fica é metade. A outra metade é ter um <b>truque pra achá-lo rápido</b> rolando as fatias. Estes são os que funcionam no plantão.</p>
+
+    <h3>1. A coluna é sua régua (níveis vertebrais)</h3>
+    <p>O corpo vertebral não é só âncora de baixo — ele te diz a <b>altura</b> e prevê o que aparece ali.</p>
+
+    <div class="mne">
+      <span class="tag">Mnemônico dos hiatos do diafragma</span>
+      <b>"Eu 8, aos 10 comi 12 OVOS"</b> → <span class="red">VCI em T8</span>, <span class="orange">Esôfago em T10</span>, <span class="cyan">Aorta em T12</span>.
+    </div>
+
+    <figure class="fig">
+      <svg viewBox="0 0 460 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Régua vertebral com níveis vasculares">
+        <!-- coluna -->
+        <g>
+          <rect x="200" y="30" width="52" height="34" rx="7" fill="#e8e8f0"/>
+          <rect x="200" y="72" width="52" height="34" rx="7" fill="#cfcfcf"/>
+          <rect x="200" y="114" width="52" height="34" rx="7" fill="#e8e8f0"/>
+          <rect x="200" y="156" width="52" height="34" rx="7" fill="#cfcfcf"/>
+          <rect x="200" y="198" width="52" height="34" rx="7" fill="#e8e8f0"/>
+          <rect x="200" y="240" width="52" height="34" rx="7" fill="#cfcfcf"/>
+          <rect x="200" y="282" width="52" height="34" rx="7" fill="#e8e8f0"/>
+          <rect x="200" y="324" width="52" height="34" rx="7" fill="#cfcfcf"/>
+        </g>
+        <!-- labels nível esquerda -->
+        <g font-family="JetBrains Mono" font-size="13" fill="#9a9ab0" text-anchor="end">
+          <text x="190" y="52">T8</text>
+          <text x="190" y="94">T10</text>
+          <text x="190" y="136">T12</text>
+          <text x="190" y="178">L1</text>
+          <text x="190" y="220">L2</text>
+          <text x="190" y="262">L3</text>
+          <text x="190" y="304">L4</text>
+          <text x="190" y="346">L5</text>
+        </g>
+        <!-- o que tem em cada nível, direita -->
+        <g font-family="Inter" font-size="12.5">
+          <text x="262" y="52" fill="#f87171">VCI cruza o diafragma</text>
+          <text x="262" y="94" fill="#f97316">esôfago cruza</text>
+          <text x="262" y="136" fill="#22d3ee">aorta cruza + tronco celíaco</text>
+          <text x="262" y="178" fill="#34d399">AMS · a. renais · plano transpilórico</text>
+          <text x="262" y="220" fill="#a855f7">v. renal esq. (entre AMS e aorta)</text>
+          <text x="262" y="262" fill="#e6e6ee">AMI</text>
+          <text x="262" y="304" fill="#f97316">bifurcação da aorta (umbigo)</text>
+          <text x="262" y="346" fill="#a855f7">confluência → VCI</text>
+        </g>
+      </svg>
+      <figcaption>Conte os corpos vertebrais: o nível já entrega o que procurar.</figcaption>
+    </figure>
+
+    <h3>2. Aorta × Cava — nunca mais confunda</h3>
+    <ul>
+      <li><b>Aorta:</b> redonda, parede grossa, <b>à esquerda</b> da coluna, calibre constante. Brilha primeiro na fase arterial.</li>
+      <li><b>VCI:</b> ovalada/em gota, parede fina, <b>à direita</b>, muda de formato a cada fatia. Brilha mais na fase venosa.</li>
+    </ul>
+
+    <h3>3. Ache o órgão seguindo o vaso dele</h3>
+    <ul>
+      <li><b>Tronco celíaco:</b> 1º ramo anterior abaixo do diafragma; abre num <b>"Y" que parece uma gaivota</b> (esplênica → esquerda, hepática comum → direita). <span class="cyan">"seagull sign".</span></li>
+      <li><b>AMS:</b> próximo ramo anterior, cercado de gordura, com a <b>VMS do lado direito</b>. <span class="orange">VMS à esquerda da AMS → suspeite de má-rotação.</span></li>
+    </ul>
+
+    <h3>4. Macete por órgão "chato de achar"</h3>
+    <table>
+      <tr><th>Órgão</th><th>Como caçar</th></tr>
+      <tr><td><b>Pâncreas</b></td><td>Siga a <b>veia esplênica</b> — ela corre colada atrás do corpo/cauda, como uma sombra. Achou a esplênica, o pâncreas está na frente. Nível ~L1.</td></tr>
+      <tr><td><b>Adrenais</b></td><td>Formato de <b>"Y"/setinha</b>. Direita <b>atrás da VCI</b>; esquerda <b>anteromedial ao polo superior do rim esquerdo</b>.</td></tr>
+      <tr><td><b>Vesícula</b></td><td>Saco escuro na borda inferior do fígado. A linha <b>vesícula→VCI (Cantlie)</b> divide fígado direito × esquerdo.</td></tr>
+      <tr><td><b>Apêndice</b></td><td>Ache o <b>ceco</b> e desça; base logo abaixo da válvula ileocecal (siga o íleo terminal entrando no ceco).</td></tr>
+      <tr><td><b>Rins</b></td><td>Retroperitônio, L1–L3. O <b>direito é mais baixo</b> (empurrado pelo fígado).</td></tr>
+      <tr><td><b>Baço</b></td><td>Póstero-lateral esquerdo, sob o diafragma. Normal não cruza a linha média nem passa muito das costelas.</td></tr>
+    </table>
+
+    <h3>5. Delgado × cólon (que alça é essa?)</h3>
+    <ul>
+      <li><b>Delgado:</b> central, pregas finas (<b>válvulas coniventes</b>) que <b>atravessam toda a luz</b>. Jejuno no QSE, íleo no QID.</li>
+      <li><b>Cólon:</b> na periferia (emoldura o abdome), <b>haustrações que NÃO cruzam a luz toda</b>, com ar/fezes dentro.</li>
+    </ul>
+
+    <div class="prova">
+      <span class="tag">Alto rendimento</span>
+      <b>Bifurcação da aorta ≈ L4 ≈ umbigo ≈ cristas ilíacas.</b> Trio que a banca adora cruzar. E a <b>confluência da VCI é mais baixa (~L5)</b> que a bifurcação da aorta.
+    </div>
+
+    <div class="mne">
+      <span class="tag">Truque do plano coronal</span>
+      Perdeu a noção de altura ou procura o <b>ponto de transição</b> de uma obstrução (alça dilatada → murcha)? Abra o <b>coronal</b>: acha o nível e a transição muito mais rápido que rolar axial.
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9 ============ -->
+<section>
+  <div class="num">09</div>
+  <h2>Os "não pode perder" do cirurgião</h2>
+  <div class="card">
+    <p>Você não precisa laudar como radiologista — mas <b>tem que reconhecer o que muda a conduta na hora</b>. Estes são os achados que o cirurgião não pode deixar passar:</p>
+
+    <details>
+      <summary>💨 Pneumoperitônio (ar livre = perfuração)</summary>
+      <div class="body">
+        <p>Bolha de ar <b>preta</b> fora da alça intestinal — geralmente subindo pra frente, abaixo da parede abdominal ou perto do fígado. Significa víscera oca perfurada até prova em contrário → <b>abdome cirúrgico</b>. Procure na <b>janela pulmonar</b>, que realça o ar.</p>
+      </div>
+    </details>
+    <details>
+      <summary>🩸 Líquido livre / hemoperitônio</summary>
+      <div class="body">
+        <p>Coleção nas goteiras parietocólicas, ao redor do fígado/baço e na pelve. <b>Escuro (~0 UH)</b> = líquido simples. <b>Claro (+45-80 UH)</b> = sangue. No trauma, sangue claro perto de um órgão = provável lesão daquele órgão.</p>
+      </div>
+    </details>
+    <details>
+      <summary>🔴 Apendicite</summary>
+      <div class="body">
+        <p>Apêndice <b>espessado (>6 mm)</b>, sem preenchimento, com <b>gordura borrada</b> em volta (fat stranding) na fossa ilíaca direita. Pode ter apendicolito (pedrinha branca) e líquido. Se tiver ar/coleção ao redor → perfurou.</p>
+      </div>
+    </details>
+    <details>
+      <summary>🌀 Obstrução intestinal</summary>
+      <div class="body">
+        <p>Alças <b>dilatadas cheias de líquido/ar</b> antes de um ponto, e alças <b>murchas</b> depois. Esse "ponto de transição" é onde está a causa. Delgado dilatado > 3 cm, cólon > 6 cm são os limites clássicos.</p>
+      </div>
+    </details>
+    <details>
+      <summary>🫧 Abscesso / coleção</summary>
+      <div class="body">
+        <p>Coleção com <b>parede que realça</b> com contraste (anel branco em volta) e centro líquido/escuro. Se tiver <b>bolinhas de ar</b> dentro, forte suspeita de infecção/abscesso.</p>
+      </div>
+    </details>
+    <details>
+      <summary>🫀 Aorta: aneurisma / dissecção (foco vascular)</summary>
+      <div class="body">
+        <p>Aorta <b>dilatada</b> (>3 cm na abdominal) = aneurisma. Uma <b>linha (flap) dentro da luz</b> separando dois canais na fase arterial = dissecção. Contraste que vaza pra fora da parede = ruptura → emergência.</p>
+      </div>
+    </details>
+
+    <div class="alert">
+      <span class="tag">Regra de plantão</span>
+      Diante da dúvida entre "líquido inocente" e "sangue", <b>meça a densidade (UH)</b>. Número resolve o que o olho não decide. Clicar no pixel e ler a UH é sua melhor ferramenta objetiva.
+    </div>
+  </div>
+</section>
+
+<!-- ============ casos reais ============ -->
+<section>
+  <div class="num">📂</div>
+  <h2>Casos reais — treine o olho no exame de verdade</h2>
+  <div class="card">
+    <p>Os esquemas acima são desenhos limpos pra você entender a lógica. Agora o pulo do gato é ver <b>TC de verdade</b>. Os botões abaixo abrem casos no <b>Radiopaedia</b> (gratuito), onde você <b>rola a pilha inteira de fatias</b> e pode ligar/desligar as legendas — muito melhor que uma imagem parada.</p>
+    <span class="kid"><b>Como usar:</b> abra o caso, role as fatias de cima pra baixo tentando achar o achado sozinho <i>antes</i> de ler o laudo. Depois compare com o esquema aqui do arquivo.</span>
+
+    <div style="display:flex;flex-direction:column;gap:12px;margin-top:16px">
+
+      <div style="border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:#0d0d14">
+        <div style="font-family:'Syne',sans-serif;font-weight:600;color:#fff;font-size:15px;margin-bottom:4px">🫀 Anatomia normal do abdome</div>
+        <div style="font-size:13.5px;color:var(--dim);margin-bottom:10px">Confira o esquema da seção 08: fígado à esquerda da tela, baço à direita, aorta/cava na frente da coluna. Role e vá nomeando cada órgão.</div>
+        <a href="https://radiopaedia.org/cases/normal-ct-abdomen" target="_blank" rel="noopener" style="display:inline-block;background:var(--orange);color:#12121a;font-weight:600;font-size:13px;padding:8px 16px;border-radius:9px;text-decoration:none">Abrir caso normal ↗</a>
+      </div>
+
+      <div style="border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:#0d0d14">
+        <div style="font-family:'Syne',sans-serif;font-weight:600;color:#fff;font-size:15px;margin-bottom:4px">💉 Fases do contraste (arterial × portal)</div>
+        <div style="font-size:13.5px;color:var(--dim);margin-bottom:10px">Mesma anatomia em fases diferentes — veja as artérias acenderem na arterial e os órgãos "corarem" na portal (seção 06).</div>
+        <a href="https://radiopaedia.org/cases/normal-multi-phase-ct-of-the-abdomen" target="_blank" rel="noopener" style="display:inline-block;background:var(--orange);color:#12121a;font-weight:600;font-size:13px;padding:8px 16px;border-radius:9px;text-decoration:none">Abrir caso multifásico ↗</a>
+      </div>
+
+      <div style="border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:#0d0d14">
+        <div style="font-family:'Syne',sans-serif;font-weight:600;color:#fff;font-size:15px;margin-bottom:4px">💨 Pneumoperitônio</div>
+        <div style="font-size:13.5px;color:var(--dim);margin-bottom:10px">Procure a bolha de ar <b>preta</b> fora da alça, perto da parede/fígado. Troque mentalmente pra janela de pulmão.</div>
+        <a href="https://radiopaedia.org/articles/pneumoperitoneum" target="_blank" rel="noopener" style="display:inline-block;background:var(--red);color:#12121a;font-weight:600;font-size:13px;padding:8px 16px;border-radius:9px;text-decoration:none">Ver casos ↗</a>
+      </div>
+
+      <div style="border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:#0d0d14">
+        <div style="font-family:'Syne',sans-serif;font-weight:600;color:#fff;font-size:15px;margin-bottom:4px">🔴 Apendicite aguda</div>
+        <div style="font-size:13.5px;color:var(--dim);margin-bottom:10px">Ache o ceco na fossa ilíaca direita, siga até a base do apêndice: espessado (&gt;6 mm) e com a gordura em volta <b>borrada</b>.</div>
+        <a href="https://radiopaedia.org/articles/acute-appendicitis" target="_blank" rel="noopener" style="display:inline-block;background:var(--red);color:#12121a;font-weight:600;font-size:13px;padding:8px 16px;border-radius:9px;text-decoration:none">Ver casos ↗</a>
+      </div>
+
+      <div style="border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:#0d0d14">
+        <div style="font-family:'Syne',sans-serif;font-weight:600;color:#fff;font-size:15px;margin-bottom:4px">🫀 Aneurisma de aorta abdominal <span style="color:var(--purple);font-size:12px">· vascular</span></div>
+        <div style="font-size:13.5px;color:var(--dim);margin-bottom:10px">Aorta &gt;3 cm à esquerda da coluna, frequentemente com trombo mural e calcificação branca na parede. Meça o diâmetro.</div>
+        <a href="https://radiopaedia.org/articles/abdominal-aortic-aneurysm" target="_blank" rel="noopener" style="display:inline-block;background:var(--purple);color:#12121a;font-weight:600;font-size:13px;padding:8px 16px;border-radius:9px;text-decoration:none">Ver casos ↗</a>
+      </div>
+
+    </div>
+
+    <div class="prova" style="margin-top:16px">
+      <span class="tag">Dica de acervo</span>
+      Pra montar sua biblioteca, o <b>Radiopaedia</b> tem os casos roláveis com laudo; <b>LITFL Radiology Library</b> e <b>Kenhub</b> são ótimos pra anatomia normal comentada.
+    </div>
+  </div>
+</section>
+
+<!-- ============ resumão ============ -->
+<section>
+  <div class="num">★</div>
+  <h2>Resumo de bolso — 7 verdades</h2>
+  <div class="card">
+    <ul>
+      <li><b>1.</b> Branco = denso (osso, contraste, sangue). Preto = ar. Cinza = o meio.</li>
+      <li><b>2.</b> Direita do paciente na sua esquerda. Coluna sempre embaixo.</li>
+      <li><b>3.</b> A régua é a UH: ar −1000, água 0, osso +1000.</li>
+      <li><b>4.</b> Sangue agudo é CLARO; líquido simples é ESCURO. Na dúvida, meça a UH.</li>
+      <li><b>5.</b> Troque de janela: partes moles (padrão), pulmão (ar/pneumo), osso (fratura).</li>
+      <li><b>6.</b> Contraste: arterial pra vaso/sangramento, portal pro abdome geral, simples pra pedra.</li>
+      <li><b>7.</b> Leia sempre na mesma ordem, órgão por órgão. Gordura "suja" aponta o foco.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  carolzita · Tomografia do Zero · material didático de estudo<br>
+  esquemas ilustrativos — não substituem imagens reais de casos
+</footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Vasculites &amp; Desfiladeiro · pocket</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d1117;--card:#16161f;--card2:#1c1c27;--line:#2a2a38;
+  --txt:#ececf4;--muted:#9a9ab0;
+  --laranja:#f97316;--roxo:#a855f7;--ciano:#22d3ee;--vermelho:#f87171;--amarelo:#fbbf24;--verde:#34d399;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{overflow-x:hidden}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;font-size:17px;line-height:1.6;padding-bottom:30px}
+.top{padding:22px 18px 12px;position:sticky;top:0;background:linear-gradient(180deg,var(--bg) 70%,transparent);z-index:5}
+.kick{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:24px;line-height:1.15;margin-top:4px}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:6px 18px 12px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;padding:9px 15px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted);white-space:nowrap;cursor:pointer;transition:.15s}
+.tab.on{background:var(--laranja);border-color:var(--laranja);color:#0a0a0f}
+.panel{display:none;padding:6px 18px 40px;animation:f .25s}
+.panel.on{display:block}
+@keyframes f{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+h2{font-family:'Syne',sans-serif;font-size:21px;color:var(--laranja);margin:18px 0 10px}
+h3{font-family:'Syne',sans-serif;font-size:16px;color:#fff;margin:16px 0 6px}
+p{margin:10px 0}
+ul{list-style:none;margin:8px 0}
+li{padding:6px 0 6px 22px;position:relative}
+li::before{content:"▸";position:absolute;left:0;top:7px;color:var(--laranja);font-size:13px}
+strong{color:#fff;font-weight:600}
+.s{color:var(--ciano);font-style:italic;font-size:.92em}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0}
+.box{border-radius:12px;padding:13px 15px;margin:13px 0;border:1px solid;font-size:15px}
+.prova{background:rgba(168,85,247,.1);border-color:rgba(168,85,247,.4)}
+.prova .l{color:var(--roxo)}
+.mac{background:rgba(34,211,238,.1);border-color:rgba(34,211,238,.4)}
+.mac .l{color:var(--ciano)}
+.warn{background:rgba(248,113,113,.1);border-color:rgba(248,113,113,.4)}
+.warn .l{color:var(--vermelho)}
+.l{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-size:10px;background:rgba(168,85,247,.25);color:var(--roxo);padding:2px 6px;border-radius:5px;margin-left:5px;font-family:'JetBrains Mono',monospace}
+.kv{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)}
+.kv:last-child{border:none}
+.kv .k{flex:0 0 42%;color:var(--ciano);font-family:'JetBrains Mono',monospace;font-size:13px}
+.kv .v{flex:1;font-size:15px}
+.step{display:flex;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line)}
+.step:last-child{border:none}
+.step .n{flex:0 0 30px;height:30px;border-radius:9px;background:rgba(249,115,22,.15);border:1px solid rgba(249,115,22,.45);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;display:grid;place-items:center;font-size:14px}
+.step .x{flex:1}
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="kick">carolzita · pocket 🚑</div>
+  <h1>Vasculites &amp; Desfiladeiro 🩸</h1>
+</div>
+<div class="tabs">
+  <div class="tab on" data-t="0">📐 TOS tipos</div>
+  <div class="tab" data-t="1">🧠 nTOS</div>
+  <div class="tab" data-t="2">🩸 vTOS/aTOS</div>
+  <div class="tab" data-t="3">🚬 Buerger</div>
+  <div class="tab" data-t="4">💔 Takayasu</div>
+  <div class="tab" data-t="5">☠️ Traps</div>
+</div>
+
+<!-- 0 TOS TIPOS -->
+<div class="panel on" data-p="0">
+  <h2>📐 3 tipos de TOS</h2>
+  <div class="card">
+    <div class="kv"><div class="k">🧠 Neurogênico</div><div class="v"><strong>~95%</strong> — plexo braquial</div></div>
+    <div class="kv"><div class="k">🩹 Venoso</div><div class="v">~4% — Paget-Schroetter</div></div>
+    <div class="kv"><div class="k">🩸 Arterial</div><div class="v">~1% — costela cervical</div></div>
+  </div>
+  <div class="box warn"><span class="l">☠️ pega-ratão</span>Vascular precisa de <strong>sinais objetivos</strong> (edema/cianose/isquemia)! Sem eles, questionar o diagnóstico.</div>
+</div>
+
+<!-- 1 NTOS -->
+<div class="panel" data-p="1">
+  <h2>🧠 TOS neurogênico</h2>
+  <p>Diagnóstico <strong>clínico</strong>, sem teste único confirmatório — cuidado com "TOS disputado"!</p>
+  <div class="card">
+    <div class="step"><div class="n">1</div><div class="x">Fisioterapia (1ª linha, maioria)</div></div>
+    <div class="step"><div class="n">2</div><div class="x">Injeção guiada (± toxina botulínica)</div></div>
+    <div class="step"><div class="n">3</div><div class="x">Cirurgia (1ª costela) só se falha</div></div>
+  </div>
+  <div class="box warn"><span class="l">☠️ pega-ratão</span>Operar "TOS disputado" (dor inespecífica) = <strong>maus resultados</strong>!</div>
+</div>
+
+<!-- 2 VTOS ATOS -->
+<div class="panel" data-p="2">
+  <h2>🩸 Venoso e Arterial</h2>
+  <div class="box mac"><span class="l">🧠 macete</span><strong>Paget-Schroetter</strong> = trombose de esforço — atleta jovem, braço edemaciado/cianótico pós-treino overhead.</div>
+  <div class="card">
+    <div class="step"><div class="n">1</div><div class="x">Anticoagular</div></div>
+    <div class="step"><div class="n">2</div><div class="x">Trombólise (cateter)</div></div>
+    <div class="step"><div class="n">3</div><div class="x">Ressecção 1ª costela</div></div>
+  </div>
+  <p>🦴 Arterial: costela cervical → dilatação pós-estenótica → trombose/embolia digital.</p>
+</div>
+
+<!-- 3 BUERGER -->
+<div class="panel" data-p="3">
+  <h2>🚬 Doença de Buerger</h2>
+  <div class="card">
+    <div class="kv"><div class="k">Critérios</div><div class="v">&lt;45 anos + tabaco + isquemia distal</div></div>
+    <div class="kv"><div class="k">Excluir</div><div class="v">Autoimune, trombofilia, DM, êmbolo proximal</div></div>
+  </div>
+  <div class="box prova"><span class="l">alto rendimento</span>🎯 <strong>Só parar de fumar</strong> muda o curso da doença! Nada mais tem eficácia comprovada consistente.</div>
+  <div class="box warn"><span class="l">☠️ pega-ratão</span>Revascularização tem opções limitadas — vasos distais pequenos demais.</div>
+</div>
+
+<!-- 4 TAKAYASU -->
+<div class="panel" data-p="4">
+  <h2>💔 "Pulseless disease"</h2>
+  <p>Mulher jovem (&lt;40a), descendência asiática 👩</p>
+  <div class="card">
+    <div class="kv"><div class="k">🟡 Pré-pulseless</div><div class="v">Constitucional (perdida!)</div></div>
+    <div class="kv"><div class="k">🔴 Pulseless</div><div class="v">Sem pulso, sopro, claudicação</div></div>
+  </div>
+  <div class="box prova"><span class="l">alto rendimento <span class="banca">ACR 2021</span></span>💊 <strong>Corticoide primeiro!</strong> NÃO angioplastar na fase ativa — só depois do controle inflamatório.</div>
+  <div class="box warn"><span class="l">☠️ pega-ratão</span>Takayasu(jovem) × GCA(&gt;50 anos) — idade é o discriminador!</div>
+</div>
+
+<!-- 5 TRAPS -->
+<div class="panel" data-p="5">
+  <h2>☠️ Pega-ratões</h2>
+  <div class="box warn"><span class="l">trap 1</span>nTOS = clínico, sem teste único 🧠</div>
+  <div class="box warn"><span class="l">trap 2</span>TOS vascular precisa sinal objetivo 🩸</div>
+  <div class="box warn"><span class="l">trap 3</span>TOS disputado → não operar direto ⚠️</div>
+  <div class="box warn"><span class="l">trap 4</span>Buerger = só parar de fumar funciona 🚬</div>
+  <div class="box warn"><span class="l">trap 5</span>Takayasu: não angioplastar na fase ativa 💔</div>
+  <div class="box warn"><span class="l">trap 6</span>Takayasu×GCA = idade decide 👵👩</div>
+  <div class="box warn"><span class="l">trap 7</span>Fase pré-pulseless é frequentemente perdida ⏳</div>
+  <div class="box warn"><span class="l">trap 8</span>Buerger tem revascularização limitada 🩹</div>
+  <div class="box mac"><span class="l">✅ resumo de bolso</span>TOS: neuro95%(fisio)·venoso4%(Paget-Schroetter)·arterial1%(costela cervical) · Buerger=parar de fumar · Takayasu=jovem,esteroide antes de angioplastar 🎓</div>
+</div>
+
+<script>
+var tabs=document.querySelectorAll('.tab'),panels=document.querySelectorAll('.panel');
+tabs.forEach(function(t){t.addEventListener('click',function(){
+  tabs.forEach(function(x){x.classList.remove('on')});
+  panels.forEach(function(x){x.classList.remove('on')});
+  t.classList.add('on');
+  document.querySelector('.panel[data-p="'+t.dataset.t+'"]').classList.add('on');
+})});
+</script>
+</body>
+</html>

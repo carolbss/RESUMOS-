@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Obstrução & Volvo · pocket</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0f;--card:#16161f;--card2:#1c1c27;--line:#2a2a38;
+  --txt:#ececf4;--muted:#9a9ab0;
+  --laranja:#f97316;--roxo:#a855f7;--ciano:#22d3ee;--vermelho:#f87171;--amarelo:#fbbf24;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{overflow-x:hidden}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;font-size:17px;line-height:1.6;padding-bottom:30px}
+.top{padding:22px 18px 12px;position:sticky;top:0;background:linear-gradient(180deg,var(--bg) 70%,transparent);z-index:5}
+.kick{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:29px;line-height:1.05;margin-top:4px}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:6px 18px 12px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;padding:9px 15px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted);white-space:nowrap;cursor:pointer;transition:.15s}
+.tab.on{background:var(--laranja);border-color:var(--laranja);color:#0a0a0f}
+.panel{display:none;padding:6px 18px 40px;animation:f .25s}
+.panel.on{display:block}
+@keyframes f{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+h2{font-family:'Syne',sans-serif;font-size:21px;color:var(--laranja);margin:18px 0 10px}
+h3{font-family:'Syne',sans-serif;font-size:16px;color:#fff;margin:16px 0 6px}
+p{margin:10px 0}
+ul{list-style:none;margin:8px 0}
+li{padding:6px 0 6px 22px;position:relative}
+li::before{content:"▸";position:absolute;left:0;top:7px;color:var(--laranja);font-size:13px}
+strong{color:#fff;font-weight:600}
+.s{color:var(--ciano);font-style:italic;font-size:.92em}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0}
+.box{border-radius:12px;padding:13px 15px;margin:13px 0;border:1px solid;font-size:15px}
+.prova{background:rgba(168,85,247,.1);border-color:rgba(168,85,247,.4)}
+.prova .l{color:var(--roxo)}
+.mac{background:rgba(34,211,238,.1);border-color:rgba(34,211,238,.4)}
+.mac .l{color:var(--ciano)}
+.warn{background:rgba(248,113,113,.1);border-color:rgba(248,113,113,.4)}
+.warn .l{color:var(--vermelho)}
+.l{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-size:10px;background:rgba(168,85,247,.25);color:var(--roxo);padding:2px 6px;border-radius:5px;margin-left:5px;font-family:'JetBrains Mono',monospace}
+.kv{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)}
+.kv:last-child{border:none}
+.kv .k{flex:0 0 40%;color:var(--ciano);font-family:'JetBrains Mono',monospace;font-size:13px}
+.kv .v{flex:1;font-size:15px}
+.step{display:flex;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line)}
+.step:last-child{border:none}
+.step .n{flex:0 0 30px;height:30px;border-radius:9px;background:rgba(249,115,22,.15);border:1px solid rgba(249,115,22,.45);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;display:grid;place-items:center;font-size:14px}
+.step .x{flex:1}
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="kick">carolzita · pocket 🚑</div>
+  <h1>Obstrução & Volvo</h1>
+</div>
+
+<div class="tabs" id="tabs">
+  <div class="tab on" data-t="dx">🔍 Diagnóstico</div>
+  <div class="tab" data-t="trat">💊 Tratamento</div>
+  <div class="tab" data-t="volvo">🌀 Volvo</div>
+  <div class="tab" data-t="passos">🔪 Passos</div>
+  <div class="tab" data-t="maos">✋ Mãos & Fios</div>
+  <div class="tab" data-t="compl">⚠️ Complicações</div>
+  <div class="tab" data-t="mac">🎯 Macetes</div>
+</div>
+
+<!-- DX -->
+<div class="panel on" id="dx">
+  <h2>🔍 Diagnóstico</h2>
+  <div class="card">
+    <h3>Tétrade 🧩</h3>
+    <ul>
+      <li>🌀 Dor em <strong>cólica</strong></li>
+      <li>🎈 <strong>Distensão</strong> (↑ quanto mais distal)</li>
+      <li>🚫 <strong>Parada de fezes e flatos</strong></li>
+      <li>🤮 <strong>Vômitos</strong> (bilioso→fecaloide)</li>
+    </ul>
+  </div>
+  <h3>Delgado 🆚 Cólon</h3>
+  <div class="card">
+    <div class="kv"><div class="k">Causa #1 ID</div><div class="v">🩹 Bridas/aderências</div></div>
+    <div class="kv"><div class="k">Causa #1 cólon</div><div class="v">🎗️ Neoplasia</div></div>
+    <div class="kv"><div class="k">RX delgado</div><div class="v">Moedas empilhadas (válvulas coniventes) 🪙</div></div>
+    <div class="kv"><div class="k">RX cólon</div><div class="v">Haustrações periféricas</div></div>
+  </div>
+  <div class="box warn"><span class="l">🚩 Estrangulamento = operar já</span>
+    Dor contínua desproporcional · febre · taquicardia · leucocitose · lactato↑ · peritonite · não-realce da parça na TC.</div>
+  <div class="box mac"><span class="l">💡 Alça fechada</span>Travada em 2 pontos (volvo/hérnia) → isquemia rápida = urgência absoluta.</div>
+  <p class="s">TC c/ contraste EV = padrão-ouro: nível, causa, zona de transição, sofrimento.</p>
+</div>
+
+<!-- TRAT -->
+<div class="panel" id="trat">
+  <h2>💊 Tratamento</h2>
+  <div class="card">
+    <h3>Suporte "drip & suck" 💧</h3>
+    <ul>
+      <li>🚱 Jejum + <strong>SNG</strong> descompressiva</li>
+      <li>💧 Cristaloide + corrigir K⁺/alcalose</li>
+      <li>💉 ATB se estrangulamento/sepse</li>
+    </ul>
+  </div>
+  <h3>Bridas (ASBO) — WSES 🩹</h3>
+  <div class="card">
+    <ul>
+      <li>Parcial + sem sofrimento → <strong>NOM</strong></li>
+      <li>🧪 <strong>Gastrografin</strong> VO/SNG: contraste no cólon em <strong>24h = resolve</strong> (dx + terapêutico)</li>
+      <li>⏱️ NOM até <strong>72h</strong>; sem melhora → cirurgia</li>
+      <li>🔭 Adesiólise <strong>laparoscópica</strong> se 1º episódio/brida única</li>
+    </ul>
+  </div>
+  <div class="box warn"><span class="l">⚠️ Operar já</span>Estrangulamento · peritonite · alça fechada · hérnia encarcerada · <strong>abdome virgem</strong> (não é brida!).</div>
+</div>
+
+<!-- VOLVO -->
+<div class="panel" id="volvo">
+  <h2>🌀 Volvo</h2>
+  <div class="box prova"><span class="l">⭐ Regra de ouro</span><strong>Sigmoide = DETORCE (endoscopia) 🔦 · Ceco = RESSECA (cirurgia) 🔪</strong></div>
+  <h3>Sigmoide 🟠 (60–75%)</h3>
+  <div class="card">
+    <ul>
+      <li>👴 Idoso acamado, constipado, megacólon/Chagas</li>
+      <li>☕ Grão de café → <strong>QSD</strong></li>
+      <li>🔦 Endoscopia detorce &gt;90% → sonda retal</li>
+      <li>✂️ <strong>Sigmoidectomia na MESMA internação</strong> (recidiva ~60%)</li>
+      <li>🩸 Inviável/perfurado → Hartmann de urgência</li>
+    </ul>
+  </div>
+  <h3>Ceco 🔵</h3>
+  <div class="card">
+    <ul>
+      <li>🧬 Fixação incompleta do mesentério direito</li>
+      <li>☕ Rim de café → <strong>QSE/epigástrio</strong></li>
+      <li>🚫 Endoscopia NÃO (sucesso ~10–15%)</li>
+      <li>🔪 <strong>Hemicolectomia direita</strong> + anastomose ileocólica</li>
+    </ul>
+  </div>
+  <div class="box mac"><span class="l">🐦 Bico de pássaro</span>Afilamento em bird's beak no contraste marca o ponto de torção.</div>
+</div>
+
+<!-- PASSOS -->
+<div class="panel" id="passos">
+  <h2>🔪 Passos</h2>
+  <h3>Adesiólise 🩹</h3>
+  <div class="card">
+    <div class="step"><div class="n">1</div><div class="x">Acesso <strong>Hasson</strong> longe de cicatriz 🎯</div></div>
+    <div class="step"><div class="n">2</div><div class="x">Tração-contratração; corta brida com <strong>tesoura fria</strong> ✂️ (sem energia perto da alça)</div></div>
+    <div class="step"><div class="n">3</div><div class="x">Corre TODO o delgado (Treitz ↔ válvula ileocecal) 🔎</div></div>
+    <div class="step"><div class="n">4</div><div class="x">Avalia viabilidade 🟢🔴 (verde de indocianina se dúvida)</div></div>
+  </div>
+  <h3>Sigmoidectomia 🌀</h3>
+  <div class="card">
+    <div class="step"><div class="n">1</div><div class="x">Mobiliza (Toldt E), protege <strong>ureter esquerdo</strong> ⚡</div></div>
+    <div class="step"><div class="n">2</div><div class="x">Liga vasos sigmoideos (AMI)</div></div>
+    <div class="step"><div class="n">3</div><div class="x">Anastomose colorretal 🔵 <strong>ou Hartmann</strong> se peritonite</div></div>
+  </div>
+</div>
+
+<!-- MAOS -->
+<div class="panel" id="maos">
+  <h2>✋ Mãos & Fios</h2>
+  <div class="card">
+    <h3>✋ Mãos</h3>
+    <div class="kv"><div class="k">Direita 🟠</div><div class="v">Metzenbaum · grampeador · bisturi</div></div>
+    <div class="kv"><div class="k">Esquerda 🔵</div><div class="v">Babcock/DeBakey segura a alça · tração</div></div>
+  </div>
+  <div class="card">
+    <h3>🧵 Fios</h3>
+    <div class="kv"><div class="k">Pedículo</div><div class="v">Vicryl 2-0/3-0 ou LigaSure/clip</div></div>
+    <div class="kv"><div class="k">Anast. seromuscular</div><div class="v">Prolene 3-0/4-0</div></div>
+    <div class="kv"><div class="k">Anast. total</div><div class="v">Vicryl 3-0/4-0</div></div>
+    <div class="kv"><div class="k">Aponeurose</div><div class="v">PDS/Náilon 1</div></div>
+  </div>
+  <div class="box mac"><span class="l">🗜️ Pinças</span>Babcock/DeBakey (atraumática), Doyen (clamp não esmagador), Balfour (afastador).</div>
+</div>
+
+<!-- COMPL -->
+<div class="panel" id="compl">
+  <h2>⚠️ Complicações</h2>
+  <div class="card">
+    <h3>⏱️ Precoces</h3>
+    <ul>
+      <li>💧 Fístula/deiscência (pior: cólon E, urgência)</li>
+      <li>🔴 Isquemia não vista → sepse</li>
+      <li>✂️ Enterotomia iatrogênica / lesão ureter/baço</li>
+      <li>⚡ Distúrbio HE, IRA (3º espaço)</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>📅 Tardias</h3>
+    <ul>
+      <li>🔁 Recidiva do volvo (detorção isolada)</li>
+      <li>🩹 Novas aderências</li>
+      <li>➿ Estenose de anastomose · hérnia incisional</li>
+    </ul>
+  </div>
+  <div class="box mac"><span class="l">🛡️ Prevenir aderências</span>Membrana AH-CMC / icodextrina · técnica delicada + hemostasia.</div>
+</div>
+
+<!-- MAC -->
+<div class="panel" id="mac">
+  <h2>🎯 Macetes & Pega-ratões</h2>
+  <div class="box mac"><span class="l">☕ Grão de café</span>Sigmoide → QSD · Ceco → QSE. Foge do lado de origem.</div>
+  <div class="box mac"><span class="l">🧪 Gastrografin</span>Chegou no cólon em 24h = destrava. Dx + tratamento.</div>
+  <div class="box mac"><span class="l">⏱️ Regra das 72h</span>NOM da brida até 72h; operar depois ↑ mortalidade.</div>
+  <div class="box mac"><span class="l">🆕 Abdome virgem</span>Sem cirurgia prévia + obstruído = NÃO é brida → operar/investigar.</div>
+  <div class="box warn"><span class="l">🪤 Pega-ratões</span>
+    <ul>
+      <li>❌ "Volvo de ceco trata por endoscopia" → é ressecção</li>
+      <li>❌ "Detorceu sigmoide → alta" → opera na mesma internação</li>
+      <li>❌ Ogilvie (pseudo-obstrução) ≠ volvo → neostigmina, excluir mecânica</li>
+      <li>❌ Íleo paralítico ≠ mecânico → sem zona de transição</li>
+    </ul>
+  </div>
+  <div class="box prova"><span class="l">Bancas RS <span class="banca">HCPA·GHC·SC·PUC·AMRIGS</span></span>Bridas #1 ID · neoplasia #1 cólon · sigmoide detorce/ceco resseca · Hartmann · alça fechada.</div>
+</div>
+
+<script>
+const tabs=document.querySelectorAll('.tab');
+const panels=document.querySelectorAll('.panel');
+tabs.forEach(t=>t.addEventListener('click',()=>{
+  tabs.forEach(x=>x.classList.remove('on'));
+  panels.forEach(p=>p.classList.remove('on'));
+  t.classList.add('on');
+  document.getElementById(t.dataset.t).classList.add('on');
+  window.scrollTo({top:0,behavior:'smooth'});
+}));
+</script>
+</body>
+</html>

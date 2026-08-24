@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TEP &amp; Anticoagulação — carolzita</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0f; --bg2:#12121a; --card:#16161f; --card2:#1c1c27;
+  --line:#2a2a38; --txt:#e6e6ef; --muted:#9a9ab0;
+  --laranja:#f97316; --laranja-bg:rgba(249,115,22,.10);
+  --roxo:#a855f7; --roxo-bg:rgba(168,85,247,.10);
+  --ciano:#22d3ee; --ciano-bg:rgba(34,211,238,.10);
+  --verde:#34d399; --vermelho:#f87171; --amarelo:#fbbf24;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(1200px 600px at 50% -10%,#15151f 0%,var(--bg) 60%);color:var(--txt);font-family:'Inter',sans-serif;line-height:1.55;padding:0 0 80px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px}
+header{padding:40px 0 24px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(30px,6vw,46px);line-height:1.05;margin:8px 0 6px;letter-spacing:-.02em}
+.sub{color:var(--muted);font-size:15px;max-width:700px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tag{font-family:'JetBrains Mono',monospace;font-size:11px;padding:5px 10px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted)}
+.tag.r{color:var(--roxo);border-color:rgba(168,85,247,.35);background:var(--roxo-bg)}
+section{margin-top:14px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:12px;overflow:hidden;transition:border-color .2s}
+details[open]{border-color:rgba(249,115,22,.30)}
+summary{cursor:pointer;list-style:none;padding:18px 20px;display:flex;align-items:center;gap:13px;font-family:'Syne',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em;user-select:none}
+summary::-webkit-details-marker{display:none}
+.num{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--bg);background:var(--laranja);width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:0 0 auto}
+.chev{margin-left:auto;color:var(--muted);transition:transform .25s;font-size:14px}
+details[open] .chev{transform:rotate(90deg)}
+.body{padding:4px 22px 24px;font-size:15px}
+.body p{margin:10px 0}
+.body h4{font-family:'Syne',sans-serif;font-size:16px;color:var(--laranja);margin:20px 0 8px;letter-spacing:-.01em}
+.body ul{margin:8px 0 8px 4px;list-style:none}
+.body li{padding:4px 0 4px 20px;position:relative}
+.body li::before{content:"▸";position:absolute;left:0;color:var(--laranja);font-size:12px;top:6px}
+.body strong{color:#fff;font-weight:600}
+.simple{color:var(--ciano);font-style:italic;font-size:.94em}
+.box{border-radius:12px;padding:13px 15px;margin:14px 0;font-size:14px;border:1px solid}
+.box.prova{background:var(--roxo-bg);border-color:rgba(168,85,247,.35)}
+.box.prova .lbl{color:var(--roxo)}
+.box.mac{background:var(--ciano-bg);border-color:rgba(34,211,238,.35)}
+.box.mac .lbl{color:var(--ciano)}
+.box.warn{background:rgba(248,113,113,.08);border-color:rgba(248,113,113,.3)}
+.box.warn .lbl{color:var(--vermelho)}
+.lbl{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-family:'JetBrains Mono',monospace;font-size:10px;background:rgba(168,85,247,.2);color:var(--roxo);padding:2px 7px;border-radius:6px;margin-left:6px;white-space:nowrap}
+.tbl{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
+.tbl table{width:100%;border-collapse:collapse;min-width:520px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--laranja);background:var(--card2)}
+td strong{color:#fff}
+.fio td:first-child{color:var(--ciano);font-family:'JetBrains Mono',monospace;font-weight:500}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin:14px 0}
+.gcard{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+.gcard .t{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--ciano);margin-bottom:4px}
+.gcard .d{font-size:13px;color:var(--muted)}
+.hands{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.hand{border-radius:12px;padding:14px;border:1px solid var(--line)}
+.hand.e{background:rgba(34,211,238,.06);border-color:rgba(34,211,238,.25)}
+.hand.d{background:rgba(249,115,22,.06);border-color:rgba(249,115,22,.25)}
+.hand .ht{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;font-weight:700}
+.hand.e .ht{color:var(--ciano)} .hand.d .ht{color:var(--laranja)}
+.hand li{font-size:13px}
+.steps{counter-reset:s;margin:10px 0}
+.step{counter-increment:s;position:relative;padding:11px 0 11px 46px;border-bottom:1px dashed var(--line)}
+.step:last-child{border-bottom:none}
+.step::before{content:counter(s);position:absolute;left:0;top:9px;width:30px;height:30px;border-radius:9px;background:var(--laranja-bg);border:1px solid rgba(249,115,22,.4);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:grid;place-items:center}
+.step b{color:#fff}
+svg{max-width:100%;height:auto;display:block;margin:16px auto}
+.fig{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.fig .cap{font-size:12px;color:var(--muted);text-align:center;margin-top:8px;font-family:'JetBrains Mono',monospace}
+footer{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+footer .ref{font-family:'JetBrains Mono',monospace;font-size:12px;margin-top:8px}
+a{color:var(--laranja)}
+@media(max-width:560px){.hands{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">carolzita · cirurgia geral · vascular</div>
+  <h1>TEP &amp; Anticoagulação</h1>
+  <p class="sub">Diagnóstico (Wells, D-dímero) · estratificação de risco (ESC: PESI+RV+troponina) · nova classificação <strong>AHA/ACC 2026</strong> (categorias A-E) · tratamento por estrato · anticoagulação (DOAC × VKA, duração). Base: 2026 AHA/ACC/Multisociety Acute PE Guideline, ESC/ERS 2019, CHEST, e pegadinhas das bancas do RS.</p>
+  <div class="tags">
+    <span class="tag">Wells</span>
+    <span class="tag">PESI</span>
+    <span class="tag">AHA/ACC 2026</span>
+    <span class="tag">DOAC</span>
+    <span class="tag">Filtro de VCI</span>
+    <span class="tag r">HCPA · GHC · SC-POA · PUC · AMRIGS</span>
+  </div>
+</header>
+
+<!-- 1 DIAGNOSTICO -->
+<details open>
+  <summary><span class="num">1</span> Diagnóstico — probabilidade pré-teste <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>A abordagem diagnóstica começa pela <strong>probabilidade clínica</strong> (Wells ou critérios de Genebra), que direciona o uso racional de D-dímero e angio-TC.</p>
+    <div class="steps">
+      <div class="step"><b>Probabilidade baixa/intermediária</b>: dosar <strong>D-dímero</strong>. Se negativo, exclui TEP (alto valor preditivo negativo); se positivo, prosseguir para angio-TC.</div>
+      <div class="step"><b>Probabilidade alta</b>: ir <strong>direto para angio-TC de tórax</strong> — D-dímero não deve ser usado para excluir TEP nesse cenário (mesmo negativo, não é confiável).</div>
+      <div class="step"><b>Angio-TC de tórax</b> = exame de escolha para confirmação diagnóstica na maioria dos serviços.</div>
+    </div>
+    <div class="box warn"><span class="lbl">⚠ pegadinha</span>D-dímero <strong>negativo</strong> em paciente de <strong>alta probabilidade clínica</strong> não exclui TEP — a decisão diagnóstica não deve depender só do exame laboratorial nesse grupo.</div>
+  </div>
+</details>
+
+<!-- 2 ESTRATIFICACAO -->
+<details>
+  <summary><span class="num">2</span> Estratificação de risco <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Modelo clássico (ESC/ERS) — ainda amplamente usado</h4>
+    <div class="fig">
+      <svg viewBox="0 0 640 220" xmlns="http://www.w3.org/2000/svg">
+        <text x="320" y="18" fill="#9a9ab0" font-size="11" font-family="monospace" text-anchor="middle">estratificação de risco — instabilidade + PESI + RV + troponina</text>
+        <rect x="60" y="35" width="520" height="40" fill="#dc2626" opacity=".3" stroke="#dc2626" stroke-width="1.5"/>
+        <text x="80" y="60" fill="#f87171" font-size="12" font-family="monospace" font-weight="bold">ALTO RISCO</text>
+        <text x="300" y="60" fill="#fff" font-size="11" font-family="monospace">instabilidade hemodinâmica (choque/hipotensão)</text>
+
+        <rect x="60" y="80" width="520" height="40" fill="#f97316" opacity=".25" stroke="#f97316" stroke-width="1.5"/>
+        <text x="80" y="105" fill="#f97316" font-size="12" font-family="monospace" font-weight="bold">INT-ALTO</text>
+        <text x="300" y="105" fill="#fff" font-size="11" font-family="monospace">estável + PESI alto + RV disf. E troponina alteradas</text>
+
+        <rect x="60" y="125" width="520" height="40" fill="#fbbf24" opacity=".2" stroke="#fbbf24" stroke-width="1.5"/>
+        <text x="80" y="150" fill="#fbbf24" font-size="12" font-family="monospace" font-weight="bold">INT-BAIXO</text>
+        <text x="300" y="150" fill="#fff" font-size="11" font-family="monospace">estável + PESI alto + só 1 ou nenhum dos 2 alterado</text>
+
+        <rect x="60" y="170" width="520" height="40" fill="#34d399" opacity=".2" stroke="#34d399" stroke-width="1.5"/>
+        <text x="80" y="195" fill="#34d399" font-size="12" font-family="monospace" font-weight="bold">BAIXO RISCO</text>
+        <text x="300" y="195" fill="#fff" font-size="11" font-family="monospace">estável + PESI baixo + RV normal + troponina normal</text>
+      </svg>
+      <div class="cap">Estratificação clássica combina estabilidade hemodinâmica, escore PESI (ou sPESI), disfunção de ventrículo direito (imagem) e troponina — a combinação de RV+troponina define o intermediário-alto × intermediário-baixo.</div>
+    </div>
+
+    <h4>Nova classificação — AHA/ACC 2026</h4>
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">AHA/ACC 2026 — novidade recente</span></span>Guideline multissociedade de 2026 introduziu as <strong>"Categorias Clínicas de TEP Agudo" (A-E)</strong>, refinando a precisão da classificação de gravidade em relação ao modelo ESC clássico. Se a prova citar essa nomenclatura nova, é sinal de que está usando a referência mais atual — o conceito subjacente (gravidade crescente conforme hemodinâmica + biomarcadores + disfunção de VD) permanece o mesmo.</div>
+
+    <h4>Ferramentas de decisão para alta precoce</h4>
+    <p><strong>Critérios de Hestia</strong> ou <strong>PESI/sPESI baixo</strong> ajudam a identificar pacientes de baixo risco elegíveis para <strong>tratamento ambulatorial</strong> ou alta precoce — revisões mostram desfechos semelhantes entre tratamento ambulatorial e internação nesse grupo selecionado.</p>
+  </div>
+</details>
+
+<!-- 3 TRATAMENTO POR RISCO -->
+<details>
+  <summary><span class="num">3</span> Tratamento por estrato de risco <span class="chev">▶</span></summary>
+  <div class="body">
+    <div class="tbl"><table>
+      <tr><th>Risco</th><th>Conduta</th></tr>
+      <tr><td><strong>Alto</strong></td><td><strong>Trombólise sistêmica</strong> (se sem contraindicação) ou embolectomia cirúrgica/cateter — heparina não fracionada como anticoagulação inicial preferida (meia-vida curta, reversível)</td></tr>
+      <tr><td><strong>Intermediário-alto</strong></td><td>Anticoagulação + monitorização estreita — <strong>trombólise não é rotina</strong>, reservada para deterioração (trombólise de resgate)</td></tr>
+      <tr><td><strong>Intermediário-baixo / Baixo</strong></td><td>Anticoagulação isolada — considerar tratamento ambulatorial se baixo risco confirmado</td></tr>
+    </table></div>
+
+    <div class="box warn"><span class="lbl">⚠ pegadinha — PEITHO trial</span>Trombólise de rotina no <strong>intermediário-alto</strong> reduz descompensação hemodinâmica, mas <strong>aumenta sangramento maior e hemorragia intracraniana</strong> — por isso não é conduta padrão nesse grupo; reserva-se para quem deteriora clinicamente.</div>
+
+    <h4>Filtro de veia cava inferior</h4>
+    <p>Indicação mais consensual entre as diretrizes: <strong>contraindicação absoluta à anticoagulação</strong> em paciente com TEP agudo. Outros cenários (falha de anticoagulação, profilaxia em alto risco) têm recomendações heterogêneas entre diferentes guidelines.</p>
+  </div>
+</details>
+
+<!-- 4 ANTICOAGULACAO -->
+<details>
+  <summary><span class="num">4</span> Anticoagulação — DOAC × VKA &amp; duração <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>DOAC como 1ª escolha na maioria dos pacientes</h4>
+    <ul>
+      <li><strong>DOACs</strong> (apixabana, rivaroxabana, dabigatrana, edoxabana) preferidos sobre <strong>varfarina (VKA)</strong> na maioria dos pacientes — início de ação rápido e previsível, sem necessidade de monitorização seriada de INR.</li>
+      <li><strong>VKA ainda indicado</strong> em: prótese valvar mecânica, síndrome antifosfolípide (especialmente tríplice positiva), insuficiência renal grave, gestação (heparina, não DOAC nem VKA).</li>
+    </ul>
+
+    <div class="fig">
+      <svg viewBox="0 0 640 160" xmlns="http://www.w3.org/2000/svg">
+        <text x="320" y="18" fill="#9a9ab0" font-size="11" font-family="monospace" text-anchor="middle">duração da anticoagulação</text>
+        <line x1="60" y1="120" x2="600" y2="120" stroke="#2a2a38" stroke-width="2"/>
+        <rect x="60" y="100" width="180" height="30" fill="#22d3ee" opacity=".3"/>
+        <text x="150" y="120" fill="#22d3ee" font-size="10" font-family="monospace" text-anchor="middle" font-weight="bold">fase inicial</text>
+        <text x="150" y="90" fill="#9a9ab0" font-size="10" font-family="monospace" text-anchor="middle">3-6 meses</text>
+        <rect x="240" y="100" width="360" height="30" fill="#a855f7" opacity=".2" stroke="#a855f7" stroke-width="1" stroke-dasharray="4 3"/>
+        <text x="420" y="120" fill="#a855f7" font-size="10" font-family="monospace" text-anchor="middle" font-weight="bold">fase estendida — se fator persistente/não provocado</text>
+        <text x="420" y="145" fill="#9a9ab0" font-size="10" font-family="monospace" text-anchor="middle">indefinida, com reavaliação periódica</text>
+      </svg>
+      <div class="cap">TEP provocado por fator transitório maior (ex: cirurgia recente) → geralmente 3 meses. TEP não provocado ou com fator de risco persistente → considerar anticoagulação estendida.</div>
+    </div>
+
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">todas as bancas</span></span>Em primeiro episódio de TEP <strong>sem fator de risco reversível maior</strong> e nos que têm <strong>fator de risco persistente</strong>, a recomendação é <strong>continuar anticoagulação além da fase inicial (3-6 meses)</strong>, entrando na fase estendida — decisão que pesa risco de recorrência × risco de sangramento continuado.</div>
+    <div class="box warn"><span class="lbl">⚠ pegadinha</span>Na fase estendida, algumas diretrizes sugerem <strong>redução de dose</strong> do DOAC (dose de proteção), enquanto outras aceitam manter dose plena — não é unânime entre ESC/CHEST e outras sociedades.</div>
+  </div>
+</details>
+
+<!-- 5 CASOS ESPECIAIS -->
+<details>
+  <summary><span class="num">5</span> Casos especiais &amp; seguimento <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Tromboembolismo pulmonar crônico (HPTEC)</h4>
+    <p>Pacientes com TEP prévio devem ser questionados sobre <strong>sintomas e limitação funcional em toda consulta por pelo menos 1 ano</strong> — rastreio de <strong>hipertensão pulmonar tromboembólica crônica</strong> (HPTEC) ou outras causas de dispneia persistente, condição potencialmente tratável com endarterectomia pulmonar.</p>
+
+    <h4>Time de resposta ao TEP (PERT)</h4>
+    <p>Equipes multidisciplinares dedicadas ao manejo de TEP de alto risco/intermediário-alto vêm ganhando espaço — mas ainda faltam evidências robustas de melhora de desfecho, segundo revisões recentes.</p>
+
+    <div class="box mac"><span class="lbl">macete</span>Anticoagulação é a <strong>base</strong> do tratamento em praticamente todos os pacientes com TEP confirmado (exceto contraindicação absoluta) — as terapias mais agressivas (trombólise, embolectomia, filtro de VCI) são reservadas para subgrupos específicos, não substituem a anticoagulação de base.</div>
+  </div>
+</details>
+
+<!-- 6 QUESTOES / PEGA-RATOES -->
+<details>
+  <summary><span class="num">6</span> Questões de banca, pega-ratões &amp; mnemônicos <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>10 questões representativas (originais, estilo das 5 bancas)</h4>
+
+    <div class="box prova"><span class="lbl">Q1 <span class="banca">HCPA</span></span><strong>Paciente com alta probabilidade clínica de TEP e D-dímero negativo. Isso exclui o diagnóstico?</strong><br>Resposta: <strong>não</strong> — em alta probabilidade, seguir direto para angio-TC, independente do D-dímero.</div>
+
+    <div class="box prova"><span class="lbl">Q2 <span class="banca">GHC</span></span><strong>TEP com choque e hipotensão. Classificação de risco e conduta?</strong><br>Resposta: <strong>alto risco</strong> — trombólise sistêmica (se sem contraindicação) ou embolectomia.</div>
+
+    <div class="box prova"><span class="lbl">Q3 <span class="banca">AMRIGS</span></span><strong>TEP hemodinamicamente estável, PESI alto, com disfunção de VD e troponina elevada. Classificação?</strong><br>Resposta: <strong>intermediário-alto</strong> risco.</div>
+
+    <div class="box prova"><span class="lbl">Q4 <span class="banca">PUC-RS</span></span><strong>Segundo o PEITHO trial, trombólise de rotina no TEP intermediário-alto é recomendada?</strong><br>Resposta: <strong>não</strong> — reduz descompensação, mas aumenta sangramento maior/hemorragia intracraniana; reservada para deterioração.</div>
+
+    <div class="box prova"><span class="lbl">Q5 <span class="banca">SC-POA</span></span><strong>Única indicação verdadeiramente consensual de filtro de veia cava inferior em TEP agudo?</strong><br>Resposta: <strong>contraindicação absoluta</strong> à anticoagulação.</div>
+
+    <div class="box prova"><span class="lbl">Q6 <span class="banca">HCPA</span></span><strong>Paciente com prótese valvar mecânica e TEP agudo. Qual anticoagulante preferir?</strong><br>Resposta: <strong>VKA (varfarina)</strong> — DOAC contraindicado nesse cenário.</div>
+
+    <div class="box prova"><span class="lbl">Q7 <span class="banca">GHC</span></span><strong>TEP não provocado, primeiro episódio. Duração da anticoagulação?</strong><br>Resposta: considerar <strong>fase estendida</strong> (além de 3-6 meses) — sem fator reversível maior identificado.</div>
+
+    <div class="box prova"><span class="lbl">Q8 <span class="banca">AMRIGS</span></span><strong>O que a diretriz AHA/ACC 2026 introduziu de novo na classificação de gravidade do TEP?</strong><br>Resposta: as <strong>"Categorias Clínicas de TEP Agudo" (A-E)</strong>, refinando a estratificação em relação ao modelo clássico ESC.</div>
+
+    <div class="box prova"><span class="lbl">Q9 <span class="banca">PUC-RS</span></span><strong>Paciente com TEP prévio há 8 meses, dispneia persistente. O que investigar?</strong><br>Resposta: <strong>hipertensão pulmonar tromboembólica crônica (HPTEC)</strong> — rastrear sintomas/limitação funcional por pelo menos 1 ano após o evento.</div>
+
+    <div class="box prova"><span class="lbl">Q10 <span class="banca">SC-POA</span></span><strong>TEP de baixo risco (PESI baixo, sem disfunção de VD, troponina normal). Tratamento ambulatorial é uma opção?</strong><br>Resposta: <strong>sim</strong>, em pacientes selecionados com acesso rápido a anticoagulante e seguimento — desfechos semelhantes à internação nesse grupo.</div>
+
+    <h4>Pega-ratões (as armadilhas clássicas)</h4>
+    <div class="box warn"><span class="lbl">☠ trap 1</span>D-dímero negativo <strong>não exclui</strong> TEP em alta probabilidade clínica.</div>
+    <div class="box warn"><span class="lbl">☠ trap 2</span>Trombólise de rotina <strong>não</strong> é indicada no intermediário-alto — só no alto risco ou resgate.</div>
+    <div class="box warn"><span class="lbl">☠ trap 3</span>Filtro de VCI não é solução padrão para todo TEP — indicação mais sólida é contraindicação à anticoagulação.</div>
+    <div class="box warn"><span class="lbl">☠ trap 4</span>Gestante com TEP: nem DOAC nem VKA — usar <strong>heparina</strong>.</div>
+    <div class="box warn"><span class="lbl">☠ trap 5</span>TEP não provocado tende à <strong>fase estendida</strong>, não parar aos 3 meses automaticamente.</div>
+    <div class="box warn"><span class="lbl">☠ trap 6</span>PERT (time de resposta) ainda tem evidência limitada de melhora de desfecho.</div>
+    <div class="box warn"><span class="lbl">☠ trap 7</span>Classificação nova AHA/ACC 2026 (A-E) pode aparecer em provas atualizadas — não estranhar a nomenclatura.</div>
+    <div class="box warn"><span class="lbl">☠ trap 8</span>Rastreio de HPTEC deve continuar por <strong>pelo menos 1 ano</strong> após o evento agudo.</div>
+
+    <h4>Mnemônicos-resumo</h4>
+    <div class="box mac"><span class="lbl">macete geral</span>Alta probabilidade→TC direto · Risco = instabilidade+PESI+RV+troponina (alto/int-alto/int-baixo/baixo) · AHA/ACC 2026=categorias A-E · Alto risco=trombólise/embolectomia · Int-alto=anticoag+monitorizar (trombólise só resgate) · DOAC 1ª linha exceto prótese mecânica/SAF/gestante · Duração: 3-6m ou estendida se não provocado/persistente.</div>
+  </div>
+</details>
+
+<footer>
+  <div><strong>carolzita</strong> · TEP &amp; Anticoagulação · referência completa</div>
+  <div class="ref">Fontes: 2026 AHA/ACC/ACCP/ACEP/CHEST/SCAI/SHM/SIR/SVM/SVN Guideline for the Evaluation and Management of Acute Pulmonary Embolism (JACC/Circulation, 2026) · ESC/ERS 2019 Guidelines on Acute Pulmonary Embolism · PEITHO trial · Sabiston · Zollinger. Conteúdo educacional; questões são itens representativos originais.</div>
+</footer>
+</div>
+</body>
+</html>

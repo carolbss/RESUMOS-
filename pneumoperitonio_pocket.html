@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🫧 Pneumoperitônio — Pocket</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d1117;--panel:#161b22;--panel2:#1c232c;--line:#2a323c;--tx:#e6edf3;--mut:#8b949e;--or:#ff7a18;--or2:#ff9a4d;--orbg:rgba(255,122,24,.10);--pu:#b083f0;--pu2:#c9a7ff;--pubg:rgba(176,131,240,.12);--cy:#3dd6d0;--cy2:#5fe3dd;--cybg:rgba(61,214,208,.10);--grn:#3fb950;--red:#f85149}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font-family:'IBM Plex Sans',sans-serif;line-height:1.5;padding:0 0 40px}
+.sheet{max-width:430px;margin:0 auto;min-height:100vh;background:var(--bg)}
+header{padding:22px 20px 0;display:flex;justify-content:space-between;align-items:baseline}
+.logo{font-size:23px;font-weight:700;letter-spacing:-.5px}.logo .b{color:var(--or)}
+.kick{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--or);text-transform:uppercase}
+nav{position:sticky;top:0;background:var(--bg);z-index:5;border-bottom:1px solid var(--line);overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;margin-top:14px}
+nav .in{display:flex;padding:0 16px}
+nav button{background:none;border:none;color:var(--mut);font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.5px;text-transform:uppercase;padding:13px 11px;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px}
+nav button.on{color:var(--or);border-bottom-color:var(--or)}
+section{display:none;padding:20px;animation:f .2s}section.on{display:block}
+@keyframes f{from{opacity:0}to{opacity:1}}
+h2{font-size:18px;color:var(--or);font-weight:600;padding-bottom:8px;border-bottom:1px solid var(--line);margin-bottom:14px}
+h3{font-size:13px;margin:16px 0 6px;font-weight:600;color:var(--or2)}
+p,li{font-size:14px}
+.step{display:flex;align-items:flex-start;gap:10px;padding:7px 0}
+.num{flex:0 0 auto;width:24px;height:24px;border-radius:6px;background:var(--or);color:#0d1117;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:13px;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.it{color:var(--cy2);font-style:italic;font-size:13px}
+.box{border-left:3px solid var(--or);background:var(--orbg);border-radius:0 8px 8px 0;padding:11px 14px;margin:14px 0}
+.box.pu{border-color:var(--pu);background:var(--pubg)}.box.cy{border-color:var(--cy);background:var(--cybg)}
+.box .lbl{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--or);margin-bottom:6px;font-weight:600}
+.box.pu .lbl{color:var(--pu2)}.box.cy .lbl{color:var(--cy2)}
+.big{font-size:16px;font-weight:600}
+.tbl{border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:12px 0;background:var(--panel)}
+.row{display:flex;align-items:center;gap:10px;padding:10px 13px;border-bottom:1px solid var(--line);font-size:13.5px}.row:last-child{border-bottom:none}
+.row .v{flex:0 0 auto;color:var(--or2);font-weight:700;font-family:'IBM Plex Mono',monospace;min-width:40px}
+.hand{font-family:'IBM Plex Mono',monospace;font-size:11px;padding:1px 6px;border-radius:5px;font-weight:600}
+.L{background:rgba(63,185,80,.15);color:#56d364}.R{background:rgba(255,122,24,.15);color:var(--or2)}
+ul{list-style:none;margin:4px 0}li{padding:4px 0 4px 24px;position:relative}li .em{position:absolute;left:0}
+.hi{color:var(--pu2);font-weight:600}.mn{font-family:'IBM Plex Mono',monospace;color:var(--cy2);font-weight:600}
+.foot{text-align:center;color:var(--mut);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1px;padding:18px;border-top:1px solid var(--line);margin-top:10px}
+</style>
+</head>
+<body>
+<div class="sheet">
+<header><div class="logo">🫧 <span class="b">Pneumo</span></div><div class="kick">Pocket</div></header>
+<nav><div class="in" id="nav"></div></nav>
+<section id="reg" class="on">
+<h2>🗺️ Visão geral</h2>
+<div class="box pu"><div class="lbl">⭐ Gás = CO₂</div><p class="big">não inflamável + solúvel</p><p class="it">seguro com bisturi elétrico; some rápido se houver embolia</p></div>
+<h3>3 vias de entrada</h3>
+<ul>
+<li><span class="em">🪡</span><span class="hi">Veress</span> (fechada) — às cegas, insufla, depois trocarte</li>
+<li><span class="em">🔓</span><span class="hi">Hasson</span> (aberta) — minilaparotomia sob visão</li>
+<li><span class="em">👁️</span>Trocarte óptico / inserção direta</li>
+</ul>
+<p class="it">📏 Pressão de trabalho 12–15 mmHg · tendência baixa pressão 8–12 · insuflar devagar no início</p>
+</section><section id="fis">
+<h2>🌬️ Fisiologia</h2>
+<div class="tbl">
+<div class="row"><span class="v">🫁</span><span>↑PaCO₂ → acidose respiratória (ajustar ventilação)</span></div>
+<div class="row"><span class="v">🫀</span><span>PIA alta → ⬇️retorno venoso (cava) → ⬇️débito</span></div>
+<div class="row"><span class="v">💓</span><span><b>Bradicardia vagal</b> na insuflação rápida → parar + atropina</span></div>
+<div class="row"><span class="v">💧</span><span>Oligúria transitória (reverte ao desinsuflar)</span></div>
+</div>
+<div class="box cy"><div class="lbl">🔑 EtCO₂</div><p>Embolia gasosa ⬇️ · Enfisema/hipercapnia ⬆️</p></div>
+</section><section id="ver">
+<h2>🪡 Veress</h2>
+<div class="step"><span class="num">1</span><div>Supino, esvaziar bexiga/estômago. Testar mola.</div></div>
+<div class="step"><span class="num">2</span><div>Incisão umbilical, <span class="hi">elevar parede</span>, inserir 45°(magro)–90°(obeso) p/ pelve. 2 cliques.</div></div>
+<div class="step"><span class="num">3</span><div>Confirmar e insuflar lento.</div></div>
+<div class="box pu"><div class="lbl">⭐ 4 testes — só 1 vale</div>
+<ul>
+<li><span class="em">💉</span>Aspiração (sem sangue/fezes)</li>
+<li><span class="em">💧</span>Gota pendente</li>
+<li><span class="em">🧪</span>Seringa</li>
+<li><span class="em">📉</span><span class="hi">Pressão de abertura &lt; 10 mmHg</span> = melhor preditor</li>
+</ul></div>
+<p class="it">🧭 Sítio alternativo = ponto de Palmer (hipocôndrio ESQ) se aderência/cirurgia prévia.</p>
+</section><section id="has">
+<h2>🔓 Hasson</h2>
+<p class="it">Minilaparotomia umbilical: abre fáscia + peritônio sob visão, cânula romba, fios de reparo.</p>
+<div class="box pu"><div class="lbl">⭐ Quando preferir</div>
+<ul>
+<li><span class="em">🤰</span>Gestante &gt; 24 sem</li>
+<li><span class="em">🧒</span>Crianças</li>
+<li><span class="em">⚖️</span>Obeso / aderências / cirurgia prévia</li>
+</ul></div>
+<p class="it">✅ Reduz lesão vascular maior + embolia · ❌ NÃO reduz lesão de alça.</p>
+</section><section id="comp">
+<h2>⚠️ Complicações</h2>
+<div class="tbl">
+<div class="row"><span class="v">🩸</span><span><b>Lesão vascular maior</b> → laparotomia imediata</span></div>
+<div class="row"><span class="v">💩</span><span><b>Lesão intestinal</b> (pode passar despercebida)</span></div>
+<div class="row"><span class="v">🫧</span><span><b>Embolia CO₂</b> ⬇️EtCO₂ → Durant (lat. ESQ + Trendelenburg)</span></div>
+<div class="row"><span class="v">🎈</span><span>Enfisema subcutâneo ⬆️EtCO₂ (autolimitado)</span></div>
+<div class="row"><span class="v">💓</span><span>Bradicardia vagal → parar + atropina</span></div>
+<div class="row"><span class="v">🕳️</span><span>Hérnia de trocarte → fechar fáscia <b>≥10 mm</b></span></div>
+</div>
+</section><section id="peg">
+<h2>🪤 Pega-ratões</h2>
+<ul>
+<li><span class="em">🎯</span>Pressão abertura &lt;10 = melhor teste do Veress</li>
+<li><span class="em">🧭</span>Palmer = hipocôndrio <b>esquerdo</b></li>
+<li><span class="em">🫀</span>Embolia ⬇️EtCO₂ · enfisema ⬆️EtCO₂</li>
+<li><span class="em">↩️</span>Durant = lateral <b>esquerdo</b> + Trendelenburg</li>
+<li><span class="em">💓</span>Bradicardia insuflando = reflexo vagal</li>
+<li><span class="em">🔓</span>Hasson não reduz lesão intestinal</li>
+<li><span class="em">🔥</span>CO₂ = não inflamável</li>
+</ul>
+</section><section id="mn">
+<h2>🧠 Mnemônicos</h2>
+<div class="box cy"><div class="lbl">🪡 Veress</div><p class="mn">Aspira · Gota · Seringa · <b>Pressão &lt;10</b></p></div>
+<div class="box cy"><div class="lbl">↩️ DURANT</div><p class="mn">Lateral Esq + Trendelenburg</p></div>
+<div class="box cy"><div class="lbl">🫁 EtCO₂</div><p class="mn">Embolia ⬇️ · Enfisema ⬆️</p></div>
+</section>
+<div class="foot">← deslize as abas →</div>
+</div>
+<script>
+var s=[['reg','🗺️ Geral'],['fis','🌬️ Fisio'],['ver','🪡 Veress'],['has','🔓 Hasson'],['comp','⚠️ Compl'],['peg','🪤 Pegas'],['mn','🧠 Mnem']];
+var n=document.getElementById('nav');
+s.forEach(function(x,i){var b=document.createElement('button');b.textContent=x[1];if(i===0)b.className='on';b.onclick=function(){document.querySelectorAll('nav button').forEach(function(y){y.classList.remove('on')});b.classList.add('on');document.querySelectorAll('section').forEach(function(y){y.classList.remove('on')});document.getElementById(x[0]).classList.add('on');document.querySelector('.sheet').scrollIntoView()};n.appendChild(b)});
+</script>
+</body>
+</html>

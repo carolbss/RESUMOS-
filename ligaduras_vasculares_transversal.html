@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Por que ligo onde ligo — lógica das ligaduras vasculares</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0f;--bg2:#12121a;--card:#16161f;--card2:#1c1c27;--line:#2a2a38;
+  --txt:#e6e6ef;--muted:#9a9ab0;
+  --laranja:#f97316;--laranja-bg:rgba(249,115,22,.10);
+  --roxo:#a855f7;--roxo-bg:rgba(168,85,247,.10);
+  --ciano:#22d3ee;--ciano-bg:rgba(34,211,238,.10);
+  --verde:#34d399;--vermelho:#f87171;--amarelo:#fbbf24;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;line-height:1.65;font-size:15px;padding-bottom:60px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 18px}
+header{padding:34px 0 18px;border-bottom:1px solid var(--line);
+  background:radial-gradient(120% 100% at 50% 0%,rgba(249,115,22,.10),transparent 65%)}
+.kick{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:32px;line-height:1.1;margin-top:6px;letter-spacing:-.02em}
+h1 span{color:var(--laranja)}
+.sub{color:var(--muted);font-size:14px;margin-top:8px;max-width:760px}
+.legend{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--muted);margin-top:14px}
+.pill{display:inline-block;width:10px;height:10px;border-radius:3px;vertical-align:middle;margin-right:5px}
+
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;margin:14px 0;overflow:hidden}
+summary{cursor:pointer;list-style:none;padding:15px 18px;display:flex;align-items:center;gap:12px;
+  font-family:'Syne',sans-serif;font-weight:600;font-size:17px;user-select:none}
+summary::-webkit-details-marker{display:none}
+summary:hover{background:var(--card2)}
+.num{font-family:'JetBrains Mono',monospace;font-size:11px;background:var(--laranja);color:#0a0a0f;
+  padding:3px 8px;border-radius:6px;font-weight:700}
+.chev{margin-left:auto;color:var(--muted);font-size:13px;transition:transform .2s}
+details[open] .chev{transform:rotate(90deg)}
+.body{padding:6px 18px 20px;border-top:1px solid var(--line)}
+
+h3{font-family:'Syne',sans-serif;font-size:16px;color:var(--laranja);margin:20px 0 8px}
+h3:first-child{margin-top:12px}
+h4{font-size:14.5px;color:#fff;margin:16px 0 6px;font-weight:600}
+p{margin:9px 0}
+ul,ol{margin:9px 0 9px 22px}li{margin:5px 0}
+strong{color:#fff;font-weight:600}
+
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--card2);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-size:11px;
+  text-transform:uppercase;letter-spacing:.5px}
+td strong{color:var(--ciano)}
+
+.box{border-radius:12px;padding:13px 16px;margin:13px 0;border:1px solid;font-size:14px}
+.box .lbl{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:1.3px;text-transform:uppercase;
+  font-weight:700;display:block;margin-bottom:5px}
+.o{background:var(--laranja-bg);border-color:rgba(249,115,22,.4)} .o .lbl{color:var(--laranja)}
+.p{background:var(--roxo-bg);border-color:rgba(168,85,247,.4)} .p .lbl{color:var(--roxo)}
+.c{background:var(--ciano-bg);border-color:rgba(34,211,238,.4)} .c .lbl{color:var(--ciano)}
+.r{background:rgba(248,113,113,.10);border-color:rgba(248,113,113,.4)} .r .lbl{color:var(--vermelho)}
+.g{background:rgba(52,211,153,.09);border-color:rgba(52,211,153,.35);color:var(--verde);font-style:italic}
+.g .lbl{color:var(--verde);font-style:normal} .g strong{color:#7fe8c0;font-style:normal}
+
+.forca{background:var(--card2);border:1px solid var(--line);border-left:3px solid var(--laranja);
+  border-radius:0 12px 12px 0;padding:13px 16px;margin:12px 0}
+.forca .t{font-family:'Syne',sans-serif;font-weight:700;font-size:15.5px;color:#fff;margin-bottom:3px}
+.forca .q{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:1.2px;
+  text-transform:uppercase;color:var(--laranja);display:block}
+
+.qa{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:13px 16px;margin:11px 0}
+.qa .perg{font-weight:600;color:var(--ciano);margin-bottom:4px}
+.qa .resp{font-size:14px}
+
+.foot{color:var(--muted);font-size:11.5px;text-align:center;margin-top:34px;
+  font-family:'JetBrains Mono',monospace;line-height:1.8}
+.tools{display:flex;gap:9px;margin:18px 0 4px;flex-wrap:wrap}
+.btn{font-family:'JetBrains Mono',monospace;font-size:11px;padding:7px 14px;border-radius:8px;
+  background:var(--card);border:1px solid var(--line);color:var(--muted);cursor:pointer}
+.btn:hover{border-color:var(--laranja);color:var(--laranja)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="kick">carolzita · transversal · material de discussão</div>
+    <h1>Por que ligo <span>onde ligo</span></h1>
+    <div class="sub">A mesma artéria pode ser ligada na origem, no meio ou rente à alça — e a escolha muda conforme a doença, não conforme o vaso. Este resumo cruza dez operações para responder uma única pergunta.</div>
+    <div class="legend">
+      <span class="pill" style="background:var(--laranja)"></span>conteúdo
+      <span class="pill" style="background:var(--roxo);margin-left:14px"></span>alto rendimento
+      <span class="pill" style="background:var(--ciano);margin-left:14px"></span>pergunta de visita
+      <span class="pill" style="background:var(--verde);margin-left:14px"></span>tradução simples
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+<div class="tools">
+  <button class="btn" onclick="document.querySelectorAll('details').forEach(d=>d.open=true)">▸ abrir tudo</button>
+  <button class="btn" onclick="document.querySelectorAll('details').forEach(d=>d.open=false)">▾ fechar tudo</button>
+</div>
+
+<!-- 1 -->
+<details open>
+<summary><span class="num">01</span> A pergunta única <span class="chev">›</span></summary>
+<div class="body">
+<div class="box g"><span class="lbl">tradução simples</span>Ligar um vaso não é um gesto técnico — é uma <strong>declaração de intenção</strong>. O ponto onde você aperta o nó diz o que você acha que a doença é, o que pretende levar embora e o que precisa deixar vivo. Duas operações fisicamente idênticas se separam nesse único gesto.</div>
+
+<p>Todo residente aprende as ligaduras como uma lista: no câncer gástrico liga-se a gástrica esquerda na origem, no Crohn liga-se a ileocólica perto da alça, na diverticulite preserva-se a cólica esquerda. Decoradas isoladamente, são seis regras arbitrárias. Entendidas juntas, são <strong>uma regra só, aplicada a contextos diferentes</strong>.</p>
+
+<div class="box o"><span class="lbl">a pergunta que substitui a lista</span>
+<strong>O que eu preciso levar embora, e o que eu preciso deixar vivo?</strong><br>
+A resposta define, sozinha, o ponto da ligadura. Tudo o mais é consequência.</div>
+
+<p>O ponto de ligadura é o resultado da disputa entre <strong>quatro forças</strong>. Em cada operação uma delas domina — e é sempre possível dizer qual.</p>
+</div>
+</details>
+
+<!-- 2 -->
+<details open>
+<summary><span class="num">02</span> As quatro forças <span class="chev">›</span></summary>
+<div class="body">
+
+<div class="forca">
+<span class="q">força 1 · puxa para a raiz</span>
+<div class="t">Necessidade oncológica — o linfonodo mora na origem do vaso</div>
+<p>A drenagem linfática acompanha o pedículo arterial e os linfonodos se concentram <strong>ao redor da raiz</strong>. Se a doença dissemina por via linfática, ligar na origem não é elegância: é o que incorpora as estações à peça.</p>
+<p><strong>Domina em:</strong> adenocarcinoma gástrico (D2), neoplasia colorretal (CME/TME), esofagectomia.</p>
+</div>
+
+<div class="forca">
+<span class="q">força 2 · puxa para a alça</span>
+<div class="t">Perfusão do que fica — o coto precisa cicatrizar</div>
+<p>Cada ligadura mais proximal retira uma fonte de irrigação do segmento que permanece. Onde a anastomose é frágil, onde o campo está inflamado ou onde o remanescente é longo, a perfusão passa a valer mais que qualquer ganho linfático.</p>
+<p><strong>Domina em:</strong> diverticulite, volvo, esofagectomia (tubo gástrico), RCU (bolsa ileal).</p>
+</div>
+
+<div class="forca">
+<span class="q">força 3 · puxa para a alça</span>
+<div class="t">Qualidade do tecido na raiz — dá para dissecar ali?</div>
+<p>Inflamação transmural, fibrose e neovascularização transformam a raiz do mesentério num território que <strong>sangra e rasga</strong>. Um plano que é seguro no câncer é hostil na doença inflamatória.</p>
+<p><strong>Domina em:</strong> Crohn, diverticulite complicada, reoperações.</p>
+</div>
+
+<div class="forca">
+<span class="q">força 4 · define tudo</span>
+<div class="t">O destino do órgão — ele vai virar outra coisa?</div>
+<p>Quando um segmento será <strong>reconstruído</strong> em vez de descartado, a ligadura deixa de ser sobre a doença e passa a ser sobre a viabilidade do órgão novo. Aqui a lógica se inverte por completo: liga-se tudo, <em>menos</em> o pedículo que sustentará o que vem depois.</p>
+<p><strong>Domina em:</strong> esofagectomia (tubo gástrico), IPAA (bolsa ileal), sleeve gástrico.</p>
+</div>
+
+<div class="box p"><span class="lbl">★ o raciocínio de prova</span>Diante de qualquer questão de "onde ligar", identifique <strong>qual das quatro forças domina naquele cenário</strong>. A resposta vem sozinha — e é assim que se responde uma pergunta sobre uma operação que você nunca viu.</div>
+</div>
+</details>
+
+<!-- 3 -->
+<details open>
+<summary><span class="num">03</span> A tabela mestra <span class="chev">›</span></summary>
+<div class="body">
+<table>
+<tr><th>Operação</th><th>Vaso</th><th>Onde ligo</th><th>Força dominante</th><th>Se eu ligar errado…</th></tr>
+
+<tr><td><strong>Gastrectomia D2</strong></td><td>Gástrica esquerda</td><td><strong>Na origem</strong>, no tronco celíaco</td><td>Oncológica</td><td>Estação 7 fica <em>in situ</em> — recidiva por falha silenciosa</td></tr>
+
+<tr><td><strong>Colectomia / RAB</strong></td><td>AMI</td><td><strong>Alta na aorta</strong> ou baixa preservando a cólica esquerda</td><td>Oncológica <em>versus</em> perfusão</td><td>Alta demais no vasculopata: isquemia do coto. Baixa demais: perde apicais</td></tr>
+
+<tr><td><strong>Esofagectomia</strong></td><td>Gástrica esquerda, curtos, gastroepiploica esquerda</td><td>Todos na origem — <strong>menos a gastroepiploica direita</strong></td><td>Destino do órgão</td><td>Lesar a gastroepiploica direita = tubo inviável, operação perdida</td></tr>
+
+<tr><td><strong>Diverticulite</strong></td><td>Sigmoideos / AMI</td><td><strong>Mais distal</strong>, preservando a cólica esquerda</td><td>Perfusão + tecido hostil</td><td>Ligadura alta desnecessária em campo contaminado: deiscência</td></tr>
+
+<tr><td><strong>Volvo de sigmoide</strong></td><td>Sigmoideos</td><td>Ramos, <strong>preservando a arcada marginal</strong></td><td>Perfusão</td><td>Coto proximal em Sudeck sem marginal = anastomose isquêmica</td></tr>
+
+<tr><td><strong>Crohn ileocecal</strong></td><td>Ileocólica</td><td><strong>Rente à alça</strong></td><td>Tecido hostil</td><td>Dissecar a raiz do mesentério inflamado: sangramento incontrolável</td></tr>
+
+<tr><td><strong>RCU / IPAA</strong></td><td>Ileocólica, cólica média, AMI</td><td>Cólicas sim, <strong>poupando a irrigação do íleo terminal</strong></td><td>Destino do órgão</td><td>Bolsa não alcança a pelve ou chega isquêmica</td></tr>
+
+<tr><td><strong>Whipple</strong></td><td>Gastroduodenal</td><td>Na origem — <strong>após o teste de clampeamento</strong></td><td>Perfusão (do fígado!)</td><td>Ligamento arqueado não diagnosticado = isquemia hepática</td></tr>
+
+<tr><td><strong>Sleeve gástrico</strong></td><td>Gastroepiploica esquerda, curtos</td><td>Rente à grande curvatura, <strong>até o ângulo de His</strong></td><td>Destino do órgão</td><td>Fundo mal liberado = fundo residual = reganho de peso</td></tr>
+
+<tr><td><strong>GIST</strong></td><td>—</td><td><strong>Nenhuma ligadura regional</strong></td><td>Biologia da doença</td><td>Linfadenectomia por reflexo = morbidade sem ganho</td></tr>
+</table>
+
+<div class="box c"><span class="lbl">pergunta de visita</span>"Nesta operação, se eu ligasse esse vaso dois centímetros mais proximal, o que eu ganharia e o que eu perderia?" — se a resposta for "nada e nada", a ligadura é indiferente. Ela quase nunca é.</div>
+</div>
+</details>
+
+<!-- 4 -->
+<details>
+<summary><span class="num">04</span> Os três casos que invertem a lógica <span class="chev">›</span></summary>
+<div class="body">
+
+<h3>1 · Crohn — ligar perto porque a doença volta</h3>
+<p>É o contrário exato do câncer, e por duas razões independentes que se somam. <strong>Não há benefício linfático</strong>, porque a doença não dissemina por linfonodo. E o mesentério do Crohn é <strong>espesso, friável e hipervascularizado</strong> — abordá-lo na raiz é convidar um sangramento que não se controla em campo inflamado.</p>
+<p>Some-se a isso o horizonte do paciente: ele provavelmente operará <strong>de novo</strong>. Cada centímetro de mesentério e de intestino poupado hoje é o que separa esse paciente da <strong>síndrome do intestino curto</strong> daqui a quinze anos.</p>
+<div class="box p"><span class="lbl">★ a exceção moderna</span>A <strong>excisão mesentérica estendida (Coffey)</strong> propõe justamente o oposto — ressecar o mesentério doente para reduzir recorrência, com base na hipótese de que o mesentério é órgão-alvo da doença, e não espectador. Ainda em debate. É um bom tema para discutir com o assistente.</div>
+
+<h3>2 · Esofagectomia — ligar tudo para salvar um só</h3>
+<div class="box g"><span class="lbl">tradução simples</span>O estômago vai deixar de ser estômago e virar um <strong>cano</strong> que sobe até o pescoço. Você corta todas as amarras dele, menos <strong>uma</strong> — e essa uma passa a carregar sozinha a vida do órgão inteiro.</div>
+<p>Ligadas a gástrica esquerda, os curtos e a gastroepiploica esquerda, <strong>toda a perfusão do conduto depende da gastroepiploica direita</strong>. E há um detalhe cruel: a <strong>ponta do tubo</strong>, que é onde se faz a anastomose, é a região <em>mais distal</em> desse suprimento único.</p>
+<div class="box r"><span class="lbl">a consequência</span>A anastomose esofagogástrica é construída, por desenho, na <strong>pior área de perfusão de todo o conduto</strong>. Não é azar que ela fistulize com frequência — é anatomia.</div>
+
+<h3>3 · Whipple — a ligadura que é sobre outro órgão</h3>
+<p>A gastroduodenal é ligada na origem, mas a força dominante não é oncológica nem local: é a <strong>perfusão do fígado</strong>. Em quem tem estenose do tronco celíaco por ligamento arqueado, o fígado é irrigado <strong>retrogradamente</strong> pela gastroduodenal a partir da mesentérica superior. Ligá-la ali causa isquemia hepática.</p>
+<div class="box c"><span class="lbl">pergunta de visita</span>"Por que o teste de clampeamento não existe em nenhuma outra ligadura da cirurgia digestiva?" — porque em nenhuma outra o vaso que você vai ligar pode ser a <strong>única via</strong> de irrigação de um órgão distante e silencioso.</div>
+<p>E o mesmo vaso reaparece pelo outro lado na <strong>úlcera duodenal sangrante</strong>: os três pontos são necessários exatamente porque a gastroduodenal recebe fluxo de <strong>duas direções</strong> — anterógrado do tronco celíaco e retrógrado da mesentérica superior. Ligar proximal e distal não basta; falta o ramo pancreático transverso.</p>
+<div class="box o"><span class="lbl">a mesma anatomia, dois usos</span>No Whipple a circulação dupla é o <strong>perigo</strong> (pode ser a única via do fígado). Na úlcera sangrante é a <strong>explicação</strong> de por que dois pontos não param o sangramento. Um conceito, duas provas.</div>
+</div>
+</details>
+
+<!-- 5 -->
+<details>
+<summary><span class="num">05</span> O que fica vivo — perfusão e watersheds <span class="chev">›</span></summary>
+<div class="body">
+<div class="box g"><span class="lbl">tradução simples</span><strong>Watershed</strong> é a fronteira entre dois territórios de irrigação — o ponto mais distante das duas fontes ao mesmo tempo. É onde a água chega por último e falta primeiro.</div>
+
+<table>
+<tr><th>Território</th><th>Fronteira entre</th><th>Onde importa</th></tr>
+<tr><td><strong>Ponto de Griffiths</strong></td><td>AMS ↔ AMI, na flexura esplênica</td><td>Colectomia esquerda, ligadura alta da AMI</td></tr>
+<tr><td><strong>Ponto de Sudeck</strong></td><td>AMI ↔ ilíaca interna, no retossigmoide</td><td>Sigmoidectomia, volvo, diverticulite, RAB</td></tr>
+<tr><td><strong>Arcada de Drummond</strong></td><td>A ponte que conecta AMS e AMI</td><td>É ela que <em>salva</em> o coto quando a ligadura foi alta</td></tr>
+<tr><td><strong>Arcadas pancreatoduodenais</strong></td><td>Tronco celíaco ↔ AMS</td><td>Whipple, úlcera sangrante</td></tr>
+</table>
+
+<div class="box p"><span class="lbl">★ o encadeamento que vale a prova inteira</span>
+Ligadura <strong>alta</strong> da AMI → o coto proximal passa a depender da <strong>marginal de Drummond</strong> → que atravessa o ponto de <strong>Griffiths</strong> → e a anastomose fica no <strong>retossigmoide</strong>, que é o ponto de <strong>Sudeck</strong>.<br>
+Ou seja: a anastomose colorretal esquerda é feita <strong>entre dois watersheds</strong>. É por isso que ela é a anastomose que mais vaza do trato digestivo.</div>
+
+<h4>Os sinais de que a perfusão está boa — e o que fazer se não estiver</h4>
+<ul>
+<li><strong>Sangramento arterial pulsátil</strong> na borda de secção. Sangramento apenas venoso não conta.</li>
+<li>Cor rosada, peristalse presente, pulso palpável no mesentério adjacente.</li>
+<li>Dúvida: <strong>verde de indocianina</strong> — responde objetivamente o que a cor não responde.</li>
+<li>Não resolveu: <strong>ressecar mais</strong> até tecido bem perfundido, ou proteger com estoma.</li>
+</ul>
+<div class="box c"><span class="lbl">pergunta de visita</span>"Se eu tivesse ligado a AMI baixa, esta anastomose precisaria de ileostomia de proteção?" — força a discutir se a proteção está compensando uma decisão vascular tomada trinta minutos antes.</div>
+</div>
+</details>
+
+<!-- 6 -->
+<details>
+<summary><span class="num">06</span> Armadilhas e casos-limite <span class="chev">›</span></summary>
+<div class="body">
+
+<div class="box r"><span class="lbl">1 · a ligadura correta no paciente errado</span>Ligadura alta da AMI é oncologicamente correta e pode ser <strong>clinicamente errada</strong> no idoso vasculopata com aterosclerose mesentérica. A técnica certa não é a mesma para todos os pacientes.</div>
+
+<div class="box r"><span class="lbl">2 · a variante que muda tudo</span><strong>Hepática direita substituta</strong> vinda da AMS (15–20%): aparece na D2, no Whipple, na colecistectomia difícil e na fundoplicatura. <strong>Hepática esquerda substituta</strong> na <em>pars flaccida</em> (~10%): aparece na D2, no Nissen e na vagotomia. Ligá-las por reflexo é isquemia hepática setorial.</div>
+
+<div class="box r"><span class="lbl">3 · ligar na origem sem precisar</span>Diverticulite, Crohn e volvo <strong>não têm indicação oncológica</strong>. Ligadura alta ali é morbidade gratuita — troca perfusão por nada.</div>
+
+<div class="box r"><span class="lbl">4 · esquecer que o órgão vai ser reaproveitado</span>Esofagectomia, IPAA e sleeve: a ligadura é sobre o <strong>futuro</strong> do segmento, não sobre o passado da doença. Quem liga pensando na doença perde o órgão.</div>
+
+<div class="box r"><span class="lbl">5 · confundir ligar com ressecar mesentério</span>No câncer, ligar na origem <strong>e</strong> retirar o envelope íntegro (mesocólon, mesorreto, mesogástrio) são coisas distintas: a primeira é vascular, a segunda é oncológica. Ligar alto e rasgar a fáscia própria não é cirurgia oncológica — é só uma ligadura alta.</div>
+
+<h4>O caso que não se encaixa: GIST</h4>
+<p>O GIST é o contraexemplo que confirma a regra. Não há ligadura regional porque <strong>não há território linfático a levar</strong> — ele dissemina por via hematogênica e por implante. Toda a técnica se volta para <strong>não romper a pseudocápsula</strong>, e não para onde apertar o nó. Quando a força 1 desaparece por completo, a operação inteira muda de natureza.</p>
+</div>
+</details>
+
+<!-- 7 -->
+<details>
+<summary><span class="num">07</span> Perguntas para a visita <span class="chev">›</span></summary>
+<div class="body">
+<p>Perguntas construídas para <strong>abrir discussão</strong>, não para checar decoreba. Servem tanto para você responder quanto para fazer ao assistente.</p>
+
+<div class="qa"><div class="perg">Por que na diverticulite eu posso ligar mais distal do que no câncer, se a operação é fisicamente a mesma?</div>
+<div class="resp">Porque não há linfonodo a colher. Sem a força oncológica, quem decide é a perfusão — e o campo inflamado precisa dela mais do que o campo oncológico.</div></div>
+
+<div class="qa"><div class="perg">Se o Crohn recidiva na anastomose de qualquer forma, por que ainda me importo com onde ligo?</div>
+<div class="resp">Porque a ligadura não muda a recidiva, mas muda duas outras coisas: o sangramento intraoperatório agora e o comprimento de intestino disponível na próxima operação.</div></div>
+
+<div class="qa"><div class="perg">Na esofagectomia, por que não fazemos a anastomose numa parte mais bem perfundida do tubo?</div>
+<div class="resp">Porque a geometria manda: o tubo precisa alcançar o pescoço ou o tórax, e o que alcança é justamente a ponta. A anastomose é feita onde ela cabe, não onde seria melhor perfundida.</div></div>
+
+<div class="qa"><div class="perg">Por que a IPAA e a esofagectomia se parecem tanto no raciocínio vascular?</div>
+<div class="resp">Porque nas duas um órgão é convertido em outro e precisa <strong>alcançar</strong> um ponto distante. Nos dois casos a pergunta operatória é a mesma: chega vivo e sem tensão? Muda o órgão, não o problema.</div></div>
+
+<div class="qa"><div class="perg">Em que situação eu ligaria alto sabendo que estou piorando a perfusão?</div>
+<div class="resp">Quando o ganho oncológico supera o risco: doença nodal aparente, necessidade de comprimento para a anastomose descer sem tensão, ou paciente jovem com boa vasculatura. A troca é consciente, não automática.</div></div>
+
+<div class="qa"><div class="perg">Se eu não fizesse o teste de clampeamento e ligasse a gastroduodenal, quando eu descobriria o erro?</div>
+<div class="resp">Tarde. Nas primeiras horas ou dias, com elevação de transaminases, isquemia hepática e falência da anastomose biliar. É o tipo de erro que não dá sinal na mesa.</div></div>
+
+<div class="qa"><div class="perg">Por que a anastomose colorretal esquerda vaza mais que a ileocólica?</div>
+<div class="resp">Três razões que se somam: fica entre dois watersheds (Griffiths e Sudeck), lida com fezes formadas e flora alta, e frequentemente é feita em campo sem preparo. A ileocólica não tem nenhuma das três.</div></div>
+</div>
+</details>
+
+<!-- 8 -->
+<details>
+<summary><span class="num">08</span> Grade de fixação <span class="chev">›</span></summary>
+<div class="body">
+
+<div class="box c"><span class="lbl">a frase-mãe</span><strong>Levar embora × deixar vivo.</strong> Toda ligadura é a resposta a essa disputa.</div>
+
+<div class="box c"><span class="lbl">as 4 forças</span><strong>Linfonodo · Perfusão · Tecido · Destino.</strong><br>Linfonodo puxa para a raiz. Perfusão e tecido puxam para a alça. Destino decide sozinho.</div>
+
+<div class="box c"><span class="lbl">câncer × inflamatória</span><strong>Câncer liga na raiz. Inflamatória liga na alça.</strong> Um colhe linfonodo; o outro foge de mesentério hostil.</div>
+
+<div class="box c"><span class="lbl">órgão reaproveitado</span><strong>Liga tudo, menos o que sustenta o órgão novo.</strong> Esofagectomia: gastroepiploica direita. IPAA: irrigação do íleo terminal.</div>
+
+<div class="box c"><span class="lbl">a anastomose entre dois watersheds</span><strong>Griffiths em cima, Sudeck embaixo.</strong> É a colorretal esquerda — e é por isso que ela vaza.</div>
+
+<div class="box c"><span class="lbl">a gastroduodenal</span><strong>Duas direções.</strong> No Whipple é o perigo; na úlcera sangrante é a explicação dos três pontos.</div>
+
+<div class="box c"><span class="lbl">o contraexemplo</span><strong>GIST não liga nada.</strong> Sem território linfático, a operação muda de natureza.</div>
+
+<div class="box p"><span class="lbl">★ como usar isso numa questão que você nunca viu</span>
+<strong>1)</strong> A doença dissemina por linfonodo? Se sim, raiz.<br>
+<strong>2)</strong> O tecido na raiz está inflamado ou fibrótico? Se sim, alça.<br>
+<strong>3)</strong> O que fica vai receber anastomose frágil ou virar outro órgão? Se sim, perfusão manda.<br>
+<strong>4)</strong> Só então escolha o ponto.</div>
+</div>
+</details>
+
+<div class="foot">
+carolzita · resumo transversal · material de discussão de visita<br>
+Cruza: gastrectomia D2 · colectomia e RAB · esofagectomia · diverticulite · volvo · Crohn · RCU/IPAA · Whipple · úlcera sangrante · sleeve · GIST<br>
+Sabiston · Zollinger · Netter · JGCA · ISGPS · ECCO · ASCRS · WSES
+</div>
+</div>
+</body>
+</html>

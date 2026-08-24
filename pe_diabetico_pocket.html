@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Pé Diabético · pocket</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d1117;--card:#16161f;--card2:#1c1c27;--line:#2a2a38;
+  --txt:#ececf4;--muted:#9a9ab0;
+  --laranja:#f97316;--roxo:#a855f7;--ciano:#22d3ee;--vermelho:#f87171;--amarelo:#fbbf24;--verde:#34d399;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{overflow-x:hidden}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;font-size:17px;line-height:1.6;padding-bottom:30px}
+.top{padding:22px 18px 12px;position:sticky;top:0;background:linear-gradient(180deg,var(--bg) 70%,transparent);z-index:5}
+.kick{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:27px;line-height:1.1;margin-top:4px}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:6px 18px 12px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;padding:9px 15px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted);white-space:nowrap;cursor:pointer;transition:.15s}
+.tab.on{background:var(--laranja);border-color:var(--laranja);color:#0a0a0f}
+.panel{display:none;padding:6px 18px 40px;animation:f .25s}
+.panel.on{display:block}
+@keyframes f{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+h2{font-family:'Syne',sans-serif;font-size:21px;color:var(--laranja);margin:18px 0 10px}
+h3{font-family:'Syne',sans-serif;font-size:16px;color:#fff;margin:16px 0 6px}
+p{margin:10px 0}
+ul{list-style:none;margin:8px 0}
+li{padding:6px 0 6px 22px;position:relative}
+li::before{content:"▸";position:absolute;left:0;top:7px;color:var(--laranja);font-size:13px}
+strong{color:#fff;font-weight:600}
+.s{color:var(--verde);font-style:italic;font-size:.92em}
+.gr{background:rgba(52,211,153,.10);border-color:rgba(52,211,153,.4);color:var(--verde);font-style:italic}
+.gr .l{color:var(--verde);font-style:normal}
+.gr strong,.gr b{color:#7fe8c0;font-style:normal}
+.step{display:flex;flex-direction:column;gap:6px;padding:10px 0;border-bottom:1px dashed var(--line)}
+.step:last-child{border:none}
+.hd2{display:flex;gap:10px;align-items:flex-start}
+.n{flex:0 0 26px;height:26px;border-radius:8px;background:rgba(249,115,22,.15);border:1px solid rgba(249,115,22,.45);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;display:grid;place-items:center;font-size:12.5px}
+.fase{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--laranja);display:block}
+.pq{border-left:2px solid var(--roxo);background:rgba(168,85,247,.10);border-radius:0 7px 7px 0;padding:7px 10px;font-size:13.5px;width:100%}
+.pq b{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--roxo);display:block}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0}
+.box{border-radius:12px;padding:13px 15px;margin:13px 0;border:1px solid;font-size:15px}
+.prova{background:rgba(168,85,247,.1);border-color:rgba(168,85,247,.4)}
+.prova .l{color:var(--roxo)}
+.mac{background:rgba(34,211,238,.1);border-color:rgba(34,211,238,.4)}
+.mac .l{color:var(--ciano)}
+.warn{background:rgba(248,113,113,.1);border-color:rgba(248,113,113,.4)}
+.warn .l{color:var(--vermelho)}
+.l{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-size:10px;background:rgba(168,85,247,.25);color:var(--roxo);padding:2px 6px;border-radius:5px;margin-left:5px;font-family:'JetBrains Mono',monospace}
+.kv{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)}
+.kv:last-child{border:none}
+.kv .k{flex:0 0 42%;color:var(--ciano);font-family:'JetBrains Mono',monospace;font-size:13px}
+.kv .v{flex:1;font-size:15px}
+.step{display:flex;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line)}
+.step:last-child{border:none}
+.step .n{flex:0 0 30px;height:30px;border-radius:9px;background:rgba(249,115,22,.15);border:1px solid rgba(249,115,22,.45);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;display:grid;place-items:center;font-size:14px}
+.step .x{flex:1}
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="kick">carolzita · pocket 🚑</div>
+  <h1>Pé Diabético 🦶</h1>
+</div>
+<div class="tabs">
+  <div class="tab on" data-t="0">🔺 Tríade</div>
+  <div class="tab" data-t="1">📊 Classificação</div>
+  <div class="tab" data-t="2">🩺 Avaliação</div>
+  <div class="tab" data-t="3">👢 Descarga</div>
+  <div class="tab" data-t="4">🦠 Infecção</div>
+  <div class="tab" data-t="5">☠️ Traps</div>
+</div>
+
+<!-- 0 TRIADE -->
+<div class="panel on" data-p="0">
+  <h2>🔺 Fisiopatologia</h2>
+  <div class="card">
+    <div class="kv"><div class="k">🧠 Neuropatia</div><div class="v">Sensitiva+motora(deformidade)+autonômica</div></div>
+    <div class="kv"><div class="k">🩸 DAOP</div><div class="v">Distal, multissegmentar (infrapatelar)</div></div>
+    <div class="kv"><div class="k">🦠 Infecção</div><div class="v">Porta de entrada facilitada</div></div>
+  </div>
+  <p class="s">Os 3 juntos = maior risco de amputação. Raramente isolados.</p>
+</div>
+
+<!-- 1 CLASSIFICACAO -->
+<div class="panel" data-p="1">
+  <h2>📊 Wagner (0-5)</h2>
+  <div class="card">
+    <div class="kv"><div class="k">0</div><div class="v">Pé de risco</div></div>
+    <div class="kv"><div class="k">1</div><div class="v">Úlcera superficial</div></div>
+    <div class="kv"><div class="k">2</div><div class="v">Úlcera profunda</div></div>
+    <div class="kv"><div class="k">3</div><div class="v">Abscesso/osteomielite</div></div>
+    <div class="kv"><div class="k">4</div><div class="v">Gangrena localizada</div></div>
+    <div class="kv"><div class="k">5</div><div class="v">Gangrena extensa</div></div>
+  </div>
+  <div class="box prova"><span class="l">alto rendimento</span>🎯 <strong>WIfI</strong> = Wound+Ischemia+footInfection — mais completo, avalia isquemia separadamente!</div>
+  <p class="s">De 28 sistemas avaliados, só 6 aprovados (IWGDF 2023): DIAFORA, IDSA/IWGDF, SINBAD, UT, Wagner, WIfI.</p>
+</div>
+
+<!-- 2 AVALIACAO -->
+<div class="panel" data-p="2">
+  <h2>🩺 Monofilamento + ITB</h2>
+  <p>🖊️ Semmes-Weinstein 10g = rastreio padrão de neuropatia sensitiva</p>
+  <div class="card">
+    <div class="kv"><div class="k">&gt;1,3</div><div class="v">⚠️ Calcificação (falso normal!)</div></div>
+    <div class="kv"><div class="k">0,9-1,3</div><div class="v">Normal</div></div>
+    <div class="kv"><div class="k">0,4-0,9</div><div class="v">DAOP leve-moderada</div></div>
+    <div class="kv"><div class="k">&lt;0,4</div><div class="v">Isquemia crítica</div></div>
+  </div>
+  <div class="box warn"><span class="l">☠️ pega-ratão</span>ITB alto no diabético <strong>NÃO exclui</strong> DAOP! Esclerose de Mönckeberg calcifica a artéria.</div>
+</div>
+
+<!-- 3 DESCARGA -->
+<div class="panel" data-p="3">
+  <h2>👢 IWGDF 2023</h2>
+  <div class="box prova"><span class="l">alto rendimento</span>🆕 <strong>Dispositivo NÃO-removível</strong> joelho-alto (TCC) = 1ª escolha! Não é só "uma opção".</div>
+  <div class="card">
+    <div class="kv"><div class="k">🥇 1ª escolha</div><div class="v">Bota de contato total / removível travada</div></div>
+    <div class="kv"><div class="k">🥈 Alternativa</div><div class="v">Bota removível (se contraindicado)</div></div>
+  </div>
+  <h3>✂️ Desbridamento cortante — 4 passos</h3>
+  <div class="box gr"><div class="l">🟢 tradução simples</div><p>Não é "limpar a ferida" — é remover uma <strong>barreira física</strong>. Calo e tecido morto escondem a úlcera do próprio corpo, que não consegue inflamar nem cicatrizar por baixo deles.</p></div>
+
+  <div class="step"><div class="hd2"><div class="n">1</div><div class="x"><span class="fase">avaliação</span>Inspecionar + <strong>sondar</strong> (probe-to-bone) antes de desbridar</div></div>
+  <div class="pq"><b>por quê</b>Sondar <strong>antes</strong> evita confundir depois se o osso exposto veio do desbridamento ou já estava lá.</div></div>
+
+  <div class="step"><div class="hd2"><div class="n">2</div><div class="x"><span class="fase">o gesto central</span>Remover <strong>todo o calo periférico</strong> + tecido desvitalizado até sangrar</div></div>
+  <div class="pq"><b>por quê</b>O calo <strong>concentra pressão</strong> sobre a ferida a cada passo — como uma pedra no sapato. Reduz pressão mais que qualquer calçado. É por isso que supera enzimático/autolítico. ✂️</div></div>
+
+  <div class="step"><div class="hd2"><div class="n">3</div><div class="x"><span class="fase">amostragem</span>Cultura de <strong>tecido profundo</strong> se infecção — nunca swab</div></div>
+  <div class="pq"><b>por quê</b>Swab pega a flora <strong>colonizante</strong> da pele, não o patógeno do tecido profundo doente.</div></div>
+
+  <div class="step"><div class="hd2"><div class="n">4</div><div class="x"><span class="fase">proteção</span>Curativo + <strong>descarga não-removível já</strong></div></div>
+  <div class="pq"><b>por quê</b>Desbridar sem descarregar = reabrir a mesma ferida a cada passo. O desbridamento cria a superfície; só a descarga deixa ela cicatrizar. 👢</div></div>
+
+  <p class="s">Reavaliar e redesbridar a cada 1–4 semanas — não é procedimento único.</p>
+</div>
+
+<!-- 4 INFECCAO -->
+<div class="panel" data-p="4">
+  <h2>🦠 IDSA/IWGDF</h2>
+  <div class="card">
+    <div class="kv"><div class="k">Leve</div><div class="v">≤2cm, ATB oral ambulatorial</div></div>
+    <div class="kv"><div class="k">Moderada</div><div class="v">&gt;2cm/profunda, avaliar internação</div></div>
+    <div class="kv"><div class="k">Grave</div><div class="v">SIRS → internar+ATB EV+cirurgia urgente</div></div>
+  </div>
+  <div class="box warn"><span class="l">☠️ pega-ratão</span>Swab superficial = <strong>colonização</strong>, não patógeno real! Preferir tecido profundo.</div>
+  <p>🦴 "Probe-to-bone" positivo → suspeitar <strong>osteomielite</strong>, confirmar com RM.</p>
+</div>
+
+<!-- 5 TRAPS -->
+<div class="panel" data-p="5">
+  <h2>☠️ Pega-ratões</h2>
+  <div class="box warn"><span class="l">trap 1</span>ITB alto não exclui DAOP no diabético 🩸</div>
+  <div class="box warn"><span class="l">trap 2</span>Descarga não-removível é preferencial, não opcional 👢</div>
+  <div class="box warn"><span class="l">trap 3</span>Swab superficial ≠ boa amostra pra cultura 🦠</div>
+  <div class="box warn"><span class="l">trap 4</span>Wagner não avalia isquemia — WIfI sim 📊</div>
+  <div class="box warn"><span class="l">trap 5</span>Colonização ≠ infecção — diagnóstico é clínico 🩺</div>
+  <div class="box warn"><span class="l">trap 6</span>Desbridamento enzimático não substitui cortante ✂️</div>
+  <div class="box warn"><span class="l">trap 7</span>Probe-to-bone+ tem boa correlação com osteomielite 🦴</div>
+  <div class="box warn"><span class="l">trap 8</span>Neuropatia motora causa deformidade, não só perda sensitiva 🧠</div>
+  <div class="box mac"><span class="l">✅ resumo de bolso</span>Tríade=neuropatia+DAOP+infecção · Wagner=profundidade · WIfI=isquemia+ferida+infecção · ITB alto=calcificação · IWGDF23=descarga não-removível+desbridamento cortante · Infecção=clínica 🎓</div>
+</div>
+
+<script>
+var tabs=document.querySelectorAll('.tab'),panels=document.querySelectorAll('.panel');
+tabs.forEach(function(t){t.addEventListener('click',function(){
+  tabs.forEach(function(x){x.classList.remove('on')});
+  panels.forEach(function(x){x.classList.remove('on')});
+  t.classList.add('on');
+  document.querySelector('.panel[data-p="'+t.dataset.t+'"]').classList.add('on');
+})});
+</script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Choque &amp; Transfusão · pocket</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d1117;--card:#16161f;--card2:#1c1c27;--line:#2a2a38;
+  --txt:#ececf4;--muted:#9a9ab0;
+  --laranja:#f97316;--roxo:#a855f7;--ciano:#22d3ee;--vermelho:#f87171;--amarelo:#fbbf24;--verde:#34d399;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{overflow-x:hidden}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;font-size:17px;line-height:1.6;padding-bottom:30px}
+.top{padding:22px 18px 12px;position:sticky;top:0;background:linear-gradient(180deg,var(--bg) 70%,transparent);z-index:5}
+.kick{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:27px;line-height:1.1;margin-top:4px}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:6px 18px 12px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;padding:9px 15px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted);white-space:nowrap;cursor:pointer;transition:.15s}
+.tab.on{background:var(--laranja);border-color:var(--laranja);color:#0a0a0f}
+.panel{display:none;padding:6px 18px 40px;animation:f .25s}
+.panel.on{display:block}
+@keyframes f{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+h2{font-family:'Syne',sans-serif;font-size:21px;color:var(--laranja);margin:18px 0 10px}
+h3{font-family:'Syne',sans-serif;font-size:16px;color:#fff;margin:16px 0 6px}
+p{margin:10px 0}
+ul{list-style:none;margin:8px 0}
+li{padding:6px 0 6px 22px;position:relative}
+li::before{content:"▸";position:absolute;left:0;top:7px;color:var(--laranja);font-size:13px}
+strong{color:#fff;font-weight:600}
+.s{color:var(--ciano);font-style:italic;font-size:.92em}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0}
+.box{border-radius:12px;padding:13px 15px;margin:13px 0;border:1px solid;font-size:15px}
+.prova{background:rgba(168,85,247,.1);border-color:rgba(168,85,247,.4)}
+.prova .l{color:var(--roxo)}
+.mac{background:rgba(34,211,238,.1);border-color:rgba(34,211,238,.4)}
+.mac .l{color:var(--ciano)}
+.warn{background:rgba(248,113,113,.1);border-color:rgba(248,113,113,.4)}
+.warn .l{color:var(--vermelho)}
+.l{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-size:10px;background:rgba(168,85,247,.25);color:var(--roxo);padding:2px 6px;border-radius:5px;margin-left:5px;font-family:'JetBrains Mono',monospace}
+.kv{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)}
+.kv:last-child{border:none}
+.kv .k{flex:0 0 42%;color:var(--ciano);font-family:'JetBrains Mono',monospace;font-size:13px}
+.kv .v{flex:1;font-size:15px}
+.step{display:flex;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line)}
+.step:last-child{border:none}
+.step .n{flex:0 0 30px;height:30px;border-radius:9px;background:rgba(249,115,22,.15);border:1px solid rgba(249,115,22,.45);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;display:grid;place-items:center;font-size:14px}
+.step .x{flex:1}
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="kick">carolzita · pocket 🚑</div>
+  <h1>Choque &amp; Transfusão 🩸</h1>
+</div>
+<div class="tabs">
+  <div class="tab on" data-t="0">🔀 4 tipos</div>
+  <div class="tab" data-t="1">📉 Classes I-IV</div>
+  <div class="tab" data-t="2">💉 Transfusão</div>
+  <div class="tab" data-t="3">🦠 Sepse</div>
+  <div class="tab" data-t="4">⚡ Outros</div>
+  <div class="tab" data-t="5">☠️ Traps</div>
+</div>
+
+<!-- 0 4 TIPOS -->
+<div class="panel on" data-p="0">
+  <h2>🔀 Os 4 tipos</h2>
+  <div class="card">
+    <div class="kv"><div class="k">🩸 Hipovolêmico</div><div class="v">↓DC ↑RVS ↓enchimento · frio</div></div>
+    <div class="kv"><div class="k">❤️ Cardiogênico</div><div class="v">↓DC ↑RVS ↑enchimento · frio</div></div>
+    <div class="kv"><div class="k">🚧 Obstrutivo</div><div class="v">↓DC · mecânico · frio</div></div>
+    <div class="kv"><div class="k">🌡️ Distributivo</div><div class="v">↑/N DC ↓↓RVS · <strong>quente</strong></div></div>
+  </div>
+  <div class="box prova"><span class="l">alto rendimento</span>🔥 Distributivo = único com <strong>extremidades quentas</strong>! Os outros 3 são frios.</div>
+</div>
+
+<!-- 1 CLASSES -->
+<div class="panel" data-p="1">
+  <h2>📉 Choque hemorrágico (ATLS)</h2>
+  <div class="card">
+    <div class="kv"><div class="k">🟢 Classe I</div><div class="v">&lt;15% · FC/PA normais</div></div>
+    <div class="kv"><div class="k">🟡 Classe II</div><div class="v">15-30% · FC100-120, PP↓</div></div>
+    <div class="kv"><div class="k">🟠 Classe III</div><div class="v">30-40% · FC120-140, PA↓, confuso</div></div>
+    <div class="kv"><div class="k">🔴 Classe IV</div><div class="v">&gt;40% · FC&gt;140, letárgico</div></div>
+  </div>
+  <div class="box warn"><span class="l">☠️ pega-ratão</span>Classificação é <strong>didática</strong> — idoso betabloqueado/atleta pode não taquicardizar mesmo em choque!</div>
+  <h3>📊 Padrão de resposta &gt; classe isolada</h3>
+  <ul>
+    <li>⚡ Rápido = estável, sangramento mínimo</li>
+    <li>⚠️ Transitório = <strong>sangramento ativo</strong> → cirurgia já!</li>
+    <li>🚨 Não-respondedor = hemorragia grave → emergência</li>
+  </ul>
+</div>
+
+<!-- 2 TRANSFUSAO -->
+<div class="panel" data-p="2">
+  <h2>💉 Damage control resuscitation</h2>
+  <ul>
+    <li>📉 Hipotensão permissiva (PAS~80-90, exceto TCE)</li>
+    <li>💧 Minimizar cristaloide (≤1L)</li>
+    <li>🩸 Hemocomponentes precoces</li>
+    <li>⚠️ Vasopressor precoce = deletério se sangramento não controlado</li>
+  </ul>
+  <div class="card">
+    <div class="kv"><div class="k">🅰️ Hemácias</div><div class="v">1</div></div>
+    <div class="kv"><div class="k">🅱️ Plasma</div><div class="v">1</div></div>
+    <div class="kv"><div class="k">🅾️ Plaquetas</div><div class="v">1</div></div>
+  </div>
+  <div class="box mac"><span class="l">🧠 macete</span>MTP = <strong>1:1:1</strong> · TXA 1g EV até 3h · Repor <strong>cálcio</strong> (citrato causa hipocalcemia) · TEG/ROTEM guia melhor que coagulograma comum.</div>
+  <div class="box warn"><span class="l">☠️ pega-ratão</span>Cristaloide &gt;1,5:1 por unidade de hemácia = <strong>pior</strong> desfecho (SDRA, falência múltipla).</div>
+</div>
+
+<!-- 3 SEPSE -->
+<div class="panel" data-p="3">
+  <h2>🦠 Surviving Sepsis Campaign</h2>
+  <ul>
+    <li>💧 ≥30 mL/kg cristaloide balanceado em 3h (ponto de partida)</li>
+    <li>📊 Lactato como marcador, meta = normalizar</li>
+  </ul>
+  <h3>💊 Escalonamento vasopressor</h3>
+  <div class="card">
+    <div class="step"><div class="n">1</div><div class="x"><strong>Norepinefrina</strong> (1ª linha sempre)</div></div>
+    <div class="step"><div class="n">2</div><div class="x">+ Vasopressina (soma, não substitui!)</div></div>
+    <div class="step"><div class="n">3</div><div class="x">+ Epinefrina (refratário)</div></div>
+  </div>
+  <p class="s">Meta: PAM ≥65 mmHg. Disfunção cardíaca: norepi OU epi 1ª linha.</p>
+  <div class="box warn"><span class="l">☠️ pega-ratão</span>Betabloqueador <strong>NÃO</strong> é tratamento de choque séptico! IMC&gt;30 → usar peso ajustado/ideal.</div>
+</div>
+
+<!-- 4 OUTROS -->
+<div class="panel" data-p="4">
+  <h2>⚡ Anafilático · Neurogênico · Obstrutivo</h2>
+  <div class="card">
+    <div class="kv"><div class="k">💉 Anafilático</div><div class="v"><strong>Epinefrina IM</strong> coxa — 1ª linha, sem atraso</div></div>
+    <div class="kv"><div class="k">🧠 Neurogênico</div><div class="v">Lesão &gt;T6 → vasodilatação+<strong>bradicardia</strong></div></div>
+    <div class="kv"><div class="k">🚧 Obstrutivo</div><div class="v">Tamponamento/pneumoHTX/TEP → <strong>alívio mecânico</strong></div></div>
+  </div>
+  <div class="box warn"><span class="l">☠️ pega-ratão</span>Choque <strong>neurogênico</strong> (hemodinâmico) ≠ choque <strong>medular</strong> (neurológico) — não confundir!</div>
+</div>
+
+<!-- 5 TRAPS -->
+<div class="panel" data-p="5">
+  <h2>☠️ Pega-ratões</h2>
+  <div class="box warn"><span class="l">trap 1</span>PA normal ainda pode ser choque (compensado) 📊</div>
+  <div class="box warn"><span class="l">trap 2</span>Distributivo = único quente 🌡️</div>
+  <div class="box warn"><span class="l">trap 3</span>Vasopressor precoce em hemorragia não controlada pode ser ruim ⚠️</div>
+  <div class="box warn"><span class="l">trap 4</span>Vasopressina soma, não substitui norepi 💊</div>
+  <div class="box warn"><span class="l">trap 5</span>Neurogênico ≠ medular 🧠</div>
+  <div class="box warn"><span class="l">trap 6</span>Betabloqueador não trata sepse 🚫</div>
+  <div class="box warn"><span class="l">trap 7</span>Classe isolada é didática — resposta clínica manda mais 📉</div>
+  <div class="box warn"><span class="l">trap 8</span>Idoso/atleta pode não taquicardizar em choque 💓</div>
+  <div class="box mac"><span class="l">✅ resumo de bolso</span>4 tipos por DC/RVS/enchimento · Classes I-IV=15·30·40·>40% · MTP 1:1:1+TXA · Sepse: norepi→+vasopressina→+epi, PAM≥65 · Anafilático=epi IM já 🎓</div>
+</div>
+
+<script>
+var tabs=document.querySelectorAll('.tab'),panels=document.querySelectorAll('.panel');
+tabs.forEach(function(t){t.addEventListener('click',function(){
+  tabs.forEach(function(x){x.classList.remove('on')});
+  panels.forEach(function(x){x.classList.remove('on')});
+  t.classList.add('on');
+  document.querySelector('.panel[data-p="'+t.dataset.t+'"]').classList.add('on');
+})});
+</script>
+</body>
+</html>

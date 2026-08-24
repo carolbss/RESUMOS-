@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doenças Biliares Acalculosas — Referência CV 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0d1117; --bg2:#161b22; --bg3:#1c2128; --line:#30363d;
+    --tx:#e6edf3; --tx2:#9da7b3; --tx3:#6e7681;
+    --orange:#ff7b29; --orange2:#ffa05c;
+    --purple:#bc8cff; --purple2:#d2b3ff;
+    --cyan:#39d0d8; --cyan2:#7ee8ee;
+    --red:#ff6b6b; --green:#3fb950; --yellow:#e3b341;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--tx);font-family:'IBM Plex Sans',sans-serif;line-height:1.55;font-size:15px;padding-bottom:60px}
+  .wrap{max-width:920px;margin:0 auto;padding:0 18px}
+  header{padding:26px 0 14px;border-bottom:1px solid var(--line)}
+  h1{font-family:'IBM Plex Serif',serif;font-size:26px;font-weight:600;letter-spacing:-.3px}
+  h1 .a{color:var(--orange)}
+  .sub{color:var(--tx2);font-size:13px;margin-top:4px;font-family:'IBM Plex Mono',monospace}
+  .tabs{position:sticky;top:0;z-index:10;background:var(--bg);display:flex;gap:6px;overflow-x:auto;padding:12px 0;border-bottom:1px solid var(--line);scrollbar-width:thin}
+  .tabs::-webkit-scrollbar{height:5px}.tabs::-webkit-scrollbar-thumb{background:var(--line);border-radius:4px}
+  .tab{flex:0 0 auto;background:var(--bg2);border:1px solid var(--line);color:var(--tx2);padding:8px 14px;border-radius:8px;cursor:pointer;font-size:13px;font-weight:500;white-space:nowrap;transition:.15s;font-family:'IBM Plex Sans'}
+  .tab:hover{border-color:var(--orange);color:var(--tx)}
+  .tab.active{background:var(--orange);border-color:var(--orange);color:#0d1117;font-weight:600}
+  .panel{display:none;padding:22px 0;animation:fade .25s}
+  .panel.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  h2{font-family:'IBM Plex Serif',serif;font-size:21px;color:var(--orange);margin:6px 0 14px;border-bottom:2px solid var(--orange);padding-bottom:6px;display:inline-block}
+  h3{font-size:16px;color:var(--orange2);margin:20px 0 8px;font-weight:600}
+  h3.p{color:var(--purple2)}
+  p{margin:8px 0}
+  .simple{color:var(--cyan2);font-style:italic;font-size:13.5px}
+  ul,ol{margin:8px 0 8px 22px}li{margin:5px 0}
+  b,strong{color:#fff;font-weight:600}
+  .box{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:14px 0}
+  .box.o{border-left:4px solid var(--orange)}
+  .box.p{border-left:4px solid var(--purple);background:#1a1525}
+  .box.c{border-left:4px solid var(--cyan);background:#0f1d20}
+  .box.r{border-left:4px solid var(--red);background:#1f1416}
+  .box.g{border-left:4px solid var(--green);background:#0f1a12}
+  .tag{display:inline-block;font-family:'IBM Plex Mono';font-size:10.5px;font-weight:600;padding:2px 8px;border-radius:20px;letter-spacing:.5px;text-transform:uppercase;margin-bottom:8px}
+  .tag.p{background:rgba(188,140,255,.15);color:var(--purple2);border:1px solid var(--purple)}
+  .tag.c{background:rgba(57,208,216,.13);color:var(--cyan2);border:1px solid var(--cyan)}
+  .tag.r{background:rgba(255,107,107,.13);color:var(--red);border:1px solid var(--red)}
+  .tag.o{background:rgba(255,123,41,.13);color:var(--orange2);border:1px solid var(--orange)}
+  table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.5px}
+  th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+  th{background:var(--bg3);color:var(--orange2);font-weight:600}
+  tr:nth-child(even) td{background:rgba(255,255,255,.015)}
+  .mono{font-family:'IBM Plex Mono';font-size:13px}
+  .kw{color:var(--orange2);font-weight:600}
+  .kp{color:var(--purple2);font-weight:600}
+  .pega{background:var(--bg2);border:1px solid var(--red);border-radius:10px;padding:13px 15px;margin:12px 0}
+  .pega .q{color:var(--red);font-weight:600;margin-bottom:6px}
+  .pega .a{color:var(--green)}
+  .mnem{background:#0f1d20;border:1px solid var(--cyan);border-radius:10px;padding:14px 16px;margin:14px 0}
+  .mnem .word{font-family:'IBM Plex Mono';font-size:19px;color:var(--cyan2);font-weight:600;letter-spacing:1px}
+  .q{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:15px;margin:14px 0}
+  .q .banca{font-family:'IBM Plex Mono';font-size:11px;color:var(--purple2);font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+  .q .stem{margin:8px 0 10px}
+  .q .opt{margin:4px 0;padding-left:6px}
+  .q details{margin-top:10px;border-top:1px dashed var(--line);padding-top:10px}
+  .q summary{cursor:pointer;color:var(--green);font-weight:600;font-size:13.5px}
+  .q .exp{margin-top:8px;color:var(--tx2);font-size:13.5px}
+  .svgbox{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:14px;margin:14px 0;text-align:center;overflow-x:auto}
+  .legend{font-size:12px;color:var(--tx2);margin-top:8px}
+  .pill{display:inline-block;background:var(--bg3);border:1px solid var(--line);border-radius:6px;padding:2px 8px;font-family:'IBM Plex Mono';font-size:12px;margin:2px}
+  hr{border:none;border-top:1px solid var(--line);margin:18px 0}
+  .footer{color:var(--tx3);font-size:11.5px;text-align:center;margin-top:30px;font-family:'IBM Plex Mono'}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Doenças Biliares <span class="a">Acalculosas</span></h1>
+  <div class="sub">Referência CV 2026 · carolzita · Sabiston · Tokyo 2018 · ESGAR/EAES 2022 · AASLD 2023 / EASL 2022 · Todani</div>
+</header>
+
+<nav class="tabs" id="tabs">
+  <button class="tab active" data-t="t1">🩺 Colecistite Alitiásica</button>
+  <button class="tab" data-t="t2">🔵 Pólipos</button>
+  <button class="tab" data-t="t3">🟣 Cistos Biliares</button>
+  <button class="tab" data-t="t4">🟠 Colangite Esclerosante</button>
+  <button class="tab" data-t="t5">⚠️ Pega-ratão</button>
+  <button class="tab" data-t="t6">🧠 Mnemônicos</button>
+  <button class="tab" data-t="t7">📝 Questões</button>
+</nav>
+
+<!-- ============ T1: COLECISTITE ALITIÁSICA ============ -->
+<section class="panel active" id="t1">
+  <h2>Colecistite Aguda Alitiásica (CAA)</h2>
+  <p>Inflamação aguda da vesícula <b>sem cálculos</b>. <span class="simple">(a vesícula inflama mesmo sem nenhuma "pedrinha" entupindo a saída).</span> Representa <b>5–10%</b> de todas as colecistites agudas, mas é <b>mais grave</b>: evolui rápido para gangrena e perfuração.</p>
+
+  <h3>Fisiopatologia</h3>
+  <div class="box o">
+    <p>Dois motores principais: <b>estase biliar</b> (bile parada) + <b>isquemia da parede</b> (pouco sangue chegando). <span class="simple">(a bile fica empoçada e parada, e a parede da vesícula fica "sufocada" sem sangue — aí ela inflama e necrosa).</span></p>
+    <p>A estase concentra a bile → <b>lama biliar (sludge)</b> e ácidos biliares tóxicos lesam a mucosa. A hipoperfusão (choque, vasopressores) leva a microtrombose dos vasos terminais → <b>necrose isquêmica</b>. Por isso a parede gangrena precocemente.</p>
+  </div>
+
+  <h3>Quem desenvolve — fatores de risco</h3>
+  <div class="box p">
+    <span class="tag p">ALTO RENDIMENTO · GHC / HCPA</span>
+    <p>Quase sempre o <b>paciente crítico / UTI</b>. Pense em CAA diante de febre/leucocitose sem foco em:</p>
+    <ul>
+      <li><b>Jejum prolongado / Nutrição parenteral total (NPT)</b> → vesícula nunca esvazia</li>
+      <li><b>Grande queimado, politrauma, pós-op de grande porte</b> (cardíaco, AAA)</li>
+      <li><b>Sepse, choque, uso de vasopressores, ventilação mecânica</b></li>
+      <li><b>Transfusões múltiplas, diabetes, aterosclerose</b></li>
+      <li><b>Imunossuprimido / HIV-AIDS</b> → associada a <b>CMV e Cryptosporidium</b></li>
+    </ul>
+    <p class="simple">(quem fica muito tempo de jejum, no soro, muito doente na UTI ou com defesa baixa — esses são os que têm risco).</p>
+  </div>
+
+  <h3>Quadro clínico</h3>
+  <p>Difícil! O paciente costuma estar <b>sedado/intubado</b> e não relata dor. Sinais sutis: <b>febre inexplicada, leucocitose, dor/defesa em HCD, sepse sem foco aparente, intolerância à dieta enteral</b>. <b>Alta suspeição</b> é a chave do diagnóstico.</p>
+
+  <h3 class="p">Diagnóstico — Tóquio 2018 (TG18)</h3>
+  <div class="box p">
+    <span class="tag p">ALTO RENDIMENTO · TG18</span>
+    <table>
+      <tr><th>Critério</th><th>Achados</th></tr>
+      <tr><td><b>A. Inflamação local</b></td><td>Murphy + ; massa/dor/defesa em HCD</td></tr>
+      <tr><td><b>B. Inflamação sistêmica</b></td><td>Febre, PCR ↑, leucocitose</td></tr>
+      <tr><td><b>C. Imagem</b></td><td>Achados de colecistite na USG/TC</td></tr>
+    </table>
+    <p class="mono"><b>Suspeito</b> = 1 de A + 1 de B · <b>Definitivo</b> = 1 de A + 1 de B + C</p>
+    <p><b>USG (1ª escolha):</b> parede <b>≥3,5–4 mm</b>, distensão, líquido perivesicular, <b>lama/sludge</b>, Murphy ecográfico, <b>SEM cálculos</b>. <br><b>HIDA (cintilografia):</b> não-enchimento da vesícula = obstrução do cístico (alta sensibilidade quando USG dúbia). <br><b>TC:</b> útil no paciente crítico, avalia gangrena/perfuração.</p>
+  </div>
+
+  <h3 class="p">Gravidade (TG18) — define a conduta</h3>
+  <table>
+    <tr><th>Grau</th><th>Definição</th><th>Conduta</th></tr>
+    <tr><td><b>I Leve</b></td><td>Sem disfunção orgânica</td><td>Colecistectomia precoce se apto</td></tr>
+    <tr><td><b>II Moderado</b></td><td>Leuco >18k, massa palpável, >72h, inflamação local marcada</td><td>Drenagem ± cirurgia</td></tr>
+    <tr><td><b>III Grave</b></td><td>Disfunção orgânica (CV, neuro, resp, renal, hepática, hemato)</td><td><b>Colecistostomia percutânea</b> + suporte</td></tr>
+  </table>
+
+  <h3>Tratamento</h3>
+  <div class="box o">
+    <p><b>Antibioticoterapia</b> de amplo espectro (cobrir Gram-negativos entéricos e anaeróbios) + ressuscitação.</p>
+    <p><b>Colecistostomia percutânea (drenagem trans-hepática guiada por USG/TC):</b> tratamento de escolha no <b>paciente crítico instável</b> (grau III) — descomprime sem o estresse cirúrgico. <span class="simple">(coloca um dreninho na vesícula pela pele para esvaziar a bile/pus, sem operar de verdade — porque o paciente está fraco demais para uma cirurgia grande).</span></p>
+    <p><b>Colecistectomia (preferência laparoscópica):</b> se o paciente está <b>estável</b> e apto. Em CAA o limiar para <b>conversão</b> é baixo pela inflamação intensa e gangrena.</p>
+  </div>
+
+  <h3>Complicações</h3>
+  <div class="box r">
+    <p>Evolução <b>mais rápida e grave</b> que a litiásica: <b>gangrena</b> (até 50%), <b>perfuração</b>, <b>empiema</b>, abscesso pericolecístico, fístula. Mortalidade elevada pela doença de base + atraso diagnóstico.</p>
+  </div>
+</section>
+
+<!-- ============ T2: PÓLIPOS ============ -->
+<section class="panel" id="t2">
+  <h2>Pólipos de Vesícula Biliar</h2>
+  <p>Elevações da parede que se projetam para o lúmen. Prevalência <b>0,3–9,5%</b>. <span class="simple">(são "verruguinhas" para dentro da vesícula vistas no ultrassom).</span> A grande questão é: <b>é benigno ou pode virar câncer?</b></p>
+
+  <h3>Classificação histológica</h3>
+  <table>
+    <tr><th>Tipo</th><th>Subtipo</th><th>Maligno?</th></tr>
+    <tr><td rowspan="3"><b>Pseudopólipos</b> (não-neoplásicos · ~70%)</td><td>Pólipo de <b>colesterol</b> (mais comum)</td><td>Não</td></tr>
+    <tr><td>Adenomiomatose</td><td>Não</td></tr>
+    <tr><td>Inflamatório</td><td>Não</td></tr>
+    <tr><td rowspan="2"><b>Verdadeiros</b> (neoplásicos)</td><td><b>Adenoma</b> (pré-maligno)</td><td>Potencial</td></tr>
+    <tr><td><b>Adenocarcinoma</b></td><td>Sim</td></tr>
+  </table>
+  <p class="simple">(a maioria é "bolinha de gordura" e nunca vira câncer; o que preocupa é o adenoma, que pode evoluir).</p>
+
+  <h3 class="p">Fatores de risco para malignidade</h3>
+  <div class="box p">
+    <span class="tag p">ALTO RENDIMENTO · TODAS AS BANCAS</span>
+    <ul>
+      <li><b>Tamanho ≥10 mm</b> (principal preditor)</li>
+      <li><b>Idade &gt;60 anos</b></li>
+      <li><b>Colangite esclerosante primária (PSC)</b></li>
+      <li><b>Etnia asiática</b></li>
+      <li><b>Pólipo séssil</b> / espessamento focal da parede <b>&gt;4 mm</b></li>
+      <li>Crescimento em seguimento</li>
+    </ul>
+  </div>
+
+  <h3 class="p">Manejo — ESGAR/EAES/EFISDS/ESGE 2022</h3>
+  <div class="box p">
+    <span class="tag p">DIRETRIZ ATUAL · DECORAR FLUXO</span>
+    <table>
+      <tr><th>Cenário</th><th>Conduta</th></tr>
+      <tr><td><b>≥10 mm</b></td><td><b>Colecistectomia</b> (se apto e aceita)</td></tr>
+      <tr><td><b>6–9 mm + ≥1 fator de risco</b></td><td><b>Colecistectomia</b></td></tr>
+      <tr><td>6–9 mm sem fator <b>OU</b> ≤5 mm com fator</td><td>USG seriado: <b>6 m, 1 a, 2 a</b>; parar se estável após 2 a</td></tr>
+      <tr><td>≤5 mm sem fator</td><td><b>Sem seguimento</b></td></tr>
+      <tr><td>Crescimento → atinge 10 mm</td><td>Colecistectomia</td></tr>
+      <tr><td>Crescimento ≥2 mm em 2 anos</td><td>Reavaliar tamanho + fatores (discussão multidisciplinar)</td></tr>
+      <tr><td>Sintomas atribuíveis à vesícula</td><td>Considerar colecistectomia (sem outra causa)</td></tr>
+    </table>
+    <p class="mono">USG é o exame primário. EcoEndoscopia/USG contrastada em casos difíceis.</p>
+  </div>
+
+  <h3>Técnica cirúrgica</h3>
+  <div class="box o">
+    <p><b>Colecistectomia videolaparoscópica</b> padrão (4 portais, dissecção do triângulo de Calot, <b>Critério de Visão Crítica de Segurança – CVS de Strasberg</b>, clipagem do ducto e artéria císticos). Ver módulo "Colecistectomia laparoscópica".</p>
+    <p class="box r" style="margin-top:10px"><b>⚠ Se há suspeita de malignidade:</b> NÃO romper a vesícula (risco de disseminação). Avaliar <b>colecistectomia aberta com ressecção do leito hepático</b> e biópsia de congelação. Adenocarcinoma confirmado → ressecção oncológica (segmentos IVb/V + linfadenectomia conforme T).</p>
+  </div>
+</section>
+
+<!-- ============ T3: CISTOS BILIARES ============ -->
+<section class="panel" id="t3">
+  <h2>Cistos de Vias Biliares (Cisto de Colédoco)</h2>
+  <p>Dilatações <b>congênitas</b> da árvore biliar. <span class="simple">(partes do "encanamento" da bile já nascem dilatadas, como balõezinhos).</span> Mais comum em <b>mulheres e asiáticos</b>; metade diagnosticada na infância.</p>
+
+  <h3>Fisiopatologia — junção pancreatobiliar anômala</h3>
+  <div class="box o">
+    <p>Teoria mais aceita: <b>canal comum longo</b> (junção do ducto pancreático com o colédoco fora da parede duodenal) → refluxo de <b>suco pancreático</b> para a via biliar → inflamação crônica e dilatação. <span class="simple">(o "cano" do pâncreas e o da bile se juntam cedo demais, e o suco do pâncreas sobe e estraga a parede da via biliar).</span></p>
+  </div>
+
+  <h3 class="p">Classificação de Todani</h3>
+  <div class="svgbox">
+    <svg viewBox="0 0 640 200" width="100%" style="max-width:600px">
+      <style>.d{fill:none;stroke:#ff7b29;stroke-width:3}.c{fill:#bc8cff;opacity:.55}.l{fill:#e6edf3;font:600 12px 'IBM Plex Mono';text-anchor:middle}.t{fill:#9da7b3;font:11px 'IBM Plex Mono';text-anchor:middle}</style>
+      <!-- I -->
+      <g transform="translate(40,20)"><path class="d" d="M30 0 L30 90"/><ellipse class="c" cx="30" cy="45" rx="16" ry="30"/><text class="l" x="30" y="120">I</text><text class="t" x="30" y="138">fusiforme</text><text class="t" x="30" y="152">extra-hep</text></g>
+      <!-- II -->
+      <g transform="translate(140,20)"><path class="d" d="M30 0 L30 90"/><circle class="c" cx="50" cy="35" r="14"/><path class="d" d="M30 35 L38 35"/><text class="l" x="35" y="120">II</text><text class="t" x="35" y="138">divertículo</text></g>
+      <!-- III -->
+      <g transform="translate(250,20)"><path class="d" d="M30 0 L30 78"/><ellipse class="c" cx="30" cy="78" rx="18" ry="14"/><path class="d" d="M12 92 L48 92" stroke-width="4"/><text class="l" x="30" y="120">III</text><text class="t" x="30" y="138">coledococele</text><text class="t" x="30" y="152">(intramural)</text></g>
+      <!-- IV -->
+      <g transform="translate(370,20)"><path class="d" d="M30 0 L30 90"/><ellipse class="c" cx="30" cy="55" rx="14" ry="22"/><circle class="c" cx="14" cy="14" r="9"/><circle class="c" cx="46" cy="14" r="9"/><text class="l" x="30" y="120">IV</text><text class="t" x="30" y="138">múltiplos</text><text class="t" x="30" y="152">intra+extra</text></g>
+      <!-- V -->
+      <g transform="translate(490,20)"><path class="d" d="M40 30 L40 90"/><circle class="c" cx="22" cy="16" r="10"/><circle class="c" cx="46" cy="12" r="9"/><circle class="c" cx="58" cy="30" r="8"/><text class="l" x="40" y="120">V · Caroli</text><text class="t" x="40" y="138">intra-hepático</text></g>
+    </svg>
+    <div class="legend">Roxo = dilatação cística · Laranja = via biliar normal</div>
+  </div>
+  <table>
+    <tr><th>Tipo</th><th>Descrição</th><th>Frequência</th></tr>
+    <tr><td><b>I</b></td><td>Dilatação fusiforme/cística do colédoco extra-hepático</td><td><b>50–80% (mais comum)</b></td></tr>
+    <tr><td><b>II</b></td><td>Divertículo verdadeiro do colédoco</td><td>~2%</td></tr>
+    <tr><td><b>III</b></td><td><b>Coledococele</b> (dilatação da porção intramural/intraduodenal)</td><td>~4%</td></tr>
+    <tr><td><b>IVa</b></td><td>Múltiplos cistos <b>intra + extra</b>-hepáticos</td><td>~15–35%</td></tr>
+    <tr><td><b>IVb</b></td><td>Múltiplos cistos só extra-hepáticos</td><td>—</td></tr>
+    <tr><td><b>V</b></td><td><b>Doença de Caroli</b> (cistos intra-hepáticos)</td><td>raro</td></tr>
+  </table>
+
+  <h3>Quadro clínico</h3>
+  <p><b>Tríade clássica</b> (raramente completa, mais em crianças): <b>dor abdominal + massa palpável em HCD + icterícia</b>. Adultos: colangites de repetição, pancreatite, icterícia obstrutiva. Dx: <b>USG → colangio-RM</b> (anatomia); CPRE/CPTH se necessário.</p>
+
+  <h3 class="p">Risco de malignidade → COLANGIOCARCINOMA</h3>
+  <div class="box p">
+    <span class="tag p">ALTO RENDIMENTO</span>
+    <p>O risco de <b>colangiocarcinoma</b> aumenta com a idade (chega a 10–30% em adultos não tratados). É o que justifica a <b>ressecção completa</b> e proíbe a simples drenagem.</p>
+  </div>
+
+  <h3>Tratamento</h3>
+  <div class="box o">
+    <p><b>Excisão completa do cisto + colecistectomia + reconstrução com hepaticojejunostomia em Y de Roux.</b> <span class="simple">(tira fora todo o "balão" doente e a vesícula, e religa a via biliar saudável direto numa alça de intestino).</span></p>
+    <ul>
+      <li><b>Tipo I e IV:</b> ressecção extra-hepática + hepaticojejunostomia Y de Roux</li>
+      <li><b>Tipo II:</b> diverticulectomia simples</li>
+      <li><b>Tipo III (coledococele):</b> frequentemente <b>esfincterotomia endoscópica</b></li>
+      <li><b>Tipo V (Caroli):</b> hepatectomia se localizada; <b>transplante</b> se difusa/cirrose</li>
+    </ul>
+    <p><b>Fios/anastomose:</b> hepaticojejunostomia com sutura <b>absorvível monofilamentar 4-0/5-0</b> (PDS), pontos separados ou contínuos, mucosa-a-mucosa.</p>
+  </div>
+</section>
+
+<!-- ============ T4: COLANGITE ESCLEROSANTE ============ -->
+<section class="panel" id="t4">
+  <h2>Colangite Esclerosante Primária (CEP / PSC)</h2>
+  <p>Doença <b>colestática crônica</b>: inflamação + fibrose progressiva → <b>estenoses multifocais</b> das vias biliares intra e extra-hepáticas, com dilatações entre elas ("contas de rosário"/<i>beading</i>). <span class="simple">(o encanamento da bile vai criando "cicatrizes" e apertos em vários pontos, com partes dilatadas no meio — fica parecendo um colar de contas).</span></p>
+
+  <h3 class="p">Associação com DII</h3>
+  <div class="box p">
+    <span class="tag p">CLÁSSICO DE PROVA</span>
+    <p><b>70–80%</b> têm <b>doença inflamatória intestinal</b>, sobretudo <b>retocolite ulcerativa (RCU ≫ Crohn)</b>. Todo paciente com CEP deve investigar DII e vice-versa.</p>
+  </div>
+
+  <h3>Quadro clínico</h3>
+  <p>Homens jovens (~30–40 a). Muitos <b>assintomáticos</b> com <b>fosfatase alcalina (FA) elevada</b>. Sintomáticos: <b>fadiga, prurido, icterícia, colangites de repetição</b>. Pode evoluir para cirrose biliar e hipertensão portal.</p>
+
+  <h3 class="p">Diagnóstico</h3>
+  <div class="box p">
+    <span class="tag p">ALTO RENDIMENTO</span>
+    <ul>
+      <li><b>Colangio-RM (CPRM):</b> padrão-ouro não invasivo → estenoses multifocais + dilatações = <b>"beading"</b></li>
+      <li><b>CPRE:</b> reservada para terapêutica (estenose dominante) ou biópsia/escovado</li>
+      <li><b>Laboratório:</b> padrão colestático (FA, GGT ↑), <b>p-ANCA</b> frequentemente +</li>
+      <li><b>Biópsia:</b> fibrose periductal <b>"em casca de cebola" (onion-skin)</b></li>
+      <li><b>Excluir colangite por IgG4</b> (mimetiza, mas <b>responde a corticoide</b> — IgG4 sérica ↑)</li>
+    </ul>
+  </div>
+
+  <h3 class="p">Vigilância de malignidade</h3>
+  <div class="box p">
+    <table>
+      <tr><th>Câncer</th><th>Vigilância</th></tr>
+      <tr><td><b>Colangiocarcinoma</b> (risco vida ~10–15%)</td><td>CPRM/USG + <b>CA 19-9</b> anual</td></tr>
+      <tr><td><b>Câncer de vesícula</b></td><td>USG anual; <b>qualquer pólipo → colecistectomia</b> (não aplica regra dos 10 mm!)</td></tr>
+      <tr><td><b>Câncer colorretal</b> (se DII)</td><td>Colonoscopia <b>anual</b></td></tr>
+    </table>
+  </div>
+
+  <h3>Tratamento</h3>
+  <div class="box o">
+    <p>Não há cura medicamentosa. <b>UDCA</b> em <b>dose alta é prejudicial</b> (não recomendado). Manejo de <b>estenose dominante</b> por CPRE (dilatação ± stent). Prurido: colestiramina. <b>Transplante hepático = único tratamento definitivo</b> na doença avançada (pode recidivar no enxerto).</p>
+  </div>
+</section>
+
+<!-- ============ T5: PEGA-RATÃO ============ -->
+<section class="panel" id="t5">
+  <h2>⚠️ Pega-ratões (armadilhas de banca)</h2>
+
+  <div class="pega"><div class="q">Q: Pólipo de colesterol vira câncer?</div><div class="a">A: NÃO. É pseudopólipo, sem potencial maligno. O que preocupa é o adenoma. O <b>tamanho ≥10 mm</b> é o principal preditor de malignidade.</div></div>
+
+  <div class="pega"><div class="q">Q: Paciente UTI, febre + leucocitose sem foco, em NPT há 2 semanas. Cálculos?</div><div class="a">A: Pense em <b>colecistite alitiásica</b>. Não precisa de cálculo — estase + isquemia bastam. USG não mostra cálculo, mas parede espessa e lama.</div></div>
+
+  <div class="pega"><div class="q">Q: Melhor conduta na colecistite alitiásica de paciente crítico/instável (grau III)?</div><div class="a">A: <b>Colecistostomia percutânea</b>, não colecistectomia. Drena sem o estresse cirúrgico.</div></div>
+
+  <div class="pega"><div class="q">Q: Tratamento do cisto de colédoco é drenagem interna (cistoenterostomia)?</div><div class="a">A: NÃO. É <b>excisão completa</b> + hepaticojejunostomia Y de Roux. Drenagem deixa epitélio doente → risco de <b>colangiocarcinoma</b>.</div></div>
+
+  <div class="pega"><div class="q">Q: Tipo de Todani mais comum?</div><div class="a">A: <b>Tipo I</b> (fusiforme extra-hepático). <b>Tipo V = Caroli</b> (intra-hepático). <b>Tipo III = coledococele</b> (pode ser tratado por via endoscópica).</div></div>
+
+  <div class="pega"><div class="q">Q: Paciente com PSC e pólipo de vesícula de 7 mm — observa?</div><div class="a">A: NÃO. PSC é fator de risco; em PSC <b>qualquer pólipo</b> indica colecistectomia (não segue o corte de 10 mm da população geral).</div></div>
+
+  <div class="pega"><div class="q">Q: UDCA em alta dose melhora a PSC?</div><div class="a">A: NÃO — alta dose é <b>prejudicial</b>. Tratamento definitivo da doença avançada é o <b>transplante hepático</b>.</div></div>
+
+  <div class="pega"><div class="q">Q: Estenose biliar que "responde a corticoide" — é PSC?</div><div class="a">A: Suspeite de <b>colangite por IgG4</b> (mimetiza PSC, mas responde a corticoide). Dosar IgG4 antes de rotular como PSC.</div></div>
+
+  <div class="pega"><div class="q">Q: Doença associada à PSC?</div><div class="a">A: <b>DII, sobretudo RCU</b> (70–80%). E lembrar do trio de cânceres: colangiocarcinoma, vesícula e colorretal.</div></div>
+</section>
+
+<!-- ============ T6: MNEMÔNICOS ============ -->
+<section class="panel" id="t6">
+  <h2>🧠 Mnemônicos</h2>
+
+  <div class="mnem">
+    <div class="word">"DOENTE GRAVE"</div>
+    <p style="margin-top:8px">Fatores de risco da <b>Colecistite Alitiásica</b>:</p>
+    <ul class="mono">
+      <li><b>D</b>iabetes / Drogas vasopressoras</li>
+      <li><b>O</b>peração de grande porte (pós-op)</li>
+      <li><b>E</b>nteral zero → jejum / NPT</li>
+      <li><b>N</b>utrição parenteral total</li>
+      <li><b>T</b>rauma / queimado</li>
+      <li><b>E</b> sepse / choque</li>
+      <li>+ <b>GRAVE</b> = ventilação, transfusões, imunossupressão (CMV/Crypto)</li>
+    </ul>
+  </div>
+
+  <div class="mnem">
+    <div class="word">Fatores p/ operar PÓLIPO — "PAISES"</div>
+    <ul class="mono">
+      <li><b>P</b>SC (colangite esclerosante)</li>
+      <li><b>A</b>siático (etnia)</li>
+      <li><b>I</b>dade &gt;60 anos</li>
+      <li><b>S</b>éssil / espessamento &gt;4 mm</li>
+      <li><b>E</b>≥10 mm (tamanho — o principal!)</li>
+      <li><b>S</b>intomas atribuíveis</li>
+    </ul>
+  </div>
+
+  <div class="mnem">
+    <div class="word">TODANI — "1 cano, 2 bolso, 3 ponta, 4 vários, 5 fígado"</div>
+    <ul class="mono">
+      <li><b>I</b> = dilatação do cano (colédoco) — <b>mais comum</b></li>
+      <li><b>II</b> = bolso lateral (divertículo)</li>
+      <li><b>III</b> = na ponta dentro do duodeno (coledococele)</li>
+      <li><b>IV</b> = vários cistos (intra + extra)</li>
+      <li><b>V</b> = dentro do fígado (Caroli)</li>
+    </ul>
+  </div>
+
+  <div class="mnem">
+    <div class="word">PSC — "BURRO" / contas de rosário</div>
+    <ul class="mono">
+      <li><b>B</b>eading na CPRM (estenoses + dilatações)</li>
+      <li><b>U</b>DCA alta dose = ruim</li>
+      <li><b>R</b>CU associada (DII)</li>
+      <li><b>R</b>isco de colangiocarcinoma</li>
+      <li><b>O</b>nion-skin (casca de cebola) na biópsia · p-ANCA +</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ T7: QUESTÕES ============ -->
+<section class="panel" id="t7">
+  <h2>📝 Questões representativas</h2>
+  <div class="box c"><span class="tag c">TRANSPARÊNCIA</span> Questões <b>originais</b>, modeladas no estilo de cada banca (HCPA, GHC, Santa Casa POA, PUC-RS, AMRIGS). <b>Não</b> são reproduções literais de provas. Servem para treinar padrão de cobrança.</div>
+
+  <div class="q">
+    <div class="banca">HCPA · estilo</div>
+    <div class="stem">Paciente de 68 anos, masculino, em USG de rotina com pólipo de vesícula séssil de 8 mm. Qual a conduta mais adequada?</div>
+    <div class="opt">a) Seguimento com USG em 6, 12 e 24 meses</div>
+    <div class="opt">b) Colecistectomia videolaparoscópica</div>
+    <div class="opt">c) Alta sem seguimento</div>
+    <div class="opt">d) Colangio-RM e reavaliação anual</div>
+    <details><summary>Resposta</summary><div class="exp"><b>b.</b> Pólipo de 6–9 mm <b>com fator de risco</b> (idade &gt;60 + séssil) → colecistectomia (ESGAR/EAES 2022).</div></details>
+  </div>
+
+  <div class="q">
+    <div class="banca">GHC · estilo</div>
+    <div class="stem">Paciente em UTI pós-politrauma, 12 dias de NPT e ventilação mecânica, evolui com febre e leucocitose sem foco. USG: vesícula distendida, parede 5 mm, lama, sem cálculos. Diagnóstico e melhor conduta inicial se instável:</div>
+    <div class="opt">a) Colecistite litiásica — colecistectomia de urgência</div>
+    <div class="opt">b) Colecistite alitiásica — colecistostomia percutânea</div>
+    <div class="opt">c) Colangite — CPRE imediata</div>
+    <div class="opt">d) Coledocolitíase — exploração de via biliar</div>
+    <details><summary>Resposta</summary><div class="exp"><b>b.</b> Quadro típico de <b>colecistite alitiásica</b> em crítico; instável (grau III) → <b>colecistostomia percutânea</b>.</div></details>
+  </div>
+
+  <div class="q">
+    <div class="banca">Santa Casa POA · estilo</div>
+    <div class="stem">Sobre o cisto de colédoco tipo I de Todani, é correto afirmar:</div>
+    <div class="opt">a) O tratamento de escolha é a cistoenterostomia (drenagem interna)</div>
+    <div class="opt">b) É a forma intra-hepática (Caroli)</div>
+    <div class="opt">c) Indica excisão completa + hepaticojejunostomia em Y de Roux pelo risco de colangiocarcinoma</div>
+    <div class="opt">d) Não exige colecistectomia associada</div>
+    <details><summary>Resposta</summary><div class="exp"><b>c.</b> Tipo I é o mais comum (fusiforme extra-hepático); trata-se com <b>ressecção completa + colecistectomia + hepaticojejunostomia Y de Roux</b>. Drenagem interna é proscrita (risco de malignidade).</div></details>
+  </div>
+
+  <div class="q">
+    <div class="banca">PUC-RS · estilo</div>
+    <div class="stem">Homem de 35 anos com retocolite ulcerativa apresenta fosfatase alcalina elevada e prurido. CPRM mostra estenoses multifocais com dilatações intercaladas. O achado histológico clássico e o tratamento definitivo na doença avançada são, respectivamente:</div>
+    <div class="opt">a) Granuloma não caseoso; corticoide</div>
+    <div class="opt">b) Fibrose em casca de cebola; transplante hepático</div>
+    <div class="opt">c) Infiltrado por IgG4; corticoide</div>
+    <div class="opt">d) Cirrose macronodular; UDCA alta dose</div>
+    <details><summary>Resposta</summary><div class="exp"><b>b.</b> CEP/PSC: <b>onion-skin fibrosis</b> e <b>transplante hepático</b> como tratamento definitivo. IgG4 é o diferencial que responde a corticoide.</div></details>
+  </div>
+
+  <div class="q">
+    <div class="banca">AMRIGS · estilo</div>
+    <div class="stem">Paciente com colangite esclerosante primária realiza USG que evidencia pólipo de vesícula de 6 mm. A conduta recomendada é:</div>
+    <div class="opt">a) Seguimento ultrassonográfico, pois &lt;10 mm</div>
+    <div class="opt">b) Colecistectomia</div>
+    <div class="opt">c) Repetir USG em 2 anos</div>
+    <div class="opt">d) CPRE com escovado</div>
+    <details><summary>Resposta</summary><div class="exp"><b>b.</b> Em <b>PSC, qualquer pólipo</b> de vesícula indica colecistectomia — não se aplica o limiar de 10 mm pelo alto risco de câncer de vesícula.</div></details>
+  </div>
+</section>
+
+<div class="footer">carolzita · CV 2026 · referências: Sabiston · Tokyo Guidelines 2018 · ESGAR/EAES/EFISDS/ESGE 2022 · AASLD 2023 / EASL 2022 · Todani et al.</div>
+</div>
+
+<script>
+  const tabs=document.querySelectorAll('.tab'),panels=document.querySelectorAll('.panel');
+  tabs.forEach(t=>t.addEventListener('click',()=>{
+    tabs.forEach(x=>x.classList.remove('active'));panels.forEach(p=>p.classList.remove('active'));
+    t.classList.add('active');document.getElementById(t.dataset.t).classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  }));
+</script>
+</body>
+</html>

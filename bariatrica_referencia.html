@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cirurgia Bariátrica — carolzita</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0f; --bg2:#12121a; --card:#16161f; --card2:#1c1c27;
+  --line:#2a2a38; --txt:#e6e6ef; --muted:#9a9ab0;
+  --laranja:#f97316; --laranja-bg:rgba(249,115,22,.10);
+  --roxo:#a855f7; --roxo-bg:rgba(168,85,247,.10);
+  --ciano:#22d3ee; --ciano-bg:rgba(34,211,238,.10);
+  --verde:#34d399; --vermelho:#f87171; --amarelo:#fbbf24;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(1200px 600px at 50% -10%,#15151f 0%,var(--bg) 60%);color:var(--txt);font-family:'Inter',sans-serif;line-height:1.55;padding:0 0 80px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px}
+header{padding:40px 0 24px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(30px,6vw,46px);line-height:1.05;margin:8px 0 6px;letter-spacing:-.02em}
+.sub{color:var(--muted);font-size:15px;max-width:700px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tag{font-family:'JetBrains Mono',monospace;font-size:11px;padding:5px 10px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted)}
+.tag.r{color:var(--roxo);border-color:rgba(168,85,247,.35);background:var(--roxo-bg)}
+section{margin-top:14px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:12px;overflow:hidden;transition:border-color .2s}
+details[open]{border-color:rgba(249,115,22,.30)}
+summary{cursor:pointer;list-style:none;padding:18px 20px;display:flex;align-items:center;gap:13px;font-family:'Syne',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em;user-select:none}
+summary::-webkit-details-marker{display:none}
+.num{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--bg);background:var(--laranja);width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:0 0 auto}
+.chev{margin-left:auto;color:var(--muted);transition:transform .25s;font-size:14px}
+details[open] .chev{transform:rotate(90deg)}
+.body{padding:4px 22px 24px;font-size:15px}
+.body p{margin:10px 0}
+.body h4{font-family:'Syne',sans-serif;font-size:16px;color:var(--laranja);margin:20px 0 8px;letter-spacing:-.01em}
+.body ul{margin:8px 0 8px 4px;list-style:none}
+.body li{padding:4px 0 4px 20px;position:relative}
+.body li::before{content:"▸";position:absolute;left:0;color:var(--laranja);font-size:12px;top:6px}
+.body strong{color:#fff;font-weight:600}
+.simple{color:var(--verde);font-style:italic;font-size:.94em;display:block;margin:6px 0}
+.box.simplebox{background:rgba(52,211,153,.09);border-color:rgba(52,211,153,.32);color:var(--verde);font-style:italic}
+.box.simplebox .lbl{color:var(--verde);font-style:normal}
+.box.simplebox strong{color:#7fe8c0;font-style:normal}
+.stx{counter-reset:st;margin:12px 0}
+.st{counter-increment:st;background:var(--card2);border:1px solid var(--line);border-radius:13px;padding:14px 16px 14px 52px;margin:11px 0;position:relative}
+.st::before{content:counter(st);position:absolute;left:14px;top:13px;width:26px;height:26px;border-radius:8px;background:var(--laranja);color:#0a0a0f;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center}
+.st .fase{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:var(--laranja);display:block;margin-bottom:1px}
+.st .ttl{font-weight:700;font-size:15.5px;color:#fff;margin-bottom:4px}
+.st p{margin:5px 0;font-size:14px}
+.pq{border-left:3px solid var(--roxo);background:var(--roxo-bg);border-radius:0 9px 9px 0;padding:8px 12px;margin:9px 0;font-size:13.5px}
+.pq b{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.3px;text-transform:uppercase;color:var(--roxo);display:block;margin-bottom:2px}
+.mh2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:9px}
+.mh{border-radius:9px;padding:8px 11px;font-size:12.5px;border:1px solid var(--line)}
+.mh.e{background:rgba(52,211,153,.07);border-color:rgba(52,211,153,.3)}
+.mh.d{background:var(--laranja-bg);border-color:rgba(249,115,22,.3)}
+.mh b{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;display:block;margin-bottom:2px}
+.mh.e b{color:var(--verde)} .mh.d b{color:var(--laranja)}
+.fio{font-family:'JetBrains Mono',monospace;font-size:11.5px;background:var(--roxo-bg);color:var(--roxo);border:1px solid rgba(168,85,247,.35);padding:1px 6px;border-radius:5px;white-space:nowrap}
+@media(max-width:640px){.mh2{grid-template-columns:1fr}}
+.box{border-radius:12px;padding:13px 15px;margin:14px 0;font-size:14px;border:1px solid}
+.box.prova{background:var(--roxo-bg);border-color:rgba(168,85,247,.35)}
+.box.prova .lbl{color:var(--roxo)}
+.box.mac{background:var(--ciano-bg);border-color:rgba(34,211,238,.35)}
+.box.mac .lbl{color:var(--ciano)}
+.box.warn{background:rgba(248,113,113,.08);border-color:rgba(248,113,113,.3)}
+.box.warn .lbl{color:var(--vermelho)}
+.lbl{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-family:'JetBrains Mono',monospace;font-size:10px;background:rgba(168,85,247,.2);color:var(--roxo);padding:2px 7px;border-radius:6px;margin-left:6px;white-space:nowrap}
+.tbl{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
+.tbl table{width:100%;border-collapse:collapse;min-width:520px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--laranja);background:var(--card2)}
+td strong{color:#fff}
+.fio td:first-child{color:var(--ciano);font-family:'JetBrains Mono',monospace;font-weight:500}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin:14px 0}
+.gcard{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+.gcard .t{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--ciano);margin-bottom:4px}
+.gcard .d{font-size:13px;color:var(--muted)}
+.hands{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.hand{border-radius:12px;padding:14px;border:1px solid var(--line)}
+.hand.e{background:rgba(34,211,238,.06);border-color:rgba(34,211,238,.25)}
+.hand.d{background:rgba(249,115,22,.06);border-color:rgba(249,115,22,.25)}
+.hand .ht{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;font-weight:700}
+.hand.e .ht{color:var(--ciano)} .hand.d .ht{color:var(--laranja)}
+.hand li{font-size:13px}
+.steps{counter-reset:s;margin:10px 0}
+.step{counter-increment:s;position:relative;padding:11px 0 11px 46px;border-bottom:1px dashed var(--line)}
+.step:last-child{border-bottom:none}
+.step::before{content:counter(s);position:absolute;left:0;top:9px;width:30px;height:30px;border-radius:9px;background:var(--laranja-bg);border:1px solid rgba(249,115,22,.4);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:grid;place-items:center}
+.step b{color:#fff}
+svg{max-width:100%;height:auto;display:block;margin:16px auto}
+.fig{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.fig .cap{font-size:12px;color:var(--muted);text-align:center;margin-top:8px;font-family:'JetBrains Mono',monospace}
+footer{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+footer .ref{font-family:'JetBrains Mono',monospace;font-size:12px;margin-top:8px}
+a{color:var(--laranja)}
+@media(max-width:560px){.hands{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">carolzita · cirurgia geral · bariátrica</div>
+  <h1>Cirurgia Bariátrica</h1>
+  <p class="sub">Indicações (ASMBS/IFSO 2022 — critérios ampliados) · Sleeve × Bypass em Y-de-Roux · complicações precoces e tardias · deficiências nutricionais · avaliação multidisciplinar. Base: ASMBS/IFSO 2022 Guidelines, e pegadinhas das bancas do RS.</p>
+  <div class="tags">
+    <span class="tag">ASMBS/IFSO 2022</span>
+    <span class="tag">Sleeve × Bypass</span>
+    <span class="tag">Hérnia interna</span>
+    <span class="tag">Úlcera marginal</span>
+    <span class="tag">Déficits nutricionais</span>
+    <span class="tag r">HCPA · GHC · SC-POA · PUC · AMRIGS</span>
+  </div>
+</header>
+
+<!-- 1 INDICACOES -->
+<details open>
+  <summary><span class="num">1</span> Indicações — ASMBS/IFSO 2022 <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>Em 2022, ASMBS/IFSO publicaram diretriz conjunta que <strong>substitui os critérios do NIH de 1991</strong> (vigentes por 30 anos), ampliando significativamente o acesso à cirurgia.</p>
+
+    <div class="fig">
+      <svg viewBox="0 0 640 220" xmlns="http://www.w3.org/2000/svg">
+        <text x="320" y="20" fill="#9a9ab0" font-size="11" font-family="monospace" text-anchor="middle">critérios antigos (NIH 1991) × atuais (ASMBS/IFSO 2022)</text>
+        <text x="160" y="45" fill="#9a9ab0" font-size="12" font-family="monospace" text-anchor="middle" font-weight="bold">NIH 1991</text>
+        <rect x="40" y="55" width="240" height="50" rx="10" fill="#f87171" opacity=".15" stroke="#f87171" stroke-width="1.5"/>
+        <text x="160" y="76" fill="#f87171" font-size="12" font-family="monospace" text-anchor="middle">BMI ≥40 (isolado)</text>
+        <text x="160" y="94" fill="#f87171" font-size="12" font-family="monospace" text-anchor="middle">OU BMI ≥35 + comorbidade</text>
+
+        <text x="480" y="45" fill="#9a9ab0" font-size="12" font-family="monospace" text-anchor="middle" font-weight="bold">ASMBS/IFSO 2022</text>
+        <rect x="360" y="55" width="240" height="50" rx="10" fill="#34d399" opacity=".15" stroke="#34d399" stroke-width="1.5"/>
+        <text x="480" y="76" fill="#34d399" font-size="12" font-family="monospace" text-anchor="middle">BMI ≥35 (isolado, já basta)</text>
+        <text x="480" y="94" fill="#34d399" font-size="12" font-family="monospace" text-anchor="middle">BMI 30-34,9 + DM2/outra</text>
+
+        <rect x="120" y="130" width="400" height="60" rx="10" fill="#22d3ee" opacity=".12" stroke="#22d3ee" stroke-width="1.5"/>
+        <text x="320" y="152" fill="#22d3ee" font-size="12" font-family="monospace" text-anchor="middle" font-weight="bold">população asiática</text>
+        <text x="320" y="172" fill="#22d3ee" font-size="12" font-family="monospace" text-anchor="middle">obesidade já a partir de BMI ≥25; cirurgia a partir de BMI ≥27,5</text>
+      </svg>
+      <div class="cap">Os limiares caíram ~5 pontos de BMI em relação ao critério clássico de 1991 — BMI≥35 isolado já indica cirurgia, sem precisar de comorbidade associada.</div>
+    </div>
+
+    <div class="tbl"><table>
+      <tr><th>Cenário</th><th>Indicação</th></tr>
+      <tr><td>BMI ≥35 kg/m²</td><td><strong>Recomendada</strong>, independente de comorbidades</td></tr>
+      <tr><td>BMI 30-34,9 kg/m² + doença metabólica (DM2, HAS, dislipidemia, SAOS, DCV, esteatose/NASH, DRC, SOP, infertilidade)</td><td><strong>Recomendada</strong></td></tr>
+      <tr><td>BMI 30-34,9 kg/m² sem resposta adequada a tratamento não-cirúrgico</td><td><strong>Deve ser considerada</strong></td></tr>
+      <tr><td>DM2 + BMI ≥30 kg/m²</td><td><strong>Recomendada</strong></td></tr>
+      <tr><td>População asiática</td><td>Obesidade definida em BMI ≥25; cirurgia oferecida a partir de BMI ≥27,5</td></tr>
+    </table></div>
+
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">ASMBS/IFSO 2022 — todas as bancas</span></span>Se a prova cobrar os critérios <strong>"clássicos"</strong> (BMI≥40 ou BMI≥35+comorbidade), essa é a referência histórica (NIH 1991). Se cobrar a diretriz <strong>atualizada</strong>, os limiares são mais baixos — <strong>BMI≥35 isolado</strong> já basta, e <strong>diabetes tipo 2 com BMI≥30</strong> já indica cirurgia.</div>
+  </div>
+</details>
+
+<!-- 2 TECNICAS -->
+<details>
+  <summary><span class="num">2</span> Técnicas cirúrgicas — Sleeve × Bypass <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>As duas técnicas mais realizadas atualmente, com mecanismos de ação distintos:</p>
+
+    <div class="tbl"><table>
+      <tr><th></th><th>Gastrectomia vertical (Sleeve)</th><th>Bypass em Y-de-Roux (RYGB)</th></tr>
+      <tr><td><strong>Mecanismo</strong></td><td>Restritivo (reduz volume gástrico) + hormonal (↓grelina)</td><td>Restritivo + <strong>disabsortivo</strong> parcial + hormonal potente</td></tr>
+      <tr><td><strong>Reversibilidade</strong></td><td>Não reversível (ressecção)</td><td>Tecnicamente reversível, raramente feito na prática</td></tr>
+      <tr><td><strong>Perda de peso</strong></td><td>Excelente, ligeiramente menor que bypass</td><td>Excelente, geralmente a maior</td></tr>
+      <tr><td><strong>Refluxo (DRGE)</strong></td><td>Pode <strong>piorar ou desencadear</strong> DRGE</td><td>Geralmente <strong>melhora</strong> DRGE</td></tr>
+      <tr><td><strong>Déficit nutricional</strong></td><td>Menor risco</td><td><strong>Maior risco</strong> (componente disabsortivo)</td></tr>
+      <tr><td><strong>Complexidade técnica</strong></td><td>Mais simples</td><td>Mais complexa (2 anastomoses)</td></tr>
+    </table></div>
+
+    <div class="box mac"><span class="lbl">macete</span><strong>DRGE importante</strong> pré-operatória → preferir <strong>bypass</strong> (melhora o refluxo). <strong>Doença inflamatória intestinal ou necessidade de vigilância gástrica futura</strong> (ex: histórico familiar de câncer gástrico) → sleeve pode ser preferível por manter acesso endoscópico mais simples ao estômago restante.</div>
+
+    <h4>Posição, preparo e montagem</h4>
+    <ul>
+      <li><strong>Decúbito dorsal, posição francesa</strong> (pernas abertas), cirurgião entre as pernas, em <strong>anti-Trendelenburg acentuado</strong>.</li>
+      <li>Mesa com capacidade de peso adequada, <strong>apoio para os pés</strong> e coxins — o proclive acentuado faz o paciente deslizar.</li>
+      <li>5 portais; afastador hepático fixo no lobo esquerdo.</li>
+      <li><strong>Profilaxia de TEV reforçada</strong> (HBPM ajustada ao peso + compressão pneumática + deambulação precoce) — obesidade é fator de risco maior e <strong>TEP é a principal causa de morte</strong> na bariátrica.</li>
+      <li>EDA pré-operatória; erradicar <em>H. pylori</em>.</li>
+    </ul>
+    <div class="box simplebox"><span class="lbl">tradução simples</span>O anti-Trendelenburg acentuado existe para que <strong>o fígado gorduroso e as vísceras "desçam"</strong> e liberem o hiato. Sem isso, o lobo esquerdo hepático — que na obesidade é grande e friável — cobre exatamente o campo de trabalho.</div>
+
+    <h4>A) Sleeve (gastrectomia vertical) — passo a passo</h4>
+    <div class="box simplebox"><span class="lbl">tradução simples</span>Transformar o estômago de uma <strong>bolsa</strong> numa <strong>mangueira estreita</strong>, retirando a grande curvatura. Não se desvia nada do trânsito: a comida segue o caminho normal, só que por um tubo. Por isso é mais simples — e por isso não tem hérnia interna nem alça cega.</div>
+
+    <div class="stx">
+
+      <div class="st">
+        <span class="fase">fase de exposição</span>
+        <div class="ttl">Liberação da grande curvatura</div>
+        <p>Abrir o ligamento gastrocólico com selante, do <strong>antro (4–6 cm do piloro)</strong> até o <strong>ângulo de His</strong>, seccionando os vasos gástricos curtos. Liberar completamente o <strong>fundo</strong> e expor o pilar esquerdo.</p>
+        <div class="pq"><b>por quê</b>Fundo mal liberado é o erro que gera o <strong>fundo residual</strong> — uma bolsa que continua produzindo grelina, mantém o apetite e é causa de <strong>reganho de peso</strong>. A liberação até o ângulo de His não é estética: é o que garante o resultado hormonal da operação.</div>
+        <div class="mh2">
+          <div class="mh e"><b>mão esquerda</b>Grasper tracionando o estômago medialmente, mantendo o gastrocólico sob tensão</div>
+          <div class="mh d"><b>mão direita</b>Selante ultrassônico ou bipolar avançado</div>
+        </div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de calibração</span>
+        <div class="ttl">Introduzir a sonda calibradora (bougie 32–40 Fr)</div>
+        <p>Sonda posicionada pelo anestesista, encostada na <strong>pequena curvatura</strong>, servindo de gabarito para toda a linha de grampos. <strong>Conferir que não há outra sonda no estômago.</strong></p>
+        <div class="pq"><b>por quê</b>O bougie define o diâmetro do tubo, e o diâmetro define os dois extremos do fracasso: <strong>largo demais</strong> → restrição insuficiente e reganho; <strong>estreito demais</strong> → estenose e, sobretudo, <strong>aumento da pressão intraluminal</strong>, que é o principal fator de fístula. E grampear a própria sonda é um acidente descrito — conferir antes de cada disparo.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de secção — passo decisivo</span>
+        <div class="ttl">Grampeamento sequencial do antro ao ângulo de His</div>
+        <p>Iniciar <strong>4–6 cm proximal ao piloro</strong>, seguindo paralelo à sonda. Cargas mais altas no antro (parede espessa) e progressivamente menores em direção ao fundo. <strong>Afastar-se do ângulo de His na última carga</strong>, sem encostar no esôfago.</p>
+        <div class="pq"><b>por quê</b>Três decisões, três motivos. Começar longe do piloro <strong>preserva o esvaziamento</strong> (antro muito ressecado gera estase). Variar a carga respeita a espessura decrescente da parede — carga baixa em parede espessa não fecha, carga alta em parede fina não sela. E o <strong>ângulo de His é onde ocorre 80–90% das fístulas</strong>: é a zona de menor perfusão e de maior pressão do tubo. Encostar no esôfago ali é a receita da fístula alta e crônica.</div>
+        <div class="mh2">
+          <div class="mh e"><b>mão esquerda</b>Grasper apresentando a grande curvatura, sem tracionar demais (tração cria "sanfona" e tubo torcido)</div>
+          <div class="mh d"><b>mão direita</b>Grampeador linear; aguardar a compressão antes de disparar</div>
+        </div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de verificação</span>
+        <div class="ttl">Hemostasia, teste de estanqueidade e retirada da peça</div>
+        <p>Revisar a linha de grampos; reforço com sutura ou selante conforme escola. <strong>Teste com azul de metileno ou ar sob soro</strong>. Retirar a peça por um dos portais, ampliado.</p>
+        <div class="pq"><b>por quê</b>O teste intraoperatório negativo <strong>não exclui</strong> a fístula tardia — a maioria se manifesta entre o 5º e o 10º dia, por isquemia progressiva, não por falha mecânica imediata. Por isso o teste tranquiliza, mas não substitui a vigilância clínica.</div>
+      </div>
+
+    </div>
+    <div class="box mac"><span class="lbl">as 3 checagens do sleeve</span><strong>1)</strong> O fundo foi liberado até o ângulo de His (sem fundo residual)? <strong>2)</strong> O tubo está calibrado e sem torção? <strong>3)</strong> A última carga passou <strong>longe</strong> do esôfago?</div>
+
+    <h4>B) Bypass em Y de Roux — passo a passo</h4>
+    <div class="box simplebox"><span class="lbl">tradução simples</span>Cria-se um <strong>estomaguinho de 30 mL</strong> e liga-se ele direto ao intestino, deixando o resto do estômago e o duodeno <strong>fora do caminho da comida</strong> — mas ainda vivos e produzindo suco, que se junta lá adiante. Daí as <strong>três alças</strong>: a que leva comida, a que leva suco, e a comum, onde os dois se encontram e a digestão acontece.</div>
+
+    <div class="tbl"><table>
+      <tr><th>Alça</th><th>O que carrega</th><th>Comprimento habitual</th></tr>
+      <tr><td><strong>Alimentar (de Roux)</strong></td><td>Comida, da bolsa até o pé da alça</td><td>~100–150 cm</td></tr>
+      <tr><td><strong>Biliopancreática</strong></td><td>Bile e suco pancreático, do duodeno até o pé</td><td>~50–100 cm</td></tr>
+      <tr><td><strong>Comum</strong></td><td>Onde os dois se juntam — digestão e absorção reais</td><td>O restante</td></tr>
+    </table></div>
+
+    <div class="stx">
+
+      <div class="st">
+        <span class="fase">fase gástrica</span>
+        <div class="ttl">Confecção da bolsa gástrica de ~30 mL</div>
+        <p>Dissecar a pequena curvatura na altura da <strong>2ª–3ª veia gástrica</strong>, entrar na retrocavidade e grampear <strong>horizontalmente</strong> e depois <strong>verticalmente</strong> em direção ao ângulo de His, criando uma bolsa <strong>estreita e verticalizada</strong>, baseada na pequena curvatura.</p>
+        <div class="pq"><b>por quê</b>A bolsa é feita na <strong>pequena curvatura</strong> porque ali a parede é menos distensível e a perfusão vem da gástrica esquerda. Bolsa grande ou horizontal <strong>dilata com o tempo</strong> e é causa clássica de reganho de peso. E a separação completa do estômago remanescente evita a <strong>fístula gastro-gástrica</strong>, que anula o efeito da cirurgia.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase intestinal</span>
+        <div class="ttl">Medir as alças e seccionar o jejuno</div>
+        <p>Identificar o <strong>ângulo de Treitz</strong>, medir a alça biliopancreática, seccionar o jejuno com grampeador linear e medir a alça alimentar a partir daí.</p>
+        <div class="pq"><b>por quê</b>A medida é o que <strong>dosa</strong> a operação: alça comum longa demais reduz o efeito; curta demais gera desnutrição proteico-calórica e diarreia. É o único momento em que o cirurgião calibra o componente disabsortivo — e não há como corrigir depois sem reoperar.</div>
+        <div class="mh2">
+          <div class="mh e"><b>mão esquerda</b>Dois graspers "caminhando" pela alça, medindo em passos regulares</div>
+          <div class="mh d"><b>mão direita</b>Grampeador linear; selante no mesentério</div>
+        </div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase da 1ª anastomose</span>
+        <div class="ttl">Gastrojejunostomia</div>
+        <p>Anastomose entre a bolsa e a alça alimentar — mecânica (linear ou circular) ou manual, calibrada em <strong>~12 mm</strong>. Ascensão ante ou retrocólica. Teste de estanqueidade.</p>
+        <div class="pq"><b>por quê</b>O calibre importa nos dois sentidos: largo demais elimina a restrição; estreito demais gera <strong>estenose</strong>, a complicação tardia mais comum do bypass (tratada por dilatação endoscópica). É também o sítio da <strong>úlcera marginal</strong> — no lado jejunal, que não tem defesa contra o ácido. Daí a proibição de tabaco e AINE.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase da 2ª anastomose</span>
+        <div class="ttl">Jejunojejunostomia — o "pé da alça"</div>
+        <p>Anastomose látero-lateral entre a alça biliopancreática e a alimentar, com grampeador linear e fechamento da enterotomia.</p>
+        <div class="pq"><b>por quê</b>É onde as secreções reencontram a comida. Estenose ou angulação aqui causa <strong>obstrução da alça biliopancreática</strong> — quadro grave e traiçoeiro, porque o paciente <strong>não vomita</strong> (a alça está excluída do trânsito alimentar) e pode evoluir para perfuração do estômago excluído.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de prevenção — o passo esquecido</span>
+        <div class="ttl">Fechar as brechas mesentéricas</div>
+        <p>Fechar com <span class="fio">sutura inabsorvível</span> a brecha do <strong>pé da alça (jejunojejunostomia)</strong> e o <strong>espaço de Petersen</strong> — entre a alça alimentar e o mesocólon transverso. Na via retrocólica, também a brecha do mesocólon.</p>
+        <div class="pq"><b>por quê</b>São os <strong>três sítios de hérnia interna</strong>, complicação que aparece <em>anos depois</em>, tipicamente após grande perda de peso — o mesentério emagrece e as brechas se alargam. É a complicação mais traiçoeira do bypass: dor intermitente, <strong>TC frequentemente normal</strong>, e a suspeita clínica vale mais que a imagem. Diante de dor abdominal em pós-bypass, a indicação é <strong>laparoscopia diagnóstica</strong>.</div>
+      </div>
+
+    </div>
+    <div class="box mac"><span class="lbl">as 3 checagens do bypass</span><strong>1)</strong> A bolsa está pequena, verticalizada e <strong>separada</strong> do remanescente? <strong>2)</strong> As alças foram medidas? <strong>3)</strong> <strong>Todas</strong> as brechas mesentéricas foram fechadas?</div>
+
+    <h4>Instrumentação e materiais</h4>
+    <div class="tbl"><table>
+      <tr><th>Momento</th><th>Mão esquerda (exposição)</th><th>Mão direita (ação)</th></tr>
+      <tr><td>Liberação da grande curvatura</td><td>Grasper tracionando o estômago medialmente</td><td>Selante ultrassônico/bipolar</td></tr>
+      <tr><td>Grampeamento do sleeve</td><td>Grasper apresentando a curvatura <strong>sem tração excessiva</strong></td><td>Grampeador linear, cargas decrescentes</td></tr>
+      <tr><td>Bolsa gástrica</td><td>Grasper elevando a parede posterior</td><td>Grampeador linear (horizontal → vertical)</td></tr>
+      <tr><td>Medida das alças</td><td>Dois graspers "caminhando" em passos regulares</td><td>Grampeador linear na secção jejunal</td></tr>
+      <tr><td>Anastomoses</td><td>Aproxima e estabiliza os cotos</td><td>Grampeador linear/circular ou porta-agulha</td></tr>
+      <tr><td>Brechas mesentéricas</td><td>Expõe a brecha em toda a extensão</td><td>Porta-agulha com sutura inabsorvível contínua</td></tr>
+    </table></div>
+    <div class="tbl"><table>
+      <tr><th>Material</th><th>Uso</th></tr>
+      <tr><td><span class="fio">Bougie 32–40 Fr</span></td><td>Calibração do sleeve</td></tr>
+      <tr><td><span class="fio">Cargas altas (verde/preta)</span></td><td>Antro — parede espessa</td></tr>
+      <tr><td><span class="fio">Cargas médias/baixas (azul/dourada)</span></td><td>Corpo e fundo — parede fina</td></tr>
+      <tr><td><span class="fio">Inabsorvível 2-0</span></td><td>Fechamento das brechas mesentéricas</td></tr>
+      <tr><td><span class="fio">Absorvível 3-0</span></td><td>Reforço de linha de grampos e enterotomias</td></tr>
+    </table></div>
+  </div>
+</details>
+
+<!-- 3 COMPLICACOES -->
+<details>
+  <summary><span class="num">3</span> Complicações precoces &amp; tardias <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Complicações precoces (pós-operatório imediato)</h4>
+    <ul>
+      <li><strong>Fístula/deiscência de anastomose ou linha de grampeamento</strong> — sinal de alarme: taquicardia persistente/inexplicada é frequentemente o <strong>primeiro sinal</strong>, antes mesmo de febre ou dor franca.</li>
+      <li><strong>Sangramento</strong> intraluminal ou intraperitoneal.</li>
+      <li><strong>TEV</strong> — obesidade é fator de risco independente; profilaxia estendida frequentemente indicada.</li>
+    </ul>
+    <div class="box warn"><span class="lbl">⚠ pegadinha</span><strong>Taquicardia &gt;120 bpm</strong> no pós-operatório de cirurgia bariátrica deve ser tratada como <strong>sinal de fístula até prova em contrário</strong> — não atribuir precocemente a dor/ansiedade sem investigar.</div>
+
+    <h4>Complicações tardias</h4>
+    <div class="grid">
+      <div class="gcard"><div class="t">Estenose de anastomose</div><div class="d">Mais comum no bypass (gastrojejunal) — disfagia progressiva, tratada com dilatação endoscópica</div></div>
+      <div class="gcard"><div class="t">Úlcera marginal</div><div class="d">Na anastomose gastrojejunal do bypass — associada a tabagismo, AINEs, H. pylori</div></div>
+      <div class="gcard"><div class="t">Hérnia interna</div><div class="d">Complicação tardia grave do bypass — dor abdominal intermitente, pode evoluir para isquemia intestinal</div></div>
+      <div class="gcard"><div class="t">Colelitíase</div><div class="d">Perda de peso rápida aumenta risco — considerar profilaxia (ácido ursodesoxicólico) no pós-operatório</div></div>
+    </div>
+
+    <div class="fig">
+      <svg viewBox="0 0 640 220" xmlns="http://www.w3.org/2000/svg">
+        <text x="320" y="18" fill="#9a9ab0" font-size="11" font-family="monospace" text-anchor="middle">espaços de hérnia interna pós-bypass em Y-de-Roux</text>
+        <!-- estomago/bolsa -->
+        <ellipse cx="200" cy="55" rx="40" ry="25" fill="#f97316" opacity=".25" stroke="#f97316" stroke-width="1.5"/>
+        <text x="200" y="60" fill="#f97316" font-size="10" font-family="monospace" text-anchor="middle">bolsa</text>
+        <!-- alca alimentar -->
+        <path d="M200 80 Q220 130 280 150" fill="none" stroke="#22d3ee" stroke-width="4"/>
+        <!-- mesocolon transverso - espaço 1 -->
+        <ellipse cx="330" cy="130" rx="30" ry="18" fill="#a855f7" opacity=".2" stroke="#a855f7" stroke-width="1.5"/>
+        <text x="330" y="115" fill="#a855f7" font-size="9" font-family="monospace" text-anchor="middle">mesocolon</text>
+        <text x="330" y="135" fill="#a855f7" font-size="9" font-family="monospace" text-anchor="middle">transverso</text>
+        <!-- pe da alça em Y -->
+        <circle cx="380" cy="170" r="10" fill="#34d399" opacity=".4" stroke="#34d399" stroke-width="1.5"/>
+        <text x="380" y="195" fill="#34d399" font-size="9" font-family="monospace" text-anchor="middle">pé da alça</text>
+        <!-- espaço de petersen -->
+        <ellipse cx="450" cy="130" rx="35" ry="20" fill="#f87171" opacity=".2" stroke="#f87171" stroke-width="1.5"/>
+        <text x="450" y="115" fill="#f87171" font-size="9" font-family="monospace" text-anchor="middle">espaço de</text>
+        <text x="450" y="135" fill="#f87171" font-size="9" font-family="monospace" text-anchor="middle">Petersen</text>
+        <!-- alca biliopancreatica -->
+        <path d="M120 100 Q150 140 250 165 Q320 178 380 170" fill="none" stroke="#fbbf24" stroke-width="3" stroke-dasharray="5 3"/>
+        <text x="150" y="95" fill="#fbbf24" font-size="9" font-family="monospace">alça BP</text>
+      </svg>
+      <div class="cap">Principais sítios de hérnia interna: defeito no mesocolon transverso, espaço de Petersen (entre alça alimentar e mesocolo transverso) e defeito mesentérico no pé da alça (jejunojejunostomia).</div>
+    </div>
+
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">todas as bancas</span></span><strong>Hérnia interna</strong> pode se apresentar com dor abdominal <strong>intermitente e inespecífica</strong>, exames de imagem muitas vezes normais entre os episódios — alto índice de suspeição é necessário em qualquer paciente pós-bypass com dor abdominal recorrente, mesmo com TC "normal".</div>
+  </div>
+</details>
+
+<!-- 4 NUTRICAO -->
+<details>
+  <summary><span class="num">4</span> Deficiências nutricionais &amp; suplementação <span class="chev">▶</span></summary>
+  <div class="body">
+    <div class="fig">
+      <svg viewBox="0 0 640 180" xmlns="http://www.w3.org/2000/svg">
+        <text x="320" y="18" fill="#9a9ab0" font-size="11" font-family="monospace" text-anchor="middle">risco relativo de déficit nutricional</text>
+        <line x1="60" y1="150" x2="600" y2="150" stroke="#2a2a38" stroke-width="1.5"/>
+        <rect x="100" y="100" width="140" height="50" fill="#34d399" opacity=".4"/>
+        <text x="170" y="90" fill="#34d399" font-size="12" font-family="monospace" text-anchor="middle" font-weight="bold">Sleeve</text>
+        <text x="170" y="170" fill="#9a9ab0" font-size="10" font-family="monospace" text-anchor="middle">menor risco</text>
+        <rect x="400" y="50" width="140" height="100" fill="#f87171" opacity=".4"/>
+        <text x="470" y="40" fill="#f87171" font-size="12" font-family="monospace" text-anchor="middle" font-weight="bold">Bypass (RYGB)</text>
+        <text x="470" y="170" fill="#9a9ab0" font-size="10" font-family="monospace" text-anchor="middle">maior risco (disabsortivo)</text>
+      </svg>
+      <div class="cap">Componente disabsortivo do bypass aumenta significativamente o risco de deficiências — exige suplementação mais rigorosa e seguimento laboratorial vitalício.</div>
+    </div>
+
+    <div class="tbl"><table>
+      <tr><th>Nutriente</th><th>Observação</th></tr>
+      <tr><td><strong>Vitamina B12</strong></td><td>Déficit comum — absorção depende do fator intrínseco produzido no estômago (reduzido no bypass)</td></tr>
+      <tr><td><strong>Ferro</strong></td><td>Absorção prejudicada pelo desvio duodenal — anemia ferropriva comum, mais em mulheres menstruadas</td></tr>
+      <tr><td><strong>Cálcio e vitamina D</strong></td><td>Absorção duodenal/jejunal proximal reduzida — risco de doença óssea metabólica a longo prazo</td></tr>
+      <tr><td><strong>Tiamina (B1)</strong></td><td>Déficit agudo pode ocorrer em vômitos persistentes pós-operatórios — risco de <strong>encefalopatia de Wernicke</strong>, emergência neurológica</td></tr>
+    </table></div>
+    <div class="box warn"><span class="lbl">⚠ pegadinha grave</span>Paciente com <strong>vômitos persistentes</strong> no pós-operatório apresentando confusão, ataxia ou alterações oculomotoras → suspeitar de <strong>encefalopatia de Wernicke</strong> por déficit agudo de tiamina — repor <strong>antes</strong> de infundir glicose (glicose sem tiamina pode precipitar/agravar o quadro).</div>
+
+    <h4>Suplementação de rotina</h4>
+    <p>Multivitamínico com minerais, cálcio, vitamina D, B12 (frequentemente parenteral/sublingual no bypass) — <strong>vitalícia</strong>, com seguimento laboratorial periódico regular.</p>
+  </div>
+</details>
+
+<!-- 5 AVALIACAO MULTIDISCIPLINAR -->
+<details>
+  <summary><span class="num">5</span> Avaliação pré-operatória multidisciplinar <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>Equipe multidisciplinar (cirurgião, nutricionista, psicólogo/psiquiatra, endocrinologista) é <strong>padrão de cuidado</strong>, não opcional.</p>
+    <ul>
+      <li><strong>Avaliação psicossocial</strong>: rastrear transtornos alimentares não tratados, expectativas irreais, suporte social.</li>
+      <li><strong>Endoscopia digestiva alta</strong> pré-operatória de rotina, para rastrear H. pylori e lesões que possam mudar a escolha da técnica.</li>
+      <li><strong>Otimização de comorbidades</strong>: controle glicêmico, avaliação cardiopulmonar conforme risco individual.</li>
+    </ul>
+    <div class="box mac"><span class="lbl">macete</span>Idade isolada <strong>não</strong> é contraindicação — <strong>fragilidade</strong> (não idade cronológica) é o que se associa a mais complicações pós-operatórias.</div>
+  </div>
+</details>
+
+<!-- 6 QUESTOES / PEGA-RATOES -->
+<details>
+  <summary><span class="num">6</span> Questões de banca, pega-ratões &amp; mnemônicos <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>10 questões representativas (originais, estilo das 5 bancas)</h4>
+
+    <div class="box prova"><span class="lbl">Q1 <span class="banca">HCPA</span></span><strong>Paciente com BMI 36, sem comorbidades. Segundo ASMBS/IFSO 2022, é candidato à cirurgia bariátrica?</strong><br>Resposta: <strong>sim</strong> — BMI≥35 já é indicação isolada, independente de comorbidades.</div>
+
+    <div class="box prova"><span class="lbl">Q2 <span class="banca">GHC</span></span><strong>Paciente com DM2 e BMI 31. Indicação de cirurgia bariátrica?</strong><br>Resposta: <strong>sim</strong> — DM2 + BMI≥30 é indicação recomendada pela diretriz atual.</div>
+
+    <div class="box prova"><span class="lbl">Q3 <span class="banca">AMRIGS</span></span><strong>Paciente com DRGE importante candidato à bariátrica. Qual técnica preferir?</strong><br>Resposta: <strong>bypass em Y-de-Roux</strong> — geralmente melhora o refluxo; sleeve pode piorá-lo.</div>
+
+    <div class="box prova"><span class="lbl">Q4 <span class="banca">PUC-RS</span></span><strong>No 2º dia pós-bypass, paciente com taquicardia persistente sem outro achado. Suspeita?</strong><br>Resposta: <strong>fístula</strong> — taquicardia é frequentemente o primeiro sinal, antes de febre/dor franca.</div>
+
+    <div class="box prova"><span class="lbl">Q5 <span class="banca">SC-POA</span></span><strong>Paciente pós-bypass, meses depois, com dor abdominal intermitente e TC normal entre episódios. Suspeitar de quê?</strong><br>Resposta: <strong>hérnia interna</strong> — imagem pode ser normal entre os episódios, exige alto índice de suspeição.</div>
+
+    <div class="box prova"><span class="lbl">Q6 <span class="banca">HCPA</span></span><strong>Quais os principais sítios de hérnia interna pós-bypass em Y-de-Roux?</strong><br>Resposta: defeito do <strong>mesocolon transverso</strong>, <strong>espaço de Petersen</strong>, defeito mesentérico no <strong>pé da alça</strong> (jejunojejunostomia).</div>
+
+    <div class="box prova"><span class="lbl">Q7 <span class="banca">GHC</span></span><strong>Paciente pós-bypass com vômitos persistentes evolui com confusão e ataxia. Suspeita e conduta?</strong><br>Resposta: <strong>encefalopatia de Wernicke</strong> — repor <strong>tiamina antes</strong> de infundir glicose.</div>
+
+    <div class="box prova"><span class="lbl">Q8 <span class="banca">AMRIGS</span></span><strong>Entre sleeve e bypass, qual tem maior risco de deficiência nutricional e por quê?</strong><br>Resposta: <strong>bypass</strong> — componente disabsortivo adicional ao restritivo.</div>
+
+    <div class="box prova"><span class="lbl">Q9 <span class="banca">PUC-RS</span></span><strong>Idade avançada isolada contraindica cirurgia bariátrica?</strong><br>Resposta: <strong>não</strong> — fragilidade, não idade cronológica isolada, é o que se associa a mais complicações.</div>
+
+    <div class="box prova"><span class="lbl">Q10 <span class="banca">SC-POA</span></span><strong>Paciente asiático com BMI 28. Segundo a diretriz atual, é candidato à cirurgia?</strong><br>Resposta: <strong>sim</strong> — limiar ajustado para população asiática é BMI≥27,5.</div>
+
+    <h4>Pega-ratões (as armadilhas clássicas)</h4>
+    <div class="box warn"><span class="lbl">☠ trap 1</span>Critério "clássico" (BMI≥40 ou 35+comorbidade) é <strong>antigo</strong> (NIH 1991) — hoje os limiares são mais baixos.</div>
+    <div class="box warn"><span class="lbl">☠ trap 2</span>Sleeve pode <strong>piorar</strong> DRGE — não é sempre a escolha "mais simples e segura".</div>
+    <div class="box warn"><span class="lbl">☠ trap 3</span>Taquicardia pós-bariátrica = pensar em fístula <strong>antes</strong> de atribuir a dor/ansiedade.</div>
+    <div class="box warn"><span class="lbl">☠ trap 4</span>Hérnia interna pode ter <strong>imagem normal</strong> entre episódios — não descartar só pela TC.</div>
+    <div class="box warn"><span class="lbl">☠ trap 5</span>Glicose <strong>antes</strong> da tiamina pode precipitar Wernicke — ordem importa.</div>
+    <div class="box warn"><span class="lbl">☠ trap 6</span>Idade isolada não contraindica — fragilidade é o fator real.</div>
+    <div class="box warn"><span class="lbl">☠ trap 7</span>Limiar para asiáticos é <strong>menor</strong> (BMI≥27,5) — não aplicar o critério padrão sem ajuste.</div>
+    <div class="box warn"><span class="lbl">☠ trap 8</span>Suplementação pós-bariátrica é <strong>vitalícia</strong>, não só nos primeiros meses.</div>
+
+    <h4>Mnemônicos-resumo</h4>
+    <div class="box mac"><span class="lbl">macete geral</span>ASMBS/IFSO 2022: BMI≥35 sozinho · BMI30-34,9+metabólica · DM2+BMI≥30 · Asiático BMI≥27,5 · DRGE→bypass · Taquicardia PO=fístula até provar contrário · Hérnia interna=Petersen+mesocolo+pé da alça · Vômito persistente=tiamina antes da glicose.</div>
+  </div>
+</details>
+
+<footer>
+  <div><strong>carolzita</strong> · Cirurgia Bariátrica · referência completa</div>
+  <div class="ref">Fontes: 2022 ASMBS/IFSO Indications for Metabolic and Bariatric Surgery (Surgery for Obesity and Related Diseases) · Sabiston · Zollinger. Conteúdo educacional; questões são itens representativos originais.</div>
+</footer>
+</div>
+</body>
+</html>

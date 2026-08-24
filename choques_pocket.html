@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>POCKET — Choques</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#0a0a0f;--surface:#12121a;--surface2:#1a1a26;--border:#2a2a3d;
+    --text:#e8e8f0;--muted:#888899;
+    --orange:#f97316;--purple:#a855f7;--cyan:#22d3ee;
+    --red:#ef4444;--green:#22c55e;--yellow:#eab308;--blue:#3b82f6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  html,body{height:100%;overflow:hidden}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:13px;line-height:1.5;display:flex;flex-direction:column}
+
+  /* HEADER */
+  .hdr{background:var(--surface);border-bottom:1px solid var(--border);padding:.6rem 1rem;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+  .hdr-title{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:800;color:var(--orange)}
+  .hdr-sub{font-size:10px;color:var(--muted);font-family:'JetBrains Mono',monospace}
+
+  /* TAB STRIP */
+  .tabs{background:var(--surface2);border-bottom:1px solid var(--border);display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;flex-shrink:0}
+  .tabs::-webkit-scrollbar{display:none}
+  .tab{background:none;border:none;border-bottom:2px solid transparent;color:var(--muted);cursor:pointer;font-family:'Inter',sans-serif;font-size:11px;font-weight:600;padding:.55rem .85rem;white-space:nowrap;flex-shrink:0}
+  .tab.active{color:var(--orange);border-bottom-color:var(--orange)}
+
+  /* CONTENT */
+  .content{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:.75rem}
+
+  /* PAGE */
+  .page{display:none}
+  .page.active{display:block}
+
+  /* ELEMENTS */
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem;margin-bottom:.75rem}
+  .card-title{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;color:var(--orange);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.6rem}
+  .box{border-radius:7px;padding:.75rem;margin:.4rem 0;font-size:12.5px;line-height:1.6}
+  .bo{background:rgba(249,115,22,.08);border-left:3px solid var(--orange)}
+  .bp{background:rgba(168,85,247,.08);border-left:3px solid var(--purple)}
+  .bc{background:rgba(34,211,238,.08);border-left:3px solid var(--cyan)}
+  .br{background:rgba(239,68,68,.08);border-left:3px solid var(--red)}
+  .by{background:rgba(234,179,8,.08);border-left:3px solid var(--yellow)}
+  strong{color:#fff;font-weight:600}
+  em{color:var(--orange);font-style:normal;font-weight:500}
+  .mono{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--cyan)}
+  .dose{font-family:'JetBrains Mono',monospace;font-size:11px;background:rgba(34,211,238,.12);color:var(--cyan);padding:1px 5px;border-radius:3px}
+  .tag{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:700;padding:1px 5px;border-radius:3px;margin-left:4px}
+  .tp{background:rgba(168,85,247,.2);color:var(--purple)}
+  table{width:100%;border-collapse:collapse;font-size:11.5px;margin:.4rem 0}
+  th{background:var(--surface2);color:var(--orange);font-size:10px;font-weight:700;padding:.45rem .6rem;text-align:left;border:1px solid var(--border);font-family:'Syne',sans-serif;letter-spacing:.04em;text-transform:uppercase}
+  td{padding:.4rem .6rem;border:1px solid var(--border);vertical-align:top}
+  .cu{color:var(--red);font-weight:700}
+  .cd{color:var(--blue);font-weight:700}
+  .cv{color:var(--yellow);font-weight:700}
+  .cg{color:var(--green);font-weight:700}
+  .blist{list-style:none}
+  .blist li{padding:.15rem 0 .15rem 1rem;font-size:12.5px;position:relative}
+  .blist li::before{content:'▸';color:var(--orange);position:absolute;left:0}
+  .sl{list-style:none;counter-reset:s}
+  .sl li{counter-increment:s;display:flex;gap:.6rem;align-items:flex-start;margin-bottom:.5rem;font-size:12.5px}
+  .sl li::before{content:counter(s);background:var(--orange);color:#000;font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:700;min-width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:2px;flex-shrink:0}
+  .alert{background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.3);border-radius:7px;padding:.6rem .8rem;font-size:12px;color:var(--red);font-weight:500;margin:.4rem 0;display:flex;gap:.4rem;align-items:flex-start}
+  .alert::before{content:'⚠️';font-size:13px}
+  .g2{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+  .cl1 td:first-child{border-left:3px solid var(--green)}
+  .cl2 td:first-child{border-left:3px solid var(--yellow)}
+  .cl3 td:first-child{border-left:3px solid var(--orange)}
+  .cl4 td:first-child{border-left:3px solid var(--red)}
+  .dr1{background:rgba(249,115,22,.06)}
+  .dr2{background:rgba(168,85,247,.06)}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div>
+    <div class="hdr-title">⚡ CHOQUES — POCKET</div>
+    <div class="hdr-sub">carolzita · cirurgia · emergência</div>
+  </div>
+</div>
+
+<div class="tabs">
+  <button class="tab active" onclick="show('classif',this)">Classificação</button>
+  <button class="tab" onclick="show('atls',this)">ATLS Classes</button>
+  <button class="tab" onclick="show('hemo',this)">Hemorrágico</button>
+  <button class="tab" onclick="show('sepse',this)">Séptico</button>
+  <button class="tab" onclick="show('obstr',this)">Obstrutivo</button>
+  <button class="tab" onclick="show('drogas',this)">Drogas</button>
+  <button class="tab" onclick="show('dcs',this)">DCS</button>
+  <button class="tab" onclick="show('mnemo',this)">Macetes</button>
+</div>
+
+<div class="content">
+
+<!-- CLASSIFICAÇÃO -->
+<div class="page active" id="pg-classif">
+  <div class="card">
+    <div class="card-title">📊 Tipos de Choque</div>
+    <table>
+      <tr><th>Tipo</th><th>CO</th><th>RVS</th><th>PVC</th><th>POAP</th></tr>
+      <tr><td><strong>Hemorrágico</strong></td><td class="cd">↓↓</td><td class="cu">↑↑</td><td class="cd">↓↓</td><td class="cd">↓↓</td></tr>
+      <tr><td><strong>Cardiogênico</strong></td><td class="cd">↓↓</td><td class="cu">↑↑</td><td class="cu">↑↑</td><td class="cu">↑↑</td></tr>
+      <tr><td><strong>Distributivo</strong></td><td class="cu">↑</td><td class="cd">↓↓</td><td class="cd">↓</td><td class="cd">↓</td></tr>
+      <tr><td><strong>Obstrutivo</strong></td><td class="cd">↓↓</td><td class="cu">↑↑</td><td class="cu">↑↑</td><td class="cv">var</td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <div class="card-title">⚡ Reconhecimento Rápido</div>
+    <div class="bo box">
+      <strong>Shock Index = FC / PAS</strong><br>
+      &gt;1,0 = choque significativo<br>
+      &gt;1,8 = mortalidade alta
+    </div>
+    <div class="br box">
+      <strong>Choque sem hipotensão:</strong> classe I e II têm PA NORMAL. Taquicardia + agitação + lactato ↑ já é choque.
+    </div>
+    <ul class="blist">
+      <li>Lactato &gt;2 mmol/L</li>
+      <li>Diurese &lt;0,5 mL/kg/h</li>
+      <li>FC &gt;100, FR &gt;22</li>
+      <li>Enchimento capilar &gt;2s</li>
+      <li>Alteração de consciência</li>
+    </ul>
+  </div>
+  <div class="card">
+    <div class="card-title">💔 Diagnóstico Diferencial Rápido</div>
+    <div class="br box">
+      <strong>Hemorrágico:</strong> taquicardia + pele fria + sem PVC alta
+    </div>
+    <div class="br box">
+      <strong>Neurogênico:</strong> bradicardia + pele QUENTE + s/ taquicardia (T ≤ T6)
+    </div>
+    <div class="br box">
+      <strong>Cardiogênico:</strong> jugular↑ + POAP↑ + B3/B4 + edema pulmonar
+    </div>
+    <div class="br box">
+      <strong>Tamponamento:</strong> tríade de Beck + FAST+
+    </div>
+    <div class="br box">
+      <strong>PTX hipertensivo:</strong> MV ↓ + hipertimpanismo + traqueia desviada
+    </div>
+  </div>
+</div>
+
+<!-- ATLS CLASSES -->
+<div class="page" id="pg-atls">
+  <div class="card">
+    <div class="card-title">🩸 Classes de Hemorragia — ATLS (adulto 70 kg)</div>
+    <table>
+      <tr><th>Cl</th><th>mL / %</th><th>FC</th><th>PAS</th><th>Diurese</th><th>SNC</th></tr>
+      <tr class="cl1"><td><strong>I</strong></td><td>&lt;750 / &lt;15%</td><td>&lt;100</td><td>Normal</td><td>&gt;30</td><td>Normal</td></tr>
+      <tr class="cl2"><td><strong>II</strong></td><td>750–1500 / 15–30%</td><td>100–120</td><td><em>Normal ⚠️</em></td><td>20–30</td><td>Ansioso</td></tr>
+      <tr class="cl3"><td><strong>III</strong></td><td>1500–2000 / 30–40%</td><td>120–140</td><td>↓</td><td>5–15</td><td>Confuso</td></tr>
+      <tr class="cl4"><td><strong>IV</strong></td><td>&gt;2000 / &gt;40%</td><td>&gt;140</td><td>↓↓</td><td>Anúria</td><td>Letárgico</td></tr>
+    </table>
+    <div class="alert">CLASSE II = PA NORMAL — armadilha de prova!</div>
+  </div>
+  <div class="card">
+    <div class="card-title">🔴 PTM — ABC Score</div>
+    <div class="bp box">
+      Ativar PTM se ≥2 pontos:<br>
+      PAS ≤90 = 1pt · FC ≥120 = 1pt<br>
+      FAST+ = 1pt · Penetrante = 1pt<br><br>
+      <strong>Proporção: CH : PFC : PLQ = 1:1:1</strong><br>
+      + Ca²⁺ a cada 2–4 CH + fluidos aquecidos
+    </div>
+    <div class="br box">
+      <strong>Tríade da Morte:</strong> Hipotermia + Acidose + Coagulopatia<br>
+      <span class="mono">HAC</span> — cada um piora os outros dois
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">💊 Ácido Tranexâmico</div>
+    <div class="bo box">
+      <span class="dose">1g IV em 10 min</span> na 1ª hora<br>
+      + <span class="dose">1g IV em 8h infusão</span><br>
+      Janela: até <em>3 horas do trauma</em><br>
+      Depois de 3h: contraproducente (↑ mortalidade — CRASH-2)
+      <span class="tag tp">AMRIGS 2022 · GHC 2023</span>
+    </div>
+  </div>
+</div>
+
+<!-- HEMORRÁGICO -->
+<div class="page" id="pg-hemo">
+  <div class="card">
+    <div class="card-title">⚡ Algoritmo Hemorrágico</div>
+    <ol class="sl">
+      <li><strong>Parar sangramento</strong> — pressão, torniquete, packing, clamp</li>
+      <li><strong>Acesso</strong> — 14G × 2 ou IO se inviável</li>
+      <li><strong>Avaliação resposta:</strong><br>
+        Total → cirurgia eletiva<br>
+        Parcial → cirurgia urgente<br>
+        Sem resposta → DCS imediato
+      </li>
+      <li><strong>ATX</strong> — 1g IV em 10 min (&lt;3h)</li>
+      <li><strong>Hemoderivados</strong> — III/IV: PTM 1:1:1</li>
+      <li><strong>Hipotensão permissiva</strong> — PAM 50–65 (TCE: ≥80)</li>
+      <li><strong>Corrigir tríade</strong> — UTI/DCS fase II</li>
+    </ol>
+  </div>
+  <div class="card">
+    <div class="card-title">🩻 REBOA</div>
+    <table>
+      <tr><th>Zona</th><th>Local</th><th>Indicação</th></tr>
+      <tr><td><strong>I</strong></td><td>Aorta torácica desc.</td><td>Hemorragia abdômen/pelve — mais usada</td></tr>
+      <tr><td><strong>II</strong></td><td>Aa. renais</td><td>⛔ Contraindicada</td></tr>
+      <tr><td><strong>III</strong></td><td>Bifurcação ilíaca</td><td>Hemorragia pélvica isolada</td></tr>
+    </table>
+    <div class="by box">Tempo máximo Zona I: 30–60 min. Zona III: 60–90 min.</div>
+  </div>
+  <div class="card">
+    <div class="card-title">💧 Hipotensão Permissiva</div>
+    <div class="bo box">
+      Trauma s/ TCE: PAM <em>50–65</em><br>
+      Trauma c/ TCE: PAM <em>≥80</em><br>
+      Sepse: PAM <em>≥65</em><br>
+      Gestante / coronariopata: <em>sem permissiva</em>
+      <span class="tag tp">AMRIGS 2024 · GHC 2022</span>
+    </div>
+  </div>
+</div>
+
+<!-- SÉPTICO -->
+<div class="page" id="pg-sepse">
+  <div class="card">
+    <div class="card-title">🦠 Definição Sepse 3.0</div>
+    <div class="bo box">
+      <strong>Sepse:</strong> SOFA ≥2 + infecção suspeita<br>
+      <strong>Choque séptico:</strong> sepse + vasopressor + lactato &gt;2
+    </div>
+    <div class="by box">
+      <strong>qSOFA:</strong> FR ≥22 + consciência ↓ + PAS ≤100<br>
+      ≥2 = investigar sepse
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">⏱️ Bundle 1ª Hora</div>
+    <ol class="sl">
+      <li><strong>Lactato</strong> — colher; repetir se &gt;2 após ressuscitação</li>
+      <li><strong>Hemocultura</strong> — 2 pares ANTES do ATB</li>
+      <li><strong>ATB</strong> — amplo espectro em até <em>1 hora</em></li>
+      <li><strong>Fluido</strong> — 30 mL/kg cristaloide (RL)</li>
+      <li><strong>Vasopressor</strong> — NE se PAM &lt;65 persiste</li>
+    </ol>
+    <div class="alert">Cada hora sem ATB = +7% mortalidade. Foco cirúrgico: drenar/ressecar urgente.</div>
+  </div>
+  <div class="card">
+    <div class="card-title">💊 Vasopressores Séptico</div>
+    <table>
+      <tr><th>Droga</th><th>Dose</th><th>Papel</th></tr>
+      <tr class="dr1"><td><strong>Norepinefrina</strong></td><td><span class="dose">0,01–3 mcg/kg/min</span></td><td>1ª linha</td></tr>
+      <tr class="dr2"><td><strong>Vasopressina</strong></td><td><span class="dose">0,03–0,04 U/min</span></td><td>2ª linha / poupador</td></tr>
+      <tr class="dr2"><td><strong>Epinefrina</strong></td><td><span class="dose">0,01–1 mcg/kg/min</span></td><td>2ª linha alternativa</td></tr>
+    </table>
+    <div class="by box">
+      <strong>Corticoide refratário:</strong> NE ≥0,25 mcg/kg/min por &gt;4h<br>
+      → <span class="dose">Hidrocortisona 200 mg/dia</span> (50mg 6/6h) — NÃO em bólus
+    </div>
+  </div>
+</div>
+
+<!-- OBSTRUTIVO -->
+<div class="page" id="pg-obstr">
+  <div class="card">
+    <div class="card-title">🫀 Tamponamento Cardíaco</div>
+    <div class="bp box">
+      <strong>Tríade de Beck:</strong><br>
+      Hipotensão + Jugular ↑ + Bulhas abafadas<br>
+      <em>+ pulso paradoxal &gt;10 mmHg + FAST+</em>
+      <span class="tag tp">HCPA 2022 · PUC 2023</span>
+    </div>
+    <ol class="sl">
+      <li>FAST/eco beira-leito — colapso câmara D</li>
+      <li>Pericardiocentese subxifoide — 18G, ângulo 45°</li>
+      <li>Janela pericárdica subxifoide — cirurgia definitiva</li>
+      <li>Toracotomia de ressuscitação — trauma penetrante + colapso</li>
+    </ol>
+    <div class="alert">Trauma penetrante + Beck → bloco imediato, sem TC.</div>
+  </div>
+  <div class="card">
+    <div class="card-title">💨 PTX Hipertensivo</div>
+    <div class="br box">
+      Diagnóstico CLÍNICO (não esperar Rx):<br>
+      ↓ MV + hipertimpanismo + jugulares↑ + hipotensão<br>
+      Em VM: pico de pressão ↑ abruptamente
+    </div>
+    <ol class="sl">
+      <li><strong>Agulha 14G</strong> — 2º EIC, linha hemiclavicular</li>
+      <li><strong>Dreno pleural</strong> — 4–5º EIC, linha axilar ant.</li>
+    </ol>
+    <div class="alert">PEA em politrauma = PTX hipertensivo até prova contrária.</div>
+  </div>
+  <div class="card">
+    <div class="card-title">🫁 TEP Maciço</div>
+    <div class="bo box">
+      PAS &lt;90 por &gt;15 min ou queda &gt;40 mmHg<br>
+      Eco: VD dilatado + "D-shape" + TAPSE &lt;17
+    </div>
+    <ol class="sl">
+      <li>Alteplase <span class="dose">100 mg IV em 2h</span> — 1ª escolha</li>
+      <li>Embolectomia cirúrgica — trombolítico CI ou falha</li>
+      <li>VA-ECMO — ponte para cirurgia</li>
+    </ol>
+  </div>
+</div>
+
+<!-- DROGAS -->
+<div class="page" id="pg-drogas">
+  <div class="card">
+    <div class="card-title">💊 Drogas Vasoativas — Resumo</div>
+    <table>
+      <tr><th>Droga</th><th>Receptor</th><th>FC</th><th>DC</th><th>RVS</th><th>Indicação</th></tr>
+      <tr class="dr1"><td><strong>Norepinefrina</strong></td><td>α1&gt;β1</td><td class="cv">↔</td><td class="cv">↔</td><td class="cu">↑↑</td><td>Distributivo 1ª linha</td></tr>
+      <tr class="dr1"><td><strong>Epinefrina</strong></td><td>α,β1,β2</td><td class="cu">↑↑</td><td class="cu">↑↑</td><td class="cu">↑</td><td>Anafilaxia (IM!) / PCR</td></tr>
+      <tr class="dr2"><td><strong>Vasopressina</strong></td><td>V1</td><td class="cv">↔</td><td class="cv">↔</td><td class="cu">↑↑</td><td>2ª linha / poupador NE</td></tr>
+      <tr><td><strong>Dopamina</strong></td><td>D,β,α</td><td class="cu">↑</td><td class="cu">↑</td><td class="cv">var</td><td>Bradicardia + hipot.</td></tr>
+      <tr class="dr1"><td><strong>Dobutamina</strong></td><td>β1&gt;β2</td><td class="cu">↑</td><td class="cu">↑↑</td><td class="cd">↓</td><td>Cardiogênico</td></tr>
+      <tr><td><strong>Fenilefrina</strong></td><td>α1</td><td class="cd">↓ (reflexo)</td><td class="cd">↓</td><td class="cu">↑↑</td><td>Neurogênico / FA+hipot</td></tr>
+      <tr class="dr2"><td><strong>Milrinona</strong></td><td>PDE3</td><td class="cu">↑</td><td class="cu">↑↑</td><td class="cd">↓↓</td><td>Cardiog. c/ BB</td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <div class="card-title">⚡ Regra Rápida</div>
+    <div class="bc box">
+      <span class="mono">VASO dilatado (séptico) → NE</span><br>
+      <span class="mono">CORAÇÃO fraco (cardiog.) → Dobu ± NE</span><br>
+      <span class="mono">ANAFILAXIA → Epi IM 0,3mg (1:1.000)</span><br>
+      <span class="mono">PCR → Epi IV</span><br>
+      <span class="mono">NE insuficiente (séptico) → + Vasopressina</span><br>
+      <span class="mono">FA rápida + hipotens. → Fenilefrina</span>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">💉 Anafilaxia — Epinefrina</div>
+    <div class="br box">
+      <strong>IM coxa anterolateral:</strong> <span class="dose">0,3–0,5 mg (1:1.000)</span><br>
+      Pode repetir a cada 5–15 min (máx 3x)<br>
+      Refratário → infusão IV: <span class="dose">0,1–1 mcg/kg/min</span><br><br>
+      Anti-histamínico e corticoide são <em>adjuvantes</em> — nunca 1ª linha!
+    </div>
+  </div>
+</div>
+
+<!-- DCS -->
+<div class="page" id="pg-dcs">
+  <div class="card">
+    <div class="card-title">🔪 Critérios para DCS (não cirurgia definitiva)</div>
+    <div class="br box">
+      pH &lt;7,2<br>
+      T° &lt;35°C<br>
+      INR &gt;1,5 / coagulopatia clínica<br>
+      Lactato &gt;5 mmol/L<br>
+      Tempo &gt;90 min c/ instabilidade<br>
+      PTM em curso
+      <span class="tag tp">HCPA 2024 · GHC 2023</span>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">🔪 Fases DCS</div>
+    <div class="by box"><strong>Fase 0 — PS:</strong> ATX + hipotensão permissiva + CH:PFC 1:1</div>
+    <div class="by box" style="margin-top:.4rem"><strong>Fase I — Bloco (&lt;90 min):</strong><br>
+      Hemostasia: packing + clamp + sutura rápida<br>
+      Contaminação: grampeamento de alça<br>
+      Fechamento: laparostomia (VAC/Bogotá bag)
+    </div>
+    <div class="by box" style="margin-top:.4rem"><strong>Fase II — UTI:</strong> corrigir HAC + VM + PIA</div>
+    <div class="by box" style="margin-top:.4rem"><strong>Fase III — 24–72h:</strong> anastomoses + fechamento definitivo</div>
+  </div>
+  <div class="card">
+    <div class="card-title">⚠️ Síndrome Compartimental Abdominal</div>
+    <div class="bo box">
+      PIA &gt;20 mmHg + disfunção orgânica nova = SCA<br>
+      Medir: sonda vesical (padrão ouro)<br>
+      Tratamento: laparostomia descompressiva urgente
+      <span class="tag tp">Santa Casa 2023</span>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">🗺️ Por Tipo — Conduta Cirúrgica</div>
+    <table>
+      <tr><th>Choque</th><th>Intervenção</th></tr>
+      <tr><td>Abdominal/Vascular</td><td>Laparotomia DCS + REBOA ponte</td></tr>
+      <tr><td>Pélvico</td><td>Packing pré-perit + fix ext + angioembol</td></tr>
+      <tr><td>Séptico abdominal</td><td>Laparotomia/drenagem &lt;12h</td></tr>
+      <tr><td>Fasciíte necrosante</td><td>Desbridamento amplo emergencial</td></tr>
+      <tr><td>Tamponamento</td><td>Pericardiocentese → janela peric</td></tr>
+      <tr><td>PTX hipertensivo</td><td>Agulha 14G → dreno pleural</td></tr>
+      <tr><td>TEP maciço</td><td>Alteplase → embolectomia cirúrgica</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- MACETES -->
+<div class="page" id="pg-mnemo">
+  <div class="card">
+    <div class="card-title">🔵 HCDO — Tipos de Choque</div>
+    <div class="bc box">
+      <strong>H</strong>emorrágico · <strong>C</strong>ardiogênico · <strong>D</strong>istributivo · <strong>O</strong>bstrutivo<br>
+      <span class="mono">"Hoje Cirurgião Decide Operar"</span>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">🔵 HAC — Tríade da Morte</div>
+    <div class="bc box">
+      <strong>H</strong>ipotermia + <strong>A</strong>cidose + <strong>C</strong>oagulopatia<br>
+      <span class="mono">"Hematologia Acabou, Cirurgiou!"</span>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">🔵 HJB — Tríade de Beck</div>
+    <div class="bc box">
+      <strong>H</strong>ipotensão + <strong>J</strong>ugular ↑ + <strong>B</strong>ulhas abafadas<br>
+      <span class="mono">"Hipotensão Jugular Bulha = pericárdio cheio"</span>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">🔵 LHAFV — Bundle Sepse 1ª Hora</div>
+    <div class="bc box">
+      <strong>L</strong>actato → <strong>H</strong>emocultura → <strong>A</strong>TB → <strong>F</strong>luido → <strong>V</strong>asopressor<br>
+      <span class="mono">"Lactato, Hemo, ATB, Fluido, Vaso"</span>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">🔵 Classes ATLS — Dica de Prova</div>
+    <div class="bc box">
+      Cl I-II: <em>PA NORMAL</em> — confiar só na PA = erro<br>
+      Cl III: PA cai + confusão mental<br>
+      Cl IV: mortalidade iminente → PTM + cirurgia<br>
+      <span class="mono">A banca quer que você escolha "sem choque" na Cl II</span>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">🔵 Vasopressores — Regra de Ouro</div>
+    <div class="bc box">
+      <span class="mono">Vasos frouxos → NE (aperta)</span><br>
+      <span class="mono">Coração fraco → Dobu (fortalece)</span><br>
+      <span class="mono">Anafilaxia → Epi IM 0,3 mg</span><br>
+      <span class="mono">PCR → Epi IV</span>
+    </div>
+  </div>
+</div>
+
+</div><!-- /content -->
+
+<script>
+function show(name, btn) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('pg-' + name).classList.add('active');
+  if (btn) btn.classList.add('active');
+}
+</script>
+</body>
+</html>

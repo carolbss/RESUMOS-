@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colangite Aguda – Resumo Cirúrgico</title>
+<style>
+  :root {
+    --bg: #0f0f0f;
+    --bg2: #161616;
+    --bg3: #1e1e1e;
+    --border: #2a2a2a;
+    --text: #d4d4d4;
+    --text-dim: #888;
+    --orange: #e8923a;
+    --orange-dim: rgba(232,146,58,0.12);
+    --purple: #b06ce4;
+    --purple-dim: rgba(176,108,228,0.12);
+    --cyan: #3ab8cf;
+    --cyan-dim: rgba(58,184,207,0.10);
+    --red: #e05252;
+    --green: #5db85d;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    padding: 16px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  h1 {
+    color: var(--orange);
+    font-size: 1.6em;
+    border-bottom: 2px solid var(--orange);
+    padding-bottom: 8px;
+    margin-bottom: 4px;
+  }
+  .subtitle { color: var(--text-dim); font-size: 0.88em; margin-bottom: 18px; }
+  .section {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 14px;
+    background: var(--bg2);
+    cursor: pointer;
+    user-select: none;
+    font-weight: 600;
+    font-size: 0.95em;
+    letter-spacing: 0.02em;
+  }
+  .section-header:hover { background: var(--bg3); }
+  .section-header .icon { font-size: 0.9em; color: var(--text-dim); transition: transform 0.2s; }
+  .section-header.open .icon { transform: rotate(90deg); }
+  .section-body {
+    display: none;
+    padding: 14px;
+    background: var(--bg);
+    border-top: 1px solid var(--border);
+  }
+  .section-body.open { display: block; }
+
+  /* color blocks */
+  .content { color: var(--orange); }
+  .highyield {
+    background: var(--purple-dim);
+    border-left: 3px solid var(--purple);
+    color: var(--purple);
+    padding: 7px 10px;
+    border-radius: 4px;
+    margin: 6px 0;
+    font-size: 0.92em;
+  }
+  .mnemonic {
+    background: var(--cyan-dim);
+    border-left: 3px solid var(--cyan);
+    color: var(--cyan);
+    padding: 7px 10px;
+    border-radius: 4px;
+    margin: 6px 0;
+    font-size: 0.92em;
+  }
+  .warn {
+    background: rgba(224,82,82,0.10);
+    border-left: 3px solid var(--red);
+    color: var(--red);
+    padding: 7px 10px;
+    border-radius: 4px;
+    margin: 6px 0;
+    font-size: 0.92em;
+  }
+  .ok {
+    background: rgba(93,184,93,0.10);
+    border-left: 3px solid var(--green);
+    color: var(--green);
+    padding: 7px 10px;
+    border-radius: 4px;
+    margin: 6px 0;
+    font-size: 0.92em;
+  }
+  p { margin: 6px 0; }
+  ul, ol { margin: 6px 0 6px 18px; }
+  li { margin: 3px 0; }
+  strong { color: #f0f0f0; }
+  em { color: var(--text-dim); font-style: normal; font-size: 0.9em; }
+  h3 { color: var(--orange); font-size: 0.95em; margin: 12px 0 5px; text-transform: uppercase; letter-spacing: 0.05em; }
+  h4 { color: var(--text-dim); font-size: 0.88em; margin: 8px 0 3px; text-transform: uppercase; letter-spacing: 0.04em; }
+
+  /* table */
+  table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 0.88em; }
+  th {
+    background: var(--bg3);
+    color: var(--orange);
+    padding: 6px 8px;
+    text-align: left;
+    font-size: 0.85em;
+    letter-spacing: 0.03em;
+  }
+  td { padding: 5px 8px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  tr:hover td { background: var(--bg2); }
+
+  /* step list */
+  .stx{counter-reset:st;margin:12px 0}
+  .st{counter-increment:st;background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:12px 14px 12px 46px;margin:10px 0;position:relative}
+  .st::before{content:counter(st);position:absolute;left:12px;top:12px;width:24px;height:24px;border-radius:7px;background:var(--orange);color:#111;font-family:ui-monospace,monospace;font-weight:700;font-size:12px;display:flex;align-items:center;justify-content:center}
+  .st .fase{font-family:ui-monospace,monospace;font-size:9.5px;letter-spacing:1.3px;text-transform:uppercase;color:var(--orange);display:block}
+  .st .ttl{font-weight:700;font-size:15px;color:#fff;margin-bottom:3px}
+  .st p{margin:4px 0;font-size:13.5px}
+  .pq{border-left:3px solid var(--purple);background:var(--purple-dim);border-radius:0 8px 8px 0;padding:7px 11px;margin:8px 0;font-size:13px}
+  .pq b{font-family:ui-monospace,monospace;font-size:9.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--purple);display:block}
+  .mh2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+  .mh{border-radius:9px;padding:8px 10px;font-size:12.5px;border:1px solid var(--border)}
+  .mh.e{background:rgba(93,184,93,.08);border-color:rgba(93,184,93,.3)}
+  .mh.d{background:var(--orange-dim);border-color:rgba(232,146,58,.3)}
+  .mh b{font-family:ui-monospace,monospace;font-size:9.5px;letter-spacing:1.1px;text-transform:uppercase;display:block}
+  .mh.e b{color:var(--green)} .mh.d b{color:var(--orange)}
+  .grn{background:rgba(93,184,93,.09);border:1px solid rgba(93,184,93,.3);border-left:3px solid var(--green);border-radius:10px;padding:11px 14px;margin:12px 0;font-size:13.5px;color:var(--green);font-style:italic}
+  .grn b{color:#8ee79a;font-style:normal;font-family:ui-monospace,monospace;font-size:9.5px;letter-spacing:1.2px;text-transform:uppercase;display:block;margin-bottom:3px}
+  .grn strong{color:#8ee79a;font-style:normal}
+  .step-list { counter-reset: step; }
+  .step-list li {
+    counter-increment: step;
+    list-style: none;
+    padding: 6px 8px 6px 32px;
+    position: relative;
+    border-left: 2px solid var(--border);
+    margin: 4px 0;
+  }
+  .step-list li::before {
+    content: counter(step);
+    position: absolute;
+    left: -12px;
+    top: 6px;
+    background: var(--orange);
+    color: #000;
+    font-weight: 700;
+    font-size: 0.78em;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .badge {
+    display: inline-block;
+    font-size: 0.75em;
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-weight: 700;
+    margin: 0 2px;
+  }
+  .badge-hcpa { background: #1a3a6e; color: #7ab0ff; }
+  .badge-ghc  { background: #1a4a2a; color: #7adf9a; }
+  .badge-sc   { background: #4a1a1a; color: #ff9a9a; }
+  .badge-puc  { background: #3a1a4a; color: #d0a0ff; }
+  .badge-amrigs { background: #3a3a1a; color: #e0e080; }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @media(max-width:600px){ .grid-2 { grid-template-columns: 1fr; } }
+  .card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 10px;
+  }
+  .card h4 { margin-top: 0; }
+  .ref { color: var(--text-dim); font-size: 0.8em; }
+</style>
+</head>
+<body>
+
+<h1>🟠 COLANGITE AGUDA</h1>
+<div class="subtitle">Cirurgia Geral &amp; Subespecialização Vascular · Sabiston · Zollinger · Netter · Tokyo Guidelines 2018</div>
+
+<!-- 1. QUADRO CLÍNICO -->
+<div class="section">
+  <div class="section-header" onclick="toggle(this)">
+    🩺 1. QUADRO CLÍNICO &amp; DIAGNÓSTICO
+    <span class="icon">▶</span>
+  </div>
+  <div class="section-body open">
+    <h3>Definição</h3>
+    <p class="content">Infecção bacteriana das vias biliares (ductos hepáticos + colédoco) associada a <strong>obstrução biliar</strong>, levando à hipertensão ductal → translocação bacteriana → bacteremia. <em>(Basicamente: infecção dentro dos "canos" da bile que ficaram entupidos)</em></p>
+
+    <h3>Tríade de Charcot (50–70% dos casos)</h3>
+    <div class="mnemonic">🔵 FID = <strong>F</strong>ebre/calafrios + <strong>I</strong>cterícia + <strong>D</strong>or em hipocôndrio direito</div>
+
+    <h3>Pêntade de Reynolds (colangite grave/supurativa)</h3>
+    <div class="mnemonic">🔵 FID + <strong>H</strong>ipotensão + <strong>A</strong>ltração da consciência → "FID-HA" = choque séptico biliar</div>
+    <div class="highyield">🟣 <span class="badge badge-hcpa">HCPA</span><span class="badge badge-ghc">GHC</span> A pêntade de Reynolds indica Grau III (TG18) e drenagem biliar de emergência imediata. Mortalidade sem drenagem: até 50%.</div>
+
+    <h3>Critérios Diagnósticos – Tokyo Guidelines 2018 (TG18)</h3>
+    <p><strong>Diagnóstico DEFINITIVO:</strong> 1 item de A + 1 de B + 1 de C</p>
+    <table>
+      <tr><th>A – Inflamação sistêmica</th><th>B – Colestase</th><th>C – Imagem</th></tr>
+      <tr>
+        <td>Febre &gt;38°C e/ou calafrios<br>PCR elevada / leucocitose</td>
+        <td>Icterícia (BT ≥2 mg/dL)<br>FA, GGT, AST, ALT elevadas</td>
+        <td>Dilatação de VBP<br>Litíase, estenose, stent, tumor</td>
+      </tr>
+    </table>
+    <p><em>Diagnóstico SUSPEITO: 1 item de A + 1 de B ou C (sem imagem confirmatória)</em></p>
+
+    <h3>Estratificação de Gravidade (TG18)</h3>
+    <table>
+      <tr><th>Grau</th><th>Critério</th><th>Conduta</th></tr>
+      <tr><td style="color:var(--green)"><strong>I – Leve</strong></td><td>Responde ao tratamento inicial (ATB + suporte)</td><td>Drenagem precoce se sem melhora em 24h</td></tr>
+      <tr><td style="color:var(--orange)"><strong>II – Moderado</strong></td><td>Leucócitos &gt;12.000 ou &lt;4.000 / febre &gt;39°C / BT ≥5 mg/dL / hipoalbuminemia / idade ≥75a / plaquetas &lt;100.000</td><td>Drenagem biliar o mais rápido possível</td></tr>
+      <tr><td style="color:var(--red)"><strong>III – Grave</strong></td><td>Disfunção orgânica: cardiovascular, neurológica, respiratória, renal, hepática (INR&gt;1,5), hematológica (plaquetas &lt;100.000)</td><td>Drenagem biliar de emergência + UTI</td></tr>
+    </table>
+    <div class="highyield">🟣 <span class="badge badge-amrigs">AMRIGS</span><span class="badge badge-puc">PUC</span> Grau III da TG18: necessita de pelo menos UMA disfunção orgânica. A disfunção cardiovascular (hipotensão com vasopressor) é o critério mais cobrado.</div>
+
+    <h3>Exames Complementares</h3>
+    <ul>
+      <li><strong>Laboratório:</strong> Leucograma (leucocitose com desvio à esquerda), BT frações (predomina direta), FA, GGT, TGO/TGP, amilase/lipase (se suspeita de pancreatite associada), hemocultura (2 amostras ANTES do ATB), coagulograma</li>
+      <li><strong>USG abdominal:</strong> 1ª escolha — dilatação VBP (&gt;7 mm sem colecistectomia prévia; &gt;10 mm com colecistectomia prévia), cálculos, sinais indiretos. Sensibilidade 70–80% para coledocolitíase. <em>(É como uma "câmera ultrassônica" que vê os canos da bile por fora)</em></li>
+      <li><strong>Colangiorressonância (CPRM):</strong> Gold standard não-invasivo. Sn&gt;90%, Sp&gt;95%. Indicada quando USG inconclusiva.</li>
+      <li><strong>TC:</strong> Útil para excluir outras causas de abdome agudo e avaliar complicações. Menos sensível para cálculos.</li>
+      <li><strong>CPRE:</strong> Diagnóstico E terapêutico — padrão-ouro quando há alta probabilidade de coledocolitíase.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 2. ANATOMIA E VASCULARIZAÇÃO -->
+<div class="section">
+  <div class="section-header" onclick="toggle(this)">
+    🫀 2. ANATOMIA &amp; VASCULARIZAÇÃO
+    <span class="icon">▶</span>
+  </div>
+  <div class="section-body">
+    <h3>Árvore Biliar Extra-hepática</h3>
+    <p class="content"><strong>Ductos hepáticos D+E</strong> → confluência → <strong>ducto hepático comum</strong> (DHC) → recebe ducto cístico → <strong>colédoco</strong> (ducto biliar comum, DBC) → ampola de Vater → esfíncter de Oddi → duodeno (D2)</p>
+    <div class="highyield">🟣 Comprimento do colédoco: <strong>6–8 cm</strong>. Diâmetro normal: <strong>≤6 mm</strong> (ecografia); &gt;8 mm = dilatado; &gt;10 mm após colecistectomia = patológico.</div>
+
+    <h3>Segmentos do Colédoco</h3>
+    <table>
+      <tr><th>Segmento</th><th>Localização</th><th>Importância Cirúrgica</th></tr>
+      <tr><td>Supraduodenal</td><td>Livre no ligamento hepatoduodenal</td><td>Local da coledocotomia cirúrgica</td></tr>
+      <tr><td>Retroduodenal</td><td>Posterior ao bulbo duodenal</td><td>Dissecção cuidadosa em cirurgia aberta</td></tr>
+      <tr><td>Retropancreático</td><td>Sulco colédoco pancreático</td><td>Obstrução maligna mais comum aqui</td></tr>
+      <tr><td>Intramural</td><td>Parede duodenal D2</td><td>Esfíncter de Oddi / ampola de Vater</td></tr>
+    </table>
+
+    <h3>Triângulo de Calot <em>(essencial na colecistectomia)</em></h3>
+    <div class="mnemonic">🔵 Limites: <strong>Ducto Cístico</strong> (inferior) + <strong>DHC</strong> (medial) + <strong>Superfície hepática</strong> (superior) → contém artéria cística</div>
+    <p>Dissecção e exposição completa do triângulo = Critical View of Safety (CVS) → obrigatória antes de clipar qualquer estrutura</p>
+
+    <h3>Triângulo de Pringle (pedículo hepático)</h3>
+    <p class="content">O ligamento hepatoduodenal contém (de anterior-lateral para posterior-medial): <strong>ducto biliar</strong> (direita), <strong>artéria hepática própria</strong> (esquerda), <strong>veia porta</strong> (posterior)</p>
+    <div class="mnemonic">🔵 Mnemônico da posição: <strong>"DAP"</strong> da direita para trás = <strong>D</strong>ucto (direita) → <strong>A</strong>rtéria (esquerda) → <strong>P</strong>orta (posterior)</div>
+
+    <h3>Vascularização da Via Biliar</h3>
+    <ul>
+      <li><strong>Artéria cística:</strong> ramo da artéria hepática direita (90%), origina-se dentro do triângulo de Calot</li>
+      <li><strong>Colédoco supraduodenal:</strong> suprimento axial pelos ramos das artérias hepática direita (a 3h) e gastroduodenal (a 9h) — <em>"sistema de relógio vascular"</em> (Northover e Terblanche)</li>
+      <li><strong>Colédoco retroduodenal/retropancreático:</strong> artéria gastroduodenal e retroduodenal (ramos da AMS)</li>
+    </ul>
+    <div class="warn">🔴 A vascularização axial do colédoco torna lesões isquêmicas iatrogênicas (durante colecistectomia) causa de estenoses tardias!</div>
+
+    <h3>Drenagem Linfática</h3>
+    <p>Linfonodo do cístico (de Mascagni) → cadeia do ligamento hepatoduodenal → linfonodo celíaco → para-aórtico</p>
+
+    <h3>Inervação</h3>
+    <p>Plexo celíaco (simpático – dor) + nervo vago (parassimpático – motilidade). Dor referida em escápula D = irritação diafragmática (nervo frênico, C3-C5)</p>
+  </div>
+</div>
+
+<!-- 3. ETIOLOGIA / FISIOPATOLOGIA -->
+<div class="section">
+  <div class="section-header" onclick="toggle(this)">
+    🦠 3. ETIOLOGIA, FISIOPATOLOGIA &amp; MICROBIOLOGIA
+    <span class="icon">▶</span>
+  </div>
+  <div class="section-body">
+    <h3>Sinais e sintomas — por frequência</h3>
+    <table>
+      <tr><th>Sinal / sintoma</th><th>Frequência</th><th>Relevância</th></tr>
+      <tr><td>Febre / calafrios</td><td>90–95%</td><td>O mais constante da tríade</td></tr>
+      <tr><td>Dor em hipocôndrio direito</td><td>70–80%</td><td><strong>Pode faltar no idoso e no imunossuprimido</strong></td></tr>
+      <tr><td>Icterícia</td><td>60–70%</td><td>Pode ser discreta na obstrução parcial</td></tr>
+      <tr><td>Náuseas e vômitos</td><td>50–60%</td><td>Inespecífico</td></tr>
+      <tr><td>Hipotensão</td><td>15–20%</td><td>Gravidade III — Reynolds</td></tr>
+      <tr><td>Confusão mental</td><td>10–15%</td><td>Gravidade III — Reynolds</td></tr>
+    </table>
+    <div class="box purple"><strong>★ o número que reorganiza o raciocínio</strong><br>A tríade de Charcot completa aparece em apenas <strong>50–70%</strong> dos casos — e a dor falta em até 30%. Esperar a tríade para diagnosticar colangite é atrasar a drenagem. O que se busca é <strong>febre + colestase + via dilatada</strong>.</div>
+
+    <h3>Populações especiais — onde o quadro engana</h3>
+    <table>
+      <tr><th>Grupo</th><th>Particularidade</th></tr>
+      <tr><td><strong>Idoso (&gt; 70 anos)</strong></td><td>Apresentação atípica; febre pode faltar; <strong>confusão mental como único sinal</strong>. Mortalidade 2–3× maior. Limiar baixo para internar e drenar</td></tr>
+      <tr><td><strong>Imunossuprimido / cirrótico</strong></td><td>Sem febre mesmo com bacteremia — só dor e icterícia. Cirrótico descompensa rápido (Child C: mortalidade &gt; 30%)</td></tr>
+      <tr><td><strong>Gestante</strong></td><td>CPRE segura no <strong>2º trimestre</strong>; febre pode desencadear parto prematuro; monitorização fetal; evitar fluoroscopia no 1º trimestre</td></tr>
+      <tr><td><strong>Pós-transplante hepático</strong></td><td>Estenose da anastomose biliar em 10–20%; colangite recorrente associa-se a rejeição crônica; drenagem precoce</td></tr>
+    </table>
+    <div class="grn"><b>tradução simples</b>Nos quatro grupos o problema é o mesmo: <strong>o paciente não consegue montar a resposta inflamatória</strong> que produziria os sinais clássicos. Ausência de febre neles <strong>não é ausência de infecção</strong> — é ausência de resposta.</div>
+
+    <h3>Causas de Obstrução Biliar (da mais para menos comum)</h3>
+    <table>
+      <tr><th>Causa</th><th>Frequência</th><th>Obs</th></tr>
+      <tr><td>Coledocolitíase</td><td>30–70%</td><td>Principal causa. 5–20% dos pacientes com colecistolitíase</td></tr>
+      <tr><td>Estenose benigna (pós-op, CBP, PSC)</td><td>5–25%</td><td>Lesão iatrogênica de via biliar = causa cirúrgica clássica</td></tr>
+      <tr><td>Causa maligna (colangiocarcinoma, ca pâncreas, ampuloma)</td><td>10–30%</td><td>Colangite em tumor = obstrução + suprainfecção</td></tr>
+      <tr><td>Pós-CPRE / stent biliar</td><td>até 20%</td><td>Colangite iatrogênica — stent entupido</td></tr>
+      <tr><td>Outros (áscaris, fasciola, estenose anastomótica)</td><td>Raro no Brasil</td><td>Mais comum no Sudeste Asiático</td></tr>
+    </table>
+
+    <h3>Fisiopatologia</h3>
+    <p class="content"><strong>Obstrução biliar</strong> → ↑ pressão intraductal → bile normalmente estéril torna-se infectada (bacteriobilia) → translocação bacteriana para capilares biliares (refluxo colêmico-venoso) → bacteremia → síndrome séptica</p>
+    <p>Pressão normal bile: 10–15 cmH₂O; colonização bacteriana: >25 cmH₂O; translocação sistêmica: >30 cmH₂O</p>
+
+    <h3>Microbiologia (mais cobrada nas provas)</h3>
+    <table>
+      <tr><th>Germe</th><th>Frequência</th><th>Obs</th></tr>
+      <tr><td><strong>E. coli</strong></td><td>25–50%</td><td>Gram-negativo – mais comum</td></tr>
+      <tr><td><strong>Klebsiella</strong></td><td>15–20%</td><td>Gram-negativo</td></tr>
+      <tr><td><strong>Enterococcus</strong></td><td>10–20%</td><td>Gram-positivo – cobre em infecções graves</td></tr>
+      <tr><td><strong>Enterobacter</strong></td><td>5–10%</td><td>Gram-negativo</td></tr>
+      <tr><td>Streptococcus</td><td>~5%</td><td>Gram-positivo</td></tr>
+      <tr><td>Bacteroides, Clostridium</td><td>&lt;10%</td><td>Anaeróbios – cirurgias biliares prévias / idosos</td></tr>
+    </table>
+    <div class="highyield">🟣 <span class="badge badge-hcpa">HCPA</span><span class="badge badge-sc">SC</span> A bile normal é estéril. A bacteriobilia não é sinonimo de colangite — exige inflamação sistêmica ou obstrução. Colangite = obstrução + infecção + hipertensão ductal.</div>
+  </div>
+</div>
+
+<!-- 4. TRATAMENTO CLÍNICO -->
+<div class="section">
+  <div class="section-header" onclick="toggle(this)">
+    💊 4. TRATAMENTO CLÍNICO &amp; ANTIBIOTICOTERAPIA
+    <span class="icon">▶</span>
+  </div>
+  <div class="section-body">
+    <h3>Medidas Iniciais (todos os graus)</h3>
+    <ul>
+      <li>Internação hospitalar</li>
+      <li>SNG se vômitos incoercíveis</li>
+      <li>Jejum + hidratação venosa vigorosa</li>
+      <li><strong>Hemocultura ×2</strong> antes de iniciar ATB</li>
+      <li>Monitorização (PA, FC, diurese, SatO₂)</li>
+      <li>UTI se Grau III</li>
+    </ul>
+
+    <h3>Antibioticoterapia (TG18 + IDSA)</h3>
+    <table>
+      <tr><th>Gravidade</th><th>1ª linha</th><th>Alternativas</th></tr>
+      <tr>
+        <td><strong>Grau I–II<br>(leve–moderado)</strong></td>
+        <td>Ampicilina-sulbactam<br>Cefazolina + Metronidazol<br>Ceftriaxone 1g/dia</td>
+        <td>Amoxicilina-clavulanato<br>Ciprofloxacino + Metronidazol</td>
+      </tr>
+      <tr>
+        <td><strong>Grau III<br>(grave)</strong></td>
+        <td>Piperacilina-tazobactam<br>Imipenem/Meropenem</td>
+        <td>Cefepime + Metronidazol<br>Vancomicina se Enterococcus</td>
+      </tr>
+      <tr>
+        <td><strong>Hospitalar/resistente</strong></td>
+        <td>Meropenem ± Vancomicina</td>
+        <td>Tigeciclina + Colistina (KPC)</td>
+      </tr>
+    </table>
+    <div class="highyield">🟣 <span class="badge badge-amrigs">AMRIGS</span><span class="badge badge-ghc">GHC</span> Duração do ATB: 4–7 dias se drenagem efetiva. ATB não substitui drenagem biliar — apenas estabiliza o paciente para o procedimento. Ajustar conforme antibiograma da cultura de bile.</div>
+
+    <h3>Analgesia</h3>
+    <p>Dipirona EV + Hioscina (antiespasmódico). Evitar AINE (risco renal). Opioides se necessário (<strong>meperidina</strong> ou tramadol — morfina aumenta pressão no esfíncter de Oddi, usar com cautela).</p>
+    <div class="highyield">🟣 <span class="badge badge-hcpa">HCPA</span> Morfina ↑ tônus do esfíncter de Oddi = pode piorar obstrução. Meperidina é a opção analgésica opioide mais segura no contexto biliar.</div>
+  </div>
+</div>
+
+<!-- 5. DRENAGEM BILIAR -->
+<div class="section">
+  <div class="section-header" onclick="toggle(this)">
+    🔧 5. DRENAGEM BILIAR – ABORDAGENS E TÉCNICAS
+    <span class="icon">▶</span>
+  </div>
+  <div class="section-body">
+    <h3>Hierarquia de Drenagem (TG18)</h3>
+    <div class="ok">✅ 1ª ESCOLHA: <strong>CPRE com esfincterotomia endoscópica</strong> → menos invasiva, alta taxa de sucesso (>90%)</div>
+    <p>2ª Escolha: <strong>Drenagem biliar trans-hepática percutânea (DBTHP / PTBD)</strong> → quando CPRE falha ou anatomia desfavorável</p>
+    <p>3ª Escolha: <strong>Cirurgia aberta (coledocotomia + exploração cirúrgica da VBP)</strong> → falha das anteriores ou necessidade de tratamento da etiologia</p>
+
+    <h3>CPRE – Passo a Passo do Endoscopista</h3>
+    <ol class="step-list">
+      <li>Sedação consciente ou anestesia geral. Decúbito lateral esquerdo ou prono.</li>
+      <li>Introdução do duodenoscópio (visão lateral) até D2.</li>
+      <li>Identificação da papila de Vater.</li>
+      <li>Canulação seletiva do ducto biliar com cateter/fio-guia.</li>
+      <li>Colangiografia diagnóstica (contraste) → confirma obstrução.</li>
+      <li><strong>Esfincterotomia:</strong> corte do esfíncter de Oddi com papilótomo/sphinctertome (sentido horário, 11h).</li>
+      <li>Extração dos cálculos com balão de Fogarty biliar ou cesta de Dormia.</li>
+      <li>Se cálculo grande: litotripsia mecânica intraluminar (LMI) ou extracorpórea (LECO) prévia.</li>
+      <li>Colocação de stent biliar plástico/metálico se estenose ou clearance incompleta.</li>
+      <li>Revisão endoscópica ao final: fluxo de bile confirmado.</li>
+    </ol>
+    <div class="highyield">🟣 <span class="badge badge-hcpa">HCPA</span><span class="badge badge-sc">SC</span> Taxa de sucesso da CPRE na colangite: 85–95%. Complicações: pancreatite pós-CPRE (~3–5%), hemorragia pós-esfincterotomia, perfuração, colangite pós-CPRE.</div>
+
+    <h3>Coledocotomia Cirúrgica (abordagem laparotômica)</h3>
+    <p><em>Indicada quando CPRE falha, anatomia alterada (Billroth II, Whipple), ou cirurgia simultânea necessária</em></p>
+
+    <h4>Posição e Preparo</h4>
+    <ul>
+      <li><strong>Posição:</strong> decúbito dorsal, coxim sob flanco direito (30°), braços abertos</li>
+      <li><strong>Acesso venoso:</strong> periférico calibroso ×2 + cateter central se Grau III</li>
+      <li><strong>SNG + SVD</strong> (cateter vesical para monitorar diurese)</li>
+      <li><strong>Tricotomia:</strong> região xifopúbica + flancos</li>
+      <li><strong>Antissepsia:</strong> clorexidina alcoólica ou PVPI</li>
+      <li><strong>Campos:</strong> laparotomia convencional</li>
+      <li><strong>ATB profilático:</strong> cefazolina 2g EV 30' antes da incisão (cobertura adicional com metronidazol se contaminação)</li>
+    </ul>
+
+    <h4>Acesso Cirúrgico</h4>
+    <p><strong>Laparotomia subcostal direita (Kocher)</strong> → padrão para cirurgia biliar programada</p>
+    <p><strong>Laparotomia mediana supra-umbilical</strong> → emergência / reoperação</p>
+
+    <h3>Técnica Cirúrgica – Coledocotomia com Tubo T</h3>
+    <div class="grn"><b>tradução simples</b>A colangite é <strong>pus dentro de um cano fechado sob pressão</strong>. O tratamento não é matar a bactéria — é <strong>abrir a saída</strong>. Antibiótico sem drenagem é como tratar um abscesso só com antibiótico. E se o endoscopista não consegue abrir, o cirurgião abre.</div>
+    <div class="box orange"><strong>Contexto:</strong> a cirurgia aberta é hoje o <strong>último recurso</strong> — indicada quando a CPRE falhou ou é inviável, quando não há endoscopia disponível, ou quando há outra indicação cirúrgica associada. O objetivo é <strong>descompressão</strong>, não cirurgia definitiva.</div>
+
+    <div class="stx">
+
+      <div class="st">
+        <span class="fase">fase de exposição</span>
+        <div class="ttl">Manobra de Kocher e exposição do ligamento hepatoduodenal</div>
+        <p>Laparotomia subcostal direita (programada) ou mediana (emergência e reoperação). Mobilizar D2 pela manobra de Kocher; afastadores de Richardson ou Deaver; auxiliar tracionando fígado e vesícula cranialmente.</p>
+        <div class="pq"><b>por quê</b>O Kocher permite <strong>palpar o colédoco entre polegar e indicador</strong> em toda a extensão, inclusive a porção retropancreática. Nesse paciente, séptico e frequentemente instável, o tato vale mais que a dissecção elegante.</div>
+        <div class="mh2">
+          <div class="mh e"><b>mão esquerda</b>Afastador e palpação bidigital do hepatoduodenal</div>
+          <div class="mh d"><b>mão direita</b>Metzenbaum e cautério na reflexão peritoneal</div>
+        </div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de identificação</span>
+        <div class="ttl">Calot, CVS e confirmação por punção</div>
+        <p>Dissecção do triângulo com <strong>Critical View of Safety</strong>. Palpar a via biliar e <strong>confirmar por punção com agulha 22G</strong>, aspirando bile antes de abrir.</p>
+        <div class="pq"><b>por quê</b>A punção existe porque, em campo inflamado e com estruturas dilatadas, <strong>a artéria hepática e a porta podem ser confundidas com a via biliar</strong>. Aspirar bile custa dez segundos e evita a lesão vascular mais grave da cirurgia biliar.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de abertura</span>
+        <div class="ttl">Coledocotomia longitudinal anterior</div>
+        <p>Incisão <strong>longitudinal</strong> de 1–2 cm na face <strong>anterior</strong> do colédoco <strong>supraduodenal</strong>, com lâmina 15 ou tesoura de Potts, entre pontos de reparo com absorvível 4-0.</p>
+        <div class="pq"><b>por quê</b>A irrigação do colédoco corre <strong>longitudinalmente, às 3 e às 9 horas</strong>. Incisão transversal secciona os dois eixos e gera <strong>estenose isquêmica</strong> tardia. Anterior porque atrás estão porta e hepática; supraduodenal porque abaixo o ducto entra no pâncreas.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de descompressão — o objetivo real</span>
+        <div class="ttl">Exploração e clareamento</div>
+        <p>Lavagem com soro morno, <strong>Fogarty biliar</strong>, cateter de <strong>Bakes</strong>, pinça de <strong>Randall</strong>. Colangiografia para confirmar clareamento.</p>
+        <div class="pq"><b>por quê</b>Aqui vale um princípio de controle de dano: no paciente séptico, <strong>descomprimir é obrigatório; clarear completamente é desejável</strong>. Insistir na retirada do último cálculo em quem está instável troca um objetivo que salva por um que pode esperar — o resíduo se resolve por CPRE depois.</div>
+        <div class="mh2">
+          <div class="mh e"><b>mão esquerda</b>Reparos mantendo a coledocotomia aberta sem rasgar a parede</div>
+          <div class="mh d"><b>mão direita</b>Fogarty, Bakes e Randall; irrigação morna</div>
+        </div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de drenagem</span>
+        <div class="ttl">Colocação do tubo em T (Kehr)</div>
+        <p>Tubo T <strong>14–16 F</strong>; ramo curto dentro da via biliar, raios alinhados à luz; teste de estanqueidade com soro.</p>
+        <div class="pq"><b>por quê</b>Na colangite o Kehr <strong>não é opcional</strong> como na coledocolitíase eletiva: a papila está edemaciada, pode haver cálculo residual e a via está infectada. Ele é a <strong>válvula de escape</strong> que impede a pressão de voltar a subir — e é a mesma pressão que causou a sepse.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de fechamento</span>
+        <div class="ttl">Sutura do colédoco ao redor do tubo</div>
+        <p>Pontos separados ou contínuo com <strong>monofilamentar absorvível 4-0</strong> (PDS/Monocryl), sem estenosar.</p>
+        <div class="pq"><b>por quê</b><strong>Absorvível sempre</strong> — fio permanente em contato com bile vira <strong>núcleo de cálculo</strong>. E sutura apertada troca uma obstrução aguda por uma estenose crônica.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de conclusão</span>
+        <div class="ttl">Colecistectomia, colangiografia de controle, dreno e síntese</div>
+        <p>Colecistectomia se a vesícula estiver presente (remove a fonte). Colangiografia pelo tubo T confirmando passagem duodenal. Dreno subhepático. Fechamento por planos.</p>
+        <div class="pq"><b>por quê</b>A colecistectomia <strong>pode ser adiada</strong> se o paciente estiver instável — o princípio é o mesmo do controle de dano: resolve-se a sepse hoje e a litíase depois. Não se troca a vida por completude.</div>
+      </div>
+
+    </div>
+
+    <div class="box cyan"><strong>as 4 checagens da drenagem na colangite</strong><br>
+      <strong>1)</strong> É <strong>bile</strong> mesmo (punção confirmatória)?<br>
+      <strong>2)</strong> A incisão é <strong>longitudinal, anterior e supraduodenal</strong>?<br>
+      <strong>3)</strong> A via está <strong>descomprimida</strong> — mesmo que não perfeitamente limpa?<br>
+      <strong>4)</strong> O <strong>Kehr</strong> está posicionado e testado?</div>
+
+    <h3>Imagem — a sequência e os números</h3>
+    <table>
+      <tr><th>Exame</th><th>Papel</th><th>Números</th></tr>
+      <tr><td><strong>1º · Ultrassonografia</strong></td><td>Exame inicial. Mostra dilatação, não o cálculo distal (gás duodenal atrapalha)</td><td>Sensibilidade 75–90% para dilatação</td></tr>
+      <tr><td><strong>2º · Colangio-RM</strong></td><td><strong>Padrão-ouro não invasivo</strong>; sem radiação; escolha na gestante</td><td>Sensibilidade 90–95% para cálculo</td></tr>
+      <tr><td><strong>3º · TC</strong></td><td>Avalia complicações — abscesso hepático, aerobilia, tumor</td><td>Ruim para cálculos pequenos</td></tr>
+      <tr><td><strong>Ecoendoscopia</strong></td><td>Alta acurácia para cálculo <strong>&lt; 5 mm</strong>; usada antes da CPRE para evitar procedimento desnecessário</td><td>—</td></tr>
+      <tr><td><strong>CPRE</strong></td><td><strong>Diagnóstica e terapêutica</strong> na mesma sessão</td><td>Morbidade 5–10%</td></tr>
+    </table>
+    <div class="box orange"><strong>Critério de dilatação no ultrassom</strong><br>
+      Via biliar principal <strong>&gt; 8 mm</strong> em quem tem vesícula · <strong>&gt; 10 mm</strong> no colecistectomizado (a via se dilata fisiologicamente depois da cirurgia).<br>
+      <span style="color:var(--green);font-style:italic">(O cano normal é fino. Se dilatou, é porque tem algo entupindo do outro lado.)</span></div>
+    <div class="box red"><strong>Pneumobilia (aerobilia)</strong> — ar na via biliar. Causas: CPRE prévia, <strong>fístula bilioentérica</strong>, abscesso hepático por anaeróbios, <em>Clostridium</em>. Em quem nunca fez CPRE nem cirurgia biliar, é achado que <strong>exige explicação</strong>.</div>
+
+    <h3>Complicações da CPRE — o preço da drenagem</h3>
+    <table>
+      <tr><th>Complicação</th><th>Frequência</th><th>Manejo</th></tr>
+      <tr><td><strong>Pancreatite pós-CPRE</strong></td><td>3–5% (até 10% em alto risco)</td><td>Ringer lactato 3 mL/kg/h, jejum. <strong>Indometacina retal 100 mg</strong> profilática reduz o risco em 50–60%</td></tr>
+      <tr><td>Sangramento pós-esfincterotomia</td><td>1–2%</td><td>Adrenalina, clipe, balão; arteriografia se refratário</td></tr>
+      <tr><td>Colangite pós-CPRE</td><td>1–3%</td><td>Antibiótico + redrenagem. Mais comum quando a obstrução <strong>não foi completamente aliviada</strong></td></tr>
+      <tr><td>Perfuração duodenal / periampular</td><td>0,3–0,6%</td><td><strong>Retroperitoneal</strong>: conservador (jejum + ATB). <strong>Intraperitoneal</strong>: cirurgia de emergência</td></tr>
+      <tr><td>Impactação da cesta de Dormia</td><td>&lt; 0,5%</td><td>Litotripsia mecânica</td></tr>
+    </table>
+    <div class="box purple"><strong>★ a lógica que a banca cobra</strong><br>Drenagem <strong>incompleta</strong> é pior que nenhuma tentativa: manipula a via, injeta contraste sob pressão numa via infectada e <strong>não alivia</strong> — é a receita da colangite pós-CPRE e da bacteremia. Se não foi possível drenar, a resposta é <strong>drenagem percutânea ou cirúrgica</strong>, não repetir a mesma tentativa.</div>
+
+    <h3>Tubo T (Kehr) – Manejo Pós-Operatório</h3>
+    <ul>
+      <li>Conectar ao coletor de bile (débito normal: 300–500 mL/24h nas primeiras 48h, depois diminui)</li>
+      <li><strong>Colangiografia via Kehr:</strong> realizar com 10–21 dias PO</li>
+      <li><strong>Clampear o tubo</strong> progressivamente antes da retirada (confirmar tolerância)</li>
+      <li><strong>Retirada:</strong> 3–6 semanas PO se colangiografia sem cálculos residuais e sem estenose</li>
+      <li>Risco de cálculo residual: ~2% (tratar por extração transcutânea via trajeto do Kehr após 4–6 semanas)</li>
+    </ul>
+    <div class="highyield">🟣 <span class="badge badge-amrigs">AMRIGS</span> O Tubo T <strong>não pode ser retirado antes de 21 dias</strong> — risco de peritonite biliar por deiscência do trajeto (trajeto ainda não fibrosado). Colangiografia antes da retirada é mandatória.</div>
+  </div>
+</div>
+
+<!-- 6. MÃO DIREITA / MÃO ESQUERDA -->
+<div class="section">
+  <div class="section-header" onclick="toggle(this)">
+    🤲 6. INSTRUMENTAÇÃO – MÃO DIREITA vs MÃO ESQUERDA
+    <span class="icon">▶</span>
+  </div>
+  <div class="section-body">
+    <div class="grid-2">
+      <div class="card">
+        <h4 style="color:var(--orange)">✋ MÃO DIREITA – Ativa / Dissecção</h4>
+        <ul>
+          <li>Bisturi (lâmina 10 ou 15) – incisão de pele e coledocotomia</li>
+          <li>Tesoura de Metzenbaum – dissecção do triângulo de Calot</li>
+          <li>Pott scissors – coledocotomia</li>
+          <li>Porta-agulha (Hegar) – suturas</li>
+          <li>Pinça de Randall – extração de cálculos</li>
+          <li>Cateter de Bakes – sondagem do colédoco</li>
+          <li>Sonda de Fogarty biliar – retirada de cálculos</li>
+          <li>Clamp vascular (Satinsky) – manobra de Pringle se sangramento</li>
+          <li>Pinça Kelly / mosquito – ligaduras</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4 style="color:var(--cyan)">🤚 MÃO ESQUERDA – Suporte / Exposição</h4>
+        <ul>
+          <li>Pinça de Duval / atraumática – tração do ducto cístico / vesícula</li>
+          <li>Pinça de Kellly anatômica – exposição e tração dos planos</li>
+          <li>Afastador de Richardson / Deaver – exposição hepática e duodenal</li>
+          <li>Compressas úmidas – proteção de alças e hemostasia</li>
+          <li>Pinça de Allis – tração de bordas da coledocotomia</li>
+          <li>Aspirador – campo limpo durante dissecção e extração biliar</li>
+          <li>Pinça de Babcock – manejo da vesícula antes da clipagem</li>
+        </ul>
+      </div>
+    </div>
+    <div class="highyield" style="margin-top:10px">🟣 Na videolaparoscopia: mão esquerda = pinça de Marylande (atraumática, tração suave do ducto cístico e vesícula). Mão direita = disector, clipador, Harmonic/Ligasure, tesoura laparoscópica.</div>
+  </div>
+</div>
+
+<!-- 7. FIOS E SUTURAS -->
+<div class="section">
+  <div class="section-header" onclick="toggle(this)">
+    🧵 7. FIOS E SUTURAS
+    <span class="icon">▶</span>
+  </div>
+  <div class="section-body">
+    <table>
+      <tr><th>Estrutura</th><th>Fio</th><th>Técnica</th><th>Obs</th></tr>
+      <tr><td>Coledocotomia (fechamento)</td><td><strong>PDS 4-0 ou Monocryl 4-0</strong></td><td>Contínua ou pontos separados</td><td>Monofilamentar absorvível – menos reação, menos risco de estenose</td></tr>
+      <tr><td>Tração das bordas (coledocotomia)</td><td>Vicryl 4-0</td><td>Pontos de tração simples</td><td>Facilita exposição do lúmen</td></tr>
+      <tr><td>Ducto cístico (ligadura)</td><td>Clipes metálicos (Ti) ou Vicryl 2-0 / Seda 2-0</td><td>Ligadura dupla proximal + 1 distal</td><td>Clipes preferidos na laparoscopia</td></tr>
+      <tr><td>Artéria cística</td><td>Clipes metálicos ou Vicryl 3-0</td><td>2 clipes proximais, 1 distal</td><td>Verificar hemostasia antes de seccionar</td></tr>
+      <tr><td>Fáscia abdominal</td><td>PDS 0 ou Vicryl 0</td><td>Contínua ancorada (loop) ou Smead-Jones</td><td>Evitar Nylon na fáscia (corta tecido)</td></tr>
+      <tr><td>Subcutâneo</td><td>Vicryl 3-0</td><td>Pontos simples ou contínuo</td><td>Apenas se necessário para aproximação</td></tr>
+      <tr><td>Pele</td><td>Nylon 3-0 ou 4-0 / grampos</td><td>Pontos simples ou Donati</td><td>Grampos se contaminação (mais fácil de abrir)</td></tr>
+      <tr><td>Hepatorrrafia / hemostasia hepática</td><td>Vicryl 0 ou Chromic 0</td><td>Ponto em U / colchoeiro</td><td>Associar cola de fibrina se necessário</td></tr>
+    </table>
+    <div class="highyield">🟣 <span class="badge badge-hcpa">HCPA</span> Fio multifilamentar (Vicryl, Seda) no colédoco = MAIOR risco de formação de cálculos biliares (litíase pós-sutura). Sempre usar <strong>monofilamentar absorvível (PDS/Monocryl)</strong> no fechamento da coledocotomia.</div>
+  </div>
+</div>
+
+<!-- 8. ANASTOMOSE BILIODIGESTIVA -->
+<div class="section">
+  <div class="section-header" onclick="toggle(this)">
+    🔗 8. ANASTOMOSE BILIODIGESTIVA (quando indicada)
+    <span class="icon">▶</span>
+  </div>
+  <div class="section-body">
+    <h3>Indicações</h3>
+    <ul>
+      <li>VBP muito dilatada (&gt;1,5–2 cm) com múltiplos cálculos de difícil extração</li>
+      <li>Estenose distal da VBP irressecável (paliação)</li>
+      <li>Falha reiterada da CPRE</li>
+      <li>Cálculos intrahepáticos (hepaticojejunostomia)</li>
+    </ul>
+    <h3>Tipos</h3>
+    <table>
+      <tr><th>Anastomose</th><th>Técnica</th><th>Indicação</th></tr>
+      <tr><td><strong>Coledocoduodenostomia</strong></td><td>Colédoco supraduodenal → D1/D2 (lado a lado)</td><td>VBP dilatada, boa mobilidade duodenal, etiologia benigna</td></tr>
+      <tr><td><strong>Hepaticojejunostomia (em Y de Roux)</strong></td><td>DHC / hepático direito ou esquerdo → alça jejunal desfuncionalizada em Y</td><td>Padrão-ouro para estenoses altas, reconstrução pós-lesão biliar, neoplasia</td></tr>
+      <tr><td><strong>Coledocojejunostomia</strong></td><td>Colédoco → jejuno em Y de Roux</td><td>Indicação limitada (mais usada coledocoduodenostomia ou hepaticojejunostomia)</td></tr>
+    </table>
+    <h3>Técnica Geral – Hepaticojejunostomia</h3>
+    <ol class="step-list">
+      <li>Identificar confluência hepática. Seccionar colédoco abaixo da obstrução.</li>
+      <li>Preparar alça jejunal em Y de Roux: 60–70 cm de alça desfuncionalizada isoperistáltica.</li>
+      <li>Anastomose término-lateral ou término-terminal: PDS 4-0 / Monocryl 4-0, pontos separados posteriores e anteriores (evitar tensão).</li>
+      <li>Stent transhepático percutâneo se anastomose difícil (calibração).</li>
+      <li>Drenagem abdominal junto à anastomose.</li>
+    </ol>
+    <div class="highyield">🟣 <span class="badge badge-puc">PUC</span><span class="badge badge-sc">SC</span> A hepaticojejunostomia em Y de Roux é a reconstrução de escolha após lesão iatrogênica da via biliar (Classificação de Bismuth-Strasberg). A coledocoduodenostomia tem risco de "síndrome do sump" (contaminação retrógrada por estase).</div>
+  </div>
+</div>
+
+<!-- 9. COMPLICAÇÕES -->
+<div class="section">
+  <div class="section-header" onclick="toggle(this)">
+    ⚠️ 9. COMPLICAÇÕES
+    <span class="icon">▶</span>
+  </div>
+  <div class="section-body">
+    <h3>Complicações da Colangite Aguda (sem tratamento adequado)</h3>
+    <ul>
+      <li class="warn"><strong>Sepse e choque séptico</strong> – principal causa de morte</li>
+      <li><strong>Abscesso hepático</strong> – piogênico, por foco biliar</li>
+      <li><strong>Colangite supurativa</strong> – pus em toda a árvore biliar → emergência cirúrgica</li>
+      <li><strong>Pancreatite aguda biliar</strong> – cálculo impactado na ampola de Vater</li>
+      <li><strong>Insuficiência hepática</strong> – obstrução prolongada → lesão hepatocitária</li>
+      <li><strong>Colangiocarcinoma</strong> – complicação tardia de colangite esclerosante primária (PSC)</li>
+    </ul>
+
+    <h3>Complicações da CPRE</h3>
+    <ul>
+      <li><strong>Pancreatite pós-CPRE</strong> (3–5%) – mais comum; hiperamilasemia pós-canulação</li>
+      <li><strong>Hemorragia</strong> (~1%) – pós-esfincterotomia; tratar com injeção de adrenalina ou clipe endoscópico</li>
+      <li><strong>Perfuração duodenal</strong> (~0,3–1%) – retroperitoneal ou livre; considerar cirurgia se não contida</li>
+      <li><strong>Colangite pós-CPRE</strong> – drenagem biliar incompleta ou stent entupido</li>
+    </ul>
+
+    <h3>Complicações da Cirurgia Aberta</h3>
+    <ul>
+      <li><strong>Lesão iatrogênica da VBP</strong> – clip inadvertido no colédoco → icterícia progressiva → requer hepaticojejunostomia</li>
+      <li><strong>Hemorragia</strong> – da artéria cística, artéria hepática direita ou veia porta</li>
+      <li><strong>Fistula biliar</strong> – deiscência da coledocotomia ou do coto do cístico</li>
+      <li><strong>Estenose biliar tardia</strong> – por isquemia axial do colédoco / sutura tensionada</li>
+      <li><strong>Cálculo residual</strong> (~2%) – no pós-CPRE ou coledocotomia → colangiografia via Kehr</li>
+      <li><strong>Coleperitônio</strong> – extravazamento de bile → reoperação ou drenagem percutânea</li>
+    </ul>
+
+    <h3>Classificação de Bismuth-Strasberg (lesões iatrogênicas)</h3>
+    <table>
+      <tr><th>Tipo</th><th>Lesão</th></tr>
+      <tr><td>A</td><td>Fístula do coto do cístico ou ductos aberrantes de Luschka</td></tr>
+      <tr><td>B</td><td>Oclusão de ducto aberrante direito</td></tr>
+      <tr><td>C</td><td>Secção de ducto aberrante direito sem ligadura</td></tr>
+      <tr><td>D</td><td>Lesão lateral do DHC/colédoco</td></tr>
+      <tr><td>E1–E5</td><td>Secção completa do DHC a vários níveis (E5 = confluência hepática destruída)</td></tr>
+    </table>
+    <div class="highyield">🟣 <span class="badge badge-hcpa">HCPA</span> Lesão tipo E (Bismuth E) = hepaticojejunostomia em Y de Roux. Lesão tipo A = CPRE + stent ou reoperação com reparo do coto. Nunca tentar reparo primário de lesão E em centro sem cirurgião hepatobiliar experiente.</div>
+  </div>
+</div>
+
+<!-- 10. BANCO DE QUESTÕES -->
+<div class="section">
+  <div class="section-header" onclick="toggle(this)">
+    📝 10. BANCO DE QUESTÕES – RESIDÊNCIA RS (últimos 10 anos)
+    <span class="icon">▶</span>
+  </div>
+  <div class="section-body">
+    <h3>Temas mais cobrados por banca</h3>
+
+    <div class="highyield">
+      🟣 <span class="badge badge-hcpa">HCPA</span> <strong>Critérios diagnósticos TG18</strong>: qual paciente tem diagnóstico DEFINITIVO vs SUSPEITO? Atenção ao critério A + B + C. Também cobra estratificação de gravidade (Grau I/II/III) e conduta específica para cada grau.
+    </div>
+    <div class="highyield">
+      🟣 <span class="badge badge-hcpa">HCPA</span> <strong>Morfina e esfíncter de Oddi</strong>: morfina aumenta tônus → opioide preferido na cólica biliar é meperidina. Frequentemente cobrado como afirmativa verdadeira/falsa.
+    </div>
+    <div class="highyield">
+      🟣 <span class="badge badge-ghc">GHC</span> <strong>Tríade de Charcot x Pêntade de Reynolds</strong>: Charcot = febre + icterícia + dor. Reynolds adiciona hipotensão + alteração mental. A pentade indica choque séptico biliar = drenagem emergencial.
+    </div>
+    <div class="highyield">
+      🟣 <span class="badge badge-ghc">GHC</span> <strong>Principal causa de colangite</strong>: coledocolitíase (30–70% dos casos). Diferente de colangite esclerosante primária (autoimune, causa não-obstrutiva clássica). Cobrado para distinguir etiologias.
+    </div>
+    <div class="highyield">
+      🟣 <span class="badge badge-sc">SC</span> <strong>Fio para fechamento da coledocotomia</strong>: SEMPRE monofilamentar absorvível (PDS/Monocryl 4-0). Seda e Vicryl = multifilamentar = risco de litíase biliar pós-sutura.
+    </div>
+    <div class="highyield">
+      🟣 <span class="badge badge-sc">SC</span> <strong>Indicação de anastomose biliodigestiva vs Tubo T</strong>: VBP >1,5 cm + múltiplos cálculos = hepaticojejunostomia ou coledocoduodenostomia. VBP <1 cm + cálculo único = coledocotomia + Tubo T.
+    </div>
+    <div class="highyield">
+      🟣 <span class="badge badge-puc">PUC</span> <strong>Classificação de Bismuth-Strasberg</strong>: lesões iatrogênicas da via biliar. Tipo A = fístula do coto. Tipos E = secção do DHC. Conduta por tipo. Associado a colecistectomia laparoscópica.
+    </div>
+    <div class="highyield">
+      🟣 <span class="badge badge-puc">PUC</span> <strong>Qual primeiro exame de imagem na suspeita de colangite?</strong> USG abdominal. Se inconclusivo: CPRM. CPRE quando alta probabilidade e tratamento indicado.
+    </div>
+    <div class="highyield">
+      🟣 <span class="badge badge-amrigs">AMRIGS</span> <strong>Quando retirar o Tubo T (Kehr)?</strong> Mínimo 21 dias PO + colangiografia sem resíduo + paciente tolerando clampagem. Retirada precoce = risco de coleperitônio.
+    </div>
+    <div class="highyield">
+      🟣 <span class="badge badge-amrigs">AMRIGS</span> <strong>ATB de escolha na colangite grave (Grau III)</strong>: piperacilina-tazobactam ou carbapenêmico (imipenem/meropenem) ± vancomicina se suspeita de Enterococcus. Germe mais comum: E. coli (Gram-negativo).
+    </div>
+
+    <h3>Questão-Tipo Clássica</h3>
+    <div style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:12px;margin:8px 0;">
+      <p><em>"Paciente de 68 anos, feminino, com febre de 39°C, icterícia e dor em hipocôndrio direito há 2 dias. BT = 6,2 mg/dL, leucócitos = 14.000, USG com dilatação de colédoco (12 mm) e cálculo em colédoco distal. Sinais vitais: PA 90×60 mmHg, FC 118 bpm, Glasgow 13. Qual o diagnóstico e conduta imediata?"</em></p>
+      <p style="color:var(--green);margin-top:8px"><strong>Resposta:</strong> Colangite Aguda Grau III (Pêntade de Reynolds: Tríade de Charcot + hipotensão + alteração da consciência). Conduta: internação em UTI + ATB de amplo espectro (pip-tazo ou carbapenêmico) + drenagem biliar emergencial (CPRE). Se CPRE não disponível: PTBD percutânea.</p>
+    </div>
+  </div>
+</div>
+
+<!-- 11. GRADE DE MNEMÔNICOS -->
+<div class="section">
+  <div class="section-header" onclick="toggle(this)">
+    🧠 11. GRADE DE MNEMÔNICOS
+    <span class="icon">▶</span>
+  </div>
+  <div class="section-body">
+    <div class="grid-2">
+      <div class="mnemonic">
+        🔵 <strong>FID</strong><br>
+        <strong>F</strong>ebre + <strong>I</strong>cterícia + <strong>D</strong>or<br>
+        = Tríade de Charcot
+      </div>
+      <div class="mnemonic">
+        🔵 <strong>FID-HA</strong><br>
+        FID + <strong>H</strong>ipotensão + <strong>A</strong>ltração da consciência<br>
+        = Pêntade de Reynolds = Grau III TG18
+      </div>
+      <div class="mnemonic">
+        🔵 <strong>DAP</strong> (pedículo hepático)<br>
+        <strong>D</strong>ucto biliar (direita) → <strong>A</strong>rtéria (esquerda) → <strong>P</strong>orta (posterior)
+      </div>
+      <div class="mnemonic">
+        🔵 <strong>ABC</strong> do diagnóstico TG18<br>
+        <strong>A</strong>: inflamação sistêmica<br>
+        <strong>B</strong>: colestase<br>
+        <strong>C</strong>: imagem<br>
+        Definitivo = A + B + C
+      </div>
+      <div class="mnemonic">
+        🔵 <strong>3 E. do CPRE</strong><br>
+        <strong>E</strong>ntrar → <strong>E</strong>sfincterotomia → <strong>E</strong>xtrair
+      </div>
+      <div class="mnemonic">
+        🔵 <strong>Kehr = 21 dias</strong><br>
+        Menos de 21 dias? = Fica!<br>
+        21 dias + colangiografia ok = Sai!
+      </div>
+      <div class="mnemonic">
+        🔵 <strong>FIO do colédoco</strong><br>
+        Sempre <strong>F</strong>io <strong>M</strong>onofilamentar <strong>A</strong>bsorvível (PDS/Monocryl)<br>
+        Nunca multifilamentar (= lito biliar)
+      </div>
+      <div class="mnemonic">
+        🔵 <strong>Germes da bile</strong><br>
+        <strong>E</strong>. coli primeiro<br>
+        <strong>K</strong>lebsiella segundo<br>
+        <strong>E</strong>nterococcus terceiro<br>
+        = "EKE"
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- REFERÊNCIAS -->
+<div style="margin-top:18px;padding:10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;">
+  <p class="ref">📚 <strong>Referências:</strong> Sabiston Textbook of Surgery, 21ª ed. · Zollinger's Atlas of Surgical Operations, 10ª ed. · Netter's Atlas of Human Anatomy · Miura F et al. Tokyo Guidelines 2018: initial management of acute biliary infection. J Hepatobiliary Pancreat Sci. 2018. · Gomi H et al. TG18 antimicrobial therapy for acute cholangitis and cholecystitis. J Hepatobiliary Pancreat Sci. 2018. · Kiriyama S et al. TG18 criteria and management bundles for acute cholangitis. J Hepatobiliary Pancreat Sci. 2018.</p>
+</div>
+
+<script>
+function toggle(header) {
+  header.classList.toggle('open');
+  const body = header.nextElementSibling;
+  body.classList.toggle('open');
+}
+// open first section by default (already open via HTML class)
+</script>
+</body>
+</html>

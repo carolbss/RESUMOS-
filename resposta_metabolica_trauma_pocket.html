@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>RMT · pocket</title>
+<style>
+  :root{
+    --bg:#0f1419;--bg2:#161c24;--bg3:#1d2530;--border:#2a3543;
+    --text:#e9f0f6;--muted:#93a1b0;
+    --orange:#ff9e42;--purple:#b46cff;--cyan:#3ddbd0;--red:#ff6b6b;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;overflow-x:hidden}
+  body{background:var(--bg);color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    font-size:18px;line-height:1.6;padding-bottom:30px}
+  .top{position:sticky;top:0;z-index:5;background:var(--bg);
+    border-bottom:2px solid var(--orange);padding:14px 16px 0}
+  .top h1{margin:0;font-size:1.25rem;color:var(--orange)}
+  .top .s{color:var(--muted);font-size:.8rem;margin:2px 0 10px}
+  .tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:10px;
+    scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+  .tabs::-webkit-scrollbar{display:none}
+  .tab{flex:0 0 auto;scroll-snap-align:start;padding:9px 16px;border-radius:22px;
+    background:var(--bg3);border:1px solid var(--border);color:var(--muted);
+    font-size:.92rem;font-weight:600;white-space:nowrap}
+  .tab.on{background:var(--orange);color:#0f1419;border-color:var(--orange)}
+  .page{display:none;padding:16px}
+  .page.on{display:block}
+  h2{color:var(--orange);font-size:1.15rem;margin:4px 0 12px}
+  .blk{background:var(--bg2);border:1px solid var(--border);border-radius:14px;
+    padding:14px 16px;margin:12px 0}
+  .blk b{color:var(--orange)}
+  .up{color:var(--red);font-weight:800}
+  .down{color:var(--cyan);font-weight:800}
+  .row{display:flex;justify-content:space-between;gap:10px;padding:7px 0;
+    border-bottom:1px solid var(--border)}
+  .row:last-child{border-bottom:none}
+  .row span:first-child{color:var(--text)}
+  .exam{background:rgba(180,108,255,.12);border:1px solid var(--purple);
+    border-radius:14px;padding:14px 16px;margin:12px 0;color:#eaddff}
+  .exam b{color:var(--purple)}
+  .mnem{background:rgba(61,219,208,.11);border:1px solid var(--cyan);
+    border-radius:14px;padding:14px 16px;margin:12px 0;color:#d8fbf7}
+  .mnem b{color:var(--cyan)}
+  .simple{color:var(--muted);font-style:italic;font-size:.9rem}
+  ul{padding-left:20px;margin:8px 0}li{margin:6px 0}
+  .hint{text-align:center;color:var(--muted);font-size:.75rem;padding:6px}
+</style>
+</head>
+<body>
+<div class="top">
+  <h1>Resposta Metabólica ao Trauma</h1>
+  <div class="s">pocket · deslize as abas →</div>
+  <div class="tabs" id="tabs">
+    <div class="tab on" data-i="0">Fases</div>
+    <div class="tab" data-i="1">Hormônios</div>
+    <div class="tab" data-i="2">Metabolismo</div>
+    <div class="tab" data-i="3">Inflamação</div>
+    <div class="tab" data-i="4">Modula</div>
+    <div class="tab" data-i="5">Macetes</div>
+  </div>
+</div>
+
+<!-- FASES -->
+<div class="page on" data-p="0">
+  <h2>Fases</h2>
+  <div class="blk">
+    <b>EBB (24–48h) · hipometabólico</b>
+    <div class="row"><span>Metabolismo / O₂ / DC / Temp</span><span class="down">↓</span></div>
+    <div class="row"><span>Glicemia</span><span class="up">↑</span></div>
+    <div class="row"><span>Prioridade</span><span>hemodinâmica</span></div>
+  </div>
+  <div class="blk">
+    <b class="up">FLOW (dias 3–10) · hipermetabólico</b>
+    <div class="row"><span>Metabolismo / O₂ / DC / Temp</span><span class="up">↑</span></div>
+    <div class="row"><span>Estado</span><span>catabolismo + reparo</span></div>
+    <div class="row"><span>Combustível</span><span>gordura (AGL)</span></div>
+  </div>
+  <div class="mnem"><b>Moore:</b> Lesão → Virada → Anabólica → Gordura. <br>"<b>Lá Vou Anabolizar Gordura</b>".</div>
+  <div class="exam"><b>Pega:</b> EBB tem metabolismo <b>baixo</b> mesmo com glicemia alta.</div>
+</div>
+
+<!-- HORMONIOS -->
+<div class="page" data-p="1">
+  <h2>Hormônios</h2>
+  <div class="blk">
+    <div class="row"><span>Catecolaminas</span><span class="up">↑↑</span></div>
+    <div class="row"><span>Cortisol</span><span class="up">↑↑</span></div>
+    <div class="row"><span>Glucagon</span><span class="up">↑</span></div>
+    <div class="row"><span>GH</span><span class="up">↑</span></div>
+    <div class="row"><span>ADH · Aldosterona</span><span class="up">↑</span></div>
+    <div class="row"><span>Insulina (ebb)</span><span class="down">↓</span></div>
+    <div class="row"><span>T3/T4</span><span class="down">↓</span></div>
+    <div class="row"><span>Sexuais</span><span class="down">↓</span></div>
+  </div>
+  <div class="mnem"><b>Descem = "IST":</b> Insulina, T3, Sexuais.</div>
+  <div class="exam"><b>Hiperglicemia:</b> cortisol + glucagon + catecolaminas + resistência à insulina.</div>
+</div>
+
+<!-- METABOLISMO -->
+<div class="page" data-p="2">
+  <h2>Metabolismo</h2>
+  <div class="blk"><b>Carboidrato</b><br>↑ gliconeogênese + glicogenólise + resistência insulínica → hiperglicemia.</div>
+  <div class="blk"><b>Proteína</b><br>Proteólise muscular → alanina + <b>glutamina</b>. Balanço N⁻.
+    <div class="simple">(o corpo "come" o próprio músculo pra fazer açúcar e defesa)</div>
+  </div>
+  <div class="blk"><b>Lipídeo</b><br>Lipólise → AGL (combustível do flow) + glicerol (gliconeogênese).</div>
+  <div class="mnem"><b>GAL:</b> Glicose↑ · Aminoácidos · Lipídeo-combustível.</div>
+  <div class="exam"><b>Glutamina</b> = AA + liberado; combustível do enterócito. Flow queima <b>gordura</b>.</div>
+</div>
+
+<!-- INFLAMACAO -->
+<div class="page" data-p="3">
+  <h2>Inflamação</h2>
+  <div class="blk"><b>SIRS (≥2):</b> T &gt;38/&lt;36 · FC&gt;90 · FR&gt;20 · Leuco &gt;12k/&lt;4k.</div>
+  <div class="blk"><b>Pró-inflamatórias — TIL:</b><br>TNF-α · IL-1 · <b>IL-6</b> · IL-8.<br><b>Anti (CARS):</b> IL-10, IL-4, IL-13.</div>
+  <div class="blk"><b>Fase aguda</b><br>↑ PCR, fibrinogênio, ferritina<br>↓ Albumina, pré-albumina, transferrina</div>
+  <div class="exam"><b>IL-6</b> = mediador da fase aguda + gravidade. Albumina/pré-albumina <b>caem</b> (reagentes negativos).</div>
+</div>
+
+<!-- MODULA -->
+<div class="page" data-p="4">
+  <h2>Modula / atenua</h2>
+  <div class="blk">
+    <ul>
+      <li>Analgesia <b>peridural</b></li>
+      <li>Ressuscitação precoce</li>
+      <li><b>Nutrição enteral precoce</b></li>
+      <li>Evitar hipotermia · controlar infecção</li>
+      <li>ERAS / ACERTO · videolaparoscopia</li>
+    </ul>
+  </div>
+  <div class="blk"><b>Nutrição</b><br>Enteral &lt;24–48h · glicemia 140–180 · não hiperalimentar no auge catabólico.</div>
+  <div class="exam"><b>Jejum prolongado intensifica</b> a resposta; peridural/ERAS/VLP atenuam.</div>
+</div>
+
+<!-- MACETES -->
+<div class="page" data-p="5">
+  <h2>Macetes</h2>
+  <div class="mnem"><b>Gatilhos DHI-IT:</b> Dor, Hipovolemia, Infecção, Isquemia, Temperatura.</div>
+  <div class="mnem"><b>Moore:</b> Lá Vou Anabolizar Gordura.</div>
+  <div class="mnem"><b>Descem IST:</b> Insulina, T3, Sexuais.</div>
+  <div class="mnem"><b>Substratos GAL:</b> Glicose, Aminoácidos, Lipídeo.</div>
+  <div class="mnem"><b>Citocinas TIL:</b> TNF-α, IL-1, IL-6.</div>
+  <div class="mnem"><b>Fase aguda ↓ "APT":</b> Albumina, Pré-albumina, Transferrina.</div>
+</div>
+
+<div class="hint">HCPA · GHC · Santa Casa POA · PUC-RS · AMRIGS</div>
+
+<script>
+  var tabs=document.querySelectorAll('.tab');
+  var pages=document.querySelectorAll('.page');
+  tabs.forEach(function(t){
+    t.addEventListener('click',function(){
+      var i=this.getAttribute('data-i');
+      tabs.forEach(function(x){x.classList.remove('on')});
+      pages.forEach(function(p){p.classList.remove('on')});
+      this.classList.add('on');
+      document.querySelector('.page[data-p="'+i+'"]').classList.add('on');
+      this.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'});
+      window.scrollTo({top:0,behavior:'smooth'});
+    });
+  });
+</script>
+</body>
+</html>

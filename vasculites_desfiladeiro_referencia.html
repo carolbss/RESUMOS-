@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vasculites &amp; Desfiladeiro Torácico — carolzita</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0f; --bg2:#12121a; --card:#16161f; --card2:#1c1c27;
+  --line:#2a2a38; --txt:#e6e6ef; --muted:#9a9ab0;
+  --laranja:#f97316; --laranja-bg:rgba(249,115,22,.10);
+  --roxo:#a855f7; --roxo-bg:rgba(168,85,247,.10);
+  --ciano:#22d3ee; --ciano-bg:rgba(34,211,238,.10);
+  --verde:#34d399; --vermelho:#f87171; --amarelo:#fbbf24;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(1200px 600px at 50% -10%,#15151f 0%,var(--bg) 60%);color:var(--txt);font-family:'Inter',sans-serif;line-height:1.55;padding:0 0 80px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px}
+header{padding:40px 0 24px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(26px,6vw,42px);line-height:1.05;margin:8px 0 6px;letter-spacing:-.02em}
+.sub{color:var(--muted);font-size:15px;max-width:700px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tag{font-family:'JetBrains Mono',monospace;font-size:11px;padding:5px 10px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted)}
+.tag.r{color:var(--roxo);border-color:rgba(168,85,247,.35);background:var(--roxo-bg)}
+section{margin-top:14px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:12px;overflow:hidden;transition:border-color .2s}
+details[open]{border-color:rgba(249,115,22,.30)}
+summary{cursor:pointer;list-style:none;padding:18px 20px;display:flex;align-items:center;gap:13px;font-family:'Syne',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em;user-select:none}
+summary::-webkit-details-marker{display:none}
+.num{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--bg);background:var(--laranja);width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:0 0 auto}
+.chev{margin-left:auto;color:var(--muted);transition:transform .25s;font-size:14px}
+details[open] .chev{transform:rotate(90deg)}
+.body{padding:4px 22px 24px;font-size:15px}
+.body p{margin:10px 0}
+.body h4{font-family:'Syne',sans-serif;font-size:16px;color:var(--laranja);margin:20px 0 8px;letter-spacing:-.01em}
+.body ul{margin:8px 0 8px 4px;list-style:none}
+.body li{padding:4px 0 4px 20px;position:relative}
+.body li::before{content:"▸";position:absolute;left:0;color:var(--laranja);font-size:12px;top:6px}
+.body strong{color:#fff;font-weight:600}
+.simple{color:var(--ciano);font-style:italic;font-size:.94em}
+.box{border-radius:12px;padding:13px 15px;margin:14px 0;font-size:14px;border:1px solid}
+.box.prova{background:var(--roxo-bg);border-color:rgba(168,85,247,.35)}
+.box.prova .lbl{color:var(--roxo)}
+.box.mac{background:var(--ciano-bg);border-color:rgba(34,211,238,.35)}
+.box.mac .lbl{color:var(--ciano)}
+.box.warn{background:rgba(248,113,113,.08);border-color:rgba(248,113,113,.3)}
+.box.warn .lbl{color:var(--vermelho)}
+.lbl{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-family:'JetBrains Mono',monospace;font-size:10px;background:rgba(168,85,247,.2);color:var(--roxo);padding:2px 7px;border-radius:6px;margin-left:6px;white-space:nowrap}
+.tbl{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
+.tbl table{width:100%;border-collapse:collapse;min-width:520px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--laranja);background:var(--card2)}
+td strong{color:#fff}
+.fio td:first-child{color:var(--ciano);font-family:'JetBrains Mono',monospace;font-weight:500}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin:14px 0}
+.gcard{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+.gcard .t{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--ciano);margin-bottom:4px}
+.gcard .d{font-size:13px;color:var(--muted)}
+.hands{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.hand{border-radius:12px;padding:14px;border:1px solid var(--line)}
+.hand.e{background:rgba(34,211,238,.06);border-color:rgba(34,211,238,.25)}
+.hand.d{background:rgba(249,115,22,.06);border-color:rgba(249,115,22,.25)}
+.hand .ht{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;font-weight:700}
+.hand.e .ht{color:var(--ciano)} .hand.d .ht{color:var(--laranja)}
+.hand li{font-size:13px}
+.steps{counter-reset:s;margin:10px 0}
+.step{counter-increment:s;position:relative;padding:11px 0 11px 46px;border-bottom:1px dashed var(--line)}
+.step:last-child{border-bottom:none}
+.step::before{content:counter(s);position:absolute;left:0;top:9px;width:30px;height:30px;border-radius:9px;background:var(--laranja-bg);border:1px solid rgba(249,115,22,.4);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:grid;place-items:center}
+.step b{color:#fff}
+svg{max-width:100%;height:auto;display:block;margin:16px auto}
+.fig{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.fig .cap{font-size:12px;color:var(--muted);text-align:center;margin-top:8px;font-family:'JetBrains Mono',monospace}
+footer{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+footer .ref{font-family:'JetBrains Mono',monospace;font-size:12px;margin-top:8px}
+a{color:var(--laranja)}
+@media(max-width:560px){.hands{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">carolzita · cirurgia vascular</div>
+  <h1>Vasculites &amp; Desfiladeiro Torácico</h1>
+  <p class="sub">Síndrome do desfiladeiro torácico (neurogênica, venosa, arterial) · tromboangiite obliterante (Buerger) · arterite de Takayasu. Base: Society for Vascular Surgery Reporting Standards for TOS, ACR/Vasculitis Foundation 2021, e pegadinhas das bancas do RS.</p>
+  <div class="tags">
+    <span class="tag">nTOS/vTOS/aTOS</span>
+    <span class="tag">Paget-Schroetter</span>
+    <span class="tag">Buerger</span>
+    <span class="tag">Takayasu</span>
+    <span class="tag">Pulseless disease</span>
+    <span class="tag r">HCPA · GHC · SC-POA · PUC · AMRIGS</span>
+  </div>
+</header>
+
+<!-- 1 TOS ANATOMIA E TIPOS -->
+<details open>
+  <summary><span class="num">1</span> Síndrome do desfiladeiro torácico — anatomia &amp; tipos <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>Compressão das estruturas neurovasculares (plexo braquial, artéria e veia subclávias) ao passarem pelo desfiladeiro torácico — <strong>3 subtipos</strong>, com prevalências muito distintas:</p>
+
+    <div class="fig">
+      <svg viewBox="0 0 640 200" xmlns="http://www.w3.org/2000/svg">
+        <text x="320" y="18" fill="#9a9ab0" font-size="11" font-family="monospace" text-anchor="middle">prevalência relativa dos 3 tipos de TOS</text>
+        <rect x="60" y="40" width="300" height="100" fill="#22d3ee" opacity=".2" stroke="#22d3ee" stroke-width="1.5"/>
+        <text x="210" y="85" fill="#22d3ee" font-size="16" font-family="monospace" text-anchor="middle" font-weight="bold">Neurogênico</text>
+        <text x="210" y="110" fill="#22d3ee" font-size="20" font-family="monospace" text-anchor="middle" font-weight="bold">~95%</text>
+        <rect x="370" y="70" width="110" height="70" fill="#a855f7" opacity=".2" stroke="#a855f7" stroke-width="1.5"/>
+        <text x="425" y="100" fill="#a855f7" font-size="12" font-family="monospace" text-anchor="middle" font-weight="bold">Venoso</text>
+        <text x="425" y="120" fill="#a855f7" font-size="15" font-family="monospace" text-anchor="middle" font-weight="bold">~4%</text>
+        <rect x="490" y="95" width="90" height="45" fill="#f87171" opacity=".2" stroke="#f87171" stroke-width="1.5"/>
+        <text x="535" y="115" fill="#f87171" font-size="10" font-family="monospace" text-anchor="middle" font-weight="bold">Arterial</text>
+        <text x="535" y="130" fill="#f87171" font-size="12" font-family="monospace" text-anchor="middle" font-weight="bold">~1%</text>
+      </svg>
+      <div class="cap">O tipo neurogênico domina amplamente (~95% dos casos) — vascular (venoso+arterial) é raro, mas tem sinais clínicos objetivos muito mais evidentes.</div>
+    </div>
+
+    <div class="tbl"><table>
+      <tr><th>Tipo</th><th>Estrutura comprimida</th><th>Apresentação</th></tr>
+      <tr><td><strong>Neurogênico (nTOS)</strong></td><td>Plexo braquial (tronco inferior, principalmente)</td><td>Dor, parestesia, fraqueza — diagnóstico <strong>clínico</strong>, difícil, frequentemente de exclusão</td></tr>
+      <tr><td><strong>Venoso (vTOS)</strong></td><td>Veia subclávia</td><td>Edema, cianose, veias colaterais — <strong>síndrome de Paget-Schroetter</strong> (trombose de esforço)</td></tr>
+      <tr><td><strong>Arterial (aTOS)</strong></td><td>Artéria subclávia</td><td>Extremidade fria, pálida, êmbolos digitais — frequentemente associado a <strong>costela cervical</strong></td></tr>
+    </table></div>
+
+    <div class="box warn"><span class="lbl">⚠ pegadinha</span>Os tipos <strong>vascular (venoso/arterial) têm sinais clínicos objetivos</strong> (edema, cianose, isquemia) — se não houver esses achados, questionar o diagnóstico de TOS vascular. O neurogênico é diagnóstico de <strong>exclusão/clínico</strong>, sem teste confirmatório único definitivo.</div>
+  </div>
+</details>
+
+<!-- 2 NTOS -->
+<details>
+  <summary><span class="num">2</span> TOS neurogênico — diagnóstico &amp; tratamento <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>Compressão do plexo braquial em um de três pontos possíveis: <strong>triângulo interescalênico</strong>, <strong>espaço costoclavicular</strong>, ou <strong>espaço retropeitoral menor</strong> (síndrome do peitoral menor).</p>
+
+    <h4>Diagnóstico — desafio clínico</h4>
+    <ul>
+      <li>Sem teste laboratorial ou de imagem <strong>isoladamente confirmatório</strong> — combinação de história, exame físico, manobras provocativas, e eletrodiagnóstico de apoio.</li>
+      <li>Importante <strong>diferenciar nTOS verdadeiro</strong> do chamado "TOS disputado" (dor cervicoescapular inespecífica) — cirurgia em casos disputados tem <strong>desfechos ruins</strong>.</li>
+    </ul>
+
+    <h4>Tratamento escalonado</h4>
+    <div class="steps">
+      <div class="step"><b>1. Fisioterapia</b> direcionada (alongamento de escalenos/peitoral menor, correção postural) — tratamento inicial na <strong>grande maioria</strong> dos pacientes.</div>
+      <div class="step"><b>2. Injeções guiadas</b> (anestésico ± toxina botulínica no escaleno anterior) podem ter papel diagnóstico e terapêutico.</div>
+      <div class="step"><b>3. Cirurgia</b> (ressecção da 1ª costela ± escalenectomia) reservada para falha do tratamento conservador bem conduzido.</div>
+    </div>
+    <div class="box warn"><span class="lbl">⚠ pegadinha</span>Indicar cirurgia sem <strong>diagnóstico bem estabelecido</strong> de nTOS verdadeiro (vs. disputado) está associado a <strong>maus resultados</strong> — a maioria dos pacientes com suspeita de nTOS deve completar fisioterapia antes de considerar cirurgia.</div>
+  </div>
+</details>
+
+<!-- 3 VTOS E ATOS -->
+<details>
+  <summary><span class="num">3</span> TOS venoso &amp; arterial <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>TOS venoso — síndrome de Paget-Schroetter</h4>
+    <p><strong>Trombose de esforço</strong> da veia subclávia/axilar, tipicamente em jovens atletas ou trabalhadores com atividade repetitiva de membro superior acima da cabeça.</p>
+    <div class="steps">
+      <div class="step"><b>1. Anticoagulação</b> imediata ao diagnóstico de TVP.</div>
+      <div class="step"><b>2. Trombólise</b> (frequentemente guiada por cateter) nos casos agudos, para restaurar patência.</div>
+      <div class="step"><b>3. Ressecção da 1ª costela</b> — geralmente indicada após a fase aguda, para descomprimir definitivamente e prevenir recidiva.</div>
+    </div>
+    <div class="box mac"><span class="lbl">macete</span>Paget-Schroetter = <strong>"trombose do esforço"</strong> — pensar em jovem atlético com edema/cianose de braço após atividade repetitiva overhead (natação, arremesso, musculação).</div>
+
+    <h4>TOS arterial</h4>
+    <p>Mais raro; frequentemente associado a <strong>anomalia óssea</strong> (costela cervical, 1ª costela anômala) causando compressão crônica → dilatação pós-estenótica → <strong>trombose ou embolização distal</strong> (isquemia digital).</p>
+    <ul>
+      <li>Tratamento definitivo: <strong>ressecção da costela cervical/1ª costela</strong> + reparo arterial (se aneurisma/trombose associada).</li>
+    </ul>
+
+    <h4>Ressecção da 1ª costela — o denominador comum cirúrgico</h4>
+    <p>Tratamento definitivo em todos os tipos que falham conservador ou têm indicação vascular clara — pode ser feita por via <strong>supraclavicular, transaxilar, ou endoscópica/robótica</strong>, conforme preferência e experiência do centro.</p>
+  </div>
+</details>
+
+<!-- 4 BUERGER -->
+<details>
+  <summary><span class="num">4</span> Tromboangiite obliterante (doença de Buerger) <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>Doença inflamatória <strong>segmentar, não-aterosclerótica</strong>, de artérias e veias de pequeno/médio calibre, com trombose e recanalização — fortemente ligada ao <strong>tabagismo</strong>.</p>
+
+    <div class="fig">
+      <svg viewBox="0 0 640 220" xmlns="http://www.w3.org/2000/svg">
+        <text x="320" y="18" fill="#9a9ab0" font-size="11" font-family="monospace" text-anchor="middle">critérios diagnósticos — doença de Buerger</text>
+        <g font-family="monospace" font-size="12">
+          <circle cx="80" cy="50" r="6" fill="#22d3ee"/>
+          <text x="100" y="55" fill="#e6e6ef">Idade &lt; 45 anos</text>
+          <circle cx="80" cy="80" r="6" fill="#22d3ee"/>
+          <text x="100" y="85" fill="#e6e6ef">Tabagismo atual ou recente</text>
+          <circle cx="80" cy="110" r="6" fill="#22d3ee"/>
+          <text x="100" y="115" fill="#e6e6ef">Isquemia distal (claudicação/dor repouso/úlcera)</text>
+          <circle cx="80" cy="140" r="6" fill="#f97316"/>
+          <text x="100" y="145" fill="#e6e6ef">Excluir doença autoimune, trombofilia, DM</text>
+          <circle cx="80" cy="170" r="6" fill="#f97316"/>
+          <text x="100" y="175" fill="#e6e6ef">Excluir fonte embólica proximal</text>
+          <circle cx="80" cy="200" r="6" fill="#f97316"/>
+          <text x="100" y="205" fill="#e6e6ef">Arteriografia consistente (bilateral)</text>
+        </g>
+      </svg>
+      <div class="cap">Diagnóstico clínico por critérios de exclusão — sem biomarcador específico; arteriografia mostra padrão característico (vasos "em saca-rolha", colaterais).</div>
+    </div>
+
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">todas as bancas</span></span>O tratamento mais eficaz e o <strong>único que realmente modifica o curso da doença</strong> é a <strong>cessação completa do tabagismo</strong> — nenhuma outra intervenção (vasodilatador, anticoagulante, revascularização, simpatectomia) tem eficácia comprovada de forma consistente para prevenir amputação sem a interrupção do tabaco.</div>
+    <div class="box warn"><span class="lbl">⚠ pegadinha</span>Revascularização cirúrgica costuma ter <strong>opções limitadas</strong> — a doença afeta vasos distais pequenos, frequentemente sem leito distal adequado para bypass. Manejo é predominantemente clínico + cessação tabágica.</div>
+  </div>
+</details>
+
+<!-- 5 TAKAYASU -->
+<details>
+  <summary><span class="num">5</span> Arterite de Takayasu — "doença sem pulso" <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>Vasculite <strong>granulomatosa de grandes vasos</strong> (aorta e ramos principais), predominante em <strong>mulheres jovens</strong> (tipicamente &lt;40 anos), com forte predileção por descendência asiática.</p>
+
+    <div class="fig">
+      <svg viewBox="0 0 640 160" xmlns="http://www.w3.org/2000/svg">
+        <text x="320" y="18" fill="#9a9ab0" font-size="11" font-family="monospace" text-anchor="middle">evolução em 2 fases</text>
+        <rect x="60" y="40" width="240" height="80" rx="10" fill="#fbbf24" opacity=".18" stroke="#fbbf24" stroke-width="1.5"/>
+        <text x="180" y="65" fill="#fbbf24" font-size="13" font-family="monospace" text-anchor="middle" font-weight="bold">fase "pré-pulseless"</text>
+        <text x="180" y="88" fill="#fff" font-size="11" font-family="monospace" text-anchor="middle">sintomas constitucionais</text>
+        <text x="180" y="104" fill="#fff" font-size="11" font-family="monospace" text-anchor="middle">(febre, mal-estar) — frequentemente <tspan fill="#f87171">perdida</tspan></text>
+        <path d="M300 80 L340 80" stroke="#9a9ab0" stroke-width="2"/>
+        <rect x="340" y="40" width="240" height="80" rx="10" fill="#f87171" opacity=".18" stroke="#f87171" stroke-width="1.5"/>
+        <text x="460" y="65" fill="#f87171" font-size="13" font-family="monospace" text-anchor="middle" font-weight="bold">fase "pulseless"</text>
+        <text x="460" y="88" fill="#fff" font-size="11" font-family="monospace" text-anchor="middle">pulsos ausentes, sopros,</text>
+        <text x="460" y="104" fill="#fff" font-size="11" font-family="monospace" text-anchor="middle">claudicação, HAS renovascular</text>
+      </svg>
+      <div class="cap">A fase inicial "pré-pulseless" é frequentemente perdida por ser inespecífica — o diagnóstico costuma ocorrer já na fase de estenose/oclusão estabelecida ("pulseless").</div>
+    </div>
+
+    <h4>Diagnóstico</h4>
+    <ul>
+      <li>Sem <strong>teste laboratorial específico</strong> — marcadores inflamatórios (VHS, PCR) são inespecíficos.</li>
+      <li>Baseado em <strong>suspeita clínica</strong> (mulher jovem, constitucional + pulsos diminuídos/ausentes) + <strong>imagem</strong> (angio-TC, angio-RM mostrando espessamento/estenose de aorta e ramos).</li>
+    </ul>
+
+    <h4>Tratamento</h4>
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">ACR/Vasculitis Foundation 2021</span></span><strong>Corticosteroide é a base</strong> do tratamento na fase ativa — <strong>angioplastia/revascularização não deve ser feita durante a fase inflamatória ativa</strong> (maior risco de reestenose e complicações). Intervenção (angioplastia com stent ou cirurgia aberta) é reservada para lesões críticas <strong>após controle da inflamação</strong>.</div>
+    <div class="box warn"><span class="lbl">⚠ pegadinha</span>Diferenciar de <strong>arterite de células gigantes (GCA)</strong> — quadros clínicos/histopatológicos parecidos, mas GCA acomete pacientes <strong>mais velhos</strong> (tipicamente &gt;50 anos), enquanto Takayasu é doença de <strong>jovens</strong>.</div>
+  </div>
+</details>
+
+<!-- 6 QUESTOES / PEGA-RATOES -->
+<details>
+  <summary><span class="num">6</span> Questões de banca, pega-ratões &amp; mnemônicos <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>10 questões representativas (originais, estilo das 5 bancas)</h4>
+
+    <div class="box prova"><span class="lbl">Q1 <span class="banca">HCPA</span></span><strong>Qual o tipo mais comum de TOS?</strong><br>Resposta: <strong>neurogênico</strong> (~95% dos casos).</div>
+
+    <div class="box prova"><span class="lbl">Q2 <span class="banca">GHC</span></span><strong>Jovem atleta com edema e cianose súbitos de braço após treino intenso de natação. Diagnóstico?</strong><br>Resposta: <strong>síndrome de Paget-Schroetter</strong> (TOS venoso, trombose de esforço).</div>
+
+    <div class="box prova"><span class="lbl">Q3 <span class="banca">AMRIGS</span></span><strong>Paciente com suspeita de nTOS. Conduta inicial antes de considerar cirurgia?</strong><br>Resposta: <strong>fisioterapia direcionada</strong> — tratamento de 1ª linha na maioria dos casos.</div>
+
+    <div class="box prova"><span class="lbl">Q4 <span class="banca">PUC-RS</span></span><strong>Qual o tratamento mais eficaz e único comprovadamente modificador da doença de Buerger?</strong><br>Resposta: <strong>cessação completa do tabagismo</strong>.</div>
+
+    <div class="box prova"><span class="lbl">Q5 <span class="banca">SC-POA</span></span><strong>Homem de 30 anos, tabagista, com dor em repouso e úlceras digitais, sem fonte embólica proximal, arteriografia com padrão característico bilateral. Diagnóstico?</strong><br>Resposta: <strong>tromboangiite obliterante (Buerger)</strong>.</div>
+
+    <div class="box prova"><span class="lbl">Q6 <span class="banca">HCPA</span></span><strong>Mulher de 28 anos com febre, mal-estar e perda de peso há meses, agora com pulsos radiais diminuídos e sopro carotídeo. Diagnóstico e fase?</strong><br>Resposta: <strong>arterite de Takayasu</strong>, fase <strong>"pulseless"</strong> (a fase pré-pulseless provavelmente passou despercebida).</div>
+
+    <div class="box prova"><span class="lbl">Q7 <span class="banca">GHC</span></span><strong>Paciente com Takayasu em fase inflamatória ativa e estenose crítica de subclávia. Deve-se angioplastar agora?</strong><br>Resposta: <strong>não</strong> — evitar intervenção na fase ativa; tratar com corticoide primeiro, intervir após controle inflamatório.</div>
+
+    <div class="box prova"><span class="lbl">Q8 <span class="banca">AMRIGS</span></span><strong>Como diferenciar Takayasu de arterite de células gigantes (GCA) pela idade?</strong><br>Resposta: Takayasu acomete <strong>jovens</strong> (&lt;40 anos); GCA acomete pacientes <strong>mais velhos</strong> (&gt;50 anos).</div>
+
+    <div class="box prova"><span class="lbl">Q9 <span class="banca">PUC-RS</span></span><strong>Paciente com isquemia digital, costela cervical à imagem, dilatação pós-estenótica da artéria subclávia. Diagnóstico e tratamento definitivo?</strong><br>Resposta: <strong>TOS arterial</strong> — ressecção da costela cervical/1ª costela + reparo arterial.</div>
+
+    <div class="box prova"><span class="lbl">Q10 <span class="banca">SC-POA</span></span><strong>Paciente com dor cervicoescapular inespecífica, sem achados objetivos claros de nTOS. Indicar cirurgia de desfiladeiro?</strong><br>Resposta: <strong>não</strong> — "TOS disputado" tem maus resultados cirúrgicos; diagnóstico de nTOS verdadeiro deve ser bem estabelecido antes.</div>
+
+    <h4>Pega-ratões (as armadilhas clássicas)</h4>
+    <div class="box warn"><span class="lbl">☠ trap 1</span>nTOS não tem teste confirmatório único — diagnóstico é clínico/de exclusão.</div>
+    <div class="box warn"><span class="lbl">☠ trap 2</span>TOS vascular precisa de <strong>sinais objetivos</strong> — sem eles, questionar o diagnóstico.</div>
+    <div class="box warn"><span class="lbl">☠ trap 3</span>Cirurgia em "TOS disputado" tem desfecho ruim — não pular a fisioterapia.</div>
+    <div class="box warn"><span class="lbl">☠ trap 4</span>Buerger: nada substitui a <strong>cessação do tabagismo</strong>.</div>
+    <div class="box warn"><span class="lbl">☠ trap 5</span>Takayasu: <strong>não</strong> angioplastar na fase ativa.</div>
+    <div class="box warn"><span class="lbl">☠ trap 6</span>Takayasu × GCA: idade é o principal discriminador.</div>
+    <div class="box warn"><span class="lbl">☠ trap 7</span>Fase "pré-pulseless" da Takayasu é frequentemente perdida por ser inespecífica.</div>
+    <div class="box warn"><span class="lbl">☠ trap 8</span>Buerger tem opções limitadas de revascularização — vasos distais pequenos.</div>
+
+    <h4>Mnemônicos-resumo</h4>
+    <div class="box mac"><span class="lbl">macete geral</span>TOS: neurogênico95%(fisio primeiro)·venoso4%(Paget-Schroetter)·arterial1%(costela cervical) · Buerger: jovem+tabaco+isquemia distal, exclui outras causas, só parar de fumar funciona · Takayasu: mulher jovem, pré-pulseless→pulseless, esteroide primeiro, angioplastia só após controle inflamatório.</div>
+  </div>
+</details>
+
+<footer>
+  <div><strong>carolzita</strong> · Vasculites &amp; Desfiladeiro Torácico · referência completa</div>
+  <div class="ref">Fontes: Society for Vascular Surgery Reporting Standards for TOS · ACR/Vasculitis Foundation Guideline for GCA and Takayasu Arteritis (2021) · Sabiston · Zollinger. Conteúdo educacional; questões são itens representativos originais.</div>
+</footer>
+</div>
+</body>
+</html>

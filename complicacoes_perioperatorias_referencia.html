@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Complicações Pré &amp; Pós-operatórias — carolzita</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0f; --bg2:#12121a; --card:#16161f; --card2:#1c1c27;
+  --line:#2a2a38; --txt:#e6e6ef; --muted:#9a9ab0;
+  --laranja:#f97316; --laranja-bg:rgba(249,115,22,.10);
+  --roxo:#a855f7; --roxo-bg:rgba(168,85,247,.10);
+  --ciano:#22d3ee; --ciano-bg:rgba(34,211,238,.10);
+  --verde:#34d399; --vermelho:#f87171; --amarelo:#fbbf24;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(1200px 600px at 50% -10%,#15151f 0%,var(--bg) 60%);color:var(--txt);font-family:'Inter',sans-serif;line-height:1.55;padding:0 0 80px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px}
+header{padding:40px 0 24px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(26px,6vw,42px);line-height:1.05;margin:8px 0 6px;letter-spacing:-.02em}
+.sub{color:var(--muted);font-size:15px;max-width:700px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tag{font-family:'JetBrains Mono',monospace;font-size:11px;padding:5px 10px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted)}
+.tag.r{color:var(--roxo);border-color:rgba(168,85,247,.35);background:var(--roxo-bg)}
+section{margin-top:14px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:12px;overflow:hidden;transition:border-color .2s}
+details[open]{border-color:rgba(249,115,22,.30)}
+summary{cursor:pointer;list-style:none;padding:18px 20px;display:flex;align-items:center;gap:13px;font-family:'Syne',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em;user-select:none}
+summary::-webkit-details-marker{display:none}
+.num{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--bg);background:var(--laranja);width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:0 0 auto}
+.chev{margin-left:auto;color:var(--muted);transition:transform .25s;font-size:14px}
+details[open] .chev{transform:rotate(90deg)}
+.body{padding:4px 22px 24px;font-size:15px}
+.body p{margin:10px 0}
+.body h4{font-family:'Syne',sans-serif;font-size:16px;color:var(--laranja);margin:20px 0 8px;letter-spacing:-.01em}
+.body ul{margin:8px 0 8px 4px;list-style:none}
+.body li{padding:4px 0 4px 20px;position:relative}
+.body li::before{content:"▸";position:absolute;left:0;color:var(--laranja);font-size:12px;top:6px}
+.body strong{color:#fff;font-weight:600}
+.simple{color:var(--ciano);font-style:italic;font-size:.94em}
+.box{border-radius:12px;padding:13px 15px;margin:14px 0;font-size:14px;border:1px solid}
+.box.prova{background:var(--roxo-bg);border-color:rgba(168,85,247,.35)}
+.box.prova .lbl{color:var(--roxo)}
+.box.mac{background:var(--ciano-bg);border-color:rgba(34,211,238,.35)}
+.box.mac .lbl{color:var(--ciano)}
+.box.warn{background:rgba(248,113,113,.08);border-color:rgba(248,113,113,.3)}
+.box.warn .lbl{color:var(--vermelho)}
+.lbl{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-family:'JetBrains Mono',monospace;font-size:10px;background:rgba(168,85,247,.2);color:var(--roxo);padding:2px 7px;border-radius:6px;margin-left:6px;white-space:nowrap}
+.tbl{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
+.tbl table{width:100%;border-collapse:collapse;min-width:520px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--laranja);background:var(--card2)}
+td strong{color:#fff}
+.fio td:first-child{color:var(--ciano);font-family:'JetBrains Mono',monospace;font-weight:500}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin:14px 0}
+.gcard{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+.gcard .t{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--ciano);margin-bottom:4px}
+.gcard .d{font-size:13px;color:var(--muted)}
+.hands{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.hand{border-radius:12px;padding:14px;border:1px solid var(--line)}
+.hand.e{background:rgba(34,211,238,.06);border-color:rgba(34,211,238,.25)}
+.hand.d{background:rgba(249,115,22,.06);border-color:rgba(249,115,22,.25)}
+.hand .ht{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;font-weight:700}
+.hand.e .ht{color:var(--ciano)} .hand.d .ht{color:var(--laranja)}
+.hand li{font-size:13px}
+.steps{counter-reset:s;margin:10px 0}
+.step{counter-increment:s;position:relative;padding:11px 0 11px 46px;border-bottom:1px dashed var(--line)}
+.step:last-child{border-bottom:none}
+.step::before{content:counter(s);position:absolute;left:0;top:9px;width:30px;height:30px;border-radius:9px;background:var(--laranja-bg);border:1px solid rgba(249,115,22,.4);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:grid;place-items:center}
+.step b{color:#fff}
+svg{max-width:100%;height:auto;display:block;margin:16px auto}
+.fig{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.fig .cap{font-size:12px;color:var(--muted);text-align:center;margin-top:8px;font-family:'JetBrains Mono',monospace}
+footer{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+footer .ref{font-family:'JetBrains Mono',monospace;font-size:12px;margin-top:8px}
+a{color:var(--laranja)}
+@media(max-width:560px){.hands{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">carolzita · cirurgia geral · perioperatório</div>
+  <h1>Complicações Pré &amp; Pós-operatórias</h1>
+  <p class="sub">Avaliação de risco cardiovascular (ACC/AHA 2024) · otimização pré-operatória · febre pós-operatória (5 W's) · deiscência e evisceração · profilaxia de TEV (Caprini). Base: 2024 AHA/ACC/Multisociety Perioperative Guideline, CHEST/Caprini VTE prophylaxis, e pegadinhas das bancas do RS.</p>
+  <div class="tags">
+    <span class="tag">ACC/AHA 2024</span>
+    <span class="tag">RCRI · METs</span>
+    <span class="tag">5 W's</span>
+    <span class="tag">Deiscência</span>
+    <span class="tag">Caprini</span>
+    <span class="tag r">HCPA · GHC · SC-POA · PUC · AMRIGS</span>
+  </div>
+</header>
+
+<!-- 1 RISCO CARDIOVASCULAR -->
+<details open>
+  <summary><span class="num">1</span> Avaliação de risco cardiovascular · ACC/AHA 2024 <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>Em <strong>setembro de 2024</strong>, ACC/AHA publicaram nova diretriz de manejo cardiovascular perioperatório para cirurgia não cardíaca, <strong>substituindo a versão de 2014</strong>. Mantém a lógica de algoritmo escalonado, mas adiciona uma etapa nova de "modificadores de risco".</p>
+
+    <div class="fig">
+      <svg viewBox="0 0 640 340" xmlns="http://www.w3.org/2000/svg">
+        <g font-family="monospace" font-size="12" text-anchor="middle">
+          <rect x="220" y="10" width="200" height="40" rx="10" fill="#f97316" opacity=".2" stroke="#f97316" stroke-width="1.5"/>
+          <text x="320" y="35" fill="#f97316" font-weight="bold">Cirurgia é urgente/emergência?</text>
+          <line x1="320" y1="50" x2="150" y2="80" stroke="#9a9ab0" stroke-width="1.5"/>
+          <text x="160" y="70" fill="#f87171">sim</text>
+          <rect x="40" y="80" width="220" height="40" rx="10" fill="#f87171" opacity=".18" stroke="#f87171" stroke-width="1.5"/>
+          <text x="150" y="105" fill="#f87171">Operar — sem tempo p/ avaliação</text>
+
+          <line x1="320" y1="50" x2="480" y2="80" stroke="#9a9ab0" stroke-width="1.5"/>
+          <text x="460" y="70" fill="#34d399">não</text>
+          <rect x="380" y="80" width="220" height="40" rx="10" fill="#22d3ee" opacity=".18" stroke="#22d3ee" stroke-width="1.5"/>
+          <text x="490" y="105" fill="#22d3ee">Estimar risco (RCRI/calculadora)</text>
+
+          <line x1="490" y1="120" x2="490" y2="145" stroke="#9a9ab0" stroke-width="1.5"/>
+          <rect x="380" y="145" width="220" height="40" rx="10" fill="#a855f7" opacity=".18" stroke="#a855f7" stroke-width="1.5"/>
+          <text x="490" y="170" fill="#a855f7">Avaliar modificadores de risco</text>
+
+          <line x1="490" y1="185" x2="490" y2="210" stroke="#9a9ab0" stroke-width="1.5"/>
+          <rect x="380" y="210" width="220" height="40" rx="10" fill="#fbbf24" opacity=".18" stroke="#fbbf24" stroke-width="1.5"/>
+          <text x="490" y="235" fill="#fbbf24">Capacidade funcional (METs)</text>
+
+          <line x1="490" y1="250" x2="380" y2="280" stroke="#9a9ab0" stroke-width="1.5"/>
+          <line x1="490" y1="250" x2="600" y2="280" stroke="#9a9ab0" stroke-width="1.5"/>
+          <text x="340" y="270" fill="#34d399" font-size="10">≥4 METs</text>
+          <text x="610" y="270" fill="#f87171" font-size="10" text-anchor="end">&lt;4 METs</text>
+          <rect x="270" y="280" width="180" height="40" rx="10" fill="#34d399" opacity=".18" stroke="#34d399" stroke-width="1.5"/>
+          <text x="360" y="305" fill="#34d399">Prossegue p/ cirurgia</text>
+          <rect x="470" y="280" width="150" height="40" rx="10" fill="#f87171" opacity=".18" stroke="#f87171" stroke-width="1.5"/>
+          <text x="545" y="298" fill="#f87171" font-size="10">Considerar exame</text>
+          <text x="545" y="312" fill="#f87171" font-size="10">adicional se muda conduta</text>
+        </g>
+      </svg>
+      <div class="cap">Algoritmo escalonado ACC/AHA 2024: estimar risco → avaliar modificadores (nova etapa) → capacidade funcional em METs → decisão. Testes adicionais só se o resultado for realmente mudar a conduta.</div>
+    </div>
+
+    <h4>O que mudou em relação a 2014</h4>
+    <ul>
+      <li><strong>Não recomenda mais uma calculadora específica</strong> — RCRI, MICA, ACS-SRC e outras (ex: AUB-HAS2) são aceitáveis; não há evidência de superioridade de uma sobre as outras.</li>
+      <li><strong>Nova etapa de "modificadores de risco"</strong>: doenças associadas a risco aumentado, mas não capturadas pelos calculadores tradicionais.</li>
+      <li>Mantido o corte de <strong>4 METs</strong> como limiar de capacidade funcional aceitável.</li>
+      <li><strong>Risco elevado</strong> = ≥1% de risco de evento cardiovascular maior (MACE) — engloba risco intermediário e alto.</li>
+    </ul>
+
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">ACC/AHA 2024 — todas as bancas</span></span>Se a questão perguntar "qual calculadora a diretriz atual recomenda", a resposta correta é que <strong>não há recomendação de uma única calculadora</strong> — mudança importante em relação à diretriz de 2014, que citava RCRI/MICA/ACS-SRC de forma mais prescritiva.</div>
+
+    <h4>Revised Cardiac Risk Index (RCRI) — os 6 critérios (ainda usado na prática)</h4>
+    <div class="box mac"><span class="lbl">macete</span>Cirurgia de <strong>alto risco</strong> · Doença cardíaca <strong>isquêmica</strong> · <strong>ICC</strong> · Doença cerebrovascular (AVC/AIT) · <strong>Diabetes insulino-dependente</strong> · Creatinina &gt;2 mg/dL. Cada item = 1 ponto; ≥3 pontos = risco elevado de evento cardíaco maior.</div>
+
+    <h4>Capacidade funcional — o teste da escada</h4>
+    <p><strong>4 METs</strong> = conseguir subir 2 lances de escada, caminhar em ritmo rápido no plano, ou fazer trabalho doméstico pesado sem sintomas. <span class="simple">(é o "teste prático" que substitui exames caros — se a pessoa aguenta uma atividade moderada do dia a dia sem sentir falta de ar ou dor no peito, o coração provavelmente aguenta a cirurgia)</span></p>
+  </div>
+</details>
+
+<!-- 2 OTIMIZACAO PRE-OP -->
+<details>
+  <summary><span class="num">2</span> Otimização pré-operatória <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Jejum pré-operatório (protocolos ERAS/ACERTO)</h4>
+    <ul>
+      <li><strong>Líquidos claros</strong> (água, chá sem leite, bebida carboidratada) permitidos até <strong>2 horas</strong> antes da anestesia.</li>
+      <li><strong>Sólidos</strong>: jejum de <strong>6-8 horas</strong> (varia por tipo de refeição — refeição leve 6h, gordurosa/carne 8h).</li>
+      <li>Jejum prolongado desnecessário só aumenta resistência insulínica e desconforto — não é "mais seguro".</li>
+    </ul>
+
+    <h4>Fatores modificáveis a otimizar antes da cirurgia eletiva</h4>
+    <div class="grid">
+      <div class="gcard"><div class="t">Anemia</div><div class="d">Investigar e tratar antes de cirurgias eletivas de grande porte — reduz necessidade transfusional</div></div>
+      <div class="gcard"><div class="t">Glicemia</div><div class="d">HbA1c elevada aumenta risco de infecção de sítio cirúrgico — otimizar controle glicêmico</div></div>
+      <div class="gcard"><div class="t">Tabagismo</div><div class="d">Cessação ≥4 semanas antes reduz complicações pulmonares e de cicatrização</div></div>
+      <div class="gcard"><div class="t">Nutrição</div><div class="d">Triagem nutricional; suplementação se desnutrição/risco identificado</div></div>
+      <div class="gcard"><div class="t">Medicações crônicas</div><div class="d">Decisão individualizada sobre manter/suspender (ex: anticoagulantes, antiagregantes, hipoglicemiantes)</div></div>
+      <div class="gcard"><div class="t">Descolonização</div><div class="d">Protocolos de banho com clorexidina/mupirocina nasal em cirurgias de alto risco de ISC</div></div>
+    </div>
+  </div>
+</details>
+
+<!-- 3 FEBRE POS-OP -->
+<details>
+  <summary><span class="num">3</span> Febre pós-operatória — os 5 W's <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>Mnemônico clássico organizado pela <strong>janela temporal</strong> em que cada causa predomina — embora as causas se sobreponham na prática.</p>
+
+    <div class="fig">
+      <svg viewBox="0 0 640 220" xmlns="http://www.w3.org/2000/svg">
+        <line x1="50" y1="180" x2="600" y2="180" stroke="#2a2a38" stroke-width="1.5"/>
+        <text x="50" y="200" fill="#9a9ab0" font-size="9" font-family="monospace">POD 0</text>
+        <text x="600" y="200" fill="#9a9ab0" font-size="9" font-family="monospace" text-anchor="end">POD 7+</text>
+        <!-- blocos temporais -->
+        <rect x="50"  y="30" width="90"  height="140" fill="#22d3ee" opacity=".14" stroke="#22d3ee" stroke-width="1.5"/>
+        <text x="95"  y="50" fill="#22d3ee" font-size="12" font-family="monospace" text-anchor="middle" font-weight="bold">WIND</text>
+        <text x="95" y="66" fill="#22d3ee" font-size="9" font-family="monospace" text-anchor="middle">(pulmão)</text>
+        <text x="95" y="90" fill="#9a9ab0" font-size="9" font-family="monospace" text-anchor="middle">24-48h</text>
+
+        <rect x="150" y="30" width="90" height="140" fill="#fbbf24" opacity=".14" stroke="#fbbf24" stroke-width="1.5"/>
+        <text x="195" y="50" fill="#fbbf24" font-size="12" font-family="monospace" text-anchor="middle" font-weight="bold">WATER</text>
+        <text x="195" y="66" fill="#fbbf24" font-size="9" font-family="monospace" text-anchor="middle">(urina)</text>
+        <text x="195" y="90" fill="#9a9ab0" font-size="9" font-family="monospace" text-anchor="middle">48-72h</text>
+
+        <rect x="250" y="30" width="90" height="140" fill="#f97316" opacity=".14" stroke="#f97316" stroke-width="1.5"/>
+        <text x="295" y="50" fill="#f97316" font-size="12" font-family="monospace" text-anchor="middle" font-weight="bold">WALKING</text>
+        <text x="295" y="66" fill="#f97316" font-size="9" font-family="monospace" text-anchor="middle">(TVP/TEP)</text>
+        <text x="295" y="90" fill="#9a9ab0" font-size="9" font-family="monospace" text-anchor="middle">72h+</text>
+
+        <rect x="350" y="30" width="90" height="140" fill="#f87171" opacity=".14" stroke="#f87171" stroke-width="1.5"/>
+        <text x="395" y="50" fill="#f87171" font-size="12" font-family="monospace" text-anchor="middle" font-weight="bold">WOUND</text>
+        <text x="395" y="66" fill="#f87171" font-size="9" font-family="monospace" text-anchor="middle">(ferida)</text>
+        <text x="395" y="90" fill="#9a9ab0" font-size="9" font-family="monospace" text-anchor="middle">5-7 dias</text>
+
+        <rect x="450" y="30" width="90" height="140" fill="#a855f7" opacity=".14" stroke="#a855f7" stroke-width="1.5"/>
+        <text x="495" y="50" fill="#a855f7" font-size="11" font-family="monospace" text-anchor="middle" font-weight="bold">WONDER</text>
+        <text x="495" y="66" fill="#a855f7" font-size="9" font-family="monospace" text-anchor="middle">DRUGS</text>
+        <text x="495" y="90" fill="#9a9ab0" font-size="9" font-family="monospace" text-anchor="middle">variável</text>
+
+        <rect x="550" y="30" width="70" height="140" fill="#34d399" opacity=".14" stroke="#34d399" stroke-width="1.5"/>
+        <text x="585" y="50" fill="#34d399" font-size="10" font-family="monospace" text-anchor="middle" font-weight="bold">WHOPPER</text>
+        <text x="585" y="66" fill="#34d399" font-size="9" font-family="monospace" text-anchor="middle">(abscesso)</text>
+        <text x="585" y="90" fill="#9a9ab0" font-size="9" font-family="monospace" text-anchor="middle">&gt;7 dias</text>
+      </svg>
+      <div class="cap">Os 5(+2) W's organizados pela janela temporal típica — atelectasia (Wind) nas primeiras 48h, ITU (Water) 48-72h, TVP (Walking) após 72h, infecção de ferida (Wound) 5-7 dias, e abscesso profundo (Whopper) após 1 semana.</div>
+    </div>
+
+    <div class="tbl"><table>
+      <tr><th>W</th><th>Causa</th><th>Janela típica</th></tr>
+      <tr><td><strong>Wind</strong></td><td>Atelectasia / pneumonia</td><td>24-48h</td></tr>
+      <tr><td><strong>Water</strong></td><td>Infecção urinária (sonda/instrumentação)</td><td>48-72h</td></tr>
+      <tr><td><strong>Walking</strong></td><td>TVP/TEP (imobilidade)</td><td>&gt;72h</td></tr>
+      <tr><td><strong>Wound</strong></td><td>Infecção de sítio cirúrgico</td><td>5-7 dias</td></tr>
+      <tr><td><strong>Wonder drugs</strong></td><td>Febre medicamentosa, reação transfusional</td><td>Variável</td></tr>
+      <tr><td><strong>Whopper</strong></td><td>Abscesso profundo / coleção intra-abdominal</td><td>&gt;7 dias</td></tr>
+    </table></div>
+
+    <div class="box warn"><span class="lbl">⚠ pegadinha atual</span>O ensino clássico de que <strong>atelectasia causa febre</strong> vem sendo <strong>questionado pela evidência</strong> (revisões mostram associação fraca) — mas ainda é a resposta "esperada" na maioria das provas por seguir o mnemônico tradicional. Fique atenta ao contexto da questão.</div>
+
+    <h4>Causas de febre precoce (24-48h) que não são "Wind"</h4>
+    <div class="box warn"><span class="lbl">⚠ não esquecer — emergências</span><strong>Infecção necrotizante de ferida</strong> (pode aparecer já em 24h!), <strong>fasciite necrotizante</strong>, <strong>deiscência de anastomose</strong> precoce, <strong>insuficiência adrenal</strong>, abstinência alcoólica, e <strong>hipertermia maligna</strong> intraoperatória/pós-imediata — causas graves que não seguem a timeline clássica dos 5 W's e exigem investigação ativa se a febre precoce vier com toxemia.</div>
+  </div>
+</details>
+
+<!-- 4 COMPLICACOES DE FERIDA -->
+<details>
+  <summary><span class="num">4</span> Deiscência &amp; evisceração <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Deiscência da fáscia — sinal de alerta clássico</h4>
+    <p><strong>Drenagem serosanguinolenta ("cor de salmão")</strong> pela incisão, geralmente entre o <strong>5º e 8º dia</strong> pós-operatório, é o sinal clássico de deiscência fascial iminente — mesmo com pele aparentemente íntegra por cima.</p>
+
+    <div class="grid">
+      <div class="gcard"><div class="t">Fatores locais</div><div class="d">Infecção de ferida, técnica de sutura inadequada, tensão excessiva, hematoma</div></div>
+      <div class="gcard"><div class="t">Fatores sistêmicos</div><div class="d">Desnutrição, obesidade, diabetes, corticoide, tabagismo, idade avançada</div></div>
+      <div class="gcard"><div class="t">Fatores mecânicos</div><div class="d">Tosse, distensão abdominal, aumento da pressão intra-abdominal, íleo</div></div>
+    </div>
+
+    <h4>Evisceração — emergência cirúrgica</h4>
+    <p>Protrusão de vísceras através da deiscência completa da parede — <strong>conduta imediata</strong>:</p>
+    <div class="steps">
+      <div class="step"><b>1. Cobrir</b> as vísceras expostas com <strong>compressas estéreis embebidas em soro fisiológico morno</strong> — nunca tentar reduzir/recolocar às cegas no leito.</div>
+      <div class="step"><b>2. Não dar nada por via oral</b>, manter o paciente calmo e em decúbito com joelhos fletidos (reduz tensão na parede).</div>
+      <div class="step"><b>3. Estabilização</b> hemodinâmica e correção de distúrbios associados (anemia, distúrbio hidroeletrolítico).</div>
+      <div class="step"><b>4. Reoperação</b> em caráter de urgência para fechamento — geralmente com técnica de sutura em massa (todas as camadas) ou uso de tela, dependendo do grau de contaminação.</div>
+    </div>
+    <div class="box warn"><span class="lbl">⚠ pegadinha</span>Diante de drenagem serosa "em salmão" pela incisão, o próximo passo <strong>não é apenas trocar o curativo</strong> — é investigar/confirmar deiscência fascial subjacente, já que a pele pode estar intacta enquanto a fáscia já cedeu.</div>
+  </div>
+</details>
+
+<!-- 5 TEV -->
+<details>
+  <summary><span class="num">5</span> Profilaxia de tromboembolismo venoso <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>TVP/TEP são causas evitáveis de morbimortalidade pós-operatória — a estratificação de risco (ex: <strong>escore de Caprini</strong>) orienta o tipo e a intensidade da profilaxia.</p>
+
+    <div class="fig">
+      <svg viewBox="0 0 640 150" xmlns="http://www.w3.org/2000/svg">
+        <line x1="60" y1="80" x2="600" y2="80" stroke="#2a2a38" stroke-width="3"/>
+        <rect x="60"  y="72" width="120" height="16" fill="#34d399" opacity=".5"/>
+        <rect x="180" y="72" width="120" height="16" fill="#fbbf24" opacity=".5"/>
+        <rect x="300" y="72" width="150" height="16" fill="#f97316" opacity=".5"/>
+        <rect x="450" y="72" width="150" height="16" fill="#f87171" opacity=".5"/>
+        <text x="120" y="45" fill="#34d399" font-size="12" font-family="monospace" text-anchor="middle" font-weight="bold">0</text>
+        <text x="240" y="45" fill="#fbbf24" font-size="12" font-family="monospace" text-anchor="middle" font-weight="bold">1-2</text>
+        <text x="375" y="45" fill="#f97316" font-size="12" font-family="monospace" text-anchor="middle" font-weight="bold">3-4</text>
+        <text x="525" y="45" fill="#f87171" font-size="12" font-family="monospace" text-anchor="middle" font-weight="bold">≥5</text>
+        <text x="120" y="112" fill="#34d399" font-size="10" font-family="monospace" text-anchor="middle">só deambulação</text>
+        <text x="240" y="112" fill="#fbbf24" font-size="10" font-family="monospace" text-anchor="middle">mecânica OU farmacológica</text>
+        <text x="375" y="112" fill="#f97316" font-size="10" font-family="monospace" text-anchor="middle">farmacológica ± mecânica</text>
+        <text x="525" y="112" fill="#f87171" font-size="10" font-family="monospace" text-anchor="middle">farmacológica + mecânica</text>
+        <text x="320" y="135" fill="#9a9ab0" font-size="10" font-family="monospace" text-anchor="middle">escore de Caprini</text>
+      </svg>
+      <div class="cap">Estratificação pelo escore de Caprini: risco muito baixo (0) → apenas deambulação precoce; baixo (1-2) → mecânica ou farmacológica; moderado (3-4) → farmacológica ± mecânica; alto (≥5) → farmacológica + mecânica combinadas.</div>
+    </div>
+
+    <h4>Métodos de profilaxia</h4>
+    <ul>
+      <li><strong>Mecânica</strong>: meias de compressão graduada, compressão pneumática intermitente — primeira escolha se alto risco de sangramento.</li>
+      <li><strong>Farmacológica</strong>: heparina de baixo peso molecular (HBPM) é a mais usada; heparina não fracionada em insuficiência renal grave.</li>
+      <li><strong>Deambulação precoce</strong> — medida simples e eficaz, válida para todos os níveis de risco.</li>
+    </ul>
+    <div class="box warn"><span class="lbl">⚠ pegadinha</span>Alto risco de <strong>sangramento</strong> não significa "sem profilaxia" — significa <strong>priorizar mecânica</strong> até o risco hemorrágico diminuir, quando então a farmacológica pode ser reconsiderada.</div>
+    <div class="box mac"><span class="lbl">duração estendida</span>Considerar profilaxia farmacológica <strong>prolongada (até 4 semanas)</strong> em cirurgias oncológicas abdominopélvicas de alto risco e bariátricas — o risco de TEV persiste além da alta hospitalar nesses grupos.</div>
+  </div>
+</details>
+
+<!-- 6 QUESTOES / PEGA-RATOES -->
+<details>
+  <summary><span class="num">6</span> Questões de banca, pega-ratões &amp; mnemônicos <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>10 questões representativas (originais, estilo das 5 bancas)</h4>
+
+    <div class="box prova"><span class="lbl">Q1 <span class="banca">HCPA</span></span><strong>Segundo a diretriz ACC/AHA 2024, qual calculadora de risco cardiovascular deve ser usada preferencialmente?</strong><br>Resposta: <strong>nenhuma específica</strong> é recomendada — RCRI, MICA, ACS-SRC e outras são aceitáveis, sem evidência de superioridade entre elas.</div>
+
+    <div class="box prova"><span class="lbl">Q2 <span class="banca">GHC</span></span><strong>Paciente sobe 2 lances de escada sem dispneia ou dor torácica. Qual a capacidade funcional estimada?</strong><br>Resposta: <strong>≥4 METs</strong> — capacidade funcional aceitável, geralmente dispensa testes cardíacos adicionais.</div>
+
+    <div class="box prova"><span class="lbl">Q3 <span class="banca">AMRIGS</span></span><strong>Paciente no 6º dia de pós-operatório com drenagem serosanguinolenta "em salmão" pela incisão, pele íntegra. Suspeita?</strong><br>Resposta: <strong>deiscência fascial iminente</strong> — investigar mesmo com pele aparentemente fechada.</div>
+
+    <div class="box prova"><span class="lbl">Q4 <span class="banca">PUC-RS</span></span><strong>Paciente com evisceração no leito. Conduta imediata?</strong><br>Resposta: cobrir com <strong>compressas estéreis embebidas em SF morno</strong>, não tentar reduzir às cegas, e encaminhar para reoperação de urgência.</div>
+
+    <div class="box prova"><span class="lbl">Q5 <span class="banca">SC-POA</span></span><strong>Febre no 3º dia pós-operatório, sonda vesical de demora há 48h. Causa mais provável pelos 5 W's?</strong><br>Resposta: <strong>Water</strong> — infecção urinária associada a instrumentação.</div>
+
+    <div class="box prova"><span class="lbl">Q6 <span class="banca">HCPA</span></span><strong>Paciente Caprini score 0 no pré-operatório. Profilaxia de TEV recomendada?</strong><br>Resposta: <strong>apenas deambulação precoce</strong> — sem necessidade de profilaxia mecânica ou farmacológica adicional.</div>
+
+    <div class="box prova"><span class="lbl">Q7 <span class="banca">GHC</span></span><strong>Paciente Caprini score 6 com alto risco de sangramento cirúrgico. Conduta de profilaxia?</strong><br>Resposta: <strong>priorizar mecânica</strong> até reduzir o risco hemorrágico, reconsiderando farmacológica depois.</div>
+
+    <div class="box prova"><span class="lbl">Q8 <span class="banca">AMRIGS</span></span><strong>Febre alta com toxemia já nas primeiras 24h pós-operatórias. O que deve ser sempre descartado, além de causas benignas?</strong><br>Resposta: <strong>infecção necrotizante de ferida/fasciite necrotizante</strong> — não segue a timeline clássica dos 5 W's e é uma emergência.</div>
+
+    <div class="box prova"><span class="lbl">Q9 <span class="banca">PUC-RS</span></span><strong>Quais os 6 critérios do RCRI?</strong><br>Resposta: cirurgia de alto risco, doença cardíaca isquêmica, ICC, doença cerebrovascular, diabetes insulino-dependente, creatinina &gt;2 mg/dL.</div>
+
+    <div class="box prova"><span class="lbl">Q10 <span class="banca">SC-POA</span></span><strong>Até quando é permitido líquido claro antes da anestesia, segundo protocolos ERAS/ACERTO?</strong><br>Resposta: <strong>2 horas</strong> antes.</div>
+
+    <h4>Pega-ratões (as armadilhas clássicas)</h4>
+    <div class="box warn"><span class="lbl">☠ trap 1</span>ACC/AHA 2024 <strong>não recomenda</strong> uma calculadora específica — pegadinha para quem decorou "RCRI é a única".</div>
+    <div class="box warn"><span class="lbl">☠ trap 2</span>Drenagem "em salmão" = investigar <strong>deiscência</strong>, não é "só secreção normal".</div>
+    <div class="box warn"><span class="lbl">☠ trap 3</span>Evisceração: <strong>nunca reduzir às cegas</strong> no leito — cobrir e levar à urgência.</div>
+    <div class="box warn"><span class="lbl">☠ trap 4</span>Alto risco de sangramento ≠ "sem profilaxia de TEV" — usar mecânica.</div>
+    <div class="box warn"><span class="lbl">☠ trap 5</span>Febre precoce com toxemia não é automaticamente "Wind" — descartar infecção necrotizante.</div>
+    <div class="box warn"><span class="lbl">☠ trap 6</span>Jejum de sólidos não precisa ser "de meia-noite" por rotina — 6-8h já é suficiente pelos protocolos atuais.</div>
+    <div class="box warn"><span class="lbl">☠ trap 7</span>4 METs é o corte de capacidade funcional — não confundir com outros valores de escalas cardíacas.</div>
+    <div class="box warn"><span class="lbl">☠ trap 8</span>Caprini 0 não é "sem cuidado nenhum" — ainda requer deambulação precoce como medida ativa.</div>
+
+    <h4>Mnemônicos-resumo</h4>
+    <div class="box mac"><span class="lbl">macete geral</span>ACC/AHA 2024 = sem calculadora única + modificadores de risco + 4 METs · RCRI = alto risco cirúrgico+isquêmica+ICC+AVC+DM insulina+Cr&gt;2 · 5W's: Wind(24-48h)→Water(48-72h)→Walking(72h+)→Wound(5-7d)→Whopper(7d+) · Caprini 0=deambular·1-2=mecânica ou farmaco·3-4=farmaco±mecânica·≥5=ambas.</div>
+  </div>
+</details>
+
+<footer>
+  <div><strong>carolzita</strong> · Complicações Pré &amp; Pós-operatórias · referência completa</div>
+  <div class="ref">Fontes: 2024 AHA/ACC/ACS/ASNC/HRS/SCA/SCCT/SCMR/SVM Guideline for Perioperative Cardiovascular Management for Noncardiac Surgery (JACC/Circulation, 2024) · CHEST Antithrombotic Guidelines / Caprini Risk Assessment Model · Sabiston · Zollinger. Conteúdo educacional; questões são itens representativos originais.</div>
+</footer>
+</div>
+</body>
+</html>

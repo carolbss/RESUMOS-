@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Melanoma &amp; Sarcomas — carolzita</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0f; --bg2:#12121a; --card:#16161f; --card2:#1c1c27;
+  --line:#2a2a38; --txt:#e6e6ef; --muted:#9a9ab0;
+  --laranja:#f97316; --laranja-bg:rgba(249,115,22,.10);
+  --roxo:#a855f7; --roxo-bg:rgba(168,85,247,.10);
+  --ciano:#22d3ee; --ciano-bg:rgba(34,211,238,.10);
+  --verde:#34d399; --vermelho:#f87171; --amarelo:#fbbf24;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(1200px 600px at 50% -10%,#15151f 0%,var(--bg) 60%);color:var(--txt);font-family:'Inter',sans-serif;line-height:1.55;padding:0 0 80px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px}
+header{padding:40px 0 24px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(28px,6vw,44px);line-height:1.05;margin:8px 0 6px;letter-spacing:-.02em}
+.sub{color:var(--muted);font-size:15px;max-width:700px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tag{font-family:'JetBrains Mono',monospace;font-size:11px;padding:5px 10px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted)}
+.tag.r{color:var(--roxo);border-color:rgba(168,85,247,.35);background:var(--roxo-bg)}
+section{margin-top:14px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:12px;overflow:hidden;transition:border-color .2s}
+details[open]{border-color:rgba(249,115,22,.30)}
+summary{cursor:pointer;list-style:none;padding:18px 20px;display:flex;align-items:center;gap:13px;font-family:'Syne',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em;user-select:none}
+summary::-webkit-details-marker{display:none}
+.num{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--bg);background:var(--laranja);width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:0 0 auto}
+.chev{margin-left:auto;color:var(--muted);transition:transform .25s;font-size:14px}
+details[open] .chev{transform:rotate(90deg)}
+.body{padding:4px 22px 24px;font-size:15px}
+.body p{margin:10px 0}
+.body h4{font-family:'Syne',sans-serif;font-size:16px;color:var(--laranja);margin:20px 0 8px;letter-spacing:-.01em}
+.body ul{margin:8px 0 8px 4px;list-style:none}
+.body li{padding:4px 0 4px 20px;position:relative}
+.body li::before{content:"▸";position:absolute;left:0;color:var(--laranja);font-size:12px;top:6px}
+.body strong{color:#fff;font-weight:600}
+.simple{color:var(--verde);font-style:italic;font-size:.94em;display:block;margin:6px 0}
+.box.simplebox{background:rgba(52,211,153,.09);border-color:rgba(52,211,153,.32);color:var(--verde);font-style:italic}
+.box.simplebox .lbl{color:var(--verde);font-style:normal}
+.box.simplebox strong{color:#7fe8c0;font-style:normal}
+.stx{counter-reset:st;margin:12px 0}
+.st{counter-increment:st;background:var(--card2);border:1px solid var(--line);border-radius:13px;padding:14px 16px 14px 52px;margin:11px 0;position:relative}
+.st::before{content:counter(st);position:absolute;left:14px;top:13px;width:26px;height:26px;border-radius:8px;background:var(--laranja);color:#0a0a0f;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center}
+.st .fase{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:var(--laranja);display:block;margin-bottom:1px}
+.st .ttl{font-weight:700;font-size:15.5px;color:#fff;margin-bottom:4px}
+.st p{margin:5px 0;font-size:14px}
+.pq{border-left:3px solid var(--roxo);background:var(--roxo-bg);border-radius:0 9px 9px 0;padding:8px 12px;margin:9px 0;font-size:13.5px}
+.pq b{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.3px;text-transform:uppercase;color:var(--roxo);display:block;margin-bottom:2px}
+@media(max-width:640px){.mh2{grid-template-columns:1fr}}
+.box{border-radius:12px;padding:13px 15px;margin:14px 0;font-size:14px;border:1px solid}
+.box.prova{background:var(--roxo-bg);border-color:rgba(168,85,247,.35)}
+.box.prova .lbl{color:var(--roxo)}
+.box.mac{background:var(--ciano-bg);border-color:rgba(34,211,238,.35)}
+.box.mac .lbl{color:var(--ciano)}
+.box.warn{background:rgba(248,113,113,.08);border-color:rgba(248,113,113,.3)}
+.box.warn .lbl{color:var(--vermelho)}
+.lbl{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-family:'JetBrains Mono',monospace;font-size:10px;background:rgba(168,85,247,.2);color:var(--roxo);padding:2px 7px;border-radius:6px;margin-left:6px;white-space:nowrap}
+.tbl{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
+.tbl table{width:100%;border-collapse:collapse;min-width:520px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--laranja);background:var(--card2)}
+td strong{color:#fff}
+.fio td:first-child{color:var(--ciano);font-family:'JetBrains Mono',monospace;font-weight:500}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin:14px 0}
+.gcard{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+.gcard .t{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--ciano);margin-bottom:4px}
+.gcard .d{font-size:13px;color:var(--muted)}
+.hands{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.hand{border-radius:12px;padding:14px;border:1px solid var(--line)}
+.hand.e{background:rgba(34,211,238,.06);border-color:rgba(34,211,238,.25)}
+.hand.d{background:rgba(249,115,22,.06);border-color:rgba(249,115,22,.25)}
+.hand .ht{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;font-weight:700}
+.hand.e .ht{color:var(--ciano)} .hand.d .ht{color:var(--laranja)}
+.hand li{font-size:13px}
+.steps{counter-reset:s;margin:10px 0}
+.step{counter-increment:s;position:relative;padding:11px 0 11px 46px;border-bottom:1px dashed var(--line)}
+.step:last-child{border-bottom:none}
+.step::before{content:counter(s);position:absolute;left:0;top:9px;width:30px;height:30px;border-radius:9px;background:var(--laranja-bg);border:1px solid rgba(249,115,22,.4);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:grid;place-items:center}
+.step b{color:#fff}
+svg{max-width:100%;height:auto;display:block;margin:16px auto}
+.fig{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.fig .cap{font-size:12px;color:var(--muted);text-align:center;margin-top:8px;font-family:'JetBrains Mono',monospace}
+footer{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+footer .ref{font-family:'JetBrains Mono',monospace;font-size:12px;margin-top:8px}
+a{color:var(--laranja)}
+@media(max-width:560px){.hands{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">carolzita · cirurgia geral · oncologia cirúrgica</div>
+  <h1>Melanoma &amp; Sarcomas</h1>
+  <p class="sub">Melanoma: biópsia excisional, margens por Breslow, linfonodo sentinela e <strong>MSLT-II</strong> (vigilância supera CLND) · Sarcomas: princípios gerais, grading FNCLCC, sarcoma retroperitoneal e <strong>STRASS trial</strong> (RT neoadjuvante sem benefício geral). Base: NCCN Melanoma 2024, NCCN Soft Tissue Sarcoma, MSLT-II (NEJM), STRASS trial, e pegadinhas das bancas do RS.</p>
+  <div class="tags">
+    <span class="tag">Breslow</span>
+    <span class="tag">MSLT-II</span>
+    <span class="tag">FNCLCC</span>
+    <span class="tag">STRASS</span>
+    <span class="tag">Ressecção compartimental</span>
+    <span class="tag r">HCPA · GHC · SC-POA · PUC · AMRIGS</span>
+  </div>
+</header>
+
+<!-- 1 MELANOMA BIOPSIA -->
+<details open>
+  <summary><span class="num">1</span> Melanoma — biópsia &amp; diagnóstico <span class="chev">▶</span></summary>
+  <div class="body">
+    <p><strong>Biópsia excisional completa</strong> é a técnica preferida diante de lesão pigmentada suspeita — permite avaliar toda a espessura e as margens, otimizando o microestadiamento (Breslow, ulceração, índice mitótico).</p>
+    <ul>
+      <li>Margens da <strong>biópsia diagnóstica</strong>: apenas <strong>1-3 mm</strong> — margens maiores nesse momento prejudicam o mapeamento linfático subsequente (linfonodo sentinela).</li>
+      <li>Orientação da elipse: <strong>longitudinal</strong>, paralela à drenagem linfática presumida (relevante em extremidades) — facilita a excisão ampla definitiva posterior.</li>
+      <li><strong>Biópsia parcial (shave/punch)</strong> é aceitável em face ou regiões acrais, quando a excisional não é viável.</li>
+    </ul>
+    <div class="box warn"><span class="lbl">⚠ pegadinha</span>Nunca fazer biópsia com margens amplas "só para garantir" — isso <strong>compromete o mapeamento linfático</strong> necessário para a biópsia de linfonodo sentinela posterior.</div>
+  </div>
+</details>
+
+<!-- 2 MARGENS -->
+<details>
+  <summary><span class="num">2</span> Margens de excisão ampla — por Breslow <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>Após confirmação diagnóstica, a <strong>excisão ampla definitiva</strong> segue margens padronizadas conforme a espessura de Breslow (NCCN):</p>
+
+    <div class="fig">
+      <svg viewBox="0 0 640 200" xmlns="http://www.w3.org/2000/svg">
+        <text x="320" y="18" fill="#9a9ab0" font-size="11" font-family="monospace" text-anchor="middle">margem de excisão ampla × espessura de Breslow</text>
+        <line x1="60" y1="160" x2="600" y2="160" stroke="#2a2a38" stroke-width="1.5"/>
+        <rect x="60"  y="140" width="120" height="20" fill="#34d399" opacity=".5"/>
+        <text x="120" y="120" fill="#34d399" font-size="12" font-family="monospace" text-anchor="middle" font-weight="bold">0,5-1cm</text>
+        <text x="120" y="178" fill="#9a9ab0" font-size="9" font-family="monospace" text-anchor="middle">in situ</text>
+
+        <rect x="190" y="120" width="120" height="40" fill="#fbbf24" opacity=".5"/>
+        <text x="250" y="105" fill="#fbbf24" font-size="12" font-family="monospace" text-anchor="middle" font-weight="bold">1cm</text>
+        <text x="250" y="178" fill="#9a9ab0" font-size="9" font-family="monospace" text-anchor="middle">≤1,0mm</text>
+
+        <rect x="320" y="90" width="120" height="70" fill="#f97316" opacity=".5"/>
+        <text x="380" y="75" fill="#f97316" font-size="12" font-family="monospace" text-anchor="middle" font-weight="bold">1-2cm</text>
+        <text x="380" y="178" fill="#9a9ab0" font-size="9" font-family="monospace" text-anchor="middle">1,01-2,0mm</text>
+
+        <rect x="450" y="60" width="140" height="100" fill="#f87171" opacity=".5"/>
+        <text x="520" y="45" fill="#f87171" font-size="12" font-family="monospace" text-anchor="middle" font-weight="bold">2cm</text>
+        <text x="520" y="178" fill="#9a9ab0" font-size="9" font-family="monospace" text-anchor="middle">&gt;2,0mm</text>
+      </svg>
+      <div class="cap">Margens crescem com a espessura, mas platôam em 2cm — melanomas muito espessos (&gt;4mm) não precisam de margens maiores que 2cm (sem benefício comprovado).</div>
+    </div>
+
+    <div class="tbl"><table>
+      <tr><th>Espessura de Breslow</th><th>Margem recomendada</th></tr>
+      <tr><td><strong>In situ</strong></td><td>0,5-1,0 cm</td></tr>
+      <tr><td><strong>≤1,0 mm</strong> (T1)</td><td>1,0 cm</td></tr>
+      <tr><td><strong>1,01-2,0 mm</strong> (T2)</td><td>1-2 cm</td></tr>
+      <tr><td><strong>2,01-4,0 mm</strong> (T3)</td><td>2,0 cm</td></tr>
+      <tr><td><strong>&gt;4,0 mm</strong> (T4)</td><td>2,0 cm</td></tr>
+    </table></div>
+    <div class="box mac"><span class="lbl">macete</span>Da espessura intermediária em diante, a margem <strong>não cresce mais além de 2cm</strong> — vários ensaios randomizados (incluindo comparações de 2cm × 4-5cm) não mostraram benefício de margens maiores em sobrevida.</div>
+    <h4>Excisão ampla — passo a passo</h4>
+<div class="box simplebox"><span class="lbl">tradução simples</span>A tabela de margens diz <strong>quanto</strong> tirar, mas a técnica é sobre <strong>como</strong> tirar sem comprometer o mapeamento linfático que muitas vezes acontece na mesma cirurgia — e sobre fechar um defeito que, dependendo do local, pode não fechar sozinho.</div>
+
+<div class="stx">
+
+<div class="st">
+  <span class="fase">fase de planejamento</span>
+  <div class="ttl">Marcar a margem antes de injetar qualquer coisa</div>
+  <p>Desenhar a margem de segurança ao redor da cicatriz da biópsia prévia, medida a partir das bordas da lesão original — não da cicatriz.</p>
+  <div class="pq"><b>por quê</b>Se a sequência de linfonodo sentinela for realizada no mesmo tempo, o corante e o radiofármaco precisam ser injetados <strong>antes</strong> de qualquer manipulação do local — mexer no tecido primeiro pode distorcer a drenagem linfática que se está tentando mapear.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de sequência — a ordem que protege o mapeamento</span>
+  <div class="ttl">Biópsia do linfonodo sentinela antes da excisão ampla</div>
+  <p>Quando indicada, a BLS é feita <strong>antes</strong> de remover o tecido ao redor da cicatriz.</p>
+  <div class="pq"><b>por quê</b>A excisão ampla remove os vasos linfáticos locais que levavam o corante/radiofármaco até o linfonodo sentinela verdadeiro. Fazer a excisão primeiro interrompe essa via e faz o sentinela "migrar" para um linfonodo que não é mais o real — um erro que invalida todo o estadiamento.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de ressecção</span>
+  <div class="ttl">Excisar em fuso, incluindo pele, subcutâneo até a fáscia</div>
+  <p>Elipse orientada conforme a drenagem linfática regional, profundidade até a fáscia muscular subjacente (sem incluí-la, salvo invasão).</p>
+  <div class="pq"><b>por quê</b>A profundidade padronizada até a fáscia — nem mais raso, nem mais fundo — garante consistência entre cirurgiões e serviços, já que o melanoma se espalha lateralmente na derme e no subcutâneo mais do que em profundidade.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de reconstrução</span>
+  <div class="ttl">Fechar primariamente ou reconstruir</div>
+  <p>Fechamento primário quando o defeito permite; enxerto de pele ou retalho local quando a margem de 2 cm deixa um defeito grande demais.</p>
+  <div class="pq"><b>por quê</b>É por isso que a margem "platôa" em 2 cm: além de não haver ganho oncológico comprovado, margens maiores aumentariam desnecessariamente a complexidade reconstrutiva sem nenhum benefício de sobrevida em troca.</div>
+</div>
+
+</div>
+  </div>
+</details>
+
+<!-- 3 LINFONODO SENTINELA -->
+<details>
+  <summary><span class="num">3</span> Linfonodo sentinela &amp; MSLT-II <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Quando indicar a biópsia de linfonodo sentinela (BLS)</h4>
+    <div class="fig">
+      <svg viewBox="0 0 640 170" xmlns="http://www.w3.org/2000/svg">
+        <line x1="60" y1="140" x2="600" y2="140" stroke="#2a2a38" stroke-width="3"/>
+        <rect x="60"  y="132" width="150" height="16" fill="#34d399" opacity=".5"/>
+        <rect x="210" y="132" width="150" height="16" fill="#fbbf24" opacity=".5"/>
+        <rect x="360" y="132" width="240" height="16" fill="#f87171" opacity=".5"/>
+        <text x="135" y="100" fill="#34d399" font-size="12" font-family="monospace" text-anchor="middle" font-weight="bold">&lt;5%</text>
+        <text x="135" y="118" fill="#9a9ab0" font-size="9" font-family="monospace" text-anchor="middle">T1a (&lt;0,8mm, sem ulceração)</text>
+        <text x="135" y="163" fill="#34d399" font-size="10" font-family="monospace" text-anchor="middle">NÃO indicar</text>
+
+        <text x="285" y="100" fill="#fbbf24" font-size="12" font-family="monospace" text-anchor="middle" font-weight="bold">5-10%</text>
+        <text x="285" y="118" fill="#9a9ab0" font-size="9" font-family="monospace" text-anchor="middle">T1b (0,8-1,0mm ou &lt;0,8+ulcerado)</text>
+        <text x="285" y="163" fill="#fbbf24" font-size="10" font-family="monospace" text-anchor="middle">discutir/considerar</text>
+
+        <text x="480" y="100" fill="#f87171" font-size="12" font-family="monospace" text-anchor="middle" font-weight="bold">&gt;10%</text>
+        <text x="480" y="118" fill="#9a9ab0" font-size="9" font-family="monospace" text-anchor="middle">T2a-T4b (&gt;1,0mm)</text>
+        <text x="480" y="163" fill="#f87171" font-size="10" font-family="monospace" text-anchor="middle">oferecer/recomendar</text>
+      </svg>
+      <div class="cap">Indicação de BLS estratificada pelo risco de positividade do linfonodo, conforme espessura/ulceração — não é "todo mundo faz" nem "ninguém faz".</div>
+    </div>
+
+    <h4>Linfonodo sentinela positivo — o que mudou (MSLT-II / DeCOG-SLT)</h4>
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">MSLT-II / DeCOG-SLT — todas as bancas</span></span>Os ensaios <strong>MSLT-II</strong> e <strong>DeCOG-SLT</strong> mostraram que, em BLS positiva, a <strong>vigilância com ultrassom nodal seriado</strong> tem sobrevida específica por melanoma <strong>equivalente</strong> à <strong>linfadenectomia de completamento (CLND)</strong> imediata. A CLND aumenta o controle regional/estadiamento, mas <strong>não melhora a sobrevida global</strong> — por isso hoje é uma opção discutida com o paciente, não mais rotina obrigatória.</div>
+    <div class="box warn"><span class="lbl">⚠ pegadinha</span>"Linfonodo sentinela positivo = linfadenectomia sempre" é a resposta <strong>antiga</strong>. A resposta atualizada é: <strong>discutir vigilância ultrassonográfica versus CLND</strong>, já que a sobrevida é semelhante entre as duas condutas.</div>
+  </div>
+</details>
+
+<!-- 4 SARCOMAS GERAL -->
+<details>
+  <summary><span class="num">4</span> Sarcomas de partes moles — princípios gerais <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Biópsia — regras que evitam "estragar" a cirurgia definitiva</h4>
+    <ul>
+      <li><strong>Biópsia core (agulha grossa)</strong> é preferida a biópsia excisional para massa suspeita de sarcoma — excisional sem planejamento pode comprometer margens futuras.</li>
+      <li>Trajeto da biópsia deve estar <strong>dentro da futura linha de ressecção definitiva</strong> — trajeto mal planejado obriga a ressecar todo o trajeto contaminado depois.</li>
+      <li>Evitar drenos que atravessem compartimentos musculares diferentes do tumor.</li>
+    </ul>
+
+    <h4>Grading — sistema FNCLCC</h4>
+    <p>Combina <strong>diferenciação tumoral, contagem mitótica e extensão de necrose</strong> em um escore de 3 graus — é o principal determinante prognóstico, junto com o tamanho e a profundidade do tumor.</p>
+
+    <h4>Tratamento de sarcoma de extremidade</h4>
+    <ul>
+      <li><strong>Cirurgia poupadora de membro + radioterapia</strong> (neo ou adjuvante) é o padrão atual — substitui a amputação de rotina, com desfechos oncológicos equivalentes.</li>
+      <li><strong>Margem ampla</strong> (não enucleação) é essencial — sarcomas têm pseudocápsula que engana o cirurgião menos experiente (parece bem delimitado, mas há doença microscópica além dela).</li>
+    </ul>
+<h4>Ressecção de sarcoma de extremidade — passo a passo</h4>
+<div class="box simplebox"><span class="lbl">tradução simples</span>O maior risco não é sangrar ou lesar um nervo — é <strong>enganar-se com a pseudocápsula</strong>. O sarcoma comprime o tecido ao redor e cria uma falsa aparência de "bem delimitado", mas essa cápsula é feita de células tumorais comprimidas, não de tecido normal. Seguir esse plano parece elegante e é exatamente o erro que garante recidiva.</div>
+
+<div class="stx">
+
+<div class="st">
+  <span class="fase">fase de planejamento</span>
+  <div class="ttl">Revisar o trajeto da biópsia prévia</div>
+  <p>Identificar e planejar a ressecção do trajeto completo da biópsia core junto com o tumor.</p>
+  <div class="pq"><b>por quê</b>O trajeto da agulha pode ter semeado células tumorais ao longo do caminho — é por isso que a regra de "biópsia dentro da futura linha de ressecção" existe: ela transforma o trajeto contaminado em parte do que já será removido, em vez de uma segunda área a tratar depois.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de exposição</span>
+  <div class="ttl">Abordar pelo compartimento muscular, não pela cápsula</div>
+  <p>Dissecar seguindo os planos fasciais do compartimento envolvido, mantendo uma margem de tecido normal ao redor do tumor.</p>
+  <div class="pq"><b>por quê</b>Compartimentos musculares são barreiras naturais relativas à disseminação — dissecar dentro do compartimento, com margem, respeita essas barreiras. Cruzar de um compartimento a outro sem necessidade expõe território que não precisava ser contaminado.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase crítica — a regra que nunca se quebra</span>
+  <div class="ttl">Ressecar com margem ampla, nunca enuclear</div>
+  <p>Remover o tumor com uma camada de tecido normal ao redor, incluindo a pseudocápsula <strong>dentro</strong> da peça — nunca dissecando rente a ela.</p>
+  <div class="pq"><b>por quê</b>"Descascar" o tumor pela pseudocápsula parece limpo porque o plano de clivagem é fácil de seguir — mas é exatamente aí que mora a doença microscópica. Dissecar rente à cápsula deixa células tumorais no leito cirúrgico, e a recidiva local depois de uma enucleação é praticamente garantida.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de orientação</span>
+  <div class="ttl">Marcar a peça e o leito cirúrgico</div>
+  <p>Orientar a peça para o patologista; marcar as margens mais próximas com clipes, se a radioterapia adjuvante estiver planejada.</p>
+  <div class="pq"><b>por quê</b>Assim como na mama, saber exatamente qual margem preocupa direciona tanto uma eventual reoperação quanto o planejamento da radioterapia, que precisa saber onde mirar o reforço de dose.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de reconstrução</span>
+  <div class="ttl">Fechar preservando função, com cirurgia poupadora de membro</div>
+  <p>Reconstrução com retalho local ou enxerto conforme o defeito; preservar estruturas neurovasculares sempre que oncologicamente seguro.</p>
+  <div class="pq"><b>por quê</b>É o que substituiu a amputação de rotina: cirurgia poupadora com radioterapia (neo ou adjuvante) tem desfechos oncológicos equivalentes à amputação na maioria dos casos, preservando a função do membro sem trocar sobrevida por isso.</div>
+</div>
+
+</div>
+<div class="box warn"><span class="lbl">⚠ a armadilha que reprova</span>Sarcoma "bem delimitado" ou "encapsulado" na imagem ou no intraoperatório <strong>não</strong> é sinônimo de benigno ou de margem segura — é a aparência que mais engana o cirurgião menos experiente.</div>
+  </div>
+</details>
+
+<!-- 5 SARCOMA RETROPERITONEAL -->
+<details>
+  <summary><span class="num">5</span> Sarcoma retroperitoneal &amp; STRASS trial <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Ressecção compartimental — o padrão atual</h4>
+    <p><strong>Ressecção completa em bloco</strong>, incluindo órgãos e estruturas adjacentes ao tumor (mesmo sem invasão comprovada), tornou-se o padrão para reduzir margens comprometidas — recidiva local é a principal causa de morte nesses pacientes.</p>
+
+    <div class="fig">
+      <svg viewBox="0 0 640 180" xmlns="http://www.w3.org/2000/svg">
+        <text x="320" y="18" fill="#9a9ab0" font-size="11" font-family="monospace" text-anchor="middle">recidiva local em 3 anos — ressecção compartimental × histórico</text>
+        <line x1="80" y1="150" x2="560" y2="150" stroke="#2a2a38" stroke-width="1.5"/>
+        <line x1="80" y1="150" x2="80" y2="30" stroke="#2a2a38" stroke-width="1.5"/>
+        <text x="40" y="35" fill="#9a9ab0" font-size="9" font-family="monospace">50%</text>
+        <text x="40" y="152" fill="#9a9ab0" font-size="9" font-family="monospace">0%</text>
+        <rect x="150" y="115" width="110" height="35" fill="#34d399" opacity=".5"/>
+        <text x="205" y="107" fill="#34d399" font-size="15" font-family="monospace" text-anchor="middle" font-weight="bold">~10%</text>
+        <text x="205" y="170" fill="#34d399" font-size="10" font-family="monospace" text-anchor="middle">compartimental</text>
+        <rect x="380" y="46" width="110" height="104" fill="#f87171" opacity=".5"/>
+        <text x="435" y="38" fill="#f87171" font-size="15" font-family="monospace" text-anchor="middle" font-weight="bold">~47%</text>
+        <text x="435" y="170" fill="#f87171" font-size="10" font-family="monospace" text-anchor="middle">controle histórico</text>
+      </svg>
+      <div class="cap">Séries comparativas mostram queda expressiva na recidiva local com ressecção compartimental (multivisceral em bloco) versus abordagens históricas menos agressivas, em centros de alto volume.</div>
+    </div>
+
+    <h4>STRASS trial — radioterapia neoadjuvante não é rotina</h4>
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">STRASS trial</span></span>O <strong>STRASS trial</strong> não mostrou benefício geral de <strong>radioterapia neoadjuvante</strong> em recidiva local ou sobrevida para sarcoma retroperitoneal — <strong>contrariando a prática histórica</strong> de irradiar rotineiramente antes da cirurgia. Pode haver benefício em <strong>subgrupo de lipossarcoma</strong>, mas não é indicação universal. O <strong>STRASS 2</strong> está avaliando terapia sistêmica neoadjuvante.</div>
+    <div class="box warn"><span class="lbl">⚠ pegadinha</span>Se a questão perguntar sobre RT neoadjuvante de rotina em sarcoma retroperitoneal, a resposta atualizada é que <strong>não há benefício comprovado</strong> na população geral — diferente do que se ensinava antes do STRASS.</div>
+
+    <h4>Fatores prognósticos principais</h4>
+    <ul>
+      <li><strong>Status de margem</strong> — R0 macroscopicamente negativo é o fator mais associado a sobrevida prolongada (mediana ~103 meses × ~18 meses se ressecção incompleta).</li>
+      <li>Subtipo histológico, grau tumoral e qualidade da cirurgia inicial — reforça a importância de operar em <strong>centro de referência</strong> desde a primeira intervenção.</li>
+    </ul>
+  </div>
+</details>
+
+<!-- 6 QUESTOES / PEGA-RATOES -->
+<details>
+  <summary><span class="num">6</span> Questões de banca, pega-ratões &amp; mnemônicos <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>10 questões representativas (originais, estilo das 5 bancas)</h4>
+
+    <div class="box prova"><span class="lbl">Q1 <span class="banca">HCPA</span></span><strong>Lesão pigmentada suspeita de melanoma. Qual a técnica de biópsia preferida e a margem adequada?</strong><br>Resposta: <strong>biópsia excisional completa</strong>, margens de <strong>1-3mm</strong> — margens maiores prejudicam o mapeamento linfático.</div>
+
+    <div class="box prova"><span class="lbl">Q2 <span class="banca">GHC</span></span><strong>Melanoma com Breslow de 1,5mm. Margem de excisão ampla recomendada?</strong><br>Resposta: <strong>1-2 cm</strong>.</div>
+
+    <div class="box prova"><span class="lbl">Q3 <span class="banca">AMRIGS</span></span><strong>Melanoma T1a, &lt;0,8mm sem ulceração. Indicar biópsia de linfonodo sentinela?</strong><br>Resposta: <strong>não</strong> — risco de positividade &lt;5%, não recomendada de rotina.</div>
+
+    <div class="box prova"><span class="lbl">Q4 <span class="banca">PUC-RS</span></span><strong>Segundo MSLT-II, qual a conduta padrão-ouro após linfonodo sentinela positivo?</strong><br>Resposta: <strong>discutir vigilância ultrassonográfica × CLND</strong> — sobrevida específica equivalente entre as duas.</div>
+
+    <div class="box prova"><span class="lbl">Q5 <span class="banca">SC-POA</span></span><strong>Massa de partes moles suspeita de sarcoma. Qual o erro técnico mais grave na biópsia?</strong><br>Resposta: <strong>trajeto de biópsia fora da futura linha de ressecção</strong> — obriga a ressecar todo o trajeto contaminado.</div>
+
+    <div class="box prova"><span class="lbl">Q6 <span class="banca">HCPA</span></span><strong>Sarcoma de extremidade com aparência "bem encapsulada". Conduta cirúrgica correta?</strong><br>Resposta: <strong>margem ampla</strong>, nunca enucleação — a pseudocápsula contém células tumorais.</div>
+
+    <div class="box prova"><span class="lbl">Q7 <span class="banca">GHC</span></span><strong>Sistema usado para graduar sarcomas de partes moles?</strong><br>Resposta: <strong>FNCLCC</strong> (diferenciação + índice mitótico + necrose).</div>
+
+    <div class="box prova"><span class="lbl">Q8 <span class="banca">AMRIGS</span></span><strong>Sarcoma retroperitoneal. Qual a abordagem cirúrgica padrão atual?</strong><br>Resposta: <strong>ressecção compartimental</strong> (multivisceral em bloco), reduzindo recidiva local comparado a abordagens menos agressivas.</div>
+
+    <div class="box prova"><span class="lbl">Q9 <span class="banca">PUC-RS</span></span><strong>Segundo o STRASS trial, radioterapia neoadjuvante de rotina em sarcoma retroperitoneal é recomendada?</strong><br>Resposta: <strong>não</strong> — sem benefício comprovado na população geral; possível benefício restrito a subgrupo de lipossarcoma.</div>
+
+    <div class="box prova"><span class="lbl">Q10 <span class="banca">SC-POA</span></span><strong>Qual o principal fator prognóstico após ressecção de sarcoma retroperitoneal?</strong><br>Resposta: <strong>status de margem</strong> (R0 macroscopicamente negativo).</div>
+
+    <h4>Pega-ratões (as armadilhas clássicas)</h4>
+    <div class="box warn"><span class="lbl">☠ trap 1</span>Margem de biópsia diagnóstica (1-3mm) ≠ margem de excisão ampla (cm) — não confundir as duas etapas.</div>
+    <div class="box warn"><span class="lbl">☠ trap 2</span>Margem de excisão <strong>não cresce além de 2cm</strong>, mesmo em melanomas muito espessos.</div>
+    <div class="box warn"><span class="lbl">☠ trap 3</span>BLS positiva <strong>não</strong> significa CLND automática — MSLT-II mudou essa conduta.</div>
+    <div class="box warn"><span class="lbl">☠ trap 4</span>Sarcoma "bem delimitado" ≠ sarcoma encapsulado de verdade — pseudocápsula engana.</div>
+    <div class="box warn"><span class="lbl">☠ trap 5</span>RT neoadjuvante em sarcoma retroperitoneal <strong>não é rotina</strong> pós-STRASS.</div>
+    <div class="box warn"><span class="lbl">☠ trap 6</span>Biópsia de sarcoma <strong>sempre</strong> dentro da linha de ressecção futura planejada.</div>
+    <div class="box warn"><span class="lbl">☠ trap 7</span>T1a de baixo risco <strong>não</strong> indica BLS de rotina — nem todo melanoma precisa.</div>
+    <div class="box warn"><span class="lbl">☠ trap 8</span>Amputação não é mais padrão em sarcoma de extremidade — cirurgia poupadora + RT tem desfecho equivalente.</div>
+
+    <h4>Mnemônicos-resumo</h4>
+    <div class="box mac"><span class="lbl">macete geral</span>Margens: in situ 0,5-1cm · ≤1mm=1cm · 1-2mm=1-2cm · &gt;2mm=2cm (platô) · BLS: &lt;5%não·5-10%discutir·&gt;10%oferece · MSLT-II: BLS+ → vigilância = CLND em sobrevida · Sarcoma: biópsia na linha de ressecção, nunca enuclear · Retroperitoneal: compartimental sim, RT neoadjuvante rotina não (STRASS).</div>
+  </div>
+</details>
+
+<footer>
+  <div><strong>carolzita</strong> · Melanoma &amp; Sarcomas · referência completa</div>
+  <div class="ref">Fontes: NCCN Clinical Practice Guidelines — Melanoma: Cutaneous (2024) e Soft Tissue Sarcoma · MSLT-II / DeCOG-SLT trials (NEJM) · STRASS Trial (Lancet Oncology) · Sabiston · Zollinger. Conteúdo educacional; questões são itens representativos originais.</div>
+</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Crohn · pocket</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0f;--card:#16161f;--card2:#1c1c27;--line:#2a2a38;
+  --txt:#ececf4;--muted:#9a9ab0;
+  --laranja:#f97316;--roxo:#a855f7;--ciano:#22d3ee;--vermelho:#f87171;--amarelo:#fbbf24;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{overflow-x:hidden}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;font-size:17px;line-height:1.6;padding-bottom:30px}
+.top{padding:22px 18px 12px;position:sticky;top:0;background:linear-gradient(180deg,var(--bg) 70%,transparent);z-index:5}
+.kick{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:30px;line-height:1.05;margin-top:4px}
+
+/* tabs */
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:6px 18px 12px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;padding:9px 15px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted);white-space:nowrap;cursor:pointer;transition:.15s}
+.tab.on{background:var(--laranja);border-color:var(--laranja);color:#0a0a0f}
+
+.panel{display:none;padding:6px 18px 40px;animation:f .25s}
+.panel.on{display:block}
+@keyframes f{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+h2{font-family:'Syne',sans-serif;font-size:21px;color:var(--laranja);margin:18px 0 10px}
+h3{font-family:'Syne',sans-serif;font-size:16px;color:#fff;margin:16px 0 6px}
+p{margin:10px 0}
+ul{list-style:none;margin:8px 0}
+li{padding:6px 0 6px 22px;position:relative}
+li::before{content:"▸";position:absolute;left:0;top:7px;color:var(--laranja);font-size:13px}
+strong{color:#fff;font-weight:600}
+.s{color:var(--ciano);font-style:italic;font-size:.92em}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0}
+.box{border-radius:12px;padding:13px 15px;margin:13px 0;border:1px solid;font-size:15px}
+.prova{background:rgba(168,85,247,.1);border-color:rgba(168,85,247,.4)}
+.prova .l{color:var(--roxo)}
+.mac{background:rgba(34,211,238,.1);border-color:rgba(34,211,238,.4)}
+.mac .l{color:var(--ciano)}
+.warn{background:rgba(248,113,113,.1);border-color:rgba(248,113,113,.4)}
+.warn .l{color:var(--vermelho)}
+.l{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-size:10px;background:rgba(168,85,247,.25);color:var(--roxo);padding:2px 6px;border-radius:5px;margin-left:5px;font-family:'JetBrains Mono',monospace}
+
+.kv{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)}
+.kv:last-child{border:none}
+.kv .k{flex:0 0 38%;color:var(--ciano);font-family:'JetBrains Mono',monospace;font-size:13px}
+.kv .v{flex:1;font-size:15px}
+
+.step{display:flex;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line)}
+.step:last-child{border:none}
+.step .n{flex:0 0 30px;height:30px;border-radius:9px;background:rgba(249,115,22,.15);border:1px solid rgba(249,115,22,.45);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;display:grid;place-items:center;font-size:14px}
+.step .t{flex:1}
+.step b{color:#fff}
+
+.hand{border-radius:12px;padding:13px 15px;margin:10px 0;border:1px solid}
+.hand.d{background:rgba(249,115,22,.07);border-color:rgba(249,115,22,.3)}
+.hand.e{background:rgba(34,211,238,.07);border-color:rgba(34,211,238,.3)}
+.hand .h{font-family:'JetBrains Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.08em;font-weight:700;margin-bottom:6px}
+.hand.d .h{color:var(--laranja)}.hand.e .h{color:var(--ciano)}
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="kick">carolzita · pocket</div>
+  <h1>Doença de Crohn</h1>
+</div>
+
+<div class="tabs" id="tabs">
+  <div class="tab on" data-t="dx">Diagnóstico</div>
+  <div class="tab" data-t="prep">Preparo</div>
+  <div class="tab" data-t="passos">Passos</div>
+  <div class="tab" data-t="maos">Mãos</div>
+  <div class="tab" data-t="fios">Fios</div>
+  <div class="tab" data-t="compl">Complicações</div>
+  <div class="tab" data-t="mac">Macetes</div>
+</div>
+
+<!-- DX -->
+<div class="panel on" data-p="dx">
+  <h2>Quem é o Crohn</h2>
+  <p>Inflamação <strong>transmural, descontínua (skip), granulomatosa</strong>, da boca ao ânus. Mais comum: <strong>ileocólica</strong>. Gene <strong>NOD2/CARD15</strong>. Tabaco piora.</p>
+  <h3>Clínica</h3>
+  <ul>
+    <li>Dor em FID (simula apendicite), diarreia crônica geralmente <strong>sem sangue</strong>, perda de peso.</li>
+    <li><strong>Doença perianal</strong> (fístula, abscesso) = doença agressiva.</li>
+    <li>B12 ↓ e diarreia por sais biliares (íleo terminal).</li>
+  </ul>
+  <h3>Exames</h3>
+  <ul>
+    <li>↑Calprotectina fecal, <strong>ASCA+</strong>.</li>
+    <li>Colono: <strong>cobblestone</strong>, úlceras salteadas, reto poupado.</li>
+    <li>Histo: transmural + <strong>granuloma não caseoso</strong>.</li>
+    <li>Entero-TC: <strong>cordão de Kantor</strong>, comb sign, creeping fat.</li>
+  </ul>
+  <div class="card">
+    <div class="l" style="color:var(--laranja)">Crohn × RCU</div>
+    <div class="kv"><div class="k">Acometimento</div><div class="v">Salteado, boca→ânus / RCU: contínuo do reto</div></div>
+    <div class="kv"><div class="k">Profundidade</div><div class="v">Transmural / RCU: mucosa</div></div>
+    <div class="kv"><div class="k">Granuloma</div><div class="v">Sim / RCU: não</div></div>
+    <div class="kv"><div class="k">Tabaco</div><div class="v">Piora / RCU: "protege"</div></div>
+    <div class="kv"><div class="k">Sorologia</div><div class="v">ASCA+ / RCU: p-ANCA+</div></div>
+    <div class="kv"><div class="k">Cirurgia</div><div class="v">Não cura / RCU: cura</div></div>
+  </div>
+  <div class="box prova"><span class="l">Prova <span class="banca">HCPA·AMRIGS</span></span>Tríade: transmural + skip + granuloma não caseoso.</div>
+</div>
+
+<!-- PREP -->
+<div class="panel" data-p="prep">
+  <h2>Tratamento & preparo</h2>
+  <h3>Clínico</h3>
+  <ul>
+    <li>Indução ileocecal: <strong>budesonida</strong> (1ª linha).</li>
+    <li>Manutenção: imunomodulador (AZA/MTX) + <strong>biológicos</strong> (anti-TNF, vedo, uste, risan, JAK).</li>
+    <li>ATB só p/ perianal/abscesso. 5-ASA pouco eficaz.</li>
+  </ul>
+  <h3>Indicações cirúrgicas</h3>
+  <ul>
+    <li><strong>Obstrução/estenose = mais comum.</strong></li>
+    <li>Fístula, abscesso, perfuração, hemorragia, refratariedade.</li>
+    <li>~70–80% operam na vida. Cirurgia <strong>não cura</strong>.</li>
+  </ul>
+  <h3>Procedimentos</h3>
+  <ul>
+    <li>Ressecção ileocecal (prototípica).</li>
+    <li>Estenoplastia: HM &lt;10cm · Finney 10–25 · Michelassi &gt;25.</li>
+    <li>Perianal: <strong>seton</strong>, evitar fistulotomia ampla.</li>
+  </ul>
+  <h3>Preparo</h3>
+  <ul>
+    <li><strong>Laparoscopia preferencial</strong> (via do LIR!C).</li>
+    <li>Otimizar nutrição, desmamar corticoide, ATB profilático, profilaxia TVP, marcar estoma.</li>
+  </ul>
+  <div class="box prova"><span class="l">Prova <span class="banca">Santa Casa·AMRIGS</span></span>LIR!C: ressecção ileocecal lap = alternativa upfront ao infliximabe na ileíte limitada (≤40cm) inflamatória.</div>
+  <div class="box warn"><span class="l">Penetrante</span>Drena → nutre → desinflama → resseca. Nunca anastomose em abscesso ativo.</div>
+</div>
+
+<!-- PASSOS -->
+<div class="panel" data-p="passos">
+  <h2>Ressecção ileocecal</h2>
+  <div class="step"><div class="n">1</div><div class="t"><b>Inventário:</b> correr todo o delgado p/ mapear skip lesions.</div></div>
+  <div class="step"><div class="n">2</div><div class="t"><b>Avaliar</b> íleo+ceco doentes, calibrar estenoses.</div></div>
+  <div class="step"><div class="n">3</div><div class="t"><b>Mobilizar cólon D</b> pela linha branca de Toldt.</div></div>
+  <div class="step"><div class="n">4</div><div class="t"><b>Proteger</b> duodeno, ureter D, vasos gonadais.</div></div>
+  <div class="step"><div class="n">5</div><div class="t"><b>Ligar a. ileocólica</b> perto da alça (mesentério friável).</div></div>
+  <div class="step"><div class="n">6</div><div class="t"><b>Margens</b> em intestino macro normal (~2cm basta).</div></div>
+  <div class="step"><div class="n">7</div><div class="t"><b>Seccionar</b> com GIA.</div></div>
+  <div class="step"><div class="n">8</div><div class="t"><b>Anastomose</b>: látero-lateral grampeada OU Kono-S.</div></div>
+  <div class="step"><div class="n">9</div><div class="t"><b>Fechar brecha</b> mesentérica, revisar.</div></div>
+  <div class="step"><div class="n">10</div><div class="t"><b>Espécime out</b>, conferir, fechar.</div></div>
+  <div class="box prova"><span class="l">Prova <span class="banca">HCPA R3</span></span>Kono-S (SuPREMe-CD): antimesentérica, ↓recorrência endoscópica e ↓deiscência/reoperação.</div>
+</div>
+
+<!-- MAOS -->
+<div class="panel" data-p="maos">
+  <h2>Mão D × Mão E</h2>
+  <div class="hand d">
+    <div class="h">Direita — ativa</div>
+    <ul><li>Porta-agulha / agulha</li><li>Metzenbaum, bisturi, energia</li><li>Grampeador GIA/TA</li><li>Mixter (pedículo)</li></ul>
+  </div>
+  <div class="hand e">
+    <div class="h">Esquerda — exposição</div>
+    <ul><li>DeBakey (atraumática)</li><li>Babcock (alça)</li><li>Allis (espécime)</li><li>Tração do mesentério</li></ul>
+  </div>
+  <h3>Clamps</h3>
+  <ul>
+    <li>Doyen atraumático: ocluir alça.</li>
+    <li>Kocher: só tecido firme/espécime.</li>
+    <li>Mixter: passar fio no pedículo ileocólico.</li>
+  </ul>
+</div>
+
+<!-- FIOS -->
+<div class="panel" data-p="fios">
+  <h2>Fios</h2>
+  <div class="card">
+    <div class="kv"><div class="k">Mesentério</div><div class="v">2-0/3-0 Vicryl ou selador, perto da alça</div></div>
+    <div class="kv"><div class="k">Grampeada</div><div class="v">GIA 75/80 + TA 60 (látero-lateral)</div></div>
+    <div class="kv"><div class="k">Kono-S</div><div class="v">3-0/4-0 PDS, antimesentérica</div></div>
+    <div class="kv"><div class="k">Manual 2 planos</div><div class="v">3-0 Vicryl/PDS interno + seda Lembert</div></div>
+    <div class="kv"><div class="k">Estenoplastia</div><div class="v">3-0/4-0 absorvível</div></div>
+    <div class="kv"><div class="k">Aponeurose</div><div class="v">0/1 PDS ou loop (4:1)</div></div>
+    <div class="kv"><div class="k">Pele</div><div class="v">4-0 Monocryl / grampos</div></div>
+    <div class="kv"><div class="k">Estoma</div><div class="v">3-0 Vicryl (Brooke)</div></div>
+  </div>
+  <div class="box mac"><span class="l">Macete</span>Mesentério friável → liga perto e devagar. Plano interno absorvível, externo seromuscular.</div>
+</div>
+
+<!-- COMPL -->
+<div class="panel" data-p="compl">
+  <h2>Complicações</h2>
+  <h3>Precoces</h3>
+  <ul>
+    <li><strong>Deiscência/fístula anastomótica</strong> (↑ corticoide, desnutrição, sepse, penetrante).</li>
+    <li>Abscesso, íleo, sangramento, ISC.</li>
+    <li>Intestino curto após múltiplas ressecções.</li>
+  </ul>
+  <h3>Tardias</h3>
+  <ul>
+    <li><strong>Recorrência</strong>: endoscópica 70–90%/1ano; cirúrgica 25–35%/5–10anos.</li>
+    <li>B12↓, diarreia por sais biliares, colelitíase, nefrolitíase, hérnia incisional.</li>
+  </ul>
+  <div class="box warn"><span class="l">↓Recorrência (cai muito)</span><strong>Parar de fumar</strong> = medida nº1. Alto risco → biológico precoce + colono 6–12m (Rutgeerts).</div>
+</div>
+
+<!-- MAC -->
+<div class="panel" data-p="mac">
+  <h2>Macetes</h2>
+  <div class="box mac"><span class="l">Os C do Crohn</span>Cobblestone · Creeping fat · Caseação ausente · Cigarro · Cuts (skip) · fisChula.</div>
+  <div class="box mac"><span class="l">Regra de ouro</span>Resseca só o que vê, poupa o resto. Cirurgia não cura.</div>
+  <div class="box mac"><span class="l">Íleo terminal</span>Ressecado → falta B12 + diarreia por sais biliares.</div>
+  <div class="box mac"><span class="l">Imagem</span>String sign (cordão de Kantor) = estenose ileal.</div>
+  <div class="box mac"><span class="l">Pós-op nº1</span>Cessar tabagismo > qualquer droga.</div>
+  <div class="box prova"><span class="l">R3/vascular</span>Kono-S · excisão mesentérica (Coffey) · LIR!C 10 anos (upfront).</div>
+</div>
+
+<script>
+const tabs=document.querySelectorAll('.tab');
+const panels=document.querySelectorAll('.panel');
+tabs.forEach(t=>t.addEventListener('click',()=>{
+  tabs.forEach(x=>x.classList.remove('on'));
+  panels.forEach(p=>p.classList.remove('on'));
+  t.classList.add('on');
+  document.querySelector('.panel[data-p="'+t.dataset.t+'"]').classList.add('on');
+  t.scrollIntoView({inline:'center',behavior:'smooth',block:'nearest'});
+  window.scrollTo({top:0,behavior:'smooth'});
+}));
+</script>
+</body>
+</html>

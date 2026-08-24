@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Baço &amp; Adrenal · pocket</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d1117;--card:#16161f;--card2:#1c1c27;--line:#2a2a38;
+  --txt:#ececf4;--muted:#9a9ab0;
+  --laranja:#f97316;--roxo:#a855f7;--ciano:#22d3ee;--vermelho:#f87171;--amarelo:#fbbf24;--verde:#34d399;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{overflow-x:hidden}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;font-size:17px;line-height:1.6;padding-bottom:30px}
+.top{padding:22px 18px 12px;position:sticky;top:0;background:linear-gradient(180deg,var(--bg) 70%,transparent);z-index:5}
+.kick{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:27px;line-height:1.1;margin-top:4px}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:6px 18px 12px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;padding:9px 15px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted);white-space:nowrap;cursor:pointer;transition:.15s}
+.tab.on{background:var(--laranja);border-color:var(--laranja);color:#0a0a0f}
+.panel{display:none;padding:6px 18px 40px;animation:f .25s}
+.panel.on{display:block}
+@keyframes f{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+h2{font-family:'Syne',sans-serif;font-size:21px;color:var(--laranja);margin:18px 0 10px}
+h3{font-family:'Syne',sans-serif;font-size:16px;color:#fff;margin:16px 0 6px}
+p{margin:10px 0}
+ul{list-style:none;margin:8px 0}
+li{padding:6px 0 6px 22px;position:relative}
+li::before{content:"▸";position:absolute;left:0;top:7px;color:var(--laranja);font-size:13px}
+strong{color:#fff;font-weight:600}
+.s{color:var(--ciano);font-style:italic;font-size:.92em}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0}
+.box{border-radius:12px;padding:13px 15px;margin:13px 0;border:1px solid;font-size:15px}
+.prova{background:rgba(168,85,247,.1);border-color:rgba(168,85,247,.4)}
+.prova .l{color:var(--roxo)}
+.mac{background:rgba(34,211,238,.1);border-color:rgba(34,211,238,.4)}
+.mac .l{color:var(--ciano)}
+.warn{background:rgba(248,113,113,.1);border-color:rgba(248,113,113,.4)}
+.warn .l{color:var(--vermelho)}
+.l{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-size:10px;background:rgba(168,85,247,.25);color:var(--roxo);padding:2px 6px;border-radius:5px;margin-left:5px;font-family:'JetBrains Mono',monospace}
+.kv{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)}
+.kv:last-child{border:none}
+.kv .k{flex:0 0 42%;color:var(--ciano);font-family:'JetBrains Mono',monospace;font-size:13px}
+.kv .v{flex:1;font-size:15px}
+.step{display:flex;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line)}
+.step:last-child{border:none}
+.step .n{flex:0 0 30px;height:30px;border-radius:9px;background:rgba(249,115,22,.15);border:1px solid rgba(249,115,22,.45);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;display:grid;place-items:center;font-size:14px}
+.step .x{flex:1}
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="kick">carolzita · pocket 🚑</div>
+  <h1>Baço &amp; Adrenal 🫘</h1>
+</div>
+<div class="tabs">
+  <div class="tab on" data-t="0">🩸 Trauma</div>
+  <div class="tab" data-t="1">💉 OPSI</div>
+  <div class="tab" data-t="2">⚡ Feocromo</div>
+  <div class="tab" data-t="3">🧂 Hiperaldo</div>
+  <div class="tab" data-t="4">🔍 Incidentaloma</div>
+  <div class="tab" data-t="5">☠️ Traps</div>
+</div>
+
+<!-- 0 TRAUMA -->
+<div class="panel on" data-p="0">
+  <h2>🩸 Trauma esplênico (AAST)</h2>
+  <div class="card">
+    <div class="kv"><div class="k">I-III</div><div class="v">Geralmente NOM</div></div>
+    <div class="kv"><div class="k">IV-V</div><div class="v">Pesa mais pra cirurgia</div></div>
+  </div>
+  <div class="box prova"><span class="l">alto rendimento</span>🎯 <strong>Estabilidade hemodinâmica</strong> &gt; grau isolado! IV-V estável pode tentar NOM+embolização.</div>
+  <ul>
+    <li>💉 Embolizar se: grau&gt;III, blush, hemoperitônio moderado, sangramento ativo</li>
+    <li>🏥 NOM só em centro com monitorização + centro cirúrgico disponível</li>
+  </ul>
+
+  <h3>🔪 Esplenectomia de urgência — 5 passos</h3>
+  <div class="box gr"><div class="lbl">🟢 tradução simples</div><p>No instável, é <b>controle de dano</b> — não cirurgia elegante. O objetivo é parar o sangramento rápido, mesmo ligando o hilo "às cegas" em vez de dissecar com calma.</p></div>
+
+  <div class="step"><div class="hd2"><span class="num">1</span><div class="sc"><span class="fase">acesso</span>Laparotomia mediana + <b>packing</b> nos 4 quadrantes</div></div>
+  <div class="pq"><b>por quê</b>Mediana dá acesso rápido a toda a cavidade — ainda não se sabe se há outros órgãos sangrando.</div></div>
+
+  <div class="step"><div class="hd2"><span class="num">2</span><div class="sc"><span class="fase">exposição</span>Seccionar ligamentos esplenorrenal/cólico/frênico → rebater o baço à mão</div></div>
+  <div class="pq"><b>por quê</b>Baço fica colado ao diafragma no QSE — mobilizar à mão evita exposição ampla, que consome tempo que o instável não tem.</div></div>
+
+  <div class="step"><div class="hd2"><span class="num">3</span><div class="sc"><span class="fase">o gesto que para o sangramento</span>Clampear o <b>hilo esplênico</b></div></div>
+  <div class="pq"><b>por quê</b>Hilo concentra artéria e veia num único ponto — interrompe tudo de uma vez, em vez de perseguir vasos num campo sangrando.</div></div>
+
+  <div class="step"><div class="hd2"><span class="num">4</span><div class="sc"><span class="fase">ligadura</span>Ligar o hilo, <b>atenção à cauda do pâncreas</b> ao lado</div></div>
+  <div class="pq"><b>por quê</b>Ligadura em massa "às cegas" pode incluir a cauda → <b>fístula pancreática</b>, complicação tardia clássica.</div></div>
+
+  <div class="step"><div class="hd2"><span class="num">5</span><div class="sc"><span class="fase">retirada</span>Revisar leito esplênico + <b>diafragma adjacente</b></div></div>
+  <div class="pq"><b>por quê</b>Diafragma esquerdo é frequentemente lesado junto — não revisar deixa 2ª fonte de sangramento ou hérnia despercebida.</div></div>
+</div>
+
+<!-- 1 OPSI -->
+<div class="panel" data-p="1">
+  <h2>💉 OPSI — vacinação</h2>
+  <div class="card">
+    <div class="kv"><div class="k">🦠 Principais</div><div class="v">Pneumococo · Hib · Meningococo</div></div>
+    <div class="kv"><div class="k">📅 Eletiva</div><div class="v">≥14 dias <strong>ANTES</strong></div></div>
+    <div class="kv"><div class="k">🚨 Urgência</div><div class="v">~14 dias <strong>DEPOIS</strong></div></div>
+  </div>
+  <div class="box warn"><span class="l">☠️ pega-ratão</span>Trauma = vacina <strong>depois</strong>, não antes! + influenza anual.</div>
+  <p>⚠️ Febre no asplênico = urgência! Pode virar choque em <strong>horas</strong>.</p>
+</div>
+
+<!-- 2 FEOCROMO -->
+<div class="panel" data-p="2">
+  <h2>⚡ Feocromocitoma</h2>
+  <div class="box warn"><span class="l">☠️ regra de ouro</span><strong>ALFA antes de BETA</strong>, sempre! Beta primeiro = crise hipertensiva paradoxal.</div>
+  <div class="card">
+    <div class="step"><div class="n">1</div><div class="x">Alfa-bloqueio (fenoxibenzamina/doxazosina) 7-14d</div></div>
+    <div class="step"><div class="n">2</div><div class="x">Beta-bloqueio só DEPOIS</div></div>
+  </div>
+
+  <h3>🔪 Adrenalectomia laparoscópica — 5 passos</h3>
+  <div class="box gr"><div class="lbl">🟢 tradução simples</div><p>A adrenal é pequena mas escondida atrás de estruturas nobres (cava à D, baço/pâncreas à E) e produz hormônios que <b>reagem à manipulação</b>. Dois cuidados: não sangrar perto dos vasos grandes, não espremer o tumor antes de ligar a veia.</p></div>
+
+  <div class="step"><div class="hd2"><span class="num">1</span><div class="sc"><span class="fase">preparo</span>Decúbito lateral, mesa fletida</div></div>
+  <div class="pq"><b>por quê</b>Gravidade afasta as vísceras do retroperitônio — abre espaço sem afastador agressivo num campo pequeno.</div></div>
+
+  <div class="step"><div class="hd2"><span class="num">2</span><div class="sc"><span class="fase">acesso</span>D: rebater fígado, expor cava · E: mobilizar baço + flexura esplênica</div></div>
+  <div class="pq"><b>por quê</b>Adrenal não tem plano próprio — é abordada <i>através</i> do órgão vizinho. Por isso D e E são tecnicamente diferentes desde o 1º passo.</div></div>
+
+  <div class="step"><div class="hd2"><span class="num">3</span><div class="sc"><span class="fase">crítico — o vaso que sangra</span>Ligar a <b>veia adrenal</b> primeiro (D: curta/larga → cava · E: mais longa → renal E)</div></div>
+  <div class="pq"><b>por quê</b>Controlar a drenagem antes de tocar a lesão — e no feocromocitoma, manipular sem a veia controlada pode disparar <b>crise hipertensiva</b> por liberação maciça de catecolaminas. ⚡</div></div>
+
+  <div class="step"><div class="hd2"><span class="num">4</span><div class="sc"><span class="fase">ressecção</span>Glândula em bloco com gordura periadrenal, <b>sem pinçar</b> o tumor</div></div>
+  <div class="pq"><b>por quê</b>Pinçar rompe a cápsula — em massa maligna (CACo), semeia a cavidade, mesma lógica da pseudocápsula do GIST.</div></div>
+
+  <div class="step"><div class="hd2"><span class="num">5</span><div class="sc"><span class="fase">extração</span>Peça em <b>endobag</b></div></div>
+  <div class="pq"><b>por quê</b>Contato com o trocarte = via de implante em cicatriz, se maligna.</div></div>
+
+  <h3>🎯 Roizen (bloqueio adequado)</h3>
+  <ul>
+    <li>PA&lt;160/90 nas 24h antes</li>
+    <li>ECG sem alteração ST-T &gt;1sem</li>
+  </ul>
+  <p>🎯 Meta 2022: PA&lt;130/80, FC 60-70 · expansão volêmica + sal</p>
+  <div class="box warn"><span class="l">☠️ pós-op</span>Hipotensão até <strong>48h</strong> após ressecção = esperado (queda de catecolaminas)!</div>
+</div>
+
+<!-- 3 HIPERALDO -->
+<div class="panel" data-p="3">
+  <h2>🧂 Hiperaldosteronismo primário</h2>
+  <p>Causa endócrina <strong>mais comum</strong> de HAS secundária</p>
+  <div class="card">
+    <div class="step"><div class="n">1</div><div class="x">ARR (rastreio)</div></div>
+    <div class="step"><div class="n">2</div><div class="x">Confirmatório (sobrecarga salina/captopril)</div></div>
+    <div class="step"><div class="n">3</div><div class="x">TC adrenal (+ excluir carcinoma)</div></div>
+    <div class="step"><div class="n">4</div><div class="x"><strong>AVS</strong> — padrão-ouro lateralização</div></div>
+    <div class="step"><div class="n">5</div><div class="x">Cirurgia (unilateral) ou espironolactona (bilateral)</div></div>
+  </div>
+  <div class="box prova"><span class="l">alto rendimento</span>🆕 Exceção sem AVS: <strong>&lt;35 anos</strong> + hipocalemia + aldosterona muito alta + nódulo típico na TC.</div>
+  <div class="box warn"><span class="l">☠️ pega-ratão</span>TC isolada <strong>não</strong> substitui AVS na maioria — nódulo incidental pode enganar o lado.</div>
+</div>
+
+<!-- 4 INCIDENTALOMA -->
+<div class="panel" data-p="4">
+  <h2>🔍 Incidentaloma adrenal</h2>
+  <p>2 perguntas sempre: <strong>é funcionante?</strong> <strong>é maligno?</strong></p>
+  <ul>
+    <li>🧪 Funcional: cortisol (dexa overnight), metanefrinas, ARR se HAS/hipoK</li>
+    <li>⚠️ Malignidade: &gt;4cm, heterogêneo, margem irregular, baixo washout</li>
+  </ul>
+  <div class="box mac"><span class="l">🧠 macete</span>Grande + silenciosa + suspeita = pensar <strong>carcinoma adrenocortical</strong>.</div>
+  <h3>🎗️ Cushing cirúrgico</h3>
+  <p>Adrenalectomia unilateral → cuidado com <strong>insuficiência adrenal PO</strong> (eixo contralateral suprimido) — repor corticoide!</p>
+</div>
+
+<!-- 5 TRAPS -->
+<div class="panel" data-p="5">
+  <h2>☠️ Pega-ratões</h2>
+  <div class="box warn"><span class="l">trap 1</span>Grau AAST isolado não decide — fisiologia manda 🩸</div>
+  <div class="box warn"><span class="l">trap 2</span>Vacina pós-urgência é depois, não antes 💉</div>
+  <div class="box warn"><span class="l">trap 3</span>Beta nunca antes do alfa! ⚡</div>
+  <div class="box warn"><span class="l">trap 4</span>Hipotensão pós-ressecção pheo é esperada 📉</div>
+  <div class="box warn"><span class="l">trap 5</span>TC isolada não substitui AVS 🔍</div>
+  <div class="box warn"><span class="l">trap 6</span>Exceção AVS tem critérios específicos, não é regra geral 📋</div>
+  <div class="box warn"><span class="l">trap 7</span>OPSI evolui em horas — orientar busca imediata ⏱️</div>
+  <div class="box warn"><span class="l">trap 8</span>Cushing PO precisa repor corticoide 💊</div>
+  <div class="box mac"><span class="l">✅ resumo de bolso</span>AAST=anatomia,mas estabilidade manda · OPSI=pneumo+Hib+meningo,antes(eletiva)/depois(urgência) · Pheo=alfa antes beta+Roizen+hipotensão PO · Hiperaldo=ARR→confirma→TC→AVS→cirurgia/espironolactona 🎓</div>
+</div>
+
+<script>
+var tabs=document.querySelectorAll('.tab'),panels=document.querySelectorAll('.panel');
+tabs.forEach(function(t){t.addEventListener('click',function(){
+  tabs.forEach(function(x){x.classList.remove('on')});
+  panels.forEach(function(x){x.classList.remove('on')});
+  t.classList.add('on');
+  document.querySelector('.panel[data-p="'+t.dataset.t+'"]').classList.add('on');
+})});
+</script>
+</body>
+</html>

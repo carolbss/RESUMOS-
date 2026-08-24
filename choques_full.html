@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CAROLZITA — Estados de Choque</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#0a0a0f;--surface:#12121a;--surface2:#1a1a26;--border:#2a2a3d;
+    --text:#e8e8f0;--muted:#888899;
+    --orange:#f97316;--purple:#a855f7;--cyan:#22d3ee;
+    --red:#ef4444;--green:#22c55e;--yellow:#eab308;--blue:#3b82f6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:14px;line-height:1.6;min-height:100vh}
+
+  /* HERO */
+  .hero{background:linear-gradient(135deg,#0f0f1a 0%,#1a0a2e 50%,#0a1628 100%);border-bottom:1px solid var(--border);padding:2rem 1.5rem 1.5rem;position:relative;overflow:hidden}
+  .hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 30% 50%,rgba(249,115,22,.06) 0%,transparent 50%),radial-gradient(circle at 70% 50%,rgba(168,85,247,.06) 0%,transparent 50%);pointer-events:none}
+  .hero-tag{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--orange);letter-spacing:.2em;text-transform:uppercase;margin-bottom:.5rem}
+  h1{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:#fff;letter-spacing:-.02em}
+  h1 span{color:var(--orange)}
+  .hero-sub{color:var(--muted);font-size:13px;margin-top:.4rem;font-style:italic}
+  .badge-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem}
+  .badge{font-family:'JetBrains Mono',monospace;font-size:10px;padding:3px 10px;border-radius:999px;font-weight:700;letter-spacing:.05em}
+  .badge-o{background:rgba(249,115,22,.15);color:var(--orange);border:1px solid rgba(249,115,22,.3)}
+  .badge-p{background:rgba(168,85,247,.15);color:var(--purple);border:1px solid rgba(168,85,247,.3)}
+  .badge-c{background:rgba(34,211,238,.15);color:var(--cyan);border:1px solid rgba(34,211,238,.3)}
+
+  /* NAV */
+  .tab-nav{background:var(--surface);border-bottom:1px solid var(--border);padding:0 1rem;display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .tab-nav::-webkit-scrollbar{display:none}
+  .tab-btn{background:none;border:none;border-bottom:3px solid transparent;color:var(--muted);cursor:pointer;font-family:'Inter',sans-serif;font-size:12px;font-weight:500;padding:.75rem 1rem;white-space:nowrap;transition:all .2s}
+  .tab-btn:hover{color:var(--text)}
+  .tab-btn.active{color:var(--orange);border-bottom-color:var(--orange)}
+
+  /* LAYOUT */
+  .container{max-width:1100px;margin:0 auto;padding:1.5rem}
+  .section{display:none}
+  .section.active{display:block}
+
+  /* CARDS */
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.25rem;margin-bottom:1rem}
+  .card-title{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--orange);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.75rem;display:flex;align-items:center;gap:.5rem}
+
+  /* COLLAPSE */
+  .collapse-btn{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:8px;color:var(--text);cursor:pointer;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;padding:.75rem 1rem;text-align:left;display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem;transition:all .2s}
+  .collapse-btn:hover,.collapse-btn.open{border-color:var(--orange);color:var(--orange)}
+  .collapse-content{display:none;padding:.25rem 0 .75rem}
+  .collapse-content.open{display:block}
+
+  /* TABLE */
+  table{width:100%;border-collapse:collapse;font-size:12.5px;margin:.5rem 0}
+  th{background:var(--surface2);color:var(--orange);font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:.06em;padding:.6rem .75rem;text-align:left;border:1px solid var(--border);text-transform:uppercase}
+  td{padding:.5rem .75rem;border:1px solid var(--border);vertical-align:top;line-height:1.5}
+  tr:hover td{background:rgba(249,115,22,.03)}
+  .cu{color:var(--red);font-weight:700}
+  .cd{color:var(--blue);font-weight:700}
+  .cv{color:var(--yellow);font-weight:700}
+  .cg{color:var(--green);font-weight:700}
+
+  /* BOXES */
+  .box{border-radius:8px;padding:.9rem 1.1rem;margin:.5rem 0;font-size:13px;line-height:1.7}
+  .box-o{background:rgba(249,115,22,.08);border-left:3px solid var(--orange)}
+  .box-p{background:rgba(168,85,247,.08);border-left:3px solid var(--purple)}
+  .box-c{background:rgba(34,211,238,.08);border-left:3px solid var(--cyan)}
+  .box-r{background:rgba(239,68,68,.08);border-left:3px solid var(--red)}
+  .box-g{background:rgba(34,197,94,.08);border-left:3px solid var(--green)}
+  .box-y{background:rgba(234,179,8,.08);border-left:3px solid var(--yellow)}
+
+  /* TAGS */
+  .tag{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px;vertical-align:middle;margin-left:5px}
+  .tag-p{background:rgba(168,85,247,.2);color:var(--purple)}
+  .tag-c{background:rgba(34,211,238,.2);color:var(--cyan)}
+  .tag-r{background:rgba(239,68,68,.2);color:var(--red)}
+
+  /* GRIDS */
+  .g2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  .g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem}
+  @media(max-width:700px){.g2,.g3{grid-template-columns:1fr};h1{font-size:1.5rem}}
+
+  /* LISTS */
+  .step-list{list-style:none;counter-reset:s}
+  .step-list li{counter-increment:s;display:flex;gap:.75rem;align-items:flex-start;margin-bottom:.6rem;font-size:13px}
+  .step-list li::before{content:counter(s);background:var(--orange);color:#000;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;min-width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:2px;flex-shrink:0}
+  .blist{list-style:none}
+  .blist li{padding:.2rem 0 .2rem 1.2rem;font-size:13px;position:relative}
+  .blist li::before{content:'▸';color:var(--orange);position:absolute;left:0}
+
+  /* MONO */
+  .mono{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--cyan)}
+  .dose{font-family:'JetBrains Mono',monospace;font-size:11px;background:rgba(34,211,238,.1);color:var(--cyan);padding:1px 6px;border-radius:4px}
+
+  /* MISC */
+  strong{color:#fff;font-weight:600}
+  em{color:var(--orange);font-style:normal;font-weight:500}
+  .small{font-size:11.5px;color:var(--muted)}
+  .alert{background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.3);border-radius:8px;padding:.7rem 1rem;font-size:12.5px;color:var(--red);font-weight:500;margin:.5rem 0;display:flex;gap:.5rem;align-items:flex-start}
+  .alert::before{content:'⚠️'}
+  .sh{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;color:#fff;margin:1.5rem 0 .75rem;display:flex;align-items:center;gap:.5rem}
+  .sh::after{content:'';flex:1;height:1px;background:var(--border)}
+  .drug-1{background:rgba(249,115,22,.06)}
+  .drug-2{background:rgba(168,85,247,.06)}
+  .cl1 td:first-child{border-left:3px solid var(--green)}
+  .cl2 td:first-child{border-left:3px solid var(--yellow)}
+  .cl3 td:first-child{border-left:3px solid var(--orange)}
+  .cl4 td:first-child{border-left:3px solid var(--red)}
+
+  /* MNEMONIC */
+  .mng{display:grid;grid-template-columns:auto 1fr;gap:.3rem 1rem;align-items:start}
+  .mnl{font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;color:var(--cyan)}
+  .mnt{font-size:13px;padding-top:.25rem}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">◈ carolzita · sistema de resumos · cirurgia geral</div>
+  <h1>ESTADOS DE <span>CHOQUE</span></h1>
+  <div class="hero-sub">Hemorrágico · Cardiogênico · Distributivo · Obstrutivo — visão do cirurgião</div>
+  <div class="badge-row">
+    <span class="badge badge-o">Trauma / Emergência</span>
+    <span class="badge badge-o">ATLS 10ª Ed</span>
+    <span class="badge badge-o">Surviving Sepsis 2021</span>
+    <span class="badge badge-p">AMRIGS · GHC · HCPA · PUC · Santa Casa</span>
+    <span class="badge badge-c">Sabiston · Zollinger</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="tab-nav">
+  <button class="tab-btn active" onclick="showTab('conceitos',this)">Conceitos</button>
+  <button class="tab-btn" onclick="showTab('hemo',this)">Hemodinâmica</button>
+  <button class="tab-btn" onclick="showTab('hemorragico',this)">Hemorrágico</button>
+  <button class="tab-btn" onclick="showTab('cardiogenico',this)">Cardiogênico</button>
+  <button class="tab-btn" onclick="showTab('distributivo',this)">Distributivo</button>
+  <button class="tab-btn" onclick="showTab('obstrutivo',this)">Obstrutivo</button>
+  <button class="tab-btn" onclick="showTab('drogas',this)">Drogas Vasoativas</button>
+  <button class="tab-btn" onclick="showTab('ressuscitacao',this)">Ressuscitação</button>
+  <button class="tab-btn" onclick="showTab('cirurgico',this)">Intervenção Cirúrgica</button>
+  <button class="tab-btn" onclick="showTab('complicacoes',this)">Complicações</button>
+  <button class="tab-btn" onclick="showTab('questoes',this)">Questões RS</button>
+  <button class="tab-btn" onclick="showTab('mnemonicos',this)">Mnemônicos</button>
+</nav>
+
+<div class="container">
+
+<!-- ===== CONCEITOS ===== -->
+<div id="tab-conceitos" class="section active">
+
+  <div class="card">
+    <div class="card-title">🧠 Definição & Fisiopatologia</div>
+    <div class="box box-o">
+      <strong>Choque = falência aguda de perfusão tecidual</strong> → oferta de O₂ &lt; demanda → metabolismo anaeróbio → acidose lática → falência orgânica progressiva.<br><br>
+      <span class="mono">DO₂ = CO × CaO₂ = CO × (Hb × 1,34 × SaO₂ + PaO₂ × 0,0031)</span>
+    </div>
+    <div class="box box-c">
+      <strong>(Tradução)</strong> O coração precisa bombear sangue suficiente para todos os órgãos. Quando isso falha — por falta de volume, bomba fraca, vasos dilatados demais ou bloqueio mecânico — as células ficam sem oxigênio e "fermentam", gerando ácido lático.
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">📊 Classificação dos Choques — Tabela Mestre</div>
+    <table>
+      <tr><th>Tipo</th><th>Mecanismo</th><th>Exemplos Clínicos</th><th>CO</th><th>RVS</th><th>Pressão Enchimento</th></tr>
+      <tr>
+        <td><strong>Hipovolêmico</strong></td>
+        <td>↓ Pré-carga (↓ volume intravascular)</td>
+        <td>Hemorragia, trauma, vômito/diarreia grave, queimaduras, pancreatite</td>
+        <td class="cd">↓↓</td><td class="cu">↑↑</td><td class="cd">↓↓</td>
+      </tr>
+      <tr>
+        <td><strong>Cardiogênico</strong></td>
+        <td>↓ Contratilidade / falha de bomba</td>
+        <td>IAM extenso, miocardite, arritmia, valvopatia aguda, contusão miocárdica</td>
+        <td class="cd">↓↓</td><td class="cu">↑↑</td><td class="cu">↑↑</td>
+      </tr>
+      <tr>
+        <td><strong>Distributivo — Séptico</strong></td>
+        <td>Vasodilatação sistêmica + disfunção endotelial</td>
+        <td>Sepse bacteriana, fúngica, viral grave</td>
+        <td class="cu">↑ (precoce)</td><td class="cd">↓↓</td><td class="cv">↓/N</td>
+      </tr>
+      <tr>
+        <td><strong>Distributivo — Anafilático</strong></td>
+        <td>Histamina → vasodilatação + broncoespasmo</td>
+        <td>Látex, β-lactâmico, relaxante muscular, contraste</td>
+        <td class="cv">↑/N</td><td class="cd">↓↓</td><td class="cd">↓</td>
+      </tr>
+      <tr>
+        <td><strong>Distributivo — Neurogênico</strong></td>
+        <td>↓ Tônus simpático (lesão medular ≥T6)</td>
+        <td>Trauma raqui-medular, anestesia raqui alta</td>
+        <td class="cv">↑/N</td><td class="cd">↓↓</td><td class="cd">↓</td>
+      </tr>
+      <tr>
+        <td><strong>Obstrutivo</strong></td>
+        <td>Obstrução mecânica ao fluxo cardíaco</td>
+        <td>Tamponamento cardíaco, PTX hipertensivo, TEP maciço</td>
+        <td class="cd">↓↓</td><td class="cu">↑↑</td><td class="cv">↑ (VD)</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🎯 Reconhecimento Clínico Rápido</div>
+    <div class="g2">
+      <div>
+        <div class="box box-r">
+          <strong>Choque = hipoperfusão ≠ hipotensão</strong><br>
+          Pode haver choque <em>compensado</em> com PA normal (jovens com hemorragia classe I-II perdem até 1500 mL sem hipotensão)
+        </div>
+        <ul class="blist">
+          <li>PAS &lt;90 mmHg (ou queda &gt;40 do basal)</li>
+          <li>PAM &lt;65 mmHg</li>
+          <li>FC &gt;100 bpm</li>
+          <li>FR &gt;22 irpm</li>
+          <li>Lactato &gt;2 mmol/L</li>
+          <li>Diurese &lt;0,5 mL/kg/h</li>
+          <li>Alteração de consciência (confusão, agitação)</li>
+          <li>Extremidades frias, enchimento capilar &gt;2s</li>
+          <li>Pele pálida, sudorese fria</li>
+        </ul>
+      </div>
+      <div>
+        <div class="box box-p">
+          <strong>Índice de Choque (Shock Index)</strong><br>
+          <span class="mono">SI = FC / PAS</span><br><br>
+          SI &lt;0,8 → normal<br>
+          SI 0,8–1,0 → borderline<br>
+          SI &gt;1,0 → choque significativo<br>
+          SI &gt;1,8 → mortalidade muito elevada <span class="tag tag-p">AMRIGS 2023</span>
+        </div>
+        <div class="box box-y" style="margin-top:.5rem">
+          <strong>Delta do Choque:</strong> PA normal com SI &gt;1 = sangramento até 30% oculto. Confiar apenas na PA é matar o paciente.
+        </div>
+        <div class="box box-p" style="margin-top:.5rem">
+          <strong>Regra mnemônica do choque descompensado:</strong> PAS &lt;90 + FC &gt;90 + FR &gt;20 = tríade de alerta máximo
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== HEMODINÂMICA ===== -->
+<div id="tab-hemo" class="section">
+  <div class="card">
+    <div class="card-title">📐 Equações e Parâmetros Hemodinâmicos</div>
+    <div class="box box-o">
+      <span class="mono">
+        DC = FC × VS → normal 4–8 L/min<br>
+        PAM = (PAS + 2×PAD) / 3 → alvo ≥65 mmHg<br>
+        RVS = [(PAM − PVC) / DC] × 80 → normal 800–1200 dyn·s/cm⁵<br>
+        IC (índice cardíaco) = DC / SC → normal 2,5–4 L/min/m²
+      </span>
+    </div>
+    <table>
+      <tr><th>Parâmetro</th><th>Normal</th><th>Hipovolêmico</th><th>Cardiogênico</th><th>Distributivo</th><th>Obstrutivo</th></tr>
+      <tr><td>DC (L/min)</td><td>4–8</td><td class="cd">↓↓</td><td class="cd">↓↓</td><td class="cu">↑ (precoce)</td><td class="cd">↓↓</td></tr>
+      <tr><td>RVS (dyn·s/cm⁵)</td><td>800–1200</td><td class="cu">↑↑</td><td class="cu">↑↑</td><td class="cd">↓↓</td><td class="cu">↑↑</td></tr>
+      <tr><td>PVC (mmHg)</td><td>2–8</td><td class="cd">↓</td><td class="cu">↑↑</td><td class="cd">↓</td><td class="cu">↑↑</td></tr>
+      <tr><td>POAP (mmHg)</td><td>6–12</td><td class="cd">↓</td><td class="cu">↑↑ (&gt;18)</td><td class="cd">↓/N</td><td class="cv">variável</td></tr>
+      <tr><td>SvO₂</td><td>65–75%</td><td class="cd">↓</td><td class="cd">↓</td><td class="cu">↑ (shunt)</td><td class="cd">↓</td></tr>
+      <tr><td>Lactato (mmol/L)</td><td>&lt;2</td><td class="cu">↑</td><td class="cu">↑</td><td class="cu">↑↑</td><td class="cu">↑</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🎭 Determinantes do Débito Cardíaco</div>
+    <div class="g3">
+      <div class="box box-o">
+        <strong>Pré-carga</strong><br>
+        Volume diastólico final = tensão da parede antes da contração<br>
+        Indicadores: PVC, POAP, ecocardiograma (VCI colabável)<br>
+        <span class="small">(quanto cheio está o coração antes de contrair)</span>
+      </div>
+      <div class="box box-p">
+        <strong>Pós-carga</strong><br>
+        Resistência que o VE vence para ejetar = RVS<br>
+        Alta pós-carga = coração trabalha mais com menos resultado<br>
+        <span class="small">(pressão contra a qual o coração joga o sangue)</span>
+      </div>
+      <div class="box box-c">
+        <strong>Contratilidade</strong><br>
+        Força intrínseca do miocárdio<br>
+        Avaliada pela FE no eco (normal ≥55%)<br>
+        <span class="small">(força que o músculo cardíaco gera ao contrair)</span>
+      </div>
+    </div>
+    <div class="box box-r">
+      <strong>Curva de Frank-Starling:</strong> até certo ponto, mais pré-carga → mais DC. No coração falido, curva está deslocada para baixo — volume extra não melhora o DC e pode causar edema pulmonar.
+    </div>
+    <div class="box box-p">
+      <strong>POCUS beira-leito substituiu Swan-Ganz:</strong> VCI colabável &gt;50% na inspiração = hipovolemia. B-lines &gt;3/campo = edema pulmonar. FE visual &lt;30% = cardiogênico. Derrame pericárdico = tamponamento.
+      <span class="tag tag-p">HCPA 2024</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== HEMORRÁGICO ===== -->
+<div id="tab-hemorragico" class="section">
+
+  <div class="box box-p" style="margin-bottom:1rem">
+    <strong>Principal choque do cirurgião.</strong> A intervenção é cirúrgica: parar o sangramento supera qualquer ressuscitação às cegas. <span class="tag tag-p">ATLS 10ª Ed</span>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🩸 Classes de Hemorragia (ATLS) — adulto 70 kg / volemia ~5L</div>
+    <table>
+      <tr><th>Classe</th><th>Volume (mL)</th><th>% Volemia</th><th>FC</th><th>PAS</th><th>FR</th><th>Diurese mL/h</th><th>Glasgow / Estado</th><th>Reposição</th></tr>
+      <tr class="cl1"><td><strong>I</strong></td><td>&lt;750</td><td>&lt;15%</td><td>&lt;100</td><td>Normal</td><td>14–20</td><td>&gt;30</td><td>Normal / levemente ansioso</td><td>Cristaloide VO</td></tr>
+      <tr class="cl2"><td><strong>II</strong></td><td>750–1500</td><td>15–30%</td><td>100–120</td><td>Normal ← ARMADILHA</td><td>20–30</td><td>20–30</td><td>Ansioso, agitado</td><td>Cristaloide IV ± CH</td></tr>
+      <tr class="cl3"><td><strong>III</strong></td><td>1500–2000</td><td>30–40%</td><td>120–140</td><td>↓ começa cair</td><td>30–40</td><td>5–15</td><td>Confuso, obnubilado</td><td><strong>CH + PFC urgente</strong></td></tr>
+      <tr class="cl4"><td><strong>IV</strong></td><td>&gt;2000</td><td>&gt;40%</td><td>&gt;140 (ou bradi terminal)</td><td>↓↓</td><td>&gt;35</td><td>Oligúria/anúria</td><td>Letárgico / inconsciente</td><td><strong>PTM + cirurgia imediata</strong></td></tr>
+    </table>
+    <div class="alert">Classes I e II: PA sistólica NORMAL — jovens compensam até perder 1500 mL. A taquicardia é o primeiro sinal. Confiar só na PA = erro fatal.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">⚡ Algoritmo de Manejo Cirúrgico</div>
+    <ol class="step-list">
+      <li><strong>Parar o sangramento PRIMEIRO</strong> — pressão direta, torniquete (membros), tamponamento pélvico, clampe cirúrgico. <em>Matar o sangramento &gt; ressuscitar indefinidamente.</em></li>
+      <li><strong>Acesso vascular</strong> — 2 acessos periféricos calibrosos (14G ou 16G); IO se impossível; central femoral se necessário (≠ subclávia em coagulopata)</li>
+      <li><strong>Avaliação de resposta (30 min de cristaloide 1L):</strong><br>
+        • <em>Responsivo total</em> → estável, perda &lt;20% → cirurgia eletiva/urgente<br>
+        • <em>Responsivo parcial</em> → melhora temporária → sangramento ativo moderado → cirurgia urgente<br>
+        • <em>Não responsivo</em> → classe IV → cirurgia emergencial imediata (DCS)
+      </li>
+      <li><strong>Ácido tranexâmico</strong> — <span class="dose">1g IV em 10 min</span> na 1ª hora do trauma + <span class="dose">1g em 8h infusão</span>. Até 3h do trauma (CRASH-2). Depois de 3h: contraindicado.</li>
+      <li><strong>Hemoderivados precoces</strong> — classes III/IV: PTM 1:1:1 (CH:PFC:plaquetas) — ressuscitação hemostática supera cristaloide maciço</li>
+      <li><strong>Hipotensão permissiva</strong> — PAS ~80–90 mmHg (PAM 50–65) até controle cirúrgico definitivo. <em>Exceção: TCE → manter PAM ≥80 mmHg</em></li>
+      <li><strong>Corrigir tríade da morte</strong> — fluidos aquecidos, cálcio, correção do pH (DCS na UTI)</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🔴 Protocolo de Transfusão Maciça (PTM)</div>
+    <div class="g2">
+      <div>
+        <div class="box box-o">
+          <strong>Definição:</strong> ≥10 CH em 24h ou ≥4 CH em 1h ou ≥50% da volemia em 3h<br><br>
+          <strong>Proporção alvo:</strong> <span class="mono">CH : PFC : PLQ = 1:1:1</span><br>
+          (Hemostasia de controle de dano = DC Resuscitation)
+        </div>
+        <ul class="blist" style="margin-top:.5rem">
+          <li>Fibrinogênio &lt;1,5 g/L → crioprecipitado 10 U ou fibrinogênio concentrado 3g</li>
+          <li>Aquecimento de fluidos e hemoderivados (↑35°C)</li>
+          <li>Ca²⁺ ionizado &gt;1,1 → gluconato de cálcio 10% (1 amp para cada 2–4 CH)</li>
+          <li>Bicarbonato se pH &lt;7,1</li>
+          <li>Ácido tranexâmico (&lt;3h)</li>
+        </ul>
+      </div>
+      <div>
+        <div class="box box-p">
+          <strong>ABC Score (ativar PTM se ≥2):</strong><br>
+          PAS ≤90 = 1 ponto<br>
+          FC ≥120 = 1 ponto<br>
+          FAST positivo = 1 ponto<br>
+          Trauma penetrante = 1 ponto
+          <span class="tag tag-p">AMRIGS 2022 / GHC 2023</span>
+        </div>
+        <div class="box box-r" style="margin-top:.5rem">
+          <strong>Tríade da Morte:</strong><br>
+          🌡️ Hipotermia &lt;35°C → enzimas coagulação inativas<br>
+          🧪 Acidose pH &lt;7,2 → plaquetas não funcionam<br>
+          🩸 Coagulopatia → ↑ sangramento → ↑ transfusão<br>
+          <em>Cada elemento piora os outros dois = espiral de morte</em>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🩻 REBOA — Oclusão Endovascular da Aorta</div>
+    <div class="g2">
+      <div>
+        <div class="box box-o">
+          <strong>Zonas da aorta:</strong><br>
+          <strong>Zona I</strong> (aorta descend. torácica): hemorragia abdominal/pélvica — <em>mais usada</em><br>
+          <strong>Zona II</strong> (aa. renais): contraindicada — vasculatura visceral<br>
+          <strong>Zona III</strong> (acima bifurcação ilíaca): hemorragia pélvica isolada
+        </div>
+        <div class="box box-o" style="margin-top:.5rem">
+          Acesso: artéria femoral, introdutor 7–12Fr. Tempo máximo:<br>
+          Zona I: 30–60 min (isquemia medular e visceral)<br>
+          Zona III: 60–90 min
+        </div>
+      </div>
+      <div>
+        <div class="box box-r">
+          <strong>Complicações:</strong><br>
+          Isquemia de MMII (mais comum), isquemia intestinal/renal/medular, trombose femoral, síndrome de reperfusão pós-deflação
+        </div>
+        <div class="box box-p" style="margin-top:.5rem">
+          Indicação: instável hemodinâmico com hemorragia abdominal ou pélvica quando cirurgia imediata não disponível ou como ponte ao controle cirúrgico. Não é substituto da cirurgia — é <em>ponte</em>.
+          <span class="tag tag-p">HCPA 2023</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CARDIOGÊNICO ===== -->
+<div id="tab-cardiogenico" class="section">
+  <div class="card">
+    <div class="card-title">💔 Choque Cardiogênico — Mecanismo</div>
+    <div class="box box-o">
+      <strong>Falha de bomba → ↓ DC → ↓ perfusão coronária → mais isquemia → ↓ DC → espiral vicioso.</strong><br>
+      Ativação neuro-humoral reflexa (catecolaminas + SRAA) → vasoconstrição → ↑ pós-carga → piora ainda mais o DC.
+    </div>
+    <div class="g2">
+      <div>
+        <div class="card-title" style="font-size:12px;margin-top:.5rem">Causas principais</div>
+        <ul class="blist">
+          <li>IAM extenso de VE (causa mais comum — 80%)</li>
+          <li>IAM de VD (hipotensão + jugulares + sem congestão pulmonar)</li>
+          <li>Miocardite fulminante</li>
+          <li>Arritmia grave (TV, FV, BAVT)</li>
+          <li>Insuficiência valvar aguda (rotura de cordoalha, endocardite)</li>
+          <li>Contusão miocárdica (trauma torácico)</li>
+          <li>Miocardiopatia peripartum / Takotsubo</li>
+        </ul>
+      </div>
+      <div>
+        <div class="card-title" style="font-size:12px;margin-top:.5rem">Diagnóstico diferencial crucial</div>
+        <table>
+          <tr><th>Achado</th><th>Cardiogênico</th><th>Obstrutivo</th></tr>
+          <tr><td>PVC / jugulares</td><td class="cu">↑</td><td class="cu">↑</td></tr>
+          <tr><td>POAP</td><td class="cu">↑↑ (&gt;18)</td><td>N ou ↑</td></tr>
+          <tr><td>Bulhas</td><td>B3/B4, sopros</td><td>Abafadas (tampo)</td></tr>
+          <tr><td>Eco FE</td><td class="cd">↓ acentuada</td><td>Normal</td></tr>
+          <tr><td>Edema pulmonar</td><td>Sim</td><td>Não</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">💊 Tratamento do Choque Cardiogênico</div>
+    <ol class="step-list">
+      <li><strong>Tratar a causa</strong> — ICP primária no IAM é a única intervenção que muda mortalidade de forma definitiva. BAVT: marca-passo transvenoso. Arritmia: cardioversão.</li>
+      <li><strong>Otimizar pré-carga com cautela</strong> — POAP &gt;18 mmHg: sem fluido. POAP &lt;12: pode tentar desafio de 250 mL com reavaliação eco imediata.</li>
+      <li><strong>Vasopressor de 1ª linha: Norepinefrina</strong> — ↑ PAM sem aumentar muito FC (menos arritmogênico que dopamina)</li>
+      <li><strong>Inotrópico: Dobutamina</strong> — ↑ DC, ↑ contratilidade (β1). Cuidado: pode piorar hipotensão (↓ RVS via β2) — sempre associar NE se PA baixa</li>
+      <li><strong>Suporte mecânico circulatório (SMC)</strong> — escalonar conforme resposta</li>
+      <li><strong>Ventilação mecânica</strong> — ↓ trabalho respiratório e ↓ pós-carga</li>
+    </ol>
+    <div class="box box-p">
+      <strong>Suporte Mecânico Circulatório — escalonamento:</strong><br>
+      IABP (balão intra-aórtico) → Impella CP/5.5 → VA-ECMO (venoarterial)<br>
+      VA-ECMO: indicada em cardiogênico refratário; atenção à isquemia de membro (monitorizar perfusão distal do sítio de acesso femoral — ELSO guidelines).
+      <span class="tag tag-p">GHC 2023</span>
+    </div>
+    <div class="alert">Dobutamina + NE é a associação clássica mas aumenta consumo de O₂ miocárdico. Monitorar isquemia continuamente. Milrinona é alternativa em paciente em uso de betabloqueador (não depende de receptor β).</div>
+  </div>
+</div>
+
+<!-- ===== DISTRIBUTIVO ===== -->
+<div id="tab-distributivo" class="section">
+
+  <button class="collapse-btn open" onclick="toggleCollapse(this)">🦠 Choque Séptico <span>▴</span></button>
+  <div class="collapse-content open">
+    <div class="card">
+      <div class="card-title">Sepse 3.0 — Definições (Surviving Sepsis Campaign)</div>
+      <div class="g2">
+        <div class="box box-o">
+          <strong>Sepse:</strong> disfunção orgânica ameaçadora à vida por resposta desregulada do hospedeiro à infecção<br>
+          Critério: <strong>SOFA ≥2</strong> + suspeita de infecção<br><br>
+          <strong>qSOFA (triagem):</strong> FR ≥22 + alteração de consciência + PAS ≤100 (≥2 = investigar sepse)
+        </div>
+        <div class="box box-r">
+          <strong>Choque Séptico:</strong> sepse + vasopressor para PAM ≥65 mmHg + lactato &gt;2 mmol/L<br><br>
+          Mortalidade: &gt;40%<br>
+          Cada hora sem antibiótico: ↑ mortalidade ~7%
+        </div>
+      </div>
+      <div class="box box-c">
+        <strong>(SOFA)</strong> Avalia 6 órgãos: respiração (PaO₂/FiO₂), coagulação (plaquetas), fígado (bilirrubina), cardiovascular (PAM ou vasopressor), neurológico (Glasgow), rim (creatinina/diurese). 0–4 pontos cada. ≥2 = disfunção orgânica.
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">⏱️ Bundle 1ª Hora — Sobrevivência na Sepse</div>
+      <ol class="step-list">
+        <li><strong>Lactato</strong> — dosar; se &gt;2 mmol/L, repetir após ressuscitação (clearance &gt;10% = resposta)</li>
+        <li><strong>Hemoculturas</strong> — 2 pares (1 periférico + 1 central se cateter) <em>ANTES</em> do antibiótico</li>
+        <li><strong>Antibiótico</strong> — amplo espectro em até <em>1 hora</em> do reconhecimento (cada hora de atraso ↑ mortalidade)</li>
+        <li><strong>Fluido</strong> — cristaloide 30 mL/kg se hipotensão ou lactato ≥4; RL preferível ao SF 0,9%</li>
+        <li><strong>Vasopressor</strong> — Norepinefrina se PAM &lt;65 persistir. Acesso venoso central preferível.</li>
+      </ol>
+      <div class="box box-p">
+        <strong>Foco cirúrgico é MANDATÓRIO e urgente:</strong> drenagem de abscesso, laparotomia (peritonite), ressecção de víscera (colecistite gangrenosa, perfuração), desbridamento de partes moles (fasciíte necrosante). Antibiótico sem controle do foco = insucesso.
+        <span class="tag tag-p">Santa Casa 2023 / AMRIGS 2022</span>
+      </div>
+      <div class="alert">Fasciíte necrosante: desbridamento cirúrgico amplo emergencial — antibiótico sozinho não resolve. Mortalidade dobra a cada 24h de atraso.</div>
+    </div>
+    <div class="card">
+      <div class="card-title">💊 Vasopressores no Séptico</div>
+      <table>
+        <tr><th>Droga</th><th>Receptor</th><th>Dose</th><th>Papel</th><th>Observação</th></tr>
+        <tr class="drug-1"><td><strong>Norepinefrina</strong></td><td>α1 &gt;&gt; β1</td><td><span class="dose">0,01–3 mcg/kg/min</span></td><td>1ª linha</td><td>↑ RVS, PAM; menos arritmia que dopamina</td></tr>
+        <tr class="drug-2"><td><strong>Vasopressina</strong></td><td>V1 (ADH)</td><td><span class="dose">0,03–0,04 U/min (fixo)</span></td><td>2ª linha / poupador de NE</td><td>Dose fixa; isquemia coronária/intestinal em doses altas</td></tr>
+        <tr class="drug-2"><td><strong>Epinefrina</strong></td><td>α1, β1, β2</td><td><span class="dose">0,01–1 mcg/kg/min</span></td><td>2ª linha alternativa</td><td>↑ lactato por efeito metabólico (≠ hipoperfusão)</td></tr>
+        <tr><td>Dopamina</td><td>D1, β1, α1</td><td><span class="dose">2–20 mcg/kg/min</span></td><td>Não preferida</td><td>NEJM 2010: mais arritmia, maior mortalidade vs NE</td></tr>
+        <tr><td>Dobutamina</td><td>β1 &gt; β2</td><td><span class="dose">2,5–20 mcg/kg/min</span></td><td>Disfunção miocárdica séptica</td><td>Adicionar se baixo DC mesmo com vasopressor</td></tr>
+      </table>
+      <div class="box box-y" style="margin-top:.75rem">
+        <strong>Corticoide no Séptico Refratário:</strong><br>
+        Indicação: NE ≥0,25 mcg/kg/min por ≥4h sem estabilização<br>
+        Dose: <span class="dose">Hidrocortisona 200 mg/dia</span> (50mg 6/6h ou infusão contínua) — <em>não em bólus</em> (piora hiperglicemia e risco de necrose miocárdica)
+      </div>
+    </div>
+  </div>
+
+  <button class="collapse-btn" onclick="toggleCollapse(this)" style="margin-top:.5rem">🐝 Choque Anafilático <span>▾</span></button>
+  <div class="collapse-content">
+    <div class="card">
+      <div class="card-title">Fisiopatologia, Diagnóstico & Tratamento</div>
+      <div class="box box-o">
+        IgE → degranulação mastócitos → histamina, triptase, prostaglandinas → vasodilatação maciça + broncoespasmo + angioedema. Reação anafilactoide (contraste, opioide) = mesmo quadro sem sensibilização prévia.
+      </div>
+      <div class="g2">
+        <div>
+          <div class="box box-r">
+            <strong>Diagnóstico (≥2 critérios):</strong><br>
+            1. Cutâneo: urticária, flushing, angioedema<br>
+            2. Respiratório: broncoespasmo, estridor, hipoxemia<br>
+            3. Cardiovascular: hipotensão, síncope, taquicardia
+          </div>
+          <div class="box box-y" style="margin-top:.5rem">
+            <strong>Gatilhos intraoperatórios frequentes:</strong><br>
+            Látex · Succinilcolina · Rocurônio · Vancomicina (síndrome do homem vermelho — ≠ anafilaxia vera) · β-lactâmicos · Contraste iodado · AINES · Gelatinas coloidais
+          </div>
+        </div>
+        <div>
+          <ol class="step-list">
+            <li><strong>Remover o agente</strong> (parar infusão, retirar luvas)</li>
+            <li><strong>Epinefrina IM 0,3–0,5 mg (1:1.000)</strong> na face anterolateral da coxa — <em>1ª medida, não anti-histamínico!</em></li>
+            <li>Decúbito + elevação MMII</li>
+            <li>O₂ 100% / IOT se angioedema de vias aéreas</li>
+            <li>Cristaloide IV 1–2L em bólus</li>
+            <li>Difenidramina <span class="dose">25–50 mg IV</span></li>
+            <li>Metilprednisolona <span class="dose">1–2 mg/kg IV</span> (previne reação bifásica)</li>
+            <li>Salbutamol nebulizado se broncoespasmo persistente</li>
+            <li>Refratário: epinefrina IV em infusão contínua</li>
+          </ol>
+          <div class="box box-p" style="margin-top:.5rem">
+            <strong>Reação bifásica</strong> em 8–72h: observar mínimo 4–8h após resolução. <span class="tag tag-p">PUC 2022 / AMRIGS 2024</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="collapse-btn" onclick="toggleCollapse(this)" style="margin-top:.5rem">🧠 Choque Neurogênico <span>▾</span></button>
+  <div class="collapse-content">
+    <div class="card">
+      <div class="card-title">Diagnóstico & Tratamento</div>
+      <div class="box box-o">
+        Lesão medular acima de T6 → perda do tônus simpático → vasodilatação periférica (↓ RVS) + bradicardia paradoxal (sem taquicardia compensatória, pois o simpático está bloqueado).
+      </div>
+      <div class="g2">
+        <div class="box box-r">
+          <strong>Diagnóstico diferencial hemorrágico vs neurogênico:</strong><br>
+          <br>
+          Hemorrágico: hipotensão + <em>taquicardia</em> + pele fria/úmida<br>
+          Neurogênico: hipotensão + <em>bradicardia</em> + pele <em>quente e seca</em><br>
+          <br>
+          Em trauma: excluir hemorragia PRIMEIRO, mesmo com lesão medular evidente
+        </div>
+        <div>
+          <ol class="step-list">
+            <li>Ressuscitação volêmica cuidadosa (cristaloide)</li>
+            <li><strong>Vasopressor: Norepinefrina</strong> ou fenilefrina (α puro, não aumenta FC)</li>
+            <li>Atropina se bradicardia sintomática (FC &lt;50)</li>
+            <li>Imobilização da coluna (colar cervical + prancha)</li>
+            <li>Manter PAM ≥85 mmHg por 7 dias para perfusão medular</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== OBSTRUTIVO ===== -->
+<div id="tab-obstrutivo" class="section">
+
+  <div class="box box-r" style="margin-bottom:1rem">
+    <strong>Choques obstrutivos são procedimentais ou cirúrgicos.</strong> Diagnóstico clínico rápido + intervenção imediata = sobrevida. Não espere imagem se o paciente estiver instável.
+  </div>
+
+  <button class="collapse-btn open" onclick="toggleCollapse(this)">🫀 Tamponamento Cardíaco <span>▴</span></button>
+  <div class="collapse-content open">
+    <div class="card">
+      <div class="card-title">Fisiopatologia, Diagnóstico & Intervenção</div>
+      <div class="box box-o">
+        Acúmulo de fluido/sangue no pericárdio → ↑ pressão intrapericárdica → ↓ enchimento diastólico (colapso de câmaras D) → ↓ DC → choque obstrutivo. Volume crítico depende da velocidade: 150 mL agudos &gt; 1 L crônico em impacto hemodinâmico.
+      </div>
+      <div class="g2">
+        <div>
+          <div class="box box-p">
+            <strong>Tríade de Beck:</strong><br>
+            1. Hipotensão<br>
+            2. Turgência jugular (↑ PVC)<br>
+            3. Bulhas abafadas<br>
+            <span class="small">Presente em &lt;40% dos casos — ausência não exclui</span>
+            <span class="tag tag-p">HCPA 2022 / PUC 2023</span>
+          </div>
+          <ul class="blist" style="margin-top:.5rem">
+            <li>Pulso paradoxal &gt;10 mmHg (queda da PA na inspiração)</li>
+            <li>Alternância elétrica no ECG (complexos variáveis)</li>
+            <li>FAST positivo (derrame pericárdico) = diagnóstico imediato</li>
+            <li>Rx tórax: silhueta em "garrafa d'água" (se crônico)</li>
+          </ul>
+        </div>
+        <div>
+          <div class="card-title" style="font-size:12px">Intervenção cirúrgica</div>
+          <ol class="step-list">
+            <li><strong>FAST/Eco beira-leito</strong> — confirma colapso de câmara D na diástole</li>
+            <li><strong>Pericardiocentese subxifoide</strong> — agulha 18G + seringa, ângulo 45° em direção ao ombro E; eco-guiada ou ECG-guiada; 50–100 mL já melhora DC</li>
+            <li><strong>Janela pericárdica subxifoide</strong> — definitiva; permite identificar conteúdo (sangue, pus, neoplasia); via cirúrgica padrão em instável</li>
+            <li><strong>Toracotomia de ressuscitação</strong> — trauma penetrante + colapso cardiovascular sem resposta → toracotomia à esquerda no 4º ou 5º EIC → evacuação + massagem cardíaca interna + controle de sangramento</li>
+          </ol>
+          <div class="alert">Trauma penetrante + tríade de Beck → não perder tempo com TC → bloco cirúrgico imediato ou toracotomia de ressuscitação no PS.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="collapse-btn" onclick="toggleCollapse(this)" style="margin-top:.5rem">💨 Pneumotórax Hipertensivo <span>▾</span></button>
+  <div class="collapse-content">
+    <div class="card">
+      <div class="card-title">Diagnóstico Clínico & Intervenção</div>
+      <div class="box box-o">
+        Mecanismo valvular → ar entra no espaço pleural mas não sai → ↑ pressão intratorácica progressiva → desvio mediastinal → compressão da veia cava → ↓ retorno venoso → ↓ DC → parada cardíaca por PEA (atividade elétrica sem pulso).
+      </div>
+      <div class="g2">
+        <div class="box box-r">
+          <strong>Diagnóstico CLÍNICO — não esperar Rx:</strong><br>
+          • Dispneia + hipotensão súbita<br>
+          • ↓ ou ausência de MV no lado afetado<br>
+          • Hipertimpanismo (percussão)<br>
+          • Desvio de traqueia para lado oposto (tardio, sutil)<br>
+          • Distensão jugular<br>
+          • Saturação em queda em paciente na VM<br>
+          <em>Em VM: pico de pressão ↑ abruptamente = sinal precoce</em>
+        </div>
+        <div>
+          <ol class="step-list">
+            <li><strong>Descompressão de agulha imediata</strong> — agulha 14G no <em>2º espaço intercostal, linha hemiclavicular</em> (ou 4–5º EIC linha axilar anterior — menor distância em obesos/musculosos)</li>
+            <li><strong>Drenagem pleural</strong> — dreno tubular 28–32Fr no 4–5º EIC, linha axilar anterior → definitivo</li>
+            <li>Válvula de Heimlich (transporte) / Selo d'água (internação)</li>
+          </ol>
+          <div class="box box-p" style="margin-top:.5rem">
+            PEA em politrauma = PTX hipertensivo até prova contrária. Descompressão de agulha antes de qualquer outra intervenção.
+            <span class="tag tag-p">ATLS / AMRIGS 2023</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="collapse-btn" onclick="toggleCollapse(this)" style="margin-top:.5rem">🫁 TEP Maciço <span>▾</span></button>
+  <div class="collapse-content">
+    <div class="card">
+      <div class="card-title">Diagnóstico & Intervenção</div>
+      <div class="box box-o">
+        TEP com hipotensão (PAS &lt;90 por &gt;15 min ou queda &gt;40 do basal) ou choque. Obstrução ≥50% da circulação pulmonar → sobrecarga aguda de VD → dilatação VD → desvio do septo interventricular ("D-shape") → ↓ enchimento VE → ↓ DC.
+      </div>
+      <div class="g2">
+        <div>
+          <strong>Diagnóstico:</strong>
+          <ul class="blist">
+            <li>ECG: S1Q3T3, BRD agudo, taquicardia sinusal</li>
+            <li>Eco: VD dilatado, septo paradoxal, TAPSE &lt;17 mm, "D-shape"</li>
+            <li>AngioTC tórax: confirmação (se estável para o exame)</li>
+            <li>Troponina e BNP: ↑ = dano de VD</li>
+            <li>Gasometria: hipoxemia + hipocapnia (hiperventilação)</li>
+          </ul>
+        </div>
+        <div>
+          <ol class="step-list">
+            <li><strong>Trombolítico sistêmico</strong> — <span class="dose">Alteplase 100 mg IV em 2h</span> — 1ª escolha se instável + sem contraindicação</li>
+            <li><strong>Embolectomia cirúrgica</strong> — trombolítico falhou ou CI absoluta + colapso hemodinâmico</li>
+            <li><strong>Trombólise guiada por cateter</strong> — dose menor (ULYSSE/OPTALYSE): menos sangramento</li>
+            <li><strong>VA-ECMO</strong> — ponte para cirurgia ou trombolítico em colapso cardiovascular</li>
+          </ol>
+          <div class="box box-r" style="margin-top:.5rem">
+            <strong>Contraindicações absolutas ao trombolítico:</strong><br>
+            AVC hemorrágico prévio · Neoplasia intracraniana · Cirurgia/trauma &lt;3 semanas · Sangramento ativo · AVC isquêmico &lt;3 meses
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== DROGAS VASOATIVAS ===== -->
+<div id="tab-drogas" class="section">
+  <div class="card">
+    <div class="card-title">💊 Farmacologia das Drogas Vasoativas — Tabela Mestre</div>
+    <table>
+      <tr><th>Droga</th><th>Receptor</th><th>Dose</th><th>FC</th><th>DC</th><th>RVS</th><th>Indicação Principal</th><th>Cuidados/Contraindicações</th></tr>
+      <tr class="drug-1">
+        <td><strong>Norepinefrina</strong></td>
+        <td>α1 &gt;&gt; β1</td>
+        <td><span class="dose">0,01–3 mcg/kg/min</span></td>
+        <td class="cv">↔/↑</td><td class="cv">↔</td><td class="cu">↑↑</td>
+        <td>1ª linha distributivo (séptico, neurogênico)</td>
+        <td>Extravasamento → necrose (acesso central); isquemia digital/mesentérica em doses altas</td>
+      </tr>
+      <tr class="drug-1">
+        <td><strong>Epinefrina</strong></td>
+        <td>α1, β1, β2</td>
+        <td><span class="dose">Anafilaxia: 0,3–0,5 mg IM (1:1.000)<br>UTI: 0,01–1 mcg/kg/min</span></td>
+        <td class="cu">↑↑</td><td class="cu">↑↑</td><td class="cu">↑</td>
+        <td>Anafilaxia (IM!) / PCR / 2ª linha séptico</td>
+        <td>↑ lactato por efeito metabólico (glicogenólise) — não confundir com hipoperfusão</td>
+      </tr>
+      <tr class="drug-2">
+        <td><strong>Vasopressina</strong></td>
+        <td>V1 (ADH)</td>
+        <td><span class="dose">0,03–0,04 U/min (fixo)</span></td>
+        <td class="cv">↔</td><td class="cv">↔</td><td class="cu">↑↑</td>
+        <td>2ª linha séptico / poupador de NE / diabetes insipidus</td>
+        <td>Isquemia intestinal, coronária e digital em doses suprafisiológicas</td>
+      </tr>
+      <tr>
+        <td><strong>Dopamina</strong></td>
+        <td>D1, β1, α1 (dose-dep.)</td>
+        <td><span class="dose">2–20 mcg/kg/min</span></td>
+        <td class="cu">↑</td><td class="cu">↑</td><td class="cv">↑ (dose)</td>
+        <td>Bradicardia + hipotensão; alternativa NE</td>
+        <td>Mais arritmogênica que NE (NEJM 2010); "dose renal" (1–3 mcg/kg/min) = mito</td>
+      </tr>
+      <tr class="drug-1">
+        <td><strong>Dobutamina</strong></td>
+        <td>β1 &gt; β2</td>
+        <td><span class="dose">2,5–20 mcg/kg/min</span></td>
+        <td class="cu">↑</td><td class="cu">↑↑</td><td class="cd">↓</td>
+        <td>Choque cardiogênico / disfunção miocárdica séptica</td>
+        <td>Hipotensão se ↓ RVS via β2 → sempre associar NE; ↑ consumo O₂ miocárdico</td>
+      </tr>
+      <tr>
+        <td><strong>Fenilefrina</strong></td>
+        <td>α1 puro</td>
+        <td><span class="dose">50–200 mcg/min</span></td>
+        <td class="cd">↓ (reflexo vagal)</td><td class="cd">↓</td><td class="cu">↑↑</td>
+        <td>FA rápida + hipotensão / choque neurogênico / perioperatório</td>
+        <td>↓ DC por ↑ pós-carga; evitar em baixo DC / cardiogênico</td>
+      </tr>
+      <tr class="drug-2">
+        <td><strong>Milrinona</strong></td>
+        <td>Inibidor PDE3</td>
+        <td><span class="dose">0,375–0,75 mcg/kg/min</span></td>
+        <td class="cu">↑</td><td class="cu">↑↑</td><td class="cd">↓↓</td>
+        <td>Cardiogênico refratário; pós-CEC; BB intoxicação</td>
+        <td>Não depende de receptor β (funciona mesmo em uso de betabloqueador); pode causar hipotensão significativa</td>
+      </tr>
+      <tr>
+        <td><strong>Levosimendan</strong></td>
+        <td>Sensibilizador Ca²⁺</td>
+        <td><span class="dose">0,05–0,2 mcg/kg/min × 24h</span></td>
+        <td class="cu">↑</td><td class="cu">↑↑</td><td class="cd">↓</td>
+        <td>Cardiogênico grave; ICC descompensada</td>
+        <td>Efeito dura 7–10 dias após infusão única; hipotensão; não disponível universalmente</td>
+      </tr>
+    </table>
+    <div class="box box-c" style="margin-top:.75rem">
+      <strong>Regra prática rápida:</strong><br>
+      <em>Vasos muito dilatados (séptico)</em> → <strong>Norepinefrina</strong><br>
+      <em>Coração fraco (cardiogênico)</em> → <strong>Dobutamina ± NE</strong><br>
+      <em>PCR ou anafilaxia</em> → <strong>Epinefrina</strong><br>
+      <em>NE insuficiente no séptico</em> → <strong>+ Vasopressina</strong><br>
+      <em>Bradicardia com hipotensão</em> → <strong>Dopamina ou Epi</strong>
+    </div>
+  </div>
+</div>
+
+<!-- ===== RESSUSCITAÇÃO ===== -->
+<div id="tab-ressuscitacao" class="section">
+  <div class="card">
+    <div class="card-title">💧 Fluidos para Ressuscitação</div>
+    <table>
+      <tr><th>Fluido</th><th>Composição Resumida</th><th>Indicação</th><th>Cuidados</th></tr>
+      <tr>
+        <td><strong>Ringer Lactato (RL)</strong></td>
+        <td>Na 130, K 4, Ca 3, Cl 109, Lac 28 mEq/L</td>
+        <td>1ª linha no trauma hemorrágico; ressuscitação geral</td>
+        <td>Evitar em hipercalemia grave; ligeiramente hipotônico</td>
+      </tr>
+      <tr>
+        <td><strong>SF 0,9%</strong></td>
+        <td>Na 154, Cl 154 mEq/L</td>
+        <td>Alcalose metabólica, ressuscitação geral</td>
+        <td>Acidose hiperclorêmica com grandes volumes; piora função renal</td>
+      </tr>
+      <tr>
+        <td><strong>SF 7,5% (hipertônico)</strong></td>
+        <td>Na 1280, Cl 1280 mEq/L</td>
+        <td>TCE + hipotensão (osmose → ↓ PIC + expansão plasmática)</td>
+        <td>Apenas 250 mL; risco de hipernatremia; não repetir</td>
+      </tr>
+      <tr>
+        <td><strong>Albumina 4–5%</strong></td>
+        <td>Coloide proteico</td>
+        <td>2ª linha na sepse; hipoalbuminemia &lt;2 g/dL</td>
+        <td>Contraindicada em TCE (SAFE trial: ↑ mortalidade); custo elevado</td>
+      </tr>
+      <tr>
+        <td><strong>CH (conc. hemácias)</strong></td>
+        <td>Hb ~24g/unid, Ht ~60%</td>
+        <td>Hb &lt;7 (estável); &lt;8–10 em coronariopata/choque ativo</td>
+        <td>1 CH ↑ Hb ~1 g/dL; TRALI; TACO; hipocalcemia (quelação citrato)</td>
+      </tr>
+    </table>
+    <div class="box box-r">
+      <strong>Tendência atual — Ressuscitação Hemostática (Damage Control Resuscitation):</strong><br>
+      Menos cristaloide + mais hemoderivados precocemente. Grandes volumes de cristaloide causam coagulopatia dilucional, ARDS, edema tecidual e síndrome compartimental abdominal. Proporção CH:PFC 1:1 desde o início.
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🎯 Metas de Ressuscitação e Monitoração</div>
+    <div class="g3">
+      <div class="box box-o"><strong>PAM</strong><br>≥65 mmHg (séptico/cardiogênico)<br>50–65 trauma s/ TCE (hipotensão permissiva)<br>≥80 trauma c/ TCE</div>
+      <div class="box box-o"><strong>Lactato</strong><br>Clearance &gt;10% em 2h<br>Alvo: &lt;2 mmol/L em 6h<br>Lactato por epinefrina ≠ hipoperfusão</div>
+      <div class="box box-o"><strong>Diurese</strong><br>Alvo: 0,5 mL/kg/h<br>Não usar isoladamente em trauma (vasoconstricção renal por catecolaminas)</div>
+    </div>
+    <div class="g2" style="margin-top:.75rem">
+      <div class="box box-c">
+        <strong>POCUS beira-leito — avaliação de responsividade:</strong><br>
+        VCI colabável &gt;50% (em VPP) = hipovolemia responsiva a fluido<br>
+        B-lines &gt;3/quadrante = edema pulmonar (não dar mais volume)<br>
+        FE visual baixa = cardiogênico
+      </div>
+      <div class="box box-c">
+        <strong>Teste de Elevação Passiva de Pernas (TEP/PLR):</strong><br>
+        Eleva MMII 30–45° por 30s → desloca ~300 mL para circulação central → ↑ DC ≥10% = responsivo a fluido. Reversível, seguro, sem risco de sobrecarga. Sensibilidade ~85%.
+        <span class="tag tag-p">GHC 2024</span>
+      </div>
+    </div>
+    <div class="box box-p" style="margin-top:.5rem">
+      <strong>Variação de Pressão de Pulso (VPP) &gt;13%</strong> ou variação de volume sistólico (VVS) &gt;10% em ventilação mecânica controlada = responsivo a fluido. Não válido em FA, respiração espontânea, frequência respiratória alta.
+      <span class="tag tag-p">HCPA 2023</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CIRURGICO ===== -->
+<div id="tab-cirurgico" class="section">
+  <div class="card">
+    <div class="card-title">🔪 Damage Control Surgery (DCS) — Cirurgia de Controle de Dano</div>
+    <div class="box box-o">
+      <strong>Conceito:</strong> cirurgia abreviada (&lt;90 min) para controle de hemorragia e contaminação → UTI para correção da tríade da morte → reoperação planejada 24–72h. Trocar o "reparo definitivo" pela sobrevida imediata.
+    </div>
+    <div class="g2">
+      <div>
+        <div class="sh">Fases DCS</div>
+        <div class="box box-y">
+          <strong>Fase 0 — Pré-hospitalar/PS</strong><br>
+          Controle externo de sangramento · Torniquete · Hipotensão permissiva · Ácido tranexâmico · CH:PFC precoce
+        </div>
+        <div class="box box-y" style="margin-top:.5rem">
+          <strong>Fase I — Controle Cirúrgico</strong><br>
+          • <em>Hemostasia:</em> packing, clamp vascular, sutura rápida, ligadura<br>
+          • <em>Contaminação:</em> grampeamento de alça, clampe de coto biliar/colônico<br>
+          • <em>Fechamento temporário:</em> laparostomia (VAC / Bogotá bag / Op-Site sandwich)<br>
+          • Tempo: idealmente &lt;60 min se instável grave
+        </div>
+        <div class="box box-y" style="margin-top:.5rem">
+          <strong>Fase II — UTI (24–48h)</strong><br>
+          Correção da tríade da morte · VM protetora · Monitorar PIA · Estabilização hemodinâmica
+        </div>
+        <div class="box box-y" style="margin-top:.5rem">
+          <strong>Fase III — Reoperação (24–72h)</strong><br>
+          Anastomoses definitivas · Reparos vasculares · Fechamento da parede
+        </div>
+      </div>
+      <div>
+        <div class="box box-p">
+          <strong>Critérios para DCS (ao invés de cirurgia definitiva):</strong><br>
+          pH &lt;7,2<br>
+          Temperatura &lt;35°C<br>
+          INR &gt;1,5 ou coagulopatia clínica<br>
+          Lactato &gt;5 mmol/L<br>
+          Tempo operatório &gt;90 min com instabilidade<br>
+          PTM em curso<br>
+          Lesão vascular complexa associada
+          <span class="tag tag-p">HCPA 2024 / GHC 2023</span>
+        </div>
+        <div class="box box-r" style="margin-top:.5rem">
+          <strong>Síndrome Compartimental Abdominal:</strong><br>
+          PIA &gt;20 mmHg + disfunção orgânica nova = SCA<br>
+          Medir via sonda vesical (técnica padrão)<br>
+          Tratamento: laparostomia descompressiva de urgência<br>
+          <em>Prevenir: evitar grandes volumes de cristaloide</em>
+          <span class="tag tag-p">Santa Casa 2023</span>
+        </div>
+        <div class="box box-c" style="margin-top:.5rem">
+          <strong>Packing pélvico pré-peritoneal:</strong><br>
+          Fratura pélvica instável + hemorragia pélvica → packing + fixação externa + angioembolização. Laparotomia convencional = contraindicada (perde efeito tamponamento do retroperitônio)
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🗺️ Intervenções por Tipo de Choque — Guia Rápido</div>
+    <table>
+      <tr><th>Tipo de Choque</th><th>Intervenção Cirúrgica/Procedural</th><th>Urgência</th></tr>
+      <tr><td>Hemorrágico — abdominal</td><td>Laparotomia exploradora, DCS, packing hepático</td><td class="cu">Imediata</td></tr>
+      <tr><td>Hemorrágico — vascular</td><td>Reparo vascular, bypass, REBOA como ponte</td><td class="cu">Imediata</td></tr>
+      <tr><td>Hemorrágico — pélvico</td><td>Packing pré-peritoneal + fixação externa + embolização</td><td class="cu">Imediata</td></tr>
+      <tr><td>Hemorrágico — torácico</td><td>Toracotomia, controle de vasos/coração, DCS torácico</td><td class="cu">Imediata</td></tr>
+      <tr><td>Séptico — abdominal (peritonite)</td><td>Laparotomia, ressecção, lavagem, drenagem</td><td class="cu">Urgente 6–12h</td></tr>
+      <tr><td>Séptico — abscesso</td><td>Drenagem cirúrgica ou percutânea guiada</td><td class="cu">Urgente</td></tr>
+      <tr><td>Séptico — fasciíte necrosante</td><td>Desbridamento amplo emergencial e repetido</td><td class="cu">Imediata</td></tr>
+      <tr><td>Obstrutivo — tamponamento</td><td>Pericardiocentese → janela pericárdica → toracotomia</td><td class="cu">Imediata</td></tr>
+      <tr><td>Obstrutivo — PTX hipertensivo</td><td>Agulha 14G 2ºEIC + dreno pleural 4–5ºEIC</td><td class="cu">Imediata</td></tr>
+      <tr><td>Obstrutivo — TEP maciço</td><td>Embolectomia (refratário a trombolítico) / cateter</td><td class="cu">Urgente</td></tr>
+      <tr><td>Cardiogênico mecânico</td><td>Esternotomia de urgência, reparo cirúrgico (CRM, valva)</td><td class="cu">Imediata</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ===== COMPLICAÇÕES ===== -->
+<div id="tab-complicacoes" class="section">
+  <div class="card">
+    <div class="card-title">⚠️ Complicações do Choque e do Tratamento</div>
+    <div class="g2">
+      <div>
+        <div class="card-title" style="font-size:12px">Orgânicas — Choque Prolongado</div>
+        <ul class="blist">
+          <li><strong>IRA</strong> — necrose tubular aguda; causa mais comum; creatinina ↑ em 48h</li>
+          <li><strong>ARDS</strong> — PaO₂/FiO₂ &lt;300; VM protetora (6 mL/kg peso ideal, PEEP adequada)</li>
+          <li><strong>Insuficiência hepática aguda</strong> — necrose centrolobular; AST/ALT em pico 24–72h</li>
+          <li><strong>CIVD</strong> — coagulopatia de consumo; fibrinogênio ↓, D-dímero ↑, plaquetas ↓</li>
+          <li><strong>Isquemia intestinal</strong> — translocação bacteriana; sangramento digestivo por gastrite de estresse</li>
+          <li><strong>Falência Múltipla de Órgãos (FMO)</strong> — mortalidade &gt;70% com ≥3 órgãos</li>
+          <li><strong>Encefalopatia</strong> — hipoperfusão cerebral, sequela neurológica</li>
+        </ul>
+      </div>
+      <div>
+        <div class="card-title" style="font-size:12px">Iatrogênicas — Tratamento</div>
+        <ul class="blist">
+          <li>Sobrecarga hídrica → ARDS + SCA + anasarca (cristaloide maciço)</li>
+          <li>Hipotermia — fluidos não aquecidos + transfusão maciça</li>
+          <li>Hipocalcemia — citrato da transfusão quela cálcio (↓ Ca² ionizado)</li>
+          <li>Hiperpotassemia — CH armazenados liberam K⁺</li>
+          <li>TRALI — lesão pulmonar aguda transfusional (PFC/plaquetas; anti-HLA)</li>
+          <li>TACO — sobrecarga circulatória associada à transfusão</li>
+          <li>Necrose por vasopressor — extravasamento de NE/dopamina</li>
+          <li>SCA — laparotomia com edema visceral + fechamento forçado</li>
+          <li>Arritmia — dopamina, dobutamina, hipocalemia, acidose</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🧩 CIVD — Coagulopatia de Consumo</div>
+    <div class="g2">
+      <div class="box box-r">
+        <strong>CIVD = ativação sistêmica da coagulação → consumo de fatores e plaquetas → paradoxalmente, sangramento</strong><br><br>
+        Laboratorial: TP↑ · TTPa↑ · Plaquetas↓ · Fibrinogênio↓ (&lt;1g/L) · D-dímero↑↑ · Esquizócitos no esfregaço
+      </div>
+      <div>
+        <strong>Tratamento:</strong>
+        <ul class="blist">
+          <li>Tratar a causa (choque, infecção, trauma)</li>
+          <li>PFC 15 mL/kg se TP/TTPa prolongados + sangramento</li>
+          <li>Crioprecipitado se fibrinogênio &lt;1,5 g/L (10 U ou 3g concentrado)</li>
+          <li>Plaquetas se &lt;50.000/μL com sangramento ativo</li>
+          <li>Ácido tranexâmico (inibir fibrinólise)</li>
+          <li>Evitar heparina exceto CIVD trombótica pura</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== QUESTÕES ===== -->
+<div id="tab-questoes" class="section">
+  <div class="card">
+    <div class="card-title">🎯 Tópicos de Alta Incidência — Bancas RS</div>
+
+    <div class="box box-p">
+      <strong>1. Classes de hemorragia e o que cada uma apresenta</strong><br>
+      A banca ama: Classe II = PA NORMAL + taquicardia (armadilha). Classe III = primeira queda de PA + confusão mental.
+      <span class="tag tag-p">AMRIGS 2021 · 2022 · HCPA 2023</span>
+    </div>
+    <div class="box box-p" style="margin-top:.5rem">
+      <strong>2. Primeira medida no choque anafilático</strong><br>
+      Resposta: <em>Epinefrina IM 0,3–0,5 mg na coxa anterolateral</em>. Anti-histamínico e corticoide são adjuvantes, nunca 1ª medida.
+      <span class="tag tag-p">PUC 2022 · GHC 2023</span>
+    </div>
+    <div class="box box-p" style="margin-top:.5rem">
+      <strong>3. Tríade de Beck</strong><br>
+      Hipotensão + turgência jugular + bulhas abafadas = tamponamento. Conduta: pericardiocentese subxifoide (primeiro procedimento).
+      <span class="tag tag-p">HCPA 2022 · PUC 2023</span>
+    </div>
+    <div class="box box-p" style="margin-top:.5rem">
+      <strong>4. Vasopressor de 1ª linha no choque séptico</strong><br>
+      Norepinefrina. Dopamina caiu de favor (mais arritmia — NEJM De Backer 2010). Corticoide só se refratário.
+      <span class="tag tag-p">AMRIGS 2023 · Santa Casa 2024</span>
+    </div>
+    <div class="box box-p" style="margin-top:.5rem">
+      <strong>5. Hipotensão permissiva — quando aplicar e exceções</strong><br>
+      Usar: trauma sem TCE (PAM 50–65 até controle cirúrgico). NÃO usar: TCE (PAM ≥80), gestante, idoso coronariopata, lesão vascular de grande vaso.
+      <span class="tag tag-p">AMRIGS 2024 · GHC 2022</span>
+    </div>
+    <div class="box box-p" style="margin-top:.5rem">
+      <strong>6. Choque neurogênico vs hemorrágico</strong><br>
+      Neurogênico: <em>bradicardia</em> + pele <em>quente e seca</em>. Hemorrágico: <em>taquicardia</em> + pele fria e úmida. Ambos com hipotensão.
+      <span class="tag tag-p">PUC 2021 · Santa Casa 2022</span>
+    </div>
+    <div class="box box-p" style="margin-top:.5rem">
+      <strong>7. Critérios para Damage Control Surgery</strong><br>
+      pH &lt;7,2 + T° &lt;35°C + INR &gt;1,5 ou tempo &gt;90 min com instabilidade → fechar temporariamente + UTI.
+      <span class="tag tag-p">HCPA 2024 · AMRIGS 2022</span>
+    </div>
+    <div class="box box-p" style="margin-top:.5rem">
+      <strong>8. Ácido tranexâmico — janela terapêutica e dose</strong><br>
+      Eficaz até <em>3 horas</em> do trauma. Após 3h: pode aumentar mortalidade (CRASH-2). Dose: 1g IV em 10 min + 1g em 8h.
+      <span class="tag tag-p">AMRIGS 2022 · GHC 2023</span>
+    </div>
+    <div class="box box-p" style="margin-top:.5rem">
+      <strong>9. Definição de choque séptico (Sepse 3.0)</strong><br>
+      Sepse + vasopressor para PAM ≥65 + lactato &gt;2 mmol/L após ressuscitação. SOFA ≥2 para sepse.
+      <span class="tag tag-p">HCPA 2023 · Santa Casa 2023</span>
+    </div>
+    <div class="box box-p" style="margin-top:.5rem">
+      <strong>10. Bundle 1ª hora da sepse</strong><br>
+      Lactato → Hemoculturas → ATB → Fluido 30 mL/kg → Vasopressor se hipotensão. Ordem importa nas provas.
+      <span class="tag tag-p">AMRIGS 2023 · GHC 2024</span>
+    </div>
+    <div class="box box-p" style="margin-top:.5rem">
+      <strong>11. TEP maciço — diagnóstico e tratamento</strong><br>
+      Eco: VD dilatado + D-shape. Tratamento 1ª linha: alteplase 100 mg IV em 2h. Se CI ao trombolítico: embolectomia cirúrgica.
+      <span class="tag tag-p">PUC 2024 · Santa Casa 2022</span>
+    </div>
+    <div class="box box-p" style="margin-top:.5rem">
+      <strong>12. PTX hipertensivo em paciente em VM</strong><br>
+      Pico de pressão nas vias aéreas em aumento abrupto + hipotensão + queda de saturação = PTX hipertensivo. Conduta imediata: descompressão com agulha 14G, 2ºEIC LHC.
+      <span class="tag tag-p">AMRIGS 2023 · HCPA 2022</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== MNEMÔNICOS ===== -->
+<div id="tab-mnemonicos" class="section">
+  <div class="card">
+    <div class="card-title">🔵 Tipos de Choque</div>
+    <div class="box box-c">
+      <div class="mng">
+        <div class="mnl">H</div><div class="mnt"><strong>H</strong>emorrágico / Hipovolêmico</div>
+        <div class="mnl">C</div><div class="mnt"><strong>C</strong>ardiogênico</div>
+        <div class="mnl">D</div><div class="mnt"><strong>D</strong>istributivo (Séptico · Anafilático · Neurogênico)</div>
+        <div class="mnl">O</div><div class="mnt"><strong>O</strong>bstrutivo (Tamponamento · PTX · TEP)</div>
+      </div>
+      <div style="margin-top:.75rem"><span class="mono">"H.C.D.O." → "Hoje Cirurgião Decide Operar"</span></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🔵 Tríade da Morte (Trauma)</div>
+    <div class="box box-c">
+      <div class="mng">
+        <div class="mnl">H</div><div class="mnt"><strong>H</strong>ipotermia (&lt;35°C) — enzimas de coagulação param</div>
+        <div class="mnl">A</div><div class="mnt"><strong>A</strong>cidose (pH &lt;7,2) — plaquetas não funcionam</div>
+        <div class="mnl">C</div><div class="mnt"><strong>C</strong>oagulopatia (INR &gt;1,5) — sangramento piora tudo</div>
+      </div>
+      <div style="margin-top:.75rem"><span class="mono">"HAC" → "Hematologia Acabou, Cirurgiou!"</span></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🔵 Tríade de Beck (Tamponamento)</div>
+    <div class="box box-c">
+      <div class="mng">
+        <div class="mnl">↓</div><div class="mnt"><strong>H</strong>ipotensão</div>
+        <div class="mnl">↑</div><div class="mnt"><strong>J</strong>ugulares distendidas (↑ PVC)</div>
+        <div class="mnl">🔇</div><div class="mnt"><strong>B</strong>ulhas abafadas</div>
+      </div>
+      <div style="margin-top:.75rem"><span class="mono">"HJB" → "Hipotensão, Jugular e Bulha muda = pericárdio cheio"</span></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🔵 Bundle 1ª Hora — Sepse</div>
+    <div class="box box-c">
+      <div class="mng">
+        <div class="mnl">L</div><div class="mnt"><strong>L</strong>actato — dosar (e repetir se &gt;2)</div>
+        <div class="mnl">H</div><div class="mnt"><strong>H</strong>emocultura — 2 pares antes do ATB</div>
+        <div class="mnl">A</div><div class="mnt"><strong>A</strong>ntibiótico — amplo espectro em 1h</div>
+        <div class="mnl">F</div><div class="mnt"><strong>F</strong>luido — 30 mL/kg cristaloide</div>
+        <div class="mnl">V</div><div class="mnt"><strong>V</strong>asopressor — NE se PAM &lt;65 persiste</div>
+      </div>
+      <div style="margin-top:.75rem"><span class="mono">"LHAFV" → "Lactato, Hemo, ATB, Fluido, Vaso"</span></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🔵 Vasopressores — Regra Rápida</div>
+    <div class="box box-c">
+      <ul class="blist">
+        <li><span class="mono">NE</span> → aperta vasos (α1) → distributivo</li>
+        <li><span class="mono">Dobu</span> → fortalece coração (β1) → cardiogênico</li>
+        <li><span class="mono">Epi IM</span> → reação alérgica grave / anafilaxia</li>
+        <li><span class="mono">Epi IV</span> → PCR / 2ª linha séptico</li>
+        <li><span class="mono">Vaso</span> → ADH, aperta sem FC → poupador NE</li>
+        <li><span class="mono">Feni</span> → α puro, brada FC → neurogênico / FA+hipotensão</li>
+      </ul>
+      <div style="margin-top:.75rem"><span class="mono">"VASO dilatado = NE | CORAÇÃO fraco = Dobu | ALERGIA = Epi IM"</span></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🔵 ATLS — Classes de Hemorragia (dica para prova)</div>
+    <div class="box box-c">
+      <span class="mono">
+        Classe I: menos de 15% → sem sintoma → VO<br>
+        Classe II: 15–30% → TAQUICARDIA, PA NORMAL → cristaloide<br>
+        Classe III: 30–40% → PA CAI, confuso → hemoderivados urgente<br>
+        Classe IV: &gt;40% → MORT-E → PTM + cirurgia imediata
+      </span>
+      <div style="margin-top:.75rem"><em>Macete: nas classes I e II a PA é NORMAL. O examinador vai tentar te enganar dizendo que PA normal = sem choque.</em></div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /container -->
+
+<script>
+function showTab(name, btn) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  if (btn) btn.classList.add('active');
+}
+function toggleCollapse(btn) {
+  const content = btn.nextElementSibling;
+  btn.classList.toggle('open');
+  content.classList.toggle('open');
+  const arrow = btn.querySelector('span');
+  if (arrow) arrow.textContent = content.classList.contains('open') ? '▴' : '▾';
+}
+</script>
+</body>
+</html>

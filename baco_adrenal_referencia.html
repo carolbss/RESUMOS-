@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Baço &amp; Adrenal — carolzita</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0f; --bg2:#12121a; --card:#16161f; --card2:#1c1c27;
+  --line:#2a2a38; --txt:#e6e6ef; --muted:#9a9ab0;
+  --laranja:#f97316; --laranja-bg:rgba(249,115,22,.10);
+  --roxo:#a855f7; --roxo-bg:rgba(168,85,247,.10);
+  --ciano:#22d3ee; --ciano-bg:rgba(34,211,238,.10);
+  --verde:#34d399; --vermelho:#f87171; --amarelo:#fbbf24;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(1200px 600px at 50% -10%,#15151f 0%,var(--bg) 60%);color:var(--txt);font-family:'Inter',sans-serif;line-height:1.55;padding:0 0 80px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px}
+header{padding:40px 0 24px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(30px,6vw,46px);line-height:1.05;margin:8px 0 6px;letter-spacing:-.02em}
+.sub{color:var(--muted);font-size:15px;max-width:700px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tag{font-family:'JetBrains Mono',monospace;font-size:11px;padding:5px 10px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted)}
+.tag.r{color:var(--roxo);border-color:rgba(168,85,247,.35);background:var(--roxo-bg)}
+section{margin-top:14px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:12px;overflow:hidden;transition:border-color .2s}
+details[open]{border-color:rgba(249,115,22,.30)}
+summary{cursor:pointer;list-style:none;padding:18px 20px;display:flex;align-items:center;gap:13px;font-family:'Syne',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em;user-select:none}
+summary::-webkit-details-marker{display:none}
+.num{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--bg);background:var(--laranja);width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:0 0 auto}
+.chev{margin-left:auto;color:var(--muted);transition:transform .25s;font-size:14px}
+details[open] .chev{transform:rotate(90deg)}
+.body{padding:4px 22px 24px;font-size:15px}
+.body p{margin:10px 0}
+.body h4{font-family:'Syne',sans-serif;font-size:16px;color:var(--laranja);margin:20px 0 8px;letter-spacing:-.01em}
+.body ul{margin:8px 0 8px 4px;list-style:none}
+.body li{padding:4px 0 4px 20px;position:relative}
+.body li::before{content:"▸";position:absolute;left:0;color:var(--laranja);font-size:12px;top:6px}
+.body strong{color:#fff;font-weight:600}
+.simple{color:var(--verde);font-style:italic;font-size:.94em;display:block;margin:6px 0}
+.box.simplebox{background:rgba(52,211,153,.09);border-color:rgba(52,211,153,.32);color:var(--verde);font-style:italic}
+.box.simplebox .lbl{color:var(--verde);font-style:normal}
+.box.simplebox strong{color:#7fe8c0;font-style:normal}
+.stx{counter-reset:st;margin:12px 0}
+.st{counter-increment:st;background:var(--card2);border:1px solid var(--line);border-radius:13px;padding:14px 16px 14px 52px;margin:11px 0;position:relative}
+.st::before{content:counter(st);position:absolute;left:14px;top:13px;width:26px;height:26px;border-radius:8px;background:var(--laranja);color:#0a0a0f;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center}
+.st .fase{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:var(--laranja);display:block;margin-bottom:1px}
+.st .ttl{font-weight:700;font-size:15.5px;color:#fff;margin-bottom:4px}
+.st p{margin:5px 0;font-size:14px}
+.pq{border-left:3px solid var(--roxo);background:var(--roxo-bg);border-radius:0 9px 9px 0;padding:8px 12px;margin:9px 0;font-size:13.5px}
+.pq b{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.3px;text-transform:uppercase;color:var(--roxo);display:block;margin-bottom:2px}
+@media(max-width:640px){.mh2{grid-template-columns:1fr}}
+.box{border-radius:12px;padding:13px 15px;margin:14px 0;font-size:14px;border:1px solid}
+.box.prova{background:var(--roxo-bg);border-color:rgba(168,85,247,.35)}
+.box.prova .lbl{color:var(--roxo)}
+.box.mac{background:var(--ciano-bg);border-color:rgba(34,211,238,.35)}
+.box.mac .lbl{color:var(--ciano)}
+.box.warn{background:rgba(248,113,113,.08);border-color:rgba(248,113,113,.3)}
+.box.warn .lbl{color:var(--vermelho)}
+.lbl{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-family:'JetBrains Mono',monospace;font-size:10px;background:rgba(168,85,247,.2);color:var(--roxo);padding:2px 7px;border-radius:6px;margin-left:6px;white-space:nowrap}
+.tbl{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
+.tbl table{width:100%;border-collapse:collapse;min-width:520px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--laranja);background:var(--card2)}
+td strong{color:#fff}
+.fio td:first-child{color:var(--ciano);font-family:'JetBrains Mono',monospace;font-weight:500}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin:14px 0}
+.gcard{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+.gcard .t{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--ciano);margin-bottom:4px}
+.gcard .d{font-size:13px;color:var(--muted)}
+.hands{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.hand{border-radius:12px;padding:14px;border:1px solid var(--line)}
+.hand.e{background:rgba(34,211,238,.06);border-color:rgba(34,211,238,.25)}
+.hand.d{background:rgba(249,115,22,.06);border-color:rgba(249,115,22,.25)}
+.hand .ht{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;font-weight:700}
+.hand.e .ht{color:var(--ciano)} .hand.d .ht{color:var(--laranja)}
+.hand li{font-size:13px}
+.steps{counter-reset:s;margin:10px 0}
+.step{counter-increment:s;position:relative;padding:11px 0 11px 46px;border-bottom:1px dashed var(--line)}
+.step:last-child{border-bottom:none}
+.step::before{content:counter(s);position:absolute;left:0;top:9px;width:30px;height:30px;border-radius:9px;background:var(--laranja-bg);border:1px solid rgba(249,115,22,.4);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:grid;place-items:center}
+.step b{color:#fff}
+svg{max-width:100%;height:auto;display:block;margin:16px auto}
+.fig{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.fig .cap{font-size:12px;color:var(--muted);text-align:center;margin-top:8px;font-family:'JetBrains Mono',monospace}
+footer{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+footer .ref{font-family:'JetBrains Mono',monospace;font-size:12px;margin-top:8px}
+a{color:var(--laranja)}
+@media(max-width:560px){.hands{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">carolzita · cirurgia geral · baço e adrenal</div>
+  <h1>Baço &amp; Adrenal</h1>
+  <p class="sub">Trauma esplênico (AAST 2018, manejo não-operatório) · OPSI e vacinação pós-esplenectomia · feocromocitoma (bloqueio alfa antes de beta) · hiperaldosteronismo primário (Endocrine Society, AVS). Base: WSES 2022, EAST Practice Guidelines, Endocrine Society PA Guideline, e pegadinhas das bancas do RS.</p>
+  <div class="tags">
+    <span class="tag">AAST 2018</span>
+    <span class="tag">OPSI</span>
+    <span class="tag">Roizen</span>
+    <span class="tag">AVS</span>
+    <span class="tag">Alfa antes de beta</span>
+    <span class="tag r">HCPA · GHC · SC-POA · PUC · AMRIGS</span>
+  </div>
+</header>
+
+<!-- 1 TRAUMA ESPLENICO -->
+<details open>
+  <summary><span class="num">1</span> Trauma esplênico — AAST &amp; manejo <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>O baço é o órgão sólido <strong>mais lesado</strong> no trauma abdominal fechado. A tendência atual é <strong>preservar</strong> sempre que possível — a esplenectomia deixou de ser reflexo automático.</p>
+
+    <div class="fig">
+      <svg viewBox="0 0 640 200" xmlns="http://www.w3.org/2000/svg">
+        <text x="320" y="18" fill="#9a9ab0" font-size="11" font-family="monospace" text-anchor="middle">AAST-OIS 2018 — graus de lesão esplênica</text>
+        <line x1="60" y1="170" x2="600" y2="170" stroke="#2a2a38" stroke-width="3"/>
+        <rect x="60"  y="150" width="100" height="20" fill="#34d399" opacity=".5"/>
+        <rect x="160" y="140" width="100" height="30" fill="#a3e635" opacity=".5"/>
+        <rect x="260" y="120" width="100" height="50" fill="#fbbf24" opacity=".5"/>
+        <rect x="360" y="90"  width="100" height="80" fill="#f97316" opacity=".5"/>
+        <rect x="460" y="50"  width="140" height="120" fill="#dc2626" opacity=".5"/>
+        <text x="110" y="140" fill="#34d399" font-size="12" font-family="monospace" text-anchor="middle" font-weight="bold">I</text>
+        <text x="210" y="130" fill="#a3e635" font-size="12" font-family="monospace" text-anchor="middle" font-weight="bold">II</text>
+        <text x="310" y="110" fill="#fbbf24" font-size="12" font-family="monospace" text-anchor="middle" font-weight="bold">III</text>
+        <text x="410" y="80" fill="#f97316" font-size="12" font-family="monospace" text-anchor="middle" font-weight="bold">IV</text>
+        <text x="530" y="40" fill="#dc2626" font-size="13" font-family="monospace" text-anchor="middle" font-weight="bold">V</text>
+        <text x="110" y="188" fill="#9a9ab0" font-size="8" font-family="monospace" text-anchor="middle">hematoma&lt;10%</text>
+        <text x="210" y="188" fill="#9a9ab0" font-size="8" font-family="monospace" text-anchor="middle">laceração 1-3cm</text>
+        <text x="310" y="188" fill="#9a9ab0" font-size="8" font-family="monospace" text-anchor="middle">&gt;3cm/hematoma&gt;50%</text>
+        <text x="410" y="188" fill="#9a9ab0" font-size="8" font-family="monospace" text-anchor="middle">lac. segmentar/hilar 25-75%</text>
+        <text x="530" y="188" fill="#9a9ab0" font-size="8" font-family="monospace" text-anchor="middle">baço estraçalhado/hilo</text>
+      </svg>
+      <div class="cap">Graus I-III geralmente candidatos a manejo não-operatório; graus IV-V e instabilidade hemodinâmica pesam mais para cirurgia — mas a decisão é fisiológica, não apenas anatômica.</div>
+    </div>
+
+    <h4>Manejo não-operatório (NOM) — quando é seguro</h4>
+    <ul>
+      <li><strong>Estabilidade hemodinâmica</strong> é o critério mais importante — mais decisivo que o grau AAST isoladamente.</li>
+      <li>Ambiente com capacidade de <strong>monitorização contínua</strong>, reavaliações seriadas e <strong>centro cirúrgico disponível</strong> a qualquer momento.</li>
+      <li><strong>Angioembolização</strong> deve ser considerada em: grau &gt;III, presença de blush de contraste (extravasamento ativo), hemoperitônio moderado, ou sangramento contínuo à imagem — aumenta a taxa de sucesso do NOM mesmo em lesões de alto grau.</li>
+    </ul>
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">EAST · WSES</span></span>Grau isolado <strong>não</strong> determina a conduta sozinho — um grau IV-V <strong>hemodinamicamente estável</strong> pode ser tentado com NOM + embolização em centro preparado; um grau baixo com <strong>instabilidade</strong> vai direto para laparotomia.</div>
+
+<h4>Esplenectomia de urgência — passo a passo</h4>
+<div class="box simplebox"><span class="lbl">tradução simples</span>Quando o paciente instável não pode esperar embolização, a esplenectomia é <strong>controle de dano</strong>, não cirurgia eletiva. O objetivo não é fazer a operação mais elegante — é <strong>parar o sangramento o mais rápido possível</strong>, mesmo que isso signifique ligar vasos "às cegas" pelo hilo em vez de dissecá-los com calma.</div>
+
+<div class="stx">
+
+<div class="st">
+  <span class="fase">fase de acesso</span>
+  <div class="ttl">Laparotomia mediana e packing inicial</div>
+  <p>Laparotomia mediana; packing com compressas nos quatro quadrantes para localizar o sangramento e ganhar tempo.</p>
+  <div class="pq"><b>por quê</b>No trauma, a mediana dá acesso rápido a toda a cavidade — não se sabe ainda se a lesão é isolada ou se há outros órgãos sangrando. O packing comprime enquanto o cirurgião orienta o quadro geral, e é a mesma lógica de controle de dano usada em qualquer laparotomia de trauma.</p></div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de exposição</span>
+  <div class="ttl">Mobilizar o baço rebatendo-o medialmente</div>
+  <p>Seccionar os ligamentos esplenorrenal, esplenocólico e esplenofrênico, rebatendo o baço para a linha média com a mão.</p>
+  <div class="pq"><b>por quê</b>O baço fica escondido no quadrante superior esquerdo, colado ao diafragma e ao retroperitônio — mobilizá-lo à mão, antes de qualquer dissecção fina, é o que permite trazê-lo ao alcance sem precisar de exposição ampla, que consome tempo que o paciente instável não tem.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de controle vascular — o gesto que para o sangramento</span>
+  <div class="ttl">Clampear o hilo esplênico</div>
+  <p>Compressão manual ou clampe vascular sobre o hilo, entre o baço mobilizado e o pâncreas.</p>
+  <div class="pq"><b>por quê</b>O hilo concentra artéria e veia esplênicas num único ponto — clampeá-lo interrompe o sangramento de uma vez, em vez de perseguir vasos individuais num campo que ainda está sangrando. É o equivalente ao "controle proximal e distal antes de tudo" de qualquer vascular, aplicado a um órgão sólido.</p></div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de ligadura</span>
+  <div class="ttl">Ligar os vasos hilares e a cauda do pâncreas com cuidado</div>
+  <p>Ligadura em massa ou individualizada do hilo, atenta à cauda do pâncreas, que corre próxima.</p>
+  <div class="pq"><b>por quê</b>A cauda do pâncreas está a poucos milímetros do hilo esplênico — ligadura em massa "às cegas" pode incluí-la e causar fístula pancreática pós-operatória, uma das complicações tardias mais lembradas dessa cirurgia.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de retirada e revisão</span>
+  <div class="ttl">Retirar o baço e revisar hemostasia</div>
+  <p>Revisar o leito esplênico e o diafragma adjacente à procura de sangramento residual.</p>
+  <div class="pq"><b>por quê</b>O diafragma esquerdo é frequentemente lesado junto no trauma penetrante ou por desaceleração — não revisá-lo deixa uma segunda fonte de sangramento ou uma hérnia diafragmática despercebida.</div>
+</div>
+
+</div>
+<div class="box warn"><span class="lbl">⚠ depois de tirar o baço</span>Programar a <strong>vacinação pós-esplenectomia</strong> (pneumococo, Hib, meningococo) — na urgência, cerca de 14 dias <strong>depois</strong> da cirurgia, não antes.</div>
+
+    <h4>Indicação de cirurgia imediata</h4>
+    <ul>
+      <li><strong>Instabilidade hemodinâmica</strong> refratária à reanimação inicial.</li>
+      <li>Lesão de grau V (baço estraçalhado ou lesão vascular hilar) na maioria dos casos.</li>
+      <li>Falha do NOM (queda de hematócrito, deterioração clínica).</li>
+    </ul>
+  </div>
+</details>
+
+<!-- 2 POS-ESPLENECTOMIA -->
+<details>
+  <summary><span class="num">2</span> Pós-esplenectomia — OPSI &amp; vacinação <span class="chev">▶</span></summary>
+  <div class="body">
+    <p><strong>OPSI (Overwhelming Post-Splenectomy Infection)</strong> = sepse fulminante por bactérias encapsuladas, com mortalidade elevada — risco vitalício após esplenectomia, mais alto nos primeiros anos e em crianças.</p>
+
+    <h4>Os 3 principais patógenos encapsulados</h4>
+    <div class="grid">
+      <div class="gcard"><div class="t">Streptococcus pneumoniae</div><div class="d">Principal causador de OPSI</div></div>
+      <div class="gcard"><div class="t">Haemophilus influenzae tipo b</div><div class="d">2º mais relevante</div></div>
+      <div class="gcard"><div class="t">Neisseria meningitidis</div><div class="d">Menos comum, mas grave</div></div>
+    </div>
+
+    <div class="fig">
+      <svg viewBox="0 0 640 160" xmlns="http://www.w3.org/2000/svg">
+        <text x="320" y="18" fill="#9a9ab0" font-size="11" font-family="monospace" text-anchor="middle">timing da vacinação — esplenectomia eletiva × urgência</text>
+        <line x1="60" y1="130" x2="600" y2="130" stroke="#2a2a38" stroke-width="2"/>
+        <circle cx="150" cy="130" r="8" fill="#34d399"/>
+        <text x="150" y="115" fill="#34d399" font-size="11" font-family="monospace" text-anchor="middle">≥14 dias ANTES</text>
+        <text x="150" y="148" fill="#9a9ab0" font-size="9" font-family="monospace" text-anchor="middle">eletiva</text>
+        <circle cx="450" cy="130" r="8" fill="#f97316"/>
+        <text x="450" y="115" fill="#f97316" font-size="11" font-family="monospace" text-anchor="middle">14 dias APÓS a cirurgia</text>
+        <text x="450" y="148" fill="#9a9ab0" font-size="9" font-family="monospace" text-anchor="middle">trauma/urgência</text>
+        <path d="M300 130 L300 100" stroke="#9a9ab0" stroke-width="1.5" stroke-dasharray="3 3"/>
+        <text x="300" y="90" fill="#9a9ab0" font-size="10" font-family="monospace" text-anchor="middle">cirurgia</text>
+      </svg>
+      <div class="cap">Vacinação ideal ≥14 dias antes da esplenectomia eletiva (melhor resposta imunológica); se urgência/trauma, vacinar ~14 dias após a cirurgia (aguardar recuperação imune).</div>
+    </div>
+
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">todas as bancas</span></span>Vacinas: <strong>antipneumocócica, anti-Haemophilus influenzae tipo b, antimeningocócica</strong> — esquema deve ser mantido/reforçado ao longo da vida (não é dose única definitiva). Vacina anual contra <strong>influenza</strong> também recomendada (reduz infecção secundária).</div>
+    <div class="box warn"><span class="lbl">⚠ pegadinha</span>Esplenectomia de <strong>urgência</strong> (trauma) não permite vacinar antes — vacinar após ~14 dias, quando a resposta imunológica já não estará tão suprimida pelo estresse cirúrgico/pós-operatório imediato.</div>
+
+    <h4>Educação do paciente</h4>
+    <p>Orientar sobre <strong>procurar atendimento médico imediato</strong> em caso de febre — OPSI pode evoluir de sintomas leves para choque séptico em <strong>horas</strong>. Considerar antibiótico profilático em situações de risco aumentado (ex: mordedura de animal).</p>
+  </div>
+</details>
+
+<!-- 3 FEOCROMOCITOMA -->
+<details>
+  <summary><span class="num">3</span> Feocromocitoma — preparo pré-operatório <span class="chev">▶</span></summary>
+  <div class="body">
+    <p><strong>Feocromocitoma</strong> = tumor de células cromafins da medula adrenal, produtor de catecolaminas — cirurgia (adrenalectomia) é o tratamento definitivo, mas exige preparo cuidadoso para evitar crise hipertensiva intraoperatória.</p>
+
+    <h4>A regra de ouro: alfa-bloqueio ANTES do beta-bloqueio</h4>
+    <div class="fig">
+      <svg viewBox="0 0 640 140" xmlns="http://www.w3.org/2000/svg">
+        <g font-family="monospace" font-size="13" text-anchor="middle" font-weight="bold">
+          <rect x="60" y="30" width="220" height="55" rx="10" fill="#22d3ee" opacity=".2" stroke="#22d3ee" stroke-width="1.5"/>
+          <text x="170" y="55" fill="#22d3ee">1º Alfa-bloqueio</text>
+          <text x="170" y="73" fill="#9a9ab0" font-size="10" font-weight="normal">fenoxibenzamina/doxazosina · 7-14 dias</text>
+
+          <path d="M285 57 L320 57" stroke="#9a9ab0" stroke-width="2"/>
+
+          <rect x="325" y="30" width="220" height="55" rx="10" fill="#f97316" opacity=".2" stroke="#f97316" stroke-width="1.5"/>
+          <text x="435" y="55" fill="#f97316">2º Beta-bloqueio</text>
+          <text x="435" y="73" fill="#9a9ab0" font-size="10" font-weight="normal">só APÓS alfa-bloqueio adequado</text>
+        </g>
+        <text x="320" y="115" fill="#f87171" font-size="11" font-family="monospace" text-anchor="middle">⚠ beta isolado/primeiro → crise hipertensiva paradoxal</text>
+      </svg>
+      <div class="cap">Nunca iniciar betabloqueador antes do alfa — sem oposição à vasoconstrição alfa-mediada, o bloqueio beta isolado permite crise hipertensiva grave por vasoconstrição sem contrapeso.</div>
+    </div>
+
+    <div class="box warn"><span class="lbl">⚠ pegadinha clássica</span><strong>Beta-bloqueador nunca é iniciado primeiro</strong> — bloquear os receptores beta (vasodilatadores/inotrópicos) sem antes bloquear os receptores alfa (vasoconstritores) deixa a vasoconstrição sem oposição, podendo precipitar <strong>crise hipertensiva grave</strong>.</div>
+
+    <h4>Critérios de Roizen — bloqueio adequado antes da cirurgia</h4>
+    <div class="box mac"><span class="lbl">critérios</span>
+      <ul style="margin-top:6px">
+        <li>PA &lt;160/90 mmHg nas <strong>24h</strong> antes da cirurgia</li>
+        <li>Hipotensão ortostática presente, mas PA ortostática &gt;80/45 mmHg</li>
+        <li>Sem alterações significativas de ST-T no ECG por &gt;1 semana</li>
+        <li>Não mais que 1 extrassístole ventricular a cada 5 minutos</li>
+      </ul>
+    </div>
+
+    <h4>Metas atuais (Endocrine Society 2022)</h4>
+    <ul>
+      <li>PA-alvo sentado <strong>&lt;130/80 mmHg</strong>; FC-alvo sentado <strong>~60-70 bpm</strong>.</li>
+      <li><strong>Expansão volêmica</strong> com solução salina e liberalização de sal na dieta — compensa a vasoconstrição crônica pré-operatória.</li>
+      <li>Duração do preparo: <strong>7-14 dias</strong> na maioria dos protocolos.</li>
+    </ul>
+<h4>Adrenalectomia laparoscópica — passo a passo</h4>
+<div class="box simplebox"><span class="lbl">tradução simples</span>A glândula adrenal é pequena, mas fica escondida atrás de estruturas nobres — veia cava à direita, baço e pâncreas à esquerda — e produz hormônios que <strong>reagem à manipulação</strong>. A técnica inteira gira em torno de dois cuidados: <strong>não sangrar</strong> perto de vasos grandes e <strong>não espremer</strong> o tumor antes de ligar sua drenagem venosa.</div>
+
+<div class="stx">
+
+<div class="st">
+  <span class="fase">fase de preparo</span>
+  <div class="ttl">Posicionamento em decúbito lateral</div>
+  <p>Decúbito lateral com a mesa fletida, elevando o flanco do lado a operar.</p>
+  <div class="pq"><b>por quê</b>A posição usa a gravidade para afastar as vísceras do retroperitônio, abrindo espaço de trabalho sem precisar de afastadores agressivos num campo pequeno e profundo.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de acesso</span>
+  <div class="ttl">Portais e mobilização do órgão adjacente</div>
+  <p>À direita, rebater o fígado e expor a veia cava; à esquerda, mobilizar o baço e a flexura esplênica do cólon.</p>
+  <div class="pq"><b>por quê</b>A adrenal não tem um plano de acesso próprio — ela é abordada <em>através</em> do órgão vizinho que a esconde. A anatomia dos dois lados é assimétrica, e é por isso que a abordagem direita e a esquerda são tecnicamente diferentes desde o primeiro passo.</p></div>
+</div>
+
+<div class="st">
+  <span class="fase">fase crítica — o vaso que sangra</span>
+  <div class="ttl">Identificar e ligar a veia adrenal primeiro</div>
+  <p><strong>Veia adrenal direita</strong>: curta, larga e drena diretamente na veia cava — a estrutura mais perigosa da operação. <strong>Veia adrenal esquerda</strong>: mais longa, drena na veia renal esquerda.</p>
+  <div class="pq"><b>por quê</b>Ligar a veia <strong>antes</strong> de manipular o tumor, sempre que possível, é o mesmo princípio oncológico de controlar a drenagem antes de tocar a lesão — mas aqui o motivo extra é fisiológico: manipular um feocromocitoma sem a veia controlada pode disparar uma crise hipertensiva por liberação maciça de catecolaminas na circulação.</div>
+  <div class="mh2">
+    <div class="mh e"><b>mão esquerda</b>Grasper afastando o fígado ou o baço, mantendo exposição constante</div>
+    <div class="mh d"><b>mão direita</b>Dissector e clipador na veia adrenal, com cuidado redobrado à direita</div>
+  </div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de ressecção</span>
+  <div class="ttl">Dissecar a glândula em bloco com a gordura periadrenal</div>
+  <p>Manipulação mínima e delicada do parênquima, evitando pinçar diretamente o tumor.</p>
+  <div class="pq"><b>por quê</b>Pinçar diretamente comprime o tecido e pode romper a cápsula — em massas potencialmente malignas (carcinoma adrenocortical), a ruptura semeia a cavidade da mesma forma que romper a pseudocápsula de um GIST.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de extração</span>
+  <div class="ttl">Retirar a peça em saco protetor</div>
+  <p>Extração em <em>endobag</em>, sem contato com a parede abdominal.</p>
+  <div class="pq"><b>por quê</b>Se a massa for maligna, o contato direto com o trajeto do trocarte é via de implante em cicatriz — mesmo cuidado já visto em outras ressecções oncológicas laparoscópicas.</div>
+</div>
+
+</div>
+<div class="box warn"><span class="lbl">⚠ o momento mais instável</span>Após a ligadura da veia adrenal e a retirada do tumor, a <strong>queda abrupta de catecolaminas</strong> pode causar hipotensão significativa por até 48 horas — é esperado, e a antecipação com reposição volêmica é parte do plano cirúrgico, não uma intercorrência.</div>
+
+  </div>
+</details>
+
+<!-- 4 HIPERALDOSTERONISMO -->
+<details>
+  <summary><span class="num">4</span> Hiperaldosteronismo primário <span class="chev">▶</span></summary>
+  <div class="body">
+    <p><strong>Causa endócrina mais comum de hipertensão secundária</strong> — rastrear em hipertensos de difícil controle, hipertensos com hipocalemia espontânea, ou hipertensos jovens.</p>
+
+    <h4>Algoritmo diagnóstico (Endocrine Society)</h4>
+    <div class="steps">
+      <div class="step"><b>1. Rastreio</b>: relação aldosterona/renina (ARR) em condições padronizadas.</div>
+      <div class="step"><b>2. Confirmação</b>: teste confirmatório (sobrecarga salina, captopril) se ARR alterada.</div>
+      <div class="step"><b>3. TC de adrenais</b> em todos os pacientes confirmados — também serve para excluir carcinoma adrenocortical.</div>
+      <div class="step"><b>4. Amostragem de veia adrenal (AVS)</b> para diferenciar doença unilateral (cirúrgica) de bilateral (clínica) — <strong>padrão-ouro de subtipagem</strong>, feita por radiologista experiente.</div>
+      <div class="step"><b>5. Tratamento</b>: adrenalectomia laparoscópica unilateral (lateralizada) ou antagonista de mineralocorticoide (bilateral/não-cirúrgico).</div>
+    </div>
+
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">Endocrine Society Guideline</span></span>Exceção que dispensa AVS: pacientes <strong>&lt;35 anos</strong>, com hipocalemia espontânea, aldosterona muito elevada e <strong>lesão adrenal unilateral</strong> com aspecto radiológico típico de adenoma cortical na TC — podem ir direto para adrenalectomia sem necessidade de AVS.</div>
+    <div class="box warn"><span class="lbl">⚠ pegadinha</span>TC de adrenal <strong>isolada não deve guiar</strong> a decisão cirúrgica na maioria dos pacientes — nódulos incidentais são comuns e nem sempre correspondem ao lado hiperfuncionante; sem AVS, corre-se o risco de operar o lado errado ou operar um paciente que na verdade tem doença bilateral.</div>
+
+    <h4>Doença unilateral × bilateral</h4>
+    <div class="tbl"><table>
+      <tr><th></th><th>Unilateral (adenoma)</th><th>Bilateral (hiperplasia)</th></tr>
+      <tr><td><strong>Tratamento</strong></td><td>Adrenalectomia laparoscópica</td><td>Antagonista mineralocorticoide (espironolactona/eplerenona) — vitalício</td></tr>
+      <tr><td><strong>Potencial de cura</strong></td><td>Alto — normaliza ou melhora muito a PA/K⁺</td><td>Controle clínico, não cura cirúrgica</td></tr>
+    </table></div>
+  </div>
+</details>
+
+<!-- 5 INCIDENTALOMA E OUTRAS -->
+<details>
+  <summary><span class="num">5</span> Incidentaloma adrenal &amp; outras massas <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Avaliação do incidentaloma adrenal</h4>
+    <p>Todo nódulo adrenal achado incidentalmente exige duas perguntas: <strong>é funcionante?</strong> e <strong>é maligno?</strong></p>
+    <ul>
+      <li><strong>Funcional</strong>: rastrear cortisol (teste de supressão com dexametasona overnight), catecolaminas/metanefrinas plasmáticas ou urinárias, e — se hipertenso/hipocalêmico — relação aldosterona/renina.</li>
+      <li><strong>Malignidade</strong>: tamanho &gt;4 cm, características de imagem suspeitas (heterogêneo, margens irregulares, baixo washout na TC), crescimento em seguimento — aumentam a suspeita de carcinoma adrenocortical.</li>
+    </ul>
+    <div class="box mac"><span class="lbl">macete</span>Massa adrenal grande + funcionalmente silenciosa + características suspeitas de imagem = maior preocupação com <strong>carcinoma adrenocortical</strong>, não com adenoma benigno.</div>
+
+    <h4>Síndrome de Cushing — indicação cirúrgica</h4>
+    <p>Adenoma produtor de cortisol confirmado → <strong>adrenalectomia unilateral</strong>. Diferente do feocromocitoma, não exige bloqueio farmacológico específico pré-operatório extenso, mas requer atenção à <strong>insuficiência adrenal pós-operatória</strong> (supressão do eixo contralateral) — reposição de corticoide no perioperatório é necessária.</p>
+  </div>
+</details>
+
+<!-- 6 QUESTOES / PEGA-RATOES -->
+<details>
+  <summary><span class="num">6</span> Questões de banca, pega-ratões &amp; mnemônicos <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>10 questões representativas (originais, estilo das 5 bancas)</h4>
+
+    <div class="box prova"><span class="lbl">Q1 <span class="banca">HCPA</span></span><strong>Trauma esplênico grau IV, paciente hemodinamicamente estável. Conduta?</strong><br>Resposta: pode-se tentar <strong>NOM + angioembolização</strong> em centro preparado — grau isolado não define cirurgia automática.</div>
+
+    <div class="box prova"><span class="lbl">Q2 <span class="banca">GHC</span></span><strong>Esplenectomia de urgência por trauma. Quando vacinar contra pneumococo?</strong><br>Resposta: <strong>~14 dias após</strong> a cirurgia (diferente da eletiva, que vacina antes).</div>
+
+    <div class="box prova"><span class="lbl">Q3 <span class="banca">AMRIGS</span></span><strong>Paciente com feocromocitoma confirmado. Qual bloqueador NUNCA deve ser iniciado antes do outro?</strong><br>Resposta: <strong>betabloqueador nunca antes do alfabloqueador</strong> — risco de crise hipertensiva paradoxal.</div>
+
+    <div class="box prova"><span class="lbl">Q4 <span class="banca">PUC-RS</span></span><strong>Paciente com feocromocitoma, 2 dias após adrenalectomia, apresenta hipotensão persistente. Explicação?</strong><br>Resposta: <strong>queda abrupta de catecolaminas</strong> após ressecção do tumor — pode persistir até 48h.</div>
+
+    <div class="box prova"><span class="lbl">Q5 <span class="banca">SC-POA</span></span><strong>Hipertenso jovem, hipocalemia espontânea, aldosterona muito elevada, nódulo adrenal unilateral típico à TC. Precisa de AVS antes da cirurgia?</strong><br>Resposta: <strong>não necessariamente</strong> — critério de exceção (&lt;35 anos + quadro típico) permite adrenalectomia direta.</div>
+
+    <div class="box prova"><span class="lbl">Q6 <span class="banca">HCPA</span></span><strong>Por que a TC de adrenal isolada não deve guiar a cirurgia na maioria dos pacientes com hiperaldosteronismo?</strong><br>Resposta: nódulos incidentais são comuns e podem <strong>não corresponder</strong> ao lado hiperfuncionante — necessário AVS para confirmar lateralização.</div>
+
+    <div class="box prova"><span class="lbl">Q7 <span class="banca">GHC</span></span><strong>Quais os 3 principais patógenos de risco em OPSI?</strong><br>Resposta: <strong>Streptococcus pneumoniae, Haemophilus influenzae tipo b, Neisseria meningitidis</strong>.</div>
+
+    <div class="box prova"><span class="lbl">Q8 <span class="banca">AMRIGS</span></span><strong>Massa adrenal de 5cm, funcionalmente silenciosa, com características radiológicas suspeitas. Principal preocupação diagnóstica?</strong><br>Resposta: <strong>carcinoma adrenocortical</strong>.</div>
+
+    <div class="box prova"><span class="lbl">Q9 <span class="banca">PUC-RS</span></span><strong>Qual o critério mais importante para decidir manejo não-operatório no trauma esplênico?</strong><br>Resposta: <strong>estabilidade hemodinâmica</strong> — mais determinante que o grau AAST isolado.</div>
+
+    <div class="box prova"><span class="lbl">Q10 <span class="banca">SC-POA</span></span><strong>Adenoma produtor de cortisol confirmado (Cushing). Cuidado especial no pós-operatório?</strong><br>Resposta: <strong>insuficiência adrenal</strong> pelo eixo contralateral suprimido — necessária reposição de corticoide perioperatória.</div>
+
+    <h4>Pega-ratões (as armadilhas clássicas)</h4>
+    <div class="box warn"><span class="lbl">☠ trap 1</span>Grau AAST isolado <strong>não</strong> decide a conduta — fisiologia (estabilidade) pesa mais.</div>
+    <div class="box warn"><span class="lbl">☠ trap 2</span>Vacinação pós-esplenectomia de urgência é <strong>depois</strong>, não antes.</div>
+    <div class="box warn"><span class="lbl">☠ trap 3</span>Beta-bloqueador <strong>nunca antes</strong> do alfa no feocromocitoma.</div>
+    <div class="box warn"><span class="lbl">☠ trap 4</span>Hipotensão pós-ressecção de feocromocitoma é <strong>esperada</strong>, não sinal de complicação isolada.</div>
+    <div class="box warn"><span class="lbl">☠ trap 5</span>TC de adrenal isolada <strong>não substitui</strong> AVS na maioria dos casos de hiperaldosteronismo.</div>
+    <div class="box warn"><span class="lbl">☠ trap 6</span>Exceção de AVS existe, mas tem <strong>critérios específicos</strong> (idade, hipocalemia, imagem típica) — não é regra geral.</div>
+    <div class="box warn"><span class="lbl">☠ trap 7</span>OPSI evolui de leve a choque séptico em <strong>horas</strong> — orientar paciente a buscar atendimento imediato.</div>
+    <div class="box warn"><span class="lbl">☠ trap 8</span>Cushing cirúrgico precisa de reposição de corticoide PO — eixo contralateral está suprimido.</div>
+
+    <h4>Mnemônicos-resumo</h4>
+    <div class="box mac"><span class="lbl">macete geral</span>AAST I-V = gravidade anatômica, mas <strong>estabilidade manda mais</strong> · OPSI = pneumococo+Hib+meningococo, vacina antes(eletiva)/depois(urgência) · Feocromocitoma = <strong>alfa antes de beta</strong>, Roizen, hipotensão pós-ressecção · Hiperaldosteronismo = ARR→confirmatório→TC→AVS→cirurgia ou espironolactona.</div>
+  </div>
+</details>
+
+<footer>
+  <div><strong>carolzita</strong> · Baço &amp; Adrenal · referência completa</div>
+  <div class="ref">Fontes: WSES Splenic Trauma Guidelines (2022) · EAST Practice Management Guideline — Splenic Injury · Endocrine Society Clinical Practice Guideline — Primary Aldosteronism · Endocrine Society Pheochromocytoma Guideline (2022) · Sabiston · Zollinger. Conteúdo educacional; questões são itens representativos originais.</div>
+</footer>
+</div>
+</body>
+</html>

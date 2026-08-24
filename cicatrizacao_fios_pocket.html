@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Cicatrização &amp; Fios · pocket</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d1117;--card:#16161f;--card2:#1c1c27;--line:#2a2a38;
+  --txt:#ececf4;--muted:#9a9ab0;
+  --laranja:#f97316;--roxo:#a855f7;--ciano:#22d3ee;--vermelho:#f87171;--amarelo:#fbbf24;--verde:#34d399;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{overflow-x:hidden}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;font-size:17px;line-height:1.6;padding-bottom:30px}
+.top{padding:22px 18px 12px;position:sticky;top:0;background:linear-gradient(180deg,var(--bg) 70%,transparent);z-index:5}
+.kick{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:26px;line-height:1.1;margin-top:4px}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:6px 18px 12px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;padding:9px 15px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted);white-space:nowrap;cursor:pointer;transition:.15s}
+.tab.on{background:var(--laranja);border-color:var(--laranja);color:#0a0a0f}
+.panel{display:none;padding:6px 18px 40px;animation:f .25s}
+.panel.on{display:block}
+@keyframes f{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+h2{font-family:'Syne',sans-serif;font-size:21px;color:var(--laranja);margin:18px 0 10px}
+h3{font-family:'Syne',sans-serif;font-size:16px;color:#fff;margin:16px 0 6px}
+p{margin:10px 0}
+ul{list-style:none;margin:8px 0}
+li{padding:6px 0 6px 22px;position:relative}
+li::before{content:"▸";position:absolute;left:0;top:7px;color:var(--laranja);font-size:13px}
+strong{color:#fff;font-weight:600}
+.s{color:var(--ciano);font-style:italic;font-size:.92em}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0}
+.box{border-radius:12px;padding:13px 15px;margin:13px 0;border:1px solid;font-size:15px}
+.prova{background:rgba(168,85,247,.1);border-color:rgba(168,85,247,.4)}
+.prova .l{color:var(--roxo)}
+.mac{background:rgba(34,211,238,.1);border-color:rgba(34,211,238,.4)}
+.mac .l{color:var(--ciano)}
+.warn{background:rgba(248,113,113,.1);border-color:rgba(248,113,113,.4)}
+.warn .l{color:var(--vermelho)}
+.l{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-size:10px;background:rgba(168,85,247,.25);color:var(--roxo);padding:2px 6px;border-radius:5px;margin-left:5px;font-family:'JetBrains Mono',monospace}
+.kv{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)}
+.kv:last-child{border:none}
+.kv .k{flex:0 0 40%;color:var(--ciano);font-family:'JetBrains Mono',monospace;font-size:13px}
+.kv .v{flex:1;font-size:15px}
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="kick">carolzita · pocket 🚑</div>
+  <h1>Cicatrização &amp; Fios 🧵</h1>
+</div>
+<div class="tabs">
+  <div class="tab on" data-t="0">🔄 Fases</div>
+  <div class="tab" data-t="1">🩹 Fechamento</div>
+  <div class="tab" data-t="2">⛔ Fatores</div>
+  <div class="tab" data-t="3">🧵 Fios</div>
+  <div class="tab" data-t="4">✂️ Técnica</div>
+  <div class="tab" data-t="5">☠️ Traps</div>
+</div>
+
+<!-- 0 -->
+<div class="panel on" data-p="0">
+  <h2>🔄 As 4 fases</h2>
+  <div class="card">
+    <div class="kv"><div class="k">🩸 Hemostasia</div><div class="v">imediata · <strong>plaqueta</strong></div></div>
+    <div class="kv"><div class="k">🔥 Inflamação</div><div class="v">dia 1-5 · <strong>macrófago (maestro)</strong></div></div>
+    <div class="kv"><div class="k">🌱 Proliferação</div><div class="v">até 3 sem · <strong>fibroblasto</strong> (colágeno III)</div></div>
+    <div class="kv"><div class="k">🧬 Remodelação</div><div class="v">3 sem-1 ano · colágeno <strong>III→I</strong></div></div>
+  </div>
+  <div class="box prova"><span class="l">alto rendimento</span>💪 Força tênsil: <strong>3%</strong> (1 sem) → <strong>20%</strong> (3 sem) → <strong>~80%</strong> (3 meses) · <strong>NUNCA 100%!</strong></div>
+  <div class="box mac"><span class="l">🧠 macete</span>Célula por fase: <strong>Plaqueta → Macrófago → Fibroblasto</strong> 🎬</div>
+</div>
+
+<!-- 1 -->
+<div class="panel" data-p="1">
+  <h2>🩹 Intenções</h2>
+  <div class="card">
+    <div class="kv"><div class="k">1️⃣ Primária</div><div class="v">bordas suturadas (ferida limpa)</div></div>
+    <div class="kv"><div class="k">2️⃣ Secundária</div><div class="v">aberta → granulação+contração (contaminada)</div></div>
+    <div class="kv"><div class="k">3️⃣ Terciária</div><div class="v">aberta uns dias, fecha depois</div></div>
+  </div>
+  <div class="box prova"><span class="l">alto rendimento <span class="banca">HCPA·AMRIGS</span></span>🦠 Ferida <strong>contaminada NÃO fecha por 1ª intenção</strong> → 2ª ou 3ª!</div>
+  <h3>🎗️ Patológica</h3>
+  <div class="card">
+    <div class="kv"><div class="k">Hipertrófica</div><div class="v">respeita limites · <strong>regride</strong></div></div>
+    <div class="kv"><div class="k">Queloide</div><div class="v"><strong>ultrapassa</strong> limites · não regride</div></div>
+  </div>
+  <div class="box warn"><span class="l">☠️ pega-ratão</span>Queloide <strong>ultrapassa</strong> a ferida e recidiva! Excisar sozinho = volta 🔁</div>
+</div>
+
+<!-- 2 -->
+<div class="panel" data-p="2">
+  <h2>⛔ O que atrasa</h2>
+  <ul>
+    <li>🦠 <strong>Infecção</strong> (causa #1!) — &gt;10⁵ UFC/g</li>
+    <li>🩸 Isquemia/hipóxia (O₂ faz colágeno)</li>
+    <li>🍬 Diabetes · 🚬 tabaco</li>
+    <li>💊 Corticoide (↔ revertido pela <strong>vit. A</strong>)</li>
+    <li>🍊 ↓ <strong>vitamina C</strong> (cofator colágeno) · ⚙️ ↓ <strong>zinco</strong></li>
+    <li>🪡 Tensão, corpo estranho, radiação</li>
+  </ul>
+  <div class="box prova"><span class="l">alto rendimento <span class="banca">GHC·PUC</span></span>🅰️ <strong>Vitamina A reverte o corticoide</strong> · 🍊 vit. C + ⚙️ zinco = cofatores do colágeno</div>
+</div>
+
+<!-- 3 -->
+<div class="panel" data-p="3">
+  <h2>🧵 Fios</h2>
+  <div class="box prova"><span class="l">alto rendimento <span class="banca">HCPA·SC-POA</span></span>🧶 <strong>Multifilamentar (trançado)</strong> = melhor manuseio MAS <strong>mais infecção</strong> (bactéria nos interstícios). Campo sujo → <strong>monofilamentar!</strong></div>
+  <div class="card">
+    <div class="kv"><div class="k">🫀 Vaso</div><div class="v"><strong>Prolene</strong> (inabsorvível mono)</div></div>
+    <div class="kv"><div class="k">🧱 Fáscia/aponeurose</div><div class="v"><strong>PDS</strong> (absorvível longa duração)</div></div>
+    <div class="kv"><div class="k">🔗 Anastomose</div><div class="v">Vicryl / PDS (absorvível)</div></div>
+    <div class="kv"><div class="k">🧑 Pele</div><div class="v">Náilon/Prolene ou Monocryl subcuticular</div></div>
+  </div>
+  <div class="box mac"><span class="l">🧠 macete</span>"Vaso = <strong>Prolene</strong>" 🫀 · "Fáscia = <strong>PDS</strong>" 🧱 · mais zeros = mais fino 🔬</div>
+</div>
+
+<!-- 4 -->
+<div class="panel" data-p="4">
+  <h2>✂️ Técnica</h2>
+  <ul>
+    <li>🪡 Agulha <strong>cilíndrica</strong> = delicado (intestino/vaso); <strong>triangular</strong> = pele/fáscia</li>
+    <li>🤏 Everter bordas, respeitar planos, matar espaço morto</li>
+    <li>🧷 Aponeurose: <strong>razão fio:ferida ≥ 4:1</strong> (small bites)</li>
+  </ul>
+  <div class="box prova"><span class="l">alto rendimento <span class="banca">GHC·AMRIGS</span></span>🧱 Fáscia = contínua com <strong>4:1</strong>, pontos pequenos e próximos → menos hérnia/deiscência</div>
+  <div class="box warn"><span class="l">☠️ pega-ratão</span>Ponto apertado = <strong>isquemia → necrose → deiscência</strong>. "Aproximar, não estrangular!" 🎯</div>
+</div>
+
+<!-- 5 -->
+<div class="panel" data-p="5">
+  <h2>☠️ Pega-ratões</h2>
+  <div class="box warn"><span class="l">trap 1</span>Orquestra = macrófago (não neutrófilo) 🎬</div>
+  <div class="box warn"><span class="l">trap 2</span>Remodelação = colágeno III → I 🧬</div>
+  <div class="box warn"><span class="l">trap 3</span>Força tênsil nunca chega a 100% (platô ~80%) 💪</div>
+  <div class="box warn"><span class="l">trap 4</span>Queloide ultrapassa e não regride 🎗️</div>
+  <div class="box warn"><span class="l">trap 5</span>Vit. A reverte corticoide; vit. C/zinco = cofatores 🍊</div>
+  <div class="box warn"><span class="l">trap 6</span>Multifilamentar = mais infecção → mono no campo sujo 🧶</div>
+  <div class="box warn"><span class="l">trap 7</span>Vaso=Prolene · fáscia=PDS · anastomose=Vicryl 🧵</div>
+  <div class="box warn"><span class="l">trap 8</span>Contaminada não fecha por 1ª intenção 🦠</div>
+  <div class="box mac"><span class="l">✅ resumo de bolso</span>Fases: Hemo·Inflama·Prolifera·Remodela (Plaqueta→Macrófago→Fibroblasto) · colágeno III→I · força 3→20→80% · queloide ultrapassa · atrasa=infecção#1/isquemia/DM/corticoide(↔vitA)/↓vitC-zinco · mono campo sujo · Prolene vaso · PDS fáscia · aponeurose 4:1 🎓</div>
+</div>
+
+<script>
+var tabs=document.querySelectorAll('.tab'),panels=document.querySelectorAll('.panel');
+tabs.forEach(function(t){t.addEventListener('click',function(){
+  tabs.forEach(function(x){x.classList.remove('on')});
+  panels.forEach(function(x){x.classList.remove('on')});
+  t.classList.add('on');
+  document.querySelector('.panel[data-p="'+t.dataset.t+'"]').classList.add('on');
+})});
+</script>
+</body>
+</html>

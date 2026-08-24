@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DAOP — Referência CV 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d1117;--panel:#161b22;--panel2:#1c232c;--line:#2a323c;--tx:#e6edf3;--mut:#8b949e;--or:#ff7a18;--or2:#ff9a4d;--orbg:rgba(255,122,24,.10);--pu:#b083f0;--pu2:#c9a7ff;--pubg:rgba(176,131,240,.12);--cy:#3dd6d0;--cy2:#5fe3dd;--cybg:rgba(61,214,208,.10);--red:#ff5f56;--grn:#3fb950}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font-family:'IBM Plex Sans',sans-serif;line-height:1.55;padding:0 0 60px}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px}
+header{padding:30px 0 14px;border-bottom:1px solid var(--line)}
+h1{font-size:30px;font-weight:700;letter-spacing:-.5px}h1 .b{color:var(--or)}
+.sub{color:var(--mut);font-size:14px;margin-top:6px;font-family:'IBM Plex Mono',monospace}
+nav{position:sticky;top:0;background:var(--bg);z-index:10;border-bottom:1px solid var(--line);overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch}
+nav .inner{max-width:920px;margin:0 auto;padding:0 12px;display:flex;gap:2px}
+nav button{background:none;border:none;color:var(--mut);font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.5px;text-transform:uppercase;padding:14px 11px;cursor:pointer;border-bottom:2px solid transparent;transition:.15s}
+nav button:hover{color:var(--tx)}nav button.on{color:var(--or);border-bottom-color:var(--or)}
+section{display:none;padding:26px 0;animation:f .25s}section.on{display:block}
+@keyframes f{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+h2{font-size:20px;color:var(--or);margin:26px 0 12px;font-weight:600;border-bottom:1px solid var(--line);padding-bottom:6px}h2:first-child{margin-top:0}
+h3{font-size:15px;margin:18px 0 8px;font-weight:600;color:var(--or2)}
+p,li{font-size:14.5px}
+ul{margin:8px 0 8px 4px;list-style:none}li{padding:3px 0 3px 24px;position:relative}li .em{position:absolute;left:0}
+.lay{color:var(--cy2);font-style:italic;font-size:13.5px}
+.box{border-left:3px solid var(--or);background:var(--orbg);border-radius:0 8px 8px 0;padding:12px 16px;margin:14px 0}
+.box.pu{border-color:var(--pu);background:var(--pubg)}.box.cy{border-color:var(--cy);background:var(--cybg)}
+.box .lbl{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--or);margin-bottom:6px;font-weight:600}
+.stx{counter-reset:st;margin:14px 0}
+.st{counter-increment:st;background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:13px 15px 13px 50px;margin:11px 0;position:relative}
+.st::before{content:counter(st);position:absolute;left:13px;top:13px;width:25px;height:25px;border-radius:7px;background:var(--or);color:#0d1117;font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:12.5px;display:flex;align-items:center;justify-content:center}
+.st .fase{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1.3px;text-transform:uppercase;color:var(--or);display:block}
+.st .ttl{font-weight:700;font-size:15px;color:#fff;margin-bottom:3px}
+.st p{margin:4px 0;font-size:13.8px}
+.pq{border-left:3px solid var(--pu);background:var(--pubg);border-radius:0 8px 8px 0;padding:8px 12px;margin:8px 0;font-size:13.3px}
+.pq b{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;color:var(--pu2);display:block}
+.mh2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+.mh{border-radius:9px;padding:8px 11px;font-size:12.5px;border:1px solid var(--line)}
+.mh.e{background:rgba(63,185,80,.07);border-color:rgba(63,185,80,.3)}
+.mh.d{background:var(--orbg);border-color:rgba(255,122,24,.3)}
+.mh b{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1.1px;text-transform:uppercase;display:block}
+.mh.e b{color:var(--grn)} .mh.d b{color:var(--or2)}
+.box.gr{border-left-color:var(--grn);background:rgba(63,185,80,.09);color:var(--grn);font-style:italic}
+.box.gr .lbl{color:var(--grn);font-style:normal}
+.box.gr b,.box.gr strong{color:#8ee79a;font-style:normal}
+@media(max-width:640px){.mh2{grid-template-columns:1fr}}
+
+.box.pu .lbl{color:var(--pu2)}.box.cy .lbl{color:var(--cy2)}
+.box li::before{content:"▸";color:var(--or);position:absolute;left:6px}.box li{padding-left:22px}
+.box.pu li::before{color:var(--pu)}.box.cy li::before{color:var(--cy)}.box li .em{display:none}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.5px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--panel2);color:var(--or2);font-weight:600;font-family:'IBM Plex Mono',monospace;font-size:12px}
+.hi{color:var(--pu2);font-weight:600}.mn{font-family:'IBM Plex Mono',monospace;color:var(--cy2)}
+.steps{counter-reset:s;list-style:none;margin:6px 0}
+.steps li{padding:8px 8px 8px 40px;border-bottom:1px solid var(--line)}
+.steps li::before{counter-increment:s;content:counter(s);background:var(--or);color:#0d1117;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:12px;width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;position:absolute;left:4px;top:8px}
+.steps li .em{display:none}.steps li:last-child{border-bottom:none}
+.hand{font-family:'IBM Plex Mono',monospace;font-size:11px;padding:1px 6px;border-radius:4px;margin-right:4px}
+.hL{background:rgba(63,185,80,.15);color:#56d364}.hR{background:rgba(255,122,24,.15);color:var(--or2)}
+.kbd{font-family:'IBM Plex Mono',monospace;background:var(--panel2);padding:1px 6px;border-radius:4px;font-size:12.5px;color:var(--or2)}
+.q{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:16px 0}
+.q .src{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--pu2);letter-spacing:1px;text-transform:uppercase}
+.q .stem{margin:8px 0 10px;font-weight:500}
+.q .alt{padding:4px 0 4px 24px;position:relative;font-size:14px}.q .alt .let{position:absolute;left:0;font-family:'IBM Plex Mono',monospace;color:var(--mut)}
+.q .alt.ok{color:var(--grn)}.q .alt.ok .let{color:var(--grn)}
+.q details{margin-top:10px;border-top:1px dashed var(--line);padding-top:10px}
+.q summary{cursor:pointer;color:var(--cy2);font-size:13px;font-family:'IBM Plex Mono',monospace}
+.q .exp{font-size:13.5px;color:var(--mut);margin-top:8px}
+.svgwrap{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px;margin:14px 0;text-align:center}
+.svgwrap figcaption{color:var(--mut);font-size:12px;margin-top:8px;font-family:'IBM Plex Mono',monospace}
+.pill{display:inline-block;background:var(--panel2);border:1px solid var(--line);border-radius:20px;padding:3px 12px;margin:3px 4px 3px 0;font-size:12.5px;font-family:'IBM Plex Mono',monospace}.pill .hi{color:var(--pu2)}
+.note{font-size:12px;color:var(--mut);border-top:1px solid var(--line);margin-top:30px;padding-top:14px;font-family:'IBM Plex Mono',monospace}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<h1>🦵 <span class="b">DAOP</span> — Doença Arterial Obstrutiva Periférica</h1>
+<div class="sub">DAOP MMII · CV 2026 · ESVS 2024 + ESC/ESVS 2024 PAAD + GVG/WIfI 2019 + Rutherford/Sabiston</div>
+</div></header>
+<nav><div class="inner" id="nav"></div></nav>
+<div class="wrap">
+
+<section id="geral" class="on">
+<h2>🧭 Definição &amp; epidemiologia</h2>
+<p>DAOP = doença <span class="hi">aterosclerótica obstrutiva</span> das artérias dos membros inferiores, da aorta distal até o pé. <span class="lay">(as "mangueiras" que levam sangue para as pernas vão entupindo de gordura/placa, igual cano de fogão entupido de gordura)</span> Espectro clínico: <b>assintomática → claudicação intermitente → isquemia crônica que ameaça o membro (CLTI)</b>.</p>
+<h3>Fatores de risco</h3>
+<div class="pill"><span class="hi">Tabagismo</span> (o mais forte, inclusive para progressão)</div>
+<div class="pill">Diabetes mellitus</div>
+<div class="pill">HAS / dislipidemia</div>
+<div class="pill">Idade &gt; 65 (ou &gt;50 com DM/tabagismo)</div>
+<div class="pill">Doença renal crônica</div>
+<div class="box pu"><div class="lbl">⚠️ Pega-ratão de prova</div>
+<p>Ao contrário do AAA (onde DM é protetor), no DAOP o <span class="hi">diabetes é fator de risco</span> — e piora o prognóstico (lesões mais distais/infrapoplíteas, calcificação arterial, maior amputação).</p></div>
+<h3>Marcador de risco cardiovascular sistêmico</h3>
+<p>DAOP é <b>equivalente de risco coronariano</b>: portador de DAOP tem alta prevalência de DAC e DCV concomitantes — rastrear e tratar fatores de risco sistêmicos é tão importante quanto tratar o membro (ESC/ESVS 2024).</p>
+</section>
+
+<section id="clinica">
+<h2>🩺 Quadro clínico &amp; classificação</h2>
+<ul>
+<li><span class="em">🤫</span>Maioria <b>assintomática</b> (ITB baixo sem sintomas) ou sintomas atípicos.</li>
+<li><span class="em">🚶</span><b>Claudicação intermitente</b>: dor/cãibra/fadiga muscular reprodutível ao esforço, alivia com repouso &lt;10 min, sem precisar sentar. <span class="lay">(a perna "pede socorro" quando anda, porque o sangue não chega o suficiente para o músculo trabalhar; para no descanso porque a demanda cai)</span></li>
+<li><span class="em">📍</span>Localização da dor indica o nível da obstrução <b>um segmento acima</b>: glútea/coxa → aortoilíaco; panturrilha → femoropoplíteo (o mais comum); pé → infrapoplíteo.</li>
+<li><span class="em">🌙</span><b>Dor de repouso</b>: piora deitado/à noite, melhora com a perna pendente (fora da cama) — já é <b>CLTI</b>.</li>
+<li><span class="em">🩹</span>Úlcera/gangrena que não cicatriza = CLTI.</li>
+</ul>
+<div class="box pu"><div class="lbl">📛 Síndrome de Leriche</div>
+<p>Obstrução aortoilíaca crônica: <span class="hi">claudicação de nádegas/coxas + impotência + ausência de pulsos femorais</span> (tríade clássica).</p></div>
+<h3>Classificação de Fontaine × Rutherford</h3>
+<table>
+<tr><th>Fontaine</th><th>Rutherford</th><th>Quadro</th></tr>
+<tr><td>I</td><td>0</td><td>Assintomático</td></tr>
+<tr><td>IIa</td><td>1</td><td>Claudicação leve</td></tr>
+<tr><td>IIb</td><td>2–3</td><td>Claudicação moderada–grave</td></tr>
+<tr><td>III</td><td>4</td><td>Dor de repouso (isquemia crítica)</td></tr>
+<tr><td>IV</td><td>5–6</td><td>Lesão trófica / gangrena (5 = focal, 6 = extensa) — CLTI</td></tr>
+</table>
+<p class="mn">Fontaine III/IV = Rutherford 4–6 = CLTI.</p>
+</section>
+
+<section id="anatomia">
+<h2>🫀 Anatomia &amp; segmentos</h2>
+<p>Três segmentos arteriais dos MMII, cada um com padrão clínico próprio:</p>
+<table>
+<tr><th>Segmento</th><th>Artérias</th><th>Clínica típica</th></tr>
+<tr><td><b>Aortoilíaco</b> (inflow)</td><td>Aorta terminal, ilíacas comuns/externas</td><td>Claudicação glútea/coxa, Leriche, pulsos femorais ausentes</td></tr>
+<tr><td><b>Femoropoplíteo</b></td><td>Femoral comum → superficial → poplítea</td><td>Claudicação de panturrilha (o mais comum)</td></tr>
+<tr><td><b>Infrapoplíteo</b> (runoff)</td><td>Tibial anterior, tibial posterior, fibular</td><td>Dor de pé, mais comum em diabéticos — CLTI distal</td></tr>
+</table>
+<div class="box pu"><div class="lbl">⚠️ Relações que caem em prova</div>
+<ul>
+<li>O <span class="hi">canal dos adutores (Hunter)</span> é o local mais comum de obstrução da femoral superficial (trajeto estreito, sujeito a estenose/oclusão).</li>
+<li>A <span class="hi">artéria femoral profunda</span> é a principal colateral entre o segmento aortoilíaco e o infrageniculado — sua patência é crítica quando a superficial ocluiu.</li>
+<li>Pulsos a palpar: femoral, poplíteo, tibial posterior (retromaleolar medial), pedioso dorsal (dorso do pé, lateral ao extensor longo do hálux).</li>
+</ul></div>
+<figure class="svgwrap">
+<svg viewBox="0 0 360 260" xmlns="http://www.w3.org/2000/svg" style="max-width:100%">
+<line x1="180" y1="10" x2="180" y2="55" stroke="#e6edf3" stroke-width="10"/>
+<line x1="180" y1="55" x2="130" y2="90" stroke="#ff5f56" stroke-width="8"/>
+<line x1="180" y1="55" x2="230" y2="90" stroke="#e6edf3" stroke-width="8"/>
+<line x1="130" y1="90" x2="120" y2="160" stroke="#ff5f56" stroke-width="7"/>
+<line x1="230" y1="90" x2="235" y2="160" stroke="#e6edf3" stroke-width="7"/>
+<line x1="120" y1="160" x2="118" y2="220" stroke="#8b949e" stroke-width="5"/>
+<line x1="235" y1="160" x2="236" y2="220" stroke="#e6edf3" stroke-width="6"/>
+<line x1="118" y1="220" x2="112" y2="250" stroke="#8b949e" stroke-width="4"/>
+<line x1="236" y1="220" x2="240" y2="250" stroke="#e6edf3" stroke-width="4"/>
+<text x="60" y="60" fill="#b083f0" font-family="IBM Plex Mono" font-size="11">ilíaca comum</text>
+<text x="85" y="120" fill="#ff9a4d" font-family="IBM Plex Mono" font-size="11">fem. superficial</text>
+<text x="60" y="185" fill="#5fe3dd" font-family="IBM Plex Mono" font-size="10">poplítea</text>
+<text x="55" y="238" fill="#8b949e" font-family="IBM Plex Mono" font-size="10">tibiais/fibular</text>
+</svg>
+<figcaption>Lado esquerdo (vermelho) = segmento femoropoplíteo ocluído — padrão mais comum de DAOP</figcaption>
+</figure>
+</section>
+
+<section id="dx">
+<h2>🔬 Diagnóstico</h2>
+<div class="box"><div class="lbl">🎯 Exame de 1ª linha</div>
+<p><span class="hi">Índice tornozelo-braquial (ITB / ABI)</span> = PAS tornozelo ÷ PAS braquial (maior valor de cada lado).</p></div>
+<table>
+<tr><th>ITB</th><th>Interpretação</th></tr>
+<tr><td>&gt; 1,40</td><td>Não compressível (calcificação — comum em DM/DRC) → pedir <b>índice tornozelo-dedo (ITD/TBI)</b></td></tr>
+<tr><td>1,00–1,40</td><td>Normal</td></tr>
+<tr><td>0,91–0,99</td><td>Limítrofe</td></tr>
+<tr><td><span class="hi">≤ 0,90</span></td><td><b>DAOP</b></td></tr>
+<tr><td>0,41–0,90</td><td>DAOP leve-moderada (claudicação)</td></tr>
+<tr><td><span class="hi">≤ 0,40</span></td><td>DAOP grave (dor de repouso/CLTI provável)</td></tr>
+</table>
+<p class="lay">(é como medir a pressão da água na torneira do quintal comparada com a da cozinha — se está bem mais fraca lá embaixo, tem "entupimento" no caminho)</p>
+<h3>Complementares</h3>
+<ul>
+<li><span class="em">🏃</span><b>Teste de esforço em esteira</b> com ITB pré/pós — confirma quando ITB de repouso é normal mas há claudicação típica.</li>
+<li><span class="em">🩸</span><b>Pressão de artelho / índice tornozelo-dedo</b> — essencial quando artérias incompressíveis (DM, DRC).</li>
+<li><span class="em">📡</span><b>Duplex arterial</b> — mapeamento não invasivo, localiza e estima grau de estenose.</li>
+<li><span class="em">🖥️</span><b>AngioTC / AngioRM</b> — planejamento de revascularização.</li>
+<li><span class="em">💉</span><b>Arteriografia digital</b> — padrão-ouro, reservada para o momento do tratamento endovascular.</li>
+</ul>
+</section>
+
+<section id="conduta">
+<h2>📐 Conduta clínica &amp; estratificação (WIfI)</h2>
+<h3>Tratamento clínico de base (todo paciente com DAOP)</h3>
+<ul>
+<li><span class="em">🚭</span>Cessação do tabagismo (a intervenção de maior impacto).</li>
+<li><span class="em">💊</span><b>Antiplaquetário</b> (AAS ou clopidogrel) + <b>estatina de alta intensidade</b> em todos.</li>
+<li><span class="em">🩹</span>Controle rígido de DM, PA (IECA/BRA preferíveis) e peso.</li>
+<li><span class="em">🏃</span><b>Exercício supervisionado</b> (caminhada, ≥30-45 min, 3x/semana, ≥12 semanas) — <span class="hi">1ª linha para claudicação</span>, tão ou mais eficaz que revascularização em Rutherford 1–3 isolado (ESVS 2024).</li>
+<li><span class="em">💊</span><b>Cilostazol</b>: melhora distância de claudicação (contraindicado em IC).</li>
+</ul>
+<div class="box pu"><div class="lbl">⭐ Quando revascularizar</div>
+<ul>
+<li>Claudicação <b>incapacitante</b> refratária ao tratamento clínico/exercício.</li>
+<li><b>CLTI</b> (dor de repouso, úlcera, gangrena) → revascularização urgente/eletiva para salvar o membro.</li>
+<li><b>Isquemia aguda</b> sobreposta → ver protocolo de isquemia aguda (emergência).</li>
+</ul></div>
+<h3>WIfI — estratificação de risco de amputação (GVG 2019)</h3>
+<table>
+<tr><th>Eixo</th><th>Avalia</th></tr>
+<tr><td><b>W</b>ound</td><td>Ferida: 0 (nenhuma) a 3 (extensa, sem cicatrização possível)</td></tr>
+<tr><td><b>I</b>schemia</td><td>ITB / pressão de artelho / TcPO2: 0 a 3</td></tr>
+<tr><td><b>f</b>oot <b>I</b>nfection</td><td>Infecção (critérios IDSA): 0 a 3</td></tr>
+</table>
+<p>Combina os 3 eixos em <b>estágio clínico 1–4</b> (risco de amputação crescente) — orienta necessidade e urgência de revascularização (framework <b>PLAN</b>: Patient risk, Limb severity, ANatomic complexity, do GVG).</p>
+<h3>TASC II — complexidade anatômica da lesão</h3>
+<table>
+<tr><th>TASC</th><th>Conduta preferencial</th></tr>
+<tr><td>A</td><td>Endovascular</td></tr>
+<tr><td>B</td><td>Endovascular (favorecido)</td></tr>
+<tr><td>C</td><td>Cirurgia aberta em bom risco / endovascular em alto risco</td></tr>
+<tr><td>D</td><td>Cirurgia aberta (bypass)</td></tr>
+</table>
+<p class="lay">(A = entupimento curtinho e fácil de desentupir por dentro do cano; D = entupimento longo e complicado, melhor trocar o pedaço do cano por um "desvio")</p>
+</section>
+
+<section id="tecnica">
+<h2>🔪 Técnica de revascularização</h2>
+<div class="box gr"><div class="lbl">tradução simples</div>A DAOP dá <strong>três respostas técnicas</strong> conforme o tipo de entupimento. Lesão curta e focal: <strong>desamassa por dentro</strong> (angioplastia). Oclusão longa: <strong>constrói um desvio</strong> (bypass) — mesma lógica de "cano velho, faz um novo do lado" que já vimos em outras revascularizações. Placa localizada e calcificada bem na bifurcação: <strong>raspa por dentro</strong> (endarterectomia). A escolha não é preferência — é o TASC da lesão.</div>
+
+<h3>A · Endovascular (angioplastia ± stent)</h3>
+<p><b>Posição:</b> supino. <b>Acesso:</b> femoral comum contralateral (retrógrado) ou ipsilateral anterógrado, guiado por fluoroscopia/US.</p>
+
+<div class="stx">
+
+<div class="st">
+  <span class="fase">fase de acesso</span>
+  <div class="ttl">Punção femoral e introdutor</div>
+  <p>Técnica de Seldinger; introdutor posicionado.</p>
+  <div class="pq"><b>por quê</b>O acesso contralateral cruzando a bifurcação aórtica ("over the top") é preferido quando a lesão está próxima ao sítio de punção — puncionar em cima da própria doença é arriscado e dificulta a navegação.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de anticoagulação</span>
+  <div class="ttl">Heparinização com alvo de ACT</div>
+  <p>Heparina sistêmica, <strong>ACT alvo &gt; 250s</strong>.</p>
+  <div class="pq"><b>por quê</b>O fio e o cateter dentro da artéria são superfícies trombogênicas por si só — sem anticoagulação adequada, o próprio material do procedimento gera um trombo novo enquanto trata a lesão original.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de cruzamento — o passo que decide tudo</span>
+  <div class="ttl">Cruzar a lesão com fio hidrofílico</div>
+  <p>Cateterismo seletivo, cruzando a oclusão ou estenose com fio-guia hidrofílico, <strong>dentro do lúmen verdadeiro</strong>.</p>
+  <div class="pq"><b>por quê</b>É o passo que separa sucesso de fracasso. Se o fio sai do lúmen verdadeiro e progride no <strong>subíntima</strong> sem retornar ao verdadeiro lúmen distalmente, toda a angioplastia seguinte é feita no plano errado — às vezes ainda funciona (recanalização subintimal intencional), mas na maioria das vezes é falha de procedimento.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de tratamento</span>
+  <div class="ttl">Angioplastia com balão, stent se necessário</div>
+  <p>Balão simples ou farmacológico; <strong>stent</strong> se resultado subótimo, dissecção limitante de fluxo, ou lesões <strong>TASC B/C</strong>.</p>
+  <div class="pq"><b>por quê</b>O stent não é upgrade automático — é resgate. Angioplastia isolada com bom resultado <strong>não precisa</strong> de stent, e colocar um sem necessidade expõe o paciente a reestenose intra-stent e perda de opções futuras. TASC C/D favorecem stent ou cirurgia porque a lesão longa tem mais chance de recolher (recoil) sem suporte.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de encerramento</span>
+  <div class="ttl">Controle e hemostasia</div>
+  <p>Angiografia de controle; hemostasia por compressão manual ou dispositivo de fechamento.</p>
+  <div class="pq"><b>por quê</b>A hemostasia inadequada no acesso é a complicação mais comum de todo o procedimento — hematoma, pseudoaneurisma, fístula arteriovenosa — e ocorre por uma falha de <em>fechamento</em>, não de tratamento da doença.</div>
+</div>
+
+</div>
+
+<h3>B · Bypass femoropoplíteo/infrapoplíteo (aberto)</h3>
+<p><b>Posição:</b> supino, perna em rotação externa/abduzida. <b>Conduto de escolha:</b> <span class="hi">veia safena magna autóloga</span> — melhor patência a longo prazo, especialmente infragenicular; PTFE se veia inadequada.</p>
+
+<div class="stx">
+
+<div class="st">
+  <span class="fase">fase de acesso</span>
+  <div class="ttl">Dissecção da artéria doadora e receptora</div>
+  <p>Incisões separadas: femoral comum (doadora) e poplítea/tibial (receptora), com controle vascular em cada uma.</p>
+  <div class="pq"><b>por quê</b>Incisões separadas — em vez de uma única incisão longa — reduzem a área de descolamento de pele e o risco de deiscência, especialmente relevante no vasculopata com perfusão cutânea já comprometida.</div>
+  <div class="mh2">
+    <div class="mh e"><b>mão esquerda</b>DeBakey atraumática, expondo os planos</div>
+    <div class="mh d"><b>mão direita</b>Metzenbaum na dissecção</div>
+  </div>
+</div>
+
+<div class="st">
+  <span class="fase">fase do conduto</span>
+  <div class="ttl">Colher e preparar a safena, ou o enxerto protético</div>
+  <p>Safena <em>in situ</em> ou reversa; ligar tributárias.</p>
+  <div class="pq"><b>por quê</b>A escolha do conduto é a decisão que mais impacta a durabilidade do bypass: <strong>veia viva</strong> se adapta ao regime de pressão arterial e tem endotélio próprio, o que reduz trombose tardia — é por isso que ela supera a prótese mesmo quando exige mais tempo de dissecção.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de controle</span>
+  <div class="ttl">Heparinizar e clampear</div>
+  <p>Heparinização sistêmica; clampeio proximal e distal com bulldog ou clampe atraumático.</p>
+  <div class="pq"><b>por quê</b>Mesmo princípio de qualquer revascularização: o segmento a jusante do clampe fica sem fluxo por toda a confecção das anastomoses, e a heparina evita que esse sangue estagnado coagule enquanto se trabalha.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase da anastomose proximal</span>
+  <div class="ttl">Término-lateral na artéria doadora</div>
+  <p><span class="kbd">Prolene 5-0/6-0</span>; tunelização do enxerto (anatômica, seguindo o trajeto vascular original, ou subcutânea).</p>
+  <div class="pq"><b>por quê</b>Término-lateral porque a artéria doadora continua perfundindo o segmento nativo — cortá-la para fazer término-terminal sacrificaria fluxo desnecessário. A escolha do túnel troca proteção (anatômico, mais profundo) por acesso fácil para reintervenção (subcutâneo).</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase da anastomose distal — o detalhe da técnica in situ</span>
+  <div class="ttl">Término-lateral na receptora; valvulótomo se in situ</div>
+  <p><span class="kbd">Prolene 6-0/7-0</span>. Na técnica <em>in situ</em>, destruir as válvulas da safena com <strong>valvulótomo</strong> antes de completar.</p>
+  <div class="pq"><b>por quê</b>A veia tem válvulas que normalmente impedem refluxo <strong>venoso</strong> — no bypass, ela carrega sangue <strong>arterial</strong> no sentido oposto ao fisiológico, e as válvulas intactas bloqueariam o fluxo completamente. Destruí-las é o que torna a veia utilizável nesse novo papel.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de verificação</span>
+  <div class="ttl">Desclampear e checar o resultado</div>
+  <p>Checar pulso ou Doppler distal e ausência de sangramento nas duas anastomoses.</p>
+  <div class="pq"><b>por quê</b>Pulso ou Doppler distal <strong>agora</strong> é a única confirmação de que o bypass realmente funciona — não a aparência da anastomose. Um bypass tecnicamente perfeito sem fluxo distal audível é bypass que vai trombosar.</div>
+</div>
+
+</div>
+
+<div class="box cy"><div class="lbl">as 3 checagens do bypass</div>
+<b>1)</b> O conduto é <strong>veia</strong> sempre que possível?<br>
+<b>2)</b> As válvulas foram destruídas, se técnica <em>in situ</em>?<br>
+<b>3)</b> Há <strong>pulso ou Doppler distal</strong> após desclampear?</div>
+
+<h3>C · Endarterectomia femoral comum</h3>
+<p>Indicada para doença localizada da bifurcação femoral — placas calcificadas focais. Remove a placa da camada íntima, mantendo a adventícia; frequentemente associada a <strong>angioplastia de inflow/outflow</strong> (procedimento híbrido).</p>
+<div class="box pu"><div class="lbl">por que a bifurcação é diferente</div>A bifurcação femoral é uma zona de <strong>turbulência de fluxo</strong> constante — é onde a aterosclerose mais calcifica e mais frequentemente se apresenta como placa focal, em vez de oclusão longa. Placa focal e calcificada responde mal à angioplastia (não expande direito) e bem à retirada mecânica direta. Por isso essa é a exceção que ainda usa endarterectomia aberta num cenário dominado por endovascular.</div>
+</section>
+
+<section id="complic">
+<h2>⚠️ Complicações</h2>
+<ul>
+<li><span class="em">🩸</span>Hematoma/pseudoaneurisma de punção (endovascular).</li>
+<li><span class="em">🧊</span>Trombose/oclusão precoce do enxerto ou do stent.</li>
+<li><span class="em">💔</span>Síndrome de reperfusão (isquemia-reperfusão) em revascularização de isquemia avançada — edema, hipercalemia, rabdomiólise, síndrome compartimental.</li>
+<li><span class="em">🦵</span>Infecção de ferida/enxerto (mais grave em prótese).</li>
+<li><span class="em">❤️</span>Eventos cardíacos perioperatórios (o paciente com DAOP é sistemicamente aterosclerótico).</li>
+<li><span class="em">✂️</span>Falha de revascularização → amputação maior.</li>
+</ul>
+<div class="box pu"><div class="lbl">🚨 Síndrome compartimental pós-revascularização</div>
+<p>Dor desproporcional, parestesia, perna tensa após reperfusão de isquemia prolongada → <span class="hi">fasciotomia</span> das 4 lojas da perna sem demora.</p></div>
+</section>
+
+<section id="pegas">
+<h2>🪤 Pega-ratões</h2>
+<div class="box pu"><div class="lbl">Os erros favoritos das bancas</div>
+<ul>
+<li>No DAOP, <b>diabetes é fator de risco</b> (diferente do AAA, onde é protetor).</li>
+<li>Claudicação: dor <b>reprodutível</b> ao esforço, <b>alivia em repouso sem sentar</b> — se precisa sentar/mudar de posição, pensar em <b>estenose de canal (claudicação neurogênica)</b>, diagnóstico diferencial clássico.</li>
+<li>Dor de <b>panturrilha</b> = doença <b>femoropoplíteo</b> (não aortoilíaco).</li>
+<li>Síndrome de <b>Leriche</b> = aortoilíaco + impotência + pulsos femorais ausentes.</li>
+<li><b>ITB &gt; 1,40</b> não é "normal alto" — é <b>não compressibilidade/calcificação</b>, pedir índice tornozelo-dedo.</li>
+<li><b>Exercício supervisionado é 1ª linha</b> para claudicação — não pular direto para revascularização.</li>
+<li><b>Cilostazol contraindicado em insuficiência cardíaca</b>.</li>
+<li>CLTI = Fontaine III/IV = Rutherford 4–6 — dor de repouso ou lesão trófica.</li>
+<li>Conduto de escolha para bypass infrainguinal: <b>veia safena autóloga</b>, não PTFE de rotina.</li>
+<li>Canal dos adutores (Hunter) = local mais comum de obstrução da femoral superficial.</li>
+</ul></div>
+</section>
+
+<section id="mnemo">
+<h2>🧠 Mnemônicos</h2>
+<div class="box cy"><div class="lbl">Coleção DAOP</div>
+<ul>
+<li><span class="mn">"6 P's" da isquemia (aguda, mas útil revisar aqui): Pain, Pallor, Pulselessness, Paresthesia, Paralysis, Poiquilotermia</span>.</li>
+<li><span class="mn">ITB ≤0,9 = doença · ≤0,4 = grave · &gt;1,4 = calcificado (pedir dedo)</span>.</li>
+<li><span class="mn">"Um segmento acima" — dor no local = obstrução um nível ANTES</span>.</li>
+<li><span class="mn">Leriche = 3 L's: Leg claudication (nádega/coxa) + Libido baixa + (pulsos) Legais ausentes</span>.</li>
+<li><span class="mn">TASC: A-B endo · C-D cirurgia (crescente = mais cirúrgico)</span>.</li>
+</ul></div>
+</section>
+
+<section id="questoes">
+<h2>📝 Questões — itens originais no estilo das bancas</h2>
+<p class="note" style="border:none;padding:0;margin:0 0 10px">Itens <b>originais</b> no padrão de cada banca (não reprodução literal).</p>
+
+<div class="q"><div class="src">HCPA · estilo</div>
+<div class="stem">Homem de 62 anos, tabagista, refere dor em panturrilha direita ao caminhar 200 metros, que alivia em repouso sem necessidade de sentar. ITB direito = 0,68. A conduta inicial mais apropriada é:</div>
+<div class="alt"><span class="let">A)</span> Angioplastia femoropoplítea imediata</div>
+<div class="alt ok"><span class="let">B)</span> Cessação do tabagismo, estatina, antiplaquetário e programa de exercício supervisionado</div>
+<div class="alt"><span class="let">C)</span> Amputação primária</div>
+<div class="alt"><span class="let">D)</span> Anticoagulação plena com varfarina</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> Claudicação (Rutherford 1–3) sem CLTI: tratamento clínico otimizado + exercício supervisionado é 1ª linha, com eficácia comparável à revascularização isolada nesse estágio (ESVS 2024).</div></details>
+</div>
+
+<div class="q"><div class="src">GHC · estilo</div>
+<div class="stem">Paciente diabético com ITB não obtido por incompressibilidade arterial (ITB &gt; 1,40). O exame mais indicado para avaliar o grau de isquemia nesse contexto é:</div>
+<div class="alt"><span class="let">A)</span> Repetir o ITB em outro horário</div>
+<div class="alt ok"><span class="let">B)</span> Índice tornozelo-dedo (pressão de artelho)</div>
+<div class="alt"><span class="let">C)</span> Arteriografia de urgência</div>
+<div class="alt"><span class="let">D)</span> Ressonância magnética de crânio</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> Artérias digitais raramente calcificam; o índice tornozelo-dedo (ou pressão de artelho isolada) é o exame indicado quando o ITB é falsamente elevado por calcificação (comum em DM/DRC).</div></details>
+</div>
+
+<div class="q"><div class="src">Santa Casa POA · estilo</div>
+<div class="stem">Homem de 68 anos com claudicação de nádegas e coxas bilateral, disfunção erétil e pulsos femorais impalpáveis. Esse quadro é característico de:</div>
+<div class="alt"><span class="let">A)</span> Estenose de canal medular</div>
+<div class="alt ok"><span class="let">B)</span> Síndrome de Leriche (obstrução aortoilíaca)</div>
+<div class="alt"><span class="let">C)</span> Trombose venosa profunda bilateral</div>
+<div class="alt"><span class="let">D)</span> Doença de Buerger</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> Tríade clássica de Leriche: claudicação glútea/coxa + impotência + ausência de pulsos femorais, por obstrução crônica da bifurcação aórtica/ilíacas.</div></details>
+</div>
+
+<div class="q"><div class="src">PUC-RS · estilo</div>
+<div class="stem">No bypass infrainguinal para DAOP, o conduto associado à melhor patência em longo prazo, especialmente em revascularizações infragenicular, é:</div>
+<div class="alt"><span class="let">A)</span> PTFE (politetrafluoretileno)</div>
+<div class="alt ok"><span class="let">B)</span> Veia safena magna autóloga</div>
+<div class="alt"><span class="let">C)</span> Dacron</div>
+<div class="alt"><span class="let">D)</span> Pericárdio bovino</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> A veia safena autóloga (in situ ou reversa) é o conduto de escolha para bypass infrainguinal, com patência superior à prótese, sobretudo abaixo do joelho.</div></details>
+</div>
+
+<div class="q"><div class="src">AMRIGS · estilo</div>
+<div class="stem">Segundo a classificação TASC II, uma lesão longa e complexa do segmento femoropoplíteo (TASC D) tem como conduta preferencial:</div>
+<div class="alt"><span class="let">A)</span> Angioplastia isolada sem stent</div>
+<div class="alt"><span class="let">B)</span> Tratamento clínico exclusivo</div>
+<div class="alt ok"><span class="let">C)</span> Cirurgia aberta (bypass)</div>
+<div class="alt"><span class="let">D)</span> Trombólise sistêmica</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>C.</b> Lesões TASC D (mais longas/complexas) têm melhor resultado com revascularização cirúrgica aberta; TASC A/B favorecem endovascular.</div></details>
+</div>
+
+<div class="q"><div class="src">HCPA · estilo</div>
+<div class="stem">O parâmetro do sistema WIfI que avalia especificamente a presença e gravidade de infecção no pé, segundo critérios IDSA, é representado pela letra:</div>
+<div class="alt"><span class="let">A)</span> W</div>
+<div class="alt"><span class="let">B)</span> I (primeiro)</div>
+<div class="alt ok"><span class="let">C)</span> fI (foot Infection)</div>
+<div class="alt"><span class="let">D)</span> N</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>C.</b> WIfI = Wound, Ischemia, foot Infection. Os três eixos combinados estratificam o risco de amputação e orientam a urgência de revascularização.</div></details>
+</div>
+
+<div class="q"><div class="src">GHC · estilo</div>
+<div class="stem">Paciente com dor de repouso em pé direito, que melhora ao deixar a perna pendente para fora da cama. Segundo Fontaine/Rutherford, esse quadro corresponde a:</div>
+<div class="alt"><span class="let">A)</span> Fontaine IIa / Rutherford 1</div>
+<div class="alt"><span class="let">B)</span> Fontaine IIb / Rutherford 3</div>
+<div class="alt ok"><span class="let">C)</span> Fontaine III / Rutherford 4</div>
+<div class="alt"><span class="let">D)</span> Fontaine I / Rutherford 0</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>C.</b> Dor de repouso que melhora com a perna pendente (favorecendo perfusão por gravidade) é isquemia crítica: Fontaine III / Rutherford 4, já dentro do espectro de CLTI.</div></details>
+</div>
+
+<div class="q"><div class="src">Santa Casa POA · estilo</div>
+<div class="stem">Fármaco utilizado para melhorar a distância de claudicação em DAOP, mas formalmente contraindicado em pacientes com insuficiência cardíaca:</div>
+<div class="alt"><span class="let">A)</span> Ácido acetilsalicílico</div>
+<div class="alt ok"><span class="let">B)</span> Cilostazol</div>
+<div class="alt"><span class="let">C)</span> Atorvastatina</div>
+<div class="alt"><span class="let">D)</span> Losartana</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> Cilostazol (inibidor da fosfodiesterase-3) melhora sintomas de claudicação, porém é contraindicado em IC por risco de eventos relacionados a inotropismo/arritmia nessa classe de fármaco.</div></details>
+</div>
+
+<div class="q"><div class="src">PUC-RS · estilo</div>
+<div class="stem">No pós-operatório imediato de revascularização de membro com isquemia avançada, o paciente evolui com dor desproporcional, perna tensa e parestesia. A hipótese e conduta mais adequadas são:</div>
+<div class="alt"><span class="let">A)</span> Trombose do enxerto — reoperar a anastomose</div>
+<div class="alt ok"><span class="let">B)</span> Síndrome compartimental por reperfusão — fasciotomia das 4 lojas</div>
+<div class="alt"><span class="let">C)</span> Infecção de ferida — antibioticoterapia isolada</div>
+<div class="alt"><span class="let">D)</span> Hematoma superficial — observação</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> Dor desproporcional + tensão + parestesia após reperfusão de isquemia prolongada é síndrome compartimental até prova em contrário — fasciotomia sem demora evita necrose muscular/nervosa irreversível.</div></details>
+</div>
+
+<div class="q"><div class="src">AMRIGS · estilo</div>
+<div class="stem">Homem de 55 anos, claudicação intermitente há 8 meses, sem melhora após 3 meses de exercício supervisionado e otimização clínica, com limitação importante nas atividades laborais. A próxima etapa mais apropriada é:</div>
+<div class="alt"><span class="let">A)</span> Amputação primária</div>
+<div class="alt"><span class="let">B)</span> Manter conduta expectante indefinidamente</div>
+<div class="alt ok"><span class="let">C)</span> Avaliar revascularização (endovascular ou cirúrgica conforme anatomia/TASC)</div>
+<div class="alt"><span class="let">D)</span> Anticoagulação plena isolada</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>C.</b> Claudicação incapacitante refratária ao tratamento clínico/exercício é indicação de revascularização; a escolha da técnica depende da classificação TASC e do risco cirúrgico do paciente.</div></details>
+</div>
+</section>
+
+<div class="note">Fontes: ESC/ESVS 2024 (Peripheral Arterial and Aortic Diseases) · ESVS 2024 (DAOP assintomática e claudicação) · Global Vascular Guidelines 2019 / WIfI · Rutherford's Vascular Surgery · Sabiston. Questões originais para estudo. — carolzita · CV 2026</div>
+</div>
+<script>
+var secs=[['geral','🧭 Geral'],['clinica','🩺 Clínica'],['anatomia','🫀 Anatomia'],['dx','🔬 Diagnóstico'],['conduta','📐 Conduta'],['tecnica','🔪 Técnica'],['complic','⚠️ Complicações'],['pegas','🪤 Pega-ratões'],['mnemo','🧠 Mnemônicos'],['questoes','📝 Questões']];
+var nav=document.getElementById('nav');
+secs.forEach(function(s,i){var b=document.createElement('button');b.textContent=s[1];if(i===0)b.className='on';b.onclick=function(){document.querySelectorAll('nav button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');document.querySelectorAll('section').forEach(function(x){x.classList.remove('on')});document.getElementById(s[0]).classList.add('on');window.scrollTo({top:0,behavior:'smooth'})};nav.appendChild(b)});
+</script>
+</body>
+</html>

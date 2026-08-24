@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doença Carotídea — Referência CV 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d1117;--panel:#161b22;--panel2:#1c232c;--line:#2a323c;--tx:#e6edf3;--mut:#8b949e;--or:#ff7a18;--or2:#ff9a4d;--orbg:rgba(255,122,24,.10);--pu:#b083f0;--pu2:#c9a7ff;--pubg:rgba(176,131,240,.12);--cy:#3dd6d0;--cy2:#5fe3dd;--cybg:rgba(61,214,208,.10);--red:#ff5f56;--grn:#3fb950}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font-family:'IBM Plex Sans',sans-serif;line-height:1.55;padding:0 0 60px}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px}
+header{padding:30px 0 14px;border-bottom:1px solid var(--line)}
+h1{font-size:30px;font-weight:700;letter-spacing:-.5px}h1 .b{color:var(--or)}
+.sub{color:var(--mut);font-size:14px;margin-top:6px;font-family:'IBM Plex Mono',monospace}
+nav{position:sticky;top:0;background:var(--bg);z-index:10;border-bottom:1px solid var(--line);overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch}
+nav .inner{max-width:920px;margin:0 auto;padding:0 12px;display:flex;gap:2px}
+nav button{background:none;border:none;color:var(--mut);font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.5px;text-transform:uppercase;padding:14px 11px;cursor:pointer;border-bottom:2px solid transparent;transition:.15s}
+nav button:hover{color:var(--tx)}nav button.on{color:var(--or);border-bottom-color:var(--or)}
+section{display:none;padding:26px 0;animation:f .25s}section.on{display:block}
+@keyframes f{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+h2{font-size:20px;color:var(--or);margin:26px 0 12px;font-weight:600;border-bottom:1px solid var(--line);padding-bottom:6px}h2:first-child{margin-top:0}
+h3{font-size:15px;margin:18px 0 8px;font-weight:600;color:var(--or2)}
+p,li{font-size:14.5px}
+ul{margin:8px 0 8px 4px;list-style:none}li{padding:3px 0 3px 24px;position:relative}li .em{position:absolute;left:0}
+.lay{color:var(--cy2);font-style:italic;font-size:13.5px}
+.box{border-left:3px solid var(--or);background:var(--orbg);border-radius:0 8px 8px 0;padding:12px 16px;margin:14px 0}
+.box.pu{border-color:var(--pu);background:var(--pubg)}.box.cy{border-color:var(--cy);background:var(--cybg)}
+.box .lbl{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--or);margin-bottom:6px;font-weight:600}
+.box.pu .lbl{color:var(--pu2)}.box.cy .lbl{color:var(--cy2)}
+.box li::before{content:"▸";color:var(--or);position:absolute;left:6px}.box li{padding-left:22px}
+.box.pu li::before{color:var(--pu)}.box.cy li::before{color:var(--cy)}.box li .em{display:none}
+.stx{counter-reset:st;margin:14px 0}
+.st{counter-increment:st;background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:13px 15px 13px 50px;margin:11px 0;position:relative}
+.st::before{content:counter(st);position:absolute;left:13px;top:13px;width:25px;height:25px;border-radius:7px;background:var(--or);color:#0d1117;font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:12.5px;display:flex;align-items:center;justify-content:center}
+.st .fase{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1.3px;text-transform:uppercase;color:var(--or);display:block}
+.st .ttl{font-weight:700;font-size:15px;color:#fff;margin-bottom:3px}
+.st p{margin:4px 0;font-size:13.8px}
+.pq{border-left:3px solid var(--pu);background:var(--pubg);border-radius:0 8px 8px 0;padding:8px 12px;margin:8px 0;font-size:13.3px}
+.pq b{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;color:var(--pu2);display:block}
+.mh2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+.mh{border-radius:9px;padding:8px 11px;font-size:12.5px;border:1px solid var(--line)}
+.mh.e{background:rgba(63,185,80,.07);border-color:rgba(63,185,80,.3)}
+.mh.d{background:var(--orbg);border-color:rgba(255,122,24,.3)}
+.mh b{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1.1px;text-transform:uppercase;display:block}
+.mh.e b{color:var(--grn)} .mh.d b{color:var(--or2)}
+.box.gr{border-left-color:var(--grn);background:rgba(63,185,80,.09);color:var(--grn);font-style:italic}
+.box.gr .lbl{color:var(--grn);font-style:normal}
+.box.gr b,.box.gr strong{color:#8ee79a;font-style:normal}
+@media(max-width:640px){.mh2{grid-template-columns:1fr}}
+
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.5px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--panel2);color:var(--or2);font-weight:600;font-family:'IBM Plex Mono',monospace;font-size:12px}
+.hi{color:var(--pu2);font-weight:600}.mn{font-family:'IBM Plex Mono',monospace;color:var(--cy2)}
+.steps{counter-reset:s;list-style:none;margin:6px 0}
+.steps li{padding:8px 8px 8px 40px;border-bottom:1px solid var(--line)}
+.steps li::before{counter-increment:s;content:counter(s);background:var(--or);color:#0d1117;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:12px;width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;position:absolute;left:4px;top:8px}
+.steps li .em{display:none}.steps li:last-child{border-bottom:none}
+.hand{font-family:'IBM Plex Mono',monospace;font-size:11px;padding:1px 6px;border-radius:4px;margin-right:4px}
+.hL{background:rgba(63,185,80,.15);color:#56d364}.hR{background:rgba(255,122,24,.15);color:var(--or2)}
+.kbd{font-family:'IBM Plex Mono',monospace;background:var(--panel2);padding:1px 6px;border-radius:4px;font-size:12.5px;color:var(--or2)}
+.q{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:16px 0}
+.q .src{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--pu2);letter-spacing:1px;text-transform:uppercase}
+.q .stem{margin:8px 0 10px;font-weight:500}
+.q .alt{padding:4px 0 4px 24px;position:relative;font-size:14px}.q .alt .let{position:absolute;left:0;font-family:'IBM Plex Mono',monospace;color:var(--mut)}
+.q .alt.ok{color:var(--grn)}.q .alt.ok .let{color:var(--grn)}
+.q details{margin-top:10px;border-top:1px dashed var(--line);padding-top:10px}
+.q summary{cursor:pointer;color:var(--cy2);font-size:13px;font-family:'IBM Plex Mono',monospace}
+.q .exp{font-size:13.5px;color:var(--mut);margin-top:8px}
+.svgwrap{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px;margin:14px 0;text-align:center}
+.svgwrap figcaption{color:var(--mut);font-size:12px;margin-top:8px;font-family:'IBM Plex Mono',monospace}
+.pill{display:inline-block;background:var(--panel2);border:1px solid var(--line);border-radius:20px;padding:3px 12px;margin:3px 4px 3px 0;font-size:12.5px;font-family:'IBM Plex Mono',monospace}.pill .hi{color:var(--pu2)}
+.note{font-size:12px;color:var(--mut);border-top:1px solid var(--line);margin-top:30px;padding-top:14px;font-family:'IBM Plex Mono',monospace}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<h1>🧠 Doença <span class="b">Carotídea</span></h1>
+<div class="sub">Estenose Carotídea · CV 2026 · ESVS 2023 Carotid/Vertebral Guidelines + NASCET/ECST</div>
+</div></header>
+<nav><div class="inner" id="nav"></div></nav>
+<div class="wrap">
+
+<section id="geral" class="on">
+<h2>🧭 Definição &amp; fisiopatologia</h2>
+<p>Doença aterosclerótica da <span class="hi">bifurcação carotídea</span> (principalmente carótida interna proximal), causando estenose que pode gerar AVC/AIT por <b>embolização de placa</b> (mecanismo mais comum) ou, mais raramente, por baixo fluxo. <span class="lay">(a placa de gordura na bifurcação do "cano principal" do pescoço solta pedacinhos que sobem e entopem uma artéria do cérebro — como uma pedrinha entupindo um ralo lá na frente)</span></p>
+<h3>Fatores de risco</h3>
+<div class="pill">Idade avançada</div>
+<div class="pill">Tabagismo</div>
+<div class="pill">HAS</div>
+<div class="pill">Dislipidemia</div>
+<div class="pill">Diabetes</div>
+<div class="pill">DAC / DAOP concomitantes</div>
+</section>
+
+<section id="clinica">
+<h2>🩺 Quadro clínico</h2>
+<ul>
+<li><span class="em">🤫</span><b>Assintomática</b>: achado em exame (sopro carotídeo, rastreio) sem evento neurológico prévio.</li>
+<li><span class="em">⚡</span><b>AIT (ataque isquêmico transitório)</b>: déficit focal com resolução completa em &lt;24h (na prática, a maioria em minutos).</li>
+<li><span class="em">🧠</span><b>AVC isquêmico</b>: déficit focal persistente — hemiparesia/hemiplegia contralateral, afasia (se hemisfério dominante), disartria.</li>
+<li><span class="em">👁️</span><b>Amaurose fugaz</b>: perda visual monocular transitória (embolia de retina — ramo oftálmico) — equivalente de AIT no território carotídeo <b>ipsilateral</b>.</li>
+</ul>
+<div class="box pu"><div class="lbl">⚠️ Pega-ratão de prova</div>
+<p>Sintomas do território carotídeo são <span class="hi">contralaterais</span> ao déficit motor/sensitivo, mas a <span class="hi">amaurose fugaz é ipsilateral</span> à estenose (mesmo lado do olho afetado) — não confundir a lateralidade!</p></div>
+</section>
+
+<section id="anatomia">
+<h2>🫀 Anatomia &amp; achados de imagem</h2>
+<p>Bifurcação da <b>carótida comum</b> em <b>carótida interna (CI)</b> — irriga o encéfalo, sem ramos cervicais — e <b>carótida externa (CE)</b> — irriga face/couro cabeludo, com múltiplos ramos cervicais. A <b>maioria das placas se forma no bulbo carotídeo</b> (início da CI), por turbulência de fluxo nessa região.</p>
+<div class="box pu"><div class="lbl">⚠️ Diferenciação cirúrgica CI × CE</div>
+<ul>
+<li><span class="hi">CI: sem ramos no pescoço</span>, posição geralmente posterolateral.</li>
+<li><span class="hi">CE: múltiplos ramos cervicais</span> (tireóidea superior, lingual, facial...), posição geralmente anteromedial.</li>
+<li>Nervo <b>hipoglosso (XII)</b> cruza próximo à bifurcação — risco de lesão (desvio de língua ipsilateral).</li>
+<li>Nervo <b>vago (X)</b> corre posterior, entre carótida e jugular — lesão causa rouquidão (ramo laríngeo recorrente).</li>
+</ul></div>
+<figure class="svgwrap">
+<svg viewBox="0 0 300 220" xmlns="http://www.w3.org/2000/svg" style="max-width:100%">
+<line x1="150" y1="210" x2="150" y2="120" stroke="#e6edf3" stroke-width="14"/>
+<line x1="150" y1="120" x2="110" y2="30" stroke="#ff5f56" stroke-width="10"/>
+<line x1="150" y1="120" x2="190" y2="40" stroke="#b083f0" stroke-width="8"/>
+<line x1="190" y1="40" x2="205" y2="20" stroke="#b083f0" stroke-width="5"/>
+<line x1="190" y1="40" x2="175" y2="15" stroke="#b083f0" stroke-width="5"/>
+<ellipse cx="150" cy="118" rx="18" ry="14" fill="#ff5f56" opacity=".4"/>
+<text x="55" y="35" fill="#ff9a4d" font-family="IBM Plex Mono" font-size="11">CI (sem ramos)</text>
+<text x="195" y="15" fill="#c9a7ff" font-family="IBM Plex Mono" font-size="10">CE (ramos)</text>
+<text x="155" y="180" fill="#8b949e" font-family="IBM Plex Mono" font-size="11">carótida comum</text>
+<text x="115" y="112" fill="#5fe3dd" font-family="IBM Plex Mono" font-size="10">bulbo/placa</text>
+</svg>
+<figcaption>Bifurcação carotídea — placa tipicamente no bulbo da CI</figcaption>
+</figure>
+</section>
+
+<section id="dx">
+<h2>🔬 Diagnóstico &amp; graduação</h2>
+<ul>
+<li><span class="em">📡</span><b>Duplex carotídeo</b> — 1ª linha, não invasivo, estima o grau de estenose por velocidade de fluxo.</li>
+<li><span class="em">🖥️</span><b>AngioTC/AngioRM</b> — confirmação e planejamento cirúrgico, avalia arco aórtico e circulação intracraniana.</li>
+<li><span class="em">💉</span>Arteriografia — reservada a casos duvidosos ou durante o próprio procedimento endovascular.</li>
+</ul>
+<div class="box"><div class="lbl">📊 Critérios de graduação (NASCET)</div>
+<p>Estenose = <b>(1 − diâmetro residual / diâmetro da CI distal normal) × 100</b>. É o método padronizado usado nos grandes trials (NASCET/ECST) que definem as indicações de tratamento.</p></div>
+</section>
+
+<section id="conduta">
+<h2>📐 Indicação de tratamento</h2>
+<div class="box pu"><div class="lbl">⭐ Sintomática (AIT/AVC não incapacitante no território, &lt;6 meses)</div>
+<ul>
+<li><span class="hi">Estenose 70–99%</span>: benefício claro e maior de revascularização (NASCET).</li>
+<li><span class="hi">Estenose 50–69%</span>: benefício menor, mas ainda indicado, individualizando por outros fatores (sexo, idade, tempo do evento).</li>
+<li>Estenose &lt;50%: tratamento clínico isolado.</li>
+</ul></div>
+<div class="box"><div class="lbl">🤔 Assintomática</div>
+<p>Estenose <b>≥60-70%</b>: considerar revascularização em pacientes de <b>baixo risco cirúrgico e boa expectativa de vida</b> (&gt;5 anos), individualizando com o avanço do tratamento clínico moderno (estatina de alta intensidade, antiplaquetário, controle de risco) — que reduziu bastante o risco natural da doença assintomática nas últimas décadas (ESVS 2023).</p></div>
+<h3>⏱️ Timing na sintomática</h3>
+<p>Idealmente operar/tratar dentro de <span class="hi">14 dias</span> do evento neurológico (o benefício da revascularização é maior quanto mais precoce, mas evitar as primeiras 48h em AVC extenso pelo risco de transformação hemorrágica).</p>
+<h3>CEA × CAS (endarterectomia × stent)</h3>
+<table>
+<tr><th>&nbsp;</th><th>CEA (endarterectomia)</th><th>CAS (stent)</th></tr>
+<tr><td>Padrão-ouro</td><td><span class="hi">Sim</span>, na maioria dos cenários</td><td>Alternativa</td></tr>
+<tr><td>Risco periprocedimento</td><td>Mais IAM</td><td>Mais AVC/óbito em 30 dias (principalmente idosos)</td></tr>
+<tr><td>Preferir quando</td><td>Idosos, anatomia cervical desfavorável para stent</td><td>Pescoço hostil (radioterapia prévia, reestenose pós-CEA, alto risco cirúrgico para CEA)</td></tr>
+</table>
+</section>
+
+<section id="tecnica">
+<h2>🔪 Técnica — Endarterectomia carotídea (CEA)</h2>
+<div class="box gr"><div class="lbl">tradução simples</div>A placa da carótida raramente entope o cérebro por <strong>falta de fluxo</strong> — o outro lado e o polígono de Willis costumam compensar. Ela causa AVC porque <strong>solta pedaços</strong> que sobem e entopem lá em cima. Por isso toda a técnica é organizada em torno de <strong>não deixar debris embolizar</strong>: a ordem de clampear, a ordem de desclampear, o shunt e o filtro existem todos para isso.</div>
+
+<p><b>Posição:</b> decúbito dorsal, pescoço em leve extensão e rotação contralateral. <b>Anestesia:</b> geral ou <b>locorregional</b> (bloqueio de plexo cervical — permite monitorar o paciente acordado durante o clampeamento).</p>
+
+<div class="stx">
+
+<div class="st">
+  <span class="fase">fase de acesso</span>
+  <div class="ttl">Incisão na borda anterior do esternocleidomastóideo</div>
+  <p>Incisão ao longo da borda anterior do ECM, aprofundando até a bainha carotídea.</p>
+  <div class="pq"><b>por quê</b>O ECM é a referência constante do pescoço, e a borda <strong>anterior</strong> leva direto ao plano entre a bainha carotídea e a jugular, sem atravessar musculatura.</div>
+  <div class="mh2">
+    <div class="mh e"><b>mão esquerda</b>Dente-de-rato na pele; afastadores autoestáticos mantendo o campo</div>
+    <div class="mh d"><b>mão direita</b>Bisturi na pele; Metzenbaum no plano da bainha</div>
+  </div>
+</div>
+
+<div class="st">
+  <span class="fase">fase crítica — os nervos</span>
+  <div class="ttl">Identificar e preservar vago e hipoglosso</div>
+  <p><strong>Vago</strong>: posterior, entre a artéria e a veia jugular. <strong>Hipoglosso</strong>: cruza a bifurcação superiormente. Cuidado também com o ramo mandibular do facial (afastador) e o laríngeo superior.</p>
+  <div class="pq"><b>por quê</b>Cada nervo tem uma sequela específica e reconhecível: <strong>hipoglosso</strong> → desvio da língua <em>para o lado da lesão</em>, com dificuldade de mastigar e falar; <strong>vago</strong> (ou seu ramo laríngeo recorrente) → <strong>rouquidão</strong>; <strong>laríngeo superior</strong> → perda de tons altos da voz, relevante em quem canta ou fala em público. São complicações de uma cirurgia feita para <em>prevenir</em> um evento — o paciente estava assintomático ou já recuperado.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de controle</span>
+  <div class="ttl">Reparo da comum, interna e externa</div>
+  <p>Controle vascular dos três vasos com <span class="kbd">vessel loops</span> ou fitas cardíacas.</p>
+  <div class="pq"><b>por quê</b>Ter os três controlados <strong>antes</strong> de qualquer clampeamento é o que permite reagir a um sangramento sem improviso — e é o que torna possível a sequência de clampeamento na ordem correta.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de clampeamento — a ordem importa</span>
+  <div class="ttl">Heparinizar e clampear <strong>I → C → E</strong></div>
+  <p>Heparinização sistêmica. Clampear na sequência <strong>interna, comum, externa</strong>.</p>
+  <div class="pq"><b>por quê</b>A <strong>interna vem primeiro</strong> porque é a única que leva sangue diretamente ao cérebro — fechá-la antes de mexer em qualquer coisa garante que nenhum debris deslocado pela manipulação suba. Clampear a comum antes da interna deixaria a interna aberta durante o próprio ato de clampear, com a placa sendo comprimida. É a mesma lógica do "não toque no tumor antes de controlar a drenagem" da cirurgia oncológica, aplicada a êmbolos.</div>
+  <div class="mh2">
+    <div class="mh e"><b>mão esquerda</b>Tração suave dos vessel loops, apresentando cada vaso</div>
+    <div class="mh d"><b>mão direita</b>Clampes vasculares atraumáticos na sequência I-C-E</div>
+  </div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de proteção cerebral</span>
+  <div class="ttl">Decidir sobre o shunt</div>
+  <p>Sob anestesia locorregional: <strong>testar tolerância neurológica</strong> ao clampe com o paciente acordado. Sob anestesia geral: shunt <strong>rotineiro, seletivo</strong> (por monitorização — EEG, potencial evocado, pressão de coto) <strong>ou nunca</strong>, conforme protocolo do serviço.</p>
+  <div class="pq"><b>por quê</b>O shunt é uma troca: ele <strong>mantém a perfusão</strong> durante o clampeamento, mas <strong>atrapalha o campo</strong> e pode ele próprio embolizar ou lesar a íntima distal. Não há superioridade demonstrada de nenhuma das três estratégias — o que existe é consistência dentro de cada serviço. É por isso que a banca cobra o <em>racional</em>, não a "resposta certa".</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de endarterectomia</span>
+  <div class="ttl">Arteriotomia e remoção da placa no plano correto</div>
+  <p>Arteriotomia longitudinal sobre a placa, estendendo-se da comum até além do fim da placa na interna. Remoção no plano entre a <strong>íntima doente e a média</strong>, deixando superfície lisa.</p>
+  <div class="pq"><b>por quê</b>O ponto que decide o resultado é o <strong>degrau distal</strong>: se a placa é arrancada e deixa uma borda de íntima solta na interna, o fluxo entra por baixo dela e <strong>disseca</strong> — trombose aguda ou embolização no pós-operatório imediato. Daí a inspeção meticulosa da transição e os <strong>pontos de fixação (tacking sutures)</strong> quando há degrau.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de fechamento</span>
+  <div class="ttl">Fechar <strong>com patch</strong></div>
+  <p>Fechamento com patch (venoso ou sintético) e <span class="kbd">prolene 6-0</span>.</p>
+  <div class="pq"><b>por quê</b>A endarterectomia <strong>retira espessura da parede</strong>, e o fechamento primário estreita ainda mais um vaso que já ficou menor — o patch devolve o calibre. Reduz <strong>reestenose e trombose</strong>, sobretudo em artéria de pequeno calibre (mulheres, tipicamente).</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de desclampeamento — a ordem inversa</span>
+  <div class="ttl">Desclampear <strong>E → C → I</strong></div>
+  <p>Soltar a <strong>externa</strong> primeiro, depois a comum, e por último a <strong>interna</strong>.</p>
+  <div class="pq"><b>por quê</b>É a manobra mais elegante da operação: os primeiros jatos de sangue, que carregam bolhas e debris residuais, são <strong>desviados para a carótida externa</strong> — que irriga a face, não o cérebro. Só depois de a corrente estar limpa é que a interna é liberada. <strong>Clampeia-se pela interna e desclampeia-se por ela também, sempre a última a ser exposta ao risco.</strong></div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de verificação</span>
+  <div class="ttl">Checar fluxo, hemostasia e neurologia</div>
+  <p>Doppler ou angiografia de controle intraoperatório; avaliação neurológica ao despertar; hemostasia rigorosa antes de fechar.</p>
+  <div class="pq"><b>por quê</b>A hemostasia aqui não é detalhe: <strong>hematoma cervical</strong> em paciente heparinizado comprime a via aérea e é <strong>emergência de abertura à beira do leito</strong>, não de centro cirúrgico. E o déficit novo ao despertar exige reexploração imediata — a janela para reverter é curta.</div>
+</div>
+
+</div>
+
+<div class="box cy"><div class="lbl">as 4 checagens da CEA</div>
+<b>1)</b> Vago e hipoglosso foram <strong>vistos</strong> e preservados?<br>
+<b>2)</b> A sequência foi <strong>I-C-E</strong> ao clampear e <strong>E-C-I</strong> ao soltar?<br>
+<b>3)</b> O <strong>degrau distal</strong> da placa está liso ou fixado?<br>
+<b>4)</b> A hemostasia está seca — sem risco de hematoma cervical?</div>
+
+<h3>CAS (stent) — resumo técnico</h3>
+<p>Acesso femoral ou transcervical; <strong>dispositivo de proteção embólica</strong> (filtro distal ou fluxo reverso) <strong>antes</strong> da angioplastia e da liberação do stent.</p>
+<div class="box pu"><div class="lbl">o mesmo princípio, outra ferramenta</div>O filtro do CAS cumpre exatamente a função da sequência I-C-E da CEA: <strong>garantir que nada suba enquanto a placa é manipulada</strong>. Muda a técnica, não o problema. E a razão de o CAS ter mais AVC periprocedimento em idosos é justamente que o arco aórtico tortuoso e calcificado desses pacientes gera embolia <em>antes</em> de o filtro chegar ao lugar.</div>
+</section>
+
+<section id="complic">
+<h2>⚠️ Complicações</h2>
+<ul>
+<li><span class="em">🧠</span><b>AVC perioperatório</b> — a mais temida; frequentemente por embolização durante a manipulação ou trombose no local operado.</li>
+<li><span class="em">❤️</span><b>IAM</b> — mais associado à CEA (pacientes com aterosclerose sistêmica).</li>
+<li><span class="em">🗣️</span>Lesão de <b>nervos cranianos</b>: hipoglosso (desvio de língua), vago/laríngeo recorrente (rouquidão), marginal da mandíbula (assimetria de sorriso).</li>
+<li><span class="em">🩸</span>Hematoma cervical — risco de <b>compressão de via aérea</b>, pode exigir reabertura de urgência.</li>
+<li><span class="em">📈</span><b>Síndrome de hiperperfusão cerebral</b>: cefaleia, crise convulsiva, hemorragia — por perda da autorregulação cerebral após correção de estenose grave crônica; controle rigoroso de PA no pós-operatório previne.</li>
+<li><span class="em">🔁</span>Reestenose (mais frequente em fechamento primário sem patch).</li>
+</ul>
+</section>
+
+<section id="pegas">
+<h2>🪤 Pega-ratões</h2>
+<div class="box pu"><div class="lbl">Os erros favoritos das bancas</div>
+<ul>
+<li>Déficit motor/sensitivo é <b>contralateral</b>; amaurose fugaz é <b>ipsilateral</b> — não trocar.</li>
+<li>Estenose <b>70-99% sintomática</b> = maior benefício comprovado de revascularização (NASCET).</li>
+<li>Sintomática: tratar idealmente em até <b>14 dias</b>, evitando as primeiras 48h em AVC extenso.</li>
+<li><b>CEA é padrão-ouro</b> na maioria; CAS reservado a cenários específicos (pescoço hostil, alto risco cirúrgico).</li>
+<li>Clampeio na sequência <b>interna → comum → externa</b> (minimiza embolização).</li>
+<li>Fechamento <b>com patch</b> reduz reestenose comparado a fechamento primário.</li>
+<li>Síndrome de hiperperfusão: controle de PA no pós-op é essencial, não é "só cefaleia".</li>
+<li>Nervo <b>hipoglosso</b> lesado → desvio de língua para o lado lesado; vago/laríngeo recorrente → rouquidão.</li>
+<li>Assintomática: hoje a indicação de revascularização é mais seletiva, pelo avanço do tratamento clínico (estatina/antiplaquetário) que reduziu o risco natural.</li>
+</ul></div>
+</section>
+
+<section id="mnemo">
+<h2>🧠 Mnemônicos</h2>
+<div class="box cy"><div class="lbl">Coleção Carotídea</div>
+<ul>
+<li><span class="mn">"Motor contra, olho a favor" — déficit contralateral, amaurose ipsilateral</span>.</li>
+<li><span class="mn">CI sem ramo, CE com ramo — "Interna é Isolada"</span>.</li>
+<li><span class="mn">Clampe: I-C-E (interna, comum, externa)</span>.</li>
+<li><span class="mn">70-99% sintomática = "trata sempre"</span>.</li>
+<li><span class="mn">Hiperperfusão = "PA alta depois de destampar o cano"</span>.</li>
+</ul></div>
+</section>
+
+<section id="questoes">
+<h2>📝 Questões — itens originais no estilo das bancas</h2>
+<p class="note" style="border:none;padding:0;margin:0 0 10px">Itens <b>originais</b> no padrão de cada banca (não reprodução literal).</p>
+
+<div class="q"><div class="src">HCPA · estilo</div>
+<div class="stem">Homem de 68 anos apresentou episódio de fraqueza no braço e perna esquerdos, com resolução completa em 20 minutos. Duplex mostra estenose de 80% na carótida interna direita. A conduta mais adequada é:</div>
+<div class="alt"><span class="let">A)</span> Tratamento clínico isolado, sem indicação de revascularização</div>
+<div class="alt ok"><span class="let">B)</span> Revascularização carotídea (CEA preferencialmente), idealmente dentro de 14 dias</div>
+<div class="alt"><span class="let">C)</span> Aguardar 6 meses e reavaliar</div>
+<div class="alt"><span class="let">D)</span> Anticoagulação plena isolada</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> AIT + estenose 70-99% ipsilateral (déficit contralateral → carótida direita) tem indicação clara de revascularização precoce, com CEA como padrão-ouro na maioria dos cenários.</div></details>
+</div>
+
+<div class="q"><div class="src">GHC · estilo</div>
+<div class="stem">Paciente relata episódio de perda visual monocular transitória à esquerda, com recuperação completa em minutos. Esse achado sugere estenose significativa em qual território, e por qual mecanismo?</div>
+<div class="alt"><span class="let">A)</span> Carótida direita, por baixo fluxo</div>
+<div class="alt ok"><span class="let">B)</span> Carótida esquerda, por embolização para a artéria oftálmica ipsilateral</div>
+<div class="alt"><span class="let">C)</span> Vertebral direita, por dissecção</div>
+<div class="alt"><span class="let">D)</span> Não tem relação com doença carotídea</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> Amaurose fugaz é embolia retiniana pela artéria oftálmica (ramo da carótida interna), sendo ipsilateral à estenose carotídea causadora — diferente dos déficits motores, que são contralaterais.</div></details>
+</div>
+
+<div class="q"><div class="src">Santa Casa POA · estilo</div>
+<div class="stem">Durante endarterectomia carotídea, a sequência correta de clampeamento vascular para minimizar o risco de embolização cerebral é:</div>
+<div class="alt"><span class="let">A)</span> Comum → interna → externa</div>
+<div class="alt ok"><span class="let">B)</span> Interna → comum → externa</div>
+<div class="alt"><span class="let">C)</span> Externa → interna → comum</div>
+<div class="alt"><span class="let">D)</span> A ordem não influencia o risco embólico</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> Clampear primeiro a interna previne que a manipulação da placa emboliza diretamente para o cérebro; a sequência interna-comum-externa é a técnica padrão.</div></details>
+</div>
+
+<div class="q"><div class="src">PUC-RS · estilo</div>
+<div class="stem">Paciente evolui, no pós-operatório de endarterectomia carotídea, com desvio da língua para o lado da cirurgia ao protrair. O nervo provavelmente lesado é:</div>
+<div class="alt"><span class="let">A)</span> Vago</div>
+<div class="alt"><span class="let">B)</span> Laríngeo recorrente</div>
+<div class="alt ok"><span class="let">C)</span> Hipoglosso</div>
+<div class="alt"><span class="let">D)</span> Facial (ramo marginal da mandíbula)</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>C.</b> O nervo hipoglosso (XII) cruza próximo à bifurcação carotídea; sua lesão causa desvio da língua para o lado lesado (fraqueza do genioglosso ipsilateral).</div></details>
+</div>
+
+<div class="q"><div class="src">AMRIGS · estilo</div>
+<div class="stem">Uma semana após endarterectomia carotídea bem-sucedida de estenose crítica de longa data, o paciente desenvolve cefaleia intensa, confusão e crise convulsiva, com PA elevada. A hipótese mais provável e a conduta imediata são:</div>
+<div class="alt"><span class="let">A)</span> AVC isquêmico — trombólise imediata</div>
+<div class="alt ok"><span class="let">B)</span> Síndrome de hiperperfusão cerebral — controle rigoroso da PA</div>
+<div class="alt"><span class="let">C)</span> Meningite pós-operatória — antibioticoterapia empírica</div>
+<div class="alt"><span class="let">D)</span> Enxaqueca comum — analgesia isolada</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> A correção de estenose crítica crônica pode causar perda da autorregulação cerebral e hiperperfusão, com risco de hemorragia; o controle rigoroso de PA no pós-operatório é essencial para prevenir/tratar essa complicação.</div></details>
+</div>
+
+<div class="q"><div class="src">HCPA · estilo</div>
+<div class="stem">Sobre a escolha entre endarterectomia carotídea (CEA) e stent carotídeo (CAS), é correto afirmar que:</div>
+<div class="alt"><span class="let">A)</span> CAS é sempre superior à CEA em qualquer paciente</div>
+<div class="alt ok"><span class="let">B)</span> CAS pode ser preferido em pacientes com pescoço hostil (radioterapia prévia, reestenose pós-CEA) ou alto risco cirúrgico</div>
+<div class="alt"><span class="let">C)</span> CEA está contraindicada em idosos</div>
+<div class="alt"><span class="let">D)</span> Ambas as técnicas são proibidas em pacientes sintomáticos</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> CEA permanece padrão-ouro na maioria dos cenários (menor risco de AVC/óbito periprocedimento, especialmente em idosos), mas CAS é preferível em situações de anatomia cervical desfavorável ou alto risco cirúrgico para cirurgia aberta.</div></details>
+</div>
+
+<div class="q"><div class="src">GHC · estilo</div>
+<div class="stem">Paciente assintomático, sem eventos neurológicos prévios, com estenose carotídea de 75% identificada em rastreio. Sobre a conduta atual segundo as diretrizes (ESVS 2023):</div>
+<div class="alt"><span class="let">A)</span> Revascularização obrigatória em todos os casos com estenose &gt;70%</div>
+<div class="alt ok"><span class="let">B)</span> Considerar revascularização em pacientes de baixo risco cirúrgico e boa expectativa de vida, individualizando frente ao tratamento clínico otimizado</div>
+<div class="alt"><span class="let">C)</span> Contraindicação absoluta a qualquer intervenção em assintomáticos</div>
+<div class="alt"><span class="let">D)</span> Anticoagulação plena substitui a necessidade de revascularização</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> Em assintomáticos, a indicação de revascularização tornou-se mais seletiva com o avanço do tratamento clínico (estatina de alta intensidade, antiplaquetário), sendo individualizada por risco cirúrgico e expectativa de vida.</div></details>
+</div>
+
+<div class="q"><div class="src">Santa Casa POA · estilo</div>
+<div class="stem">Na técnica de endarterectomia carotídea, o fechamento da arteriotomia com patch (venoso ou sintético), em comparação ao fechamento primário, está associado a:</div>
+<div class="alt"><span class="let">A)</span> Maior taxa de reestenose</div>
+<div class="alt ok"><span class="let">B)</span> Menor taxa de reestenose, especialmente em vasos de calibre pequeno</div>
+<div class="alt"><span class="let">C)</span> Nenhuma diferença em desfechos</div>
+<div class="alt"><span class="let">D)</span> Maior risco de lesão de nervo hipoglosso</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> O fechamento com patch reduz o risco de reestenose comparado ao fechamento primário, sendo especialmente recomendado em carótidas de calibre reduzido.</div></details>
+</div>
+
+<div class="q"><div class="src">PUC-RS · estilo</div>
+<div class="stem">O exame de imagem considerado de 1ª linha, não invasivo, para triagem e acompanhamento de estenose carotídea é:</div>
+<div class="alt"><span class="let">A)</span> Arteriografia digital</div>
+<div class="alt ok"><span class="let">B)</span> Duplex (ultrassom Doppler) carotídeo</div>
+<div class="alt"><span class="let">C)</span> Ressonância magnética com contraste, sempre</div>
+<div class="alt"><span class="let">D)</span> PET-CT</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> O duplex carotídeo é o exame inicial de escolha por ser não invasivo, amplamente disponível e permitir estimar o grau de estenose por critérios de velocidade de fluxo.</div></details>
+</div>
+
+<div class="q"><div class="src">AMRIGS · estilo</div>
+<div class="stem">O uso de dispositivo de proteção embólica (filtro distal ou sistema de fluxo reverso) durante o stent carotídeo (CAS) tem como principal objetivo:</div>
+<div class="alt"><span class="let">A)</span> Reduzir o tempo do procedimento</div>
+<div class="alt ok"><span class="let">B)</span> Minimizar a embolização cerebral de debris durante a angioplastia/liberação do stent</div>
+<div class="alt"><span class="let">C)</span> Prevenir hematoma cervical</div>
+<div class="alt"><span class="let">D)</span> Substituir a necessidade de antiagregação plaquetária</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> O dispositivo de proteção embólica captura ou desvia debris da placa durante a manipulação no CAS, reduzindo o risco de AVC embólico periprocedimento — uma das principais preocupações dessa técnica.</div></details>
+</div>
+</section>
+
+<div class="note">Fontes: ESVS 2023 Clinical Practice Guidelines on Atherosclerotic Carotid and Vertebral Artery Disease · NASCET/ECST trials · Rutherford's Vascular Surgery · Sabiston. Questões originais para estudo. — carolzita · CV 2026</div>
+</div>
+<script>
+var secs=[['geral','🧭 Geral'],['clinica','🩺 Clínica'],['anatomia','🫀 Anatomia'],['dx','🔬 Diagnóstico'],['conduta','📐 Conduta'],['tecnica','🔪 Técnica'],['complic','⚠️ Complicações'],['pegas','🪤 Pega-ratões'],['mnemo','🧠 Mnemônicos'],['questoes','📝 Questões']];
+var nav=document.getElementById('nav');
+secs.forEach(function(s,i){var b=document.createElement('button');b.textContent=s[1];if(i===0)b.className='on';b.onclick=function(){document.querySelectorAll('nav button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');document.querySelectorAll('section').forEach(function(x){x.classList.remove('on')});document.getElementById(s[0]).classList.add('on');window.scrollTo({top:0,behavior:'smooth'})};nav.appendChild(b)});
+</script>
+</body>
+</html>

@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CAROLZITA | Cirurgia Torácica</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0f172a;--surface:#1e293b;--border:#334155;--text:#f8fafc;--muted:#94a3b8;
+  --orange:#f97316;--od:rgba(249,115,22,.13);
+  --purple:#a855f7;--pd:rgba(168,85,247,.13);
+  --cyan:#22d3ee;--cd:rgba(34,211,238,.11);
+  --green:#22c55e;--gd:rgba(34,197,94,.11);
+  --red:#ef4444;--rd:rgba(239,68,68,.13);
+  --yellow:#eab308;--yd:rgba(234,179,8,.13);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6;font-size:15px}
+
+/* ─── HEADER ─── */
+.header{background:linear-gradient(135deg,#1e293b 0%,#0f172a 100%);border-bottom:2px solid var(--orange);padding:1.8rem 2rem;text-align:center}
+.header-tag{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--orange);letter-spacing:.2em;text-transform:uppercase;margin-bottom:.4rem}
+.header h1{font-family:'Syne',sans-serif;font-size:2.1rem;font-weight:800;letter-spacing:-.02em}
+.header h1 span{color:var(--orange)}
+.header-sub{font-size:.82rem;color:var(--muted);margin-top:.3rem;font-family:'JetBrains Mono',monospace}
+.badges{display:flex;gap:.45rem;justify-content:center;flex-wrap:wrap;margin-top:.9rem}
+.badge{font-family:'JetBrains Mono',monospace;font-size:.62rem;padding:.2rem .6rem;border-radius:999px;text-transform:uppercase;letter-spacing:.1em}
+.bo{background:var(--od);color:var(--orange);border:1px solid rgba(249,115,22,.3)}
+.bp{background:var(--pd);color:var(--purple);border:1px solid rgba(168,85,247,.3)}
+.bc{background:var(--cd);color:var(--cyan);border:1px solid rgba(34,211,238,.3)}
+
+/* ─── TABS ─── */
+.tab-nav{display:flex;overflow-x:auto;background:var(--surface);border-bottom:1px solid var(--border);padding:0 1rem;scrollbar-width:none}
+.tab-nav::-webkit-scrollbar{display:none}
+.tab-btn{flex-shrink:0;padding:.9rem 1.1rem;background:none;border:none;color:var(--muted);font-family:'Syne',sans-serif;font-size:.75rem;font-weight:700;cursor:pointer;border-bottom:2px solid transparent;transition:all .2s;text-transform:uppercase;letter-spacing:.08em;white-space:nowrap}
+.tab-btn:hover{color:var(--text)}
+.tab-btn.active{color:var(--orange);border-bottom-color:var(--orange)}
+.tab-content{display:none;padding:1.75rem;max-width:920px;margin:0 auto}
+.tab-content.active{display:block}
+
+/* ─── CONTROLS ─── */
+.controls{display:flex;gap:.4rem;margin-bottom:.9rem;justify-content:flex-end}
+.ctrl{background:var(--surface);border:1px solid var(--border);color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:.65rem;padding:.25rem .65rem;border-radius:.3rem;cursor:pointer;text-transform:uppercase;letter-spacing:.08em;transition:all .15s}
+.ctrl:hover{color:var(--text);border-color:var(--orange)}
+
+/* ─── SECTIONS ─── */
+.section{background:var(--surface);border:1px solid var(--border);border-radius:.75rem;margin-bottom:.85rem;overflow:hidden}
+.sh{display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.2rem;cursor:pointer;user-select:none;transition:background .2s}
+.sh:hover{background:rgba(255,255,255,.02)}
+.st{display:flex;align-items:center;gap:.7rem;font-family:'Syne',sans-serif;font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.si{width:28px;height:28px;border-radius:.4rem;display:flex;align-items:center;justify-content:center;font-size:.82rem;flex-shrink:0}
+.sio{background:var(--od);color:var(--orange)}.sip{background:var(--pd);color:var(--purple)}
+.sic{background:var(--cd);color:var(--cyan)}.sig{background:var(--gd);color:var(--green)}
+.sir{background:var(--rd);color:var(--red)}.siy{background:var(--yd);color:var(--yellow)}
+.chv{color:var(--muted);transition:transform .2s;font-size:.65rem;flex-shrink:0}
+.section.open .chv{transform:rotate(180deg)}
+.sb{display:none;padding:.2rem 1.2rem 1.2rem;border-top:1px solid var(--border)}
+.section.open .sb{display:block}
+
+/* ─── CARDS ─── */
+.card{border-radius:.5rem;padding:.8rem .95rem;margin-bottom:.7rem;border-left:3px solid}
+.co{background:var(--od);border-color:var(--orange)}.cp{background:var(--pd);border-color:var(--purple)}
+.cc{background:var(--cd);border-color:var(--cyan)}.cg{background:var(--gd);border-color:var(--green)}
+.cr{background:var(--rd);border-color:var(--red)}.cy{background:var(--yd);border-color:var(--yellow)}
+.ct{font-family:'Syne',sans-serif;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.45rem}
+.co .ct{color:var(--orange)}.cp .ct{color:var(--purple)}.cc .ct{color:var(--cyan)}
+.cg .ct{color:var(--green)}.cr .ct{color:var(--red)}.cy .ct{color:var(--yellow)}
+
+/* ─── IMAGING BLOCK ─── */
+.img-block{background:#0d1729;border:1px solid var(--cyan);border-radius:.55rem;padding:1rem;margin-bottom:.7rem}
+.img-title{display:flex;align-items:center;gap:.4rem;font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--cyan);font-weight:500;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.55rem}
+.img-block ul{padding-left:1.2rem;font-size:.8rem;line-height:1.95;color:#e2e8f0}
+.img-block ul li{margin-bottom:.05rem}
+.img-block ul strong{color:#fff}
+
+/* ─── LISTS ─── */
+ul.cl,ol.cl{padding-left:1.2rem;font-size:.84rem;line-height:1.85}
+ul.cl li,ol.cl li{margin-bottom:.15rem}
+
+/* ─── TABLES ─── */
+.tw{overflow-x:auto;margin-bottom:.7rem}
+table{width:100%;border-collapse:collapse;font-size:.79rem}
+th{background:rgba(255,255,255,.05);padding:.45rem .7rem;text-align:left;font-family:'JetBrains Mono',monospace;font-size:.67rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);border-bottom:1px solid var(--border)}
+td{padding:.45rem .7rem;border-bottom:1px solid rgba(255,255,255,.04);vertical-align:top;line-height:1.5}
+tr:last-child td{border-bottom:none}
+
+/* ─── MNEMONICS ─── */
+.mnemo{font-family:'JetBrains Mono',monospace;background:var(--cd);border:1px solid rgba(34,211,238,.25);border-radius:.5rem;padding:.7rem 1rem;font-size:.83rem;color:var(--cyan);margin-bottom:.7rem;letter-spacing:.03em}
+.mnemo strong{color:#fff}
+
+/* ─── ALERTS ─── */
+.alert{border-radius:.5rem;padding:.7rem 1rem;margin-bottom:.7rem;font-size:.83rem;display:flex;gap:.5rem;align-items:flex-start}
+.ar{background:var(--rd);border:1px solid rgba(239,68,68,.3);color:#fca5a5}
+.ay{background:var(--yd);border:1px solid rgba(234,179,8,.3);color:#fef08a}
+.ag{background:var(--gd);border:1px solid rgba(34,197,94,.3);color:#86efac}
+.pq{border-left:3px solid var(--purple);background:var(--pd);border-radius:0 .5rem .5rem 0;padding:.6rem .9rem;margin:.5rem 0 .9rem;font-size:.83rem}
+.pq b{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--purple);display:block;margin-bottom:.2rem}
+.grn{background:rgba(34,197,94,.09);border:1px solid rgba(34,197,94,.28);border-radius:.6rem;padding:.7rem 1rem;margin:.6rem 0;color:#86efac;font-style:italic;font-size:.85rem}
+.grn b{color:#a7f3d0;font-style:normal;font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:.25rem}
+
+
+/* ─── GRID ─── */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-bottom:.7rem}
+@media(max-width:600px){.g2{grid-template-columns:1fr}}
+
+/* ─── PHASES ─── */
+.phase-item{display:flex;gap:.9rem;margin-bottom:.8rem;align-items:flex-start}
+.pdot{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;flex-shrink:0;font-family:'JetBrains Mono',monospace;margin-top:.1rem}
+.po{background:var(--od);color:var(--orange);border:2px solid var(--orange)}
+.py{background:var(--yd);color:var(--yellow);border:2px solid var(--yellow)}
+.pr{background:var(--rd);color:var(--red);border:2px solid var(--red)}
+.ph-title{font-family:'Syne',sans-serif;font-size:.77rem;font-weight:700;text-transform:uppercase;margin-bottom:.25rem}
+.po-t{color:var(--orange)}.py-t{color:var(--yellow)}.pr-t{color:var(--red)}
+.ph-body{font-size:.8rem;line-height:1.75;color:#cbd5e1}
+
+/* ─── STEP LIST ─── */
+.steps{counter-reset:s;list-style:none;padding:0}
+.steps li{counter-increment:s;display:flex;gap:.7rem;margin-bottom:.55rem;font-size:.83rem;align-items:flex-start}
+.steps li::before{content:counter(s);width:20px;height:20px;border-radius:50%;background:var(--od);color:var(--orange);font-family:'JetBrains Mono',monospace;font-size:.67rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.1rem}
+
+/* ─── MISC ─── */
+.sub{font-family:'Syne',sans-serif;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--orange);margin:1rem 0 .35rem;border-bottom:1px solid rgba(249,115,22,.2);padding-bottom:.25rem}
+.p{font-size:.84rem;line-height:1.7;color:#cbd5e1;margin-bottom:.5rem}
+.hl-o{color:var(--orange);font-weight:600}.hl-p{color:var(--purple);font-weight:600}
+.hl-c{color:var(--cyan);font-weight:600}.hl-r{color:var(--red);font-weight:600}
+.hl-g{color:var(--green);font-weight:600}.hl-y{color:var(--yellow);font-weight:600}
+.staging-s td:first-child{color:var(--green)}.staging-m td:first-child{color:var(--yellow)}.staging-x td:first-child{color:var(--red)}
+.footer{text-align:center;padding:1.8rem;color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:.67rem;border-top:1px solid var(--border);margin-top:1.5rem}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-tag">carolzita · residência cirurgia geral → vascular</div>
+  <h1>CIRURGIA <span>TORÁCICA</span></h1>
+  <div class="header-sub">Pleura · Pneumotórax · Neoplasia Pulmonar · Trauma · Técnicas · Análise de Imagem</div>
+  <div class="badges">
+    <span class="badge bo">SBCT Livro Virtual</span>
+    <span class="badge bp">AMRIGS · HCPA · GHC · Santa Casa · PUC-RS</span>
+    <span class="badge bc">Julho 2026</span>
+  </div>
+</div>
+
+<nav class="tab-nav">
+  <button class="tab-btn active" data-tab="pleura">01 · Pleura</button>
+  <button class="tab-btn" data-tab="pneumo">02 · Pneumotórax</button>
+  <button class="tab-btn" data-tab="cancer">03 · Ca Pulmão</button>
+  <button class="tab-btn" data-tab="trauma">04 · Trauma</button>
+  <button class="tab-btn" data-tab="tecnicas">05 · Técnicas</button>
+  <button class="tab-btn" data-tab="provas">06 · Provas RS</button>
+</nav>
+
+<!-- ══════════════════════════════════════════
+     TAB 1 — PLEURA
+══════════════════════════════════════════ -->
+<div class="tab-content active" id="tab-pleura">
+<div class="controls">
+  <button class="ctrl" onclick="expandAll('tab-pleura')">Expandir tudo</button>
+  <button class="ctrl" onclick="collapseAll('tab-pleura')">Colapsar tudo</button>
+</div>
+
+<!-- ANATOMIA & FISIOLOGIA -->
+<div class="section">
+  <div class="sh" onclick="tog(this)">
+    <div class="st"><div class="si sig">🫁</div>Anatomia & Fisiologia Pleural</div>
+    <div class="chv">▼</div>
+  </div>
+  <div class="sb">
+    <div class="card cg">
+      <div class="ct">Fisiologia Normal</div>
+      <ul class="cl">
+        <li>Produção: <strong>0,1 mL/kg/h</strong> ≈ 10–20 mL/dia (equilíbrio entre filtração e reabsorção)</li>
+        <li>Reabsorção: <strong>rede linfática parietal</strong> → linfonodos mediastinais e diafragmáticos</li>
+        <li>Maior reabsorção: <span class="hl-g">diafragma + mediastino</span> (rede linfática mais densa)</li>
+        <li>Maior secreção: ápices pulmonares</li>
+        <li>Pressão pleural: negativa em relação à atmosférica → mantém pulmão expandido</li>
+        <li>Líquido normal: 5–15 mL, proteína &lt;1,5 g/dL, células mesoteliais + macrófagos</li>
+      </ul>
+    </div>
+    <div class="card co">
+      <div class="ct">Folhetos Pleurais</div>
+      <ul class="cl">
+        <li><strong>Visceral:</strong> reveste pulmão + cissuras; produz pouco líquido; reabsorção mínima</li>
+        <li><strong>Parietal:</strong> reveste parede torácica, mediastino, diafragma; principal fonte e reabsortora</li>
+        <li><strong>Mediastinal:</strong> separa os dois hemitórax; contém o saco pericárdico</li>
+        <li>Cavidade pleural = espaço virtual em condições normais</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ANÁLISE DE IMAGEM — DERRAME PLEURAL -->
+<div class="section open">
+  <div class="sh" onclick="tog(this)">
+    <div class="st"><div class="si sic">📷</div>Análise de Imagem — Derrame Pleural</div>
+    <div class="chv">▼</div>
+  </div>
+  <div class="sb">
+    <div class="img-block">
+      <div class="img-title">📡 Radiografia de Tórax</div>
+      <ul>
+        <li><strong>Mínimo detectável (PA):</strong> ~200–250 mL → embotamento (blunting) do seio costofrênico</li>
+        <li><strong>Perfil:</strong> &gt;75 mL apaga seio costofrênico anterior (mais sensível!)</li>
+        <li><strong>Menisco côncavo:</strong> curva côncava voltada para cima = líquido livre → sinal mais clássico</li>
+        <li><strong>Linha de Ellis-Damoiseau:</strong> linha de condensação côncava superior no RX em PA</li>
+        <li><strong>Derrame subpulmonar:</strong> "elevação do hemidiafragma" com pico &gt;50% da largura do hemitórax (deslocado lateralmente) → confirmar em perfil ou decúbito lateral</li>
+        <li><strong>Decúbito lateral (incidência de Laurel):</strong> camada &gt;10 mm = drenável; &lt;10 mm = conservador</li>
+        <li><strong>Loculado:</strong> formato lenticular, NÃO muda com mudança de decúbito</li>
+        <li><strong>Maciço (opacificação &gt;2/3 do hemitórax):</strong> etiologia maligna muito provável</li>
+        <li><strong>Desvio do mediastino CONTRALATERAL:</strong> derrame livre grande → esperado</li>
+        <li><strong>SEM desvio ou desvio IPSILATERAL:</strong> suspeitar de pulmão encarcerado OU atelectasia maciça ipsilateral</li>
+      </ul>
+    </div>
+    <div class="img-block">
+      <div class="img-title">🔬 Tomografia Computadorizada (TC)</div>
+      <ul>
+        <li><strong>Atenuação (Unidades Hounsfield):</strong></li>
+        <li>&nbsp;&nbsp;• Transudato: próximo de 0 HU (semelhante à água)</li>
+        <li>&nbsp;&nbsp;• Exsudato: ~20 HU (mais denso que água) — SBCT cita –20 HU como limiar</li>
+        <li>&nbsp;&nbsp;• Hemotórax: &gt;40 HU (denso, hiperdenso agudo)</li>
+        <li>&nbsp;&nbsp;• Empiema: variável, denso + septações</li>
+        <li><strong>Split pleural sign:</strong> realce das pleuras parietal + visceral com contraste, com líquido entre elas → empiema (alta especificidade — Sinal diagnóstico da TC!)</li>
+        <li><strong>Ângulo AGUDO</strong> com a parede torácica → processo <span class="hl-c">PLEURAL</span> (derrame, empiema, mesotelioma)</li>
+        <li><strong>Ângulo OBTUSO</strong> com a parede → processo <span class="hl-o">PARENQUIMATOSO</span> (abscesso, consolidação)</li>
+        <li><strong>Septações / loculações internas:</strong> fase fibrinopurulenta do empiema</li>
+        <li><strong>Espessamento pleural parietal &gt;3 mm:</strong> exsudato (vs. transudato = pleura fina)</li>
+        <li><strong>Gás no espaço pleural:</strong> fístula broncopleural, ruptura esofágica, cirurgia recente</li>
+        <li><strong>Empiema vs abscesso pulmonar:</strong> no empiema = interface do nível hidroaéreo se estende até parede / ângulo agudo / limites menores no mediastino; no abscesso = ângulo obtuso + parênquima circundante alterado</li>
+      </ul>
+    </div>
+    <div class="img-block">
+      <div class="img-title">🔊 Ultrassonografia (USG)</div>
+      <ul>
+        <li><strong>Anecóico puro:</strong> pode ser transudato simples OU exsudato não complicado</li>
+        <li><strong>Ecos internos, debris, fibrina em "véu", septações:</strong> exsudato / empiema / hemotórax</li>
+        <li><strong>Sinal da "medusa":</strong> atelectasia pulmonar flutuante dentro do derrame = pulmão não vai reexpandir bem</li>
+        <li><strong>Septações em teia de aranha:</strong> empiema fase II (fibrinopurulenta)</li>
+        <li><strong>Principal utilidade:</strong> guia para toracocentese (mesmo derrames pequenos ou loculados)</li>
+        <li>Limitação: operador-dependente; não substitui TC para dx diferencial complexo</li>
+        <li>Vantagem na UTI: beira leito, sem radiação, detecta derrames que o RX em supino subestima</li>
+      </ul>
+    </div>
+    <div class="card cp">
+      <div class="ct">🎯 Pérolas de Prova — Imagem Pleural</div>
+      <ul class="cl">
+        <li>Derrame maciço <strong>sem desvio</strong> de mediastino → pulmão encarcerado ou obstrução brônquica → investigar Ca</li>
+        <li>Empiema no RX: 3 sinais clássicos → interface até a parede / limites menores no mediastino / nível ultrapassa cissuras</li>
+        <li>TC com contraste: <strong>split pleural sign</strong> = empiema (distingue de transudato)</li>
+        <li>Incidência de Laurel (decúbito lateral): camada ≥10 mm = drenável</li>
+        <li>DPOC + opacidade: dificuldade de diferenciação → TC obrigatória</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- CRITÉRIOS DE LIGHT -->
+<div class="section open">
+  <div class="sh" onclick="tog(this)">
+    <div class="st"><div class="si sio">⚖️</div>Critérios de Light — Exsudato vs Transudato</div>
+    <div class="chv">▼</div>
+  </div>
+  <div class="sb">
+    <div class="mnemo">
+      <strong>LIGHT = qualquer UM dos 3 critérios → EXSUDATO</strong><br>
+      Proteína líq/soro &gt; <strong>0,5</strong> · DHL líq/soro &gt; <strong>0,6</strong> · DHL líq &gt; <strong>2/3</strong> do limite superior normal sérico<br>
+      Memória: "<strong>P meio · D seis · D dois-terços</strong>"
+    </div>
+    <div class="g2">
+      <div class="card co">
+        <div class="ct">Exsudato — Causas</div>
+        <ul class="cl">
+          <li>Pneumonia / parapneumônico <span class="hl-o">(mais comum)</span></li>
+          <li>Tuberculose <span class="hl-p">(ADA &gt;40 UI/L + linfócitos &gt;80%)</span></li>
+          <li>Neoplasia maligna</li>
+          <li>TEP <span class="hl-y">(pode ser transudato ou exsudato!)</span></li>
+          <li>AR, LES, vasculites</li>
+          <li>Ruptura esofágica <span class="hl-p">(amilase↑↑, pH &lt;6, aspecto turvo)</span></li>
+          <li>Hemotórax (Hct líq/sang &gt;0,5)</li>
+          <li>Quilotórax (TG &gt;110 mg/dL)</li>
+          <li>Pancreatite (amilase↑)</li>
+          <li>Síndrome de Dressler, pericardite</li>
+        </ul>
+      </div>
+      <div class="card cg">
+        <div class="ct">Transudato — Causas</div>
+        <ul class="cl">
+          <li>ICC <span class="hl-g">(mais comum; bilateral com predomínio D)</span></li>
+          <li>Cirrose hepática (ascite + hipoalbuminemia)</li>
+          <li>Síndrome nefrótica</li>
+          <li>Hipoalbuminemia grave</li>
+          <li>Hipotireoidismo</li>
+          <li>Pericardite constritiva</li>
+          <li>Síndrome de Meigs <span class="hl-p">(tumor ovariano benigno + ascite + derrame)</span></li>
+          <li>Diálise peritoneal</li>
+          <li>Atelectasia maciça (↓pressão pleural)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="sub">Análise Complementar do Líquido Pleural</div>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Parâmetro</th><th>Valor de Corte</th><th>Significado / Causa</th></tr></thead>
+        <tbody>
+          <tr><td>pH</td><td>&lt;7,0</td><td>Drenagem OBRIGATÓRIA (empiema franco)</td></tr>
+          <tr><td>pH</td><td>7,0–7,2</td><td>Borderline → reavaliar em 12–24h; nova punção</td></tr>
+          <tr><td>pH</td><td>&lt;6,0</td><td>Ruptura esofágica (diagnóstico)</td></tr>
+          <tr><td>Glicose</td><td>&lt;60 mg/dL</td><td>Empiema, AR, TBC, neoplasia</td></tr>
+          <tr><td>Glicose</td><td>&lt;40 mg/dL</td><td>Fase crônica do empiema; AR grave</td></tr>
+          <tr><td>DHL</td><td>&gt;1000 UI/L</td><td>Infecção grave (empiema, pleurite grave)</td></tr>
+          <tr><td>ADA</td><td>&gt;40 UI/L</td><td>Tuberculose (+ linfócitos &gt;80%) = muito sugestivo</td></tr>
+          <tr><td>Amilase</td><td>Elevada</td><td>Pancreatite (esquerdo), ruptura esofágica, neoplasia</td></tr>
+          <tr><td>TG</td><td>&gt;110 mg/dL</td><td>Quilotórax (linfático)</td></tr>
+          <tr><td>Hematócrito líq/sang</td><td>&gt;0,5</td><td>Hemotórax verdadeiro</td></tr>
+          <tr><td>Citologia oncótica</td><td>Positiva ≈60%</td><td>Maligno (90% com 2 amostras + biópsia)</td></tr>
+          <tr><td>Contagem celular</td><td>PMN predomina</td><td>Infecção bacteriana aguda, empiema</td></tr>
+          <tr><td>Contagem celular</td><td>Linfócitos &gt;80%</td><td>TBC, linfoma, neoplasia, sarcoidose</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="alert ar">
+      <span>🚨</span>
+      <span><strong>Aspecto purulento macroscópico = drenagem IMEDIATA</strong>, sem aguardar análise laboratorial (SBCT — Pinto Filho). Nunca punções de repetição: se precisou puncionar 2x, indicar dreno.</span>
+    </div>
+    <div class="alert ay">
+      <span>⚠️</span>
+      <span><strong>Falso-exsudato no ICC:</strong> uso excessivo de diurético pode concentrar o líquido → critérios de Light indicam exsudato mas é transudato. Usar gradiente de albumina sérica-pleural &gt;1,2 g/dL para identificar transudato "mascarado".</span>
+    </div>
+  </div>
+</div>
+
+<!-- EMPIEMA PLEURAL -->
+<div class="section open">
+  <div class="sh" onclick="tog(this)">
+    <div class="st"><div class="si sir">🦠</div>Empiema Pleural — Fases, Diagnóstico & Tratamento</div>
+    <div class="chv">▼</div>
+  </div>
+  <div class="sb">
+    <div class="card co">
+      <div class="ct">Etiologia (1300 casos — revisão SBCT)</div>
+      <ul class="cl">
+        <li><strong>60%:</strong> infecções pulmonares prévias (pneumonia → contaminação da pleura visceral)</li>
+        <li><strong>20%:</strong> pós-operatório torácico (pneumonectomia 2–12%; lobectomia 1–3%)</li>
+        <li><strong>10%:</strong> trauma (hemotórax infectado → risco 2x maior se hemopneumotórax)</li>
+        <li>&lt;10%: ruptura esofágica, abscesso subfrênico, procedimentos pleurais (toracocentese, biópsia)</li>
+      </ul>
+    </div>
+    <div class="mnemo"><strong>EFO</strong> = Exsudativa → Fibrinopurulenta → Organização (ATS 1962)</div>
+    <div class="phase-item">
+      <div class="pdot po">I</div>
+      <div>
+        <div class="ph-title po-t">Fase I — Exsudativa (Aguda)</div>
+        <div class="ph-body">
+          Líquido estéril como resposta inflamatória. pH, glicose e DHL <em>normais</em>. Pulmão móvel, septações ausentes.<br>
+          <strong>TC:</strong> coleção homogênea, sem realce pleural significativo, sem septações.<br>
+          <strong>Tto:</strong> drenagem fechada (dreno tubular 4°–5° EIC LAM) + ATB sistêmico. Alta taxa de sucesso.
+        </div>
+      </div>
+    </div>
+    <div class="phase-item">
+      <div class="pdot py">II</div>
+      <div>
+        <div class="ph-title py-t">Fase II — Fibrinopurulenta (Transição)</div>
+        <div class="ph-body">
+          Turbidez ↑, septações/loculações de fibrina, germes identificados. pH↓, DHL↑, glicose↓. Pulmão parcialmente imóvel.<br>
+          <strong>TC:</strong> split pleural sign + septações internas + pulmão parcialmente fixo.<br>
+          <strong>Tto 1ª escolha:</strong> VATS (videotoracoscopia) com debridamento + drenagem orientada.<br>
+          <strong>Alternativas:</strong> fibrinolíticos intrapleurais (STK ou uroquinase) + drenagem fechada | descorticação precoce (toracotomia).<br>
+          <em>Drenagem fechada isolada = razoável chance de insucesso nesta fase!</em>
+        </div>
+      </div>
+    </div>
+    <div class="phase-item">
+      <div class="pdot pr">III</div>
+      <div>
+        <div class="ph-title pr-t">Fase III — Organização (Crônica)</div>
+        <div class="ph-body">
+          Pus espesso e purulento. Glicose &lt;40 mg/dL, pH &lt;7. Fibroblastos → casca fibrótica → <em>pulmão encarcerado</em>.<br>
+          <strong>TC:</strong> espessamento pleural marcado ("casca de laranja"), pulmão imóvel, calcificações tardias.<br>
+          <strong>Tto:</strong> drenagem aberta (pleurostomia — técnica de Eloesser 1935) → descorticação pulmonar → toracoplastia / mioplastia (refratários).
+        </div>
+      </div>
+    </div>
+    <div class="sub">Critérios para Drenagem (Light / Pinto Filho)</div>
+    <div class="g2">
+      <div class="card cr">
+        <div class="ct">🚨 Indicação Absoluta</div>
+        <ul class="cl">
+          <li>Aspecto purulento macroscópico <strong>(não esperar lab!)</strong></li>
+          <li>pH &lt;7,0</li>
+          <li>Gram ou cultura positivos</li>
+          <li>Glicose &lt;40 mg/dL</li>
+        </ul>
+      </div>
+      <div class="card cy">
+        <div class="ct">⚠️ Borderline — Reavaliar</div>
+        <ul class="cl">
+          <li>pH 7,0–7,2 com glicose e DHL limítrofes</li>
+          <li>Nova punção em 12–24h</li>
+          <li>pH subindo → fase resolvendo</li>
+          <li>pH caindo → drenagem imediata</li>
+        </ul>
+      </div>
+    </div>
+    <div class="sub">Bacteriologia por Contexto Clínico</div>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Contexto</th><th>Germe Principal</th></tr></thead>
+        <tbody>
+          <tr><td>Adulto jovem / criança &gt;2 anos</td><td><em>S. pneumoniae</em> (pneumococo)</td></tr>
+          <tr><td>Criança &lt;2 anos (velamento rápido, total)</td><td><em>S. aureus</em></td></tr>
+          <tr><td>Debilitados, alcoolistas, diabéticos</td><td>Gram-negativos aeróbios + anaeróbios</td></tr>
+          <tr><td>Pós-operatório torácico</td><td>Gram-negativos + <em>S. aureus</em></td></tr>
+          <tr><td>Anaeróbios (fetidez, septações precoces)</td><td>Alcoolismo, má higiene oral, DRGE, disfagia</td></tr>
+          <tr><td>Culturas negativas (20–30%)</td><td>ATB prévio ou técnica inadequada de coleta</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="sub">Descorticação Pulmonar Precoce</div>
+    <div class="card co">
+      <div class="ct">Quando indicar? (Pinto Filho / SBCT)</div>
+      <ul class="cl">
+        <li>Fase II que não resolveu com drenagem fechada</li>
+        <li>Encarceramento pulmonar em fase inicial impedindo reexpansão</li>
+        <li>Via: toracotomia convencional (remoção de pus + coágulos de fibrina + "casca" sobre pulmão)</li>
+        <li>Via VATS: equivalente para fase II (lise de loculações + debridamento + drenagem orientada)</li>
+        <li>Pré-requisito: parênquima potencialmente expansível (sem supuração ou necrose grave)</li>
+      </ul>
+    </div>
+    <div class="card cy">
+      <div class="ct">Pleurostomia (Eloesser — Fase III)</div>
+      <ul class="cl">
+        <li>Drenagem aberta + retalho cutâneo suturado à pleura parietal</li>
+        <li>Ressecção de 1–2 segmentos de costela no ponto mais declive do empiema</li>
+        <li>Permite lavagem diária da cavidade + alta precoce</li>
+        <li>Indicação formal: empiema crônico com mediastino fixado ("fixação do mediastino")</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- DERRAME NEOPLÁSICO -->
+<div class="section">
+  <div class="sh" onclick="tog(this)">
+    <div class="st"><div class="si sip">🎗️</div>Derrame Pleural Neoplásico — Diagnóstico & Tratamento</div>
+    <div class="chv">▼</div>
+  </div>
+  <div class="sb">
+    <div class="g2">
+      <div class="card cp">
+        <div class="ct">Epidemiologia</div>
+        <ul class="cl">
+          <li><strong>Homens:</strong> Ca pulmão (principal)</li>
+          <li><strong>Mulheres:</strong> Ca mama (principal)</li>
+          <li>Ca pulmão + Ca mama = 50–65% dos derrames malignos</li>
+          <li>Linfomas + TGU + TGI = 25%</li>
+          <li>Tumor primário desconhecido = 7–15%</li>
+          <li>Sobrevida: ovário/mama &gt; outros; pulmão = pior (3–12 meses)</li>
+        </ul>
+      </div>
+      <div class="card co">
+        <div class="ct">Apresentação Clínica</div>
+        <ul class="cl">
+          <li>Dispneia = sintoma mais comum</li>
+          <li>Dor torácica = invasão pleura parietal</li>
+          <li>25% assintomáticos (achado radiológico)</li>
+          <li>Derrame maciço bilateral <strong>sem desvio de mediastino</strong> → suspeita alta de maligno</li>
+        </ul>
+      </div>
+    </div>
+    <div class="sub">Sequência Diagnóstica</div>
+    <ol class="steps">
+      <li>Citologia oncótica do líquido pleural → positiva em ~60% (exsudato geralmente)</li>
+      <li>Biópsia pleural por agulha (associada à toracocentese) → positiva em 70–80%</li>
+      <li>Videotoracoscopia (VATS) → rendimento &gt;90% — padrão se etapas anteriores negativas</li>
+    </ol>
+    <div class="sub">Tratamento — Opções</div>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Opção</th><th>Indicação</th><th>Eficácia / Obs</th></tr></thead>
+        <tbody>
+          <tr><td>Toracocentese de repetição</td><td>Terminal, recusa de outras opções, recidiva pós-pleurodese</td><td>Alta recorrência. Risco: PTX iatrogênico, empiema</td></tr>
+          <tr><td><strong>Pleurodese — Talco poudrage (VATS)</strong></td><td>Padrão: pulmão que reexpande</td><td>Sucesso &gt;90%. Gold standard</td></tr>
+          <tr><td>Pleurodese — Talco slurry (dreno)</td><td>Alternativa ao poudrage</td><td>Sucesso 88–100%. Não inferior ao poudrage (estudos recentes)</td></tr>
+          <tr><td>Cateter PleurX (longa duração)</td><td>Pulmão encarcerado, derrames recorrentes, ambulatorial</td><td>Eficaz mesmo sem expansão total</td></tr>
+          <tr><td>Derivação pleuroperitônial</td><td>Refratário à pleurodese química</td><td>Obstrução 12–25%; compressão manual ×400/dia</td></tr>
+          <tr><td>Pleurectomia (VATS)</td><td>Falha de outros métodos</td><td>Mortalidade 10–13%; invasivo</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card co">
+      <div class="ct">Detalhes da Pleurodese (SBCT — Tedde)</div>
+      <ul class="cl">
+        <li><strong>Dreno calibre:</strong> 24–36 F (clássico) ou 10–14 F (estudos recentes = mesma eficácia)</li>
+        <li><strong>Lidocaína intrapleural:</strong> 3 mg/kg (máx 250 mg) imediatamente ANTES do talco</li>
+        <li><strong>Clampeamento pós-talco:</strong> ~1h (controverso; não há consenso)</li>
+        <li><strong>Retirada do dreno:</strong> débito &lt;150 mL/dia + expansão completa → 48–72h pós-talco</li>
+        <li><strong>Corticosteroides REDUZEM</strong> efetividade (inibem inflamação necessária)</li>
+        <li><strong>Rotação do paciente</strong> pós-instilação: NÃO necessária (talco se distribui independentemente)</li>
+        <li><strong>Complicação grave:</strong> SARA/pneumonite aguda por talco (excluir edema reexpansão + linfangite)</li>
+      </ul>
+    </div>
+    <div class="alert ar">
+      <span>🚨</span>
+      <span><strong>Condição fundamental para pleurodese:</strong> pulmão DEVE reexpandir completamente após drenagem (confirmar radiologicamente). Pulmão encarcerado = pleurodese vai falhar → usar cateter PleurX.</span>
+    </div>
+    <div class="card cy">
+      <div class="ct">Mesotelioma Maligno — Cuidado!</div>
+      <ul class="cl">
+        <li><strong>40%</strong> dos pacientes com mesotelioma desenvolvem implante tumoral no local de procedimento pleural</li>
+        <li>Indicação de radioterapia profilática no sítio de punção/biópsia</li>
+        <li>Associação com exposição ao asbesto (latência 20–40 anos)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div><!-- /tab-pleura -->
+
+
+<!-- ══════════════════════════════════════════
+     TAB 2 — PNEUMOTÓRAX
+══════════════════════════════════════════ -->
+<div class="tab-content" id="tab-pneumo">
+<div class="controls">
+  <button class="ctrl" onclick="expandAll('tab-pneumo')">Expandir tudo</button>
+  <button class="ctrl" onclick="collapseAll('tab-pneumo')">Colapsar tudo</button>
+</div>
+
+<div class="section open">
+  <div class="sh" onclick="tog(this)">
+    <div class="st"><div class="si sio">📋</div>Classificação & Epidemiologia</div>
+    <div class="chv">▼</div>
+  </div>
+  <div class="sb">
+    <div class="tw">
+      <table>
+        <thead><tr><th>Tipo</th><th>Definição</th><th>Perfil / Causa</th></tr></thead>
+        <tbody>
+          <tr><td><span class="hl-o">Espontâneo Primário</span></td><td>Sem doença pulmonar subjacente, exceto blebs subpleurais apicais</td><td>Homem, magro, alto, 20–40 anos, fumante. 6–10/100.000/ano. Predomínio D. Bilateral em 2%.</td></tr>
+          <tr><td><span class="hl-o">Espontâneo Secundário</span></td><td>Complicação de doença pulmonar conhecida</td><td>DPOC (principal!), TBC, fibrose cística, neoplasia, LAM, Marfan, histiocitose, sarcoidose, escleroderma</td></tr>
+          <tr><td><span class="hl-y">Catamenial</span></td><td>Vinculado ao ciclo menstrual</td><td>Mulher &gt;30a. Início 24–72h após menstruação. Predomina à direita. Endometriose pleural / diafragma fenestrado.</td></tr>
+          <tr><td><span class="hl-y">Iatrogênico</span></td><td>Após procedimento diagnóstico ou terapêutico</td><td>Punção venosa central, toracocentese, biópsia transbrônquica/transtorácica, VM (barotrauma), acupuntura</td></tr>
+          <tr><td><span class="hl-r">Traumático</span></td><td>Decorrente de trauma</td><td>Aberto (penetrante) ou fechado. Sempre drenar (mesmo pequeno).</td></tr>
+          <tr><td><span class="hl-c">Neonatal</span></td><td>Pós-natal</td><td>2× mais em meninos. Aspiração de mecônio/muco ou VM em síndrome membrana hialina.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card cp">
+      <div class="ct">Recorrência (Importante para Indicação Cirúrgica)</div>
+      <ul class="cl">
+        <li>Após 1° episódio: ~<strong>30%</strong> de recorrência</li>
+        <li>Após 2° episódio: <strong>60–80%</strong> de recorrência (período de latência cada vez menor)</li>
+        <li>Maioria das recorrências: dentro do 1° ano</li>
+        <li>Secundário: recorrência ligeiramente maior que o primário</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="section open">
+  <div class="sh" onclick="tog(this)">
+    <div class="st"><div class="si sir">🔴</div>Pneumotórax Hipertensivo — Fisiopatologia & Emergência</div>
+    <div class="chv">▼</div>
+  </div>
+  <div class="sb">
+    <div class="mnemo">
+      Mecanismo valvular unidirecional → P intrapleural POSITIVA → compressão mediastino<br>
+      → pinçamento das cavas → ↓retorno venoso → ↓DC → hipotensão → CHOQUE<br>
+      <strong>Síndrome de Horner rara:</strong> desvio do mediastino traciona gânglio simpático (ptose + miose + anidrose ipsilateral)
+    </div>
+    <div class="alert ar">
+      <span>🚨</span>
+      <span><strong>DIAGNÓSTICO CLÍNICO — NÃO aguardar RX!</strong><br>
+      Taquicardia + hipotensão + ausência de MV ipsilateral + turgência jugular + desvio traqueal contralateral<br>
+      → Punção IMEDIATA 2°EIC LHC (borda superior da 3ª costela) com agulha calibrosa → drenagem formal em seguida.</span>
+    </div>
+    <div class="card co">
+      <div class="ct">Cuidado com VM</div>
+      <ul class="cl">
+        <li>Paciente em ventilação mecânica com pressão positiva = risco de progressão RÁPIDA para hipertensivo</li>
+        <li>Qualquer pneumotórax em VM → drenagem imediata, sem exceção</li>
+        <li>Contralateral ao pneumotórax: pulmão comprimido → queda abrupta de SpO₂</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ANÁLISE DE IMAGEM — PNEUMOTÓRAX -->
+<div class="section open">
+  <div class="sh" onclick="tog(this)">
+    <div class="st"><div class="si sic">📷</div>Análise de Imagem — Pneumotórax</div>
+    <div class="chv">▼</div>
+  </div>
+  <div class="sb">
+    <div class="img-block">
+      <div class="img-title">📡 Radiografia de Tórax</div>
+      <ul>
+        <li><strong>Linha de reflexão pleural:</strong> linha branca fina paralela à parede torácica + ausência de trama vascular lateral a ela</li>
+        <li><strong>Incidência padrão:</strong> PA em inspiração. Em expiração forçada: aumenta visibilidade de pequenos pneumotórax</li>
+        <li><strong>Tamanho — critério BTS (British Thoracic Society):</strong><br>
+          &nbsp;&nbsp;• Distância borda pulmão → parede torácica ao nível do hilo: <strong>&gt;2 cm = GRANDE</strong>; &lt;2 cm = PEQUENO</li>
+        <li><strong>Tamanho — critério ACCP (American College):</strong><br>
+          &nbsp;&nbsp;• Distância ápice pulmão → cúpula pleural: <strong>&gt;3 cm = GRANDE</strong></li>
+        <li><strong>Pneumotórax hipertensivo no RX:</strong> câmara aérea hipertensa + desvio mediastino CONTRALATERAL + diafragma ipsilateral deprimido/achatado (invertido)</li>
+        <li><strong>DPOC:</strong> pulmão hiperlucente com pouca diferença de densidade em relação ao pneumotórax → muito difícil diferenciar no RX → pedir TC!</li>
+        <li><strong>Derrame associado:</strong> em 10–20% dos espontâneos (seio costofrênico apagado); se hemorrágico = ruptura de aderência vascularizada</li>
+        <li><strong>Pneumotórax bilateral simultâneo:</strong> raro (2%); suspeitar de doença sistêmica</li>
+      </ul>
+    </div>
+    <div class="img-block">
+      <div class="img-title">🔬 Tomografia Computadorizada</div>
+      <ul>
+        <li><strong>Padrão ouro</strong> para casos duvidosos (DPOC, bolhas, pós-cirúrgico)</li>
+        <li><strong>Blebs/bolhas subpleurais apicais:</strong> visíveis em TC — guia decisão cirúrgica (pleurodese vs ressecção)</li>
+        <li><strong>Diferenciação pneumotórax vs bola enfisematosa gigante:</strong> TC essencial no DPOC</li>
+        <li><strong>Pneumotórax oculto (occult pneumothorax):</strong> apenas na TC, não visto no RX em supino → comum no trauma</li>
+        <li><strong>Localização:</strong> apical (espontâneo), anterior (VM/supino), loculado (pós-op, pós-empiema)</li>
+        <li>Identifica doença contralateral (blebs) → indicação de cirurgia bilateral profilática</li>
+      </ul>
+    </div>
+    <div class="img-block">
+      <div class="img-title">🔊 FAST / Ultrassom Pulmonar</div>
+      <ul>
+        <li>No ponto 2°EIC LHC: ausência do <strong>"lung sliding"</strong> (deslizamento pleural) + ausência do sinal de "comet tail" = pneumotórax</li>
+        <li><strong>Sinal do ponto pulmonar:</strong> transição entre lung sliding presente e ausente = borda do pneumotórax (confirma o diagnóstico)</li>
+        <li>Sensibilidade 79–95%; especificidade 86–100% para PTX</li>
+        <li>Limitação: não quantifica bem; não diferencia bolha de PTX no DPOC → TC necessária</li>
+      </ul>
+    </div>
+    <div class="card cp">
+      <div class="ct">🎯 Pérolas de Prova — Imagem Pneumotórax</div>
+      <ul class="cl">
+        <li>DPOC + piora súbita da dispneia → sempre pensar em PTX → TC (RX pode confundir com bola)</li>
+        <li>Hipertensivo: desvio contralateral + diafragma achatado = diagnóstico no RX, mas tratar ANTES</li>
+        <li>PTX em VM: SEMPRE drenar (mesmo pequeno)</li>
+        <li>Expiração forçada: aumenta visibilidade do PTX pequeno no RX</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- TRATAMENTO PNEUMOTÓRAX -->
+<div class="section">
+  <div class="sh" onclick="tog(this)">
+    <div class="st"><div class="si sio">💊</div>Tratamento por Tipo</div>
+    <div class="chv">▼</div>
+  </div>
+  <div class="sb">
+    <div class="alert ar"><span>🚨</span><span><strong>PTX hipertensivo:</strong> punção 2°EIC LHC → drenagem formal 5°EIC LAM</span></div>
+    <div class="alert ar"><span>🚨</span><span><strong>PTX aberto (aspirante):</strong> curativo de 3 lados (válvula unidirecional) → drenagem em OUTRO local (nunca selar completamente sem dreno!)</span></div>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Tipo & Condição</th><th>Conduta</th></tr></thead>
+        <tbody>
+          <tr><td>Primário <strong>pequeno</strong>, assintomático</td><td>Observação + O₂ suplementar (↑reabsorção ×4). Alta + retorno 24–48h</td></tr>
+          <tr><td>Primário <strong>grande</strong> ou sintomático</td><td>Drenagem fechada (dreno fino 5°EIC LAA) OU aspiração simples (BTS: equivalentes no 1° episódio)</td></tr>
+          <tr><td>Secundário (qualquer tamanho)</td><td>Internação + drenagem pleural fechada (reserva pulmonar comprometida!)</td></tr>
+          <tr><td>Iatrogênico <strong>sem VM</strong></td><td>Pequeno: observação; Grande / progressivo: drenagem</td></tr>
+          <tr><td>Iatrogênico <strong>em VM</strong></td><td>Drenagem IMEDIATA (risco de hipertensivo com pressão positiva)</td></tr>
+          <tr><td>Traumático (aberto ou fechado)</td><td>Drenagem fechada 5°EIC LAM SEMPRE</td></tr>
+          <tr><td>Catamenial</td><td>VATS (fechar defeitos diafragmáticos + ablação implantes) + hormonioterapia</td></tr>
+          <tr><td>Neonatal assintomático / leve</td><td>Observação + O₂ com cautela (risco de hiperóxia)</td></tr>
+          <tr><td>Neonatal com instabilidade</td><td>Drenagem com dreno fino</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="sub">Indicações Cirúrgicas (VATS / Toracotomia)</div>
+    <div class="card cp">
+      <div class="ct">Quando operar?</div>
+      <ul class="cl">
+        <li>2° episódio <strong>ipsilateral</strong></li>
+        <li>1° episódio <strong>contralateral</strong> a episódio anterior (bilateral)</li>
+        <li>1° episódio em <strong>profissões de risco</strong> (aviadores, mergulhadores, militares)</li>
+        <li>3° episódio ipsilateral (indicação formal)</li>
+        <li>Fístula aérea persistente &gt;5–7 dias com drenagem</li>
+        <li>Falha de expansão pulmonar</li>
+      </ul>
+    </div>
+    <div class="g2">
+      <div class="card cg">
+        <div class="ct">VATS — 1ª escolha cirúrgica</div>
+        <ul class="cl">
+          <li>Ressecção de blebs (stapler GIA ou clipagem)</li>
+          <li>Pleurodese: abrasão mecânica OU pleurectomia apical</li>
+          <li>Taxa de insucesso &lt;10%</li>
+          <li>Menor dor, menor internação</li>
+        </ul>
+      </div>
+      <div class="card co">
+        <div class="ct">Toracotomia Axilar</div>
+        <ul class="cl">
+          <li>Insucesso da VATS</li>
+          <li>Entubação seletiva impossível</li>
+          <li>Pulmão encarcerado</li>
+          <li>Taxa de insucesso &lt;3%</li>
+        </ul>
+      </div>
+    </div>
+    <div class="sub">Critérios de Retirada do Dreno</div>
+    <ul class="cl">
+      <li>Fístula aérea FECHADA (sem borbulhamento, mesmo na tosse/choro)</li>
+      <li>Expansão total confirmada no RX</li>
+      <li>Opção de segurança: clampear 6–12h → RX sem PTX → retirar</li>
+      <li>Atenção: a oscilação da coluna do dreno NÃO contraindica a retirada (indica apenas que está pérvio)</li>
+    </ul>
+    <div class="alert ay"><span>⚠️</span><span>Edema pulmonar de reexpansão: complicação rara após drenagem de PTX extenso (&gt;72h de colapso). Injúria de reperfusão. Prevenir com O₂ pré-drenagem e reexpansão gradual.</span></div>
+  </div>
+</div>
+</div><!-- /tab-pneumo -->
+
+
+<!-- ══════════════════════════════════════════
+     TAB 3 — CA PULMÃO
+══════════════════════════════════════════ -->
+<div class="tab-content" id="tab-cancer">
+<div class="controls">
+  <button class="ctrl" onclick="expandAll('tab-cancer')">Expandir tudo</button>
+  <button class="ctrl" onclick="collapseAll('tab-cancer')">Colapsar tudo</button>
+</div>
+
+<div class="section open">
+  <div class="sh" onclick="tog(this)">
+    <div class="st"><div class="si sio">🧬</div>Tipos Histológicos</div>
+    <div class="chv">▼</div>
+  </div>
+  <div class="sb">
+    <div class="tw">
+      <table>
+        <thead><tr><th>Tipo (% do total)</th><th>Localização</th><th>Perfil</th><th>Mutações-Chave</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Adenocarcinoma (40%)</strong></td><td>Periférico, glandular</td><td>Ex-fumantes, não fumantes, mulheres; GGN/subsólido na TC</td><td>EGFR, KRAS, ALK, ROS1, BRAF, MET</td></tr>
+          <tr><td><strong>Carcinoma Escamoso (25–30%)</strong></td><td>Central, endobrônquico</td><td>Tabagismo intenso, homens; cavitação; hipercalcemia</td><td>PIK3CA, FGFR, SOX2</td></tr>
+          <tr><td><strong>Ca Grandes Células (10%)</strong></td><td>Periférico, anaplásico</td><td>Tabagismo; diagnóstico de exclusão; pior prognóstico</td><td>Heterogêneo</td></tr>
+          <tr><td><strong>CPPC (15%)</strong></td><td>Central, neuroendócrino</td><td>Quase 100% tabagismo; doença sistêmica na apresentação; muito quimio/radiosensível</td><td>TP53, RB1</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnemo">CPNPC = 85% | CPPC = 15%<br><strong>Adenoca → EGAR</strong>: Egfr/Alk mutado · Glandular · Alvo (terapia) · peRiférico</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="sh" onclick="tog(this)">
+    <div class="st"><div class="si sip">⚡</div>Síndromes Paraneoplásicas & Especiais</div>
+    <div class="chv">▼</div>
+  </div>
+  <div class="sb">
+    <div class="tw">
+      <table>
+        <thead><tr><th>Síndrome</th><th>Tipo Histológico</th><th>Mecanismo / Clínica</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Hipercalcemia</strong></td><td>Escamoso (CEC)</td><td>PTHrP (paratohormônio-relacionado) → hipercalcemia + poliúria + constipação</td></tr>
+          <tr><td><strong>SIADH</strong></td><td>CPPC</td><td>ADH ectópico → hiponatremia dilucional (náusea, confusão, convulsão)</td></tr>
+          <tr><td><strong>Síndrome de Cushing</strong></td><td>CPPC</td><td>ACTH ectópico → hipercortisolismo (obesidade central, HAS, hiperglicemia)</td></tr>
+          <tr><td><strong>Sd Eaton-Lambert</strong></td><td>CPPC</td><td>Ac anti-canais Ca²⁺ pré-sinápticos → fraqueza proximal que <em>melhora</em> com esforço (≠ miastenia)</td></tr>
+          <tr><td><strong>Baqueteamento / osteoartropatia</strong></td><td>Todos (escamoso &gt;)</td><td>VEGF + prostaglandinas → hipertrófica dos dedos + periostite</td></tr>
+          <tr><td><strong>Sd Pancoast (sulco superior)</strong></td><td>Qualquer tipo</td><td>Invasão C8-T2: dor ombro/braço/cotovelo irradiada + Sd Horner (ptose/miose/anidrose) + atrofia m. mão</td></tr>
+          <tr><td><strong>Sd VCS (veia cava superior)</strong></td><td>CPPC &gt; CEC; linfoma</td><td>Compressão da VCS → edema em "capuz", cianose face/pescoço, circulação colateral, cefaleia</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="section open">
+  <div class="sh" onclick="tog(this)">
+    <div class="st"><div class="si sip">📊</div>Estadiamento TNM — 8ª Edição (2017) CPNPC</div>
+    <div class="chv">▼</div>
+  </div>
+  <div class="sb">
+    <div class="g2">
+      <div class="card co">
+        <div class="ct">T — Tumor Primário</div>
+        <ul class="cl" style="font-size:.78rem">
+          <li><strong>T1a:</strong> ≤1 cm</li>
+          <li><strong>T1b:</strong> 1–2 cm</li>
+          <li><strong>T1c:</strong> 2–3 cm</li>
+          <li><strong>T2a:</strong> 3–4 cm / brônquio principal ≥2cm da carina / pleura visceral / atelec. lobar</li>
+          <li><strong>T2b:</strong> 4–5 cm</li>
+          <li><strong>T3:</strong> 5–7 cm / parede / pericárdio / frênico / nódulo mesmo lobo</li>
+          <li><strong>T4:</strong> &gt;7 cm / coração / grandes vasos / traqueia / carina / esôfago / coluna / nódulo outro lobo ipsilateral</li>
+        </ul>
+      </div>
+      <div class="card cp">
+        <div class="ct">N e M</div>
+        <ul class="cl" style="font-size:.78rem">
+          <li><strong>N0:</strong> sem comprometimento</li>
+          <li><strong>N1:</strong> ipsilateral hilar / peribrônquico / intrapulmonar</li>
+          <li><strong>N2:</strong> ipsilateral mediastinal / subcarinal</li>
+          <li><strong>N3:</strong> contralateral (mediastinal/hilar) / escaleno / supraclavicular</li>
+          <li class="hl-g" style="margin-top:.5rem;list-style:none">M0: sem metástase</li>
+          <li><strong>M1a:</strong> nódulo contralateral / derrame pleural-pericárdico maligno / implantes</li>
+          <li><strong>M1b:</strong> 1 metástase extrapulmonar única</li>
+          <li><strong>M1c:</strong> múltiplas metástases (1 ou vários órgãos)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="sub">Estadios & Conduta</div>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Estadio</th><th>TNM Resumido</th><th>Conduta Geral</th></tr></thead>
+        <tbody>
+          <tr class="staging-s"><td><strong>IA–IIA</strong></td><td>T1–T2a N0 M0</td><td>Lobectomia + dissecção ganglionar ± QT adjuvante (IA: não indicada; IIA: discutida)</td></tr>
+          <tr class="staging-s"><td><strong>IIB</strong></td><td>T2b–T3 N0 / T1-2 N1 M0</td><td>Cirurgia + QT adjuvante (cisplatina-based)</td></tr>
+          <tr class="staging-m"><td><strong>IIIA</strong></td><td>T3N1 / T1-3N2 / T4N0-1 M0</td><td>N2 mínimo: QT neoadjuvante → cirurgia. N2 bulky: QT+RT definitiva</td></tr>
+          <tr class="staging-m"><td><strong>IIIB–C</strong></td><td>T1-4 N2-3 M0</td><td>QT+RT concomitante → durvalumabe manutenção se sem progressão</td></tr>
+          <tr class="staging-x"><td><strong>IVA</strong></td><td>M1a / M1b</td><td>Sistêmico: terapia-alvo (EGFR/ALK) ou QT ou imunoterapia conforme perfil molecular</td></tr>
+          <tr class="staging-x"><td><strong>IVB</strong></td><td>M1c</td><td>Sistêmico paliativo</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnemo"><strong>Regra rápida:</strong> I–II = CIRURGIA | III = MULTIMODAL | IV = SISTÊMICO<br>N2 = a fronteira entre cirurgia e não-cirurgia (N2 mínimo pode operar; N2 bulky não)</div>
+  </div>
+</div>
+
+<!-- ANÁLISE DE IMAGEM — CA PULMÃO -->
+<div class="section open">
+  <div class="sh" onclick="tog(this)">
+    <div class="st"><div class="si sic">📷</div>Análise de Imagem — Neoplasia Pulmonar</div>
+    <div class="chv">▼</div>
+  </div>
+  <div class="sb">
+    <div class="img-block">
+      <div class="img-title">📡 Radiografia de Tórax</div>
+      <ul>
+        <li><strong>Nódulo sólido:</strong> densidade tecidual uniforme &gt;3 cm = massa (alta probabilidade de malignidade)</li>
+        <li><strong>Nódulo em vidro fosco (GGN):</strong> semitransparente, não apaga vasos → adenocarcinoma in situ / minimamente invasivo</li>
+        <li><strong>Nódulo parcialmente sólido:</strong> GGN + componente sólido → pior prognóstico que GGN puro</li>
+        <li><strong>Sinal de S de Golden (RX):</strong> atelectasia lobar superior D com concavidade medial (massa hilar empurrando) → Ca pulmão central até prova em contrário!</li>
+        <li><strong>Sinal de volume loss:</strong> elevação hemidiafragma + desvio fissuras = atelectasia lobar → massa central obstrutiva</li>
+        <li><strong>Síndrome VCS:</strong> alargamento do mediastino superior ± sombra do timo (linfoma)</li>
+        <li><strong>Pancoast:</strong> velamento apical ± erosão dos arcos costais posteriores 1° e 2° (sugestivo)</li>
+      </ul>
+    </div>
+    <div class="img-block">
+      <div class="img-title">🔬 TC de Alta Resolução (TCAR)</div>
+      <ul>
+        <li><strong>Espiculação ("sol nascente"):</strong> projeções lineares a partir do nódulo = altamente sugestivo de malignidade</li>
+        <li><strong>Lobulação irregular:</strong> sugestiva de malignidade (crescimento diferencial)</li>
+        <li><strong>Pleural tag:</strong> espessamento/tração da pleura adjacente = invasão pleural visceral em andamento</li>
+        <li><strong>Cavitação maligna:</strong> paredes ESPESSAS (&gt;15 mm) e IRREGULARES → escamoso. ≠ TBC (paredes finas, conteúdo + calcificação). ≠ Abscesso (nível hidroaéreo + febre + clínica)</li>
+        <li><strong>Calcificação BENIGNA:</strong> central / em "pipoca" (hamartoma = diagnóstico!) / laminada / difusa</li>
+        <li><strong>Calcificação MALIGNA (rara):</strong> excêntrica / amorfa / puntiforme</li>
+        <li><strong>Gânglio suspeito de N2:</strong> eixo curto &gt;1 cm no mediastino (sensibilidade 64%, especificidade 74%) → confirmar com PET ou biópsia</li>
+        <li><strong>Nódulo satélite mesmo lobo = T3 | outro lobo ipsilateral = T4 | contralateral = M1a</strong></li>
+        <li>Sempre avaliar janela mediastinal + janela pulmonar + janela óssea (Pancoast)</li>
+      </ul>
+    </div>
+    <div class="img-block">
+      <div class="img-title">☢️ PET-CT (¹⁸F-FDG)</div>
+      <ul>
+        <li>Padrão ouro para estadiamento ganglionar e metastático em CPNPC ressecável</li>
+        <li>SUVmax &gt;2,5 sugere malignidade (mas inespecífico!)</li>
+        <li><strong>Falso-positivo:</strong> granulomas (sarcoidose, histoplasmose, TBC), infecções ativas, artrite</li>
+        <li><strong>Falso-negativo:</strong> lesões &lt;1 cm, carcinoide/NET, adenocarcinoma em GGN puro (baixo metabolismo)</li>
+        <li>Não substitui mediastinoscopia/EBUS se N2 confirmado (decisão cirúrgica)</li>
+      </ul>
+    </div>
+    <div class="card cp">
+      <div class="ct">🎯 Pérolas de Prova — Imagem Ca Pulmão</div>
+      <ul class="cl">
+        <li>Sinal de S de Golden no RX = Ca pulmão (central, obstruindo brônquio lobar superior D)</li>
+        <li>GGN puro = adenocarcinoma in situ; melhor prognóstico → seguimento com TC em 3–6 meses</li>
+        <li>Cavitação paredes espessas + irregulares = escamoso</li>
+        <li>Calcificação em "pipoca" = hamartoma → BENIGNO</li>
+        <li>Nódulo + adenopatia hilar ipsilateral N1 = IIB → cirurgia + QT adjuvante</li>
+        <li>Nódulo + gânglio subcarinal N2 = potencial IIIA → multimodal</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="sh" onclick="tog(this)">
+    <div class="st"><div class="si sio">💊</div>Tratamento — Destaques por Estadio</div>
+    <div class="chv">▼</div>
+  </div>
+  <div class="sb">
+    <div class="card cg">
+      <div class="ct">CPNPC I–II — Cirúrgico</div>
+      <ul class="cl">
+        <li><strong>Lobectomia + dissecção ganglionar sistemática:</strong> padrão ouro</li>
+        <li><strong>Segmentectomia/cunha:</strong> T1a &lt;2 cm em pacientes com baixa reserva funcional (FEV₁ &lt;40%)</li>
+        <li><strong>SBRT (radioterapia estereotáxica):</strong> inoperáveis Estadio I</li>
+        <li><strong>QT adjuvante (IIB/pN1):</strong> cisplatina + vinorelbina ou docetaxel / pemetrexede</li>
+        <li><strong>Imunoterapia adjuvante:</strong> atezolizumabe 3 anos (PD-L1 positivo, IB–IIIA ressecado)</li>
+      </ul>
+    </div>
+    <div class="card cy">
+      <div class="ct">CPNPC III — Multimodal</div>
+      <ul class="cl">
+        <li>N2 mínimo (1 estação, pequeno volume): indução QT → ressecção → consolidação</li>
+        <li>N2 bulky / IIIB-C: QT+RT concomitante definitiva → durvalumabe manutenção</li>
+      </ul>
+    </div>
+    <div class="card cr">
+      <div class="ct">CPNPC IV — Sistêmico</div>
+      <ul class="cl">
+        <li><strong>EGFR mutado:</strong> osimertinibe 1ª linha (3ª geração; melhor SNC e SG)</li>
+        <li><strong>ALK / ROS1 rearranjo:</strong> alectinibe ou lorlatinibe</li>
+        <li><strong>BRAF V600E:</strong> dabrafenibe + trametinibe</li>
+        <li><strong>PD-L1 ≥50% sem mutação driver:</strong> pembrolizumabe monoterapia</li>
+        <li><strong>PD-L1 &lt;50% sem mutação:</strong> QT + pembrolizumabe (dupla platina)</li>
+      </ul>
+    </div>
+    <div class="card cp">
+      <div class="ct">CPPC</div>
+      <ul class="cl">
+        <li>Estadio limitado: QT (cisplatina+etoposídeo) + RT torácica concomitante + RT craniana profilática</li>
+        <li>Estadio extenso: QT ± atezolizumabe; sobrevida mediana &lt;12 meses</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div><!-- /tab-cancer -->
+
+
+<!-- ══════════════════════════════════════════
+     TAB 4 — TRAUMA
+══════════════════════════════════════════ -->
+<div class="tab-content" id="tab-trauma">
+<div class="controls">
+  <button class="ctrl" onclick="expandAll('tab-trauma')">Expandir tudo</button>
+  <button class="ctrl" onclick="collapseAll('tab-trauma')">Colapsar tudo</button>
+</div>
+
+<div class="section open">
+  <div class="sh" onclick="tog(this)">
+    <div class="st"><div class="si sir">💀</div>Big 6 — Lesões do Atendimento Primário (ATLS)</div>
+    <div class="chv">▼</div>
+  </div>
+  <div class="sb">
+    <div class="mnemo"><strong>HOPAT-P:</strong> Hemotórax maciço · Obstrução VA · Pneumotórax Hipertensivo · Aberto aspirante · Tamponamento · tórax instável c/ contusão Pulmonar</div>
+    <div class="tw">
+      <table>
+        <thead><tr><th>#</th><th>Lesão</th><th>Clínica Chave</th><th>Conduta Imediata</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td><span class="hl-r">Obstrução Via Aérea</span></td><td>Estridor, cornagem, cianose, incapacidade de falar</td><td>Jaw thrust → aspiração → IOT → cricotireoidostomia</td></tr>
+          <tr><td>2</td><td><span class="hl-r">PTX Hipertensivo</span></td><td>Taquicardia, hipotensão, ausência MV ipsilateral, TJE, desvio traqueal</td><td>Punção 2°EIC LHC → dreno 5°EIC LAM</td></tr>
+          <tr><td>3</td><td><span class="hl-r">PTX Aberto (Aspirante)</span></td><td>Ferida "sugante", comunicação pleura-exterior</td><td>Curativo 3 lados + dreno em outro local</td></tr>
+          <tr><td>4</td><td><span class="hl-r">Hemotórax Maciço</span></td><td>&gt;1500 mL inicial OU &gt;200 mL/h por 2–4h; choque hipovolêmico</td><td>Dreno 5°EIC LAM → cristaloides → critérios = toracotomia</td></tr>
+          <tr><td>5</td><td><span class="hl-r">Tórax Instável (Flail Chest)</span></td><td>≥3 costelas em ≥2 pontos; movimento paradoxal; contusão pulmonar</td><td>Analgesia (bloqueio intercostal/peridural) + VM se PaO₂/FiO₂&lt;200</td></tr>
+          <tr><td>6</td><td><span class="hl-r">Tamponamento Cardíaco</span></td><td>Tríade de Beck: hipotensão + TJE + bulhas abafadas; pulsus paradoxus</td><td>Pericardiocentese → janela pericárdica / toracotomia ressuscitação</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="sh" onclick="tog(this)">
+    <div class="st"><div class="si siy">⚡</div>Occult Six — Atendimento Secundário</div>
+    <div class="chv">▼</div>
+  </div>
+  <div class="sb">
+    <div class="tw">
+      <table>
+        <thead><tr><th>Lesão</th><th>Suspeitar</th><th>Diagnóstico</th><th>Conduta</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Transecção Aórtica</strong></td><td>Desaceleração + alargamento mediastino &gt;8 cm RX + obliteração botão aórtico</td><td>AngioTC (gold standard)</td><td>TEVAR (1ª escolha) ou cirurgia aberta</td></tr>
+          <tr><td><strong>Ruptura Traqueobronquial</strong></td><td>Pneumomediastino + PTX bilateral + enfisema SC maciço + hemoptise + dreno com fístula intratável</td><td>Broncoscopia</td><td>Cirurgia (sutura primária)</td></tr>
+          <tr><td><strong>Contusão Miocárdica</strong></td><td>Desaceleração frontal + arritmias + ECG anormal + troponina↑</td><td>ECG + troponina + ECO</td><td>Monitorização 24–48h + tto arritmia</td></tr>
+          <tr><td><strong>Ruptura Esofágica</strong></td><td>Derrame E + pneumomediastino + pH pleural &lt;6 + amilase↑↑</td><td>Esofagograma (contraste hidrossolúvel) / EDA</td><td>Cirurgia urgente (sutura ± drenagem)</td></tr>
+          <tr><td><strong>Ruptura Diafragmática</strong></td><td>Elevação "diafragma" E + gases/alças no tórax + SNG torácica + sinal do colar TC</td><td>TC / videolaparoscopia</td><td>Cirurgia (sutura diafragmática)</td></tr>
+          <tr><td><strong>Contusão Pulmonar</strong></td><td>Hipóxia progressiva (pior 24–48h) + mecanismo fechado + opacidade sem limites segmentares</td><td>TC (mais sensível)</td><td>Suporte ventilatório PEEP protetora + restrição hídrica</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ANÁLISE DE IMAGEM — TRAUMA -->
+<div class="section open">
+  <div class="sh" onclick="tog(this)">
+    <div class="st"><div class="si sic">📷</div>Análise de Imagem — Trauma Torácico</div>
+    <div class="chv">▼</div>
+  </div>
+  <div class="sb">
+    <div class="img-block">
+      <div class="img-title">📡 Radiografia de Tórax (1ª imagem no trauma)</div>
+      <ul>
+        <li><strong>Pneumotórax:</strong> linha de reflexão pleural + ausência de trama vascular lateral</li>
+        <li><strong>Hemotórax:</strong> opacidade homogênea (&gt;200 mL apaga seio costofrênico; &gt;1500 mL = velamento &gt;2/3)</li>
+        <li><strong>Contusão pulmonar:</strong> opacidade parenquimatosa bilateral irregular, sem limites segmentares; <em>piora nas 24–48h após o trauma!</em></li>
+        <li><strong>Alargamento mediastino:</strong> &gt;8 cm na PA = suspeita de transecção aórtica; verificar desvio SNG para direita</li>
+        <li><strong>Obliteração do botão aórtico:</strong> transecção aórtica</li>
+        <li><strong>Tamponamento:</strong> coração globoso em "moringa" — ECO (eFAST) é mais sensível!</li>
+        <li><strong>Ruptura diafragmática:</strong> elevação hemidiafragma E + gases/alças no tórax + SNG torácica</li>
+        <li><strong>Pneumomediastino:</strong> ruptuta traqueobronquial ou esofágica até prova em contrário</li>
+        <li><strong>Costelas:</strong> RX subestima fraturas — TC muito mais sensível para fraturas e complicações</li>
+      </ul>
+    </div>
+    <div class="img-block">
+      <div class="img-title">🔬 Tomografia Computadorizada (padrão no paciente estável)</div>
+      <ul>
+        <li><strong>Hemotórax:</strong> atenuação &gt;40 HU = denso/coagulado; &lt;40 HU = mais antigo/sero</li>
+        <li><strong>PTX oculto (occult pneumothorax):</strong> visível apenas na TC (em supino, o ar vai para anterior)</li>
+        <li><strong>Fratura de costelas:</strong> TC identifica 2–3× mais fraturas que RX; avalia pneumotórax e contusão associados</li>
+        <li><strong>Transecção aórtica:</strong> irregularidade da parede + pseudoaneurisma + hematoma periaórtico ± hematoma mediastinal anterior (AngioTC &gt; TC sem contraste)</li>
+        <li><strong>Contusão pulmonar:</strong> ground glass + consolidações sem delimitação broncoanatômica, adjacente ao local de impacto</li>
+        <li><strong>Ruptura diafragmática:</strong> sinal do colar (constrição da alça herniada no hiato diafragmático) + hemidiafragma dependente posterior + alça ou gordura omental no tórax</li>
+        <li><strong>Pneumomediastino:</strong> ar nas fáscias mediastinais — sempre investigar ruptura traqueobrônquica e esofágica</li>
+      </ul>
+    </div>
+    <div class="img-block">
+      <div class="img-title">🔊 eFAST — FAST Estendida</div>
+      <ul>
+        <li><strong>Janela pleural:</strong> ausência de lung sliding + ausência de B-lines = pneumotórax (sens 79–95%)</li>
+        <li><strong>Sinal do ponto pulmonar:</strong> confirma a borda do PTX (específico &gt;99%)</li>
+        <li><strong>Janela subxifóidea (pericárdica):</strong> derrame pericárdico = tamponamento</li>
+        <li><strong>Janela pleural posterior/lateral:</strong> derrame anecóico = hemotórax</li>
+        <li>Limitação: não diferencia hemotórax de empiema; não detecta lesão aórtica; PTX loculado posterior pode ser perdido</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="sh" onclick="tog(this)">
+    <div class="st"><div class="si sir">🏥</div>Toracotomia de Ressuscitação</div>
+    <div class="chv">▼</div>
+  </div>
+  <div class="sb">
+    <div class="g2">
+      <div class="card cr">
+        <div class="ct">Indicações</div>
+        <ul class="cl">
+          <li>Trauma <strong>penetrante</strong>: PCR &lt;10 min com sinais de vida recentes</li>
+          <li>Trauma <strong>contuso</strong>: PCR &lt;5 min (sobrevida &lt;2%)</li>
+          <li>Hemotórax maciço: &gt;1500 mL inicial ou &gt;200 mL/h por 2–4h</li>
+        </ul>
+      </div>
+      <div class="card co">
+        <div class="ct">Técnica</div>
+        <ol class="cl">
+          <li>Toracotomia antero-lateral ESQUERDA (5°EIC)</li>
+          <li>Abertura pericárdio (anterior ao n. frênico)</li>
+          <li>Drenagem de tamponamento</li>
+          <li>Sutura de lacerações cardíacas</li>
+          <li>Massagem cardíaca interna</li>
+          <li>Cross-clamp da aorta descendente (↑perfusão coronária/cerebral)</li>
+          <li>Controle hemorragias pulmonares (clampeamento hilo)</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+</div><!-- /tab-trauma -->
+
+
+<!-- ══════════════════════════════════════════
+     TAB 5 — TÉCNICAS
+══════════════════════════════════════════ -->
+<div class="tab-content" id="tab-tecnicas">
+<div class="controls">
+  <button class="ctrl" onclick="expandAll('tab-tecnicas')">Expandir tudo</button>
+  <button class="ctrl" onclick="collapseAll('tab-tecnicas')">Colapsar tudo</button>
+</div>
+
+<!-- DRENO TORÁCICO -->
+<div class="section open">
+  <div class="sh" onclick="tog(this)">
+    <div class="st"><div class="si sio">🪣</div>Drenagem Pleural — Dreno Torácico (SBCT — Perfeito)</div>
+    <div class="chv">▼</div>
+  </div>
+  <div class="sb">
+    <div class="grn"><b>tradução simples</b>O dreno não trata a doença — ele <strong>drena o espaço</strong> para que o pulmão volte a colar na parede torácica, que é o que realmente resolve o pneumotórax ou o derrame. Cada detalhe técnico (local, borda da costela, punção de confirmação) existe para não transformar o procedimento que salva numa nova lesão.</div>
+    <div class="sub">Local de Inserção</div>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Situação</th><th>Local</th><th>Dreno</th></tr></thead>
+        <tbody>
+          <tr><td>Líquido / hemotórax / empiema / pós-op</td><td>5°–6° EIC entre LAM e LAP, borda SUPERIOR da costela</td><td>Tubular multiperfurado calibroso</td></tr>
+          <tr><td>Pneumotórax (preferência atual)</td><td>5°EIC LAA ou LAM</td><td>Tubular fino ou pigtail</td></tr>
+          <tr><td>PTX espontâneo (clássico Pezzer)</td><td>2°EIC LHC</td><td>Pezzer / Malecot (só para PTX — baixo risco sangramento)</td></tr>
+          <tr><td>Derrame loculado</td><td>USG ou TC guided</td><td>Tubular ou pigtail</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="alert ay"><span>⚠️</span><span><strong>Máximo inferior:</strong> 7°EIC. Abaixo = risco de lesão diafragma, fígado e baço. SEMPRE borda superior da costela (feixe neurovascular = margem INFERIOR).</span></div>
+    <div class="pq"><b>por quê</b>O feixe neurovascular intercostal corre <strong>rente à borda inferior</strong> de cada costela — entrar pela borda superior da costela de baixo é o que garante distância segura dele. E acima do 7° EIC o diafragma sobe muito na expiração e fica exposto ao trajeto do trocarte.</div>
+    <div class="sub">Técnica Passo a Passo (Perfeito — SBCT)</div>
+    <ol class="steps">
+      <li><strong>Posição:</strong> semi-sentado ou decúbito oblíquo; MMSS ipsilateral elevado (antebraço na nuca — alarga EIC)</li>
+      <li>Antissepsia de todo o hemitórax com solução iodada</li>
+      <li>Campos estéreis</li>
+      <li>Anestesia local com lidocaína 1%: pele → SC → plano muscular → intercosto + pleura parietal</li>
+      <li><strong>Punção de confirmação OBRIGATÓRIA</strong> (agulha + seringa): retorno de ar ou líquido confirma posição. Sem retorno = NÃO instalar dreno neste local!</li>
+    </ol>
+    <div class="pq"><b>por quê</b>É a última checagem antes de um corte na parede torácica. Sem retorno, o espaço pleural pode não estar onde a anatomia de superfície sugere — aderências, derrame loculado ou pulmão colado à parede mudam o alvo real.</div>
+    <ol class="steps" start="6">
+      <li>Incisão de 1–1,5 cm na pele</li>
+      <li>Divulsão com pinça hemostática curva (Kelly) nos planos SC e muscular</li>
+      <li>Penetração na pleura RENTE à borda SUPERIOR da costela + <em>"breque de dedo"</em> (dedo indicador próximo da ponta da pinça — evita entrada violenta)</li>
+    </ol>
+    <div class="pq"><b>por quê</b>A pleura oferece resistência até ceder de repente — sem o dedo travando a profundidade, a pinça "some" para dentro do tórax na hora que a resistência cede, arriscando lesar pulmão ou estruturas mediastinais.</div>
+    <ol class="steps" start="9">
+      <li>Abertura da pinça dentro da cavidade; exploração digital se necessário (lojas, aderências)</li>
+      <li>Introdução do dreno com auxílio de outra pinça hemostática curva</li>
+      <li>Conexão ao sistema de selo d'água</li>
+      <li>Fixação com <strong>fio de algodão 0</strong> (ponto em "U" ao redor do dreno + ponto de retenção)</li>
+      <li>Curativo compressivo ao redor do orifício</li>
+      <li>Controle radiográfico imediato (confirmar posição + expansão)</li>
+    </ol>
+    <div class="sub">Sistema de Drenagem</div>
+    <div class="g2">
+      <div class="card co">
+        <div class="ct">Selo d'Água (Drenagem Fechada)</div>
+        <ul class="cl">
+          <li>Tubo mergulhado 2–3 cm na água (<em>não mais</em> — cria resistência ao fluxo)</li>
+          <li>Respiro para o meio externo (NÃO conectado à água)</li>
+          <li>Oscilação da coluna = dreno pérvio (NÃO contraindica retirada)</li>
+          <li>Borbulhamento = fístula aérea ativa → NUNCA clampear!</li>
+        </ul>
+      </div>
+      <div class="card co">
+        <div class="ct">Aspiração Contínua (2 frascos)</div>
+        <ul class="cl">
+          <li>Indicação: fístula aérea com não expansão, pus espesso, hemotórax coagulado</li>
+          <li><strong>Adulto:</strong> 15–20 cm H₂O | <strong>Criança:</strong> 8–12 cm H₂O</li>
+          <li>Nível de aspiração = profundidade do respiro no 2° frasco</li>
+        </ul>
+      </div>
+    </div>
+    <div class="sub">Critérios de Retirada e Técnica</div>
+    <div class="g2">
+      <div class="card cg">
+        <div class="ct">Retirada por Líquido</div>
+        <ul class="cl">
+          <li>Débito &lt;100–150 mL/24h</li>
+          <li>Melhora clínica + ausculta</li>
+          <li>RX: expansão pulmonar satisfatória</li>
+        </ul>
+      </div>
+      <div class="card cg">
+        <div class="ct">Retirada por Pneumotórax</div>
+        <ul class="cl">
+          <li>Sem fístula (sem borbulhamento na tosse)</li>
+          <li>Expansão total no RX</li>
+          <li>Opção: clampear 6–12h → RX → retirar</li>
+        </ul>
+      </div>
+    </div>
+    <p class="p" style="font-size:.82rem"><strong>Técnica de retirada:</strong> seccionar fio → pedir apneia (adulto) → tracionar em golpe único → ocluir imediatamente com gaze + pomada antibiótica/lidocaína geléia → esparadrapo hermético. Não trocar curativo antes de 48–72h.</p>
+    <div class="alert ar"><span>🚨</span><span>NUNCA clampear o dreno com fístula aérea ativa → risco de PTX hipertensivo. Clampear apenas na troca do frasco, por segundos, pedindo para o paciente parar de respirar.</span></div>
+  </div>
+</div>
+
+<!-- TRAQUEOSTOMIA -->
+<div class="section">
+  <div class="sh" onclick="tog(this)">
+    <div class="st"><div class="si sio">🌬️</div>Traqueostomia</div>
+    <div class="chv">▼</div>
+  </div>
+  <div class="sb">
+    <div class="g2">
+      <div class="card co">
+        <div class="ct">Indicações</div>
+        <ul class="cl">
+          <li>VM prolongada prevista (&gt;10–14 dias)</li>
+          <li>Obstrução supraglótica (tumor, trauma, corpo estranho)</li>
+          <li>Facilitar desmame da VM</li>
+          <li>Proteção de aspiração (disfagia neurológica)</li>
+          <li>Via aérea difícil ou incapacidade de IOT</li>
+        </ul>
+      </div>
+      <div class="card co">
+        <div class="ct">Anatomia Cirúrgica Crítica</div>
+        <ul class="cl">
+          <li>Istmo tireóide: 1°–3° anéis → retração superior ou secção</li>
+          <li><strong>Janela ideal: 2°–3° ou 3°–4° anéis traqueais</strong></li>
+          <li>N. laríngeos recorrentes: laterais à traqueia</li>
+          <li>A. inominada: pode cruzar abaixo do manúbrio → erosão = catastrófica</li>
+          <li>Não abrir abaixo do 4° anel (risco inominada)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="sub">Posição</div>
+    <p class="p"><strong>Extensão cervical forçada</strong> com coxim entre as escápulas → expõe região anterior + alarga anéis traqueais.</p>
+    <div class="sub">Técnica Cirúrgica Clássica</div>
+    <ol class="steps">
+      <li>Extensão cervical (coxim entre escápulas). Anestesia geral ou sedação profunda</li>
+      <li>Incisão transversa ~2–3 cm, 1,5–2 cm abaixo da borda inferior da cricoide</li>
+      <li>Dissecção por planos: pele → SC → platisma → fáscia cervical média</li>
+      <li>Afastamento dos músculos pré-tireoidianos (esternotireóideo, esterno-hióideo) lateralmente</li>
+      <li>Exposição e hemostasia de vasos pré-traqueais</li>
+      <li>Istmo tireóide: retrair superiormente ou seccionar entre ligaduras</li>
+      <li>Identificar e palpar anéis traqueais (2°–4°)</li>
+      <li>Abertura da traqueia: janela retangular (remove segmento do 2°–3° anel) ou incisão vertical com retalhos (Bjork)</li>
+      <li>Comunicar ao anestesiologista para tracionar a IOT acima do orifício traqueal</li>
+      <li>Inserir cânula de traqueostomia</li>
+      <li>Capnografia + ausculta bilateral: confirmação</li>
+      <li>Fixação das fitas ao pescoço (dois dedos de espaço)</li>
+      <li>Fechamento por planos + curativo</li>
+    </ol>
+    <div class="sub">Tabela de Fios</div>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Plano</th><th>Fio</th></tr></thead>
+        <tbody>
+          <tr><td>Istmo tireóide (se seccionado)</td><td class="hl-o">Vicryl 3-0 (absorvível)</td></tr>
+          <tr><td>Músculos pré-tireoidianos</td><td class="hl-o">Vicryl 2-0 ou 3-0</td></tr>
+          <tr><td>Platisma</td><td class="hl-o">Vicryl 3-0</td></tr>
+          <tr><td>Pele</td><td class="hl-o">Nylon 3-0 ou Monocryl subcuticular</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card cr">
+      <div class="ct">Complicações</div>
+      <ul class="cl">
+        <li><strong>Imediatas:</strong> hemorragia (v. inominada!), falsa via, enfisema SC, PTX (cúpulas pleurais), lesão n. recorrentes</li>
+        <li><strong>Tardias:</strong> obstrução da cânula, granuloma, infecção, estenose traqueal (subglótica — mais comum tardia)</li>
+        <li><strong>Catastrófica:</strong> erosão da a. inominada (pulsação da cânula + hemoptise maciça) → compressão digital interna + cirurgia emergencial</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- TORACOTOMIA -->
+<div class="section">
+  <div class="sh" onclick="tog(this)">
+    <div class="st"><div class="si sio">✂️</div>Toracotomia — Técnica Póstero-Lateral</div>
+    <div class="chv">▼</div>
+  </div>
+  <div class="sb">
+    <div class="sub">Vias de Acesso</div>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Via</th><th>Indicação</th><th>Posição</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Póstero-lateral</strong></td><td>Principal: ressecção pulmonar eletiva, esôfago, aorta descendente</td><td>DL 90°</td></tr>
+          <tr><td><strong>Antero-lateral</strong></td><td>Urgência (trauma, ressuscitação), tamponamento</td><td>DD ou semi-DL</td></tr>
+          <tr><td><strong>Axilar</strong></td><td>PTX (blebs), mínima sequela estética</td><td>DL, braço elevado</td></tr>
+          <tr><td><strong>Esternotomia mediana</strong></td><td>Cardíaco, bilateral, mediastino anterior</td><td>DD</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="sub">Técnica Póstero-Lateral (Principal)</div>
+    <div class="grn"><b>tradução simples</b>A toracotomia é sobre <strong>abrir espaço entre costelas sem quebrá-las</strong> e <strong>colapsar só o pulmão que precisa ser operado</strong>, mantendo o outro respirando sozinho. Os dois cuidados técnicos centrais — abertura gradual do afastador e intubação seletiva — existem exatamente para isso.</div>
+    <ol class="steps">
+      <li><strong>Posição:</strong> DL 90°, coxim axilar, fixar pelve com suportes, MMSS superior elevado. Mesa "quebrada" (broken) no nível do cotovelo → alarga EIC-alvo</li>
+      <li><strong>Intubação seletiva</strong> com tubo de duplo lúmen (Carlens ou White) → isolamento pulmonar ipsilateral</li>
+    </ol>
+    <div class="pq"><b>por quê</b>Sem isolar o pulmão operado, ele continua se movendo a cada ciclo respiratório dentro do campo cirúrgico — impossibilita a dissecção fina e aumenta o risco de lesão iatrogênica no tecido que ainda está inflando e desinflando.</div>
+    <ol class="steps" start="3">
+      <li>Incisão de pele: da ponta do ângulo inferior da escápula → EIC-alvo → LAA</li>
+      <li>Secção muscular: grande dorsal (posterolateral) → serrátil anterior (anterolateral)</li>
+      <li>Identifar e contar EIC: entrar no EIC escolhido (geralmente 5° ou 6°)</li>
+      <li>Retrator de Finochietto: abertura GRADUAL (evita fratura costal)</li></ol>
+    <div class="pq"><b>por quê</b>O espaço intercostal não estica instantaneamente — abrir rápido demais fratura a costela em vez de afastá-la, com muito mais dor pós-operatória e risco de lesão do feixe neurovascular no foco de fratura.</div>
+    <ol class="steps" start="7">
+      <li>Colapso pulmonar ipsilateral (suspensão ventilação ou CO₂)</li>
+      <li>Procedimento cirúrgico (ressecção, pleurodese, descorticação etc.)</li>
+      <li><strong>Fechamento:</strong> pericostal = Vicryl 1 ou PDS 1 (pontos passados ao redor das costelas) → músculos Vicryl 1 → SC Vicryl 2-0 → pele Nylon 3-0 ou stapler</li>
+      <li>Drenos: 1–2 tubulares (anterior + posterior; ou 1 pós-lobectomia)</li>
+    </ol>
+    <div class="g2">
+      <div class="card co">
+        <div class="ct">🤲 Mão Esquerda</div>
+        <ul class="cl">
+          <li>Retração de pulmão e tecidos</li>
+          <li>Aspiração (Yankauer)</li>
+          <li>Contraposição durante sutura</li>
+          <li>Compressas de gaze (hemostasia)</li>
+        </ul>
+      </div>
+      <div class="card co">
+        <div class="ct">✋ Mão Direita</div>
+        <ul class="cl">
+          <li>Dissecção (tesoura, bisturi, eletrocautério)</li>
+          <li>Ligaduras e suturas</li>
+          <li>Grampeadores (GIA, TA, EEA)</li>
+          <li>Pinças de tecido (Craford, Duval, Satinsky)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card cr">
+      <div class="ct">Complicações</div>
+      <ul class="cl">
+        <li>Sangramento (vasos intercostais, hilares)</li>
+        <li>Lesão n. frênico ou recorrente</li>
+        <li>Espaço residual pós-ressecção</li>
+        <li>Fístula broncopleural (pós-pneumonectomia: mortalidade 28–50%!)</li>
+        <li>Empiema pós-operatório</li>
+        <li>Herniação cardíaca (pós-pneumonectomia com pericardiectomia)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- VATS -->
+<div class="section">
+  <div class="sh" onclick="tog(this)">
+    <div class="st"><div class="si sic">🎥</div>Videotoracoscopia (VATS)</div>
+    <div class="chv">▼</div>
+  </div>
+  <div class="sb">
+    <div class="tw">
+      <table>
+        <thead><tr><th>Indicação</th><th>Procedimento VATS</th></tr></thead>
+        <tbody>
+          <tr><td>PTX espontâneo (2°+ episódio)</td><td>Ressecção blebs (stapler) + pleurodese por abrasão / pleurectomia apical</td></tr>
+          <tr><td>Empiema fase fibrinopurulenta (II)</td><td>Debridamento + lise septações + lavagem + drenagem orientada</td></tr>
+          <tr><td>Derrame maligno</td><td>Biópsia pleural dirigida + pleurodese poudrage de talco</td></tr>
+          <tr><td>Ca pulmão Estadios I–II (lobectomia VATS)</td><td>Lobectomia + dissecção ganglionar (padrão em centros especializados)</td></tr>
+          <tr><td>Biópsia pulmonar / pleural diagnóstica</td><td>Nódulo indeterminado, DPI, mesotelioma</td></tr>
+          <tr><td>PTX catamenial</td><td>Fechamento defeitos diafragmáticos + ablação implantes endometriose</td></tr>
+          <tr><td>Tamponamento / derrame pericárdico</td><td>Janela pericárdica vídeo-assistida</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="sub">Técnica</div>
+    <ol class="steps">
+      <li>DL (igual à toracotomia) + intubação seletiva ipsilateral (tubo duplo lúmen)</li>
+      <li>1ª incisão (câmera): 5°–6° EIC LAA (~1 cm)</li>
+      <li>Colapso pulmonar ipsilateral (suspensão VM ou CO₂ a baixo fluxo)</li>
+      <li>Exploração com câmera 30° (permite visão oblíqua das estruturas)</li>
+      <li>2ª e 3ª incisões de trabalho orientadas pela câmera (&lt;1 cm cada)</li>
+      <li>Procedimento específico</li>
+      <li>Dreno pelo portal da câmera</li>
+      <li>Fechamento portais: Vicryl 0 (muscular) + Nylon 3-0 (pele)</li>
+    </ol>
+    <div class="card cy">
+      <div class="ct">Conversão para Toracotomia</div>
+      <ul class="cl">
+        <li>Aderências densas impedindo visualização</li>
+        <li>Sangramento incontrolável</li>
+        <li>Lesão de estruturas adjacentes</li>
+        <li>Impossibilidade de intubação seletiva</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div><!-- /tab-tecnicas -->
+
+
+<!-- ══════════════════════════════════════════
+     TAB 6 — PROVAS RS
+══════════════════════════════════════════ -->
+<div class="tab-content" id="tab-provas">
+<div class="controls">
+  <button class="ctrl" onclick="expandAll('tab-provas')">Expandir tudo</button>
+  <button class="ctrl" onclick="collapseAll('tab-provas')">Colapsar tudo</button>
+</div>
+
+<div class="section open">
+  <div class="sh" onclick="tog(this)">
+    <div class="st"><div class="si sip">🎯</div>Tópicos por Banca — Cirurgia Torácica</div>
+    <div class="chv">▼</div>
+  </div>
+  <div class="sb">
+    <div class="tw">
+      <table>
+        <thead><tr><th>Banca</th><th>Temas Frequentes em Cirurgia Torácica</th></tr></thead>
+        <tbody>
+          <tr><td><strong>AMRIGS</strong><br><span class="hl-p">(Alta prioridade)</span></td><td>Big 6 do trauma torácico + condutas; critérios de Light; empiema fases + tratamento; pneumotórax classificação + BTS; hemotórax maciço critérios de toracotomia; pleurodese — condições e agentes</td></tr>
+          <tr><td><strong>HCPA</strong></td><td>Análise do líquido pleural (pH, ADA, amilase); TC: split pleural sign + ângulos; derrame unilateral no ICC sem resposta a diurético; Ca pulmão — biologia molecular (EGFR/ALK) + síndromes paraneoplásicas; VATS indicações</td></tr>
+          <tr><td><strong>GHC</strong></td><td>Pneumotórax: classificação BTS + ACCP; dificuldade no DPOC; dreno torácico técnica + sistema + critérios de retirada; eFAST no trauma</td></tr>
+          <tr><td><strong>Santa Casa POA</strong></td><td>Derrame neoplásico: sequência diagnóstica + talco; empiema pós-op; quilotórax diagnóstico (TG) + tratamento; diferenciação tamponamento vs PTX hipertensivo no trauma</td></tr>
+          <tr><td><strong>PUC-RS</strong></td><td>Estadiamento TNM Ca pulmão (8ª ed) + conduta por estadio; ressecção limitada vs lobectomia; multimodalidade; imunoterapia adjuvante</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="section open">
+  <div class="sh" onclick="tog(this)">
+    <div class="st"><div class="si sic">💡</div>Grid de Mnemonicos — Cirurgia Torácica</div>
+    <div class="chv">▼</div>
+  </div>
+  <div class="sb">
+    <div class="mnemo"><strong>LIGHT — Exsudato (qualquer 1 dos 3):</strong><br>
+      Proteína líq/soro &gt; <strong>0,5</strong> | DHL líq/soro &gt; <strong>0,6</strong> | DHL líq &gt; <strong>2/3</strong> do LSN sérico<br>
+      "P <strong>meio</strong> · D <strong>seis</strong> décimos · D <strong>dois-terços</strong>"
+    </div>
+    <div class="mnemo"><strong>EFO — Fases do Empiema:</strong><br>
+      <strong>E</strong>xsudativa (dreno simples) → <strong>F</strong>ibrinopurulenta (VATS + fibrinolíticos) → <strong>O</strong>rganização (descorticação / pleurostomia Eloesser)<br>
+      Tratamento escalonado: Dreno → VATS → Descorticação → Drenagem Aberta
+    </div>
+    <div class="mnemo"><strong>HOPAT-P — Big 6 Trauma Torácico:</strong><br>
+      <strong>H</strong>emotórax maciço · <strong>O</strong>bstrução VA · <strong>P</strong>TX Hipertensivo · <strong>A</strong>spirante (aberto) · <strong>T</strong>amponamento · tórax instável c/ contusão <strong>P</strong>ulmonar
+    </div>
+    <div class="mnemo"><strong>DRENO — Regras Fundamentais:</strong><br>
+      Borda <strong>SUP</strong>erior da costela · NUNCA clampear com fístula · NUNCA drenar &gt;1500 mL de vez<br>
+      Pezzer: só PTX espontâneo (risco de sangramento baixo) | Tubular: tudo o resto
+    </div>
+    <div class="mnemo"><strong>CA PULMÃO — Estadiamento Rápido:</strong><br>
+      <strong>I–II = CIRURGIA</strong> (lobectomia ± QT adj) | <strong>III = MULTI</strong> (QT+RT ± cirurgia) | <strong>IV = SISTÊMICO</strong> (alvo/imuno/QT)<br>
+      N2 = fronteira: mínimo = pode operar; bulky = não operar
+    </div>
+    <div class="mnemo"><strong>ADENOCA — Biologia Molecular:</strong><br>
+      <strong>EGAR</strong>: Egfr + Alk/Ros1 + BRAF + MET → terapia-alvo<br>
+      CPPC = TP53 + RB1 → quimio ± imuno (NÃO tem alvo útil)
+    </div>
+    <div class="mnemo"><strong>IMAGEM PLEURAL — Regras Rápidas:</strong><br>
+      Ângulo <strong>AGUDO</strong> na TC = processo PLEURAL | Ângulo <strong>OBTUSO</strong> = PARENQUIMATOSO<br>
+      Split pleural sign = <strong>EMPIEMA</strong> | Menisco côncavo = líquido livre | Sem desvio no maciço = pulmão encarcerado / atelectasia
+    </div>
+    <div class="mnemo"><strong>PTX HIPERTENSIVO — Diagnóstico Clínico:</strong><br>
+      Taquicardia + Hipotensão + Ausência MV ipsilateral + TJE + Desvio traqueal<br>
+      → <strong>PUNÇÃO ANTES DO RX!</strong> 2°EIC LHC → dreno 5°EIC LAM
+    </div>
+    <div class="mnemo"><strong>PLEURODESE — Condição Essencial:</strong><br>
+      Pulmão <strong>DEVE REEXPANDIR</strong> completamente (confirmar RX)<br>
+      Pulmão encarcerado → pleurodese FALHA → usar cateter PleurX
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="sh" onclick="tog(this)">
+    <div class="st"><div class="si sip">📚</div>Referências — SBCT Livro Virtual</div>
+    <div class="chv">▼</div>
+  </div>
+  <div class="sb">
+    <div class="card cp">
+      <div class="ct">Capítulos Consultados</div>
+      <ul class="cl">
+        <li>PERFEITO, J.A.J. <em>Punção e Drenagem Pleural.</em> SBCT Livro Virtual, cap. 16</li>
+        <li>PINTO FILHO, D.R. <em>Empiema Pleural: Fundamentos Terapêuticos.</em> SBCT Livro Virtual, cap. 11</li>
+        <li>PINTO FILHO, D.R. <em>Descorticação Pulmonar Precoce.</em> SBCT Livro Virtual</li>
+        <li>GOMES, C.A. <em>Pneumotórax.</em> SBCT Livro Virtual, cap. 17</li>
+        <li>TEDDE, M.L. <em>Tratamento do Derrame Pleural Neoplásico.</em> SBCT Livro Virtual, cap. 14</li>
+        <li>Referências adicionais: Sabiston 21ª ed. | Shields General Thoracic Surgery 8ª ed. | TNM 8ª ed. IASLC (2017)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div><!-- /tab-provas -->
+
+<div class="footer">
+  carolzita · cirurgia torácica · Hospital Ernesto Dornelles → vascular 2026 · SBCT Livro Virtual
+</div>
+
+<script>
+function tog(h){h.parentElement.classList.toggle('open')}
+function expandAll(id){document.getElementById(id).querySelectorAll('.section').forEach(s=>s.classList.add('open'))}
+function collapseAll(id){document.getElementById(id).querySelectorAll('.section').forEach(s=>s.classList.remove('open'))}
+document.querySelectorAll('.tab-btn').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.tab-btn').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    document.getElementById('tab-'+b.dataset.tab).classList.add('active');
+  });
+});
+</script>
+</body>
+</html>

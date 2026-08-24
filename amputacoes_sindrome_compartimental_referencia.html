@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amputações &amp; Síndrome Compartimental — carolzita</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0f; --bg2:#12121a; --card:#16161f; --card2:#1c1c27;
+  --line:#2a2a38; --txt:#e6e6ef; --muted:#9a9ab0;
+  --laranja:#f97316; --laranja-bg:rgba(249,115,22,.10);
+  --roxo:#a855f7; --roxo-bg:rgba(168,85,247,.10);
+  --ciano:#22d3ee; --ciano-bg:rgba(34,211,238,.10);
+  --verde:#34d399; --vermelho:#f87171; --amarelo:#fbbf24;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(1200px 600px at 50% -10%,#15151f 0%,var(--bg) 60%);color:var(--txt);font-family:'Inter',sans-serif;line-height:1.55;padding:0 0 80px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px}
+header{padding:40px 0 24px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(26px,6vw,42px);line-height:1.05;margin:8px 0 6px;letter-spacing:-.02em}
+.sub{color:var(--muted);font-size:15px;max-width:700px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tag{font-family:'JetBrains Mono',monospace;font-size:11px;padding:5px 10px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted)}
+.tag.r{color:var(--roxo);border-color:rgba(168,85,247,.35);background:var(--roxo-bg)}
+section{margin-top:14px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:12px;overflow:hidden;transition:border-color .2s}
+details[open]{border-color:rgba(249,115,22,.30)}
+summary{cursor:pointer;list-style:none;padding:18px 20px;display:flex;align-items:center;gap:13px;font-family:'Syne',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em;user-select:none}
+summary::-webkit-details-marker{display:none}
+.num{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--bg);background:var(--laranja);width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:0 0 auto}
+.chev{margin-left:auto;color:var(--muted);transition:transform .25s;font-size:14px}
+details[open] .chev{transform:rotate(90deg)}
+.body{padding:4px 22px 24px;font-size:15px}
+.body p{margin:10px 0}
+.body h4{font-family:'Syne',sans-serif;font-size:16px;color:var(--laranja);margin:20px 0 8px;letter-spacing:-.01em}
+.body ul{margin:8px 0 8px 4px;list-style:none}
+.body li{padding:4px 0 4px 20px;position:relative}
+.body li::before{content:"▸";position:absolute;left:0;color:var(--laranja);font-size:12px;top:6px}
+.body strong{color:#fff;font-weight:600}
+.simple{color:var(--verde);font-style:italic;font-size:.94em;display:block;margin:6px 0}
+.box.simplebox{background:rgba(52,211,153,.09);border-color:rgba(52,211,153,.32);color:var(--verde);font-style:italic}
+.box.simplebox .lbl{color:var(--verde);font-style:normal}
+.box.simplebox strong{color:#7fe8c0;font-style:normal}
+.stx{counter-reset:st;margin:12px 0}
+.st{counter-increment:st;background:var(--card2);border:1px solid var(--line);border-radius:13px;padding:14px 16px 14px 52px;margin:11px 0;position:relative}
+.st::before{content:counter(st);position:absolute;left:14px;top:13px;width:26px;height:26px;border-radius:8px;background:var(--laranja);color:#0a0a0f;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center}
+.st .fase{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:var(--laranja);display:block;margin-bottom:1px}
+.st .ttl{font-weight:700;font-size:15.5px;color:#fff;margin-bottom:4px}
+.st p{margin:5px 0;font-size:14px}
+.pq{border-left:3px solid var(--roxo);background:var(--roxo-bg);border-radius:0 9px 9px 0;padding:8px 12px;margin:9px 0;font-size:13.5px}
+.pq b{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.3px;text-transform:uppercase;color:var(--roxo);display:block;margin-bottom:2px}
+@media(max-width:640px){.mh2{grid-template-columns:1fr}}
+.box{border-radius:12px;padding:13px 15px;margin:14px 0;font-size:14px;border:1px solid}
+.box.prova{background:var(--roxo-bg);border-color:rgba(168,85,247,.35)}
+.box.prova .lbl{color:var(--roxo)}
+.box.mac{background:var(--ciano-bg);border-color:rgba(34,211,238,.35)}
+.box.mac .lbl{color:var(--ciano)}
+.box.warn{background:rgba(248,113,113,.08);border-color:rgba(248,113,113,.3)}
+.box.warn .lbl{color:var(--vermelho)}
+.lbl{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-family:'JetBrains Mono',monospace;font-size:10px;background:rgba(168,85,247,.2);color:var(--roxo);padding:2px 7px;border-radius:6px;margin-left:6px;white-space:nowrap}
+.tbl{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
+.tbl table{width:100%;border-collapse:collapse;min-width:520px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--laranja);background:var(--card2)}
+td strong{color:#fff}
+.fio td:first-child{color:var(--ciano);font-family:'JetBrains Mono',monospace;font-weight:500}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin:14px 0}
+.gcard{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+.gcard .t{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--ciano);margin-bottom:4px}
+.gcard .d{font-size:13px;color:var(--muted)}
+.hands{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.hand{border-radius:12px;padding:14px;border:1px solid var(--line)}
+.hand.e{background:rgba(34,211,238,.06);border-color:rgba(34,211,238,.25)}
+.hand.d{background:rgba(249,115,22,.06);border-color:rgba(249,115,22,.25)}
+.hand .ht{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;font-weight:700}
+.hand.e .ht{color:var(--ciano)} .hand.d .ht{color:var(--laranja)}
+.hand li{font-size:13px}
+.steps{counter-reset:s;margin:10px 0}
+.step{counter-increment:s;position:relative;padding:11px 0 11px 46px;border-bottom:1px dashed var(--line)}
+.step:last-child{border-bottom:none}
+.step::before{content:counter(s);position:absolute;left:0;top:9px;width:30px;height:30px;border-radius:9px;background:var(--laranja-bg);border:1px solid rgba(249,115,22,.4);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:grid;place-items:center}
+.step b{color:#fff}
+svg{max-width:100%;height:auto;display:block;margin:16px auto}
+.fig{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.fig .cap{font-size:12px;color:var(--muted);text-align:center;margin-top:8px;font-family:'JetBrains Mono',monospace}
+footer{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+footer .ref{font-family:'JetBrains Mono',monospace;font-size:12px;margin-top:8px}
+a{color:var(--laranja)}
+@media(max-width:560px){.hands{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">carolzita · cirurgia geral · trauma e vascular</div>
+  <h1>Amputações &amp; Síndrome Compartimental</h1>
+  <p class="sub">Síndrome compartimental aguda (AAOS 2025) · pressão intracompartimental e delta-P · técnica de fasciotomia · seleção do nível de amputação (pulsos, TcPO2). Base: AAOS 2025 Clinical Practice Guideline, Society for Vascular Surgery, e pegadinhas das bancas do RS.</p>
+  <div class="tags">
+    <span class="tag">AAOS 2025</span>
+    <span class="tag">Delta-P</span>
+    <span class="tag">Fasciotomia</span>
+    <span class="tag">TcPO2</span>
+    <span class="tag">Transtibial × Transfemoral</span>
+    <span class="tag r">HCPA · GHC · SC-POA · PUC · AMRIGS</span>
+  </div>
+</header>
+
+<!-- 1 SINDROME COMPARTIMENTAL -->
+<details open>
+  <summary><span class="num">1</span> Síndrome compartimental aguda — diagnóstico <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>Aumento da pressão dentro de um compartimento fascial fechado, comprometendo a perfusão tecidual — <strong>emergência cirúrgica</strong>, principal causa: fraturas (tíbia é a mais comum), mas também trauma de partes moles, queimaduras, reperfusão pós-isquemia.</p>
+
+    <h4>Diagnóstico é clínico — o sinal mais precoce e confiável</h4>
+    <ul>
+      <li><strong>Dor desproporcional</strong> ao trauma aparente e <strong>dor à extensão passiva</strong> da musculatura do compartimento — os achados <strong>mais precoces e sensíveis</strong>, presentes antes de qualquer outro sinal.</li>
+      <li>Os <strong>"5 Ps"</strong> (dor/pain, palidez, parestesia, paralisia, ausência de pulso) são <strong>tardios</strong> — pulso costuma permanecer palpável mesmo com síndrome compartimental estabelecida, já que a pressão arterial sistêmica supera a compartimental na maioria dos casos.</li>
+    </ul>
+    <div class="box warn"><span class="lbl">⚠ pegadinha grave</span>Pulso <strong>presente</strong> não afasta síndrome compartimental — <strong>não esperar</strong> perda de pulso para agir. Dor desproporcional + dor à extensão passiva já bastam para levantar forte suspeita clínica.</div>
+
+    <h4>Medida de pressão intracompartimental (AAOS 2025)</h4>
+    <div class="fig">
+      <svg viewBox="0 0 640 160" xmlns="http://www.w3.org/2000/svg">
+        <text x="320" y="18" fill="#9a9ab0" font-size="11" font-family="monospace" text-anchor="middle">delta-P (PA diastólica − pressão intracompartimental)</text>
+        <line x1="60" y1="120" x2="600" y2="120" stroke="#2a2a38" stroke-width="3"/>
+        <rect x="60" y="100" width="270" height="20" fill="#34d399" opacity=".4"/>
+        <text x="195" y="90" fill="#34d399" font-size="13" font-family="monospace" text-anchor="middle" font-weight="bold">Δ &gt; 30 mmHg</text>
+        <text x="195" y="145" fill="#34d399" font-size="10" font-family="monospace" text-anchor="middle">ajuda a EXCLUIR</text>
+        <rect x="330" y="100" width="270" height="20" fill="#f87171" opacity=".4"/>
+        <text x="465" y="90" fill="#f87171" font-size="13" font-family="monospace" text-anchor="middle" font-weight="bold">Δ &lt; 30 mmHg</text>
+        <text x="465" y="145" fill="#f87171" font-size="10" font-family="monospace" text-anchor="middle">fasciotomia indicada</text>
+      </svg>
+      <div class="cap">Delta-P = PA diastólica menos pressão intracompartimental medida. Δ&lt;30mmHg (ou pressão absoluta &gt;30mmHg) apoia a indicação de fasciotomia; monitorização contínua auxilia quando o exame clínico é duvidoso.</div>
+    </div>
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">AAOS 2025</span></span>Não existem <strong>biomarcadores séricos</strong> úteis para diagnóstico de síndrome compartimental tardia/perdida — a decisão se apoia em <strong>exame clínico</strong> e <strong>monitorização de pressão</strong> (contínua, quando disponível), não em exames laboratoriais.</div>
+  </div>
+</details>
+
+<!-- 2 FASCIOTOMIA -->
+<details>
+  <summary><span class="num">2</span> Fasciotomia — técnica &amp; timing <span class="chev">▶</span></summary>
+  <div class="body">
+    <div class="box warn"><span class="lbl">⚠ pegadinha clássica</span><strong>NUNCA elevar o membro</strong> na suspeita de síndrome compartimental — elevação <strong>reduz</strong> o fluxo arterial e estreita o gradiente artério-venoso de pressão, <strong>piorando</strong> a perfusão. Manter o membro <strong>ao nível do coração</strong>, não acima.</div>
+
+    <h4>Técnica — perna (4 compartimentos)</h4>
+    <div class="fig">
+      <svg viewBox="0 0 640 220" xmlns="http://www.w3.org/2000/svg">
+        <text x="320" y="18" fill="#9a9ab0" font-size="11" font-family="monospace" text-anchor="middle">fasciotomia de perna — técnica de dupla incisão</text>
+        <!-- perna esquematica -->
+        <rect x="220" y="35" width="200" height="160" rx="20" fill="#12121a" stroke="#9a9ab0" stroke-width="2"/>
+        <!-- incisao lateral -->
+        <line x1="245" y1="45" x2="245" y2="185" stroke="#f97316" stroke-width="4"/>
+        <text x="200" y="120" fill="#f97316" font-size="11" font-family="monospace" text-anchor="end">incisão lateral</text>
+        <text x="180" y="136" fill="#f97316" font-size="9" font-family="monospace" text-anchor="end">(anterior+lateral)</text>
+        <!-- incisao medial -->
+        <line x1="395" y1="45" x2="395" y2="185" stroke="#22d3ee" stroke-width="4"/>
+        <text x="440" y="120" fill="#22d3ee" font-size="11" font-family="monospace" text-anchor="start">incisão medial</text>
+        <text x="440" y="136" fill="#22d3ee" font-size="9" font-family="monospace" text-anchor="start">(2 posteriores)</text>
+        <!-- 4 compartimentos internos -->
+        <line x1="245" y1="115" x2="395" y2="115" stroke="#4b5563" stroke-width="1" stroke-dasharray="4 3"/>
+        <line x1="320" y1="45" x2="320" y2="185" stroke="#4b5563" stroke-width="1" stroke-dasharray="4 3"/>
+        <text x="280" y="80" fill="#9a9ab0" font-size="9" font-family="monospace" text-anchor="middle">anterior</text>
+        <text x="360" y="80" fill="#9a9ab0" font-size="9" font-family="monospace" text-anchor="middle">lateral</text>
+        <text x="280" y="155" fill="#9a9ab0" font-size="9" font-family="monospace" text-anchor="middle">posterior prof.</text>
+        <text x="360" y="155" fill="#9a9ab0" font-size="9" font-family="monospace" text-anchor="middle">posterior superf.</text>
+      </svg>
+      <div class="cap">Técnica de dupla incisão libera os 4 compartimentos: incisão lateral acessa anterior+lateral; incisão medial acessa os 2 compartimentos posteriores. Incisão única também é aceita se liberar todos os compartimentos.</div>
+    </div>
+
+    <div class="box mac"><span class="lbl">macete</span>O que importa <strong>não é a técnica exata</strong> (1 ou 2 incisões) — o que importa é a <strong>descompressão completa de todos os compartimentos</strong> envolvidos. Compartimento anterior e posterior profundo são os <strong>mais frequentemente liberados de forma incompleta</strong> — atenção redobrada a eles.</div>
+
+<h4>Passo a passo — fasciotomia de perna (dupla incisão)</h4>
+<div class="box simplebox"><span class="lbl">tradução simples</span>O músculo está inchando dentro de uma <strong>bolsa fechada</strong> (a fáscia) que não estica. A cirurgia não conserta o músculo — <strong>corta a bolsa</strong> para que ele tenha para onde inchar sem se esmagar contra a própria parede. Fechar a fáscia de novo antes de o edema passar recria a mesma bolsa e mata o mesmo músculo.</div>
+
+<div class="stx">
+
+  <div class="st">
+    <span class="fase">fase de decisão</span>
+    <div class="ttl">Confirmar a indicação antes de incisar</div>
+    <p>Dor desproporcional e dor à extensão passiva, ou <strong>Δ-P &lt; 30 mmHg</strong> (pressão diastólica menos pressão intracompartimental).</p>
+    <div class="pq"><b>por quê</b>É a última checagem antes de um corte que não tem volta. Esperar os 5 Ps clássicos é esperar demais — eles são sinais tardios, e a essa altura o dano muscular já pode ser irreversível.</div>
+  </div>
+
+  <div class="st">
+    <span class="fase">fase de acesso lateral</span>
+    <div class="ttl">Incisão lateral — compartimentos anterior e lateral</div>
+    <p>Incisão longitudinal na face lateral da perna, entre a crista tibial e a fíbula.</p>
+    <div class="pq"><b>por quê</b>Essa incisão dá acesso direto a dois dos quatro compartimentos de uma vez, porque o septo intermuscular anterior que os separa é fino e fica logo abaixo da pele nesse ponto.</div>
+  </div>
+
+  <div class="st">
+    <span class="fase">fase de acesso medial</span>
+    <div class="ttl">Incisão medial — os dois compartimentos posteriores</div>
+    <p>Incisão longitudinal na face medial, poupando a veia safena magna.</p>
+    <div class="pq"><b>por quê</b>Os compartimentos posteriores superficial e profundo não são alcançáveis pela incisão lateral sem atravessar a tíbia — por isso a técnica de dupla incisão, e não uma única, é a forma confiável de garantir os quatro.</div>
+  </div>
+
+  <div class="st">
+    <span class="fase">fase crítica — o compartimento que se esquece</span>
+    <div class="ttl">Abrir explicitamente a fáscia do posterior profundo</div>
+    <p>Identificar e liberar separadamente a fáscia que envolve o posterior profundo, não apenas o superficial.</p>
+    <div class="pq"><b>por quê</b>É o compartimento mais frequentemente liberado de forma incompleta — fica escondido atrás do superficial, e quem para na primeira fáscia que encontra deixa o músculo tibial posterior e os flexores ainda comprimidos. É o erro técnico mais citado nas revisões de fasciotomia malsucedida.</div>
+  </div>
+
+  <div class="st">
+    <span class="fase">fase de verificação</span>
+    <div class="ttl">Confirmar a liberação dos quatro compartimentos</div>
+    <p>Palpar cada compartimento, checando que a pressão caiu e o músculo abaúla livremente pela fasciotomia.</p>
+    <div class="pq"><b>por quê</b>O número de incisões é irrelevante — o que importa é a descompressão completa. Uma incisão só, se bem executada, libera os quatro tanto quanto duas; duas incisões mal feitas podem deixar um compartimento intocado.</div>
+  </div>
+
+  <div class="st">
+    <span class="fase">fase de fechamento — a decisão errada mais comum</span>
+    <div class="ttl">Deixar a pele aberta</div>
+    <p>Curativo estéril ou VAC; <strong>não fechar</strong> a pele nem a fáscia no mesmo tempo.</p>
+    <div class="pq"><b>por quê</b>O edema que motivou a cirurgia ainda não passou — fechar agora recria a mesma bolsa fechada que você acabou de abrir. O fechamento (primário tardio, enxerto ou cicatrização por segunda intenção) só acontece dias depois, quando o inchaço já cedeu.</div>
+  </div>
+
+</div>
+
+<div class="box mac"><span class="lbl">a checagem que resume tudo</span>Não importa se foi <strong>1 ou 2 incisões</strong> — importa se os <strong>4 compartimentos</strong> foram liberados, com atenção redobrada ao <strong>posterior profundo</strong>, o mais comumente esquecido.</div>
+
+    <h4>Quando NÃO fazer fasciotomia</h4>
+    <div class="box warn"><span class="lbl">⚠ pegadinha</span>Em paciente com <strong>dano neuromuscular/vascular já irreversível</strong>, a fasciotomia <strong>não está indicada</strong> — pode expor o paciente a risco cirúrgico sem benefício. Se necessária estabilização de fratura nesse cenário, usar técnica que <strong>não viole o compartimento</strong> (fixador externo/gesso).</div>
+
+    <h4>Complicações da fasciotomia tardia</h4>
+    <p>Fasciotomia realizada <strong>tardiamente</strong> (diagnóstico perdido/atrasado) associa-se a <strong>alto índice de infecção</strong> e maior taxa de <strong>amputação</strong> — necrose muscular estabelecida antes da descompressão é terreno fértil para infecção grave.</p>
+  </div>
+</details>
+
+<!-- 3 SELECAO NIVEL AMPUTACAO -->
+<details>
+  <summary><span class="num">3</span> Seleção do nível de amputação <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>Objetivo: <strong>o nível mais distal possível</strong> que tenha boa chance de cicatrização — preserva mobilidade e reduz gasto energético na marcha, mas expõe a maior risco de falha de cicatrização se mal avaliado.</p>
+
+    <h4>Ferramentas de avaliação de perfusão</h4>
+    <div class="tbl"><table>
+      <tr><th>Ferramenta</th><th>Interpretação</th></tr>
+      <tr><td><strong>Pulso palpável imediatamente proximal</strong> ao nível proposto</td><td>Excelente valor preditivo <strong>positivo</strong> para cicatrização — mas ausência de pulso <strong>não exclui</strong> boa cicatrização isoladamente</td></tr>
+      <tr><td><strong>Pulso femoral</strong> palpável</td><td>Sugere boa chance de sucesso para amputação <strong>transtibial</strong></td></tr>
+      <tr><td><strong>TcPO2</strong> (pressão transcutânea de O₂)</td><td>&gt;40 mmHg associado a boa cicatrização; valores baixos não impedem tentativa, mas aumentam risco</td></tr>
+      <tr><td><strong>Pressão de perfusão cutânea (SPP)</strong></td><td>&gt;30 mmHg geralmente associada a cicatrização adequada</td></tr>
+      <tr><td><strong>Índice tornozelo-braquial (ITB)</strong></td><td>Limitado no diabético por calcificação — usar pressão do hálux se ITB não confiável</td></tr>
+    </table></div>
+
+    <div class="box warn"><span class="lbl">⚠ pegadinha</span>Usar <strong>apenas o exame de pulso</strong> para decidir o nível de amputação <strong>excluiria desnecessariamente</strong> pacientes que poderiam cicatrizar em nível mais distal — a ausência de pulso <strong>não</strong> impede tentativa de amputação transtibial se outros parâmetros (TcPO2, SPP) forem favoráveis.</div>
+  </div>
+</details>
+
+<!-- 4 NIVEIS -->
+<details>
+  <summary><span class="num">4</span> Transtibial × transfemoral — por que preservar o joelho importa <span class="chev">▶</span></summary>
+  <div class="body">
+    <div class="fig">
+      <svg viewBox="0 0 640 180" xmlns="http://www.w3.org/2000/svg">
+        <text x="320" y="18" fill="#9a9ab0" font-size="11" font-family="monospace" text-anchor="middle">gasto energético relativo na marcha</text>
+        <line x1="60" y1="150" x2="600" y2="150" stroke="#2a2a38" stroke-width="1.5"/>
+        <rect x="120" y="120" width="100" height="30" fill="#34d399" opacity=".5"/>
+        <text x="170" y="112" fill="#34d399" font-size="12" font-family="monospace" text-anchor="middle" font-weight="bold">normal</text>
+        <text x="170" y="168" fill="#9a9ab0" font-size="9" font-family="monospace" text-anchor="middle">baseline</text>
+        <rect x="280" y="95" width="100" height="55" fill="#fbbf24" opacity=".5"/>
+        <text x="330" y="87" fill="#fbbf24" font-size="12" font-family="monospace" text-anchor="middle" font-weight="bold">+25-40%</text>
+        <text x="330" y="168" fill="#9a9ab0" font-size="9" font-family="monospace" text-anchor="middle">transtibial</text>
+        <rect x="440" y="50" width="100" height="100" fill="#f87171" opacity=".5"/>
+        <text x="490" y="42" fill="#f87171" font-size="12" font-family="monospace" text-anchor="middle" font-weight="bold">+65-100%+</text>
+        <text x="490" y="168" fill="#9a9ab0" font-size="9" font-family="monospace" text-anchor="middle">transfemoral</text>
+      </svg>
+      <div class="cap">O gasto energético para caminhar aumenta substancialmente conforme o nível de amputação sobe — pacientes idosos com amputação transfemoral frequentemente não conseguem deambular com prótese e ficam dependentes de cadeira de rodas.</div>
+    </div>
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">todas as bancas</span></span>Por causa do <strong>enorme salto no gasto energético</strong> entre transtibial e transfemoral, cirurgiões frequentemente aceitam <strong>maior risco de complicação local</strong> (deiscência, necessidade de revisão) para <strong>preservar o comprimento tibial e o joelho</strong> — a funcionalidade a longo prazo compensa o risco cirúrgico adicional.</div>
+
+    <h4>Amputações do pé (níveis mais distais)</h4>
+    <ul>
+      <li><strong>Transmetatársica</strong>: bom equilíbrio entre preservação funcional e taxa de cicatrização em pacientes selecionados com perfusão adequada.</li>
+      <li><strong>Syme, Chopart</strong>: níveis intermediários entre pé e transtibial, menos comuns, indicações específicas.</li>
+    </ul>
+    <div class="box warn"><span class="lbl">⚠ pegadinha</span>Amputações mais distais (ex: transmetatársica) têm <strong>taxa de revisão para nível mais proximal relativamente alta</strong>, especialmente em diabéticos não bem controlados — não é "garantia" de sucesso definitivo, exige seguimento próximo.</div>
+  </div>
+</details>
+
+<!-- 5 QUESTOES / PEGA-RATOES -->
+<details>
+  <summary><span class="num">5</span> Questões de banca, pega-ratões &amp; mnemônicos <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>10 questões representativas (originais, estilo das 5 bancas)</h4>
+
+    <div class="box prova"><span class="lbl">Q1 <span class="banca">HCPA</span></span><strong>Paciente com fratura de tíbia, dor desproporcional e dor à extensão passiva dos dedos, pulso pedioso presente. Descarta síndrome compartimental?</strong><br>Resposta: <strong>não</strong> — pulso presente não exclui; dor desproporcional/à extensão é o sinal mais precoce e confiável.</div>
+
+    <div class="box prova"><span class="lbl">Q2 <span class="banca">GHC</span></span><strong>Qual a conduta postural correta diante de suspeita de síndrome compartimental?</strong><br>Resposta: manter o membro <strong>ao nível do coração</strong> — elevação é <strong>contraindicada</strong> (reduz fluxo arterial).</div>
+
+    <div class="box prova"><span class="lbl">Q3 <span class="banca">AMRIGS</span></span><strong>Segundo AAOS 2025, qual valor de delta-P apoia indicação de fasciotomia?</strong><br>Resposta: <strong>delta-P &lt; 30 mmHg</strong> (PA diastólica menos pressão intracompartimental).</div>
+
+    <div class="box prova"><span class="lbl">Q4 <span class="banca">PUC-RS</span></span><strong>Paciente com dano neuromuscular já irreversível por síndrome compartimental tardia. Fasciotomia é indicada?</strong><br>Resposta: <strong>não</strong> — não indicada em dano irreversível estabelecido; se precisar estabilizar fratura, usar técnica que não viole o compartimento.</div>
+
+    <div class="box prova"><span class="lbl">Q5 <span class="banca">SC-POA</span></span><strong>Quais compartimentos da perna são mais frequentemente liberados de forma incompleta na fasciotomia?</strong><br>Resposta: <strong>anterior e posterior profundo</strong>.</div>
+
+    <div class="box prova"><span class="lbl">Q6 <span class="banca">HCPA</span></span><strong>Paciente com pulso femoral palpável, sem pulso poplíteo. Isso favorece qual nível de amputação?</strong><br>Resposta: <strong>transtibial</strong> — pulso femoral sugere boa chance de cicatrização nesse nível.</div>
+
+    <div class="box prova"><span class="lbl">Q7 <span class="banca">GHC</span></span><strong>Por que cirurgiões toleram maior risco de complicação local para preservar o nível transtibial em vez de ir direto para transfemoral?</strong><br>Resposta: o <strong>gasto energético</strong> na marcha aumenta muito mais na transfemoral — preservar o joelho mantém mais funcionalidade.</div>
+
+    <div class="box prova"><span class="lbl">Q8 <span class="banca">AMRIGS</span></span><strong>Ausência de pulso poplíteo, isoladamente, contraindica tentativa de amputação transtibial?</strong><br>Resposta: <strong>não necessariamente</strong> — complementar com TcPO2/SPP; usar só o pulso excluiria pacientes que poderiam cicatrizar nesse nível.</div>
+
+    <div class="box prova"><span class="lbl">Q9 <span class="banca">PUC-RS</span></span><strong>Existem biomarcadores séricos úteis para diagnóstico de síndrome compartimental tardia/perdida?</strong><br>Resposta: <strong>não</strong>, segundo AAOS 2025 — diagnóstico apoia-se em exame clínico e monitorização de pressão.</div>
+
+    <div class="box prova"><span class="lbl">Q10 <span class="banca">SC-POA</span></span><strong>Fasciotomia tardia (diagnóstico perdido) associa-se a qual desfecho?</strong><br>Resposta: <strong>maior taxa de infecção e amputação</strong> — necrose muscular já estabelecida antes da descompressão.</div>
+
+    <h4>Pega-ratões (as armadilhas clássicas)</h4>
+    <div class="box warn"><span class="lbl">☠ trap 1</span>Pulso presente <strong>não</strong> exclui síndrome compartimental — os 5 Ps são tardios.</div>
+    <div class="box warn"><span class="lbl">☠ trap 2</span>Elevação do membro <strong>piora</strong> a perfusão — nunca elevar na suspeita.</div>
+    <div class="box warn"><span class="lbl">☠ trap 3</span>Técnica de 1 ou 2 incisões não importa tanto quanto <strong>descompressão completa</strong>.</div>
+    <div class="box warn"><span class="lbl">☠ trap 4</span>Dano irreversível estabelecido = <strong>não</strong> operar fasciotomia sem benefício.</div>
+    <div class="box warn"><span class="lbl">☠ trap 5</span>Ausência de pulso isolada <strong>não</strong> deve excluir tentativa de nível mais distal de amputação.</div>
+    <div class="box warn"><span class="lbl">☠ trap 6</span>Não existem biomarcadores séricos confiáveis para síndrome compartimental perdida.</div>
+    <div class="box warn"><span class="lbl">☠ trap 7</span>Compartimento anterior/posterior profundo são os mais liberados de forma incompleta.</div>
+    <div class="box warn"><span class="lbl">☠ trap 8</span>Preservar comprimento tibial vale o risco de complicação local pelo ganho funcional.</div>
+
+    <h4>Mnemônicos-resumo</h4>
+    <div class="box mac"><span class="lbl">macete geral</span>Sinal mais precoce = dor desproporcional/extensão passiva · 5 Ps são tardios · Nunca elevar o membro · Delta-P&lt;30 ou pressão&gt;30 = fasciotomia · Sem biomarcador sérico útil · Nível de amputação: pulso+TcPO2+SPP, não só exame físico · Preservar joelho = menos gasto energético.</div>
+  </div>
+</details>
+
+<footer>
+  <div><strong>carolzita</strong> · Amputações &amp; Síndrome Compartimental · referência completa</div>
+  <div class="ref">Fontes: AAOS Clinical Practice Guideline — Management of Acute Compartment Syndrome (2025 update) · Society for Vascular Surgery — Amputations · Sabiston · Zollinger. Conteúdo educacional; questões são itens representativos originais.</div>
+</footer>
+</div>
+</body>
+</html>

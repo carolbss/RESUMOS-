@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Pancreatite Crônica · pocket</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d1117;--card:#16161f;--card2:#1c1c27;--line:#2a2a38;
+  --txt:#ececf4;--muted:#9a9ab0;
+  --laranja:#f97316;--roxo:#a855f7;--ciano:#22d3ee;--vermelho:#f87171;--amarelo:#fbbf24;--verde:#34d399;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{overflow-x:hidden}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;font-size:17px;line-height:1.6;padding-bottom:30px}
+.top{padding:22px 18px 12px;position:sticky;top:0;background:linear-gradient(180deg,var(--bg) 70%,transparent);z-index:5}
+.kick{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:27px;line-height:1.1;margin-top:4px}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:6px 18px 12px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;padding:9px 15px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted);white-space:nowrap;cursor:pointer;transition:.15s}
+.tab.on{background:var(--laranja);border-color:var(--laranja);color:#0a0a0f}
+.panel{display:none;padding:6px 18px 40px;animation:f .25s}
+.panel.on{display:block}
+@keyframes f{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+h2{font-family:'Syne',sans-serif;font-size:21px;color:var(--laranja);margin:18px 0 10px}
+h3{font-family:'Syne',sans-serif;font-size:16px;color:#fff;margin:16px 0 6px}
+p{margin:10px 0}
+ul{list-style:none;margin:8px 0}
+li{padding:6px 0 6px 22px;position:relative}
+li::before{content:"▸";position:absolute;left:0;top:7px;color:var(--laranja);font-size:13px}
+strong{color:#fff;font-weight:600}
+.s{color:var(--verde);font-style:italic;font-size:.92em}
+.gr{background:rgba(52,211,153,.10);border-color:rgba(52,211,153,.4);color:var(--verde);font-style:italic}
+.gr .l{color:var(--verde);font-style:normal}
+.gr strong,.gr b{color:#7fe8c0;font-style:normal}
+.step{display:flex;flex-direction:column;gap:6px;padding:10px 0;border-bottom:1px dashed var(--line)}
+.step:last-child{border:none}
+.hd2{display:flex;gap:12px;align-items:flex-start}
+.n{flex:0 0 28px;height:28px;border-radius:8px;background:rgba(249,115,22,.15);border:1px solid rgba(249,115,22,.45);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;display:grid;place-items:center;font-size:13px}
+.x{flex:1}
+.fase{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--laranja);display:block}
+.pq{border-left:2px solid var(--roxo);background:rgba(168,85,247,.10);border-radius:0 7px 7px 0;padding:7px 10px;font-size:14px;width:100%}
+.pq b{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--roxo);display:block}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0}
+.box{border-radius:12px;padding:13px 15px;margin:13px 0;border:1px solid;font-size:15px}
+.prova{background:rgba(168,85,247,.1);border-color:rgba(168,85,247,.4)}
+.prova .l{color:var(--roxo)}
+.mac{background:rgba(34,211,238,.1);border-color:rgba(34,211,238,.4)}
+.mac .l{color:var(--ciano)}
+.warn{background:rgba(248,113,113,.1);border-color:rgba(248,113,113,.4)}
+.warn .l{color:var(--vermelho)}
+.l{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-size:10px;background:rgba(168,85,247,.25);color:var(--roxo);padding:2px 6px;border-radius:5px;margin-left:5px;font-family:'JetBrains Mono',monospace}
+.kv{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)}
+.kv:last-child{border:none}
+.kv .k{flex:0 0 42%;color:var(--ciano);font-family:'JetBrains Mono',monospace;font-size:13px}
+.kv .v{flex:1;font-size:15px}
+.step{display:flex;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line)}
+.step:last-child{border:none}
+.step .n{flex:0 0 30px;height:30px;border-radius:9px;background:rgba(249,115,22,.15);border:1px solid rgba(249,115,22,.45);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;display:grid;place-items:center;font-size:14px}
+.step .x{flex:1}
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="kick">carolzita · pocket 🚑</div>
+  <h1>Pancreatite Crônica 🥞⏳</h1>
+</div>
+<div class="tabs">
+  <div class="tab on" data-t="0">🧬 TIGAR-O</div>
+  <div class="tab" data-t="1">🔬 Diagnóstico</div>
+  <div class="tab" data-t="2">💊 Manejo</div>
+  <div class="tab" data-t="3">⚔️ ESCAPE</div>
+  <div class="tab" data-t="4">🔪 Cirurgias</div>
+  <div class="tab" data-t="5">☠️ Traps</div>
+</div>
+
+<!-- 0 TIGAR-O -->
+<div class="panel on" data-p="0">
+  <h2>🧬 TIGAR-O</h2>
+  <div class="card">
+    <div class="kv"><div class="k">🍺 T-Tóxica</div><div class="v"><strong>Álcool</strong> (+comum) + tabaco (sinérgico)</div></div>
+    <div class="kv"><div class="k">❓ I-Idiopática</div><div class="v">2ª mais comum</div></div>
+    <div class="kv"><div class="k">🧬 G-Genética</div><div class="v">PRSS1, SPINK1, CFTR</div></div>
+    <div class="kv"><div class="k">🛡️ A-Autoimune</div><div class="v">Tipo 1(IgG4) · Tipo 2(DII)</div></div>
+    <div class="kv"><div class="k">🔁 R-Recorrente</div><div class="v">PA de repetição</div></div>
+    <div class="kv"><div class="k">🚧 O-Obstrutiva</div><div class="v">Divisum, tumor, trauma</div></div>
+  </div>
+  <div class="box mac"><span class="l">🧠 macete</span>Álcool + tabaco = efeito <strong>sinérgico</strong>, não só somado!</div>
+</div>
+
+<!-- 1 DIAGNOSTICO -->
+<div class="panel" data-p="1">
+  <h2>🔬 Cambridge (imagem)</h2>
+  <div class="card">
+    <div class="kv"><div class="k">🟢 Normal</div><div class="v">Sem alterações</div></div>
+    <div class="kv"><div class="k">🟡 Leve</div><div class="v">&lt;3 alterações ductais</div></div>
+    <div class="kv"><div class="k">🟠 Moderada</div><div class="v">≥3 alterações</div></div>
+    <div class="kv"><div class="k">🔴 Grave</div><div class="v">Cisto/obstrução/cálculo/invasão</div></div>
+  </div>
+  <div class="box warn"><span class="l">☠️ pega-ratão</span>Dor <strong>NÃO</strong> se correlaciona com gravidade de imagem!</div>
+  <p>🔍 Elastase fecal = teste indireto mais usado. EUS = mais sensível pra fase inicial.</p>
+</div>
+
+<!-- 2 MANEJO -->
+<div class="panel" data-p="2">
+  <h2>💊 Insuficiência exócrina</h2>
+  <p>&lt;10% função → esteatorreia + perda de peso + déficit vit ADEK</p>
+  <div class="box prova"><span class="l">alto rendimento</span>💊 PERT (enzimas) sempre <strong>DURANTE</strong> a refeição, não antes/depois!</div>
+  <h3>🍬 Diabetes tipo 3c</h3>
+  <p>Perde células alfa (glucagon) também → <strong>mais risco de hipoglicemia</strong> no tratamento!</p>
+  <h3>🩹 Dor — escalonamento</h3>
+  <div class="card">
+    <div class="step"><div class="n">1</div><div class="x">Parar álcool/tabaco + analgesia</div></div>
+    <div class="step"><div class="n">2</div><div class="x">Enzimas (efeito discreto)</div></div>
+    <div class="step"><div class="n">3</div><div class="x">Opioides (risco de dependência real)</div></div>
+    <div class="step"><div class="n">4</div><div class="x">Intervenção (endo/cirúrgica)</div></div>
+  </div>
+</div>
+
+<!-- 3 ESCAPE -->
+<div class="panel" data-p="3">
+  <h2>⚔️ ESCAPE trial (JAMA 2020)</h2>
+  <div class="box prova"><span class="l">alto rendimento</span>🆕 <strong>Cirurgia PRECOCE</strong> supera endoscopia-primeiro no controle de dor!</div>
+  <div class="card">
+    <div class="kv"><div class="k">🟢 Cirurgia precoce</div><div class="v"><strong>71%</strong> controle satisfatório</div></div>
+    <div class="kv"><div class="k">🔴 Endoscopia-1º</div><div class="v"><strong>33%</strong> + mais reintervenções</div></div>
+  </div>
+  <div class="box warn"><span class="l">☠️ pega-ratão</span>Diretriz antiga (S3/HaPanEU) = cirurgia é último recurso. Evidência nova (ESCAPE) = cirurgia precoce é melhor! Atenção à referência da questão.</div>
+  <p>👉 Indicação (independente do timing): dor refratária, complicação local, suspeita de malignidade.</p>
+</div>
+
+<!-- 4 CIRURGIAS -->
+<div class="panel" data-p="4">
+  <h2>🔪 Qual técnica?</h2>
+  <div class="card">
+    <div class="kv"><div class="k">🟦 Puestow</div><div class="v">Ducto dilatado, <strong>sem</strong> massa → só drena</div></div>
+    <div class="kv"><div class="k">🟩 Frey</div><div class="v">Ducto dilatado <strong>+</strong> massa → drena+núcleo</div></div>
+    <div class="kv"><div class="k">🟪 Beger</div><div class="v">Massa grande, poupa duodeno</div></div>
+    <div class="kv"><div class="k">🟥 Whipple/PPPD</div><div class="v">Malignidade ou groove pancreatitis</div></div>
+  </div>
+  <div class="box gr"><span class="l">🟢 tradução simples</span>A dor tem <strong>2 origens</strong>: ou o <strong>cano está entupido</strong> (pressão) → abre o cano; ou há <strong>massa na cabeça</strong> comprimindo tudo → tira o núcleo. Frey faz as duas. Toda a decisão: <strong>ducto dilatado? massa na cabeça?</strong></div>
+
+  <h3>🟦 Puestow — 4 passos</h3>
+  <div class="step"><div class="hd2"><div class="n">1</div><div class="x"><span class="fase">exposição</span>Abrir o <strong>gastrocólico</strong> → expor da cabeça à cauda</div></div>
+  <div class="pq"><b>por quê</b>A drenagem só funciona se o ducto for aberto em <strong>toda a extensão dilatada</strong>. Exposição parcial = drenagem parcial = dor persiste.</div></div>
+
+  <div class="step"><div class="hd2"><div class="n">2</div><div class="x"><span class="fase">localização</span>Achar o Wirsung: palpação · <strong>USG intraop</strong> · <strong>punção</strong> (suco claro)</div></div>
+  <div class="pq"><b>por quê</b>Glândula fibrótica: o ducto <strong>não é visível</strong> e a superfície é toda igual ao tato. Punção com retorno claro confirma — abrir no lugar errado sangra e não drena.</div></div>
+
+  <div class="step"><div class="hd2"><div class="n">3</div><div class="x"><span class="fase">define o resultado</span>Ductotomia <strong>longitudinal ampla</strong> (6–10+ cm), retirar cálculos</div></div>
+  <div class="pq"><b>por quê</b>Abrir <strong>curto</strong> deixa segmentos sob pressão → <strong>falha nº1</strong> da operação. Ir até onde o ducto <strong>ainda está dilatado</strong>, não até onde é confortável. 📏</div></div>
+
+  <div class="step"><div class="hd2"><div class="n">4</div><div class="x"><span class="fase">reconstrução</span>Látero-lateral em <strong>Y de Roux</strong>, ponto pegando <strong>parênquima e cápsula</strong></div></div>
+  <div class="pq"><b>por quê</b>A parede ductal fibrótica é <strong>fina demais</strong> para segurar ponto sozinha. Y de Roux mantém bile e conteúdo entérico longe da anastomose.</div></div>
+
+  <h3>🟩 Frey — o híbrido</h3>
+  <div class="step"><div class="hd2"><div class="n">1</div><div class="x"><span class="fase">drenagem</span>Mesma ductotomia do Puestow</div></div>
+  <div class="pq"><b>por quê</b>O Frey <strong>contém</strong> o Puestow — é ele + um gesto na cabeça.</div></div>
+
+  <div class="step"><div class="hd2"><div class="n">2</div><div class="x"><span class="fase">o que o diferencia</span><strong>Escavar o núcleo</strong> da cabeça, deixando a <strong>casca posterior</strong></div></div>
+  <div class="pq"><b>por quê</b><strong>Não segue plano anatômico</strong> — esvazia o miolo por dentro, como uma fruta, mantendo a casca. Descomprime via biliar e duodeno <strong>sem desvascularizá-los</strong>. Daí ser mais simples e seguro que o Beger. 🥭</div></div>
+
+  <div class="step"><div class="hd2"><div class="n">3</div><div class="x"><span class="fase">reconstrução</span><strong>Uma</strong> anastomose cobrindo ducto + cavidade</div></div>
+  <div class="pq"><b>por quê</b>Uma boca só resolve os <strong>dois</strong> problemas (pressão ductal + massa). Por isso é a <strong>mais usada</strong> hoje.</div></div>
+
+  <h3>🟪 Beger — ressecção verdadeira</h3>
+  <div class="step"><div class="hd2"><div class="n">1</div><div class="x"><span class="fase">mobilização</span>Kocher + <strong>túnel retropancreático</strong> (VMS/porta)</div></div>
+  <div class="pq"><b>por quê</b>Mesmo túnel do Whipple — é o que faz dele <strong>ressecção verdadeira</strong>, com plano anatômico. E mais exigente tecnicamente.</div></div>
+
+  <div class="step"><div class="hd2"><div class="n">2</div><div class="x"><span class="fase">secção</span><strong>Secciona o colo</strong> sobre a porta</div></div>
+  <div class="pq"><b>por quê</b>Aqui Beger e Frey se separam: o <strong>Frey nunca secciona o colo</strong>. Seccionar cria <strong>duas superfícies</strong> → duas anastomoses.</div></div>
+
+  <div class="step"><div class="hd2"><div class="n">3</div><div class="x"><span class="fase">crítico</span>Ressecção subtotal poupando as <strong>arcadas pancreatoduodenais</strong></div></div>
+  <div class="pq"><b>por quê</b>As arcadas são a <strong>única irrigação do duodeno</strong> depois de retirar a cabeça — as mesmas que obrigam ressecção em bloco no Whipple. Preservá-las é o que permite <strong>não</strong> tirar o duodeno. 🩸</div></div>
+
+  <div class="step"><div class="hd2"><div class="n">4</div><div class="x"><span class="fase">reconstrução</span><strong>Duas</strong> anastomoses (cavidade cefálica + coto do corpo)</div></div>
+  <div class="pq"><b>por quê</b>Duas bocas = <strong>mais risco de fístula</strong> que o Frey. Em troca, retira mais massa — melhor quando a cabeça é volumosa e o ducto <strong>não</strong> está dilatado.</div></div>
+
+  <div class="box mac"><span class="l">🧠 as três em uma linha</span><strong>Puestow</strong> abre o cano · <strong>Frey</strong> abre e escava por dentro · <strong>Beger</strong> secciona o colo e resseca de verdade, poupando o duodeno pelas arcadas.</div>
+  <div class="box warn"><span class="l">☠️ antes de qualquer uma</span><strong>Excluir malignidade.</strong> Massa cefálica na PC é indistinguível de adenoca por imagem em parte dos casos — e PC é <strong>fator de risco</strong>. Dúvida que persiste → <strong>Whipple</strong>, não drenagem.</div>
+  <h3>🎗️ Risco de câncer</h3>
+  <div class="card">
+    <div class="kv"><div class="k">PC comum</div><div class="v">~2%/10anos — sem rastreio de rotina</div></div>
+    <div class="kv"><div class="k">PC hereditária</div><div class="v"><strong>40-55%</strong> vida toda!</div></div>
+  </div>
+</div>
+
+<!-- 5 TRAPS -->
+<div class="panel" data-p="5">
+  <h2>☠️ Pega-ratões</h2>
+  <div class="box warn"><span class="l">trap 1</span>ESCAPE inverteu a lógica: cirurgia precoce pode ser melhor ⚔️</div>
+  <div class="box warn"><span class="l">trap 2</span>Dor não correlaciona com imagem 🔬</div>
+  <div class="box warn"><span class="l">trap 3</span>PC comum ≠ hereditária no risco de câncer 🎗️</div>
+  <div class="box warn"><span class="l">trap 4</span>Ductotomia <strong>curta</strong> = falha nº1 do Puestow 📏</div>
+  <div class="box warn"><span class="l">trap 5</span><strong>Frey não secciona o colo</strong> — Beger sim ✂️</div>
+  <div class="box warn"><span class="l">trap 6</span>Beger poupa duodeno pelas <strong>arcadas pancreatoduodenais</strong> 🩸</div>
+  <div class="box warn"><span class="l">trap 4</span>Frey ≠ Beger — não confundir! 🔪</div>
+  <div class="box warn"><span class="l">trap 5</span>PERT durante a refeição, sempre 💊</div>
+  <div class="box warn"><span class="l">trap 6</span>Diabetes 3c = mais hipoglicemia que tipo 2 🍬</div>
+  <div class="box warn"><span class="l">trap 7</span>Álcool+tabaco = sinérgico 🍺🚬</div>
+  <div class="box warn"><span class="l">trap 8</span>Massa em PC sempre investigar — pode ser câncer 🔍</div>
+  <div class="box mac"><span class="l">✅ resumo de bolso</span>TIGAR-O=álcool+tabaco · Cambridge=leve→grave · ESCAPE=cirurgia71%×endo33% · Puestow=drena·Frey=drena+núcleo·Beger=resseca·Whipple=malignidade · PERT=durante refeição 🎓</div>
+</div>
+
+<script>
+var tabs=document.querySelectorAll('.tab'),panels=document.querySelectorAll('.panel');
+tabs.forEach(function(t){t.addEventListener('click',function(){
+  tabs.forEach(function(x){x.classList.remove('on')});
+  panels.forEach(function(x){x.classList.remove('on')});
+  t.classList.add('on');
+  document.querySelector('.panel[data-p="'+t.dataset.t+'"]').classList.add('on');
+})});
+</script>
+</body>
+</html>

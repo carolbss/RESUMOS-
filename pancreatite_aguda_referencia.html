@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pancreatite Aguda — carolzita</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0f; --bg2:#12121a; --card:#16161f; --card2:#1c1c27;
+  --line:#2a2a38; --txt:#e6e6ef; --muted:#9a9ab0;
+  --laranja:#f97316; --laranja-bg:rgba(249,115,22,.10);
+  --roxo:#a855f7; --roxo-bg:rgba(168,85,247,.10);
+  --ciano:#22d3ee; --ciano-bg:rgba(34,211,238,.10);
+  --verde:#34d399; --vermelho:#f87171; --amarelo:#fbbf24;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(1200px 600px at 50% -10%,#15151f 0%,var(--bg) 60%);color:var(--txt);font-family:'Inter',sans-serif;line-height:1.55;padding:0 0 80px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px}
+header{padding:40px 0 24px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(30px,6vw,46px);line-height:1.05;margin:8px 0 6px;letter-spacing:-.02em}
+.sub{color:var(--muted);font-size:15px;max-width:700px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tag{font-family:'JetBrains Mono',monospace;font-size:11px;padding:5px 10px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted)}
+.tag.r{color:var(--roxo);border-color:rgba(168,85,247,.35);background:var(--roxo-bg)}
+section{margin-top:14px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:12px;overflow:hidden;transition:border-color .2s}
+details[open]{border-color:rgba(249,115,22,.30)}
+summary{cursor:pointer;list-style:none;padding:18px 20px;display:flex;align-items:center;gap:13px;font-family:'Syne',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em;user-select:none}
+summary::-webkit-details-marker{display:none}
+.num{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--bg);background:var(--laranja);width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:0 0 auto}
+.chev{margin-left:auto;color:var(--muted);transition:transform .25s;font-size:14px}
+details[open] .chev{transform:rotate(90deg)}
+.body{padding:4px 22px 24px;font-size:15px}
+.body p{margin:10px 0}
+.body h4{font-family:'Syne',sans-serif;font-size:16px;color:var(--laranja);margin:20px 0 8px;letter-spacing:-.01em}
+.body ul{margin:8px 0 8px 4px;list-style:none}
+.body li{padding:4px 0 4px 20px;position:relative}
+.body li::before{content:"▸";position:absolute;left:0;color:var(--laranja);font-size:12px;top:6px}
+.body strong{color:#fff;font-weight:600}
+.simple{color:var(--verde);font-style:italic;font-size:.94em;display:block;margin:6px 0}
+.box.simplebox{background:rgba(52,211,153,.09);border-color:rgba(52,211,153,.32);color:var(--verde);font-style:italic}
+.box.simplebox .lbl{color:var(--verde);font-style:normal}
+.box.simplebox strong{color:#7fe8c0;font-style:normal}
+.stx{counter-reset:st;margin:12px 0}
+.st{counter-increment:st;background:var(--card2);border:1px solid var(--line);border-radius:13px;padding:14px 16px 14px 52px;margin:11px 0;position:relative}
+.st::before{content:counter(st);position:absolute;left:14px;top:13px;width:26px;height:26px;border-radius:8px;background:var(--laranja);color:#0a0a0f;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center}
+.st .fase{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:var(--laranja);display:block;margin-bottom:1px}
+.st .ttl{font-weight:700;font-size:15.5px;color:#fff;margin-bottom:4px}
+.st p{margin:5px 0;font-size:14px}
+.pq{border-left:3px solid var(--roxo);background:var(--roxo-bg);border-radius:0 9px 9px 0;padding:8px 12px;margin:9px 0;font-size:13.5px}
+.pq b{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.3px;text-transform:uppercase;color:var(--roxo);display:block;margin-bottom:2px}
+.mh2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:9px}
+.mh{border-radius:9px;padding:8px 11px;font-size:12.5px;border:1px solid var(--line)}
+.mh.e{background:rgba(52,211,153,.07);border-color:rgba(52,211,153,.3)}
+.mh.d{background:var(--laranja-bg);border-color:rgba(249,115,22,.3)}
+.mh b{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;display:block;margin-bottom:2px}
+.mh.e b{color:var(--verde)} .mh.d b{color:var(--laranja)}
+@media(max-width:640px){.mh2{grid-template-columns:1fr}}
+.box{border-radius:12px;padding:13px 15px;margin:14px 0;font-size:14px;border:1px solid}
+.box.prova{background:var(--roxo-bg);border-color:rgba(168,85,247,.35)}
+.box.prova .lbl{color:var(--roxo)}
+.box.mac{background:var(--ciano-bg);border-color:rgba(34,211,238,.35)}
+.box.mac .lbl{color:var(--ciano)}
+.box.warn{background:rgba(248,113,113,.08);border-color:rgba(248,113,113,.3)}
+.box.warn .lbl{color:var(--vermelho)}
+.lbl{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-family:'JetBrains Mono',monospace;font-size:10px;background:rgba(168,85,247,.2);color:var(--roxo);padding:2px 7px;border-radius:6px;margin-left:6px;white-space:nowrap}
+.tbl{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
+.tbl table{width:100%;border-collapse:collapse;min-width:520px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--laranja);background:var(--card2)}
+td strong{color:#fff}
+.fio td:first-child{color:var(--ciano);font-family:'JetBrains Mono',monospace;font-weight:500}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin:14px 0}
+.gcard{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+.gcard .t{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--ciano);margin-bottom:4px}
+.gcard .d{font-size:13px;color:var(--muted)}
+.hands{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.hand{border-radius:12px;padding:14px;border:1px solid var(--line)}
+.hand.e{background:rgba(34,211,238,.06);border-color:rgba(34,211,238,.25)}
+.hand.d{background:rgba(249,115,22,.06);border-color:rgba(249,115,22,.25)}
+.hand .ht{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;font-weight:700}
+.hand.e .ht{color:var(--ciano)} .hand.d .ht{color:var(--laranja)}
+.hand li{font-size:13px}
+.steps{counter-reset:s;margin:10px 0}
+.step{counter-increment:s;position:relative;padding:11px 0 11px 46px;border-bottom:1px dashed var(--line)}
+.step:last-child{border-bottom:none}
+.step::before{content:counter(s);position:absolute;left:0;top:9px;width:30px;height:30px;border-radius:9px;background:var(--laranja-bg);border:1px solid rgba(249,115,22,.4);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:grid;place-items:center}
+.step b{color:#fff}
+svg{max-width:100%;height:auto;display:block;margin:16px auto}
+.fig{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.fig .cap{font-size:12px;color:var(--muted);text-align:center;margin-top:8px;font-family:'JetBrains Mono',monospace}
+footer{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+footer .ref{font-family:'JetBrains Mono',monospace;font-size:12px;margin-top:8px}
+a{color:var(--laranja)}
+@media(max-width:560px){.hands{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">carolzita · cirurgia geral · abdome agudo · pâncreas</div>
+  <h1>Pancreatite Aguda</h1>
+  <p class="sub"><strong>Diagnóstico = 2 de 3</strong> (dor típica + lipase/amilase ≥3× LSN + imagem) · classificação de <strong>Atlanta revisada 2012</strong> (leve / moderadamente grave / grave) · <strong>ressuscitação MODERADA</strong> com Ringer lactato (pós-WATERFALL) · <strong>ATB só na necrose infectada</strong> · <strong>step-up approach</strong> e drenagem tardia (&gt;4 sem) · colecistectomia na mesma internação se biliar leve (PONCHO). Base: Atlanta 2012, ACG 2024, IAP/APA, WSES, WATERFALL (NEJM 2022) e pegadinhas das bancas do RS.</p>
+  <div class="tags">
+    <span class="tag">Atlanta 2012</span>
+    <span class="tag">I GET SMASHED</span>
+    <span class="tag">Ranson · BISAP · Balthazar</span>
+    <span class="tag">WATERFALL</span>
+    <span class="tag">Step-up · PANTER</span>
+    <span class="tag">PONCHO</span>
+    <span class="tag r">HCPA · GHC · SC-POA · PUC · AMRIGS</span>
+  </div>
+</header>
+
+<!-- 1 QUADRO CLÍNICO -->
+<details open>
+  <summary><span class="num">1</span> Quadro clínico &amp; diagnóstico <span class="chev">▶</span></summary>
+  <div class="body">
+    <p><strong>Pancreatite aguda (PA)</strong> = inflamação aguda do pâncreas por <strong>ativação intra-acinar precoce do tripsinogênio</strong> → autodigestão da glândula. <span class="simple">(as enzimas que deveriam digerir a comida no intestino ligam cedo demais, ainda dentro do pâncreas, e começam a "comer" o próprio órgão)</span></p>
+
+    <h4>Diagnóstico — a regra de ouro: 2 dos 3 critérios (Atlanta 2012)</h4>
+    <ul>
+      <li><strong>1. Dor abdominal típica</strong> — epigástrica, intensa, contínua, <strong>com irradiação para o dorso ("em barra/cinturão")</strong>, melhora inclinando o tronco para frente (posição de prece maometana).</li>
+      <li><strong>2. Amilase e/ou lipase ≥ 3× o limite superior da normalidade (LSN)</strong>. <strong>Lipase</strong> = mais sensível e específica, sobe mais tarde e permanece elevada por mais tempo. <span class="simple">(a lipase é a melhor "prova de sangue" — fica alta por mais dias)</span></li>
+      <li><strong>3. Imagem característica</strong> (TC contrastada, RM ou US) compatível com PA.</li>
+    </ul>
+    <div class="box warn"><span class="lbl">⚠ Pegadinha nº1</span>O <strong>nível de amilase/lipase NÃO se correlaciona com a gravidade</strong> nem com o prognóstico. Enzima altíssima ≠ pancreatite grave. Não repetir dosagem seriada para "acompanhar".</div>
+
+    <h4>Sinais clássicos (raros, mas de prova)</h4>
+    <ul>
+      <li><strong>Sinal de Cullen</strong> = equimose periumbilical.</li>
+      <li><strong>Sinal de Grey-Turner</strong> = equimose em flancos.</li>
+      <li><strong>Sinal de Fox</strong> = equimose na base do pênis/ligamento inguinal.</li>
+    </ul>
+    <p class="simple">(são manchas roxas que aparecem quando o sangramento retroperitoneal "vaza" para a pele — indicam pancreatite necro-hemorrágica, quadro grave)</p>
+    <div class="box mac"><span class="lbl">macete</span><strong>Cu</strong>llen = <strong>umbi</strong>go · <strong>T</strong>urner = flanco (la<strong>T</strong>eral). Sinais tardios (24–48h) e de mau prognóstico.</div>
+  </div>
+</details>
+
+<!-- 2 ETIOLOGIA -->
+<details>
+  <summary><span class="num">2</span> Etiologia &amp; fisiopatologia <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>As duas causas que dominam a prova</h4>
+    <ul>
+      <li><strong>1º Litíase biliar (~40–50%)</strong> — causa mais comum global e a mais comum em <strong>mulheres</strong>. Microcálculo impacta na papila/ampola de Vater → refluxo e obstrução do ducto pancreático.</li>
+      <li><strong>2º Álcool (~30%)</strong> — 2ª causa; mais comum em <strong>homens</strong>. Geralmente após libação/uso crônico.</li>
+    </ul>
+    <div class="box mac"><span class="lbl">mnemônico · I GET SMASHED</span><strong>I</strong>diopática · <strong>G</strong>allstones (litíase) · <strong>E</strong>tanol · <strong>T</strong>rauma · <strong>S</strong>teroides · <strong>M</strong>umps (caxumba/vírus) · <strong>A</strong>utoimune · <strong>S</strong>corpion (picada) · <strong>H</strong>ipercalcemia/<strong>H</strong>ipertrigliceridemia · <strong>E</strong>RCP (pós-CPRE) · <strong>D</strong>rugs (azatioprina, tiazídicos, valproato, didanosina).</div>
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">AMRIGS · PUC</span></span><strong>Hipertrigliceridemia</strong> causa PA quando TG <strong>&gt; 1000 mg/dL</strong>; suspeitar quando amilase está falsamente normal/baixa (interferência laboratorial). Tratamento: insulina EV ± aférese. <strong>Hipercalcemia</strong> (hiperparatireoidismo) é outra causa metabólica clássica.</div>
+
+    <h4>Fisiopatologia em 3 tempos</h4>
+    <ul>
+      <li><strong>Fase 1 — ativação intra-acinar</strong>: tripsinogênio → tripsina dentro da célula acinar; falha dos mecanismos protetores.</li>
+      <li><strong>Fase 2 — inflamação intrapancreática</strong>: recrutamento de neutrófilos, liberação de citocinas.</li>
+      <li><strong>Fase 3 — resposta sistêmica (SIRS)</strong>: pode evoluir para SDRA, IRA, choque distributivo e disfunção de múltiplos órgãos.</li>
+    </ul>
+  </div>
+</details>
+
+<!-- 3 ANATOMIA -->
+<details>
+  <summary><span class="num">3</span> Anatomia &amp; vascularização do pâncreas <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>Órgão <strong>retroperitoneal</strong> (exceto pequena porção da cauda, intraperitoneal no ligamento esplenorrenal), dividido em <strong>cabeça (+ processo uncinado), colo, corpo e cauda</strong>. <span class="simple">(fica atrás do estômago, "deitado" na parede de trás da barriga)</span></p>
+
+    <div class="fig">
+      <svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="panc" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#f97316"/><stop offset="1" stop-color="#fb923c"/>
+          </linearGradient>
+        </defs>
+        <!-- duodeno em C -->
+        <path d="M120 70 q-45 15 -45 75 q0 60 45 75" fill="none" stroke="#22d3ee" stroke-width="16" stroke-linecap="round" opacity=".7"/>
+        <text x="60" y="150" fill="#22d3ee" font-size="12" font-family="monospace">duodeno</text>
+        <!-- pancreas -->
+        <path d="M130 130 q60 -25 150 -20 q120 8 200 -35" fill="none" stroke="url(#panc)" stroke-width="34" stroke-linecap="round"/>
+        <text x="150" y="185" fill="#f97316" font-size="12" font-family="monospace">cabeça</text>
+        <text x="300" y="120" fill="#f97316" font-size="12" font-family="monospace">corpo</text>
+        <text x="470" y="95" fill="#f97316" font-size="12" font-family="monospace">cauda</text>
+        <!-- processo uncinado -->
+        <path d="M135 150 q10 30 40 30" fill="none" stroke="#fb923c" stroke-width="18" stroke-linecap="round"/>
+        <text x="145" y="205" fill="#fb923c" font-size="11" font-family="monospace">uncinado</text>
+        <!-- ducto de Wirsung -->
+        <path d="M150 135 q60 -12 140 -10 q100 4 180 -28" fill="none" stroke="#fff" stroke-width="3" stroke-dasharray="6 5"/>
+        <text x="330" y="150" fill="#fff" font-size="11" font-family="monospace">ducto de Wirsung</text>
+        <!-- baco -->
+        <ellipse cx="560" cy="60" rx="34" ry="24" fill="#a855f7" opacity=".55"/>
+        <text x="535" y="30" fill="#a855f7" font-size="12" font-family="monospace">baço</text>
+        <!-- vasos mesentericos atras do colo -->
+        <line x1="255" y1="60" x2="255" y2="230" stroke="#f87171" stroke-width="6" opacity=".7"/>
+        <text x="262" y="245" fill="#f87171" font-size="11" font-family="monospace">AMS/VMS (atrás do colo)</text>
+      </svg>
+      <div class="cap">Relações: colo repousa sobre os vasos mesentéricos superiores; cabeça abraçada pelo "C" duodenal; cauda toca o hilo esplênico.</div>
+    </div>
+
+    <h4>Ductos</h4>
+    <ul>
+      <li><strong>Ducto principal (Wirsung)</strong> → desemboca na <strong>papila maior (ampola de Vater)</strong>, junto ao colédoco (esfíncter de Oddi).</li>
+      <li><strong>Ducto acessório (Santorini)</strong> → papila menor. Persiste patente no <strong>pâncreas divisum</strong> (variante embriológica, causa de PA recorrente).</li>
+    </ul>
+
+    <h4>Vascularização — por que a hemorragia é grave</h4>
+    <ul>
+      <li><strong>Cabeça/uncinado</strong>: arcadas <strong>pancreaticoduodenais superiores</strong> (ramo da gastroduodenal / tronco celíaco) e <strong>inferiores</strong> (ramo da AMS). Irrigação compartilhada com o duodeno — por isso não se resseca só a cabeça (necessita duodenopancreatectomia).</li>
+      <li><strong>Corpo/cauda</strong>: artéria <strong>esplênica</strong> (ramos: pancreática dorsal, pancreática magna) e artéria pancreática transversa inferior.</li>
+      <li><strong>Drenagem venosa</strong>: para o sistema porta (veia esplênica corre atrás do corpo/cauda).</li>
+    </ul>
+    <div class="box warn"><span class="lbl">⚠ complicação vascular</span>A inflamação pode erodir a <strong>artéria esplênica</strong> → <strong>pseudoaneurisma</strong> (causa de hemorragia intracística/HDA tardia — tratamento por <strong>embolização</strong>). Trombose da <strong>veia esplênica</strong> → hipertensão portal segmentar/sinistra com varizes de fundo gástrico.</div>
+  </div>
+</details>
+
+<!-- 4 GRAVIDADE E ESCORES -->
+<details>
+  <summary><span class="num">4</span> Gravidade &amp; escores prognósticos <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Classificação de Atlanta revisada (2012) — 3 graus</h4>
+    <div class="tbl"><table>
+      <tr><th>Grau</th><th>Definição</th></tr>
+      <tr><td><strong>Leve</strong></td><td>Sem falência orgânica e sem complicações locais/sistêmicas. Maioria (~80%). Resolve em ~1 semana.</td></tr>
+      <tr><td><strong>Moderadamente grave</strong></td><td>Falência orgânica <strong>transitória</strong> (&lt;48h) <em>e/ou</em> complicação local (coleção, necrose) ou sistêmica.</td></tr>
+      <tr><td><strong>Grave</strong></td><td>Falência orgânica <strong>persistente</strong> (&gt;48h), única ou múltipla. Maior mortalidade.</td></tr>
+    </table></div>
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">HCPA · GHC</span></span>A <strong>falência orgânica persistente (&gt;48h)</strong> é o principal determinante de mortalidade — definida pelo <strong>escore de Marshall modificado</strong> (respiratório/PaO₂-FiO₂, renal/creatinina, cardiovascular/PAS). Ponto ≥2 em qualquer sistema = falência daquele órgão.</div>
+
+    <h4>Classificação baseada em determinantes (alternativa)</h4>
+    <p>Leve · Moderada · Grave · <strong>Crítica</strong> (necrose infectada + falência orgânica persistente = pior prognóstico).</p>
+
+    <h4>Escores de gravidade — comparativo</h4>
+    <div class="tbl"><table>
+      <tr><th>Escore</th><th>Quando/como</th><th>Ponto de corte</th></tr>
+      <tr><td><strong>Ranson</strong></td><td>5 na admissão + 6 em 48h (11 total). Cálculo demora 48h.</td><td>≥3 = grave</td></tr>
+      <tr><td><strong>BISAP</strong></td><td>Rápido, nas <strong>primeiras 24h</strong>: BUN&gt;25, Impaired mental status, SIRS, Age&gt;60, Pleural effusion.</td><td>≥3 = alto risco</td></tr>
+      <tr><td><strong>APACHE II</strong></td><td>Contínuo, UTI. Complexo.</td><td>≥8 = grave</td></tr>
+      <tr><td><strong>Glasgow-Imrie</strong></td><td>Em 48h (PANCREAS).</td><td>≥3 = grave</td></tr>
+      <tr><td><strong>CTSI / Balthazar</strong></td><td>Tomográfico (ver abaixo).</td><td>≥6 = grave</td></tr>
+    </table></div>
+
+    <div class="box mac"><span class="lbl">Ranson admissão · "GA LAW"</span><strong>G</strong>licose&gt;200 · <strong>A</strong>ge&gt;55 · <strong>L</strong>DH&gt;350 · <strong>A</strong>ST(TGO)&gt;250 · <strong>W</strong>BC(leucócitos)&gt;16.000. <br><br><span class="lbl" style="color:var(--ciano)">Ranson 48h · "C HOBBS"</span><strong>C</strong>álcio&lt;8 · <strong>H</strong>ematócrito ↓&gt;10% · <strong>O</strong>xigênio PaO₂&lt;60 · <strong>B</strong>UN ↑&gt;5 · <strong>B</strong>ase déficit&gt;4 · <strong>S</strong>equestro líquido&gt;6L.</div>
+    <div class="box warn"><span class="lbl">⚠ pegadinha Ranson</span>A <strong>amilase NÃO faz parte</strong> de nenhum critério de Ranson. E os critérios de admissão são diferentes para PA <strong>biliar</strong> (cortes ligeiramente distintos) — mas a versão clássica cobrada é a não-biliar acima.</div>
+
+    <h4>Balthazar / CTSI (índice de gravidade tomográfico)</h4>
+    <p>Grau A–E (A=normal a E=≥2 coleções/gás) <strong>somado ao % de necrose</strong> (0 / &lt;30% / 30–50% / &gt;50%). <strong>CTSI ≥6</strong> = grave. <span class="simple">(a tomografia dá uma "nota" juntando o grau de inflamação e quanto do pâncreas morreu)</span></p>
+    <div class="box warn"><span class="lbl">⚠ timing da TC</span>A TC com contraste <strong>NÃO deve ser feita na admissão</strong> de rotina — subestima necrose. Ideal <strong>após 72–96h</strong> do início dos sintomas, quando a necrose se demarca. Indicações precoces: dúvida diagnóstica ou piora clínica.</div>
+  </div>
+</details>
+
+<!-- 5 COMPLICAÇÕES -->
+<details>
+  <summary><span class="num">5</span> Complicações locais &amp; sistêmicas <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Coleções — nomenclatura de Atlanta 2012 (cai muito!)</h4>
+    <p>Divide-se por <strong>tempo (&lt; ou &gt; 4 semanas)</strong> e por <strong>conteúdo (líquido puro × necrose)</strong>:</p>
+    <div class="tbl"><table>
+      <tr><th></th><th>&lt; 4 semanas (aguda)</th><th>&gt; 4 semanas (encapsulada)</th></tr>
+      <tr><td><strong>PA intersticial edematosa</strong> (líquido)</td><td>APFC — coleção fluida aguda peripancreática</td><td><strong>Pseudocisto</strong> (parede definida, sem sólido)</td></tr>
+      <tr><td><strong>PA necrosante</strong> (líquido + sólido)</td><td>ANC — coleção necrótica aguda</td><td><strong>WON</strong> — necrose organizada/encapsulada (<em>walled-off necrosis</em>)</td></tr>
+    </table></div>
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">SC-POA · PUC · AMRIGS</span></span><strong>Pseudocisto</strong> = coleção de líquido pancreático com parede não-epitelizada (fibrosa/inflamatória), &gt;4 semanas, <strong>sem debris sólidos</strong>. A maioria (&lt;6 cm, assintomático) <strong>resolve espontaneamente</strong> → conduta expectante. Drenar só se: sintomático, infectado, crescente ou complicado. <strong>Não confundir</strong> pseudocisto (líquido) com WON (contém necrose sólida) — WON precisa de desbridamento, não só drenagem.</div>
+
+    <h4>Necrose: estéril × infectada</h4>
+    <ul>
+      <li><strong>Necrose estéril</strong> → manejo conservador; intervenção só se sintomática/persistente.</li>
+      <li><strong>Necrose infectada</strong> → suspeitar por <strong>gás nas coleções na TC</strong> ou deterioração clínica após 7–10 dias. Confirma-se clínico-radiologicamente; <strong>PAAF de rotina não é recomendada</strong> (risco de falso-negativo e contaminação). Indica ATB ± intervenção (step-up).</li>
+    </ul>
+
+    <h4>Complicações sistêmicas / precoces</h4>
+    <ul>
+      <li><strong>SIRS → SDRA</strong> (derrame pleural esquerdo é comum), <strong>IRA</strong> pré-renal, choque distributivo.</li>
+      <li><strong>Síndrome compartimental abdominal</strong> (PIA &gt;20 mmHg + disfunção orgânica) — piorada por ressuscitação excessiva.</li>
+      <li><strong>Hipocalcemia</strong> (saponificação da gordura), hiperglicemia.</li>
+    </ul>
+    <div class="box warn"><span class="lbl">⚠ curva temporal da mortalidade</span><strong>Precoce (1ª semana)</strong> = morte por <strong>SIRS/falência orgânica</strong>. <strong>Tardia (&gt;2 semanas)</strong> = morte por <strong>necrose infectada/sepse</strong>. Padrão bimodal clássico de prova.</div>
+  </div>
+</details>
+
+<!-- 6 MANEJO CLINICO -->
+<details>
+  <summary><span class="num">6</span> Manejo clínico — fluidos, nutrição, ATB <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Fluidoterapia — a MUDANÇA que a banca quer (pós-WATERFALL)</h4>
+    <p>O paradigma antigo de "ressuscitação agressiva" caiu. O <strong>ensaio WATERFALL (NEJM 2022)</strong> mostrou que a hidratação agressiva aumenta a <strong>sobrecarga volêmica sem reduzir a gravidade</strong>.</p>
+    <ul>
+      <li><strong>Fluido de escolha: Ringer lactato (RL)</strong> &gt; soro fisiológico (menos acidose hiperclorêmica; possível efeito anti-inflamatório).</li>
+      <li><strong>Estratégia MODERADA e guiada por metas</strong>: RL <strong>1,5 mL/kg/h</strong>, com bolus de <strong>10 mL/kg</strong> apenas se hipovolemia. Reavaliar em 3–12–24–48h.</li>
+      <li>Metas de resposta: diurese ≥0,5 mL/kg/h, queda do hematócrito/ureia, melhora da FC/PA.</li>
+    </ul>
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">HCPA · GHC · AMRIGS</span></span>Se a questão for atual: <strong>ressuscitação moderada com RL</strong>. RL é contraindicado na <strong>hipercalcemia</strong> (contém cálcio) — nesse cenário use SF. Evitar sobrecarga → risco de síndrome compartimental e SDRA.</div>
+
+    <h4>Nutrição — abandonar o "jejum + SNE"</h4>
+    <ul>
+      <li><strong>Dieta oral precoce</strong> assim que houver tolerância (mesmo com dor leve), tipicamente em 24–72h. Não esperar normalizar enzimas.</li>
+      <li>Se não tolera VO: <strong>nutrição enteral</strong> (sonda) &gt; parenteral — protege a barreira intestinal, reduz translocação bacteriana e infecção da necrose.</li>
+      <li><strong>Nutrição parenteral</strong> = último recurso (íleo prolongado, intolerância enteral).</li>
+    </ul>
+
+    <h4>Analgesia e suporte</h4>
+    <ul>
+      <li>Opioides (não há evidência de que morfina piore por espasmo de Oddi — mito clássico de prova).</li>
+      <li>Antieméticos, correção de distúrbios hidroeletrolíticos, controle glicêmico.</li>
+    </ul>
+
+    <h4>Antibióticos — a regra de ouro</h4>
+    <div class="box warn"><span class="lbl">⚠ NÃO usar ATB profilático</span><strong>Antibiótico profilático NÃO é recomendado</strong> na PA grave/necrosante estéril. ATB apenas quando há <strong>necrose infectada</strong> comprovada/suspeita ou infecção extrapancreática (colangite, ITU, pneumonia). Escolha com boa penetração: <strong>carbapenêmicos</strong>, quinolonas + metronidazol. Antifúngico não é rotina.</div>
+  </div>
+</details>
+
+<!-- 7 CPRE / STEP-UP / TECNICA -->
+<details>
+  <summary><span class="num">7</span> CPRE, step-up approach &amp; técnica cirúrgica <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>CPRE na pancreatite biliar — quando é urgente</h4>
+    <ul>
+      <li><strong>Indicação clara</strong>: PA biliar + <strong>colangite aguda</strong> concomitante → CPRE com papilotomia <strong>em até 24–72h</strong> (urgência se colangite).</li>
+      <li>PA biliar + <strong>obstrução biliar persistente</strong> (cálculo impactado, colédoco dilatado, bilirrubinas em ascensão) → CPRE.</li>
+      <li><strong>NÃO fazer CPRE</strong> de rotina na PA biliar leve <em>sem</em> colangite ou obstrução — não melhora desfecho e adiciona risco.</li>
+    </ul>
+
+    <h4>Step-up approach (PANTER) — o princípio antes da técnica</h4>
+    <div class="box simplebox"><span class="lbl">tradução simples</span>A necrose infectada não é um abscesso que se drena e acaba — é <strong>tecido morto misturado com tecido vivo</strong>, e no começo os dois estão colados. Esperar não é omissão: é deixar o corpo <strong>construir uma parede</strong> em volta e <strong>separar o morto do vivo</strong>. Depois disso, tirar o morto é fácil. Antes disso, você arranca os dois juntos — e é o vivo que sangra.</div>
+
+    <div class="stx">
+
+      <div class="st">
+        <span class="fase">degrau 1 — esperar e demarcar</span>
+        <div class="ttl">Antibiótico e otimização clínica</div>
+        <p>Antibiótico apenas na <strong>necrose infectada</strong>; suporte, nutrição enteral, correção de disfunções. Objetivo declarado: <strong>chegar às 4 semanas</strong>.</p>
+        <div class="pq"><b>por quê</b>As 4 semanas são o tempo que a necrose leva para se <strong>"murar" (WON)</strong> — desenvolver uma parede fibrosa e se demarcar do parênquima viável. Intervir antes significa sangramento em campo inflamado, perda de tecido funcionante e mortalidade maior. <strong>Nunca operar necrose estéril precocemente.</strong></div>
+      </div>
+
+      <div class="st">
+        <span class="fase">degrau 2 — a primeira intervenção</span>
+        <div class="ttl">Drenagem percutânea ou endoscópica transmural</div>
+        <p>Cateter retroperitoneal guiado por TC/US, <em>ou</em> drenagem transgástrica endoscópica com <strong>stent de aposição luminal (LAMS)</strong>.</p>
+        <div class="pq"><b>por quê</b>A drenagem sozinha <strong>resolve cerca de um terço dos casos</strong> — e nos que não resolve, ela ganha tempo, controla a sepse e deixa o paciente chegar melhor à necrosectomia. Preferir a via <strong>retroperitoneal</strong> quando percutânea: ela cria o trajeto que o VARD vai usar no degrau seguinte, sem contaminar a cavidade peritoneal.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">degrau 3 — necrosectomia minimamente invasiva</span>
+        <div class="ttl">VARD ou necrosectomia endoscópica</div>
+        <p><strong>VARD</strong> (desbridamento retroperitoneal videoassistido) pelo trajeto do dreno, ou necrosectomia endoscópica através do stent transgástrico.</p>
+        <div class="pq"><b>por quê</b>Ambas usam <strong>um caminho já existente</strong> — o do dreno ou o do stent — e por isso não abrem a cavidade nem expõem alças à contaminação. É essa a diferença que reduz falência de órgãos, hérnia incisional e diabetes em relação à cirurgia aberta primária.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">degrau 4 — último recurso</span>
+        <div class="ttl">Necrosectomia aberta</div>
+        <p>Laparotomia, reservada a falha dos degraus anteriores, síndrome compartimental, perfuração ou isquemia intestinal associada.</p>
+        <div class="pq"><b>por quê</b>Deixou de ser a primeira opção porque o <strong>PANTER</strong> mostrou que o escalonamento reduz complicações maiores. A cirurgia aberta não foi abolida — foi <strong>reposicionada no fim da fila</strong>.</div>
+      </div>
+
+    </div>
+
+    <h4>Necrosectomia aberta — passo a passo (quando inevitável)</h4>
+    <div class="stx">
+
+      <div class="st">
+        <span class="fase">fase de acesso</span>
+        <div class="ttl">Laparotomia e entrada na retrocavidade</div>
+        <p>Decúbito dorsal com coxim; mediana ou Chevron. Abertura do <strong>ligamento gastrocólico</strong>, rebatendo o estômago cranialmente e expondo o pâncreas na retrocavidade dos epíplons.</p>
+        <div class="pq"><b>por quê</b>O gastrocólico é a porta direta para a loja pancreática. Tentar chegar pelo mesocólon transverso ou pelo hiato de Winslow expõe a <strong>cólica média</strong> e complica um campo que já é hostil.</div>
+        <div class="mh2">
+          <div class="mh e"><b>mão esquerda</b>Duval/Babcock em preensão atraumática; afastador maleável; aspirador mantendo o campo limpo</div>
+          <div class="mh d"><b>mão direita</b>Selante ou cautério no gastrocólico</div>
+        </div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de desbridamento — a técnica que define tudo</span>
+        <div class="ttl"><em>Finger fracture</em> — desbridamento digital, nunca ressecção</div>
+        <p>Remover o tecido necrótico <strong>com o dedo ou pinça romba</strong>, retirando apenas o que <strong>se solta sem resistência</strong>. Não fazer ressecção formal do pâncreas.</p>
+        <div class="pq"><b>por quê</b>É o conceito central. O que sai com o dedo é o que já está <strong>morto e demarcado</strong>; o que resiste ainda tem vascularização e é <strong>tecido vivo</strong>. Puxar o que resiste significa arrancar parênquima viável e, sobretudo, <strong>romper vasos que atravessam a necrose</strong> — artéria esplênica, gastroduodenal, vasos cólicos. A hemorragia é a principal causa de morte nesta operação.</div>
+        <div class="mh2">
+          <div class="mh e"><b>mão esquerda</b>Estabiliza a cavidade e apresenta a loja; aspirador contínuo</div>
+          <div class="mh d"><b>mão direita</b><strong>Dedo</strong> e pinça romba; Kelly na dissecção; cautério só na hemostasia superficial</div>
+        </div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de hemostasia</span>
+        <div class="ttl">Controle vascular no leito</div>
+        <p>Hemostasia meticulosa com <strong>seda 2-0/3-0</strong> ou clipes; tamponamento temporário se sangramento difuso.</p>
+        <div class="pq"><b>por quê</b>Os vasos aqui estão <strong>banhados por enzimas ativadas há semanas</strong> — a parede está friável e o ponto pode rasgar. É o mesmo mecanismo do pseudoaneurisma da gastroduodenal no Whipple, e a razão de o sangramento tardio ser tão temido nesta doença.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de drenagem</span>
+        <div class="ttl">Drenos amplos e planejamento de reabordagem</div>
+        <p>Drenos de grosso calibre na loja; considerar <strong>lavagem contínua</strong> ou reabordagens programadas.</p>
+        <div class="pq"><b>por quê</b>A necrosectomia quase nunca é completa em um só tempo — o tecido continua se demarcando <em>depois</em> da cirurgia. Planejar a reabordagem é reconhecer a biologia da doença, não admitir falha técnica.</div>
+      </div>
+
+    </div>
+
+    <div class="box mac"><span class="lbl">as 4 checagens da necrose</span>
+      <strong>1)</strong> A necrose está <strong>infectada</strong> (gás na TC, deterioração clínica) — ou só estéril?<br>
+      <strong>2)</strong> Já passaram <strong>4 semanas</strong> e a coleção está murada?<br>
+      <strong>3)</strong> A drenagem foi <strong>tentada antes</strong> da necrosectomia?<br>
+      <strong>4)</strong> No desbridamento, saiu <strong>só o que se soltou sozinho</strong>?
+    </div>
+
+    <div class="hands">
+      <div class="hand e"><div class="ht">Mão esquerda</div><ul>
+        <li>Pinça de <strong>Duval / Babcock</strong> (apreensão atraumática de vísceras)</li>
+        <li>Aspirador (campo limpo)</li>
+        <li>Afastador maleável / valva</li>
+      </ul></div>
+      <div class="hand d"><div class="ht">Mão direita</div><ul>
+        <li><strong>Dedo/pinça romba</strong> para desbridamento digital</li>
+        <li><strong>Kelly</strong> para dissecção romba</li>
+        <li>Eletrocautério para hemostasia superficial</li>
+      </ul></div>
+    </div>
+    <div class="box mac"><span class="lbl">fios</span>Ligaduras vasculares com <strong>seda 2-0/3-0</strong> ou clipes; fixação de drenos com <strong>náilon 2-0</strong>; parede em <strong>PDS 1</strong>. Colecistectomia associada se PA biliar → colédoco com <strong>Vicryl</strong>/clipes conforme o caso.</div>
+  </div>
+</details>
+
+<!-- 8 COLECISTECTOMIA / PREVENCAO -->
+<details>
+  <summary><span class="num">8</span> Colecistectomia &amp; prevenção de recorrência <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>PA biliar LEVE — timing da colecistectomia (PONCHO trial)</h4>
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">HCPA · GHC · SC-POA · PUC · AMRIGS</span></span>Na PA biliar <strong>leve</strong>, a <strong>colecistectomia deve ser feita na MESMA internação</strong> (índice), após resolução do quadro — <strong>não dar alta sem operar</strong>. O <strong>PONCHO trial</strong> mostrou que a colecistectomia precoce reduz recorrência/readmissão por eventos biliares (novo episódio de PA, colangite, cólica) sem aumentar complicações cirúrgicas. Adiar 6 semanas é conduta antiga e ERRADA em prova.</div>
+
+    <h4>PA biliar GRAVE / necrosante</h4>
+    <ul>
+      <li><strong>Adiar</strong> a colecistectomia até resolução da inflamação e das coleções (geralmente após a alta / &gt;6 semanas) — operar no meio da necrose aumenta morbidade.</li>
+      <li>Ponte: se alto risco cirúrgico e coledocolitíase, <strong>papilotomia endoscópica</strong> protege contra recorrência enquanto se aguarda.</li>
+    </ul>
+
+    <h4>Outras prevenções por etiologia</h4>
+    <ul>
+      <li><strong>Álcool</strong>: cessação + suporte; aconselhamento reduz recorrência.</li>
+      <li><strong>Hipertrigliceridemia</strong>: fibratos, dieta, controle de TG &lt;500.</li>
+      <li><strong>Hipercalcemia</strong>: tratar hiperparatireoidismo.</li>
+    </ul>
+  </div>
+</details>
+
+<!-- 9 QUESTOES / PEGA-RATOES -->
+<details>
+  <summary><span class="num">9</span> Questões de banca, pega-ratões &amp; mnemônicos <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>10 questões representativas (originais, estilo das 5 bancas)</h4>
+
+    <div class="box prova"><span class="lbl">Q1 <span class="banca">HCPA</span></span><strong>Sobre o diagnóstico de PA, assinale a correta.</strong><br>Resposta: exige <strong>2 dos 3</strong> critérios (dor típica + enzima ≥3× LSN + imagem). A lipase é mais sensível/específica que a amilase e o valor da enzima <strong>não</strong> reflete gravidade.</div>
+
+    <div class="box prova"><span class="lbl">Q2 <span class="banca">GHC</span></span><strong>Paciente com PA biliar leve, resolvida em 3 dias. Conduta quanto à vesícula?</strong><br>Resposta: <strong>colecistectomia na mesma internação</strong> (PONCHO) — não dar alta e reagendar.</div>
+
+    <div class="box prova"><span class="lbl">Q3 <span class="banca">AMRIGS</span></span><strong>Qual a estratégia de hidratação recomendada atualmente na PA?</strong><br>Resposta: <strong>ressuscitação moderada com Ringer lactato</strong> (~1,5 mL/kg/h, bolus só se hipovolemia) — WATERFALL. Agressiva causa sobrecarga sem benefício.</div>
+
+    <div class="box prova"><span class="lbl">Q4 <span class="banca">PUC-RS</span></span><strong>Coleção pancreática líquida, encapsulada, &gt;4 semanas, sem debris sólidos = ?</strong><br>Resposta: <strong>pseudocisto</strong>. Se contivesse necrose sólida seria WON.</div>
+
+    <div class="box prova"><span class="lbl">Q5 <span class="banca">SC-POA</span></span><strong>PA necrosante com gás em coleção na TC no 10º dia + piora clínica. Conduta?</strong><br>Resposta: <strong>necrose infectada</strong> → ATB + <strong>step-up approach</strong> (drenagem antes de necrosectomia), preferir intervir &gt;4 semanas.</div>
+
+    <div class="box prova"><span class="lbl">Q6 <span class="banca">HCPA</span></span><strong>Qual NÃO é critério de Ranson?</strong><br>Resposta: <strong>amilase</strong> (nunca entra em Ranson). Entram: idade&gt;55, leucócitos&gt;16k, glicose&gt;200, LDH&gt;350, AST&gt;250 (admissão).</div>
+
+    <div class="box prova"><span class="lbl">Q7 <span class="banca">GHC</span></span><strong>Principal determinante de mortalidade na PA grave?</strong><br>Resposta: <strong>falência orgânica persistente (&gt;48h)</strong>, avaliada pelo Marshall modificado.</div>
+
+    <div class="box prova"><span class="lbl">Q8 <span class="banca">AMRIGS</span></span><strong>Antibiótico profilático na PA necrosante estéril?</strong><br>Resposta: <strong>não indicado</strong>. ATB só na infecção comprovada/suspeita.</div>
+
+    <div class="box prova"><span class="lbl">Q9 <span class="banca">PUC-RS</span></span><strong>PA biliar + colangite. Qual intervenção e em quanto tempo?</strong><br>Resposta: <strong>CPRE com papilotomia em 24–72h</strong> (urgente se colangite).</div>
+
+    <div class="box prova"><span class="lbl">Q10 <span class="banca">SC-POA</span></span><strong>Melhor momento para TC de estadiamento de necrose?</strong><br>Resposta: <strong>após 72–96h</strong> do início — TC precoce subestima a necrose.</div>
+
+    <h4>Pega-ratões (as armadilhas clássicas)</h4>
+    <div class="box warn"><span class="lbl">☠ trap 1</span>Enzima muito alta <strong>não</strong> significa pancreatite mais grave.</div>
+    <div class="box warn"><span class="lbl">☠ trap 2</span>Na <strong>hipertrigliceridemia</strong> a amilase pode vir <strong>falsamente normal</strong> — não exclui PA.</div>
+    <div class="box warn"><span class="lbl">☠ trap 3</span><strong>Amilase não é critério de Ranson</strong> — pega quem decora "no automático".</div>
+    <div class="box warn"><span class="lbl">☠ trap 4</span>Hidratação <strong>agressiva</strong> é conduta ANTIGA — hoje é moderada (WATERFALL).</div>
+    <div class="box warn"><span class="lbl">☠ trap 5</span>Jejum prolongado + nutrição parenteral é ERRADO — dieta oral/enteral <strong>precoce</strong>.</div>
+    <div class="box warn"><span class="lbl">☠ trap 6</span>Na PA biliar leve, <strong>não</strong> adiar a colecistectomia — mesma internação.</div>
+    <div class="box warn"><span class="lbl">☠ trap 7</span>Necrose <strong>estéril</strong> não se opera precocemente; step-up e adiar &gt;4 sem.</div>
+    <div class="box warn"><span class="lbl">☠ trap 8</span>Pseudocisto (líquido) ≠ WON (necrose sólida) — condutas diferentes.</div>
+
+    <h4>Mnemônicos-resumo</h4>
+    <div class="box mac"><span class="lbl">macete geral</span><strong>I GET SMASHED</strong> (etiologia) · <strong>GA LAW / C HOBBS</strong> (Ranson) · <strong>BISAP</strong> (24h) · <strong>Cullen/Turner/Fox</strong> (equimoses) · fluidos <strong>"Moderado + Ringer"</strong> · ATB <strong>"só se infectada"</strong> · biliar leve <strong>"opera na mesma internação"</strong>.</div>
+  </div>
+</details>
+
+<footer>
+  <div><strong>carolzita</strong> · Pancreatite Aguda · referência completa</div>
+  <div class="ref">Fontes: Atlanta Classification revisada (2012) · ACG Guidelines 2024 · IAP/APA Guidelines · WSES · WATERFALL trial (NEJM 2022) · PANTER · PONCHO · Sabiston · Zollinger. Conteúdo educacional; questões são itens representativos originais.</div>
+</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patologia Mamária — Carolzita</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0a0f; --bg2:#12121a; --card:#15151f; --card2:#1b1b28;
+    --border:#26263a; --txt:#e7e7ee; --txt2:#a2a2b5;
+    --orange:#f97316; --purple:#a855f7; --cyan:#22d3ee;
+    --orange-dim:rgba(249,115,22,.12); --purple-dim:rgba(168,85,247,.12); --cyan-dim:rgba(34,211,238,.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:radial-gradient(1200px 600px at 80% -10%,rgba(168,85,247,.08),transparent),radial-gradient(1000px 500px at -10% 20%,rgba(34,211,238,.06),transparent),var(--bg);color:var(--txt);font-family:'Inter',sans-serif;line-height:1.62;padding:0 0 100px}
+  .wrap{max-width:940px;margin:0 auto;padding:0 20px}
+  header{padding:54px 0 30px;text-align:center;border-bottom:1px solid var(--border);margin-bottom:8px}
+  header .kicker{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.28em;color:var(--cyan);text-transform:uppercase;margin-bottom:14px}
+  header h1{font-family:'Syne',sans-serif;font-weight:800;font-size:2.5rem;line-height:1.08;background:linear-gradient(120deg,#fff 20%,var(--orange) 60%,var(--purple));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  header p{color:var(--txt2);margin-top:12px;font-size:.95rem}
+  .legend{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+  .legend span{font-family:'JetBrains Mono',monospace;font-size:.7rem;padding:5px 12px;border-radius:20px;border:1px solid var(--border)}
+  .lg-o{color:var(--orange);background:var(--orange-dim);border-color:rgba(249,115,22,.35)}
+  .lg-p{color:var(--purple);background:var(--purple-dim);border-color:rgba(168,85,247,.35)}
+  .lg-c{color:var(--cyan);background:var(--cyan-dim);border-color:rgba(34,211,238,.35)}
+
+  details{background:var(--card);border:1px solid var(--border);border-radius:16px;margin:16px 0;overflow:hidden;transition:border-color .2s}
+  details[open]{border-color:rgba(249,115,22,.3)}
+  summary{cursor:pointer;list-style:none;padding:20px 22px;display:flex;align-items:center;gap:14px;font-family:'Syne',sans-serif;font-weight:700;font-size:1.18rem;user-select:none}
+  summary::-webkit-details-marker{display:none}
+  summary .num{font-family:'JetBrains Mono',monospace;font-size:.8rem;color:var(--bg);background:var(--orange);min-width:30px;height:30px;display:flex;align-items:center;justify-content:center;border-radius:9px;font-weight:700}
+  summary .chev{margin-left:auto;color:var(--txt2);transition:transform .25s;font-size:1rem}
+  details[open] summary .chev{transform:rotate(90deg);color:var(--orange)}
+  .body{padding:4px 24px 26px}
+  .body p{margin:11px 0;color:#d7d7e2}
+  .body h4{font-family:'Syne',sans-serif;color:var(--orange);margin:22px 0 8px;font-size:1.04rem;display:flex;align-items:center;gap:8px}
+  .body h4::before{content:"";width:6px;height:18px;background:var(--orange);border-radius:3px;display:inline-block}
+  ul{margin:8px 0 8px 4px;list-style:none}
+  li{padding:5px 0 5px 22px;position:relative;color:#d7d7e2}
+  li::before{content:"▸";position:absolute;left:2px;color:var(--orange);font-size:.85rem;top:6px}
+  .simple{color:#34d399;font-style:italic;font-size:.92em;display:block;margin:6px 0}
+.grn{background:rgba(52,211,153,.09);border:1px solid rgba(52,211,153,.32);border-radius:10px;padding:12px 15px;margin:12px 0;color:#34d399;font-style:italic}
+.grn .tag{color:#34d399;font-style:normal;font-family:inherit;font-size:11px;text-transform:uppercase;letter-spacing:1px;font-weight:700;background:none;padding:0}
+.grn strong{color:#7fe8c0;font-style:normal}
+.stx{counter-reset:st;margin:12px 0}
+.st{counter-increment:st;background:var(--card2);border:1px solid var(--border);border-radius:13px;padding:14px 16px 14px 52px;margin:11px 0;position:relative}
+.st::before{content:counter(st);position:absolute;left:14px;top:13px;width:26px;height:26px;border-radius:8px;background:var(--orange);color:#0a0a0f;font-family:monospace;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center}
+.st .fase{font-family:monospace;font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:var(--orange);display:block;margin-bottom:1px}
+.st .ttl{font-weight:700;font-size:15.5px;color:#fff;margin-bottom:4px}
+.st p{margin:5px 0;font-size:14px}
+.pq{border-left:3px solid var(--purple);background:var(--purple-dim);border-radius:0 9px 9px 0;padding:8px 12px;margin:9px 0;font-size:13.5px}
+.pq b{font-family:monospace;font-size:10px;letter-spacing:1.3px;text-transform:uppercase;color:var(--purple);display:block;margin-bottom:2px}
+.mh2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:9px}
+.mh{border-radius:9px;padding:8px 11px;font-size:12.5px;border:1px solid var(--border)}
+.mh.e{background:rgba(52,211,153,.07);border-color:rgba(52,211,153,.3)}
+.mh.d{background:var(--orange-dim);border-color:rgba(249,115,22,.3)}
+.mh b{font-family:monospace;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;display:block;margin-bottom:2px}
+.mh.e b{color:#34d399} .mh.d b{color:var(--orange)}
+@media(max-width:640px){.mh2{grid-template-columns:1fr}}
+  .term{color:#fff;font-weight:600}
+
+  .prova{background:var(--purple-dim);border:1px solid rgba(168,85,247,.4);border-left:4px solid var(--purple);border-radius:12px;padding:14px 18px;margin:16px 0}
+  .prova .tag{font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.1em;color:var(--purple);text-transform:uppercase;font-weight:700;display:inline-flex;align-items:center;gap:7px;margin-bottom:7px}
+  .prova .tag::before{content:"★";font-size:.9rem}
+  .prova .banca{background:var(--purple);color:#fff;font-size:.6rem;padding:2px 7px;border-radius:6px;margin-left:6px}
+  .prova p{margin:5px 0;color:#ecdcff;font-size:.94rem}
+
+  .mnem{background:var(--cyan-dim);border:1px solid rgba(34,211,238,.4);border-left:4px solid var(--cyan);border-radius:12px;padding:14px 18px;margin:16px 0}
+  .mnem .tag{font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.1em;color:var(--cyan);text-transform:uppercase;font-weight:700;margin-bottom:7px;display:flex;align-items:center;gap:7px}
+  .mnem .tag::before{content:"◆"}
+  .mnem code{font-family:'JetBrains Mono',monospace;color:#fff;background:rgba(34,211,238,.16);padding:2px 8px;border-radius:6px;font-weight:700;letter-spacing:.04em}
+  .mnem p{margin:6px 0;color:#d3f6fd;font-size:.93rem}
+
+  table{width:100%;border-collapse:collapse;margin:16px 0;font-size:.9rem;background:var(--bg2);border-radius:12px;overflow:hidden}
+  th{background:var(--card2);color:var(--orange);font-family:'Syne',sans-serif;font-weight:700;text-align:left;padding:12px 14px;font-size:.86rem;border-bottom:2px solid var(--border)}
+  td{padding:11px 14px;border-bottom:1px solid var(--border);color:#d7d7e2;vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  tr:hover td{background:rgba(249,115,22,.04)}
+  .hand-r{color:var(--orange);font-weight:600}
+  .hand-l{color:var(--cyan);font-weight:600}
+
+  .fig{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:20px;margin:18px 0;text-align:center}
+  .fig svg{max-width:100%;height:auto}
+  .fig figcaption{color:var(--txt2);font-size:.82rem;margin-top:12px;font-family:'JetBrains Mono',monospace}
+
+  .pill{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:.72rem;padding:2px 9px;border-radius:7px;margin:2px;background:var(--card2);border:1px solid var(--border)}
+  .pill.o{color:var(--orange);border-color:rgba(249,115,22,.4)}
+  .pill.p{color:var(--purple);border-color:rgba(168,85,247,.4)}
+  .pill.c{color:var(--cyan);border-color:rgba(34,211,238,.4)}
+
+  .refbox{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 24px;margin-top:34px}
+  .refbox h4{font-family:'Syne',sans-serif;color:var(--cyan);margin-bottom:10px}
+  .refbox li::before{content:"§";color:var(--cyan)}
+  .callout{background:linear-gradient(100deg,rgba(249,115,22,.08),rgba(168,85,247,.08));border:1px solid var(--border);border-radius:12px;padding:14px 18px;margin:14px 0;font-size:.92rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">Carolzita · Mastologia · Cirurgia Geral</div>
+  <h1>Patologia Mamária</h1>
+  <p>Nódulo · Câncer de mama · Biópsia — do rastreio à mesa cirúrgica</p>
+  <div class="legend">
+    <span class="lg-o">● conteúdo</span>
+    <span class="lg-p">★ tema quente de prova</span>
+    <span class="lg-c">◆ mnemônico</span>
+  </div>
+</header>
+
+<!-- 1 -->
+<details open>
+  <summary><span class="num">01</span>Quadro clínico &amp; avaliação do nódulo<span class="chev">›</span></summary>
+  <div class="body">
+    <p>O nódulo mamário é a queixa mais comum em mastologia. A pedra angular da investigação é a <span class="term">avaliação tríplice / tripé diagnóstico</span> <span class="simple">(olhar por três caminhos: examinar com a mão, ver na imagem e olhar a célula no microscópio)</span>: <b>exame clínico + imagem + análise histológica/citológica</b>. Concordância dos três reduz erro; discordância obriga biópsia.</p>
+
+    <h4>Características clínicas — benigno x suspeito</h4>
+    <table>
+      <tr><th>Achado</th><th>Sugere benigno</th><th>Sugere maligno</th></tr>
+      <tr><td>Consistência</td><td>Fibroelástico</td><td>Endurecido, pétreo</td></tr>
+      <tr><td>Mobilidade</td><td>Móvel</td><td>Aderido a pele/plano profundo</td></tr>
+      <tr><td>Limites</td><td>Bem delimitado, regular</td><td>Irregular, mal definido</td></tr>
+      <tr><td>Pele</td><td>Normal</td><td>Retração, <i>peau d'orange</i></td></tr>
+      <tr><td>Papila</td><td>Normal</td><td>Retração recente, descarga sanguinolenta</td></tr>
+    </table>
+
+    <h4>Sinais de alerta (bandeiras vermelhas)</h4>
+    <ul>
+      <li><span class="term">Peau d'orange / casca de laranja</span> <span class="simple">(pele fica cheia de "furinhos" como casca de laranja, porque a linfa fica presa e incha)</span> — edema por bloqueio linfático dérmico.</li>
+      <li><span class="term">Retração ou inversão mamilar recente</span> — tração pelos ligamentos de Cooper invadidos.</li>
+      <li><span class="term">Descarga papilar</span> suspeita: espontânea, <b>unilateral, uniductal, sanguinolenta/serosanguinolenta</b> <span class="simple">(sai sozinha, de um buraquinho só, de um peito só, e com sangue)</span>.</li>
+      <li><span class="term">Adenopatia axilar</span> endurecida/fixa.</li>
+      <li><span class="term">Carcinoma inflamatório (T4d)</span>: mama vermelha, quente, edemaciada — principal diagnóstico diferencial da <b>mastite</b> que não melhora com antibiótico.</li>
+    </ul>
+
+    <h4>Nódulos/lesões benignas mais cobradas</h4>
+    <table>
+      <tr><th>Lesão</th><th>Perfil</th><th>Pérola</th></tr>
+      <tr><td>Fibroadenoma</td><td>Jovem (20–30a), móvel, "rato mamário"</td><td>Tumor benigno + comum na jovem</td></tr>
+      <tr><td>Cisto</td><td>35–50a, flutua com o ciclo</td><td>USG: anecoico, reforço posterior</td></tr>
+      <tr><td>Tumor filodes</td><td>Crescimento rápido, volumoso</td><td>Ressecção com margem (~1cm); pode ser maligno</td></tr>
+      <tr><td>Papiloma intraductal</td><td>Descarga sanguinolenta uniductal</td><td>Causa nº1 de descarga sanguinolenta</td></tr>
+      <tr><td>Esteatonecrose</td><td>Pós-trauma/cirurgia</td><td>Simula câncer na imagem</td></tr>
+      <tr><td>Alteração fibrocística</td><td>Mastalgia cíclica, nodularidade</td><td>Mais comum; não é fator de risco relevante</td></tr>
+    </table>
+
+    <div class="prova">
+      <div class="tag">Tema quente <span class="banca">Geral RS</span></div>
+      <p><b>Descarga papilar:</b> o diferencial clássico é <b>papiloma intraductal</b> (benigno, causa mais comum) x <b>carcinoma papilífero</b>. Descarga que preocupa = espontânea + unilateral + uniductal + sanguinolenta. Descarga multiductal, bilateral e provocada (leitosa/esverdeada) costuma ser benigna/fisiológica.</p>
+    </div>
+  </div>
+</details>
+
+<!-- 2 -->
+<details>
+  <summary><span class="num">02</span>Rastreamento &amp; imagem — BI-RADS<span class="chev">›</span></summary>
+  <div class="body">
+    <h4>Mamografia — quem e quando</h4>
+    <ul>
+      <li><span class="term">MS / INCA:</span> rastreio populacional dos <b>50 aos 69 anos, bienal</b>.</li>
+      <li><span class="term">SBM / CBR / FEBRASGO:</span> <b>anual a partir dos 40 anos</b>.</li>
+      <li>Achados suspeitos: <b>microcalcificações pleomórficas agrupadas</b>, nódulo espiculado, distorção arquitetural.</li>
+    </ul>
+
+    <h4>Métodos complementares</h4>
+    <ul>
+      <li><span class="term">USG</span>: mama densa, jovens; separa sólido de cístico.</li>
+      <li><span class="term">RM</span>: alto risco (BRCA), avaliar extensão/multicentricidade, prótese, mama densa.</li>
+    </ul>
+
+    <h4>Classificação BI-RADS &amp; conduta</h4>
+    <table>
+      <tr><th>Categoria</th><th>Significado</th><th>Conduta</th></tr>
+      <tr><td>0</td><td>Inconclusivo</td><td>Complementar (USG/incidências/RM)</td></tr>
+      <tr><td>1</td><td>Negativo</td><td>Rastreio de rotina</td></tr>
+      <tr><td>2</td><td>Benigno</td><td>Rastreio de rotina</td></tr>
+      <tr><td>3</td><td>Provavelmente benigno (&lt;2%)</td><td>Seguimento em 6 meses</td></tr>
+      <tr><td>4 (A/B/C)</td><td>Suspeito (2–95%)</td><td><b>Biópsia</b></td></tr>
+      <tr><td>5</td><td>Altamente suspeito (&gt;95%)</td><td><b>Biópsia</b></td></tr>
+      <tr><td>6</td><td>Malignidade já comprovada</td><td>Tratamento</td></tr>
+    </table>
+
+    <div class="prova">
+      <div class="tag">Tema quente <span class="banca">HCPA</span><span class="banca">AMRIGS</span></div>
+      <p>Questão de conduta por categoria BI-RADS é praticamente obrigatória. Grave o divisor de águas: <b>BI-RADS 3 = seguimento; BI-RADS 4 = biópsia.</b> É o pulo do gato mais cobrado.</p>
+    </div>
+
+    <div class="mnem">
+      <div class="tag">Mnemônico</div>
+      <p><code>3 espera, 4 fura</code> — categoria 3 controla em 6 meses, categoria 4 já vai pra biópsia.</p>
+    </div>
+  </div>
+</details>
+
+<!-- 3 -->
+<details>
+  <summary><span class="num">03</span>Anatomia &amp; vascularização da mama<span class="chev">›</span></summary>
+  <div class="body">
+    <p>A mama assenta entre a <span class="term">2ª e 6ª costela</span>, da borda lateral do esterno à linha axilar média, sobre a fáscia do <b>peitoral maior</b>, serrátil anterior e oblíquo externo. Possui o <span class="term">prolongamento axilar de Spence</span> <span class="simple">(uma "ponta" da mama que vai em direção à axila)</span>.</p>
+    <ul>
+      <li><span class="term">Ligamentos de Cooper</span> <span class="simple">(cordõezinhos que seguram a mama no lugar)</span> — quando o tumor os invade e encurta, geram a <b>retração de pele</b>.</li>
+      <li><span class="term">Espaço retromamário (de Chassaignac)</span> — plano de clivagem entre glândula e fáscia peitoral usado na mastectomia.</li>
+    </ul>
+
+    <div class="fig">
+      <svg viewBox="0 0 620 300" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0" width="620" height="300" fill="#12121a" rx="10"/>
+        <!-- parede torácica -->
+        <rect x="40" y="60" width="30" height="200" fill="#26263a" rx="4"/>
+        <text x="55" y="285" fill="#a2a2b5" font-size="11" text-anchor="middle" font-family="JetBrains Mono">tórax</text>
+        <!-- peitoral -->
+        <rect x="70" y="80" width="24" height="160" fill="#3a3a52" rx="3"/>
+        <text x="82" y="55" fill="#a2a2b5" font-size="10" text-anchor="middle" font-family="JetBrains Mono">peitoral</text>
+        <!-- glandula -->
+        <path d="M94 90 Q260 60 300 160 Q260 260 94 230 Z" fill="rgba(249,115,22,.15)" stroke="#f97316" stroke-width="2"/>
+        <text x="180" y="165" fill="#f97316" font-size="13" text-anchor="middle" font-family="Syne" font-weight="700">glândula mamária</text>
+        <!-- papila -->
+        <circle cx="300" cy="160" r="10" fill="#a855f7"/>
+        <text x="300" y="195" fill="#a855f7" font-size="10" text-anchor="middle" font-family="JetBrains Mono">CAP</text>
+        <!-- arterias -->
+        <line x1="70" y1="110" x2="150" y2="120" stroke="#22d3ee" stroke-width="2.5"/>
+        <text x="440" y="105" fill="#22d3ee" font-size="11" font-family="JetBrains Mono">→ a. torácica interna (medial ~60%)</text>
+        <line x1="410" y1="100" x2="150" y2="120" stroke="#22d3ee" stroke-width="1" stroke-dasharray="3"/>
+        <line x1="94" y1="220" x2="180" y2="210" stroke="#22d3ee" stroke-width="2.5"/>
+        <text x="440" y="220" fill="#22d3ee" font-size="11" font-family="JetBrains Mono">→ a. torácica lateral</text>
+        <line x1="410" y1="215" x2="200" y2="210" stroke="#22d3ee" stroke-width="1" stroke-dasharray="3"/>
+        <text x="440" y="160" fill="#a2a2b5" font-size="10" font-family="JetBrains Mono">+ intercostais perfurantes</text>
+      </svg>
+      <figcaption>Corte esquemático: glândula, CAP e principais artérias</figcaption>
+    </div>
+
+    <h4>Vascularização arterial</h4>
+    <ul>
+      <li><span class="term">Artéria torácica interna (mamária interna)</span> — ramos perfurantes, supre ~60% (porção medial). Ramo da subclávia.</li>
+      <li><span class="term">Artéria torácica lateral (mamária externa)</span> — ramo da axilar, porção lateral.</li>
+      <li><span class="term">Artérias intercostais posteriores</span> (perfurantes) e contribuição da toracoacromial/torácica superior.</li>
+    </ul>
+
+    <h4>Drenagem venosa</h4>
+    <p>Acompanha as artérias → veia axilar, torácica interna e intercostais. O <span class="term">plexo venoso vertebral de Batson</span> explica metástase óssea vertebral <span class="simple">(uma "estrada" de veias que leva células do tumor direto pra coluna)</span>.</p>
+
+    <h4>Drenagem linfática — o coração do estadiamento</h4>
+    <ul>
+      <li><b>~75%</b> drena para os <span class="term">linfonodos axilares</span>; ~25% para a cadeia <span class="term">mamária interna</span>.</li>
+      <li><span class="term">Níveis de Berg</span> (referência = músculo peitoral menor):
+        <span class="pill c">I — lateral</span><span class="pill c">II — posterior</span><span class="pill c">III — medial/apical</span></li>
+      <li><span class="term">Linfonodo de Rotter</span> — interpeitoral (entre peitoral maior e menor).</li>
+    </ul>
+
+    <div class="fig">
+      <svg viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0" width="600" height="220" fill="#12121a" rx="10"/>
+        <!-- peitoral menor triangulo -->
+        <polygon points="270,40 270,180 360,110" fill="rgba(168,85,247,.18)" stroke="#a855f7" stroke-width="2"/>
+        <text x="300" y="115" fill="#a855f7" font-size="11" text-anchor="middle" font-family="JetBrains Mono">m. peitoral</text>
+        <text x="300" y="130" fill="#a855f7" font-size="11" text-anchor="middle" font-family="JetBrains Mono">menor</text>
+        <!-- nivel I lateral -->
+        <circle cx="450" cy="110" r="26" fill="rgba(34,211,238,.15)" stroke="#22d3ee" stroke-width="2"/>
+        <text x="450" y="115" fill="#22d3ee" font-size="14" text-anchor="middle" font-family="Syne" font-weight="700">I</text>
+        <text x="450" y="160" fill="#a2a2b5" font-size="10" text-anchor="middle" font-family="JetBrains Mono">lateral</text>
+        <!-- nivel II posterior -->
+        <circle cx="315" cy="110" r="22" fill="rgba(34,211,238,.15)" stroke="#22d3ee" stroke-width="2"/>
+        <text x="315" y="115" fill="#22d3ee" font-size="14" text-anchor="middle" font-family="Syne" font-weight="700">II</text>
+        <text x="315" y="200" fill="#a2a2b5" font-size="10" text-anchor="middle" font-family="JetBrains Mono">posterior</text>
+        <!-- nivel III medial -->
+        <circle cx="180" cy="110" r="26" fill="rgba(34,211,238,.15)" stroke="#22d3ee" stroke-width="2"/>
+        <text x="180" y="115" fill="#22d3ee" font-size="14" text-anchor="middle" font-family="Syne" font-weight="700">III</text>
+        <text x="180" y="160" fill="#a2a2b5" font-size="10" text-anchor="middle" font-family="JetBrains Mono">medial/apical</text>
+        <text x="300" y="25" fill="#e7e7ee" font-size="12" text-anchor="middle" font-family="Syne" font-weight="700">Níveis de Berg</text>
+      </svg>
+      <figcaption>Níveis axilares definidos pelo peitoral menor</figcaption>
+    </div>
+
+    <h4>Inervação — nervos a preservar na axila</h4>
+    <table>
+      <tr><th>Nervo</th><th>Músculo/função</th><th>Lesão causa</th></tr>
+      <tr><td>Torácico longo (de Bell)</td><td>Serrátil anterior</td><td><b>Escápula alada</b></td></tr>
+      <tr><td>Toracodorsal</td><td>Grande dorsal (latíssimo)</td><td>Fraqueza adução/rotação interna</td></tr>
+      <tr><td>Intercostobraquial</td><td>Sensibilidade face medial do braço/axila</td><td>Parestesia/dor</td></tr>
+    </table>
+
+    <div class="prova">
+      <div class="tag">Tema quente <span class="banca">Santa Casa POA</span><span class="banca">PUC-RS</span></div>
+      <p><b>Nervos da axila</b> caem muito em prova prática/teórica de cirurgia. O clássico: lesão do <b>torácico longo → escápula alada</b>. Os três níveis de Berg e o linfonodo de Rotter também são recorrentes.</p>
+    </div>
+  </div>
+</details>
+
+<!-- 4 -->
+<details>
+  <summary><span class="num">04</span>Câncer de mama — patologia &amp; biologia<span class="chev">›</span></summary>
+  <div class="body">
+    <h4>Fatores de risco</h4>
+    <ul>
+      <li>Sexo feminino, idade avançada, história familiar.</li>
+      <li><span class="term">Mutações BRCA1</span> (mama + ovário, associado a <b>triplo-negativo</b>) e <span class="term">BRCA2</span>.</li>
+      <li>Exposição estrogênica prolongada: menarca precoce, menopausa tardia, nuliparidade, 1ª gestação tardia, TRH.</li>
+      <li>Obesidade pós-menopausa, álcool, radioterapia torácica prévia.</li>
+      <li>Lesões de risco: <b>hiperplasia ductal atípica, CLIS</b>.</li>
+    </ul>
+
+    <h4>Tipos histológicos</h4>
+    <table>
+      <tr><th>Tipo</th><th>Característica</th></tr>
+      <tr><td>CDIS (ductal in situ)</td><td>Não ultrapassa membrana basal; precursor. Microcalcificações.</td></tr>
+      <tr><td>CLIS (lobular in situ)</td><td><b>Marcador de risco</b> (bilateral), não precursor obrigatório.</td></tr>
+      <tr><td>Carcinoma invasivo NST/SOE (ductal)</td><td>Mais comum (~75%).</td></tr>
+      <tr><td>Carcinoma lobular invasivo</td><td>Bilateral/multicêntrico, células "em fila indiana", perde <b>E-caderina</b>.</td></tr>
+      <tr><td>Especiais (tubular, mucinoso, medular, papilífero)</td><td>Melhor prognóstico.</td></tr>
+      <tr><td>Doença de Paget</td><td>Eczema mamilar; associado a CDIS/carcinoma subjacente.</td></tr>
+      <tr><td>Carcinoma inflamatório (T4d)</td><td>Êmbolos em linfáticos dérmicos; pior prognóstico.</td></tr>
+    </table>
+
+    <h4>Imuno-histoquímica &amp; subtipos moleculares</h4>
+    <p>Painel: <span class="pill o">RE</span><span class="pill o">RP</span><span class="pill o">HER2</span><span class="pill o">Ki-67</span> <span class="simple">(exames que dizem o "combustível" do tumor e a que remédio ele responde)</span>.</p>
+    <table>
+      <tr><th>Subtipo</th><th>Perfil</th><th>Tratamento-alvo</th></tr>
+      <tr><td>Luminal A</td><td>RE+/RP+, HER2−, Ki-67 baixo</td><td>Hormonioterapia; melhor prognóstico</td></tr>
+      <tr><td>Luminal B</td><td>RE+, HER2±, Ki-67 alto</td><td>Hormônio ± QT ± anti-HER2</td></tr>
+      <tr><td>HER2 superexpresso</td><td>HER2+, RE/RP−</td><td><b>Trastuzumabe</b> + QT</td></tr>
+      <tr><td>Triplo-negativo</td><td>RE−/RP−/HER2−</td><td>QT; pior prognóstico; liga a BRCA1</td></tr>
+    </table>
+
+    <h4>Estadiamento TNM (essencial)</h4>
+    <ul>
+      <li><b>T1</b> ≤2cm · <b>T2</b> 2–5cm · <b>T3</b> &gt;5cm · <b>T4</b>: a) parede torácica, b) pele/<i>peau d'orange</i>, c) ambos, d) inflamatório.</li>
+      <li><b>N</b>: axilar/mamária interna (número e nível). <b>M</b>: metástase — <b>osso &gt; pulmão &gt; fígado &gt; cérebro</b>.</li>
+    </ul>
+
+    <div class="prova">
+      <div class="tag">Tema quente <span class="banca">HCPA</span><span class="banca">GHC</span></div>
+      <p>Correlação <b>subtipo molecular → terapia</b> é ouro de prova. Sabe distinguir: HER2+ pede <b>trastuzumabe</b>; RE+ pede <b>hormonioterapia (tamoxifeno / inibidor de aromatase)</b>; triplo-negativo só sobra <b>QT</b> e é o de pior comportamento. Lobular invasivo = perda de E-caderina + fila indiana.</p>
+    </div>
+    <div class="mnem">
+      <div class="tag">Mnemônico</div>
+      <p><code>Osso Primeiro, Fígado e Pulmão Chegam depois</code> — sítios de metástase (Osso é o mais comum).</p>
+      <p><code>Lobular = fiLa indiana + perde E-caderina</code></p>
+    </div>
+  </div>
+</details>
+
+<!-- 5 -->
+<details>
+  <summary><span class="num">05</span>Biópsia — técnicas &amp; indicações<span class="chev">›</span></summary>
+  <div class="body">
+    <table>
+      <tr><th>Método</th><th>O que fornece</th><th>Melhor uso / pérola</th></tr>
+      <tr><td><b>PAAF</b> (agulha fina)</td><td>Citologia</td><td>Sólido x cístico. <b>Não</b> distingue in situ de invasivo (não vê arquitetura).</td></tr>
+      <tr><td><b>Core biopsy</b> (agulha grossa / tru-cut)</td><td>Histologia + imuno-histoquímica</td><td><b>Padrão-ouro pré-op.</b> Guiada por USG (nódulo) ou estereotaxia (microcalcificação).</td></tr>
+      <tr><td><b>Mamotomia</b> (a vácuo)</td><td>Fragmentos maiores</td><td>Ideal para microcalcificações; guiada por estereotaxia/USG/RM.</td></tr>
+      <tr><td><b>Biópsia excisional</b></td><td>Retira toda a lesão</td><td>Também terapêutica em lesão pequena.</td></tr>
+      <tr><td><b>Biópsia incisional</b></td><td>Fragmento de lesão grande</td><td>Tumores volumosos/localmente avançados.</td></tr>
+    </table>
+    <p>Lesões <span class="term">não palpáveis</span> exigem <span class="term">marcação pré-operatória</span> (fio metálico/agulhamento ou ROLL) <span class="simple">(marca-se o "esconderijo" do nódulo antes da cirurgia porque a mão não o encontra)</span> e <b>radiografia da peça</b> para confirmar retirada.</p>
+
+    <div class="prova">
+      <div class="tag">Tema quente <span class="banca">AMRIGS</span></div>
+      <p>Pega clássica: a <b>PAAF não diferencia carcinoma in situ de invasivo</b> porque só dá citologia, sem arquitetura tecidual. Por isso a <b>core biopsy é a preferida</b> para diagnóstico definitivo e imuno-histoquímica.</p>
+    </div>
+    <div class="mnem">
+      <div class="tag">Mnemônico</div>
+      <p><code>Core = Conteúdo Completo</code> — Core biopsy dá histologia + receptores (in situ x invasivo + IHQ). PAAF só "espia" a célula.</p>
+    </div>
+  </div>
+</details>
+
+<!-- 6 -->
+<details>
+  <summary><span class="num">06</span>Posicionamento &amp; preparo<span class="chev">›</span></summary>
+  <div class="body">
+    <ul>
+      <li><span class="term">Decúbito dorsal horizontal</span>, cabeceira levemente elevada.</li>
+      <li><span class="term">Braço ipsilateral abduzido a 90°</span> em suporte de mesa (Krause) — abre o acesso à axila. Evitar &gt;90° (estiramento do plexo braquial).</li>
+      <li>Coxim sob o hemitórax/escápula do lado operado.</li>
+      <li>Antissepsia ampla: mama, axila, região clavicular e parede torácica; braço muitas vezes preparado para permitir mobilização estéril.</li>
+      <li>Anestesia geral. Antibioticoprofilaxia (cefazolina) se implante/linfadenectomia extensa.</li>
+      <li>Se linfonodo sentinela: injeção do radiofármaco (tecnécio-99m) previamente e/ou azul patente no intraoperatório.</li>
+    </ul>
+  </div>
+</details>
+
+<!-- 7 -->
+<details>
+  <summary><span class="num">07</span>Técnica cirúrgica — passo a passo<span class="chev">›</span></summary>
+  <div class="body">
+<h4>A. Cirurgia conservadora (setorectomia / quadrantectomia)</h4>
+<div class="grn"><span class="tag">tradução simples</span>A conservadora não é "tirar menos" — é tirar <strong>o suficiente com margem livre</strong> e confiar que a radioterapia trata o resto da mama. Cada gesto técnico existe para que o patologista consiga responder uma pergunta única: <strong>a margem está livre?</strong> Sem isso, a "conservação" vira reoperação.</div>
+
+<div class="stx">
+
+<div class="st">
+  <span class="fase">fase de planejamento</span>
+  <div class="ttl">Marcar a lesão antes da incisão</div>
+  <p>Marcação pré-operatória; agulhamento se a lesão for impalpável, guiado por imagem.</p>
+  <div class="pq"><b>por quê</b>Uma lesão pequena e impalpável some de vista assim que o campo é aberto e a anatomia se distorce — marcar antes é a única garantia de operar no lugar certo.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de acesso</span>
+  <div class="ttl">Incisão seguindo as linhas de Langer</div>
+  <p>Incisão arciforme ou periareolar sobre a lesão, respeitando as linhas de tensão da pele.</p>
+  <div class="pq"><b>por quê</b>Cortar na direção das linhas naturais da pele produz uma cicatriz que fecha sob menor tensão e amadurece mais fina — o mesmo princípio estético de qualquer incisão eletiva, aqui relevante porque a paciente vai olhar essa cicatriz todos os dias.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de ressecção — a margem que decide tudo</span>
+  <div class="ttl">Dissecar com margem macroscópica até a fáscia peitoral</div>
+  <p>Margem de cerca de 1 cm ao redor da lesão, aprofundando até a fáscia do peitoral maior.</p>
+  <div class="pq"><b>por quê</b>Ir até a fáscia dá um plano profundo <strong>inequivocamente livre</strong> sem precisar adivinhar onde o tumor termina no tecido glandular, que é mole e difícil de palpar com precisão. É a mesma lógica de usar um plano anatômico fixo como referência, em vez de confiar só no tato.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de orientação — o gesto que evita reoperar</span>
+  <div class="ttl">Orientar a peça com fios de reparo</div>
+  <p>Fio curto = superior, fio longo = lateral (ou convenção equivalente do serviço).</p>
+  <div class="pq"><b>por quê</b>Se uma margem vier comprometida no laudo, orientar a peça é o que permite voltar exatamente <strong>naquele</strong> quadrante para ampliar — sem orientação, teria que se reoperar a cavidade inteira "no escuro", tirando mais tecido do que o necessário.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de confirmação</span>
+  <div class="ttl">Radiografia da peça se houver microcalcificações</div>
+  <p>Confirma que a lesão mamográfica está de fato dentro da peça ressecada.</p>
+  <div class="pq"><b>por quê</b>Microcalcificação não se vê nem se palpa a olho nu — a radiografia é a única forma de saber, ainda na sala, que você não ressecou tecido normal ao lado da lesão real.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de planejamento futuro</span>
+  <div class="ttl">Clipe metálico no leito cirúrgico</div>
+  <p>Marcar o leito da ressecção antes de fechar.</p>
+  <div class="pq"><b>por quê</b>O clipe é o alvo da radioterapia adjuvante que vem depois — sem ele, o radioterapeuta teria que estimar onde ficava o tumor num tecido que já cicatrizou e mudou de forma.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de encerramento</span>
+  <div class="ttl">Hemostasia, aproximação do parênquima e fechamento</div>
+  <p>Aproximar o parênquima remanescente antes de fechar por planos. <strong>Sempre seguida de radioterapia adjuvante.</strong></p>
+  <div class="pq"><b>por quê</b>Aproximar o parênquima evita a deformidade de um "buraco" na mama e reduz o espaço morto onde se acumularia seroma ou hematoma.</div>
+</div>
+
+</div>
+<div class="callout"><b>Margem livre:</b> invasivo = <i>"no tumor on ink"</i> (sem tumor tocando a tinta); <b>CDIS puro ≥ 2 mm</b>.</div>
+
+<h4>B. Mastectomia radical modificada (Madden / Patey)</h4>
+<div class="grn"><span class="tag">tradução simples</span>Aqui não há margem para calcular — tira-se a glândula inteira. O que sobra para decidir é <strong>quanto do peitoral vai junto</strong> e <strong>como não lesar os nervos</strong> que cruzam a axila fazendo o trabalho de esvaziar os linfonodos.</div>
+
+<div class="stx">
+
+<div class="st">
+  <span class="fase">fase de acesso</span>
+  <div class="ttl">Incisão elíptica transversa (Stewart)</div>
+  <p>Englobando o complexo areolopapilar e a lesão ou cicatriz de biópsia prévia.</p>
+  <div class="pq"><b>por quê</b>A incisão precisa remover, junto com a glândula, qualquer pele que possa já ter recebido implante tumoral — incluindo o trajeto de biópsias anteriores.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase crítica — o equilíbrio da espessura</span>
+  <div class="ttl">Confeccionar os retalhos cutâneos</div>
+  <p>Dissecção no plano entre o subcutâneo e a glândula, evitando retalhos finos demais.</p>
+  <div class="pq"><b>por quê</b>Retalho fino demais perde a rede vascular subdérmica e necrosa; retalho grosso demais deixa tecido glandular residual para trás. É um equilíbrio que só a experiência calibra bem, e o erro mais comum de quem opera pouco é ir fino demais por medo de deixar tumor.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de descolamento</span>
+  <div class="ttl">Descolar a glândula do peitoral, de medial para lateral</div>
+  <p>Plano do espaço retromamário, sobre a fáscia do peitoral maior.</p>
+  <div class="pq"><b>por quê</b>Seguir sempre a mesma direção mantém o cirurgião no plano avascular correto — mudar de direção no meio do descolamento é como e onde se perde o plano e se começa a sangrar do músculo.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase axilar — os nervos que definem a função do braço</span>
+  <div class="ttl">Linfadenectomia dos níveis I e II</div>
+  <p>Identificar e preservar o nervo <strong>torácico longo</strong>, o <strong>toracodorsal</strong> e, quando possível, o <strong>intercostobraquial</strong>.</p>
+  <div class="pq"><b>por quê</b>Cada nervo tem uma consequência específica e memorável: lesar o torácico longo produz <strong>escápula alada</strong> (denervação do serrátil anterior); lesar o toracodorsal enfraquece a adução e rotação interna do braço (grande dorsal); lesar o intercostobraquial — sacrificado com mais frequência, por ser puramente sensitivo — causa parestesia na face medial do braço, o "preço" mais aceito da cirurgia axilar.</div>
+  <div class="mh2">
+    <div class="mh e"><b>mão esquerda</b>Farabeuf ou Gosset afastando, expondo o campo axilar</div>
+    <div class="mh d"><b>mão direita</b>Metzenbaum na dissecção cuidadosa ao redor dos nervos</div>
+  </div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de encerramento</span>
+  <div class="ttl">Hemostasia, drenos e fechamento sem tensão</div>
+  <p>Drenos aspirativos (Portovac) subcutâneo e axilar; fechamento por planos.</p>
+  <div class="pq"><b>por quê</b>O espaço morto criado pela retirada da glândula e pelo esvaziamento axilar acumula líquido linfático continuamente nos primeiros dias — o dreno é o que evita que esse líquido vire seroma sob pressão, a complicação mais comum de toda a cirurgia mamária.</div>
+</div>
+
+</div>
+
+<table>
+  <tr><th>Técnica</th><th>Peitoral maior</th><th>Peitoral menor</th></tr>
+  <tr><td><b>Madden</b></td><td>Preserva</td><td>Preserva</td></tr>
+  <tr><td><b>Patey</b></td><td>Preserva</td><td>Retira</td></tr>
+  <tr><td><b>Halsted</b> (radical clássica)</td><td>Retira</td><td>Retira</td></tr>
+</table>
+
+<h4>C. Biópsia de linfonodo sentinela (BLS)</h4>
+<div class="grn"><span class="tag">tradução simples</span>Em vez de tirar todos os linfonodos da axila "para garantir", tira-se só <strong>o primeiro que recebe a drenagem do tumor</strong> — o sentinela. Se ele está limpo, a lógica é que os de trás também estão, e o resto da axila fica intocado.</div>
+<ul>
+  <li>Indicada na <b>axila clinicamente negativa</b>. É o 1º linfonodo que drena o tumor.</li>
+  <li>Localização por <b>tecnécio-99m + azul patente</b> (gamma probe e/ou visualização do azul).</li>
+  <li>Sentinela negativo → <b>dispensa esvaziamento axilar</b> (poupa linfedema).</li>
+</ul>
+
+<div class="prova">
+  <div class="tag">Tema quente <span class="banca">HCPA</span><span class="banca">Santa Casa POA</span></div>
+  <p><b>Critério ACOSOG Z0011:</b> em cirurgia conservadora + RT, com T1–T2 e <b>1–2 linfonodos sentinela positivos</b>, pode-se <b>omitir a linfadenectomia axilar</b> sem prejuízo de sobrevida. Cai bastante distinguir Madden × Patey × Halsted.</p>
+</div>
+<div class="mnem">
+  <div class="tag">Mnemônico</div>
+  <p><code>MaddEn = mantém os dois; PatEy = perde o pEqueno (menor); Halsted = leva tudo</code>.</p>
+</div>
+  </div>
+</details>
+
+<!-- 8 -->
+<details>
+  <summary><span class="num">08</span>Instrumentação — mão direita × mão esquerda<span class="chev">›</span></summary>
+  <div class="body">
+    <p>Referência para cirurgião <b>destro</b> (mão dominante executa; mão não-dominante expõe/traciona).</p>
+    <table>
+      <tr><th>Momento</th><th class="hand-r">Mão direita (executa)</th><th class="hand-l">Mão esquerda (expõe)</th></tr>
+      <tr><td>Incisão de pele</td><td>Bisturi frio (lâmina 15/23)</td><td>Contra-tração da pele (gaze/dedos)</td></tr>
+      <tr><td>Confecção de retalhos</td><td>Eletrocautério / tesoura de Metzenbaum</td><td>Pinça de Allis ou ganchos tracionando a pele</td></tr>
+      <tr><td>Descolamento glandular</td><td>Eletrocautério</td><td>Kocher/Allis tracionando a peça; afastador</td></tr>
+      <tr><td>Dissecção axilar</td><td>Metzenbaum + eletrocautério pontual</td><td>Pinça anatômica; afastador de Farabeuf/Gosset</td></tr>
+      <tr><td>Ligadura vascular</td><td>Porta-agulhas / nó; clipe</td><td>Pinça hemostática (Halsted/Crile) apresentando o vaso</td></tr>
+      <tr><td>Sutura</td><td>Porta-agulhas (Mayo-Hegar)</td><td>Pinça dente-de-rato apresentando a borda</td></tr>
+    </table>
+  </div>
+</details>
+
+<!-- 9 -->
+<details>
+  <summary><span class="num">09</span>Fios &amp; suturas — quando usar cada um<span class="chev">›</span></summary>
+  <div class="body">
+    <table>
+      <tr><th>Estrutura</th><th>Fio sugerido</th><th>Por quê</th></tr>
+      <tr><td>Ligadura vascular</td><td>Seda/algodão 2-0/3-0 ou poliglactina 3-0</td><td>Hemostasia segura</td></tr>
+      <tr><td>Aproximação de parênquima (conservadora)</td><td>Poliglactina (Vicryl) 2-0/3-0</td><td>Absorvível, reduz espaço morto</td></tr>
+      <tr><td>Subcutâneo</td><td>Poliglactina 3-0/4-0</td><td>Reduz tensão da pele</td></tr>
+      <tr><td>Pele</td><td>Mononáilon 3-0/4-0 (separado) ou Monocryl 4-0 (intradérmico)</td><td>Estética / retirada</td></tr>
+      <tr><td>Fixação de dreno</td><td>Náilon 2-0/3-0</td><td>Ancoragem</td></tr>
+    </table>
+    <div class="mnem">
+      <div class="tag">Mnemônico</div>
+      <p><code>Vicryl por Dentro, Náilon por Fora</code> — absorvível nos planos profundos, inabsorvível/monofilamentar na pele.</p>
+    </div>
+  </div>
+</details>
+
+<!-- 10 -->
+<details>
+  <summary><span class="num">10</span>Complicações mais comuns<span class="chev">›</span></summary>
+  <div class="body">
+    <ul>
+      <li><span class="term">Seroma</span> — <b>a mais comum</b> pós-mastectomia/esvaziamento. Manejo: drenos, punções seriadas.</li>
+      <li><span class="term">Linfedema de membro superior</span> — associado ao esvaziamento axilar; principal razão para preferir BLS.</li>
+      <li><span class="term">Hematoma</span> e <span class="term">infecção de sítio cirúrgico</span>.</li>
+      <li><span class="term">Necrose de retalho cutâneo</span> — retalhos finos, tabagismo, tensão.</li>
+      <li><span class="term">Lesão do torácico longo</span> → <b>escápula alada</b>; <span class="term">lesão do intercostobraquial</span> → parestesia/dor na face medial do braço.</li>
+      <li><span class="term">Deiscência</span>, assimetria/retração estética, <span class="term">dor crônica pós-mastectomia</span>.</li>
+    </ul>
+    <div class="prova">
+      <div class="tag">Tema quente <span class="banca">Geral RS</span></div>
+      <p>"Complicação mais comum da mastectomia/linfadenectomia?" → <b>seroma</b>. "Complicação mais temida a longo prazo do esvaziamento axilar?" → <b>linfedema</b>. Essa dupla é campeã de recorrência.</p>
+    </div>
+  </div>
+</details>
+
+<!-- 11 -->
+<details>
+  <summary><span class="num">11</span>Grade de mnemônicos &amp; alto rendimento RS<span class="chev">›</span></summary>
+  <div class="body">
+    <div class="mnem"><div class="tag">BI-RADS</div><p><code>3 espera · 4 fura</code> — 3 segue em 6 meses, 4 biópsia.</p></div>
+    <div class="mnem"><div class="tag">Níveis de Berg</div><p><code>1-2-3 = Lateral · Posterior · Medial</code> (referência: peitoral menor).</p></div>
+    <div class="mnem"><div class="tag">Mastectomias</div><p><code>Madden mantém 2 · Patey perde o pequeno · Halsted leva tudo</code>.</p></div>
+    <div class="mnem"><div class="tag">Nervo × lesão</div><p><code>Longo → escápuLa aLada</code>.</p></div>
+    <div class="mnem"><div class="tag">Metástase</div><p><code>Osso primeiro</code> (depois pulmão, fígado, cérebro).</p></div>
+    <div class="mnem"><div class="tag">Biópsia</div><p><code>Core = histologia + receptores; PAAF só citologia</code>.</p></div>
+    <div class="mnem"><div class="tag">Lobular</div><p><code>Fila indiana + perde E-caderina</code>.</p></div>
+
+    <div class="callout"><b>Checklist de alto rendimento para HCPA/GHC/Santa Casa/PUC-RS/AMRIGS:</b> conduta por BI-RADS · avaliação tríplice · Z0011 e indicação de BLS · subtipo molecular → terapia-alvo · níveis de Berg + nervos da axila · Madden×Patey×Halsted · descarga papilar (papiloma×carcinoma) · margens (invasivo × CDIS) · seroma/linfedema · carcinoma inflamatório (T4d) × mastite.</div>
+
+    <div class="callout" style="border-color:rgba(168,85,247,.4)"><b>Transparência:</b> as marcações de banca indicam <i>temas de altíssima incidência</i> nesses concursos com base no padrão histórico das provas de cirurgia/mastologia — não são citação literal de questão numerada. Quando quiser, te monto um bloco de <b>questões comentadas</b> simulando o estilo de cada banca.</div>
+  </div>
+</details>
+
+<div class="refbox">
+  <h4>Referências</h4>
+  <ul>
+    <li>Sabiston — <i>Textbook of Surgery</i> (mama: doenças benignas e malignas, técnica cirúrgica).</li>
+    <li>Zollinger — <i>Atlas of Surgical Operations</i> (mastectomia, linfadenectomia, retalhos, passo a passo).</li>
+    <li>Netter — <i>Atlas de Anatomia Humana</i> (parede torácica, vascularização e drenagem linfática da mama).</li>
+    <li>Complementos atualizados: ACOSOG Z0011; diretrizes SBM/CBR (BI-RADS); consenso de margens SSO/ASTRO; literatura 2022–2025.</li>
+  </ul>
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colectomia Direita · Pocket Reference · Carolina 2026</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+:root{--bg:#0d0f14;--bg2:#13151c;--bg3:#1a1d26;--border:#252836;--text:#c9cdd8;--text-dim:#6b7280;--orange:#f97316;--orange-dim:#431a06;--orange-bg:#1c1208;--purple:#a855f7;--purple-dim:#3b1668;--purple-bg:#17102a;--cyan:#22d3ee;--cyan-dim:#064e5a;--cyan-bg:#071318;--emerald:#10b981;--emerald-dim:#064e3b;--emerald-bg:#071c15;--pink:#ec4899;--pink-dim:#831843;--pink-bg:#1f0817;--red:#ef4444;--amber:#f59e0b;--amber-dim:#78350f;--amber-bg:#1c0f02;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:13px;line-height:1.65;}
+.header{background:linear-gradient(135deg,#0d0f14,#1f0817 60%,#0d0f14);border-bottom:1px solid var(--border);padding:1.75rem 2rem;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-40%;right:-5%;width:500px;height:500px;background:radial-gradient(circle,rgba(236,72,153,0.08),transparent 70%);pointer-events:none;}
+.header-tag{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--pink);text-transform:uppercase;letter-spacing:3px;margin-bottom:.4rem;}
+.header h1{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:#fff;letter-spacing:-1px;line-height:1.1;}
+.header h1 span{color:var(--pink);}
+.header-meta{display:flex;gap:1rem;margin-top:.75rem;flex-wrap:wrap;}
+.mpill{background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:.25rem .7rem;font-size:10px;font-family:'JetBrains Mono',monospace;color:var(--text-dim);}
+.mpill.pk{border-color:var(--pink-dim);color:var(--pink);}
+.mpill.o{border-color:var(--orange);color:var(--orange);}
+.mpill.p{border-color:var(--purple);color:var(--purple);}
+.legend{display:flex;gap:1.5rem;padding:.7rem 2rem;background:var(--bg2);border-bottom:1px solid var(--border);flex-wrap:wrap;}
+.legend-item{display:flex;align-items:center;gap:.4rem;font-size:11px;}
+.ldot{width:9px;height:9px;border-radius:50%;}
+.d-pk{background:var(--pink);}
+.d-o{background:var(--orange);}
+.d-p{background:var(--purple);}
+.d-c{background:var(--cyan);}
+.container{max-width:1200px;margin:0 auto;padding:1.5rem 2rem 3rem;}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;}
+.block{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:1.1rem;margin-bottom:1rem;overflow:hidden;}
+.block-title{font-family:'Syne',sans-serif;font-size:.85rem;font-weight:700;color:var(--pink);margin-bottom:.75rem;padding-bottom:.35rem;border-bottom:1px solid var(--pink-dim);display:flex;align-items:center;gap:.5rem;}
+.bnum{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text-dim);background:var(--bg);padding:.15rem .4rem;border-radius:4px;}
+.cpk{background:var(--pink-bg);border-left:3px solid var(--pink);border-radius:0 8px 8px 0;padding:.65rem .9rem;margin:.6rem 0;color:#fbcfe8;}
+.co{background:var(--orange-bg);border-left:3px solid var(--orange);border-radius:0 8px 8px 0;padding:.65rem .9rem;margin:.6rem 0;color:#fde8d3;}
+.cp{background:var(--purple-bg);border-left:3px solid var(--purple);border-radius:0 8px 8px 0;padding:.65rem .9rem;margin:.6rem 0;color:#e9d5ff;}
+.cc{background:var(--cyan-bg);border-left:3px solid var(--cyan);border-radius:0 8px 8px 0;padding:.65rem .9rem;margin:.6rem 0;color:#cffafe;}
+.ce{background:var(--emerald-bg);border-left:3px solid var(--emerald);border-radius:0 8px 8px 0;padding:.65rem .9rem;margin:.6rem 0;color:#d1fae5;}
+.cr{background:#1c0a0a;border-left:3px solid var(--red);border-radius:0 8px 8px 0;padding:.65rem .9rem;margin:.6rem 0;color:#fecaca;}
+.lbl{font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:1px;font-weight:700;margin-bottom:.3rem;}
+.lbl.pk{color:var(--pink);}.lbl.o{color:var(--orange);}.lbl.p{color:var(--purple);}.lbl.c{color:var(--cyan);}.lbl.e{color:var(--emerald);}.lbl.r{color:var(--red);}
+.tw{overflow-x:auto;margin:.5rem 0;}
+table{width:100%;border-collapse:collapse;font-size:12px;}
+th{background:var(--bg3);color:var(--pink);font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.5px;padding:.5rem .65rem;text-align:left;border:1px solid var(--border);}
+td{padding:.5rem .65rem;border:1px solid var(--border);vertical-align:top;line-height:1.5;}
+tr:nth-child(even) td{background:rgba(255,255,255,.02);}
+tr:hover td{background:rgba(236,72,153,.04);}
+.steps{list-style:none;}
+.steps li{display:flex;gap:.75rem;margin-bottom:.75rem;padding-bottom:.75rem;border-bottom:1px solid var(--border);}
+.steps li:last-child{border-bottom:none;margin-bottom:0;}
+.sn{flex-shrink:0;width:28px;height:28px;background:var(--pink-dim);color:var(--pink);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:11px;}
+.sc{flex:1;}
+.st{font-weight:600;color:#fff;font-size:12.5px;margin-bottom:.2rem;}
+ul{list-style:none;}
+ul li{padding:.2rem 0;padding-left:1rem;position:relative;}
+ul li::before{content:'▸';position:absolute;left:0;color:var(--pink);}
+ul.o-list li::before{color:var(--orange);}
+ul.p-list li::before{color:var(--purple);}
+ul.c-list li::before{color:var(--cyan);}
+.mnem-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.75rem;margin:.5rem 0;}
+.mcard{background:var(--pink-bg);border:1px solid var(--pink-dim);border-radius:10px;padding:.85rem;}
+.mword{font-family:'JetBrains Mono',monospace;font-size:1.1rem;font-weight:700;color:var(--pink);letter-spacing:2px;margin-bottom:.5rem;}
+.mline{font-size:12px;margin-bottom:.25rem;}
+.ml{color:var(--pink);font-weight:700;margin-right:.4rem;}
+.banca{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:9px;background:var(--purple-dim);color:var(--purple);border-radius:4px;padding:.1rem .35rem;margin-left:.3rem;font-weight:700;}
+.hl{color:var(--orange);font-weight:600;}
+.hlp{color:var(--purple);font-weight:600;}
+.hlc{color:var(--cyan);font-weight:600;}
+.hlpk{color:var(--pink);font-weight:600;}
+.hle{color:var(--emerald);font-weight:600;}
+.kid{color:#fb7185;font-style:italic;font-size:11px;}
+.comp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.65rem;}
+.comp{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:.75rem;}
+.comp.danger{border-color:#7f1d1d;}
+.comp.warn{border-color:#78350f;}
+.comp.info{border-color:var(--pink-dim);}
+.comp-head{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:.35rem;}
+.comp.danger .comp-head{color:var(--red);}
+.comp.warn .comp-head{color:var(--amber);}
+.comp.info .comp-head{color:var(--pink);}
+.comp-body{font-size:11.5px;color:var(--text-dim);line-height:1.55;}
+.hands-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.hand-box{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:.85rem;}
+.hand-title{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:.6rem;}
+.ht-pk{color:var(--pink);border-bottom:1px solid var(--pink-dim);padding-bottom:.35rem;}
+.ht-p{color:var(--purple);border-bottom:1px solid var(--purple-dim);padding-bottom:.35rem;}
+.hand-item{display:flex;align-items:flex-start;gap:.5rem;padding:.3rem 0;border-bottom:1px solid var(--border);font-size:12px;}
+.hand-item:last-child{border-bottom:none;}
+.hand-step{flex-shrink:0;font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:700;width:18px;color:var(--text-dim);margin-top:2px;}
+.mt{margin-top:1rem;}
+.footer{margin-top:2rem;border-top:1px solid var(--border);padding-top:1.25rem;text-align:center;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text-dim);letter-spacing:.5px;}
+@media(max-width:900px){.g3,.g4{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.g2,.g3,.g4,.hands-grid{grid-template-columns:1fr;}.container{padding:1rem 1rem 2rem;}.header{padding:1.25rem 1rem;}.legend{padding:.6rem 1rem;}.header h1{font-size:1.5rem;}}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-tag">// pocket reference · cirurgia geral · residência rs 2026</div>
+  <h1>Colectomia <span>Direita</span></h1>
+  <div class="header-meta">
+    <span class="mpill pk">CME · D3 · Hohenberger</span>
+    <span class="mpill o">AMS · Íleocólica · Cólica D · Cólica média (ramo D)</span>
+    <span class="mpill p">Sabiston Cap. 52 · Zollinger Cap. 87</span>
+  </div>
+</div>
+
+<div class="legend">
+  <div class="legend-item"><div class="ldot d-pk"></div>Rosa = anatomia/técnica</div>
+  <div class="legend-item"><div class="ldot d-o"></div>Laranja = atenção/perigo</div>
+  <div class="legend-item"><div class="ldot d-p"></div>Roxo = bancas/prova</div>
+  <div class="legend-item"><div class="ldot d-c"></div>Ciano = mnemônico</div>
+</div>
+
+<div class="container">
+
+  <!-- 01 -->
+  <div class="g2">
+    <div class="block">
+      <div class="block-title"><span class="bnum">01</span>Indicações & Quadro Clínico</div>
+      <ul>
+        <li><span class="hlpk">Adenocarcinoma de cólon D</span> — indicação mais comum</li>
+        <li>Carcinoide apêndice &gt;2 cm · Crohn ileocólico refratário</li>
+        <li>Massa cecal complicada · Isquemia segmentar · Vólvulo cecal</li>
+        <li>FAP (parte de colectomia total) · Trauma extenso</li>
+      </ul>
+      <div class="cpk mt">
+        <div class="lbl pk">Cólon D vs. Cólon E — Clínica</div>
+        <strong>D:</strong> anemia, sangue oculto, massa tardia (sintomas silenciosos). <span class="kid">(cano grosso com fezes líquidas — demora a entupir)</span><br>
+        <strong>E:</strong> mudança hábito, obstrução, sangue vivo.
+      </div>
+      <div class="co mt">
+        <div class="lbl o">Sinal de Alerta</div>
+        <strong>Anemia ferropriva em homem &gt;50</strong> ou mulher pós-menopausa → COLONOSCOPIA OBRIGATÓRIA.
+      </div>
+      <div class="cpk mt">
+        <div class="lbl pk">Diagnóstico</div>
+        Colonoscopia + biópsia (padrão-ouro) · CEA pré-op · TC tórax/abdome/pelve · RNM hepática se metástase suspeita
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-title"><span class="bnum">02</span>Anatomia & Vascularização</div>
+      <div class="cpk">
+        <div class="lbl pk">3 Artérias do Cólon Direito (origem: AMS)</div>
+        <ul>
+          <li><strong>1. Íleocólica</strong> — ramo CONSTANTE da AMS</li>
+          <li><strong>2. Cólica direita</strong> — INCONSTANTE (10–60%)</li>
+          <li><strong>3. Ramo direito da cólica média</strong></li>
+        </ul>
+      </div>
+      <div class="co mt">
+        <div class="lbl o">Tronco de Henle — Perigo!</div>
+        Confluência venosa (gastrocólica) próxima ao colo do pâncreas. Drena cólon D + estômago + duodeno. <span class="hl">Lesão = sangramento grave.</span>
+      </div>
+      <div class="cpk mt">
+        <div class="lbl pk">Estruturas em Risco</div>
+        <ul>
+          <li><strong>Duodeno (2ª porção):</strong> atrás da fáscia de Toldt — risco de lesão</li>
+          <li><strong>Ureter direito:</strong> cruzado pela íleocólica</li>
+          <li><strong>Vasos gonadais D:</strong> cruzam o retroperitônio</li>
+        </ul>
+      </div>
+      <div class="cp mt">
+        <div class="lbl p">CME = D3 (Hohenberger 2009)</div>
+        <strong>C</strong>omplete <strong>M</strong>esocolic <strong>E</strong>xcision: dissecção no plano embriológico, mesocólon íntegro, ligadura central dos vasos. Equivalente ocidental do D3 japonês. <span class="kid">(retira o cólon junto com toda a "gordura e linfonodos" sem deixar nada para trás)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 03 -->
+  <div class="block">
+    <div class="block-title"><span class="bnum">03</span>Estadiamento TNM & QT Adjuvante</div>
+    <div class="g2">
+      <div>
+        <div class="lbl pk">TNM Resumido (AJCC 8)</div>
+        <div class="tw"><table><thead><tr><th>T</th><th>Descrição</th><th>N</th><th>Linfonodos</th></tr></thead><tbody>
+          <tr><td>T1</td><td>Submucosa</td><td>N0</td><td>Nenhum</td></tr>
+          <tr><td>T2</td><td>Muscular própria</td><td>N1</td><td>1–3</td></tr>
+          <tr><td>T3</td><td>Subserosa</td><td>N2</td><td>≥4</td></tr>
+          <tr><td>T4a</td><td>Peritônio visceral</td><td>M0</td><td>—</td></tr>
+          <tr><td>T4b</td><td>Órgão adjacente</td><td>M1</td><td>Metástase</td></tr>
+        </tbody></table></div>
+        <div class="co mt">
+          <div class="lbl o">Mínimo de Linfonodos</div>
+          <span class="hl">≥12 linfonodos</span> analisados — caso contrário, subestadiamento. CME aumenta para 25–30.
+        </div>
+      </div>
+      <div>
+        <div class="lbl pk">QT Adjuvante por Estadio</div>
+        <div class="tw"><table><thead><tr><th>Estadio</th><th>Conduta</th></tr></thead><tbody>
+          <tr><td><span class="hlpk">I</span></td><td>Observação</td></tr>
+          <tr><td><span class="hlpk">II baixo risco</span></td><td>Observação ou QT (controverso)</td></tr>
+          <tr><td><span class="hlpk">II alto risco</span></td><td>FOLFOX ou Capecitabina</td></tr>
+          <tr><td><span class="hlpk">III</span></td><td><strong>FOLFOX 6 meses (obrigatória!)</strong></td></tr>
+          <tr><td><span class="hlpk">IV</span></td><td>QT paliativa ± ressecção mtx</td></tr>
+        </tbody></table></div>
+        <div class="cp mt">
+          <div class="lbl p">FOLFOX</div>
+          <strong>FOL</strong>inato + 5-<strong>F</strong>luoruracil + <strong>OX</strong>aliplatina — 12 ciclos quinzenais.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 04 -->
+  <div class="block">
+    <div class="block-title"><span class="bnum">04</span>Preparo & Posicionamento</div>
+    <div class="g2">
+      <div>
+        <div class="lbl pk">Preparo Pré-Op</div>
+        <ul>
+          <li>Colonoscopia completa (excluir lesão sincrônica 3–5%)</li>
+          <li>Tatuagem endoscópica se &lt;2 cm</li>
+          <li>Preparo mecânico + ATB oral (neomicina + metro)</li>
+          <li><span class="hle">ATB IV:</span> Cefazolina 2g + Metronidazol 500mg na indução</li>
+          <li>Profilaxia TVP: HBPM + compressão pneumática</li>
+          <li><span class="hlpk">ERAS:</span> jejum reduzido, dieta precoce, sem dreno rotineiro</li>
+        </ul>
+      </div>
+      <div>
+        <div class="lbl pk">Posicionamento</div>
+        <ul>
+          <li>Decúbito dorsal, pernas abduzidas (posição francesa)</li>
+          <li>Trendelenburg + rotação LATERAL ESQUERDA</li>
+          <li>Cirurgião à esquerda, assistente entre pernas</li>
+        </ul>
+        <div class="cpk mt">
+          <div class="lbl pk">Trocartes — 4 Portas</div>
+          <ul>
+            <li><strong>T1 Umbilical 10–12 mm:</strong> câmera 30°</li>
+            <li><strong>T2 Suprapúbico 12 mm:</strong> grampeador, mão D</li>
+            <li><strong>T3 Flanco E 5 mm:</strong> mão E (tração)</li>
+            <li><strong>T4 Hipocôndrio E 5 mm:</strong> assistente</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 05 -->
+  <div class="block">
+    <div class="block-title"><span class="bnum">05</span>Técnica Passo a Passo — P·I·V·M·A·S·R</div>
+    <div class="cpk">
+      <div class="lbl pk">Mnemônico</div>
+      <strong>P</strong>neumo+Posição → <strong>I</strong>nspeção → <strong>V</strong>asos (íleocólica primeiro) → <strong>M</strong>obilização mesocólica (CME) → <strong>A</strong>ngulação hepática → <strong>S</strong>ecção íleo+cólon → <strong>R</strong>econstrução íleo-cólica
+    </div>
+    <ul class="steps mt">
+      <li><div class="sn">P</div><div class="sc"><div class="st">Pneumo + Posição</div>Veress umbilical → CO₂ 12–15 mmHg → trocartes sob visão. Trendelenburg + rot. lateral esquerda 15°. Afasta delgado para FIE.</div></li>
+      <li><div class="sn">I</div><div class="sc"><div class="st">Inspeção</div>Avalia implantes peritoneais, fígado, gânglios. Localiza tumor (palpação + tatuagem). Confirma operabilidade.</div></li>
+      <li><div class="sn">V</div><div class="sc"><div class="st">Vasos — Abordagem Medial</div>Eleva íleo terminal → identifica <span class="hlpk">corda da íleocólica</span>. Abre peritônio inferiormente. <span class="hl">Identifica e protege ureter D + vasos gonadais.</span> Liga íleocólica na origem (2 clips prox + 1 dist).</div></li>
+      <li><div class="sn">M</div><div class="sc"><div class="st">Mobilização Mesocólica (CME)</div>Continua dissecção no plano embriológico medial→lateral. Expõe duodeno (2ª porção) e cabeça do pâncreas. Identifica tronco de Henle. Mantém fáscia mesocólica íntegra.</div></li>
+      <li><div class="sn">A</div><div class="sc"><div class="st">Angulação Hepática (Descida)</div>Secciona ligamento gastrocólico e hepatocólico. Mobiliza ângulo hepático medialmente. <span class="hl">Cuidado com duodeno e vesícula.</span> Liga ramo direito da cólica média.</div></li>
+      <li><div class="sn">S</div><div class="sc"><div class="st">Secção Íleo + Cólon</div>Íleo terminal: 10–15 cm proximal à válvula ileocecal. Cólon transverso: à direita da cólica média. <span class="hle">Grampeador linear cortante Endo-GIA carga azul (3.5 mm)</span> em ambos.</div></li>
+      <li><div class="sn">R</div><div class="sc"><div class="st">Reconstrução Íleo-Cólica</div><strong>Extracorpórea (comum):</strong> mini-incisão Pfannenstiel/periumbilical com Alexis, anastomose fora, devolve à cavidade. <strong>Intracorpórea:</strong> totalmente laparo com grampeador. <span class="hlpk">Latero-lateral isoperistáltica = padrão.</span></div></li>
+    </ul>
+  </div>
+
+  <!-- 06 -->
+  <div class="block">
+    <div class="block-title"><span class="bnum">06</span>Instrumentação — Mão a Mão</div>
+    <div class="tw"><table><thead><tr><th>Instrumento</th><th>Uso</th><th>Instrumento</th><th>Uso</th></tr></thead><tbody>
+      <tr><td><span class="hlpk">Babcock</span></td><td>Tração atraumática</td><td><span class="hlpk">Ligasure 5 mm</span></td><td>Dissecção+hemostasia mesocólio</td></tr>
+      <tr><td><span class="hlc">Tesoura ultrassônica</span></td><td>Secção ligamentos</td><td><span class="hlc">Clipador 10 mm</span></td><td>Ligadura central vasos (2+1)</td></tr>
+      <tr><td><span class="hl">Endo-GIA azul (3.5)</span></td><td>Secção íleo e cólon</td><td><span class="hl">Endo-GIA branca (2.5)</span></td><td>Secção vascular</td></tr>
+      <tr><td><span class="hlp">Câmera 30°</span></td><td>Visualização angulada</td><td><span class="hlp">Alexis</span></td><td>Protetor de ferida extração</td></tr>
+      <tr><td>Endobag</td><td>Extração oncológica</td><td>Porta-agulha laparo</td><td>Anastomose intracorpórea</td></tr>
+    </tbody></table></div>
+
+    <div class="lbl pk mt">Distribuição das Mãos</div>
+    <div class="hands-grid">
+      <div class="hand-box">
+        <div class="hand-title ht-pk">Mão Direita (Cirurgião)</div>
+        <div class="hand-item"><div class="hand-step">P</div><div>Insere trocartes sob visão</div></div>
+        <div class="hand-item"><div class="hand-step">V</div><div>Tesoura ultrassônica → peritônio</div></div>
+        <div class="hand-item"><div class="hand-step">V</div><div>Clipador → liga íleocólica (2+1)</div></div>
+        <div class="hand-item"><div class="hand-step">M</div><div>Ligasure → plano embriológico</div></div>
+        <div class="hand-item"><div class="hand-step">A</div><div>Ligasure → ligamentos hepatocólico/gastrocólico</div></div>
+        <div class="hand-item"><div class="hand-step">S</div><div>Endo-GIA azul → secciona íleo</div></div>
+        <div class="hand-item"><div class="hand-step">S</div><div>Endo-GIA azul → secciona cólon</div></div>
+        <div class="hand-item"><div class="hand-step">R</div><div>Porta-agulha → anastomose</div></div>
+      </div>
+      <div class="hand-box">
+        <div class="hand-title ht-p">Mão Esquerda + Assistente</div>
+        <div class="hand-item"><div class="hand-step">P</div><div>Mantém pneumo + posiciona trocartes</div></div>
+        <div class="hand-item"><div class="hand-step">V</div><div>Babcock → eleva íleo terminal cranialmente</div></div>
+        <div class="hand-item"><div class="hand-step">V</div><div>Tração medial expõe corda da íleocólica</div></div>
+        <div class="hand-item"><div class="hand-step">M</div><div>Tração mesocólica suave (não rasga)</div></div>
+        <div class="hand-item"><div class="hand-step">A</div><div>Tração medial do ângulo hepático</div></div>
+        <div class="hand-item"><div class="hand-step">S</div><div>Estabiliza alça para grampeador</div></div>
+        <div class="hand-item"><div class="hand-step">R</div><div>Tração para anastomose + extração</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 07 -->
+  <div class="block">
+    <div class="block-title"><span class="bnum">07</span>Tabela de Fios & Materiais</div>
+    <div class="tw"><table><thead><tr><th>Material</th><th>Calibre</th><th>Uso</th><th>Observação</th></tr></thead><tbody>
+      <tr><td><span class="hlpk">Endo-GIA azul</span></td><td>3.5 mm</td><td>Secção íleo + cólon</td><td>Padrão para tecido normal</td></tr>
+      <tr><td><span class="hlpk">Endo-GIA branca</span></td><td>2.5 mm</td><td>Secção vascular</td><td>Não usar em tecido espesso</td></tr>
+      <tr><td><span class="hle">Clips de Ti</span></td><td>Médio/Grande</td><td>Ligadura central artérias</td><td>2 prox + 1 dist</td></tr>
+      <tr><td><span class="hlc">PDS / Vicryl</span></td><td>3-0</td><td>Anastomose manual</td><td>Absorvível, contínuo ou separado</td></tr>
+      <tr><td><span class="hlc">Vicryl</span></td><td>2-0</td><td>Aponeurose mini-incisão</td><td>Pontos contínuos</td></tr>
+      <tr><td><span class="hlp">Vicryl</span></td><td>0</td><td>Fáscia trocarte ≥10mm</td><td>Evita hérnia de trocarte</td></tr>
+      <tr><td><span class="hlp">Monocryl</span></td><td>4-0</td><td>Pele subcuticular</td><td>Estético, absorvível</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <!-- 08 -->
+  <div class="block">
+    <div class="block-title"><span class="bnum">08</span>Complicações</div>
+    <div class="comp-grid">
+      <div class="comp danger"><div class="comp-head">Deiscência Anastomótica</div><div class="comp-body">2–4% em íleo-cólica. Sinais: febre, taqui, dor, drenagem fecaloide. TC c/ contraste. Tto: contida = ATB+drenagem; grave = reoperação + ileostomia.</div></div>
+      <div class="comp danger"><div class="comp-head">Lesão Duodenal</div><div class="comp-body">Mobilização hepática. Intraop = sutura primária. Tardio = peritonite grave. Prevenção: identificar duodeno cedo.</div></div>
+      <div class="comp danger"><div class="comp-head">Lesão Ureteral D</div><div class="comp-body">Durante ligadura íleocólica. Reparo + stent se &lt;50%; reimplante se extensa.</div></div>
+      <div class="comp warn"><div class="comp-head">Sangramento Tronco de Henle</div><div class="comp-body">Confluência venosa próx ao pâncreas. Conversão para aberta. Prevenção: dissecção meticulosa.</div></div>
+      <div class="comp warn"><div class="comp-head">Íleo Paralítico</div><div class="comp-body">&gt;72h pós-op. Reduzir opioides, corrigir K+/Mg+. ERAS reduz incidência.</div></div>
+      <div class="comp warn"><div class="comp-head">ISC</div><div class="comp-body">5–15%. Prevenção: ATB, Alexis, preparo + ATB oral.</div></div>
+      <div class="comp info"><div class="comp-head">Hérnia de Trocarte</div><div class="comp-body">Fechar fáscia ≥10mm com Vicryl 0. AMRIGS.</div></div>
+      <div class="comp info"><div class="comp-head">Estenose Anastomótica</div><div class="comp-body">Mais em término-terminal. Dilatação endoscópica.</div></div>
+      <div class="comp info"><div class="comp-head">Diarreia Pós-Colectomia D</div><div class="comp-body">Perda válvula ileocecal + má absorção sais biliares. Loperamida + colestiramina. Melhora em 3–6 meses.</div></div>
+    </div>
+    <div class="cr mt">
+      <div class="lbl r">Sinais de Alarme Pós-Op</div>
+      Taquicardia inexplicada (FC&gt;100), febre &gt;38° após 3º DPO, dor nova, drenagem fecaloide, leucocitose &gt;15.000 → <strong>TC URGENTE com contraste oral/retal</strong>.
+    </div>
+  </div>
+
+  <!-- 09 -->
+  <div class="block">
+    <div class="block-title"><span class="bnum">09</span>Seguimento Oncológico (NCCN)</div>
+    <div class="tw"><table><thead><tr><th>Exame</th><th>Frequência</th><th>Duração</th></tr></thead><tbody>
+      <tr><td>Anamnese + EF</td><td>3/3 meses</td><td>2 anos · depois 6/6 até 5 anos</td></tr>
+      <tr><td>CEA</td><td>3/3 meses</td><td>3 anos · depois 6/6 até 5 anos</td></tr>
+      <tr><td>TC tórax/abd/pelve</td><td>Anual</td><td>5 anos</td></tr>
+      <tr><td>Colonoscopia</td><td>1 ano pós-op</td><td>Depois 3/3 anos se normal</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <!-- 10 -->
+  <div class="block">
+    <div class="block-title"><span class="bnum">10</span>Mnemônicos & Temas de Prova RS</div>
+    <div class="mnem-grid">
+      <div class="mcard"><div class="mword">P·I·V·M·A·S·R</div><div class="mline"><span class="ml">P</span>neumo + Posição</div><div class="mline"><span class="ml">I</span>nspeção</div><div class="mline"><span class="ml">V</span>asos (íleocólica 1º)</div><div class="mline"><span class="ml">M</span>obilização CME</div><div class="mline"><span class="ml">A</span>ngulação hepática</div><div class="mline"><span class="ml">S</span>ecção íleo+cólon</div><div class="mline"><span class="ml">R</span>econstrução</div></div>
+      <div class="mcard"><div class="mword">CME = D3</div><div class="mline"><span class="ml">C</span>omplete</div><div class="mline"><span class="ml">M</span>esocolic</div><div class="mline"><span class="ml">E</span>xcision</div><div class="mline" style="color:var(--text-dim);font-size:11px;margin-top:.35rem;">Hohenberger 2009 = D3 japonês</div></div>
+      <div class="mcard"><div class="mword">≥12 LINFOS</div><div class="mline">Mínimo para N adequado</div><div class="mline">CME aumenta para 25–30</div><div class="mline" style="color:var(--text-dim);font-size:11px;margin-top:.35rem;">Pergunta clássica!</div></div>
+      <div class="mcard"><div class="mword">FOLFOX III</div><div class="mline">Estadio III = QT OBRIGATÓRIA</div><div class="mline">FOL + 5FU + OXaliplatina</div><div class="mline">6 meses (12 ciclos)</div></div>
+      <div class="mcard"><div class="mword">3 ARTÉRIAS</div><div class="mline"><span class="ml">1</span> Íleocólica (sempre)</div><div class="mline"><span class="ml">2</span> Cólica D (inconstante)</div><div class="mline"><span class="ml">3</span> Cólica média ramo D</div><div class="mline" style="color:var(--text-dim);font-size:11px;margin-top:.35rem;">Todas ramos da AMS</div></div>
+      <div class="mcard"><div class="mword">HENLE = PERIGO</div><div class="mline">Tronco gastrocólico</div><div class="mline">Drena cólon D + estômago + duodeno</div><div class="mline">Lesão = sangramento grave</div></div>
+      <div class="mcard"><div class="mword">ANEMIA + HOMEM&gt;50</div><div class="mline">= COLONOSCOPIA OBRIGATÓRIA</div><div class="mline" style="color:var(--text-dim);font-size:11px;margin-top:.35rem;">Investiga cólon D silencioso</div></div>
+      <div class="mcard"><div class="mword">DIARREIA PÓS-OP</div><div class="mline">Perda da válvula ileocecal</div><div class="mline">Loperamida + colestiramina</div><div class="mline">Melhora em 3–6 meses</div></div>
+    </div>
+
+    <div class="lbl p mt">Temas por Banca</div>
+    <div class="tw"><table><thead><tr><th>Banca</th><th>Tópicos</th></tr></thead><tbody>
+      <tr><td><span class="banca">HCPA</span></td><td>Anatomia vascular + tronco de Henle; CME/D3; estadiamento TNM; ≥12 linfonodos; QT adjuvante por estadio</td></tr>
+      <tr><td><span class="banca">GHC</span></td><td>Anemia + idoso → colonoscopia cólon D; passos laparo (abordagem medial); ureter e duodeno; complicações</td></tr>
+      <tr><td><span class="banca">Santa Casa</span></td><td>Cólon D vs. E (clínica); hemicolectomia D estendida; cirurgia urgência; ERAS; ATB profilático</td></tr>
+      <tr><td><span class="banca">PUC-RS</span></td><td>Diarreia pós-colectomia (válvula ileocecal); seguimento (CEA, TC, colono); FOLFOX III; T4 ressecção em bloco</td></tr>
+      <tr><td><span class="banca">AMRIGS</span></td><td>Hérnia de trocarte (Vicryl 0); deiscência (taqui+febre+dor); CME padrão atual; tronco de Henle; anastomose latero-lateral isoperistáltica</td></tr>
+    </tbody></table></div>
+
+    <div class="cp mt">
+      <div class="lbl p">Questões Clássicas que SEMPRE Caem</div>
+      <ul class="p-list">
+        <li>Anemia ferropriva em homem 60a → <span class="hlp">Colonoscopia obrigatória (cólon D)</span></li>
+        <li>Mínimo linfonodos N adequado? → <span class="hlp">≥12</span></li>
+        <li>O que é CME? → <span class="hlp">Complete Mesocolic Excision (Hohenberger 2009 = D3)</span></li>
+        <li>Estadio III adjuvância? → <span class="hlp">FOLFOX 6 meses (obrigatória)</span></li>
+        <li>Artéria sempre presente cólon D? → <span class="hlp">Íleocólica (AMS)</span></li>
+        <li>Diarreia crônica pós-colectomia D? → <span class="hlp">Perda válvula ileocecal + sais biliares</span></li>
+        <li>Tronco de Henle? → <span class="hlp">Confluência venosa gastrocólica — sangramento grave</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer">
+    // pocket · colectomia direita · carolina · residência rs 2026<br>
+    <span style="opacity:.5;">sabiston cap. 52 · zollinger cap. 87 · netter 271–280 · Hohenberger 2009 · NCCN 2024</span>
+  </div>
+
+</div>
+</body>
+</html>

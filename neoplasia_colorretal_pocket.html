@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CCR · Pocket · carolzita</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+:root{
+  --bg:#0d1117;--bg2:#161b22;--bg3:#1c232e;--border:#2a3140;
+  --text:#c9d1d9;--dim:#8b949e;
+  --orange:#ff7a18;--orange-bg:#2a1505;
+  --purple:#b083f0;--purple-bg:#1e1430;
+  --cyan:#3dd6d0;--cyan-bg:#06201f;
+  --red:#f87171;--green:#4ade80;--yellow:#fbbf24;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-serif;font-size:14.5px;line-height:1.55;padding-bottom:2.5rem}
+.head{padding:1.1rem 1rem .8rem;border-bottom:1px solid var(--border);background:linear-gradient(135deg,#1a1005,#161b22 60%)}
+.head h1{font-size:1.25rem;color:#fff;font-weight:700;display:flex;align-items:center;gap:.5rem}
+.head h1 em{color:var(--orange);font-style:normal}
+.head .s{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--dim);margin-top:.25rem}
+.tabs{position:sticky;top:0;z-index:50;display:flex;gap:.3rem;overflow-x:auto;background:var(--bg2);border-bottom:1px solid var(--border);padding:.5rem .6rem;scrollbar-width:thin}
+.tabs::-webkit-scrollbar{height:4px}.tabs::-webkit-scrollbar-thumb{background:var(--border)}
+.tab{flex-shrink:0;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;padding:.4rem .7rem;border-radius:7px;cursor:pointer;color:var(--dim);border:1px solid transparent;white-space:nowrap}
+.tab.on{background:var(--orange-bg);color:var(--orange);border-color:#5c2e0a}
+.wrap{max-width:640px;margin:0 auto;padding:1rem}
+.sec{display:none}.sec.on{display:block;animation:f .2s}
+@keyframes f{from{opacity:0}to{opacity:1}}
+.t{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:700;color:var(--orange);letter-spacing:1px;text-transform:uppercase;margin:1rem 0 .5rem;padding-bottom:.35rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:.4rem}
+.t:first-child{margin-top:.2rem}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:.7rem .85rem;margin:.55rem 0}
+.card.o{border-left:3px solid var(--orange)}
+.card.p{border-left:3px solid var(--purple)}
+.card.c{border-left:3px solid var(--cyan)}
+.card.r{border-left:3px solid var(--red)}
+.card.g{border-left:3px solid var(--green)}
+.lbl{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:1px;text-transform:uppercase;font-weight:700;margin-bottom:.3rem}
+.o .lbl{color:var(--orange)}.p .lbl{color:var(--purple)}.c .lbl{color:var(--cyan)}.r .lbl{color:var(--red)}.g .lbl{color:var(--green)}
+strong{color:#fff}
+.big{color:var(--orange);font-weight:700;font-size:1.05rem}
+ul{margin:.3rem 0 .3rem 1.1rem}li{margin:.22rem 0}
+.row{display:flex;justify-content:space-between;gap:.6rem;padding:.35rem 0;border-bottom:1px solid var(--border);font-size:13px}
+.row:last-child{border:none}
+.row .k{color:var(--dim);font-family:'IBM Plex Mono',monospace;font-size:11px}
+.row .v{color:#fff;text-align:right;font-weight:500}
+.mn{background:var(--purple-bg);border:1px solid #3b2566;border-radius:9px;padding:.6rem .8rem;margin:.5rem 0}
+.mn-w{font-family:'IBM Plex Mono',monospace;font-weight:700;color:var(--purple);letter-spacing:2px;margin-bottom:.2rem}
+.mn-d{font-size:12.5px;color:var(--text)}
+.trap{font-size:12.5px;background:var(--bg2);border:1px solid #5c2e0a;border-left:3px solid var(--orange);border-radius:9px;padding:.55rem .75rem;margin:.45rem 0}
+.trap b{color:var(--orange)}
+.flow{display:flex;flex-direction:column;gap:.4rem;margin:.5rem 0}
+.fstep{display:flex;gap:.6rem;align-items:flex-start;background:var(--bg3);border:1px solid var(--border);border-radius:9px;padding:.5rem .7rem}
+.fn{flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--orange-bg);color:var(--orange);border:1px solid #5c2e0a;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700}
+.fc{font-size:12.5px}.fc b{color:#fff}
+.fstep{flex-direction:column;gap:.4rem}
+.fhd{display:flex;gap:.6rem;align-items:flex-start;width:100%}
+.fase{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1.2px;text-transform:uppercase;color:var(--orange);display:block}
+.pq{border-left:2px solid var(--purple);background:var(--purple-bg);border-radius:0 7px 7px 0;padding:.45rem .65rem;font-size:12px;width:100%}
+.pq b{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1.1px;text-transform:uppercase;color:var(--purple);display:block}
+.card.gr{border-left:3px solid var(--green);background:rgba(74,222,128,.08);color:var(--green);font-style:italic}
+.card.gr .lbl{color:var(--green);font-style:normal}
+.card.gr strong{color:#8ef0aa;font-style:normal}
+.hand{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin:.5rem 0}
+.hc{background:var(--bg3);border:1px solid var(--border);border-radius:9px;padding:.55rem .65rem;font-size:12px}
+.hc.l{border-top:2px solid var(--cyan)}.hc.r{border-top:2px solid var(--orange)}
+.ht{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:1px;font-weight:700;margin-bottom:.25rem}
+.l .ht{color:var(--cyan)}.r .ht{color:var(--orange)}
+</style>
+</head>
+<body>
+
+<div class="head">
+  <h1>🎗️ CCR <em>Pocket</em></h1>
+  <div class="s">// neoplasia colorretal · rastreio · TNM · cirurgia · carolzita</div>
+</div>
+
+<div class="tabs" id="tabs"></div>
+<div class="wrap" id="wrap"></div>
+
+<script>
+const S = [
+{t:'🩺 CLÍNICA', h:`
+<div class="t">🩺 Quadro por sítio</div>
+<div class="card o"><div class="lbl">Cólon direito</div>Anemia ferropriva 🩸, melena, massa, astenia. Obstrui tarde.</div>
+<div class="card c"><div class="lbl">Cólon esquerdo</div>Fezes em fita, alteração do hábito, obstrução, hematoquezia.</div>
+<div class="card p"><div class="lbl">Reto</div>Hematoquezia, tenesmo, urgência. Toque retal! RM de pelve.</div>
+<div class="trap"><b>🪤</b> Idoso + anemia ferropriva = câncer de cólon DIREITO até prova em contrário → colono.</div>
+<div class="t">🧬 Vias moleculares</div>
+<div class="card"><strong>CIN</strong> (85%): APC→KRAS→TP53 · <strong>MSI/dMMR</strong> (15%): Lynch/esporádica · <strong>CIMP/serrilhada</strong>: BRAF.</div>
+`},
+{t:'🔎 RASTREIO', h:`
+<div class="t">🔎 Risco médio</div>
+<div class="card g"><div class="lbl">⚠️ Início aos 45 anos</div><span class="big">45 → 75 anos</span><br>Mudança de 2021 (era 50). 76–85 individualizar.</div>
+<div class="card o"><div class="lbl">Métodos</div>
+<div class="row"><span class="k">Colonoscopia</span><span class="v">10 anos ⭐</span></div>
+<div class="row"><span class="k">FIT</span><span class="v">anual</span></div>
+<div class="row"><span class="k">FIT-DNA</span><span class="v">1–3 anos</span></div>
+<div class="row"><span class="k">Retossigmoido</span><span class="v">5 anos</span></div>
+<div class="row"><span class="k">Colono-TC</span><span class="v">5 anos</span></div>
+</div>
+<div class="trap"><b>🪤</b> Qualquer teste NÃO-colono positivo → colonoscopia. Nunca repetir o mesmo teste.</div>
+<div class="t">🧬 Alto risco</div>
+<div class="card p">Fam. 1º grau: <strong>40a</strong> ou -10a do caso · Lynch: <strong>20–25a</strong> a cada 1–2a · PAF: <strong>10–12a</strong> · DII: <strong>8a</strong> após sintomas.</div>
+`},
+{t:'📊 TNM', h:`
+<div class="t">📊 T — profundidade</div>
+<div class="card c">
+<div class="row"><span class="k">Tis</span><span class="v">in situ</span></div>
+<div class="row"><span class="k">T1</span><span class="v">submucosa</span></div>
+<div class="row"><span class="k">T2</span><span class="v">muscular própria</span></div>
+<div class="row"><span class="k">T3</span><span class="v">subserosa/pericólico</span></div>
+<div class="row"><span class="k">T4a/b</span><span class="v">peritônio / órgão</span></div>
+</div>
+<div class="card o"><div class="lbl">N / M</div>N1 = 1–3 LN · N2 = ≥4 · M1a/b/c (peritônio = M1c). <strong>≥12 LN</strong> = adequado.</div>
+<div class="t">🎯 Estádio → conduta</div>
+<div class="card g">
+<div class="row"><span class="k">I (T1–2N0)</span><span class="v">cirurgia</span></div>
+<div class="row"><span class="k">II (T3–4N0)</span><span class="v">cx ± QT se alto risco</span></div>
+<div class="row"><span class="k">III (N+)</span><span class="v">cx + QT (FOLFOX)</span></div>
+<div class="row"><span class="k">IV (M1)</span><span class="v">QT ± metastasect.</span></div>
+</div>
+<div class="card p"><div class="lbl">Biomarcadores</div><strong>MMR/MSI</strong> em todos (Lynch + prognóstico + imunoterapia) · <strong>RAS/BRAF</strong> no IV · <strong>CEA</strong> p/ seguimento.</div>
+<div class="trap"><b>🪤</b> Estádio II dMMR NÃO se beneficia de 5-FU isolado.</div>
+`},
+{t:'🔪 CIRURGIA', h:`
+<div class="t">🔪 Ressecção por sítio</div>
+<div class="card o">
+<div class="row"><span class="k">Ceco/ascend.</span><span class="v">Colectomia D</span></div>
+<div class="row"><span class="k">Flex. hepática</span><span class="v">Colectomia D ampliada</span></div>
+<div class="row"><span class="k">Descend.</span><span class="v">Colectomia E</span></div>
+<div class="row"><span class="k">Sigmoide</span><span class="v">Sigmoidectomia</span></div>
+<div class="row"><span class="k">Reto médio/alto</span><span class="v">RAB + TME</span></div>
+<div class="row"><span class="k">Reto muito baixo</span><span class="v">Miles (APR)</span></div>
+</div>
+<div class="card gr"><div class="lbl">🟢 tradução simples</div>Mesma lógica da <strong>D2 gástrica</strong> com outros nomes: liga <strong>na origem</strong> (linfonodo mora na raiz do pedículo) e tira o <strong>envelope de gordura inteiro</strong> sem rasgar. Cólon = mesocólon (CME) · reto = mesorreto (TME).</div>
+<div class="card c"><div class="lbl">Princípio</div>Extensão = <strong>drenagem linfática do pedículo</strong>, NÃO a margem do tumor.</div>
+
+<div class="t">🔪 Sigmoidectomia/RAB — 9 passos</div>
+<div class="flow">
+<div class="fstep"><div class="fhd"><div class="fn">1</div><div class="fc"><span class="fase">exposição</span><b>Trendelenburg + rotação D</b> · achar promontório e AMI tensionada</div></div>
+<div class="pq"><b>por quê</b>A gravidade faz o trabalho do auxiliar. A AMI se destaca <strong>como uma corda</strong> sob tensão.</div></div>
+
+<div class="fstep"><div class="fhd"><div class="fn">2</div><div class="fc"><span class="fase">protege o ureter</span><b>Medial→lateral</b> sob a AMI · plano Toldt/Gerota · <b>ureter E fica embaixo</b></div></div>
+<div class="pq"><b>por quê</b>Mantendo o plano <strong>acima da Gerota</strong>, o ureter fica no retroperitônio e <strong>nunca sobe com a peça</strong>. Entrar lateral primeiro perde essa proteção. 🚨</div></div>
+
+<div class="fstep"><div class="fhd"><div class="fn">3</div><div class="fc"><span class="fase">vascular</span><b>AMI alta (origem)</b> ou <b>baixa</b> (preserva cólica E) · VMI na borda do pâncreas</div></div>
+<div class="pq"><b>por quê</b><strong>Alta</strong> = linfonodos apicais + comprimento p/ descer sem tensão · <strong>baixa</strong> = preserva perfusão do coto. Sem diferença de sobrevida — muda o <strong>risco de isquemia</strong>. ⚖️</div></div>
+
+<div class="fstep"><div class="fhd"><div class="fn">4</div><div class="fc"><span class="fase">mobilização</span>Goteira E + <b>abaixar flexura esplênica</b></div></div>
+<div class="pq"><b>por quê</b>Anastomose baixa <strong>sob tensão vaza</strong>. E é aqui que ocorre a <strong>lesão esplênica por tração</strong> (ligamento esplenocólico).</div></div>
+
+<div class="fstep"><div class="fhd"><div class="fn">5</div><div class="fc"><span class="fase">reto — plano santo</span><b>TME</b> no plano de Heald · preservar <b>plexos hipogástricos</b></div></div>
+<div class="pq"><b>por quê</b>Mesorreto sai <strong>como envelope fechado</strong> → recidiva caiu de 30% p/ &lt;10%. Rasgar semeia a pelve. Plexos na parede do plano = <strong>disfunção urinária/sexual</strong>. 🎗️</div></div>
+
+<div class="fstep"><div class="fhd"><div class="fn">6</div><div class="fc"><span class="fase">secção distal</span>Grampeador articulado · idealmente <b>1 único disparo</b></div></div>
+<div class="pq"><b>por quê</b>Cada disparo extra cria <strong>cruzamento de linhas de grampos</strong> = ponto de isquemia = deiscência. Pelve estreita = passo mais difícil.</div></div>
+
+<div class="fstep"><div class="fhd"><div class="fn">7</div><div class="fc"><span class="fase">retirada</span><b>Protetor de parede</b> · secção proximal em cólon que <b>sangra arterial</b></div></div>
+<div class="pq"><b>por quê</b>Protetor evita <strong>implante tumoral na ferida</strong>. Borda pálida ou só com sangramento venoso → ressecar mais.</div></div>
+
+<div class="fstep"><div class="fhd"><div class="fn">8</div><div class="fc"><span class="fase">anastomose</span>EEA transanal · <b>donuts + air-leak + indocianina</b></div></div>
+<div class="pq"><b>por quê</b><strong>3 testes, 3 falhas diferentes</strong>: donuts = secção circunferencial completa · ar = estanqueidade · indocianina = <strong>perfusão</strong>, que os outros dois não detectam. 💚</div></div>
+
+<div class="fstep"><div class="fhd"><div class="fn">9</div><div class="fc"><span class="fase">proteção</span><b>Ileostomia</b> se baixa/pós-neoadjuvância</div></div>
+<div class="pq"><b>por quê</b><strong>NÃO impede</strong> a fístula — <strong>reduz a gravidade</strong> quando ocorre (evita peritonite fecal). Paliação do desfecho, não prevenção. ⚠️ ~20% nunca revertem.</div></div>
+</div>
+
+<div class="card p"><div class="lbl">✅ 4 checagens antes de fechar</div>① Ureter E visto? ② Donuts completos? ③ Air-leak negativo? ④ Coto sangra arterial?</div>
+
+<div class="t">🫀 Watershed (isquemia)</div>
+<div class="card r"><strong>Griffiths</strong> (flexura esplênica) · <strong>Sudeck</strong> (retossigmoide). Arcada marginal de Drummond conecta AMS↔AMI.</div>
+<div class="t">✋ Instrumentação</div>
+<div class="hand">
+<div class="hc l"><div class="ht">✋ ESQUERDA</div>Grasper/Babcock: tração e exposição do mesocólon; contra-tração abre o plano.</div>
+<div class="hc r"><div class="ht">🖐️ DIREITA</div>LigaSure/ultrassônico + grampeador nos pedículos.</div>
+</div>
+<div class="card p"><div class="lbl">Fios/grampos</div>Pedículo: clipe/selagem ou seda 2-0 · Anastomose: EEA ou PDS/Vicryl 3-0 · Aponeurose: PDS 1.</div>
+<div class="trap"><b>🪤</b> Identificar e proteger o <strong>ureter esquerdo</strong> antes de ligar a AMI.</div>
+`},
+
+{t:'🎯 RETO', h:`
+<div class="t">🎯 Reto — o que muda</div>
+<div class="card c"><div class="lbl">Estadiamento</div><strong>RM de pelve</strong>: T, N, margem circunferencial (CRM), EMVI. Ecoendo p/ T1–T2.</div>
+<div class="card o"><div class="lbl">TME (Heald)</div>Mesorreto em bloco, plano avascular "santo", preserva plexos → recidiva &lt;10%.</div>
+<div class="t">💊 Neoadjuvância</div>
+<div class="flow">
+<div class="fstep"><div class="fn">1</div><div class="fc"><b>cT3/T4 ou N+</b> → neoadjuvância antes da TME</div></div>
+<div class="fstep"><div class="fn">2</div><div class="fc"><b>TNT</b>: toda QT+RT antes da cirurgia (tendência atual) ↑ resposta patológica</div></div>
+<div class="fstep"><div class="fn">3</div><div class="fc"><b>cCR</b> → Watch-and-Wait (preservação de órgão, Habr-Gama)</div></div>
+</div>
+<div class="card g"><div class="lbl">⭐ Reto dMMR/MSI-H</div><strong>Dostarlimab</strong> neoadjuvante → 100% cCR, evita RT e cirurgia. Assunto quente!</div>
+<div class="trap"><b>🪤</b> Margem distal ≥1 cm no reto baixo pós-neoadjuvância. Neoadjuvância com RT = RETO (não cólon).</div>
+`},
+{t:'⚠️ COMPLIC.', h:`
+<div class="t">⚠️ Complicações</div>
+<div class="card r"><div class="lbl">Fístula anastomótica</div>Mais comum em anastomose BAIXA e pós-neoadj. 4º–7º dia: febre, dor, dreno. Prevenção: sem tensão + boa perfusão + <strong>ileostomia de proteção</strong> + air-leak test.</div>
+<div class="card o"><div class="lbl">Outras</div>Lesão ureteral/vesical · disfunção urinária/sexual (TME) · <strong>LARS</strong> (urgência/incontinência pós-RAB) · isquemia · ISC.</div>
+<div class="t">🔬 Seguimento (II–III)</div>
+<div class="card g">
+<div class="row"><span class="k">CEA</span><span class="v">3–6 meses</span></div>
+<div class="row"><span class="k">TC TAP</span><span class="v">anual (3–5a)</span></div>
+<div class="row"><span class="k">Colono</span><span class="v">1a → 3a → 5a</span></div>
+</div>
+<div class="card p"><div class="lbl">Metástase</div><strong>Fígado</strong> (via porta) &gt; pulmão. Reto baixo → pulmão direto (retal inf. → cava).</div>
+<div class="trap"><b>🪤</b> CEA subindo isolado no seguimento = investigar recidiva com imagem.</div>
+`},
+{t:'🧠 MNEMÔNICOS', h:`
+<div class="t">🧠 Guardar</div>
+<div class="mn"><div class="mn-w">45 ANOS</div><div class="mn-d">Início do rastreio de risco médio (mudança 2021).</div></div>
+<div class="mn"><div class="mn-w">≥12 LN</div><div class="mn-d">Mínimo para estadiamento N adequado.</div></div>
+<div class="mn"><div class="mn-w">TNM → CONDUTA</div><div class="mn-d">I cx · II cx±QT · III cx+QT · IV QT±metastasect.</div></div>
+<div class="mn"><div class="mn-w">FOLFOX</div><div class="mn-d">Adjuvância estádio III (e II alto risco).</div></div>
+<div class="mn"><div class="mn-w">PAF vs LYNCH</div><div class="mn-d">PAF = APC, &gt;100 pólipos, proctocolectomia · Lynch = MMR, CCR D jovem.</div></div>
+<div class="mn"><div class="mn-w">MEDIAL→LATERAL</div><div class="mn-d">Plano acima da Gerota = ureter fica embaixo, no retroperitônio.</div></div>
+<div class="mn"><div class="mn-w">ALTA × BAIXA</div><div class="mn-d">Alta = apicais + comprimento · baixa = perfusão. Muda isquemia, não sobrevida.</div></div>
+<div class="mn"><div class="mn-w">TME = ENVELOPE</div><div class="mn-d">Mesorreto íntegro derrubou recidiva de 30% p/ &lt;10%.</div></div>
+<div class="mn"><div class="mn-w">3 TESTES</div><div class="mn-d">Donuts (secção) · ar (estanqueidade) · indocianina (perfusão).</div></div>
+<div class="mn"><div class="mn-w">ILEOSTOMIA</div><div class="mn-d">Não impede a fístula — reduz a gravidade dela.</div></div>
+<div class="mn"><div class="mn-w">GRIFFITHS / SUDECK</div><div class="mn-d">Watershed = risco de isquemia anastomótica.</div></div>
+<div class="trap"><b>🪤</b> Anti-EGFR só em RAS/BRAF selvagem E tumor esquerdo. CEA não serve para rastreio.</div>
+`}
+];
+const tabs=document.getElementById('tabs'),wrap=document.getElementById('wrap');
+S.forEach((s,i)=>{
+  const t=document.createElement('div');t.className='tab'+(i===0?' on':'');t.textContent=s.t;t.onclick=()=>go(i);tabs.appendChild(t);
+  const d=document.createElement('div');d.className='sec'+(i===0?' on':'');d.innerHTML=s.h;wrap.appendChild(d);
+});
+function go(i){
+  document.querySelectorAll('.tab').forEach((t,k)=>t.classList.toggle('on',k===i));
+  document.querySelectorAll('.sec').forEach((d,k)=>d.classList.toggle('on',k===i));
+  document.querySelectorAll('.tab')[i].scrollIntoView({inline:'center',block:'nearest',behavior:'smooth'});
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+document.addEventListener('keydown',e=>{
+  const on=[...document.querySelectorAll('.tab')].findIndex(t=>t.classList.contains('on'));
+  if(e.key==='ArrowRight'&&on<S.length-1)go(on+1);
+  if(e.key==='ArrowLeft'&&on>0)go(on-1);
+});
+</script>
+</body>
+</html>

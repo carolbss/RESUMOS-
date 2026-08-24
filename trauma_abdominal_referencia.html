@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trauma Abdominal — Referência CV 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d1117;--panel:#161b22;--panel2:#1c232c;--line:#2a323c;--tx:#e6edf3;--mut:#8b949e;--or:#ff7a18;--or2:#ff9a4d;--orbg:rgba(255,122,24,.10);--pu:#b083f0;--pu2:#c9a7ff;--pubg:rgba(176,131,240,.12);--cy:#3dd6d0;--cy2:#5fe3dd;--cybg:rgba(61,214,208,.10);--red:#ff5f56;--grn:#3fb950}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font-family:'IBM Plex Sans',sans-serif;line-height:1.55;padding:0 0 60px}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px}
+header{padding:30px 0 14px;border-bottom:1px solid var(--line)}
+h1{font-size:30px;font-weight:700;letter-spacing:-.5px}h1 .b{color:var(--or)}
+.sub{color:var(--mut);font-size:14px;margin-top:6px;font-family:'IBM Plex Mono',monospace}
+nav{position:sticky;top:0;background:var(--bg);z-index:10;border-bottom:1px solid var(--line);overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch}
+nav .inner{max-width:920px;margin:0 auto;padding:0 12px;display:flex;gap:2px}
+nav button{background:none;border:none;color:var(--mut);font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.5px;text-transform:uppercase;padding:14px 11px;cursor:pointer;border-bottom:2px solid transparent;transition:.15s}
+nav button:hover{color:var(--tx)}nav button.on{color:var(--or);border-bottom-color:var(--or)}
+section{display:none;padding:26px 0;animation:f .25s}section.on{display:block}
+@keyframes f{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+h2{font-size:20px;color:var(--or);margin:26px 0 12px;font-weight:600;border-bottom:1px solid var(--line);padding-bottom:6px}h2:first-child{margin-top:0}
+h3{font-size:15px;margin:18px 0 8px;font-weight:600;color:var(--or2)}
+p,li{font-size:14.5px}
+ul{margin:8px 0 8px 4px;list-style:none}li{padding:3px 0 3px 24px;position:relative}li .em{position:absolute;left:0}
+.lay{color:var(--cy2);font-style:italic;font-size:13.5px}
+.box{border-left:3px solid var(--or);background:var(--orbg);border-radius:0 8px 8px 0;padding:12px 16px;margin:14px 0}
+.box.pu{border-color:var(--pu);background:var(--pubg)}.box.cy{border-color:var(--cy);background:var(--cybg)}
+.box .lbl{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--or);margin-bottom:6px;font-weight:600}
+.box.pu .lbl{color:var(--pu2)}.box.cy .lbl{color:var(--cy2)}
+.box li::before{content:"▸";color:var(--or);position:absolute;left:6px}.box li{padding-left:22px}
+.box.pu li::before{color:var(--pu)}.box.cy li::before{color:var(--cy)}.box li .em{display:none}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.5px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--panel2);color:var(--or2);font-weight:600;font-family:'IBM Plex Mono',monospace;font-size:12px}
+.hi{color:var(--pu2);font-weight:600}.mn{font-family:'IBM Plex Mono',monospace;color:var(--cy2)}
+.steps{counter-reset:s;list-style:none;margin:6px 0}
+.steps li{padding:8px 8px 8px 40px;border-bottom:1px solid var(--line)}
+.steps li::before{counter-increment:s;content:counter(s);background:var(--or);color:#0d1117;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:12px;width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;position:absolute;left:4px;top:8px}
+.steps li .em{display:none}.steps li:last-child{border-bottom:none}
+.hand{font-family:'IBM Plex Mono',monospace;font-size:11px;padding:1px 6px;border-radius:4px;margin-right:4px}
+.hL{background:rgba(63,185,80,.15);color:#56d364}.hR{background:rgba(255,122,24,.15);color:var(--or2)}
+.kbd{font-family:'IBM Plex Mono',monospace;background:var(--panel2);padding:1px 6px;border-radius:4px;font-size:12.5px;color:var(--or2)}
+.q{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:16px 0}
+.q .src{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--pu2);letter-spacing:1px;text-transform:uppercase}
+.q .stem{margin:8px 0 10px;font-weight:500}
+.q .alt{padding:4px 0 4px 24px;position:relative;font-size:14px}.q .alt .let{position:absolute;left:0;font-family:'IBM Plex Mono',monospace;color:var(--mut)}
+.q .alt.ok{color:var(--grn)}.q .alt.ok .let{color:var(--grn)}
+.q details{margin-top:10px;border-top:1px dashed var(--line);padding-top:10px}
+.q summary{cursor:pointer;color:var(--cy2);font-size:13px;font-family:'IBM Plex Mono',monospace}
+.q .exp{font-size:13.5px;color:var(--mut);margin-top:8px}
+.svgwrap{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px;margin:14px 0;text-align:center}
+.svgwrap figcaption{color:var(--mut);font-size:12px;margin-top:8px;font-family:'IBM Plex Mono',monospace}
+.pill{display:inline-block;background:var(--panel2);border:1px solid var(--line);border-radius:20px;padding:3px 12px;margin:3px 4px 3px 0;font-size:12.5px;font-family:'IBM Plex Mono',monospace}.pill .hi{color:var(--pu2)}
+.note{font-size:12px;color:var(--mut);border-top:1px solid var(--line);margin-top:30px;padding-top:14px;font-family:'IBM Plex Mono',monospace}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<h1>🩸 Trauma <span class="b">Abdominal</span></h1>
+<div class="sub">FAST/e-FAST · Damage Control · CV 2026 · ATLS 11ª ed · WSES 2016–2022 · AAST-OIS 2018</div>
+</div></header>
+<nav><div class="inner" id="nav"></div></nav>
+<div class="wrap">
+
+<section id="geral" class="on">
+<h2>🧭 Definição &amp; mecanismos</h2>
+<p>Trauma abdominal = lesão de vísceras/vasos da cavidade abdominal, retroperitônio ou pelve por mecanismo <span class="hi">contuso</span> (colisão, atropelamento, queda — lesão de vísceras maciças: baço &gt; fígado) ou <span class="hi">penetrante</span> (arma branca, arma de fogo — lesão de vísceras ocas: intestino delgado, cólon). <span class="lay">(a barriga pode ser "amassada" numa batida — machuca os órgãos "cheios" como baço e fígado — ou "furada" por faca/bala — machuca as "tripas")</span></p>
+<div class="box"><div class="lbl">🎯 Órgão mais lesado</div>
+<ul>
+<li><span class="em">·</span><b>Trauma contuso:</b> <span class="hi">baço</span> é o mais lesado (fígado é o mais lesado em algumas séries de alta energia; ambos caem em prova).</li>
+<li><span class="em">·</span><b>Arma branca:</b> fígado &gt; delgado &gt; diafragma.</li>
+<li><span class="em">·</span><b>Arma de fogo (PAF):</b> <span class="hi">intestino delgado</span> &gt; cólon &gt; fígado (trajeto múltiplo, alta energia).</li>
+</ul></div>
+<h3>Regiões anatômicas do abdome (importante para PAF)</h3>
+<ul>
+<li><span class="em">📦</span><b>Abdome anterior:</b> entre linhas axilares anteriores, do rebordo costal à sínfise púbica.</li>
+<li><span class="em">🔦</span><b>Toracoabdominal:</b> do mamilo (4º EIC anterior / 6º posterior) ao rebordo costal — risco de lesão <span class="hi">diafragmática</span> e torácica associada.</li>
+<li><span class="em">🌀</span><b>Flanco/dorso:</b> vísceras retroperitoneais (rim, cólon retroperitoneal, duodeno) — FAST insensível aqui.</li>
+</ul>
+</section>
+
+<section id="anat">
+<h2>🫀 Anatomia cirúrgica &amp; vascularização</h2>
+<h3>Quadrantes e conteúdo</h3>
+<ul>
+<li><span class="em">↖️</span><b>QSD:</b> fígado, vesícula, flexura hepática, duodeno, rim D. <span class="lay">(canto de cima da direita)</span></li>
+<li><span class="em">↗️</span><b>QSE:</b> baço, estômago, cauda do pâncreas, flexura esplênica, rim E.</li>
+<li><span class="em">↙️↘️</span><b>QID/QIE:</b> ceco/apêndice, cólon sigmoide, alças de delgado, anexos, bexiga.</li>
+</ul>
+<div class="box pu"><div class="lbl">⭐ Alto rendimento — Zonas do retroperitônio</div>
+<ul>
+<li><span class="em">·</span><b>Zona I (central):</b> aorta, VCI, tronco celíaco, AMS, duodeno, pâncreas → <span class="hi">SEMPRE explorar</span> (contuso e penetrante).</li>
+<li><span class="em">·</span><b>Zona II (flanco/perirrenal):</b> rim, pedículo renal, cólon retroperitoneal → explorar se <span class="hi">penetrante ou hematoma expansivo/pulsátil</span>; contuso estável → conservador.</li>
+<li><span class="em">·</span><b>Zona III (pélvica):</b> vasos ilíacos, plexo pré-sacral → contuso: <span class="hi">NÃO abrir</span> (empacotar + angioembolizar); penetrante: explorar.</li>
+</ul></div>
+<h3>Vascularização-chave</h3>
+<ul>
+<li><span class="em">🩸</span><b>Baço:</b> artéria esplênica (ramo do tronco celíaco) + vasos curtos gástricos. Ligamentos: esplenofrênico, esplenorrenal, esplenocólico, gastroesplênico.</li>
+<li><span class="em">🩸</span><b>Fígado:</b> dupla — artéria hepática (~25–30% fluxo) + veia porta (~70%). Manobra de <span class="hi">Pringle</span> (clampe do pedículo hepático no hiato de Winslow) controla ambos; se sangramento persiste = lesão de veia hepática/retro-hepática da VCI.</li>
+</ul>
+</section>
+
+<section id="clinica">
+<h2>🩺 Avaliação inicial — ATLS 11ª ed</h2>
+<p>Trauma abdominal é avaliado dentro do <span class="hi">ABCDE</span>. Hemorragia intra-abdominal é causa maior de choque no "C" (Circulation). O abdome é uma das cinco fontes de hemorragia oculta ("blood on the floor + 4 more": tórax, abdome, pelve/retroperitônio, ossos longos, externo).</p>
+<div class="box"><div class="lbl">🔎 Exame físico — limitações</div>
+<ul>
+<li><span class="em">·</span>Até <span class="hi">20–40%</span> dos hemoperitônios significativos têm exame abdominal inicial normal (rebaixamento, álcool, lesão medular, distração por outras lesões).</li>
+<li><span class="em">·</span>Sinais de alerta: distensão, dor/defesa, <span class="hi">peritonite</span>, equimose (Grey-Turner/Cullen — tardios), evisceração, sinal do cinto de segurança.</li>
+</ul></div>
+<h3>Classificação da resposta à volemia (ATLS)</h3>
+<table>
+<tr><th>Resposta a 1 L cristaloide</th><th>Interpretação</th><th>Conduta</th></tr>
+<tr><td><b>Responder</b> (estabiliza)</td><td>Perda leve, sem sangramento ativo</td><td>Continua investigação (CT)</td></tr>
+<tr><td><b>Transient responder</b> (melhora e volta a cair)</td><td>Sangramento ativo moderado</td><td>Hemoderivados + provável cirurgia/angio</td></tr>
+<tr><td><b>Non-responder</b> (não melhora)</td><td>Hemorragia exsanguinante</td><td><span class="hi">Sala imediata</span> + protocolo transfusão maciça</td></tr>
+</table>
+</section>
+
+<section id="fast">
+<h2>🔊 FAST &amp; e-FAST</h2>
+<p><b>FAST</b> = <i>Focused Assessment with Sonography for Trauma</i>. Ultrassom point-of-care à beira-leito para detectar <span class="hi">líquido livre</span> (sangue) — não gradua lesão de órgão. Incorporado ao ATLS para o paciente hipotenso, reduzindo laparotomias não terapêuticas. <span class="lay">(um "ultrassom rápido" que procura poças de sangue escondidas na barriga e ao redor do coração)</span></p>
+<figure class="svgwrap">
+<svg viewBox="0 0 320 210" width="100%" style="max-width:420px">
+<rect x="0" y="0" width="320" height="210" fill="#0d1117"/>
+<ellipse cx="160" cy="105" rx="70" ry="95" fill="#161b22" stroke="#2a323c" stroke-width="1.5"/>
+<line x1="160" y1="20" x2="160" y2="190" stroke="#2a323c" stroke-dasharray="3 3"/>
+<!-- pericardico -->
+<circle cx="160" cy="42" r="12" fill="rgba(255,122,24,.18)" stroke="#ff7a18"/>
+<text x="160" y="46" fill="#ff9a4d" font-size="11" text-anchor="middle" font-family="monospace">1</text>
+<text x="160" y="14" fill="#8b949e" font-size="8.5" text-anchor="middle" font-family="monospace">Pericárdico (subxifoide)</text>
+<!-- RUQ Morison -->
+<circle cx="118" cy="88" r="13" fill="rgba(176,131,240,.20)" stroke="#b083f0"/>
+<text x="118" y="92" fill="#c9a7ff" font-size="11" text-anchor="middle" font-family="monospace">2</text>
+<text x="70" y="70" fill="#8b949e" font-size="8.5" text-anchor="middle" font-family="monospace">QSD /</text>
+<text x="70" y="80" fill="#8b949e" font-size="8.5" text-anchor="middle" font-family="monospace">Morison*</text>
+<!-- LUQ -->
+<circle cx="202" cy="88" r="13" fill="rgba(61,214,208,.18)" stroke="#3dd6d0"/>
+<text x="202" y="92" fill="#5fe3dd" font-size="11" text-anchor="middle" font-family="monospace">3</text>
+<text x="255" y="80" fill="#8b949e" font-size="8.5" text-anchor="middle" font-family="monospace">QSE /</text>
+<text x="255" y="90" fill="#8b949e" font-size="8.5" text-anchor="middle" font-family="monospace">esplenorrenal</text>
+<!-- pelvico -->
+<circle cx="160" cy="158" r="13" fill="rgba(255,95,86,.18)" stroke="#ff5f56"/>
+<text x="160" y="162" fill="#ff8b84" font-size="11" text-anchor="middle" font-family="monospace">4</text>
+<text x="160" y="192" fill="#8b949e" font-size="8.5" text-anchor="middle" font-family="monospace">Pélvico (Douglas/retrovesical)</text>
+</svg>
+<figcaption>4 janelas do FAST · *Morison (hepatorrenal) = ponto mais sensível no supino · e-FAST acrescenta 2 janelas torácicas</figcaption>
+</figure>
+<h3>As 4 janelas + extensão</h3>
+<table>
+<tr><th>Janela</th><th>Detecta</th></tr>
+<tr><td>1. Pericárdica (subxifoide)</td><td>Hemopericárdio / tamponamento</td></tr>
+<tr><td>2. QSD — recesso hepatorrenal (<b>Morison</b>)</td><td>Hemoperitônio — <span class="hi">janela mais sensível no supino</span></td></tr>
+<tr><td>3. QSE — recesso esplenorrenal</td><td>Hemoperitônio periesplênico</td></tr>
+<tr><td>4. Pélvica (Douglas/retrovesical)</td><td>Líquido pélvico — ponto de acúmulo mais precoce em pé</td></tr>
+<tr><td><b>e-FAST</b> — hemitórax bilateral</td><td>Hemotórax / pneumotórax</td></tr>
+</table>
+<div class="box pu"><div class="lbl">⭐ Alto rendimento — desempenho &amp; limites</div>
+<ul>
+<li><span class="em">·</span>Sensibilidade ~<span class="hi">85–96%</span>, especificidade &gt;98% p/ líquido livre. Detecta a partir de ~200 mL.</li>
+<li><span class="em">·</span><b>NÃO</b> avalia bem: lesão de <span class="hi">víscera oca, retroperitônio, diafragma e pâncreas</span> → FAST negativo NÃO exclui lesão.</li>
+<li><span class="em">·</span>Operador-dependente; obesidade, enfisema subcutâneo e ascite prévia limitam.</li>
+</ul></div>
+<h3>Como o FAST muda a conduta</h3>
+<table>
+<tr><th>Hemodinâmica</th><th>FAST</th><th>Conduta</th></tr>
+<tr><td><b>Instável</b></td><td>Positivo</td><td><span class="hi">Laparotomia imediata</span> — sem CT</td></tr>
+<tr><td><b>Instável</b></td><td>Negativo</td><td>Buscar outra fonte (tórax, pelve, externo); repetir FAST / DPL</td></tr>
+<tr><td><b>Estável</b></td><td>Positivo</td><td><span class="hi">CT</span> para graduar lesão → decidir NOM × cirurgia</td></tr>
+<tr><td><b>Estável</b></td><td>Negativo</td><td>Observação / CT conforme mecanismo</td></tr>
+</table>
+<p style="font-size:13px;color:var(--mut)">DPL (lavado peritoneal) hoje é raro — usado quando FAST indisponível/duvidoso no instável. Positivo: &gt;10 mL sangue vivo, &gt;100.000 hemácias/mm³, bile/bactéria/conteúdo entérico.</p>
+</section>
+
+<section id="conduta">
+<h2>📐 Conduta — algoritmo decisório</h2>
+<div class="box"><div class="lbl">🚨 Indicações de laparotomia imediata</div>
+<ul>
+<li><span class="em">·</span>Instabilidade hemodinâmica + FAST/DPL positivo</li>
+<li><span class="em">·</span><span class="hi">Peritonite</span> difusa</li>
+<li><span class="em">·</span>Evisceração; empalamento</li>
+<li><span class="em">·</span>Pneumoperitônio; lesão diafragmática; ruptura intraperitoneal de bexiga</li>
+<li><span class="em">·</span>Sangue no toque retal / SNG (lesão de TGI)</li>
+<li><span class="em">·</span><b>PAF</b> com trajeto transperitoneal (a maioria vai para cirurgia)</li>
+</ul></div>
+<h3>Ferimento por arma branca (FAB) anterior</h3>
+<p>Paciente estável, sem peritonite/evisceração → estratégia seletiva: exploração local da ferida ± observação seriada / TC. Só ~1/3 dos FAB penetram o peritônio e destes nem todos precisam de cirurgia.</p>
+<div class="box pu"><div class="lbl">⭐ Manejo não operatório (NOM) de vísceras maciças</div>
+<ul>
+<li><span class="em">·</span>Indicado no <span class="hi">estável</span>, com lesão de baço/fígado graduada por TC, sem peritonite e sem outra indicação cirúrgica.</li>
+<li><span class="em">·</span><b>Angioembolização</b> se blush de contraste / pseudoaneurisma em paciente estável — aumenta sucesso do NOM.</li>
+<li><span class="em">·</span>Falha do NOM (instabiliza) → cirurgia. Grau AAST alto (IV–V) tem maior taxa de falha, mas grau isolado não indica cirurgia — decide a <span class="hi">fisiologia</span>.</li>
+</ul></div>
+<h3>Graduação AAST-OIS 2018 (baço/fígado) — resumo</h3>
+<table>
+<tr><th>Grau</th><th>Baço</th><th>Fígado</th></tr>
+<tr><td>I</td><td>Hematoma subcapsular &lt;10%; laceração &lt;1 cm</td><td>Similar; laceração &lt;1 cm</td></tr>
+<tr><td>II</td><td>Subcapsular 10–50%; laceração 1–3 cm</td><td>Laceração 1–3 cm</td></tr>
+<tr><td>III</td><td>Subcapsular &gt;50%/roto; laceração &gt;3 cm</td><td>Laceração &gt;3 cm</td></tr>
+<tr><td>IV</td><td>Desvascularização &gt;25%</td><td>Ruptura 25–75% de lobo</td></tr>
+<tr><td>V</td><td>Baço estilhaçado / lesão hilar devascularizante</td><td>Ruptura &gt;75%; lesão venosa justa-hepática/VCI retro-hepática</td></tr>
+</table>
+<p style="font-size:13px;color:var(--mut)">2018: passou a incorporar <span class="hi">lesão vascular</span> (pseudoaneurisma, FAV, extravasamento) na imagem, elevando o grau.</p>
+</section>
+
+<section id="dcs">
+<h2>🛠️ Damage Control — cirurgia &amp; ressuscitação</h2>
+<p>Estratégia para o paciente <span class="hi">in extremis</span> em que a operação definitiva completa mataria pela <b>tríade letal</b>. Prioriza fisiologia sobre anatomia: opera-se pouco e rápido, corrige-se na UTI, e reconstrói-se depois.</p>
+<div class="box pu"><div class="lbl">⭐ Tríade letal (→ "diamante" letal)</div>
+<ul>
+<li><span class="em">·</span><b>Hipotermia</b> (&lt;35 °C) → disfunção plaquetária/enzimática</li>
+<li><span class="em">·</span><b>Acidose</b> (pH &lt;7,2) → refratariedade a catecolaminas</li>
+<li><span class="em">·</span><b>Coagulopatia</b> → sangramento difuso</li>
+<li><span class="em">·</span>(+ <b>Hipocalcemia</b> = "diamante letal" — Ca²⁺ é cofator da coagulação)</li>
+</ul></div>
+<h3>Gatilhos para damage control</h3>
+<ul>
+<li><span class="em">🌡️</span>Temperatura &lt;35 °C · pH &lt;7,2 · lactato/déficit de base elevados</li>
+<li><span class="em">🩸</span>Transfusão maciça (&gt;10 UI CH/24 h ou &gt;4 UI/h) · coagulopatia clínica</li>
+<li><span class="em">⏱️</span>Lesões múltiplas/complexas, tempo cirúrgico proibitivo</li>
+</ul>
+<h3>As 3 fases</h3>
+<table>
+<tr><th>Fase</th><th>Objetivo</th><th>O que se faz</th></tr>
+<tr><td><b>1. Laparotomia abreviada</b></td><td>Controle de dano</td><td>Hemostasia (packing, ligadura, shunt temporário) + controle de contaminação (grampeamento/ressecção de alça <span class="hi">sem anastomose</span>) + <span class="hi">fechamento temporário</span> (peritoneostomia/vácuo/bolsa de Bogotá)</td></tr>
+<tr><td><b>2. UTI</b></td><td>Reverter tríade letal</td><td>Reaquecer, corrigir coagulopatia/acidose, otimizar hemodinâmica</td></tr>
+<tr><td><b>3. Reoperação</b> (24–48 h)</td><td>Definitiva</td><td>Retirar compressas, reconstruir/anastomosar, fechar parede</td></tr>
+</table>
+<div class="box cy"><div class="lbl">🩸 Damage Control Resuscitation (DCR)</div>
+<ul>
+<li><span class="em">·</span><b>Hipotensão permissiva</b> (PAS-alvo ~80–90 mmHg até controle do sangramento, salvo TCE).</li>
+<li><span class="em">·</span><b>Ressuscitação hemostática</b> balanceada <span class="hi">1:1:1</span> (CH:plasma:plaquetas); minimizar cristaloide.</li>
+<li><span class="em">·</span><b>Ácido tranexâmico</b> (CRASH-2): 1 g em 10 min + 1 g em 8 h, dentro de <span class="hi">3 h</span> do trauma.</li>
+<li><span class="em">·</span>Cálcio (evitar hipocalcemia da transfusão) · prevenir hipotermia.</li>
+</ul></div>
+<h3>REBOA</h3>
+<p><i>Resuscitative Endovascular Balloon Occlusion of the Aorta</i> — balão intra-aórtico como <span class="hi">ponte</span> (não solução) para hemorragia de tronco não compressível. Zona I (aorta descendente, sangramento abdominal) e Zona III (infrarrenal, sangramento pélvico). Não é rotina.</p>
+</section>
+
+<section id="tecnica">
+<h2>🔪 Técnica — laparotomia de trauma</h2>
+<div class="box"><div class="lbl">🛏️ Setup</div>
+<ul>
+<li><span class="em">·</span><b>Posição:</b> supino, braços abertos (crucifixo); antissepsia do queixo aos joelhos ("preparar do mento à coxa") — permite ampliar para tórax/inguinal.</li>
+<li><span class="em">·</span><b>Incisão:</b> laparotomia mediana xifopúbica — acesso rápido e ampliável.</li>
+<li><span class="em">·</span>Mesa aquecida, fluidos aquecidos, protocolo de transfusão maciça pronto.</li>
+</ul></div>
+<h3>Sequência operatória</h3>
+<ul class="steps">
+<li><span class="em">·</span>Abertura ampla da mediana; aspiração e evacuação de coágulos. <span class="hand hL">E</span>afastador/aspirador · <span class="hand hR">D</span>bisturi/tesoura de Metzenbaum.</li>
+<li><span class="em">·</span><b>Packing dos 4 quadrantes</b> com compressas — tampona e revela a fonte. <span class="hand hL">E</span>expõe/eleva víscera · <span class="hand hR">D</span>posiciona compressas.</li>
+<li><span class="em">·</span>Retirar compressas por quadrante; identificar sangramento. Hemostasia: <span class="hi">packing peri-hepático</span>, manobra de Pringle (clampe vascular/Satinsky no pedículo), ligaduras.</li>
+<li><span class="em">·</span><b>Baço:</b> mobilizar seccionando ligamentos, trazer à linha média. Instável → <span class="hi">esplenectomia</span> (ligar hilo com fio 2-0/0). <span class="hand hL">E</span>tração medial do baço · <span class="hand hR">D</span>tesoura/ligadura.</li>
+<li><span class="em">·</span><b>Controle de contaminação:</b> alça lesada → grampeador linear ou fita cardíaca; sem restaurar trânsito no damage control.</li>
+<li><span class="em">·</span><b>Fechamento temporário</b> (peritoneostomia com curativo a vácuo) se damage control / risco de síndrome compartimental; ou fechamento definitivo por planos.</li>
+</ul>
+<div class="box cy"><div class="lbl">🧵 Fios &amp; instrumentos-chave</div>
+<ul>
+<li><span class="em">·</span>Pedículo esplênico/vasos calibrosos: <span class="hi">seda/poliéster 2-0 ou 0</span>; clampes vasculares (Satinsky, bulldog).</li>
+<li><span class="em">·</span>Enterorrafia/anastomose (fase definitiva): <span class="hi">PDS/Vicryl 3-0 ou 4-0</span>.</li>
+<li><span class="em">·</span>Vaso maior reparável: prolene 4-0/5-0. Fechamento de aponeurose: PDS 1 (loop).</li>
+<li><span class="em">·</span>Vaso não essencial em campo contaminado/instável → <span class="hi">ligar</span> ou shunt temporário.</li>
+</ul></div>
+</section>
+
+<section id="complic">
+<h2>⚠️ Complicações</h2>
+<ul>
+<li><span class="em">🎈</span><b>Síndrome compartimental abdominal (SCA):</b> PIA &gt;20 mmHg + disfunção orgânica nova. Ressuscitação volumosa e fechamento sob tensão são fatores → daí a peritoneostomia. Trata com descompressão.</li>
+<li><span class="em">🦠</span><b>Abscesso intra-abdominal / sepse:</b> especialmente após lesão de cólon e contaminação.</li>
+<li><span class="em">💉</span><b>Coagulopatia persistente</b> e ressangramento (relaparotomia).</li>
+<li><span class="em">🧫</span><b>Sepse pós-esplenectomia (OPSI):</b> vacinar (pneumococo, meningococo, Hib) idealmente 14 dias após, ou na alta.</li>
+<li><span class="em">💧</span><b>Fístula biliar/bilioma</b> (fígado); <span class="em">·</span>fístula pancreática (lesão de pâncreas/duodeno perdida).</li>
+<li><span class="em">🔁</span><b>Necrose hepática</b> pós-angioembolização de alto grau; abscesso.</li>
+</ul>
+</section>
+
+<section id="pegas">
+<h2>🪤 Pega-ratões</h2>
+<div class="box pu"><div class="lbl">⚠️ Erros clássicos de prova</div>
+<ul>
+<li><span class="em">·</span><b>FAST negativo NÃO exclui</b> lesão (víscera oca, retroperitônio, diafragma) — não substitui TC no estável.</li>
+<li><span class="em">·</span>No <b>instável com FAST positivo</b> → sala, <span class="hi">não peça TC</span> ("TC é para o estável").</li>
+<li><span class="em">·</span>FAST positivo em paciente <b>estável</b> NÃO obriga cirurgia — gradua por TC (maioria vai para NOM).</li>
+<li><span class="em">·</span>Grau AAST alto por si só <b>não indica</b> cirurgia — quem decide é a <span class="hi">hemodinâmica</span>.</li>
+<li><span class="em">·</span>Hematoma retroperitoneal <b>Zona I sempre explora</b>; <b>Zona III no contuso NÃO abrir</b> (empacota/angioembolização).</li>
+<li><span class="em">·</span>Damage control: <span class="hi">não fazer anastomose</span> na 1ª cirurgia — é abreviada.</li>
+<li><span class="em">·</span>Tríade letal = hipotermia + acidose + coagulopatia (não confundir com Cushing/Charcot).</li>
+<li><span class="em">·</span>Ácido tranexâmico só tem benefício se &lt;3 h; após, pode ser deletério.</li>
+<li><span class="em">·</span>Lesão diafragmática à esquerda pode passar despercebida — herniação tardia; suspeitar em ferida toracoabdominal.</li>
+</ul></div>
+</section>
+
+<section id="mnemo">
+<h2>🧠 Mnemônicos</h2>
+<div class="box cy"><div class="lbl">FAST — 4 janelas</div><p class="mn">"Pericárdio, Morison, Esplenorrenal, Pelve" · Morison = mais sensível no supino</p></div>
+<div class="box cy"><div class="lbl">Tríade letal — "HAC"</div><p class="mn">Hipotermia · Acidose · Coagulopatia (+ hipoCalcemia = diamante)</p></div>
+<div class="box cy"><div class="lbl">3 fases do Damage Control</div><p class="mn">"Abre-Reanima-Reconstrói" · abreviada → UTI → reoperação 24–48 h</p></div>
+<div class="box cy"><div class="lbl">Zonas do retroperitônio</div><p class="mn">1 sempre · 2 depende · 3 contuso não abre</p></div>
+<div class="box cy"><div class="lbl">DCR — 1:1:1</div><p class="mn">CH : Plasma : Plaquetas + TXA &lt;3 h + hipotensão permissiva</p></div>
+<div class="box cy"><div class="lbl">Órgão + lesado</div><p class="mn">Contuso = baço · PAF = delgado · FAB = fígado</p></div>
+</section>
+
+<section id="questoes">
+<h2>📝 Questões estilo banca</h2>
+
+<div class="q"><div class="src">HCPA · estilo</div>
+<div class="stem">Homem, 28 anos, vítima de colisão automobilística, chega hipotenso (PAS 80) e taquicárdico, não responde a 1 L de cristaloide. FAST demonstra líquido livre no recesso hepatorrenal. A conduta é:</div>
+<div class="alt"><span class="let">A)</span> Tomografia de abdome com contraste</div>
+<div class="alt ok"><span class="let">B)</span> Laparotomia exploradora imediata</div>
+<div class="alt"><span class="let">C)</span> Angioembolização eletiva</div>
+<div class="alt"><span class="let">D)</span> Observação com FAST seriado</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> Instável + FAST positivo = laparotomia sem demora. TC é reservada ao paciente estável.</div></details>
+</div>
+
+<div class="q"><div class="src">GHC · estilo</div>
+<div class="stem">Sobre o exame FAST no trauma abdominal, é correto afirmar:</div>
+<div class="alt"><span class="let">A)</span> Detecta com alta sensibilidade lesões de víscera oca e retroperitônio</div>
+<div class="alt"><span class="let">B)</span> Um FAST negativo exclui lesão intra-abdominal significativa</div>
+<div class="alt ok"><span class="let">C)</span> Avalia líquido livre com alta especificidade, mas não gradua a lesão do órgão</div>
+<div class="alt"><span class="let">D)</span> Substitui a tomografia no paciente estável</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>C.</b> FAST identifica líquido livre (sensib. ~85–96%, espec. &gt;98%), mas é ruim para víscera oca/retroperitônio e não gradua lesão — no estável, TC define a conduta.</div></details>
+</div>
+
+<div class="q"><div class="src">Santa Casa POA · estilo</div>
+<div class="stem">Paciente com múltiplas lesões abdominais, temperatura 34 °C, pH 7,1 e coagulopatia. A estratégia mais adequada na primeira laparotomia é:</div>
+<div class="alt"><span class="let">A)</span> Reconstrução definitiva de todas as lesões em tempo único</div>
+<div class="alt ok"><span class="let">B)</span> Controle de dano: hemostasia, controle de contaminação e fechamento temporário</div>
+<div class="alt"><span class="let">C)</span> Anastomose primária de todas as alças lesadas</div>
+<div class="alt"><span class="let">D)</span> Fechamento definitivo da parede sob tensão</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> Tríade letal instalada indica damage control — operação abreviada, sem anastomose, com peritoneostomia; reconstrução em 24–48 h após reverter a fisiologia na UTI.</div></details>
+</div>
+
+<div class="q"><div class="src">PUC-RS · estilo</div>
+<div class="stem">Sobre o hematoma retroperitoneal no trauma, assinale a correta:</div>
+<div class="alt"><span class="let">A)</span> Hematoma de Zona I (central) deve ser sempre observado</div>
+<div class="alt"><span class="let">B)</span> Hematoma pélvico (Zona III) por trauma contuso deve ser sempre aberto</div>
+<div class="alt ok"><span class="let">C)</span> Hematoma de Zona I deve ser explorado tanto no trauma contuso quanto no penetrante</div>
+<div class="alt"><span class="let">D)</span> Hematoma de Zona II é sempre indicação de nefrectomia</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>C.</b> Zona I (grandes vasos, duodeno-pâncreas) sempre explora. Zona III contuso NÃO se abre (empacota + angioembolização). Zona II depende do mecanismo/expansão.</div></details>
+</div>
+
+<div class="q"><div class="src">AMRIGS · estilo</div>
+<div class="stem">Paciente estável com lesão esplênica grau III à TC, com blush de contraste, sem peritonite. A conduta que aumenta a chance de sucesso do manejo não operatório é:</div>
+<div class="alt"><span class="let">A)</span> Esplenectomia imediata</div>
+<div class="alt ok"><span class="let">B)</span> Angioembolização esplênica</div>
+<div class="alt"><span class="let">C)</span> Laparotomia com esplenorrafia obrigatória</div>
+<div class="alt"><span class="let">D)</span> Alta hospitalar precoce</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> No estável, blush/pseudoaneurisma é indicação de angioembolização, que sustenta o NOM. A instabilidade, não o grau isolado, indicaria cirurgia.</div></details>
+</div>
+
+<div class="q"><div class="src">HCPA · estilo</div>
+<div class="stem">Compõe a chamada "ressuscitação de controle de dano" (DCR), EXCETO:</div>
+<div class="alt"><span class="let">A)</span> Hipotensão permissiva até o controle do sangramento</div>
+<div class="alt"><span class="let">B)</span> Transfusão balanceada 1:1:1</div>
+<div class="alt ok"><span class="let">C)</span> Infusão liberal e precoce de grandes volumes de cristaloide</div>
+<div class="alt"><span class="let">D)</span> Ácido tranexâmico nas primeiras 3 horas</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>C.</b> A DCR justamente <i>minimiza</i> cristaloides (diluição/coagulopatia), privilegiando hemoderivados balanceados, hipotensão permissiva e TXA precoce.</div></details>
+</div>
+
+<div class="q"><div class="src">GHC · estilo</div>
+<div class="stem">Qual é a víscera mais frequentemente lesada no ferimento abdominal por arma de fogo?</div>
+<div class="alt"><span class="let">A)</span> Baço</div>
+<div class="alt ok"><span class="let">B)</span> Intestino delgado</div>
+<div class="alt"><span class="let">C)</span> Rim</div>
+<div class="alt"><span class="let">D)</span> Pâncreas</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> No PAF, o intestino delgado é o mais lesado (maior superfície e trajeto múltiplo); no trauma contuso o baço lidera.</div></details>
+</div>
+
+<div class="q"><div class="src">Santa Casa POA · estilo</div>
+<div class="stem">São indicações de laparotomia imediata no trauma abdominal, EXCETO:</div>
+<div class="alt"><span class="let">A)</span> Peritonite difusa</div>
+<div class="alt"><span class="let">B)</span> Evisceração</div>
+<div class="alt"><span class="let">C)</span> Pneumoperitônio</div>
+<div class="alt ok"><span class="let">D)</span> Lesão esplênica grau II em paciente estável, sem outras lesões</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>D.</b> Lesão esplênica de baixo grau em estável é candidata a NOM. As demais são indicações clássicas de laparotomia.</div></details>
+</div>
+
+<div class="q"><div class="src">PUC-RS · estilo</div>
+<div class="stem">A manobra de Pringle no trauma hepático consiste em:</div>
+<div class="alt ok"><span class="let">A)</span> Clampeamento do pedículo hepático no hiato de Winslow (artéria hepática + veia porta)</div>
+<div class="alt"><span class="let">B)</span> Clampeamento da aorta supracelíaca</div>
+<div class="alt"><span class="let">C)</span> Ligadura da veia esplênica</div>
+<div class="alt"><span class="let">D)</span> Oclusão da veia cava infra-hepática</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>A.</b> Pringle oclui o influxo (a. hepática + porta). Se o sangramento persiste apesar do Pringle, suspeita-se de lesão de veia hepática/VCI retro-hepática.</div></details>
+</div>
+
+<div class="q"><div class="src">AMRIGS · estilo</div>
+<div class="stem">Complicação diretamente relacionada à ressuscitação volumosa e ao fechamento da parede sob tensão após laparotomia de trauma:</div>
+<div class="alt"><span class="let">A)</span> Fístula biliar</div>
+<div class="alt ok"><span class="let">B)</span> Síndrome compartimental abdominal</div>
+<div class="alt"><span class="let">C)</span> Sepse pós-esplenectomia (OPSI)</div>
+<div class="alt"><span class="let">D)</span> Necrose hepática pós-embolização</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> A SCA (PIA &gt;20 mmHg + disfunção orgânica) é prevenida com peritoneostomia/curativo a vácuo justamente nesse cenário; trata-se com descompressão.</div></details>
+</div>
+
+</section>
+
+<div class="note">Fontes: ATLS 11ª ed (ACS) · WSES Liver Trauma Guidelines (2016) · WSES Bowel Injury (2022) · AAST-OIS 2018 (spleen/liver revision) · CRASH-2 · Sabiston · Rutherford. Questões originais para estudo. — carolzita · CV 2026</div>
+</div>
+<script>
+var secs=[['geral','🧭 Geral'],['anat','🫀 Anatomia'],['clinica','🩺 Avaliação'],['fast','🔊 FAST'],['conduta','📐 Conduta'],['dcs','🛠️ Damage Ctrl'],['tecnica','🔪 Técnica'],['complic','⚠️ Complic'],['pegas','🪤 Pega-ratões'],['mnemo','🧠 Mnemônicos'],['questoes','📝 Questões']];
+var nav=document.getElementById('nav');
+secs.forEach(function(s,i){var b=document.createElement('button');b.textContent=s[1];if(i===0)b.className='on';b.onclick=function(){document.querySelectorAll('nav button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');document.querySelectorAll('section').forEach(function(x){x.classList.remove('on')});document.getElementById(s[0]).classList.add('on');window.scrollTo({top:0,behavior:'smooth'})};nav.appendChild(b)});
+</script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Aorta Torácica &amp; TAAA · pocket</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d1117;--card:#16161f;--card2:#1c1c27;--line:#2a2a38;
+  --txt:#ececf4;--muted:#9a9ab0;
+  --laranja:#f97316;--roxo:#a855f7;--ciano:#22d3ee;--vermelho:#f87171;--amarelo:#fbbf24;--verde:#34d399;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{overflow-x:hidden}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;font-size:17px;line-height:1.6;padding-bottom:30px}
+.top{padding:22px 18px 12px;position:sticky;top:0;background:linear-gradient(180deg,var(--bg) 70%,transparent);z-index:5}
+.kick{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:26px;line-height:1.1;margin-top:4px}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:6px 18px 12px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;padding:9px 15px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted);white-space:nowrap;cursor:pointer;transition:.15s}
+.tab.on{background:var(--laranja);border-color:var(--laranja);color:#0a0a0f}
+.panel{display:none;padding:6px 18px 40px;animation:f .25s}
+.panel.on{display:block}
+@keyframes f{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+h2{font-family:'Syne',sans-serif;font-size:21px;color:var(--laranja);margin:18px 0 10px}
+h3{font-family:'Syne',sans-serif;font-size:16px;color:#fff;margin:16px 0 6px}
+p{margin:10px 0}
+ul{list-style:none;margin:8px 0}
+li{padding:6px 0 6px 22px;position:relative}
+li::before{content:"▸";position:absolute;left:0;top:7px;color:var(--laranja);font-size:13px}
+strong{color:#fff;font-weight:600}
+.s{color:var(--verde);font-style:italic;font-size:.92em}
+.gr{background:rgba(52,211,153,.10);border-color:rgba(52,211,153,.4);color:var(--verde);font-style:italic}
+.gr .l{color:var(--verde);font-style:normal}
+.gr strong,.gr b{color:#7fe8c0;font-style:normal}
+.step{display:flex;flex-direction:column;gap:6px;padding:10px 0;border-bottom:1px dashed var(--line)}
+.step:last-child{border:none}
+.hd2{display:flex;gap:10px;align-items:flex-start}
+.n{flex:0 0 26px;height:26px;border-radius:8px;background:rgba(249,115,22,.15);border:1px solid rgba(249,115,22,.45);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;display:grid;place-items:center;font-size:12.5px}
+.fase{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--laranja);display:block}
+.pq{border-left:2px solid var(--roxo);background:rgba(168,85,247,.10);border-radius:0 7px 7px 0;padding:7px 10px;font-size:13.5px;width:100%}
+.pq b{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--roxo);display:block}
+.fio{font-family:'JetBrains Mono',monospace;font-size:11.5px;background:rgba(168,85,247,.14);color:var(--roxo);border:1px solid var(--roxo);padding:1px 6px;border-radius:5px;white-space:nowrap}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0}
+.box{border-radius:12px;padding:13px 15px;margin:13px 0;border:1px solid;font-size:15px}
+.prova{background:rgba(168,85,247,.1);border-color:rgba(168,85,247,.4)}
+.prova .l{color:var(--roxo)}
+.mac{background:rgba(34,211,238,.1);border-color:rgba(34,211,238,.4)}
+.mac .l{color:var(--ciano)}
+.warn{background:rgba(248,113,113,.1);border-color:rgba(248,113,113,.4)}
+.warn .l{color:var(--vermelho)}
+.l{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-size:10px;background:rgba(168,85,247,.25);color:var(--roxo);padding:2px 6px;border-radius:5px;margin-left:5px;font-family:'JetBrains Mono',monospace}
+.kv{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)}
+.kv:last-child{border:none}
+.kv .k{flex:0 0 34%;color:var(--ciano);font-family:'JetBrains Mono',monospace;font-size:13px}
+.kv .v{flex:1;font-size:15px}
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="kick">carolzita · pocket 🚑</div>
+  <h1>Aorta Torácica &amp; TAAA 🫀</h1>
+</div>
+<div class="tabs">
+  <div class="tab on" data-t="0">📐 Crawford</div>
+  <div class="tab" data-t="1">📏 Limiares</div>
+  <div class="tab" data-t="2">🔪 Aberto</div>
+  <div class="tab" data-t="3">🩻 Endo</div>
+  <div class="tab" data-t="4">🦵 Medula</div>
+  <div class="tab" data-t="5">☠️ Traps</div>
+</div>
+
+<!-- 0 -->
+<div class="panel on" data-p="0">
+  <h2>📐 Crawford (extensão TAAA)</h2>
+  <div class="card">
+    <div class="kv"><div class="k">I</div><div class="v">subclávia E → acima das renais</div></div>
+    <div class="kv"><div class="k">II 👑</div><div class="v"><strong>subclávia E → bifurcação (a MAIOR)</strong></div></div>
+    <div class="kv"><div class="k">III</div><div class="v">T6 → bifurcação</div></div>
+    <div class="kv"><div class="k">IV</div><div class="v">diafragma (T12) → bifurcação (só abdome)</div></div>
+    <div class="kv"><div class="k">V (Safi)</div><div class="v">T6 → acima das renais</div></div>
+  </div>
+  <div class="box prova"><span class="l">alto rendimento</span>👑 <strong>Extent II = a mais extensa + MAIOR risco de paraplegia!</strong></div>
+  <h3>🧬 Etiologia</h3>
+  <ul>
+    <li>👵 Descendente/TAAA = <strong>degenerativa/aterosclerose</strong></li>
+    <li>🧑 Ascendente jovem = <strong>Marfan / bicúspide / Loeys-Dietz</strong></li>
+  </ul>
+</div>
+
+<!-- 1 -->
+<div class="panel" data-p="1">
+  <h2>📏 Quando operar</h2>
+  <div class="card">
+    <div class="kv"><div class="k">🫀 Ascendente</div><div class="v"><strong>≥5,5 cm</strong> (5,0 se Marfan/bicúspide)</div></div>
+    <div class="kv"><div class="k">🌡️ Descendente/TAAA</div><div class="v"><strong>≥5,5-6,0 cm</strong></div></div>
+    <div class="kv"><div class="k">📈 Cresce</div><div class="v"><strong>&gt;0,5 cm/ano</strong></div></div>
+    <div class="kv"><div class="k">🔥 Sintomático/roto</div><div class="v"><strong>opera em qualquer tamanho!</strong></div></div>
+  </div>
+  <div class="box mac"><span class="l">🧠 macete</span>Conjuntivo (Marfan) = limiar <strong>MENOR</strong> ⬇️</div>
+  <ul>
+    <li>📷 Diagnóstico: <strong>angio-TC</strong></li>
+    <li>🗣️ Rouquidão = laríngeo recorrente E (<strong>Ortner</strong>)</li>
+    <li>💊 Clínico: BB + estatina + parar de fumar; Marfan → losartana</li>
+  </ul>
+</div>
+
+<!-- 2 -->
+<div class="panel" data-p="2">
+  <h2>🔪 Reparo aberto (Crawford) — 7 passos</h2>
+  <div class="box gr"><span class="l">🟢 tradução simples</span>O TAAA é um <strong>tronco que alimenta tudo</strong> — medula, rins, intestino, fígado. A cirurgia é uma corrida contra o relógio de cada órgão: quanto tempo aguenta sem fluxo, e em que ordem religar. 🕐</div>
+  <p class="s">🛏️ Decúbito lateral D modificado + toracofrenolaparotomia · ventilação monopulmonar</p>
+
+  <div class="step"><div class="hd2"><div class="n">1</div><div class="x"><span class="fase">controle</span>Heparinizar → clampe proximal/distal do segmento</div></div>
+  <div class="pq"><b>por quê</b>Sem parada circulatória total — o <strong>bypass átrio-femoral E</strong> perfunde o resto do corpo enquanto se clampa só o segmento tratado.</div></div>
+
+  <div class="step"><div class="hd2"><div class="n">2</div><div class="x"><span class="fase">abertura</span><strong>Inclusão</strong>: não resseca a parede, enxerto entra <strong>dentro</strong> do saco</div></div>
+  <div class="pq"><b>por quê</b>Ressecar a parede exigiria dissecar tudo que adere ao aneurisma (esôfago, pulmão, ázigos). Mesma lógica do "fechar o saco sobre o enxerto" do AAA — aqui desde o início.</div></div>
+
+  <div class="step"><div class="hd2"><div class="n">3</div><div class="x"><span class="fase">anastomose proximal</span>Tubo de Dacron à aorta sadia <span class="fio">Prolene</span></div></div>
+  <div class="pq"><b>por quê</b>Estabelece o novo fluxo de entrada cedo — cada anastomose completa é um território a menos dependendo só do bypass.</div></div>
+
+  <div class="step"><div class="hd2"><div class="n">4</div><div class="x"><span class="fase">crítico — a medula</span><strong>Reimplante das intercostais T8-L1</strong> (Adamkiewicz) + patch visceral</div></div>
+  <div class="pq"><b>por quê</b>Passo que mais decide se o paciente anda depois. Medula tem irrigação segmentar, pouca reserva colateral. Reimplantar em <strong>ilha (patch)</strong> reduz nº de anastomoses e tempo de isquemia. 🚨</div></div>
+
+  <div class="step"><div class="hd2"><div class="n">5</div><div class="x"><span class="fase">renal</span>Reimplante da renal E · <strong>perfusão fria</strong></div></div>
+  <div class="pq"><b>por quê</b>Reduz demanda metabólica do rim sem fluxo pulsátil — mesmo princípio da preservação para transplante, aplicado in situ.</div></div>
+
+  <div class="step"><div class="hd2"><div class="n">6</div><div class="x"><span class="fase">o momento mais perigoso</span>Anastomose distal + <strong>reperfusão sequencial</strong></div></div>
+  <div class="pq"><b>por quê</b>Cada território reperfundido devolve ácido lático e K⁺ acumulados. Tudo de uma vez soma os efeitos — pode matar. Sequencial distribui o impacto no tempo. ⚠️</div></div>
+
+  <div class="step"><div class="hd2"><div class="n">7</div><div class="x"><span class="fase">encerramento</span>Hemostasia · fechar saco · reconstrução diafragmática</div></div>
+  <div class="pq"><b>por quê</b>Diafragma mal reconstruído = disfunção ventilatória num paciente que já ficou horas com um pulmão colabado.</div></div>
+
+  <div class="box warn"><span class="l">☠️ pega-ratão</span>Anastomose aórtica = <strong>Prolene</strong> (inabsorvível mono), NUNCA absorvível! 🧵</div>
+  <p>💀 Mortalidade eletiva ~6% · rota &gt;20%</p>
+</div>
+
+<!-- 3 -->
+<div class="panel" data-p="3">
+  <h2>🩻 Endovascular</h2>
+  <div class="card">
+    <div class="kv"><div class="k">TEVAR</div><div class="v">descendente · 1ª opção se anatomia boa</div></div>
+    <div class="kv"><div class="k">Seal zone</div><div class="v"><strong>≥20 mm</strong> de aorta sadia</div></div>
+    <div class="kv"><div class="k">F/B-EVAR</div><div class="v">preserva celíaco/AMS/renais no TAAA</div></div>
+  </div>
+  <div class="box prova"><span class="l">alto rendimento <span class="banca">GHC</span></span>💧 <strong>Endoleak tipo II</strong> (refluxo por ramo) = o mais comum → observar se estável. <strong>Tipo I e III = tratar sempre!</strong></div>
+  <ul>
+    <li>🦾 Cobrir subclávia E (zona 2) → pode precisar revascularizar</li>
+    <li>📉 Mortalidade 30d menor que aberto (2-5% × 10-20%)</li>
+    <li>👁️ Vigilância por imagem vitalícia</li>
+  </ul>
+</div>
+
+<!-- 4 -->
+<div class="panel" data-p="4">
+  <h2>🦵 Isquemia medular</h2>
+  <div class="box prova"><span class="l">alto rendimento <span class="banca">HCPA·GHC·PUC</span></span>🩸 <strong>Artéria de Adamkiewicz</strong> (T8-L1, à E) → alimenta a <strong>espinhal anterior</strong>. Risco máximo na <strong>Extent II</strong>.</div>
+  <div class="box mac"><span class="l">🧠 macete "DRENA"</span><strong>D</strong>reno liquórico · <strong>R</strong>eimplante intercostais · <strong>E</strong>levar PAM (≥85-90) · <strong>N</strong>ão anemiar/hipotensão · <strong>A</strong>ortic distal perfusion 💧</div>
+  <div class="box warn"><span class="l">☠️ pega-ratão</span>Paraplegia no pós-op = EMERGÊNCIA → <strong>drenar liquor + subir PAM JÁ</strong> (pode reverter!). Nunca só observar 🚨</div>
+</div>
+
+<!-- 5 -->
+<div class="panel" data-p="5">
+  <h2>☠️ Pega-ratões</h2>
+  <div class="box warn"><span class="l">trap 1</span>Extent II = maior paraplegia (não o IV) 👑</div>
+  <div class="box warn"><span class="l">trap 2</span>Adamkiewicz = T8-L1, espinhal anterior 🩸</div>
+  <div class="box warn"><span class="l">trap 3</span>Marfan/bicúspide = limiar menor (5,0) ⬇️</div>
+  <div class="box warn"><span class="l">trap 4</span>Sintomático/roto = operar sem esperar tamanho 🔥</div>
+  <div class="box warn"><span class="l">trap 5</span>Paraplegia pós-op = liquor + PAM, não observar 🚨</div>
+  <div class="box warn"><span class="l">trap 6</span>Endoleak I/III tratam; II observa se estável 💧</div>
+  <div class="box warn"><span class="l">trap 7</span>Anastomose aórtica = Prolene 🧵</div>
+  <div class="box warn"><span class="l">trap 8</span>TEVAR seal ≥20 mm; zona 2 revasculariza subclávia 🦾</div>
+  <div class="box mac"><span class="l">✅ resumo de bolso</span>Crawford II=maior/mais paraplegia · limiares asc 5,5(5,0 Marfan)/desc-TAAA 5,5-6,0/cresce &gt;0,5/sintomático opera · aberto=bypass átrio-femoral+clampe sequencial+reimplante intercostais · endo=TEVAR(seal≥20)/F-BEVAR · anti-medula DRENA(Adamkiewicz T8-L1) · Prolene 🎓</div>
+</div>
+
+<script>
+var tabs=document.querySelectorAll('.tab'),panels=document.querySelectorAll('.panel');
+tabs.forEach(function(t){t.addEventListener('click',function(){
+  tabs.forEach(function(x){x.classList.remove('on')});
+  panels.forEach(function(x){x.classList.remove('on')});
+  t.classList.add('on');
+  document.querySelector('.panel[data-p="'+t.dataset.t+'"]').classList.add('on');
+})});
+</script>
+</body>
+</html>

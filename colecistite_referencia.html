@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colecistite &amp; Colecistectomia — carolzita</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0f; --bg2:#12121a; --card:#16161f; --card2:#1c1c27;
+  --line:#2a2a38; --txt:#e6e6ef; --muted:#9a9ab0;
+  --laranja:#f97316; --laranja-bg:rgba(249,115,22,.10);
+  --roxo:#a855f7; --roxo-bg:rgba(168,85,247,.10);
+  --ciano:#22d3ee; --ciano-bg:rgba(34,211,238,.10);
+  --verde:#34d399; --vermelho:#f87171; --amarelo:#fbbf24;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(1200px 600px at 50% -10%,#15151f 0%,var(--bg) 60%);color:var(--txt);font-family:'Inter',sans-serif;line-height:1.55;padding:0 0 80px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px}
+header{padding:40px 0 24px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(28px,6vw,44px);line-height:1.05;margin:8px 0 6px;letter-spacing:-.02em}
+.sub{color:var(--muted);font-size:15px;max-width:740px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tag{font-family:'JetBrains Mono',monospace;font-size:11px;padding:5px 10px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted)}
+.tag.r{color:var(--roxo);border-color:rgba(168,85,247,.35);background:var(--roxo-bg)}
+section{margin-top:14px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:12px;overflow:hidden;transition:border-color .2s}
+details[open]{border-color:rgba(249,115,22,.30)}
+summary{cursor:pointer;list-style:none;padding:18px 20px;display:flex;align-items:center;gap:13px;font-family:'Syne',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em;user-select:none}
+summary::-webkit-details-marker{display:none}
+.num{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--bg);background:var(--laranja);width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:0 0 auto}
+.chev{margin-left:auto;color:var(--muted);transition:transform .25s;font-size:14px}
+details[open] .chev{transform:rotate(90deg)}
+.body{padding:4px 22px 24px;font-size:15px}
+.body p{margin:10px 0}
+.body h4{font-family:'Syne',sans-serif;font-size:16px;color:var(--laranja);margin:20px 0 8px;letter-spacing:-.01em}
+.body ul{margin:8px 0 8px 4px;list-style:none}
+.body li{padding:4px 0 4px 20px;position:relative}
+.body li::before{content:"▸";position:absolute;left:0;color:var(--laranja);font-size:12px;top:6px}
+.body strong{color:#fff;font-weight:600}
+.simple{color:var(--verde);font-style:italic;font-size:.94em;display:block;margin:6px 0}
+.step .fase{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--laranja);display:block;margin-bottom:1px}
+.step .sttl{font-family:'Syne',sans-serif;font-weight:700;font-size:15.5px;color:#fff;margin-bottom:4px}
+.step p{margin:5px 0;font-size:14px}
+.pq{border-left:3px solid var(--roxo);background:var(--roxo-bg);border-radius:0 9px 9px 0;padding:8px 12px;margin:9px 0;font-size:13.5px}
+.pq b{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--roxo);display:block;margin-bottom:2px}
+.minihands{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:9px}
+.mh{border-radius:9px;padding:8px 11px;font-size:12.5px;border:1px solid var(--line)}
+.mh.e{background:rgba(52,211,153,.07);border-color:rgba(52,211,153,.3)}
+.mh.d{background:rgba(249,115,22,.07);border-color:rgba(249,115,22,.3)}
+.mh b{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:2px}
+.mh.e b{color:var(--verde)} .mh.d b{color:var(--laranja)}
+.box.simplebox{background:rgba(52,211,153,.08);border-color:rgba(52,211,153,.3)}
+.box.simplebox .lbl{color:var(--verde)}
+.box.simplebox{color:var(--verde);font-style:italic}
+.box.simplebox strong{color:#7fe8c0;font-style:normal}
+.fio{font-family:'JetBrains Mono',monospace;font-size:11.5px;background:var(--roxo-bg);color:var(--roxo);border:1px solid rgba(168,85,247,.35);padding:1px 6px;border-radius:5px;white-space:nowrap}
+@media(max-width:620px){.minihands{grid-template-columns:1fr}}
+.box{border-radius:12px;padding:13px 15px;margin:14px 0;font-size:14px;border:1px solid}
+.box.prova{background:var(--roxo-bg);border-color:rgba(168,85,247,.35)}
+.box.prova .lbl{color:var(--roxo)}
+.box.mac{background:var(--ciano-bg);border-color:rgba(34,211,238,.35)}
+.box.mac .lbl{color:var(--ciano)}
+.box.warn{background:rgba(248,113,113,.08);border-color:rgba(248,113,113,.3)}
+.box.warn .lbl{color:var(--vermelho)}
+.lbl{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-family:'JetBrains Mono',monospace;font-size:10px;background:rgba(168,85,247,.2);color:var(--roxo);padding:2px 7px;border-radius:6px;margin-left:6px;white-space:nowrap}
+.tbl{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
+.tbl table{width:100%;border-collapse:collapse;min-width:520px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--laranja);background:var(--card2)}
+td strong{color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin:14px 0}
+.gcard{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+.gcard .t{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--ciano);margin-bottom:4px}
+.gcard .d{font-size:13px;color:var(--muted)}
+.hands{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.hand{border-radius:12px;padding:14px;border:1px solid var(--line)}
+.hand.e{background:rgba(34,211,238,.06);border-color:rgba(34,211,238,.25)}
+.hand.d{background:rgba(249,115,22,.06);border-color:rgba(249,115,22,.25)}
+.hand .ht{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;font-weight:700}
+.hand.e .ht{color:var(--ciano)} .hand.d .ht{color:var(--laranja)}
+.hand li{font-size:13px}
+.steps{counter-reset:s;margin:10px 0}
+.step{counter-increment:s;position:relative;padding:11px 0 11px 46px;border-bottom:1px dashed var(--line)}
+.step:last-child{border-bottom:none}
+.step::before{content:counter(s);position:absolute;left:0;top:9px;width:30px;height:30px;border-radius:9px;background:var(--laranja-bg);border:1px solid rgba(249,115,22,.4);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:grid;place-items:center}
+.step b{color:#fff}
+svg{max-width:100%;height:auto;display:block;margin:16px auto}
+.fig{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.fig .cap{font-size:12px;color:var(--muted);text-align:center;margin-top:8px;font-family:'JetBrains Mono',monospace}
+footer{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+footer .ref{font-family:'JetBrains Mono',monospace;font-size:12px;margin-top:8px}
+a{color:var(--laranja)}
+@media(max-width:560px){.hands{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">carolzita · cirurgia geral · vias biliares</div>
+  <h1>Colecistite &amp; Colecistectomia</h1>
+  <p class="sub">Tema único e completo: da <strong>colelitíase</strong> à <strong>colecistite aguda</strong> (diagnóstico e gravidade <strong>TG18</strong>, timing cirúrgico <strong>WSES</strong>), com a técnica das <strong>duas vias reunidas</strong> — <strong>laparoscópica</strong> (Calot, Critical View of Safety) e <strong>aberta</strong> (Kocher, conversão) — mais a <strong>vesícula difícil</strong> (subtotal, Mirizzi, cirrose) e a <strong>lesão de via biliar (Strasberg)</strong>. Base: Tokyo Guidelines 2018, WSES 2020, SAGES Safe Cholecystectomy, e pegadinhas das 5 bancas do RS.</p>
+  <div class="tags">
+    <span class="tag">TG18 I–III</span>
+    <span class="tag">Murphy</span>
+    <span class="tag">Triângulo de Calot</span>
+    <span class="tag">Critical View of Safety</span>
+    <span class="tag">Strasberg</span>
+    <span class="tag">Subtotal · Mirizzi</span>
+    <span class="tag r">HCPA · GHC · SC-POA · PUC · AMRIGS</span>
+  </div>
+</header>
+
+<!-- 1 COLELITIASE & ESPECTRO -->
+<details open>
+  <summary><span class="num">1</span> Colelitíase &amp; espectro clínico <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>A <strong>colelitíase</strong> (cálculos na vesícula) é o substrato de quase tudo. A maioria é <strong>assintomática</strong>; o sintoma clássico é a <strong>cólica biliar</strong> — dor em hipocôndrio direito/epigástrio, pós-prandial (gordura), que dura &lt;6 h e cede. Quando a dor <strong>persiste &gt;6 h + febre + Murphy</strong>, instalou-se a <strong>colecistite aguda</strong>.</p>
+
+    <h4>Fatores de risco — "4 Fs" (e além)</h4>
+    <ul>
+      <li><strong>Female, Fat, Forty, Fertile</strong> (mulher, obesa, ~40 anos, multípara/fértil). Some-se: história familiar, emagrecimento rápido/bariátrica, jejum/NPT, anemias hemolíticas (cálculos pigmentares), fibrose cística, ceftriaxona, estrogênio.</li>
+    </ul>
+    <div class="simple">A bile fica "saturada" de colesterol e forma pedrinhas; a pedra que entala no canal de saída (ducto cístico) inflama a vesícula.</div>
+
+    <h4>Colecistite aguda (calculosa) — fisiopatologia</h4>
+    <ul>
+      <li><strong>Obstrução do ducto cístico</strong> por cálculo → distensão, inflamação química → infecção secundária. Evolui para <strong>empiema, gangrena e perfuração</strong> se não tratada.</li>
+      <li><strong>Acalculosa</strong> (sem cálculo): paciente crítico/UTI, jejum prolongado, queimado — ver tema "Doenças Biliares Acalculosas".</li>
+    </ul>
+
+    <h4>Complicações da litíase — os nomes têm que estar na ponta da língua</h4>
+    <div class="tbl"><table>
+      <tr><th>Complicação</th><th>Essência</th></tr>
+      <tr><td><strong>Coledocolitíase</strong></td><td>Cálculo no colédoco → icterícia; estratificar risco (ASGE) → CPRE × exploração</td></tr>
+      <tr><td><strong>Colangite</strong></td><td>Obstrução + infecção da via biliar; <strong>tríade de Charcot</strong> / <strong>pêntade de Reynolds</strong> → CPRE (ver tema próprio)</td></tr>
+      <tr><td><strong>Pancreatite biliar</strong></td><td>Cálculo impactado na papila</td></tr>
+      <tr><td><strong>Síndrome de Mirizzi</strong></td><td>Cálculo no infundíbulo/cístico <strong>comprime o hepático comum</strong> → icterícia; risco de fístula colecistobiliar</td></tr>
+      <tr><td><strong>Íleo biliar</strong></td><td>Fístula colecistoentérica → cálculo grande obstrui o <strong>íleo terminal</strong>; <strong>tríade de Rigler</strong> (pneumobilia + obstrução + cálculo ectópico)</td></tr>
+      <tr><td><strong>Síndrome de Bouveret</strong></td><td>Variante alta: cálculo obstrui o <strong>duodeno</strong> (obstrução de saída gástrica)</td></tr>
+      <tr><td><strong>Vesícula em porcelana</strong></td><td>Calcificação da parede; associação com <strong>câncer de vesícula</strong> → colecistectomia</td></tr>
+    </table></div>
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">HCPA · GHC</span></span><strong>Íleo biliar</strong> = tríade de <strong>Rigler</strong> (pneumobilia + obstrução intestinal + cálculo ectópico), obstrui o <strong>íleo terminal</strong>. <strong>Mirizzi</strong> = compressão extrínseca do <strong>hepático comum</strong> por cálculo no cístico/infundíbulo. Não confundir os dois.</div>
+  </div>
+</details>
+
+<!-- 2 DIAGNOSTICO & TG18 -->
+<details>
+  <summary><span class="num">2</span> Diagnóstico &amp; gravidade (Tokyo Guidelines 2018) <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Sinal de Murphy &amp; laboratório</h4>
+    <ul>
+      <li><strong>Sinal de Murphy</strong>: parada inspiratória à palpação do HD (inflamação da vesícula). <strong>Murphy ultrassonográfico</strong> = dor à compressão com o transdutor sobre a vesícula.</li>
+      <li>Leucocitose, <strong>PCR elevada</strong>; se icterícia/enzimas canaliculares (FA, GGT, BT) → suspeitar coledocolitíase associada.</li>
+    </ul>
+
+    <h4>Imagem — ultrassom é o 1º exame</h4>
+    <ul>
+      <li><strong>US</strong>: cálculo, <strong>espessamento parietal &gt;4 mm</strong>, <strong>líquido pericolecístico</strong>, distensão, cálculo impactado, <strong>Murphy US +</strong>.</li>
+      <li>Dúvida/complicação: TC; <strong>colangio-RM</strong> para via biliar; <strong>cintilografia (HIDA)</strong> é o mais sensível (vesícula não enche) mas pouco usado na urgência.</li>
+    </ul>
+
+    <h4>Critérios diagnósticos TG18 (A + B + C)</h4>
+    <div class="tbl"><table>
+      <tr><th>Grupo</th><th>Critério</th></tr>
+      <tr><td><strong>A · Sinais locais</strong></td><td>Murphy; massa/dor/defesa em HD</td></tr>
+      <tr><td><strong>B · Sinais sistêmicos</strong></td><td>Febre; PCR elevada; leucocitose</td></tr>
+      <tr><td><strong>C · Imagem</strong></td><td>Achados de colecistite aguda no US/TC/RM</td></tr>
+    </table></div>
+    <p><strong>Suspeita</strong> = 1 de A + 1 de B. <strong>Diagnóstico definitivo</strong> = 1 de A + 1 de B + C.</p>
+
+    <h4>Gravidade TG18 (decorar os cortes)</h4>
+    <div class="tbl"><table>
+      <tr><th>Grau</th><th>Definição</th></tr>
+      <tr><td><strong>I · Leve</strong></td><td>Não preenche II/III; vesícula sem inflamação grave, paciente hígido</td></tr>
+      <tr><td><strong>II · Moderado</strong></td><td>Qualquer um: <strong>leucócitos &gt;18.000</strong>; <strong>massa palpável em HD</strong>; <strong>sintomas &gt;72 h</strong>; inflamação local marcada (gangrena, abscesso pericolecístico/hepático, peritonite biliar, enfisematosa)</td></tr>
+      <tr><td><strong>III · Grave</strong></td><td><strong>Disfunção orgânica</strong>: cardiovascular (vasopressor), neuro, respiratória, renal (Cr &gt;2 / oligúria), hepática (INR &gt;1,5), hematológica (plaquetas &lt;100.000)</td></tr>
+    </table></div>
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">todas as bancas</span></span>Grau <strong>II</strong> se: <strong>leuco &gt;18 mil</strong>, massa palpável, <strong>&gt;72 h</strong> de sintomas, ou inflamação local grave. Grau <strong>III</strong> = <strong>disfunção orgânica</strong>. O grau III (grave) é o que tem <strong>maior taxa de lesão de via biliar</strong> e conversão.</div>
+  </div>
+</details>
+
+<!-- 3 TRATAMENTO & TIMING -->
+<details>
+  <summary><span class="num">3</span> Tratamento &amp; timing cirúrgico <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>O tratamento da colecistite aguda é a <strong>colecistectomia (laparoscópica) precoce</strong>, associada a suporte e antibiótico. "Precoce" venceu o velho "esfriar e operar depois": menos complicações, menor internação, sem aumento de lesão.</p>
+
+    <h4>Timing (muito cobrado)</h4>
+    <ul>
+      <li><strong>WSES 2020</strong>: colecistectomia laparoscópica precoce <strong>o quanto antes, em até 7 dias da admissão e 10 dias do início dos sintomas</strong>.</li>
+      <li><strong>TG18</strong>: nos graus <strong>I e II</strong>, indicar LC precoce se o paciente tolera cirurgia e há técnica laparoscópica avançada disponível — <strong>independente do tempo de sintomas</strong>.</li>
+      <li>Antibioticoterapia conforme gravidade e flora local; analgesia; hidratação.</li>
+    </ul>
+
+    <h4>Grau III / alto risco cirúrgico</h4>
+    <ul>
+      <li>Se <strong>inapto à cirurgia</strong> (grave, comorbidades): <strong>colecistostomia percutânea (drenagem transhepática)</strong> + ATB → colecistectomia de intervalo depois.</li>
+      <li>Grau III com disfunção reversível e centro capacitado pode ainda ser operado após otimização.</li>
+    </ul>
+
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">GHC · SC-POA · PUC-RS</span></span>Números para a prova: <strong>LC precoce em ≤7 dias da admissão / ≤10 dias dos sintomas</strong> (WSES). Alto risco/grau III inapto → <strong>colecistostomia percutânea</strong> como ponte, e não "esperar meses com o quadro agudo".</div>
+
+    <h4>Colelitíase assintomática — quando operar mesmo assim</h4>
+    <ul>
+      <li><strong>Vesícula em porcelana</strong>; <strong>pólipo &gt;10 mm</strong> ou de crescimento; <strong>cálculo &gt;3 cm</strong>; anomalia da junção pancreatobiliar.</li>
+      <li>Anemias hemolíticas (ex.: esferocitose — colecistectomia junto da esplenectomia); candidatos a transplante; certos povos com alta incidência de câncer.</li>
+    </ul>
+    <div class="box warn"><span class="lbl">⚠ pegadinha</span>Colelitíase <strong>assintomática</strong> em geral <strong>NÃO</strong> se opera de rotina — exceto as situações de risco acima (porcelana, pólipo &gt;10 mm, cálculo &gt;3 cm, hemolítica, etc.).</div>
+  </div>
+</details>
+
+<!-- 4 ANATOMIA & CALOT -->
+<details>
+  <summary><span class="num">4</span> Anatomia, triângulo de Calot &amp; variações <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Triângulo de Calot × triângulo hepatocístico</h4>
+    <ul>
+      <li><strong>Triângulo de Calot (original)</strong>: ducto cístico (lateral) · ducto hepático comum (medial) · <strong>artéria cística (superior)</strong>.</li>
+      <li><strong>Triângulo hepatocístico (uso cirúrgico)</strong>: ducto cístico · ducto hepático comum · <strong>borda inferior do fígado</strong> (segmento V) — é o espaço dissecado; nele corre a <strong>artéria cística</strong>.</li>
+    </ul>
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">HCPA · AMRIGS</span></span>Conteúdo do triângulo: <strong>artéria cística</strong> (e o linfonodo de Mascagni/Lund). O limite <strong>superior do Calot é a artéria cística</strong>; no hepatocístico o limite superior é o <strong>fígado</strong>. Pegadinha clássica de anatomia.</div>
+
+    <div class="fig">
+      <svg viewBox="0 0 620 220" xmlns="http://www.w3.org/2000/svg">
+        <text x="310" y="16" fill="#9a9ab0" font-size="11" font-family="monospace" text-anchor="middle">triângulo hepatocístico &amp; artéria cística</text>
+        <path d="M120 60 Q90 130 150 180" fill="none" stroke="#eab308" stroke-width="6"/>
+        <text x="86" y="120" fill="#eab308" font-size="10" font-family="monospace" text-anchor="end">hepático comum</text>
+        <path d="M150 180 Q220 200 300 175" fill="none" stroke="#f59e0b" stroke-width="6"/>
+        <text x="230" y="212" fill="#f59e0b" font-size="10" font-family="monospace" text-anchor="middle">ducto cístico</text>
+        <path d="M300 175 Q380 150 400 90 Q410 60 360 55 Q300 55 300 110 Z" fill="rgba(52,211,153,.15)" stroke="#34d399" stroke-width="2"/>
+        <text x="360" y="110" fill="#34d399" font-size="11" font-family="monospace" text-anchor="middle">vesícula</text>
+        <path d="M150 120 Q220 130 300 150" fill="none" stroke="#f87171" stroke-width="3"/>
+        <text x="210" y="118" fill="#f87171" font-size="10" font-family="monospace" text-anchor="middle">a. cística</text>
+        <path d="M120 60 Q260 40 430 70" fill="none" stroke="#9a9ab0" stroke-width="2" stroke-dasharray="4 4"/>
+        <text x="300" y="42" fill="#9a9ab0" font-size="9" font-family="monospace" text-anchor="middle">borda inferior do fígado (seg. V)</text>
+      </svg>
+      <div class="cap">O triângulo delimitado por ducto cístico, hepático comum e fígado contém a artéria cística — dissecar só aqui, obtendo a Visão Crítica, evita confundir o colédoco com o cístico.</div>
+    </div>
+
+    <h4>Reparo de segurança: sulco de Rouvière</h4>
+    <ul>
+      <li>O <strong>sulco de Rouvière</strong> (fenda na face posterior do fígado, à direita do hilo) marca o plano do <strong>pedículo hepático direito</strong>: dissecar <strong>ventral/anterior a ele</strong> mantém-se longe da via biliar.</li>
+    </ul>
+
+    <h4>Variações anatômicas — a fonte das lesões</h4>
+    <ul>
+      <li><strong>Artéria cística</strong> curta, dupla, ou originada da hepática direita "caterpillar/Moynihan" (alça tortuosa da hepática direita colada ao cístico).</li>
+      <li><strong>Ducto cístico</strong> de implantação baixa, paralelo, ou em espiral posterior.</li>
+      <li><strong>Ductos de Luschka</strong> (subvesiculares) — fonte de fístula biliar pós-op.</li>
+      <li>Hepático direito aberrante/acessório cruzando o triângulo.</li>
+    </ul>
+  </div>
+</details>
+
+<!-- 5 LAPAROSCOPICA -->
+<details>
+  <summary><span class="num">5</span> Colecistectomia laparoscópica — técnica &amp; instrumentação <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>É o <strong>padrão-ouro</strong> para colelitíase sintomática e colecistite aguda. Menor dor, internação e retorno precoce; a segurança depende da <strong>dissecção correta do triângulo</strong>.</p>
+
+    <h4>Posição &amp; portais (técnica americana × francesa)</h4>
+    <ul>
+      <li>Decúbito dorsal; <strong>proclive (anti-Trendelenburg) + rotação para a esquerda</strong> — afasta cólon/duodeno e "cai" o fígado.</li>
+      <li><strong>4 portais clássicos</strong>: umbilical (óptica 10 mm), epigástrico (trabalho principal), e dois subcostais direitos (linha médio-clavicular e axilar anterior) para pinças de tração.</li>
+    </ul>
+
+    <div class="hands">
+      <div class="hand e">
+        <div class="ht">Mão esquerda (não dominante)</div>
+        <ul>
+          <li><strong>Pinça de tração no fundo</strong> (portal axilar) — empurra a vesícula sobre o fígado, cranial</li>
+          <li><strong>Pinça no infundíbulo/bolsa de Hartmann</strong> — tração <strong>lateral e inferior</strong>, abrindo o triângulo (manobra que separa cístico do hepático)</li>
+        </ul>
+      </div>
+      <div class="hand d">
+        <div class="ht">Mão direita (dominante)</div>
+        <ul>
+          <li><strong>Dissector de Maryland / gancho</strong> — abre o peritônio do triângulo</li>
+          <li><strong>Clipadora</strong> e <strong>tesoura</strong>; energia (monopolar no gancho / ultrassônico)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="box simplebox"><span class="lbl">tradução simples</span>A operação tem <strong>duas metades</strong>: primeiro se <em>prova quem é quem</em> — abrir o triângulo até ter certeza absoluta de que aquilo é o cístico e a artéria cística; só depois se <em>corta</em>. Toda lesão de via biliar acontece quando as duas metades se invertem.</div>
+
+    <div class="steps">
+
+      <div class="step">
+        <span class="fase">fase de acesso</span>
+        <div class="sttl">Pneumoperitônio e portais</div>
+        <p>Veress ou Hasson umbilical, <strong>12–14 mmHg</strong>. Óptica de 30°. Quatro portais: <strong>umbilical</strong> (óptica), <strong>epigástrico</strong> (trabalho principal, à direita do ligamento falciforme), <strong>subcostal médio-clavicular</strong> e <strong>subcostal axilar anterior</strong> (tração).</p>
+        <div class="pq"><b>por quê</b>O epigástrico entra <strong>à direita do ligamento falciforme</strong> para alinhar o instrumento com o eixo do pedículo. Entrar à esquerda obriga o dissector a trabalhar em ângulo contra a anatomia.</div>
+      </div>
+
+      <div class="step">
+        <span class="fase">fase de exposição</span>
+        <div class="sttl">A tração em duas direções que abre o triângulo</div>
+        <p>Proclive + rotação para a esquerda. Pinça do portal <strong>axilar</strong> traciona o <strong>fundo em direção cranial</strong>, sobre o fígado. Pinça do portal <strong>médio-clavicular</strong> traciona o <strong>infundíbulo (bolsa de Hartmann) ínfero-lateralmente</strong>.</p>
+        <div class="pq"><b>por quê</b>É o passo mais subestimado da operação. Tracionar o infundíbulo <strong>para cima e medialmente</strong> alinha o cístico <em>paralelo</em> ao hepático comum e cria a ilusão de que os dois são o mesmo ducto — é o erro que produz a lesão clássica de Strasberg E. A tração <strong>ínfero-lateral</strong> faz o ângulo entre eles se abrir.</div>
+        <span class="simple">(Se você puxa a vesícula para cima, os dois canos ficam deitados um em cima do outro e parecem um só. Se puxa para o lado e para baixo, eles se separam em "V" e dá para ver que são dois.)</span>
+        <div class="minihands">
+          <div class="mh e"><b>mão esquerda</b>Duas pinças de tração: fundo (cranial) e infundíbulo (ínfero-lateral), tensão mantida o tempo todo</div>
+          <div class="mh d"><b>mão direita</b>Maryland ou gancho pelo portal epigástrico</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <span class="fase">fase de dissecção</span>
+        <div class="sttl">Abertura do peritônio do triângulo hepatocístico</div>
+        <p>Abrir o peritônio <strong>anterior e posterior</strong> do triângulo, "varrendo" a gordura do infundíbulo. Dissecção <strong>alta, junto à parede da vesícula</strong>, sempre acima do plano do cístico.</p>
+        <div class="pq"><b>por quê</b>Dissecar <strong>rente à vesícula</strong> é a regra de segurança: quanto mais longe dela, mais perto do hepatocoledoco e da artéria hepática direita. A artéria hepática direita pode fazer uma alça no triângulo — a <strong>"caterpillar hump"</strong> — e ser confundida com a cística.</div>
+        <div class="minihands">
+          <div class="mh e"><b>mão esquerda</b>Contratração constante — o plano só existe sob tensão</div>
+          <div class="mh d"><b>mão direita</b>Gancho com monopolar em toques curtos, ou Maryland romo; nunca energia junto ao hilo</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <span class="fase">fase de segurança — passo decisivo</span>
+        <div class="sttl">Obter a Critical View of Safety</div>
+        <p>Os <strong>três critérios</strong>, todos completos: <strong>(1)</strong> triângulo hepatocístico limpo de gordura e fibrose; <strong>(2)</strong> <strong>terço inferior</strong> da vesícula descolado do leito, com a placa cística exposta; <strong>(3)</strong> <strong>apenas duas estruturas</strong> entrando na vesícula.</p>
+        <div class="pq"><b>por quê</b>A CVS não é um passo técnico — é um <strong>critério de parada</strong>. Ela existe para tornar a identificação errada anatomicamente impossível: com o terço inferior descolado, nenhuma estrutura pode entrar na vesícula sem ter sido vista. Clipar antes da CVS é a causa raiz da lesão de via biliar.</div>
+        <div class="box warn" style="margin-top:8px"><span class="lbl">⚠ não sirva de substituto</span>Colangiografia intraoperatória, visão infundibular ou "certeza" do cirurgião <strong>não substituem</strong> a CVS. Se ela não pode ser obtida → <em>bailout</em>: fundus-first, subtotal ou conversão.</div>
+      </div>
+
+      <div class="step">
+        <span class="fase">fase vascular e ductal</span>
+        <div class="sttl">Clipagem e secção — artéria antes, ducto depois</div>
+        <p><strong>Artéria cística</strong>: clipar e seccionar primeiro. <strong>Ducto cístico</strong>: <strong>2 clipes proximais + 1 distal</strong>, coto de <span class="fio">&lt; 1 cm</span>. Cístico largo ou friável (colecistite aguda) → <span class="fio">endoloop</span> ou sutura, não clipe.</p>
+        <div class="pq"><b>por quê</b>A artéria vem primeiro porque, uma vez seccionada, o cístico fica livre e móvel — e porque um sangramento arterial <em>depois</em> de seccionar o ducto obriga a manobras às cegas no hilo. Coto longo é reservatório de cálculo residual (<strong>síndrome do coto cístico</strong>); clipe em cístico edemaciado <strong>escorrega</strong> e gera fístula biliar.</div>
+        <div class="minihands">
+          <div class="mh e"><b>mão esquerda</b>Mantém o infundíbulo tracionado, expondo a junção cístico–vesícula</div>
+          <div class="mh d"><b>mão direita</b>Clipadora; tesoura fria entre os clipes (nunca cauterizar a secção do ducto)</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <span class="fase">fase de descolamento</span>
+        <div class="sttl">Separação do leito hepático</div>
+        <p>Descolamento <strong>retrógrado</strong> — do infundíbulo em direção ao fundo — no <strong>plano da placa cística</strong>. Hemostasia progressiva; inspecionar o leito à procura de <strong>ductos de Luschka</strong>.</p>
+        <div class="pq"><b>por quê</b>O plano correto é <strong>entre a vesícula e a placa cística</strong>. Entrar fundo demais causa sangramento hepático e abre ductos de Luschka — causa de <strong>fístula biliar pós-operatória</strong> com CVS perfeita e clipes íntegros.</div>
+      </div>
+
+      <div class="step">
+        <span class="fase">fase de extração</span>
+        <div class="sttl">Retirada em saco e revisão final</div>
+        <p>Peça <strong>sempre em bolsa</strong>, pelo portal umbilical. Revisar leito, clipes e hilo com a pressão do pneumoperitônio <strong>reduzida</strong>. Recuperar cálculos derramados. Dreno apenas em contaminação, dúvida de hemostasia ou suspeita de fístula.</p>
+        <div class="pq"><b>por quê</b>Baixar a pressão antes da revisão revela sangramento venoso que os 14 mmHg estavam <strong>tamponando</strong>. Cálculos perdidos na cavidade podem gerar abscesso tardio e trajetos fistulosos meses depois — complicação exclusiva da via laparoscópica.</div>
+      </div>
+
+    </div>
+
+    <div class="box mac"><span class="lbl">as três checagens antes de clipar</span>
+      <strong>1)</strong> O triângulo está limpo de gordura e fibrose?<br>
+      <strong>2)</strong> O terço inferior da vesícula está descolado do leito?<br>
+      <strong>3)</strong> Existem <strong>exatamente</strong> duas estruturas entrando na vesícula?<br>
+      Três "sim" → clipa. Qualquer "não" → <em>bailout</em>.
+    </div>
+
+    <h4>Clipes, fios &amp; energia</h4>
+    <ul>
+      <li>Cístico e artéria: <strong>clipes</strong> (regra prática 2+1). Cístico largo/friável (colecistite) → <strong>endoloop / sutura</strong>.</li>
+      <li>Evitar energia térmica junto à via biliar (lesão por difusão de calor).</li>
+    </ul>
+  </div>
+</details>
+
+<!-- 6 CVS -->
+<details>
+  <summary><span class="num">6</span> Critical View of Safety &amp; cultura de segurança <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>A <strong>Visão Crítica de Segurança (CVS, Strasberg)</strong> é o método padrão para <strong>identificar com certeza o ducto cístico e a artéria cística</strong> antes de clipar — reduz a lesão de via biliar por confusão anatômica.</p>
+
+    <h4>Os 3 critérios da CVS (têm que estar completos)</h4>
+    <ol style="margin:8px 0 8px 20px">
+      <li><strong>Triângulo hepatocístico limpo</strong> de gordura e tecido fibroso.</li>
+      <li><strong>Terço inferior da vesícula descolado do leito hepático</strong> (placa cística exposta).</li>
+      <li><strong>Apenas 2 estruturas entrando na vesícula</strong> — o ducto cístico e a artéria cística.</li>
+    </ol>
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">HCPA · GHC · SC-POA</span></span>Decore os <strong>3 critérios da CVS</strong>: (1) triângulo limpo, (2) terço inferior da vesícula liberado do leito, (3) <strong>só 2 estruturas</strong> entrando na vesícula. Clipar <strong>antes</strong> da CVS é a principal causa de lesão de via biliar.</div>
+
+    <h4>Cultura de segurança (SAGES) — estratégias anti-lesão</h4>
+    <ul>
+      <li><strong>Dissecar alto, junto à vesícula</strong>; usar o sulco de <strong>Rouvière</strong> como referência.</li>
+      <li><strong>Time-out / momento de pausa</strong> antes de clipar qualquer estrutura tubular.</li>
+      <li><strong>Colangiografia intraoperatória</strong> ou <strong>colangiografia com verde de indocianina (ICG)</strong> na dúvida anatômica.</li>
+      <li>Reconhecer a vesícula difícil e <strong>acionar plano B (bailout)</strong> em vez de insistir: converter ou fazer <strong>subtotal</strong>.</li>
+    </ul>
+    <div class="box mac"><span class="lbl">macete CVS</span>"<strong>Limpo · Solto · 2</strong>": triângulo <strong>limpo</strong>, vesícula <strong>solta</strong> do leito (terço inferior), <strong>2</strong> estruturas. Sem os três → não clipa.</div>
+  </div>
+</details>
+
+<!-- 7 ABERTA & DIFICIL -->
+<details>
+  <summary><span class="num">7</span> Aberta, conversão &amp; vesícula difícil <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Colecistectomia aberta — indicações</h4>
+    <ul>
+      <li><strong>Conversão</strong> da laparoscópica (a mais comum); anatomia indefinida, sangramento incontrolável, suspeita de lesão biliar/tumor.</li>
+      <li>Situações de alta dificuldade: <strong>Mirizzi avançado (III/IV)</strong>, <strong>cirrose com hipertensão portal (Child B/C)</strong>, câncer de vesícula, fístula biliobiliar/bilioentérica.</li>
+    </ul>
+
+    <h4>Técnica aberta — passo a passo</h4>
+    <div class="box simplebox"><span class="lbl">tradução simples</span>Na aberta você troca a câmera pela <strong>mão</strong>. O que orienta não é mais a imagem, e sim o <strong>tato</strong>: palpar o pedículo entre os dedos e sentir onde está o colédoco. É por isso que a aberta é mais segura na vesícula hostil — e não menos.</div>
+
+    <div class="steps">
+
+      <div class="step">
+        <span class="fase">fase de acesso</span>
+        <div class="sttl">Incisão subcostal direita (Kocher) ou mediana supraumbilical</div>
+        <p>Kocher <strong>dois dedos abaixo do rebordo costal direito</strong>, do rebordo à linha média. A mediana é preferida na conversão de urgência, em sangramento ativo ou quando não se sabe o que se vai encontrar.</p>
+        <div class="pq"><b>por quê</b>A subcostal dá <strong>exposição direta do hilo</strong>, mas é uma janela fixa. A mediana é mais dolorosa e tem mais hérnia incisional, porém pode ser <strong>estendida</strong> em qualquer direção — a escolha certa quando a operação pode virar uma hepatectomia ou uma derivação biliar.</div>
+      </div>
+
+      <div class="step">
+        <span class="fase">fase de exposição</span>
+        <div class="sttl">Montagem do campo</div>
+        <p>Afastador autoestático (<strong>Gosset</strong> ou <strong>Balfour</strong>) + válvula maleável sobre o fígado. Compressas rebatendo <strong>cólon transverso e duodeno</strong> caudalmente. Tração do fundo cranial e do infundíbulo lateral — a <strong>mesma lógica de duas direções</strong> da laparoscopia.</p>
+        <div class="pq"><b>por quê</b>Rebater o duodeno é o que protege o colédoco: sem isso, a primeira porção duodenal sobe sobre o pedículo e transforma a dissecção num campo cego.</div>
+        <div class="minihands">
+          <div class="mh e"><b>mão esquerda</b>Pinça de Duval ou Pean no fundo; a outra mão do auxiliar na válvula hepática</div>
+          <div class="mh d"><b>mão direita</b>Metzenbaum e dissector; compressa montada para varrer a gordura</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <span class="fase">fase de dissecção</span>
+        <div class="sttl">Triângulo de Calot e obtenção da CVS</div>
+        <p>Abrir o peritônio do triângulo, identificar <strong>ducto cístico e artéria cística</strong>. <strong>A CVS vale igual na aberta.</strong> Palpar o ligamento hepatoduodenal entre polegar e indicador — a manobra de <strong>Pringle digital</strong> localiza o colédoco e permite controle vascular imediato se houver sangramento.</p>
+        <div class="pq"><b>por quê</b>Aqui está a vantagem real da via aberta: a <strong>palpação</strong>. Você sente o cálculo impactado no infundíbulo, sente a espessura do colédoco e pode ocluir o pedículo com os dedos. Nenhum desses três recursos existe na laparoscopia.</div>
+      </div>
+
+      <div class="step">
+        <span class="fase">fase vascular e ductal</span>
+        <div class="sttl">Artéria cística e ducto cístico</div>
+        <p><strong>Artéria</strong>: ligar ou transfixar com <span class="fio">seda 2-0/3-0</span>, ou clipar; seccionar. <strong>Ducto</strong>: ligadura dupla ou clipe. <strong>Colangiografia transcística</strong> se anatomia dúbia ou suspeita de coledocolitíase.</p>
+        <div class="pq"><b>por quê</b>Fio trançado em vaso curto e retrátil segura melhor que clipe. E a colangiografia, mais do que rastrear cálculo, é o exame que <strong>define a anatomia em tempo real</strong> — se você já duvidou o suficiente para pensar nela, faça.</div>
+        <div class="minihands">
+          <div class="mh e"><b>mão esquerda</b>Pinça expondo e estabilizando o ducto sob tensão leve</div>
+          <div class="mh d"><b>mão direita</b>Porta-agulha com seda/Vicryl 2-0, ou clipadora; Mixter passando a ligadura</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <span class="fase">fase de descolamento</span>
+        <div class="sttl">Retrógrada ou <em>fundus-first</em></div>
+        <p><strong>Retrógrada (do colo ao fundo)</strong> é o padrão — identifica cístico e artéria antes de descolar. <strong>Anterógrada / <em>fundus-first</em> (do fundo ao colo)</strong> quando o triângulo está hostil: descola-se a vesícula do leito primeiro e chega-se ao pedículo <strong>por cima</strong>, com a peça já quase livre.</p>
+        <div class="pq"><b>por quê</b>O <em>fundus-first</em> inverte a ordem justamente para não dissecar às cegas um triângulo fibrosado. Mas tem o seu próprio risco: no fígado cirrótico ou na inflamação intensa, ele pode <strong>arrastar o cirurgião para dentro da placa cística</strong> e daí para o hilo — o chamado plano perigoso. Se o <em>fundus-first</em> também estiver difícil, o passo seguinte é a <strong>subtotal</strong>, não a insistência.</div>
+        <div class="minihands">
+          <div class="mh e"><b>mão esquerda</b>Válvula afastando o fígado; a outra tracionando a vesícula em contratração</div>
+          <div class="mh d"><b>mão direita</b>Eletrocautério ou bisturi no plano da placa cística</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <span class="fase">fase de encerramento</span>
+        <div class="sttl">Hemostasia, dreno e fechamento</div>
+        <p>Hemostasia do leito com eletrocautério ou coagulador de argônio; revisar <strong>ductos de Luschka</strong>. <strong>Dreno apenas</strong> se contaminação, dúvida de hemostasia, bile no campo ou colecistectomia subtotal. Fechar a parede por planos.</p>
+        <div class="pq"><b>por quê</b>Dreno de rotina não previne coleção e não substitui hemostasia — mas na <strong>subtotal fenestrante</strong> ele é obrigatório, porque o remanescente foi deixado <em>aberto</em> de propósito e vai drenar bile.</div>
+      </div>
+
+    </div>
+
+    <h4>Conversão — decisão, não derrota</h4>
+    <div class="box warn"><span class="lbl">⚠ pegadinha clássica</span>A <strong>conversão para aberta NÃO é complicação nem "fracasso"</strong> — é decisão de <strong>segurança</strong>. Insistir na laparoscopia com anatomia obscura é que causa a lesão de via biliar. <span class="banca">GHC</span><span class="banca">PUC-RS</span></div>
+
+    <h5 style="font-family:'Syne',sans-serif;color:var(--ciano);margin:14px 0 6px;font-size:14.5px">Gatilhos para converter — decidir agora, não depois</h5>
+    <ul>
+      <li><strong>Anatomia não identificável</strong> — o "triângulo congelado"</li>
+      <li><strong>Sangramento incontrolável</strong></li>
+      <li><strong>Suspeita ou confirmação de lesão de via biliar</strong></li>
+      <li>Aderências densas · <strong>Mirizzi</strong> · suspeita de câncer de vesícula</li>
+    </ul>
+
+    <h5 style="font-family:'Syne',sans-serif;color:var(--ciano);margin:14px 0 6px;font-size:14.5px">Preditores de conversão — antecipáveis no pré-operatório</h5>
+    <ul>
+      <li>Colecistite aguda <strong>gangrenosa</strong></li>
+      <li><strong>Sexo masculino</strong></li>
+      <li>Espessamento parietal <strong>&gt; 4–5 mm</strong> na ultrassonografia</li>
+      <li>Cirurgia abdominal prévia</li>
+      <li><strong>Tempo de sintomas prolongado</strong> (&gt; 72 h)</li>
+    </ul>
+    <div class="box simplebox"><span class="lbl">tradução simples</span>Converter é como <strong>desviar de um desvio na estrada</strong>: não significa que você errou o caminho, significa que a ponte à frente está interditada. Quem insiste em passar é que cai.</div>
+    <div class="box prova"><span class="lbl">alto rendimento</span>A pergunta é sempre a mesma, com roupas diferentes: <em>"paciente com anatomia obscura, o que fazer?"</em> A resposta nunca é "dissecar com cuidado" — é <strong>bailout</strong>: fundus-first, subtotal, colecistostomia ou conversão. <span class="banca">HCPA</span><span class="banca">GHC</span></div>
+
+    <h4>Vesícula difícil — o cardápio de <em>bailouts</em></h4>
+    <p>Quando a <strong>CVS não é alcançável com segurança</strong>, a recomendação atual (<strong>SAGES Safe Cholecystectomy Program</strong>) é abandonar a dissecção do triângulo em vez de insistir. As opções podem ser combinadas, e o objetivo é único: <strong>evitar a lesão de via biliar</strong>.</p>
+    <ul>
+      <li><strong>Fundus-first (dome-down)</strong> — chega ao pedículo por cima, com a peça quase livre</li>
+      <li><strong>Colecistectomia subtotal</strong> — o bailout mais eficaz (abaixo)</li>
+      <li><strong>Colecistostomia</strong> (tubo) — descomprime e adia; útil no paciente crítico</li>
+      <li><strong>Conversão para aberta</strong></li>
+      <li><strong>Interromper e encaminhar</strong> a centro terciário — decisão legítima e às vezes a mais corajosa</li>
+    </ul>
+
+    <h4>Colecistectomia subtotal — o <em>bailout</em> de ouro</h4>
+    <p>Deixa a <strong>placa cística e a parede posterior aderidas ao leito</strong>, sem nunca entrar na área perigosa do hilo. Classificação de <strong>Strasberg (2016)</strong>:</p>
+    <div class="tbl"><table>
+      <tr><th>Tipo</th><th>O que se faz com o remanescente</th><th><em>Trade-off</em></th></tr>
+      <tr><td><strong>Fenestrante</strong></td><td>Deixa o coto <strong>aberto</strong>, com ablação da mucosa; <strong>dreno obrigatório</strong></td><td>Menos recidiva de cálculo · <strong>mais fístula biliar</strong></td></tr>
+      <tr><td><strong>Reconstituinte</strong></td><td><strong>Fecha</strong> o remanescente do infundíbulo (cria uma "minivesícula")</td><td>Menos fístula · <strong>mais recidiva de cálculo</strong>, sintomas e reoperação</td></tr>
+    </table></div>
+    <div class="box simplebox"><span class="lbl">tradução simples</span>É desistir de tirar a vesícula inteira e deixar de propósito a <strong>parte que está colada no fígado</strong> — justamente a que fica perto dos canos importantes. Você tira o que dá, e não encosta onde não enxerga.</div>
+    <div class="box mac"><span class="lbl">macete das duas subtotais</span><strong>Fenestrante = aberta = drena</strong> (fístula, mas sem coto guardando cálculo).<br><strong>Reconstituinte = fechada = guarda</strong> (sem fístula, mas o coto pode voltar a doer).</div>
+    <div class="box prova"><span class="lbl">alto rendimento</span>A subtotal <strong>substituiu</strong> a dissecção insistente como conduta recomendada na vesícula hostil. Alternativa que diga "prosseguir com dissecção meticulosa do triângulo" está errada. <span class="banca">Santa Casa POA</span><span class="banca">AMRIGS</span></div>
+
+    <h4>Síndrome de Mirizzi (classificação de Csendes)</h4>
+    <ul>
+      <li><strong>Tipo I</strong>: compressão extrínseca do hepático comum (sem fístula). <strong>II–IV</strong>: fístula colecistobiliar progressiva (pela % da circunferência do colédoco). <strong>V</strong>: fístula colecistoentérica.</li>
+      <li>Tipo I → colecistectomia (frequentemente subtotal/aberta); tipos com fístula → reparo biliar / <strong>hepaticojejunostomia</strong>. <strong>Não forçar</strong> dissecção do triângulo.</li>
+    </ul>
+
+    <h4>Cirrose &amp; hipertensão portal</h4>
+    <ul>
+      <li><strong>Child A</strong>: colecistectomia (de preferência laparoscópica) viável. <strong>Child B/C</strong>: risco alto de sangramento (circulação colateral no leito) — cirurgia criteriosa, subtotal, ou manejo conservador/drenagem.</li>
+    </ul>
+  </div>
+</details>
+
+<!-- 8 LESAO VIA BILIAR -->
+<details>
+  <summary><span class="num">8</span> Complicações &amp; lesão de via biliar (Strasberg) <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Complicações gerais</h4>
+    <ul>
+      <li><strong>Fístula/vazamento biliar</strong> (coto cístico, ducto de Luschka) — coleção/bilioma; drenagem + <strong>CPRE com stent</strong>.</li>
+      <li>Sangramento (artéria cística/leito), abscesso, cálculo residual/coledocolitíase retida, coto cístico longo (síndrome pós-colecistectomia).</li>
+      <li><strong>Lesão de via biliar</strong> — a mais temida; maior em colecistite grave/anatomia distorcida.</li>
+    </ul>
+
+    <h4>Classificação de Strasberg (lesão biliar)</h4>
+    <div class="tbl"><table>
+      <tr><th>Tipo</th><th>Lesão</th></tr>
+      <tr><td><strong>A</strong></td><td>Fístula do <strong>coto cístico</strong> ou de ducto de Luschka (via biliar principal íntegra)</td></tr>
+      <tr><td><strong>B</strong></td><td>Oclusão de ducto <strong>hepático direito aberrante</strong></td></tr>
+      <tr><td><strong>C</strong></td><td><strong>Secção</strong> de ducto hepático direito aberrante (sem ligadura → fístula)</td></tr>
+      <tr><td><strong>D</strong></td><td>Lesão <strong>lateral</strong> (parcial) da via biliar principal</td></tr>
+      <tr><td><strong>E</strong></td><td><strong>Secção circunferencial</strong> da via biliar principal (E1–E5 de Bismuth, pela altura)</td></tr>
+    </table></div>
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">PUC-RS · AMRIGS</span></span><strong>Strasberg A</strong> = vazamento do coto cístico/Luschka (a mais comum, trata com CPRE+stent ± drenagem). <strong>Strasberg E</strong> = secção completa da via biliar principal (subclassificada por Bismuth) → geralmente <strong>hepaticojejunostomia em Y de Roux</strong> em centro especializado.</div>
+    <div class="box warn"><span class="lbl">⚠ pegadinha</span>A <strong>lesão clássica</strong> é confundir o <strong>colédoco com o cístico</strong> e ressecá-lo (lesão tipo "excisional" de Bismuth) — evitada pela <strong>CVS</strong>. Suspeita intra-op → <strong>parar, colangiografia e chamar cirurgião hepatobiliar</strong>; reparo por especialista tem melhor desfecho.</div>
+  </div>
+</details>
+
+<!-- 9 QUESTOES -->
+<details>
+  <summary><span class="num">9</span> Questões de banca, pega-ratões &amp; mnemônicos <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>10 questões representativas (originais, estilo das 5 bancas)</h4>
+
+    <div class="box prova"><span class="lbl">Q1 <span class="banca">HCPA</span></span><strong>Quais os 3 critérios da Critical View of Safety?</strong><br>Resposta: triângulo hepatocístico <strong>limpo</strong>; <strong>terço inferior da vesícula descolado do leito</strong>; <strong>apenas 2 estruturas</strong> entrando na vesícula.</div>
+    <div class="box prova"><span class="lbl">Q2 <span class="banca">GHC</span></span><strong>Timing da colecistectomia na colecistite aguda (WSES)?</strong><br>Resposta: LC precoce <strong>≤7 dias da admissão e ≤10 dias dos sintomas</strong>.</div>
+    <div class="box prova"><span class="lbl">Q3 <span class="banca">AMRIGS</span></span><strong>Critérios de gravidade grau II de TG18?</strong><br>Resposta: leuco <strong>&gt;18.000</strong>, massa palpável em HD, <strong>&gt;72 h</strong> de sintomas, ou inflamação local grave.</div>
+    <div class="box prova"><span class="lbl">Q4 <span class="banca">PUC-RS</span></span><strong>Colecistite grau III em paciente inapto à cirurgia. Conduta?</strong><br>Resposta: <strong>colecistostomia percutânea</strong> + ATB, colecistectomia de intervalo depois.</div>
+    <div class="box prova"><span class="lbl">Q5 <span class="banca">SC-POA</span></span><strong>Conteúdo do triângulo de Calot?</strong><br>Resposta: <strong>artéria cística</strong> (limites: cístico, hepático comum e — no hepatocístico — o fígado).</div>
+    <div class="box prova"><span class="lbl">Q6 <span class="banca">HCPA</span></span><strong>Vazamento biliar do coto cístico no pós-op. Classificação e conduta?</strong><br>Resposta: <strong>Strasberg A</strong>; <strong>CPRE com stent</strong> ± drenagem da coleção.</div>
+    <div class="box prova"><span class="lbl">Q7 <span class="banca">GHC</span></span><strong>Bailout mais eficaz na vesícula difícil quando o triângulo não pode ser dissecado?</strong><br>Resposta: <strong>colecistectomia subtotal</strong> (fenestrante ou reconstituinte).</div>
+    <div class="box prova"><span class="lbl">Q8 <span class="banca">AMRIGS</span></span><strong>Tríade de Rigler indica qual complicação?</strong><br>Resposta: <strong>íleo biliar</strong> (pneumobilia + obstrução + cálculo ectópico).</div>
+    <div class="box prova"><span class="lbl">Q9 <span class="banca">PUC-RS</span></span><strong>Cálculo no infundíbulo comprimindo o hepático comum. Diagnóstico?</strong><br>Resposta: <strong>síndrome de Mirizzi</strong>.</div>
+    <div class="box prova"><span class="lbl">Q10 <span class="banca">SC-POA</span></span><strong>Colelitíase assintomática — cite uma indicação de colecistectomia.</strong><br>Resposta: <strong>vesícula em porcelana</strong> (ou pólipo &gt;10 mm, cálculo &gt;3 cm, anemia hemolítica).</div>
+
+    <h4>Pega-ratões (as armadilhas clássicas)</h4>
+    <div class="box warn"><span class="lbl">☠ trap 1</span><strong>Conversão para aberta não é fracasso</strong> — é segurança.</div>
+    <div class="box warn"><span class="lbl">☠ trap 2</span>Clipar <strong>antes</strong> da CVS = principal causa de lesão de via biliar.</div>
+    <div class="box warn"><span class="lbl">☠ trap 3</span>Colecistite precoce é <strong>melhor</strong> que "esfriar e operar depois".</div>
+    <div class="box warn"><span class="lbl">☠ trap 4</span>Grau III inapto → <strong>colecistostomia</strong>, não insistir na cirurgia.</div>
+    <div class="box warn"><span class="lbl">☠ trap 5</span><strong>Mirizzi</strong> (comprime hepático comum) ≠ <strong>íleo biliar</strong> (obstrui íleo terminal).</div>
+    <div class="box warn"><span class="lbl">☠ trap 6</span>Litíase assintomática <strong>não</strong> se opera de rotina (exceto risco: porcelana, pólipo &gt;10 mm, cálculo &gt;3 cm...).</div>
+    <div class="box warn"><span class="lbl">☠ trap 7</span>Strasberg <strong>A</strong> = coto cístico/Luschka; <strong>E</strong> = via principal (hepaticojejunostomia).</div>
+    <div class="box warn"><span class="lbl">☠ trap 8</span>Limite superior do <strong>Calot original é a artéria cística</strong>; do hepatocístico é o <strong>fígado</strong>.</div>
+
+    <h4>Mnemônicos-resumo</h4>
+    <div class="box mac"><span class="lbl">macete geral</span>Litíase = <strong>4 Fs</strong> · colecistite = obstrução do cístico + Murphy · <strong>TG18</strong>: dx A+B+C; grau II (&gt;18mil/&gt;72h/massa/inflamação) · III (disfunção orgânica) · trata <strong>LC precoce ≤7d/≤10d</strong>; grau III inapto → <strong>colecistostomia</strong> · Calot = <strong>artéria cística</strong> · segurança = <strong>CVS "limpo-solto-2"</strong> + Rouvière · difícil → <strong>subtotal</strong> (fenestrante × reconstituinte) / conversão · Mirizzi (Csendes) · lesão = <strong>Strasberg A–E</strong> (A coto, E via principal→hepaticojejuno).</div>
+  </div>
+</details>
+
+<footer>
+  <div><strong>carolzita</strong> · Colecistite &amp; Colecistectomia (laparoscópica + aberta) · referência completa unificada</div>
+  <div class="ref">Fontes: Tokyo Guidelines 2018 (diagnóstico e gravidade da colecistite aguda) · WSES 2020 — acute calculous cholecystitis · SAGES Safe Cholecystectomy Program (Critical View of Safety) · classificação de Strasberg (lesão biliar) e de Csendes (Mirizzi) · Sabiston · Zollinger. Conteúdo educacional; questões são itens representativos originais.</div>
+</footer>
+</div>
+</body>
+</html>

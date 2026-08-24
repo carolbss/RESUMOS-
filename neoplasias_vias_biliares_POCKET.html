@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>🟠 Pocket — Vias Biliares Malignas</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d1117;--panel:#161b22;--panel2:#1c2230;--border:#30363d;--txt:#e6edf3;--mut:#8b949e;--orange:#ff7a18;--purple:#b083f0;--cyan:#3dd6d0;--red:#f85149;--green:#3fb950}
+.step{display:flex;flex-direction:column;gap:5px;padding:9px 0;border-bottom:1px dashed var(--border)}
+.step:last-child{border:none}
+.hd2{display:flex;gap:10px;align-items:flex-start}
+.n{flex:0 0 26px;height:26px;border-radius:8px;background:rgba(255,122,24,.16);border:1px solid rgba(255,122,24,.45);color:var(--orange);font-family:'IBM Plex Mono',monospace;font-weight:700;display:grid;place-items:center;font-size:13px}
+.x{flex:1}
+.fase{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--orange);display:block}
+.pq{border-left:2px solid var(--purple);background:rgba(176,131,240,.12);border-radius:0 7px 7px 0;padding:6px 9px;font-size:13px;width:100%}
+.pq b{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1.1px;text-transform:uppercase;color:var(--purple);display:block}
+.card.g{border-left:3px solid var(--green);background:rgba(63,185,80,.10);color:var(--green);font-style:italic}
+.card.g .h{color:var(--green);font-style:normal}
+.card.g b,.card.g strong{color:#8ee79a;font-style:normal}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{background:var(--bg);color:var(--txt);font-family:'IBM Plex Sans',sans-serif;font-size:15px;line-height:1.5;overflow-x:hidden}
+.top{position:sticky;top:0;z-index:20;background:linear-gradient(180deg,#0d1117 70%,rgba(13,17,23,0));padding:14px 14px 6px}
+.title{font-size:18px;font-weight:700}.title span{color:var(--orange)}
+.dots{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--mut);margin-top:2px}
+.tabbar{display:flex;gap:7px;overflow-x:auto;padding:10px 14px;scrollbar-width:none}
+.tabbar::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;padding:8px 13px;border-radius:20px;background:var(--panel);border:1px solid var(--border);color:var(--mut);cursor:pointer;white-space:nowrap}
+.tab.on{background:var(--orange);color:#0d1117;border-color:var(--orange)}
+.slider{display:flex;transition:transform .28s cubic-bezier(.4,0,.2,1);touch-action:pan-y}
+.page{flex:0 0 100%;width:100%;padding:6px 14px 90px}
+h2{font-size:16px;font-weight:700;margin:12px 0 8px;display:flex;align-items:center;gap:6px}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:13px 14px;margin:10px 0}
+.card.o{border-left:4px solid var(--orange)}
+.card.p{border-left:4px solid var(--purple);background:#1c1530}
+.card.c{border-left:4px solid var(--cyan);background:#0f2b2c}
+.card.r{border-left:4px solid var(--red);background:#2a1414}
+.card .h{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.5px;color:var(--mut);margin-bottom:6px;text-transform:uppercase}
+.card.p .h{color:var(--purple)}.card.c .h{color:var(--cyan)}.card.r .h{color:var(--red)}
+ul{list-style:none;margin:4px 0}
+li{margin:5px 0;padding-left:18px;position:relative}
+li::before{content:"▸";position:absolute;left:0;color:var(--orange)}
+.card.p li::before{color:var(--purple)}.card.c li::before{color:var(--cyan)}.card.r li::before{color:var(--red)}
+b.o{color:var(--orange)}b.p{color:var(--purple)}b.c{color:var(--cyan)}
+.lay{color:var(--cyan);font-style:italic;font-size:13px;margin-top:5px}
+table{width:100%;border-collapse:collapse;font-size:12.5px;margin:6px 0}
+td,th{border:1px solid var(--border);padding:7px 8px;vertical-align:top}
+th{background:var(--panel2);color:var(--orange);font-family:'IBM Plex Mono',monospace;font-size:11px}
+.bismuth{display:flex;flex-direction:column;gap:7px;margin:8px 0}
+.brow{display:flex;align-items:center;gap:10px;background:var(--panel2);border-radius:9px;padding:9px 11px}
+.bt{font-family:'IBM Plex Mono',monospace;font-weight:700;color:var(--orange);font-size:15px;min-width:38px}
+.bd{font-size:13px}
+.hint{text-align:center;color:var(--mut);font-size:11px;font-family:'IBM Plex Mono',monospace;padding:6px;opacity:.7}
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="title">🟠 Pocket · <span>Vias Biliares Malignas</span></div>
+  <div class="dots" id="dots"></div>
+</div>
+<div class="tabbar" id="tabbar"></div>
+<div class="hint">⬅️ deslize para navegar ➡️</div>
+<div class="slider" id="slider">
+
+  <!-- 1 FLASH -->
+  <div class="page">
+    <h2>⚡ Flashcard</h2>
+    <div class="card o"><div class="h">📌 essência</div>
+      <ul>
+        <li>🟠 <b class="o">CaVB</b>: adenoca, 60–80% <b>incidental</b>, invade <b>IVb/V</b>.</li>
+        <li>🟣 <b class="p">Colangio</b>: peri-hilar (Klatskin) = <b>mais comum</b>.</li>
+        <li>⭐ Bismuth = extensão <b>ductal</b> do peri-hilar (≠ TNM).</li>
+        <li>🎯 Cura = <b>R0</b>.</li>
+      </ul>
+    </div>
+    <div class="card c"><div class="h">🧒 lay</div>
+      <p>CaVB nasce na "bolsinha da bile" e quase sempre é achado por acaso. Klatskin nasce na "forquilha" dos canos do fígado.</p>
+    </div>
+  </div>
+
+  <!-- 2 BISMUTH -->
+  <div class="page">
+    <h2>⭐ Bismuth-Corlette</h2>
+    <div class="bismuth">
+      <div class="brow"><div class="bt">I</div><div class="bd">⬇️ abaixo da confluência</div></div>
+      <div class="brow"><div class="bt">II</div><div class="bd">🔵 na confluência + <b class="p">caudado</b></div></div>
+      <div class="brow"><div class="bt">IIIa</div><div class="bd">➡️ ducto <b class="o">DIREITO</b> → hepatec. <b>direita</b></div></div>
+      <div class="brow"><div class="bt">IIIb</div><div class="bd">⬅️ ducto <b class="o">ESQUERDO</b> → hepatec. <b>esquerda</b></div></div>
+      <div class="brow"><div class="bt">IV</div><div class="bd">↔️ ambos / multifocal → estendida ± TX</div></div>
+    </div>
+    <div class="card c"><div class="h">🧠 macete</div>
+      <p>1️⃣ embaixo · 2️⃣ confluência · 3️⃣ um lado (<b class="c">a=direitA</b>, b=esquerdo) · 4️⃣ os dois.</p>
+    </div>
+    <div class="card r"><div class="h">🪤 pega</div>
+      <p>Caudado (seg. I) ressecado <b>II→IV</b>. Bismuth NÃO é prognóstico nem define ressecabilidade.</p>
+    </div>
+  </div>
+
+  <!-- 3 CONDUTA -->
+  <div class="page">
+    <h2>🟠 Ca Vesícula — T → cirurgia</h2>
+    <table>
+      <tr><th>T</th><th>Conduta</th></tr>
+      <tr><td>Tis/T1a</td><td>✅ Colecistectomia simples</td></tr>
+      <tr><td>T1b</td><td>⚠️ Radical (controverso)</td></tr>
+      <tr><td>T2</td><td>🔪 Radical: IVb/V + linfadenec. portal</td></tr>
+      <tr><td>T3</td><td>Hepatec. maior se R0</td></tr>
+      <tr><td>T4</td><td>❌ Irressecável → sistêmico</td></tr>
+    </table>
+    <div class="card p"><div class="h">🟣 incidental pós-lap</div>
+      <ul>
+        <li>Reoperar se <b>≥ T1b</b> / margem +.</li>
+        <li>🚫 Port-site: excisão NÃO rotineira.</li>
+        <li>Não romper a vesícula!</li>
+      </ul>
+    </div>
+    <div class="card o"><div class="h">🟠 colangio por sítio</div>
+      <ul><li>Distal → 🥼 <b>Whipple</b>.</li><li>Peri-hilar → hepatec.+caudado+Y Roux.</li><li>Intra-hep → hepatectomia.</li></ul>
+    </div>
+  </div>
+
+  <!-- 4 TÉCNICA -->
+  <div class="page">
+    <h2>🔪 Mãos & fios</h2>
+    <div class="card c"><div class="h">✋ esquerda</div>
+      <p>DeBakey/preensão p/ tração · aspirador-dissector no campo.</p></div>
+    <div class="card o"><div class="h">🖐 direita</div>
+      <p>Metzenbaum/CUSA · harmônico no parênquima · clipador no cístico/art. cística · porta-agulha (X).</p></div>
+    <div class="card o"><div class="h">🧵 fios</div>
+      <table>
+        <tr><th>Onde</th><th>Fio</th></tr>
+        <tr><td>Cístico/art.</td><td>Clipe / Vicryl 2-0</td></tr>
+        <tr><td>Parênquima</td><td>Prolene 3-0/4-0 (X)</td></tr>
+        <tr><td>Vasos hilares</td><td>Prolene 5-0/6-0</td></tr>
+        <tr><td>🔵 <b>Hepaticojej.</b></td><td><b>PDS 5-0/6-0</b> separado</td></tr>
+        <tr><td>Aponeurose</td><td>PDS/Vicryl 1</td></tr>
+      </table>
+    </div>
+    <h2>🟠 Colecistectomia radical — 3 passos</h2>
+    <div class="card g"><div class="h">🟢 tradução simples</div>O CaVB <strong>atravessa a parede e invade o fígado colado atrás</strong>. Por isso tira-se a vesícula <strong>+ o pedaço de fígado que ela toca</strong> + linfonodos, tudo <strong>em bloco</strong>, sem abrir a peça.</div>
+
+    <div class="step"><div class="hd2"><div class="n">1</div><div class="x"><span class="fase">estadiamento</span><strong>Linfadenectomia do hepatoduodenal</strong> (esqueletizar o pedículo)</div></div>
+    <div class="pq"><b>por quê</b>Vem <strong>antes</strong> porque define ressecabilidade: linfonodo <strong>além</strong> do hepatoduodenal (para-aórtico/celíaco) = <strong>doença sistêmica</strong> → a hepatectomia não beneficia. 🚫</div></div>
+
+    <div class="step"><div class="hd2"><div class="n">2</div><div class="x"><span class="fase">em bloco</span><strong>Segmentectomia IVb/V</strong> (ou cunha 2–3 cm) com a vesícula</div></div>
+    <div class="pq"><b>por quê</b>IVb/V fazem <strong>contato direto</strong> com o leito — é por ali que invade e drena. <strong>Abrir a peça semeia a cavidade.</strong> Daí também o cuidado com extração e <strong>port-site</strong> no incidental. ⚠️</div></div>
+
+    <div class="step"><div class="hd2"><div class="n">3</div><div class="x"><span class="fase">margem</span><strong>Congelação do cístico</strong> → se +, ressecar via biliar + hepaticojejuno</div></div>
+    <div class="pq"><b>por quê</b>Margem cística + significa que o tumor <strong>já subiu pelo ducto</strong> — deixar a via in situ garante R1. A decisão <strong>só existe se a congelação for pedida</strong>. 🔬</div></div>
+
+    <h2>🟣 Peri-hilar (Klatskin) — 5 passos</h2>
+    <div class="card g"><div class="h">🟢 tradução simples</div>O tumor senta na <strong>bifurcação dos ductos</strong>. Como não dá margem nos dois lados, <strong>sacrifica-se um lado do fígado</strong> — e leva-se o <strong>caudado</strong> junto, porque ele drena direto na bifurcação.</div>
+
+    <div class="step"><div class="hd2"><div class="n">1</div><div class="x"><span class="fase">estadiamento</span>Linfadenectomia + avaliar invasão de <strong>porta e artéria</strong></div></div>
+    <div class="pq"><b>por quê</b>Ressecabilidade = <strong>3 eixos</strong>: extensão ductal (Bismuth) + invasão vascular + <strong>volume do fígado remanescente</strong>. Invasão do lado que <strong>fica</strong> é o que torna irressecável — não a extensão ductal sozinha.</div></div>
+
+    <div class="step"><div class="hd2"><div class="n">2</div><div class="x"><span class="fase">secção distal</span><strong>Colédoco distal</strong> + congelação · rebater cranialmente</div></div>
+    <div class="pq"><b>por quê</b>Rebater a via para cima é o que <strong>abre o acesso à bifurcação</strong> e permite dissecar porta e artéria por trás.</div></div>
+
+    <div class="step"><div class="hd2"><div class="n">3</div><div class="x"><span class="fase">define a operação</span>Hepatectomia por <strong>Bismuth</strong> + <strong>CAUDADO em bloco</strong></div></div>
+    <div class="pq"><b>por quê</b>O <strong>caudado drena direto na confluência</strong> por ductos curtos → invadido cedo → se ficar, <strong>recidiva local</strong>. Por isso é <strong>rotina</strong>, não opção. E atenção: <strong>IIIa → hepatectomia DIREITA</strong> (sacrifica o lado doente p/ ter margem no que fica). 🧠</div></div>
+
+    <div class="step"><div class="hd2"><div class="n">4</div><div class="x"><span class="fase">margem</span>Ductos proximais + <strong>congelação proximal</strong></div></div>
+    <div class="pq"><b>por quê</b>A <strong>proximal</strong> é a que mais compromete o R0 — o tumor cresce ao longo da parede ductal, <strong>além do que a imagem mostra</strong>. Equivalente biliar do difuso gástrico.</div></div>
+
+    <div class="step"><div class="hd2"><div class="n">5</div><div class="x"><span class="fase">reconstrução</span><strong>Hepaticojejuno em Y</strong> 60–70 cm · <strong>PDS 5-0/6-0</strong> separados</div></div>
+    <div class="pq"><b>por quê</b><strong>Absorvível sempre</strong>: fio permanente na luz biliar vira <strong>núcleo de cálculo</strong>. Frequentemente há <strong>múltiplas bocas</strong> ductais a reconstruir.</div></div>
+
+    <div class="card c"><div class="h">✅ 4 checagens do Klatskin</div>① Linfonodo <strong>além</strong> do hepatoduodenal? ② <strong>Remanescente</strong> suficiente (embolização portal?) ③ <strong>Caudado</strong> na peça? ④ Margens proximal e distal negativas?</div>
+  </div>
+
+  <!-- 5 PREP + COMPLIC -->
+  <div class="page">
+    <h2>🧪 Pré-op & ⚠️ complicações</h2>
+    <div class="card p"><div class="h">🟣 pré-op peri-hilar</div>
+      <ul>
+        <li>🗺️ Colangio-RM + TC trifásica.</li>
+        <li>💧 Drenar biliar do <b>remanescente</b>.</li>
+        <li>🎈 Embolizar porta do lado a <b>ressecar</b> (hipertrofia).</li>
+      </ul></div>
+    <div class="card r"><div class="h">⚠️ complicações</div>
+      <ul>
+        <li>💦 Fístula biliar (mais comum).</li>
+        <li>🫥 Insuf. hepática pós-hepatec. (mortalidade).</li>
+        <li>🩸 Hemorragia (porta/artéria).</li>
+        <li>🔥 Colangite · 🔒 estenose tardia da HJ.</li>
+      </ul></div>
+    <div class="card c"><div class="h">🧒 lay</div>
+      <p>Antes de tirar metade do fígado, "engorda-se" o lado que fica entupindo a veia do lado que sai.</p></div>
+  </div>
+
+  <!-- 6 PEGAS -->
+  <div class="page">
+    <h2>🪤 Top pega-ratões</h2>
+    <div class="card r"><div class="h">não erre</div>
+      <ul>
+        <li>Bismuth ≠ TNM.</li>
+        <li><b>IIIa=direito · IIIb=esquerdo</b>.</li>
+        <li>Caudado: ressecar II→IV.</li>
+        <li>T1a basta colecistec. simples.</li>
+        <li>Klatskin = peri-hilar (mais comum).</li>
+        <li>Courvoisier = obstrução <b>distal</b>.</li>
+        <li>Porcelana: risco superestimado.</li>
+      </ul></div>
+    <div class="card c"><div class="h">🧠 5 P (risco CaVB)</div>
+      <p>Pedras · Pólipo &gt;1cm · Porcelana · junção Pancreatobiliar · Portador Salmonella.</p></div>
+  </div>
+
+</div>
+
+<script>
+const labels=["⚡ Flash","⭐ Bismuth","🟠 Conduta","🔪 Técnica","🧪 Pré/Compl","🪤 Pegas"];
+const slider=document.getElementById('slider'),tabbar=document.getElementById('tabbar'),dots=document.getElementById('dots');
+let idx=0;const n=labels.length;
+labels.forEach((l,i)=>{const t=document.createElement('div');t.className='tab'+(i===0?' on':'');t.textContent=l;t.onclick=()=>go(i);tabbar.appendChild(t);});
+function render(){slider.style.transform=`translateX(-${idx*100}%)`;document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('on',i===idx));dots.textContent=`${idx+1}/${n}  ·  ${labels[idx].replace(/^[^ ]+ /,'')}`;const on=document.querySelectorAll('.tab')[idx];on&&on.scrollIntoView({inline:'center',behavior:'smooth',block:'nearest'});}
+function go(i){idx=Math.max(0,Math.min(n-1,i));render();}
+let x0=null;
+slider.addEventListener('touchstart',e=>x0=e.touches[0].clientX,{passive:true});
+slider.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>45)go(idx+(dx<0?1:-1));x0=null;},{passive:true});
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')go(idx+1);if(e.key==='ArrowLeft')go(idx-1);});
+render();
+</script>
+</body>
+</html>

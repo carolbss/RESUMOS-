@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colangite Aguda · Pocket Reference · Carolina 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+
+  :root {
+    --bg:#0d0f14; --bg2:#13151c; --bg3:#1a1d26; --border:#252836;
+    --text:#c9cdd8; --text-dim:#6b7280;
+    --orange:#f97316; --orange-dim:#431a06; --orange-bg:#1c1208;
+    --purple:#a855f7; --purple-dim:#3b1668; --purple-bg:#17102a;
+    --cyan:#22d3ee; --cyan-dim:#064e5a; --cyan-bg:#071318;
+    --teal:#14b8a6; --teal-dim:#134e4a; --teal-bg:#071c1a;
+    --sky:#38bdf8; --sky-dim:#0c4a6e; --sky-bg:#082030;
+    --emerald:#10b981; --emerald-dim:#064e3b; --emerald-bg:#071c15;
+    --red:#ef4444; --yellow:#eab308; --green:#22c55e;
+  }
+
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--text); font-family:'Inter',sans-serif; font-size:13px; line-height:1.65; }
+
+  .header {
+    background:linear-gradient(135deg,#0d0f14 0%,#071c1a 50%,#071318 100%);
+    border-bottom:1px solid var(--border); padding:1.75rem 2rem; position:relative; overflow:hidden;
+  }
+  .header::before {
+    content:''; position:absolute; top:-40%; right:-5%;
+    width:500px; height:500px;
+    background:radial-gradient(circle,rgba(20,184,166,0.09) 0%,transparent 70%);
+    pointer-events:none;
+  }
+  .header-tag { font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--teal); text-transform:uppercase; letter-spacing:3px; margin-bottom:.4rem; }
+  .header h1 { font-family:'Syne',sans-serif; font-size:2rem; font-weight:800; color:#fff; letter-spacing:-1px; line-height:1.1; }
+  .header h1 span { color:var(--teal); }
+  .header-meta { display:flex; gap:1rem; margin-top:.75rem; flex-wrap:wrap; }
+  .mpill { background:var(--bg3); border:1px solid var(--border); border-radius:20px; padding:.25rem .7rem; font-size:10px; font-family:'JetBrains Mono',monospace; color:var(--text-dim); }
+  .mpill.t { border-color:var(--teal);   color:var(--teal); }
+  .mpill.o { border-color:var(--orange); color:var(--orange); }
+  .mpill.p { border-color:var(--purple); color:var(--purple); }
+
+  .legend { display:flex; gap:1.5rem; padding:.7rem 2rem; background:var(--bg2); border-bottom:1px solid var(--border); flex-wrap:wrap; }
+  .legend-item { display:flex; align-items:center; gap:.4rem; font-size:11px; }
+  .ldot { width:9px; height:9px; border-radius:50%; }
+  .d-t{background:var(--teal);} .d-o{background:var(--orange);} .d-p{background:var(--purple);} .d-c{background:var(--cyan);}
+
+  .container { max-width:1200px; margin:0 auto; padding:1.5rem 2rem 3rem; }
+
+  .g2 { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+  .g3 { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
+  .g4 { display:grid; grid-template-columns:repeat(4,1fr); gap:.75rem; }
+
+  .block { background:var(--bg2); border:1px solid var(--border); border-radius:12px; padding:1.1rem; margin-bottom:1rem; overflow:hidden; }
+  .block-title { font-family:'Syne',sans-serif; font-size:.85rem; font-weight:700; color:var(--teal); margin-bottom:.75rem; padding-bottom:.35rem; border-bottom:1px solid var(--teal-dim); display:flex; align-items:center; gap:.5rem; }
+  .block-title .bnum { font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--text-dim); background:var(--bg); padding:.15rem .4rem; border-radius:4px; }
+
+  .co { background:var(--orange-bg); border-left:3px solid var(--orange); border-radius:0 8px 8px 0; padding:.65rem .9rem; margin:.6rem 0; color:#fde8d3; }
+  .ct { background:var(--teal-bg);   border-left:3px solid var(--teal);   border-radius:0 8px 8px 0; padding:.65rem .9rem; margin:.6rem 0; color:#ccfbf1; }
+  .cp { background:var(--purple-bg); border-left:3px solid var(--purple); border-radius:0 8px 8px 0; padding:.65rem .9rem; margin:.6rem 0; color:#e9d5ff; }
+  .cc { background:var(--cyan-bg);   border-left:3px solid var(--cyan);   border-radius:0 8px 8px 0; padding:.65rem .9rem; margin:.6rem 0; color:#cffafe; }
+  .cd { background:#1c0a0a;          border-left:3px solid var(--red);    border-radius:0 8px 8px 0; padding:.65rem .9rem; margin:.6rem 0; color:#fecaca; }
+
+  .lbl { font-family:'JetBrains Mono',monospace; font-size:9px; text-transform:uppercase; letter-spacing:1px; font-weight:700; margin-bottom:.3rem; }
+  .lbl.t{color:var(--teal);} .lbl.o{color:var(--orange);} .lbl.p{color:var(--purple);} .lbl.c{color:var(--cyan);} .lbl.r{color:var(--red);}
+
+  .tw { overflow-x:auto; margin:.5rem 0; }
+  table { width:100%; border-collapse:collapse; font-size:12px; }
+  th { background:var(--bg3); color:var(--teal); font-family:'JetBrains Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:.5px; padding:.5rem .65rem; text-align:left; border:1px solid var(--border); }
+  td { padding:.5rem .65rem; border:1px solid var(--border); vertical-align:top; line-height:1.5; }
+  tr:nth-child(even) td { background:rgba(255,255,255,.02); }
+  tr:hover td { background:rgba(20,184,166,.04); }
+
+  .steps { list-style:none; }
+  .steps li { display:flex; gap:.75rem; margin-bottom:.75rem; padding-bottom:.75rem; border-bottom:1px solid var(--border); }
+  .steps li:last-child { border-bottom:none; margin-bottom:0; }
+  .sn { flex-shrink:0; width:28px; height:28px; background:var(--teal-dim); color:var(--teal); border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:'JetBrains Mono',monospace; font-weight:700; font-size:11px; }
+  .sc { flex:1; }
+  .st { font-weight:600; color:#fff; font-size:12.5px; margin-bottom:.2rem; }
+
+  ul { list-style:none; }
+  ul li { padding:.2rem 0; padding-left:1rem; position:relative; }
+  ul li::before { content:'▸'; position:absolute; left:0; color:var(--teal); }
+  ul.o-list li::before { color:var(--orange); }
+  ul.p-list li::before { color:var(--purple); }
+  ul.c-list li::before { color:var(--cyan); }
+  ul.r-list li::before { color:var(--red); }
+
+  .mnem-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:.75rem; margin:.5rem 0; }
+  .mcard { background:var(--teal-bg); border:1px solid var(--teal-dim); border-radius:10px; padding:.85rem; }
+  .mword { font-family:'JetBrains Mono',monospace; font-size:1.1rem; font-weight:700; color:var(--teal); letter-spacing:2px; margin-bottom:.5rem; }
+  .mline { font-size:12px; margin-bottom:.25rem; }
+  .ml { color:var(--teal); font-weight:700; margin-right:.4rem; }
+
+  .banca { display:inline-block; font-family:'JetBrains Mono',monospace; font-size:9px; background:var(--purple-dim); color:var(--purple); border-radius:4px; padding:.1rem .35rem; margin-left:.3rem; font-weight:700; }
+
+  .hl  { color:var(--teal);   font-weight:600; }
+  .hlo { color:var(--orange); font-weight:600; }
+  .hlp { color:var(--purple); font-weight:600; }
+  .hlc { color:var(--cyan);   font-weight:600; }
+  .hlr { color:var(--red);    font-weight:600; }
+
+  .comp-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:.65rem; }
+  .comp { background:var(--bg3); border:1px solid var(--border); border-radius:10px; padding:.75rem; }
+  .comp.danger { border-color:#7f1d1d; }
+  .comp.warn   { border-color:#78350f; }
+  .comp.info   { border-color:var(--teal-dim); }
+  .comp-head { font-family:'JetBrains Mono',monospace; font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.5px; margin-bottom:.35rem; }
+  .comp.danger .comp-head { color:var(--red); }
+  .comp.warn   .comp-head { color:var(--yellow); }
+  .comp.info   .comp-head { color:var(--teal); }
+  .comp-body { font-size:11.5px; color:var(--text-dim); line-height:1.55; }
+
+  .classif { background:var(--bg3); border:1px solid var(--border); border-radius:10px; padding:.75rem 1rem; margin:.4rem 0; display:flex; gap:.75rem; align-items:flex-start; }
+  .classif-badge { flex-shrink:0; font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; padding:.25rem .6rem; border-radius:6px; line-height:1; }
+  .cb-t { background:var(--teal-bg);   color:var(--teal);   border:1px solid var(--teal-dim); }
+  .cb-o { background:var(--orange-bg); color:var(--orange); border:1px solid var(--orange-dim); }
+  .cb-p { background:var(--purple-bg); color:var(--purple); border:1px solid var(--purple-dim); }
+  .cb-r { background:#1c0a0a;          color:var(--red);    border:1px solid #7f1d1d; }
+  .classif-body { font-size:12px; line-height:1.55; }
+  .classif-body strong { color:#fff; }
+
+  .mt { margin-top:1rem; }
+  .mb { margin-bottom:1rem; }
+
+  .footer { margin-top:2rem; border-top:1px solid var(--border); padding-top:1.25rem; text-align:center; font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--text-dim); letter-spacing:.5px; }
+
+  @media(max-width:900px){ .g2,.g3,.g4{grid-template-columns:1fr 1fr;} }
+  @media(max-width:600px){ .g2,.g3,.g4{grid-template-columns:1fr;} .container{padding:1rem;} }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-tag">// pocket reference · cirurgiaRS · residência 2026</div>
+  <h1><span>Colangite</span> Aguda · Pocket</h1>
+  <div class="header-meta">
+    <div class="mpill t">Charcot · Reynolds</div>
+    <div class="mpill t">Tokyo 2018</div>
+    <div class="mpill o">CPRE = padrão-ouro</div>
+    <div class="mpill p">Sabiston · Zollinger</div>
+  </div>
+</div>
+
+<div class="legend">
+  <div class="legend-item"><div class="ldot d-t"></div>Conceito-chave</div>
+  <div class="legend-item"><div class="ldot d-o"></div>Atenção clínica</div>
+  <div class="legend-item"><div class="ldot d-p"></div>Classificação</div>
+  <div class="legend-item"><div class="ldot d-c"></div>Técnica</div>
+</div>
+
+<div class="container">
+
+<!-- ══ ROW 1: Definição + Fisiopatologia ══ -->
+<div class="g2">
+  <div class="block">
+    <div class="block-title"><span class="bnum">01</span>Definição & Epidemiologia</div>
+    <div class="ct">
+      <div class="lbl t">Definição</div>
+      <strong>Infecção bacteriana ascendente da via biliar</strong> associada a obstrução biliar. Emergência cirúrgica.
+    </div>
+    <ul>
+      <li>Principal causa: <span class="hl">coledocolitíase (70–80%)</span></li>
+      <li>Mais comum &gt;60 anos</li>
+      <li>Mortalidade histórica 10–30% → hoje &lt;5% com manejo agressivo</li>
+      <li>Grau III sem drenagem: mortalidade &gt;50%</li>
+    </ul>
+    <div class="ct mt">
+      <div class="lbl t">Causas por frequência</div>
+      Coledocolitíase 70–80% · Estenose pós-op 10–15% · Neoplasia 5–10% · Parasitose &lt;5%
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-title"><span class="bnum">02</span>Fisiopatologia — 3 Etapas</div>
+    <div class="classif">
+      <div class="classif-badge cb-t">1</div>
+      <div class="classif-body"><strong>Obstrução biliar</strong> → pressão ductal &gt;25 cmH₂O (normal 10–15)</div>
+    </div>
+    <div class="classif">
+      <div class="classif-badge cb-o">2</div>
+      <div class="classif-body"><strong>Estase biliar</strong> → proliferação bacteriana (E. coli 25–50%, Klebsiella 15–20%, Enterococcus 10%)</div>
+    </div>
+    <div class="classif">
+      <div class="classif-badge cb-r">3</div>
+      <div class="classif-body"><strong>Bacteremia sistêmica</strong> → refluxo colêmico-venoso → sepse em 30–40%</div>
+    </div>
+    <div class="co mt">
+      <div class="lbl o">Diferença chave</div>
+      Colecistite = infecção "fechada" na vesícula. Colangite = bile infectada circula na árvore biliar → cai na corrente sanguínea.
+    </div>
+  </div>
+</div>
+
+<!-- ══ ROW 2: Tríade de Charcot + Pêntade de Reynolds ══ -->
+<div class="block">
+  <div class="block-title"><span class="bnum">03</span>Quadro Clínico — Tríade de Charcot & Pêntade de Reynolds</div>
+  <div class="g2">
+    <div>
+      <div class="ct">
+        <div class="lbl t">Tríade de Charcot (1877) — 50–70% dos casos</div>
+        <strong>1. Febre</strong> + calafrios (90–95%)<br>
+        <strong>2. Dor abdominal</strong> HD — cólica biliar (70–80%)<br>
+        <strong>3. Icterícia</strong> — escleral + colúria + acolia (60–70%)
+      </div>
+      <div class="ct">
+        <div class="lbl t">Outros sintomas</div>
+        Náuseas/vômitos 50–60% · Anorexia frequente
+      </div>
+      <div class="co">
+        <div class="lbl o">Atenção!</div>
+        Idoso e imunossuprimido: febre pode estar AUSENTE. Confusão mental pode ser o único sinal.
+      </div>
+    </div>
+    <div>
+      <div class="cd">
+        <div class="lbl r">Pêntade de Reynolds — Grau III (4–8% dos casos)</div>
+        Tríade de Charcot +<br>
+        <strong>4. Hipotensão</strong> (choque séptico)<br>
+        <strong>5. Alteração da consciência</strong> (confusão, torpor)<br><br>
+        → Mortalidade &gt;50% sem drenagem em &lt;24h<br>
+        → UTI + CPRE emergencial
+      </div>
+      <div class="cp mt">
+        <div class="lbl p">Mnemônico REYNOLDS</div>
+        <strong>R</strong>isco de morte · <strong>E</strong>ncefalopatia · <strong>Y</strong>ellow · <strong>N</strong>ível pressão baixo · <strong>O</strong>brigado drenar &lt;24h · <strong>L</strong>eucocitose · <strong>D</strong>renagem emergencial · <strong>S</strong>epse grau III
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ ROW 3: Diagnóstico TG18 ══ -->
+<div class="g2">
+  <div class="block">
+    <div class="block-title"><span class="bnum">04</span>Critérios Diagnósticos TG18</div>
+    <div class="cp">
+      <div class="lbl p">Diagnóstico definitivo = 1 de A + 1 de B + 1 de C</div>
+      <strong>A — Inflamação sistêmica:</strong> Febre/calafrios OU PCR↑ OU leucocitose<br>
+      <strong>B — Colestase:</strong> Icterícia (BT&gt;2 mg/dL) OU FA/GGT/TGO/TGP↑<br>
+      <strong>C — Imagem:</strong> VBP dilatada OU causa identificada
+    </div>
+    <div class="co">
+      <div class="lbl o">Diagnóstico suspeito</div>
+      A+B ou A+C → tratar como colangite enquanto investiga
+    </div>
+    <div class="tw mt">
+      <table>
+        <tr><th>Lab</th><th>Achado</th></tr>
+        <tr><td>Leucócitos</td><td>&gt;10.000 (neutrofilia)</td></tr>
+        <tr><td>PCR / PCT</td><td>PCR&gt;20; PCT&gt;0,5 (bacteremia)</td></tr>
+        <tr><td>BT / BD</td><td>BT&gt;2 mg/dL; BD predomina</td></tr>
+        <tr><td>FA / GGT</td><td>3–5× limite superior</td></tr>
+        <tr><td>TGO / TGP</td><td>Moderado (&lt;5×)</td></tr>
+        <tr><td>Hemocultura</td><td>+ em 20–40%; coletar ANTES ATB</td></tr>
+        <tr><td>Creatinina / RNI</td><td>↑ = disfunção orgânica (grau III)</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-title"><span class="bnum">05</span>Imagem — Sequência</div>
+    <ul class="o-list">
+      <li><span class="hlo">1º US abdominal:</span> rápido, beira do leito. VBP &gt;8 mm = dilatada. Ruim para cálculo distal.</li>
+      <li><span class="hlo">2º Colangio-RNM:</span> padrão-ouro não invasivo. Sensibilidade 90–95%. Escolha na gestante.</li>
+      <li><span class="hlo">3º TC abdome:</span> avalia complicações (abscesso, aerobilia). Ruim para cálculos pequenos.</li>
+      <li><span class="hlo">CPRE:</span> diagnóstico + terapêutico. Indicar assim que diagnóstico confirmado.</li>
+    </ul>
+    <div class="ct mt">
+      <div class="lbl t">VBP dilatada — valores</div>
+      &gt;8 mm: não colecistectomizado<br>
+      &gt;10 mm: colecistectomizado (compensação pós-cx)
+    </div>
+    <div class="cc mt">
+      <div class="lbl c">Aerobilia/Pneumobilia</div>
+      Ar na via biliar = alerta. Causas: CPRE prévia, fístula bilioentérica, Clostridium. TC superior à US.
+    </div>
+  </div>
+</div>
+
+<!-- ══ ROW 4: Classificação TG18 ══ -->
+<div class="block">
+  <div class="block-title"><span class="bnum">06</span>Classificação de Gravidade — Tokyo Guidelines 2018</div>
+  <div class="tw">
+  <table>
+    <tr><th>Grau</th><th>Critérios clínicos</th><th>Tratamento</th><th>Timing drenagem</th></tr>
+    <tr>
+      <td><span class="hl">I — Leve</span></td>
+      <td>Não atinge grau II/III. Responde a ATB em 24h.</td>
+      <td>ATB + hidratação. Colecistectomia pode ser no mesmo internamento.</td>
+      <td>Eletiva (24–72h)</td>
+    </tr>
+    <tr>
+      <td><span class="hlo">II — Moderado</span></td>
+      <td>≥2: leucócitos &gt;12.000 ou &lt;4.000; febre ≥39°C; idade ≥75 anos; BT ≥5 mg/dL; albumina &lt;0,7×LN</td>
+      <td>ATB + CPRE precoce. Colecistectomia diferida 2–6 sem.</td>
+      <td>Precoce (&lt;24–48h)</td>
+    </tr>
+    <tr>
+      <td><span class="hlr">III — Grave</span></td>
+      <td>Disfunção orgânica: hipotensão (vasopressor), consciência↓, PaO₂/FiO₂&lt;300, Cr&gt;2, plaquetas&lt;100k, RNI&gt;1,5</td>
+      <td>UTI + CPRE emergencial + suporte orgânico. Colecistectomia só após estabilização total.</td>
+      <td><span class="hlr">Emergencial (&lt;24h)</span></td>
+    </tr>
+  </table>
+  </div>
+  <div class="g2 mt">
+    <div class="cd">
+      <div class="lbl r">Regra de ouro TG18</div>
+      Todo grau III → drenagem em &lt;24h INDEPENDENTE da condição clínica. Não esperar estabilizar para drenar. A drenagem biliar É o tratamento da sepse aqui.
+    </div>
+    <div class="cp">
+      <div class="lbl p">Mnemônico Grau III — HIPCO</div>
+      <strong>H</strong>ipotensão (vasopressor) · <strong>I</strong>nteligência alterada · <strong>P</strong>ulmão (PaO₂/FiO₂&lt;300) · <strong>C</strong>reatinina &gt;2 · <strong>O</strong>utros (plaquetas&lt;100k, RNI&gt;1,5)
+    </div>
+  </div>
+</div>
+
+<!-- ══ ROW 5: ATB ══ -->
+<div class="block">
+  <div class="block-title"><span class="bnum">07</span>Antibioticoterapia</div>
+  <div class="tw">
+  <table>
+    <tr><th>Gravidade</th><th>1ª escolha</th><th>Alternativa</th><th>Duração</th></tr>
+    <tr><td><span class="hl">Grau I</span></td><td>Ampicilina-sulbactam 3g IV 6/6h</td><td>Cefalosporina 2ª ger · Cipro 400mg IV 12/12h</td><td>5–7 dias</td></tr>
+    <tr><td><span class="hlo">Grau II</span></td><td>Piperacilina-tazobactam 4,5g IV 6/6h</td><td>Cefepima + metronidazol</td><td>7–10 dias</td></tr>
+    <tr><td><span class="hlr">Grau III</span></td><td><strong>Imipeném 500mg IV 6/6h</strong> ou Meropeném 1g 8/8h</td><td>Vancomicina + Pip-Tazo (MRSA suspeito)</td><td>10–14 dias; por cultura</td></tr>
+  </table>
+  </div>
+  <div class="g2 mt">
+    <div>
+      <div class="lbl t" style="margin-bottom:.5rem;">Germes frequentes</div>
+      <ul>
+        <li><em>E. coli</em> 25–50% (gram-neg)</li>
+        <li><em>Klebsiella</em> 15–20%</li>
+        <li><em>Enterococcus</em> 10–15%</li>
+        <li><em>Bacteroides</em> 10–15% (anaeróbio)</li>
+        <li><em>Pseudomonas</em> 5% (pós-CPRE)</li>
+      </ul>
+    </div>
+    <div class="co">
+      <div class="lbl o">Regras essenciais ATB</div>
+      1. Hemocultura (2 amostras) ANTES do ATB<br>
+      2. ATB IV na chegada, não esperar exames<br>
+      3. Reduzir espectro após resultado de cultura (desescalonamento)
+    </div>
+  </div>
+</div>
+
+<!-- ══ ROW 6: CPRE passo a passo ══ -->
+<div class="block">
+  <div class="block-title"><span class="bnum">08</span>CPRE — Padrão-Ouro de Drenagem</div>
+  <div class="g2">
+    <div>
+      <ol class="steps">
+        <li>
+          <div class="sn">1</div>
+          <div class="sc"><div class="st">Posicionamento</div>Prono ou lateral esq · Sedação profunda · Anestesista em graus II/III</div>
+        </li>
+        <li>
+          <div class="sn">2</div>
+          <div class="sc"><div class="st">Cateterismo da papila de Vater</div>Duodenoscópio de visão lateral → 2ª porção duodenal → colangiografia com contraste</div>
+        </li>
+        <li>
+          <div class="sn">3</div>
+          <div class="sc"><div class="st">Esfincterotomia biliar</div>Corte do esfíncter de Oddi → abertura da papila para passagem de instrumentos</div>
+        </li>
+        <li>
+          <div class="sn">4</div>
+          <div class="sc"><div class="st">Extração do cálculo</div>Cesta de Dormia ou balão. Cálculo &gt;15 mm → litotripsia mecânica/LASER antes</div>
+        </li>
+        <li>
+          <div class="sn">5</div>
+          <div class="sc"><div class="st">Colangiografia final + prótese se grau III</div>Se instável: colocar prótese plástica 10F temporária → extrair cálculo em 2ª sessão</div>
+        </li>
+      </ol>
+    </div>
+    <div>
+      <div class="tw">
+      <table>
+        <tr><th>Método</th><th>Indicação</th></tr>
+        <tr><td><strong>CPRE</strong></td><td>1ª escolha. Coledocolitíase e estenoses acessíveis.</td></tr>
+        <tr><td><strong>PTB (percutânea)</strong></td><td>Falha de CPRE. Tumor de hilo. Anatomia alterada.</td></tr>
+        <tr><td><strong>EUS-guiado</strong></td><td>Billroth II / Roux-em-Y (CPRE impossível)</td></tr>
+        <tr><td><strong>Cirurgia</strong></td><td>Última opção. Alta morbidade na fase aguda.</td></tr>
+      </table>
+      </div>
+      <div class="ct mt">
+        <div class="lbl t">Colecistectomia após colangite</div>
+        Grau I: pode ser no mesmo internamento (↓recorrência 30% → &lt;2%)<br>
+        Graus II/III: sempre diferida 2–6 semanas<br>
+        NUNCA operar na fase aguda grave
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ ROW 7: Complicações ══ -->
+<div class="block">
+  <div class="block-title"><span class="bnum">09</span>Complicações</div>
+  <div class="g2">
+    <div>
+      <div class="lbl r" style="margin-bottom:.5rem;">Da colangite não tratada</div>
+      <div class="comp-grid">
+        <div class="comp danger"><div class="comp-head">Sepse/Choque</div><div class="comp-body">30–40% grau III. UTI + vasopressor + drenagem urgente.</div></div>
+        <div class="comp danger"><div class="comp-head">Abscesso Hepático</div><div class="comp-body">ATB prolongado + drenagem percutânea por TC. Cirurgia rara.</div></div>
+        <div class="comp warn"><div class="comp-head">Pancreatite Biliar</div><div class="comp-body">15–20%. Cálculo impactado na papila. CPRE se coledocolitíase.</div></div>
+        <div class="comp info"><div class="comp-head">Colangite Esclerosante</div><div class="comp-body">Fibrose progressiva → cirrose biliar secundária em infecções recorrentes.</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="lbl c" style="margin-bottom:.5rem;">Da CPRE</div>
+      <div class="comp-grid">
+        <div class="comp warn"><div class="comp-head">Pancreatite pós-CPRE</div><div class="comp-body">3–5%. Profilaxia: indometacina retal 100 mg. Hidratação agressiva RL.</div></div>
+        <div class="comp warn"><div class="comp-head">Sangramento</div><div class="comp-body">1–2%. Pós-esfincterotomia. Adrenalina / clipe / balão.</div></div>
+        <div class="comp info"><div class="comp-head">Colangite pós-CPRE</div><div class="comp-body">1–3%. Estenose não aliviada. ATB + re-drenagem.</div></div>
+        <div class="comp danger"><div class="comp-head">Perfuração</div><div class="comp-body">0,3–0,6%. Retroperitoneal: conservador. Intraperitoneal: cirurgia.</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ ROW 8: Anatomia biliar ══ -->
+<div class="block">
+  <div class="block-title"><span class="bnum">10</span>Anatomia Biliar — High-Yield</div>
+  <div class="g2">
+    <div>
+      <div class="ct">
+        <div class="lbl t">Hierarquia ductal</div>
+        Canalículos → Interlobulares → <strong>Ductos hepáticos D+E</strong> → DHC (2–4 cm) + cístico → <strong>Colédoco</strong> (6–8 cm, 4 porções) + Wirsung → Ampola de Vater → Papila → Duodeno
+      </div>
+      <ul class="mt">
+        <li>Colédoco normal: &lt;8 mm (não colecistectomizado)</li>
+        <li>Ligamento hepatoduodenal: VIA = <strong>V</strong>eia (posterior) · <strong>I</strong>nfra (artéria, esq) · <strong>A</strong>ducto (biliar, dir)</li>
+        <li>Artérias marginais às 3h e 9h → não dissecar circunferencialmente</li>
+        <li>Ducto de Luschka → bile leak pós-colecistectomia</li>
+      </ul>
+    </div>
+    <div>
+      <div class="co">
+        <div class="lbl o">Triângulo de Calot</div>
+        Superior: DHC · Inferior: cístico · Lateral: borda hepática<br>
+        Conteúdo: artéria cística (ramo da hepática D em 80%)<br>
+        CVS obrigatório antes de clipar qualquer estrutura
+      </div>
+      <div class="cc mt">
+        <div class="lbl c">Esfíncter de Oddi</div>
+        Tônus basal = fechado. CCK → relaxamento. Esfincterotomia = corte permanente = não volta a fechar.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ ROW 9: Mnemônicos ══ -->
+<div class="block">
+  <div class="block-title"><span class="bnum">11</span>Mnemônicos</div>
+  <div class="mnem-grid">
+    <div class="mcard">
+      <div class="mword">CHARCOT</div>
+      <div class="mline"><span class="ml">C</span>alafrios + febre</div>
+      <div class="mline"><span class="ml">H</span>ipocôndrio D (dor)</div>
+      <div class="mline"><span class="ml">A</span>marelo (icterícia)</div>
+      <div class="mline"><span class="ml">R</span>eferência: 1877</div>
+      <div class="mline"><span class="ml">C</span>olédoco obstruído</div>
+      <div class="mline"><span class="ml">O</span>brigado a drenar</div>
+      <div class="mline"><span class="ml">T</span>ríade clássica</div>
+    </div>
+    <div class="mcard">
+      <div class="mword">HIPCO</div>
+      <div class="mline"><span class="ml">H</span>ipotensão (vasopressor)</div>
+      <div class="mline"><span class="ml">I</span>nteligência ↓ (confusão)</div>
+      <div class="mline"><span class="ml">P</span>ulmão PaO₂/FiO₂&lt;300</div>
+      <div class="mline"><span class="ml">C</span>reatinina &gt;2 mg/dL</div>
+      <div class="mline"><span class="ml">O</span>utros: plaq&lt;100k, RNI&gt;1,5</div>
+      <div class="mline" style="margin-top:.4rem;color:var(--red);font-size:11px;">= Grau III TG18 → drenar &lt;24h</div>
+    </div>
+    <div class="mcard">
+      <div class="mword">VIA</div>
+      <div class="mline"><span class="ml">V</span>eia porta — posterior</div>
+      <div class="mline"><span class="ml">I</span>nfra-hepática — artéria (esq)</div>
+      <div class="mline"><span class="ml">A</span>rranjo ductal biliar — direita</div>
+      <div class="mline" style="margin-top:.4rem;color:var(--text-dim);font-size:11px;">Conteúdo do ligamento hepatoduodenal</div>
+    </div>
+    <div class="mcard">
+      <div class="mword">CPRE OK</div>
+      <div class="mline"><span class="ml">C</span>álculo → extrair</div>
+      <div class="mline"><span class="ml">P</span>ancreatite: compl. 3–5%</div>
+      <div class="mline"><span class="ml">R</span>eal padrão-ouro</div>
+      <div class="mline"><span class="ml">E</span>sfincterotomia = corte Oddi</div>
+      <div class="mline"><span class="ml">O</span>perativo alternativo: PTB/EUS</div>
+      <div class="mline"><span class="ml">K</span>ey: indometacina profilática</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ ROW 10: Bancas RS ══ -->
+<div class="block">
+  <div class="block-title"><span class="bnum">12</span>Bancas RS</div>
+  <div class="tw">
+  <table>
+    <tr><th>Banca</th><th>Foco principal</th><th>Pergunta típica</th></tr>
+    <tr><td><span class="banca">HCPA</span></td><td>TG18, critérios grau III, CPRE padrão-ouro, pancreatite biliar associada</td><td>"Tríade + hipotensão → grau TG18 e conduta?"</td></tr>
+    <tr><td><span class="banca">GHC</span></td><td>DD icterícia obstrutiva, US vs. Colangio-RNM, ATB correto por grau</td><td>"Melhor próximo exame: US dilatação VBP 12 mm?"</td></tr>
+    <tr><td><span class="banca">S.Casa</span></td><td>Anatomia colédoco, papila de Vater, complicações CPRE, profilaxia pancreatite</td><td>"O que se secciona na esfincterotomia biliar?"</td></tr>
+    <tr><td><span class="banca">PUC-RS</span></td><td>Timing colecistectomia após CPRE, colangite × colecistite, grau I no internamento</td><td>"Após CPRE e resolução: quando colecistectomia?"</td></tr>
+    <tr><td><span class="banca">AMRIGS</span></td><td>Pêntade de Reynolds, grau III TG18, sepse biliar, PTB como alternativa</td><td>"Colangite + confusão + PA 80/50: prioridade ATB ou drenagem?"</td></tr>
+  </table>
+  </div>
+  <div class="comp-grid mt">
+    <div class="comp danger"><div class="comp-head">Clássico de prova</div><div class="comp-body">Grau III = drenar &lt;24h. Não esperar estabilização. A drenagem biliar É o tratamento.</div></div>
+    <div class="comp danger"><div class="comp-head">Clássico de prova</div><div class="comp-body">Charcot = 3. Reynolds = Charcot + hipotensão + confusão = 5. Saber os 5.</div></div>
+    <div class="comp warn"><div class="comp-head">ATB correto</div><div class="comp-body">Grau I: ampicilina-sulbactam. Grau II: Pip-Tazo. Grau III: carbapenêmico. Hemocultura antes!</div></div>
+    <div class="comp warn"><div class="comp-head">CPRE × Cirurgia</div><div class="comp-body">CPRE = sempre 1ª opção. Cirurgia só se CPRE falhou. Não operar na fase aguda grave.</div></div>
+    <div class="comp info"><div class="comp-head">Pancreatite pós-CPRE</div><div class="comp-body">Mais comum das complicações (3–5%). Profilaxia: indometacina retal 100 mg pré-procedimento.</div></div>
+    <div class="comp info"><div class="comp-head">VBP dilatada</div><div class="comp-body">&gt;8 mm (não colecistectomizado) ou &gt;10 mm (colecistectomizado) = dilatada.</div></div>
+  </div>
+</div>
+
+<!-- ══ ROW 11: Fluxograma ══ -->
+<div class="block">
+  <div class="block-title"><span class="bnum">13</span>Fluxograma de Decisão Rápida</div>
+  <div class="ct">
+    <div class="lbl t">Suspeita de colangite → ação imediata</div>
+    <strong>1.</strong> ATB IV + hemocultura (2 amostras) → <strong>2.</strong> US abdominal → <strong>3.</strong> Classificar TG18 → <strong>4.</strong> Drenar conforme grau
+  </div>
+  <div class="g3 mt">
+    <div class="ct">
+      <div class="lbl t">Grau I — Leve</div>
+      ATB · CPRE eletiva (&lt;72h) · Colecistectomia: mesmo internamento se possível
+    </div>
+    <div class="co">
+      <div class="lbl o">Grau II — Moderado</div>
+      ATB · CPRE &lt;24–48h · Colecistectomia diferida 2–6 semanas
+    </div>
+    <div class="cd">
+      <div class="lbl r">Grau III — Grave</div>
+      UTI + vasopressor · CPRE &lt;24h · Suporte orgânico · Colecistectomia só após estabilização total
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  // pocket · colangite aguda · cirurgiaRS · carolina · 2026 · sabiston · zollinger · tokyo guidelines 2018 · pubmed 2022–2025
+</div>
+
+</div><!-- /container -->
+</body>
+</html>

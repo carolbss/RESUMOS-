@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TVP — Referência CV 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d1117;--panel:#161b22;--panel2:#1c232c;--line:#2a323c;--tx:#e6edf3;--mut:#8b949e;--or:#ff7a18;--or2:#ff9a4d;--orbg:rgba(255,122,24,.10);--pu:#b083f0;--pu2:#c9a7ff;--pubg:rgba(176,131,240,.12);--cy:#3dd6d0;--cy2:#5fe3dd;--cybg:rgba(61,214,208,.10);--red:#ff5f56;--grn:#3fb950}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font-family:'IBM Plex Sans',sans-serif;line-height:1.55;padding:0 0 60px}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px}
+header{padding:30px 0 14px;border-bottom:1px solid var(--line)}
+h1{font-size:30px;font-weight:700;letter-spacing:-.5px}h1 .b{color:var(--or)}
+.sub{color:var(--mut);font-size:14px;margin-top:6px;font-family:'IBM Plex Mono',monospace}
+nav{position:sticky;top:0;background:var(--bg);z-index:10;border-bottom:1px solid var(--line);overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch}
+nav .inner{max-width:920px;margin:0 auto;padding:0 12px;display:flex;gap:2px}
+nav button{background:none;border:none;color:var(--mut);font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.5px;text-transform:uppercase;padding:14px 11px;cursor:pointer;border-bottom:2px solid transparent;transition:.15s}
+nav button:hover{color:var(--tx)}nav button.on{color:var(--or);border-bottom-color:var(--or)}
+section{display:none;padding:26px 0;animation:f .25s}section.on{display:block}
+@keyframes f{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+h2{font-size:20px;color:var(--or);margin:26px 0 12px;font-weight:600;border-bottom:1px solid var(--line);padding-bottom:6px}h2:first-child{margin-top:0}
+h3{font-size:15px;margin:18px 0 8px;font-weight:600;color:var(--or2)}
+p,li{font-size:14.5px}
+ul{margin:8px 0 8px 4px;list-style:none}li{padding:3px 0 3px 24px;position:relative}li .em{position:absolute;left:0}
+.lay{color:var(--cy2);font-style:italic;font-size:13.5px}
+.box{border-left:3px solid var(--or);background:var(--orbg);border-radius:0 8px 8px 0;padding:12px 16px;margin:14px 0}
+.box.pu{border-color:var(--pu);background:var(--pubg)}.box.cy{border-color:var(--cy);background:var(--cybg)}
+.box .lbl{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--or);margin-bottom:6px;font-weight:600}
+.box.pu .lbl{color:var(--pu2)}.box.cy .lbl{color:var(--cy2)}
+.box li::before{content:"▸";color:var(--or);position:absolute;left:6px}.box li{padding-left:22px}
+.box.pu li::before{color:var(--pu)}.box.cy li::before{color:var(--cy)}.box li .em{display:none}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.5px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--panel2);color:var(--or2);font-weight:600;font-family:'IBM Plex Mono',monospace;font-size:12px}
+.hi{color:var(--pu2);font-weight:600}.mn{font-family:'IBM Plex Mono',monospace;color:var(--cy2)}
+.steps{counter-reset:s;list-style:none;margin:6px 0}
+.steps li{padding:8px 8px 8px 40px;border-bottom:1px solid var(--line)}
+.steps li::before{counter-increment:s;content:counter(s);background:var(--or);color:#0d1117;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:12px;width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;position:absolute;left:4px;top:8px}
+.steps li .em{display:none}.steps li:last-child{border-bottom:none}
+.hand{font-family:'IBM Plex Mono',monospace;font-size:11px;padding:1px 6px;border-radius:4px;margin-right:4px}
+.hL{background:rgba(63,185,80,.15);color:#56d364}.hR{background:rgba(255,122,24,.15);color:var(--or2)}
+.kbd{font-family:'IBM Plex Mono',monospace;background:var(--panel2);padding:1px 6px;border-radius:4px;font-size:12.5px;color:var(--or2)}
+.q{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:16px 0}
+.q .src{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--pu2);letter-spacing:1px;text-transform:uppercase}
+.q .stem{margin:8px 0 10px;font-weight:500}
+.q .alt{padding:4px 0 4px 24px;position:relative;font-size:14px}.q .alt .let{position:absolute;left:0;font-family:'IBM Plex Mono',monospace;color:var(--mut)}
+.q .alt.ok{color:var(--grn)}.q .alt.ok .let{color:var(--grn)}
+.q details{margin-top:10px;border-top:1px dashed var(--line);padding-top:10px}
+.q summary{cursor:pointer;color:var(--cy2);font-size:13px;font-family:'IBM Plex Mono',monospace}
+.q .exp{font-size:13.5px;color:var(--mut);margin-top:8px}
+.svgwrap{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px;margin:14px 0;text-align:center}
+.svgwrap figcaption{color:var(--mut);font-size:12px;margin-top:8px;font-family:'IBM Plex Mono',monospace}
+.pill{display:inline-block;background:var(--panel2);border:1px solid var(--line);border-radius:20px;padding:3px 12px;margin:3px 4px 3px 0;font-size:12.5px;font-family:'IBM Plex Mono',monospace}.pill .hi{color:var(--pu2)}
+.note{font-size:12px;color:var(--mut);border-top:1px solid var(--line);margin-top:30px;padding-top:14px;font-family:'IBM Plex Mono',monospace}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<h1>🩸 Trombose Venosa <span class="b">Profunda</span> (TVP)</h1>
+<div class="sub">TVP de MMII · CV 2026 · CHEST 2021 + ESVS 2021 Venous Thrombosis + Wells Score</div>
+</div></header>
+<nav><div class="inner" id="nav"></div></nav>
+<div class="wrap">
+
+<section id="geral" class="on">
+<h2>🧭 Definição &amp; tríade de Virchow</h2>
+<p>TVP = formação de trombo no sistema venoso profundo, mais comumente dos <span class="hi">membros inferiores</span>. Faz parte do espectro do <b>tromboembolismo venoso (TEV)</b>, junto com o TEP (embolia pulmonar). <span class="lay">(o sangue nas veias, que deveria fluir de volta ao coração, "empoça" e coagula dentro do vaso — como água parada que forma uma nata; pedaços dessa "nata" podem soltar e ir para o pulmão)</span></p>
+<div class="box pu"><div class="lbl">🔺 Tríade de Virchow</div>
+<ul>
+<li><span class="hi">Estase venosa</span> (imobilização, viagens longas, ICC, compressão extrínseca)</li>
+<li><span class="hi">Lesão endotelial</span> (cirurgia, trauma, cateter venoso central)</li>
+<li><span class="hi">Hipercoagulabilidade</span> (neoplasia, trombofilias, gestação/puerpério, uso de estrogênio)</li>
+</ul></div>
+<h3>Fatores de risco</h3>
+<div class="pill">Cirurgia de grande porte (especialmente ortopédica de quadril/joelho)</div>
+<div class="pill">Câncer ativo</div>
+<div class="pill">Imobilização prolongada</div>
+<div class="pill">TVP/TEP prévios</div>
+<div class="pill">Trombofilias (Fator V Leiden, mutação da protrombina)</div>
+<div class="pill">Gestação / puerpério / anticoncepcional</div>
+</section>
+
+<section id="clinica">
+<h2>🩺 Quadro clínico</h2>
+<ul>
+<li><span class="em">🦵</span>Edema unilateral, empastamento da panturrilha, dor/desconforto.</li>
+<li><span class="em">🌡️</span>Calor local, eritema, dilatação de veias superficiais colaterais.</li>
+<li><span class="em">🤫</span>Pode ser <b>assintomática</b> (achado em rastreio de paciente de alto risco).</li>
+<li><span class="em">🔍</span><b>Sinal de Homans</b> (dor à dorsiflexão do pé) — baixa sensibilidade/especificidade, <b>não deve ser usado isoladamente</b> para diagnóstico.</li>
+</ul>
+<div class="box pu"><div class="lbl">🚨 Flegmasia — formas graves</div>
+<ul>
+<li><b>Flegmasia alba dolens</b>: perna pálida, edemaciada, dolorosa (obstrução venosa maciça com espasmo arterial reflexo).</li>
+<li><b>Flegmasia cerulea dolens</b>: perna cianótica, edema tenso, risco de <span class="hi">gangrena venosa</span> — emergência, risco de perda de membro.</li>
+</ul></div>
+</section>
+
+<section id="anatomia">
+<h2>🫀 Anatomia venosa</h2>
+<table>
+<tr><th>Sistema</th><th>Veias</th></tr>
+<tr><td><b>Profundo</b></td><td>Tibiais anteriores/posteriores, fibulares → poplítea → femoral (superficial + profunda) → femoral comum → ilíaca externa/comum → cava inferior</td></tr>
+<tr><td><b>Superficial</b></td><td>Safena magna (medial) e parva (posterior)</td></tr>
+<tr><td><b>Perfurantes</b></td><td>Conectam superficial ↔ profundo (válvulas unidirecionais, sentido superficial → profundo)</td></tr>
+</table>
+<div class="box pu"><div class="lbl">⚠️ Relevância clínica da anatomia</div>
+<ul>
+<li><span class="hi">TVP distal</span> (infrapoplítea — tibiais/fibulares): menor risco embólico, pode ser conduta expectante em casos selecionados.</li>
+<li><span class="hi">TVP proximal</span> (poplítea ou acima): maior risco de TEP → sempre anticoagular.</li>
+<li>A <b>veia femoral superficial</b>, apesar do nome, é <b>veia profunda</b> — pega-ratão clássico de terminologia.</li>
+</ul></div>
+</section>
+
+<section id="dx">
+<h2>🔬 Diagnóstico</h2>
+<h3>Escore de Wells (probabilidade pré-teste de TVP)</h3>
+<table>
+<tr><th>Critério</th><th>Pontos</th></tr>
+<tr><td>Câncer ativo</td><td>+1</td></tr>
+<tr><td>Paralisia/imobilização de membro</td><td>+1</td></tr>
+<tr><td>Acamado &gt;3 dias ou cirurgia grande &lt;12 sem</td><td>+1</td></tr>
+<tr><td>Dor à palpação do trajeto venoso profundo</td><td>+1</td></tr>
+<tr><td>Edema de todo o membro</td><td>+1</td></tr>
+<tr><td>Edema de panturrilha &gt;3cm vs contralateral</td><td>+1</td></tr>
+<tr><td>Edema depressível (cacifo) unilateral</td><td>+1</td></tr>
+<tr><td>Veias superficiais colaterais dilatadas</td><td>+1</td></tr>
+<tr><td>TVP prévia documentada</td><td>+1</td></tr>
+<tr><td>Diagnóstico alternativo tão ou mais provável</td><td>−2</td></tr>
+</table>
+<p class="mn">≥2 = probabilidade "provável" (alta) · &lt;2 = "improvável" (baixa)</p>
+<div class="box"><div class="lbl">🎯 Fluxo diagnóstico</div>
+<ul>
+<li><span class="hi">Wells baixo</span> → D-dímero. Negativo exclui TVP; positivo → USG Doppler.</li>
+<li><span class="hi">Wells alto</span> → USG Doppler venoso direto (D-dímero pouco útil aqui, alta prevalência pré-teste).</li>
+</ul></div>
+<h3>Exames</h3>
+<ul>
+<li><span class="em">📡</span><b>USG Doppler com compressão</b> — padrão-ouro não invasivo. Veia não compressível = trombo.</li>
+<li><span class="em">🩸</span><b>D-dímero</b> — alto valor preditivo negativo, baixo valor preditivo positivo (eleva em cirurgia, gravidez, câncer, idade avançada).</li>
+<li><span class="em">🖥️</span>Venografia/angioTC — reservadas para casos duvidosos ou planejamento de trombólise.</li>
+</ul>
+</section>
+
+<section id="conduta">
+<h2>📐 Conduta terapêutica</h2>
+<div class="box pu"><div class="lbl">⭐ Anticoagulação — pilar do tratamento</div>
+<ul>
+<li><span class="hi">TVP proximal (poplítea ou acima)</span>: anticoagular sempre.</li>
+<li><span class="hi">TVP distal isolada</span>, sem sintomas graves/fatores de extensão: <b>USG seriada por 2 semanas</b> é alternativa à anticoagulação (CHEST 2021) — se propagar, anticoagular.</li>
+</ul></div>
+<h3>Opções de anticoagulação</h3>
+<table>
+<tr><th>Classe</th><th>Exemplos</th><th>Observação</th></tr>
+<tr><td><b>DOAC</b> (preferência atual)</td><td>Rivaroxabana, apixabana, dabigatrana, edoxabana</td><td>Monoterapia oral, sem necessidade de monitorização — 1ª linha na maioria (CHEST 2021)</td></tr>
+<tr><td>HBPM</td><td>Enoxaparina</td><td>Preferida em <b>câncer ativo</b> (embora DOAC também seja aceito conforme risco de sangramento) e gestação</td></tr>
+<tr><td>Varfarina (antagonista de vit. K)</td><td>—</td><td>Necessita ponte com heparina; monitorização por INR; preferida em SAAF/próteses valvares mecânicas</td></tr>
+</table>
+<h3>Duração</h3>
+<ul>
+<li><span class="em">📅</span><b>Provocada por fator transitório</b> (cirurgia, imobilização): <b>3 meses</b>.</li>
+<li><span class="em">♾️</span><b>Não provocada / câncer ativo / recorrente</b>: considerar <b>anticoagulação estendida</b> (indefinida, reavaliando risco-benefício periodicamente).</li>
+</ul>
+<h3>Terapia intervencionista</h3>
+<p><span class="hi">Anticoagulação isolada é preferida</span> sobre trombólise/trombectomia de rotina (CHEST 2021). Reservar terapia intervencionista (trombólise dirigida por cateter, trombectomia mecânica) para: <b>flegmasia cerulea dolens</b> (risco de perda de membro) ou <b>TVP iliofemoral extensa e grave</b> em pacientes selecionados com baixo risco de sangramento, visando reduzir síndrome pós-trombótica.</p>
+<h3>Filtro de veia cava inferior</h3>
+<p>Indicado quando há <span class="hi">contraindicação absoluta à anticoagulação</span> na vigência de TVP proximal/TEP, ou recorrência de TEP apesar de anticoagulação terapêutica adequada. Não é tratamento definitivo — retirar assim que a anticoagulação puder ser retomada, se filtro recuperável.</p>
+</section>
+
+<section id="tecnica">
+<h2>🔪 Trombólise dirigida por cateter (casos selecionados)</h2>
+<p class="note" style="border:none;margin:0 0 6px;padding:0"><span class="hand hL">ESQ</span> mão esquerda · <span class="hand hR">DIR</span> mão direita.</p>
+<p><b>Indicação:</b> TVP iliofemoral extensa/aguda (&lt;14 dias) em paciente com boa expectativa funcional e baixo risco hemorrágico, ou flegmasia cerulea dolens.</p>
+<ol class="steps">
+<li>Acesso venoso guiado por USG (geralmente poplíteo ou jugular, conforme extensão do trombo).</li>
+<li>Passagem de fio-guia através do segmento trombosado sob fluoroscopia.</li>
+<li>Posicionamento de cateter multi-fenestrado ou dispositivo de trombectomia mecânica dentro do trombo.</li>
+<li>Infusão local de trombolítico (farmacomecânica) ou aspiração/trombectomia mecânica isolada.</li>
+<li>Venografia de controle; tratar lesão residual (ex.: estenose de May-Thurner) com angioplastia/stent venoso se identificada.</li>
+</ol>
+<div class="box cy"><div class="lbl">💡 Síndrome de May-Thurner</div>
+<p>Compressão da <span class="hi">veia ilíaca comum esquerda pela artéria ilíaca comum direita</span> contra a coluna vertebral — causa anatômica clássica de TVP iliofemoral esquerda recorrente/predominante em mulheres jovens.</p></div>
+</section>
+
+<section id="complic">
+<h2>⚠️ Complicações</h2>
+<ul>
+<li><span class="em">🫁</span><b>TEP (tromboembolia pulmonar)</b> — a complicação aguda mais temida, principalmente de TVP proximal.</li>
+<li><span class="em">🦵</span><b>Síndrome pós-trombótica</b>: dor crônica, edema, hiperpigmentação, úlcera de estase — por dano valvular residual (até 50% dos casos de TVP proximal).</li>
+<li><span class="em">🩸</span>Sangramento relacionado à anticoagulação.</li>
+<li><span class="em">🖤</span>Gangrena venosa (flegmasia cerulea dolens não tratada).</li>
+<li><span class="em">🔁</span>Recorrência (maior em não provocada, câncer, trombofilia).</li>
+</ul>
+</section>
+
+<section id="pegas">
+<h2>🪤 Pega-ratões</h2>
+<div class="box pu"><div class="lbl">Os erros favoritos das bancas</div>
+<ul>
+<li>Sinal de Homans tem <b>baixa acurácia</b> — não confirma nem exclui TVP isoladamente.</li>
+<li>"Veia femoral <b>superficial</b>" é veia <b>profunda</b> (nomenclatura confunde) — trombose ali é TVP verdadeira.</li>
+<li>D-dímero negativo tem alto valor para <b>excluir</b>, mas positivo <b>não confirma</b> (inespecífico).</li>
+<li>TVP distal isolada sem gravidade → pode-se <b>vigiar com USG seriada</b>, não obrigatoriamente anticoagular de imediato.</li>
+<li><b>DOAC</b> é hoje 1ª linha na maioria dos casos (CHEST 2021), não mais varfarina de rotina.</li>
+<li>Trombólise/trombectomia <b>não é rotina</b> — reservada a casos extensos/graves selecionados.</li>
+<li><b>Flegmasia cerulea dolens</b> = emergência (risco de perda de membro), diferente da alba dolens (menos grave).</li>
+<li>Filtro de cava <b>não trata</b> a TVP — só previne embolização; retirar quando possível.</li>
+<li><b>Síndrome de May-Thurner</b>: compressão da ilíaca comum esquerda pela direita → TVP iliofemoral E recorrente.</li>
+</ul></div>
+</section>
+
+<section id="mnemo">
+<h2>🧠 Mnemônicos</h2>
+<div class="box cy"><div class="lbl">Coleção TVP</div>
+<ul>
+<li><span class="mn">Virchow: Estase + Endotélio + Estado de hipercoagulabilidade (3 E's)</span>.</li>
+<li><span class="mn">Wells ≥2 = provável → USG direto · &lt;2 = improvável → D-dímero</span>.</li>
+<li><span class="mn">"D-dímero exclui, não confirma"</span>.</li>
+<li><span class="mn">Proximal = TEP risco alto · Distal = pode vigiar</span>.</li>
+<li><span class="mn">"Cerulea = perde perna" (flegmasia grave)</span>.</li>
+</ul></div>
+</section>
+
+<section id="questoes">
+<h2>📝 Questões — itens originais no estilo das bancas</h2>
+<p class="note" style="border:none;padding:0;margin:0 0 10px">Itens <b>originais</b> no padrão de cada banca (não reprodução literal).</p>
+
+<div class="q"><div class="src">HCPA · estilo</div>
+<div class="stem">Mulher de 45 anos, pós-operatório de artroplastia de quadril há 10 dias, apresenta edema unilateral de panturrilha, empastamento e dor à palpação do trajeto venoso. Escore de Wells = 3. A próxima conduta diagnóstica é:</div>
+<div class="alt"><span class="let">A)</span> Solicitar D-dímero isoladamente</div>
+<div class="alt ok"><span class="let">B)</span> USG Doppler venoso de membros inferiores diretamente</div>
+<div class="alt"><span class="let">C)</span> Iniciar anticoagulação empírica sem confirmação</div>
+<div class="alt"><span class="let">D)</span> Solicitar angioTC de tórax</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> Wells ≥2 (probabilidade alta) → ir direto para USG Doppler, já que o D-dímero tem baixo valor preditivo positivo nesse cenário de alta prevalência pré-teste.</div></details>
+</div>
+
+<div class="q"><div class="src">GHC · estilo</div>
+<div class="stem">Paciente com TVP proximal de membro inferior, sem contraindicações à anticoagulação e sem câncer ativo. Segundo as diretrizes atuais (CHEST 2021), a classe de anticoagulante preferencial como 1ª linha é:</div>
+<div class="alt"><span class="let">A)</span> Varfarina isolada, sem ponte</div>
+<div class="alt ok"><span class="let">B)</span> Anticoagulante oral direto (DOAC) em monoterapia</div>
+<div class="alt"><span class="let">C)</span> Heparina não fracionada intravenosa contínua por 3 meses</div>
+<div class="alt"><span class="let">D)</span> Ácido acetilsalicílico</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> Os DOACs (ex.: rivaroxabana, apixabana) são atualmente preferidos como monoterapia de 1ª linha na maioria dos pacientes com TVP, por praticidade e eficácia comparável/superior com menor sangramento.</div></details>
+</div>
+
+<div class="q"><div class="src">Santa Casa POA · estilo</div>
+<div class="stem">Paciente com TVP proximal extensa evolui com perna cianótica, edema tenso e dor intensa, com risco iminente de gangrena venosa. O diagnóstico e a conduta mais apropriada são:</div>
+<div class="alt"><span class="let">A)</span> Flegmasia alba dolens — anticoagulação isolada</div>
+<div class="alt ok"><span class="let">B)</span> Flegmasia cerulea dolens — considerar trombólise/trombectomia de urgência</div>
+<div class="alt"><span class="let">C)</span> Erisipela — antibioticoterapia</div>
+<div class="alt"><span class="let">D)</span> Síndrome pós-trombótica — meia de compressão</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> Perna cianótica + edema tenso + risco de gangrena venosa caracteriza flegmasia cerulea dolens, uma das poucas indicações formais de terapia intervencionista (trombólise/trombectomia) além da anticoagulação.</div></details>
+</div>
+
+<div class="q"><div class="src">PUC-RS · estilo</div>
+<div class="stem">Mulher jovem com TVP iliofemoral esquerda recorrente, sem fatores de risco evidentes. A causa anatômica clássica a ser investigada é:</div>
+<div class="alt"><span class="let">A)</span> Síndrome do desfiladeiro torácico</div>
+<div class="alt ok"><span class="let">B)</span> Síndrome de May-Thurner (compressão da veia ilíaca comum esquerda pela artéria ilíaca comum direita)</div>
+<div class="alt"><span class="let">C)</span> Aneurisma de aorta abdominal</div>
+<div class="alt"><span class="let">D)</span> Cisto de Baker</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> A síndrome de May-Thurner é causa anatômica clássica de TVP iliofemoral esquerda recorrente, por compressão extrínseca da veia ilíaca comum esquerda pela artéria ilíaca comum direita contra a coluna.</div></details>
+</div>
+
+<div class="q"><div class="src">AMRIGS · estilo</div>
+<div class="stem">Paciente com TVP proximal aguda e contraindicação absoluta à anticoagulação por sangramento ativo. A conduta mais apropriada para prevenir TEP nesse cenário é:</div>
+<div class="alt"><span class="let">A)</span> Iniciar DOAC em dose reduzida</div>
+<div class="alt ok"><span class="let">B)</span> Implante de filtro de veia cava inferior</div>
+<div class="alt"><span class="let">C)</span> Trombólise sistêmica</div>
+<div class="alt"><span class="let">D)</span> Observação clínica isolada</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> Contraindicação absoluta à anticoagulação em TVP proximal é indicação clássica de filtro de veia cava inferior, idealmente recuperável, retirado assim que a anticoagulação puder ser retomada.</div></details>
+</div>
+
+<div class="q"><div class="src">HCPA · estilo</div>
+<div class="stem">Sobre a TVP distal isolada (infrapoplítea), assintomática, sem fatores de risco para extensão, a conduta aceita pelas diretrizes atuais é:</div>
+<div class="alt"><span class="let">A)</span> Anticoagulação obrigatória por 6 meses</div>
+<div class="alt ok"><span class="let">B)</span> USG seriada por 2 semanas como alternativa à anticoagulação, anticoagulando se houver propagação</div>
+<div class="alt"><span class="let">C)</span> Filtro de veia cava profilático</div>
+<div class="alt"><span class="let">D)</span> Trombectomia cirúrgica de rotina</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> CHEST 2021: em TVP distal isolada de baixo risco, USG seriada por 2 semanas é alternativa aceitável à anticoagulação, reservando-a para casos de propagação proximal.</div></details>
+</div>
+
+<div class="q"><div class="src">GHC · estilo</div>
+<div class="stem">Homem de 70 anos com neoplasia de pâncreas em estadiamento apresenta TVP proximal de membro inferior. A duração recomendada de anticoagulação nesse contexto é:</div>
+<div class="alt"><span class="let">A)</span> 3 meses fixos, independentemente da neoplasia</div>
+<div class="alt ok"><span class="let">B)</span> Estendida (indefinida), com reavaliação periódica do risco-benefício enquanto o câncer estiver ativo</div>
+<div class="alt"><span class="let">C)</span> 7 dias apenas</div>
+<div class="alt"><span class="let">D)</span> Não anticoagular por risco de sangramento tumoral</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> TVP associada a câncer ativo tem alto risco de recorrência; a anticoagulação estendida é indicada enquanto persistir o fator de risco, com reavaliação periódica.</div></details>
+</div>
+
+<div class="q"><div class="src">Santa Casa POA · estilo</div>
+<div class="stem">Sobre o D-dímero na investigação de TVP, é correto afirmar que:</div>
+<div class="alt"><span class="let">A)</span> Um resultado positivo confirma o diagnóstico de TVP</div>
+<div class="alt ok"><span class="let">B)</span> Um resultado negativo, em paciente de baixa probabilidade clínica, ajuda a excluir TVP</div>
+<div class="alt"><span class="let">C)</span> Deve ser solicitado preferencialmente em pacientes de alta probabilidade (Wells ≥2)</div>
+<div class="alt"><span class="let">D)</span> É específico para trombose, não se alterando em outras condições</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> O D-dímero tem alto valor preditivo negativo (útil para excluir, principalmente em baixa probabilidade pré-teste) e baixa especificidade (eleva em vários contextos: cirurgia, gravidez, câncer, idade).</div></details>
+</div>
+
+<div class="q"><div class="src">PUC-RS · estilo</div>
+<div class="stem">A complicação crônica mais comum após TVP proximal de membro inferior, caracterizada por dor, edema, hiperpigmentação e eventual úlcera de estase, denomina-se:</div>
+<div class="alt"><span class="let">A)</span> Síndrome de May-Thurner</div>
+<div class="alt ok"><span class="let">B)</span> Síndrome pós-trombótica</div>
+<div class="alt"><span class="let">C)</span> Flegmasia cerulea dolens</div>
+<div class="alt"><span class="let">D)</span> Síndrome de Leriche</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> A síndrome pós-trombótica decorre de dano valvular residual após TVP, podendo ocorrer em até metade dos casos de TVP proximal, mesmo com tratamento adequado.</div></details>
+</div>
+
+<div class="q"><div class="src">AMRIGS · estilo</div>
+<div class="stem">Homem de 55 anos, sem câncer ativo, com TVP proximal provocada por cirurgia ortopédica de grande porte realizada há 3 semanas. A duração recomendada de anticoagulação é de:</div>
+<div class="alt"><span class="let">A)</span> 7 dias</div>
+<div class="alt ok"><span class="let">B)</span> 3 meses</div>
+<div class="alt"><span class="let">C)</span> 12 meses fixos</div>
+<div class="alt"><span class="let">D)</span> Indefinida, sem reavaliação</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> TVP provocada por fator de risco transitório (ex.: cirurgia recente) é tratada por um curso padrão de 3 meses, sem necessidade de extensão além disso.</div></details>
+</div>
+</section>
+
+<div class="note">Fontes: CHEST 2021 (Antithrombotic Therapy for VTE Disease, 2nd update) · ESVS 2021 Venous Thrombosis Guidelines · Escore de Wells · Rutherford's Vascular Surgery · Sabiston. Questões originais para estudo. — carolzita · CV 2026</div>
+</div>
+<script>
+var secs=[['geral','🧭 Geral'],['clinica','🩺 Clínica'],['anatomia','🫀 Anatomia'],['dx','🔬 Diagnóstico'],['conduta','📐 Conduta'],['tecnica','🔪 Intervenção'],['complic','⚠️ Complicações'],['pegas','🪤 Pega-ratões'],['mnemo','🧠 Mnemônicos'],['questoes','📝 Questões']];
+var nav=document.getElementById('nav');
+secs.forEach(function(s,i){var b=document.createElement('button');b.textContent=s[1];if(i===0)b.className='on';b.onclick=function(){document.querySelectorAll('nav button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');document.querySelectorAll('section').forEach(function(x){x.classList.remove('on')});document.getElementById(s[0]).classList.add('on');window.scrollTo({top:0,behavior:'smooth'})};nav.appendChild(b)});
+</script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌋 Úlcera Péptica — Pocket</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d1117;--panel:#161b22;--panel2:#1c232c;--line:#2a323c;--tx:#e6edf3;--mut:#8b949e;--or:#ff7a18;--or2:#ff9a4d;--orbg:rgba(255,122,24,.10);--pu:#b083f0;--pu2:#c9a7ff;--pubg:rgba(176,131,240,.12);--cy:#3dd6d0;--cy2:#5fe3dd;--cybg:rgba(61,214,208,.10);--grn:#3fb950}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font-family:'IBM Plex Sans',sans-serif;line-height:1.5;padding:0 0 40px}
+.sheet{max-width:430px;margin:0 auto;min-height:100vh;background:var(--bg)}
+header{padding:22px 20px 0;display:flex;justify-content:space-between;align-items:baseline}
+.logo{font-size:23px;font-weight:700;letter-spacing:-.5px}.logo .b{color:var(--or)}
+.kick{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--or);text-transform:uppercase}
+nav{position:sticky;top:0;background:var(--bg);z-index:5;border-bottom:1px solid var(--line);overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;margin-top:14px}
+nav .in{display:flex;padding:0 16px}
+nav button{background:none;border:none;color:var(--mut);font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.5px;text-transform:uppercase;padding:13px 11px;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px}
+nav button.on{color:var(--or);border-bottom-color:var(--or)}
+section{display:none;padding:20px;animation:f .2s}section.on{display:block}
+@keyframes f{from{opacity:0}to{opacity:1}}
+h2{font-size:18px;color:var(--or);font-weight:600;padding-bottom:8px;border-bottom:1px solid var(--line);margin-bottom:14px}
+h3{font-size:13px;margin:16px 0 6px;font-weight:600;color:var(--or2)}
+p,li{font-size:14px}
+.step{display:flex;align-items:flex-start;gap:10px;padding:7px 0}
+.num{flex:0 0 auto;width:24px;height:24px;border-radius:6px;background:var(--or);color:#0d1117;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:13px;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.it{color:var(--cy2);font-style:italic;font-size:13px}
+.step{flex-direction:column;gap:6px;align-items:stretch;border-bottom:1px dashed var(--line);padding:10px 0}
+.step:last-child{border-bottom:none}
+.hd2{display:flex;gap:10px;align-items:flex-start}
+.sc{flex:1;font-size:14px}
+.fase{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:1.3px;text-transform:uppercase;color:var(--or);display:block}
+.pq{border-left:2px solid var(--pu);background:var(--pubg);border-radius:0 7px 7px 0;padding:7px 10px;font-size:13px}
+.pq b{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1.2px;text-transform:uppercase;color:var(--pu2);display:block}
+.box.gr{border-color:var(--grn);background:rgba(63,185,80,.10);color:var(--grn);font-style:italic}
+.box.gr .lbl{color:var(--grn);font-style:normal}
+.box.gr b,.box.gr strong,.box.gr .hi{color:#8ee79a;font-style:normal}
+.box.rd{border-color:#f87171;background:rgba(248,113,113,.10)}
+.box.rd .lbl{color:#f87171}
+.fio{font-family:'IBM Plex Mono',monospace;font-size:11.5px;background:var(--pubg);color:var(--pu2);border:1px solid rgba(176,131,240,.3);padding:1px 6px;border-radius:5px;white-space:nowrap}
+.box{border-left:3px solid var(--or);background:var(--orbg);border-radius:0 8px 8px 0;padding:11px 14px;margin:14px 0}
+.box.pu{border-color:var(--pu);background:var(--pubg)}.box.cy{border-color:var(--cy);background:var(--cybg)}
+.box .lbl{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--or);margin-bottom:6px;font-weight:600}
+.box.pu .lbl{color:var(--pu2)}.box.cy .lbl{color:var(--cy2)}
+.big{font-size:16px;font-weight:600}
+.tbl{border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:12px 0;background:var(--panel)}
+.row{display:flex;align-items:center;gap:10px;padding:10px 13px;border-bottom:1px solid var(--line);font-size:13.5px}.row:last-child{border-bottom:none}
+.row .v{flex:0 0 auto;color:var(--or2);font-weight:700;font-family:'IBM Plex Mono',monospace;min-width:52px}
+.hand{font-family:'IBM Plex Mono',monospace;font-size:11px;padding:1px 6px;border-radius:5px;font-weight:600}
+.L{background:rgba(63,185,80,.15);color:#56d364}.R{background:rgba(255,122,24,.15);color:var(--or2)}
+ul{list-style:none;margin:4px 0}li{padding:4px 0 4px 24px;position:relative}li .em{position:absolute;left:0}
+.hi{color:var(--pu2);font-weight:600}.mn{font-family:'IBM Plex Mono',monospace;color:var(--cy2);font-weight:600}
+.foot{text-align:center;color:var(--mut);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1px;padding:18px;border-top:1px solid var(--line);margin-top:10px}
+</style>
+</head>
+<body>
+<div class="sheet">
+<header><div class="logo">🌋 <span class="b">Úlcera Péptica</span></div><div class="kick">Pocket</div></header>
+<nav><div class="in" id="nav"></div></nav>
+
+<section id="def" class="on">
+<h2>🧭 Definição</h2>
+<div class="box"><div class="lbl">📏 Conceito</div>
+<p class="big">Lesão que rompe a mucosa até a submucosa/muscular</p>
+<p class="it">"buraco" no estômago/duodeno por desequilíbrio ácido × proteção 🧪</p></div>
+<ul>
+<li><span class="em">🦠</span><span class="hi">H. pylori</span> = causa nº1 mundial</li>
+<li><span class="em">💊</span>AINE/AAS = 2ª causa mais comum</li>
+<li><span class="em">🚬</span>Tabagismo, estresse fisiológico grave (Curling/Cushing)</li>
+</ul>
+<div class="box pu"><div class="lbl">📍 Duodenal × Gástrica</div>
+<p><span class="hi">Duodenal</span>: dor melhora com alimentação. <span class="hi">Gástrica</span>: dor piora — SEMPRE biopsiar (excluir Ca)</p></div>
+</section>
+
+<section id="anat">
+<h2>🫀 Anatomia-chave</h2>
+<div class="box pu"><div class="lbl">🎯 A regra mais cobrada</div>
+<p>Úlcera duodenal <span class="hi">POSTERIOR SANGRA</span> (erode a a. gastroduodenal) · <span class="hi">ANTERIOR PERFURA</span> (cavidade livre)</p></div>
+<ul>
+<li><span class="em">🩸</span>GDA corre <span class="hi">posterior ao bulbo (D1)</span> — ramo da hepática comum</li>
+<li><span class="em">🫃</span>Úlcera gástrica → a. gástrica esquerda</li>
+</ul>
+</section>
+
+<section id="dx">
+<h2>🔬 Diagnóstico</h2>
+<div class="tbl">
+<div class="row"><span class="v">🔬 EDA</span><span>padrão-ouro — biópsia se gástrica</span></div>
+<div class="row"><span class="v">🦠 H. pylori</span><span>teste da urease, histologia, antígeno fecal</span></div>
+</div>
+<div class="box cy"><div class="lbl">📊 Forrest (sangrante)</div>
+<p>Ia/Ib ativo → Iia/Iib alto risco → III sem sinais (baixo risco)</p></div>
+</section>
+
+<section id="cond">
+<h2>📐 Conduta clínica</h2>
+<div class="box pu"><div class="lbl">💊 Base</div>
+<p>IBP + erradicar H. pylori (esquema tríplice/quádruplo) + suspender AINE</p></div>
+<div class="box"><div class="lbl">🎯 Boey score (perfurada)</div>
+<p>Choque + comorbidade + &gt;24h evolução → prediz mortalidade, orienta abordagem</p></div>
+</section>
+
+<section id="perf">
+<h2>💥 Perfurada — Graham</h2>
+<div class="box gr"><div class="lbl">🟢 tradução simples</div><p>Não se "costura o buraco": o tecido em volta está inflamado e <b>rasga</b>. Tampa-se com um pedaço de <b>omento vivo</b>, como uma rolha que traz sangue e cicatriza por cima.</p></div>
+<p class="it">🛏️ Supino · laparoscopia se estável (WSES) · aberta se instável/sem estrutura</p>
+
+<div class="step"><div class="hd2"><span class="num">1</span><div class="sc"><span class="fase">acesso e inventário</span>Identificar a perfuração (<b>parede anterior do bulbo</b>) · aspirar · <b>colher cultura</b></div></div>
+<div class="pq"><b>por quê</b><b>Anterior perfura</b> (só cavidade livre à frente) · <b>posterior sangra</b> (GDA atrás). A anatomia decide a complicação. 🎯</div></div>
+
+<div class="step"><div class="hd2"><span class="num">2</span><div class="sc"><span class="fase">preparo do retalho</span>Mobilizar língua de <b>omento bem vascularizado</b>, <b>sem tensão</b> · alternativas: falciforme, jejuno</div></div>
+<div class="pq"><b>por quê</b>O omento é <b>enxerto vascularizado</b>, não curativo — leva sangue e macrófagos. Tracionado, perde perfusão e falha igual a uma sutura simples.</div></div>
+
+<div class="step"><div class="hd2"><span class="num">3</span><div class="sc"><span class="fase">sutura — o detalhe</span>3–4 pontos em <b>U</b> <span class="fio">Vicryl 2-0/3-0</span>: borda → omento → borda oposta. <b class="hi">NÃO amarrar ainda!</b></div></div>
+<div class="pq"><b>por quê</b>Amarrar ponto a ponto <b>rasga</b> o tecido edemaciado e fecha o campo. Passando todos frouxos, a tensão se distribui. ⚠️</div></div>
+
+<div class="step"><div class="hd2"><span class="num">4</span><div class="sc"><span class="fase">fixação</span>Posicionar o omento <b>sobre</b> a perfuração e amarrar com <b>força mínima</b></div></div>
+<div class="pq"><b>por quê</b>Nó apertado <b>necrosa o retalho</b> — o tecido que deveria cicatrizar. Falha tanto por excesso de força quanto por falta de omento.</div></div>
+
+<div class="step"><div class="hd2"><span class="num">5</span><div class="sc"><span class="fase">encerramento</span>Lavar <b>8–10 L</b> · dreno conforme contaminação · IBP + <b>erradicar H. pylori</b></div></div>
+<div class="pq"><b>por quê</b>Aqui é o <b>oposto</b> da apendicite: contaminação química difusa → a lavagem ampla <b>é</b> o tratamento. E o que mais reduz recidiva não é cirúrgico: é erradicar o H. pylori. 🦠</div></div>
+
+<div class="box rd"><div class="lbl">☠️ perfuração ≥ 2 cm</div><p>Não fecha com patch — <b>abordagem individualizada</b> (ressecção, exclusão pilórica). Tamponar defeito grande = deiscência.</p></div>
+</section>
+
+<section id="sang">
+<h2>🩸 Sangrante — GDA</h2>
+<div class="box gr"><div class="lbl">🟢 tradução simples</div><p>A artéria fica <b>atrás</b> da úlcera, escondida. Abre-se o duodeno <b>pela frente</b> e costura-se a artéria no fundo da cratera — hemostasia <b>dentro</b> do tubo digestivo.</p></div>
+<p class="it">1ª linha: endoscopia (adrenalina + térmico/clipe) · ressangrou → <b>retratar</b> endoscopia · falhou → <b>embolização</b> ou cirurgia</p>
+
+<div class="step"><div class="hd2"><span class="num">1</span><div class="sc"><span class="fase">acesso</span><b>Kocher</b> + <b>duodenotomia longitudinal anterior</b> (a úlcera é posterior)</div></div>
+<div class="pq"><b>por quê</b>Abre-se a parede <b>oposta</b> à lesão. O Kocher permite <b>comprimir o pedículo entre os dedos</b> enquanto prepara o ponto — controle sem clampear às cegas. ✋</div></div>
+
+<div class="step"><div class="hd2"><span class="num">2</span><div class="sc"><span class="fase">hemostasia — decisivo</span><b>3 pontos</b> <span class="fio">Prolene 3-0</span>: proximal · distal · <b>U medial</b> (ramo pancreático transverso)</div></div>
+<div class="pq"><b>por quê</b>A GDA recebe fluxo de <b>2 direções</b>: anterógrado do tronco celíaco e <b>retrógrado da AMS</b> pelas arcadas. Por isso proximal+distal não basta. ⚠️ Ponto profundo medial pode pegar o <b>colédoco</b>.</div></div>
+
+<div class="step"><div class="hd2"><span class="num">3</span><div class="sc"><span class="fase">fechamento</span>Fechar <b class="hi">TRANSVERSAL</b> — Heineke-Mikulicz</div></div>
+<div class="pq"><b>por quê</b>Fechar no mesmo sentido <b>estreita</b>. Abrir no eixo longo e fechar no curto <b>alarga</b> o lúmen. Longitudinal = estenose duodenal = erro clássico de prova. ↔️</div></div>
+
+<div class="step"><div class="hd2"><span class="num">4</span><div class="sc"><span class="fase">decisão</span><b>Instável</b> → só hemostasia · <b>estável + refratária + Hp neg</b> → considerar vagotomia + piloroplastia</div></div>
+<div class="pq"><b>por quê</b>Acrescentar procedimento em paciente chocado <b>aumenta mortalidade</b> sem ganho. Hoje o IBP faz o papel da cirurgia definitiva. É controle de dano, não de doença.</div></div>
+</section>
+
+<section id="cir">
+<h2>🔪 Definitiva</h2>
+<div class="box gr"><div class="lbl">🟢 tradução simples</div><p>Dois <b>botões</b> ligam o ácido: o <b>vago</b> (ver/cheirar comida) e a <b>gastrina do antro</b> (comida distendendo). A cirurgia desliga um, o outro ou os dois.</p></div>
+
+<div class="box pu"><div class="lbl">⭐ o trade-off que organiza tudo</div><p class="big">Menos recidiva = mais sequela</p></div>
+<div class="tbl">
+<div class="row"><span class="v">HSV</span><span>recidiva <b>10–15%</b> · efeitos <b>mínimos</b> · <b class="hi">SEM drenagem</b></span></div>
+<div class="row"><span class="v">Troncal</span><span>+ drenagem · diarreia/dumping</span></div>
+<div class="row"><span class="v">Tr+antrec</span><span>recidiva <b>~1%</b> · sequelas <b>máximas</b></span></div>
+</div>
+<div class="box pu"><div class="lbl">🎯 a pergunta clássica</div><p>Troncal <b>denerva o piloro</b> → precisa de drenagem. <b>HSV preserva o Latarjet</b> → não precisa.</p></div>
+
+<h3>🧠 Vagotomia superseletiva</h3>
+<div class="step"><div class="hd2"><span class="num">1</span><div class="sc"><span class="fase">exposição</span>Identificar troncos no esôfago abdominal</div></div>
+<div class="pq"><b>por quê</b>Rotação embrionária → <b class="hi">LARP</b>: <b>L</b>eft <b>A</b>nterior, <b>R</b>ight <b>P</b>osterior 🔄</div></div>
+<div class="step"><div class="hd2"><span class="num">2</span><div class="sc"><span class="fase">crítico</span><b>Preservar o pé de ganso</b> de Latarjet 🦢</div></div>
+<div class="pq"><b>por quê</b>Latarjet comanda a <b>motilidade antropilórica</b> — é ele que dispensa a piloroplastia. Lesá-lo = troncal disfarçada, com estase e sem drenagem.</div></div>
+<div class="step"><div class="hd2"><span class="num">3</span><div class="sc"><span class="fase">denervação</span>Seccionar só ramos de <b>corpo e fundo</b> · limite <b>7 cm do piloro</b></div></div>
+<div class="pq"><b>por quê</b>7 cm = fronteira entre mucosa <b>oxíntica</b> (ácido) e <b>antro</b> (gastrina). Além invade o Latarjet; aquém deixa células parietais.</div></div>
+
+<h3>✂️ Troncal + antrectomia</h3>
+<ul>
+<li><span class="em">1️⃣</span>Seccionar <b>2 troncos</b> + enviar segmento à <b>congelação</b> (vagotomia incompleta = recidiva nº1)</li>
+<li><span class="em">2️⃣</span>Mobilizar · <b>preservar a arcada gastroepiploica</b> (irriga o coto que receberá a anastomose)</li>
+<li><span class="em">3️⃣</span>Antrectomia = <b>50% distais</b>, da incisura ao piloro · <span class="fio">carga azul 3,5</span> · <span class="fio">roxa 4,0</span> se duodeno cicatricial</li>
+<li><span class="em">4️⃣</span>Reconstruir: <b>BI</b> (fisiológica) · <b>BII</b> (em desuso) · <b class="hi">Y de Roux 40–60 cm</b> (padrão atual)</li>
+</ul>
+<div class="box pu"><div class="lbl">⭐ por que 40–60 cm</div><p>A diferença entre as reconstruções é <b>o que acontece com a bile</b>. Menos que 40 não impede o refluxo; muito mais favorece a <b>síndrome do Y de Roux</b> (estase).</p></div>
+<div class="box rd"><div class="lbl">☠️ coto duodenal</div><p>No BII e Y de Roux é fechado às cegas. Duodeno cicatricial mal fechado → <b>fístula do coto duodenal</b>. 💀</p></div>
+</section>
+
+<section id="pos">
+<h2>🍽️ Pós-gastrectomia</h2>
+<div class="tbl">
+<div class="row"><span class="v">15–30′</span><span><b>Dumping precoce</b> — carga hiperosmolar <b>sequestra líquido</b> → cólica, taquicardia, hipotensão</span></div>
+<div class="row"><span class="v">2–3 h</span><span><b>Dumping tardio</b> — pico glicêmico → <b>hiperinsulinemia</b> → hipoglicemia</span></div>
+<div class="row"><span class="v">BII</span><span><b>Alça aferente</b> — vômito bilioso <b class="hi">em jato que ALIVIA</b>, sem comida</span></div>
+<div class="row"><span class="v">Bile</span><span><b>Refluxo alcalino</b> — dor <b>contínua</b>, vômito <b class="hi">NÃO alivia</b></span></div>
+<div class="row"><span class="v">Vagot.</span><span><b>Diarreia</b> por sais biliares → colestiramina</span></div>
+<div class="row"><span class="v">Tardio</span><span><b>B12</b> (fator intrínseco) + ferro · <b>Ca de coto</b> em 15–20 anos</span></div>
+</div>
+<div class="box cy"><div class="lbl">🧠 as duas dores</div><p class="mn">Aferente: jato que ALIVIA · Alcalino: NÃO alivia</p><p class="it">Cano entupido que desentope × ácido que queima o tempo todo</p></div>
+
+<h3>✋ Mãos</h3>
+<div class="tbl">
+<div class="row"><span class="v"><span class="hand L">ESQ</span></span><span>Babcock elevando/expondo · posiciona o omento · compressão digital do leito da GDA</span></div>
+<div class="row"><span class="v"><span class="hand R">DIR</span></span><span>Porta-agulha no U · empurrador de nó · Metzenbaum nos vagos · grampeador</span></div>
+</div>
+<h3>🧵 Fios</h3>
+<ul>
+<li><span class="em">🩹</span>Graham U — <span class="fio">Vicryl 2-0/3-0</span> (campo contaminado)</li>
+<li><span class="em">🩸</span>GDA — <span class="fio">Prolene 3-0/4-0</span> (<b>inabsorvível</b>: hemostasia tem que durar)</li>
+<li><span class="em">🔗</span>Anastomose — <span class="fio">PDS 3-0</span> + seda seromuscular</li>
+<li><span class="em">📎</span>Grampos — azul 3,5 · <b>roxa 4,0</b> se espesso</li>
+</ul>
+</section>
+
+<section id="peg">
+<h2>🪤 Pega-ratões</h2>
+<ul>
+<li><span class="em">📍</span>Posterior sangra · Anterior perfura</li>
+<li><span class="em">🫃</span>Gástrica SEMPRE biopsia (excluir Ca)</li>
+<li><span class="em">🩸</span>GDA fica posterior ao bulbo</li>
+<li><span class="em">🧵</span>Graham patch = 1ª escolha na perfurada estável</li>
+<li><span class="em">↔️</span>Fechar duodenotomia transversal, não longitudinal</li>
+<li><span class="em">🦠</span>H. pylori = causa nº1, tratar sempre que +</li>
+<li><span class="em">🪢</span>Graham: passar TODOS os pontos <b>antes</b> de amarrar</li>
+<li><span class="em">🫒</span>Nó apertado <b>necrosa o omento</b> — força mínima</li>
+<li><span class="em">📏</span>Perfuração <b>≥2 cm</b> não fecha com patch</li>
+<li><span class="em">🧠</span><b>HSV não precisa</b> de drenagem · troncal precisa</li>
+<li><span class="em">🩸</span>GDA: 3 pontos porque o fluxo vem de <b>2 direções</b></li>
+<li><span class="em">🍽️</span>Aferente <b>alivia</b> com vômito · alcalino <b>não</b></li>
+</ul>
+</section>
+
+<section id="mn">
+<h2>🧠 Mnemônicos</h2>
+<div class="box cy"><div class="lbl">📍 Localização</div><p class="mn">"Posterior Sangra, Anterior Arrebenta (perfura)"</p></div>
+<div class="box cy"><div class="lbl">🩸 GDA</div><p class="mn">3 pontos: cima, baixo, e o "U" do pâncreas</p><p class="it">Fluxo de 2 direções: celíaco (anterógrado) + AMS (retrógrado)</p></div>
+<div class="box cy"><div class="lbl">🔄 troncos vagais</div><p class="mn">LARP</p><p class="it">Left Anterior · Right Posterior</p></div>
+<div class="box cy"><div class="lbl">↔️ Heineke-Mikulicz</div><p class="mn">Abre no longo, fecha no curto = alarga</p></div>
+<div class="box cy"><div class="lbl">⚖️ definitiva</div><p class="mn">Menos recidiva = mais sequela</p></div>
+<div class="box cy"><div class="lbl">🦢 Latarjet</div><p class="mn">Preservou o pé de ganso = dispensa drenagem</p></div>
+</section>
+
+<div class="foot">← deslize as abas →</div>
+</div>
+<script>
+var s=[['def','🧭 Def'],['anat','🫀 Anatomia'],['dx','🔬 Dx'],['cond','📐 Conduta'],['perf','💥 Perfurada'],['sang','🩸 Sangrante'],['cir','🔪 Definitiva'],['pos','🍽️ Pós-gastrec'],['peg','🪤 Pegas'],['mn','🧠 Mnem']];
+var n=document.getElementById('nav');
+s.forEach(function(x,i){var b=document.createElement('button');b.textContent=x[1];if(i===0)b.className='on';b.onclick=function(){document.querySelectorAll('nav button').forEach(function(y){y.classList.remove('on')});b.classList.add('on');document.querySelectorAll('section').forEach(function(y){y.classList.remove('on')});document.getElementById(x[0]).classList.add('on');document.querySelector('.sheet').scrollIntoView()};n.appendChild(b)});
+</script>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Pancreatite Aguda · pocket</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d1117;--card:#16161f;--card2:#1c1c27;--line:#2a2a38;
+  --txt:#ececf4;--muted:#9a9ab0;
+  --laranja:#f97316;--roxo:#a855f7;--ciano:#22d3ee;--vermelho:#f87171;--amarelo:#fbbf24;--verde:#34d399;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{overflow-x:hidden}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;font-size:17px;line-height:1.6;padding-bottom:30px}
+.top{padding:22px 18px 12px;position:sticky;top:0;background:linear-gradient(180deg,var(--bg) 70%,transparent);z-index:5}
+.kick{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:29px;line-height:1.05;margin-top:4px}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:6px 18px 12px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;padding:9px 15px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted);white-space:nowrap;cursor:pointer;transition:.15s}
+.tab.on{background:var(--laranja);border-color:var(--laranja);color:#0a0a0f}
+.panel{display:none;padding:6px 18px 40px;animation:f .25s}
+.panel.on{display:block}
+@keyframes f{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+h2{font-family:'Syne',sans-serif;font-size:21px;color:var(--laranja);margin:18px 0 10px}
+h3{font-family:'Syne',sans-serif;font-size:16px;color:#fff;margin:16px 0 6px}
+p{margin:10px 0}
+ul{list-style:none;margin:8px 0}
+li{padding:6px 0 6px 22px;position:relative}
+li::before{content:"▸";position:absolute;left:0;top:7px;color:var(--laranja);font-size:13px}
+strong{color:#fff;font-weight:600}
+.s{color:var(--verde);font-style:italic;font-size:.92em}
+.gr{background:rgba(52,211,153,.10);border-color:rgba(52,211,153,.4);color:var(--verde);font-style:italic}
+.gr .l{color:var(--verde);font-style:normal}
+.gr strong,.gr b{color:#7fe8c0;font-style:normal}
+.step{flex-direction:column;gap:6px}
+.hd2{display:flex;gap:12px;align-items:flex-start}
+.fase{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--laranja);display:block}
+.pq{border-left:2px solid var(--roxo);background:rgba(168,85,247,.10);border-radius:0 7px 7px 0;padding:7px 10px;font-size:14px;width:100%}
+.pq b{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--roxo);display:block}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0}
+.box{border-radius:12px;padding:13px 15px;margin:13px 0;border:1px solid;font-size:15px}
+.prova{background:rgba(168,85,247,.1);border-color:rgba(168,85,247,.4)}
+.prova .l{color:var(--roxo)}
+.mac{background:rgba(34,211,238,.1);border-color:rgba(34,211,238,.4)}
+.mac .l{color:var(--ciano)}
+.warn{background:rgba(248,113,113,.1);border-color:rgba(248,113,113,.4)}
+.warn .l{color:var(--vermelho)}
+.l{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-size:10px;background:rgba(168,85,247,.25);color:var(--roxo);padding:2px 6px;border-radius:5px;margin-left:5px;font-family:'JetBrains Mono',monospace}
+.kv{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)}
+.kv:last-child{border:none}
+.kv .k{flex:0 0 44%;color:var(--ciano);font-family:'JetBrains Mono',monospace;font-size:13px}
+.kv .v{flex:1;font-size:15px}
+.step{display:flex;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line)}
+.step:last-child{border:none}
+.step .n{flex:0 0 30px;height:30px;border-radius:9px;background:rgba(249,115,22,.15);border:1px solid rgba(249,115,22,.45);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;display:grid;place-items:center;font-size:14px}
+.step .x{flex:1}
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="kick">carolzita · pocket 🚑</div>
+  <h1>Pancreatite Aguda 🔥🥞</h1>
+</div>
+<div class="tabs">
+  <div class="tab on" data-t="0">🎯 DX</div>
+  <div class="tab" data-t="1">🧨 Causas</div>
+  <div class="tab" data-t="2">📊 Gravidade</div>
+  <div class="tab" data-t="3">💧 Manejo</div>
+  <div class="tab" data-t="4">🩹 Complicações</div>
+  <div class="tab" data-t="5">🔪 Intervir</div>
+  <div class="tab" data-t="6">☠️ Traps</div>
+</div>
+
+<!-- 0 DX -->
+<div class="panel on" data-p="0">
+  <h2>🎯 Diagnóstico = 2 de 3</h2>
+  <div class="card">
+    <div class="kv"><div class="k">1️⃣ Dor</div><div class="v">Epigástrica <strong>em barra</strong>, irradia pro dorso 🔙</div></div>
+    <div class="kv"><div class="k">2️⃣ Enzima</div><div class="v"><strong>Lipase/amilase ≥ 3× LSN</strong> · lipase &gt; amilase 🏆</div></div>
+    <div class="kv"><div class="k">3️⃣ Imagem</div><div class="v">TC/RM/US compatível 🖼️</div></div>
+  </div>
+  <div class="box warn"><span class="l">☠️ pega-ratão</span>O <strong>valor da enzima NÃO reflete gravidade!</strong> Enzima nas alturas ≠ PA grave. Não repetir dosagem seriada.</div>
+  <h3>🩸 Sinais de necro-hemorragia (tardios)</h3>
+  <ul>
+    <li>🟣 <strong>Cullen</strong> = umbigo</li>
+    <li>🟣 <strong>Grey-Turner</strong> = flancos</li>
+    <li>🟣 <strong>Fox</strong> = base do pênis/inguinal</li>
+  </ul>
+  <div class="box mac"><span class="l">macete</span>Enzimas: 🕐 lipase sobe depois e <strong>fica alta mais tempo</strong> → melhor pra dx tardio.</div>
+</div>
+
+<!-- 1 CAUSAS -->
+<div class="panel" data-p="1">
+  <h2>🧨 Etiologia</h2>
+  <div class="card">
+    <div class="kv"><div class="k">🥇 Litíase</div><div class="v">~40–50% · causa nº1 · ♀ mulheres</div></div>
+    <div class="kv"><div class="k">🥈 Álcool</div><div class="v">~30% · ♂ homens</div></div>
+    <div class="kv"><div class="k">🥉 Metabólica</div><div class="v">TG &gt;1000 · hipercalcemia</div></div>
+  </div>
+  <div class="box mac"><span class="l">🧠 I GET SMASHED</span><strong>I</strong>diopática · <strong>G</strong>allstones 💎 · <strong>E</strong>tanol 🍺 · <strong>T</strong>rauma · <strong>S</strong>teroides · <strong>M</strong>umps 🦠 · <strong>A</strong>utoimune · <strong>S</strong>corpion 🦂 · <strong>H</strong>iperCa/hiperTG · <strong>E</strong>RCP · <strong>D</strong>rugs 💊</div>
+  <div class="box prova"><span class="l">alto rendimento <span class="banca">AMRIGS·PUC</span></span>💡 <strong>TG &gt; 1000</strong> → amilase pode vir <strong>falsamente normal</strong>! Tratar com insulina EV ± aférese.</div>
+</div>
+
+<!-- 2 GRAVIDADE -->
+<div class="panel" data-p="2">
+  <h2>📊 Atlanta 2012 · 3 graus</h2>
+  <div class="card">
+    <div class="kv"><div class="k">🟢 Leve</div><div class="v">Sem falência, sem complicação (~80%)</div></div>
+    <div class="kv"><div class="k">🟡 Mod. grave</div><div class="v">Falência <strong>transitória &lt;48h</strong> e/ou complicação local</div></div>
+    <div class="kv"><div class="k">🔴 Grave</div><div class="v">Falência <strong>persistente &gt;48h</strong> ⚰️ (Marshall)</div></div>
+  </div>
+  <div class="box prova"><span class="l">alto rendimento <span class="banca">HCPA·GHC</span></span>⭐ <strong>Falência orgânica persistente &gt;48h</strong> = principal preditor de morte (escore de <strong>Marshall modificado</strong>).</div>
+  <h3>🔢 Escores</h3>
+  <ul>
+    <li>📋 <strong>Ranson</strong> ≥3 (só em 48h) · <strong>amilase NÃO entra!</strong> ☠️</li>
+    <li>⚡ <strong>BISAP</strong> ≥3 (rápido, 24h): BUN·Impaired·SIRS·Age·Pleural</li>
+    <li>🖥️ <strong>Balthazar/CTSI</strong> ≥6 · TC ideal &gt;72–96h</li>
+  </ul>
+  <div class="box mac"><span class="l">🧠 Ranson admissão · GA LAW</span><strong>G</strong>licose&gt;200 · <strong>A</strong>ge&gt;55 · <strong>L</strong>DH&gt;350 · <strong>A</strong>ST&gt;250 · <strong>W</strong>BC&gt;16k</div>
+</div>
+
+<!-- 3 MANEJO -->
+<div class="panel" data-p="3">
+  <h2>💧 Fluidos · pós-WATERFALL</h2>
+  <div class="box prova"><span class="l">alto rendimento <span class="banca">HCPA·GHC·AMRIGS</span></span>🌊 <strong>Ressuscitação MODERADA</strong> com <strong>Ringer lactato</strong> (~1,5 mL/kg/h, bolus 10 mL/kg só se hipovolêmico). Agressiva = sobrecarga ⚠️ sem benefício!</div>
+  <ul>
+    <li>💉 <strong>RL &gt; SF</strong> (menos acidose). RL evitar se hiperCa.</li>
+    <li>🎯 Metas: diurese ≥0,5 mL/kg/h, ↓ureia/Ht</li>
+  </ul>
+  <h2>🍽️ Nutrição</h2>
+  <ul>
+    <li>✅ <strong>Dieta oral precoce</strong> (24–72h, não esperar enzima)</li>
+    <li>✅ Enteral &gt; parenteral (protege barreira intestinal 🛡️)</li>
+    <li>❌ Jejum prolongado + NPT = ERRADO</li>
+  </ul>
+  <h2>💊 Antibiótico</h2>
+  <div class="box warn"><span class="l">☠️ regra de ouro</span><strong>NÃO usar ATB profilático!</strong> Só na <strong>necrose infectada</strong> comprovada/suspeita (ou colangite/ITU). Carbapenêmico penetra bem.</div>
+  <div class="box mac"><span class="l">💊 analgesia</span>Opioide liberado — morfina "fechar Oddi" é <strong>mito</strong> de prova.</div>
+</div>
+
+<!-- 4 COMPLICACOES -->
+<div class="panel" data-p="4">
+  <h2>🩹 Coleções · Atlanta</h2>
+  <div class="card">
+    <div class="kv"><div class="k">💧 &lt;4sem líquido</div><div class="v">APFC</div></div>
+    <div class="kv"><div class="k">💧 &gt;4sem líquido</div><div class="v"><strong>Pseudocisto</strong> (sem sólido)</div></div>
+    <div class="kv"><div class="k">🧫 &lt;4sem necrose</div><div class="v">ANC</div></div>
+    <div class="kv"><div class="k">🧫 &gt;4sem necrose</div><div class="v"><strong>WON</strong> (murada, tem sólido)</div></div>
+  </div>
+  <div class="box prova"><span class="l">alto rendimento <span class="banca">SC-POA·PUC</span></span>🎈 <strong>Pseudocisto</strong> = líquido, parede fibrosa, &gt;4sem, <strong>sem debris</strong>. Maioria <strong>resolve sozinho</strong> → expectante. Drenar só se sintomático/infectado/crescente.</div>
+  <div class="box warn"><span class="l">🦠 necrose infectada</span>Suspeitar por <strong>gás na coleção na TC</strong> 💨 ou piora após 7–10d. <strong>PAAF de rotina NÃO</strong>. → ATB + step-up.</div>
+  <div class="box mac"><span class="l">⚰️ mortalidade bimodal</span>1ª sem = <strong>SIRS/falência</strong> · &gt;2sem = <strong>necrose infectada/sepse</strong>.</div>
+</div>
+
+<!-- 5 INTERVIR -->
+<div class="panel" data-p="5">
+  <h2>🔧 CPRE — quando?</h2>
+  <ul>
+    <li>🚨 PA biliar + <strong>colangite</strong> → CPRE + papilotomia em <strong>24–72h</strong></li>
+    <li>🪨 PA biliar + <strong>obstrução persistente</strong> → CPRE</li>
+    <li>🚫 Biliar leve SEM colangite/obstrução → <strong>não</strong> CPRE</li>
+  </ul>
+  <h2>🪜 Step-up (PANTER)</h2>
+  <div class="box gr"><span class="l">🟢 tradução simples</span>Necrose infectada é <strong>tecido morto colado no vivo</strong>. Esperar não é omissão — é deixar o corpo <strong>construir a parede</strong> e <strong>separar o morto do vivo</strong>. Depois disso é fácil tirar. Antes, você arranca os dois — e é o vivo que sangra. 🩸</div>
+
+  <div class="step"><div class="hd2"><div class="n">1</div><div class="x"><span class="fase">esperar e demarcar</span>💊 ATB (só se <strong>infectada</strong>) + suporte + nutrição enteral · meta: <strong>chegar às 4 semanas</strong></div></div>
+  <div class="pq"><b>por quê</b>4 semanas = tempo para a necrose <strong>"murar" (WON)</strong> e se demarcar. Antes disso: sangramento, perda de parênquima viável, mortalidade maior. <strong>Nunca operar necrose estéril precoce.</strong> ⏳</div></div>
+
+  <div class="step"><div class="hd2"><div class="n">2</div><div class="x"><span class="fase">1ª intervenção</span>🩹 Drenagem <strong>percutânea retroperitoneal</strong> ou <strong>endoscópica transmural (LAMS)</strong></div></div>
+  <div class="pq"><b>por quê</b>A drenagem sozinha <strong>resolve ~1/3</strong> — e nos demais controla a sepse e ganha tempo. Preferir <strong>retroperitoneal</strong>: cria o trajeto que o VARD vai usar depois, sem contaminar o peritônio. 🛣️</div></div>
+
+  <div class="step"><div class="hd2"><div class="n">3</div><div class="x"><span class="fase">mini-invasiva</span>📹 <strong>VARD</strong> (pelo trajeto do dreno) ou necrosectomia endoscópica (pelo stent)</div></div>
+  <div class="pq"><b>por quê</b>Ambas usam um <strong>caminho já existente</strong> — não abrem a cavidade nem expõem alças. É isso que reduz falência de órgãos, hérnia incisional e diabetes. 🎯</div></div>
+
+  <div class="step"><div class="hd2"><div class="n">4</div><div class="x"><span class="fase">último recurso</span>🔪 Necrosectomia <strong>aberta</strong></div></div>
+  <div class="pq"><b>por quê</b>Não foi abolida — foi <strong>reposicionada no fim da fila</strong> pelo PANTER. Fica para falha dos degraus, síndrome compartimental, perfuração ou isquemia associada.</div></div>
+
+  <h2>🔪 Necrosectomia aberta</h2>
+  <div class="step"><div class="hd2"><div class="n">1</div><div class="x"><span class="fase">acesso</span>Abrir o <strong>ligamento gastrocólico</strong> → retrocavidade</div></div>
+  <div class="pq"><b>por quê</b>Porta direta para a loja. Pelo mesocólon expõe a <strong>cólica média</strong> num campo já hostil.</div></div>
+
+  <div class="step"><div class="hd2"><div class="n">2</div><div class="x"><span class="fase">a técnica que define tudo</span>✋ <strong>Finger fracture</strong> — tirar só o que <strong>se solta sem resistência</strong></div></div>
+  <div class="pq"><b>por quê</b>O que sai com o dedo está <strong>morto e demarcado</strong>; o que resiste ainda é <strong>vivo e vascularizado</strong>. Puxar rompe <strong>vasos que atravessam a necrose</strong> (esplênica, GDA, cólicos) — <strong>hemorragia é a principal causa de morte</strong> nesta cirurgia. ☠️</div></div>
+
+  <div class="step"><div class="hd2"><div class="n">3</div><div class="x"><span class="fase">hemostasia</span>Seda 2-0/3-0 ou clipes · tamponamento se difuso</div></div>
+  <div class="pq"><b>por quê</b>Vasos <strong>banhados por enzimas há semanas</strong> = parede friável, o ponto rasga. Mesmo mecanismo do pseudoaneurisma da GDA no Whipple.</div></div>
+
+  <div class="step"><div class="hd2"><div class="n">4</div><div class="x"><span class="fase">drenagem</span>Drenos amplos · <strong>planejar reabordagem</strong></div></div>
+  <div class="pq"><b>por quê</b>Nunca é completa num tempo só — o tecido <strong>continua se demarcando depois</strong>. Reabordar é reconhecer a biologia, não admitir falha. 🔁</div></div>
+
+  <div class="box mac"><span class="l">🧠 4 checagens</span>① Está <strong>infectada</strong> (gás na TC/piora)? ② Passaram <strong>4 semanas</strong> e murou? ③ <strong>Drenou</strong> antes de operar? ④ Saiu <strong>só o que se soltou sozinho</strong>?</div>
+  <div class="box prova"><span class="l">alto rendimento <span class="banca">HCPA·SC-POA</span></span>⏳ <strong>Adiar intervenção &gt;4 semanas</strong> (WON murada) reduz mortalidade. <strong>Nunca operar necrose estéril precoce.</strong></div>
+  <h2>🔪 Vesícula (PA biliar)</h2>
+  <div class="box prova"><span class="l">alto rendimento <span class="banca">HCPA·GHC·PUC·AMRIGS</span></span>🟢 Biliar <strong>LEVE</strong> → colecistectomia na <strong>MESMA internação</strong> (PONCHO). Não dar alta sem operar! 🔴 Grave/necrosante → adiar até resolver.</div>
+</div>
+
+<!-- 6 TRAPS -->
+<div class="panel" data-p="6">
+  <h2>☠️ Pega-ratões</h2>
+  <div class="box warn"><span class="l">trap 1</span>Enzima alta <strong>≠</strong> gravidade 📈</div>
+  <div class="box warn"><span class="l">trap 2</span>HiperTG → amilase <strong>falsamente normal</strong> 🤫</div>
+  <div class="box warn"><span class="l">trap 3</span><strong>Amilase NÃO é critério de Ranson</strong> 🚫</div>
+  <div class="box warn"><span class="l">trap 4</span>Hidratação agressiva = ANTIGO. Hoje <strong>moderada</strong> 🌊</div>
+  <div class="box warn"><span class="l">trap 5</span>Jejum + NPT = ERRADO → oral/enteral <strong>precoce</strong> 🍽️</div>
+  <div class="box warn"><span class="l">trap 6</span>Biliar leve → <strong>não adiar</strong> colecistectomia ⏱️</div>
+  <div class="box warn"><span class="l">trap 7</span>Necrose <strong>estéril</strong> não opera precoce ⛔</div>
+  <div class="box warn"><span class="l">trap 8</span>Pseudocisto (líquido) <strong>≠</strong> WON (sólido) 🎈🧫</div>
+  <div class="box mac"><span class="l">✅ resumo de bolso</span>2 de 3 · I GET SMASHED · Ranson sem amilase · Ringer moderado · ATB só se infectada · biliar leve opera já · step-up &gt;4sem 🎓</div>
+</div>
+
+<script>
+var tabs=document.querySelectorAll('.tab'),panels=document.querySelectorAll('.panel');
+tabs.forEach(function(t){t.addEventListener('click',function(){
+  tabs.forEach(function(x){x.classList.remove('on')});
+  panels.forEach(function(x){x.classList.remove('on')});
+  t.classList.add('on');
+  document.querySelector('.panel[data-p="'+t.dataset.t+'"]').classList.add('on');
+})});
+</script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Biliar Acalculosa · OR Pocket</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Serif:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0d1117;--bg2:#161b22;--line:#30363d;--tx:#e6edf3;--tx2:#9da7b3;
+    --o:#ff7b29;--o2:#ffa05c;--p:#bc8cff;--p2:#d2b3ff;--c:#39d0d8;--c2:#7ee8ee;--r:#ff6b6b;--g:#3fb950}
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  body{background:var(--bg);color:var(--tx);font-family:'IBM Plex Sans',sans-serif;font-size:15px;line-height:1.5;padding-bottom:30px}
+  .hd{padding:16px 16px 10px;border-bottom:1px solid var(--line)}
+  .hd h1{font-family:'IBM Plex Serif';font-size:20px}.hd h1 .a{color:var(--o)}
+  .hd .or{float:right;font-family:'IBM Plex Mono';font-size:11px;color:var(--o2);letter-spacing:1px;margin-top:4px}
+  .tabs{position:sticky;top:0;z-index:9;display:flex;gap:6px;overflow-x:auto;padding:10px 12px;background:var(--bg);border-bottom:1px solid var(--line);scrollbar-width:none}
+  .tabs::-webkit-scrollbar{display:none}
+  .tb{flex:0 0 auto;background:var(--bg2);border:1px solid var(--line);color:var(--tx2);padding:9px 13px;border-radius:9px;font-size:13px;font-weight:600;white-space:nowrap}
+  .tb.on{background:var(--o);color:#0d1117;border-color:var(--o)}
+  .pg{display:none;padding:14px 16px}.pg.on{display:block}
+  .ttl{font-family:'IBM Plex Serif';font-size:17px;color:var(--o);margin:4px 0 12px;border-bottom:2px solid var(--o);padding-bottom:5px}
+  .cd{background:var(--bg2);border:1px solid var(--line);border-radius:11px;padding:12px 13px;margin:10px 0}
+  .cd.o{border-left:4px solid var(--o)}.cd.p{border-left:4px solid var(--p);background:#1a1525}
+  .cd.c{border-left:4px solid var(--c);background:#0f1d20}.cd.r{border-left:4px solid var(--r);background:#1f1416}.cd.g{border-left:4px solid var(--g);background:#0f1a12}
+  .lb{font-family:'IBM Plex Mono';font-size:10.5px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;display:block;margin-bottom:6px}
+  .lb.o{color:var(--o2)}.lb.p{color:var(--p2)}.lb.c{color:var(--c2)}.lb.r{color:var(--r)}.lb.g{color:var(--g)}
+  b{color:#fff}.s{color:var(--c2);font-style:italic;font-size:12.5px}
+  ul{margin:6px 0 4px 18px}li{margin:4px 0}
+  .row{display:flex;gap:8px;align-items:flex-start;margin:7px 0}
+  .num{flex:0 0 auto;width:22px;height:22px;border-radius:6px;background:var(--bg);border:1px solid var(--o);color:var(--o2);font-family:'IBM Plex Mono';font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center}
+  .num.p{border-color:var(--p);color:var(--p2)}
+  .mono{font-family:'IBM Plex Mono';font-size:13px}
+  table{width:100%;border-collapse:collapse;margin:8px 0;font-size:12.5px}
+  th,td{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+  th{background:#1c2128;color:var(--o2)}
+  .word{font-family:'IBM Plex Mono';font-size:16px;color:var(--c2);font-weight:600;letter-spacing:1px}
+  .swipe{text-align:center;color:var(--tx2);font-family:'IBM Plex Mono';font-size:11px;padding:14px 0 4px}
+</style>
+</head>
+<body>
+<div class="hd"><span class="or">OR POCKET</span><h1>Biliar <span class="a">Acalculosa</span></h1></div>
+
+<div class="tabs" id="tb">
+  <button class="tb on" data-p="p1">🩺 CAA</button>
+  <button class="tb" data-p="p2">🔵 PÓLIPO</button>
+  <button class="tb" data-p="p3">🟣 CISTO</button>
+  <button class="tb" data-p="p4">🟠 PSC</button>
+  <button class="tb" data-p="p5">⚠️ TRAPS</button>
+  <button class="tb" data-p="p6">🧠 MNEMO</button>
+</div>
+
+<!-- CAA -->
+<section class="pg on" id="p1">
+  <div class="ttl">🩺 Colecistite Alitiásica</div>
+  <div class="cd p"><span class="lb p">⚡ pense em</span> Paciente <b>UTI/crítico</b>: febre + leucocitose <b>sem foco</b>. Jejum/NPT, pós-op grande, sepse, vasopressor, queimado, trauma, imunossuprimido (CMV/Crypto).</div>
+  <div class="cd o"><span class="lb o">🔍 USG</span> Parede <b>≥3,5–4 mm</b> · lama · distensão · Murphy eco + · <b>SEM cálculo</b>. HIDA: não-enchimento.</div>
+  <div class="cd g"><span class="lb g">💉 conduta TG18</span>
+    <div class="row"><div class="num">I</div><div>Leve/estável → colecistectomia precoce</div></div>
+    <div class="row"><div class="num">III</div><div>Grave/instável → <b>COLECISTOSTOMIA PERCUTÂNEA</b> + ATB</div></div>
+  </div>
+  <div class="cd r"><span class="lb r">🚨 complica rápido</span> Gangrena (≈50%), perfuração, empiema. Limiar baixo p/ conversão.</div>
+</section>
+
+<!-- POLIPO -->
+<section class="pg" id="p2">
+  <div class="ttl">🔵 Pólipo de Vesícula</div>
+  <div class="cd o"><span class="lb o">📊 tipos</span> Colesterol (≈70%, benigno) · adenomiomatose · <b>adenoma</b> (pré-maligno) · adenoca.</div>
+  <div class="cd p"><span class="lb p">⚠️ fatores de risco "PAISES"</span> <b>P</b>SC · <b>A</b>siático · <b>I</b>dade&gt;60 · <b>S</b>éssil/parede&gt;4mm · <b>E</b>≥10mm · <b>S</b>intomas.</div>
+  <div class="cd p"><span class="lb p">✅ ESGAR/EAES 2022</span>
+    <table>
+      <tr><th>Achado</th><th>Conduta</th></tr>
+      <tr><td><b>≥10 mm</b></td><td>Colecistectomia</td></tr>
+      <tr><td>6–9 + fator</td><td>Colecistectomia</td></tr>
+      <tr><td>6–9 s/fator · ≤5 c/fator</td><td>USG 6m/1a/2a</td></tr>
+      <tr><td>≤5 s/fator</td><td>Sem seguimento</td></tr>
+    </table>
+  </div>
+  <div class="cd r"><span class="lb r">🔪 suspeita de CA</span> Não romper! Colecisto aberta + leito hepático + congelação.</div>
+</section>
+
+<!-- CISTO -->
+<section class="pg" id="p3">
+  <div class="ttl">🟣 Cisto de Colédoco · Todani</div>
+  <div class="cd o"><span class="lb o">🗂️ classificação</span>
+    <table>
+      <tr><th>T</th><th>O quê</th></tr>
+      <tr><td><b>I</b></td><td>Fusiforme extra-hep (<b>+comum</b>)</td></tr>
+      <tr><td>II</td><td>Divertículo</td></tr>
+      <tr><td>III</td><td>Coledococele (endoscópico)</td></tr>
+      <tr><td>IV</td><td>Múltiplos intra+extra</td></tr>
+      <tr><td>V</td><td><b>Caroli</b> (intra-hep)</td></tr>
+    </table>
+  </div>
+  <div class="cd c"><span class="lb c">🧒 tríade</span> Dor + massa HCD + icterícia (rara completa). Causa: junção pancreatobiliar anômala.</div>
+  <div class="cd p"><span class="lb p">⚠️ risco</span> <b>Colangiocarcinoma</b> → justifica ressecção total.</div>
+  <div class="cd g"><span class="lb g">🔪 cirurgia</span> <b>Excisão completa + colecistectomia + hepaticojejunostomia Y de Roux</b>. Anastomose: PDS 4-0/5-0 mucosa-mucosa. <b>Nunca drenagem interna.</b></div>
+</section>
+
+<!-- PSC -->
+<section class="pg" id="p4">
+  <div class="ttl">🟠 Colangite Esclerosante (PSC)</div>
+  <div class="cd p"><span class="lb p">🔗 associação</span> <b>DII — RCU</b> (70–80%). Homem jovem, FA elevada, prurido.</div>
+  <div class="cd o"><span class="lb o">🔍 diagnóstico</span> <b>CPRM</b>: estenoses multifocais + dilatações = <b>"beading"</b>. Biópsia: <b>onion-skin</b>. p-ANCA +. Excluir <b>IgG4</b> (responde a corticoide).</div>
+  <div class="cd r"><span class="lb r">🚨 vigilância CA</span> Colangiocarcinoma (CA19-9+imagem anual) · vesícula (<b>qualquer pólipo → colecisto</b>) · colorretal (colono anual se DII).</div>
+  <div class="cd g"><span class="lb g">💊 tratamento</span> <b>UDCA alta dose = ruim.</b> Estenose dominante → CPRE. Definitivo (avançado) → <b>transplante hepático</b>.</div>
+</section>
+
+<!-- TRAPS -->
+<section class="pg" id="p5">
+  <div class="ttl">⚠️ Pega-ratões</div>
+  <div class="cd r"><b>Colesterol</b> NÃO vira câncer; tamanho ≥10mm = principal preditor.</div>
+  <div class="cd r"><b>CAA</b> = sem cálculo; crítico instável → <b>colecistostomia</b> (não colecistectomia).</div>
+  <div class="cd r"><b>Cisto colédoco</b> = excisão completa, NUNCA drenagem interna (colangioCA).</div>
+  <div class="cd r"><b>Todani I</b> = +comum · <b>V</b> = Caroli · <b>III</b> = coledococele (endoscópico).</div>
+  <div class="cd r"><b>PSC + qualquer pólipo</b> = colecistectomia (ignora regra dos 10mm).</div>
+  <div class="cd r"><b>UDCA alta dose</b> piora PSC; estenose que responde a corticoide → pensar <b>IgG4</b>.</div>
+</section>
+
+<!-- MNEMO -->
+<section class="pg" id="p6">
+  <div class="ttl">🧠 Mnemônicos</div>
+  <div class="cd c"><div class="word">PÓLIPO → "PAISES"</div><div class="mono">PSC · Asiático · Idade&gt;60 · Séssil/&gt;4mm · E≥10mm · Sintomas</div></div>
+  <div class="cd c"><div class="word">TODANI</div><div class="mono">1 cano · 2 bolso · 3 ponta · 4 vários · 5 fígado(Caroli)</div></div>
+  <div class="cd c"><div class="word">PSC → "BURRO"</div><div class="mono">Beading · UDCA alta=ruim · RCU · Risco colangioCA · Onion-skin/p-ANCA</div></div>
+  <div class="cd c"><div class="word">CAA = "DOENTE na UTI"</div><div class="mono">jejum/NPT · pós-op · sepse · vasopressor · trauma/queimado · imunossup</div></div>
+</section>
+
+<div class="swipe">← deslize as abas →</div>
+
+<script>
+  const t=document.querySelectorAll('.tb'),p=document.querySelectorAll('.pg');
+  t.forEach(b=>b.addEventListener('click',()=>{
+    t.forEach(x=>x.classList.remove('on'));p.forEach(x=>x.classList.remove('on'));
+    b.classList.add('on');document.getElementById(b.dataset.p).classList.add('on');
+    window.scrollTo({top:0});
+  }));
+</script>
+</body>
+</html>

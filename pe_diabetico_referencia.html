@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pé Diabético — carolzita</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0f; --bg2:#12121a; --card:#16161f; --card2:#1c1c27;
+  --line:#2a2a38; --txt:#e6e6ef; --muted:#9a9ab0;
+  --laranja:#f97316; --laranja-bg:rgba(249,115,22,.10);
+  --roxo:#a855f7; --roxo-bg:rgba(168,85,247,.10);
+  --ciano:#22d3ee; --ciano-bg:rgba(34,211,238,.10);
+  --verde:#34d399; --vermelho:#f87171; --amarelo:#fbbf24;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(1200px 600px at 50% -10%,#15151f 0%,var(--bg) 60%);color:var(--txt);font-family:'Inter',sans-serif;line-height:1.55;padding:0 0 80px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px}
+header{padding:40px 0 24px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(30px,6vw,46px);line-height:1.05;margin:8px 0 6px;letter-spacing:-.02em}
+.sub{color:var(--muted);font-size:15px;max-width:700px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tag{font-family:'JetBrains Mono',monospace;font-size:11px;padding:5px 10px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted)}
+.tag.r{color:var(--roxo);border-color:rgba(168,85,247,.35);background:var(--roxo-bg)}
+section{margin-top:14px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:12px;overflow:hidden;transition:border-color .2s}
+details[open]{border-color:rgba(249,115,22,.30)}
+summary{cursor:pointer;list-style:none;padding:18px 20px;display:flex;align-items:center;gap:13px;font-family:'Syne',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em;user-select:none}
+summary::-webkit-details-marker{display:none}
+.num{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--bg);background:var(--laranja);width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:0 0 auto}
+.chev{margin-left:auto;color:var(--muted);transition:transform .25s;font-size:14px}
+details[open] .chev{transform:rotate(90deg)}
+.body{padding:4px 22px 24px;font-size:15px}
+.body p{margin:10px 0}
+.body h4{font-family:'Syne',sans-serif;font-size:16px;color:var(--laranja);margin:20px 0 8px;letter-spacing:-.01em}
+.body ul{margin:8px 0 8px 4px;list-style:none}
+.body li{padding:4px 0 4px 20px;position:relative}
+.body li::before{content:"▸";position:absolute;left:0;color:var(--laranja);font-size:12px;top:6px}
+.body strong{color:#fff;font-weight:600}
+.simple{color:var(--verde);font-style:italic;font-size:.94em;display:block;margin:6px 0}
+.box.simplebox{background:rgba(52,211,153,.09);border-color:rgba(52,211,153,.32);color:var(--verde);font-style:italic}
+.box.simplebox .lbl{color:var(--verde);font-style:normal}
+.box.simplebox strong{color:#7fe8c0;font-style:normal}
+.stx{counter-reset:st;margin:12px 0}
+.st{counter-increment:st;background:var(--card2);border:1px solid var(--line);border-radius:13px;padding:14px 16px 14px 52px;margin:11px 0;position:relative}
+.st::before{content:counter(st);position:absolute;left:14px;top:13px;width:26px;height:26px;border-radius:8px;background:var(--laranja);color:#0a0a0f;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center}
+.st .fase{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:var(--laranja);display:block;margin-bottom:1px}
+.st .ttl{font-weight:700;font-size:15.5px;color:#fff;margin-bottom:4px}
+.st p{margin:5px 0;font-size:14px}
+.pq{border-left:3px solid var(--roxo);background:var(--roxo-bg);border-radius:0 9px 9px 0;padding:8px 12px;margin:9px 0;font-size:13.5px}
+.pq b{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.3px;text-transform:uppercase;color:var(--roxo);display:block;margin-bottom:2px}
+@media(max-width:640px){.mh2{grid-template-columns:1fr}}
+.box{border-radius:12px;padding:13px 15px;margin:14px 0;font-size:14px;border:1px solid}
+.box.prova{background:var(--roxo-bg);border-color:rgba(168,85,247,.35)}
+.box.prova .lbl{color:var(--roxo)}
+.box.mac{background:var(--ciano-bg);border-color:rgba(34,211,238,.35)}
+.box.mac .lbl{color:var(--ciano)}
+.box.warn{background:rgba(248,113,113,.08);border-color:rgba(248,113,113,.3)}
+.box.warn .lbl{color:var(--vermelho)}
+.lbl{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-family:'JetBrains Mono',monospace;font-size:10px;background:rgba(168,85,247,.2);color:var(--roxo);padding:2px 7px;border-radius:6px;margin-left:6px;white-space:nowrap}
+.tbl{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
+.tbl table{width:100%;border-collapse:collapse;min-width:520px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--laranja);background:var(--card2)}
+td strong{color:#fff}
+.fio td:first-child{color:var(--ciano);font-family:'JetBrains Mono',monospace;font-weight:500}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin:14px 0}
+.gcard{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+.gcard .t{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--ciano);margin-bottom:4px}
+.gcard .d{font-size:13px;color:var(--muted)}
+.hands{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.hand{border-radius:12px;padding:14px;border:1px solid var(--line)}
+.hand.e{background:rgba(34,211,238,.06);border-color:rgba(34,211,238,.25)}
+.hand.d{background:rgba(249,115,22,.06);border-color:rgba(249,115,22,.25)}
+.hand .ht{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;font-weight:700}
+.hand.e .ht{color:var(--ciano)} .hand.d .ht{color:var(--laranja)}
+.hand li{font-size:13px}
+.steps{counter-reset:s;margin:10px 0}
+.step{counter-increment:s;position:relative;padding:11px 0 11px 46px;border-bottom:1px dashed var(--line)}
+.step:last-child{border-bottom:none}
+.step::before{content:counter(s);position:absolute;left:0;top:9px;width:30px;height:30px;border-radius:9px;background:var(--laranja-bg);border:1px solid rgba(249,115,22,.4);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:grid;place-items:center}
+.step b{color:#fff}
+svg{max-width:100%;height:auto;display:block;margin:16px auto}
+.fig{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.fig .cap{font-size:12px;color:var(--muted);text-align:center;margin-top:8px;font-family:'JetBrains Mono',monospace}
+footer{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+footer .ref{font-family:'JetBrains Mono',monospace;font-size:12px;margin-top:8px}
+a{color:var(--laranja)}
+@media(max-width:560px){.hands{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">carolzita · cirurgia geral · vascular</div>
+  <h1>Pé Diabético</h1>
+  <p class="sub">Fisiopatologia (neuropatia + DAOP + infecção) · classificações (Wagner, WIfI) · avaliação vascular · <strong>IWGDF 2023</strong> (descarga não-removível preferencial) · infecção (IDSA/IWGDF). Base: IWGDF 2023 Guidelines, e pegadinhas das bancas do RS.</p>
+  <div class="tags">
+    <span class="tag">IWGDF 2023</span>
+    <span class="tag">Wagner</span>
+    <span class="tag">WIfI</span>
+    <span class="tag">TCC</span>
+    <span class="tag">IDSA/IWGDF</span>
+    <span class="tag r">HCPA · GHC · SC-POA · PUC · AMRIGS</span>
+  </div>
+</header>
+
+<!-- 1 FISIOPATOLOGIA -->
+<details open>
+  <summary><span class="num">1</span> Fisiopatologia — a tríade do pé diabético <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>Três componentes que se combinam e se potencializam, raramente isolados:</p>
+
+    <div class="fig">
+      <svg viewBox="0 0 640 260" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="230" cy="110" r="90" fill="#22d3ee" opacity=".15" stroke="#22d3ee" stroke-width="1.5"/>
+        <text x="180" y="80" fill="#22d3ee" font-size="13" font-family="monospace" text-anchor="middle" font-weight="bold">Neuropatia</text>
+        <circle cx="410" cy="110" r="90" fill="#f97316" opacity=".15" stroke="#f97316" stroke-width="1.5"/>
+        <text x="460" y="80" fill="#f97316" font-size="13" font-family="monospace" text-anchor="middle" font-weight="bold">DAOP</text>
+        <circle cx="320" cy="190" r="90" fill="#f87171" opacity=".15" stroke="#f87171" stroke-width="1.5"/>
+        <text x="320" y="245" fill="#f87171" font-size="13" font-family="monospace" text-anchor="middle" font-weight="bold">Infecção</text>
+        <text x="320" y="150" fill="#fff" font-size="12" font-family="monospace" text-anchor="middle" font-weight="bold">ÚLCERA</text>
+        <text x="320" y="166" fill="#fff" font-size="12" font-family="monospace" text-anchor="middle" font-weight="bold">/PÉ DE RISCO</text>
+      </svg>
+      <div class="cap">Neuropatia (perda de proteção sensitiva + deformidade) + doença arterial periférica (isquemia) + infecção — a interseção dos três é onde o risco de amputação é maior.</div>
+    </div>
+
+    <h4>Neuropatia diabética — perda da "proteção" sensitiva</h4>
+    <ul>
+      <li><strong>Sensitiva</strong>: perda da percepção de dor/trauma → lesões passam despercebidas.</li>
+      <li><strong>Motora</strong>: atrofia da musculatura intrínseca do pé → deformidades (dedos em garra, proeminências ósseas) que criam pontos de pressão anormais.</li>
+      <li><strong>Autonômica</strong>: pele seca, fissuras, diminuição de suor — porta de entrada para infecção.</li>
+    </ul>
+
+    <h4>Doença arterial periférica (DAOP)</h4>
+    <p>Frequentemente <strong>distal e multissegmentar</strong> no diabético (artérias infrapatelares) — dificulta revascularização e cicatrização mesmo após desbridamento adequado.</p>
+  </div>
+</details>
+
+<!-- 2 CLASSIFICACAO -->
+<details>
+  <summary><span class="num">2</span> Classificação — Wagner &amp; WIfI <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Wagner — clássica, baseada em profundidade</h4>
+    <div class="fig">
+      <svg viewBox="0 0 640 180" xmlns="http://www.w3.org/2000/svg">
+        <line x1="60" y1="150" x2="600" y2="150" stroke="#2a2a38" stroke-width="3"/>
+        <rect x="60"  y="135" width="90" height="15" fill="#34d399" opacity=".5"/>
+        <rect x="150" y="120" width="90" height="30" fill="#a3e635" opacity=".5"/>
+        <rect x="240" y="100" width="90" height="50" fill="#fbbf24" opacity=".5"/>
+        <rect x="330" y="80"  width="90" height="70" fill="#f97316" opacity=".5"/>
+        <rect x="420" y="60"  width="90" height="90" fill="#f87171" opacity=".5"/>
+        <rect x="510" y="40"  width="90" height="110" fill="#dc2626" opacity=".5"/>
+        <text x="105" y="130" fill="#34d399" font-size="13" font-family="monospace" text-anchor="middle" font-weight="bold">0</text>
+        <text x="195" y="115" fill="#a3e635" font-size="13" font-family="monospace" text-anchor="middle" font-weight="bold">1</text>
+        <text x="285" y="95" fill="#fbbf24" font-size="13" font-family="monospace" text-anchor="middle" font-weight="bold">2</text>
+        <text x="375" y="75" fill="#f97316" font-size="13" font-family="monospace" text-anchor="middle" font-weight="bold">3</text>
+        <text x="465" y="55" fill="#f87171" font-size="13" font-family="monospace" text-anchor="middle" font-weight="bold">4</text>
+        <text x="555" y="35" fill="#dc2626" font-size="13" font-family="monospace" text-anchor="middle" font-weight="bold">5</text>
+        <text x="105" y="168" fill="#9a9ab0" font-size="8" font-family="monospace" text-anchor="middle">pé de risco</text>
+        <text x="195" y="168" fill="#9a9ab0" font-size="8" font-family="monospace" text-anchor="middle">superficial</text>
+        <text x="285" y="168" fill="#9a9ab0" font-size="8" font-family="monospace" text-anchor="middle">profunda</text>
+        <text x="375" y="168" fill="#9a9ab0" font-size="8" font-family="monospace" text-anchor="middle">abscesso/osteomielite</text>
+        <text x="465" y="168" fill="#9a9ab0" font-size="8" font-family="monospace" text-anchor="middle">gangrena localizada</text>
+        <text x="555" y="168" fill="#9a9ab0" font-size="8" font-family="monospace" text-anchor="middle">gangrena extensa</text>
+      </svg>
+      <div class="cap">Wagner 0-5: baseada em profundidade e presença de gangrena — simples, mas não considera isquemia nem infecção de forma explícita.</div>
+    </div>
+
+    <h4>WIfI — mais completa, incorpora isquemia</h4>
+    <p><strong>W</strong>ound (ferida) + <strong>I</strong>schemia (isquemia) + <strong>f</strong>oot <strong>I</strong>nfection (infecção) — cada componente graduado de 0 a 3, combinados para estimar <strong>risco de amputação</strong> e <strong>benefício de revascularização</strong>.</p>
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">IWGDF 2023 — classificações recomendadas</span></span>Entre os <strong>28 sistemas de classificação</strong> avaliados, apenas <strong>6</strong> foram considerados adequados para uso clínico: <strong>DIAFORA, IDSA/IWGDF, SINBAD, University of Texas, Wagner e WIfI</strong> — Wagner continua válido, mas WIfI é mais completo por incorporar isquemia e infecção separadamente.</div>
+  </div>
+</details>
+
+<!-- 3 AVALIACAO VASCULAR -->
+<details>
+  <summary><span class="num">3</span> Avaliação vascular &amp; neurológica <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Teste do monofilamento de Semmes-Weinstein (10g)</h4>
+    <p>Rastreio padrão de neuropatia sensitiva — aplicado em pontos plantares padronizados (geralmente hálux e cabeças metatarsais). <strong>Perda de sensibilidade</strong> = pé em risco, mesmo sem lesão ainda presente.</p>
+
+    <h4>Índice tornozelo-braquial (ITB)</h4>
+    <div class="tbl"><table>
+      <tr><th>ITB</th><th>Interpretação</th></tr>
+      <tr><td>&gt;1,3</td><td>Calcificação arterial (<strong>falsamente elevado</strong> — comum em diabéticos, artérias incompressíveis)</td></tr>
+      <tr><td>0,9-1,3</td><td>Normal</td></tr>
+      <tr><td>0,4-0,9</td><td>DAOP leve a moderada</td></tr>
+      <tr><td>&lt;0,4</td><td>DAOP grave/isquemia crítica</td></tr>
+    </table></div>
+    <div class="box warn"><span class="lbl">⚠ pegadinha</span>No diabético, o ITB pode estar <strong>falsamente normal ou elevado</strong> por calcificação da camada média arterial (esclerose de Mönckeberg) — <strong>não exclui</strong> DAOP significativa. Complementar com <strong>pressão do hálux</strong> ou <strong>onda de pulso/Doppler</strong> quando há suspeita clínica de isquemia apesar do ITB normal.</div>
+  </div>
+</details>
+
+<!-- 4 TRATAMENTO -->
+<details>
+  <summary><span class="num">4</span> Tratamento — desbridamento &amp; descarga (IWGDF 2023) <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Desbridamento</h4>
+    <ul>
+      <li><strong>Desbridamento cortante (sharp)</strong> é o método padrão — remove tecido desvitalizado, biofilme e calo periférico.</li>
+      <li>IWGDF <strong>desaconselha</strong> métodos alternativos (autolítico, biocirúrgico, hidrocirúrgico, químico, a laser) como rotina em vez do desbridamento cortante padrão.</li>
+    </ul>
+
+    <h4>Desbridamento cortante — o que separa o eficaz do superficial</h4>
+    <div class="box simplebox"><span class="lbl">tradução simples</span>Desbridar não é "limpar a ferida" — é remover uma <strong>barreira física</strong>. O calo periférico e o tecido desvitalizado escondem a ferida do próprio corpo: por baixo deles, o organismo não consegue nem inflamar direito nem cicatrizar. Cortar essa borda expõe tecido sangrante e vivo, que é o único tipo de tecido capaz de fechar uma úlcera.</div>
+
+    <div class="stx">
+
+      <div class="st">
+        <span class="fase">fase de avaliação</span>
+        <div class="ttl">Inspecionar a ferida e sondar (probe-to-bone)</div>
+        <p>Avaliar profundidade, bordas e sondar o leito com instrumento estéril.</p>
+        <div class="pq"><b>por quê</b>É o momento de rastrear osteomielite antes de desbridar — sondar e tocar osso <strong>antes</strong> de remover tecido evita confundir depois se o osso exposto apareceu pelo desbridamento ou já estava lá.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase central — o gesto que muda o desfecho</span>
+        <div class="ttl">Remover todo o calo periférico e o tecido desvitalizado</div>
+        <p>Desbridamento cortante com bisturi ou cureta, até expor bordas sangrantes e leito viável.</p>
+        <div class="pq"><b>por quê</b>O calo ao redor da úlcera <strong>concentra pressão</strong> exatamente sobre a ferida a cada passo — é como manter uma pedra dentro do sapato sobre o machucado. Removê-lo não é só estética: reduz a pressão local mais do que qualquer calçado, e é isso que faz o desbridamento cortante superar os métodos alternativos (autolítico, enzimático) que a IWGDF desaconselha como rotina.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de amostragem</span>
+        <div class="ttl">Colher tecido profundo para cultura, se houver sinais de infecção</div>
+        <p>Biópsia ou curetagem profunda — nunca swab superficial.</p>
+        <div class="pq"><b>por quê</b>O swab da superfície coleta a flora colonizante da pele, não o patógeno que está causando a infecção no tecido profundo — é a diferença entre cultivar o que está de passagem e cultivar o que está doente.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de proteção</span>
+        <div class="ttl">Curativo e descarga de pressão imediata</div>
+        <p>Cobertura adequada ao exsudato; iniciar descarga (offloading) não removível no mesmo momento.</p>
+        <div class="pq"><b>por quê</b>Desbridar sem descarregar a pressão é reabrir a mesma ferida a cada passo que o paciente dá — o desbridamento cria a superfície que cicatriza, mas só a descarga permite que ela realmente cicatrize sem ser esmagada de novo.</div>
+      </div>
+
+    </div>
+    <div class="box prova"><span class="lbl">frequência</span>Reavaliação e novo desbridamento a cada <strong>1–4 semanas</strong>, conforme a evolução — não é procedimento único.</div>
+
+    <h4>Descarga de pressão (offloading) — a mudança mais importante</h4>
+    <div class="fig">
+      <svg viewBox="0 0 640 170" xmlns="http://www.w3.org/2000/svg">
+        <text x="320" y="18" fill="#9a9ab0" font-size="11" font-family="monospace" text-anchor="middle">descarga de pressão — úlcera plantar neuropática</text>
+        <rect x="60" y="40" width="240" height="90" rx="10" fill="#34d399" opacity=".18" stroke="#34d399" stroke-width="2"/>
+        <text x="180" y="70" fill="#34d399" font-size="13" font-family="monospace" text-anchor="middle" font-weight="bold">1ª escolha</text>
+        <text x="180" y="92" fill="#fff" font-size="12" font-family="monospace" text-anchor="middle">bota de contato total (TCC)</text>
+        <text x="180" y="110" fill="#fff" font-size="12" font-family="monospace" text-anchor="middle">ou removível tornada NÃO-removível</text>
+        <rect x="340" y="40" width="240" height="90" rx="10" fill="#fbbf24" opacity=".14" stroke="#fbbf24" stroke-width="1.5"/>
+        <text x="460" y="70" fill="#fbbf24" font-size="13" font-family="monospace" text-anchor="middle" font-weight="bold">alternativa</text>
+        <text x="460" y="92" fill="#fff" font-size="12" font-family="monospace" text-anchor="middle">bota removível</text>
+        <text x="460" y="110" fill="#fff" font-size="12" font-family="monospace" text-anchor="middle">(se TCC contraindicado/não tolerado)</text>
+        <text x="320" y="155" fill="#9a9ab0" font-size="10" font-family="monospace" text-anchor="middle">requer educação sobre adesão ao uso contínuo</text>
+      </svg>
+      <div class="cap">IWGDF 2023: dispositivo de descarga não-removível (joelho-alto) é o tratamento preferencial para úlcera plantar neuropática — supera dispositivos removíveis, que dependem da adesão do paciente.</div>
+    </div>
+
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">IWGDF 2023</span></span>Para úlcera plantar <strong>neuropática</strong>, o dispositivo de descarga <strong>não-removível, joelho-alto</strong> (bota de contato total ou dispositivo removível "travado" pelo profissional) é a <strong>1ª escolha</strong> — supera sapatos terapêuticos e outros métodos por eliminar a variável "adesão do paciente".</div>
+    <div class="box warn"><span class="lbl">⚠ pegadinha</span>Muitos serviços ainda prescrevem apenas "sapato especial" ou orientação de repouso relativo — a evidência atual favorece fortemente o <strong>dispositivo não-removível</strong> como padrão-ouro, não apenas uma opção entre várias.</div>
+  </div>
+</details>
+
+<!-- 5 INFECCAO -->
+<details>
+  <summary><span class="num">5</span> Infecção — classificação IDSA/IWGDF <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>Diagnóstico de infecção é <strong>clínico</strong> — sinais de inflamação local ou sistêmica, não apenas cultura positiva (colonização ≠ infecção).</p>
+
+    <div class="tbl"><table>
+      <tr><th>Grau</th><th>Definição</th><th>Conduta</th></tr>
+      <tr><td><strong>Não infectada</strong></td><td>Sem sinais de inflamação</td><td>Sem antibiótico</td></tr>
+      <tr><td><strong>Leve</strong></td><td>Inflamação local, ≤2cm ao redor da úlcera</td><td>ATB oral, ambulatorial</td></tr>
+      <tr><td><strong>Moderada</strong></td><td>Inflamação &gt;2cm ou acometimento mais profundo, sem sinais sistêmicos</td><td>Frequentemente requer internação/avaliação cirúrgica</td></tr>
+      <tr><td><strong>Grave</strong></td><td>Sinais sistêmicos (SIRS) associados</td><td>Internação, ATB EV, avaliação cirúrgica urgente</td></tr>
+    </table></div>
+    <div class="box warn"><span class="lbl">⚠ pegadinha</span><strong>Cultura de swab superficial</strong> da úlcera reflete colonização, não necessariamente o patógeno causador da infecção profunda — amostra de <strong>tecido profundo</strong> (biópsia/curetagem após desbridamento) é preferível quando possível.</div>
+
+    <h4>Osteomielite — quando suspeitar</h4>
+    <p><strong>"Probe-to-bone" positivo</strong> (sondagem que atinge o osso através da úlcera) tem boa correlação com osteomielite subjacente, especialmente em úlceras profundas/crônicas — associado a exames de imagem (RM é o padrão para confirmação).</p>
+  </div>
+</details>
+
+<!-- 6 QUESTOES / PEGA-RATOES -->
+<details>
+  <summary><span class="num">6</span> Questões de banca, pega-ratões &amp; mnemônicos <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>10 questões representativas (originais, estilo das 5 bancas)</h4>
+
+    <div class="box prova"><span class="lbl">Q1 <span class="banca">HCPA</span></span><strong>Diabético com ITB de 1,4. Isso exclui doença arterial periférica?</strong><br>Resposta: <strong>não</strong> — ITB elevado pode indicar calcificação arterial (Mönckeberg), não exclui DAOP; complementar avaliação.</div>
+
+    <div class="box prova"><span class="lbl">Q2 <span class="banca">GHC</span></span><strong>Úlcera plantar neuropática. Qual o dispositivo de descarga preferencial segundo IWGDF 2023?</strong><br>Resposta: <strong>dispositivo não-removível, joelho-alto</strong> (bota de contato total) — 1ª escolha.</div>
+
+    <div class="box prova"><span class="lbl">Q3 <span class="banca">AMRIGS</span></span><strong>Qual classificação incorpora isquemia, ferida e infecção separadamente para estimar risco de amputação?</strong><br>Resposta: <strong>WIfI</strong>.</div>
+
+    <div class="box prova"><span class="lbl">Q4 <span class="banca">PUC-RS</span></span><strong>Sondagem de úlcera atinge estrutura óssea ("probe-to-bone" positivo). Suspeita?</strong><br>Resposta: <strong>osteomielite</strong> subjacente — boa correlação, confirmar com RM se necessário.</div>
+
+    <div class="box prova"><span class="lbl">Q5 <span class="banca">SC-POA</span></span><strong>Qual método de desbridamento é considerado padrão pelo IWGDF, em vez de métodos alternativos como enzimático?</strong><br>Resposta: <strong>desbridamento cortante (sharp)</strong>.</div>
+
+    <div class="box prova"><span class="lbl">Q6 <span class="banca">HCPA</span></span><strong>Amostra de swab superficial de uma úlcera infectada. É a melhor forma de identificar o patógeno causador?</strong><br>Resposta: <strong>não</strong> — reflete colonização; tecido profundo é preferível.</div>
+
+    <div class="box prova"><span class="lbl">Q7 <span class="banca">GHC</span></span><strong>Paciente com infecção de pé diabético e sinais sistêmicos (SIRS). Classificação IDSA/IWGDF e conduta?</strong><br>Resposta: <strong>grave</strong> — internação, ATB EV, avaliação cirúrgica urgente.</div>
+
+    <div class="box prova"><span class="lbl">Q8 <span class="banca">AMRIGS</span></span><strong>Quais os 3 componentes da fisiopatologia do pé diabético que se combinam no risco de amputação?</strong><br>Resposta: <strong>neuropatia, doença arterial periférica e infecção</strong>.</div>
+
+    <div class="box prova"><span class="lbl">Q9 <span class="banca">PUC-RS</span></span><strong>Teste de rastreio padrão para neuropatia sensitiva no pé diabético?</strong><br>Resposta: <strong>monofilamento de Semmes-Weinstein 10g</strong>.</div>
+
+    <div class="box prova"><span class="lbl">Q10 <span class="banca">SC-POA</span></span><strong>Entre os 28 sistemas de classificação avaliados pelo IWGDF 2023, quantos foram considerados adequados para uso clínico?</strong><br>Resposta: <strong>6</strong> (DIAFORA, IDSA/IWGDF, SINBAD, University of Texas, Wagner, WIfI).</div>
+
+    <h4>Pega-ratões (as armadilhas clássicas)</h4>
+    <div class="box warn"><span class="lbl">☠ trap 1</span>ITB elevado no diabético <strong>não exclui</strong> DAOP — pensar em calcificação arterial.</div>
+    <div class="box warn"><span class="lbl">☠ trap 2</span>Descarga <strong>não-removível</strong> é preferencial, não apenas "uma opção".</div>
+    <div class="box warn"><span class="lbl">☠ trap 3</span>Swab superficial <strong>não</strong> é a melhor amostra para cultura de infecção profunda.</div>
+    <div class="box warn"><span class="lbl">☠ trap 4</span>Wagner não avalia isquemia explicitamente — WIfI é mais completo nesse aspecto.</div>
+    <div class="box warn"><span class="lbl">☠ trap 5</span>Colonização ≠ infecção — diagnóstico de infecção é clínico, não só cultura.</div>
+    <div class="box warn"><span class="lbl">☠ trap 6</span>Desbridamento enzimático/autolítico <strong>não</strong> substitui o cortante como rotina.</div>
+    <div class="box warn"><span class="lbl">☠ trap 7</span>"Probe-to-bone" positivo tem boa correlação com osteomielite — não ignorar esse achado simples.</div>
+    <div class="box warn"><span class="lbl">☠ trap 8</span>Neuropatia motora causa deformidades que geram pontos de pressão — não é só perda de sensibilidade.</div>
+
+    <h4>Mnemônicos-resumo</h4>
+    <div class="box mac"><span class="lbl">macete geral</span>Tríade: neuropatia+DAOP+infecção · Wagner=profundidade(0-5) · WIfI=Wound+Ischemia+footInfection · ITB alto=calcificação, não exclui DAOP · IWGDF2023: descarga não-removível 1ª escolha, desbridamento cortante padrão · Infecção=clínica, tecido profundo&gt;swab.</div>
+  </div>
+</details>
+
+<footer>
+  <div><strong>carolzita</strong> · Pé Diabético · referência completa</div>
+  <div class="ref">Fontes: IWGDF 2023 Guidelines (Classification, Offloading, Infection, PAD) · IDSA/IWGDF Infection Guideline · Sabiston · Zollinger. Conteúdo educacional; questões são itens representativos originais.</div>
+</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Obstrução Intestinal & Volvo — carolzita</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0f; --bg2:#12121a; --card:#16161f; --card2:#1c1c27;
+  --line:#2a2a38; --txt:#e6e6ef; --muted:#9a9ab0;
+  --laranja:#f97316; --laranja-bg:rgba(249,115,22,.10);
+  --roxo:#a855f7; --roxo-bg:rgba(168,85,247,.10);
+  --ciano:#22d3ee; --ciano-bg:rgba(34,211,238,.10);
+  --verde:#34d399; --vermelho:#f87171; --amarelo:#fbbf24;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(1200px 600px at 50% -10%,#15151f 0%,var(--bg) 60%);color:var(--txt);font-family:'Inter',sans-serif;line-height:1.55;padding:0 0 80px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px}
+header{padding:40px 0 24px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(30px,6vw,46px);line-height:1.05;margin:8px 0 6px;letter-spacing:-.02em}
+.sub{color:var(--muted);font-size:15px;max-width:660px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tag{font-family:'JetBrains Mono',monospace;font-size:11px;padding:5px 10px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted)}
+.tag.r{color:var(--roxo);border-color:rgba(168,85,247,.35);background:var(--roxo-bg)}
+section{margin-top:14px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:12px;overflow:hidden;transition:border-color .2s}
+details[open]{border-color:rgba(249,115,22,.30)}
+summary{cursor:pointer;list-style:none;padding:18px 20px;display:flex;align-items:center;gap:13px;font-family:'Syne',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em;user-select:none}
+summary::-webkit-details-marker{display:none}
+.num{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--bg);background:var(--laranja);width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:0 0 auto}
+.chev{margin-left:auto;color:var(--muted);transition:transform .25s;font-size:14px}
+details[open] .chev{transform:rotate(90deg)}
+.body{padding:4px 22px 24px;font-size:15px}
+.body p{margin:10px 0}
+.body h4{font-family:'Syne',sans-serif;font-size:16px;color:var(--laranja);margin:20px 0 8px;letter-spacing:-.01em}
+.body ul{margin:8px 0 8px 4px;list-style:none}
+.body li{padding:4px 0 4px 20px;position:relative}
+.body li::before{content:"▸";position:absolute;left:0;color:var(--laranja);font-size:12px;top:6px}
+.body strong{color:#fff;font-weight:600}
+.simple{color:var(--ciano);font-style:italic;font-size:.94em}
+.box{border-radius:12px;padding:13px 15px;margin:14px 0;font-size:14px;border:1px solid}
+.box.prova{background:var(--roxo-bg);border-color:rgba(168,85,247,.35)}
+.box.prova .lbl{color:var(--roxo)}
+.box.mac{background:var(--ciano-bg);border-color:rgba(34,211,238,.35)}
+.box.mac .lbl{color:var(--ciano)}
+.box.warn{background:rgba(248,113,113,.08);border-color:rgba(248,113,113,.3)}
+.box.warn .lbl{color:var(--vermelho)}
+.lbl{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-family:'JetBrains Mono',monospace;font-size:10px;background:rgba(168,85,247,.2);color:var(--roxo);padding:2px 7px;border-radius:6px;margin-left:6px;white-space:nowrap}
+.tbl{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
+.tbl table{width:100%;border-collapse:collapse;min-width:520px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--laranja);background:var(--card2)}
+td strong{color:#fff}
+.fio td:first-child{color:var(--ciano);font-family:'JetBrains Mono',monospace;font-weight:500}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin:14px 0}
+.gcard{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+.gcard .t{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--ciano);margin-bottom:4px}
+.gcard .d{font-size:13px;color:var(--muted)}
+.hands{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.hand{border-radius:12px;padding:14px;border:1px solid var(--line)}
+.hand.e{background:rgba(34,211,238,.06);border-color:rgba(34,211,238,.25)}
+.hand.d{background:rgba(249,115,22,.06);border-color:rgba(249,115,22,.25)}
+.hand .ht{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;font-weight:700}
+.hand.e .ht{color:var(--ciano)} .hand.d .ht{color:var(--laranja)}
+.hand li{font-size:13px}
+.steps{counter-reset:s;margin:10px 0}
+.step{counter-increment:s;position:relative;padding:11px 0 11px 46px;border-bottom:1px dashed var(--line)}
+.step:last-child{border-bottom:none}
+.step::before{content:counter(s);position:absolute;left:0;top:9px;width:30px;height:30px;border-radius:9px;background:var(--laranja-bg);border:1px solid rgba(249,115,22,.4);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:grid;place-items:center}
+.step b{color:#fff}
+svg{max-width:100%;height:auto;display:block;margin:16px auto}
+.fig{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.fig .cap{font-size:12px;color:var(--muted);text-align:center;margin-top:8px;font-family:'JetBrains Mono',monospace}
+footer{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+footer .ref{font-family:'JetBrains Mono',monospace;font-size:12px;margin-top:8px}
+a{color:var(--laranja)}
+@media(max-width:560px){.hands{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">carolzita · cirurgia geral · abdome agudo obstrutivo</div>
+  <h1>Obstrução Intestinal & Volvo</h1>
+  <p class="sub"><strong>Bridas</strong> = causa #1 no delgado · <strong>neoplasia</strong> = #1 no cólon · <strong>volvo de sigmoide</strong> = detorção endoscópica; <strong>volvo de ceco</strong> = ressecção. Foco em WSES/Bologna (ASBO) e ASCRS 2021 (volvo) e nas pegadinhas das bancas do RS.</p>
+  <div class="tags">
+    <span class="tag">Bridas/aderências</span>
+    <span class="tag">Gastrografin</span>
+    <span class="tag">Bico de pássaro</span>
+    <span class="tag">Sinais de estrangulamento</span>
+    <span class="tag r">HCPA · GHC · SC-POA · PUC · AMRIGS</span>
+  </div>
+</header>
+
+<!-- 1 QUADRO CLÍNICO -->
+<details open>
+  <summary><span class="num">1</span> Quadro clínico & diagnóstico <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>Obstrução intestinal = interrupção do trânsito por <strong>causa mecânica</strong> (barreira física) ou <strong>funcional</strong> (íleo paralítico / pseudo-obstrução, sem barreira). <span class="simple">(o cano do intestino entope de verdade — mecânica; ou o motor para de empurrar mesmo sem entupir — funcional)</span></p>
+
+    <h4>Tétrade clássica (mecânica)</h4>
+    <ul>
+      <li><strong>Dor abdominal em cólica</strong> (peristalse de luta contra a barreira)</li>
+      <li><strong>Distensão</strong> — quanto mais distal, maior</li>
+      <li><strong>Parada de eliminação de fezes e flatos</strong> (obstipação/constipação)</li>
+      <li><strong>Vômitos</strong> — precoces e biliosos (proximal) → tardios e fecaloides (distal)</li>
+    </ul>
+
+    <h4>Delgado × Cólon — a divisão que a banca cobra</h4>
+    <div class="tbl"><table>
+      <tr><th></th><th>Delgado (ID)</th><th>Cólon (IG)</th></tr>
+      <tr><td><strong>Causa #1</strong></td><td>Aderências/bridas (pós-op)</td><td>Neoplasia (CA colorretal)</td></tr>
+      <tr><td><strong>#2</strong></td><td>Hérnia encarcerada</td><td>Volvo (sigmoide &gt; ceco)</td></tr>
+      <tr><td><strong>#3</strong></td><td>Neoplasia / Crohn</td><td>Diverticulite</td></tr>
+      <tr><td><strong>Vômito</strong></td><td>Precoce, bilioso/fecaloide</td><td>Tardio</td></tr>
+      <tr><td><strong>Distensão</strong></td><td>Central, menor</td><td>Periférica, exuberante</td></tr>
+      <tr><td><strong>RX</strong></td><td>Alças centrais, válvulas coniventes (empilhamento de moedas)</td><td>Alças periféricas, haustrações</td></tr>
+    </table></div>
+    <p class="simple">(delgado = risquinhos que atravessam a alça toda como moedas empilhadas; cólon = bolsas nas bordas)</p>
+
+    <div class="box warn"><span class="lbl">🚩 Sinais de estrangulamento / isquemia (indicam cirurgia URGENTE)</span>
+      Dor <strong>contínua e desproporcional</strong> (deixou de ser cólica), <strong>febre</strong>, <strong>taquicardia</strong>, <strong>leucocitose</strong>, <strong>acidose/lactato ↑</strong>, <strong>irritação peritoneal</strong>. Na TC: espessamento e <strong>não realce da parça</strong>, líquido livre, pneumatose, edema mesentérico, alça em "U/C" fechada.
+    </div>
+
+    <h4>Alça fechada (closed-loop) — a mais perigosa</h4>
+    <p>Obstrução em <strong>dois pontos</strong> do mesmo segmento (volvo, hérnia com anel apertado). Não há descompressão retrógrada → distensão rápida, isquemia precoce e alto risco de perfuração. <span class="simple">(a alça vira um balão amarrado nas duas pontas — estoura fácil)</span></p>
+
+    <h4>Diagnóstico por imagem</h4>
+    <ul>
+      <li><strong>TC de abdome com contraste EV</strong> = padrão-ouro: define nível, causa, grau (parcial × completo), <strong>zona de transição</strong> e sinais de sofrimento.</li>
+      <li><strong>Sinal das fezes no delgado</strong> (small-bowel feces sign) = conteúdo fecaloide na transição, sugere obstrução mais prolongada.</li>
+      <li><strong>RX simples</strong> (ortostase/decúbito): níveis hidroaéreos, distensão. Útil e barato, mas TC é superior.</li>
+      <li><strong>Volvo de sigmoide</strong>: sinal do <strong>"grão de café"/U invertido</strong> apontando para o QSD.</li>
+      <li><strong>Volvo de ceco</strong>: alça dilatada em <strong>"grão de café"</strong> deslocada para o <strong>QSE/epigástrio</strong> ("rim de café"), com delgado distendido.</li>
+      <li><strong>Enema/TC com contraste</strong>: afilamento em <strong>"bico de pássaro"</strong> (bird's beak) no ponto de torção.</li>
+    </ul>
+    <div class="box prova"><span class="lbl">Tema de prova <span class="banca">HCPA · AMRIGS</span></span>
+      Diferenciar volvo de <strong>sigmoide</strong> (idoso acamado, constipado, dieta rica em fibra, doença de Chagas/megacólon) do de <strong>ceco</strong> (mais jovem, mobilidade cecal por fixação incompleta do mesentério direito). Sigmoide é MUITO mais comum (~60–75% dos volvos).
+    </div>
+  </div>
+</details>
+
+<!-- 2 ANATOMIA -->
+<details>
+  <summary><span class="num">2</span> Anatomia & vascularização <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Por que gira? — o pré-requisito anatômico</h4>
+    <ul>
+      <li><strong>Volvo = torção de uma alça em torno do seu eixo mesentérico.</strong> Precisa de segmento móvel + mesentério longo e base estreita.</li>
+      <li><strong>Sigmoide</strong>: mesocólon sigmoide redundante e longo, com base de fixação estreita → gira sobre o eixo dos vasos sigmoideos/hemorroidária superior.</li>
+      <li><strong>Ceco</strong>: fixação (fusão) incompleta do mesentério direito ao retroperitônio na embriogênese → ceco/cólon direito móvel ("cecum mobile").</li>
+    </ul>
+
+    <h4>Vascularização (a base que torce)</h4>
+    <ul>
+      <li><strong>Delgado</strong>: <strong>artéria mesentérica superior (AMS)</strong> → jejunais/ileais formando arcadas e vasa recta. Bridas comprimem a alça, não o pedículo — mas a torção sobre a AMS causa isquemia difusa.</li>
+      <li><strong>Ceco/cólon direito</strong>: AMS → ileocólica, cólica direita (inconstante) e ramo direito da cólica média.</li>
+      <li><strong>Sigmoide</strong>: <strong>artéria mesentérica inferior (AMI)</strong> → artérias sigmoideas + hemorroidária (retal) superior. <strong>Ponto de Sudeck</strong> (junção retossigmoide) e <strong>arco de Riolan / marginal de Drummond</strong> são as garantias colaterais.</li>
+    </ul>
+
+    <div class="fig">
+      <svg viewBox="0 0 460 300" role="img" aria-label="Volvo de sigmoide e de ceco">
+        <defs><style>.o{fill:none;stroke:#f97316;stroke-width:3}.c{fill:none;stroke:#22d3ee;stroke-width:3}.t{fill:#9a9ab0;font-family:monospace;font-size:11px}.w{fill:#e6e6ef;font-family:monospace;font-size:12px}</style></defs>
+        <!-- sigmoide -->
+        <text x="70" y="24" class="w">VOLVO SIGMOIDE</text>
+        <path class="o" d="M60 220 C60 120 150 120 150 200" />
+        <path class="o" d="M60 220 C60 250 150 250 150 200" />
+        <circle cx="105" cy="200" r="6" fill="#f87171"/>
+        <text x="70" y="278" class="t">grão de café → QSD</text>
+        <!-- ceco -->
+        <text x="300" y="24" class="w">VOLVO CECO</text>
+        <path class="c" d="M300 210 C300 110 400 110 400 190" />
+        <path class="c" d="M300 210 C300 245 400 245 400 190" />
+        <circle cx="350" cy="190" r="6" fill="#f87171"/>
+        <text x="285" y="278" class="t">rim de café → QSE</text>
+        <line x1="230" y1="60" x2="230" y2="260" stroke="#2a2a38" stroke-width="1.5" stroke-dasharray="4 4"/>
+      </svg>
+      <div class="cap">Torção sobre a base mesentérica estreita — ponto vermelho = eixo da torção</div>
+    </div>
+    <div class="box prova"><span class="lbl">Tema de prova <span class="banca">PUC-RS · GHC</span></span>
+      Volvo de sigmoide desloca-se para o <strong>QSD</strong> (grão de café apontando para cima e à direita); volvo de ceco desloca-se para o <strong>QSE/epigástrio</strong>. Truque: "o órgão foge para o lado OPOSTO à sua origem".
+    </div>
+  </div>
+</details>
+
+<!-- 3 TRATAMENTO -->
+<details>
+  <summary><span class="num">3</span> Tratamento — clínico × cirúrgico <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Suporte inicial (todos) — "drip and suck"</h4>
+    <ul>
+      <li><strong>Jejum + SNG</strong> descompressiva (alívio de vômito e distensão). <span class="simple">(sonda pelo nariz que aspira o que está entupido em cima)</span></li>
+      <li><strong>Reposição volêmica</strong> com cristaloide isotônico + correção de distúrbios hidroeletrolíticos (hipoK, alcalose).</li>
+      <li><strong>Sonda vesical</strong> para monitorar débito; ATB se estrangulamento/sepse.</li>
+    </ul>
+
+    <h4>Obstrução por bridas / aderências (ASBO) — WSES/Bologna</h4>
+    <ul>
+      <li>Sem sinais de estrangulamento/peritonite e <strong>obstrução parcial</strong> → <strong>tratamento não operatório (NOM)</strong>.</li>
+      <li><strong>Gastrografin (contraste hidrossolúvel) VO ou por SNG</strong> tem valor <strong>diagnóstico E terapêutico</strong>: contraste no cólon em até <strong>24h</strong> prediz resolução (evita cirurgia). <span class="simple">(se o contraste chega no cólon, o intestino vai destravar sozinho)</span></li>
+      <li><strong>NOM por até 72h</strong>; sem resolução → cirurgia. Operar após o 4º dia ↑ morbimortalidade.</li>
+      <li><strong>Adesiólise laparoscópica</strong> preferível se <strong>1º episódio</strong> e/ou <strong>brida única</strong> antecipada; baixo limiar de conversão.</li>
+    </ul>
+    <div class="box warn"><span class="lbl">⚠️ Operar JÁ (não tentar NOM)</span>
+      Sinais de estrangulamento, peritonite, <strong>alça fechada</strong>, hérnia encarcerada irredutível, obstrução completa com sofrimento, ou <strong>abdome virgem</strong> (sem cirurgia prévia → causa é obstrutiva não-aderencial até prova em contrário).
+    </div>
+
+    <h4>Volvo de SIGMOIDE — ASCRS 2021</h4>
+    <ul>
+      <li>Estável, sem peritonite/perfuração → <strong>endoscopia (retossigmoidoscopia/colonoscopia)</strong> para avaliar viabilidade, <strong>detorcer e descomprimir</strong>. Sucesso &gt; 90%. Deixa-se sonda retal.</li>
+      <li>Após detorção bem-sucedida → <strong>sigmoidectomia eletiva na MESMA internação</strong> (recidiva sem cirurgia chega a 60%).</li>
+      <li>Falha na detorção, cólon inviável ou perfurado → <strong>sigmoidectomia de urgência</strong> (Hartmann se instável/peritonite; anastomose primária ± ostomia de proteção se condições favoráveis).</li>
+      <li>Detorção/sigmoidopexia/mesosigmoidoplastia isoladas são <strong>inferiores</strong> à colectomia p/ prevenir recidiva; fixação endoscópica (PEC) só em risco proibitivo.</li>
+    </ul>
+
+    <h4>Volvo de CECO — ASCRS 2021</h4>
+    <ul>
+      <li><strong>Detorção endoscópica NÃO recomendada</strong> (sucesso ~10–15%).</li>
+      <li><strong>Ressecção segmentar (hemicolectomia direita)</strong> com anastomose ileocólica é o tratamento de escolha (viável ou não).</li>
+      <li>Cecopexia/cecostomia: só para paciente inapto à ressecção (maior recidiva e morbidade).</li>
+    </ul>
+    <div class="box prova"><span class="lbl">Tema de prova <span class="banca">Santa Casa POA · AMRIGS</span></span>
+      <strong>Sigmoide = ENDOSCOPIA primeiro; Ceco = CIRURGIA (ressecção) primeiro.</strong> É a pegadinha mais cobrada do tema. E: detorção do sigmoide sem ressecção posterior = recidiva altíssima.
+    </div>
+  </div>
+</details>
+
+<!-- 4 POSIÇÃO -->
+<details>
+  <summary><span class="num">4</span> Posição & preparo <span class="chev">▶</span></summary>
+  <div class="body">
+    <ul>
+      <li><strong>Adesiólise / delgado</strong>: decúbito dorsal horizontal, braços podendo ficar abertos; para laparoscopia, 1º trocarte por <strong>Hasson (aberto)</strong> longe de cicatrizes (risco de alça aderida à parede).</li>
+      <li><strong>Sigmoidectomia (volvo)</strong>: posição de <strong>Lloyd-Davies / litotomia modificada</strong> (acesso perineal p/ grampeador transanal e eventual estoma), Trendelenburg + rotação lateral.</li>
+      <li><strong>Hemicolectomia direita (volvo ceco)</strong>: decúbito dorsal; se laparoscópica, leve Trendelenburg + decúbito lateral esquerdo.</li>
+      <li>Preparo: <strong>SNG</strong>, antibioticoprofilaxia (cefazolina + metronidazol ou cefoxitina) na indução, <strong>tricotomia</strong>, marcação de estoma pelo estomaterapeuta quando eletivo, TVP profilaxia, normotermia (ERAS/ACERTO).</li>
+    </ul>
+    <div class="box mac"><span class="lbl">Macete</span> Em urgência com cólon cheio de fezes NÃO se faz preparo mecânico anterógrado — decide-se em mesa por Hartmann × anastomose primária conforme contaminação e estabilidade.</div>
+  </div>
+</details>
+
+<!-- 5 PASSO A PASSO -->
+<details>
+  <summary><span class="num">5</span> Passo a passo — 3 cenários <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>A) Adesiólise (bridas)</h4>
+    <div class="steps">
+      <div class="step"><b>Acesso seguro:</b> Hasson/aberto afastado de cicatriz; inventário da cavidade e identificação da zona de transição (alça colabada distal vs. dilatada proximal).</div>
+      <div class="step"><b>Tração-contratração</b> suave; secção da <strong>brida única</strong> com <strong>tesoura fria</strong> (evitar energia perto da parça pelo risco de lesão térmica tardia).</div>
+      <div class="step"><b>Corre-se todo o delgado</b> da válvula ileocecal ao Treitz procurando outros pontos e lesões seromusculares.</div>
+      <div class="step"><b>Avaliar viabilidade</b> (cor, peristalse, pulso mesentérico; se dúvida, envolver em compressa morna e reavaliar / verde de indocianina).</div>
+      <div class="step"><b>Enterectomia + anastomose</b> se segmento inviável; reparo de serosas rotas.</div>
+    </div>
+
+    <h4>B) Sigmoidectomia por volvo</h4>
+    <div class="steps">
+      <div class="step"><b>Detorção</b> e avaliação da viabilidade; se inviável, não destorcer para não liberar toxinas (decisão individualizada).</div>
+      <div class="step"><b>Mobilização</b> do sigmoide da goteira parietocólica esquerda (linha branca de Toldt); identificar e proteger <strong>ureter esquerdo</strong> e gonadais.</div>
+      <div class="step"><b>Ligadura dos vasos sigmoideos</b> (ramos da AMI) — preservar a marginal quando possível.</div>
+      <div class="step"><b>Secção proximal e distal</b> em tecido sadio com grampeador linear.</div>
+      <div class="step"><b>Decisão:</b> anastomose colorretal primária (grampeador circular transanal, teste de vazamento/ar) <strong>ou Hartmann</strong> (coto retal fechado + colostomia terminal) se peritonite/instabilidade.</div>
+    </div>
+
+    <h4>C) Hemicolectomia direita por volvo de ceco</h4>
+    <div class="steps">
+      <div class="step"><b>Mobilização do cólon direito</b> (Toldt direita), duodeno e ureter direito protegidos.</div>
+      <div class="step"><b>Ligadura</b> de ileocólica e cólica direita; secção do íleo terminal e do transverso proximal.</div>
+      <div class="step"><b>Anastomose ileocólica</b> (látero-lateral grampeada ou término-terminal manual) — geralmente segura mesmo em urgência (delgado sem contaminação fecal maciça).</div>
+    </div>
+    <div class="box prova"><span class="lbl">Tema de prova <span class="banca">HCPA R3 · Santa Casa</span></span>
+      Hartmann = coto retal fechado + colostomia terminal, reservado a cólon inviável/peritonite/instabilidade. Anastomose ileocólica em urgência tolera melhor a ausência de preparo que a colorretal esquerda.
+    </div>
+  </div>
+</details>
+
+<!-- 6 INSTRUMENTAÇÃO -->
+<details>
+  <summary><span class="num">6</span> Instrumentação — mão D × mão E <span class="chev">▶</span></summary>
+  <div class="body">
+    <div class="hands">
+      <div class="hand d"><div class="ht">Mão direita (dominante)</div>
+        <ul>
+          <li>Tesoura de Metzenbaum (adesiólise fria)</li>
+          <li>Bisturi elétrico / LigaSure na mobilização</li>
+          <li>Grampeador linear (secção) e circular (anastomose)</li>
+          <li>Porta-agulhas para suturas seromusculares</li>
+        </ul>
+      </div>
+      <div class="hand e"><div class="ht">Mão esquerda (assiste/expõe)</div>
+        <ul>
+          <li>Pinça atraumática de <strong>Babcock/DeBakey</strong> segurando a alça</li>
+          <li>Tração-contratração da brida</li>
+          <li>Pinça de dissecção anatômica</li>
+          <li>Compressa para afastar e proteger alças viáveis</li>
+        </ul>
+      </div>
+    </div>
+    <h4>Pinças e clamps</h4>
+    <ul>
+      <li><strong>Babcock / DeBakey</strong>: preensão atraumática do intestino distendido (evita ruptura).</li>
+      <li><strong>Doyen (clamp intestinal não esmagador)</strong>: ocluir alça antes da enterotomia.</li>
+      <li><strong>Kocher / Kelly</strong>: pedículos mesentéricos.</li>
+      <li><strong>Afastador de Balfour/Gosset</strong> em laparotomia mediana.</li>
+    </ul>
+  </div>
+</details>
+
+<!-- 7 FIOS -->
+<details>
+  <summary><span class="num">7</span> Tabela de fios — o que e quando <span class="chev">▶</span></summary>
+  <div class="body">
+    <div class="tbl"><table>
+      <tr><th>Momento</th><th>Fio / material</th><th>Observação</th></tr>
+      <tr class="fio"><td>Ligadura de pedículo mesentérico</td><td>Poliglactina 2-0/3-0 (Vicryl) ou clip/LigaSure</td><td>Vasos sigmoideos, ileocólica</td></tr>
+      <tr class="fio"><td>Anastomose manual — plano seromuscular</td><td>Polipropileno 3-0/4-0 ou seda 3-0</td><td>Pontos separados ou contínuo</td></tr>
+      <tr class="fio"><td>Anastomose manual — plano total</td><td>Poliglactina 3-0/4-0 (absorvível)</td><td>Mucosa-mucosa</td></tr>
+      <tr class="fio"><td>Reparo de serosa rota</td><td>Poliglactina 4-0 seromuscular</td><td>Evita fístula tardia</td></tr>
+      <tr class="fio"><td>Fechamento de aponeurose</td><td>PDS 1 / Náilon 1 (loop)</td><td>4:1 relação fio:ferida</td></tr>
+      <tr class="fio"><td>Pele</td><td>Náilon 3-0/4-0 ou grampos</td><td>Contaminado → ferida aberta 2ª intenção</td></tr>
+    </table></div>
+  </div>
+</details>
+
+<!-- 8 COMPLICAÇÕES -->
+<details>
+  <summary><span class="num">8</span> Complicações <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Precoces</h4>
+    <ul>
+      <li><strong>Fístula/deiscência anastomótica</strong> (maior em cólon esquerdo, urgência, contaminação).</li>
+      <li><strong>Isquemia/necrose</strong> não reconhecida → sepse; síndrome de reperfusão pós-detorção.</li>
+      <li><strong>Lesão iatrogênica</strong> (enterotomia inadvertida na adesiólise, ureter, baço na mobilização esquerda).</li>
+      <li><strong>Distúrbios hidroeletrolíticos</strong> e IRA por sequestro para o 3º espaço.</li>
+    </ul>
+    <h4>Tardias</h4>
+    <ul>
+      <li><strong>Recidiva do volvo</strong> (detorção isolada), recidiva de obstrução aderencial.</li>
+      <li><strong>Novas aderências</strong> (cirurgia gera aderências → ciclo).</li>
+      <li><strong>Estenose de anastomose</strong>; hérnia incisional; disfunção de estoma.</li>
+      <li><strong>Síndrome do intestino curto</strong> após ressecções extensas.</li>
+    </ul>
+    <div class="box mac"><span class="lbl">Prevenção de aderências</span> Membrana de ácido hialurônico-carboximetilcelulose e icodextrina reduzem incidência/recidiva de ASBO (WSES). Técnica delicada, hemostasia e mínima manipulação são o principal.</div>
+  </div>
+</details>
+
+<!-- 9 TEMAS DE PROVA -->
+<details>
+  <summary><span class="num">9</span> Temas de prova — bancas RS <span class="chev">▶</span></summary>
+  <div class="body">
+    <div class="box prova"><span class="lbl">HCPA</span> Causa #1 de obstrução do delgado = bridas; sinais de estrangulamento; valor do Gastrografin (dx + terapêutico, contraste no cólon em 24h prediz resolução).</div>
+    <div class="box prova"><span class="lbl">GHC</span> Volvo sigmoide × ceco: sigmoide detorce por endoscopia, ceco resseca. Sinal do grão de café e sua direção.</div>
+    <div class="box prova"><span class="lbl">Santa Casa POA</span> Cirurgia de Hartmann (indicações); anastomose primária × ostomia na urgência colônica esquerda.</div>
+    <div class="box prova"><span class="lbl">PUC-RS</span> RX delgado (válvulas coniventes/moedas empilhadas) × cólon (haustrações); alça fechada; causa #1 no cólon = neoplasia.</div>
+    <div class="box prova"><span class="lbl">AMRIGS</span> Após detorção do sigmoide, indicar sigmoidectomia na mesma internação (recidiva); abdome virgem obstruído → operar (não é brida).</div>
+    <div class="box prova"><span class="lbl">R3 / vascular</span> Isquemia mesentérica × obstrução com estrangulamento (dor desproporcional, lactato); verde de indocianina p/ viabilidade; síndrome de Ogilvie (pseudo-obstrução) — neostigmina.</div>
+  </div>
+</details>
+
+<!-- 10 MACETES -->
+<details>
+  <summary><span class="num">10</span> Grid de macetes & pega-ratões <span class="chev">▶</span></summary>
+  <div class="body">
+    <div class="grid">
+      <div class="gcard"><div class="t">Delgado = bridas</div><div class="d">1º brida, 2º hérnia, 3º neoplasia. Cólon: 1º neoplasia, 2º volvo, 3º diverticulite.</div></div>
+      <div class="gcard"><div class="t">Sigmoide detorce, ceco resseca</div><div class="d">Endoscopia resolve &gt;90% do sigmoide; só ~10–15% do ceco → ressecção.</div></div>
+      <div class="gcard"><div class="t">Grão de café</div><div class="d">Sigmoide → QSD; Ceco → QSE. Bico de pássaro no contraste.</div></div>
+      <div class="gcard"><div class="t">Gastrografin</div><div class="d">Chegou no cólon em 24h = vai destravar. Dx + tratamento.</div></div>
+      <div class="gcard"><div class="t">Regra das 72h</div><div class="d">NOM na brida até 72h; operar depois disso ↑ morbimortalidade.</div></div>
+      <div class="gcard"><div class="t">Abdome virgem</div><div class="d">Sem cirurgia prévia + obstruído = NÃO é brida → operar/investigar.</div></div>
+      <div class="gcard"><div class="t">Alça fechada</div><div class="d">Dois pontos travados = isquemia rápida = urgência absoluta.</div></div>
+      <div class="gcard"><div class="t">Detorceu, resseca</div><div class="d">Sigmoide só detorcido recidiva ~60%. Colectomia na mesma internação.</div></div>
+      <div class="gcard"><div class="t">Ogilvie ≠ volvo</div><div class="d">Pseudo-obstrução colônica: neostigmina/colonoscopia descompressiva; excluir mecânica antes.</div></div>
+    </div>
+    <div class="box warn"><span class="lbl">🪤 Pega-ratões</span>
+      <ul>
+        <li><strong>"Volvo de ceco trata-se por endoscopia"</strong> → FALSO, é ressecção.</li>
+        <li><strong>"Após detorcer o sigmoide, alta e acompanhamento"</strong> → FALSO, opera na mesma internação.</li>
+        <li><strong>Confundir sinais de estrangulamento com obstrução simples</strong> → o estrangulamento contraindica NOM.</li>
+        <li><strong>Íleo paralítico (funcional) ≠ obstrução mecânica</strong> → sem zona de transição; tratar a causa (eletrólitos, opioides, pós-op).</li>
+      </ul>
+    </div>
+  </div>
+</details>
+
+<footer>
+  <p><strong>Referências fixas:</strong> Sabiston — <em>Textbook of Surgery</em>; Zollinger — <em>Atlas of Surgical Operations</em>; Netter — <em>Atlas de Anatomia</em>.</p>
+  <p class="ref">Diretrizes: WSES/Bologna — ASBO (World J Emerg Surg) · ASCRS Clinical Practice Guidelines for Colonic Volvulus & ACPO (Dis Colon Rectum, 2021) · WSES consensus on sigmoid volvulus (2023) · metanálise contraste hidrossolúvel em ASBO (2024/2025).</p>
+  <p class="ref" style="margin-top:14px;color:var(--laranja)">carolzita · obstrução intestinal & volvo · full</p>
+</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Mama · Pocket</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0a0f;--card:#15151f;--card2:#1b1b28;--border:#26263a;
+    --txt:#eaeaf2;--txt2:#9a9ab0;
+    --orange:#f97316;--purple:#a855f7;--cyan:#22d3ee;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  html,body{overflow-x:hidden}
+  body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;font-size:17px;line-height:1.6;padding-bottom:40px}
+  .top{position:sticky;top:0;z-index:20;background:rgba(10,10,15,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:16px 18px 0}
+  .top h1{font-family:'Syne',sans-serif;font-weight:800;font-size:1.5rem;background:linear-gradient(110deg,#fff,var(--orange),var(--purple));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .top .sub{font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.2em;color:var(--cyan);text-transform:uppercase;margin:3px 0 12px}
+  .tabs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:12px}
+  .tabs::-webkit-scrollbar{display:none}
+  .tab{flex:0 0 auto;font-family:'JetBrains Mono',monospace;font-size:.8rem;font-weight:700;padding:9px 15px;border-radius:22px;border:1px solid var(--border);background:var(--card);color:var(--txt2);white-space:nowrap;cursor:pointer;transition:all .2s}
+  .tab.active{background:var(--orange);color:#0a0a0f;border-color:var(--orange)}
+  .page{display:none;padding:18px 18px 0;animation:fade .25s}
+  .page.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px 17px;margin-bottom:14px}
+  .card.o{border-left:4px solid var(--orange)}
+  .card.p{border-left:4px solid var(--purple)}
+  .card.c{border-left:4px solid var(--cyan)}
+  .h{font-family:'Syne',sans-serif;font-weight:700;font-size:1.12rem;margin-bottom:9px;display:flex;align-items:center;gap:9px}
+  .h.o{color:var(--orange)} .h.p{color:var(--purple)} .h.c{color:var(--cyan)}
+  .card p{margin:7px 0;color:#dcdce6}
+  .card b{color:#fff}
+  .row{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--border)}
+  .row:last-child{border-bottom:none}
+  .k{flex:0 0 40%;font-weight:700;color:#fff;font-size:.95rem}
+  .v{flex:1;color:#cfcfdc;font-size:.95rem}
+  .chip{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:8px;margin:3px 4px 3px 0}
+  .chip.o{color:var(--orange);background:rgba(249,115,22,.14)}
+  .chip.p{color:var(--purple);background:rgba(168,85,247,.14)}
+  .chip.c{color:var(--cyan);background:rgba(34,211,238,.14)}
+  
+  .gr{border-left:4px solid #34d399;background:rgba(52,211,153,.10)}
+  .gr .h{color:#34d399}
+  .step2{display:flex;flex-direction:column;gap:6px;padding:10px 0;border-bottom:1px solid var(--border)}
+  .step2:last-child{border:none}
+  .hd2{display:flex;gap:10px;align-items:flex-start}
+  .n2{flex:0 0 26px;height:26px;border-radius:8px;background:rgba(249,115,22,.15);border:1px solid rgba(249,115,22,.45);color:var(--orange);font-family:'JetBrains Mono',monospace;font-weight:700;display:grid;place-items:center;font-size:12.5px}
+  .fase2{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--orange);display:block}
+  .pq2{border-left:2px solid var(--purple);background:rgba(168,85,247,.10);border-radius:0 7px 7px 0;padding:7px 10px;font-size:13.5px;width:100%}
+  .pq2 b{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--purple);display:block}
+code{font-family:'JetBrains Mono',monospace;color:#fff;background:rgba(34,211,238,.16);padding:2px 8px;border-radius:7px;font-weight:700;font-size:.9em;display:inline-block;margin:2px 0}
+  .r{color:var(--orange);font-weight:700}
+  .l{color:var(--cyan);font-weight:700}
+  ul{list-style:none;margin:6px 0}
+  li{padding:6px 0 6px 20px;position:relative;color:#dcdce6}
+  li::before{content:"▸";position:absolute;left:0;color:var(--orange)}
+</style>
+</head>
+<body>
+<div class="top">
+  <h1>Patologia Mamária</h1>
+  <div class="sub">pocket · bloco cirúrgico</div>
+  <div class="tabs" id="tabs">
+    <div class="tab active" data-t="dx">diagnóstico</div>
+    <div class="tab" data-t="prep">preparo</div>
+    <div class="tab" data-t="steps">passos</div>
+    <div class="tab" data-t="hands">mãos</div>
+    <div class="tab" data-t="sut">suturas</div>
+    <div class="tab" data-t="cx">complicações</div>
+    <div class="tab" data-t="mn">mnemônicos</div>
+  </div>
+</div>
+
+<!-- DIAGNOSTICO -->
+<div class="page active" data-p="dx">
+  <div class="card o"><div class="h o">Avaliação tríplice</div>
+    <p><b>Clínica + Imagem + Histologia.</b> Discordância = biópsia.</p>
+  </div>
+  <div class="card o"><div class="h o">Suspeito x benigno</div>
+    <div class="row"><div class="k">Benigno</div><div class="v">móvel, fibroelástico, regular</div></div>
+    <div class="row"><div class="k">Maligno</div><div class="v">pétreo, aderido, irregular, retração</div></div>
+    <div class="row"><div class="k">Descarga</div><div class="v">espontânea, uni-ductal, uni-lateral, sangue</div></div>
+  </div>
+  <div class="card c"><div class="h c">BI-RADS</div>
+    <div class="row"><div class="k">3</div><div class="v">provavelmente benigno → <b>segue 6 meses</b></div></div>
+    <div class="row"><div class="k">4</div><div class="v">suspeito → <b>biópsia</b></div></div>
+    <div class="row"><div class="k">5</div><div class="v">&gt;95% → biópsia</div></div>
+    <div class="row"><div class="k">6</div><div class="v">CA comprovado → tratar</div></div>
+    <p><code>3 espera · 4 fura</code></p>
+  </div>
+  <div class="card p"><div class="h p">Biópsia</div>
+    <div class="row"><div class="k">Core</div><div class="v"><b>padrão-ouro</b>: histologia + IHQ</div></div>
+    <div class="row"><div class="k">PAAF</div><div class="v">só citologia; não separa in situ/invasivo</div></div>
+    <div class="row"><div class="k">Mamotomia</div><div class="v">microcalcificações</div></div>
+    <div class="row"><div class="k">Impalpável</div><div class="v">agulhamento + RX da peça</div></div>
+  </div>
+  <div class="card p"><div class="h p">Subtipo → terapia</div>
+    <div class="row"><div class="k">Luminal (RE+)</div><div class="v">hormonioterapia</div></div>
+    <div class="row"><div class="k">HER2+</div><div class="v">trastuzumabe + QT</div></div>
+    <div class="row"><div class="k">Triplo-neg</div><div class="v">só QT · pior · BRCA1</div></div>
+  </div>
+</div>
+
+<!-- PREPARO -->
+<div class="page" data-p="prep">
+  <div class="card o"><div class="h o">Posição</div>
+    <ul>
+      <li>Decúbito dorsal, cabeceira leve elevada</li>
+      <li>Braço abduzido <b>90°</b> (não mais → plexo)</li>
+      <li>Coxim sob o hemitórax operado</li>
+    </ul>
+  </div>
+  <div class="card c"><div class="h c">Preparo</div>
+    <ul>
+      <li>Antissepsia: mama + axila + clavícula + tórax</li>
+      <li>Anestesia geral</li>
+      <li>ATB: cefazolina se implante/linfadenectomia extensa</li>
+      <li>Sentinela: Tc-99m prévio + azul patente</li>
+    </ul>
+  </div>
+</div>
+
+<!-- STEPS -->
+<div class="page" data-p="steps">
+  <div class="card gr"><div class="h">🟢 tradução simples</div>
+    <p><b>Conservadora:</b> não é "tirar menos" — é tirar o suficiente com margem livre e confiar na RT pro resto. Todo gesto existe pra responder uma pergunta: <b>a margem está livre?</b><br>
+    <b>Mastectomia:</b> aqui não há margem a calcular — sobra decidir quanto do peitoral vai junto e como não lesar os nervos da axila.</p>
+  </div>
+
+  <div class="card o"><div class="h o">Conservadora — 6 passos</div>
+    <div class="step2"><div class="hd2"><div class="n2">1</div><div><span class="fase2">planejamento</span>Marcar a lesão (agulhamento se impalpável)</div></div>
+    <div class="pq2"><b>por quê</b>Lesão pequena some de vista com o campo aberto — marcar é a única garantia de operar no lugar certo.</div></div>
+
+    <div class="step2"><div class="hd2"><div class="n2">2</div><div><span class="fase2">acesso</span>Incisão nas <b>linhas de Langer</b></div></div>
+    <div class="pq2"><b>por quê</b>Cicatriz fecha sob menos tensão e amadurece mais fina — relevante porque a paciente vê essa cicatriz todo dia.</div></div>
+
+    <div class="step2"><div class="hd2"><div class="n2">3</div><div><span class="fase2">margem que decide tudo</span>Dissecar ~1 cm até a <b>fáscia peitoral</b></div></div>
+    <div class="pq2"><b>por quê</b>Fáscia = plano profundo <b>inequivocamente livre</b>, sem adivinhar onde o tumor termina no tecido mole.</div></div>
+
+    <div class="step2"><div class="hd2"><div class="n2">4</div><div><span class="fase2">evita reoperar</span>Orientar a peça com fios (curto=superior, longo=lateral)</div></div>
+    <div class="pq2"><b>por quê</b>Margem comprometida no laudo → volta <b>naquele</b> quadrante pra ampliar, sem reoperar a cavidade inteira "no escuro".</div></div>
+
+    <div class="step2"><div class="hd2"><div class="n2">5</div><div><span class="fase2">confirmação</span>RX da peça se microcalcificação</div></div>
+    <div class="pq2"><b>por quê</b>Única forma de saber, ainda na sala, que a lesão mamográfica está de fato dentro da peça.</div></div>
+
+    <div class="step2"><div class="hd2"><div class="n2">6</div><div><span class="fase2">planejamento futuro</span>Clipe no leito + aproximar parênquima + RT sempre</div></div>
+    <div class="pq2"><b>por quê</b>Clipe é o alvo da RT depois — sem ele, o radioterapeuta estima às cegas num tecido já cicatrizado.</div></div>
+
+    <p><b>Margem:</b> invasivo = sem tumor na tinta · CDIS ≥ 2 mm</p>
+  </div>
+
+  <div class="card p"><div class="h p">Mastectomia (Madden) — 5 passos</div>
+    <div class="step2"><div class="hd2"><div class="n2">1</div><div><span class="fase2">acesso</span>Incisão elíptica (Stewart) c/ CAP + cicatriz de biópsia prévia</div></div>
+    <div class="pq2"><b>por quê</b>Remove junto qualquer pele que já recebeu implante tumoral.</div></div>
+
+    <div class="step2"><div class="hd2"><div class="n2">2</div><div><span class="fase2">crítico — equilíbrio</span>Retalhos (nem fino → necrose, nem grosso → deixa glândula)</div></div>
+    <div class="pq2"><b>por quê</b>Fino perde a rede subdérmica; grosso deixa tecido residual. Erro comum: fino demais por medo de deixar tumor.</div></div>
+
+    <div class="step2"><div class="hd2"><div class="n2">3</div><div><span class="fase2">descolamento</span>Glândula do peitoral, <b>medial → lateral</b>, sempre a mesma direção</div></div>
+    <div class="pq2"><b>por quê</b>Mudar de direção no meio é onde se perde o plano avascular e começa a sangrar do músculo.</div></div>
+
+    <div class="step2"><div class="hd2"><div class="n2">4</div><div><span class="fase2">axilar — os nervos</span>Linfadenectomia <b>I–II</b> · preservar torácico longo, toracodorsal, intercostobraquial</div></div>
+    <div class="pq2"><b>por quê</b>Torácico longo → <b>escápula alada</b> · toracodorsal → fraqueza de adução/rotação interna · intercostobraquial (sacrificado com mais frequência) → parestesia medial do braço, o "preço" mais aceito.</div></div>
+
+    <div class="step2"><div class="hd2"><div class="n2">5</div><div><span class="fase2">encerramento</span>Drenos aspirativos + fechar sem tensão</div></div>
+    <div class="pq2"><b>por quê</b>Espaço morto acumula linfa continuamente — dreno evita virar seroma, a complicação mais comum de toda a mama.</div></div>
+  </div>
+
+  <div class="card c"><div class="h c">Mastectomias</div>
+    <div class="row"><div class="k">Madden</div><div class="v">mantém os 2 peitorais</div></div>
+    <div class="row"><div class="k">Patey</div><div class="v">tira o menor</div></div>
+    <div class="row"><div class="k">Halsted</div><div class="v">tira os 2</div></div>
+  </div>
+  <div class="card p"><div class="h p">Sentinela / Z0011</div>
+    <p>Axila clínica negativa → BLS. Negativo = <b>sem esvaziamento</b>.</p>
+    <p><b>Z0011:</b> conservadora + RT, T1-T2, <b>1–2 sentinelas +</b> → pode omitir linfadenectomia.</p>
+  </div>
+</div>
+
+<!-- HANDS -->
+<div class="page" data-p="hands">
+  <div class="card o"><div class="h o">Mão direita × esquerda</div>
+    <p style="color:var(--txt2);font-size:.85rem">destro: <span class="r">direita executa</span> · <span class="l">esquerda expõe</span></p>
+    <div class="row"><div class="k">Incisão</div><div class="v"><span class="r">bisturi</span> / <span class="l">contra-tração</span></div></div>
+    <div class="row"><div class="k">Retalhos</div><div class="v"><span class="r">cautério/Metz</span> / <span class="l">Allis</span></div></div>
+    <div class="row"><div class="k">Descolar</div><div class="v"><span class="r">cautério</span> / <span class="l">Kocher + afastador</span></div></div>
+    <div class="row"><div class="k">Axila</div><div class="v"><span class="r">Metz</span> / <span class="l">Farabeuf/Gosset</span></div></div>
+    <div class="row"><div class="k">Ligadura</div><div class="v"><span class="r">nó/porta-agulha</span> / <span class="l">hemostática</span></div></div>
+    <div class="row"><div class="k">Sutura</div><div class="v"><span class="r">Mayo-Hegar</span> / <span class="l">dente-de-rato</span></div></div>
+  </div>
+</div>
+
+<!-- SUTURAS -->
+<div class="page" data-p="sut">
+  <div class="card o"><div class="h o">Fios</div>
+    <div class="row"><div class="k">Ligadura</div><div class="v">seda/algodão 2-0/3-0</div></div>
+    <div class="row"><div class="k">Parênquima</div><div class="v">Vicryl 2-0/3-0</div></div>
+    <div class="row"><div class="k">Subcutâneo</div><div class="v">Vicryl 3-0/4-0</div></div>
+    <div class="row"><div class="k">Pele</div><div class="v">Náilon 3-0/4-0 ou Monocryl 4-0</div></div>
+    <div class="row"><div class="k">Dreno</div><div class="v">Náilon 2-0/3-0</div></div>
+  </div>
+  <div class="card c"><div class="h c">Regra</div>
+    <p><code>Vicryl por dentro · Náilon por fora</code></p>
+  </div>
+</div>
+
+<!-- COMPLICACOES -->
+<div class="page" data-p="cx">
+  <div class="card o"><div class="h o">Complicações</div>
+    <ul>
+      <li><b>Seroma</b> — a mais comum (drenos/punção)</li>
+      <li><b>Linfedema</b> — do esvaziamento (por isso BLS)</li>
+      <li>Hematoma · infecção</li>
+      <li>Necrose de retalho (fino/tabagismo)</li>
+      <li>Torácico longo → <b>escápula alada</b></li>
+      <li>Intercostobraquial → parestesia braço medial</li>
+      <li>Deiscência · dor crônica</li>
+    </ul>
+  </div>
+  <div class="card p"><div class="h p">Campeãs de prova</div>
+    <p>Mais comum = <b>seroma</b>. Mais temida a longo prazo = <b>linfedema</b>.</p>
+  </div>
+</div>
+
+<!-- MNEMONICOS -->
+<div class="page" data-p="mn">
+  <div class="card c"><div class="h c">Mnemônicos</div>
+    <p><code>3 espera · 4 fura</code> BI-RADS</p>
+    <p><code>Berg: Lateral · Posterior · Medial</code></p>
+    <p><code>Madden mantém 2 · Patey perde o pequeno · Halsted leva tudo</code></p>
+    <p><code>Longo → escápuLa aLada</code></p>
+    <p><code>Osso primeiro</code> (metástase)</p>
+    <p><code>Core = histo+IHQ · PAAF só citologia</code></p>
+    <p><code>Lobular = fila indiana + perde E-caderina</code></p>
+  </div>
+  <div class="card p"><div class="h p">Checklist RS</div>
+    <p><span class="chip o">BI-RADS</span><span class="chip o">tríplice</span><span class="chip p">Z0011</span><span class="chip p">subtipo→terapia</span><span class="chip c">Berg</span><span class="chip c">nervos</span><span class="chip o">Madden/Patey</span><span class="chip p">descarga</span><span class="chip c">margens</span><span class="chip o">seroma/linfedema</span><span class="chip p">T4d×mastite</span></p>
+  </div>
+</div>
+
+<script>
+  const tabs=document.querySelectorAll('.tab');
+  const pages=document.querySelectorAll('.page');
+  tabs.forEach(t=>t.addEventListener('click',()=>{
+    tabs.forEach(x=>x.classList.remove('active'));
+    pages.forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    document.querySelector('.page[data-p="'+t.dataset.t+'"]').classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+    t.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'});
+  }));
+</script>
+</body>
+</html>

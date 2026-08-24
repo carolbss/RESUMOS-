@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resposta Metabólica ao Trauma — carolzita</title>
+<style>
+  :root{
+    --bg:#0f1419;
+    --bg2:#161c24;
+    --bg3:#1d2530;
+    --border:#2a3543;
+    --text:#e6edf3;
+    --muted:#93a1b0;
+    --orange:#ff9e42;   /* conteúdo */
+    --purple:#b46cff;   /* alto rendimento / banca */
+    --cyan:#3ddbd0;     /* mnemônico */
+    --orange-bg:rgba(255,158,66,.08);
+    --purple-bg:rgba(180,108,255,.10);
+    --cyan-bg:rgba(61,219,208,.09);
+    --red:#ff6b6b;
+    --green:#5dd39e;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:var(--bg);color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    line-height:1.55;padding:0 0 60px;
+  }
+  header{
+    background:linear-gradient(135deg,#1a2230,#0f1419);
+    border-bottom:2px solid var(--orange);
+    padding:26px 20px 20px;text-align:center;
+  }
+  header h1{margin:0;font-size:1.5rem;color:var(--orange);letter-spacing:.3px}
+  header .sub{color:var(--muted);font-size:.82rem;margin-top:6px}
+  .wrap{max-width:920px;margin:0 auto;padding:18px 16px}
+  .legend{
+    display:flex;gap:10px;flex-wrap:wrap;justify-content:center;
+    margin:14px 0 6px;font-size:.72rem
+  }
+  .legend span{padding:4px 10px;border-radius:20px;border:1px solid var(--border)}
+  .lo{color:var(--orange);background:var(--orange-bg)}
+  .lp{color:var(--purple);background:var(--purple-bg)}
+  .lc{color:var(--cyan);background:var(--cyan-bg)}
+
+  details{
+    background:var(--bg2);border:1px solid var(--border);
+    border-radius:12px;margin:12px 0;overflow:hidden;
+  }
+  details[open]{border-color:var(--orange)}
+  summary{
+    cursor:pointer;padding:14px 16px;font-weight:600;font-size:1.02rem;
+    color:var(--orange);list-style:none;display:flex;align-items:center;gap:10px;
+    user-select:none;
+  }
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:"▸";color:var(--orange);transition:.2s;font-size:.9rem}
+  details[open] summary::before{transform:rotate(90deg)}
+  .body{padding:2px 18px 18px}
+  .body p{margin:8px 0}
+  .simple{color:var(--muted);font-style:italic}
+  h4{color:var(--orange);margin:16px 0 6px;font-size:.98rem;
+     border-left:3px solid var(--orange);padding-left:9px}
+
+  /* callouts */
+  .exam{
+    background:var(--purple-bg);border:1px solid var(--purple);
+    border-radius:9px;padding:11px 13px;margin:12px 0;font-size:.9rem;color:#e9dcff
+  }
+  .exam b{color:var(--purple)}
+  .banca{
+    display:inline-block;background:var(--purple);color:#0f1419;
+    font-size:.66rem;font-weight:700;padding:1px 7px;border-radius:5px;margin-right:5px;
+    vertical-align:middle
+  }
+  .mnem{
+    background:var(--cyan-bg);border:1px solid var(--cyan);
+    border-radius:9px;padding:11px 13px;margin:12px 0;font-size:.9rem;color:#d4fbf7
+  }
+  .mnem b{color:var(--cyan)}
+
+  table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.84rem}
+  th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top}
+  th{background:var(--bg3);color:var(--orange);font-weight:600}
+  td .up{color:var(--red);font-weight:700}
+  td .down{color:var(--cyan);font-weight:700}
+  .tag-ebb{color:#7fb0ff}
+  .tag-flow{color:var(--orange)}
+
+  ul{margin:6px 0;padding-left:20px}
+  li{margin:4px 0}
+  .pill{display:inline-block;padding:2px 8px;border-radius:6px;font-size:.75rem;
+        background:var(--bg3);border:1px solid var(--border);margin:2px 3px 2px 0}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:640px){.grid2{grid-template-columns:1fr}}
+  .card{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:12px}
+  .card h5{margin:0 0 6px;color:var(--orange);font-size:.9rem}
+  .foot{text-align:center;color:var(--muted);font-size:.72rem;margin-top:26px}
+</style>
+</head>
+<body>
+<header>
+  <h1>Resposta Metabólica ao Trauma</h1>
+  <div class="sub">Modelo carolzita · Sabiston · Zollinger · Fisiologia cirúrgica · Provas RS</div>
+  <div class="legend">
+    <span class="lo">● conteúdo</span>
+    <span class="lp">● alto rendimento (banca)</span>
+    <span class="lc">● mnemônico</span>
+  </div>
+</header>
+
+<div class="wrap">
+
+<!-- 1 CONCEITO -->
+<details open>
+  <summary>1 · Conceito e visão geral</summary>
+  <div class="body">
+    <p>Conjunto de alterações <b>neuroendócrinas, metabólicas, imunológicas e inflamatórias</b> sistêmicas desencadeadas por trauma, cirurgia, queimadura, sepse ou qualquer agressão. Objetivo evolutivo: <b>manter a perfusão, mobilizar substratos energéticos e permitir a cicatrização/sobrevivência</b>.</p>
+    <p class="simple">(É o "modo de emergência" do corpo: ele quebra os próprios estoques — açúcar, músculo e gordura — para ter energia e água enquanto se conserta.)</p>
+    <h4>Estímulos aferentes que disparam a resposta</h4>
+    <ul>
+      <li><b>Hipovolemia</b> (barorreceptores) — estímulo mais potente</li>
+      <li>Dor / lesão tecidual (aferências nociceptivas)</li>
+      <li>Hipóxia, acidose, hipoglicemia</li>
+      <li>Infecção / toxinas (LPS)</li>
+      <li>Alterações de temperatura, medo/ansiedade, jejum</li>
+    </ul>
+    <div class="mnem"><b>Mnemônico — gatilhos "DHI-IT":</b> <b>D</b>or · <b>H</b>ipovolemia · <b>I</b>nfecção · <b>I</b>squemia/hipóxia · <b>T</b>emperatura. Todos convergem para o hipotálamo.</div>
+  </div>
+</details>
+
+<!-- 2 FASES -->
+<details>
+  <summary>2 · Fases da resposta (Cuthbertson & Moore)</summary>
+  <div class="body">
+    <h4>Cuthbertson (1932) — Ebb & Flow</h4>
+    <table>
+      <tr><th>Característica</th><th class="tag-ebb">EBB (refluxo)</th><th class="tag-flow">FLOW (fluxo)</th></tr>
+      <tr><td>Momento</td><td>Primeiras <b>24–48 h</b></td><td>Após ressuscitação (dias 3–10)</td></tr>
+      <tr><td>Metabolismo</td><td><b>Hipo</b>metabólico</td><td><b>Hiper</b>metabólico</td></tr>
+      <tr><td>Consumo de O₂</td><td><span class="down">↓</span></td><td><span class="up">↑</span></td></tr>
+      <tr><td>Débito cardíaco</td><td><span class="down">↓</span></td><td><span class="up">↑</span></td></tr>
+      <tr><td>Temperatura</td><td><span class="down">↓</span> (tende à hipotermia)</td><td><span class="up">↑</span> (febre)</td></tr>
+      <tr><td>Glicemia</td><td><span class="up">↑</span> (por catecolaminas)</td><td><span class="up">↑</span> ("diabetes do trauma")</td></tr>
+      <tr><td>Prioridade</td><td>Estabilidade hemodinâmica</td><td>Catabolismo + reparo</td></tr>
+    </table>
+    <p class="simple">(EBB = o corpo "abaixa a marcha" para não desperdiçar energia e segurar a pressão. FLOW = depois de estabilizado, ele acelera tudo para se reconstruir.)</p>
+
+    <h4>Moore — 4 fases (evolução clínica)</h4>
+    <table>
+      <tr><th>Fase</th><th>Período</th><th>Marca</th></tr>
+      <tr><td>1. Adrenérgico-corticoide (lesão/catabólica)</td><td>Dias 1–4</td><td>Catabolismo, balanço N⁻</td></tr>
+      <tr><td>2. Reversão corticoide (ponto de virada)</td><td>Dias 3–7</td><td>Transição, diurese</td></tr>
+      <tr><td>3. Anabólica</td><td>Semanas 2–5</td><td>Síntese proteica, balanço N⁺</td></tr>
+      <tr><td>4. Ganho de gordura</td><td>Semanas–meses</td><td>Reposição de tecido adiposo</td></tr>
+    </table>
+    <div class="exam"><span class="banca">HCPA</span><span class="banca">AMRIGS</span><b>Alto rendimento:</b> diferenciar EBB × FLOW e a ordem das 4 fases de Moore. Pegadinha clássica: na fase EBB o metabolismo está <b>reduzido</b> (não elevado), apesar da glicemia alta.</div>
+    <div class="mnem"><b>Mnemônico — Moore "Lá Vou Anabolizar Gordura":</b> <b>L</b>esão → <b>V</b>irada (reversão) → <b>A</b>nabólica → <b>G</b>ordura.</div>
+  </div>
+</details>
+
+<!-- 3 NEUROENDOCRINO -->
+<details>
+  <summary>3 · Resposta neuroendócrina (eixo e mediadores)</summary>
+  <div class="body">
+    <p>Aferências → <b>hipotálamo</b> → ativação do eixo <b>hipotálamo-hipófise-adrenal (HHA)</b> e do <b>sistema nervoso simpático</b>. Predomínio de hormônios <b>contrarreguladores/catabólicos</b>.</p>
+    <div class="grid2">
+      <div class="card">
+        <h5>Via simpático-adrenal</h5>
+        <p>Medula adrenal + terminações simpáticas → <b>adrenalina e noradrenalina</b> → taquicardia, vasoconstrição, glicogenólise, gliconeogênese, lipólise e <b>resistência à insulina</b>.</p>
+      </div>
+      <div class="card">
+        <h5>Eixo HHA</h5>
+        <p>CRH → ACTH → <b>cortisol</b>. Gliconeogênese, proteólise, lipólise, ação permissiva às catecolaminas, retenção de Na⁺/água e efeito anti-inflamatório.</p>
+      </div>
+    </div>
+    <p class="simple">(O cérebro manda dois "telegramas de alarme": um rápido pelos nervos, jogando adrenalina, e um mais duradouro pelos hormônios, jogando cortisol.)</p>
+    <div class="exam"><span class="banca">GHC</span><span class="banca">PUC-RS</span><b>Alto rendimento:</b> o <b>cortisol</b> tem efeito <b>permissivo</b> — sozinho é fraco, mas potencializa a ação das catecolaminas. Sua secreção perde o ciclo circadiano no trauma grave.</div>
+  </div>
+</details>
+
+<!-- 4 HORMONIOS -->
+<details>
+  <summary>4 · Perfil hormonal (sobe × desce)</summary>
+  <div class="body">
+    <table>
+      <tr><th>Hormônio</th><th>Variação</th><th>Efeito principal</th></tr>
+      <tr><td>Catecolaminas</td><td><span class="up">↑↑</span></td><td>Glicogenólise, gliconeogênese, lipólise, resistência insulínica</td></tr>
+      <tr><td>Cortisol</td><td><span class="up">↑↑</span></td><td>Gliconeogênese, proteólise, lipólise, permissivo, anti-inflamatório</td></tr>
+      <tr><td>Glucagon</td><td><span class="up">↑</span></td><td>Glicogenólise e gliconeogênese hepática → hiperglicemia</td></tr>
+      <tr><td>ADH (vasopressina)</td><td><span class="up">↑</span></td><td>Retenção de água livre, vasoconstrição</td></tr>
+      <tr><td>Aldosterona (SRAA)</td><td><span class="up">↑</span></td><td>Retenção de Na⁺/água, excreção de K⁺</td></tr>
+      <tr><td>GH</td><td><span class="up">↑</span></td><td>Lipólise, síntese proteica, resistência insulínica</td></tr>
+      <tr><td>Insulina (fase ebb)</td><td><span class="down">↓</span> → normal/↑ c/ resistência</td><td>Hiperglicemia mesmo com insulina presente</td></tr>
+      <tr><td>T3 / T4 (T3 baixo)</td><td><span class="down">↓</span></td><td>Síndrome do eutireóideo doente</td></tr>
+      <tr><td>Hormônios sexuais (testo/estrógeno)</td><td><span class="down">↓</span></td><td>Contribui p/ catabolismo</td></tr>
+    </table>
+    <div class="mnem"><b>Mnemônico — quem SOBE ("4 do catabolismo + retenção"):</b> <b>Ca</b>tecolaminas · <b>Co</b>rtisol · <b>Glu</b>cagon · <b>GH</b> (contrarreguladores) + <b>ADH e Aldosterona</b> (retêm água/sódio). Quem <b>desce</b>: <b>Insulina, T3, sexuais</b> → "<b>IST</b>" caem.</div>
+    <div class="exam"><span class="banca">Santa Casa POA</span><span class="banca">AMRIGS</span><b>Alto rendimento:</b> a tríade contrarreguladora <b>cortisol + glucagon + catecolaminas</b> é a principal responsável pela hiperglicemia do trauma.</div>
+  </div>
+</details>
+
+<!-- 5 METABOLICO -->
+<details>
+  <summary>5 · Alterações metabólicas dos substratos</summary>
+  <div class="body">
+    <h4>Carboidratos — hiperglicemia</h4>
+    <p>↑ <b>gliconeogênese</b> hepática + ↑ glicogenólise + <b>resistência periférica à insulina</b>. A glicose alimenta cérebro, hemácias, tecido de cicatrização e células imunes.</p>
+
+    <h4>Proteínas — proteólise e balanço nitrogenado negativo</h4>
+    <p>Degradação de proteína muscular esquelética → liberação de aminoácidos (destaque para <b>alanina</b> e <b>glutamina</b>). A alanina abastece a gliconeogênese (<b>ciclo glicose-alanina</b> e ciclo de Cori); há síntese de proteínas de fase aguda no fígado. Resultado: <b>balanço nitrogenado negativo</b> e perda de massa magra.</p>
+    <p class="simple">(O corpo "canibaliza" o próprio músculo para virar açúcar e fazer proteínas de defesa — por isso o paciente grave emagrece rápido.)</p>
+
+    <h4>Lipídeos — lipólise (fonte energética principal do flow)</h4>
+    <p>↑ lipólise → <b>ácidos graxos livres</b> (principal combustível na fase de fluxo) + <b>glicerol</b> (substrato de gliconeogênese).</p>
+
+    <div class="exam"><span class="banca">HCPA</span><span class="banca">PUC-RS</span><b>Alto rendimento:</b> a <b>glutamina</b> é o aminoácido mais abundante liberado pelo músculo e combustível preferencial de <b>enterócitos e células imunes</b>; torna-se "condicionalmente essencial" no estresse. Fonte energética predominante na fase de fluxo = <b>gordura (AGL)</b>, não glicose.</div>
+    <div class="mnem"><b>Mnemônico — "GAL do estresse":</b> <b>G</b>licose ↑ · <b>A</b>minoácidos mobilizados (alanina/glutamina) · <b>L</b>ipídeos como combustível. Todos os três estoques são consumidos.</div>
+  </div>
+</details>
+
+<!-- 6 INFLAMATORIO -->
+<details>
+  <summary>6 · Resposta inflamatória e imune</summary>
+  <div class="body">
+    <h4>SIRS (≥ 2 critérios)</h4>
+    <ul>
+      <li>Temperatura &gt; 38 °C ou &lt; 36 °C</li>
+      <li>FC &gt; 90 bpm</li>
+      <li>FR &gt; 20 irpm ou PaCO₂ &lt; 32 mmHg</li>
+      <li>Leucócitos &gt; 12.000 ou &lt; 4.000, ou &gt; 10% bastões</li>
+    </ul>
+    <h4>Citocinas</h4>
+    <div class="grid2">
+      <div class="card">
+        <h5>Pró-inflamatórias</h5>
+        <p><b>TNF-α, IL-1, IL-6, IL-8</b>. A <b>IL-6</b> é o principal indutor da resposta de fase aguda e se correlaciona com a gravidade.</p>
+      </div>
+      <div class="card">
+        <h5>Anti-inflamatórias (CARS)</h5>
+        <p><b>IL-4, IL-10, IL-13</b>. Resposta compensatória; se exagerada → imunossupressão e infecção.</p>
+      </div>
+    </div>
+    <h4>Proteínas de fase aguda (fígado)</h4>
+    <table>
+      <tr><th>Positivas (↑)</th><th>Negativas (↓)</th></tr>
+      <tr><td>PCR, fibrinogênio, ferritina, haptoglobina, ceruloplasmina, α1-antitripsina</td><td>Albumina, transferrina, pré-albumina</td></tr>
+    </table>
+    <div class="exam"><span class="banca">GHC</span><span class="banca">Santa Casa POA</span><b>Alto rendimento:</b> <b>IL-6</b> = principal mediador da fase aguda e marcador de gravidade; <b>PCR</b> é a proteína de fase aguda positiva mais cobrada; <b>albumina/pré-albumina</b> são reagentes <b>negativos</b> (caem — logo, pré-albumina baixa não é só desnutrição no agudo).</div>
+    <div class="mnem"><b>Mnemônico — "TIL do fogo" (pró-inflamatórias):</b> <b>T</b>NF-α · <b>I</b>L-1 · <b>IL-6</b> · IL-8. E "os que apagam": <b>IL-10</b> lidera a CARS.</div>
+  </div>
+</details>
+
+<!-- 7 MODULADORES -->
+<details>
+  <summary>7 · Fatores que modulam / atenuam a resposta</summary>
+  <div class="body">
+    <p>A intensidade é proporcional à <b>magnitude e duração da agressão</b>. Reduzem a resposta:</p>
+    <ul>
+      <li><b>Analgesia/anestesia</b> — bloqueio de aferências; <b>peridural</b> atenua a resposta neuroendócrina</li>
+      <li><b>Ressuscitação volêmica precoce</b></li>
+      <li><b>Nutrição enteral precoce</b> — reduz catabolismo e translocação bacteriana</li>
+      <li><b>Controle da temperatura</b> (evitar hipotermia) e da <b>infecção</b></li>
+      <li>Protocolos <b>ERAS/ACERTO</b> — jejum abreviado, cirurgia minimamente invasiva, mobilização precoce</li>
+    </ul>
+    <div class="exam"><span class="banca">PUC-RS</span><span class="banca">AMRIGS</span><b>Alto rendimento:</b> analgesia peridural, videolaparoscopia e protocolos ERAS/ACERTO <b>atenuam</b> a resposta metabólica ao trauma cirúrgico. Jejum prolongado a <b>intensifica</b>.</div>
+  </div>
+</details>
+
+<!-- 8 CLINICA -->
+<details>
+  <summary>8 · Implicações clínicas e nutrição</summary>
+  <div class="body">
+    <ul>
+      <li><b>Nutrição enteral precoce</b> (&lt; 24–48 h) sempre que possível — trato funcionante</li>
+      <li><b>Controle glicêmico</b> no crítico: alvo ~140–180 mg/dL (evitar hipoglicemia e hiperglicemia extrema)</li>
+      <li>Aporte proteico generoso para atenuar o balanço nitrogenado negativo</li>
+      <li>Imunonutrição (glutamina, arginina, ômega-3): benefício <b>controverso</b>, individualizar</li>
+      <li>Não "hiperalimentar" na fase catabólica aguda → risco de complicações metabólicas</li>
+    </ul>
+    <p class="simple">(Alimentar cedo pela barriga mantém o intestino "vivo" e diminui o consumo do músculo; mas jogar comida demais no auge do estresse atrapalha.)</p>
+  </div>
+</details>
+
+<!-- 9 PROVA -->
+<details>
+  <summary>9 · Temas de prova — RS (resumo dos ganchos)</summary>
+  <div class="body">
+    <div class="exam">
+      <b>Checklist de pegadinhas mais cobradas:</b>
+      <ul>
+        <li>EBB = hipometabólico / FLOW = hipermetabólico (não trocar)</li>
+        <li>Ordem de Moore: lesão → reversão → anabólica → gordura</li>
+        <li>Sobem: catecolaminas, cortisol, glucagon, GH, ADH, aldosterona</li>
+        <li>Descem: insulina (ebb), T3/T4, hormônios sexuais</li>
+        <li>Hiperglicemia = cortisol + glucagon + catecolaminas + resistência insulínica</li>
+        <li>IL-6 = principal mediador de fase aguda / marcador de gravidade</li>
+        <li>Reagentes de fase aguda negativos: albumina, transferrina, pré-albumina</li>
+        <li>Glutamina = AA mais liberado do músculo, combustível do enterócito</li>
+        <li>Combustível predominante no flow = gordura (AGL)</li>
+        <li>Peridural / ERAS / VLP atenuam a resposta</li>
+      </ul>
+    </div>
+    <p style="font-size:.78rem;color:var(--muted)">Bancas de referência: HCPA · GHC · Santa Casa POA · PUC-RS · AMRIGS.</p>
+  </div>
+</details>
+
+<!-- 10 MNEMONICOS -->
+<details>
+  <summary>10 · Grade de mnemônicos</summary>
+  <div class="body">
+    <div class="grid2">
+      <div class="mnem"><b>Gatilhos — DHI-IT:</b> Dor, Hipovolemia, Infecção, Isquemia, Temperatura.</div>
+      <div class="mnem"><b>Moore — "Lá Vou Anabolizar Gordura":</b> Lesão, Virada, Anabólica, Gordura.</div>
+      <div class="mnem"><b>Sobem:</b> Ca–Co–Glu–GH + ADH/Aldo. <b>Descem — "IST":</b> Insulina, T3, Sexuais.</div>
+      <div class="mnem"><b>Substratos — GAL:</b> Glicose ↑, Aminoácidos mobilizados, Lipídeos como combustível.</div>
+      <div class="mnem"><b>Citocinas do fogo — TIL:</b> TNF-α, IL-1, IL-6 (+ IL-8). Apaga: IL-10.</div>
+      <div class="mnem"><b>Fase aguda negativa — "APT cai":</b> Albumina, Pré-albumina, Transferrina.</div>
+    </div>
+  </div>
+</details>
+
+<!-- 11 QUESTOES -->
+<details>
+  <summary>11 · Banco de questões (estilo bancas RS)</summary>
+  <div class="body">
+    <p style="font-size:.82rem;color:var(--muted)">6 questões no formato residência. Toque em <b style="color:var(--cyan)">Ver gabarito</b> para conferir a resposta comentada.</p>
+
+    <!-- Q1 -->
+    <div class="card" style="margin:14px 0">
+      <p><b style="color:var(--purple)">Q1.</b> Sobre a fase de refluxo (<i>ebb</i>) da resposta metabólica ao trauma, assinale a correta:</p>
+      <ul style="list-style:none;padding-left:0;font-size:.86rem">
+        <li>A) Hipermetabolismo com aumento do consumo de O₂.</li>
+        <li>B) Ocorre entre o 3º e o 10º dia após a lesão.</li>
+        <li>C) Cursa com ↓ débito cardíaco e tendência à hipotermia, apesar de hiperglicemia.</li>
+        <li>D) Predomínio da insulina sobre os hormônios contrarreguladores.</li>
+        <li>E) É a fase anabólica de recuperação muscular.</li>
+      </ul>
+      <details style="background:var(--bg3);border-color:var(--cyan)">
+        <summary style="color:var(--cyan);font-size:.9rem">Ver gabarito</summary>
+        <div class="body" style="font-size:.86rem"><b style="color:var(--cyan)">Resposta: C.</b> A fase ebb (primeiras 24–48 h) é <b>hipometabólica</b> — ↓ DC, ↓ consumo de O₂ e tendência à hipotermia —, mas cursa com hiperglicemia por descarga de catecolaminas. As demais descrevem a fase flow (A, B) ou fases posteriores de Moore (E).</div>
+      </details>
+    </div>
+
+    <!-- Q2 -->
+    <div class="card" style="margin:14px 0">
+      <p><b style="color:var(--purple)">Q2.</b> Todos os hormônios abaixo estão <b>aumentados</b> na resposta ao trauma, EXCETO:</p>
+      <ul style="list-style:none;padding-left:0;font-size:.86rem">
+        <li>A) Cortisol</li>
+        <li>B) Glucagon</li>
+        <li>C) Catecolaminas</li>
+        <li>D) Insulina</li>
+        <li>E) Hormônio antidiurético (ADH)</li>
+      </ul>
+      <details style="background:var(--bg3);border-color:var(--cyan)">
+        <summary style="color:var(--cyan);font-size:.9rem">Ver gabarito</summary>
+        <div class="body" style="font-size:.86rem"><b style="color:var(--cyan)">Resposta: D.</b> Na fase ebb a <b>insulina está reduzida</b>; mesmo quando retorna, há resistência periférica. Os demais (cortisol, glucagon, catecolaminas, ADH) são hormônios de estresse elevados.</div>
+      </details>
+    </div>
+
+    <!-- Q3 -->
+    <div class="card" style="margin:14px 0">
+      <p><b style="color:var(--purple)">Q3.</b> A hiperglicemia do traumatizado grave decorre principalmente de:</p>
+      <ul style="list-style:none;padding-left:0;font-size:.86rem">
+        <li>A) Aumento isolado da secreção de insulina.</li>
+        <li>B) Ação combinada de cortisol, glucagon e catecolaminas com resistência periférica à insulina.</li>
+        <li>C) Redução da gliconeogênese hepática.</li>
+        <li>D) Deficiência absoluta de insulina por destruição pancreática.</li>
+        <li>E) Aumento da captação periférica de glicose.</li>
+      </ul>
+      <details style="background:var(--bg3);border-color:var(--cyan)">
+        <summary style="color:var(--cyan);font-size:.9rem">Ver gabarito</summary>
+        <div class="body" style="font-size:.86rem"><b style="color:var(--cyan)">Resposta: B.</b> É a "diabetes do trauma": tríade contrarreguladora (cortisol + glucagon + catecolaminas) elevando gliconeogênese e glicogenólise, somada à resistência insulínica periférica.</div>
+      </details>
+    </div>
+
+    <!-- Q4 -->
+    <div class="card" style="margin:14px 0">
+      <p><b style="color:var(--purple)">Q4.</b> Sobre a resposta inflamatória ao trauma, assinale a correta:</p>
+      <ul style="list-style:none;padding-left:0;font-size:.86rem">
+        <li>A) A IL-10 é a principal citocina pró-inflamatória.</li>
+        <li>B) A albumina é reagente de fase aguda positivo, elevando-se precocemente.</li>
+        <li>C) A IL-6 é o principal mediador da fase aguda e correlaciona-se com a gravidade.</li>
+        <li>D) A PCR é um reagente de fase aguda negativo.</li>
+        <li>E) O TNF-α tem ação predominantemente anti-inflamatória.</li>
+      </ul>
+      <details style="background:var(--bg3);border-color:var(--cyan)">
+        <summary style="color:var(--cyan);font-size:.9rem">Ver gabarito</summary>
+        <div class="body" style="font-size:.86rem"><b style="color:var(--cyan)">Resposta: C.</b> A <b>IL-6</b> lidera a resposta de fase aguda e marca gravidade. A IL-10 é anti-inflamatória (CARS); TNF-α é pró-inflamatório; PCR é reagente <b>positivo</b>; albumina é reagente <b>negativo</b> (cai).</div>
+      </details>
+    </div>
+
+    <!-- Q5 -->
+    <div class="card" style="margin:14px 0">
+      <p><b style="color:var(--purple)">Q5.</b> Sobre o metabolismo de substratos no trauma:</p>
+      <ul style="list-style:none;padding-left:0;font-size:.86rem">
+        <li>A) O principal combustível na fase de fluxo é a glicose exógena.</li>
+        <li>B) A glutamina é o aminoácido mais abundante liberado pelo músculo e combustível preferencial dos enterócitos.</li>
+        <li>C) Há balanço nitrogenado positivo desde as primeiras 24 h.</li>
+        <li>D) A lipólise encontra-se inibida.</li>
+        <li>E) A alanina não participa da gliconeogênese.</li>
+      </ul>
+      <details style="background:var(--bg3);border-color:var(--cyan)">
+        <summary style="color:var(--cyan);font-size:.9rem">Ver gabarito</summary>
+        <div class="body" style="font-size:.86rem"><b style="color:var(--cyan)">Resposta: B.</b> A glutamina é o AA mais liberado do músculo e combustível de enterócitos/células imunes. No flow o combustível predominante é a <b>gordura (AGL)</b>; o balanço nitrogenado é <b>negativo</b> na fase aguda; a lipólise está <b>aumentada</b>; e a alanina é substrato-chave da gliconeogênese (ciclo glicose-alanina).</div>
+      </details>
+    </div>
+
+    <!-- Q6 -->
+    <div class="card" style="margin:14px 0">
+      <p><b style="color:var(--purple)">Q6.</b> Qual medida <b>atenua</b> a resposta metabólica ao trauma cirúrgico?</p>
+      <ul style="list-style:none;padding-left:0;font-size:.86rem">
+        <li>A) Jejum pré-operatório prolongado.</li>
+        <li>B) Hipotermia intraoperatória.</li>
+        <li>C) Analgesia peridural e protocolos ERAS/ACERTO.</li>
+        <li>D) Retardo no início da nutrição enteral.</li>
+        <li>E) Laparotomia ampla em vez de videolaparoscopia.</li>
+      </ul>
+      <details style="background:var(--bg3);border-color:var(--cyan)">
+        <summary style="color:var(--cyan);font-size:.9rem">Ver gabarito</summary>
+        <div class="body" style="font-size:.86rem"><b style="color:var(--cyan)">Resposta: C.</b> Bloqueio de aferências (peridural), jejum abreviado, nutrição enteral precoce e cirurgia minimamente invasiva reduzem o estresse. Jejum prolongado, hipotermia e cirurgia aberta ampla <b>intensificam</b> a resposta.</div>
+      </details>
+    </div>
+
+  </div>
+</details>
+
+<div class="foot">
+  carolzita · Resposta Metabólica ao Trauma · Referências: Sabiston (Tratado de Cirurgia) + Zollinger + fisiologia cirúrgica atual.
+</div>
+
+</div>
+</body>
+</html>

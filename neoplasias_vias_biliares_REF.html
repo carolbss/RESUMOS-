@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neoplasias Malignas das Vias Biliares — Referência CV 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d1117; --panel:#161b22; --panel2:#1c2230; --border:#30363d;
+  --txt:#e6edf3; --mut:#8b949e;
+  --orange:#ff7b35; --orange-d:#3a2415;
+  --purple:#a371f7; --purple-d:#2a1f44;
+  --cyan:#39d0d8; --cyan-d:#10333a;
+  --red:#f85149; --green:#3fb950;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font-family:'IBM Plex Sans',sans-serif;line-height:1.6;font-size:15px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 18px 80px}
+header{padding:34px 0 18px;border-bottom:1px solid var(--border);margin-bottom:0}
+h1{font-size:26px;font-weight:700;letter-spacing:-.5px}
+h1 .accent{color:var(--orange)}
+.sub{color:var(--mut);font-size:14px;margin-top:6px}
+.tag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;padding:2px 8px;border-radius:6px;margin-right:6px;margin-top:8px}
+.tag.o{background:var(--orange-d);color:var(--orange)}
+.tag.p{background:var(--purple-d);color:var(--purple)}
+.tag.c{background:var(--cyan-d);color:var(--cyan)}
+nav{position:sticky;top:0;background:rgba(13,17,23,.96);backdrop-filter:blur(8px);z-index:10;border-bottom:1px solid var(--border);overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch}
+nav button{background:none;border:none;color:var(--mut);font-family:'IBM Plex Mono',monospace;font-size:12.5px;padding:14px 13px;cursor:pointer;border-bottom:2px solid transparent;font-weight:500}
+nav button:hover{color:var(--txt)}
+nav button.active{color:var(--orange);border-bottom-color:var(--orange)}
+section{display:none;padding-top:26px;animation:fade .25s ease}
+section.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+h2{font-size:20px;font-weight:700;margin:8px 0 16px;color:var(--orange);display:flex;align-items:center;gap:8px}
+h3{font-size:16px;font-weight:600;margin:22px 0 10px;color:var(--txt);border-left:3px solid var(--orange);padding-left:10px}
+h3.p{border-color:var(--purple);color:#d2b8ff}
+p{margin:9px 0}
+.lay{color:var(--green);font-style:italic;font-size:13.5px;display:block;margin:6px 0}
+.box.g{border-left:4px solid var(--green);background:rgba(63,185,80,.09);color:var(--green);font-style:italic}
+.box.g .lbl{color:var(--green);font-style:normal}
+.box.g b,.box.g strong{color:#8ee79a;font-style:normal}
+.stx{counter-reset:st;margin:14px 0}
+.st{counter-increment:st;background:var(--panel2);border:1px solid var(--border);border-radius:12px;padding:13px 15px 13px 50px;margin:11px 0;position:relative}
+.st::before{content:counter(st);position:absolute;left:13px;top:13px;width:25px;height:25px;border-radius:7px;background:var(--orange);color:#0d1117;font-family:ui-monospace,monospace;font-weight:700;font-size:12.5px;display:flex;align-items:center;justify-content:center}
+.st .fase{font-family:ui-monospace,monospace;font-size:10px;letter-spacing:1.3px;text-transform:uppercase;color:var(--orange);display:block}
+.st .ttl{font-weight:700;font-size:15px;color:#fff;margin-bottom:3px}
+.st p{margin:4px 0;font-size:13.8px}
+.pq{border-left:3px solid var(--purple);background:var(--purple-d);border-radius:0 8px 8px 0;padding:8px 12px;margin:8px 0;font-size:13.3px}
+.pq b{font-family:ui-monospace,monospace;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;color:var(--purple);display:block}
+.mh2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+.mh{border-radius:9px;padding:8px 11px;font-size:12.5px;border:1px solid var(--border)}
+.mh.e{background:rgba(63,185,80,.07);border-color:rgba(63,185,80,.3)}
+.mh.d{background:var(--orange-d);border-color:rgba(255,123,53,.35)}
+.mh b{font-family:ui-monospace,monospace;font-size:10px;letter-spacing:1.1px;text-transform:uppercase;display:block}
+.mh.e b{color:var(--green)} .mh.d b{color:var(--orange)}
+@media(max-width:640px){.mh2{grid-template-columns:1fr}}
+ul{margin:8px 0 8px 4px;list-style:none}
+li{margin:6px 0;padding-left:20px;position:relative}
+li::before{content:"▸";position:absolute;left:2px;color:var(--orange)}
+li.p::before{color:var(--purple)}
+.box{border-radius:10px;padding:14px 16px;margin:14px 0;border:1px solid var(--border);background:var(--panel)}
+.box.o{border-left:4px solid var(--orange)}
+.box.p{border-left:4px solid var(--purple);background:var(--purple-d)}
+.box.c{border-left:4px solid var(--cyan);background:var(--cyan-d)}
+.box.r{border-left:4px solid var(--red)}
+.box .lbl{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--mut);margin-bottom:8px}
+.box.p .lbl{color:var(--purple)}
+.box.c .lbl{color:var(--cyan)}
+.box.r .lbl{color:var(--red)}
+.banca{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:600;padding:1px 6px;border-radius:4px;background:var(--purple-d);color:var(--purple);margin-left:6px;vertical-align:middle}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px}
+th,td{border:1px solid var(--border);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--panel2);color:var(--orange);font-weight:600;font-family:'IBM Plex Mono',monospace;font-size:12px}
+tr:nth-child(even) td{background:var(--panel)}
+.hand{display:flex;gap:12px;margin:8px 0;flex-wrap:wrap}
+.hand>div{flex:1;min-width:240px;border:1px solid var(--border);border-radius:8px;padding:12px;background:var(--panel)}
+.hand .ttl{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;margin-bottom:6px}
+.hand .L .ttl{color:var(--cyan)}
+.hand .R .ttl{color:var(--orange)}
+code{font-family:'IBM Plex Mono',monospace;background:var(--panel2);padding:1px 6px;border-radius:4px;font-size:13px;color:var(--cyan)}
+.svgwrap{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:16px;margin:14px 0;text-align:center;overflow-x:auto}
+.q{border:1px solid var(--border);border-radius:10px;padding:16px;margin:14px 0;background:var(--panel)}
+.q .head{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--purple);margin-bottom:8px}
+.q .opt{margin:5px 0;padding-left:20px;position:relative}
+.q .opt::before{content:attr(data-l);position:absolute;left:0;font-family:'IBM Plex Mono',monospace;color:var(--mut);font-weight:600}
+.q details{margin-top:10px;border-top:1px dashed var(--border);padding-top:10px}
+.q summary{cursor:pointer;color:var(--green);font-weight:600;font-size:13.5px}
+.q .ans{margin-top:8px;font-size:13.5px;color:var(--mut)}
+.q .ans b{color:var(--txt)}
+.ref{font-size:12.5px;color:var(--mut);margin:6px 0;padding-left:18px;position:relative}
+.ref::before{content:"§";position:absolute;left:0;color:var(--orange)}
+.pill{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;padding:2px 8px;border-radius:20px;border:1px solid var(--border);margin:2px}
+.foot{margin-top:40px;padding-top:18px;border-top:1px solid var(--border);color:var(--mut);font-size:12px;text-align:center}
+b.h{color:var(--purple)}
+.kbd{font-family:'IBM Plex Mono',monospace;color:var(--orange);font-weight:600}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Neoplasias Malignas das <span class="accent">Vias Biliares</span></h1>
+  <div class="sub">Carcinoma de vesícula biliar · Colangiocarcinoma · Foco na classificação de Bismuth-Corlette</div>
+  <div>
+    <span class="tag o">conteúdo geral</span>
+    <span class="tag p">alto rendimento / prova</span>
+    <span class="tag c">mnemônico / lay</span>
+  </div>
+</header>
+
+<nav id="nav"></nav>
+
+<!-- ================= VISÃO GERAL ================= -->
+<section id="geral" class="active">
+  <h2>🩺 Quadro clínico &amp; epidemiologia</h2>
+
+  <h3>Carcinoma de vesícula biliar (CaVB)</h3>
+  <ul>
+    <li>Neoplasia maligna <b>mais comum das vias biliares</b>; histologia: <b>adenocarcinoma (&gt;90%)</b>.</li>
+    <li>Mulheres &gt; homens (3:1), pico após 60 anos. Áreas de alta incidência: Chile, norte da Índia, andinos, leste europeu.</li>
+    <li><b>60–80% são achado INCIDENTAL</b> em colecistectomia feita por doença benigna — peça fundamental do raciocínio cirúrgico.</li>
+    <li>Disseminação <b>precoce</b>: invasão direta do leito hepático (segmentos <b>IVb/V</b>), linfática (ligamento hepatoduodenal), peritoneal e hematogênica.</li>
+  </ul>
+  <p class="lay">(É um câncer que cresce na "bolsinha de guardar bile". Quase sempre só é descoberto por acaso, quando o cirurgião tira a vesícula achando que era pedra. E ele gosta de se espalhar cedo, por isso assusta.)</p>
+
+  <div class="box o">
+    <div class="lbl">Fatores de risco — CaVB</div>
+    <ul>
+      <li>Colelitíase (principal; risco maior com cálculos &gt; 3 cm) e colecistite crônica.</li>
+      <li>Pólipo de vesícula <b>&gt; 1 cm</b>, séssil, crescimento rápido.</li>
+      <li>Vesícula em porcelana <span class="banca">PEGA</span> — risco hoje considerado <b>menor</b> que o histórico; calcificação <b>seletiva/mucosa</b> &gt; calcificação difusa intramural.</li>
+      <li>Junção pancreatobiliar anômala / cisto de colédoco.</li>
+      <li>Portador crônico de <b>Salmonella typhi</b>; obesidade; colangite esclerosante primária (CEP).</li>
+    </ul>
+  </div>
+
+  <h3>Colangiocarcinoma (CCA)</h3>
+  <ul>
+    <li>Adenocarcinoma do epitélio dos ductos biliares. Classificação <b>anatômica</b>:</li>
+    <li class="p"><b>Peri-hilar (tumor de Klatskin)</b> — <b>mais comum (~50–60%)</b>; é o alvo do Bismuth-Corlette.</li>
+    <li class="p">Distal (~20–30%) — segmento intrapancreático do colédoco.</li>
+    <li class="p">Intra-hepático (~10–20%) — comporta-se como massa, mimetiza CHC.</li>
+  </ul>
+  <p class="lay">(O colangiocarcinoma é um câncer do "encanamento" que leva a bile. O tipo mais comum nasce bem na "forquilha" onde os dois canos do fígado se juntam — esse é o Klatskin.)</p>
+
+  <div class="box o">
+    <div class="lbl">Fatores de risco — CCA</div>
+    <ul>
+      <li><b>Colangite esclerosante primária (CEP)</b> — clássico, frequentemente associada a retocolite ulcerativa.</li>
+      <li>Cistos de colédoco / <b>doença de Caroli</b> / fibrose hepática congênita.</li>
+      <li>Hepatolitíase; parasitas: <b>Clonorchis sinensis, Opisthorchis viverrini</b> (sudeste asiático).</li>
+      <li>Thorotrast (contraste histórico), hepatite B/C, cirrose, exposição a tóxicos.</li>
+    </ul>
+  </div>
+
+  <h3 class="p">Apresentação clínica — onde a banca prende</h3>
+  <ul>
+    <li class="p">CCA peri-hilar/distal: <b>icterícia obstrutiva indolor e progressiva</b>, colúria, acolia, prurido, perda ponderal.</li>
+    <li class="p"><b>Sinal de Courvoisier</b> (vesícula palpável, indolor + icterícia) → obstrução maligna <b>distal</b>; raro no Klatskin (obstrução acima do cístico).</li>
+    <li class="p">CaVB sintomático = geralmente <b>avançado</b>: icterícia indica invasão hilar/irressecabilidade frequente.</li>
+    <li class="p">Marcadores: <b>CA 19-9</b> (sobe também em colestase benigna; falso-negativo em Lewis-negativos ~5–10%) e CEA — apoio, não diagnóstico.</li>
+  </ul>
+</section>
+
+<!-- ================= ANATOMIA ================= -->
+<section id="anatomia">
+  <h2>🫀 Anatomia &amp; vascularização</h2>
+
+  <h3>Árvore biliar</h3>
+  <p>Ductos hepáticos <b>direito</b> e <b>esquerdo</b> → <b>confluência</b> (normalmente extra-hepática, anterior à bifurcação portal direita) → <b>ducto hepático comum</b> → junção com o ducto cístico → <b>colédoco</b> → ampola de Vater (esfíncter de Oddi).</p>
+  <p class="lay">(Pense em dois riachos do fígado que se juntam num rio — o ponto de junção é a "confluência". É bem ali que o tumor de Klatskin gosta de aparecer.)</p>
+
+  <div class="svgwrap">
+    <svg width="440" height="230" viewBox="0 0 440 230" xmlns="http://www.w3.org/2000/svg">
+      <style>.dl{stroke:#ff7b35;stroke-width:7;fill:none;stroke-linecap:round}.lb{fill:#e6edf3;font:12px 'IBM Plex Mono',monospace}.lbm{fill:#8b949e;font:11px 'IBM Plex Mono',monospace}.cf{fill:#a371f7}</style>
+      <path class="dl" d="M70 30 L150 110"/><path class="dl" d="M230 30 L150 110"/>
+      <path class="dl" d="M150 110 L150 150"/>
+      <path class="dl" d="M150 150 L150 200"/>
+      <path class="dl" style="stroke:#39d0d8" d="M255 120 L150 165"/>
+      <circle class="cf" cx="150" cy="110" r="9"/>
+      <text class="lb" x="20" y="28">Hep. D</text>
+      <text class="lb" x="195" y="28">Hep. E</text>
+      <text class="lb" x="165" y="108" fill="#a371f7">confluência (Klatskin)</text>
+      <text class="lb" x="55" y="135">ducto hep. comum</text>
+      <text class="lb" x="160" y="185">colédoco</text>
+      <text class="lb" x="262" y="118" fill="#39d0d8">ducto cístico</text>
+      <text class="lbm" x="120" y="222">→ ampola de Vater</text>
+    </svg>
+  </div>
+
+  <h3>Vesícula &amp; triângulo de Calot</h3>
+  <ul>
+    <li><b>Artéria cística</b> — em geral ramo da <b>artéria hepática direita</b>; localiza-se no triângulo de Calot.</li>
+    <li><b>Triângulo de Calot</b> (hepatocístico): ducto cístico (inferior), ducto hepático comum (medial), borda inferior do fígado (superior).</li>
+    <li>Leito vesicular = interface com os <b>segmentos IVb e V</b> → rota de invasão hepática direta no CaVB.</li>
+  </ul>
+
+  <h3>Ligamento hepatoduodenal (pedículo) &amp; vascularização ductal</h3>
+  <ul>
+    <li>Tríade portal: <b>veia porta</b> (posterior), <b>artéria hepática</b> (ântero-medial), <b>via biliar</b> (ântero-lateral direita).</li>
+    <li>Suprimento arterial da via biliar = artérias axiais às <b>3 e 9 horas</b> → fragilidade isquêmica nas anastomoses biliares.</li>
+    <li class="p"><b>Segmento I (caudado)</b>: drena diretamente na confluência → motivo de ressecá-lo nos Bismuth II–IV.</li>
+  </ul>
+  <div class="box c">
+    <div class="lbl">Lay — pedículo</div>
+    <p>O "cabinho" que segura o fígado tem três fios juntos: a veia grande atrás, a artéria no meio e o cano da bile na frente-direita. O cirurgião tem que separar os três sem cortar o errado.</p>
+  </div>
+</section>
+
+<!-- ================= Ca VESÍCULA ================= -->
+<section id="cavb">
+  <h2>🟠 Carcinoma de vesícula — estadiamento &amp; conduta</h2>
+
+  <h3>Profundidade (T) define a cirurgia</h3>
+  <table>
+    <tr><th>Estágio T</th><th>Profundidade</th><th>Conduta cirúrgica</th></tr>
+    <tr><td>Tis / T1a</td><td>Mucosa / lâmina própria</td><td><b>Colecistectomia simples</b> com margem do cístico livre — adequada. Sobrevida 5a ~95%.</td></tr>
+    <tr><td>T1b</td><td>Camada muscular</td><td><b>Controverso</b>: simples vs. radical. Guidelines (NCCN) tendem a radical + linfadenectomia.</td></tr>
+    <tr><td>T2</td><td>Tecido conjuntivo perimuscular</td><td><b>Colecistectomia radical (estendida)</b>: ressecção IVb/V + linfadenectomia portal.</td></tr>
+    <tr><td>T3</td><td>Serosa / fígado / 1 órgão adjacente</td><td>Radical estendida (hepatectomia maior conforme invasão) se R0 viável.</td></tr>
+    <tr><td>T4</td><td>Veia porta/art. hepática ou ≥2 órgãos</td><td>Geralmente <b>irressecável</b> → tratamento sistêmico.</td></tr>
+  </table>
+
+  <div class="box p">
+    <div class="lbl">Alto rendimento — colecistectomia RADICAL (estendida)</div>
+    <ul>
+      <li class="p">Componentes: <b>ressecção em cunha do leito vesicular OU segmentectomia anatômica IVb + V</b> (margem hepática ~2–3 cm).</li>
+      <li class="p"><b>Linfadenectomia portal</b>: estações do cístico, pericoledocianas, da artéria hepática e retroportais (esqueletização do ligamento hepatoduodenal).</li>
+      <li class="p">Ressecção da via biliar <b>apenas</b> se margem do cístico positiva ou invasão — não é rotina.</li>
+      <li class="p">Indicação de re-ressecção quando CaVB incidental for <b>T1b ou maior</b> / margem positiva.</li>
+    </ul>
+  </div>
+
+  <div class="box r">
+    <div class="lbl">CaVB incidental pós-laparoscopia</div>
+    <ul>
+      <li>Reestadiar (TC/RM tórax-abdome) e <b>reoperar se ≥ T1b</b> ou margem positiva, sem metástase.</li>
+      <li class="p"><b>Excisão de rotina dos orifícios dos trocartes (port-site) NÃO é mais recomendada</b> — não melhora sobrevida (mudança recente; pega de prova).</li>
+      <li>Evitar perfuração da vesícula no intraoperatório (risco de disseminação peritoneal).</li>
+    </ul>
+  </div>
+  <p class="lay">(Se o patologista disser que o câncer passou da primeira camada, não basta ter tirado a vesícula: tem que voltar e tirar um pedaço do fígado embaixo dela e limpar os gânglios do "cabinho".)</p>
+</section>
+
+<!-- ================= COLANGIO ================= -->
+<section id="colangio">
+  <h2>🟣 Colangiocarcinoma — princípios de ressecção</h2>
+
+  <h3>Por subtipo anatômico</h3>
+  <table>
+    <tr><th>Localização</th><th>Frequência</th><th>Cirurgia de eleição</th></tr>
+    <tr><td>Intra-hepático</td><td>10–20%</td><td>Hepatectomia (segmentar/maior) com margem + linfadenectomia.</td></tr>
+    <tr><td><b>Peri-hilar (Klatskin)</b></td><td>50–60%</td><td>Ressecção via biliar extra-hepática + <b>hepatectomia maior + caudado</b> + linfadenectomia + reconstrução em Y de Roux (ver Bismuth).</td></tr>
+    <tr><td>Distal</td><td>20–30%</td><td><b>Duodenopancreatectomia (Whipple)</b>.</td></tr>
+  </table>
+
+  <div class="box p">
+    <div class="lbl">Pré-operatório do peri-hilar — alto rendimento</div>
+    <ul>
+      <li class="p">Estadiamento por <b>colangio-RM + TC trifásica</b>; mapear extensão ductal (Bismuth), invasão vascular e atrofia lobar.</li>
+      <li class="p"><b>Drenagem biliar pré-op do futuro fígado remanescente</b> quando colestase importante / hepatectomia maior planejada.</li>
+      <li class="p"><b>Embolização da veia porta</b> do lado a ser ressecado se remanescente estimado pequeno (hipertrofia do remanescente).</li>
+      <li class="p">Escovado/biópsia por CPRE; estadiamento laparoscópico pode evitar laparotomia não terapêutica.</li>
+    </ul>
+  </div>
+  <p class="lay">(Antes de cortar metade do fígado, o cirurgião "engorda" o lado que vai ficar, entupindo de propósito a veia do lado que vai sair — assim o lado que sobra cresce e aguenta o tranco.)</p>
+
+  <div class="box c">
+    <div class="lbl">Princípio R0</div>
+    <p>O objetivo único da cirurgia curativa é a ressecção <b>R0</b> (margens microscopicamente livres). Margens proximais e distais vão a <b>congelação intraoperatória</b>.</p>
+  </div>
+</section>
+
+<!-- ================= BISMUTH ================= -->
+<section id="bismuth">
+  <h2>⭐ Classificação de Bismuth-Corlette (FOCO)</h2>
+  <p>Descreve a <b>extensão longitudinal</b> do colangiocarcinoma <b>peri-hilar</b> ao longo da árvore biliar, em relação à confluência dos ductos hepáticos.</p>
+
+  <div class="svgwrap">
+    <svg width="640" height="200" viewBox="0 0 640 200" xmlns="http://www.w3.org/2000/svg">
+      <style>.bd{stroke:#8b949e;stroke-width:5;fill:none;stroke-linecap:round}.tm{stroke:#f85149;stroke-width:7;fill:none;stroke-linecap:round}.tt{fill:#e6edf3;font:bold 13px 'IBM Plex Mono',monospace}.ts{fill:#8b949e;font:10px 'IBM Plex Mono',monospace}</style>
+      <!-- I -->
+      <g transform="translate(0,0)">
+        <path class="bd" d="M20 20 L55 60 M90 20 L55 60 M55 60 L55 110"/>
+        <path class="tm" d="M55 80 L55 105"/>
+        <text class="tt" x="40" y="135">I</text><text class="ts" x="8" y="150">abaixo da</text><text class="ts" x="8" y="162">confluência</text>
+      </g>
+      <!-- II -->
+      <g transform="translate(130,0)">
+        <path class="bd" d="M20 20 L55 60 M90 20 L55 60 M55 60 L55 110"/>
+        <path class="tm" d="M55 55 L55 70"/>
+        <text class="tt" x="40" y="135">II</text><text class="ts" x="18" y="150">na</text><text class="ts" x="2" y="162">confluência</text>
+      </g>
+      <!-- IIIa -->
+      <g transform="translate(260,0)">
+        <path class="bd" d="M20 20 L55 60 M90 20 L55 60 M55 60 L55 110"/>
+        <path class="tm" d="M55 55 L55 70 M55 58 L33 36"/>
+        <text class="tt" x="32" y="135">IIIa</text><text class="ts" x="20" y="150">+ ducto</text><text class="ts" x="22" y="162">DIREITO</text>
+      </g>
+      <!-- IIIb -->
+      <g transform="translate(390,0)">
+        <path class="bd" d="M20 20 L55 60 M90 20 L55 60 M55 60 L55 110"/>
+        <path class="tm" d="M55 55 L55 70 M55 58 L77 36"/>
+        <text class="tt" x="32" y="135">IIIb</text><text class="ts" x="18" y="150">+ ducto</text><text class="ts" x="14" y="162">ESQUERDO</text>
+      </g>
+      <!-- IV -->
+      <g transform="translate(520,0)">
+        <path class="bd" d="M20 20 L55 60 M90 20 L55 60 M55 60 L55 110"/>
+        <path class="tm" d="M55 55 L55 70 M55 58 L33 36 M55 58 L77 36"/>
+        <text class="tt" x="42" y="135">IV</text><text class="ts" x="14" y="150">ambos /</text><text class="ts" x="12" y="162">multifocal</text>
+      </g>
+    </svg>
+  </div>
+
+  <table>
+    <tr><th>Tipo</th><th>Extensão ductal</th><th>Ressecção correspondente</th></tr>
+    <tr><td><b>I</b></td><td>Ducto hepático comum, <b>abaixo</b> da confluência (confluência preservada)</td><td>Ressecção da via biliar extra-hepática + linfadenectomia.</td></tr>
+    <tr><td><b>II</b></td><td>Atinge a <b>confluência</b> (sem invadir ductos D/E)</td><td>Via biliar extra-hepática + <b>caudado (segmento I)</b> + linfadenectomia.</td></tr>
+    <tr><td><b>IIIa</b></td><td>Confluência + ducto hepático <b>DIREITO</b></td><td><b>Hepatectomia direita</b> (± trissectorectomia) + <b>caudado</b>.</td></tr>
+    <tr><td><b>IIIb</b></td><td>Confluência + ducto hepático <b>ESQUERDO</b></td><td><b>Hepatectomia esquerda</b> + <b>caudado</b>.</td></tr>
+    <tr><td><b>IV</b></td><td>Ambos os ductos (2ª ordem bilateral) ou multifocal</td><td>Hepatectomia estendida/trissectorectomia + caudado; ou transplante em casos selecionados (protocolo Mayo). Historicamente irressecável.</td></tr>
+  </table>
+
+  <div class="box p">
+    <div class="lbl">Por que ressecar o caudado (segmento I) nos tipos II–IV</div>
+    <p class="p">Os ductos do caudado <b>drenam diretamente na confluência</b>; deixá-los garante margem positiva e recidiva. A ressecção do caudado em bloco é considerada <b>essencial</b> para R0 nos Bismuth II a IV.</p>
+  </div>
+
+  <div class="box r">
+    <div class="lbl">⚠ Pega clássico</div>
+    <p>Bismuth-Corlette é <b>puramente ANATÔMICA</b> (extensão longitudinal nos ductos). <b>Não é estadiamento TNM</b> e, isoladamente, <b>não define ressecabilidade nem prognóstico</b>. A ressecabilidade depende de invasão vascular (porta/artéria), atrofia lobar e volume do remanescente. Quem prediz sobrevida é o TNM (AJCC), não o Bismuth.</p>
+  </div>
+
+  <div class="box c">
+    <div class="lbl">Mnemônico Bismuth</div>
+    <p><b>1</b> embaixo · <b>2</b> na confluência · <b>3</b> num lado só (<b>a</b> = direit<b>A</b>… na verdade "<b>a</b>nterior-direito"; macete: <b>IIIa = direitA</b>, <b>IIIb = esquerdo</b> — "a vem antes, lado direito") · <b>4</b> = os dois lados (b<b>I</b>lateral, <b>IV</b> de "tudo").</p>
+  </div>
+</section>
+
+<!-- ================= TÉCNICA ================= -->
+<section id="tecnica">
+  <h2>🔪 Técnica cirúrgica — passo a passo, mãos &amp; fios</h2>
+
+  <h3>Posicionamento (comum às duas)</h3>
+  <ul>
+    <li>Decúbito dorsal horizontal, supino; braço direito pode ficar aberto para acessos.</li>
+    <li>Incisão: <b>subcostal direita (Kocher) prolongada</b> ou bilateral em "Mercedes/J" para exposição hepática; afastador fixo (Thompson/Omni).</li>
+    <li>Cirurgião à direita do paciente; inventário/estadiamento da cavidade antes de qualquer ressecção.</li>
+  </ul>
+
+  <h3 class="p">A) Colecistectomia radical (CaVB ≥ T1b/T2)</h3>
+  <div class="box g"><div class="lbl">tradução simples</div>O câncer de vesícula não respeita a parede: ele atravessa e <strong>invade o fígado colado atrás</strong>. Por isso não basta tirar a vesícula — retira-se também <strong>o pedaço de fígado que ela toca</strong> e os linfonodos do pedículo, tudo <strong>em bloco</strong>, sem abrir a peça.</div>
+
+  <div class="stx">
+
+    <div class="st">
+      <span class="fase">fase de estadiamento</span>
+      <div class="ttl">Inventário e linfadenectomia do hepatoduodenal</div>
+      <p>Estadiamento da cavidade antes de qualquer ressecção. <strong>Esqueletização do pedículo</strong>, retirando o tecido linfonodal do ligamento hepatoduodenal em direção à peça.</p>
+      <div class="pq"><b>por quê</b>A linfadenectomia vem <strong>antes</strong> porque define ressecabilidade: linfonodo positivo <strong>além</strong> do hepatoduodenal (para-aórtico, celíaco) é <strong>doença sistêmica</strong> — e nesse caso a ressecção hepática não beneficia. Congelação do para-aórtico suspeito antes de seguir.</div>
+      <div class="mh2">
+        <div class="mh e"><b>mão esquerda</b>DeBakey tracionando o pedículo; aspirador-dissector mantendo o campo limpo</div>
+        <div class="mh d"><b>mão direita</b>Metzenbaum e dissector; clipes nos linfáticos</div>
+      </div>
+    </div>
+
+    <div class="st">
+      <span class="fase">fase de ressecção — em bloco</span>
+      <div class="ttl">Segmentectomia IVb/V com a vesícula</div>
+      <p>Ressecar os <strong>segmentos IVb e V</strong> (ou cunha do leito com margem de 2–3 cm) <strong>em bloco</strong> com a vesícula, sem abrir a peça.</p>
+      <div class="pq"><b>por quê</b>São os segmentos que fazem <strong>contato direto</strong> com o leito vesicular — é por ali que o tumor invade e por ali que drena a linfa. E "em bloco" é literal: abrir a vesícula durante a ressecção <strong>semeia a cavidade</strong> e piora o prognóstico. Pelo mesmo motivo, câncer descoberto <em>durante</em> uma colecistectomia laparoscópica pede cuidado redobrado com a extração e a possibilidade de <strong>implante em portal</strong>.</div>
+    </div>
+
+    <div class="st">
+      <span class="fase">fase de margem</span>
+      <div class="ttl">Congelação da margem do ducto cístico</div>
+      <p>Enviar a margem do cístico à congelação. Se positiva → <strong>ressecção da via biliar extra-hepática + hepaticojejunostomia</strong>.</p>
+      <div class="pq"><b>por quê</b>É o passo que muda a operação no meio do caminho. Margem cística positiva significa que o tumor <strong>já subiu pelo ducto</strong> — e deixar a via biliar in situ garantiria R1. A decisão só existe se a congelação for pedida.</div>
+    </div>
+
+  </div>
+
+  <h3 class="p">B) Ressecção peri-hilar (tumor de Klatskin)</h3>
+  <div class="box g"><div class="lbl">tradução simples</div>O tumor senta exatamente na <strong>bifurcação onde os dois ductos hepáticos se juntam</strong>. Como não dá para deixar margem nos dois lados ao mesmo tempo, sacrifica-se <strong>um lado inteiro do fígado</strong> — e leva-se junto o <strong>lobo caudado</strong>, porque ele drena diretamente para a bifurcação.</div>
+
+  <div class="stx">
+
+    <div class="st">
+      <span class="fase">fase de estadiamento</span>
+      <div class="ttl">Linfadenectomia regional e avaliação de invasão vascular</div>
+      <p>Dissecção do pedículo, avaliando invasão da <strong>veia porta</strong> e da <strong>artéria hepática</strong> — sobretudo do lado que se pretende preservar.</p>
+      <div class="pq"><b>por quê</b>A ressecabilidade do Klatskin depende de <strong>três eixos simultâneos</strong>: extensão ductal (Bismuth), invasão vascular e <strong>volume do futuro fígado remanescente</strong>. Invasão da artéria ou da porta do lado que ficaria é o que torna o tumor irressecável — não a extensão ductal isolada.</div>
+    </div>
+
+    <div class="st">
+      <span class="fase">fase de secção distal</span>
+      <div class="ttl">Transecção do colédoco distal com congelação</div>
+      <p>Seccionar o colédoco distal, enviar a <strong>margem distal à congelação</strong> e rebater a peça cranialmente.</p>
+      <div class="pq"><b>por quê</b>Rebater a via biliar para cima é o que <strong>abre o acesso à bifurcação</strong> e permite dissecar a porta e a artéria por trás. Sem esse passo, o hilo permanece coberto pela própria via biliar.</div>
+      <div class="mh2">
+        <div class="mh e"><b>mão esquerda</b>Tração cranial da peça, expondo a face posterior do pedículo</div>
+        <div class="mh d"><b>mão direita</b>Dissector no plano entre porta e via biliar; clipes nos ramos</div>
+      </div>
+    </div>
+
+    <div class="st">
+      <span class="fase">fase hepática — o passo que define a operação</span>
+      <div class="ttl">Hepatectomia conforme Bismuth + <strong>lobo caudado em bloco</strong></div>
+      <p><strong>IIIa</strong> → hepatectomia direita · <strong>IIIb</strong> → hepatectomia esquerda · <strong>IV</strong> → ressecção estendida. Sempre com <strong>ressecção do caudado (segmento I)</strong>.</p>
+      <div class="pq"><b>por quê</b>O <strong>caudado drena diretamente na confluência</strong> por ductos curtos e próprios — ele é invadido precocemente e, se deixado, é sítio de <strong>recidiva local</strong>. É a razão de a caudatectomia ser rotina no Klatskin e não uma opção. E a lateralidade segue a lógica inversa da intuição: no <strong>IIIa</strong>, com extensão para o ducto direito, resseca-se o <strong>fígado direito</strong> — sacrifica-se o lado doente para conseguir margem no lado que fica.</div>
+    </div>
+
+    <div class="st">
+      <span class="fase">fase de margem proximal</span>
+      <div class="ttl">Transecção dos ductos proximais com congelação</div>
+      <p>Seccionar os ductos do lado a preservar, com margem, e enviar <strong>congelação proximal</strong>.</p>
+      <div class="pq"><b>por quê</b>A margem <strong>proximal</strong> é a que mais frequentemente compromete o R0 no Klatskin — o tumor cresce ao longo da parede ductal, muitas vezes além do que a imagem mostra. É o equivalente biliar do tipo difuso gástrico.</div>
+    </div>
+
+    <div class="st">
+      <span class="fase">fase de reconstrução</span>
+      <div class="ttl">Hepaticojejunostomia em Y de Roux</div>
+      <p>Alça de <strong>60–70 cm</strong>, anastomose mucosa-mucosa com <strong>PDS 5-0/6-0</strong>, pontos separados. Frequentemente há <strong>múltiplas bocas ductais</strong> a reconstruir.</p>
+      <div class="pq"><b>por quê</b>Fio <strong>absorvível monofilamentar</strong> pela mesma regra de toda anastomose biliar: fio permanente na luz vira <strong>núcleo de cálculo</strong>. E o Y de Roux longo mantém o conteúdo entérico longe de uma anastomose que já é pequena, fina e sob risco.</div>
+      <span class="lay">(O cano da bile é fino e frágil: costura-se com fio liso, fino e que o corpo absorve, ligando-o a uma alça em Y para a bile voltar a escorrer.)</span>
+    </div>
+
+  </div>
+
+  <div class="box c"><div class="lbl">as 4 checagens do Klatskin</div>
+    <strong>1)</strong> Há linfonodo positivo <strong>além</strong> do hepatoduodenal? (se sim, não ressecar)<br>
+    <strong>2)</strong> O <strong>futuro fígado remanescente</strong> é suficiente — precisa de embolização portal prévia?<br>
+    <strong>3)</strong> O <strong>caudado</strong> está incluído na peça?<br>
+    <strong>4)</strong> As margens <strong>proximal e distal</strong> voltaram negativas?</div>
+
+  <div class="box o">
+    <div class="lbl">Fios &amp; quando usar</div>
+    <table>
+      <tr><th>Estrutura / tempo</th><th>Material</th></tr>
+      <tr><td>Ducto cístico / artéria cística</td><td>Clipe metálico ou ligadura (seda/Vicryl 2-0/3-0)</td></tr>
+      <tr><td>Parênquima hepático (hemostasia)</td><td>Prolene 3-0/4-0 em "X"; selante; sutura de pedículos com Vicryl 2-0</td></tr>
+      <tr><td>Vasos hilares (porta/artéria, reparo)</td><td>Prolene 5-0/6-0 monofilamentar</td></tr>
+      <tr><td><b>Hepaticojejunostomia</b> (anastomose biliar)</td><td><b>PDS 5-0/6-0</b> monofilamentar absorvível (pontos separados; mucosa-mucosa)</td></tr>
+      <tr><td>Enteroanastomose do Y de Roux</td><td>Vicryl 3-0 / grampeador linear</td></tr>
+      <tr><td>Aponeurose</td><td>PDS / Vicryl 1 (loop)</td></tr>
+    </table>
+  </div>
+  <p class="lay">(O cano da bile é frágil e fininho; por isso costura-se com um fio liso e fino que o corpo absorve depois. Liga-se a um pedaço de intestino em forma de "Y" para a bile voltar a escorrer pro tubo digestivo.)</p>
+</section>
+
+<!-- ================= COMPLICAÇÕES ================= -->
+<section id="comp">
+  <h2>⚠️ Complicações</h2>
+  <table>
+    <tr><th>Complicação</th><th>Observação de prova</th></tr>
+    <tr><td><b>Fístula biliar</b></td><td>Mais comum após hepatectomia + reconstrução; drenagem + suporte; maioria fecha.</td></tr>
+    <tr><td><b>Insuficiência hepática pós-hepatectomia</b></td><td>Principal causa de mortalidade em ressecções maiores; prevenção = embolização portal + drenagem do remanescente.</td></tr>
+    <tr><td>Hemorragia / lesão vascular</td><td>Veia porta, artéria hepática; reparo com Prolene fino.</td></tr>
+    <tr><td>Colangite</td><td>Por obstrução/estenose; ascendente pela anastomose.</td></tr>
+    <tr><td>Estenose da hepaticojejunostomia</td><td>Complicação <b>tardia</b>; isquemia da via biliar (3 e 9h) contribui.</td></tr>
+    <tr><td>Recidiva peritoneal / port-site</td><td>CaVB; evitar ruptura da vesícula; excisão de trocarte não rotineira.</td></tr>
+    <tr><td>Coleção/abscesso subfrênico</td><td>Drenagem percutânea.</td></tr>
+  </table>
+</section>
+
+<!-- ================= PEGA-RATÃO ================= -->
+<section id="pega">
+  <h2>🪤 Pega-ratões</h2>
+  <div class="box r"><div class="lbl">1</div><p><b>Bismuth-Corlette ≠ TNM.</b> É classificação anatômica de extensão ductal; não estadia nem prediz prognóstico/ressecabilidade por si só.</p></div>
+  <div class="box r"><div class="lbl">2</div><p><b>IIIa = direito, IIIb = esquerdo.</b> Trocar os lados é o erro mais cobrado. (a = direitA.)</p></div>
+  <div class="box r"><div class="lbl">3</div><p><b>Caudado (segmento I) é ressecado nos tipos II–IV</b>, porque seus ductos drenam na confluência — não é "opcional".</p></div>
+  <div class="box r"><div class="lbl">4</div><p><b>CaVB T1a → colecistectomia simples basta.</b> Só a partir de <b>T1b</b> indica-se radical/re-ressecção. Cuidado com a alternativa que manda "sempre reoperar".</p></div>
+  <div class="box r"><div class="lbl">5</div><p><b>Klatskin é peri-hilar</b>, não intra-hepático nem distal. E o <b>peri-hilar é o mais comum</b> dos colangiocarcinomas.</p></div>
+  <div class="box r"><div class="lbl">6</div><p><b>Courvoisier</b> (vesícula palpável indolor + icterícia) aponta obstrução maligna <b>distal</b> — não é típico do Klatskin.</p></div>
+  <div class="box r"><div class="lbl">7</div><p><b>Vesícula em porcelana</b>: o risco oncológico foi <b>superestimado</b>; calcificação seletiva/mucosa preocupa mais que a difusa.</p></div>
+  <div class="box r"><div class="lbl">8</div><p>Excisão rotineira dos <b>port-sites</b> no CaVB incidental <b>não</b> é mais recomendada (não muda sobrevida).</p></div>
+</section>
+
+<!-- ================= MNEMÔNICOS ================= -->
+<section id="mnem">
+  <h2>🧠 Mnemônicos</h2>
+  <div class="box c"><div class="lbl">Bismuth-Corlette</div><p><b>1</b> embaixo → <b>2</b> na confluência → <b>3</b> um lado (<b>a</b>=direitA, <b>b</b>=esquerdo) → <b>4</b> os dois lados/multifocal.</p></div>
+  <div class="box c"><div class="lbl">Fatores de risco CaVB — "5 P"</div><p><b>P</b>edras (cálculos &gt;3 cm) · <b>P</b>ólipo &gt;1 cm · <b>P</b>orcelana · junção <b>P</b>ancreatobiliar anômala · <b>P</b>ortador de Salmonella.</p></div>
+  <div class="box c"><div class="lbl">Risco de colangiocarcinoma — "CHOP-C"</div><p><b>C</b>EP · <b>H</b>epatolitíase · <b>O</b>pisthorchis/Clonorchis · <b>P</b>arede cística (cistos de colédoco/Caroli) · <b>C</b>irrose/hepatite.</p></div>
+  <div class="box c"><div class="lbl">Caudado</div><p>"<b>C</b>onfluência puxa o <b>C</b>audado" → ressecar segmento I nos Bismuth II–IV.</p></div>
+  <div class="box c"><div class="lbl">CaVB T1a vs T1b</div><p>"<b>a</b> = <b>a</b>dequado (colecistectomia simples) · <b>b</b> = <b>b</b>isturi maior (radical/re-ressecção)".</p></div>
+</section>
+
+<!-- ================= QUESTÕES ================= -->
+<section id="quest">
+  <h2>📝 Questões — itens originais por banca</h2>
+  <p class="sub" style="margin-bottom:12px">Itens representativos <b>autorais</b>, modelados no estilo de cada banca — não são reproduções literais de bancos proprietários.</p>
+
+  <div class="q">
+    <div class="head">QUESTÃO 1 — estilo HCPA</div>
+    <p>Homem de 64 anos com icterícia obstrutiva indolor. Colangio-RM mostra tumor peri-hilar acometendo a confluência e estendendo-se ao ducto hepático esquerdo, sem invasão vascular. A classificação e a ressecção de eleição são:</p>
+    <div class="opt" data-l="A">Bismuth IIIa — hepatectomia direita + caudado.</div>
+    <div class="opt" data-l="B">Bismuth IIIb — hepatectomia esquerda + caudado.</div>
+    <div class="opt" data-l="C">Bismuth II — apenas ressecção da via biliar extra-hepática.</div>
+    <div class="opt" data-l="D">Bismuth IV — transplante hepático.</div>
+    <details><summary>Gabarito</summary><div class="ans"><b>B.</b> Confluência + ducto hepático <b>esquerdo</b> = IIIb → hepatectomia esquerda com ressecção do caudado em bloco. (IIIa seria o lado direito.)</div></details>
+  </div>
+
+  <div class="q">
+    <div class="head">QUESTÃO 2 — estilo AMRIGS</div>
+    <p>Após colecistectomia laparoscópica por colelitíase, o anatomopatológico revela adenocarcinoma de vesícula <b>T1b</b> (invasão da camada muscular), margem do cístico livre, sem metástases. A conduta mais adequada é:</p>
+    <div class="opt" data-l="A">Observação clínica, pois a colecistectomia foi curativa.</div>
+    <div class="opt" data-l="B">Quimioterapia paliativa exclusiva.</div>
+    <div class="opt" data-l="C">Re-ressecção radical (segmentectomia IVb/V + linfadenectomia portal).</div>
+    <div class="opt" data-l="D">Excisão obrigatória de todos os orifícios de trocarte.</div>
+    <details><summary>Gabarito</summary><div class="ans"><b>C.</b> A partir de T1b indica-se re-ressecção radical. Observação só basta em Tis/T1a com margem livre. A excisão rotineira de port-sites não é recomendada.</div></details>
+  </div>
+
+  <div class="q">
+    <div class="head">QUESTÃO 3 — estilo PUC-RS</div>
+    <p>Sobre a classificação de Bismuth-Corlette, assinale a CORRETA:</p>
+    <div class="opt" data-l="A">É um sistema de estadiamento TNM que prediz a sobrevida.</div>
+    <div class="opt" data-l="B">Classifica o colangiocarcinoma intra-hepático.</div>
+    <div class="opt" data-l="C">Descreve a extensão longitudinal do tumor peri-hilar; o tipo IV acomete ambos os ductos.</div>
+    <div class="opt" data-l="D">No tipo II não há necessidade de ressecar o caudado.</div>
+    <details><summary>Gabarito</summary><div class="ans"><b>C.</b> É anatômica (extensão ductal) e aplica-se ao <b>peri-hilar</b>; IV = bilateral/multifocal. Não é TNM (A errada), não é intra-hepático (B), e o caudado é ressecado já a partir do tipo II (D errada).</div></details>
+  </div>
+
+  <div class="q">
+    <div class="head">QUESTÃO 4 — estilo Santa Casa POA</div>
+    <p>Na hepaticojejunostomia em Y de Roux para reconstrução biliar após ressecção de Klatskin, o fio e a configuração mais apropriados são:</p>
+    <div class="opt" data-l="A">Seda 2-0 contínuo.</div>
+    <div class="opt" data-l="B">Náilon 3-0 contínuo.</div>
+    <div class="opt" data-l="C">PDS 5-0/6-0 monofilamentar absorvível, pontos separados mucosa-mucosa.</div>
+    <div class="opt" data-l="D">Polipropileno 2-0 em bolsa.</div>
+    <details><summary>Gabarito</summary><div class="ans"><b>C.</b> A via biliar exige monofilamentar absorvível fino (PDS 5-0/6-0); fios trançados/permanentes favorecem litíase e estenose na anastomose.</div></details>
+  </div>
+
+  <div class="q">
+    <div class="head">QUESTÃO 5 — estilo GHC</div>
+    <p>Paciente programado para hepatectomia direita ampliada por Klatskin IIIa, com volume do futuro fígado remanescente estimado em 25%. Qual medida pré-operatória reduz o risco de insuficiência hepática pós-hepatectomia?</p>
+    <div class="opt" data-l="A">Embolização da veia porta direita para hipertrofiar o remanescente esquerdo.</div>
+    <div class="opt" data-l="B">Embolização da veia porta esquerda.</div>
+    <div class="opt" data-l="C">Ligadura da artéria hepática direita.</div>
+    <div class="opt" data-l="D">Nenhuma — operar imediatamente.</div>
+    <details><summary>Gabarito</summary><div class="ans"><b>A.</b> Emboliza-se a porta do lado a ser <b>ressecado</b> (direito) para hipertrofiar o remanescente (esquerdo). Drenagem biliar do remanescente também é recomendada.</div></details>
+  </div>
+</section>
+
+<!-- ================= REFERÊNCIAS ================= -->
+<section id="ref">
+  <h2>📚 Referências &amp; consenso × controvérsia</h2>
+  <div class="ref">Sabiston — <i>Textbook of Surgery</i>: vias biliares, colangiocarcinoma e CaVB (quadro clínico, anatomia, princípios de ressecção).</div>
+  <div class="ref">Zollinger's — <i>Atlas of Surgical Operations</i>: colecistectomia, hepatectomias e hepaticojejunostomia (tempos e suturas).</div>
+  <div class="ref">NCCN / ESMO 2023 (cânceres biliares): colecistectomia simples em Tis/T1a; <b>radical (IVb/V + linfadenectomia portal) em T1b+</b>; ressecção R0 como objetivo.</div>
+  <div class="ref">AJCC 8ª edição — estadiamento TNM (o que prediz prognóstico, ao contrário do Bismuth).</div>
+  <div class="ref">Literatura peri-hilar: ressecção do <b>caudado essencial nos Bismuth II–IV</b>; embolização portal e drenagem do remanescente para prevenir falência hepática.</div>
+
+  <div class="box p" style="margin-top:18px">
+    <div class="lbl">Consenso × controvérsia</div>
+    <ul>
+      <li class="p"><b>Consenso:</b> R0 é o único caminho curativo; caudado em bloco nos II–IV; Whipple no distal; T1a → colecistectomia simples.</li>
+      <li class="p"><b>Controverso:</b> conduta no <b>T1b</b> (simples vs radical); ressecabilidade do <b>Bismuth IV</b> (alguns centros operam, transplante em selecionados); extensão exata da hepatectomia no T2 da vesícula.</li>
+    </ul>
+  </div>
+</section>
+
+<div class="foot">Padrão carolzita · CV 2026 · referência interativa — laranja = geral · roxo = prova · ciano = mnemônico/lay</div>
+</div>
+
+<script>
+const tabs=[
+ ["geral","VISÃO GERAL"],["anatomia","ANATOMIA"],["cavb","Ca VESÍCULA"],
+ ["colangio","COLANGIO"],["bismuth","★ BISMUTH"],["tecnica","TÉCNICA"],
+ ["comp","COMPLICAÇÕES"],["pega","PEGA-RATÃO"],["mnem","MNEMÔNICOS"],
+ ["quest","QUESTÕES"],["ref","REFERÊNCIAS"]
+];
+const nav=document.getElementById('nav');
+tabs.forEach((t,i)=>{const b=document.createElement('button');b.textContent=t[1];b.dataset.id=t[0];if(i===0)b.classList.add('active');b.onclick=()=>{document.querySelectorAll('nav button').forEach(x=>x.classList.remove('active'));document.querySelectorAll('section').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById(t[0]).classList.add('active');window.scrollTo({top:0,behavior:'smooth'});};nav.appendChild(b);});
+</script>
+</body>
+</html>

@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Úlcera Péptica — carolzita</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0f; --bg2:#12121a; --card:#16161f; --card2:#1c1c27;
+  --line:#2a2a38; --txt:#e6e6ef; --muted:#9a9ab0;
+  --laranja:#f97316; --laranja-bg:rgba(249,115,22,.10);
+  --roxo:#a855f7; --roxo-bg:rgba(168,85,247,.10);
+  --ciano:#22d3ee; --ciano-bg:rgba(34,211,238,.10);
+  --verde:#34d399; --vermelho:#f87171; --amarelo:#fbbf24;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(1200px 600px at 50% -10%,#15151f 0%,var(--bg) 60%);color:var(--txt);font-family:'Inter',sans-serif;line-height:1.55;padding:0 0 80px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px}
+header{padding:40px 0 24px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(30px,6vw,46px);line-height:1.05;margin:8px 0 6px;letter-spacing:-.02em}
+.sub{color:var(--muted);font-size:15px;max-width:700px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tag{font-family:'JetBrains Mono',monospace;font-size:11px;padding:5px 10px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted)}
+.tag.r{color:var(--roxo);border-color:rgba(168,85,247,.35);background:var(--roxo-bg)}
+section{margin-top:14px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:12px;overflow:hidden;transition:border-color .2s}
+details[open]{border-color:rgba(249,115,22,.30)}
+summary{cursor:pointer;list-style:none;padding:18px 20px;display:flex;align-items:center;gap:13px;font-family:'Syne',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em;user-select:none}
+summary::-webkit-details-marker{display:none}
+.num{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--bg);background:var(--laranja);width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:0 0 auto}
+.chev{margin-left:auto;color:var(--muted);transition:transform .25s;font-size:14px}
+details[open] .chev{transform:rotate(90deg)}
+.body{padding:4px 22px 24px;font-size:15px}
+.body p{margin:10px 0}
+.body h4{font-family:'Syne',sans-serif;font-size:16px;color:var(--laranja);margin:20px 0 8px;letter-spacing:-.01em}
+.body ul{margin:8px 0 8px 4px;list-style:none}
+.body li{padding:4px 0 4px 20px;position:relative}
+.body li::before{content:"▸";position:absolute;left:0;color:var(--laranja);font-size:12px;top:6px}
+.body strong{color:#fff;font-weight:600}
+.simple{color:var(--verde);font-style:italic;font-size:.94em;display:block;margin:6px 0}
+.box.simplebox{background:rgba(52,211,153,.09);border-color:rgba(52,211,153,.32);color:var(--verde);font-style:italic}
+.box.simplebox .lbl{color:var(--verde);font-style:normal}
+.box.simplebox strong{color:#7fe8c0;font-style:normal}
+.stx{counter-reset:st;margin:10px 0}
+.st{counter-increment:st;background:var(--card2);border:1px solid var(--line);border-radius:13px;padding:14px 16px 14px 52px;margin:11px 0;position:relative}
+.st::before{content:counter(st);position:absolute;left:14px;top:13px;width:26px;height:26px;border-radius:8px;background:var(--laranja);color:#0a0a0f;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center}
+.st .fase{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:var(--laranja);display:block;margin-bottom:1px}
+.st .ttl{font-weight:700;font-size:15.5px;color:#fff;margin-bottom:4px}
+.st p{margin:5px 0;font-size:14px}
+.pq{border-left:3px solid var(--roxo);background:var(--roxo-bg);border-radius:0 9px 9px 0;padding:8px 12px;margin:9px 0;font-size:13.5px}
+.pq b{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.3px;text-transform:uppercase;color:var(--roxo);display:block;margin-bottom:2px}
+.mh2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:9px}
+.mh{border-radius:9px;padding:8px 11px;font-size:12.5px;border:1px solid var(--line)}
+.mh.e{background:rgba(52,211,153,.07);border-color:rgba(52,211,153,.3)}
+.mh.d{background:var(--laranja-bg);border-color:rgba(249,115,22,.3)}
+.mh b{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;display:block;margin-bottom:2px}
+.mh.e b{color:var(--verde)} .mh.d b{color:var(--laranja)}
+.fio{font-family:'JetBrains Mono',monospace;font-size:11.5px;background:var(--roxo-bg);color:var(--roxo);border:1px solid rgba(168,85,247,.35);padding:1px 6px;border-radius:5px;white-space:nowrap}
+@media(max-width:640px){.mh2{grid-template-columns:1fr}}
+.box{border-radius:12px;padding:13px 15px;margin:14px 0;font-size:14px;border:1px solid}
+.box.prova{background:var(--roxo-bg);border-color:rgba(168,85,247,.35)}
+.box.prova .lbl{color:var(--roxo)}
+.box.mac{background:var(--ciano-bg);border-color:rgba(34,211,238,.35)}
+.box.mac .lbl{color:var(--ciano)}
+.box.warn{background:rgba(248,113,113,.08);border-color:rgba(248,113,113,.3)}
+.box.warn .lbl{color:var(--vermelho)}
+.lbl{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-family:'JetBrains Mono',monospace;font-size:10px;background:rgba(168,85,247,.2);color:var(--roxo);padding:2px 7px;border-radius:6px;margin-left:6px;white-space:nowrap}
+.tbl{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
+.tbl table{width:100%;border-collapse:collapse;min-width:520px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--laranja);background:var(--card2)}
+td strong{color:#fff}
+.fio td:first-child{color:var(--ciano);font-family:'JetBrains Mono',monospace;font-weight:500}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin:14px 0}
+.gcard{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+.gcard .t{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--ciano);margin-bottom:4px}
+.gcard .d{font-size:13px;color:var(--muted)}
+.hands{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.hand{border-radius:12px;padding:14px;border:1px solid var(--line)}
+.hand.e{background:rgba(34,211,238,.06);border-color:rgba(34,211,238,.25)}
+.hand.d{background:rgba(249,115,22,.06);border-color:rgba(249,115,22,.25)}
+.hand .ht{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;font-weight:700}
+.hand.e .ht{color:var(--ciano)} .hand.d .ht{color:var(--laranja)}
+.hand li{font-size:13px}
+.steps{counter-reset:s;margin:10px 0}
+.step{counter-increment:s;position:relative;padding:11px 0 11px 46px;border-bottom:1px dashed var(--line)}
+.step:last-child{border-bottom:none}
+.step::before{content:counter(s);position:absolute;left:0;top:9px;width:30px;height:30px;border-radius:9px;background:var(--laranja-bg);border:1px solid rgba(249,115,22,.4);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:grid;place-items:center}
+.step b{color:#fff}
+svg{max-width:100%;height:auto;display:block;margin:16px auto}
+.fig{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.fig .cap{font-size:12px;color:var(--muted);text-align:center;margin-top:8px;font-family:'JetBrains Mono',monospace}
+footer{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+footer .ref{font-family:'JetBrains Mono',monospace;font-size:12px;margin-top:8px}
+a{color:var(--laranja)}
+@media(max-width:560px){.hands{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">carolzita · cirurgia geral · estômago/duodeno</div>
+  <h1>Úlcera Péptica</h1>
+  <p class="sub">Etiologia (H. pylori × AINE) · a regra anterior/posterior · erradicação de H. pylori (ACG 2024, vonoprazan) · úlcera perfurada (WSES 2020/2023, laparoscopia-primeiro) · úlcera sangrante (Forrest, ligadura da GDA). Base: ACG Guideline H. pylori (2024), WSES Perforated and Bleeding Peptic Ulcer Guidelines, e pegadinhas das bancas do RS.</p>
+  <div class="tags">
+    <span class="tag">H. pylori</span>
+    <span class="tag">Forrest</span>
+    <span class="tag">Graham patch</span>
+    <span class="tag">WSES 2020/2023</span>
+    <span class="tag">GDA</span>
+    <span class="tag r">HCPA · GHC · SC-POA · PUC · AMRIGS</span>
+  </div>
+</header>
+
+<!-- 1 ETIOLOGIA E QUADRO CLINICO -->
+<details open>
+  <summary><span class="num">1</span> Etiologia &amp; quadro clínico <span class="chev">▶</span></summary>
+  <div class="body">
+    <p><strong>Úlcera péptica</strong> = lesão que rompe a mucosa até a submucosa/muscular própria, por desequilíbrio entre fatores agressores (ácido, pepsina, H. pylori) e protetores (muco, bicarbonato, fluxo sanguíneo mucoso).</p>
+
+    <h4>As duas causas dominantes</h4>
+    <div class="tbl"><table>
+      <tr><th>Causa</th><th>Frequência</th><th>Observação</th></tr>
+      <tr><td><strong>H. pylori</strong></td><td>Causa nº1 mundial</td><td>Prevalência em queda em países desenvolvidos, ainda alta no Brasil</td></tr>
+      <tr><td><strong>AINE/AAS</strong></td><td>2ª causa mais comum</td><td>Risco aumenta com idade, dose, uso concomitante de corticoide/anticoagulante</td></tr>
+      <tr><td><strong>Úlceras de estresse</strong></td><td>Contexto de doença grave</td><td>Curling (queimadura extensa), Cushing (lesão do SNC/neurocirurgia)</td></tr>
+    </table></div>
+
+    <h4>Duodenal × Gástrica — diferenciação clínica clássica</h4>
+    <div class="tbl"><table>
+      <tr><th></th><th>Úlcera duodenal</th><th>Úlcera gástrica</th></tr>
+      <tr><td><strong>Dor</strong></td><td><strong>Melhora</strong> com alimentação, retorna 2-3h depois</td><td><strong>Piora</strong> com alimentação</td></tr>
+      <tr><td><strong>Malignidade</strong></td><td>Praticamente nunca maligniza</td><td><strong>Sempre biopsiar</strong> — pode ser neoplasia</td></tr>
+      <tr><td><strong>Relação c/ H. pylori</strong></td><td>~90% dos casos</td><td>~70-80% dos casos</td></tr>
+    </table></div>
+    <div class="box warn"><span class="lbl">⚠ pegadinha</span>Toda <strong>úlcera gástrica</strong> deve ser biopsiada (múltiplos fragmentos das bordas) e ter <strong>cicatrização confirmada por EDA de controle</strong> — nunca assumir benignidade só pelo aspecto endoscópico inicial.</div>
+  </div>
+</details>
+
+<!-- 2 ANATOMIA -->
+<details>
+  <summary><span class="num">2</span> Anatomia — a regra mais cobrada <span class="chev">▶</span></summary>
+  <div class="body">
+    <div class="fig">
+      <svg viewBox="0 0 640 260" xmlns="http://www.w3.org/2000/svg">
+        <text x="320" y="18" fill="#9a9ab0" font-size="11" font-family="monospace" text-anchor="middle">bulbo duodenal — parede anterior × posterior</text>
+        <!-- bulbo duodenal -->
+        <ellipse cx="320" cy="140" rx="130" ry="80" fill="#12121a" stroke="#9a9ab0" stroke-width="2"/>
+        <!-- parede anterior -->
+        <path d="M200 100 Q320 60 440 100" fill="none" stroke="#22d3ee" stroke-width="6"/>
+        <text x="320" y="55" fill="#22d3ee" font-size="13" font-family="monospace" text-anchor="middle" font-weight="bold">parede ANTERIOR</text>
+        <text x="320" y="75" fill="#22d3ee" font-size="11" font-family="monospace" text-anchor="middle">→ cavidade livre → PERFURA</text>
+        <!-- parede posterior + GDA -->
+        <path d="M200 180 Q320 220 440 180" fill="none" stroke="#f87171" stroke-width="6"/>
+        <text x="320" y="245" fill="#f87171" font-size="13" font-family="monospace" text-anchor="middle" font-weight="bold">parede POSTERIOR</text>
+        <path d="M180 175 Q320 200 460 175" fill="none" stroke="#fbbf24" stroke-width="3" stroke-dasharray="6 4"/>
+        <text x="470" y="180" fill="#fbbf24" font-size="11" font-family="monospace">a. gastroduodenal (GDA)</text>
+        <text x="320" y="230" fill="#f87171" font-size="11" font-family="monospace" text-anchor="middle">→ erode a GDA → SANGRA</text>
+      </svg>
+      <div class="cap">Úlcera na parede posterior do bulbo pode erodir a artéria gastroduodenal (adjacente) → hemorragia. Úlcera na parede anterior comunica com a cavidade peritoneal livre → perfuração.</div>
+    </div>
+
+    <div class="box mac"><span class="lbl">macete</span><strong>Posterior sangra, anterior perfura</strong> — a GDA corre logo posterior ao bulbo duodenal (ramo da a. hepática comum); a parede anterior não tem essa proteção "capitonada" por vísceras vizinhas, comunicando-se diretamente com a cavidade livre.</div>
+
+    <p>Úlceras <strong>gástricas</strong> mais associadas a sangramento por erosão da <strong>a. gástrica esquerda</strong> (ramo do tronco celíaco), especialmente as localizadas na pequena curvatura.</p>
+  </div>
+</details>
+
+<!-- 3 DIAGNOSTICO E H PYLORI -->
+<details>
+  <summary><span class="num">3</span> Diagnóstico &amp; erradicação de H. pylori <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Diagnóstico</h4>
+    <ul>
+      <li><strong>EDA</strong> = padrão-ouro — permite biópsia (obrigatória se gástrica) e teste da urease rápido.</li>
+      <li><strong>Testes para H. pylori</strong>: teste da urease/histologia (durante EDA), <strong>antígeno fecal</strong>, <strong>teste respiratório da ureia</strong> (sensibilidade ~97%, especificidade ~100% — usado também para <strong>confirmar erradicação</strong> após tratamento).</li>
+      <li>Sorologia (anticorpos) <strong>não distingue</strong> infecção ativa de exposição prévia — não usar para confirmar erradicação.</li>
+    </ul>
+    <div class="box warn"><span class="lbl">⚠ pegadinha</span>Teste respiratório e antígeno fecal exigem <strong>suspensão de IBP por 1-2 semanas</strong> e de antibióticos/bismuto por 4 semanas antes do teste — falso-negativo é comum se testado precocemente demais.</div>
+
+    <h4>Erradicação — ACG 2024</h4>
+    <ul>
+      <li><strong>Terapia guiada por exposição prévia a macrolídeo</strong> e por resistência regional a claritromicina — não usar claritromicina empírica em áreas/pacientes de alto risco de resistência.</li>
+      <li><strong>Terapia quádrupla com bismuto</strong> (IBP + bismuto + tetraciclina + metronidazol) é opção robusta independente de resistência à claritromicina.</li>
+      <li><strong>Vonoprazana</strong> (inibidor competitivo do potássio, ação mais potente/rápida que IBP clássico) associada a antibióticos vem ganhando espaço como terapia dupla/tripla eficaz, inclusive em cenários de resistência.</li>
+      <li>Duração: geralmente <strong>14 dias</strong> para a maioria dos esquemas.</li>
+    </ul>
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">ACG 2024</span></span>A diretriz atual <strong>não recomenda mais terapia tripla clássica com claritromicina de forma empírica universal</strong> — a escolha do esquema deve considerar exposição prévia a antibióticos e padrões de resistência local. <strong>Confirmar erradicação</strong> (teste respiratório/antígeno fecal) em <strong>todos os pacientes</strong> tratados, não só nos sintomáticos persistentes.</div>
+  </div>
+</details>
+
+<!-- 4 ULCERA PERFURADA -->
+<details>
+  <summary><span class="num">4</span> Úlcera perfurada — manejo (WSES 2020/2023) <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>Emergência cirúrgica clássica — dor abdominal súbita e intensa, sinais de peritonite, pneumoperitônio ao RX/TC em boa parte dos casos.</p>
+
+    <div class="fig">
+      <svg viewBox="0 0 640 180" xmlns="http://www.w3.org/2000/svg">
+        <text x="320" y="18" fill="#9a9ab0" font-size="11" font-family="monospace" text-anchor="middle">abordagem cirúrgica — WSES 2020/2023</text>
+        <rect x="40" y="40" width="260" height="60" rx="10" fill="#34d399" opacity=".18" stroke="#34d399" stroke-width="1.5"/>
+        <text x="170" y="65" fill="#34d399" font-size="13" font-family="monospace" text-anchor="middle" font-weight="bold">paciente estável</text>
+        <text x="170" y="85" fill="#fff" font-size="12" font-family="monospace" text-anchor="middle">laparoscopia (preferencial)</text>
+        <rect x="340" y="40" width="260" height="60" rx="10" fill="#f97316" opacity=".18" stroke="#f97316" stroke-width="1.5"/>
+        <text x="470" y="65" fill="#f97316" font-size="13" font-family="monospace" text-anchor="middle" font-weight="bold">instável / sem expertise</text>
+        <text x="470" y="85" fill="#fff" font-size="12" font-family="monospace" text-anchor="middle">via aberta</text>
+        <text x="320" y="135" fill="#9a9ab0" font-size="11" font-family="monospace" text-anchor="middle">perfuração ≥2cm → abordagem individualizada (pode exigir ressecção)</text>
+        <text x="320" y="155" fill="#9a9ab0" font-size="11" font-family="monospace" text-anchor="middle">operar o quanto antes — atraso e idade &gt;70 anos aumentam mortalidade</text>
+      </svg>
+      <div class="cap">Estável → laparoscopia é a via preferencial atual. Instável ou sem equipe/material adequado → via aberta. Perfurações grandes (≥2cm) exigem avaliação individualizada, podendo necessitar ressecção.</div>
+    </div>
+
+    <h4>Graham patch — passo a passo</h4>
+    <div class="box simplebox"><span class="lbl">tradução simples</span>Não se "costura o buraco" da úlcera: o tecido em volta está inflamado e friável, e ponto em tecido ruim <strong>rasga</strong>. O que se faz é <strong>tampar</strong> o buraco com um pedaço de omento vivo, como uma rolha que traz sangue e cicatriza por cima.</div>
+
+    <div class="stx">
+
+      <div class="st">
+        <span class="fase">fase de acesso e inventário</span>
+        <div class="ttl">Identificar a perfuração e controlar a contaminação</div>
+        <p>Laparoscopia (preferencial no estável) ou laparotomia mediana supraumbilical. Inspeção sistemática — a perfuração está quase sempre na <strong>parede anterior do bulbo duodenal</strong>. Aspirar o líquido, colher <strong>cultura</strong>.</p>
+        <div class="pq"><b>por quê</b>A localização não é acaso: a úlcera <strong>anterior perfura</strong> porque à frente dela só existe cavidade livre; a posterior sangra porque atrás dela está a artéria gastroduodenal. A anatomia decide a complicação.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de preparo do retalho</span>
+        <div class="ttl">Mobilizar uma língua de omento bem vascularizada</div>
+        <p>Escolher uma porção do <strong>omento maior</strong> com pedículo próprio e mobilizá-la até a perfuração <strong>sem tensão</strong>. Se o omento for insuficiente ou ausente (gastrectomia prévia), alternativas: <strong>ligamento falciforme</strong> ou retalho jejunal.</p>
+        <div class="pq"><b>por quê</b>O omento não é um curativo — é um <strong>enxerto vascularizado</strong>. Ele funciona porque leva sangue e macrófagos ao local. Retalho tracionado perde a perfusão e o <em>patch</em> falha exatamente como falharia uma sutura simples.</div>
+        <div class="mh2">
+          <div class="mh e"><b>mão esquerda</b>Babcock elevando o estômago e expondo a perfuração; depois posiciona e mantém o omento</div>
+          <div class="mh d"><b>mão direita</b>Aspirador na coleta; tesoura/energia liberando o retalho omental</div>
+        </div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de sutura — o detalhe que reprova</span>
+        <div class="ttl">Passar 3–4 pontos em U <em>antes</em> de posicionar o omento</div>
+        <p>Pontos separados em <strong>U</strong> com <span class="fio">Vicryl 2-0/3-0</span>, transfixando: <strong>borda da úlcera → omento → borda oposta</strong>. <strong>Não amarrar nenhum ponto</strong> nesta etapa — deixá-los todos reparados.</p>
+        <div class="pq"><b>por quê</b>Amarrar ponto a ponto vai <strong>rasgando</strong> o tecido edemaciado e fecha o campo, impedindo passar os seguintes. Passando todos frouxos primeiro, a tensão se distribui igualmente entre eles quando forem amarrados.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de fixação</span>
+        <div class="ttl">Posicionar o omento e amarrar suavemente</div>
+        <p>Acomodar o omento <strong>sobre</strong> a perfuração e amarrar os pontos com <strong>força mínima</strong> — o omento é a tampa, não o ponto. Teste de estanqueidade com azul de metileno pela SNG é opcional.</p>
+        <div class="pq"><b>por quê</b>Nó apertado <strong>estrangula e necrosa</strong> o retalho, que é justamente o tecido que deveria cicatrizar. O <em>patch</em> falha por excesso de força com a mesma frequência com que falha por falta de omento.</div>
+        <div class="box warn" style="margin-top:8px"><span class="lbl">⚠ perfuração ≥ 2 cm</span>Não se fecha com <em>patch</em>. Exige abordagem individualizada — ressecção, exclusão pilórica ou duodenostomia. Tentar tamponar um defeito grande é a receita da deiscência.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de encerramento</span>
+        <div class="ttl">Lavagem exaustiva, dreno e fechamento</div>
+        <p>Lavar com <strong>8–10 L de soro aquecido</strong> até retorno claro. Dreno subhepático conforme grau de contaminação. Fechar por planos. SNG e IBP no pós-operatório; <strong>erradicar H. pylori</strong> e suspender AINE.</p>
+        <div class="pq"><b>por quê</b>Aqui a lógica é <strong>oposta</strong> à da apendicite: no abdome químico e difusamente contaminado pelo conteúdo gastroduodenal, a lavagem ampla <em>é</em> o tratamento. E o passo que mais reduz recidiva não é cirúrgico — é erradicar o <em>H. pylori</em> depois.</div>
+      </div>
+
+    </div>
+    <div class="box warn"><span class="lbl">⚠ nuance atual</span>O <strong>reforço com omento não é obrigatório em todos os casos</strong> — a WSES pondera que, em perfurações pequenas com boa aproximação tecidual, o fechamento simples pode ter resultado semelhante, reservando o patch omental para casos selecionados (maior tempo cirúrgico/habilidade laparoscópica exigida). Na prática e na maioria das provas, porém, o <strong>Graham patch continua sendo a resposta esperada</strong> como técnica padrão.</div>
+  </div>
+</details>
+
+<!-- 5 ULCERA SANGRANTE -->
+<details>
+  <summary><span class="num">5</span> Úlcera sangrante — Forrest &amp; cirurgia <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Classificação de Forrest — guia a terapia endoscópica</h4>
+    <div class="fig">
+      <svg viewBox="0 0 640 170" xmlns="http://www.w3.org/2000/svg">
+        <line x1="60" y1="140" x2="600" y2="140" stroke="#2a2a38" stroke-width="3"/>
+        <rect x="60"  y="120" width="90" height="20" fill="#dc2626" opacity=".5"/>
+        <rect x="150" y="120" width="90" height="20" fill="#f97316" opacity=".5"/>
+        <rect x="240" y="120" width="90" height="20" fill="#f97316" opacity=".5"/>
+        <rect x="330" y="120" width="90" height="20" fill="#fbbf24" opacity=".5"/>
+        <rect x="420" y="120" width="90" height="20" fill="#34d399" opacity=".4"/>
+        <rect x="510" y="120" width="90" height="20" fill="#34d399" opacity=".5"/>
+        <text x="105" y="112" fill="#dc2626" font-size="11" font-family="monospace" text-anchor="middle" font-weight="bold">Ia jato</text>
+        <text x="195" y="112" fill="#f97316" font-size="11" font-family="monospace" text-anchor="middle" font-weight="bold">Ib babação</text>
+        <text x="285" y="112" fill="#f97316" font-size="11" font-family="monospace" text-anchor="middle" font-weight="bold">IIa vaso visível</text>
+        <text x="375" y="112" fill="#fbbf24" font-size="10" font-family="monospace" text-anchor="middle" font-weight="bold">IIb coágulo</text>
+        <text x="465" y="112" fill="#34d399" font-size="10" font-family="monospace" text-anchor="middle" font-weight="bold">IIc hematina</text>
+        <text x="555" y="112" fill="#34d399" font-size="11" font-family="monospace" text-anchor="middle" font-weight="bold">III limpa</text>
+        <text x="105" y="158" fill="#9a9ab0" font-size="9" font-family="monospace" text-anchor="middle">alto risco</text>
+        <text x="285" y="158" fill="#9a9ab0" font-size="9" font-family="monospace" text-anchor="middle">terapia endoscópica</text>
+        <text x="555" y="158" fill="#9a9ab0" font-size="9" font-family="monospace" text-anchor="middle">baixo risco, IBP só</text>
+      </svg>
+      <div class="cap">Forrest Ia-IIa (e IIb após remoção do coágulo) recebem terapia endoscópica (dupla: adrenalina + método térmico/clipe). IIc e III têm baixo risco de ressangramento — IBP isolado, sem necessidade de terapia endoscópica.</div>
+    </div>
+
+    <h4>Falha da endoscopia — próximos passos (WSES)</h4>
+    <div class="steps">
+      <div class="step"><b>1. Ressangramento após 1ª endoscopia</b>: preferir <strong>retratamento endoscópico</strong> a ir direto para cirurgia — estudo clássico (Lau et al., NEJM) mostrou desfechos comparáveis com menos morbidade que cirurgia de resgate imediata.</div>
+      <div class="step"><b>2. Falha do retratamento endoscópico</b> ou sangramento maciço incontrolável: <strong>embolização arterial transcateter (TAE)</strong> se disponível, ou <strong>cirurgia</strong>.</div>
+    </div>
+
+    <h4>Técnica cirúrgica — controle da GDA em 3 pontos</h4>
+    <div class="box simplebox"><span class="lbl">tradução simples</span>A artéria que sangra fica <strong>atrás</strong> da úlcera, escondida. Você não a alcança por fora — abre o duodeno <strong>pela frente</strong>, enfia o dedo no buraco da úlcera por dentro e costura a artéria ali, no fundo do crateras. É hemostasia <em>dentro</em> do tubo digestivo.</div>
+
+    <div class="stx">
+
+      <div class="st">
+        <span class="fase">fase de acesso</span>
+        <div class="ttl">Manobra de Kocher e duodenotomia longitudinal</div>
+        <p>Mobilizar o duodeno pela <strong>manobra de Kocher</strong> para poder apoiá-lo entre os dedos. <strong>Duodenotomia longitudinal na parede anterior</strong>, sobre a úlcera — que está na parede posterior.</p>
+        <div class="pq"><b>por quê</b>Abre-se a parede <strong>oposta</strong> à lesão. O Kocher permite comprimir manualmente o pedículo entre polegar e indicador enquanto se prepara o ponto — controle temporário do sangramento sem clampear às cegas.</div>
+        <div class="mh2">
+          <div class="mh e"><b>mão esquerda</b>Compressão digital do leito ulceroso / do pedículo; afastadores mantendo a duodenotomia aberta</div>
+          <div class="mh d"><b>mão direita</b>Bisturi na duodenotomia; aspirador; porta-agulha com <span class="fio">Prolene 3-0</span></div>
+        </div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de hemostasia — passo decisivo</span>
+        <div class="ttl">Os três pontos na artéria gastroduodenal</div>
+        <p><strong>1)</strong> Ponto <strong>proximal</strong> à úlcera · <strong>2)</strong> ponto <strong>distal</strong> · <strong>3)</strong> ponto em <strong>"U"</strong> medial, capturando o <strong>ramo pancreático transverso</strong>.</p>
+        <div class="pq"><b>por quê</b>A GDA recebe fluxo de <strong>duas direções</strong>: anterógrado do tronco celíaco pela hepática comum, e <strong>retrógrado</strong> da mesentérica superior pelas arcadas pancreatoduodenais. Por isso ligar só proximal e distal não para o sangramento — falta o ramo transverso, que continua alimentando a cratera por trás. É a mesma anatomia que explica o teste de clampeamento no Whipple, vista pelo outro lado.</div>
+        <div class="box warn" style="margin-top:8px"><span class="lbl">⚠ cuidado</span>Ponto profundo demais medialmente pode pegar o <strong>colédoco</strong>, que corre atrás do bulbo, ou o parênquima pancreático. Ponto raso não segura. É um dos gestos mais desconfortáveis da cirurgia de urgência.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de fechamento</span>
+        <div class="ttl">Fechar <em>transversalmente</em> — Heineke-Mikulicz</div>
+        <p>A duodenotomia longitudinal é fechada em sentido <strong>transversal</strong>, alargando o lúmen em vez de estreitá-lo.</p>
+        <div class="pq"><b>por quê</b>Fechar no mesmo sentido em que se abriu <strong>estreita o tubo</strong> — é o princípio inverso da piloroplastia. Abrir no eixo longo e fechar no eixo curto transforma a incisão em <strong>alargamento</strong> do lúmen. Fechar longitudinalmente causa estenose duodenal, e é erro clássico de prova.</div>
+        <span class="simple">(É o mesmo truque de quando você corta uma manga da camisa no comprimento e costura na largura: em vez de apertar, ela abre.)</span>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de decisão</span>
+        <div class="ttl">Acrescentar ou não cirurgia redutora de ácido</div>
+        <p>Paciente <strong>instável</strong>, idoso ou com sangramento maciço → apenas hemostasia, sem acrescentar procedimento. Paciente <strong>estável</strong>, jovem, com úlcera refratária e <em>H. pylori</em> negativo → considerar vagotomia troncal + piloroplastia no mesmo tempo.</p>
+        <div class="pq"><b>por quê</b>Na era pré-IBP a cirurgia definitiva era regra, porque não havia como reduzir o ácido depois. Hoje o IBP e a erradicação fazem esse papel — e acrescentar procedimento num paciente chocado <strong>aumenta a mortalidade</strong> sem ganho. A operação é de controle de dano, não de doença.</div>
+      </div>
+
+    </div>
+    <div class="box mac"><span class="lbl">macete</span>Os <strong>3 pontos</strong> da GDA existem porque a artéria recebe fluxo <strong>de duas direções</strong> (anterógrado do tronco celíaco via hepática, e retrógrado da AMS via pancreatoduodenal inferior) — ligar só proximal e distal deixa o ramo transverso sangrando.</div>
+    <div class="box warn"><span class="lbl">⚠ pegadinha</span>Fechar a duodenotomia no sentido <strong>longitudinal</strong> (em vez de transversal) é erro clássico de prova — risco de <strong>estenose duodenal</strong> pós-operatória.</div>
+
+    <div class="box prova"><span class="lbl">e a cirurgia definitiva?</span>Vagotomia e antrectomia hoje são <strong>exceção</strong> — ver a seção 6. Em paciente instável, faz-se apenas a hemostasia.</div>
+  </div>
+</details>
+
+<!-- 6 CIRURGIA DEFINITIVA -->
+<details>
+  <summary><span class="num">6</span> Cirurgia redutora de ácido — vagotomias, antrectomia &amp; reconstruções <span class="chev">▶</span></summary>
+  <div class="body">
+    <div class="box simplebox"><span class="lbl">tradução simples</span>Existem <strong>dois botões</strong> que ligam a produção de ácido: o <strong>nervo vago</strong> (fase cefálica — pensar, ver e cheirar comida) e a <strong>gastrina do antro</strong> (fase gástrica — comida distendendo o estômago). A cirurgia clássica desliga um, o outro, ou os dois. Quanto mais botões você desliga, menos úlcera recidiva — e mais efeitos colaterais o paciente carrega para o resto da vida.</div>
+
+    <div class="box prova"><span class="lbl">contexto atual</span>Estas operações são da <strong>era pré-IBP e pré-erradicação de H. pylori</strong>. Hoje são <strong>raras</strong> — reservadas a intratabilidade verdadeira após otimização clínica, complicação em paciente <em>H. pylori</em> negativo sem AINE, ou realizadas no mesmo tempo de uma cirurgia de complicação em paciente estável. <strong>Continuam caindo em prova.</strong> <span class="banca">HCPA</span><span class="banca">AMRIGS</span></div>
+
+    <h4>O trade-off que organiza tudo</h4>
+    <div class="tbl"><table>
+      <tr><th>Procedimento</th><th>Recidiva</th><th>Efeitos colaterais</th><th>Precisa de drenagem?</th></tr>
+      <tr><td><strong>Vagotomia superseletiva (HSV)</strong></td><td>Maior (~10–15%)</td><td><strong>Mínimos</strong></td><td><strong>Não</strong> — piloro inervado e funcionante</td></tr>
+      <tr><td><strong>Vagotomia troncal + drenagem</strong></td><td>Intermediária</td><td>Diarreia, dumping</td><td><strong>Sim</strong> — piloro denervado</td></tr>
+      <tr><td><strong>Vagotomia troncal + antrectomia</strong></td><td><strong>Menor (~1%)</strong></td><td><strong>Máximos</strong></td><td>A própria reconstrução</td></tr>
+    </table></div>
+    <div class="box mac"><span class="lbl">a regra de ouro</span><strong>Menos recidiva = mais sequela.</strong> A escolha equilibra o risco de a úlcera voltar contra o risco de o paciente viver com dumping e diarreia. É essa troca que a banca quer ver que você entendeu.</div>
+
+    <h4>A) Vagotomia superseletiva (gástrica proximal / de células parietais)</h4>
+    <div class="stx">
+
+      <div class="st">
+        <span class="fase">fase de exposição</span>
+        <div class="ttl">Identificar os troncos vagais no esôfago abdominal</div>
+        <p>Laparotomia mediana, mobilização do esôfago abdominal. Identificar o <strong>tronco vagal anterior (esquerdo)</strong> e o <strong>posterior (direito)</strong>.</p>
+        <div class="pq"><b>por quê</b>A regra de rotação embrionária: o estômago gira 90° para a direita, então o vago <strong>esquerdo vira anterior</strong> e o <strong>direito vira posterior</strong>. Daí o mnemônico clássico — <strong>LARP</strong>: <em>Left Anterior, Right Posterior</em>.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase crítica — o que preservar</span>
+        <div class="ttl">Identificar o "pé de ganso" de Latarjet</div>
+        <p>Seguir os ramos vagais distalmente até os ramos terminais que inervam o antro — o <strong>pé de ganso (crow's foot)</strong> do nervo de Latarjet. <strong>Preservar integralmente.</strong></p>
+        <div class="pq"><b>por quê</b>O nervo de Latarjet é o que comanda a <strong>motilidade antropilórica</strong>. Preservá-lo é exatamente o que dispensa a piloroplastia — o estômago continua esvaziando sozinho. Lesá-lo transforma a operação numa vagotomia troncal disfarçada, com estase gástrica e sem procedimento de drenagem para compensar.</div>
+        <div class="mh2">
+          <div class="mh e"><b>mão esquerda</b>Tração suave do estômago para baixo e para a esquerda, abrindo a pequena curvatura em leque</div>
+          <div class="mh d"><b>mão direita</b>Metzenbaum e dissector fino; clipes ou ligaduras delicadas nos ramos</div>
+        </div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de denervação</span>
+        <div class="ttl">Seccionar apenas os ramos do corpo e do fundo</div>
+        <p>Seccionar os ramos vagais destinados ao <strong>corpo e fundo gástricos</strong> — onde estão as <strong>células parietais</strong>. Limite distal da denervação: <strong>7 cm proximal ao piloro</strong>.</p>
+        <div class="pq"><b>por quê</b>Esses 7 cm são a fronteira anatômica entre a mucosa oxíntica (produtora de ácido) e o antro (produtor de gastrina). Denervar além disso invade o território do Latarjet; denervar aquém deixa células parietais funcionantes e a úlcera recidiva.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de encerramento</span>
+        <div class="ttl">Conferir a pequena curvatura e fechar</div>
+        <p>Revisar a pequena curvatura desnudada — considerar reperitonizar. <strong>Nenhum procedimento de drenagem é necessário.</strong></p>
+        <div class="pq"><b>por quê</b>A pequena curvatura fica desvascularizada e desperitonizada ao longo de vários centímetros: existe risco descrito de <strong>necrose da pequena curvatura</strong>, complicação rara mas catastrófica.</div>
+      </div>
+
+    </div>
+
+    <h4>B) Vagotomia troncal + antrectomia</h4>
+    <div class="stx">
+
+      <div class="st">
+        <span class="fase">fase de denervação</span>
+        <div class="ttl">Vagotomia troncal</div>
+        <p>Seccionar <strong>os dois troncos</strong> vagais ao nível do esôfago abdominal, ressecando um segmento de 1–2 cm de cada e enviando para congelação.</p>
+        <div class="pq"><b>por quê</b>O segmento é enviado ao patólogo porque <strong>confirmar que era nervo</strong> é a única forma de garantir que a vagotomia foi feita. Vagotomia incompleta é a causa nº 1 de recidiva.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de mobilização</span>
+        <div class="ttl">Liberar o estômago e o duodeno</div>
+        <p>Secção do ligamento gastro-hepático — <strong>atenção à hepática esquerda substituta</strong>. Secção do gastrocólico <strong>preservando a arcada gastroepiploica</strong>. <strong>Manobra de Kocher</strong> no duodeno.</p>
+        <div class="pq"><b>por quê</b>A arcada gastroepiploica é o suprimento do coto gástrico que vai receber a anastomose. Sacrificá-la aqui compromete a perfusão da linha de sutura que você mesmo vai fazer dez minutos depois.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de ressecção</span>
+        <div class="ttl">Antrectomia — os 50% distais</div>
+        <p>Limite proximal: da <strong>incisura angularis</strong> na pequena curvatura até o ponto correspondente na grande curvatura. Ligadura da <strong>gástrica direita</strong> e dos ramos gastroepiploicos. Secção com grampeador linear (<span class="fio">carga azul 3,5 mm</span>; <span class="fio">roxa 4,0 mm</span> se duodeno cicatricial).</p>
+        <div class="pq"><b>por quê</b>Retira-se o antro porque é ali que ficam as <strong>células G produtoras de gastrina</strong> — é o segundo botão do ácido. Vagotomia sem antrectomia deixa a gastrina livre; antrectomia sem vagotomia deixa a fase cefálica livre.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de reconstrução</span>
+        <div class="ttl">Billroth I, Billroth II ou Y de Roux</div>
+        <p><strong>Billroth I (gastroduodenostomia)</strong> — a mais fisiológica, mantém o trânsito pelo duodeno. Não usar se o duodeno estiver inflamado ou cicatricial.<br>
+        <strong>Billroth II (gastrojejunostomia com alça aferente)</strong> — usada quando o duodeno é inviável. <strong>Em desuso</strong> pela morbidade tardia.<br>
+        <strong>Y de Roux</strong> — alça de <strong>40–60 cm</strong>. <strong>Padrão atual</strong> quando o Billroth I não é possível.</p>
+        <div class="pq"><b>por quê</b>A diferença entre as três é <strong>o que acontece com a bile</strong>. No BI e no BII ela banha o coto gástrico → <strong>refluxo alcalino</strong> e risco de câncer de coto. No Y de Roux os 40–60 cm afastam a bile do estômago — e esse comprimento não é arbitrário: menos que isso não impede o refluxo, muito mais que isso favorece a <strong>síndrome do Y de Roux</strong> (estase da alça).</div>
+        <div class="box warn" style="margin-top:8px"><span class="lbl">⚠ o coto duodenal</span>No Billroth II e no Y de Roux o coto duodenal é fechado às cegas. Se estiver cicatricial e mal fechado → <strong>fístula do coto duodenal</strong>, uma das complicações mais temidas da cirurgia gástrica. Considerar duodenostomia de descompressão em duodeno hostil.</div>
+      </div>
+
+    </div>
+
+    <h4>C) Procedimentos de drenagem (após vagotomia troncal)</h4>
+    <div class="tbl"><table>
+      <tr><th>Técnica</th><th>Como se faz</th><th>Observação</th></tr>
+      <tr><td><strong>Piloroplastia de Heineke-Mikulicz</strong></td><td>Incisão longitudinal através do piloro, fechada <strong>transversalmente</strong></td><td>A mais usada. Mesmo princípio do fechamento da duodenotomia</td></tr>
+      <tr><td><strong>Piloroplastia de Finney</strong></td><td>Incisão em "U" invertido; anastomose látero-lateral gastroduodenal</td><td>Para piloro muito cicatricial</td></tr>
+      <tr><td><strong>Gastrojejunostomia</strong></td><td>Anastomose ao jejuno, contornando o piloro</td><td>Quando o duodeno é inabordável</td></tr>
+    </table></div>
+    <div class="box mac"><span class="lbl">a lógica da drenagem</span>Vagotomia <strong>troncal</strong> denerva o piloro, que perde o relaxamento coordenado e vira uma barreira fechada. Sem procedimento de drenagem, o paciente sai da cirurgia com <strong>estase gástrica</strong>. Já a superseletiva preserva o Latarjet — e por isso <strong>não precisa</strong> de drenagem. Essa relação é a pergunta clássica.</div>
+
+    <h4>Síndromes pós-gastrectomia</h4>
+    <div class="tbl"><table>
+      <tr><th>Síndrome</th><th>Mecanismo</th><th>Clínica</th><th>Conduta</th></tr>
+      <tr><td><strong>Dumping precoce</strong> (15–30 min)</td><td>Carga hiperosmolar chega rápido ao delgado → <strong>sequestro de líquido</strong> para a luz</td><td>Cólica, diarreia, taquicardia, sudorese, hipotensão</td><td>Dieta fracionada, pobre em carboidrato simples; separar líquidos dos sólidos; deitar após comer</td></tr>
+      <tr><td><strong>Dumping tardio</strong> (2–3 h)</td><td>Pico de glicose → <strong>hiperinsulinemia reativa</strong> → hipoglicemia</td><td>Sudorese, tremor, confusão</td><td>Dieta; acarbose; octreotide em refratários</td></tr>
+      <tr><td><strong>Síndrome da alça aferente</strong> (BII)</td><td>Obstrução da alça aferente → acúmulo de bile sob pressão</td><td>Dor pós-prandial que <strong>alivia com vômito bilioso em jato</strong>, sem alimento</td><td>Cirúrgica — conversão para Y de Roux</td></tr>
+      <tr><td><strong>Gastrite por refluxo alcalino</strong></td><td>Bile banhando o coto gástrico</td><td>Dor <strong>contínua</strong>, vômito bilioso que <strong>não alivia</strong> a dor</td><td>Conversão para Y de Roux</td></tr>
+      <tr><td><strong>Diarreia pós-vagotomia</strong></td><td>Denervação e trânsito acelerado de sais biliares</td><td>Diarreia explosiva, pós-prandial</td><td>Colestiramina; geralmente melhora com o tempo</td></tr>
+      <tr><td><strong>Anemia</strong></td><td>↓ ferro (perda do ambiente ácido) e ↓ <strong>B12</strong> (perda do fator intrínseco)</td><td>Tardia, anos depois</td><td>Reposição; <strong>B12 vitalícia</strong> na gastrectomia total</td></tr>
+      <tr><td><strong>Câncer do coto gástrico</strong></td><td>Refluxo alcalino crônico</td><td>15–20 anos após</td><td>Vigilância endoscópica</td></tr>
+    </table></div>
+    <div class="box mac"><span class="lbl">macete que separa as duas dores</span><strong>Alça aferente:</strong> vômito bilioso <strong>em jato que ALIVIA</strong> a dor, sem comida junto.<br><strong>Refluxo alcalino:</strong> dor <strong>contínua</strong> e o vômito <strong>NÃO alivia</strong>.<br>É a diferença entre um <em>cano entupido que desentope</em> e um <em>ácido que queima o tempo todo</em>.</div>
+
+    <h4>Instrumentação e fios</h4>
+    <div class="tbl"><table>
+      <tr><th>Momento</th><th>Mão esquerda</th><th>Mão direita</th></tr>
+      <tr><td>Graham patch</td><td>Babcock elevando o estômago e expondo a perfuração; posiciona e mantém o omento</td><td>Aspirador; porta-agulha passando o U pela borda → omento → borda oposta; empurrador de nó</td></tr>
+      <tr><td>Vagotomia</td><td>Tração do estômago para baixo, abrindo a pequena curvatura</td><td>Metzenbaum e dissector fino nos ramos; clipes</td></tr>
+      <tr><td>Antrectomia</td><td>Duval/Babcock posicionando o estômago para o grampeador</td><td>LigaSure/harmônico nas curvaturas; grampeador linear</td></tr>
+      <tr><td>Sangramento da GDA</td><td>Compressão digital do leito; afastadores na duodenotomia</td><td>Porta-agulha com Prolene; Satinsky se necessário clampear</td></tr>
+    </table></div>
+    <div class="tbl"><table>
+      <tr><th>Estrutura</th><th>Fio</th><th>Por quê</th></tr>
+      <tr><td>Sutura em U do Graham patch</td><td><span class="fio">Vicryl 2-0/3-0</span></td><td>Absorvível, agulha redonda; campo contaminado</td></tr>
+      <tr><td><em>Oversewing</em> da GDA</td><td><span class="fio">Prolene 3-0/4-0</span></td><td><strong>Inabsorvível</strong> — a hemostasia precisa durar</td></tr>
+      <tr><td>Anastomose gastrointestinal manual</td><td><span class="fio">PDS 3-0</span></td><td>Absorvível de longa duração</td></tr>
+      <tr><td>Reforço da linha de grampos</td><td><span class="fio">Vicryl 3-0</span></td><td>Pontos seromusculares</td></tr>
+      <tr><td>Secção gástrica</td><td><span class="fio">Carga azul 3,5 mm</span></td><td>Parede de espessura habitual</td></tr>
+      <tr><td>Duodeno cicatricial</td><td><span class="fio">Carga roxa 4,0 mm</span></td><td>Maior altura de grampo para tecido espesso</td></tr>
+      <tr><td>Aponeurose</td><td><span class="fio">Vicryl/PDS 1</span></td><td>Contínua</td></tr>
+    </table></div>
+  </div>
+</details>
+
+<!-- 6 QUESTOES / PEGA-RATOES -->
+<details>
+  <summary><span class="num">7</span> Questões de banca, pega-ratões &amp; mnemônicos <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>10 questões representativas (originais, estilo das 5 bancas)</h4>
+
+    <div class="box prova"><span class="lbl">Q1 <span class="banca">HCPA</span></span><strong>Úlcera duodenal na parede posterior do bulbo, paciente com melena e queda de hematócrito. Qual vaso está provavelmente envolvido?</strong><br>Resposta: <strong>artéria gastroduodenal</strong> — parede posterior sangra.</div>
+
+    <div class="box prova"><span class="lbl">Q2 <span class="banca">GHC</span></span><strong>Paciente com pneumoperitônio e sinais de peritonite. Qual a localização mais provável da úlcera?</strong><br>Resposta: <strong>parede anterior</strong> — comunica com a cavidade livre, perfura.</div>
+
+    <div class="box prova"><span class="lbl">Q3 <span class="banca">AMRIGS</span></span><strong>Úlcera gástrica identificada à EDA, aspecto benigno. Conduta quanto à biópsia?</strong><br>Resposta: <strong>biopsiar sempre</strong> — úlcera gástrica pode ser maligna independente do aspecto endoscópico.</div>
+
+    <div class="box prova"><span class="lbl">Q4 <span class="banca">PUC-RS</span></span><strong>Paciente jovem, hígido, com úlcera perfurada de 1cm, hemodinamicamente estável. Via de acesso preferencial?</strong><br>Resposta: <strong>laparoscopia</strong> — preferencial em pacientes estáveis (WSES).</div>
+
+    <div class="box prova"><span class="lbl">Q5 <span class="banca">SC-POA</span></span><strong>Forrest IIc (hematina, mancha plana) à endoscopia. Conduta?</strong><br>Resposta: <strong>IBP isolado</strong>, sem necessidade de terapia endoscópica — baixo risco de ressangramento.</div>
+
+    <div class="box prova"><span class="lbl">Q6 <span class="banca">HCPA</span></span><strong>Paciente ressangra após terapia endoscópica bem-sucedida para úlcera Forrest Ia. Próximo passo?</strong><br>Resposta: <strong>retratamento endoscópico</strong> antes de cirurgia — desfechos comparáveis com menor morbidade.</div>
+
+    <div class="box prova"><span class="lbl">Q7 <span class="banca">GHC</span></span><strong>Por que a ligadura da GDA na úlcera sangrante exige 3 pontos, não apenas 2?</strong><br>Resposta: a artéria recebe fluxo <strong>anterógrado e retrógrado</strong> — o 3º ponto em U captura o ramo pancreático transverso.</div>
+
+    <div class="box prova"><span class="lbl">Q8 <span class="banca">AMRIGS</span></span><strong>Ao fechar a duodenotomia após controle de úlcera sangrante, qual orientação evita estenose?</strong><br>Resposta: fechamento <strong>transversal</strong> (Heineke-Mikulicz), nunca longitudinal.</div>
+
+    <div class="box prova"><span class="lbl">Q9 <span class="banca">PUC-RS</span></span><strong>Segundo ACG 2024, terapia tripla com claritromicina empírica é a recomendação universal para erradicação de H. pylori?</strong><br>Resposta: <strong>não</strong> — escolha do esquema deve considerar exposição prévia a antibióticos e resistência local; quádrupla com bismuto é opção robusta independente de resistência.</div>
+
+    <div class="box prova"><span class="lbl">Q10 <span class="banca">SC-POA</span></span><strong>Como confirmar erradicação de H. pylori após tratamento?</strong><br>Resposta: <strong>teste respiratório da ureia ou antígeno fecal</strong> — não usar sorologia, que não distingue infecção ativa de exposição prévia.</div>
+
+    <h4>Pega-ratões (as armadilhas clássicas)</h4>
+    <div class="box warn"><span class="lbl">☠ trap 1</span>Posterior sangra, anterior perfura — fácil de inverter na prova.</div>
+    <div class="box warn"><span class="lbl">☠ trap 2</span>Úlcera gástrica <strong>sempre</strong> biopsia — nunca assumir benignidade pelo aspecto.</div>
+    <div class="box warn"><span class="lbl">☠ trap 3</span>Sorologia para H. pylori <strong>não</strong> confirma erradicação.</div>
+    <div class="box warn"><span class="lbl">☠ trap 4</span>Fechamento longitudinal da duodenotomia = risco de estenose.</div>
+    <div class="box warn"><span class="lbl">☠ trap 5</span>Ligadura da GDA com só 2 pontos deixa o ramo transverso sangrando.</div>
+    <div class="box warn"><span class="lbl">☠ trap 6</span>Ressangramento pós-endoscopia → retratar endoscopicamente antes de operar.</div>
+    <div class="box warn"><span class="lbl">☠ trap 7</span>Claritromicina empírica universal não é mais a recomendação-padrão (ACG 2024).</div>
+    <div class="box warn"><span class="lbl">☠ trap 8</span>Vagotomia/antrectomia não são mais 1ª linha — só refratários pós-otimização.</div>
+
+    <h4>Mnemônicos-resumo</h4>
+    <div class="box mac"><span class="lbl">macete geral</span>Posterior sangra (GDA) · Anterior perfura (cavidade livre) · Gástrica sempre biopsia · Perfurada estável=laparoscopia+Graham patch · Forrest Ia-IIa=terapia endoscópica, IIc/III=só IBP · GDA=3 pontos (prox+dist+transverso) · Fechamento SEMPRE transversal · Confirmar erradicação com teste respiratório/antígeno fecal, não sorologia.</div>
+  </div>
+</details>
+
+<footer>
+  <div><strong>carolzita</strong> · Úlcera Péptica · referência completa</div>
+  <div class="ref">Fontes: ACG Clinical Guideline — Treatment of Helicobacter pylori Infection (2024) · WSES Perforated and Bleeding Peptic Ulcer Guidelines (2020) + Laparoscopic-First Position Statement (2023) · Lau JY et al., NEJM (retratamento endoscópico) · Sabiston · Zollinger. Conteúdo educacional; questões são itens representativos originais.</div>
+</footer>
+</div>
+</body>
+</html>

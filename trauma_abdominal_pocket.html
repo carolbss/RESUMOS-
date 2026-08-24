@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🩸 Trauma Abdominal — Pocket</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d1117;--panel:#161b22;--panel2:#1c232c;--line:#2a323c;--tx:#e6edf3;--mut:#8b949e;--or:#ff7a18;--or2:#ff9a4d;--orbg:rgba(255,122,24,.10);--pu:#b083f0;--pu2:#c9a7ff;--pubg:rgba(176,131,240,.12);--cy:#3dd6d0;--cy2:#5fe3dd;--cybg:rgba(61,214,208,.10);--grn:#3fb950}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font-family:'IBM Plex Sans',sans-serif;line-height:1.5;padding:0 0 40px}
+.sheet{max-width:430px;margin:0 auto;min-height:100vh;background:var(--bg)}
+header{padding:22px 20px 0;display:flex;justify-content:space-between;align-items:baseline}
+.logo{font-size:23px;font-weight:700;letter-spacing:-.5px}.logo .b{color:var(--or)}
+.kick{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--or);text-transform:uppercase}
+nav{position:sticky;top:0;background:var(--bg);z-index:5;border-bottom:1px solid var(--line);overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;margin-top:14px}
+nav .in{display:flex;padding:0 16px}
+nav button{background:none;border:none;color:var(--mut);font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.5px;text-transform:uppercase;padding:13px 11px;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px}
+nav button.on{color:var(--or);border-bottom-color:var(--or)}
+section{display:none;padding:20px;animation:f .2s}section.on{display:block}
+@keyframes f{from{opacity:0}to{opacity:1}}
+h2{font-size:18px;color:var(--or);font-weight:600;padding-bottom:8px;border-bottom:1px solid var(--line);margin-bottom:14px}
+h3{font-size:13px;margin:16px 0 6px;font-weight:600;color:var(--or2)}
+p,li{font-size:14px}
+.step{display:flex;align-items:flex-start;gap:10px;padding:7px 0}
+.num{flex:0 0 auto;width:24px;height:24px;border-radius:6px;background:var(--or);color:#0d1117;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:13px;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.it{color:var(--cy2);font-style:italic;font-size:13px}
+.box{border-left:3px solid var(--or);background:var(--orbg);border-radius:0 8px 8px 0;padding:11px 14px;margin:14px 0}
+.box.pu{border-color:var(--pu);background:var(--pubg)}.box.cy{border-color:var(--cy);background:var(--cybg)}
+.box .lbl{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--or);margin-bottom:6px;font-weight:600}
+.box.pu .lbl{color:var(--pu2)}.box.cy .lbl{color:var(--cy2)}
+.big{font-size:16px;font-weight:600}
+.tbl{border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:12px 0;background:var(--panel)}
+.row{display:flex;align-items:center;gap:10px;padding:10px 13px;border-bottom:1px solid var(--line);font-size:13.5px}.row:last-child{border-bottom:none}
+.row .v{flex:0 0 auto;color:var(--or2);font-weight:700;font-family:'IBM Plex Mono',monospace;min-width:66px}
+.hand{font-family:'IBM Plex Mono',monospace;font-size:11px;padding:1px 6px;border-radius:5px;font-weight:600}
+.L{background:rgba(63,185,80,.15);color:#56d364}.R{background:rgba(255,122,24,.15);color:var(--or2)}
+ul{list-style:none;margin:4px 0}li{padding:4px 0 4px 24px;position:relative}li .em{position:absolute;left:0}
+.hi{color:var(--pu2);font-weight:600}.mn{font-family:'IBM Plex Mono',monospace;color:var(--cy2);font-weight:600}
+.foot{text-align:center;color:var(--mut);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1px;padding:18px;border-top:1px solid var(--line);margin-top:10px}
+</style>
+</head>
+<body>
+<div class="sheet">
+<header><div class="logo">🩸 <span class="b">Trauma Abdominal</span></div><div class="kick">Pocket</div></header>
+<nav><div class="in" id="nav"></div></nav>
+
+<section id="def" class="on">
+<h2>🧭 Definição</h2>
+<div class="box"><div class="lbl">📏 Mecanismo</div>
+<p class="big">Contuso 🚗 × Penetrante 🔪</p>
+<p class="it">contuso = machuca víscera maciça (baço/fígado) · penetrante = machuca víscera oca (tripas) 🌀</p></div>
+<div class="box pu"><div class="lbl">🎯 Órgão + lesado</div>
+<ul>
+<li><span class="em">🚗</span>Contuso → <span class="hi">Baço</span></li>
+<li><span class="em">🔫</span>Arma de fogo → <span class="hi">Delgado</span></li>
+<li><span class="em">🔪</span>Arma branca → <span class="hi">Fígado</span></li>
+</ul></div>
+</section>
+
+<section id="fast">
+<h2>🔊 FAST</h2>
+<div class="box"><div class="lbl">📡 4 janelas</div>
+<ul>
+<li><span class="em">❤️</span>Pericárdica (subxifoide)</li>
+<li><span class="em">🫘</span>QSD — <span class="hi">Morison</span> (+ sensível no supino ⭐)</li>
+<li><span class="em">🩸</span>QSE — esplenorrenal</li>
+<li><span class="em">🔽</span>Pélvica (Douglas)</li>
+</ul>
+<p class="it">e-FAST = + 2 janelas do tórax (hemo/pneumotórax) 🫁</p></div>
+<div class="box pu"><div class="lbl">⭐ Alto rendimento</div>
+<ul>
+<li><span class="em">📈</span>Sensib. ~85–96% · espec. &gt;98% (líquido livre, ≥200 mL)</li>
+<li><span class="em">🚫</span>NÃO vê: víscera oca, retroperitônio, diafragma</li>
+<li><span class="em">⚠️</span>FAST negativo NÃO exclui lesão!</li>
+</ul></div>
+</section>
+
+<section id="alg">
+<h2>📐 Algoritmo</h2>
+<div class="tbl">
+<div class="row"><span class="v">Inst +</span><span>FAST + → 🏥 laparotomia JÁ (sem TC)</span></div>
+<div class="row"><span class="v">Inst –</span><span>FAST – → busca outra fonte / DPL</span></div>
+<div class="row"><span class="v">Estáv +</span><span>FAST + → 🖥️ TC gradua → NOM × cx</span></div>
+<div class="row"><span class="v">Estáv –</span><span>FAST – → observação / TC</span></div>
+</div>
+<div class="box pu"><div class="lbl">🚨 Laparotomia JÁ</div>
+<ul>
+<li><span class="em">🩸</span>Instável + FAST/DPL +</li>
+<li><span class="em">🔥</span>Peritonite</li>
+<li><span class="em">🫃</span>Evisceração / empalamento</li>
+<li><span class="em">💨</span>Pneumoperitônio · diafragma · bexiga intraperit.</li>
+<li><span class="em">🔫</span>PAF transperitoneal</li>
+</ul></div>
+</section>
+
+<section id="nom">
+<h2>🛡️ NOM &amp; graus</h2>
+<div class="box"><div class="lbl">✅ Manejo não operatório</div>
+<ul>
+<li><span class="em">🫀</span>Estável + baço/fígado por TC, sem peritonite</li>
+<li><span class="em">🎯</span>Blush/pseudoaneurisma → <span class="hi">angioembolização</span></li>
+<li><span class="em">⚠️</span>Quem decide cirurgia é a <span class="hi">hemodinâmica</span>, não o grau!</li>
+</ul></div>
+<div class="tbl">
+<div class="row"><span class="v">AAST I-II</span><span>Baixo grau → NOM 🟢</span></div>
+<div class="row"><span class="v">AAST III</span><span>NOM se estável 🟡</span></div>
+<div class="row"><span class="v">AAST IV-V</span><span>Alta falha; ⅔ operam se instável 🔴</span></div>
+</div>
+<p class="it">2018: grau sobe se houver lesão vascular (blush/pseudoaneurisma) 📈</p>
+</section>
+
+<section id="retro">
+<h2>📍 Retroperitônio</h2>
+<div class="box pu"><div class="lbl">⭐ Zonas — decorar!</div>
+<ul>
+<li><span class="em">1️⃣</span>Zona I (central) → <span class="hi">SEMPRE explora</span> (aorta/VCI/duodeno-pâncreas)</li>
+<li><span class="em">2️⃣</span>Zona II (flanco) → explora se penetrante / expansivo</li>
+<li><span class="em">3️⃣</span>Zona III (pelve) → contuso <span class="hi">NÃO abre</span> (empacota + angio 🎯)</li>
+</ul></div>
+</section>
+
+<section id="dcs">
+<h2>🛠️ Damage Control</h2>
+<div class="box pu"><div class="lbl">💀 Tríade letal (HAC)</div>
+<ul>
+<li><span class="em">🌡️</span><span class="hi">H</span>ipotermia &lt;35°C</li>
+<li><span class="em">🧪</span><span class="hi">A</span>cidose pH &lt;7,2</li>
+<li><span class="em">🩸</span><span class="hi">C</span>oagulopatia</li>
+<li><span class="em">💎</span>(+ hipoCalcemia = diamante letal)</li>
+</ul></div>
+<h3>3 fases ⏱️</h3>
+<div class="step"><div class="num">1</div><div><b>Abre (abreviada)</b> — packing + ligadura + shunt · alça grampeada <span class="it">sem anastomose</span> · peritoneostomia 🩹</div></div>
+<div class="step"><div class="num">2</div><div><b>Reanima (UTI)</b> — reaquece, corrige acidose/coagulopatia 🔥</div></div>
+<div class="step"><div class="num">3</div><div><b>Reconstrói</b> — 24–48 h · anastomose + fecha parede 🧵</div></div>
+<div class="box cy"><div class="lbl">🩸 DCR</div>
+<ul>
+<li><span class="em">📉</span>Hipotensão permissiva (~80–90 mmHg)</li>
+<li><span class="em">⚖️</span>Transfusão <span class="hi">1:1:1</span> · pouco cristaloide</li>
+<li><span class="em">⏰</span>TXA &lt;3 h (1g+1g)</li>
+<li><span class="em">🎈</span>REBOA = ponte, não solução</li>
+</ul></div>
+</section>
+
+<section id="tec">
+<h2>🔪 Técnica</h2>
+<div class="box"><div class="lbl">🛏️ Setup</div>
+<p>Supino crucifixo · antissepsia <span class="hi">mento → coxa</span> · mediana xifopúbica 📏</p></div>
+<div class="step"><div class="num">1</div><div>Abre + aspira coágulos <span class="hand L">E</span>afastador <span class="hand R">D</span>bisturi</div></div>
+<div class="step"><div class="num">2</div><div><b>Packing 4 quadrantes</b> 🩹 tampona e revela a fonte</div></div>
+<div class="step"><div class="num">3</div><div>Hemostasia: packing peri-hepático · <span class="hi">Pringle</span> (pedículo hepático) 🤏</div></div>
+<div class="step"><div class="num">4</div><div>Baço instável → esplenectomia (hilo com seda 2-0/0) 🩸</div></div>
+<div class="step"><div class="num">5</div><div>Alça lesada → grampeia, <span class="it">sem restaurar trânsito</span> ✂️</div></div>
+<div class="box cy"><div class="lbl">🧵 Fios</div>
+<ul>
+<li><span class="em">·</span>Pedículo/vaso calibroso → seda/poliéster 2-0/0</li>
+<li><span class="em">·</span>Enterorrafia (definitiva) → PDS/Vicryl 3-0/4-0</li>
+<li><span class="em">·</span>Vaso reparável → prolene 4-0/5-0 · aponeurose → PDS 1</li>
+</ul></div>
+</section>
+
+<section id="peg">
+<h2>🪤 Pega-ratões</h2>
+<div class="box pu"><div class="lbl">⚠️ Não erre!</div>
+<ul>
+<li><span class="em">🚫</span>FAST – NÃO exclui lesão</li>
+<li><span class="em">🖥️</span>Instável + FAST + → sala, <span class="hi">não pede TC</span></li>
+<li><span class="em">🟢</span>FAST + no estável ≠ cirurgia (gradua por TC)</li>
+<li><span class="em">📊</span>Grau AAST alto não indica cirurgia — é a fisiologia</li>
+<li><span class="em">1️⃣</span>Zona I sempre abre · Zona III contuso não abre</li>
+<li><span class="em">🧵</span>Damage control = <span class="hi">sem anastomose</span> na 1ª cx</li>
+<li><span class="em">⏰</span>TXA só &lt;3 h</li>
+<li><span class="em">🫁</span>Diafragma E passa batido → herniação tardia</li>
+</ul></div>
+</section>
+
+<section id="mn">
+<h2>🧠 Mnemônicos</h2>
+<div class="box cy"><div class="lbl">🔊 FAST</div><p class="mn">Pericárdio · Morison · Esplenorrenal · Pelve</p></div>
+<div class="box cy"><div class="lbl">💀 Tríade letal</div><p class="mn">"HAC" Hipotermia · Acidose · Coagulopatia (+ Ca = diamante)</p></div>
+<div class="box cy"><div class="lbl">⏱️ Damage control</div><p class="mn">"Abre → Reanima → Reconstrói" (24–48 h)</p></div>
+<div class="box cy"><div class="lbl">📍 Zonas retro</div><p class="mn">1 sempre · 2 depende · 3 contuso não abre</p></div>
+<div class="box cy"><div class="lbl">🎯 Órgão + lesado</div><p class="mn">Contuso=Baço · PAF=Delgado · FAB=Fígado</p></div>
+</section>
+
+<div class="foot">← deslize as abas →</div>
+</div>
+<script>
+var s=[['def','🧭 Def'],['fast','🔊 FAST'],['alg','📐 Algoritmo'],['nom','🛡️ NOM'],['retro','📍 Retro'],['dcs','🛠️ Damage'],['tec','🔪 Técnica'],['peg','🪤 Pegas'],['mn','🧠 Mnem']];
+var n=document.getElementById('nav');
+s.forEach(function(x,i){var b=document.createElement('button');b.textContent=x[1];if(i===0)b.className='on';b.onclick=function(){document.querySelectorAll('nav button').forEach(function(y){y.classList.remove('on')});b.classList.add('on');document.querySelectorAll('section').forEach(function(y){y.classList.remove('on')});document.getElementById(x[0]).classList.add('on');document.querySelector('.sheet').scrollIntoView()};n.appendChild(b)});
+</script>
+</body>
+</html>

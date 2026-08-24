@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RCU · Pocket · carolzita</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+:root{
+  --bg:#0d1117;--bg2:#161b22;--bg3:#1c232e;--border:#2a3140;
+  --text:#c9d1d9;--dim:#8b949e;
+  --orange:#ff7a18;--orange-bg:#2a1505;
+  --purple:#b083f0;--purple-bg:#1e1430;
+  --cyan:#3dd6d0;--cyan-bg:#06201f;
+  --red:#f87171;--green:#4ade80;--yellow:#fbbf24;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-serif;font-size:14.5px;line-height:1.55;padding-bottom:2.5rem}
+.head{padding:1.1rem 1rem .8rem;border-bottom:1px solid var(--border);background:linear-gradient(135deg,#1a1005,#161b22 60%)}
+.head h1{font-size:1.25rem;color:#fff;font-weight:700;display:flex;align-items:center;gap:.5rem}
+.head h1 em{color:var(--orange);font-style:normal}
+.head .s{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--dim);margin-top:.25rem}
+.tabs{position:sticky;top:0;z-index:50;display:flex;gap:.3rem;overflow-x:auto;background:var(--bg2);border-bottom:1px solid var(--border);padding:.5rem .6rem;scrollbar-width:thin}
+.tabs::-webkit-scrollbar{height:4px}.tabs::-webkit-scrollbar-thumb{background:var(--border)}
+.tab{flex-shrink:0;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;padding:.4rem .7rem;border-radius:7px;cursor:pointer;color:var(--dim);border:1px solid transparent;white-space:nowrap}
+.tab.on{background:var(--orange-bg);color:var(--orange);border-color:#5c2e0a}
+.slide{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--dim);text-align:center;padding:.5rem}
+.wrap{max-width:640px;margin:0 auto;padding:1rem}
+.sec{display:none}.sec.on{display:block;animation:f .2s}
+@keyframes f{from{opacity:0}to{opacity:1}}
+.t{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:700;color:var(--orange);letter-spacing:1px;text-transform:uppercase;margin:1rem 0 .5rem;padding-bottom:.35rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:.4rem}
+.t:first-child{margin-top:.2rem}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:.7rem .85rem;margin:.55rem 0}
+.card.o{border-left:3px solid var(--orange)}
+.card.p{border-left:3px solid var(--purple)}
+.card.c{border-left:3px solid var(--cyan)}
+.card.r{border-left:3px solid var(--red)}
+.card.g{border-left:3px solid var(--green)}
+.lbl{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:1px;text-transform:uppercase;font-weight:700;margin-bottom:.3rem}
+.o .lbl{color:var(--orange)}.p .lbl{color:var(--purple)}.c .lbl{color:var(--cyan)}.r .lbl{color:var(--red)}.g .lbl{color:var(--green)}
+strong{color:#fff}
+.big{color:var(--orange);font-weight:700;font-size:1.05rem}
+ul{margin:.3rem 0 .3rem 1.1rem}li{margin:.22rem 0}
+.row{display:flex;justify-content:space-between;gap:.6rem;padding:.35rem 0;border-bottom:1px solid var(--border);font-size:13px}
+.row:last-child{border:none}
+.row .k{color:var(--dim);font-family:'IBM Plex Mono',monospace;font-size:11px}
+.row .v{color:#fff;text-align:right;font-weight:500}
+.mn{background:var(--purple-bg);border:1px solid #3b2566;border-radius:9px;padding:.6rem .8rem;margin:.5rem 0}
+.mn-w{font-family:'IBM Plex Mono',monospace;font-weight:700;color:var(--purple);letter-spacing:2px;margin-bottom:.2rem}
+.mn-d{font-size:12.5px;color:var(--text)}
+.trap{font-size:12.5px;background:var(--bg2);border:1px solid #5c2e0a;border-left:3px solid var(--orange);border-radius:9px;padding:.55rem .75rem;margin:.45rem 0}
+.trap b{color:var(--orange)}
+.flow{display:flex;flex-direction:column;gap:.4rem;margin:.5rem 0}
+.fstep{display:flex;gap:.6rem;align-items:flex-start;background:var(--bg3);border:1px solid var(--border);border-radius:9px;padding:.5rem .7rem}
+.fn{flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--orange-bg);color:var(--orange);border:1px solid #5c2e0a;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700}
+.fc{font-size:12.5px}.fc b{color:#fff}
+.hand{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin:.5rem 0}
+.hc{background:var(--bg3);border:1px solid var(--border);border-radius:9px;padding:.55rem .65rem;font-size:12px}
+.hc.l{border-top:2px solid var(--cyan)}.hc.r{border-top:2px solid var(--orange)}
+.ht{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:1px;font-weight:700;margin-bottom:.25rem}
+.l .ht{color:var(--cyan)}.r .ht{color:var(--orange)}
+@media(max-width:480px){.hand{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="head">
+  <h1>🩸 RCU <em>Pocket</em></h1>
+  <div class="s">// retocolite ulcerativa · or pocket · carolzita</div>
+</div>
+<div class="tabs" id="tabs"></div>
+<div class="slide">← deslize as abas →</div>
+<div class="wrap" id="wrap"></div>
+
+<script>
+const S=[
+{t:'🩺 DX', h:`
+<div class="t">🩸 Cara da doença</div>
+<div class="card c"><div class="lbl">RCU = CONTÍNUA</div>
+Mucosa/submucosa · <strong>começa no reto</strong> · ascende contínua (sem skip).<br>
+Sintoma cardinal: <strong>diarreia com sangue + muco</strong>, urgência, tenesmo.</div>
+<div class="card o"><div class="lbl">Montreal</div>
+<div class="row"><span class="k">E1</span><span class="v">Proctite</span></div>
+<div class="row"><span class="k">E2</span><span class="v">Colite esquerda</span></div>
+<div class="row"><span class="k">E3</span><span class="v">Pancolite (↑risco CA)</span></div></div>
+<div class="t">🆚 RCU × Crohn</div>
+<div class="card p">
+<div class="row"><span class="k">RCU</span><span class="v">contínua · mucosa · reto+ · p-ANCA · tabaco PROTEGE · cura cx</span></div>
+<div class="row"><span class="k">Crohn</span><span class="v">salteada · transmural · boca-ânus · granuloma · ASCA · fístula</span></div></div>
+<div class="trap"><b>🪤</b> Poupa reto / lesão salteada / granuloma → é <b>Crohn</b>.</div>
+<div class="trap"><b>🪤</b> <b>CEP</b> = extra-intestinal independente da atividade → vigilância anual.</div>
+`},
+{t:'⚕️ GRAVIDADE', h:`
+<div class="t">🌡️ Truelove-Witts (ASUC)</div>
+<div class="card r"><div class="lbl">GRAVE = ≥6 + 1 sistêmico</div>
+<div class="row"><span class="k">Evac. c/ sangue</span><span class="v big">≥ 6/dia</span></div>
+<div class="row"><span class="k">Temp</span><span class="v">&gt; 37,8 °C</span></div>
+<div class="row"><span class="k">FC</span><span class="v">&gt; 90 bpm</span></div>
+<div class="row"><span class="k">Hb</span><span class="v">&lt; 10,5 g/dL</span></div>
+<div class="row"><span class="k">VHS</span><span class="v">&gt; 30 (PCR↑)</span></div></div>
+<div class="t">📅 Oxford — DIA 3</div>
+<div class="card c"><div class="lbl">Prevê colectomia (~85%)</div>
+<strong>&gt; 8 evac/dia</strong> &nbsp;OU&nbsp; <strong>3–8 + PCR &gt; 45</strong> em 72h → resgate/cirurgia.</div>
+<div class="mn"><div class="mn-w">MAYO 0–1</div><div class="mn-d">= cicatrização de mucosa (alvo do tratamento).</div></div>
+`},
+{t:'💊 CLÍNICO', h:`
+<div class="t">🪜 Escada</div>
+<div class="card o">
+<div class="row"><span class="k">Leve/proctite</span><span class="v">5-ASA tópico ± oral</span></div>
+<div class="row"><span class="k">Mod-grave</span><span class="v">corticoide → biológico/JAK</span></div>
+<div class="row"><span class="k">Manutenção</span><span class="v">5-ASA/biológico (corticoide NÃO)</span></div></div>
+<div class="t">🚨 ASUC</div>
+<div class="card r"><div class="lbl">Internação</div>
+<ul>
+<li>Corticoide IV (hidrocortisona/metilpred)</li>
+<li>Profilaxia <strong>TEV</strong> · repor K⁺/Mg²⁺</li>
+<li>Suspender opioide/antidiarreico/anticolinérgico</li>
+<li>Cirurgião desde a admissão · reavaliar <strong>dia 3</strong></li>
+</ul></div>
+<div class="card p"><div class="lbl">Resgate (falha 72h)</div>
+<strong>Infliximabe 5 mg/kg</strong> &nbsp;OU&nbsp; <strong>ciclosporina 2 mg/kg/dia</strong>. Sem resposta ~7d → colectomia.</div>
+<div class="trap"><b>🪤</b> Resgate é <b>sequencial</b> — não empilhar IFX + ciclosporina.</div>
+<div class="trap"><b>🪤</b> Excluir <b>C. difficile / CMV</b> antes de chamar de refratário.</div>
+`},
+{t:'✂️ INDICAÇÕES', h:`
+<div class="t">🔴 Emergência → colectomia + ileostomia</div>
+<div class="card r">
+Fulminante refratária · <strong>megacólon tóxico</strong> (&gt;6 cm + toxemia) · perfuração · hemorragia maciça · falha de resgate.<br>
+Op: <strong>colectomia total + ileostomia terminal</strong> (coto a Hartmann).</div>
+<div class="t">🟠 Eletiva → proctocolectomia + IPAA</div>
+<div class="card o">
+Refratariedade/dependência de corticoide · <strong>displasia alto grau / CCR</strong> · retardo de crescimento.<br>
+Op: <strong>proctocolectomia restauradora c/ bolsa em J (IPAA)</strong>.</div>
+<div class="card c"><div class="lbl">Vigilância</div>
+Colono c/ cromoendoscopia <strong>8 anos após dx</strong> (pancolite); <strong>anual e imediata se CEP</strong>.</div>
+<div class="trap"><b>🪤</b> Cirurgia <b>cura</b> a RCU (Crohn não). Sempre colectomia <b>total</b>.</div>
+<div class="trap"><b>🪤</b> Instável/desnutrido/imunossuprimido → <b>nunca IPAA</b> de início.</div>
+`},
+{t:'🔪 TÉCNICA', h:`
+<div class="t">🛏️ Preparo</div>
+<div class="card c">Posição <strong>Lloyd-Davies (litotomia)</strong> · sonda vesical · laparo/robótico preferencial · 3-tempos em ASUC.</div>
+<div class="t">👣 IPAA — passos</div>
+<div class="flow">
+<div class="fstep"><div class="fn">1</div><div class="fc"><b>Mobilizar cólon</b> + ligar pedículos (íleocólica, cólica média, AMI)</div></div>
+<div class="fstep"><div class="fn">2</div><div class="fc"><b>Liberar flexuras</b> + alongar mesentério ileal p/ descer à pelve</div></div>
+<div class="fstep"><div class="fn">3</div><div class="fc"><b>Proctectomia c/ TME</b> protegendo nervos pélvicos</div></div>
+<div class="fstep"><div class="fn">4</div><div class="fc"><b>Secção retal</b> grampeador linear, <b>~2 cm acima da pectínea</b></div></div>
+<div class="fstep"><div class="fn">5</div><div class="fc"><b>Bolsa em J</b> (~15–20 cm) com GIA</div></div>
+<div class="fstep"><div class="fn">6</div><div class="fc"><b>IPAA</b>: duplo grampeamento (circular) OU mucosectomia + manual</div></div>
+<div class="fstep"><div class="fn">7</div><div class="fc"><b>Teste de ar</b> + <b>ileostomia em alça</b> de proteção + dreno</div></div>
+</div>
+<div class="hand">
+<div class="hc l"><div class="ht">🤚 ESQUERDA</div>Babcock / grasper atraumático · tração e contra-tração do cólon e mesentério</div>
+<div class="hc r"><div class="ht">✋ DIREITA</div>Energia (LigaSure/ultrassônico) · grampeadores linear+circular · porta-agulha</div>
+</div>
+<div class="card p"><div class="lbl">Stapled × Mucosectomia</div>
+<strong>Grampeada</strong>: melhor função, deixa <strong>cuff</strong> (vigiar).<br>
+<strong>Mucosectomia</strong>: tira toda mucosa (displasia distal), função pior.</div>
+<div class="t">🧵 Fios & cargas</div>
+<div class="card o">
+<div class="row"><span class="k">Pedículos</span><span class="v">energia/clipe</span></div>
+<div class="row"><span class="k">Reto/bolsa</span><span class="v">grampeador linear</span></div>
+<div class="row"><span class="k">Anast. bolsa-anal</span><span class="v">circular (EEA)</span></div>
+<div class="row"><span class="k">Ileostomia</span><span class="v">poliglactina 3-0</span></div>
+<div class="row"><span class="k">Aponeurose</span><span class="v">PDS 0–1 contínuo</span></div></div>
+`},
+{t:'⚠️ COMPLIC.', h:`
+<div class="t">⚠️ Pós-IPAA</div>
+<div class="card r">
+<div class="row"><span class="k">+ comum</span><span class="v"><strong>Pouchite</strong> (ATB: metro/cipro)</span></div>
+<div class="row"><span class="k">Grave</span><span class="v">deiscência / sepse pélvica</span></div>
+<div class="row"><span class="k">Tardio</span><span class="v">estenose · fístula bolsa-vaginal</span></div>
+<div class="row"><span class="k">Cuff</span><span class="v">cuffite (mesalazina tópica)</span></div>
+<div class="row"><span class="k">Pélvico</span><span class="v">disf. sexual/urinária · ↓fertilidade ♀</span></div>
+<div class="row"><span class="k">Falência</span><span class="v">~5–15% → ileostomia definitiva</span></div></div>
+<div class="card g"><div class="lbl">Não esquecer</div>DII = pró-trombótico → <strong>profilaxia de TEV</strong> (estendida se tofacitinibe).</div>
+`},
+{t:'🎯 MNEMÔNICOS', h:`
+<div class="mn"><div class="mn-w">CONTÍNUA</div><div class="mn-d">RCU contínua, do reto pra cima. Salteada/poupa reto = Crohn.</div></div>
+<div class="mn"><div class="mn-w">6 + 1</div><div class="mn-d">Grave (Truelove): ≥6 evac. sanguinolentas + 1 sistêmico.</div></div>
+<div class="mn"><div class="mn-w">DIA 3</div><div class="mn-d">Oxford: &gt;8 fezes OU 3–8 + PCR&gt;45 → resgate/cx.</div></div>
+<div class="mn"><div class="mn-w">CURA = TUDO FORA</div><div class="mn-d">Proctocolectomia cura a RCU (remove todo risco). Crohn não.</div></div>
+<div class="mn"><div class="mn-w">CEP → CA</div><div class="mn-d">RCU + colangite esclerosante = vigilância anual imediata.</div></div>
+<div class="trap"><b>🪤</b> Tabaco PROTEGE na RCU (dado de prova, não conduta).</div>
+<div class="trap"><b>🪤</b> Megacólon: sem colono/preparo. Rx/TC + descompressão.</div>
+<div class="trap"><b>🪤</b> Emergência = colectomia total + ileostomia (Hartmann), nunca IPAA.</div>
+`}
+];
+const tabs=document.getElementById('tabs'),wrap=document.getElementById('wrap');
+S.forEach((s,i)=>{
+  const t=document.createElement('div');t.className='tab'+(i===0?' on':'');t.textContent=s.t;t.onclick=()=>go(i);tabs.appendChild(t);
+  const d=document.createElement('div');d.className='sec'+(i===0?' on':'');d.innerHTML=s.h;wrap.appendChild(d);
+});
+function go(i){
+  document.querySelectorAll('.tab').forEach((t,k)=>t.classList.toggle('on',k===i));
+  document.querySelectorAll('.sec').forEach((d,k)=>d.classList.toggle('on',k===i));
+  document.querySelectorAll('.tab')[i].scrollIntoView({inline:'center',block:'nearest',behavior:'smooth'});
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+document.addEventListener('keydown',e=>{
+  const on=[...document.querySelectorAll('.tab')].findIndex(t=>t.classList.contains('on'));
+  if(e.key==='ArrowRight'&&on<S.length-1)go(on+1);
+  if(e.key==='ArrowLeft'&&on>0)go(on-1);
+});
+</script>
+</body>
+</html>

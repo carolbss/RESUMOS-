@@ -1,0 +1,648 @@
+<!DOCTYPE html><html lang='pt-BR'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Apendicectomia - Guia Completo - Carolina 2026</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+:root{--bg:#0d0f14;--bg2:#13151c;--bg3:#1a1d26;--border:#252836;--text:#c9cdd8;--text-dim:#6b7280;--orange:#f97316;--orange-dim:#431a06;--orange-bg:#1c1208;--purple:#a855f7;--purple-dim:#3b1668;--purple-bg:#17102a;--cyan:#22d3ee;--cyan-dim:#064e5a;--cyan-bg:#071318;--emerald:#10b981;--emerald-dim:#064e3b;--emerald-bg:#071c15;--red:#ef4444;--amber:#f59e0b;--amber-dim:#78350f;--amber-bg:#1c0f02;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:14px;line-height:1.7;}
+.header{background:linear-gradient(135deg,#0d0f14,#071318 60%,#0d0f14);border-bottom:2px solid var(--cyan-dim);padding:2.5rem 2.5rem 2rem;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-30%;right:-5%;width:600px;height:600px;background:radial-gradient(circle,rgba(34,211,238,0.06),transparent 70%);pointer-events:none;}
+.htag{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--cyan);text-transform:uppercase;letter-spacing:3px;margin-bottom:.5rem;}
+.header h1{font-family:'Syne',sans-serif;font-size:2.8rem;font-weight:800;color:#fff;letter-spacing:-1.5px;line-height:1.05;margin-bottom:.5rem;}
+.header h1 em{color:var(--cyan);font-style:normal;}
+.header-sub{color:var(--text-dim);font-size:13.5px;max-width:580px;line-height:1.75;margin-bottom:1rem;}
+.header-pills{display:flex;gap:.5rem;flex-wrap:wrap;}
+.hpill{font-family:'JetBrains Mono',monospace;font-size:10px;padding:.25rem .7rem;border-radius:20px;background:var(--bg3);border:1px solid var(--border);color:var(--text-dim);}
+.hpill.c{border-color:var(--cyan-dim);color:var(--cyan);}.hpill.o{border-color:var(--orange-dim);color:var(--orange);}.hpill.p{border-color:var(--purple-dim);color:var(--purple);}
+.wrap{max-width:1100px;margin:0 auto;padding:2rem 2rem 4rem;}
+.section{border:1px solid var(--border);border-radius:16px;margin-bottom:1.5rem;overflow:hidden;}
+.sh{padding:1rem 1.5rem;cursor:pointer;display:flex;align-items:center;gap:.75rem;background:var(--bg2);user-select:none;transition:background .2s;}
+.sh:hover{background:var(--bg3);}
+.snum{font-family:'JetBrains Mono',monospace;font-size:10px;background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:.2rem .5rem;color:var(--text-dim);}
+.stitle{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:#fff;flex:1;}
+.sarr{font-size:12px;color:var(--text-dim);transition:transform .25s;margin-left:auto;}
+.section.open .sarr{transform:rotate(180deg);}
+.sb{display:none;padding:1.5rem;border-top:1px solid var(--border);}
+.section.open .sb{display:block;}
+.ac .sh{border-left:4px solid var(--cyan);}.ao .sh{border-left:4px solid var(--orange);}
+.ap .sh{border-left:4px solid var(--purple);}.ae .sh{border-left:4px solid var(--emerald);}.aa .sh{border-left:4px solid var(--amber);}
+.call{border-radius:10px;padding:.9rem 1.1rem;margin:.75rem 0;font-size:13px;}
+.ce{background:var(--emerald-bg);border-left:3px solid var(--emerald);color:#d1fae5;}
+.co{background:var(--orange-bg);border-left:3px solid var(--orange);color:#fde8d3;}
+.cp{background:var(--purple-bg);border-left:3px solid var(--purple);color:#e9d5ff;}
+.cc{background:var(--cyan-bg);border-left:3px solid var(--cyan);color:#cffafe;}
+.cr{background:#1c0a0a;border-left:3px solid var(--red);color:#fecaca;}
+.cy{background:var(--amber-bg);border-left:3px solid var(--amber);color:#fef3c7;}
+.ct{font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;margin-bottom:.35rem;}
+.ce .ct{color:var(--emerald);}.co .ct{color:var(--orange);}.cp .ct{color:var(--purple);}
+.cc .ct{color:var(--cyan);}.cr .ct{color:var(--red);}.cy .ct{color:var(--amber);}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+.card{background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:1rem;}
+.tw{overflow-x:auto;margin:.75rem 0;}
+table{width:100%;border-collapse:collapse;font-size:13px;}
+th{background:var(--bg3);color:var(--cyan);font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.5px;padding:.55rem .75rem;text-align:left;border:1px solid var(--border);}
+td{padding:.55rem .75rem;border:1px solid var(--border);vertical-align:top;line-height:1.55;}
+tr:nth-child(even) td{background:rgba(255,255,255,.02);}
+tr:hover td{background:rgba(34,211,238,.04);}
+ul.l{list-style:none;}
+ul.l li{padding:.2rem 0 .2rem 1.2rem;position:relative;}
+ul.l li::before{content:'\25B8';position:absolute;left:0;color:var(--cyan);}
+ul.l.o li::before{color:var(--orange);}.ul.l.p li::before{color:var(--purple);}
+.mg{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:.85rem;margin-top:.75rem;}
+.mc2{background:var(--cyan-bg);border:1px solid var(--cyan-dim);border-radius:12px;padding:1rem;}
+.mw{font-family:'JetBrains Mono',monospace;font-size:1.15rem;font-weight:700;color:var(--cyan);letter-spacing:2px;margin-bottom:.5rem;}
+.ml3{font-size:12.5px;margin-bottom:.25rem;}
+.ml4{color:var(--cyan);font-weight:700;margin-right:.4rem;}
+.cog{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.75rem;}
+.com{background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:.85rem;}
+.com.danger{border-color:#7f1d1d;}.com.warn{border-color:var(--amber-dim);}.com.info{border-color:var(--cyan-dim);}
+.comh{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:.35rem;}
+.com.danger .comh{color:var(--red);}.com.warn .comh{color:var(--amber);}.com.info .comh{color:var(--cyan);}
+.comb{font-size:12.5px;color:var(--text-dim);line-height:1.55;}
+.banca{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:9px;background:var(--purple-dim);color:var(--purple);border-radius:4px;padding:.1rem .35rem;margin-left:.3rem;font-weight:700;}
+.he{color:var(--emerald);font-weight:600;}.ho{color:var(--orange);font-weight:600;}.hp{color:var(--purple);font-weight:600;}
+.hc{color:var(--cyan);font-weight:600;}.hy{color:var(--amber);font-weight:600;}
+.sub{font-family:'Syne',sans-serif;font-weight:700;font-size:.9rem;color:var(--cyan);margin:1.25rem 0 .6rem;padding-bottom:.3rem;border-bottom:1px solid var(--cyan-dim);}
+.sub.o{color:var(--orange);border-color:var(--orange-dim);}.sub.p{color:var(--purple);border-color:var(--purple-dim);}
+.sub.e{color:var(--emerald);border-color:var(--emerald-dim);}
+
+.tr{color:var(--emerald);font-style:italic;font-size:12.5px;display:block;margin:.4rem 0;}
+.steps{counter-reset:st;margin:.5rem 0;}
+.st{counter-increment:st;background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:1rem 1.1rem 1rem 3.4rem;margin:.85rem 0;position:relative;}
+.st::before{content:counter(st);position:absolute;left:1rem;top:1rem;width:1.65rem;height:1.65rem;border-radius:8px;background:var(--orange);color:#0d0f14;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;}
+.fase{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:1.6px;text-transform:uppercase;color:var(--orange);display:block;margin-bottom:.15rem;}
+.sttl{font-family:'Syne',sans-serif;font-weight:700;font-size:.98rem;color:#fff;margin-bottom:.35rem;}
+.st p{font-size:13px;margin:.35rem 0;}
+.pq{border-left:3px solid var(--purple);background:var(--purple-bg);border-radius:0 8px 8px 0;padding:.6rem .9rem;margin:.6rem 0;font-size:12.5px;color:#e9d5ff;}
+.pq b{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:1.4px;text-transform:uppercase;color:var(--purple);display:block;margin-bottom:.2rem;}
+.hands{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-top:.65rem;}
+.hd{border-radius:8px;padding:.55rem .8rem;font-size:12px;border:1px solid var(--border);}
+.hd.l{background:rgba(16,185,129,.07);border-color:var(--emerald-dim);}
+.hd.r{background:rgba(249,115,22,.07);border-color:var(--orange-dim);}
+.hd b{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:1.2px;text-transform:uppercase;display:block;margin-bottom:.15rem;}
+.hd.l b{color:var(--emerald);}.hd.r b{color:var(--orange);}
+@media(max-width:600px){.hands{grid-template-columns:1fr;}}
+.fio{font-family:'JetBrains Mono',monospace;font-size:11px;background:var(--purple-bg);color:var(--purple);border:1px solid var(--purple-dim);padding:.05rem .4rem;border-radius:4px;white-space:nowrap;}
+.footer{margin-top:2rem;border-top:1px solid var(--border);padding:1.5rem 0;text-align:center;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text-dim);}
+@media(max-width:900px){.g2,.g3{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.g2,.g3{grid-template-columns:1fr;}.wrap{padding:1rem 1rem 3rem;}.header{padding:1.5rem 1rem;}.header h1{font-size:1.65rem;}}
+</style></head><body>
+<div class="header">
+  <div class="htag">// guia completo - cirurgia geral - residencia rs 2026</div>
+  <h1>Apendicectomia<br><em>Guia Completo</em></h1>
+  <p class="header-sub">Diagnostico diferencial expandido, fisiopatologia, casos especiais (gestante, crianca, idoso, mulher em idade fertil), tratamento nao operatorio e analise de bancas RS. Sabiston Cap. 51 - Zollinger Cap. 77 - Netter 267-270.</p>
+  <div class="header-pills">
+    <span class="hpill c">Score de Alvarado - MANTRELS</span>
+    <span class="hpill o">DD expandido - Mulher - Gestante</span>
+    <span class="hpill p">HCPA - GHC - Santa Casa - PUC-RS - AMRIGS</span>
+  </div>
+</div>
+<div class="wrap">
+
+<div class="section ac">
+  <div class="sh" onclick="toggle(this)"><span class="snum">01</span><span class="stitle">Fisiopatologia e Quadro Clinico</span><span class="sarr">&#9660;</span></div>
+  <div class="sb">
+    <div class="g2">
+      <div>
+        <div class="sub">Fisiopatologia</div>
+        <ul class="l">
+          <li><span class="hc">Obstrucao do lumen apendicular</span> - causa mais comum: fecalito (35-40%)</li>
+          <li>Tambem: linfadenite (crianca), parasitas, tumor carcinoide, corpo estranho</li>
+          <li>Obstrucao - distensao - isquemia da parede - translocacao bacteriana</li>
+          <li>Progressao: edema - gangrena - perfuracao (12-72h)</li>
+          <li><span class="ho">Arteria apendicular: TERMINAL, sem colaterais</span> - isquemia rapida</li>
+        </ul>
+        <div class="call cc"><div class="ct">Bacterias Mais Comuns</div>E. coli, Bacteroides fragilis, Peptostreptococcus. Polimicrobiana na perfuracao. Justifica ATB com cobertura de gram-negativos e anaerobios.</div>
+      </div>
+      <div>
+        <div class="sub">Quadro Clinico Classico</div>
+        <ul class="l">
+          <li>Dor periumbilical - migra para FID em 12-24h</li>
+          <li>Anorexia (quase universal), nausea, vomito APOS a dor</li>
+          <li>Febre baixa (37,5-38,5 graus C) - febre alta sugere perfuracao</li>
+          <li>Leucocitose com desvio a esquerda</li>
+        </ul>
+        <div class="call co"><div class="ct">Sinais Fisicos Classicos</div>
+          <strong>McBurney:</strong> ponto 1/3 lat na linha EIAS-umbigo - dor a palpacao<br>
+          <strong>Blumberg:</strong> dor a descompressao brusca em FID<br>
+          <strong>Psoas (+):</strong> apendice retrocecal - dor a extensao do quadril D<br>
+          <strong>Obturador (+):</strong> apendice pelvico - dor a rotacao interna do quadril D<br>
+          <strong>Rovsing:</strong> palpacao em FIE causa dor em FID
+        </div>
+      </div>
+    </div>
+    <div class="sub o" style="margin-top:1rem;">Score de Alvarado - MANTRELS</div>
+    <div class="tw"><table><thead><tr><th>Criterio</th><th>Pontos</th><th>Criterio</th><th>Pontos</th></tr></thead><tbody>
+      <tr><td><span class="hc">M</span>igracao da dor para FID</td><td>1</td><td><span class="hc">R</span>igidez abdominal</td><td>1</td></tr>
+      <tr><td><span class="hc">A</span>norexia</td><td>1</td><td><span class="hc">E</span>levacao da temperatura (mais de 37,3)</td><td>1</td></tr>
+      <tr><td><span class="hc">N</span>auseas/Vomitos</td><td>1</td><td><span class="hc">L</span>eucocitose (mais de 10.000)</td><td>2</td></tr>
+      <tr><td><span class="hc">T</span>endencia em FID (dor a palpacao)</td><td>2</td><td><span class="hc">S</span>hift para esquerda (desvio)</td><td>1</td></tr>
+    </tbody></table></div>
+    <div class="g3" style="margin-top:.75rem;">
+      <div class="call cc"><div class="ct">Score maior ou igual 7</div>Alta probabilidade - <span class="hc">OPERAR</span></div>
+      <div class="call cy"><div class="ct">Score 5-6</div>Probabilidade moderada - <span class="hy">OBSERVAR, repetir exame, imagem</span></div>
+      <div class="call ce"><div class="ct">Score menor ou igual 4</div>Baixa probabilidade - <span class="he">IMPROVAVEL, alta com orientacao</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="section ao">
+  <div class="sh" onclick="toggle(this)"><span class="snum">02</span><span class="stitle">Diagnostico Diferencial Expandido</span><span class="sarr">&#9660;</span></div>
+  <div class="sb">
+    <div class="sub">DD Geral - por Faixa Etaria</div>
+    <div class="tw"><table><thead><tr><th>Condicao</th><th>Diferenciais Chave</th><th>Como diferenciar</th></tr></thead><tbody>
+      <tr><td><strong>Linfadenite mesentetica</strong></td><td>Crianca, DOR difusa nao localizada em FID, febre alta</td><td>Infeccao viral previa, USG: linfonodos aumentados sem apendice visivel</td></tr>
+      <tr><td><strong>Gastroenterite aguda</strong></td><td>Dor difusa, vomito ANTES da dor, diarreia proeminente</td><td>Sequencia errada (vomito antes), multiplos casos familiares</td></tr>
+      <tr><td><strong>Constipacao intestinal</strong></td><td>Fecaloma, dor colicativa, sem febre, sem leucocitose</td><td>Toque retal, radiografia de abdome</td></tr>
+      <tr><td><strong>Hernia inguinal encarcerada</strong></td><td>Dor inguinal irradiada para FID</td><td>Exame do canal inguinal, USG</td></tr>
+      <tr><td><strong>Diverticulo de Meckel</strong></td><td>Clinica identica a apendicite - impossivel diferenciar pre-op</td><td>Descoberto na cirurgia - regra dos 2: 2% pop, 2 pes do ID, 2 tipos de mucosa</td></tr>
+      <tr><td><strong>Doenca de Crohn (ileo terminal)</strong></td><td>Dor em FID, massa palpavel, diarreia cronica, historia previa</td><td>Historia clinica, colonoscopia, TC</td></tr>
+    </tbody></table></div>
+
+    <div class="sub o" style="margin-top:1rem;">DD na Mulher em Idade Fertil - ESSENCIAL</div>
+    <div class="tw"><table><thead><tr><th>Condicao</th><th>Sinais Caracteristicos</th><th>Diagnostico</th></tr></thead><tbody>
+      <tr><td><span class="ho">Doenca Inflamatoria Pelvica (DIP)</span></td><td>Dor bilateral, corrimento purulento, cervicite, Chandelier (+)</td><td>Culturas, USG, criterios de Heger</td></tr>
+      <tr><td><span class="ho">Cisto de ovario roturado</span></td><td>Dor aguda em FID ou FIE, alivio espontaneo parcial</td><td>USG - liquido livre, sem cisto</td></tr>
+      <tr><td><span class="ho">Torcao de ovario</span></td><td>Dor aguda intermitente, nauseas intensas, massa anexial</td><td>USG Doppler - ausencia de fluxo</td></tr>
+      <tr><td><span class="ho">Gravidez Ectopica ROTA</span></td><td>Amenorreia, dor intensa, instabilidade hemodinamica, beta-hCG +</td><td>beta-hCG + USG transvaginal - EMERGENCIA</td></tr>
+      <tr><td><span class="ho">Endometriose</span></td><td>Dor ciclica, dismenorreia, dispareunia - piora no periodo menstrual</td><td>Historia clinica, laparoscopia diagnostica</td></tr>
+    </tbody></table></div>
+    <div class="call cr"><div class="ct">Gravidez Ectopica Rota - Emergencia</div>Sempre realizar beta-hCG em mulher em idade fertil com dor abdominal aguda. Ectopica rota - instabilidade hemodinamica - cirurgia imediata (salpingectomia).</div>
+    <div class="call cp"><div class="ct">Ponto Chave - Mulher</div>Taxa de apendicectomia negativa em mulheres e maior (15-25% vs 5-10% nos homens). Justificativa para TC pre-op em mulher em idade fertil com quadro atipico.</div>
+  </div>
+</div>
+
+<div class="section ac">
+  <div class="sh" onclick="toggle(this)"><span class="snum">03</span><span class="stitle">Imagem e Laboratorio - Quando e o Que Pedir</span><span class="sarr">&#9660;</span></div>
+  <div class="sb">
+    <div class="g2">
+      <div>
+        <div class="sub">Exames Laboratoriais</div>
+        <ul class="l">
+          <li>Hemograma: leucocitose com desvio - sensibilidade 70-80%</li>
+          <li>PCR: eleva em 12-24h - til para acompanhamento</li>
+          <li>Urina tipo 1: exclui ITU; piuria leve pode ocorrer na apendicite pelvica</li>
+          <li><span class="ho">Beta-hCG: OBRIGATORIO em toda mulher em idade fertil com dor abdominal aguda</span></li>
+          <li>Amilase/lipase: se duvida com pancreatite</li>
+        </ul>
+      </div>
+      <div>
+        <div class="sub">Imagem - Algoritmo</div>
+        <div class="call cc"><div class="ct">Homem adulto, clinica tipica, Alvarado >= 7</div>Operar sem imagem. Tempo = progressao para perfuracao.</div>
+        <div class="call cy"><div class="ct">Quadro atipico, Alvarado 5-6, mulher em idade fertil</div><span class="hy">USG primeiro</span> - se inconclusivo: <span class="hy">TC (homem/crianca) ou RNM (gestante)</span></div>
+        <div class="call co"><div class="ct">Gestante - sempre RNM</div>TC evitar pelo risco de radiacao ao feto. RNM: acuracia 94-98% sem radiacao ionizante.</div>
+      </div>
+    </div>
+    <div class="sub o" style="margin-top:1rem;">Comparacao: USG vs TC vs RNM</div>
+    <div class="tw"><table><thead><tr><th>Exame</th><th>Sensib.</th><th>Especif.</th><th>Vantagem</th><th>Desvantagem</th></tr></thead><tbody>
+      <tr><td><span class="hc">USG</span></td><td>75-90%</td><td>86-98%</td><td>Sem radiacao, rapido, avalia DD ginecologico</td><td>Operador-dependente, apendice nem sempre visualizado</td></tr>
+      <tr><td><span class="ho">TC abdome e pelve</span></td><td>94-98%</td><td>95-99%</td><td>Padrao-ouro, avalia perfuracao e abscessos</td><td>Radiacao ionizante - evitar em gestante e crianca jovem</td></tr>
+      <tr><td><span class="hp">RNM</span></td><td>94-97%</td><td>95-99%</td><td>Sem radiacao - ideal em gestante</td><td>Cara, lenta, nem sempre disponivel</td></tr>
+    </tbody></table></div>
+    <div class="call cc"><div class="ct">Criterios TC para Apendicite</div>Apendice maior que 6mm de diametro, espessamento da parede, gordura periapendicular inflamada (sinal da chama de vela), fecalito calcificado, liquido livre periapendicular.</div>
+  </div>
+</div>
+
+<div class="section ap">
+  <div class="sh" onclick="toggle(this)"><span class="snum">04</span><span class="stitle">Casos Especiais - Gestante, Crianca, Idoso, Imunossuprimido</span><span class="sarr">&#9660;</span></div>
+  <div class="sb">
+    <div class="g2">
+      <div>
+        <div class="sub p">Gestante</div>
+        <ul class="l">
+          <li><span class="hp">Mais comum cirurgia nao obstetrica na gravidez</span></li>
+          <li>Diagnostico dificil: utero desloca o apendice cefalicamente apos 2o trimestre</li>
+          <li>Sintomas atipicos: dor no flanco D ou hipocondrio D</li>
+          <li>Leucocitose fisiologica na gravidez (ate 15.000) - dificulta interpretacao</li>
+          <li>RNM: exame de escolha (sem radiacao)</li>
+          <li><span class="hc">Laparo preferida:</span> CO2 ate 12-15 mmHg, monitor fetal continuo</li>
+          <li><span class="ho">Perfuracao em gestante: risco de prematuridade e perda fetal - OPERAR SEMPRE</span></li>
+        </ul>
+        <div class="call co"><div class="ct">Trimestre x Timing Cirurgico</div>
+          <strong>1o trim:</strong> risco aumentado de aborto<br>
+          <strong>2o trim:</strong> <span class="he">janela ideal para cirurgia</span><br>
+          <strong>3o trim:</strong> acesso mais dificil, maior risco de parto prematuro<br>
+          Mas: <span class="ho">suspeita = operar em qualquer trimestre</span>
+        </div>
+      </div>
+      <div>
+        <div class="sub p">Crianca, Idoso e Imunossuprimido</div>
+        <div class="card" style="margin-bottom:.75rem;">
+          <div style="color:var(--cyan);font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-bottom:.4rem;">Crianca (menos de 5 anos)</div>
+          <ul class="l">
+            <li>Maior taxa de perfuracao (50-80%) - diagnose dificil, epiploo pouco desenvolvido</li>
+            <li>Diarreia e vomito proeminentes - confunde com gastroenterite</li>
+            <li>Peritonite difusa mais rapida - epiploo nao limita a infeccao</li>
+            <li><span class="hc">USG primeira escolha</span> - sem radiacao</li>
+          </ul>
+        </div>
+        <div class="card" style="margin-bottom:.75rem;">
+          <div style="color:var(--orange);font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-bottom:.4rem;">Idoso (mais de 65 anos)</div>
+          <ul class="l">
+            <li>Sintomas atenuados: febre baixa, dor leve, leucocitose modesta (Murphy silencioso)</li>
+            <li>Alta taxa de perfuracao ao diagnostico (30-50%)</li>
+            <li><span class="hy">TC recomendada</span> - maior acuracia e avalia DD (diverticulite, carcinoma)</li>
+            <li>Pesquisar tumor de ceco em todo idoso com apendicite</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div style="color:var(--purple);font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-bottom:.4rem;">Imunossuprimido (HIV, transplantado, quimio)</div>
+          <ul class="l">
+            <li>Leucocitose pode estar ausente - nao confiar no hemograma</li>
+            <li>TC de entrada</li>
+            <li>Limiar menor para cirurgia - perfuracao mais rapida</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section ae">
+  <div class="sh" onclick="toggle(this)"><span class="snum">05</span><span class="stitle">Tratamento - TNO vs. Cirurgia e Abscesso Periapendicular</span><span class="sarr">&#9660;</span></div>
+  <div class="sb">
+    <div class="g2">
+      <div>
+        <div class="sub e">Tratamento Nao Operatorio (TNO)</div>
+        <div class="call cc"><div class="ct">Criterios para TNO (apendicite nao complicada)</div>
+          <ul class="l" style="margin-top:.25rem;">
+            <li>Apendicite nao complicada (sem perfuracao ou abscesso)</li>
+            <li>Paciente estavel hemodinamicamente</li>
+            <li>Ausencia de fecalito na TC (controverso)</li>
+            <li>ATB IV: Ceftriaxona + Metronidazol por 48-72h depois oral por 7-10 dias</li>
+          </ul>
+        </div>
+        <div class="call co"><div class="ct">TNO - Resultados</div>
+          Sucesso inicial: 70-80%<br>
+          Recorrencia em 1 ano: 20-30%<br>
+          <span class="ho">Controverso: maioria dos servicos brasileiros ainda opera de rotina.</span><br>
+          Cai em provas: "qual a conduta na apendicite nao complicada?" - aceitar cirurgia OU TNO dependendo do enunciado.
+        </div>
+      </div>
+      <div>
+        <div class="sub e">Abscesso Periapendicular - Plastrao</div>
+        <div class="call cy"><div class="ct">Abscesso - Protocolo</div>
+          <ul class="l" style="margin-top:.25rem;">
+            <li><span class="hy">ATB + drenagem percutanea</span> guiada por USG ou TC</li>
+            <li>Apendicectomia de intervalo: <span class="hy">6-8 semanas</span> depois</li>
+            <li>Colonoscopia pre-operatoria no adulto - excluir neoplasia de ceco</li>
+          </ul>
+        </div>
+        <div class="call cr"><div class="ct">PLASTRAO - Nao Operar de Imediato!</div>
+          Plastrao apendicular (massa periapendicular): <span style="color:var(--red);font-weight:600;">NAO operar de imediato</span> - ATB + drenagem + intervalo.<br>
+          Excecao: instabilidade hemodinamica, peritonite difusa, falha do tratamento conservador.
+        </div>
+        <div class="call cp"><div class="ct">Cai em Prova (AMRIGS 2022, HCPA 2023)</div>
+          Abscesso periapendicular estavel: <span class="hp">ATB + drenagem percutanea + apendicectomia eletiva 6-8 semanas</span>. NAO operacao de emergencia.
+        </div>
+      </div>
+    </div>
+    <div class="sub o" style="margin-top:1rem;">Laparo vs. Aberta - Comparacao</div>
+    <div class="tw"><table><thead><tr><th>Desfecho</th><th>Laparoscopica</th><th>Aberta</th><th>Significancia</th></tr></thead><tbody>
+      <tr><td>ISC (infeccao ferida)</td><td><span class="he">MENOR (1-3%)</span></td><td>5-10%</td><td>LAPARO MELHOR - cai em toda prova!</td></tr>
+      <tr><td>Abscesso intra-abdominal</td><td><span class="ho">MAIOR (3-5%)</span></td><td>1-2%</td><td>ABERTA MELHOR - inversao classica!</td></tr>
+      <tr><td>Tempo de internacao</td><td>Menor</td><td>Maior</td><td>LAPARO MELHOR</td></tr>
+      <tr><td>Retorno ao trabalho</td><td>Mais rapido</td><td>Mais lento</td><td>LAPARO MELHOR</td></tr>
+      <tr><td>Custo</td><td>Maior</td><td>Menor</td><td>ABERTA MELHOR</td></tr>
+    </tbody></table></div>
+    <div class="call cr"><div class="ct">Regra de Ouro - SEMPRE CAI</div>
+      <span style="color:var(--red);font-weight:600;">Laparoscopica: abscesso intra-abdominal MAIS comum - ISC MENOS comum.<br>Aberta: ISC MAIS comum - abscesso intra-abdominal MENOS comum.</span><br>
+      Esta inversao cai em TODAS as bancas RS!
+    </div>
+  </div>
+</div>
+
+<div class="section ac">
+  <div class="sh" onclick="toggle(this)"><span class="snum">06</span><span class="stitle">Anatomia - Posicoes e Vascularizacao do Apendice</span><span class="sarr">&#9660;</span></div>
+  <div class="sb">
+    <div class="g2">
+      <div>
+        <div class="sub">Posicoes do Apendice</div>
+        <div class="tw"><table><thead><tr><th>Posicao</th><th>Frequencia</th><th>Sinal Tipico</th></tr></thead><tbody>
+          <tr><td><span class="hc">Retrocecal</span></td><td>65%</td><td>Psoas (+), Dor no flanco D</td></tr>
+          <tr><td><span class="hc">Pelvico / Descendente</span></td><td>25%</td><td>Obturador (+), Dor suprapubica</td></tr>
+          <tr><td>Pre-ileal</td><td>5%</td><td>Rigidez periumbilical</td></tr>
+          <tr><td>Pos-ileal</td><td>2%</td><td>Obstrucao intestinal</td></tr>
+          <tr><td>Subcecal</td><td>2%</td><td>Dor baixa em FID</td></tr>
+          <tr><td>Subhepatico</td><td>1%</td><td>Dor em hipocondrio D - confunde com colecistite!</td></tr>
+        </tbody></table></div>
+      </div>
+      <div>
+        <div class="sub">Vascularizacao e Tenia</div>
+        <div class="call cc"><div class="ct">Arteria Apendicular</div>Ramo da arteria ileo-colica (A. mesenterica superior). TERMINAL - sem colaterais. Isquemia rapida em apendicite avancada.</div>
+        <div class="call ce"><div class="ct">Tenia do Colo como Guia</div>As 3 tenias do ceco convergem para a <span class="he">base do apendice</span>. Se nao encontrar o apendice - seguir a tenia ate a base. Essencial na laparoscopia!</div>
+        <div class="call co"><div class="ct">Apendice Subhepatico (atenção!)</div>Dor em HCD + febre + leucocitose pode simular colecistite aguda. TC faz o diagnostico diferencial. Não apersar de ser raro, cai em prova.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="section ao">
+  <div class="sh" onclick="toggle(this)"><span class="snum">07</span><span class="stitle">Preparo, Posição e Montagem da Sala</span><span class="sarr">&#9660;</span></div>
+  <div class="sb">
+    <div class="g2">
+      <div>
+        <div class="sub o">Preparo do paciente</div>
+        <ul class="l o">
+          <li><span class="ho">Antibiótico na indução</span> — cefazolina 2 g + metronidazol 500 mg (dose única na não complicada)</li>
+          <li>Esvaziamento vesical: micção espontânea antes de descer, ou sonda vesical de alívio</li>
+          <li>Sonda nasogástrica apenas se distensão importante ou íleo</li>
+          <li>Tricotomia só se necessária, imediatamente antes; antissepsia com clorexidina alcoólica</li>
+          <li><span class="hp">β-hCG obrigatório</span> em toda mulher em idade fértil</li>
+          <li>Profilaxia de TEV conforme risco (Caprini) — a maioria é jovem e de baixo risco</li>
+        </ul>
+        <div class="call cy"><div class="ct">Marcação da incisão na aberta</div>
+          <strong>Ponto de McBurney</strong> = junção do terço lateral com os dois terços mediais de uma linha entre a <strong>espinha ilíaca ântero-superior</strong> e a <strong>cicatriz umbilical</strong>.
+          <span class="tr">(É o ponto onde o apêndice costuma "encostar" na parede — por isso é ali que mais dói e é ali que se corta.)</span>
+        </div>
+      </div>
+      <div>
+        <div class="sub o">Posição e montagem — laparoscópica</div>
+        <ul class="l o">
+          <li><span class="hc">Decúbito dorsal</span>, braço esquerdo junto ao corpo (o direito pode ficar aberto)</li>
+          <li>Cirurgião e auxiliar <span class="hc">à esquerda</span> do paciente; instrumentador à direita; monitor no <span class="hc">quadrante inferior direito</span></li>
+          <li>Mesa em <span class="ho">Trendelenburg + rotação para a esquerda</span> — afasta as alças da fossa ilíaca direita</li>
+          <li>Pneumoperitônio 12–15 mmHg (Veress umbilical ou Hasson)</li>
+        </ul>
+        <div class="call cc"><div class="ct">Portais — triangulação</div>
+          <strong>10–12 mm umbilical</strong> (óptica) · <strong>5 mm suprapúbico</strong> na linha média · <strong>5 mm em fossa ilíaca esquerda</strong>.<br>
+          Configuração alternativa: os três em linha no hemiabdome inferior. O portal por onde a peça sai deve ser o de <strong>maior calibre</strong>.
+          <span class="tr">(Os portais formam um triângulo apontando para o apêndice — se ficarem alinhados demais, os instrumentos "brigam" entre si dentro da barriga.)</span>
+        </div>
+        <div class="call cp"><div class="ct">Gestante</div>
+          Portal inicial por <span class="hp">técnica aberta (Hasson)</span>, com o local ajustado à altura do fundo uterino. Pressão de 12 mmHg. Deslocamento uterino para a esquerda. <span class="banca">HCPA</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section ao">
+  <div class="sh" onclick="toggle(this)"><span class="snum">08</span><span class="stitle">Técnica Laparoscópica — Passo a Passo</span><span class="sarr">&#9660;</span></div>
+  <div class="sb">
+    <div class="call ce"><div class="ct">tradução simples</div>
+      A operação tem <strong>duas metades</strong>: primeiro se <em>acha e se solta</em> o apêndice do que o prende (mesoapêndice); depois se <em>fecha e se tira</em> — ligando a base e retirando a peça sem contaminar a cavidade. Tudo que se faz antes de ligar a base ainda é reversível.
+    </div>
+
+    <div class="steps">
+
+      <div class="st">
+        <span class="fase">fase de acesso</span>
+        <div class="sttl">Pneumoperitônio e primeiro portal</div>
+        <p>Agulha de Veress ou técnica aberta de Hasson na <strong>cicatriz umbilical</strong>. Insuflação até <strong>12–15 mmHg</strong>. Óptica de 30° introduzida sob visão.</p>
+        <div class="pq"><b>por quê</b>A cicatriz umbilical é o ponto onde a <strong>aponeurose, a fáscia transversalis e o peritônio se fundem</strong> — a parede é mais fina e não há tecido adiposo interposto. É o acesso mais curto à cavidade.</div>
+        <div class="hands">
+          <div class="hd l"><b>mão esquerda</b>Eleva a parede abdominal com pinça de campo ou com a mão, afastando as alças</div>
+          <div class="hd r"><b>mão direita</b>Veress (com os 4 testes) ou dissecção por planos até o peritônio no Hasson</div>
+        </div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de inventário</span>
+        <div class="sttl">Inspeção sistemática da cavidade</div>
+        <p>Varredura em sentido horário: fígado e vesícula, goteiras, alças, pelve. Na mulher, <strong>obrigatoriamente</strong> avaliar útero, trompas e ovários. Aspirar líquido livre e observar seu aspecto (seroso, purulento, fecalóide).</p>
+        <div class="pq"><b>por quê</b>É o momento de mudar o diagnóstico. Cerca de <strong>10–20%</strong> das laparoscopias por suspeita de apendicite revelam outra causa — DIP, cisto ovariano roto, gravidez ectópica, Meckel, diverticulite direita. Achar isso agora evita uma apendicectomia inútil e um diagnóstico perdido.</div>
+        <div class="call cp" style="margin-top:.6rem;"><div class="ct">alto rendimento</div>Apêndice normal + achado alternativo → tratar o achado. Apêndice normal <strong>sem</strong> outra causa → a maioria dos serviços retira mesmo assim, para evitar dúvida diagnóstica futura. <span class="banca">Santa Casa POA</span></div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de exposição</span>
+        <div class="sttl">Localização do apêndice — seguir a tênia</div>
+        <p>Rebater as alças de delgado cranial e medialmente. Identificar o <strong>ceco</strong> e seguir a <strong>tênia livre (tênia anterior)</strong> convergindo até a <strong>base apendicular</strong>. Se necessário, mobilizar o ceco pela <strong>linha de Toldt</strong> para expor apêndices retrocecais.</p>
+        <div class="pq"><b>por quê</b>As três tênias do cólon <strong>convergem exatamente na base do apêndice</strong>. É a única referência que funciona em qualquer das cinco posições — retrocecal, pélvica, subcecal, pré-ileal e retroileal. A ponta pode estar em qualquer lugar; a base, nunca.</div>
+        <span class="tr">(As tênias são três "faixas" que correm ao longo do intestino grosso como as costuras de uma bola. Elas se juntam num ponto só — e esse ponto é sempre a raiz do apêndice.)</span>
+        <div class="hands">
+          <div class="hd l"><b>mão esquerda</b>Pinça atraumática (Johann/babcock) rebatendo o ceco medialmente e mantendo tensão</div>
+          <div class="hd r"><b>mão direita</b>Pinça de preensão seguindo a tênia; gancho ou tesoura para a linha de Toldt se retrocecal</div>
+        </div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de liberação</span>
+        <div class="sttl">Criação da janela no mesoapêndice</div>
+        <p>Tracionar o apêndice pela ponta, "em bandeira", expondo o <strong>mesoapêndice</strong>. Abrir uma <strong>janela avascular junto à base</strong>, entre a artéria apendicular e a parede do apêndice.</p>
+        <div class="pq"><b>por quê</b>A janela criada <strong>junto à base</strong> permite ligar o mesoapêndice num só bloco e dá espaço para o instrumento passar por trás. Abrir a janela longe da base obriga a ligaduras seriadas e aumenta o risco de sangramento.</div>
+        <div class="hands">
+          <div class="hd l"><b>mão esquerda</b>Preensão da <strong>ponta</strong> do apêndice com tração constante em direção à parede anterior</div>
+          <div class="hd r"><b>mão direita</b>Dissector de Maryland abrindo a janela; nunca energia às cegas junto à artéria</div>
+        </div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase vascular</span>
+        <div class="sttl">Controle do mesoapêndice e da artéria apendicular</div>
+        <p>Selar e seccionar o mesoapêndice com <strong>energia bipolar avançada</strong>, clipes ou grampeador vascular. A <strong>artéria apendicular</strong>, ramo da <strong>ileocólica</strong> (que vem da mesentérica superior), corre na borda livre do mesoapêndice.</p>
+        <div class="pq"><b>por quê</b>É uma <strong>artéria terminal, sem colaterais</strong>. Isso explica a fisiopatologia (obstrução → isquemia → gangrena → perfuração) e explica a técnica: se ela escapa e retrai para dentro do mesoapêndice, o sangramento é de difícil controle e o campo se perde rapidamente.</div>
+        <div class="call cr" style="margin-top:.6rem;"><div class="ct">armadilha</div>Selar apenas com energia monopolar em mesoapêndice espesso e edemaciado é falha frequente. Em apendicite complicada, com meso inflamado e friável, prefira <strong>clipe ou grampeador</strong>.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de secção — passo decisivo</span>
+        <div class="sttl">Ligadura da base apendicular</div>
+        <p>Escolher conforme a base: <strong>endoloop duplo</strong> (base sadia — dois no coto que fica, um na peça), <strong>grampeador linear com carga vascular ou intestinal</strong> (base edemaciada, gangrenosa ou de calibre aumentado) ou <strong>clipes de polímero</strong> (Hem-o-lok) em bases finas e sadias.</p>
+        <div class="pq"><b>por quê</b>Este é o passo <strong>irreversível</strong> e o que determina a fístula de coto. A ligadura precisa cair em <strong>tecido viável</strong>: se a base está necrosada e a inflamação se estende ao ceco, ligar ali garante deiscência. Nesse cenário, a conduta é ressecar <strong>além</strong> da base — apendicectomia com cecorrafia ou até ressecção ileocecal.</div>
+        <span class="tr">(É como amarrar um balão: se o pedaço onde você amarra estiver rasgado e molhado, o nó não segura. Tem que amarrar num pedaço firme.)</span>
+        <div class="hands">
+          <div class="hd l"><b>mão esquerda</b>Mantém o apêndice tracionado e alinhado, expondo a transição base–ceco</div>
+          <div class="hd r"><b>mão direita</b>Aplicador de endoloop, grampeador linear ou clipadora — sempre com a base à vista</div>
+        </div>
+        <div class="call cp" style="margin-top:.6rem;"><div class="ct">alto rendimento</div>Sepultamento do coto em bolsa de tabaco <strong>não é necessário</strong> e não reduz complicações. Prática histórica, ainda cobrada como pegadinha. <span class="banca">GHC</span><span class="banca">AMRIGS</span></div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de extração</span>
+        <div class="sttl">Retirada da peça em bolsa protetora</div>
+        <p>A peça <strong>nunca</strong> sai em contato direto com o portal. Usar bolsa de extração (endobag) ou dedo de luva, retirando pelo portal de maior calibre — habitualmente o umbilical.</p>
+        <div class="pq"><b>por quê</b>Contato direto do apêndice inflamado com a parede é a causa principal de <strong>infecção de sítio cirúrgico</strong> na laparoscopia — justamente a complicação em que a laparoscopia é superior à aberta. Perder isso apaga a vantagem da via.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de encerramento</span>
+        <div class="sttl">Revisão, aspiração e fechamento</div>
+        <p>Aspirar coleções dirigidas; <strong>não</strong> irrigar amplamente a cavidade. Revisar hemostasia do mesoapêndice e do coto. Dreno apenas em abscesso residual não drenável. Retirar os portais <strong>sob visão</strong>. Fechar a aponeurose de todos os portais <span class="fio">≥ 10 mm</span> com <span class="fio">Vicryl 0</span>; pele com <span class="fio">mononáilon 4-0</span> ou intradérmico.</p>
+        <div class="pq"><b>por quê</b>Dois motivos independentes: <strong>(1)</strong> a irrigação ampla <strong>dissemina</strong> a contaminação da fossa ilíaca direita para os quadrantes superiores e aumenta abscesso intracavitário; <strong>(2)</strong> portal de 10–12 mm sem fechamento da fáscia é a causa da <strong>hérnia de trocarte</strong>, com epíplon ou alça encarcerada.</div>
+        <div class="call cr" style="margin-top:.6rem;"><div class="ct">armadilha</div>Retirar o portal sem visualizar o trajeto esconde sangramento da parede pelos <strong>vasos epigástricos inferiores</strong>, que só aparece no pós-operatório como hematoma ou queda de hemoglobina.</div>
+      </div>
+
+    </div>
+
+    <div class="call cc"><div class="ct">as três checagens antes de ligar a base</div>
+      <strong>1)</strong> A base está em tecido viável, sem necrose até o ceco?<br>
+      <strong>2)</strong> O mesoapêndice está controlado e a artéria apendicular selada?<br>
+      <strong>3)</strong> O diagnóstico se confirmou, ou existe outro achado que muda a operação?<br>
+      Três "sim" → liga.
+    </div>
+  </div>
+</div>
+
+<div class="section ao">
+  <div class="sh" onclick="toggle(this)"><span class="snum">09</span><span class="stitle">Técnica Aberta (McBurney) — Passo a Passo</span><span class="sarr">&#9660;</span></div>
+  <div class="sb">
+    <div class="call ce"><div class="ct">tradução simples</div>
+      Na aberta, em vez de cortar a parede em linha reta, você <strong>afasta cada camada de músculo no sentido das fibras dela</strong>, como quem abre uma cortina em vez de rasgá-la. Por isso a incisão de McBurney quase não deixa hérnia.
+    </div>
+
+    <div class="steps">
+
+      <div class="st">
+        <span class="fase">fase de acesso</span>
+        <div class="sttl">Incisão de McBurney (oblíqua) ou de Rocky-Davis (transversa)</div>
+        <p>Incisão de 4–6 cm centrada no <strong>ponto de McBurney</strong>, perpendicular à linha espino-umbilical. A de Rocky-Davis é transversa e tem melhor resultado estético.</p>
+        <div class="pq"><b>por quê</b>Centrar no McBurney coloca a incisão <strong>sobre o ceco</strong>, e não sobre o apêndice — que pode estar em qualquer posição. É o ceco que se traz para fora; o apêndice vem junto.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de parede — divulsão</span>
+        <div class="sttl">Abertura das três camadas musculares em <em>grid-iron</em></div>
+        <p>Secção da aponeurose do <strong>oblíquo externo</strong> no sentido de suas fibras. Divulsão romba do <strong>oblíquo interno</strong> e do <strong>transverso do abdome</strong>, cujas fibras são perpendiculares às do externo. Abertura da <strong>fáscia transversalis</strong> e do <strong>peritônio</strong> entre pinças, sob visão.</p>
+        <div class="pq"><b>por quê</b>Afastar as fibras em vez de seccioná-las preserva a integridade muscular e a inervação segmentar — é isso que faz a taxa de <strong>hérnia incisional</strong> ser mínima nessa incisão. Abrir o peritônio entre pinças evita lesar alça aderida.</div>
+        <span class="tr">(As camadas de músculo da barriga têm fibras cruzadas, como as camadas de um compensado. Você separa cada uma no sentido dela e depois elas voltam a se cruzar sozinhas — a parede fecha praticamente sozinha.)</span>
+        <div class="hands">
+          <div class="hd l"><b>mão esquerda</b>Afastadores de Farabeuf mantendo as camadas separadas e o campo aberto</div>
+          <div class="hd r"><b>mão direita</b>Bisturi na aponeurose; pinça de Kelly e o próprio dedo na divulsão romba</div>
+        </div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de exposição</span>
+        <div class="sttl">Exteriorização do ceco e identificação da base</div>
+        <p>Localizar o ceco pelas <strong>tênias e pelos apêndices epiplóicos</strong>, exteriorizá-lo com pinça de Babcock e seguir a <strong>tênia livre</strong> até a base apendicular.</p>
+        <div class="pq"><b>por quê</b>Trazer o ceco para fora da cavidade transforma uma operação em campo profundo e estreito numa operação de superfície — e, se houver contaminação, ela ocorre <strong>fora</strong> do abdome, sobre os campos.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase vascular</span>
+        <div class="sttl">Ligadura do mesoapêndice</div>
+        <p>Pinçar, seccionar e ligar o mesoapêndice com <span class="fio">seda 3-0</span> ou <span class="fio">Vicryl 3-0</span>, em ligaduras seriadas da ponta em direção à base, incluindo a <strong>artéria apendicular</strong>.</p>
+        <div class="pq"><b>por quê</b>Ligadura sob visão direta em vaso terminal. Um coto de mesoapêndice mal ligado retrai para o retroperitônio e o sangramento se torna difícil de localizar depois de fechada a parede.</div>
+        <div class="hands">
+          <div class="hd l"><b>mão esquerda</b>Tração do apêndice pela ponta com Babcock, expondo o meso em leque</div>
+          <div class="hd r"><b>mão direita</b>Kelly curva passando por baixo do meso; porta-agulha ou fio nas ligaduras</div>
+        </div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de secção</span>
+        <div class="sttl">Ligadura da base e apendicectomia</div>
+        <p>Esmagar a base com pinça, deslocar a pinça 1 cm distalmente e ligar no sulco criado com <span class="fio">Vicryl 2-0/3-0</span>. Pinçar acima e seccionar entre a ligadura e a pinça. Cauterizar a mucosa do coto.</p>
+        <div class="pq"><b>por quê</b>O esmagamento cria um <strong>sulco de tecido comprimido</strong> onde a ligadura não escorrega. Cauterizar a mucosa exposta reduz a contaminação por conteúdo apendicular residual.</div>
+        <div class="call cp" style="margin-top:.6rem;"><div class="ct">alto rendimento</div>Bolsa de tabaco para sepultar o coto: <strong>opcional e sem benefício comprovado</strong>. Se a base estiver necrosada, não ligar ali — ressecar além, com cecorrafia ou ressecção ileocecal. <span class="banca">HCPA</span></div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de encerramento</span>
+        <div class="sttl">Revisão e fechamento por planos</div>
+        <p>Revisar hemostasia, aspirar sem irrigar amplamente, devolver o ceco à cavidade. Fechar peritônio (opcional), aproximar transverso e oblíquo interno, suturar a aponeurose do oblíquo externo com <span class="fio">Vicryl 0/2-0</span> e a pele conforme o grau de contaminação.</p>
+        <div class="pq"><b>por quê</b>Em ferida <strong>contaminada ou infectada</strong> (apendicite perfurada), o fechamento primário da pele aumenta a infecção de sítio cirúrgico — considerar fechamento primário retardado ou por segunda intenção. É a razão pela qual a via aberta tem mais ISC que a laparoscópica.</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="section ap">
+  <div class="sh" onclick="toggle(this)"><span class="snum">10</span><span class="stitle">Instrumentação e Fios</span><span class="sarr">&#9660;</span></div>
+  <div class="sb">
+    <div class="call co"><div class="ct">princípio das mãos</div>
+      A <strong>mão esquerda</strong> (não dominante) faz <strong>exposição, tração e contratração</strong> — ela cria o plano. A <strong>mão direita</strong> corta, disseca e liga. Sem tensão adequada da esquerda, não existe plano para a direita seguir.
+      <span class="tr">(É como cortar uma folha de papel: se ninguém segura o papel esticado, a tesoura só amassa.)</span>
+    </div>
+
+    <div class="sub p">Instrumental por via</div>
+    <div class="tw"><table><thead><tr><th>Momento</th><th>Mão esquerda</th><th>Mão direita</th></tr></thead><tbody>
+      <tr><td><strong>Laparo — localizar</strong></td><td>Johann/Babcock rebatendo o ceco medialmente</td><td>Pinça de preensão seguindo a tênia; gancho na linha de Toldt</td></tr>
+      <tr><td><strong>Laparo — janela do meso</strong></td><td>Preensão da ponta do apêndice, tração "em bandeira"</td><td>Dissector de Maryland</td></tr>
+      <tr><td><strong>Laparo — meso</strong></td><td>Tração mantida, meso em tensão</td><td>Bipolar avançado / clipes / grampeador vascular</td></tr>
+      <tr><td><strong>Laparo — base</strong></td><td>Apêndice alinhado, transição base–ceco à vista</td><td>Aplicador de endoloop ou grampeador linear</td></tr>
+      <tr><td><strong>Aberta — parede</strong></td><td>Farabeuf mantendo as camadas afastadas</td><td>Bisturi na aponeurose; Kelly e dedo na divulsão</td></tr>
+      <tr><td><strong>Aberta — meso</strong></td><td>Babcock tracionando o apêndice pela ponta</td><td>Kelly curva por baixo do meso; ligaduras</td></tr>
+      <tr><td><strong>Aberta — base</strong></td><td>Ceco exteriorizado e estabilizado</td><td>Pinça de esmagamento; porta-agulha; cautério na mucosa</td></tr>
+    </tbody></table></div>
+
+    <div class="sub p">Tabela de fios</div>
+    <div class="tw"><table><thead><tr><th>Estrutura</th><th>Fio</th><th>Por quê</th></tr></thead><tbody>
+      <tr><td>Mesoapêndice (aberta)</td><td><span class="fio">Seda 3-0</span> ou <span class="fio">Vicryl 3-0</span></td><td>Trançado, alto atrito, nó seguro em vaso terminal</td></tr>
+      <tr><td>Base apendicular (aberta)</td><td><span class="fio">Vicryl 2-0 / 3-0</span></td><td>Absorvível — fio permanente em coto contaminado favorece granuloma e fístula</td></tr>
+      <tr><td>Base apendicular (laparo)</td><td><span class="fio">Endoloop</span> · grampeador · Hem-o-lok</td><td>Endoloop duplo no coto que permanece; grampeador se base edemaciada</td></tr>
+      <tr><td>Aponeurose do oblíquo externo</td><td><span class="fio">Vicryl 0 / 2-0</span></td><td>Camada de sustentação da incisão em <em>grid-iron</em></td></tr>
+      <tr><td>Portais ≥ 10 mm</td><td><span class="fio">Vicryl 0</span></td><td><strong>Obrigatório</strong> — previne hérnia de trocarte</td></tr>
+      <tr><td>Pele</td><td><span class="fio">Mononáilon 3-0 / 4-0</span> ou intradérmico</td><td>Em ferida contaminada, considerar fechamento retardado</td></tr>
+    </tbody></table></div>
+
+    <div class="call cy"><div class="ct">regra de ouro dos fios aqui</div>
+      Coto apendicular é <strong>campo contaminado</strong>: use absorvível. E a única sutura verdadeiramente obrigatória da laparoscopia é a <strong>aponeurose dos portais de 10–12 mm</strong>.
+    </div>
+  </div>
+</div>
+
+<div class="section ap">
+  <div class="sh" onclick="toggle(this)"><span class="snum">11</span><span class="stitle">Complicações e Achados Incidentais</span><span class="sarr">&#9660;</span></div>
+  <div class="sb">
+    <div class="cog">
+      <div class="com danger"><div class="comh">Perfuracao com Peritonite</div><div class="comb">Taxa: 15-30% ao diagnostico. Tratamento: cirurgia de urgencia + ATB prolongado. Mortalidade: ate 5%. Criancas e idosos: maior taxa.</div></div>
+      <div class="com danger"><div class="comh">Abscesso Intra-Abdominal Pos-Op</div><div class="comb">Mais comum apos laparo que aberta. Febre pos-op dia 5-7, dor abdominal. Diagnostico: TC. Tratamento: drenagem percutanea + ATB.</div></div>
+      <div class="com warn"><div class="comh">ISC - Infeccao de Ferida</div><div class="comb">Mais comum apos aberta. Streptococcus, S. aureus, anaerobios. Tratamento: abertura da ferida + curativo + ATB.</div></div>
+      <div class="com warn"><div class="comh">Mucocele do Apendice</div><div class="comb">Dilatacao por muco. Risco: cistoadenoma mucoso ou cistoadenocarcinoma. Rompimento - pseudomixoma peritonei. Nunca biopsiar por via percutanea!</div></div>
+      <div class="com info"><div class="comh">Tumor Carcinoide</div><div class="comb">Achado incidental mais comum do apendice (0,3-0,5%). Menos de 2 cm: apendicectomia suficiente. Mais de 2 cm: hemicolectomia D.</div></div>
+      <div class="com info"><div class="comh">Hernia de Trocarte</div><div class="comb">Trocarte de 10-12 mm sem fechamento da fascia. Fechar com Vicryl 0. Cai em AMRIGS. Omento ou alca intestinal.</div></div>
+    </div>
+    <div class="call cy" style="margin-top:1rem;"><div class="ct">Regra do Tumor Carcinoide</div>Carcinoide apendicular: <span class="hy">menor que 2 cm = apendicectomia</span> (curativa em 95%). <span class="hy">Maior que 2 cm = hemicolectomia direita</span> com linfadenectomia. Pergunta classica de bancas!</div>
+  </div>
+</div>
+
+<div class="section ac">
+  <div class="sh" onclick="toggle(this)"><span class="snum">12</span><span class="stitle">Antibioticoterapia — Profilaxia e Tratamento</span><span class="sarr">&#9660;</span></div>
+  <div class="sb">
+    <div class="tw"><table><thead><tr><th>Situacao</th><th>ATB</th><th>Duracao</th><th>Observacao</th></tr></thead><tbody>
+      <tr><td>Apendicite nao complicada - profilaxia</td><td><span class="hc">Cefazolina 2g IV</span> + Metronidazol 500mg IV</td><td>Dose unica na inducao</td><td>Suspender em 24h pos-op</td></tr>
+      <tr><td>Apendicite complicada (perfurada/gangrenosa)</td><td><span class="ho">Cefazolina + Metronidazol</span> ou Piperacilina-Tazobactam</td><td>3-5 dias IV depois oral</td><td>Guiar por cultura se disponivel</td></tr>
+      <tr><td>Abscesso periapendicular</td><td><span class="ho">Cefazolina + Metronidazol</span> ou Ertapenem</td><td>7-14 dias</td><td>Associado a drenagem percutanea</td></tr>
+      <tr><td>Paciente alergico a penicilina</td><td>Gentamicina + Metronidazol ou Clindamicina + Gentamicina</td><td>Conforme situacao</td><td>Evitar cefalosporinas se reacao grave</td></tr>
+    </tbody></table></div>
+    <div class="call cc"><div class="ct">Ponto-Chave de Prova</div>ATB profilatico na apendicite nao complicada: <span class="hc">DOSE UNICA</span> na inducao anestesica. Nao se repete rotineiramente no pos-op. Estende apenas se complicada (perfuracao, gangrena).</div>
+  </div>
+</div>
+
+<div class="section ap">
+  <div class="sh" onclick="toggle(this)"><span class="snum">13</span><span class="stitle">Mnemônicos e Temas de Prova por Banca RS</span><span class="sarr">&#9660;</span></div>
+  <div class="sb">
+    <div class="mg">
+      <div class="mc2"><div class="mw">MANTRELS</div><div class="ml3"><span class="ml4">M</span>igracao FID - <span class="ml4">A</span>norexia - <span class="ml4">N</span>ausea/Vomito</div><div class="ml3"><span class="ml4">T</span>endencia FID (2pts) - <span class="ml4">R</span>igidez</div><div class="ml3"><span class="ml4">E</span>levacao temp - <span class="ml4">L</span>eucocitose (2pts) - <span class="ml4">S</span>hift</div><div class="ml3" style="color:var(--text-dim);font-size:11px;">>=7 opera / 5-6 observa / <=4 improvavel</div></div>
+      <div class="mc2"><div class="mw">ABSCESSO UP ISC DOWN</div><div class="ml3">Laparo: abscesso intra-abdominal <span class="ho">MAIS</span> comum</div><div class="ml3">Laparo: ISC <span class="he">MENOS</span> comum</div><div class="ml3" style="color:var(--text-dim);font-size:11px;">Inversao classica - cai em TODAS as bancas RS</div></div>
+      <div class="mc2"><div class="mw">REGRA 2 MECKEL</div><div class="ml3"><span class="ml4">2%</span> da populacao</div><div class="ml3"><span class="ml4">2</span> pes (60cm) do angulo ileocecal</div><div class="ml3"><span class="ml4">2</span> tipos de mucosa ectopica (gastrica e pancreatica)</div><div class="ml3"><span class="ml4">2</span> anos - pico de sintomas</div></div>
+      <div class="mc2"><div class="mw">CARCINOIDE</div><div class="ml3"><span class="ml4">&lt;2 cm</span> - Apendicectomia simples</div><div class="ml3"><span class="ml4">&gt;2 cm</span> - Hemicolectomia direita</div><div class="ml3" style="color:var(--text-dim);font-size:11px;">Achado incidental mais comum do apendice</div></div>
+      <div class="mc2"><div class="mw">TENIA -> BASE</div><div class="ml3">Seguir a tenia do ceco</div><div class="ml3">para encontrar a base do apendice</div><div class="ml3" style="color:var(--text-dim);font-size:11px;">Essencial quando apendice nao e facilmente localizado</div></div>
+      <div class="mc2"><div class="mw">PLASTRAO</div><div class="ml3"><span class="ml4">NAO</span> operar de imediato</div><div class="ml3"><span class="ml4">ATB</span> + drenagem percutanea</div><div class="ml3"><span class="ml4">Intervalo</span> 6-8 semanas</div><div class="ml3" style="color:var(--text-dim);font-size:11px;">Abscesso periapendicular estavel</div></div>
+    </div>
+    <div class="sub o" style="margin-top:1.5rem;">Temas por Banca</div>
+    <div class="tw"><table><thead><tr><th>Banca</th><th>Topicos Recorrentes</th></tr></thead><tbody>
+      <tr><td><span class="banca">HCPA</span></td><td>Score Alvarado completo; TNO vs. cirurgia; abscesso periapendicular - conduta; DD na gestante; RNM na gravidez; abscesso intra-ab pos-laparo</td></tr>
+      <tr><td><span class="banca">GHC</span></td><td>Fisiopatologia (arteria terminal sem colateral); posicoes do apendice e sinais (Psoas, Obturador, Rovsing); laparo vs. aberta - inversao ISC/abscesso</td></tr>
+      <tr><td><span class="banca">Santa Casa POA</span></td><td>DD na mulher (DIP vs. ectopica vs. apendicite); beta-hCG obrigatorio; mucocele e pseudomixoma peritonei; tumor carcinoide (regra 2cm)</td></tr>
+      <tr><td><span class="banca">PUC-RS</span></td><td>Apendicite em crianca (maior taxa de perfuracao); idoso (sintomas atenuados); imunossuprimido; diverticulo de Meckel (regra dos 2); Alvarado na gestante</td></tr>
+      <tr><td><span class="banca">AMRIGS</span></td><td>ATB profilatico dose unica; hernia de trocarte (fechar >=10mm); abscesso pos-laparo; apendicite subhepatica; TNO e taxa de recorrencia (20-30% em 1 ano)</td></tr>
+    </tbody></table></div>
+    <div class="call cp" style="margin-top:1rem;"><div class="ct">Questoes Classicas que Sempre Caem</div>
+      <ul class="l">
+        <li>Score Alvarado >=7 = ? <span class="hp">Operar sem imagem adicional</span></li>
+        <li>Laparo vs. aberta - qual tem mais abscesso? <span class="hp">Laparoscopica - inversao classica</span></li>
+        <li>Plastrao apendicular - conduta? <span class="hp">ATB + drenagem percutanea + cirurgia eletiva 6-8 semanas</span></li>
+        <li>Carcinoide de 3 cm - conduta? <span class="hp">Hemicolectomia direita (mais que 2 cm)</span></li>
+        <li>Gestante com suspeita de apendicite - imagem? <span class="hp">RNM (sem radiacao ionizante)</span></li>
+        <li>Nao encontra o apendice na laparo - o que faz? <span class="hp">Seguir a tenia do ceco ate a base do apendice</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  // apendicectomia - guia completo - carolina - residencia rs 2026<br>
+  <span style="opacity:.5;">sabiston cap. 51 · zollinger cap. 77 · netter 267-270 · WSES Jerusalem Guidelines · SAGES · pubmed 2022-2025</span>
+</div>
+</div>
+<script>
+function toggle(h){h.parentElement.classList.toggle('open');}
+document.querySelectorAll('.section').forEach(function(s,i){if([0,1,2,4,5,7,8,12].includes(i))s.classList.add('open');});
+</script>
+</body></html>

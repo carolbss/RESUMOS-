@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Pocket · Peritônio, Mesentério & Alças</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0c;--bg2:#121216;--bg3:#1a1a20;--line:#27272f;
+  --txt:#e8e8ec;--txt2:#a1a1aa;--txt3:#6b6b76;
+  --org:#f97316;--pur:#a855f7;--cya:#22d3ee;--grn:#34d399;--red:#f43f5e;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;font-weight:300;
+  line-height:1.55;font-size:15px;padding-bottom:30px}
+header{padding:16px 16px 0;position:sticky;top:0;background:var(--bg);z-index:20;border-bottom:1px solid var(--line)}
+.t{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--org)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:-.02em;margin:5px 0 12px}
+h1 span{color:var(--org)}
+.tabs{display:flex;gap:7px;overflow-x:auto;scrollbar-width:none;padding-bottom:11px;scroll-snap-type:x mandatory}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;scroll-snap-align:start;font-family:'JetBrains Mono',monospace;font-size:.66rem;
+  letter-spacing:.09em;text-transform:uppercase;padding:8px 13px;border-radius:999px;
+  border:1px solid var(--line);background:var(--bg2);color:var(--txt2);cursor:pointer;white-space:nowrap;transition:.15s}
+.tab.on{background:rgba(249,115,22,.13);border-color:rgba(249,115,22,.45);color:var(--org)}
+main{padding:16px}
+.pane{display:none;animation:f .18s ease}
+.pane.on{display:block}
+@keyframes f{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+h2{font-family:'Syne',sans-serif;font-weight:700;font-size:1.02rem;color:var(--org);margin:2px 0 12px}
+h3{font-family:'Inter',sans-serif;font-weight:600;font-size:.86rem;color:var(--txt);margin:18px 0 7px;
+  text-transform:uppercase;letter-spacing:.07em}
+ul{padding-left:17px;margin:8px 0}
+li{margin:6px 0;font-size:.9rem}
+li::marker{color:var(--org)}
+b{font-weight:600;color:#fff}
+.kid{color:var(--txt3);font-style:italic;font-size:.83rem}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:10px;margin:10px 0}
+table{border-collapse:collapse;width:100%;min-width:440px;font-size:.82rem}
+th{background:var(--bg3);color:var(--txt2);font-family:'JetBrains Mono',monospace;font-size:.62rem;
+  letter-spacing:.09em;text-transform:uppercase;font-weight:400;text-align:left;padding:9px 11px;border-bottom:1px solid var(--line)}
+td{padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td.k{color:var(--org);white-space:nowrap;font-weight:500}
+td.j{color:var(--grn)} td.i{color:var(--cya)}
+.box{border-left:3px solid var(--org);background:rgba(249,115,22,.09);border-radius:0 9px 9px 0;padding:11px 13px;margin:12px 0;font-size:.87rem}
+.box.c{border-color:var(--cya);background:rgba(34,211,238,.08)}
+.box.p{border-color:var(--pur);background:rgba(168,85,247,.09)}
+.box.r{border-color:var(--red);background:rgba(244,63,94,.08)}
+.box .tag{font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;display:block;margin-bottom:5px;color:var(--org)}
+.box.c .tag{color:var(--cya)} .box.p .tag{color:var(--pur)} .box.r .tag{color:var(--red)}
+.mn{font-family:'JetBrains Mono',monospace;color:var(--cya);font-weight:700}
+ol.st{list-style:none;padding:0;counter-reset:s}
+ol.st li{counter-increment:s;position:relative;padding:9px 0 9px 40px;border-bottom:1px solid var(--line);font-size:.89rem}
+ol.st li:last-child{border-bottom:none}
+ol.st li::before{content:counter(s,decimal-leading-zero);position:absolute;left:0;top:9px;
+  font-family:'JetBrains Mono',monospace;font-size:.66rem;color:var(--org);
+  border:1px solid rgba(249,115,22,.35);background:rgba(249,115,22,.09);border-radius:5px;padding:2px 5px}
+.hint{text-align:center;color:var(--txt3);font-size:.68rem;font-family:'JetBrains Mono',monospace;
+  letter-spacing:.13em;text-transform:uppercase;padding:16px 0 0}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="t">carolzita pocket</div>
+  <h1>Peritônio & <span>alças</span></h1>
+  <div class="tabs" id="tabs">
+    <div class="tab on" data-p="p1">Delgado × cólon</div>
+    <div class="tab" data-p="p2">Jejuno × íleo</div>
+    <div class="tab" data-p="p3">Marcos</div>
+    <div class="tab" data-p="p4">Correr a alça</div>
+    <div class="tab" data-p="p5">Viabilidade</div>
+    <div class="tab" data-p="p6">Espaços</div>
+    <div class="tab" data-p="p7">Mesentério</div>
+    <div class="tab" data-p="p8">Vasos</div>
+    <div class="tab" data-p="p9">Mnemônicos</div>
+  </div>
+</header>
+
+<main>
+
+<section class="pane on" id="p1">
+  <h2>É delgado ou cólon?</h2>
+  <div class="tw"><table>
+    <thead><tr><th></th><th>Delgado</th><th>Cólon</th></tr></thead>
+    <tbody>
+      <tr><td class="k">Tênias</td><td class="j">Não</td><td class="i">Sim (3) — ausentes no reto e apêndice</td></tr>
+      <tr><td class="k">Haustros</td><td class="j">Não</td><td class="i">Sim</td></tr>
+      <tr><td class="k">Epiploicos</td><td class="j">Não</td><td class="i">Sim (poucos no ceco, nenhum no reto)</td></tr>
+      <tr><td class="k">Calibre</td><td class="j">2,5–3,5 cm</td><td class="i">4–7 cm</td></tr>
+      <tr><td class="k">Parede</td><td class="j">Rosada, mais espessa</td><td class="i">Acinzentada, fina</td></tr>
+      <tr><td class="k">Arcadas</td><td class="j">Múltiplas, em leque (1–2 no jejuno · 4–5 no íleo)</td><td class="i">Arcada marginal única (Drummond)</td></tr>
+      <tr><td class="k">Vasa recta</td><td class="j">Saem das arcadas; comprimento varia (longos no jejuno, curtos no íleo)</td><td class="i">Longos e retilíneos, saindo da marginal direto para a parede</td></tr>
+      <tr><td class="k">Fixação</td><td class="j">Jejuno e íleo muito móveis (o duodeno é fixo, retroperitoneal)</td><td class="i">Asc/desc fixos; transverso e sigmoide móveis</td></tr>
+    </tbody>
+  </table></div>
+  <div class="box c"><span class="tag">regra</span><span class="mn">3 tênias + haustros + epiploicos = cólon.</span> Faltando os três achados em segmento grosso: reto (tênias fundidas) ou ceco.</div>
+  <div class="box r"><span class="tag">cuidado</span>Comprimento de <b>vasa recta</b> só é critério <b>dentro do delgado</b> (jejuno longos × íleo curtos). Entre delgado e cólon, o que discrimina é o <b>padrão de arcadas</b>: leque de múltiplas arcadas no delgado × arcada marginal única no cólon.</div>
+</section>
+
+<section class="pane" id="p2">
+  <h2>Jejuno × íleo</h2>
+  <div class="tw"><table>
+    <thead><tr><th></th><th>Jejuno</th><th>Íleo</th></tr></thead>
+    <tbody>
+      <tr><td class="k">Local</td><td class="j">QSE</td><td class="i">QID / pelve</td></tr>
+      <tr><td class="k">Calibre</td><td class="j">3–4 cm</td><td class="i">2–2,5 cm</td></tr>
+      <tr><td class="k">Parede</td><td class="j">Espessa, firme</td><td class="i">Fina, flácida</td></tr>
+      <tr><td class="k">Kerckring</td><td class="j">Altas, palpáveis</td><td class="i">Baixas / ausentes distalmente</td></tr>
+      <tr><td class="k">Arcadas</td><td class="j">1–2</td><td class="i">4–5</td></tr>
+      <tr><td class="k">Vasa recta</td><td class="j">Longos e retos</td><td class="i">Curtos</td></tr>
+      <tr><td class="k">Gordura do meso</td><td class="j">Escassa, janelas translúcidas</td><td class="i">Abundante, invade a alça</td></tr>
+      <tr><td class="k">Cor</td><td class="j">Mais vermelha</td><td class="i">Mais pálida</td></tr>
+      <tr><td class="k">Linfoide</td><td class="j">Pouco</td><td class="i">Placas de Peyer (antimesentérico)</td></tr>
+    </tbody>
+  </table></div>
+  <div class="box"><span class="tag">teste do foco</span>Levante o mesentério contra a luz: <b>janelas translúcidas = jejuno</b>; parede opaca de gordura = íleo.</div>
+  <div class="box p"><span class="tag">prova</span>O par mais cobrado é <b>número de arcadas × comprimento dos vasa recta</b>.</div>
+</section>
+
+<section class="pane" id="p3">
+  <h2>Marcos anatômicos</h2>
+  <ul>
+    <li><b>Treitz</b> — à esquerda de L2, sob o mesocólon transverso. Início do jejuno, marco proximal absoluto.</li>
+    <li><b>Válvula ileocecal</b> — marco distal absoluto; medir daqui os 15–20 cm de íleo terminal a preservar.</li>
+    <li><b>Tênias convergem na base do apêndice</b> — siga a tênia livre a partir do ceco.</li>
+    <li><b>Raiz do mesentério</b> — oblíqua: duodenojejunal (superior-esquerda) → junção ileocecal (inferior-direita). Meso do jejuno entra alto e à esquerda; do íleo, baixo e à direita.</li>
+    <li><b>Meckel</b> — borda antimesentérica, ~60 cm da válvula. Regra dos 2.</li>
+    <li><b>Recesso intersigmoide</b> — ápice do V do mesossigmoide; <b>ureter esquerdo logo abaixo</b>.</li>
+    <li><b>Cólica média</b> — emerge na borda inferior do pâncreas, dentro da raiz do mesocólon transverso.</li>
+  </ul>
+  <div class="box r"><span class="tag">perdido no campo</span>Ancore em três pontos fixos: <b>Treitz, válvula ileocecal e promontório</b>. A partir de qualquer um deles você reconstrói a orientação.</div>
+</section>
+
+<section class="pane" id="p4">
+  <h2>Correr a alça</h2>
+  <ol class="st">
+    <li>Exteriorizar sobre compressas <b>úmidas e mornas</b>; cobrir o que não está sendo visto.</li>
+    <li>Escolher o ponto de partida: <b>Treitz</b> para patologia proximal, <b>válvula ileocecal em sentido retrógrado</b> para distal.</li>
+    <li>Técnica bimanual, segmentos de 10–15 cm, rotação de <b>360°</b> — a borda mesentérica esconde perfuração e hematoma.</li>
+    <li>Inspecionar o <b>meso</b> junto: hematoma, rasgo, desvascularização.</li>
+    <li>Marcar o achado (clipe, reparo, Babcock) antes de seguir.</li>
+    <li>Devolver em ordem: jejuno alto/esquerda, íleo baixo/direita, <b>meso sem torção</b>.</li>
+  </ol>
+  <div class="box r"><span class="tag">antes de anastomosar</span>Conferir os <b>dois mesos no mesmo plano</b>, bordas antimesentéricas alinhadas, sem rotação de 180°. Fechar defeito mesentérico (ou deixar francamente amplo) — brecha parcial = hérnia interna.</div>
+  <div class="box"><span class="tag">obstrução</span>Proximal distendida + distal colapsada = <b>zona de transição</b>. Correr da alça colapsada em direção proximal chega mais rápido ao ponto obstrutivo.</div>
+  <div class="box"><span class="tag">laparoscopia</span>Sem palpação: use gravidade (Trendelenburg + rotação), ancore no ceco e corra o íleo "mão sobre mão" com duas pinças atraumáticas, sem soltar.</div>
+</section>
+
+<section class="pane" id="p5">
+  <h2>Alça viável?</h2>
+  <ul>
+    <li>Liberar a constrição, compressa morna, <b>aguardar 15–20 min</b>.</li>
+    <li><b>Viável</b>: cor rosada retorna, peristalse ao estímulo, pulso arterial no meso junto à borda, sangramento vivo na secção.</li>
+    <li><b>Inviável</b>: acinzentada/negra persistente, flácida sem peristalse, sem pulso mesentérico.</li>
+    <li><b>Adjuvantes</b>: Doppler na borda antimesentérica; <b>ICG</b> 0,1–0,25 mg/kg EV, fluorescência em 30–60 s. Evidência mais robusta em ressecção colorretal esquerda eletiva; em urgência os dados ainda são limitados e a leitura permanece subjetiva.</li>
+    <li>Ressecção extensa ou dúvida → <b>second look em 24–48 h</b>.</li>
+  </ul>
+  <div class="box c"><span class="tag">checklist</span><span class="mn">Cor · Pulso · Peristalse · Sangramento na borda</span></div>
+</section>
+
+<section class="pane" id="p6">
+  <h2>Espaços peritoneais</h2>
+  <ul>
+    <li><b>Divisor</b>: mesocólon transverso separa supra de inframesocólico.</li>
+    <li><b>Morrison (hepatorrenal)</b> — mais declive em decúbito dorsal; 1ª janela do FAST; abscesso pós-op.</li>
+    <li><b>Douglas / retovesical</b> — mais declive em pé ou semissentado.</li>
+    <li><b>Goteira direita</b>: ampla, comunica sub-hepático ↔ pelve (úlcera perfurada simulando apendicite).</li>
+    <li><b>Goteira esquerda</b>: rasa, barrada pelo <b>ligamento frenocólico</b>.</li>
+    <li><b>Inframesocólico direito</b> fechado pela raiz do mesentério; <b>esquerdo</b> aberto para a pelve.</li>
+  </ul>
+  <h3>Forame de Winslow</h3>
+  <div class="tw"><table>
+    <tbody>
+      <tr><td class="k">Anterior</td><td>Ligamento hepatoduodenal (tríade portal) — <b>Pringle</b></td></tr>
+      <tr><td class="k">Posterior</td><td>Veia cava inferior</td></tr>
+      <tr><td class="k">Superior</td><td>Lobo caudado</td></tr>
+      <tr><td class="k">Inferior</td><td>1ª porção do duodeno / a. hepática comum</td></tr>
+    </tbody>
+  </table></div>
+  <div class="box c"><span class="tag">retroperitônio</span><span class="mn">SAD PUCKER</span> — Suprarrenal, Aorta/VCI, Duodeno 2-4, Pâncreas (não a cauda), Ureter, Cólon asc/desc, Kidney, Esôfago, Reto.</div>
+</section>
+
+<section class="pane" id="p7">
+  <h2>Mesentério</h2>
+  <ul>
+    <li><b>Raiz</b> ~15 cm, oblíqua: duodenojejunal (esq. de L2) → junção ileocecal. Cruza 3ª porção do duodeno, aorta, VCI, ureter direito e gonadais direitos.</li>
+    <li><b>Borda intestinal</b> ~6 m em leque; altura média ~20 cm.</li>
+    <li><b>Órgão contínuo</b> (Coffey, 2016/2021): do duodenojejunal ao mesorreto. Base racional da CME/CVL e da ETM — ressecar com o envelope mesentérico íntegro.</li>
+    <li><b>Gordura</b> aumenta do jejuno para o íleo; exagerada = <i>creeping fat</i> (Crohn).</li>
+  </ul>
+  <h3>Patologia</h3>
+  <ul>
+    <li><b>Trauma</b>: hematoma <b>expansivo, pulsátil ou na raiz</b> → explorar. Desvascularização segmentar → ressecar mesmo com alça de aspecto viável.</li>
+    <li><b>Hérnia interna</b>: defeito não fechado (Petersen, mesojejuno, janela mesocólica); dor desproporcional, <i>whirl sign</i>.</li>
+    <li><b>Isquemia mesentérica</b>: embólica poupa jejuno proximal; second look em 24–48 h.</li>
+    <li><b>Paniculite</b> (halo gorduroso), <b>cisto/linfangioma</b>, <b>desmoide</b> (PAF), <b>carcinoide</b> com retração em raios de roda.</li>
+  </ul>
+  <h3>Técnica</h3>
+  <ul>
+    <li>Transiluminar antes de seccionar; ligadura dupla em meso espesso.</li>
+    <li>Oncológico: cunha até a origem do pedículo. Benigno: rente à alça.</li>
+    <li>Tensão: Cattell-Braasch + incisões peritoneais de relaxamento poupando vasos.</li>
+    <li>Defeito mesentérico: fechar com sutura contínua não absorvível ou deixar francamente amplo — nunca parcial.</li>
+    <li>Preservar válvula ileocecal e ≥100–120 cm de delgado.</li>
+  </ul>
+  <h3>Planos avasculares</h3>
+  <ul>
+    <li><b>Toldt</b> (preservar Gerota) · <b>Fredet</b> (tronco de Henle) · <b>Treitz</b> (Kocher) · <b>Waldeyer/Denonvilliers</b> (ETM).</li>
+  </ul>
+  <div class="box c"><span class="tag">regra</span><span class="mn">Sangrou = saiu do plano.</span></div>
+</section>
+
+<section class="pane" id="p8">
+  <h2>Vasos e zonas críticas</h2>
+  <ul>
+    <li><b>Celíaco</b> até a papila · <b>AMS</b> até 2/3 do transverso · <b>AMI</b> daí ao reto superior.</li>
+    <li><b>Marginal de Drummond</b> — arcada contínua junto ao cólon; origem dos vasa recta; descontínua em 5–7%.</li>
+    <li><b>Arco de Riolano</b> — conexão central AMS ↔ AMI.</li>
+    <li><b>Griffiths</b> (flexura esplênica) e <b>Sudeck</b> (retossigmoide) — watershed, colite isquêmica, deiscência.</li>
+    <li><b>Cólica direita ausente</b> em até 20%; <b>ileocólica</b> é constante.</li>
+    <li><b>Tronco de Henle</b> — confluência venosa frágil na face anterior do pâncreas.</li>
+    <li><b>Reto</b> — tripla irrigação (retal superior, média, inferior) protege da isquemia após ligadura alta da AMI.</li>
+  </ul>
+  <div class="box p"><span class="tag">prova</span>Ângulo esplênico = calcanhar de Aquiles do cólon (Griffiths + marginal descontínua).</div>
+</section>
+
+<section class="pane" id="p9">
+  <h2>Mnemônicos</h2>
+  <div class="box c"><span class="tag">retroperitônio</span><span class="mn">SAD PUCKER</span></div>
+  <div class="box c"><span class="tag">winslow</span><span class="mn">Frente tríade · trás cava · cima caudado · baixo duodeno</span></div>
+  <div class="box c"><span class="tag">tríade portal</span><span class="mn">D</span>ucto à direita · <span class="mn">A</span>rtéria à esquerda · <span class="mn">V</span>eia atrás</div>
+  <div class="box c"><span class="tag">cólon</span><span class="mn">3 T + H + A</span> (tênias, haustros, apêndices epiploicos)</div>
+  <div class="box c"><span class="tag">jejuno</span><span class="mn">J de Janela</span> — janelas no meso, poucas arcadas, vasa recta longos, parede grossa</div>
+  <div class="box c"><span class="tag">íleo</span><span class="mn">I de Invadido por gordura</span> — muitas arcadas, vasa recta curtos, parede fina, Peyer</div>
+  <div class="box c"><span class="tag">meckel</span><span class="mn">Regra dos 2</span></div>
+  <div class="box c"><span class="tag">watershed</span><span class="mn">Griffith<b>S</b> = flexura e<b>S</b>plênica · Sudec<b>K</b> = retossigmoide</span></div>
+  <div class="box c"><span class="tag">manobras</span><span class="mn">Kocher duodeno · Cattell direita · Mattox esquerda</span></div>
+  <div class="box c"><span class="tag">anastomose</span><span class="mn">Cor · Pulso · Peristalse · Sem torção</span></div>
+</section>
+
+<p class="hint">deslize as abas ←→</p>
+</main>
+
+<script>
+const tabs=document.querySelectorAll('.tab');
+tabs.forEach(t=>t.addEventListener('click',()=>{
+  document.querySelector('.tab.on').classList.remove('on');
+  document.querySelector('.pane.on').classList.remove('on');
+  t.classList.add('on');
+  document.getElementById(t.dataset.p).classList.add('on');
+  t.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'});
+  window.scrollTo({top:0,behavior:'smooth'});
+}));
+</script>
+</body>
+</html>

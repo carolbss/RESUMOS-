@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doença de Crohn — carolzita</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0f; --bg2:#12121a; --card:#16161f; --card2:#1c1c27;
+  --border:#26263400; --line:#2a2a38;
+  --txt:#e6e6ef; --muted:#9a9ab0;
+  --laranja:#f97316; --laranja-bg:rgba(249,115,22,.10);
+  --roxo:#a855f7; --roxo-bg:rgba(168,85,247,.10);
+  --ciano:#22d3ee; --ciano-bg:rgba(34,211,238,.10);
+  --verde:#34d399; --vermelho:#f87171; --amarelo:#fbbf24;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(1200px 600px at 50% -10%,#15151f 0%,var(--bg) 60%);color:var(--txt);font-family:'Inter',sans-serif;line-height:1.55;padding:0 0 80px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px}
+header{padding:40px 0 24px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(30px,6vw,46px);line-height:1.05;margin:8px 0 6px;letter-spacing:-.02em}
+.sub{color:var(--muted);font-size:15px;max-width:640px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tag{font-family:'JetBrains Mono',monospace;font-size:11px;padding:5px 10px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted)}
+.tag.r{color:var(--roxo);border-color:rgba(168,85,247,.35);background:var(--roxo-bg)}
+
+section{margin-top:14px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:12px;overflow:hidden;transition:border-color .2s}
+details[open]{border-color:rgba(249,115,22,.30)}
+summary{cursor:pointer;list-style:none;padding:18px 20px;display:flex;align-items:center;gap:13px;font-family:'Syne',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em;user-select:none}
+summary::-webkit-details-marker{display:none}
+.num{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--bg);background:var(--laranja);width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:0 0 auto}
+.chev{margin-left:auto;color:var(--muted);transition:transform .25s;font-size:14px}
+details[open] .chev{transform:rotate(90deg)}
+.body{padding:4px 22px 24px;font-size:15px}
+.body p{margin:10px 0}
+.body h4{font-family:'Syne',sans-serif;font-size:16px;color:var(--laranja);margin:20px 0 8px;letter-spacing:-.01em}
+.body ul{margin:8px 0 8px 4px;list-style:none}
+.body li{padding:4px 0 4px 20px;position:relative}
+.body li::before{content:"▸";position:absolute;left:0;color:var(--laranja);font-size:12px;top:6px}
+.body strong{color:#fff;font-weight:600}
+.simple{color:var(--ciano);font-style:italic;font-size:.94em}
+
+/* callouts */
+.box{border-radius:12px;padding:13px 15px;margin:14px 0;font-size:14px;border:1px solid}
+.box.prova{background:var(--roxo-bg);border-color:rgba(168,85,247,.35)}
+.box.prova .lbl{color:var(--roxo)}
+.box.mac{background:var(--ciano-bg);border-color:rgba(34,211,238,.35)}
+.box.mac .lbl{color:var(--ciano)}
+.box.warn{background:rgba(248,113,113,.08);border-color:rgba(248,113,113,.3)}
+.box.warn .lbl{color:var(--vermelho)}
+.lbl{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-family:'JetBrains Mono',monospace;font-size:10px;background:rgba(168,85,247,.2);color:var(--roxo);padding:2px 7px;border-radius:6px;margin-left:6px;white-space:nowrap}
+
+/* tables */
+.tbl{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
+.tbl table{width:100%;border-collapse:collapse;min-width:520px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--laranja);background:var(--card2)}
+td strong{color:#fff}
+.fio td:first-child{color:var(--ciano);font-family:'JetBrains Mono',monospace;font-weight:500}
+
+/* grids */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin:14px 0}
+.gcard{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+.gcard .t{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--ciano);margin-bottom:4px}
+.gcard .d{font-size:13px;color:var(--muted)}
+
+/* hands */
+.hands{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.hand{border-radius:12px;padding:14px;border:1px solid var(--line)}
+.hand.e{background:rgba(34,211,238,.06);border-color:rgba(34,211,238,.25)}
+.hand.d{background:rgba(249,115,22,.06);border-color:rgba(249,115,22,.25)}
+.hand .ht{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;font-weight:700}
+.hand.e .ht{color:var(--ciano)} .hand.d .ht{color:var(--laranja)}
+.hand li{font-size:13px}
+
+/* steps */
+.steps{counter-reset:s;margin:10px 0}
+.step{counter-increment:s;position:relative;padding:11px 0 11px 46px;border-bottom:1px dashed var(--line)}
+.step:last-child{border-bottom:none}
+.step::before{content:counter(s);position:absolute;left:0;top:9px;width:30px;height:30px;border-radius:9px;background:var(--laranja-bg);border:1px solid rgba(249,115,22,.4);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:grid;place-items:center}
+.step b{color:#fff}
+
+svg{max-width:100%;height:auto;display:block;margin:16px auto}
+.fig{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.fig .cap{font-size:12px;color:var(--muted);text-align:center;margin-top:8px;font-family:'JetBrains Mono',monospace}
+
+footer{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+footer .ref{font-family:'JetBrains Mono',monospace;font-size:12px;margin-top:8px}
+a{color:var(--laranja)}
+@media(max-width:560px){.hands{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">carolzita · cirurgia geral · gastro</div>
+  <h1>Doença de Crohn</h1>
+  <p class="sub">Inflamação <strong>transmural, granulomatosa e descontínua</strong> que pode acometer da boca ao ânus. Foco em fenótipo cirúrgico, ressecção ileocecal e cobranças das bancas do RS.</p>
+  <div class="tags">
+    <span class="tag">Transmural</span>
+    <span class="tag">Skip lesions</span>
+    <span class="tag">NOD2/CARD15</span>
+    <span class="tag r">HCPA · GHC · SC-POA · PUC · AMRIGS</span>
+  </div>
+</header>
+
+<!-- 1 QUADRO CLÍNICO -->
+<details open>
+  <summary><span class="num">1</span> Quadro clínico & diagnóstico <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>Doença inflamatória intestinal (DII) crônica, <strong>recidivante</strong>, de etiologia imunomediada em hospedeiro geneticamente predisposto (<strong>NOD2/CARD15</strong>) com gatilho ambiental — <strong>tabagismo piora</strong> (ao contrário da RCU). <span class="simple">(o intestino fica inflamado de tempos em tempos, e o cigarro é gasolina no fogo)</span></p>
+
+    <h4>Distribuição e fenótipo (Montreal)</h4>
+    <ul>
+      <li><strong>Localização:</strong> ileocólica (L3, ~40%, a mais comum) > ileal isolada (L1, ~30%) > colônica (L2, ~20%); L4 = TGI alto. <strong>Poupa reto</strong> com frequência e é <strong>descontínua</strong> (skip lesions). <span class="simple">(salta pedaços de intestino, deixando ilhas saudáveis entre as doentes)</span></li>
+      <li><strong>Comportamento:</strong> <strong>B1</strong> inflamatório · <strong>B2</strong> estenosante (fibroestenótico) · <strong>B3</strong> penetrante/fistulizante · modificador <strong>"p"</strong> = perianal.</li>
+      <li><strong>Idade:</strong> A1 &lt;17a · A2 17–40a · A3 &gt;40a.</li>
+    </ul>
+
+    <h4>Clínica</h4>
+    <ul>
+      <li><strong>Dor abdominal</strong> (clássico em FID, simula apendicite na ileíte terminal), <strong>diarreia crônica</strong> (geralmente <em>sem</em> sangue — diferente da RCU), perda ponderal, febre, fadiga.</li>
+      <li><strong>Doença perianal</strong> (até 1/3): fissuras, plicomas, abscessos, <strong>fístulas</strong> — marcador de doença agressiva.</li>
+      <li><strong>Manifestações extraintestinais:</strong> artrite/sacroileíte/espondilite, eritema nodoso, pioderma gangrenoso, uveíte/episclerite, aftas orais, colangite esclerosante (mais RCU), cálculos biliares e <strong>nefrolitíase por oxalato</strong>, deficiência de <strong>B12</strong> (íleo terminal).</li>
+    </ul>
+
+    <h4>Exames</h4>
+    <ul>
+      <li><strong>Labs:</strong> anemia, ↑PCR/VHS, ↑<strong>calprotectina fecal</strong>, <strong>ASCA+</strong> (RCU tende a p-ANCA+).</li>
+      <li><strong>Colono + biópsias:</strong> úlceras aftoides → lineares profundas, aspecto em <strong>paralelepípedo/cobblestone</strong>, lesões salteadas, preservação retal.</li>
+      <li><strong>Histologia:</strong> inflamação <strong>transmural</strong> + <strong>granuloma não caseoso</strong> (presente em só ~15–30%, mas patognomônico quando há).</li>
+      <li><strong>Entero-TC/Entero-RM:</strong> sinal do <strong>cordão de Kantor</strong> (string sign), realce mural, <strong>sinal do pente</strong> (comb sign), <strong>creeping fat</strong> (gordura mesentérica que abraça a alça).</li>
+    </ul>
+
+    <div class="box prova"><span class="lbl">Tema de prova <span class="banca">HCPA · AMRIGS</span></span>
+      Tríade histológica clássica de Crohn: <strong>transmural + descontínua (skip) + granuloma não caseoso</strong>. Diferenciar de RCU (mucosa/submucosa, contínua ascendente, sem granuloma) é a questão que mais cai.</div>
+
+    <h4>Crohn × Retocolite Ulcerativa (campeã de prova)</h4>
+    <div class="tbl"><table>
+      <tr><th>Critério</th><th>Crohn</th><th>RCU</th></tr>
+      <tr><td><strong>Acometimento</strong></td><td>Boca ao ânus, salteado</td><td>Cólon, contínuo a partir do reto</td></tr>
+      <tr><td><strong>Profundidade</strong></td><td>Transmural</td><td>Mucosa/submucosa</td></tr>
+      <tr><td><strong>Reto</strong></td><td>Frequentemente poupado</td><td>Sempre acometido</td></tr>
+      <tr><td><strong>Sangramento</strong></td><td>Menos comum</td><td>Diarreia mucossanguinolenta</td></tr>
+      <tr><td><strong>Granuloma</strong></td><td>Sim (não caseoso)</td><td>Não</td></tr>
+      <tr><td><strong>Fístula / estenose</strong></td><td>Comuns</td><td>Raras</td></tr>
+      <tr><td><strong>Tabaco</strong></td><td>Piora</td><td>"Protege" (paradoxo)</td></tr>
+      <tr><td><strong>Sorologia</strong></td><td>ASCA+</td><td>p-ANCA+</td></tr>
+      <tr><td><strong>Cirurgia</strong></td><td>Não curativa (recidiva)</td><td>Curativa (proctocolectomia)</td></tr>
+    </table></div>
+  </div>
+</details>
+
+<!-- 2 ANATOMIA -->
+<details>
+  <summary><span class="num">2</span> Anatomia & vascularização <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>Como o alvo cirúrgico mais comum é a <strong>região ileocecal</strong>, a anatomia que importa é a do <strong>cólon direito + íleo terminal</strong> e seu suprimento pela <strong>artéria mesentérica superior (AMS)</strong>.</p>
+
+    <h4>Suprimento arterial</h4>
+    <ul>
+      <li><strong>Artéria ileocólica</strong> (ramo da AMS): nutre íleo terminal, ceco, apêndice e cólon ascendente proximal — <strong>é a artéria-chave a ligar na ressecção ileocecal</strong>.</li>
+      <li><strong>Artéria cólica direita</strong> (inconstante, ~10–40%) e <strong>cólica média</strong> (do tronco da AMS) — ascendente e flexura hepática.</li>
+      <li>Ramos jejunais e ileais da AMS para o delgado restante.</li>
+      <li><strong>Arcada marginal de Drummond</strong> e <strong>arco de Riolan</strong> = colaterais entre AMS e AMI. <span class="simple">(estradas de reserva caso uma artéria principal seja ligada)</span></li>
+    </ul>
+
+    <h4>Drenagem venosa e linfática</h4>
+    <ul>
+      <li>Veia ileocólica → <strong>veia mesentérica superior (VMS)</strong> → veia porta.</li>
+      <li>Linfáticos acompanham os vasos; na cirurgia oncológica a ligadura é alta (na origem), mas no <strong>Crohn a ligadura é mais próxima da alça</strong> (doença benigna).</li>
+    </ul>
+
+    <div class="box prova"><span class="lbl">Tema de prova <span class="banca">PUC-RS · GHC</span></span>
+      <strong>Creeping fat</strong> (gordura que envolve a alça) e <strong>mesentério espessado/encurtado</strong> são marcas do Crohn. Estudo de Coffey sugere que incluir o mesentério na ressecção pode reduzir recorrência cirúrgica — tema "novo" para R3.</div>
+
+    <div class="fig">
+      <svg viewBox="0 0 460 300" role="img" aria-label="Vascularização ileocólica">
+        <defs><marker id="ah" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#f97316"/></marker></defs>
+        <!-- AMS trunk -->
+        <path d="M60 40 C90 110, 110 170, 130 250" stroke="#f97316" stroke-width="6" fill="none"/>
+        <text x="30" y="40" fill="#f97316" font-family="JetBrains Mono" font-size="12">AMS</text>
+        <!-- ileocolic -->
+        <path d="M105 150 C160 150, 230 150, 300 165" stroke="#fbbf24" stroke-width="4" fill="none" marker-end="url(#ah)"/>
+        <text x="200" y="140" fill="#fbbf24" font-family="JetBrains Mono" font-size="11">a. ileocólica</text>
+        <!-- right colic -->
+        <path d="M95 110 C160 95, 250 95, 320 110" stroke="#34d399" stroke-width="3" fill="none" stroke-dasharray="5 4"/>
+        <text x="210" y="88" fill="#34d399" font-family="JetBrains Mono" font-size="10">a. cólica D (inconstante)</text>
+        <!-- middle colic -->
+        <path d="M82 70 C150 55, 280 55, 360 70" stroke="#22d3ee" stroke-width="3" fill="none"/>
+        <text x="250" y="48" fill="#22d3ee" font-family="JetBrains Mono" font-size="10">a. cólica média</text>
+        <!-- cecum/colon -->
+        <rect x="300" y="150" width="48" height="70" rx="14" fill="#16161f" stroke="#9a9ab0"/>
+        <text x="305" y="240" fill="#9a9ab0" font-size="11">ceco</text>
+        <rect x="320" y="60" width="34" height="100" rx="14" fill="#16161f" stroke="#9a9ab0"/>
+        <text x="358" y="115" fill="#9a9ab0" font-size="11">cólon asc.</text>
+        <!-- ileum -->
+        <path d="M300 195 C260 215, 220 215, 185 250" stroke="#e6e6ef" stroke-width="8" fill="none" stroke-linecap="round"/>
+        <text x="185" y="270" fill="#e6e6ef" font-size="11">íleo terminal</text>
+      </svg>
+      <div class="cap">Eixo AMS → a. ileocólica (alvo da ligadura na ressecção ileocecal)</div>
+    </div>
+  </div>
+</details>
+
+<!-- 3 TRATAMENTO -->
+<details>
+  <summary><span class="num">3</span> Tratamento — clínico × cirúrgico <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Clínico (escada terapêutica)</h4>
+    <ul>
+      <li><strong>Indução:</strong> <strong>budesonida</strong> (1ª linha na ileocecal — alto metabolismo de 1ª passagem, menos efeitos sistêmicos) ou corticoide sistêmico nas crises graves.</li>
+      <li><strong>Manutenção / poupadores de corticoide:</strong> imunomoduladores (azatioprina/6-MP, metotrexato) e <strong>biológicos</strong>: anti-TNF (infliximabe, adalimumabe), anti-integrina (vedolizumabe), anti-IL-12/23 (ustequinumabe), anti-IL-23 (risanquizumabe), JAK (upadacitinibe).</li>
+      <li><strong>Antibióticos</strong> (metronidazol/cipro): doença <strong>perianal/abscesso</strong>, não para doença luminal pura.</li>
+      <li><strong>5-ASA tem papel limitado</strong> no Crohn (≠ RCU). Alvo atual = <em>treat-to-target</em> com cicatrização mucosa.</li>
+    </ul>
+
+    <div class="box warn"><span class="lbl">Pegadinha</span>
+      Cirurgia <strong>NÃO cura</strong> o Crohn — a doença recidiva. O princípio é <strong>poupar intestino</strong> (evitar síndrome do intestino curto). Ressecar só o macroscopicamente doente; margem de ~2 cm basta (margem microscópica não muda recorrência).</div>
+
+    <h4>Indicações cirúrgicas (~70–80% operam na vida)</h4>
+    <ul>
+      <li><strong>Obstrução / estenose fibrótica</strong> → indicação mais comum.</li>
+      <li><strong>Fístulas</strong> (enterocutânea, enteroentérica, enterovesical, enterovaginal), <strong>abscesso</strong>, <strong>perfuração</strong>, hemorragia.</li>
+      <li>Falha/refratariedade ou dependência de corticoide; doença perianal complexa.</li>
+      <li>Displasia/câncer, retardo de crescimento (crianças), megacólon tóxico (raro).</li>
+    </ul>
+
+    <div class="box prova"><span class="lbl">Tema de prova <span class="banca">Santa Casa POA · AMRIGS</span></span>
+      <strong>Trial LIR!C:</strong> na ileíte terminal limitada (≤40 cm), inflamatória (não estenosante) e refratária ao tratamento convencional, a <strong>ressecção ileocecal laparoscópica é alternativa ao infliximabe</strong>, com qualidade de vida semelhante e custo-efetiva. O seguimento de <strong>10 anos (2026)</strong> reforça a ressecção como estratégia <em>upfront</em>, não só de resgate.</div>
+
+    <h4>Procedimentos</h4>
+    <ul>
+      <li><strong>Ressecção ileocecal / ileocólica</strong> com anastomose — a operação prototípica.</li>
+      <li><strong>Colectomia segmentar</strong> (doença colônica localizada) ou proctocolectomia em casos extensos.</li>
+      <li><strong>Estenoplastia (estricturoplastia):</strong> preserva alça em estenoses curtas, múltiplas ou em intestino já curto.
+        <ul>
+          <li>Heineke-Mikulicz: estenose &lt;10 cm.</li>
+          <li>Finney: 10–25 cm.</li>
+          <li>Michelassi (látero-lateral isoperistáltica): &gt;25 cm.</li>
+        </ul>
+      </li>
+      <li><strong>Perianal:</strong> drenagem de abscesso, <strong>sedenho (seton)</strong> nas fístulas complexas, evitar fistulotomia ampla (risco de incontinência).</li>
+      <li><strong>Sequência na doença penetrante:</strong> tratar sepse primeiro → <strong>drenagem percutânea do abscesso</strong> + ATB + otimização nutricional → ressecção eletiva (reduz vazamento e estoma).</li>
+    </ul>
+  </div>
+</details>
+
+<!-- 4 POSIÇÃO E PREPARO -->
+<details>
+  <summary><span class="num">4</span> Posição & preparo <span class="chev">▶</span></summary>
+  <div class="body">
+    <ul>
+      <li><strong>Posição:</strong> decúbito dorsal para ileocecal; <strong>Lloyd-Davies (litotomia modificada)</strong> se precisar de acesso perineal/anastomose colorretal.</li>
+      <li><strong>Via:</strong> <strong>laparoscópica preferencial</strong> na ileocecal (menos aderências, recuperação mais rápida — foi a via do LIR!C); aberta/mão-assistida em doença fistulizante complexa ou reoperação.</li>
+      <li><strong>Preparo:</strong> otimização <strong>nutricional pré-op</strong> (desnutrição ↑ vazamento), desmame de corticoide, timing dos biológicos, ATB profilático IV, profilaxia de TVP, marcação de estoma se previsto, SVD, SNG se obstruído.</li>
+      <li>Preparo mecânico de cólon ± ATB oral é debatido; consenso atual favorece ATB oral + mecânico em cirurgia colorretal eletiva.</li>
+    </ul>
+    <div class="box mac"><span class="lbl">Macete</span>
+      Antes de operar Crohn penetrante: <strong>"drena, nutre, desinflama, depois resseca"</strong> — operar no abscesso ativo = anastomose que vaza.</div>
+  </div>
+</details>
+
+<!-- 5 PASSO A PASSO -->
+<details>
+  <summary><span class="num">5</span> Passo a passo — ressecção ileocecal <span class="chev">▶</span></summary>
+  <div class="body">
+    <div class="steps">
+      <div class="step"><b>Acesso e inventário.</b> Portais laparoscópicos ou laparotomia mediana. <strong>"Correr todo o delgado"</strong> da válvula ileocecal ao Treitz para mapear todas as lesões salteadas e estenoses. <span class="simple">(passa o dedo por toda a mangueira pra achar todos os pontos doentes)</span></div>
+      <div class="step"><b>Avaliar o segmento.</b> Identificar íleo terminal + ceco doentes, palpar estenoses (passar cateter/balão de Foley para calibrar), avaliar mesentério espessado.</div>
+      <div class="step"><b>Mobilizar cólon direito.</b> Incisar a <strong>linha branca de Toldt</strong>; dissecção látero-medial ou medial-lateral, liberar flexura hepática se necessário.</div>
+      <div class="step"><b>Proteger estruturas.</b> Identificar e afastar <strong>duodeno (D2/D3), ureter direito e vasos gonadais</strong>.</div>
+      <div class="step"><b>Dividir mesentério.</b> Ligar a <strong>artéria ileocólica</strong>; no Crohn o mesentério é friável/espesso → ligar próximo à alça (vaso a vaso ou selador). Considerar excisão mesentérica estendida (Coffey).</div>
+      <div class="step"><b>Definir margens.</b> Transecção em <strong>intestino macroscopicamente normal</strong> (íleo proximal e cólon ascendente/transverso). Não buscar margem microscópica ampla.</div>
+      <div class="step"><b>Seccionar a alça.</b> Grampeador linear (GIA) ou entre pinças intestinais.</div>
+      <div class="step"><b>Anastomose.</b> Escolha entre <strong>látero-lateral grampeada (functional end-to-end)</strong> — mais comum — ou <strong>Kono-S</strong> manual antimesentérica (ver bloco de fios).</div>
+      <div class="step"><b>Fechar brecha mesentérica</b>, revisar hemostasia e integridade da anastomose.</div>
+      <div class="step"><b>Retirar espécime</b>, conferir contagem e fechar por planos.</div>
+    </div>
+
+    <div class="box prova"><span class="lbl">Tema de prova <span class="banca">HCPA R3 · Santa Casa</span></span>
+      <strong>Anastomose de Kono-S</strong> (RCT SuPREMe-CD, Luglio, <em>Ann Surg</em> 2020): anastomose antimesentérica com "coluna de suporte" reduziu <strong>recorrência endoscópica</strong> (Rutgeerts ≥ i2) vs grampeada látero-lateral. Metanálises (2024) confirmam <strong>menos deiscência e reoperação</strong>, porém o benefício de recorrência permanece debatido. Tópico moderno para R3/vascular.</div>
+
+    <div class="fig">
+      <svg viewBox="0 0 460 170" role="img" aria-label="Tipos de estenoplastia">
+        <text x="0" y="14" fill="#9a9ab0" font-family="JetBrains Mono" font-size="11">Estenoplastias</text>
+        <!-- HM -->
+        <rect x="10" y="50" width="120" height="30" rx="15" fill="none" stroke="#f97316" stroke-width="3"/>
+        <line x1="55" y1="30" x2="55" y2="100" stroke="#22d3ee" stroke-width="2" stroke-dasharray="4 3"/>
+        <line x1="85" y1="30" x2="85" y2="100" stroke="#22d3ee" stroke-width="2" stroke-dasharray="4 3"/>
+        <text x="20" y="125" fill="#e6e6ef" font-size="11">Heineke-Mikulicz</text>
+        <text x="34" y="140" fill="#9a9ab0" font-size="10">&lt;10 cm</text>
+        <!-- Finney -->
+        <path d="M170 50 q60 -30 120 0 l0 30 q-60 30 -120 0 z" fill="none" stroke="#f97316" stroke-width="3"/>
+        <text x="190" y="125" fill="#e6e6ef" font-size="11">Finney</text>
+        <text x="186" y="140" fill="#9a9ab0" font-size="10">10–25 cm</text>
+        <!-- Michelassi -->
+        <path d="M320 55 l120 0 M320 78 l120 0" stroke="#f97316" stroke-width="3"/>
+        <path d="M330 55 l0 23 M360 55 l0 23 M390 55 l0 23 M420 55 l0 23" stroke="#22d3ee" stroke-width="1.5"/>
+        <text x="328" y="125" fill="#e6e6ef" font-size="11">Michelassi</text>
+        <text x="340" y="140" fill="#9a9ab0" font-size="10">&gt;25 cm</text>
+      </svg>
+      <div class="cap">Escolha da estenoplastia conforme o comprimento da estenose</div>
+    </div>
+  </div>
+</details>
+
+<!-- 6 INSTRUMENTAÇÃO -->
+<details>
+  <summary><span class="num">6</span> Instrumentação — mão D × mão E <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>Regra geral: <strong>mão direita = mão ativa</strong> (corta, dissecaa, grampeia, sutura); <strong>mão esquerda = exposição e contratração</strong>. <span class="simple">(uma mão trabalha, a outra segura e estica o tecido pra a primeira enxergar)</span></p>
+    <div class="hands">
+      <div class="hand d">
+        <div class="ht">Mão Direita (ativa)</div>
+        <ul>
+          <li>Porta-agulha / agulha</li>
+          <li>Tesoura de Metzenbaum (dissecção fina)</li>
+          <li>Bisturi / energia (LigaSure, Harmonic)</li>
+          <li>Grampeador GIA / TA</li>
+          <li>Mixter (dissecção de pedículo)</li>
+        </ul>
+      </div>
+      <div class="hand e">
+        <div class="ht">Mão Esquerda (exposição)</div>
+        <ul>
+          <li>Pinça <strong>DeBakey</strong> (atraumática, vaso/serosa)</li>
+          <li><strong>Babcock</strong> (preensão atraumática de alça)</li>
+          <li>Allis (preensão do espécime a ressecar)</li>
+          <li>Tração/contratração do mesentério</li>
+          <li>Na lap: <em>grasper</em> atraumático para tração</li>
+        </ul>
+      </div>
+    </div>
+    <h4>Pinças e clamps específicos</h4>
+    <ul>
+      <li><strong>Pinças intestinais atraumáticas</strong> (tipo Doyen) — ocluir alça preservando parede.</li>
+      <li><strong>Kocher</strong> — tecido firme/espécime (nunca em alça a preservar).</li>
+      <li><strong>Mixter (ângulo reto)</strong> — passar fio ao redor do pedículo ileocólico.</li>
+      <li><strong>Babcock</strong> — manipular alça com mínimo trauma.</li>
+    </ul>
+  </div>
+</details>
+
+<!-- 7 FIOS -->
+<details>
+  <summary><span class="num">7</span> Tabela de fios — o que e quando <span class="chev">▶</span></summary>
+  <div class="body">
+    <div class="tbl"><table class="fio">
+      <tr><th>Momento</th><th>Fio / dispositivo</th><th>Observação</th></tr>
+      <tr><td>2-0 / 3-0 Vicryl ou selador</td><td><strong>Ligadura do mesentério</strong></td><td>Vaso a vaso; ileocólica próxima à alça (doença benigna)</td></tr>
+      <tr><td>GIA 75/80 + TA 60</td><td><strong>Anastomose grampeada</strong></td><td>Látero-lateral functional end-to-end (mais comum)</td></tr>
+      <tr><td>3-0 / 4-0 PDS</td><td><strong>Anastomose Kono-S</strong></td><td>Manual, antimesentérica, com coluna de suporte</td></tr>
+      <tr><td>3-0 Vicryl/PDS (interno) + 3-0 seda (Lembert externo)</td><td><strong>Anastomose manual em 2 planos</strong></td><td>Plano interno hemostático + seromuscular externo</td></tr>
+      <tr><td>3-0 / 4-0 absorvível</td><td><strong>Estenoplastia</strong></td><td>Plano único ou duplo conforme técnica</td></tr>
+      <tr><td>0 ou 1 PDS / loop</td><td><strong>Aponeurose</strong></td><td>Absorção lenta, razão fio:ferida 4:1</td></tr>
+      <tr><td>4-0 Monocryl / grampos</td><td><strong>Pele</strong></td><td>Subcuticular ou grampeador</td></tr>
+      <tr><td>3-0 Vicryl</td><td><strong>Maturação de estoma</strong></td><td>Eversão mucocutânea (Brooke)</td></tr>
+    </table></div>
+    <div class="box mac"><span class="lbl">Macete dos fios</span>
+      <strong>Mesentério friável → liga perto da alça e devagar.</strong> Anastomose: plano interno = absorvível (Vicryl/PDS); plano externo seromuscular = pode seda (Lembert). Parede que demora a cicatrizar (Crohn + corticoide) pede fio de absorção mais lenta.</div>
+  </div>
+</details>
+
+<!-- 8 COMPLICAÇÕES -->
+<details>
+  <summary><span class="num">8</span> Complicações <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Precoces</h4>
+    <ul>
+      <li><strong>Deiscência / fístula anastomótica</strong> — risco ↑ com corticoide, desnutrição, sepse e doença penetrante. <span class="simple">(a costura do intestino abre e vaza)</span></li>
+      <li>Abscesso intra-abdominal, íleo prolongado, sangramento, infecção de ferida (ISC), fístula enterocutânea.</li>
+      <li><strong>Síndrome do intestino curto</strong> após ressecções múltiplas/extensas.</li>
+    </ul>
+    <h4>Tardias</h4>
+    <ul>
+      <li><strong>Recorrência:</strong> endoscópica ~70–90% em 1 ano; cirúrgica ~25–35% em 5–10 anos. Vigilância com colono em 6–12 meses (escore de <strong>Rutgeerts</strong>).</li>
+      <li>Estenose anastomótica, deficiência de <strong>B12</strong>, diarreia por <strong>má absorção de sais biliares</strong>, colelitíase, nefrolitíase, hérnia incisional, obstrução por aderências.</li>
+    </ul>
+    <div class="box warn"><span class="lbl">Profilaxia de recorrência (cai muito)</span>
+      <strong>Parar de fumar é a medida isolada mais eficaz.</strong> Em alto risco (tabagista, fenótipo penetrante, doença perianal, ressecção prévia) → <strong>biológico precoce pós-op</strong> + colono de vigilância em 6–12 meses guiando a terapia pelo Rutgeerts. Plexite mientérica na margem = fator de recorrência.</div>
+  </div>
+</details>
+
+<!-- 9 PROVA RS -->
+<details>
+  <summary><span class="num">9</span> Temas de prova — bancas RS <span class="chev">▶</span></summary>
+  <div class="body">
+    <div class="box prova"><span class="lbl">HCPA</span> Tríade histológica (transmural/skip/granuloma não caseoso); diferenciação Crohn × RCU; budesonida na ileocecal.</div>
+    <div class="box prova"><span class="lbl">GHC</span> Indicação cirúrgica mais comum = estenose/obstrução; princípio de poupar intestino; creeping fat.</div>
+    <div class="box prova"><span class="lbl">Santa Casa POA</span> Tipos de estenoplastia (HM/Finney/Michelassi); manejo da doença perianal (seton); LIR!C.</div>
+    <div class="box prova"><span class="lbl">PUC-RS</span> Manifestações extraintestinais; B12 e sais biliares no íleo terminal; tabaco piora.</div>
+    <div class="box prova"><span class="lbl">AMRIGS</span> Classificação de Montreal; cirurgia não é curativa; sorologia ASCA × p-ANCA.</div>
+    <div class="box prova"><span class="lbl">R3 / vascular</span> Kono-S (SuPREMe-CD); excisão mesentérica (Coffey); ressecção como estratégia upfront (LIR!C 10 anos).</div>
+  </div>
+</details>
+
+<!-- 10 MACETES -->
+<details>
+  <summary><span class="num">10</span> Grid de macetes <span class="chev">▶</span></summary>
+  <div class="body">
+    <div class="grid">
+      <div class="gcard"><div class="t">Os "C" do Crohn</div><div class="d">Cobblestone · Creeping fat · Caseação ausente (granuloma não caseoso) · Cigarro piora · Cuts/skip lesions · fisChula</div></div>
+      <div class="gcard"><div class="t">Boca ao ânus</div><div class="d">Qualquer ponto do TGI, descontínuo, poupando o reto — diferente da RCU.</div></div>
+      <div class="gcard"><div class="t">Gene</div><div class="d">NOD2/CARD15 — o "interruptor" genético mais associado.</div></div>
+      <div class="gcard"><div class="t">Sinal do cordão</div><div class="d">String sign de Kantor na entero-TC = estenose do íleo terminal.</div></div>
+      <div class="gcard"><div class="t">Regra de ouro cirúrgica</div><div class="d">Resseca só o que vê, poupa o resto. Cirurgia não cura.</div></div>
+      <div class="gcard"><div class="t">Íleo terminal</div><div class="d">Ressecado/inflamado → falta B12 + diarreia por sais biliares.</div></div>
+      <div class="gcard"><div class="t">Antes de operar penetrante</div><div class="d">Drena, nutre, desinflama, depois resseca.</div></div>
+      <div class="gcard"><div class="t">Pós-op nº 1</div><div class="d">Parar de fumar > qualquer droga para evitar recorrência.</div></div>
+    </div>
+  </div>
+</details>
+
+<footer>
+  <p><strong>Referências fixas:</strong> Sabiston — <em>Textbook of Surgery</em>; Zollinger — <em>Atlas of Surgical Operations</em>; Netter — <em>Atlas de Anatomia</em>.</p>
+  <p class="ref">Atualizações: SuPREMe-CD / Kono-S (Luglio, Ann Surg 2020) · LIR!C seguimento 10 anos (Lancet Gastroenterol Hepatol, 2026) · metanálise Kono-S (J Clin Med 2024) · ECCO Therapeutics CD (J Crohns Colitis 2024) · Coffey (mesentério, J Crohns Colitis 2018).</p>
+  <p class="ref" style="margin-top:14px;color:var(--laranja)">carolzita · doença de crohn · full</p>
+</footer>
+</div>
+</body>
+</html>

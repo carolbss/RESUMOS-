@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neoplasias Císticas e Neuroendócrinas do Pâncreas — Referência CV 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d1117; --bg2:#161b22; --bg3:#1c2230; --line:#2a3038;
+  --txt:#c9d1d9; --txt2:#8b949e; --txt3:#6e7681;
+  --orange:#ff7b29; --orange-d:#3a2410;
+  --purple:#a371f7; --purple-d:#241a3a;
+  --cyan:#39c5cf; --cyan-d:#0f2e30;
+  --red:#f85149; --green:#3fb950; --yellow:#d29922;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font-family:'IBM Plex Sans',sans-serif;line-height:1.6;font-size:15px;padding-bottom:60px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 18px}
+header{padding:30px 0 16px;border-bottom:1px solid var(--line)}
+h1{font-family:'IBM Plex Serif',serif;font-size:26px;font-weight:600;letter-spacing:-.3px}
+h1 .accent{color:var(--orange)}
+.sub{color:var(--txt2);font-size:13px;margin-top:6px;font-family:'IBM Plex Mono',monospace}
+.tabs{position:sticky;top:0;z-index:20;background:var(--bg);display:flex;gap:4px;overflow-x:auto;padding:10px 18px;border-bottom:1px solid var(--line);scrollbar-width:thin}
+.tabs::-webkit-scrollbar{height:5px}.tabs::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
+.tab{flex:0 0 auto;background:var(--bg2);border:1px solid var(--line);color:var(--txt2);padding:8px 14px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;font-family:'IBM Plex Mono',monospace;transition:.15s}
+.tab:hover{color:var(--txt);border-color:var(--orange)}
+.tab.active{background:var(--orange);color:#0d1117;border-color:var(--orange)}
+.panel{display:none;padding:24px 0;animation:fade .25s}
+.panel.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1}}
+h2{font-family:'IBM Plex Serif',serif;font-size:20px;color:var(--orange);margin:26px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+h2:first-child{margin-top:0}
+h3{font-size:16px;color:var(--txt);margin:18px 0 8px;font-weight:600}
+p{margin:8px 0}
+.lay{color:var(--cyan);font-style:italic;font-size:.93em}
+ul,ol{margin:8px 0 8px 22px}li{margin:4px 0}
+strong{color:#fff;font-weight:600}
+code{font-family:'IBM Plex Mono',monospace;background:var(--bg3);padding:1px 6px;border-radius:4px;font-size:.88em;color:var(--orange)}
+.card{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0}
+.box{border-left:4px solid var(--orange);background:var(--orange-d);border-radius:0 10px 10px 0;padding:12px 16px;margin:14px 0}
+.box.hy{border-left-color:var(--purple);background:var(--purple-d)}
+.box.mn{border-left-color:var(--cyan);background:var(--cyan-d)}
+.box .lbl{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;font-weight:600;margin-bottom:6px;display:block}
+.box .lbl{color:var(--orange)}.box.hy .lbl{color:var(--purple)}.box.mn .lbl{color:var(--cyan)}
+.banca{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:600;padding:1px 7px;border-radius:20px;background:#2a1f44;color:var(--purple);border:1px solid #3a2a5a;margin-left:6px;vertical-align:middle}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--bg3);color:var(--orange);font-family:'IBM Plex Mono',monospace;font-size:11.5px;text-transform:uppercase;letter-spacing:.5px;position:sticky;top:0}
+td strong{color:var(--cyan)}
+.tag{font-family:'IBM Plex Mono',monospace;font-size:11px;padding:2px 8px;border-radius:5px;font-weight:600}
+.t-b{background:#0f2a16;color:var(--green)}
+.t-m{background:#3a1414;color:var(--red)}
+.t-w{background:#3a2e0d;color:var(--yellow)}
+svg{max-width:100%;height:auto;display:block;margin:16px auto;background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:10px}
+.q{background:var(--bg2);border:1px solid var(--line);border-left:4px solid var(--purple);border-radius:0 10px 10px 0;padding:14px 16px;margin:16px 0}
+.q .stem{font-weight:500}
+.alt{margin:8px 0 0 0;padding-left:4px}
+.alt div{padding:3px 0;color:var(--txt2)}
+details{margin-top:10px;border-top:1px dashed var(--line);padding-top:8px}
+summary{cursor:pointer;color:var(--cyan);font-weight:600;font-size:13px;font-family:'IBM Plex Mono',monospace}
+details[open] summary{margin-bottom:6px}
+.ans{color:var(--green);font-weight:600}
+.foot{color:var(--txt3);font-size:11px;text-align:center;margin-top:30px;font-family:'IBM Plex Mono',monospace}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:640px){.grid2{grid-template-columns:1fr}h1{font-size:21px}}
+.pill{display:inline-block;width:11px;height:11px;border-radius:3px;vertical-align:middle;margin-right:5px}
+.legend{font-size:12px;color:var(--txt2);font-family:'IBM Plex Mono',monospace;margin-top:10px}
+/* flowchart */
+.flow{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:18px 16px;margin:16px 0}
+.frow{display:flex;align-items:stretch;gap:10px;margin:0 0 6px}
+.fdec{flex:1;background:var(--bg3);border:1px solid var(--purple);border-radius:10px;padding:10px 12px;font-size:13.5px}
+.fdec b{color:var(--purple);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.5px}
+.fout{flex:0 0 auto;display:flex;flex-direction:column;justify-content:center;gap:6px;min-width:150px}
+.chip{border-radius:8px;padding:7px 11px;font-size:13px;font-weight:600;text-align:center;font-family:'IBM Plex Sans'}
+.chip.res{background:#3a1414;color:#ff9d9d;border:1px solid var(--red)}
+.chip.eus{background:#3a2e0d;color:#ffd970;border:1px solid var(--yellow)}
+.chip.vig{background:#0f2a16;color:#8ff0a8;border:1px solid var(--green)}
+.fyes{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--green);font-weight:600;margin-bottom:2px}
+.fno{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--txt2)}
+.fdown{text-align:center;color:var(--txt3);font-size:18px;line-height:1;margin:1px 0}
+@media(max-width:640px){.frow{flex-direction:column}.fout{min-width:0}}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <h1>Neoplasias <span class="accent">Císticas & Neuroendócrinas</span> do Pâncreas</h1>
+  <div class="sub">Referência CV 2026 · Sabiston · Zollinger · Kyoto 2024 (IPMN) · WHO 2022 (TNE) · ENETS/NCCN</div>
+  <div class="legend">
+    <span class="pill" style="background:var(--orange)"></span>conteúdo geral
+    <span class="pill" style="background:var(--purple);margin-left:14px"></span>alto rendimento / prova
+    <span class="pill" style="background:var(--cyan);margin-left:14px"></span>analogia & mnemônico
+  </div>
+</header>
+
+<nav class="tabs">
+  <button class="tab active" data-t="vg">🗺️ Visão Geral</button>
+  <button class="tab" data-t="an">🩸 Anatomia</button>
+  <button class="tab" data-t="cis">💧 Císticas</button>
+  <button class="tab" data-t="tne">⚡ TNE</button>
+  <button class="tab" data-t="cir">🔪 Cirurgia</button>
+  <button class="tab" data-t="comp">⚠️ Complicações</button>
+  <button class="tab" data-t="quest">📝 Questões</button>
+  <button class="tab" data-t="pega">🪤 Pega-ratão</button>
+  <button class="tab" data-t="mn">🧠 Mnemônicos</button>
+</nav>
+
+<main class="wrap">
+
+<!-- ============ VISÃO GERAL ============ -->
+<section class="panel active" id="vg">
+  <h2>O grande mapa</h2>
+  <p>As lesões císticas pancreáticas dividem-se em <strong>não-neoplásicas</strong> (pseudocisto — o mais comum de todos, ligado a pancreatite) e <strong>neoplásicas</strong>. Entre as neoplásicas, quatro entidades dominam as provas.</p>
+  <p class="lay">(Pense no pâncreas como um cacho: alguns "balões" são só água parada após uma briga — pseudocisto. Outros são tumores de verdade, e o segredo é saber qual deles pode virar câncer.)</p>
+
+  <div class="box mn"><span class="lbl">🧠 A "família" das císticas — por sexo e idade</span>
+  <strong>Avó</strong> = Cistoadenoma <strong>Seroso</strong> (idosa, benigno) · <strong>Mãe</strong> = <strong>Mucinoso</strong> (mulher meia-idade, pré-maligno) · <strong>Filha</strong> = <strong>Sólido-pseudopapilar/Frantz</strong> (mulher jovem). O <strong>IPMN</strong> é o "vô" (homem, idoso, no ducto).</div>
+
+  <table>
+    <thead><tr><th>Lesão</th><th>Quem / Local</th><th>Comunica c/ ducto?</th><th>CEA do líquido</th><th>Marca registrada</th><th>Malignidade</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Seroso (SCN)</strong></td><td>♀ idosa (60-70a) · corpo/cauda</td><td>Não</td><td><span class="tag t-b">BAIXO &lt;5</span></td><td>Microcístico "favo de mel", cicatriz central estrelada</td><td><span class="tag t-b">Benigno</span></td></tr>
+      <tr><td><strong>Mucinoso (MCN)</strong></td><td>♀ 40-50a (quase só mulher) · corpo/cauda</td><td><strong>Não</strong></td><td><span class="tag t-m">ALTO &gt;192</span></td><td><strong>Estroma tipo ovariano</strong> (patognomônico)</td><td><span class="tag t-w">Pré-maligno</span></td></tr>
+      <tr><td><strong>IPMN</strong></td><td>♂≈♀ idoso (60-70a) · cabeça</td><td><strong>SIM</strong></td><td><span class="tag t-m">ALTO</span> + amilase ↑↑</td><td>Mucina pela papila ("boca de peixe")</td><td><span class="tag t-w">Pré-maligno (MD &gt;&gt; BD)</span></td></tr>
+      <tr><td><strong>SPN / Frantz</strong></td><td>♀ jovem (20-30a) · corpo/cauda</td><td>Não</td><td>Variável</td><td>Sólido-cístico c/ hemorragia; β-catenina nuclear</td><td><span class="tag t-w">Baixo grau (~10-15%)</span></td></tr>
+      <tr><td><strong>TNE cístico</strong></td><td>qualquer · qualquer</td><td>Não</td><td>Baixo · cromogranina ↑</td><td>Realce arterial intenso; cromogranina A +</td><td>Variável (grau)</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box hy"><span class="lbl">⭐ Alto rendimento — o tripé que resolve a questão</span>
+  <ol style="margin-left:18px">
+    <li><strong>Comunicação com o ducto</strong> → distingue IPMN (sim) de MCN (não). EUS-PAAF: <strong>amilase alta</strong> sugere comunicação (IPMN/pseudocisto).</li>
+    <li><strong>CEA do líquido</strong>: <strong>alto (&gt;192 ng/mL)</strong> = mucinoso (MCN/IPMN); <strong>baixo</strong> = seroso ou TNE.</li>
+    <li><strong>Glicose do líquido baixa (&lt;50)</strong> e <strong>mucina +</strong> também apontam lesão mucinosa.</li>
+  </ol></div>
+
+  <div class="card">
+    <h3>Quando lembrar de cada uma na hora da prova</h3>
+    <ul>
+      <li>Achado <strong>incidental</strong> em mulher idosa, microcístico com cicatriz central → <strong>SCN</strong>.</li>
+      <li>Cisto único grande em corpo/cauda de <strong>mulher de meia-idade</strong>, sem comunicação → <strong>MCN</strong>.</li>
+      <li><strong>Wirsung dilatado</strong>, mucina saindo pela papila, idoso → <strong>IPMN de ducto principal</strong>.</li>
+      <li>Massa grande sólido-cística com <strong>hemorragia</strong> em <strong>mulher jovem</strong> → <strong>SPN (Frantz)</strong>.</li>
+      <li>Massa <strong>hipervascular</strong> (realce arterial) + síndrome hormonal → <strong>TNE funcionante</strong>.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ ANATOMIA ============ -->
+<section class="panel" id="an">
+  <h2>Anatomia cirúrgica</h2>
+  <p>Pâncreas retroperitoneal, dividido em <strong>cabeça</strong> (com o <strong>processo uncinado</strong>), <strong>colo</strong>, <strong>corpo</strong> e <strong>cauda</strong>. O colo repousa sobre a <strong>confluência veno-portal</strong> (veia mesentérica superior + veia esplênica = veia porta) — referência central de toda pancreatectomia.</p>
+  <p class="lay">(Imagine um cachorro deitado: a cabeça abraça o duodeno como uma letra "C", a cauda toca o baço, e a barriga repousa sobre os grandes vasos.)</p>
+
+  <svg viewBox="0 0 760 320" role="img" aria-label="Anatomia e vascularização do pâncreas">
+    <defs><marker id="ar" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#f85149"/></marker></defs>
+    <!-- pancreas shape -->
+    <path d="M120,150 C120,90 200,80 240,110 C280,140 360,150 470,150 C560,150 640,135 690,120" fill="none" stroke="#ff7b29" stroke-width="34" stroke-linecap="round" opacity=".25"/>
+    <text x="150" y="200" fill="#ff7b29" font-size="13" font-family="IBM Plex Mono">Cabeça +</text>
+    <text x="150" y="216" fill="#ff7b29" font-size="13" font-family="IBM Plex Mono">uncinado</text>
+    <text x="300" y="185" fill="#ff7b29" font-size="13" font-family="IBM Plex Mono">Colo</text>
+    <text x="430" y="130" fill="#ff7b29" font-size="13" font-family="IBM Plex Mono">Corpo</text>
+    <text x="640" y="105" fill="#ff7b29" font-size="13" font-family="IBM Plex Mono">Cauda → baço</text>
+    <!-- vessels -->
+    <line x1="300" y1="40" x2="300" y2="290" stroke="#39c5cf" stroke-width="3"/>
+    <text x="306" y="55" fill="#39c5cf" font-size="12" font-family="IBM Plex Mono">VMS / VP (atrás do colo)</text>
+    <circle cx="300" cy="150" r="6" fill="#39c5cf"/>
+    <text x="290" y="300" fill="#39c5cf" font-size="11" font-family="IBM Plex Mono">AMS (uncinado a contorna)</text>
+    <!-- GDA -->
+    <path d="M200,70 C210,110 215,130 220,150" fill="none" stroke="#f85149" stroke-width="2.5" marker-end="url(#ar)"/>
+    <text x="120" y="65" fill="#f85149" font-size="11" font-family="IBM Plex Mono">A. gastroduodenal</text>
+    <!-- splenic -->
+    <path d="M360,95 C480,80 580,80 680,95" fill="none" stroke="#f85149" stroke-width="2.5" stroke-dasharray="2 3"/>
+    <text x="430" y="78" fill="#f85149" font-size="11" font-family="IBM Plex Mono">A. esplênica (corpo/cauda)</text>
+    <text x="380" y="270" fill="#8b949e" font-size="11" font-family="IBM Plex Mono">Arcadas pancreaticoduodenais = tronco celíaco ↔ AMS</text>
+  </svg>
+
+  <h3>Vascularização (decora pela prova)</h3>
+  <table>
+    <thead><tr><th>Região</th><th>Suprimento arterial</th><th>Drenagem venosa</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Cabeça / uncinado</strong></td><td>Arcadas <strong>pancreaticoduodenais</strong>: a. gastroduodenal → pancreaticoduodenais sup. (ant./post.); AMS → pancreaticoduodenais inf. (ant./post.). <span class="lay">(uma "ponte dupla" entre o tronco celíaco e a AMS)</span></td><td>Veias pancreaticoduodenais → VMS / veia porta</td></tr>
+      <tr><td><strong>Corpo / cauda</strong></td><td>Ramos da <strong>a. esplênica</strong>: dorsal pancreática, pancreática magna, caudal</td><td>Veia esplênica → confluência → veia porta</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box hy"><span class="lbl">⭐ Por que a cabeça não pode ser "só ressecada"</span>
+  Cabeça e duodeno compartilham as <strong>arcadas pancreaticoduodenais</strong>: irrigação em comum. Por isso lesão maligna/IPMN-MD da cabeça exige <strong>duodenopancreatectomia (Whipple)</strong> — não dá para tirar só o pâncreas. Já corpo/cauda são irrigados pela esplênica → <strong>pancreatectomia distal ± esplenectomia</strong>.</div>
+
+  <div class="box"><span class="lbl">📐 Passo perigoso</span>
+  O <strong>processo uncinado</strong> passa <strong>posterior</strong> à VMS/veia porta e adere à <strong>AMS</strong> (mesopâncreas / margem retroportal). É o passo de maior risco de sangramento e de margem positiva no Whipple.</div>
+</section>
+
+<!-- ============ CÍSTICAS ============ -->
+<section class="panel" id="cis">
+  <h2>1 · Cistoadenoma Seroso (SCN)</h2>
+  <p><strong>Quadro:</strong> mulher idosa (6ª-7ª década), em geral <strong>assintomático/incidental</strong>; quando grande dá efeito de massa.</p>
+  <ul>
+    <li><strong>Imagem:</strong> microcístico, aspecto de <strong>favo de mel / esponja</strong>; <strong>cicatriz central estrelada</strong> com calcificação em "sol radiante" (~30%). Variante <strong>oligo/macrocística</strong> simula MCN.</li>
+    <li><strong>Histologia:</strong> células cuboidais ricas em <strong>glicogênio</strong> (PAS+), sem mucina.</li>
+    <li><strong>Líquido:</strong> CEA <strong>baixo</strong> (&lt;5), amilase baixa, sem mucina.</li>
+    <li><strong>Associação:</strong> <strong>von Hippel-Lindau</strong> (gene VHL, 3p25).</li>
+    <li><strong>Conduta:</strong> essencialmente <strong>benigno</strong> (cistoadenocarcinoma seroso é raríssimo). <strong>Observação</strong>; ressecar se sintomático, &gt;4 cm, crescimento ou dúvida diagnóstica.</li>
+  </ul>
+
+  <h2>2 · Neoplasia Cística Mucinosa (MCN)</h2>
+  <p><strong>Quadro:</strong> <strong>quase exclusivamente mulheres</strong> (&gt;95%), 40-50 anos (perimenopausa); cisto único em <strong>corpo/cauda</strong>.</p>
+  <ul>
+    <li><strong>Chave:</strong> <strong>NÃO comunica</strong> com o ducto principal (diferencia do IPMN).</li>
+    <li><strong>Imagem:</strong> macrocístico, poucos cistos grandes, "cisto dentro de cisto"; <strong>calcificação periférica em "casca de ovo"</strong> sugere malignidade.</li>
+    <li><strong>Histologia (patognomônica):</strong> <strong>estroma tipo ovariano</strong> (receptores de estrogênio/progesterona) sob epitélio mucinoso.</li>
+    <li><strong>Líquido:</strong> CEA <strong>alto</strong> (&gt;192), mucina +, amilase baixa.</li>
+    <li><strong>Conduta:</strong> <strong>ressecção</strong> para pacientes operáveis (geralmente <strong>pancreatectomia distal</strong>) — potencial de carcinoma invasor. Prognóstico ótimo se não invasor.</li>
+  </ul>
+  <p class="lay">(O estroma ovariano é como uma "assinatura": só a MCN o tem — por isso é coisa de mulher e fica longe da cabeça.)</p>
+
+  <h2>3 · IPMN (Neoplasia Intraductal Papilar Mucinosa)</h2>
+  <p><strong>Quadro:</strong> idoso (60-70a), discreto predomínio masculino; pancreatite recorrente, dor, ou incidental. Mucina extruindo pela <strong>papila patulosa</strong> ("boca de peixe") na CPRE/duodenoscopia é clássico do tipo ducto principal.</p>
+  <ul>
+    <li><strong>Chave:</strong> <strong>COMUNICA</strong> com o sistema ductal → líquido com <strong>amilase ↑↑</strong> além de CEA alto.</li>
+    <li><strong>Tipos:</strong> <span class="tag t-m">Ducto principal (MD)</span> risco de malignidade muito alto (~40-70%); <span class="tag t-w">Ramo lateral (BD)</span> menor risco; <strong>misto</strong> (comporta-se como MD).</li>
+    <li><strong>Subtipos histo:</strong> gástrico (mais comum, BD, baixo grau), intestinal (MD, MUC2, → ca coloide, melhor prognóstico), pancreatobiliar (MUC1, → ca tubular, pior). Oncocítico hoje é entidade separada (IOPN).</li>
+  </ul>
+
+  <div class="box hy"><span class="lbl">⭐ Kyoto 2024 — Estigmas de alto risco (HRS) <span class="banca">HCPA</span><span class="banca">PUC-RS</span></span>
+  <strong>Indicam ressecção:</strong>
+  <ol style="margin-left:18px">
+    <li>Icterícia obstrutiva (massa de cabeça)</li>
+    <li><strong>Nódulo mural com realce ≥ 5 mm</strong> ou componente sólido</li>
+    <li>Ducto pancreático principal <strong>≥ 10 mm</strong></li>
+    <li>Citologia <strong>suspeita ou positiva</strong> para malignidade <em>(novidade 2024)</em></li>
+  </ol></div>
+
+  <div class="box"><span class="lbl">⚠️ Kyoto 2024 — Características preocupantes (WF)</span>
+  Cisto ≥ 3 cm · nódulo mural &lt; 5 mm · parede espessa com realce · ducto principal <strong>5-9 mm</strong> · mudança abrupta de calibre com atrofia distal · linfadenopatia · crescimento &gt; 2,5 mm/ano · pancreatite aguda · <strong>CA 19-9 &gt; 37 U/mL</strong> · DM de início/piora recente (&lt;1 ano).
+  <br>→ Conduta: <strong>EUS-PAAF</strong> e avaliar. WF isolada = vigilância vs. cirurgia conforme número/contexto.</div>
+
+  <div class="card"><h3>Resumo de conduta no IPMN</h3>
+  <ul>
+    <li><strong>MD-IPMN e misto</strong> → ressecar (alto risco).</li>
+    <li><strong>BD-IPMN</strong>: HRS → ressecar; WF → EUS-PAAF e decidir; sem critérios → <strong>vigilância</strong> (RM/EUS conforme tamanho).</li>
+  </ul></div>
+
+  <h3>Algoritmo de conduta — Kyoto 2024</h3>
+  <p class="lay">(Uma escada de perguntas "sim/não": desce um degrau a cada "não" até chegar na vigilância.)</p>
+  <div class="flow">
+    <div class="frow">
+      <div class="fdec"><b>1 · É MD-IPMN ou misto?</b><br>Ducto principal acometido</div>
+      <div class="fout"><div class="fyes">SIM ▶</div><div class="chip res">🔪 RESSECAR</div></div>
+    </div>
+    <div class="fno" style="text-align:center">↓ não (BD-IPMN)</div>
+    <div class="fdown">▼</div>
+    <div class="frow">
+      <div class="fdec"><b>2 · Tem algum HRS?</b><br>Icterícia · nódulo ≥5 mm · ducto ≥10 mm · citologia +</div>
+      <div class="fout"><div class="fyes">SIM ▶</div><div class="chip res">🔪 RESSECAR</div></div>
+    </div>
+    <div class="fno" style="text-align:center">↓ não</div>
+    <div class="fdown">▼</div>
+    <div class="frow">
+      <div class="fdec"><b>3 · Tem alguma WF?</b><br>Cisto ≥3 cm · nódulo &lt;5 mm · ducto 5-9 mm · CA19-9 &gt;37 · crescimento &gt;2,5 mm/ano · DM novo · pancreatite</div>
+      <div class="fout"><div class="fyes">SIM ▶</div><div class="chip eus">🔍 EUS-PAAF<br><span style="font-weight:400;font-size:11px">ressecar vs vigiar</span></div></div>
+    </div>
+    <div class="fno" style="text-align:center">↓ não</div>
+    <div class="fdown">▼</div>
+    <div class="frow">
+      <div class="fdec"><b>4 · Sem critérios</b><br>Nenhum HRS nem WF</div>
+      <div class="fout"><div class="chip vig">👁️ VIGILÂNCIA<br><span style="font-weight:400;font-size:11px">RM/EUS conforme tamanho</span></div></div>
+    </div>
+  </div>
+  <p class="sub">Após EUS-PAAF: reclassifica para HRS (ex.: nódulo confirmado, citologia suspeita) → ressecar; caso contrário, vigilância mais estreita.</p>
+
+  <h2>4 · Neoplasia Sólido-Pseudopapilar (SPN / tumor de Frantz)</h2>
+  <p><strong>Quadro:</strong> <strong>mulher jovem</strong> (20-30a) — "tumor da filha". Massa grande, bem delimitada, frequentemente em corpo/cauda; achado de massa palpável ou dor.</p>
+  <ul>
+    <li><strong>Imagem/patologia:</strong> massa <strong>sólido-cística</strong> com <strong>hemorragia/degeneração</strong>; pseudopapilas.</li>
+    <li><strong>Molecular:</strong> mutação <strong>CTNNB1 → β-catenina nuclear</strong>, perda de E-caderina; <strong>CD10+, vimentina+, receptor de progesterona+</strong>; <strong>cromogranina geralmente NEGATIVA</strong> (separa de TNE).</li>
+    <li><strong>Comportamento:</strong> baixo grau de malignidade (~10-15%); prognóstico excelente mesmo com metástase.</li>
+    <li><strong>Conduta:</strong> <strong>ressecção cirúrgica</strong> (cura &gt;95%); ressecar metástases hepáticas isoladas.</li>
+  </ul>
+</section>
+
+<!-- ============ TNE ============ -->
+<section class="panel" id="tne">
+  <h2>Tumores Neuroendócrinos do Pâncreas (TNE-P)</h2>
+  <p>Originam-se das ilhotas. Classificam-se em <strong>funcionantes</strong> (síndrome hormonal) e <strong>não-funcionantes</strong> (maioria, 60-90%, achados por massa/incidental). Marcador geral: <strong>cromogranina A</strong>.</p>
+  <p class="lay">(São "fábricas de hormônio" do pâncreas: algumas trabalham em silêncio, outras gritam liberando hormônio demais e causando síndromes típicas.)</p>
+
+  <h3>Síndromes funcionantes</h3>
+  <table>
+    <thead><tr><th>Tumor</th><th>Hormônio / Síndrome</th><th>Pistas de prova</th><th>Malignidade</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Insulinoma</strong></td><td>Insulina · hipoglicemia</td><td><strong>Tríade de Whipple</strong>; teste de jejum 72 h; <strong>regra dos 90%</strong></td><td><span class="tag t-b">~90% benigno</span></td></tr>
+      <tr><td><strong>Gastrinoma</strong></td><td>Gastrina · <strong>Zollinger-Ellison</strong></td><td>Úlceras pépticas recorrentes/atípicas, diarreia; <strong>triângulo do gastrinoma (Passaro)</strong>; teste da secretina</td><td><span class="tag t-m">~60-90% maligno</span></td></tr>
+      <tr><td><strong>Glucagonoma</strong></td><td>Glucagon</td><td><strong>4 D</strong>: Dermatite (eritema necrolítico migratório), Diabetes, Depressão, trombose (DVT) + emagrecimento</td><td><span class="tag t-m">Maligno (maioria)</span></td></tr>
+      <tr><td><strong>VIPoma</strong></td><td>VIP · Verner-Morrison</td><td><strong>WDHA</strong>: diarreia aquosa, hipocalemia, acloridria ("cólera pancreática")</td><td><span class="tag t-m">Maligno (maioria)</span></td></tr>
+      <tr><td><strong>Somatostatinoma</strong></td><td>Somatostatina</td><td>Tríade: <strong>diabetes + colelitíase + esteatorreia/diarreia</strong></td><td><span class="tag t-m">Maligno (maioria)</span></td></tr>
+    </tbody>
+  </table>
+
+  <div class="box hy"><span class="lbl">⭐ Insulinoma — regra dos 90% <span class="banca">AMRIGS</span><span class="banca">GHC</span></span>
+  ~90% benigno, ~90% solitário, ~90% intrapancreático, ~90% &lt; 2 cm. <strong>Tríade de Whipple</strong>: (1) sintomas de hipoglicemia em jejum, (2) glicemia &lt; 55 mg/dL, (3) alívio com glicose. Diagnóstico: <strong>teste de jejum de 72 h</strong> (insulina e peptídeo C inapropriadamente altos; pró-insulina alta; sulfonilureia negativa). Conduta: <strong>enucleação</strong> se distante do ducto.</div>
+
+  <div class="box"><span class="lbl">📐 Triângulo do gastrinoma (de Passaro)</span>
+  Vértices: (1) junção ducto cístico/colédoco, (2) junção 2ª/3ª porção do duodeno, (3) junção colo/corpo do pâncreas. ~80% dos gastrinomas estão aí. Associação importante com <strong>MEN1</strong> (~25%).</div>
+
+  <svg viewBox="0 0 520 380" role="img" aria-label="Triângulo do gastrinoma de Passaro">
+    <!-- pancreas body/tail -->
+    <path d="M120,250 C200,240 300,235 430,210" fill="none" stroke="#ff7b29" stroke-width="26" stroke-linecap="round" opacity=".22"/>
+    <text x="350" y="200" fill="#ff7b29" font-size="12" font-family="IBM Plex Mono">corpo/cauda</text>
+    <!-- duodenum C-loop on the right -->
+    <path d="M150,70 C250,60 320,90 330,150 C338,210 300,270 200,290" fill="none" stroke="#39c5cf" stroke-width="20" stroke-linecap="round" opacity=".30"/>
+    <text x="345" y="150" fill="#39c5cf" font-size="12" font-family="IBM Plex Mono">2ª porção</text>
+    <text x="300" y="305" fill="#39c5cf" font-size="12" font-family="IBM Plex Mono">3ª porção</text>
+    <!-- CBD -->
+    <path d="M150,40 L160,80" stroke="#d29922" stroke-width="4"/>
+    <text x="100" y="35" fill="#d29922" font-size="11" font-family="IBM Plex Mono">ducto cístico/colédoco</text>
+    <!-- triangle -->
+    <polygon points="160,80 330,210 150,250" fill="rgba(163,113,247,.12)" stroke="#a371f7" stroke-width="2.5" stroke-dasharray="6 5"/>
+    <!-- vertices -->
+    <circle cx="160" cy="80" r="7" fill="#a371f7"/><text x="172" y="78" fill="#a371f7" font-size="12" font-family="IBM Plex Mono">① cístico × colédoco</text>
+    <circle cx="330" cy="210" r="7" fill="#a371f7"/><text x="342" y="214" fill="#a371f7" font-size="12" font-family="IBM Plex Mono">② 2ª/3ª duodeno</text>
+    <circle cx="150" cy="250" r="7" fill="#a371f7"/><text x="20" y="270" fill="#a371f7" font-size="12" font-family="IBM Plex Mono">③ colo/corpo pâncreas</text>
+    <!-- gastrinoma marker -->
+    <circle cx="225" cy="175" r="9" fill="#f85149"/><circle cx="225" cy="175" r="15" fill="none" stroke="#f85149" stroke-width="1.5" opacity=".5"/>
+    <text x="200" y="148" fill="#f85149" font-size="12" font-family="IBM Plex Mono">~80% aqui</text>
+  </svg>
+
+  <h3>Síndromes hereditárias</h3>
+  <div class="box mn"><span class="lbl">🧠 MEN1 = os 3 P</span>
+  <strong>P</strong>aratireoide (hiperplasia/hiperPTH — o mais comum) · <strong>P</strong>âncreas (ilhotas: gastrinoma/insulinoma, frequentemente <strong>múltiplos</strong>) · <strong>P</strong>ituitária (hipófise). Gene <em>menin</em> (11q13). Pense em MEN1 quando há TNE múltiplo ou gastrinoma jovem.</div>
+  <p>Também associados: <strong>VHL</strong>, <strong>NF1</strong> (somatostatinoma duodenal), esclerose tuberosa.</p>
+
+  <h3>Graduação WHO 2022 (decora!)</h3>
+  <table>
+    <thead><tr><th>Grau</th><th>Diferenciação</th><th>Ki-67</th><th>Mitoses /2 mm² (10 CGA)</th></tr></thead>
+    <tbody>
+      <tr><td><strong>TNE G1</strong></td><td>Bem diferenciado</td><td>&lt; 3%</td><td>&lt; 2</td></tr>
+      <tr><td><strong>TNE G2</strong></td><td>Bem diferenciado</td><td>3 – 20%</td><td>2 – 20</td></tr>
+      <tr><td><strong>TNE G3</strong></td><td>Bem diferenciado</td><td>&gt; 20%</td><td>&gt; 20</td></tr>
+      <tr><td><strong>NEC</strong> (carcinoma)</td><td><strong>Pouco</strong> diferenciado (peq./grandes células)</td><td>&gt; 20%</td><td>&gt; 20</td></tr>
+      <tr><td><strong>MiNEN</strong></td><td>Misto neuroendócrino-não neuroendócrino</td><td>—</td><td>—</td></tr>
+    </tbody>
+  </table>
+  <div class="box hy"><span class="lbl">⭐ Pega clássico</span>
+  O grande salto de 2017/2022 foi separar <strong>TNE G3 (bem diferenciado)</strong> do <strong>NEC (pouco diferenciado)</strong> — ambos com Ki-67 &gt;20%, mas biologia e tratamento diferentes. Quando Ki-67 e mitoses discordam, vale o <strong>maior grau</strong>.</div>
+
+  <h3>Localização e tratamento</h3>
+  <ul>
+    <li><strong>Imagem:</strong> TC/RM (realce arterial intenso — hipervascular), EUS; funcional: <strong>PET Ga-68 DOTATATE</strong> (receptor de somatostatina) &gt; octreoscan; estímulo arterial com cálcio para insulinoma oculto.</li>
+    <li><strong>Não-funcionante &lt; 2 cm</strong> (especialmente &lt;1 cm, G1, assintomático): <strong>vigilância</strong> é aceitável.</li>
+    <li><strong>≥ 2 cm, funcionante ou sintomático</strong>: <strong>ressecção</strong> (enucleação, pancreatectomia distal ou Whipple conforme local).</li>
+    <li><strong>Insulinoma</strong>: enucleação. <strong>Gastrinoma</strong>: explorar duodeno + linfonodos peripancreáticos.</li>
+    <li><strong>Doença avançada:</strong> análogos de somatostatina (octreotide/lanreotide), <strong>PRRT (177Lu-DOTATATE)</strong>, everolimo, sunitinibe, terapia hepática.</li>
+  </ul>
+</section>
+
+<!-- ============ CIRURGIA ============ -->
+<section class="panel" id="cir">
+  <h2>Escolha da operação</h2>
+  <table>
+    <thead><tr><th>Localização / lesão</th><th>Operação</th></tr></thead>
+    <tbody>
+      <tr><td>Cabeça/uncinado (IPMN-MD, mucinoso maligno, gastrinoma cabeça)</td><td><strong>Duodenopancreatectomia (Whipple)</strong></td></tr>
+      <tr><td>Corpo/cauda (MCN, SCN, SPN, TNE distal)</td><td><strong>Pancreatectomia distal ± esplenectomia</strong></td></tr>
+      <tr><td>TNE pequeno/insulinoma longe do ducto</td><td><strong>Enucleação</strong></td></tr>
+      <tr><td>Lesão benigna no colo/corpo proximal</td><td><strong>Pancreatectomia central</strong> (poupa parênquima)</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Duodenopancreatectomia (Whipple) — passo a passo</h2>
+  <p><strong>Posição:</strong> decúbito dorsal, braços abertos. <strong>Incisão:</strong> subcostal bilateral (chevron) ou mediana.</p>
+  <ol>
+    <li><strong>Exploração/estadiamento</strong> — afastar carcinomatose e metástase hepática.</li>
+    <li><strong>Manobra de Kocher</strong> — mobiliza o duodeno, expõe veia cava/aorta, permite palpar a origem da <strong>AMS</strong>. <span class="lay">(descolar o "C" do duodeno da parede de trás)</span></li>
+    <li>Abrir a <strong>retrocavidade dos epíploons</strong> dividindo o ligamento gastrocólico.</li>
+    <li>Identificar a <strong>VMS</strong> na borda inferior do colo e criar o <strong>túnel infrapancreático</strong> (plano avascular sobre a VMS/VP).</li>
+    <li><strong>Colecistectomia</strong> + secção do hepatocolédoco.</li>
+    <li>Secção gástrica (clássico) ou <strong>preservação do piloro</strong> (PPPD — secção do duodeno 2 cm distal ao piloro).</li>
+    <li>Secção do jejuno proximal e do <strong>colo do pâncreas</strong> sobre a VMS/VP.</li>
+    <li><strong>Dissecção do uncinado da AMS</strong> (mesopâncreas/margem retroportal) — passo mais hemorrágico e de margem.</li>
+    <li><strong>Reconstrução</strong> (alça única, ordem de Child): pancreaticojejunostomia → hepaticojejunostomia → gastro/duodenojejunostomia.</li>
+  </ol>
+
+  <div class="box hy"><span class="lbl">⭐ Mãos & instrumentos — direita vs esquerda</span>
+  <ul style="margin-left:18px">
+    <li><strong>Mão esquerda</strong>: expõe/retrai e estabiliza — <strong>pinça de DeBakey/Cushing</strong>, segura fios de reparo, aspirador; tração contralateral na dissecção do uncinado.</li>
+    <li><strong>Mão direita</strong>: opera — <strong>bisturi/eletrocautério</strong>, tesoura de Metzenbaum, <strong>porta-agulha</strong>, aplicador de clipes (orientado perpendicular ao vaso, ponta visível antes de fechar).</li>
+    <li>Vasos: <strong>bulldog/Satinsky</strong> se ressecção venosa; ligadura da <strong>a. gastroduodenal</strong> com clampeamento-teste antes (checar fluxo hepático).</li>
+  </ul></div>
+
+  <div class="box"><span class="lbl">🧵 Fios — qual e quando</span>
+  <ul style="margin-left:18px">
+    <li><strong>Pancreaticojejunostomia ducto-mucosa</strong>: PDS/Prolene <strong>4-0 ou 5-0</strong> (camada interna ducto-mucosa); camada externa PDS/seda 3-0.</li>
+    <li><strong>Hepaticojejunostomia</strong>: PDS 4-0/5-0 (monofilamentar absorvível, pontos separados).</li>
+    <li><strong>Ressecção venosa (VP/VMS)</strong>: Prolene 5-0/6-0.</li>
+    <li><strong>Ligadura da GDA</strong>: dupla ligadura + transfixação (seda 2-0/3-0).</li>
+    <li><strong>Coto na pancreatectomia distal</strong>: grampeador + reforço, ligadura do ducto de Wirsung com PDS 4-0.</li>
+  </ul></div>
+
+  <h2>Pancreatectomia distal — passo a passo</h2>
+  <ol>
+    <li>Posição dorsal; abrir retrocavidade e mobilizar a flexura esplênica.</li>
+    <li>Liberar a borda inferior do pâncreas; identificar <strong>a. e v. esplênicas</strong>.</li>
+    <li><strong>Ligar a. esplênica</strong> (próximo à origem) e a <strong>veia esplênica</strong> separadamente.</li>
+    <li>Secção do pâncreas (grampeador linear ou bisturi), tratar o <strong>coto</strong> (suturar/ligar o ducto).</li>
+    <li><strong>Preservação esplênica</strong> (lesão benigna): técnica de <strong>Kimura</strong> (preserva vasos esplênicos) ou <strong>Warshaw</strong> (liga vasos, perfusão pelos vasos gástricos curtos).</li>
+  </ol>
+  <p class="lay">(Como tirar a "cauda do cachorro" junto com o baço, porque dividem a mesma artéria — a esplênica.)</p>
+
+  <div class="box"><span class="lbl">💉 Esplenectomia = vacinar!</span>
+  Risco de <strong>OPSI</strong> (sepse fulminante por encapsulados). Vacinas: pneumococo, meningococo, <em>H. influenzae</em> b — idealmente ≥2 semanas antes (eletiva) ou pós-op (urgência).</div>
+
+  <h2>Enucleação</h2>
+  <p>Para TNE pequeno/insulinoma <strong>distante ≥ 2-3 mm do ducto principal</strong>. Usar <strong>USG intraoperatório</strong> para localizar e medir a distância ao Wirsung. Dissecção fina com cautério, ligadura dos vasos nutridores. <strong>Principal risco: fístula pancreática.</strong></p>
+</section>
+
+<!-- ============ COMPLICAÇÕES ============ -->
+<section class="panel" id="comp">
+  <h2>Complicações pós-pancreatectomia</h2>
+  <div class="box hy"><span class="lbl">⭐ Fístula pancreática (POPF) — a mais temida <span class="banca">Santa Casa</span></span>
+  Definição ISGPS: <strong>amilase no dreno &gt; 3× o limite superior do sérico</strong> a partir do <strong>3º PO</strong>, com repercussão clínica.
+  <ul style="margin-left:18px">
+    <li><strong>Grau A</strong> (bioquímica) → sem impacto clínico (hoje "fuga bioquímica").</li>
+    <li><strong>Grau B</strong> → exige mudança de manejo (dreno, ATB, NPT).</li>
+    <li><strong>Grau C</strong> → reoperação, falência orgânica, óbito.</li>
+  </ul>
+  Fatores de risco: pâncreas <strong>mole</strong>, ducto <strong>fino</strong>, gordura (textura), patologia não-pancreática.</div>
+
+  <table>
+    <thead><tr><th>Complicação</th><th>Ponto-chave</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Esvaziamento gástrico lento (DGE)</strong></td><td>Muito comum no PPPD; manejo de suporte/procinético.</td></tr>
+      <tr><td><strong>Hemorragia pós-pancreatectomia (PPH)</strong></td><td>"<strong>Sentinel bleed</strong>" anuncia pseudoaneurisma do coto da <strong>GDA</strong> → angioembolização.</td></tr>
+      <tr><td><strong>Abscesso/coleção</strong></td><td>Frequentemente associado à fístula → drenagem percutânea.</td></tr>
+      <tr><td><strong>Insuficiência endócrina/exócrina</strong></td><td>DM e esteatorreia após ressecção extensa → reposição de enzimas/insulina.</td></tr>
+      <tr><td><strong>OPSI</strong></td><td>Pós-esplenectomia (encapsulados) → vacinação.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ============ QUESTÕES ============ -->
+<section class="panel" id="quest">
+  <h2>Questões representativas</h2>
+  <p class="sub" style="margin-bottom:14px">Itens originais no estilo das bancas (não reprodução literal de provas).</p>
+
+  <div class="q"><div class="stem"><span class="banca">HCPA</span> Mulher de 45 anos, cisto único de 5 cm em cauda pancreática, sem comunicação com o ducto; líquido com CEA 800 ng/mL e estroma tipo ovariano. Diagnóstico e conduta?</div>
+    <div class="alt"><div>A) Pseudocisto — drenagem</div><div>B) Cistoadenoma seroso — observar</div><div>C) Neoplasia cística mucinosa — pancreatectomia distal</div><div>D) IPMN de ramo — vigilância</div></div>
+    <details><summary>Ver resposta</summary><p class="ans">C.</p><p>Estroma ovariano = patognomônico de <strong>MCN</strong>; mulher, cauda, sem comunicação, CEA alto. Conduta: <strong>ressecção</strong> (pancreatectomia distal) pelo potencial maligno.</p></details>
+  </div>
+
+  <div class="q"><div class="stem"><span class="banca">PUC-RS</span> Homem de 68 anos com pancreatite de repetição; CPRE mostra papila patulosa com saída de mucina e Wirsung de 11 mm. Pela classificação de Kyoto 2024, a conduta é:</div>
+    <div class="alt"><div>A) Vigilância anual com RM</div><div>B) EUS-PAAF e reavaliar em 6 meses</div><div>C) Ressecção cirúrgica</div><div>D) Antibiótico e observação</div></div>
+    <details><summary>Ver resposta</summary><p class="ans">C.</p><p>Ducto principal <strong>≥10 mm</strong> é <strong>estigma de alto risco (HRS)</strong> → IPMN de ducto principal → <strong>ressecção</strong>.</p></details>
+  </div>
+
+  <div class="q"><div class="stem"><span class="banca">AMRIGS</span> Paciente com episódios de confusão e sudorese em jejum, glicemia 42 mg/dL com alívio após glicose. Insulina e peptídeo C elevados, sulfonilureia negativa. O tumor mais provável:</div>
+    <div class="alt"><div>A) Gastrinoma</div><div>B) Insulinoma</div><div>C) Glucagonoma</div><div>D) VIPoma</div></div>
+    <details><summary>Ver resposta</summary><p class="ans">B.</p><p><strong>Tríade de Whipple</strong> + peptídeo C alto (endógeno) + sulfonilureia negativa = <strong>insulinoma</strong>. Regra dos 90% (benigno, solitário, intrapancreático, &lt;2 cm) → <strong>enucleação</strong>.</p></details>
+  </div>
+
+  <div class="q"><div class="stem"><span class="banca">GHC</span> Mulher de 24 anos, massa de 8 cm sólido-cística com áreas de hemorragia em corpo pancreático; imuno com β-catenina nuclear e cromogranina negativa. Diagnóstico:</div>
+    <div class="alt"><div>A) TNE não-funcionante</div><div>B) Cistoadenoma seroso</div><div>C) Neoplasia sólido-pseudopapilar (Frantz)</div><div>D) Adenocarcinoma ductal</div></div>
+    <details><summary>Ver resposta</summary><p class="ans">C.</p><p>Mulher jovem + sólido-cístico hemorrágico + <strong>β-catenina nuclear</strong> + <strong>cromogranina negativa</strong> = <strong>SPN</strong>. Ressecção é curativa na maioria.</p></details>
+  </div>
+
+  <div class="q"><div class="stem"><span class="banca">Santa Casa</span> No 3º PO de Whipple, dreno com amilase 5× o sérico e necessidade de TC + antibiótico, sem reoperação. Classificação ISGPS:</div>
+    <div class="alt"><div>A) Fuga bioquímica</div><div>B) POPF grau B</div><div>C) POPF grau C</div><div>D) DGE</div></div>
+    <details><summary>Ver resposta</summary><p class="ans">B.</p><p>Amilase &gt;3× sérico no ≥3º PO com <strong>mudança de manejo</strong> sem reoperação/falência = <strong>grau B</strong>.</p></details>
+  </div>
+
+  <div class="q"><div class="stem"><span class="banca">HCPA</span> Achado incidental de cisto microcístico com cicatriz central calcificada em mulher de 70 anos, líquido com CEA 2 ng/mL. Conduta mais apropriada:</div>
+    <div class="alt"><div>A) Pancreatectomia distal imediata</div><div>B) Observação/vigilância</div><div>C) Quimioterapia</div><div>D) Whipple</div></div>
+    <details><summary>Ver resposta</summary><p class="ans">B.</p><p>Padrão de <strong>cistoadenoma seroso</strong> (CEA baixo, cicatriz central) — <strong>benigno</strong> → observação; cirurgia só se sintomático/grande/dúvida.</p></details>
+  </div>
+</section>
+
+<!-- ============ PEGA-RATÃO ============ -->
+<section class="panel" id="pega">
+  <h2>🪤 Pega-ratão</h2>
+  <div class="box hy"><span class="lbl">⚠️ Os erros que a banca adora</span></div>
+  <div class="card">
+  <ul>
+    <li><strong>MCN NÃO comunica</strong> com o ducto; <strong>IPMN comunica</strong>. A <strong>amilase alta</strong> no líquido aponta comunicação (IPMN/pseudocisto), não MCN.</li>
+    <li><strong>Estroma tipo ovariano</strong> = só MCN (não IPMN). Não confunda.</li>
+    <li><strong>CEA baixo</strong> = seroso/TNE; <strong>CEA alto</strong> = mucinoso. Glicose <strong>baixa</strong> = mucinoso.</li>
+    <li><strong>Cicatriz central</strong> = seroso (benigno). <strong>Casca de ovo periférica</strong> = mucinoso, alerta de malignidade.</li>
+    <li><strong>Insulinoma</strong> = funcionante <strong>mais comum</strong> e geralmente <strong>benigno</strong>. <strong>Gastrinoma</strong> = geralmente <strong>maligno</strong>. Não troque.</li>
+    <li>Necrolítico migratório = <strong>glucagonoma</strong>; WDHA/cólera pancreática = <strong>VIPoma</strong>; diabetes + cálculo biliar + esteatorreia = <strong>somatostatinoma</strong>.</li>
+    <li><strong>SPN</strong> tem <strong>cromogranina NEGATIVA</strong> — não é neuroendócrino apesar do nome parecido; pista é <strong>β-catenina nuclear</strong>.</li>
+    <li><strong>TNE G3 ≠ NEC</strong>: ambos Ki-67 &gt;20%, mas G3 é <strong>bem</strong> diferenciado e NEC é <strong>pouco</strong> diferenciado (tratamento diferente).</li>
+    <li><strong>MD-IPMN &gt;&gt; BD-IPMN</strong> em risco de malignidade — não inverta.</li>
+    <li>Lesão de <strong>cabeça</strong> = Whipple; <strong>corpo/cauda</strong> = pancreatectomia distal. Pega quando a questão dá a localização "escondida".</li>
+    <li>Sangramento tardio pós-Whipple ("sentinel bleed") = <strong>pseudoaneurisma da GDA</strong> → <strong>angioembolização</strong>, não reoperação cega.</li>
+    <li>Não esqueça <strong>vacinação</strong> antes de esplenectomia eletiva (OPSI).</li>
+  </ul>
+  </div>
+</section>
+
+<!-- ============ MNEMÔNICOS ============ -->
+<section class="panel" id="mn">
+  <h2>🧠 Mnemônicos</h2>
+
+  <div class="box mn"><span class="lbl">🧠 Família das císticas</span>
+  <strong>Avó</strong> = Seroso (idosa, benigno) · <strong>Mãe</strong> = Mucinoso (meia-idade, ♀, pré-maligno) · <strong>Filha</strong> = SPN/Frantz (jovem) · <strong>Vô</strong> = IPMN (homem idoso, no ducto).</div>
+
+  <div class="box mn"><span class="lbl">🧠 HRS do IPMN (Kyoto) — "INDICA cirurgia"</span>
+  <strong>I</strong>cterícia obstrutiva · <strong>N</strong>ódulo mural ≥5 mm · <strong>D</strong>ucto principal ≥10 mm · <strong>C</strong>itologia suspeita/positiva.</div>
+
+  <div class="box mn"><span class="lbl">🧠 Insulinoma — regra dos 90%</span>
+  90% benigno · 90% solitário · 90% intrapancreático · 90% &lt;2 cm. + <strong>Tríade de Whipple</strong>.</div>
+
+  <div class="box mn"><span class="lbl">🧠 Glucagonoma — os 4 D</span>
+  <strong>D</strong>ermatite (eritema necrolítico migratório) · <strong>D</strong>iabetes · <strong>D</strong>epressão · <strong>D</strong>VT (trombose) — + emagrecimento.</div>
+
+  <div class="box mn"><span class="lbl">🧠 VIPoma — WDHA</span>
+  <strong>W</strong>atery Diarrhea · <strong>H</strong>ypokalemia · <strong>A</strong>chlorhydria (cólera pancreática / Verner-Morrison).</div>
+
+  <div class="box mn"><span class="lbl">🧠 Somatostatinoma — "inibe tudo"</span>
+  <strong>D</strong>iabetes + <strong>C</strong>olelitíase + <strong>E</strong>steatorreia ("DiCE"). Somatostatina inibe insulina, CCK e enzimas.</div>
+
+  <div class="box mn"><span class="lbl">🧠 MEN1 — os 3 P</span>
+  <strong>P</strong>aratireoide · <strong>P</strong>âncreas (ilhotas) · <strong>P</strong>ituitária.</div>
+
+  <div class="box mn"><span class="lbl">🧠 Líquido cístico — "MUC = Mucinoso = CEA alto"</span>
+  CEA <strong>alto</strong> + mucina + glicose <strong>baixa</strong> = mucinoso (MCN/IPMN). Amilase alta = comunica (IPMN).</div>
+</section>
+
+<div class="foot wrap">carolzita · CV 2026 · Sabiston · Zollinger · Kyoto 2024 · WHO 2022 · ENETS/NCCN — questões originais representativas</div>
+</main>
+
+<script>
+document.querySelectorAll('.tab').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    document.getElementById(b.dataset.t).classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+});
+</script>
+</body>
+</html>

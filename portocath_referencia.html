@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portocath — Cateter Venoso Totalmente Implantável — Referência CV 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d1117; --bg2:#161b22; --bg3:#1c2230; --line:#2a3038;
+  --txt:#c9d1d9; --txt2:#8b949e; --txt3:#6e7681;
+  --orange:#ff7b29; --orange-d:#3a2410;
+  --purple:#a371f7; --purple-d:#241a3a;
+  --cyan:#39c5cf; --cyan-d:#0f2e30;
+  --red:#f85149; --green:#3fb950; --yellow:#d29922;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font-family:'IBM Plex Sans',sans-serif;line-height:1.6;font-size:15px;padding-bottom:60px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 18px}
+header{padding:30px 0 16px;border-bottom:1px solid var(--line)}
+h1{font-family:'IBM Plex Serif',serif;font-size:26px;font-weight:600;letter-spacing:-.3px}
+h1 .accent{color:var(--orange)}
+.sub{color:var(--txt2);font-size:13px;margin-top:6px;font-family:'IBM Plex Mono',monospace}
+.tabs{position:sticky;top:0;z-index:20;background:var(--bg);display:flex;gap:4px;overflow-x:auto;padding:10px 18px;border-bottom:1px solid var(--line);scrollbar-width:thin}
+.tabs::-webkit-scrollbar{height:5px}.tabs::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
+.tab{flex:0 0 auto;background:var(--bg2);border:1px solid var(--line);color:var(--txt2);padding:8px 14px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;font-family:'IBM Plex Mono',monospace;transition:.15s}
+.tab:hover{color:var(--txt);border-color:var(--orange)}
+.tab.active{background:var(--orange);color:#0d1117;border-color:var(--orange)}
+.panel{display:none;padding:24px 0;animation:fade .25s}
+.panel.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1}}
+h2{font-family:'IBM Plex Serif',serif;font-size:20px;color:var(--orange);margin:26px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+h2:first-child{margin-top:0}
+h3{font-size:16px;color:var(--txt);margin:18px 0 8px;font-weight:600}
+p{margin:8px 0}
+.lay{color:var(--green,#3fb950);font-style:italic;font-size:.93em;display:block;margin:6px 0}
+.box.g{border-left-color:#3fb950;background:rgba(63,185,80,.09);color:#3fb950;font-style:italic}
+.box.g .lbl{color:#3fb950;font-style:normal}
+.box.g b,.box.g strong{color:#8ee79a;font-style:normal}
+.stx{counter-reset:st;margin:14px 0}
+.st{counter-increment:st;background:var(--bg3);border:1px solid var(--line);border-radius:12px;padding:13px 15px 13px 50px;margin:11px 0;position:relative}
+.st::before{content:counter(st);position:absolute;left:13px;top:13px;width:25px;height:25px;border-radius:7px;background:var(--orange);color:#0d1117;font-family:'IBM Plex Mono',ui-monospace,monospace;font-weight:700;font-size:12.5px;display:flex;align-items:center;justify-content:center}
+.st .fase{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;letter-spacing:1.3px;text-transform:uppercase;color:var(--orange);display:block}
+.st .ttl{font-weight:700;font-size:15px;color:#fff;margin-bottom:3px}
+.st p{margin:4px 0;font-size:13.8px}
+.pq{border-left:3px solid var(--purple);background:var(--purple-d);border-radius:0 8px 8px 0;padding:8px 12px;margin:8px 0;font-size:13.3px}
+.pq b{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;color:var(--purple);display:block}
+ul,ol{margin:8px 0 8px 22px}li{margin:4px 0}
+strong{color:#fff;font-weight:600}
+code{font-family:'IBM Plex Mono',monospace;background:var(--bg3);padding:1px 6px;border-radius:4px;font-size:.88em;color:var(--orange)}
+.card{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0}
+.box{border-left:4px solid var(--orange);background:var(--orange-d);border-radius:0 10px 10px 0;padding:12px 16px;margin:14px 0}
+.box.hy{border-left-color:var(--purple);background:var(--purple-d)}
+.box.mn{border-left-color:var(--cyan);background:var(--cyan-d)}
+.box .lbl{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;font-weight:600;margin-bottom:6px;display:block}
+.box .lbl{color:var(--orange)}.box.hy .lbl{color:var(--purple)}.box.mn .lbl{color:var(--cyan)}
+.banca{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:600;padding:1px 7px;border-radius:20px;background:#2a1f44;color:var(--purple);border:1px solid #3a2a5a;margin-left:6px;vertical-align:middle}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--bg3);color:var(--orange);font-family:'IBM Plex Mono',monospace;font-size:11.5px;text-transform:uppercase;letter-spacing:.5px;position:sticky;top:0}
+td strong{color:var(--cyan)}
+.tag{font-family:'IBM Plex Mono',monospace;font-size:11px;padding:2px 8px;border-radius:5px;font-weight:600}
+.t-b{background:#0f2a16;color:var(--green)}
+.t-m{background:#3a1414;color:var(--red)}
+.t-w{background:#3a2e0d;color:var(--yellow)}
+svg{max-width:100%;height:auto;display:block;margin:16px auto;background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:10px}
+.q{background:var(--bg2);border:1px solid var(--line);border-left:4px solid var(--purple);border-radius:0 10px 10px 0;padding:14px 16px;margin:16px 0}
+.q .stem{font-weight:500}
+.alt{margin:8px 0 0 0;padding-left:4px}
+.alt div{padding:3px 0;color:var(--txt2)}
+details{margin-top:10px;border-top:1px dashed var(--line);padding-top:8px}
+summary{cursor:pointer;color:var(--cyan);font-weight:600;font-size:13px;font-family:'IBM Plex Mono',monospace}
+details[open] summary{margin-bottom:6px}
+.ans{color:var(--green);font-weight:600}
+.foot{color:var(--txt3);font-size:11px;text-align:center;margin-top:30px;font-family:'IBM Plex Mono',monospace}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:640px){.grid2{grid-template-columns:1fr}h1{font-size:21px}}
+.pill{display:inline-block;width:11px;height:11px;border-radius:3px;vertical-align:middle;margin-right:5px}
+.legend{font-size:12px;color:var(--txt2);font-family:'IBM Plex Mono',monospace;margin-top:10px}
+.flow{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:18px 16px;margin:16px 0}
+.frow{display:flex;align-items:stretch;gap:10px;margin:0 0 6px}
+.fdec{flex:1;background:var(--bg3);border:1px solid var(--purple);border-radius:10px;padding:10px 12px;font-size:13.5px}
+.fdec b{color:var(--purple);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.5px}
+.fout{flex:0 0 auto;display:flex;flex-direction:column;justify-content:center;gap:6px;min-width:150px}
+.chip{border-radius:8px;padding:7px 11px;font-size:13px;font-weight:600;text-align:center;font-family:'IBM Plex Sans'}
+.chip.res{background:#3a1414;color:#ff9d9d;border:1px solid var(--red)}
+.chip.eus{background:#3a2e0d;color:#ffd970;border:1px solid var(--yellow)}
+.chip.vig{background:#0f2a16;color:#8ff0a8;border:1px solid var(--green)}
+.fdown{text-align:center;color:var(--txt3);font-size:18px;line-height:1;margin:1px 0}
+@media(max-width:640px){.frow{flex-direction:column}.fout{min-width:0}}
+</style>
+</head>
+<body>
+<header class="wrap"><h1>Portocath <span class="accent">· TIVAP</span></h1><div class="sub">Referência CV 2026 · VJI/US · Seldinger · junção cavoatrial · pinch-off · agulha de Huber</div><div class="legend"><span class="pill" style="background:var(--orange)"></span>conteúdo geral<span class="pill" style="background:var(--purple);margin-left:14px"></span>alto rendimento / prova<span class="pill" style="background:var(--cyan);margin-left:14px"></span>analogia &amp; mnemônico</div></header>
+<nav class="tabs">
+  <button class="tab active" data-t="vg">🗺️ Visão Geral</button>
+  <button class="tab" data-t="an">🩸 Sítios</button>
+  <button class="tab" data-t="tec">🪡 Técnica</button>
+  <button class="tab" data-t="pt">📍 Ponta</button>
+  <button class="tab" data-t="comp">⚠️ Complicações</button>
+  <button class="tab" data-t="inf">🦠 CRBSI/Trombose</button>
+  <button class="tab" data-t="quest">📝 Questões</button>
+  <button class="tab" data-t="pega">🪤 Pega-ratão</button>
+  <button class="tab" data-t="mn">🧠 Mnemônicos</button>
+</nav>
+<main class="wrap">
+<section class="panel active" id="vg">
+<h2>O que é e quando indicar</h2>
+<p>O <strong>cateter venoso central totalmente implantável (port / TIVAP)</strong> é um reservatório subcutâneo (geralmente infraclavicular) conectado a um cateter cuja ponta fica na <strong>veia cava superior</strong>. Punciona-se o septo por uma <strong>agulha de Huber</strong> (não-cortante, que não "corta" o silicone).</p>
+<div class="box hy"><span class="lbl">★ Indicações</span>Acesso venoso de <strong>longa duração</strong>: quimioterapia, nutrição parenteral prolongada, hemoderivados/antibióticos repetidos, acessos difíceis. Vantagem sobre PICC/cateter externo: <strong>menor infecção</strong> e melhor qualidade de vida (sem curativo externo). <span class="banca">HCPA</span> <span class="banca">AMRIGS</span></div>
+<p class="lay">(É uma "tomada" debaixo da pele: quando precisa, espeta-se a agulha de Huber no reservatório; quando não, fica escondida e o paciente toma banho normalmente.)</p>
+</section><section class="panel" id="an">
+<h2>Sítios de punção</h2>
+<svg viewBox="0 0 520 230" xmlns="http://www.w3.org/2000/svg">
+<line x1="120" y1="40" x2="120" y2="150" stroke="#3fb950" stroke-width="7"/><text x="60" y="35" fill="#3fb950" font-size="11" font-family="monospace">VJI direita ✅</text>
+<line x1="120" y1="150" x2="300" y2="170" stroke="#3fb950" stroke-width="7"/>
+<line x1="170" y1="90" x2="300" y2="120" stroke="#f85149" stroke-width="6"/><text x="180" y="80" fill="#f85149" font-size="11" font-family="monospace">subclávia ⚠️ pinch-off</text>
+<rect x="150" y="105" width="120" height="8" fill="#8b949e"/><text x="155" y="100" fill="#8b949e" font-size="10" font-family="monospace">clavícula</text>
+<line x1="300" y1="60" x2="300" y2="200" stroke="#a371f7" stroke-width="8"/><text x="310" y="80" fill="#a371f7" font-size="11" font-family="monospace">VCS</text>
+<circle cx="300" cy="195" r="7" fill="#ff7b29"/><text x="312" y="200" fill="#ff7b29" font-size="11" font-family="monospace">junção cavoatrial</text>
+</svg>
+<table>
+<tr><th>Sítio</th><th>Prós</th><th>Contras</th></tr>
+<tr><td><strong>VJI direita (guiada por US)</strong> ✅ preferencial</td><td>Trajeto curto/reto à VCS; <strong>menor pneumotórax</strong>; <strong>evita pinch-off</strong></td><td>Cicatriz/trajeto cervical; angulação subcutânea</td></tr>
+<tr><td><strong>Subclávia</strong></td><td>Conforto, estética</td><td><strong>Pinch-off</strong> (clavícula × 1ª costela) → fratura/embolização; maior pneumo/hemotórax</td></tr>
+<tr><td><strong>Axilar (US)</strong></td><td>Alternativa emergente, baixo pinch-off</td><td>Técnica mais exigente</td></tr>
+</table>
+<div class="box hy"><span class="lbl">★ alto rendimento</span><strong>VJI direita guiada por ultrassom</strong> é o padrão atual; a <strong>subclávia por punção às cegas</strong> tem maior risco mecânico (pneumotórax e síndrome de pinch-off). <span class="banca">PUC-RS</span> <span class="banca">GHC</span></div>
+</section><section class="panel" id="tec">
+<h2>Técnica de Seldinger — passo a passo</h2>
+<div class="box g"><span class="lbl">tradução simples</span>A técnica de Seldinger resolve um problema simples: como colocar um <strong>tubo grosso</strong> dentro de uma veia usando uma <strong>agulha fina</strong>. A resposta é o <strong>fio-guia</strong> — entra pela agulha, fica dentro da veia, e tudo o mais (dilatador, bainha, cateter) <strong>desliza por cima dele</strong>. O fio é o caminho; enquanto ele estiver no lugar certo, você não se perde.</div>
+
+<div class="stx">
+
+  <div class="st">
+    <span class="fase">fase de preparo</span>
+    <div class="ttl">Antissepsia, campos e posição</div>
+    <p>Antissepsia ampla, campos, anestesia local. Supino em <strong>leve Trendelenburg</strong>.</p>
+    <div class="pq"><b>por quê</b>O Trendelenburg faz duas coisas ao mesmo tempo: <strong>enche a veia</strong> (alvo maior, punção mais fácil) e <strong>aumenta a pressão venosa central</strong>, reduzindo o risco de <strong>embolia gasosa</strong> no momento em que o sistema fica aberto para o ar.</div>
+  </div>
+
+  <div class="st">
+    <span class="fase">fase de punção</span>
+    <div class="ttl">Punção da jugular interna direita <strong>guiada por ultrassom</strong></div>
+    <p>Punção sob visão direta; confirmar <strong>sangue venoso</strong> (escuro, não pulsátil).</p>
+    <div class="pq"><b>por quê</b>A <strong>VJI direita</strong> é a preferida porque o trajeto até a veia cava superior é <strong>curto e retilíneo</strong> — menos ectopia, menos trombose e menos angulação do cateter. E o <strong>ultrassom</strong> é padrão atual porque a punção às cegas da subclávia é o que produz <strong>pneumotórax</strong> e a <strong>síndrome de pinch-off</strong>.</div>
+  </div>
+
+  <div class="st">
+    <span class="fase">fase do fio — o passo central</span>
+    <div class="ttl">Passagem do fio-guia</div>
+    <p>Introduzir o fio-guia pela agulha; <strong>checar posição</strong> e vigiar <strong>ectopia ou arritmia</strong> no monitor.</p>
+    <div class="pq"><b>por quê</b>Extrassístoles durante a passagem significam que o fio <strong>tocou o átrio ou o ventrículo</strong> — recuar imediatamente. É o aviso mais precoce de que o fio foi longe demais, e ignorá-lo é o caminho para arritmia sustentada ou perfuração. O fio <strong>nunca</strong> é solto: a mão o segura em algum ponto o tempo todo, sob risco de embolização do próprio fio.</div>
+  </div>
+
+  <div class="st">
+    <span class="fase">fase de acesso</span>
+    <div class="ttl">Dilatação, bainha peel-away e avanço do cateter</div>
+    <p>Dilatar o trajeto sobre o fio, introduzir a <strong>bainha destacável</strong> e avançar o cateter até a veia cava superior.</p>
+    <div class="pq"><b>por quê</b>A bainha <em>peel-away</em> existe porque o cateter do porto <strong>não tem lúmen para passar sobre o fio</strong> — ela cria um túnel temporário, o cateter entra por dentro, e depois a bainha se rasga e sai. É também o momento de maior risco de <strong>embolia gasosa</strong>: a bainha aberta comunica a cava com o ar ambiente.</div>
+  </div>
+
+  <div class="st">
+    <span class="fase">fase da câmara</span>
+    <div class="ttl">Bolsa subcutânea infraclavicular e tunelização</div>
+    <p>Criar a bolsa <strong>infraclavicular</strong>, sobre plano firme, e <strong>tunelizar</strong> o cateter do sítio de punção até a câmara.</p>
+    <div class="pq"><b>por quê</b>A bolsa fica sobre a <strong>fáscia peitoral</strong>, plano firme que permite empurrar a agulha de Huber contra uma superfície resistente — bolsa em plano frouxo faz a câmara "fugir" a cada punção. Ela não deve ficar <strong>sobre a incisão</strong>, para que a linha de sutura não seja puncionada nem sofra deiscência sobre o corpo estranho.</div>
+  </div>
+
+  <div class="st">
+    <span class="fase">fase de teste</span>
+    <div class="ttl">Conexão, fixação e teste de refluxo</div>
+    <p>Conectar cateter e câmara, fixar a câmara à fáscia, <strong>testar refluxo</strong> e lavar com soro/heparina.</p>
+    <div class="pq"><b>por quê</b>Testar o refluxo <strong>agora</strong> é a única chance de corrigir angulação, torção ou má conexão sem uma segunda operação. Porto que não reflui na sala não vai refluir na quimioterapia.</div>
+  </div>
+
+  <div class="st">
+    <span class="fase">fase de confirmação</span>
+    <div class="ttl">Fluoroscopia intraoperatória e radiografia pós-operatória</div>
+    <p><strong>Fluoroscopia</strong> confirmando a ponta na <strong>junção cavoatrial</strong>; fechamento por planos; <strong>radiografia de tórax</strong> ao final.</p>
+    <div class="pq"><b>por quê</b>Duas confirmações diferentes: a fluoroscopia valida o <strong>posicionamento</strong> enquanto ainda dá para corrigir; o raio-X pós valida a <strong>ausência de pneumotórax</strong>, que pode não estar presente no intraoperatório e se manifestar depois.</div>
+  </div>
+
+</div>
+
+<table><tr><th>Tempo</th><th>Mão esquerda</th><th>Mão direita</th></tr>
+<tr><td>Punção guiada por US</td><td>Transdutor de ultrassom, mantendo a agulha no plano</td><td>Agulha de punção + seringa</td></tr>
+<tr><td>Passagem do fio</td><td><strong>Segura o fio</strong> — nunca solta</td><td>Avança o fio; retira a agulha sobre ele</td></tr>
+<tr><td>Bolsa e túnel</td><td>Pinça expondo o plano da fáscia peitoral</td><td>Bisturi e tunelizador</td></tr>
+<tr><td>Sutura</td><td>Dente-de-rato</td><td>Porta-agulha com Vicryl / náilon</td></tr></table>
+
+<div class="box mn"><span class="lbl">★ agulha de Huber</span>Agulha <strong>não-cortante</strong>, de ponta defletida — ela <strong>afasta</strong> as fibras do septo de silicone em vez de cortá-las, o que permite centenas de punções. Agulha comum corta o septo e <strong>inutiliza o reservatório</strong>.</div>
+
+<div class="box hy"><span class="lbl">★ as 4 checagens antes de fechar</span>
+<strong>1)</strong> Houve <strong>refluxo</strong> franco de sangue?<br>
+<strong>2)</strong> A ponta está na <strong>junção cavoatrial</strong> à fluoroscopia?<br>
+<strong>3)</strong> A câmara está sobre plano firme e <strong>fora da linha de incisão</strong>?<br>
+<strong>4)</strong> A radiografia pós descartou <strong>pneumotórax</strong>?</div>
+</section><section class="panel" id="pt">
+<h2>Posição da ponta</h2>
+<div class="box hy"><span class="lbl">★ alvo</span>A ponta deve ficar na <strong>junção cavoatrial</strong> (transição VCS–átrio direito). Confirmar por <strong>fluoroscopia intraoperatória + RX de tórax</strong>. <span class="banca">Santa Casa</span></div>
+<table>
+<tr><th>Posição</th><th>Problema</th></tr>
+<tr><td><strong>Muito alta</strong> (VCS proximal/inominada)</td><td>Trombose, disfunção, mau funcionamento</td></tr>
+<tr><td><strong>No átrio direito</strong></td><td><strong>Arritmia</strong>, perfuração, tamponamento</td></tr>
+<tr><td><strong>Junção cavoatrial</strong> ✅</td><td>Ideal — alto fluxo, menor trombose</td></tr>
+</table>
+</section><section class="panel" id="comp">
+<h2>Complicações imediatas (mecânicas)</h2>
+<table>
+<tr><th>Complicação</th><th>Comentário / conduta</th></tr>
+<tr><td><span class="tag t-w">atenção</span> <strong>Pneumotórax / hemotórax</strong></td><td>Mais na <strong>subclávia</strong>; o US reduz. RX pós obrigatório; drenar se sintomático</td></tr>
+<tr><td><span class="tag t-b">comum</span> Punção arterial (carótida/subclávia)</td><td>Compressão; cuidado com cervical alta</td></tr>
+<tr><td><span class="tag t-w">atenção</span> <strong>Embolia gasosa</strong></td><td>Trendelenburg + ocluir; <strong>decúbito lateral esquerdo (Durant)</strong> + 100% O₂</td></tr>
+<tr><td><span class="tag t-b">comum</span> <strong>Arritmia</strong></td><td>Fio-guia/cateter no AD → recuar; monitorizar</td></tr>
+<tr><td><span class="tag t-b">comum</span> Malposição / ectopia</td><td>Reposicionar sob fluoroscopia</td></tr>
+</table>
+<div class="box mn"><span class="lbl">★ conexão Durant</span>Mesma manobra do pneumoperitônio: embolia gasosa → <strong>decúbito lateral esquerdo + Trendelenburg</strong>.</div>
+</section><section class="panel" id="inf">
+<h2>Complicações tardias</h2>
+<ul>
+<li><strong>CRBSI</strong> (infecção de corrente sanguínea relacionada ao cateter) — geralmente <strong>Staphylococcus</strong>; hemoculturas pareadas (cateter × periférica, tempo diferencial de positivação). Antibiótico; <strong>retirar o port</strong> se sepse, instabilidade, infecção de túnel/bolsa, fungemia (Candida), <em>S. aureus</em> ou germe persistente.</li>
+<li><strong>Trombose relacionada ao cateter</strong> — edema do membro/pescoço; anticoagulação; retirada se refratária/infectada.</li>
+<li><strong>Síndrome de pinch-off</strong> — compressão do cateter entre clavícula e 1ª costela (sítio subclávio) → <strong>fratura e embolização</strong> do fragmento (pode ir ao coração/AP). Sinal radiográfico de compressão = alerta para retirar antes da fratura. Fragmento embolizado → resgate endovascular.</li>
+<li><strong>Oclusão</strong> — trombo intraluminal ou <strong>bainha de fibrina</strong> (refluxo ausente mas infunde) → trombolítico (alteplase); estudo contrastado.</li>
+<li>Extravasamento/necrose, deiscência ou erosão da pele sobre a câmara.</li>
+</ul>
+</section><section class="panel" id="quest"><h2>Questões — estilo das bancas RS</h2><p class="sub" style="margin-bottom:14px">Itens originais no estilo das bancas (não reprodução literal de provas).</p>
+<div class="q"><div class="stem"><span class="banca">HCPA</span> Qual o sítio de punção preferencial para implante de port, atualmente?</div><div class="alt"><div>A) Subclávia esquerda às cegas</div><div>B) Veia jugular interna direita guiada por ultrassom</div><div>C) Femoral</div><div>D) Veia basílica por dissecção</div></div><details><summary>Ver resposta</summary><p class="ans">B.</p><p><strong>VJI direita guiada por US</strong>: trajeto curto à VCS, menor pneumotórax e evita pinch-off.</p></details></div>
+<div class="q"><div class="stem"><span class="banca">PUC-RS</span> A síndrome de pinch-off está associada a qual sítio e mecanismo?</div><div class="alt"><div>A) Jugular — angulação subcutânea</div><div>B) Subclávia — compressão entre clavícula e 1ª costela</div><div>C) Femoral — flexão do quadril</div><div>D) Axilar — compressão do redondo maior</div></div><details><summary>Ver resposta</summary><p class="ans">B.</p><p><strong>Pinch-off</strong> = compressão do cateter subclávio entre <strong>clavícula e 1ª costela</strong> → fratura e embolização.</p></details></div>
+<div class="q"><div class="stem"><span class="banca">Santa Casa</span> A posição ideal da ponta do cateter do port é:</div><div class="alt"><div>A) Veia inominada</div><div>B) Átrio direito</div><div>C) Junção cavoatrial</div><div>D) Veia cava inferior</div></div><details><summary>Ver resposta</summary><p class="ans">C.</p><p><strong>Junção cavoatrial</strong> (VCS–AD): alto fluxo, menor trombose. No AD → arritmia/perfuração.</p></details></div>
+<div class="q"><div class="stem"><span class="banca">GHC</span> Durante o implante, o paciente apresenta extrassístoles ventriculares. A causa mais provável é:</div><div class="alt"><div>A) Pneumotórax</div><div>B) Fio-guia/cateter no átrio direito</div><div>C) Embolia gasosa</div><div>D) Punção arterial</div></div><details><summary>Ver resposta</summary><p class="ans">B.</p><p><strong>Fio-guia no AD</strong> irrita o miocárdio → arritmia; recuar o fio e monitorizar.</p></details></div>
+<div class="q"><div class="stem"><span class="banca">AMRIGS</span> Para puncionar o septo do reservatório do port utiliza-se:</div><div class="alt"><div>A) Agulha 18G comum</div><div>B) Agulha de Huber (não-cortante)</div><div>C) Cateter de Foley</div><div>D) Jelco simples</div></div><details><summary>Ver resposta</summary><p class="ans">B.</p><p>A <strong>agulha de Huber</strong> tem ponta defletida (não-cortante) e preserva o septo de silicone.</p></details></div>
+<div class="q"><div class="stem"><span class="banca">HCPA</span> Paciente em QT com port apresenta febre e calafrios à infusão; hemoculturas do cateter positivam antes da periférica. Diagnóstico:</div><div class="alt"><div>A) Trombose do cateter</div><div>B) Pinch-off</div><div>C) Infecção de corrente sanguínea relacionada ao cateter (CRBSI)</div><div>D) Bainha de fibrina</div></div><details><summary>Ver resposta</summary><p class="ans">C.</p><p>Tempo diferencial de positivação (cateter antes da periférica) sugere <strong>CRBSI</strong> — frequentemente Staphylococcus.</p></details></div>
+<div class="q"><div class="stem"><span class="banca">PUC-RS</span> Cateter do port que infunde normalmente mas sem refluxo de sangue sugere:</div><div class="alt"><div>A) Fratura do cateter</div><div>B) Bainha de fibrina / oclusão parcial</div><div>C) Pneumotórax</div><div>D) Trombose da VCS</div></div><details><summary>Ver resposta</summary><p class="ans">B.</p><p><strong>Bainha de fibrina</strong> age como válvula: deixa infundir mas impede aspiração → trombolítico/estudo contrastado.</p></details></div>
+<div class="q"><div class="stem"><span class="banca">GHC</span> Indicação de retirada imediata do port na CRBSI inclui:</div><div class="alt"><div>A) Qualquer febre isolada</div><div>B) Sepse/instabilidade, infecção de túnel, fungemia ou S. aureus persistente</div><div>C) Refluxo lento</div><div>D) Edema discreto do braço</div></div><details><summary>Ver resposta</summary><p class="ans">B.</p><p>Retirar se <strong>sepse, infecção de túnel/bolsa, fungemia (Candida), S. aureus ou germe persistente</strong>.</p></details></div>
+<div class="q"><div class="stem"><span class="banca">Santa Casa</span> Em embolia gasosa durante a punção venosa central, a manobra indicada é:</div><div class="alt"><div>A) Decúbito lateral direito</div><div>B) Decúbito lateral esquerdo + Trendelenburg (Durant)</div><div>C) Posição sentada</div><div>D) Decúbito ventral</div></div><details><summary>Ver resposta</summary><p class="ans">B.</p><p><strong>Durant</strong>: decúbito lateral esquerdo + Trendelenburg (mesma da embolia por CO₂).</p></details></div>
+<div class="q"><div class="stem"><span class="banca">AMRIGS</span> Comparada à subclávia às cegas, a punção da jugular interna guiada por US reduz principalmente:</div><div class="alt"><div>A) Infecção tardia</div><div>B) Pneumotórax e pinch-off</div><div>C) Trombose venosa</div><div>D) Arritmias</div></div><details><summary>Ver resposta</summary><p class="ans">B.</p><p>A VJI/US reduz <strong>pneumotórax</strong> e evita o <strong>pinch-off</strong> típico da subclávia.</p></details></div>
+</section>
+<section class="panel" id="pega">
+<h2>Pega-ratões</h2>
+<ul>
+<li><span class="em">✅</span><strong>VJI direita + US</strong> = padrão (menor pneumo, sem pinch-off).</li>
+<li><span class="em">⚠️</span><strong>Subclávia</strong> → pinch-off (clavícula × 1ª costela) → fratura/embolização.</li>
+<li><span class="em">📍</span>Ponta na <strong>junção cavoatrial</strong>; no AD → arritmia.</li>
+<li><span class="em">🪡</span>Punção do septo só com <strong>agulha de Huber</strong>.</li>
+<li><span class="em">🩻</span>Sinal radiográfico de compressão = retirar antes da fratura.</li>
+<li><span class="em">🦠</span>CRBSI → retirar se sepse/túnel/fungemia/S. aureus.</li>
+<li><span class="em">🧵</span>Infunde mas não reflui = <strong>bainha de fibrina</strong>.</li>
+<li><span class="em">↩️</span>Embolia gasosa → Durant (lateral esquerdo + Trendelenburg).</li>
+</ul>
+</section><section class="panel" id="mn">
+<h2>Mnemônicos</h2>
+<div class="box mn"><span class="lbl">✅ JUGULAR (US)</span><p>Direita · Ultrassom · menor pneumo · sem pinch-off.</p></div>
+<div class="box mn"><span class="lbl">⚠️ PINCH-OFF</span><p>Subclávia → clavícula × 1ª costela → fratura/embolização.</p></div>
+<div class="box mn"><span class="lbl">📍 PONTA</span><p>Junção cavoatrial (não no AD).</p></div>
+<div class="box mn"><span class="lbl">🧵 não reflui, infunde</span><p>= bainha de fibrina.</p></div>
+<p class="foot">// portocath · acesso vascular · carolzita · CV 2026 · US-guided IJV · ponta cavoatrial · agulha de Huber</p>
+</section>
+</main>
+
+<script>
+document.querySelectorAll('.tab').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    document.getElementById(b.dataset.t).classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+});
+</script>
+</body>
+</html>

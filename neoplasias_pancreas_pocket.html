@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Pâncreas Cístico+TNE · OR POCKET</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Serif:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d1117;--bg2:#161b22;--bg3:#1c2230;--line:#2a3038;
+  --txt:#c9d1d9;--txt2:#8b949e;
+  --orange:#ff7b29;--orange-d:#3a2410;
+  --purple:#a371f7;--purple-d:#241a3a;
+  --cyan:#39c5cf;--cyan-d:#0f2e30;
+  --red:#f85149;--green:#3fb950;--yellow:#d29922;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{background:var(--bg);color:var(--txt);font-family:'IBM Plex Sans',sans-serif;font-size:15px;line-height:1.5}
+.hd{padding:14px 16px 8px;border-bottom:1px solid var(--line)}
+.hd h1{font-family:'IBM Plex Serif',serif;font-size:18px;font-weight:700}
+.hd h1 .a{color:var(--orange)}
+.hd .or{float:right;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--orange);margin-top:4px}
+.tabs{position:sticky;top:0;z-index:30;display:flex;gap:5px;overflow-x:auto;padding:9px 16px;background:var(--bg);border-bottom:1px solid var(--line);scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;background:var(--bg2);border:1px solid var(--line);color:var(--txt2);padding:7px 12px;border-radius:9px;font-size:12px;font-weight:600;font-family:'IBM Plex Mono',monospace;white-space:nowrap}
+.tab.active{background:var(--orange);color:#0d1117;border-color:var(--orange)}
+.swipe{text-align:center;font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--txt2);padding:6px}
+.p{display:none;padding:14px 16px 40px;animation:f .2s}
+.p.active{display:block}
+@keyframes f{from{opacity:0}to{opacity:1}}
+.sec{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--orange);font-weight:600;margin:16px 0 7px;padding-bottom:4px;border-bottom:1px solid var(--line)}
+.sec:first-child{margin-top:0}
+.b{border-left:4px solid var(--orange);background:var(--orange-d);border-radius:0 9px 9px 0;padding:9px 12px;margin:9px 0}
+.b.hy{border-left-color:var(--purple);background:var(--purple-d)}
+.b.mn{border-left-color:var(--cyan);background:var(--cyan-d)}
+.b .l{display:block;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1px;font-weight:600;margin-bottom:4px;color:var(--orange)}
+.b.hy .l{color:var(--purple)}.b.mn .l{color:var(--cyan)}
+strong{color:#fff}
+.step{display:flex;gap:9px;padding:5px 0;align-items:flex-start}
+.n{flex:0 0 auto;width:22px;height:22px;border-radius:6px;background:var(--bg3);color:var(--orange);font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:12px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line)}
+.row{display:flex;justify-content:space-between;gap:8px;padding:7px 0;border-bottom:1px solid var(--line);font-size:14px}
+.row:last-child{border:0}
+.row .k{color:var(--txt);font-weight:500}.row .v{color:var(--txt2);text-align:right;font-size:13px}
+.tag{font-family:'IBM Plex Mono',monospace;font-size:10px;padding:1px 6px;border-radius:5px;font-weight:600}
+.tb{background:#0f2a16;color:var(--green)}.tm{background:#3a1414;color:var(--red)}.tw{background:#3a2e0d;color:var(--yellow)}
+ul{margin:5px 0 5px 18px}li{margin:3px 0}
+.banca{font-family:'IBM Plex Mono',monospace;font-size:9px;font-weight:600;padding:1px 6px;border-radius:20px;background:#2a1f44;color:var(--purple);border:1px solid #3a2a5a}
+.foot{text-align:center;font-family:'IBM Plex Mono',monospace;font-size:10px;color:#6e7681;padding:14px}
+.fl{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:11px;margin:9px 0}
+.fl .q{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--purple);font-weight:600}
+.fl .r{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:5px 0;font-size:13px;border-bottom:1px solid var(--line)}
+.fl .r:last-child{border:0}
+.cp{font-size:11px;font-weight:600;padding:3px 8px;border-radius:6px;white-space:nowrap}
+.cp.r{background:#3a1414;color:#ff9d9d}.cp.e{background:#3a2e0d;color:#ffd970}.cp.v{background:#0f2a16;color:#8ff0a8}
+</style>
+</head>
+<body>
+<div class="hd"><span class="or">OR POCKET</span><h1>Pâncreas <span class="a">Cístico + TNE</span></h1></div>
+
+<div class="tabs">
+  <button class="tab active" data-t="cl">🗺️ MAPA</button>
+  <button class="tab" data-t="ci">💧 CÍSTICAS</button>
+  <button class="tab" data-t="tn">⚡ TNE</button>
+  <button class="tab" data-t="cx">🔪 CIRURGIA</button>
+  <button class="tab" data-t="fm">🧵 FIOS/MÃOS</button>
+  <button class="tab" data-t="pg">🪤 PEGA</button>
+  <button class="tab" data-t="mn">🧠 MNEMO</button>
+</div>
+<div class="swipe">← deslize as abas →</div>
+
+<!-- MAPA -->
+<div class="p active" id="cl">
+  <div class="sec">🗺️ O tripé que mata a questão</div>
+  <div class="b hy"><span class="l">⭐ DECISIVO</span>
+  1️⃣ <strong>Comunica c/ ducto?</strong> IPMN sim / MCN não (→ amilase ↑ = comunica)<br>
+  2️⃣ <strong>CEA líquido</strong>: ALTO &gt;192 = mucinoso · BAIXO &lt;5 = seroso/TNE<br>
+  3️⃣ <strong>Glicose baixa + mucina</strong> = mucinoso</div>
+
+  <div class="sec">👨‍👩‍👧 Família por sexo/idade</div>
+  <div class="row"><span class="k">👵 Seroso (SCN)</span><span class="v">♀ idosa · <span class="tag tb">benigno</span></span></div>
+  <div class="row"><span class="k">👩 Mucinoso (MCN)</span><span class="v">♀ 40-50 · <span class="tag tw">pré-malig</span></span></div>
+  <div class="row"><span class="k">👴 IPMN</span><span class="v">♂ idoso · ducto</span></div>
+  <div class="row"><span class="k">👧 SPN/Frantz</span><span class="v">♀ jovem</span></div>
+
+  <div class="b"><span class="l">📍 Local → cirurgia</span>
+  Cabeça → <strong>Whipple</strong> · Corpo/cauda → <strong>pancreatectomia distal</strong></div>
+</div>
+
+<!-- CÍSTICAS -->
+<div class="p" id="ci">
+  <div class="sec">💧 Seroso (SCN)</div>
+  <div class="row"><span class="k">Microcístico "favo"</span><span class="v">cicatriz central</span></div>
+  <div class="row"><span class="k">Glicogênio PAS+ · VHL</span><span class="v">CEA <span class="tag tb">baixo</span></span></div>
+  <div class="row"><span class="k">Conduta</span><span class="v">observar (benigno)</span></div>
+
+  <div class="sec">💧 Mucinoso (MCN)</div>
+  <div class="b hy"><span class="l">⭐ PATOGNOMÔNICO</span><strong>Estroma tipo ovariano</strong> · ♀ · corpo/cauda · <strong>NÃO comunica</strong> · CEA <span class="tag tm">alto</span> · casca de ovo = malignidade<br>→ <strong>ressecção (pancreatectomia distal)</strong></div>
+
+  <div class="sec">💧 IPMN — Kyoto 2024</div>
+  <div class="b hy"><span class="l">⭐ HRS = "INDICA cirurgia"</span>
+  <strong>I</strong>cterícia · <strong>N</strong>ódulo ≥5 mm · <strong>D</strong>ucto ≥10 mm · <strong>C</strong>itologia +<br>MD-IPMN/misto → ressecar</div>
+  <div class="b"><span class="l">⚠️ WF</span>cisto ≥3 cm · nódulo &lt;5 mm · ducto 5-9 mm · CA19-9 &gt;37 · cresc &gt;2,5 mm/ano · DM novo · pancreatite → <strong>EUS-PAAF</strong></div>
+
+  <div class="fl">
+    <div class="q">🪜 ESCADA DE CONDUTA</div>
+    <div class="r"><span>1 · MD-IPMN/misto?</span><span class="cp r">🔪 RESSECAR</span></div>
+    <div class="r"><span>2 · HRS? (INDICA)</span><span class="cp r">🔪 RESSECAR</span></div>
+    <div class="r"><span>3 · WF?</span><span class="cp e">🔍 EUS-PAAF</span></div>
+    <div class="r"><span>4 · nenhum</span><span class="cp v">👁️ VIGIAR</span></div>
+  </div>
+
+  <div class="sec">💧 SPN / Frantz</div>
+  <div class="row"><span class="k">♀ jovem · sólido-cístico</span><span class="v">hemorragia</span></div>
+  <div class="row"><span class="k">β-catenina nuclear</span><span class="v">cromogranina ❌</span></div>
+  <div class="row"><span class="k">Conduta</span><span class="v">ressecção (cura &gt;95%)</span></div>
+</div>
+
+<!-- TNE -->
+<div class="p" id="tn">
+  <div class="sec">⚡ Funcionantes</div>
+  <div class="row"><span class="k">🍬 Insulinoma</span><span class="v">Whipple triad · <span class="tag tb">90% benigno</span></span></div>
+  <div class="row"><span class="k">🔥 Gastrinoma</span><span class="v">ZE · triângulo Passaro · <span class="tag tm">maligno</span></span></div>
+  <div class="row"><span class="k">🟥 Glucagonoma</span><span class="v">4 D</span></div>
+  <div class="row"><span class="k">💧 VIPoma</span><span class="v">WDHA</span></div>
+  <div class="row"><span class="k">🪨 Somatostatinoma</span><span class="v">DM+cálculo+esteatorreia</span></div>
+
+  <div class="b hy"><span class="l">⭐ Insulinoma — regra dos 90%</span>90% benigno · solitário · intrapancreático · &lt;2 cm. Jejum 72 h. → <strong>enucleação</strong></div>
+  <div class="b mn"><span class="l">🧠 MEN1 = 3 P</span>Paratireoide · Pâncreas · Pituitária. TNE múltiplo? pense MEN1</div>
+
+  <div class="b"><span class="l">📐 Triângulo de Passaro (gastrinoma ~80%)</span>
+  <svg viewBox="0 0 320 200" style="width:100%;background:transparent;border:0;padding:0;margin:4px 0">
+    <polygon points="90,35 230,120 80,165" fill="rgba(163,113,247,.14)" stroke="#a371f7" stroke-width="2" stroke-dasharray="5 4"/>
+    <circle cx="90" cy="35" r="5" fill="#a371f7"/><text x="100" y="33" fill="#a371f7" font-size="11" font-family="IBM Plex Mono">① cístico×colédoco</text>
+    <circle cx="230" cy="120" r="5" fill="#a371f7"/><text x="238" y="124" fill="#a371f7" font-size="11" font-family="IBM Plex Mono">② 2ª/3ª duodeno</text>
+    <circle cx="80" cy="165" r="5" fill="#a371f7"/><text x="10" y="185" fill="#a371f7" font-size="11" font-family="IBM Plex Mono">③ colo/corpo</text>
+    <circle cx="140" cy="100" r="7" fill="#f85149"/>
+  </svg></div>
+
+  <div class="sec">🔬 WHO 2022</div>
+  <div class="row"><span class="k">G1</span><span class="v">Ki67 &lt;3% · mit &lt;2</span></div>
+  <div class="row"><span class="k">G2</span><span class="v">Ki67 3-20% · mit 2-20</span></div>
+  <div class="row"><span class="k">G3 (bem dif)</span><span class="v">Ki67 &gt;20%</span></div>
+  <div class="row"><span class="k">NEC (pouco dif)</span><span class="v">Ki67 &gt;20%</span></div>
+  <div class="b"><span class="l">📏 Conduta</span>Não-func &lt;2 cm → vigiar · ≥2 cm/funcionante → ressecar · avançado → SSA, PRRT (177Lu)</div>
+</div>
+
+<!-- CIRURGIA -->
+<div class="p" id="cx">
+  <div class="sec">🔪 Whipple — passos</div>
+  <div class="step"><span class="n">1</span><span>Explorar / estadiar</span></div>
+  <div class="step"><span class="n">2</span><span><strong>Kocher</strong> → expõe AMS/cava</span></div>
+  <div class="step"><span class="n">3</span><span>Abrir retrocavidade (gastrocólico)</span></div>
+  <div class="step"><span class="n">4</span><span>VMS borda inferior → <strong>túnel infrapancreático</strong></span></div>
+  <div class="step"><span class="n">5</span><span>Colecistectomia + secção colédoco</span></div>
+  <div class="step"><span class="n">6</span><span>Secção gástrica / piloro (PPPD)</span></div>
+  <div class="step"><span class="n">7</span><span>Secção jejuno + <strong>colo sobre VMS/VP</strong></span></div>
+  <div class="step"><span class="n">8</span><span>⚠️ Uncinado da <strong>AMS</strong> (mais hemorrágico)</span></div>
+  <div class="step"><span class="n">9</span><span>Reconstrução (Child): PJ → HJ → GJ</span></div>
+
+  <div class="sec">🔪 Pancreatectomia distal</div>
+  <div class="step"><span class="n">1</span><span>Abrir retrocavidade · borda inf.</span></div>
+  <div class="step"><span class="n">2</span><span>Ligar <strong>a. + v. esplênica</strong></span></div>
+  <div class="step"><span class="n">3</span><span>Secção do pâncreas · tratar coto + ducto</span></div>
+  <div class="b"><span class="l">🐶 Poupar baço (benigno)</span><strong>Kimura</strong> (preserva vasos) · <strong>Warshaw</strong> (liga vasos, gástricos curtos)</div>
+
+  <div class="b mn"><span class="l">💉 Esplenectomia</span>Vacinar (pneumo/meningo/Hib) — risco OPSI</div>
+</div>
+
+<!-- FIOS/MÃOS -->
+<div class="p" id="fm">
+  <div class="sec">✋ Mãos</div>
+  <div class="b"><span class="l">↩️ Mão esquerda</span>DeBakey/Cushing · expõe e retrai · segura fios de reparo · aspirador</div>
+  <div class="b"><span class="l">↪️ Mão direita</span>Bisturi/cautério · Metzenbaum · porta-agulha · <strong>clipe ⊥ ao vaso, ponta visível</strong></div>
+
+  <div class="sec">🧵 Fios — qual / quando</div>
+  <div class="row"><span class="k">Pancreaticojejuno (ducto-mucosa)</span><span class="v">PDS/Prolene 4-0/5-0</span></div>
+  <div class="row"><span class="k">Camada externa PJ</span><span class="v">PDS/seda 3-0</span></div>
+  <div class="row"><span class="k">Hepaticojejuno</span><span class="v">PDS 4-0/5-0</span></div>
+  <div class="row"><span class="k">Ressecção venosa VP/VMS</span><span class="v">Prolene 5-0/6-0</span></div>
+  <div class="row"><span class="k">Ligadura GDA</span><span class="v">dupla + transfix. seda 2-0</span></div>
+  <div class="row"><span class="k">Coto distal / Wirsung</span><span class="v">grampo + PDS 4-0</span></div>
+
+  <div class="b hy"><span class="l">⭐ POPF (ISGPS)</span>Amilase dreno &gt;3× sérico no ≥3º PO. A=bioquímica · <strong>B=muda manejo</strong> · C=reop/óbito. Risco: pâncreas <strong>mole</strong> + ducto <strong>fino</strong></div>
+</div>
+
+<!-- PEGA -->
+<div class="p" id="pg">
+  <div class="b hy"><span class="l">🪤 PEGA-RATÃO</span></div>
+  <ul>
+    <li><strong>MCN não comunica</strong>; IPMN sim → amilase ↑ = IPMN</li>
+    <li>Estroma ovariano = <strong>só MCN</strong></li>
+    <li>Cicatriz central = seroso · casca de ovo = mucinoso maligno</li>
+    <li>Insulinoma = comum + <strong>benigno</strong> · Gastrinoma = <strong>maligno</strong></li>
+    <li>SPN = cromogranina <strong>negativa</strong> (β-catenina +)</li>
+    <li><strong>TNE G3 ≠ NEC</strong> (bem vs pouco diferenciado)</li>
+    <li>MD-IPMN <strong>&gt;&gt;</strong> BD-IPMN em malignidade</li>
+    <li>Sangramento tardio Whipple = pseudoaneurisma <strong>GDA</strong> → <strong>angioembolização</strong></li>
+    <li>Necrolítico=glucagonoma · WDHA=VIPoma · DM+cálculo+esteatorreia=somatostatinoma</li>
+  </ul>
+</div>
+
+<!-- MNEMO -->
+<div class="p" id="mn">
+  <div class="b mn"><span class="l">🧠 Família císticas</span>👵 Seroso · 👩 Mucinoso · 👧 SPN · 👴 IPMN</div>
+  <div class="b mn"><span class="l">🧠 HRS IPMN = "INDICA"</span><strong>I</strong>cterícia · <strong>N</strong>ódulo ≥5 · <strong>D</strong>ucto ≥10 · <strong>C</strong>itologia +</div>
+  <div class="b mn"><span class="l">🧠 Insulinoma</span>regra dos 90% + tríade de Whipple</div>
+  <div class="b mn"><span class="l">🧠 Glucagonoma = 4 D</span>Dermatite · Diabetes · Depressão · DVT</div>
+  <div class="b mn"><span class="l">🧠 VIPoma = WDHA</span>Water Diarrhea · Hypokalemia · Achlorhydria</div>
+  <div class="b mn"><span class="l">🧠 Somatostatinoma = DiCE</span>Diabetes · Colelitíase · Esteatorreia</div>
+  <div class="b mn"><span class="l">🧠 MEN1 = 3 P</span>Paratireoide · Pâncreas · Pituitária</div>
+  <div class="b mn"><span class="l">🧠 Líquido</span>CEA alto + glicose baixa = mucinoso · amilase alta = comunica</div>
+</div>
+
+<div class="foot">carolzita · Kyoto 2024 · WHO 2022</div>
+
+<script>
+document.querySelectorAll('.tab').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.p').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    document.getElementById(b.dataset.t).classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+});
+</script>
+</body>
+</html>

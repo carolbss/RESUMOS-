@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Queimaduras · pocket</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d1117;--card:#16161f;--card2:#1c1c27;--line:#2a2a38;
+  --txt:#ececf4;--muted:#9a9ab0;
+  --laranja:#f97316;--roxo:#a855f7;--ciano:#22d3ee;--vermelho:#f87171;--amarelo:#fbbf24;--verde:#34d399;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{overflow-x:hidden}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;font-size:17px;line-height:1.6;padding-bottom:30px}
+.top{padding:22px 18px 12px;position:sticky;top:0;background:linear-gradient(180deg,var(--bg) 70%,transparent);z-index:5}
+.kick{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:29px;line-height:1.05;margin-top:4px}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:6px 18px 12px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;padding:9px 15px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted);white-space:nowrap;cursor:pointer;transition:.15s}
+.tab.on{background:var(--laranja);border-color:var(--laranja);color:#0a0a0f}
+.panel{display:none;padding:6px 18px 40px;animation:f .25s}
+.panel.on{display:block}
+@keyframes f{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+h2{font-family:'Syne',sans-serif;font-size:21px;color:var(--laranja);margin:18px 0 10px}
+h3{font-family:'Syne',sans-serif;font-size:16px;color:#fff;margin:16px 0 6px}
+p{margin:10px 0}
+ul{list-style:none;margin:8px 0}
+li{padding:6px 0 6px 22px;position:relative}
+li::before{content:"▸";position:absolute;left:0;top:7px;color:var(--laranja);font-size:13px}
+strong{color:#fff;font-weight:600}
+.s{color:var(--ciano);font-style:italic;font-size:.92em}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0}
+.box{border-radius:12px;padding:13px 15px;margin:13px 0;border:1px solid;font-size:15px}
+.prova{background:rgba(168,85,247,.1);border-color:rgba(168,85,247,.4)}
+.prova .l{color:var(--roxo)}
+.mac{background:rgba(34,211,238,.1);border-color:rgba(34,211,238,.4)}
+.mac .l{color:var(--ciano)}
+.warn{background:rgba(248,113,113,.1);border-color:rgba(248,113,113,.4)}
+.warn .l{color:var(--vermelho)}
+.l{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-size:10px;background:rgba(168,85,247,.25);color:var(--roxo);padding:2px 6px;border-radius:5px;margin-left:5px;font-family:'JetBrains Mono',monospace}
+.kv{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)}
+.kv:last-child{border:none}
+.kv .k{flex:0 0 42%;color:var(--ciano);font-family:'JetBrains Mono',monospace;font-size:13px}
+.kv .v{flex:1;font-size:15px}
+.step{display:flex;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line)}
+.step:last-child{border:none}
+.step .n{flex:0 0 30px;height:30px;border-radius:9px;background:rgba(249,115,22,.15);border:1px solid rgba(249,115,22,.45);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;display:grid;place-items:center;font-size:14px}
+.step .x{flex:1}
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="kick">carolzita · pocket 🚑</div>
+  <h1>Queimaduras 🔥</h1>
+</div>
+<div class="tabs">
+  <div class="tab on" data-t="0">🩹 Profundidade</div>
+  <div class="tab" data-t="1">📐 Extensão</div>
+  <div class="tab" data-t="2">💧 Fluidos</div>
+  <div class="tab" data-t="3">🚑 Transferência</div>
+  <div class="tab" data-t="4">✂️ Escarotomia</div>
+  <div class="tab" data-t="5">☠️ Traps</div>
+</div>
+
+<!-- 0 PROFUNDIDADE -->
+<div class="panel on" data-p="0">
+  <h2>🩹 Graus da queimadura</h2>
+  <div class="card">
+    <div class="kv"><div class="k">1️⃣ 1º grau</div><div class="v">Epiderme · dolorosa · sem bolha</div></div>
+    <div class="kv"><div class="k">2️⃣ 2º superficial</div><div class="v">Derme papilar · <strong>bolhas</strong> · muito dolorosa</div></div>
+    <div class="kv"><div class="k">2️⃣ 2º profundo</div><div class="v">Derme reticular · pálido · dor ↓</div></div>
+    <div class="kv"><div class="k">3️⃣ 3º grau</div><div class="v">Toda derme · coriáceo · <strong>indolor</strong></div></div>
+    <div class="kv"><div class="k">4️⃣ 4º grau</div><div class="v">Músculo/osso · carbonização</div></div>
+  </div>
+  <div class="box warn"><span class="l">☠️ pega-ratão</span>3º grau = <strong>INDOLOR</strong> (terminações destruídas) — não é "leve", é o oposto!</div>
+</div>
+
+<!-- 1 EXTENSAO -->
+<div class="panel" data-p="1">
+  <h2>📐 Regra dos nove (adulto)</h2>
+  <div class="card">
+    <div class="kv"><div class="k">🗣️ Cabeça</div><div class="v">9%</div></div>
+    <div class="kv"><div class="k">💪 Cada braço</div><div class="v">9%</div></div>
+    <div class="kv"><div class="k">🫁 Tronco (ant/post)</div><div class="v">18% + 18%</div></div>
+    <div class="kv"><div class="k">🦵 Cada perna</div><div class="v">18%</div></div>
+    <div class="kv"><div class="k">🍑 Períneo</div><div class="v">1%</div></div>
+  </div>
+  <div class="box prova"><span class="l">alto rendimento</span>👶 Criança: regra do adulto subestima cabeça! Use <strong>Lund-Browder</strong>.</div>
+  <div class="box mac"><span class="l">🧠 macete</span>Palma da mão do paciente ≈ <strong>1% SCQ</strong> — ótimo pra queimadura espalhada.</div>
+  <p class="s">Só contam 2º e 3º grau no cálculo — 1º grau fica de fora!</p>
+</div>
+
+<!-- 2 FLUIDOS -->
+<div class="panel" data-p="2">
+  <h2>💧 ABA 2023/2024</h2>
+  <div class="box prova"><span class="l">alto rendimento</span>🆕 <strong>2 mL/kg/%SCQ</strong> inicial (não mais 4mL) → reduz "fluid creep" ⚠️. Titular por diurese!</div>
+  <div class="card">
+    <div class="kv"><div class="k">📜 Parkland clássico</div><div class="v">4mL × peso × %SCQ /24h</div></div>
+    <div class="kv"><div class="k">⏱️ Metade em</div><div class="v">8h <strong>do trauma</strong> (não da chegada!)</div></div>
+    <div class="kv"><div class="k">🎯 Diurese-alvo</div><div class="v">0,5 mL/kg/h adulto</div></div>
+    <div class="kv"><div class="k">💉 Fluido</div><div class="v">Ringer lactato</div></div>
+  </div>
+  <div class="box warn"><span class="l">☠️ pega-ratão</span>Contagem das 8h começa no <strong>trauma</strong>! Se chegou 2h depois, restam só 6h.</div>
+</div>
+
+<!-- 3 TRANSFERENCIA -->
+<div class="panel" data-p="3">
+  <h2>🚑 Critérios ABA</h2>
+  <ul>
+    <li>📏 2º/3º grau &gt;10% SCQ</li>
+    <li>🖐️ Face/mãos/pés/genitália/períneo/articulação</li>
+    <li>🔥 3º grau qualquer idade</li>
+    <li>⚡ Elétrica (inclui raio)</li>
+    <li>🧪 Química</li>
+    <li>💨 Inalatória</li>
+    <li>🩺 Comorbidades complicadoras</li>
+    <li>🤕 Trauma associado</li>
+    <li>👶 Criança sem suporte adequado</li>
+    <li>🏠 Suporte social/reabilitação</li>
+  </ul>
+  <h3>💨 Lesão inalatória — sinais</h3>
+  <ul>
+    <li>🏚️ Espaço fechado</li>
+    <li>⚫ Fuligem/escarro carbonáceo</li>
+    <li>🔥 Vibrissas chamuscadas</li>
+    <li>😮‍💨 Rouquidão/estridor</li>
+    <li>🩸 Carboxihemoglobina ↑</li>
+  </ul>
+  <div class="box warn"><span class="l">☠️ pega-ratão</span>Edema de via aérea é <strong>progressivo</strong> — via aérea OK agora ≠ OK daqui a pouco. Intubar precoce!</div>
+</div>
+
+<!-- 4 ESCAROTOMIA -->
+<div class="panel" data-p="4">
+  <h2>✂️ Quando fazer</h2>
+  <ul>
+    <li>💪 Membro circunferencial 3º grau + pulso ↓/ausente</li>
+    <li>🫁 Tórax circunferencial restringindo ventilação</li>
+  </ul>
+  <div class="card">
+    <div class="step"><div class="n">1</div><div class="x">Incisão através da escara (indolor, não precisa anestesia ali)</div></div>
+    <div class="step"><div class="n">2</div><div class="x">Membro: linhas <strong>médio-laterais</strong></div></div>
+    <div class="step"><div class="n">3</div><div class="x">Tórax: linhas axilares + travessas (grade)</div></div>
+    <div class="step"><div class="n">4</div><div class="x">Reavalia pulso/perfusão</div></div>
+  </div>
+  <div class="box warn"><span class="l">☠️ pega-ratão</span>Escarotomia = só a <strong>escara</strong>. <strong>Fasciotomia</strong> = abre fáscia (síndrome compartimental verdadeira, ex: elétrica de alta voltagem). Não confundir!</div>
+</div>
+
+<!-- 5 TRAPS -->
+<div class="panel" data-p="5">
+  <h2>☠️ Pega-ratões</h2>
+  <div class="box warn"><span class="l">trap 1</span>3º grau é indolor — não é leve! 🩹</div>
+  <div class="box warn"><span class="l">trap 2</span>Só 2º/3º grau entram no %SCQ 📐</div>
+  <div class="box warn"><span class="l">trap 3</span>ABA hoje = 2mL, não 4mL — menos volume! 💧</div>
+  <div class="box warn"><span class="l">trap 4</span>8h de Parkland conta do trauma, não da chegada ⏱️</div>
+  <div class="box warn"><span class="l">trap 5</span>Criança usa Lund-Browder, não regra do adulto 👶</div>
+  <div class="box warn"><span class="l">trap 6</span>Escarotomia ≠ Fasciotomia ✂️</div>
+  <div class="box warn"><span class="l">trap 7</span>Face/mão/pé/genitália = transfere mesmo pequena 🚑</div>
+  <div class="box warn"><span class="l">trap 8</span>Via aérea inalatória piora progressivamente 💨</div>
+  <div class="box mac"><span class="l">✅ resumo de bolso</span>1º=epiderme·2ºsup=bolha·2ºprof=pálido·3º=coriáceo indolor · Regra9:cabeça9+braço9+tronco18×2+perna18×2 · ABA=2mL titulado · Diurese 0,5mL/kg/h · Escarotomia=escara só 🎓</div>
+</div>
+
+<script>
+var tabs=document.querySelectorAll('.tab'),panels=document.querySelectorAll('.panel');
+tabs.forEach(function(t){t.addEventListener('click',function(){
+  tabs.forEach(function(x){x.classList.remove('on')});
+  panels.forEach(function(x){x.classList.remove('on')});
+  t.classList.add('on');
+  document.querySelector('.panel[data-p="'+t.dataset.t+'"]').classList.add('on');
+})});
+</script>
+</body>
+</html>

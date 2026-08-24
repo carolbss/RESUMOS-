@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neoplasia Gástrica — Resumo carolzita</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0f; --bg2:#12121a; --card:#15151f; --card2:#1b1b27;
+  --border:#26263a; --txt:#e8e8f0; --muted:#9494ab;
+  --orange:#f97316; --purple:#a855f7; --cyan:#22d3ee;
+  --orange-dim:rgba(249,115,22,.12); --purple-dim:rgba(168,85,247,.12); --cyan-dim:rgba(34,211,238,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;line-height:1.6;font-size:16px}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px 120px}
+
+/* HEADER */
+header{padding:48px 20px 28px;text-align:center;border-bottom:1px solid var(--border);
+  background:radial-gradient(120% 100% at 50% 0%, rgba(249,115,22,.10), transparent 60%)}
+header .kicker{font-family:'JetBrains Mono',monospace;color:var(--orange);font-size:.8rem;letter-spacing:.18em;text-transform:uppercase}
+header h1{font-family:'Syne',sans-serif;font-weight:800;font-size:2.5rem;line-height:1.1;margin:10px 0 6px;
+  background:linear-gradient(100deg,#fff,#f97316 60%,#a855f7);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+header p{color:var(--muted);font-size:.95rem;max-width:620px;margin:0 auto}
+.refs{margin-top:16px;font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--muted)}
+.refs b{color:var(--cyan)}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:50;background:rgba(10,10,15,.9);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border);padding:10px 0;margin-bottom:8px}
+nav .navin{max-width:960px;margin:0 auto;padding:0 20px;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+nav .navin::-webkit-scrollbar{display:none}
+nav a{white-space:nowrap;font-size:.78rem;font-weight:600;color:var(--muted);text-decoration:none;
+  padding:6px 12px;border-radius:20px;border:1px solid var(--border);transition:.15s}
+nav a:hover{color:var(--txt);border-color:var(--orange);background:var(--orange-dim)}
+
+/* LEGEND */
+.legend{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin:22px 0 6px;font-size:.8rem}
+.legend span{display:flex;align-items:center;gap:6px;color:var(--muted)}
+.dot{width:11px;height:11px;border-radius:50%;display:inline-block}
+.dot.o{background:var(--orange)} .dot.p{background:var(--purple)} .dot.c{background:var(--cyan)}
+
+/* SECTIONS */
+section{margin-top:18px}
+details{background:var(--card);border:1px solid var(--border);border-radius:14px;margin-bottom:14px;overflow:hidden}
+details[open]{border-color:#33334d}
+summary{cursor:pointer;list-style:none;padding:18px 22px;display:flex;align-items:center;gap:14px;
+  font-family:'Syne',sans-serif;font-weight:700;font-size:1.18rem;user-select:none}
+summary::-webkit-details-marker{display:none}
+summary .ico{font-size:1.3rem;line-height:1}
+summary .chev{margin-left:auto;color:var(--muted);transition:.2s;font-size:1.1rem}
+details[open] summary .chev{transform:rotate(90deg)}
+summary:hover{background:var(--card2)}
+.body{padding:4px 22px 24px;border-top:1px solid var(--border)}
+.body h4{font-family:'Syne',sans-serif;color:var(--orange);font-size:1.02rem;margin:20px 0 8px}
+.body p{margin:8px 0}
+.body ul{margin:8px 0 8px 4px;list-style:none}
+.body ul li{position:relative;padding-left:20px;margin:6px 0}
+.body ul li::before{content:"▸";position:absolute;left:0;color:var(--orange)}
+.simple{color:#34d399;font-style:italic;font-size:.9em}
+.green{background:rgba(52,211,153,.09);border-left:3px solid #34d399;border-radius:8px;padding:12px 16px;margin:14px 0;color:#34d399;font-style:italic}
+.green .tag{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:#34d399;font-weight:600;display:block;margin-bottom:4px;font-style:normal}
+.green b,.green strong{color:#7fe8c0;font-style:normal}
+.stx{counter-reset:st;margin:12px 0}
+.st{counter-increment:st;background:var(--card2);border:1px solid var(--border);border-radius:13px;padding:14px 16px 14px 52px;margin:11px 0;position:relative}
+.st::before{content:counter(st);position:absolute;left:14px;top:13px;width:26px;height:26px;border-radius:8px;background:var(--orange);color:#0a0a0f;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center}
+.st .fase{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);display:block;margin-bottom:1px}
+.st .ttl{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:#fff;margin-bottom:4px}
+.st p{margin:5px 0;font-size:.93rem}
+.pq{border-left:3px solid var(--purple);background:var(--purple-dim);border-radius:0 8px 8px 0;padding:8px 12px;margin:9px 0;font-size:.9rem}
+.pq b{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;color:var(--purple);display:block;margin-bottom:2px}
+.mh2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:9px}
+.mh{border-radius:9px;padding:8px 11px;font-size:.85rem;border:1px solid var(--border)}
+.mh.e{background:rgba(52,211,153,.07);border-color:rgba(52,211,153,.3)}
+.mh.d{background:var(--orange-dim);border-color:rgba(249,115,22,.3)}
+.mh b{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:2px}
+.mh.e b{color:#34d399} .mh.d b{color:var(--orange)}
+.fio{font-family:'JetBrains Mono',monospace;font-size:.78rem;background:var(--purple-dim);color:var(--purple);border:1px solid rgba(168,85,247,.35);padding:1px 6px;border-radius:5px;white-space:nowrap}
+@media(max-width:640px){.mh2{grid-template-columns:1fr}}
+b,strong{color:#fff;font-weight:700}
+
+/* CALLOUTS */
+.hot{background:var(--purple-dim);border-left:3px solid var(--purple);border-radius:8px;padding:12px 16px;margin:14px 0}
+.hot .tag{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--purple);font-weight:600;display:block;margin-bottom:4px}
+.mnem{background:var(--cyan-dim);border-left:3px solid var(--cyan);border-radius:8px;padding:12px 16px;margin:14px 0}
+.mnem .tag{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan);font-weight:600;display:block;margin-bottom:4px}
+.mnem b{color:var(--cyan)}
+.warn{background:rgba(234,179,8,.1);border-left:3px solid #eab308;border-radius:8px;padding:12px 16px;margin:14px 0;font-size:.92rem}
+
+/* TABLES */
+.tbl{overflow-x:auto;margin:14px 0;border:1px solid var(--border);border-radius:10px}
+table{width:100%;border-collapse:collapse;font-size:.88rem;min-width:520px}
+th{background:var(--card2);color:var(--orange);font-family:'Syne',sans-serif;text-align:left;padding:10px 14px;font-size:.82rem;text-transform:uppercase;letter-spacing:.05em}
+td{padding:10px 14px;border-top:1px solid var(--border);vertical-align:top}
+tr:hover td{background:rgba(255,255,255,.02)}
+td .pt{color:var(--purple);font-weight:600}
+
+/* GRID CARDS */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:14px 0}
+.gc{background:var(--card2);border:1px solid var(--border);border-radius:10px;padding:14px 16px}
+.gc h5{font-family:'Syne',sans-serif;color:var(--cyan);font-size:.95rem;margin-bottom:6px}
+.gc p{font-size:.86rem;color:var(--muted);margin:0}
+
+/* SVG figs */
+figure{margin:18px 0;background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:16px;text-align:center}
+figure svg{max-width:100%;height:auto}
+figcaption{color:var(--muted);font-size:.78rem;margin-top:10px;font-family:'JetBrains Mono',monospace}
+
+.pill{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:.7rem;padding:2px 9px;border-radius:12px;margin:2px 3px 2px 0;font-weight:600}
+.pill.n1{background:var(--orange-dim);color:var(--orange);border:1px solid var(--orange)}
+.pill.n2{background:var(--purple-dim);color:var(--purple);border:1px solid var(--purple)}
+
+footer{text-align:center;color:var(--muted);font-size:.75rem;margin-top:40px;font-family:'JetBrains Mono',monospace}
+mark{background:var(--orange-dim);color:var(--orange);padding:0 4px;border-radius:4px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="kicker">carolzita · cirurgia do aparelho digestivo</div>
+  <h1>Neoplasia Gástrica</h1>
+  <p>Adenocarcinoma gástrico — do rastreio de dispepsia à gastrectomia D2. Foco em Borrmann, Lauren e linfadenectomia para as bancas do RS.</p>
+  <div class="refs">📚 <b>Sabiston</b> 21ª · <b>Zollinger's Atlas</b> 11ª · <b>Netter</b> · JGCA/NCCN/AJCC 8ª · FLOT4, Dutch D1D2, ToGA, CheckMate-649</div>
+</header>
+
+<nav><div class="navin">
+  <a href="#clinica">Clínica</a>
+  <a href="#risco">Risco/Rastreio</a>
+  <a href="#patologia">Lauren/Borrmann</a>
+  <a href="#estadiamento">TNM</a>
+  <a href="#anatomia">Anatomia/Vasos</a>
+  <a href="#linfa">D1 vs D2</a>
+  <a href="#cirurgia">Cirurgia passo-a-passo</a>
+  <a href="#maos">Mãos/Fios</a>
+  <a href="#neoadj">Onco-tto</a>
+  <a href="#complic">Complicações</a>
+  <a href="#banca">Bancas RS</a>
+  <a href="#mnem">Mnemônicos</a>
+</div></nav>
+
+<div class="wrap">
+
+<div class="legend">
+  <span><i class="dot o"></i> Conteúdo</span>
+  <span><i class="dot p"></i> Tema quente de prova (+banca)</span>
+  <span><i class="dot c"></i> Mnemônico / macete</span>
+</div>
+
+<!-- 1. CLÍNICA -->
+<section id="clinica"><details open>
+<summary><span class="ico">🩺</span> Quadro clínico <span class="chev">›</span></summary>
+<div class="body">
+<h4>Fases</h4>
+<ul>
+<li><b>Precoce:</b> assintomático ou dispepsia vaga, plenitude, epigastralgia inespecífica <span class="simple">(no começo o tumor é tão discreto que parece só uma "má digestão")</span></li>
+<li><b>Avançado:</b> emagrecimento, anorexia, saciedade precoce, dor epigástrica persistente, vômitos (obstrução pilórica), disfagia (tumor de cárdia/JEG), hemorragia digestiva / anemia ferropriva, massa palpável</li>
+</ul>
+
+<div class="hot"><span class="tag">◆ tema quente · sinais de doença avançada / metastática</span>
+Perguntados direto em prova. Decore o "combo" de disseminação:
+<ul>
+<li><b>Linfonodo de Virchow</b> — supraclavicular esquerdo (sinal de Troisier) <span class="simple">(o câncer "avisa" lá no pescoço, do lado esquerdo)</span></li>
+<li><b>Nódulo da Irmã Maria José</b> — periumbilical (metástase pela ligamento falciforme/redondo)</li>
+<li><b>Prateleira de Blumer</b> — massa no fundo de saco ao toque retal (implante peritoneal pélvico)</li>
+<li><b>Tumor de Krukenberg</b> — metástase ovariana bilateral (células em anel de sinete)</li>
+<li><b>Linfonodo de Irish</b> — axilar anterior esquerdo</li>
+</ul></div>
+
+<h4>Paraneoplásicos (dermatológicos)</h4>
+<ul>
+<li><b>Acantose nigricans</b> e <b>sinal de Leser-Trélat</b> (erupção súbita de ceratoses seborreicas)</li>
+<li>Tromboflebite migratória (<b>sinal de Trousseau</b>)</li>
+</ul>
+</div>
+</details></section>
+
+<!-- 2. RISCO -->
+<section id="risco"><details>
+<summary><span class="ico">⚠️</span> Fatores de risco, rastreio e diagnóstico <span class="chev">›</span></summary>
+<div class="body">
+<h4>Fatores de risco</h4>
+<ul>
+<li><b>H. pylori</b> — carcinógeno grupo I (OMS); principal fator ambiental modificável <span class="simple">(bactéria que fica no estômago e ao longo dos anos pode iniciar o câncer)</span></li>
+<li>Gastrite atrófica crônica → metaplasia intestinal → displasia (<b>cascata de Correa</b>)</li>
+<li>Dieta rica em sal, defumados e <b>nitrosaminas</b>; tabagismo; obesidade (cárdia)</li>
+<li>Anemia perniciosa, gastrectomia parcial prévia (câncer de coto, &gt;15-20 anos), pólipos adenomatosos, doença de Ménétrier</li>
+<li><b>Tipo sanguíneo A</b></li>
+</ul>
+<div class="hot"><span class="tag">◆ tema quente · síndromes hereditárias</span>
+<ul>
+<li><b>CDH1</b> (E-caderina) → <b>câncer gástrico difuso hereditário</b> — indica gastrectomia total profilática; associado a CA lobular de mama</li>
+<li>Lynch (HNPCC), PAF, Li-Fraumeni, Peutz-Jeghers</li>
+</ul></div>
+<h4>Diagnóstico e estadiamento</h4>
+<ul>
+<li><b>EDA + biópsia</b> (padrão-ouro dx; ≥6-8 fragmentos das bordas da lesão)</li>
+<li><b>Ecoendoscopia (USG endoscópica)</b> — melhor método para <b>T e N locorregional</b> <span class="simple">(um ultrassom por dentro do estômago que mede quão fundo o tumor entrou)</span></li>
+<li><b>TC tórax/abdome/pelve</b> — M; <b>videolaparoscopia estadiadora + citologia peritoneal</b> em ≥T3/N+ (citologia positiva = M1, mesmo sem lesão macroscópica)</li>
+<li>Marcadores (CEA, CA 19-9, CA 72-4) — prognóstico/seguimento, não rastreio</li>
+</ul>
+</div>
+</details></section>
+
+<!-- 3. PATOLOGIA -->
+<section id="patologia"><details>
+<summary><span class="ico">🔬</span> Lauren & Borrmann (o que mais cai) <span class="chev">›</span></summary>
+<div class="body">
+<h4>Classificação de Lauren (histológica)</h4>
+<div class="tbl"><table>
+<tr><th></th><th>Intestinal</th><th>Difuso</th></tr>
+<tr><td><b>Diferenciação</b></td><td>Bem diferenciado, glandular</td><td>Indiferenciado, <span class="pt">anel de sinete</span></td></tr>
+<tr><td><b>Perfil</b></td><td>Homem, idoso, áreas endêmicas</td><td>Jovem, mulher, tipo A</td></tr>
+<tr><td><b>Etiologia</b></td><td>H. pylori, dieta (cascata de Correa)</td><td><span class="pt">CDH1</span> / genético</td></tr>
+<tr><td><b>Disseminação</b></td><td>Hematogênica (fígado)</td><td>Linfática/transmural, linite</td></tr>
+<tr><td><b>Prognóstico</b></td><td>Melhor</td><td>Pior</td></tr>
+</table></div>
+
+<div class="hot"><span class="tag">◆ tema quente · classificação de Borrmann (macroscópica — avançado)</span>
+<figure>
+<svg viewBox="0 0 640 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tipos de Borrmann">
+<style>.bt{fill:#1b1b27;stroke:#a855f7;stroke-width:2}.tum{fill:#f97316}.lbl{fill:#e8e8f0;font-family:Inter,sans-serif;font-size:13px;font-weight:600}.sub{fill:#9494ab;font-family:Inter,sans-serif;font-size:10px}</style>
+<!-- I polipoide -->
+<rect class="bt" x="20" y="60" width="120" height="70" rx="8"/>
+<ellipse class="tum" cx="80" cy="60" rx="26" ry="20"/>
+<text class="lbl" x="80" y="155" text-anchor="middle">I</text><text class="sub" x="80" y="170" text-anchor="middle">polipoide/vegetante</text>
+<!-- II ulcerado bordas nítidas -->
+<rect class="bt" x="180" y="60" width="120" height="70" rx="8"/>
+<path class="tum" d="M215 60 q10 -18 30 -18 q20 0 30 18 l-8 4 q-8 -14 -22 -14 q-14 0 -22 14 z"/>
+<text class="lbl" x="240" y="155" text-anchor="middle">II</text><text class="sub" x="240" y="170" text-anchor="middle">ulcerado, bordas nítidas</text>
+<!-- III ulcerado infiltrativo -->
+<rect class="bt" x="340" y="60" width="120" height="70" rx="8"/>
+<path class="tum" d="M370 60 q0 -22 30 -22 q30 0 30 22 l-6 6 q-6 -16 -24 -16 q-18 0 -24 16 z" opacity=".9"/>
+<rect class="tum" x="372" y="70" width="56" height="6" opacity=".5"/>
+<text class="lbl" x="400" y="155" text-anchor="middle">III ★</text><text class="sub" x="400" y="170" text-anchor="middle">ulcerado infiltrativo (+comum)</text>
+<!-- IV linite -->
+<rect x="500" y="60" width="120" height="70" rx="8" fill="#f97316" opacity=".25" stroke="#a855f7" stroke-width="2"/>
+<rect x="500" y="60" width="120" height="70" rx="8" fill="none" stroke="#f97316" stroke-width="3" stroke-dasharray="5 4"/>
+<text class="lbl" x="560" y="155" text-anchor="middle">IV</text><text class="sub" x="560" y="170" text-anchor="middle">infiltrativo difuso (linite)</text>
+</svg>
+<figcaption>Borrmann I→IV · III = mais frequente · IV = linite plástica ("garrafa de couro")</figcaption>
+</figure>
+<ul>
+<li><b>I</b> — polipoide/vegetante, bem delimitado, sem ulceração</li>
+<li><b>II</b> — ulcerado com bordas elevadas e nítidas</li>
+<li><b>III</b> — ulcerado infiltrativo, bordas mal definidas (<b>mais comum</b>)</li>
+<li><b>IV</b> — infiltrativo difuso = <b>linite plástica</b> (estômago rígido, "garrafa de couro"; pior prognóstico)</li>
+</ul>
+</div>
+
+<h4>Câncer gástrico precoce (early gastric cancer)</h4>
+<p>Definição = restrito à <b>mucosa/submucosa (T1)</b>, <u>independente do status linfonodal</u>. Classificação japonesa endoscópica: <b>I</b> protruso · <b>II</b> superficial (IIa elevado / IIb plano / IIc deprimido) · <b>III</b> escavado.</p>
+</div>
+</details></section>
+
+<!-- 4. TNM -->
+<section id="estadiamento"><details>
+<summary><span class="ico">📊</span> Estadiamento TNM (AJCC 8ª) <span class="chev">›</span></summary>
+<div class="body">
+<div class="tbl"><table>
+<tr><th>T</th><th>N</th><th>M</th></tr>
+<tr><td><b>T1a</b> mucosa/lâmina própria<br><b>T1b</b> submucosa</td><td><b>N0</b> nenhum</td><td rowspan="4"><b>M1</b> metástase à distância<br><span class="pt">(inclui citologia peritoneal +)</span></td></tr>
+<tr><td><b>T2</b> muscular própria</td><td><b>N1</b> 1–2 LN</td></tr>
+<tr><td><b>T3</b> subserosa</td><td><b>N2</b> 3–6 LN</td></tr>
+<tr><td><b>T4a</b> serosa (peritônio visceral)<br><b>T4b</b> estruturas adjacentes</td><td><b>N3a</b> 7–15 · <b>N3b</b> ≥16</td></tr>
+</table></div>
+<div class="warn">⚠ <b>Mínimo de 15–16 linfonodos</b> examinados para estadiamento N adequado — a D2 normalmente entrega ≥25–30. Poucos LN "sub-estadiam" o paciente.</div>
+</div>
+</details></section>
+
+<!-- 5. ANATOMIA -->
+<section id="anatomia"><details>
+<summary><span class="ico">🫀</span> Anatomia & vascularização <span class="chev">›</span></summary>
+<div class="body">
+<h4>Divisão anatômica</h4>
+<p>Cárdia · fundo · corpo · antro · piloro; curvatura menor e maior. Relações: fígado (segmento lateral esq.), baço, pâncreas (retrocavidade), cólon transverso (mesocólon), diafragma.</p>
+
+<figure>
+<svg viewBox="0 0 560 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Vascularização do estômago">
+<style>
+.st{fill:#1b1b27;stroke:#3a3a52;stroke-width:2}
+.art{stroke-width:5;fill:none;stroke-linecap:round}
+.a-red{stroke:#f97316}.a-cel{stroke:#a855f7}.a-cy{stroke:#22d3ee}
+.al{fill:#e8e8f0;font-family:Inter;font-size:11px;font-weight:600}
+.aln{fill:#9494ab;font-family:'JetBrains Mono';font-size:9px}
+</style>
+<!-- stomach body -->
+<path class="st" d="M180 40 C120 60 110 150 140 220 C160 270 220 300 280 295 C330 291 350 250 345 210 C395 205 415 150 400 100 C390 66 340 45 300 42 C260 39 220 30 180 40 Z"/>
+<!-- celiac trunk -->
+<line class="art a-cel" x1="270" y1="330" x2="270" y2="290"/>
+<text class="al" x="278" y="345">Tronco celíaco</text>
+<!-- gastrica esquerda -->
+<path class="art a-red" d="M270 290 C255 250 235 180 200 120"/>
+<text class="al" x="150" y="115">A. gástrica esq.</text><text class="aln" x="150" y="127">(curv. menor)</text>
+<!-- hepatica comum -> gastrica direita -->
+<path class="art a-cy" d="M270 290 C320 275 355 255 345 215"/>
+<path class="art a-cy" d="M345 215 C330 190 310 165 285 140"/>
+<text class="al" x="360" y="240">A. gástrica dir.</text><text class="aln" x="360" y="252">(ram. hepática)</text>
+<!-- gastroepiploica direita (gastroduodenal) -->
+<path class="art a-red" d="M345 215 C350 260 300 300 240 300"/>
+<text class="al" x="255" y="330">Gastroepiploica dir.</text>
+<!-- esplenica -> gastroepiploica esq + curtas -->
+<path class="art a-cel" d="M270 290 C220 285 175 275 150 235"/>
+<text class="al" x="60" y="235">A. esplênica</text>
+<path class="art a-cy" d="M150 235 C155 270 190 295 235 298"/>
+<text class="al" x="60" y="290">Gastroepiploica esq.</text>
+<!-- gastricas curtas -->
+<path class="art a-cy" d="M150 235 C165 190 175 150 185 110"/>
+<text class="al" x="60" y="150">Gástricas curtas</text><text class="aln" x="60" y="162">(vasa brevia → fundo)</text>
+<!-- legend -->
+<circle cx="430" cy="320" r="5" fill="#a855f7"/><text class="aln" x="440" y="324">tronco celíaco / esplênica</text>
+<circle cx="430" cy="335" r="5" fill="#f97316"/><text class="aln" x="440" y="339">curv. menor / GE dir.</text>
+<circle cx="430" cy="350" r="5" fill="#22d3ee"/><text class="aln" x="440" y="354">ramos hepática / esplênica</text>
+</svg>
+<figcaption>Diagrama esquemático — todo o suprimento vem do TRONCO CELÍACO</figcaption>
+</figure>
+
+<h4>Artérias (todas do tronco celíaco)</h4>
+<ul>
+<li><b>Gástrica esquerda</b> (ramo direto do tronco celíaco) → curvatura menor. <span class="pt">Ligadura na origem = passo oncológico da D2 (estação 7).</span></li>
+<li><b>Gástrica direita</b> (da hepática própria/comum) → curvatura menor</li>
+<li><b>Gastromental (gastroepiploica) direita</b> (da gastroduodenal) → curvatura maior</li>
+<li><b>Gastromental (gastroepiploica) esquerda</b> (da esplênica) → curvatura maior</li>
+<li><b>Gástricas curtas (vasa brevia)</b> (da esplênica) → fundo <span class="simple">(vasinhos curtos que ligam o baço ao topo do estômago)</span></li>
+</ul>
+<h4>Drenagem venosa → sistema porta</h4>
+<ul>
+<li>Gástrica esq. (coronária) e dir. → veia porta (a coronária é sítio de varizes na hipertensão portal)</li>
+<li>Gastroepiploica dir. → tronco gastrocólico de <b>Henle</b> → mesentérica superior</li>
+<li>Gastroepiploica esq. e curtas → veia esplênica</li>
+</ul>
+</div>
+</details></section>
+
+<!-- 6. LINFA D1/D2 -->
+<section id="linfa"><details open>
+<summary><span class="ico">🎯</span> Linfadenectomia D1 vs D2 <span class="chev">›</span></summary>
+<div class="body">
+<p>O drama da pergunta. As estações são numeradas pela <b>JGCA</b> (Japanese Gastric Cancer Association):</p>
+
+<figure>
+<svg viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Estações linfonodais D1 e D2">
+<style>
+.stm{fill:#15151f;stroke:#3a3a52;stroke-width:2}
+.d1{fill:#f97316}.d2{fill:#a855f7}
+.nl{fill:#0a0a0f;font-family:'JetBrains Mono';font-size:10px;font-weight:700;text-anchor:middle}
+.cl{fill:#e8e8f0;font-family:Inter;font-size:10px}
+</style>
+<path class="stm" d="M200 40 C150 60 145 150 175 210 C195 250 250 275 300 270 C345 266 360 230 355 195 C400 190 415 140 402 98 C392 66 345 48 305 46 C265 43 240 32 200 40 Z"/>
+<!-- perigastric D1 (orange) -->
+<g><circle class="d1" cx="215" cy="70" r="12"/><text class="nl" x="215" y="74">1</text></g>
+<g><circle class="d1" cx="270" cy="55" r="12"/><text class="nl" x="270" y="59">2</text></g>
+<g><circle class="d1" cx="200" cy="130" r="12"/><text class="nl" x="200" y="134">3</text></g>
+<g><circle class="d1" cx="315" cy="255" r="12"/><text class="nl" x="315" y="259">4</text></g>
+<g><circle class="d1" cx="350" cy="150" r="12"/><text class="nl" x="350" y="154">5</text></g>
+<g><circle class="d1" cx="330" cy="215" r="12"/><text class="nl" x="330" y="219">6</text></g>
+<!-- D2 vascular (purple) -->
+<g><circle class="d2" cx="250" cy="300" r="13"/><text class="nl" x="250" y="304">7</text></g>
+<g><circle class="d2" cx="310" cy="300" r="13"/><text class="nl" x="310" y="304">8</text></g>
+<g><circle class="d2" cx="280" cy="290" r="13"/><text class="nl" x="280" y="294">9</text></g>
+<g><circle class="d2" cx="150" cy="230" r="13"/><text class="nl" x="150" y="234">10</text></g>
+<g><circle class="d2" cx="120" cy="190" r="13"/><text class="nl" x="120" y="194">11</text></g>
+<g><circle class="d2" cx="380" cy="255" r="13"/><text class="nl" x="380" y="259">12</text></g>
+<!-- legend -->
+<circle class="d1" cx="440" cy="60" r="9"/><text class="cl" x="455" y="64">D1 · perigástricas (1–6)</text>
+<circle class="d2" cx="440" cy="85" r="9"/><text class="cl" x="455" y="89">D2 · +7 8 9 10 11 12</text>
+</svg>
+<figcaption>Estações JGCA · 7=gástrica esq · 8=hepática comum · 9=tronco celíaco · 10=hilo esplênico · 11=esplênica · 12=lig. hepatoduodenal</figcaption>
+</figure>
+
+<div class="grid">
+<div class="gc"><h5>D1</h5><p>Perigástricas.
+<span class="pill n1">1</span><span class="pill n1">2</span><span class="pill n1">3</span><span class="pill n1">4</span><span class="pill n1">5</span><span class="pill n1">6</span><br>Indicada para <b>T1/early</b> ou pacientes de alto risco cirúrgico.</p></div>
+<div class="gc"><h5>D1+ / D2</h5><p>D1 + estações vasculares.
+<span class="pill n2">7</span><span class="pill n2">8a</span><span class="pill n2">9</span><span class="pill n2">11p</span><span class="pill n2">12a</span> (+ <span class="pill n2">10</span><span class="pill n2">11d</span> na total).<br><b>Padrão-ouro para ≥T2 ressecável.</b></p></div>
+</div>
+
+<div class="hot"><span class="tag">◆ tema quente · D2 sem esplenopancreatectomia</span>
+Os trials ocidentais (<b>Dutch D1D2</b> — Songun, e MRC) mostraram que a D2 <u>com esplenectomia/pancreatectomia de rotina</u> aumentava morbimortalidade sem ganho. Hoje: <b>D2 é padrão, mas preservando baço e pâncreas</b> (só ressecar se invasão direta). O seguimento de 15 anos do trial holandês mostrou <b>menor recidiva locorregional e menor mortalidade câncer-específica</b> com D2.</div>
+</div>
+</details></section>
+
+<!-- 7. CIRURGIA -->
+<section id="cirurgia"><details>
+<summary><span class="ico">🔪</span> Cirurgia — posição, preparo e passo a passo <span class="chev">›</span></summary>
+<div class="body">
+<h4>Que operação para qual tumor</h4>
+<div class="tbl"><table>
+<tr><th>Localização</th><th>Ressecção</th><th>Reconstrução</th></tr>
+<tr><td>Antro / distal</td><td><b>Gastrectomia subtotal (distal)</b></td><td>Billroth II ou <b>Y de Roux</b></td></tr>
+<tr><td>Corpo proximal / difuso</td><td><b>Gastrectomia total</b></td><td>Esofagojejuno em <b>Y de Roux</b></td></tr>
+<tr><td>Cárdia / JEG (Siewert)</td><td>Esofagogastrectomia</td><td>Conforme Siewert I–III</td></tr>
+<tr><td>T1a mucoso &lt;2cm, sem úlcera/ILV</td><td><b>ESD/EMR endoscópica</b></td><td>—</td></tr>
+</table></div>
+
+<div class="hot"><span class="tag">◆ tema quente · margens</span>
+Margem proximal <b>≥ 5 cm</b> (Lauren intestinal) e <b>≥ 6–8 cm</b> (difuso/linite). Sempre <b>congelação transoperatória</b> das margens.</div>
+
+<h4>Posição & preparo</h4>
+<ul>
+<li>Decúbito dorsal, <b>proclive reverso de Trendelenburg</b> leve; membros em abdução (posição francesa na VLP — cirurgião entre as pernas)</li>
+<li>Anestesia geral + IOT; <b>SNG</b>, sonda vesical; <b>antibioticoprofilaxia</b> (cefazolina na indução); profilaxia de TEV; normotermia</li>
+<li>Inventário: <b>videolaparoscopia + citologia/lavado peritoneal</b> antes de ressecar (afasta carcinomatose oculta)</li>
+</ul>
+
+<h4>Passo a passo — gastrectomia com linfadenectomia D2</h4>
+<div class="green"><span class="tag">tradução simples</span>A gastrectomia oncológica é <strong>uma dissecção linfonodal que por acaso retira o estômago</strong>, e não o contrário. Cada vaso é ligado <strong>na origem</strong> — não porque isso facilite tirar o estômago, mas porque os linfonodos moram <em>ao redor da origem do vaso</em>. Quem liga o vaso perto do estômago faz uma gastrectomia; quem liga na origem faz uma cirurgia de câncer.</div>
+
+<div class="stx">
+
+<div class="st">
+<span class="fase">fase de estadiamento</span>
+<div class="ttl">Acesso e inventário com lavado peritoneal</div>
+<p>Mediana supraumbilical ou portais de VLP. Inspeção do fígado, de toda a superfície peritoneal, goteiras e pelve. <strong>Lavado peritoneal para citologia</strong> antes de qualquer manipulação do tumor.</p>
+<div class="pq"><b>por quê</b><strong>Citologia peritoneal positiva é doença M1</strong>, mesmo sem nódulo visível — e muda a operação de curativa para paliativa. Colher o lavado <em>antes</em> de manipular evita tanto o falso-negativo por diluição quanto a dúvida de ter sido você quem semeou.</div>
+</div>
+
+<div class="st">
+<span class="fase">fase de exposição</span>
+<div class="ttl">Omentectomia e abertura da retrocavidade</div>
+<p>Separar o grande omento do <strong>cólon transverso</strong> no plano embrionário avascular, entrando na retrocavidade dos epíploons. Na D2 clássica, a <strong>bursectomia</strong> (folheto posterior) já não é rotina.</p>
+<div class="pq"><b>por quê</b>O omento é retirado porque compartilha a drenagem linfática da grande curvatura. O plano entre omento e cólon é avascular — quem entra fora dele sangra do mesocólon e arrisca lesar a <strong>cólica média</strong>, que corre logo abaixo.</div>
+<div class="mh2">
+<div class="mh e"><b>mão esquerda</b>Tração do omento para cima; o auxiliar faz contratração do cólon transverso para baixo</div>
+<div class="mh d"><b>mão direita</b>Selante bipolar ou harmônico no plano avascular</div>
+</div>
+</div>
+
+<div class="st">
+<span class="fase">fase vascular direita</span>
+<div class="ttl">Gastroepiploica direita na origem — estação <span class="pill n1">6</span></div>
+<p>Seguir a gastroepiploica direita até sua <strong>origem na gastroduodenal</strong> e ligá-la ali, colhendo o tecido linfonodal infrapilórico. Cuidado com o <strong>tronco gastrocólico de Henle</strong>, imediatamente adjacente.</p>
+<div class="pq"><b>por quê</b>A estação 6 fica exatamente na raiz do vaso. Ligar rente ao estômago deixa os linfonodos infrapilóricos <em>in situ</em> — falha oncológica silenciosa, que só aparece como recidiva. E o Henle está ali do lado: sua avulsão é a hemorragia clássica deste tempo.</div>
+</div>
+
+<div class="st">
+<span class="fase">fase do hilo hepático</span>
+<div class="ttl">Gástrica direita <span class="pill n1">5</span> e ligamento hepatoduodenal <span class="pill n2">12a</span></div>
+<p>Ligar a <strong>gástrica direita junto à hepática própria</strong> (estação 5) e esqueletizar a face esquerda do ligamento hepatoduodenal ao longo da <strong>artéria hepática própria</strong> (estação 12a).</p>
+<div class="pq"><b>por quê</b>É aqui que se define a diferença entre D1 e D2 no lado direito. E é aqui que mora a armadilha anatômica: <strong>hepática esquerda substituta</strong> no ligamento gastro-hepático (pars flaccida) — ligá-la por engano causa isquemia hepática esquerda.</div>
+<div class="mh2">
+<div class="mh e"><b>mão esquerda</b>Vessel loop na hepática própria; tração medial do tecido linfonodal em direção à peça</div>
+<div class="mh d"><b>mão direita</b>Mixter e clipes; dissecção romba com peanut</div>
+</div>
+</div>
+
+<div class="st">
+<span class="fase">fase de secção distal</span>
+<div class="ttl">Secção duodenal</div>
+<p>Grampeador linear <strong>1–2 cm distal ao piloro</strong>. Considerar reforço da linha de grampos.</p>
+<div class="pq"><b>por quê</b>A margem distal raramente é problema oncológico — o problema é o <strong>coto duodenal</strong>. Ele será fechado às cegas e é sede de uma das fístulas mais graves da cirurgia gástrica, com débito enzimático alto e difícil controle.</div>
+</div>
+
+<div class="st">
+<span class="fase">fase vascular superior — o coração da D2</span>
+<div class="ttl">Esqueletizar hepática comum <span class="pill n2">8a</span> e tronco celíaco <span class="pill n2">9</span></div>
+<p>Dissecar a borda superior do pâncreas expondo a <strong>artéria hepática comum</strong> em toda a extensão (8a) e seguir até o <strong>tronco celíaco</strong> (9), removendo o tecido linfonodal em bloco em direção à peça.</p>
+<div class="pq"><b>por quê</b>São as estações que <strong>definem</strong> a D2 e são vizinhas da borda superior do pâncreas. Dissecção com energia excessiva sobre o parênquima é a causa da <strong>fístula pancreática pós-D2</strong> — a complicação mais característica desta operação, e a razão de a esplenopancreatectomia de rotina ter sido abandonada.</div>
+</div>
+
+<div class="st">
+<span class="fase">passo oncológico-chave</span>
+<div class="ttl">Ligadura da gástrica esquerda <em>na origem</em> — estação <span class="pill n2">7</span></div>
+<p>Identificar a <strong>artéria gástrica esquerda</strong> na sua emergência do tronco celíaco e ligá-la <strong>ali</strong>, incorporando a estação 7 à peça. A <strong>veia gástrica esquerda (coronária)</strong> costuma estar imediatamente anterior — ligar separadamente.</p>
+<div class="pq"><b>por quê</b>É <strong>o</strong> passo da operação. A estação 7 é a de maior chance de acometimento, e ligar a artéria na origem é o que a incorpora à peça. Ligar perto do estômago é tecnicamente mais fácil, mais rápido e oncologicamente inadequado — a diferença entre uma gastrectomia e uma gastrectomia com D2 se decide neste gesto.</div>
+<div class="mh2">
+<div class="mh e"><b>mão esquerda</b>Tração do estômago para cima e para a esquerda, expondo a pequena curvatura e a raiz do vaso</div>
+<div class="mh d"><b>mão direita</b>Mixter passando ligadura dupla <span class="fio">seda 2-0</span>; clipes no coto proximal</div>
+</div>
+</div>
+
+<div class="st">
+<span class="fase">fase vascular esquerda</span>
+<div class="ttl">Curvatura maior: gastroepiploica esquerda e gástricas curtas <span class="pill n2">10</span><span class="pill n2">11</span></div>
+<p>Ligar a gastroepiploica esquerda e as <strong>gástricas curtas</strong>, dissecando ao longo da <strong>artéria esplênica</strong> (11) e, na gastrectomia total, o <strong>hilo esplênico</strong> (10).</p>
+<div class="pq"><b>por quê</b>Aqui está a mudança de conduta mais cobrada: as estações 10 e 11 são vizinhas do baço e da cauda do pâncreas, e antigamente eram abordadas com <strong>esplenopancreatectomia de rotina</strong>. Ensaios mostraram <strong>mais morbidade sem ganho de sobrevida</strong>. Hoje só se ressecam baço e pâncreas em caso de <strong>invasão direta</strong>.</div>
+</div>
+
+<div class="st">
+<span class="fase">fase de secção proximal</span>
+<div class="ttl">Margem proximal com congelação</div>
+<p>Subtotal: secção gástrica proximal. Total: secção do <strong>esôfago</strong>. Margem proximal desejada: <strong>≥5 cm no tipo intestinal</strong> e <strong>≥8 cm no difuso</strong>. <strong>Congelação da margem sempre.</strong></p>
+<div class="pq"><b>por quê</b>A margem maior no difuso não é excesso de zelo: o tipo difuso (anel de sinete, <em>CDH1</em>) infiltra a submucosa <strong>muito além do que a lesão aparenta</strong> — é a mesma biologia da linite plástica. A congelação existe porque o olho e o dedo subestimam essa extensão.</div>
+</div>
+
+<div class="st">
+<span class="fase">fase de reconstrução</span>
+<div class="ttl">Y de Roux — subtotal ou esofagojejunostomia</div>
+<p><strong>Subtotal</strong>: Billroth II ou <strong>Y de Roux</strong> (preferida). <strong>Total</strong>: <strong>esofagojejunostomia em Y de Roux</strong>, habitualmente com grampeador circular (<span class="fio">EEA</span>), alça alimentar de <strong>50–60 cm</strong>.</p>
+<div class="pq"><b>por quê</b>Sem estômago não há reservatório nem barreira ao refluxo — a alça longa em Y é o que impede a <strong>esofagite alcalina</strong>, que num esôfago sem defesa é incapacitante. Por isso o Y de Roux é praticamente obrigatório na total, e não apenas preferível.</div>
+</div>
+
+<div class="st">
+<span class="fase">fase de verificação</span>
+<div class="ttl">Teste de estanqueidade, dreno e conferência da peça</div>
+<p>Testar a anastomose (azul de metileno ou ar sob líquido). Revisar hemostasia. Dreno <strong>seletivo</strong>. Conferir a peça e <strong>contar os linfonodos</strong>: mínimo de <strong>15–16</strong> para estadiamento adequado.</p>
+<div class="pq"><b>por quê</b>A <strong>esofagojejunostomia é a anastomose de maior risco</strong> de toda a cirurgia digestiva alta — esôfago não tem serosa, e sua fístula é a complicação mais letal da gastrectomia total. E a contagem de linfonodos é medida de qualidade: menos de 15 pode significar subestadiamento, não ausência de doença.</div>
+</div>
+
+</div>
+
+<div class="hot"><span class="tag">◆ as 3 checagens antes de reconstruir</span>
+<strong>1)</strong> A gástrica esquerda foi ligada <strong>na origem</strong>?<br>
+<strong>2)</strong> A margem proximal voltou negativa na congelação?<br>
+<strong>3)</strong> Baço e pâncreas foram preservados (sem invasão direta)?
+</div>
+</div>
+</details></section>
+
+<!-- 8. MÃOS/FIOS -->
+<section id="maos"><details>
+<summary><span class="ico">🧤</span> Mãos, pinças e fios <span class="chev">›</span></summary>
+<div class="body">
+<div class="tbl"><table>
+<tr><th>Momento</th><th>Mão esquerda (exposição)</th><th>Mão direita (ação)</th></tr>
+<tr><td>Exposição gástrica</td><td>Pinça de <b>Duval</b> / <b>Babcock</b> no estômago; afastador (Balfour/válvula)</td><td>Tração/contra-tração do omento</td></tr>
+<tr><td>Dissecção linfonodal</td><td>Preensão do tecido a esqueletizar</td><td><b>Tesoura Metzenbaum</b>, eletrocautério, <b>LigaSure/Harmonic</b></td></tr>
+<tr><td>Ligadura vascular</td><td>Apresenta o vaso</td><td>Clipe / energia / <b>fio seda 2-0/3-0</b> + nó</td></tr>
+<tr><td>Secção duodeno/esôfago</td><td>Estabiliza a alça</td><td><b>Grampeador linear (GIA/TA)</b></td></tr>
+<tr><td>Anastomose</td><td>Aproxima cotos / tutor</td><td><b>Porta-agulha</b> + sutura; ou <b>grampeador circular (EEA)</b></td></tr>
+</table></div>
+
+<h4>Tabela de fios</h4>
+<div class="tbl"><table>
+<tr><th>Estrutura</th><th>Fio sugerido</th><th>Observação</th></tr>
+<tr><td>Ligadura de vaso nomeado</td><td>Seda 2-0 / 3-0 ou clipe/energia</td><td>Reforço da gástrica esq. na origem</td></tr>
+<tr><td>Anastomose (plano interno)</td><td><b>Monofilamentar absorvível</b> — PDS 3-0/4-0 ou Vicryl 3-0</td><td>Chuleio ou pontos separados</td></tr>
+<tr><td>Anastomose (seromuscular)</td><td>Seda 3-0 / Lembert</td><td>Plano de reforço</td></tr>
+<tr><td>Aponeurose</td><td><b>PDS ou Prolene 1</b></td><td>Sutura contínua (regra 4:1)</td></tr>
+<tr><td>Pele</td><td>Náilon 3-0/4-0 ou grampos</td><td>—</td></tr>
+</table></div>
+</div>
+</details></section>
+
+<!-- 9. NEOADJ -->
+<section id="neoadj"><details>
+<summary><span class="ico">💊</span> Tratamento oncológico (neo/adjuvante) <span class="chev">›</span></summary>
+<div class="body">
+<div class="hot"><span class="tag">◆ tema quente · quimioterapia perioperatória</span>
+<b>FLOT</b> (5-FU + leucovorina + oxaliplatina + docetaxel) perioperatório é o <b>padrão atual</b> para tumores <b>≥ cT2 ou N+</b> ressecáveis — o trial <b>FLOT4</b> superou o esquema ECF/ECX do antigo <b>MAGIC</b>, com melhor sobrevida global.</div>
+<ul>
+<li><b>Adjuvante (quando não fez neo):</b> quimiorradioterapia (INT-0116/Macdonald) ou quimio adjuvante — <b>CLASSIC</b> (capecitabina+oxaliplatina, pós-D2) e <b>ACTS-GC</b> (S-1, Ásia)</li>
+<li><b>HER2+ (metastático):</b> <b>trastuzumabe</b> + quimio — trial <b>ToGA</b></li>
+<li><b>Metastático 1ª linha:</b> imunoterapia — <b>nivolumabe</b> + quimio (<b>CheckMate-649</b>) conforme PD-L1 (CPS); pembrolizumabe em cenários selecionados</li>
+<li><b>Paliação de obstrução/sangramento:</b> gastrojejunostomia, stent endoscópico, RT hemostática</li>
+</ul>
+<figure>
+<svg viewBox="0 0 560 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Fluxo perioperatório FLOT">
+<style>.bx{rx:10;fill:#1b1b27;stroke:#f97316;stroke-width:2}.bx2{fill:#1b1b27;stroke:#a855f7;stroke-width:2}.tx{fill:#e8e8f0;font-family:Inter;font-size:12px;font-weight:600;text-anchor:middle}.ar{stroke:#22d3ee;stroke-width:2;marker-end:url(#ah)}</style>
+<defs><marker id="ah" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#22d3ee"/></marker></defs>
+<rect x="20" y="40" width="150" height="44" rx="10" fill="#1b1b27" stroke="#f97316" stroke-width="2"/>
+<text class="tx" x="95" y="60">FLOT neoadj.</text><text class="tx" x="95" y="76" font-size="10" fill="#9494ab">4 ciclos</text>
+<line class="ar" x1="172" y1="62" x2="205" y2="62"/>
+<rect x="207" y="40" width="150" height="44" rx="10" fill="#1b1b27" stroke="#a855f7" stroke-width="2"/>
+<text class="tx" x="282" y="60">Gastrectomia + D2</text>
+<line class="ar" x1="359" y1="62" x2="392" y2="62"/>
+<rect x="394" y="40" width="150" height="44" rx="10" fill="#1b1b27" stroke="#f97316" stroke-width="2"/>
+<text class="tx" x="469" y="60">FLOT adj.</text><text class="tx" x="469" y="76" font-size="10" fill="#9494ab">4 ciclos</text>
+</svg>
+<figcaption>Esquema perioperatório FLOT4 (≥cT2/N+)</figcaption>
+</figure>
+</div>
+</details></section>
+
+<!-- 10. COMPLICAÇÕES -->
+<section id="complic"><details>
+<summary><span class="ico">🩹</span> Complicações <span class="chev">›</span></summary>
+<div class="body">
+<h4>Precoces</h4>
+<ul>
+<li><b>Fístula/deiscência de anastomose</b> — a <b>esofagojejunal</b> (gastrectomia total) é a mais temida</li>
+<li>Sangramento, abscesso subfrênico, <b>fístula pancreática</b> (dissecção D2 agressiva), lesão esplênica</li>
+<li>Atonia/retardo do esvaziamento gástrico</li>
+</ul>
+<h4>Tardias</h4>
+<div class="grid">
+<div class="gc"><h5>Dumping</h5><p><b>Precoce</b> (osmótico, 15–30 min) e <b>tardio</b> (hipoglicemia reativa, 1–3 h). Manejo dietético.</p></div>
+<div class="gc"><h5>Alça aferente</h5><p>Síndrome da alça aferente (Billroth II) — dor + vômito bilioso em jato.</p></div>
+<div class="gc"><h5>Refluxo alcalino</h5><p>Gastrite/esofagite biliar — Y de Roux corrige melhor que BII.</p></div>
+<div class="gc"><h5>Carências</h5><p><b>B12</b> (repor vitalício na total), ferro, anemia, osteoporose.</p></div>
+<div class="gc"><h5>Colelitíase</h5><p>Por vagotomia/denervação — cálculos biliares.</p></div>
+<div class="gc"><h5>Câncer de coto</h5><p>Vigilância endoscópica &gt;15 anos.</p></div>
+</div>
+</div>
+</details></section>
+
+<!-- 11. BANCAS -->
+<section id="banca"><details>
+<summary><span class="ico">🎓</span> Alta recorrência nas bancas do RS <span class="chev">›</span></summary>
+<div class="body">
+<p style="color:var(--muted);font-size:.86rem">Temas que <b>historicamente mais reincidem</b> em HCPA · GHC · Santa Casa POA · PUC-RS · AMRIGS (padrão de cobrança, não questões literais):</p>
+<div class="tbl"><table>
+<tr><th>Banca</th><th>Foco típico</th></tr>
+<tr><td><b>HCPA</b></td><td>Estadiamento/conduta por T (early → ESD; avançado → D2), papel da ecoendoscopia e da laparoscopia estadiadora; FLOT perioperatório</td></tr>
+<tr><td><b>GHC</b></td><td>Fatores de risco (H. pylori, cascata de Correa), Borrmann e Lauren, sinais de metástase (Virchow, Krukenberg)</td></tr>
+<tr><td><b>Santa Casa POA</b></td><td>Técnica: margens, tipo de gastrectomia por localização, reconstrução Y de Roux vs Billroth</td></tr>
+<tr><td><b>PUC-RS</b></td><td>D1 vs D2 e a controvérsia esplenectomia; nº mínimo de linfonodos; anel de sinete/linite</td></tr>
+<tr><td><b>AMRIGS</b></td><td>Clínica + rastreio, síndromes hereditárias (CDH1), complicações pós-gastrectomia (dumping, B12)</td></tr>
+</table></div>
+<div class="warn">⚠ Não tenho o banco literal das provas aqui — mapeei os <b>eixos de cobrança recorrentes</b>. Se tu colar as questões dos últimos 4 anos (PDF/texto), eu cruzo tema-a-tema e marco a frequência real por banca.</div>
+</div>
+</details></section>
+
+<!-- 12. MNEMÔNICOS -->
+<section id="mnem"><details open>
+<summary><span class="ico">🧠</span> Grade de mnemônicos <span class="chev">›</span></summary>
+<div class="body">
+<div class="grid">
+<div class="gc"><h5>Metástases "à distância"</h5><p><b>V-M-K-B-I</b><br><b>V</b>irchow · <b>M</b>aria José (irmã) · <b>K</b>rukenberg · <b>B</b>lumer · <b>I</b>rish</p></div>
+<div class="gc"><h5>Lauren</h5><p><b>Difuso = D de "Desgraça"</b><br>jovem, mulher, anel de sinete, CDH1, linite, pior prognóstico.<br>Intestinal = idoso + H. pylori + melhor.</p></div>
+<div class="gc"><h5>Borrmann III</h5><p>"<b>3 = o mais comum</b>" — ulcerado infiltrativo. IV = linite ("garrafa de couro").</p></div>
+<div class="gc"><h5>Margem</h5><p><b>5 e 8</b> → <b>5 cm</b> intestinal, <b>8 cm</b> difuso.</p></div>
+<div class="gc"><h5>D2 = "7-8-9"</h5><p>O coração da D2 são as estações <b>7 (gástrica esq), 8 (hepática comum), 9 (celíaco)</b> + 11/12.</p></div>
+<div class="gc"><h5>Perioperatório</h5><p><b>FLOT</b> = "<b>F</b>oi o <b>L</b>ance que <b>O</b>usou <b>T</b>ombar o MAGIC" (≥cT2/N+).</p></div>
+</div>
+</div>
+</details></section>
+
+<footer>
+carolzita · Neoplasia Gástrica v1 · Sabiston 21ª · Zollinger's Surgical Ops 11ª · Netter · JGCA/AJCC 8ª<br>
+FLOT4 (Al-Batran) · Dutch D1D2 (Songun) · ToGA (Bang) · CheckMate-649 · CLASSIC · gerado por Claudinho 🩺
+</footer>
+
+</div>
+
+<script>
+// abre a seção alvo ao clicar na nav
+document.querySelectorAll('nav a').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const id=a.getAttribute('href').slice(1);
+    const det=document.querySelector('#'+id+' details');
+    if(det) det.open=true;
+  });
+});
+</script>
+</body>
+</html>

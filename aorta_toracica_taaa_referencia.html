@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aneurisma de Aorta Torácica &amp; Toracoabdominal — carolzita</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0f; --bg2:#12121a; --card:#16161f; --card2:#1c1c27;
+  --line:#2a2a38; --txt:#e6e6ef; --muted:#9a9ab0;
+  --laranja:#f97316; --laranja-bg:rgba(249,115,22,.10);
+  --roxo:#a855f7; --roxo-bg:rgba(168,85,247,.10);
+  --ciano:#22d3ee; --ciano-bg:rgba(34,211,238,.10);
+  --verde:#34d399; --vermelho:#f87171; --amarelo:#fbbf24;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(1200px 600px at 50% -10%,#15151f 0%,var(--bg) 60%);color:var(--txt);font-family:'Inter',sans-serif;line-height:1.55;padding:0 0 80px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px}
+header{padding:40px 0 24px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(28px,6vw,44px);line-height:1.05;margin:8px 0 6px;letter-spacing:-.02em}
+.sub{color:var(--muted);font-size:15px;max-width:730px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tag{font-family:'JetBrains Mono',monospace;font-size:11px;padding:5px 10px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted)}
+.tag.r{color:var(--roxo);border-color:rgba(168,85,247,.35);background:var(--roxo-bg)}
+section{margin-top:14px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:12px;overflow:hidden;transition:border-color .2s}
+details[open]{border-color:rgba(249,115,22,.30)}
+summary{cursor:pointer;list-style:none;padding:18px 20px;display:flex;align-items:center;gap:13px;font-family:'Syne',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em;user-select:none}
+summary::-webkit-details-marker{display:none}
+.num{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--bg);background:var(--laranja);width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:0 0 auto}
+.chev{margin-left:auto;color:var(--muted);transition:transform .25s;font-size:14px}
+details[open] .chev{transform:rotate(90deg)}
+.body{padding:4px 22px 24px;font-size:15px}
+.body p{margin:10px 0}
+.body h4{font-family:'Syne',sans-serif;font-size:16px;color:var(--laranja);margin:20px 0 8px;letter-spacing:-.01em}
+.body ul{margin:8px 0 8px 4px;list-style:none}
+.body li{padding:4px 0 4px 20px;position:relative}
+.body li::before{content:"▸";position:absolute;left:0;color:var(--laranja);font-size:12px;top:6px}
+.body strong{color:#fff;font-weight:600}
+.simple{color:var(--verde);font-style:italic;font-size:.94em;display:block;margin:6px 0}
+.box.simplebox{background:rgba(52,211,153,.09);border-color:rgba(52,211,153,.32);color:var(--verde);font-style:italic}
+.box.simplebox .lbl{color:var(--verde);font-style:normal}
+.box.simplebox strong{color:#7fe8c0;font-style:normal}
+.stx{counter-reset:st;margin:12px 0}
+.st{counter-increment:st;background:var(--card2);border:1px solid var(--line);border-radius:13px;padding:14px 16px 14px 52px;margin:11px 0;position:relative}
+.st::before{content:counter(st);position:absolute;left:14px;top:13px;width:26px;height:26px;border-radius:8px;background:var(--laranja);color:#0a0a0f;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center}
+.st .fase{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:var(--laranja);display:block;margin-bottom:1px}
+.st .ttl{font-weight:700;font-size:15.5px;color:#fff;margin-bottom:4px}
+.st p{margin:5px 0;font-size:14px}
+.pq{border-left:3px solid var(--roxo);background:var(--roxo-bg);border-radius:0 9px 9px 0;padding:8px 12px;margin:9px 0;font-size:13.5px}
+.pq b{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.3px;text-transform:uppercase;color:var(--roxo);display:block;margin-bottom:2px}
+.mh2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:9px}
+.mh{border-radius:9px;padding:8px 11px;font-size:12.5px;border:1px solid var(--line)}
+.mh.e{background:rgba(52,211,153,.07);border-color:rgba(52,211,153,.3)}
+.mh.d{background:var(--laranja-bg);border-color:rgba(249,115,22,.3)}
+.mh b{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;display:block;margin-bottom:2px}
+.mh.e b{color:var(--verde)} .mh.d b{color:var(--laranja)}
+.fio{font-family:'JetBrains Mono',monospace;font-size:11.5px;background:var(--roxo-bg);color:var(--roxo);border:1px solid rgba(168,85,247,.35);padding:1px 6px;border-radius:5px;white-space:nowrap}
+@media(max-width:640px){.mh2{grid-template-columns:1fr}}
+.box{border-radius:12px;padding:13px 15px;margin:14px 0;font-size:14px;border:1px solid}
+.box.prova{background:var(--roxo-bg);border-color:rgba(168,85,247,.35)}
+.box.prova .lbl{color:var(--roxo)}
+.box.mac{background:var(--ciano-bg);border-color:rgba(34,211,238,.35)}
+.box.mac .lbl{color:var(--ciano)}
+.box.warn{background:rgba(248,113,113,.08);border-color:rgba(248,113,113,.3)}
+.box.warn .lbl{color:var(--vermelho)}
+.lbl{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-family:'JetBrains Mono',monospace;font-size:10px;background:rgba(168,85,247,.2);color:var(--roxo);padding:2px 7px;border-radius:6px;margin-left:6px;white-space:nowrap}
+.tbl{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
+.tbl table{width:100%;border-collapse:collapse;min-width:520px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--laranja);background:var(--card2)}
+td strong{color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin:14px 0}
+.gcard{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+.gcard .t{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--ciano);margin-bottom:4px}
+.gcard .d{font-size:13px;color:var(--muted)}
+.hands{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.hand{border-radius:12px;padding:14px;border:1px solid var(--line)}
+.hand.e{background:rgba(34,211,238,.06);border-color:rgba(34,211,238,.25)}
+.hand.d{background:rgba(249,115,22,.06);border-color:rgba(249,115,22,.25)}
+.hand .ht{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;font-weight:700}
+.hand.e .ht{color:var(--ciano)} .hand.d .ht{color:var(--laranja)}
+.hand li{font-size:13px}
+.steps{counter-reset:s;margin:10px 0}
+.step{counter-increment:s;position:relative;padding:11px 0 11px 46px;border-bottom:1px dashed var(--line)}
+.step:last-child{border-bottom:none}
+.step::before{content:counter(s);position:absolute;left:0;top:9px;width:30px;height:30px;border-radius:9px;background:var(--laranja-bg);border:1px solid rgba(249,115,22,.4);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:grid;place-items:center}
+.step b{color:#fff}
+svg{max-width:100%;height:auto;display:block;margin:16px auto}
+.fig{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.fig .cap{font-size:12px;color:var(--muted);text-align:center;margin-top:8px;font-family:'JetBrains Mono',monospace}
+footer{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+footer .ref{font-family:'JetBrains Mono',monospace;font-size:12px;margin-top:8px}
+a{color:var(--laranja)}
+@media(max-width:560px){.hands{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">carolzita · cirurgia vascular · aorta</div>
+  <h1>Aneurisma de Aorta Torácica &amp; Toracoabdominal</h1>
+  <p class="sub">Da aorta ascendente à bifurcação: segmentos torácicos, <strong>classificação de Crawford (I–V)</strong> do toracoabdominal, limiares de intervenção por diâmetro/crescimento, reparo <strong>aberto</strong> (bypass átrio-femoral, reimplante de intercostais, perfusão visceral) × <strong>endovascular</strong> (TEVAR, F/B-EVAR) e o pesadelo da <strong>isquemia medular</strong>. Base: ACC/AHA 2022, ESVS 2024/2026, SVS TEVAR, e pegadinhas das 5 bancas do RS.</p>
+  <div class="tags">
+    <span class="tag">Crawford I–V</span>
+    <span class="tag">Adamkiewicz</span>
+    <span class="tag">TEVAR / F-BEVAR</span>
+    <span class="tag">Dreno liquórico</span>
+    <span class="tag">Marfan</span>
+    <span class="tag r">HCPA · GHC · SC-POA · PUC · AMRIGS</span>
+  </div>
+</header>
+
+<!-- 1 DEFINICOES -->
+<details open>
+  <summary><span class="num">1</span> Definições, anatomia &amp; epidemiologia <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>Aneurisma = dilatação <strong>focal e permanente</strong> com diâmetro <strong>≥1,5× o normal</strong> do segmento, envolvendo <strong>todas as camadas</strong> da parede (verdadeiro) <span class="simple">(a parede da aorta "estufa" como uma bexiga fraca, e todas as três camadas continuam ali — diferente do pseudoaneurisma, que é um vazamento contido)</span>.</p>
+
+    <h4>Segmentos da aorta torácica</h4>
+    <ul>
+      <li><strong>Aorta ascendente</strong> (raiz + tubular) — mais ligada a <strong>valva aórtica bicúspide</strong> e <strong>doenças do tecido conjuntivo</strong>.</li>
+      <li><strong>Arco aórtico</strong> — emergência dos troncos supra-aórticos.</li>
+      <li><strong>Aorta torácica descendente (DTA)</strong> — do istmo (após a subclávia esquerda) ao diafragma; mais <strong>degenerativa/aterosclerótica</strong>.</li>
+      <li><strong>Toracoabdominal (TAAA)</strong> — envolve simultaneamente aorta torácica descendente e abdominal, com os ramos viscerais/renais no trajeto. Representa ~3% dos aneurismas aórticos.</li>
+    </ul>
+
+    <div class="fig">
+      <svg viewBox="0 0 640 240" xmlns="http://www.w3.org/2000/svg">
+        <text x="320" y="16" fill="#9a9ab0" font-size="11" font-family="monospace" text-anchor="middle">segmentos da aorta &amp; ramos viscerais</text>
+        <path d="M180 40 C180 30 210 30 210 55 L210 90 C210 130 250 150 250 195 L250 220" fill="none" stroke="#f97316" stroke-width="10" stroke-linecap="round"/>
+        <path d="M205 46 C230 34 245 40 250 40" fill="none" stroke="#22d3ee" stroke-width="4"/>
+        <path d="M198 42 C210 30 214 34 214 34" fill="none" stroke="#22d3ee" stroke-width="4"/>
+        <text x="150" y="52" fill="#9a9ab0" font-size="10" font-family="monospace" text-anchor="end">ascendente</text>
+        <text x="270" y="40" fill="#22d3ee" font-size="10" font-family="monospace">arco / troncos</text>
+        <text x="150" y="110" fill="#9a9ab0" font-size="10" font-family="monospace" text-anchor="end">descendente</text>
+        <line x1="250" y1="150" x2="300" y2="150" stroke="#a855f7" stroke-width="3"/><text x="305" y="153" fill="#a855f7" font-size="10" font-family="monospace">tronco celíaco</text>
+        <line x1="250" y1="168" x2="300" y2="168" stroke="#a855f7" stroke-width="3"/><text x="305" y="171" fill="#a855f7" font-size="10" font-family="monospace">AMS</text>
+        <line x1="248" y1="185" x2="220" y2="185" stroke="#34d399" stroke-width="3"/><line x1="252" y1="185" x2="282" y2="185" stroke="#34d399" stroke-width="3"/><text x="305" y="188" fill="#34d399" font-size="10" font-family="monospace">renais</text>
+        <text x="150" y="200" fill="#9a9ab0" font-size="10" font-family="monospace" text-anchor="end">abdominal</text>
+        <line x1="150" y1="150" x2="250" y2="150" stroke="#2a2a38" stroke-dasharray="3 3"/><text x="120" y="153" fill="#fbbf24" font-size="9" font-family="monospace" text-anchor="end">diafragma</text>
+      </svg>
+      <div class="cap">O TAAA é desafiador porque a dilatação atravessa a origem dos ramos viscerais (celíaco, AMS) e renais — que precisam ser preservados/reimplantados na cirurgia.</div>
+    </div>
+
+    <h4>Fatores de risco &amp; história natural</h4>
+    <ul>
+      <li>HAS, tabagismo, aterosclerose, idade, sexo masculino, história familiar.</li>
+      <li>Crescem em média ~1-3 mm/ano; quanto maior, mais rápido cresce e mais rompe (lei de Laplace: tensão ∝ raio).</li>
+      <li>A maioria é <strong>assintomática</strong> — achado incidental em TC/RX de tórax.</li>
+    </ul>
+  </div>
+</details>
+
+<!-- 2 ETIOLOGIA & CRAWFORD -->
+<details>
+  <summary><span class="num">2</span> Etiologia &amp; classificação de Crawford (I–V) <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Etiologias (a banca gosta das associações)</h4>
+    <ul>
+      <li><strong>Degenerativa/aterosclerótica</strong> — mais comum na descendente/toracoabdominal.</li>
+      <li><strong>Tecido conjuntivo</strong>: <strong>Marfan</strong> (FBN1, fibrilina), <strong>Loeys-Dietz</strong> (TGFBR), <strong>Ehlers-Danlos vascular tipo IV</strong> (COL3A1) — aorta <strong>ascendente/raiz</strong>, jovens.</li>
+      <li><strong>Valva aórtica bicúspide</strong> — aneurisma da ascendente.</li>
+      <li><strong>Dissecção crônica</strong> (degeneração aneurismática pós-dissecção).</li>
+      <li><strong>Infecciosa (micótica)</strong>, <strong>aortite</strong> (Takayasu, arterite de células gigantes), pós-traumática.</li>
+    </ul>
+
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">HCPA · PUC-RS</span></span>Aneurisma da <strong>ascendente em jovem</strong> → pensar <strong>Marfan / bicúspide / Loeys-Dietz</strong>. <strong>Descendente/toracoabdominal em idoso HAS/tabagista</strong> → <strong>degenerativo/aterosclerótico</strong>.</div>
+
+    <h4>Classificação de Crawford (extensão do TAAA)</h4>
+    <div class="tbl"><table>
+      <tr><th>Extensão</th><th>Limite proximal</th><th>Limite distal</th><th>Observação</th></tr>
+      <tr><td><strong>I</strong></td><td>Abaixo da subclávia E</td><td>Acima das renais (até celíaco/AMS)</td><td>Poupa aorta infrarrenal</td></tr>
+      <tr><td><strong>II</strong></td><td>Abaixo da subclávia E</td><td>Até a bifurcação aórtica</td><td><strong>Mais extensa · maior risco de paraplegia</strong></td></tr>
+      <tr><td><strong>III</strong></td><td>Abaixo de T6 (torácica distal)</td><td>Até a bifurcação</td><td></td></tr>
+      <tr><td><strong>IV</strong></td><td>Abaixo de T12 (diafragma)</td><td>Até a bifurcação</td><td><strong>Toda abdominal</strong></td></tr>
+      <tr><td><strong>V</strong> (Safi)</td><td>Abaixo de T6</td><td>Acima das renais</td><td>Adição de Safi</td></tr>
+    </table></div>
+
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">todas as bancas</span></span>Decore os extremos: <strong>Extent II</strong> = da subclávia E à bifurcação → <strong>a mais extensa e de maior risco de isquemia medular/paraplegia</strong>. <strong>Extent IV</strong> = do diafragma para baixo → toda abdominal, menor risco medular. Safi acrescentou a <strong>Extent V</strong>.</div>
+
+    <div class="box mac"><span class="lbl">macete Crawford</span>Pense de cima para baixo: <strong>I</strong> (subclávia→acima das renais), <strong>II</strong> (subclávia→bifurcação, "a maiorzona"), <strong>III</strong> (T6→bifurcação), <strong>IV</strong> (diafragma→bifurcação, só abdome), <strong>V</strong> (T6→acima das renais).</div>
+  </div>
+</details>
+
+<!-- 3 LIMIARES -->
+<details>
+  <summary><span class="num">3</span> Quadro clínico, rastreio &amp; limiares de intervenção <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Sintomas (quando há)</h4>
+    <ul>
+      <li><strong>Dor torácica/dorsal</strong> — expansão; dor nova/intensa = ameaça de ruptura.</li>
+      <li><strong>Compressão</strong>: rouquidão (nervo laríngeo recorrente E — <strong>sinal de Ortner</strong>), disfagia (esôfago), estridor/tosse (traqueia/brônquio), síndrome de veia cava superior.</li>
+      <li><strong>Ruptura</strong>: dor lancinante + choque — emergência.</li>
+    </ul>
+
+    <h4>Diagnóstico &amp; rastreio</h4>
+    <ul>
+      <li><strong>Angio-TC</strong> é o exame padrão (diâmetro, extensão, ramos, planejamento). RM como alternativa; ETE para raiz/ascendente.</li>
+      <li>Rastrear <strong>parentes de 1º grau</strong> e portadores de síndromes do conjuntivo/bicúspide.</li>
+    </ul>
+
+    <h4>Limiares para intervenção eletiva</h4>
+    <div class="tbl"><table>
+      <tr><th>Segmento / cenário</th><th>Limiar de reparo</th></tr>
+      <tr><td>Aorta <strong>ascendente</strong> degenerativa</td><td><strong>≥5,5 cm</strong> (≥5,0 cm em centros experientes / fatores de risco)</td></tr>
+      <tr><td>Ascendente com <strong>Marfan / bicúspide</strong></td><td><strong>≥5,0 cm</strong> (ou menor com risco — hist. familiar, crescimento, dissecção)</td></tr>
+      <tr><td>Aorta <strong>descendente / toracoabdominal</strong></td><td><strong>≥5,5–6,0 cm</strong> (limiar menor no conjuntivo)</td></tr>
+      <tr><td><strong>Crescimento rápido</strong></td><td><strong>&gt;0,5 cm/ano</strong> (ou &gt;5 mm/6 meses)</td></tr>
+      <tr><td><strong>Sintomático / roto</strong></td><td>Reparo <strong>independente do tamanho</strong></td></tr>
+    </table></div>
+
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">GHC · SC-POA · AMRIGS</span></span>Números-chave: <strong>ascendente ≥5,5 cm</strong> (≥5,0 se Marfan/bicúspide ou centro experiente); <strong>descendente/toracoabdominal ≥5,5–6,0 cm</strong>; <strong>crescimento &gt;0,5 cm/ano</strong>; <strong>sintomático = operar em qualquer tamanho</strong>. Limiares são <strong>menores nas doenças do tecido conjuntivo</strong>.</div>
+
+    <h4>Tratamento clínico (todos)</h4>
+    <ul>
+      <li><strong>Controle pressórico</strong> (betabloqueador; <strong>losartana/BRA</strong> no Marfan), <strong>estatina</strong>, <strong>cessação do tabagismo</strong>, controle de dislipidemia.</li>
+      <li><strong>Vigilância por imagem</strong> seriada conforme diâmetro e velocidade de crescimento.</li>
+    </ul>
+    <div class="box warn"><span class="lbl">⚠ pegadinha</span>Aneurisma <strong>sintomático</strong> (dor nova) ou <strong>roto</strong> não espera limiar de tamanho — <strong>opera</strong>. Dor torácica/dorsal nova em portador de aneurisma = ameaça de ruptura até prova em contrário.</div>
+  </div>
+</details>
+
+<!-- 4 ABERTO -->
+<details>
+  <summary><span class="num">4</span> Reparo aberto — técnica &amp; instrumentação <span class="chev">▶</span></summary>
+  <div class="body">
+<div class="box simplebox"><span class="lbl">tradução simples</span>O TAAA não é uma artéria — é um <strong>tronco que alimenta tudo</strong>: medula, rins, intestino, fígado. Trocar um segmento longo dele significa desligar, um por um, os órgãos que dependem desse trecho. A cirurgia inteira é uma corrida contra o relógio de cada órgão: <strong>quanto tempo cada um aguenta sem fluxo, e em que ordem você religa para que nenhum ultrapasse esse limite</strong>.</div>
+
+<h4>Posição &amp; acessos</h4>
+<ul>
+  <li><strong>Decúbito lateral direito modificado</strong> (tórax a ~60°, quadril mais plano) — permite toracotomia e laparotomia no mesmo campo.</li>
+  <li><strong>Toracofrenolaparotomia</strong> com secção do diafragma; ventilação monopulmonar (tubo de duplo lúmen) para colabar o pulmão esquerdo.</li>
+  <li>Ampla exposição retroperitoneal esquerda (rotação medial das vísceras).</li>
+</ul>
+
+<h4>Proteção de órgãos-alvo — o que reduz mortalidade e paraplegia</h4>
+<ul>
+  <li><strong>Bypass átrio-femoral esquerdo</strong> — perfusão distal durante o clampeamento, protege medula, rins e vísceras.</li>
+  <li><strong>Clampeamento sequencial</strong> — reduz o tempo de isquemia de cada território, ao custo de reoperar o clampe várias vezes.</li>
+  <li><strong>Perfusão visceral/renal seletiva</strong> (cateteres em celíaco, AMS, renais; solução renal fria).</li>
+  <li><strong>Reimplante das intercostais críticas</strong> (T8–L1, território de Adamkiewicz) em ilha de patch.</li>
+  <li><strong>Drenagem liquórica</strong> e hipotermia permissiva.</li>
+</ul>
+
+<div class="mh2">
+  <div class="mh e"><b>mão esquerda</b>DeBakey/vascular longa apreendendo a borda do enxerto e a parede aórtica; aspirador controlando o refluxo dos óstios; clampes vasculares para controle proximal/distal</div>
+  <div class="mh d"><b>mão direita</b>Porta-agulha com <span class="fio">Prolene 2-0 a 4-0</span>; tesoura de Potts na arteriotomia; cateteres de perfusão visceral</div>
+</div>
+
+<div class="stx">
+
+<div class="st">
+  <span class="fase">fase de controle</span>
+  <div class="ttl">Heparinização e controle proximal/distal</div>
+  <p>Clampes acima e abaixo do segmento a ser tratado.</p>
+  <div class="pq"><b>por quê</b>Diferente da dissecção tipo A, aqui não há parada circulatória total — o clampeamento delimita um segmento de cada vez, porque o resto da aorta continua perfundindo o corpo através do bypass átrio-femoral.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de abertura</span>
+  <div class="ttl">Abertura longitudinal do saco — técnica de inclusão</div>
+  <p>Não se resseca a parede aneurismática; o enxerto é colocado <strong>dentro</strong> do saco aberto.</p>
+  <div class="pq"><b>por quê</b>Ressecar toda a parede exigiria dissecar cada estrutura aderida ao aneurisma (esôfago, pulmão, veia ázigos) — um risco desnecessário. A técnica de inclusão trata apenas o lúmen, deixando a parede externa como envelope protetor, a mesma lógica de "fechar o saco sobre o enxerto" já vista no AAA infrarrenal, aqui aplicada desde o início da reconstrução.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase da anastomose proximal</span>
+  <div class="ttl">Tubo de Dacron à aorta sadia</div>
+  <p><span class="fio">Prolene</span>, ponto contínuo.</p>
+  <div class="pq"><b>por quê</b>Começar pela proximal estabelece o novo fluxo de entrada o quanto antes — cada anastomose completa é um território a menos dependendo só do bypass átrio-femoral.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase crítica — a medula</span>
+  <div class="ttl">Reimplante das intercostais críticas e do patch visceral</div>
+  <p>Reimplantar as intercostais de T8–L1 (Adamkiewicz) e o patch celíaco/AMS/renal direito, com perfusão seletiva enquanto se trabalha.</p>
+  <div class="pq"><b>por quê</b>É o passo que mais determina se o paciente anda depois da cirurgia. A medula tem irrigação segmentar e pouca reserva colateral nessa região — perder as intercostais erradas, ou deixá-las isquêmicas por tempo demais, é a causa direta de paraplegia. Reimplantar em <strong>ilha (patch)</strong>, e não uma a uma, reduz o número de anastomoses e o tempo total de isquemia de cada uma.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase renal</span>
+  <div class="ttl">Reimplante da renal esquerda com perfusão fria</div>
+  <p>Isolada ou dentro do patch, com solução de perfusão renal fria durante a reconstrução.</p>
+  <div class="pq"><b>por quê</b>A perfusão fria reduz a demanda metabólica do rim enquanto ele fica sem fluxo pulsátil normal — o mesmo princípio da preservação de órgão para transplante, aplicado in situ, durante a cirurgia.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase final — a reperfusão é o momento mais perigoso</span>
+  <div class="ttl">Anastomose distal e reperfusão sequencial</div>
+  <p>Desclampear devagar, corrigindo acidose e hipotensão à medida que cada território volta a ser perfundido.</p>
+  <div class="pq"><b>por quê</b>Cada território reperfundido devolve à circulação sistêmica o ácido lático e o potássio acumulados durante o clampeamento — reperfundir tudo de uma vez soma esses efeitos e pode ser fatal. Fazer sequencialmente distribui o impacto metabólico ao longo do tempo, dando à anestesia margem para corrigir cada onda antes da próxima.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de encerramento</span>
+  <div class="ttl">Hemostasia, fechamento do saco e reconstrução diafragmática</div>
+  <p>Fechar o saco sobre o enxerto; reconstruir o diafragma seccionado no acesso.</p>
+  <div class="pq"><b>por quê</b>O diafragma não é uma incisão qualquer — sua disfunção pós-operatória compromete a ventilação num paciente que já passou horas com um pulmão colabado; a reconstrução cuidadosa é o que evita insuficiência respiratória somada a todo o resto.</div>
+</div>
+
+</div>
+
+<div class="box warn"><span class="lbl">⚠ pegadinha</span>Anastomose aórtica é sempre com <strong>fio inabsorvível monofilamentar (Prolene)</strong> — jamais absorvível. Mortalidade eletiva do TAAA aberto ~6%, subindo para &gt;20% na ruptura.</div>
+  </div>
+</details>
+
+<!-- 5 ENDOVASCULAR & MEDULA -->
+<details>
+  <summary><span class="num">5</span> Endovascular (TEVAR / F-BEVAR) &amp; isquemia medular <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>TEVAR — descendente</h4>
+    <ul>
+      <li>Endoprótese via femoral/ilíaca; tornou-se a <strong>1ª opção para a torácica descendente</strong> com anatomia favorável.</li>
+      <li><strong>Zona de ancoragem proximal ≥20 mm</strong> de aorta sadia. Cobertura da <strong>subclávia esquerda (zona 2)</strong> pode exigir revascularização (bypass carótido-subclávio) para proteger braço/medula/circulação posterior.</li>
+      <li>Mortalidade em 30 dias <strong>menor que a cirurgia aberta</strong> (~2-5% × 10-20% em lesões comparáveis), mas exige <strong>vigilância por imagem vitalícia</strong> (endoleak, migração).</li>
+    </ul>
+
+    <h4>Endovascular do TAAA — dispositivos ramificados</h4>
+    <ul>
+      <li><strong>F-EVAR (fenestrado)</strong> e <strong>B-EVAR (ramificado)</strong> — preservam o fluxo de celíaco, AMS e renais por fenestras/ramos. Alternativa ao aberto em pacientes de alto risco cirúrgico.</li>
+    </ul>
+
+    <h4>Endoleaks (classificação — cobrada)</h4>
+    <div class="tbl"><table>
+      <tr><th>Tipo</th><th>Origem</th></tr>
+      <tr><td><strong>I</strong></td><td>Falha de selagem proximal (Ia) ou distal (Ib) — <strong>tratar</strong></td></tr>
+      <tr><td><strong>II</strong></td><td>Refluxo por ramo (intercostal/lombar) — o mais comum; observar se sem crescimento</td></tr>
+      <tr><td><strong>III</strong></td><td>Defeito/desconexão entre módulos — tratar</td></tr>
+      <tr><td><strong>IV</strong></td><td>Porosidade do tecido (precoce, transitório)</td></tr>
+      <tr><td><strong>V</strong></td><td>Endotensão (crescimento sem vazamento identificável)</td></tr>
+    </table></div>
+
+    <h4>Isquemia medular / paraplegia — o pesadelo</h4>
+    <p>Complicação temida do reparo torácico/toracoabdominal, por interrupção do suprimento da <strong>artéria espinhal anterior</strong>, alimentada pela <strong>artéria de Adamkiewicz</strong> (radicular magna, geralmente <strong>T8–L1, à esquerda</strong>). Risco maior na <strong>Extent II</strong>, cobertura extensa e reoperação.</p>
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">HCPA · GHC · PUC-RS</span></span>Prevenção de isquemia medular (decorar o pacote): <strong>drenagem liquórica (CSF)</strong>, <strong>aumento da PAM (alvo ≥85-90 mmHg)</strong>, <strong>reimplante de intercostais/lombares (Adamkiewicz)</strong>, <strong>reparo estagiado</strong>, <strong>perfusão aórtica distal</strong>, evitar hipotensão e anemia. A <strong>artéria de Adamkiewicz</strong> costuma originar-se entre <strong>T8 e L1</strong>.</div>
+    <div class="box mac"><span class="lbl">macete anti-paraplegia</span>"<strong>DRENA</strong>": <strong>D</strong>reno liquórico · <strong>R</strong>eimplante de intercostais · <strong>E</strong>levar PAM · <strong>N</strong>ão deixar anemiar/hipotenso · <strong>A</strong>ortic distal perfusion (bypass). Se déficit no pós-op → drenar liquor + subir a PAM imediatamente.</div>
+    <div class="box warn"><span class="lbl">⚠ pegadinha</span>Déficit neurológico de MMII no pós-operatório (paraparesia/paraplegia) = <strong>emergência</strong>: <strong>drenagem liquórica + aumento da PAM</strong> podem reverter. Não "observar".</div>
+  </div>
+</details>
+
+<!-- 6 QUESTOES -->
+<details>
+  <summary><span class="num">6</span> Questões de banca, pega-ratões &amp; mnemônicos <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>10 questões representativas (originais, estilo das 5 bancas)</h4>
+
+    <div class="box prova"><span class="lbl">Q1 <span class="banca">HCPA</span></span><strong>Qual extensão de Crawford é a mais extensa e de maior risco de paraplegia?</strong><br>Resposta: <strong>Extent II</strong> (subclávia esquerda até a bifurcação aórtica).</div>
+    <div class="box prova"><span class="lbl">Q2 <span class="banca">GHC</span></span><strong>Limiar de reparo eletivo da aorta torácica descendente degenerativa?</strong><br>Resposta: <strong>~5,5–6,0 cm</strong> (menor no tecido conjuntivo).</div>
+    <div class="box prova"><span class="lbl">Q3 <span class="banca">AMRIGS</span></span><strong>Artéria responsável pela irrigação medular crítica em cirurgia de aorta toracoabdominal?</strong><br>Resposta: <strong>artéria de Adamkiewicz</strong> (radicular magna, T8–L1), que alimenta a <strong>espinhal anterior</strong>.</div>
+    <div class="box prova"><span class="lbl">Q4 <span class="banca">PUC-RS</span></span><strong>Jovem com aneurisma de aorta ascendente. Etiologia mais provável?</strong><br>Resposta: <strong>doença do tecido conjuntivo (Marfan)</strong> ou <strong>valva aórtica bicúspide</strong>.</div>
+    <div class="box prova"><span class="lbl">Q5 <span class="banca">SC-POA</span></span><strong>Medidas de prevenção de isquemia medular no reparo toracoabdominal?</strong><br>Resposta: <strong>drenagem liquórica, aumento da PAM, reimplante de intercostais, perfusão distal, reparo estagiado</strong>.</div>
+    <div class="box prova"><span class="lbl">Q6 <span class="banca">HCPA</span></span><strong>Rouquidão em portador de aneurisma torácico — mecanismo?</strong><br>Resposta: <strong>compressão do nervo laríngeo recorrente esquerdo</strong> (sinal de Ortner).</div>
+    <div class="box prova"><span class="lbl">Q7 <span class="banca">GHC</span></span><strong>Tipo de endoleak mais comum após TEVAR e sua conduta habitual?</strong><br>Resposta: <strong>tipo II</strong> (refluxo por ramo) — observar se sem crescimento do saco.</div>
+    <div class="box prova"><span class="lbl">Q8 <span class="banca">AMRIGS</span></span><strong>Comprimento mínimo de zona de ancoragem proximal para TEVAR?</strong><br>Resposta: <strong>~20 mm</strong> de aorta sadia.</div>
+    <div class="box prova"><span class="lbl">Q9 <span class="banca">PUC-RS</span></span><strong>Como preservar os ramos viscerais no reparo endovascular do TAAA?</strong><br>Resposta: <strong>endoprótese fenestrada (F-EVAR) ou ramificada (B-EVAR)</strong>.</div>
+    <div class="box prova"><span class="lbl">Q10 <span class="banca">SC-POA</span></span><strong>Aneurisma torácico com dor dorsal nova. Conduta quanto ao tamanho?</strong><br>Resposta: <strong>sintomático = reparar independente do diâmetro</strong> (ameaça de ruptura).</div>
+
+    <h4>Pega-ratões (as armadilhas clássicas)</h4>
+    <div class="box warn"><span class="lbl">☠ trap 1</span><strong>Extent II</strong> = maior risco de paraplegia (não é o IV).</div>
+    <div class="box warn"><span class="lbl">☠ trap 2</span>Adamkiewicz = <strong>T8–L1</strong>, à esquerda; irriga a espinhal <strong>anterior</strong>.</div>
+    <div class="box warn"><span class="lbl">☠ trap 3</span>Limiar é <strong>menor</strong> no Marfan/bicúspide (~5,0 cm ascendente).</div>
+    <div class="box warn"><span class="lbl">☠ trap 4</span>Sintomático/roto → operar <strong>sem</strong> esperar tamanho.</div>
+    <div class="box warn"><span class="lbl">☠ trap 5</span>Paraplegia pós-op = <strong>drenar liquor + subir PAM</strong>, não observar.</div>
+    <div class="box warn"><span class="lbl">☠ trap 6</span>Endoleak <strong>tipo I e III</strong> tratam sempre; <strong>tipo II</strong> observa se estável.</div>
+    <div class="box warn"><span class="lbl">☠ trap 7</span>Anastomose aórtica = <strong>Prolene</strong> (inabsorvível), nunca absorvível.</div>
+    <div class="box warn"><span class="lbl">☠ trap 8</span>Cobertura da subclávia E (zona 2) pode exigir <strong>revascularização</strong>.</div>
+
+    <h4>Mnemônicos-resumo</h4>
+    <div class="box mac"><span class="lbl">macete geral</span>Crawford <strong>II = maior</strong> (subclávia→bifurcação, mais paraplegia) · limiares: ascendente <strong>5,5</strong> (5,0 Marfan/bicúspide), descendente/TAAA <strong>5,5-6,0</strong>, cresce <strong>&gt;0,5/ano</strong>, sintomático=opera · aberto: <strong>bypass átrio-femoral + clampe sequencial + reimplante intercostais + perfusão visceral</strong> · endo: <strong>TEVAR</strong> (seal ≥20 mm) / <strong>F-BEVAR</strong> · anti-medula <strong>DRENA</strong> (dreno liquor + PAM↑ + Adamkiewicz T8-L1) · anastomose <strong>Prolene</strong>.</div>
+  </div>
+</details>
+
+<footer>
+  <div><strong>carolzita</strong> · Aneurisma de Aorta Torácica &amp; Toracoabdominal · referência completa</div>
+  <div class="ref">Fontes: 2022 ACC/AHA Guideline for the Diagnosis and Management of Aortic Disease (Circulation) · ESVS 2024 (aorto-ilíaca) e 2026 (aorta torácica descendente/toracoabdominal) Clinical Practice Guidelines · SVS TEVAR Guidelines (J Vasc Surg 2021) · Crawford &amp; Safi (classificação) · Sabiston · Rutherford. Conteúdo educacional; questões são itens representativos originais.</div>
+</footer>
+</div>
+</body>
+</html>

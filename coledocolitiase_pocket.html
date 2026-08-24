@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Coledocolitíase — Pocket</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@600;800&display=swap');
+
+  :root {
+    --bg: #0f0f0f;
+    --surface: #1a1a1a;
+    --border: #2a2a2a;
+    --orange: #ff8c42;
+    --purple: #c084fc;
+    --cyan: #22d3ee;
+    --text: #e5e5e5;
+    --muted: #888;
+    --green: #4ade80;
+    --red: #f87171;
+    --yellow: #fbbf24;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+  html, body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Syne', sans-serif;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  /* TAB BAR */
+  .tab-bar {
+    display: flex;
+    overflow-x: auto;
+    background: var(--surface);
+    border-bottom: 2px solid var(--border);
+    scrollbar-width: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+  }
+
+  .tab-bar::-webkit-scrollbar { display: none; }
+
+  .tab {
+    flex-shrink: 0;
+    padding: 14px 18px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--muted);
+    cursor: pointer;
+    white-space: nowrap;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.5px;
+  }
+
+  .tab.active {
+    color: var(--orange);
+    border-bottom-color: var(--orange);
+    background: rgba(255,140,66,0.05);
+  }
+
+  /* PANELS */
+  .panels {
+    margin-top: 52px;
+    height: calc(100vh - 52px);
+    overflow: hidden;
+  }
+
+  .panel {
+    display: none;
+    height: 100%;
+    overflow-y: auto;
+    padding: 20px 16px 40px;
+  }
+
+  .panel.active { display: block; }
+
+  h2 {
+    font-size: 1.3rem;
+    color: var(--orange);
+    font-weight: 800;
+    margin-bottom: 16px;
+    border-left: 3px solid var(--orange);
+    padding-left: 12px;
+  }
+
+  h3 {
+    font-size: 1rem;
+    color: var(--cyan);
+    font-weight: 700;
+    margin: 16px 0 10px;
+  }
+
+  p, li { font-size: 15px; line-height: 1.65; margin-bottom: 8px; }
+
+  ul, ol { padding-left: 20px; margin-bottom: 12px; }
+
+  strong { color: var(--orange); }
+  .exam { color: var(--purple); font-weight: 700; }
+  .mnemonic { color: var(--cyan); font-weight: 700; }
+  .note { color: var(--muted); font-size: 13px; font-style: italic; }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px;
+    margin-bottom: 12px;
+  }
+
+  .card-orange { border-left: 3px solid var(--orange); }
+  .card-purple { border-left: 3px solid var(--purple); }
+  .card-cyan { border-left: 3px solid var(--cyan); }
+  .card-red { border-left: 3px solid var(--red); }
+  .card-green { border-left: 3px solid var(--green); }
+
+  .badge {
+    display: inline-block;
+    font-size: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+  }
+
+  .badge-purple { background: rgba(192,132,252,0.15); color: var(--purple); }
+  .badge-hcpa { background: #1e3a5f; color: #60a5fa; }
+  .badge-ghc { background: #1a3a2a; color: #4ade80; }
+  .badge-sc { background: #3a1a2a; color: #f472b6; }
+  .badge-puc { background: #2a1a3a; color: var(--purple); }
+  .badge-amrigs { background: #3a2a1a; color: var(--yellow); }
+
+  .step-row {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    margin-bottom: 12px;
+  }
+
+  .step-num {
+    background: var(--orange);
+    color: #000;
+    font-weight: 800;
+    font-size: 12px;
+    min-width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-family: 'JetBrains Mono', monospace;
+    margin-top: 2px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    font-family: 'JetBrains Mono', monospace;
+    margin: 10px 0;
+  }
+
+  th {
+    background: #222;
+    color: var(--orange);
+    padding: 9px 10px;
+    text-align: left;
+    border-bottom: 2px solid var(--orange);
+    font-size: 12px;
+  }
+
+  td {
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    font-size: 13px;
+  }
+
+  .mn-card {
+    background: rgba(34,211,238,0.07);
+    border: 1px solid rgba(34,211,238,0.2);
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 10px;
+  }
+
+  .mn-card .title { color: var(--cyan); font-weight: 700; font-size: 13px; margin-bottom: 5px; font-family: 'JetBrains Mono', monospace; }
+
+  .hand-section { margin-bottom: 16px; }
+  .hand-label {
+    font-size: 13px;
+    font-weight: 700;
+    padding: 8px 12px;
+    border-radius: 6px 6px 0 0;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .hand-left-label { background: rgba(255,140,66,0.12); color: var(--orange); }
+  .hand-right-label { background: rgba(34,211,238,0.12); color: var(--cyan); }
+
+  .hand-body {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: none;
+    border-radius: 0 0 6px 6px;
+    padding: 10px 14px;
+  }
+
+  .hand-body li { font-size: 14px; }
+</style>
+</head>
+<body>
+
+<div class="tab-bar">
+  <div class="tab active" onclick="show(0)">📌 Diagnóstico</div>
+  <div class="tab" onclick="show(1)">🏥 Preparo</div>
+  <div class="tab" onclick="show(2)">🔪 Passos</div>
+  <div class="tab" onclick="show(3)">🖐️ Mãos</div>
+  <div class="tab" onclick="show(4)">🧵 Suturas</div>
+  <div class="tab" onclick="show(5)">⚡ Complic.</div>
+  <div class="tab" onclick="show(6)">🧠 Mnemon.</div>
+</div>
+
+<div class="panels">
+
+  <!-- PANEL 0: DIAGNÓSTICO -->
+  <div class="panel active">
+    <h2>📌 Diagnóstico</h2>
+
+    <div class="card card-orange">
+      <strong>Definição:</strong> Cálculo(s) no ducto colédoco.
+      <ul style="margin-top:8px">
+        <li><strong>Secundária</strong> (mais comum) — migração da vesícula</li>
+        <li><strong>Primária</strong> (rara) — formação in situ, marrons, bactérias</li>
+      </ul>
+    </div>
+
+    <div class="card card-purple">
+      <div class="badge badge-purple">⭐ HIGH-YIELD</div><br>
+      Coledocolitíase em <strong>10–15%</strong> dos pacientes com colelitíase.<br>
+      <span class="exam">Cálculos retidos pós-colecistectomia: ~3%</span>
+    </div>
+
+    <h3>Apresentação Clínica</h3>
+
+    <div class="card card-orange">
+      <strong>Tríade de Charcot</strong><br>
+      <span class="mnemonic">FID</span> = Febre + Icterícia + Dor HCD
+    </div>
+
+    <div class="card card-red">
+      <strong>Pêntade de Reynolds</strong> (colangite grave)<br>
+      <span class="mnemonic">FID + HA</span> = Charcot + Hipotensão + Alteração consciência<br>
+      <span class="exam">→ UTI + drenagem EMERGÊNCIA</span>
+    </div>
+
+    <div class="card card-orange">
+      <strong>Icterícia flutuante</strong> = coledocolitíase<br>
+      <strong>Icterícia progressiva</strong> = pensar neoplasia
+    </div>
+
+    <h3>Laboratório</h3>
+    <ul>
+      <li>↑ Bilirrubina direta</li>
+      <li>↑ FA + GGT (colestase)</li>
+      <li>↑ TGO/TGP (obstrução aguda)</li>
+      <li>↑ Amilase/lipase (pancreatite)</li>
+      <li>↑ TP/INR (colestase prolongada)</li>
+    </ul>
+
+    <h3>Imagem</h3>
+    <ul>
+      <li><strong>USG</strong> → 1ª linha (baixa sensibilidade p/ cálculo no colédoco)</li>
+      <li><strong>ColangioRM (CPRM)</strong> → exame de escolha diagnóstico ≥90% acurácia</li>
+      <li><strong>CPER</strong> → padrão-ouro terapêutico</li>
+      <li><strong>EUS</strong> → cálculos pequenos, alto risco cirúrgico</li>
+    </ul>
+
+    <h3>Colangite — Tóquio (TG18)</h3>
+    <table>
+      <thead><tr><th>Grau</th><th>Conduta</th></tr></thead>
+      <tbody>
+        <tr><td style="color:var(--green)"><strong>I</strong></td><td>ATB + CPER eletiva (24–72h)</td></tr>
+        <tr><td style="color:var(--yellow)"><strong>II</strong></td><td>ATB + CPER precoce (≤24h)</td></tr>
+        <tr><td style="color:var(--red)"><strong>III</strong></td><td>UTI + ATB + drenagem emergencial</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- PANEL 1: PREPARO -->
+  <div class="panel">
+    <h2>🏥 Preparo Op.</h2>
+
+    <div class="card card-orange">
+      <strong>Posicionamento:</strong><br>
+      Decúbito dorsal · Braços em crucifixo · Coxim sob dorso direito · Trendelenburg reverso leve · Rotação mesa para esquerda
+    </div>
+
+    <div class="card card-orange">
+      <strong>Preparo:</strong>
+      <ul style="margin-top:6px">
+        <li>Jejum ≥6h sólidos / 2h líquidos claros</li>
+        <li>ATB profilático: Cefazolina 2g EV (30–60 min antes)</li>
+        <li>TVP: Heparina SC + meia compressiva</li>
+        <li>Sonda vesical (procedimento longo)</li>
+        <li>DEGERM + antissepsia com PVPI ou clorexidina alcoólica</li>
+      </ul>
+    </div>
+
+    <div class="card card-purple">
+      <div class="badge badge-purple">⭐ ATB colangite</div>
+      <ul style="margin-top:6px">
+        <li><strong>Leve/comunitária:</strong> Ampicilina-sulbactam ou Ceftriaxona + Metronidazol</li>
+        <li><strong>Grave/MDR:</strong> Pip-Tazo ou Meropenem</li>
+      </ul>
+      <span class="note">Germes: E. coli · Klebsiella · Enterococcus · Bacteroides · Clostridium</span>
+    </div>
+
+    <h3>Instrumentação</h3>
+    <ul>
+      <li>Afastador de Balfour / Richardson / Deaver</li>
+      <li>Pinça de Babcock, Kelly, Allis</li>
+      <li>Bisturi frio lâmina 15</li>
+      <li>Tesoura Metzenbaum</li>
+      <li>Pinça de Randall (cureta biliar)</li>
+      <li>Sonda de Fogarty</li>
+      <li>Coledocoscópio (se disponível)</li>
+      <li>Dreno de Kehr (T-tube) — tamanho 14–16F</li>
+      <li>Cateter para colangiografia + contraste iodado</li>
+    </ul>
+
+    <h3>Estratégia</h3>
+    <div class="card card-orange">
+      <strong>2 tempos (mais comum no Brasil):</strong><br>
+      1º CPER → clearance colédoco<br>
+      2º Colecistectomia laparoscópica (mesma internação ou ≤72h)
+    </div>
+    <div class="card card-orange">
+      <strong>1 tempo (rendezvous):</strong><br>
+      CPER intraop. guiada por fio-guia trans-cístico<br>
+      <span class="note">evita re-sedação, menos trauma</span>
+    </div>
+    <div class="card card-orange">
+      <strong>Exploração laparoscópica (ERLD):</strong><br>
+      Via transcística (cálculos ≤8 mm) ou coledocotomia laparoscópica (>8 mm / múltiplos)
+    </div>
+  </div>
+
+  <!-- PANEL 2: PASSOS -->
+  <div class="panel">
+    <h2>🔪 Passos Cirúrgicos</h2>
+    <div class="card card-green">🟢 <strong>tradução simples:</strong> a pedra está <strong>dentro do cano</strong>. Duas portas: a <strong>lateral</strong> (coto do cístico, que já vai ser aberto de qualquer jeito) e a <strong>da frente</strong> (cortar o colédoco). A lateral não deixa cicatriz no cano — por isso <strong>tenta-se ela primeiro</strong>.</div>
+
+    <div class="step-row"><div class="step-num">1</div><div><span class="fase">acesso</span><strong>Portais + material na sala</strong> — coledocoscópio, Dormia, Fogarty, arco em C
+    <div class="pq"><b>por quê</b>Material que não está na sala <strong>muda a conduta</strong>: converte ou manda pra CPRE por falta de recurso, não por indicação.</div></div></div>
+
+    <div class="step-row"><div class="step-num">2</div><div><span class="fase">exposição</span><strong>Calot até a CVS</strong> — tração cranial do fundo + ínfero-lateral do infundíbulo
+    <div class="pq"><b>por quê</b>Vale <strong>mais</strong> aqui: via dilatada + manipulação = maior risco de tomar o colédoco por cístico. <strong>Dilatação é fator de risco, não proteção.</strong> ⚠️</div></div></div>
+
+    <div class="step-row"><div class="step-num">3</div><div><span class="fase">diagnóstica</span><strong>Ductotomia no cístico + CIO</strong> — avaliar intra-hepático, calibre, falhas de enchimento, passagem ao duodeno
+    <div class="pq"><b>por quê</b>Responde <strong>duas</strong> perguntas: tem cálculo? e a anatomia é a que eu penso? A 2ª evita lesão de via biliar. Sem passagem ao duodeno = cálculo impactado ou estenose ampular.</div></div></div>
+
+    <div class="step-row"><div class="step-num">4</div><div><span class="fase">1ª escolha</span><strong>TRANSCÍSTICA</strong> — cálculos <strong>≤6–8 mm</strong>, poucos, distais · dilatar → coledocoscópio/Dormia/Fogarty
+    <div class="pq"><b>por quê</b><strong>Não abre o colédoco</strong>: sem sutura na via biliar, sem Kehr, sem <strong>estenose tardia</strong>. O limite é anatômico — cístico fino/tortuoso não deixa passar. 🎯</div></div></div>
+
+    <div class="step-row"><div class="step-num">5</div><div><span class="fase">2ª escolha</span><strong>COLEDOCOTOMIA</strong> — <strong>&gt;8 mm</strong>, múltiplos ou falha da transcística · <strong>longitudinal, anterior, supraduodenal</strong> ~1–1,5 cm entre reparos de <span class="mono">Prolene 4-0</span>
+    <div class="pq"><b>por quê</b><strong>Longitudinal</strong> porque a irrigação corre <strong>às 3 e 9 horas</strong> — transversal secciona os dois eixos = <strong>estenose isquêmica</strong>. <strong>Anterior</strong> porque atrás estão porta e hepática. <strong>Supraduodenal</strong> porque abaixo é pâncreas. 🧭</div></div></div>
+
+    <div class="step-row"><div class="step-num">6</div><div><span class="fase">verificação</span><strong>Confirmar clareamento</strong> — colangiografia/coledocoscopia final
+    <div class="pq"><b>por quê</b>Cálculo residual = causa nº1 de reoperação/CPRE. E é <strong>agora</strong> ou nunca — depois de fechado, só por via endoscópica ou pelo trajeto do Kehr.</div></div></div>
+
+    <div class="step-row"><div class="step-num">7</div><div><span class="fase">a decisão</span><strong>Kehr × primário × stent</strong> · sutura <span class="mono">absorvível 4-0/5-0</span>
+    <div class="pq"><b>por quê</b>É sobre <strong>o que acontece se a pressão subir</strong>. O Kehr é <strong>válvula de escape</strong>: bile sai pelo dreno em vez de forçar a sutura. Primário é melhor quando você tem <strong>certeza</strong> — e pior quando não tem.<br>E <strong>absorvível sempre</strong>: fio permanente na bile vira <strong>núcleo de cálculo</strong>. 🧵</div></div></div>
+
+    <div class="step-row"><div class="step-num">8</div><div><span class="fase">conclusão</span><strong>Completar a colecistectomia</strong> · dreno subhepático se coledocotomia · fechar portais ≥10 mm
+    <div class="pq"><b>por quê</b>A vesícula vem <strong>por último</strong> porque, ainda presa, é a <strong>melhor alça de tração</strong> de toda a exploração.</div></div></div>
+
+    <div class="card card-purple" style="margin-top:16px">
+      <div class="badge badge-purple">⭐ Dreno de Kehr</div><br>
+      Drenagem livre 24–48 h → colangiografia de controle em <strong>7–14 dias</strong> → retirar se sem cálculo e com passagem livre.<br>
+      <strong>Retirada precoce (&lt;2–3 sem) = biloma e peritonite biliar</strong> — o trajeto fibroso ainda não maturou. ⚠️
+    </div>
+
+    <div class="card card-orange" style="margin-top:12px">
+      <strong>✅ 4 checagens</strong><br>① CVS antes de clipar? ② Transcística <strong>tentada</strong> antes? ③ Incisão longitudinal, anterior e supraduodenal? ④ Clareamento <strong>confirmado</strong> antes de fechar?
+    </div>
+
+    <div class="card card-orange" style="margin-top:12px">
+      <strong>🚪 Quando NÃO explorar</strong><br>
+      Colédoco &gt;2 cm com cálculos <strong>múltiplos/recidivantes</strong>, estenose distal ou litíase primária → <strong>coledocoduodenostomia</strong> ou <strong>coledocojejuno em Y de Roux</strong>.<br>
+      <span class="note">Se o cano entope toda vez, para de desentupir e abre uma saída nova.</span>
+    </div>
+
+    <div class="card card-red" style="margin-top:12px">
+      <strong>⚠️ Mirizzi</strong><br>
+      Cálculo no infundíbulo comprime <strong>externamente</strong> o hepático comum → icterícia <strong>sem cálculo no colédoco</strong>.<br>
+      <strong>Csendes I</strong> = compressão externa · <strong>II–V</strong> = fístula colecistobiliar crescente.<br>
+      Calot distorcido → <strong>limiar baixo para subtotal ou conversão</strong>.
+    </div>
+  </div>
+
+  <!-- PANEL 3: MÃOS -->
+  <div class="panel">
+    <h2>🖐️ Instrumentação</h2>
+
+    <div class="hand-section">
+      <div class="hand-label hand-left-label">✋ MÃO ESQUERDA — Tração e Exposição</div>
+      <div class="hand-body">
+        <ul>
+          <li>Pinça de Babcock (vesícula/infundíbulo)</li>
+          <li>Pinça de Kelly (exposição colédoco)</li>
+          <li>Pinça de Allis (pontos de reparo)</li>
+          <li>Afastador Richardson / Deaver (fígado)</li>
+          <li>Sonda de Fogarty (controle do balão)</li>
+          <li>Porta-agulha (auxílio em sutura)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="hand-section">
+      <div class="hand-label hand-right-label">🤚 MÃO DIREITA — Ação e Dissecção</div>
+      <div class="hand-body">
+        <ul>
+          <li>Bisturi frio n° 15 (coledocotomia)</li>
+          <li>Tesoura Metzenbaum (dissecção fina)</li>
+          <li>Pinça de Randall (extração de cálculos)</li>
+          <li>Porta-agulha (sutura)</li>
+          <li>Eletrocautério monopolar (hemostasia)</li>
+          <li>Seringa + cateter (colangiografia / lavagem)</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Anatomia de Referência</h3>
+    <div class="card card-orange">
+      <strong>Triângulo de Calot:</strong><br>
+      Ducto hepático comum (medial) · Ducto cístico (inferior) · Lobo dir. fígado (superior)<br>
+      <span class="note">→ Contém a artéria cística (identificar antes de clipar!)</span>
+    </div>
+    <div class="card card-orange">
+      <strong>Ligamento hepatoduodenal:</strong><br>
+      <span class="mnemonic">VCA</span> — Veia porta (posterior) · Colédoco (direita) · Artéria (esquerda)
+    </div>
+    <div class="card card-red">
+      <strong>Vascularização do colédoco:</strong> "3h e 9h"<br>
+      Sup → a. hepática direita | Inf → a. gastroduodenal<br>
+      <span class="note">Não esqueletizar! → isquemia → estenose tardia</span>
+    </div>
+  </div>
+
+  <!-- PANEL 4: SUTURAS -->
+  <div class="panel">
+    <h2>🧵 Suturas</h2>
+
+    <table>
+      <thead>
+        <tr><th>Estrutura</th><th>Fio</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Pontos tração colédoco</td><td style="color:var(--orange)">Prolene 4-0 ou PDS 4-0</td></tr>
+        <tr><td>Fechamento primário colédoco</td><td style="color:var(--orange)">PDS 4-0 (pontos simples)</td></tr>
+        <tr><td>Ao redor do Kehr</td><td style="color:var(--orange)">PDS 4-0 ou Vicryl 4-0</td></tr>
+        <tr><td>Ducto cístico (abertura)</td><td style="color:var(--orange)">Seda 2-0 ou clip metálico</td></tr>
+        <tr><td>Anastomose biliodigestiva</td><td style="color:var(--orange)">PDS 4-0 (p. separados)</td></tr>
+        <tr><td>Aponeurose</td><td style="color:var(--cyan)">PDS 1 ou Nylon 1</td></tr>
+        <tr><td>Subcutâneo</td><td style="color:var(--cyan)">Vicryl 2-0 ou 3-0</td></tr>
+        <tr><td>Pele</td><td style="color:var(--cyan)">Nylon 4-0 / Monocryl intradérmico</td></tr>
+      </tbody>
+    </table>
+
+    <div class="card card-purple" style="margin-top:12px">
+      <div class="badge badge-purple">⭐ Regra do PDS</div>
+      PDS = monofilamento absorvível de longa duração → 1ª escolha para via biliar.<br>
+      Vicryl = alternativa aceitável.<br>
+      <span class="note">Pontos separados na via biliar → menor risco de estenose que sutura contínua</span>
+    </div>
+
+    <div class="card card-purple" style="margin-top:10px">
+      <div class="badge badge-purple">⭐ Colédoco-Jejunostomia</div>
+      Indicações: <span class="mnemonic">R.E.C.</span><br>
+      Recidiva · Estenose ampular · Colédoco >2 cm<br>
+      Técnica: Y-de-Roux, alça ~60 cm, anastomose término-lateral, PDS 4-0 pontos separados
+    </div>
+  </div>
+
+  <!-- PANEL 5: COMPLICAÇÕES -->
+  <div class="panel">
+    <h2>⚡ Complicações</h2>
+
+    <h3 style="color:var(--red)">Intraoperatórias</h3>
+    <ul>
+      <li><strong>Lesão de via biliar</strong> — 0,1–0,5%; Bismuth-Strasberg A–E</li>
+      <li>Lesão art. hepática / v. porta</li>
+      <li>Sangramento leito vesicular</li>
+      <li>Cálculo residual</li>
+    </ul>
+
+    <h3 style="color:var(--yellow)">Pós-op Precoce</h3>
+    <ul>
+      <li>Fístula biliar (bile pelo dreno >3 dias)</li>
+      <li>Colangite pós-procedimento</li>
+      <li><strong>Pancreatite pós-CPER</strong> (2–5%) <span class="exam">⭐</span></li>
+      <li>Sangramento pós-esfincterotomia</li>
+      <li>Perfuração duodenal (CPER)</li>
+      <li>Retenção / saída precoce do Kehr → biloma</li>
+    </ul>
+
+    <h3 style="color:var(--orange)">Tardias</h3>
+    <ul>
+      <li>Estenose biliar (fibrose)</li>
+      <li>Coledocolitíase recidivante</li>
+      <li>Colangite de repetição</li>
+      <li>Cirrose biliar secundária</li>
+    </ul>
+
+    <div class="card card-purple">
+      <div class="badge badge-purple">⭐ Pancreatite pós-CPER</div>
+      FR: jovem · mulher · disfunção esfíncter de Oddi · múltiplas canulações<br>
+      <strong>Profilaxia:</strong> Indometacina retal 100 mg pré-procedimento + Ringer Lactato agressivo
+    </div>
+
+    <div class="card card-purple">
+      <div class="badge badge-purple">⭐ Lesão de via biliar</div>
+      Bismuth: I–V (mais usada em aberta)<br>
+      Strasberg: A–E (inclui laparoscopia)<br>
+      Tipo E (secção completa) → Y-de-Roux (reconstrução)
+    </div>
+  </div>
+
+  <!-- PANEL 6: MNEMÔNICOS -->
+  <div class="panel">
+    <h2>🧠 Mnemônicos</h2>
+
+    <div class="mn-card">
+      <div class="title">Tríade de Charcot</div>
+      <span class="mnemonic">FID</span> — Febre · Icterícia · Dor HCD
+    </div>
+
+    <div class="mn-card">
+      <div class="title">Pêntade de Reynolds</div>
+      <span class="mnemonic">FID + HA</span> — Charcot + Hipotensão + Alteração consciência
+    </div>
+
+    <div class="mn-card">
+      <div class="title">Segmentos do colédoco</div>
+      <span class="mnemonic">SRRI</span> — Supraduodenal · Retroduodenal · Retropancreático · Intraduodenal
+    </div>
+
+    <div class="mn-card">
+      <div class="title">Ligamento hepatoduodenal</div>
+      <span class="mnemonic">VCA</span> — Veia porta (post.) · Colédoco (dir.) · Artéria (esq.)
+    </div>
+
+    <div class="mn-card">
+      <div class="title">Colestase laboratorial</div>
+      <span class="mnemonic">FA + GGT + BD ↑</span>
+    </div>
+
+    <div class="mn-card">
+      <div class="title">Indicações colédoco-jejunostomia</div>
+      <span class="mnemonic">R.E.C.</span> — Recidiva · Estenose ampular · Colédoco >2 cm
+    </div>
+
+    <div class="mn-card">
+      <div class="title">Germes da bile</div>
+      <span class="mnemonic">E.K.E.B.C.</span><br>
+      E. coli · Klebsiella · Enterococcus · Bacteroides · Clostridium
+    </div>
+
+    <div class="mn-card">
+      <div class="title">Icterícia: coledocolitíase vs neoplasia</div>
+      <span class="mnemonic">F</span>lutuante = <strong>F</strong>riedrich (pedra move)<br>
+      <span class="mnemonic">P</span>rogressiva = <strong>P</strong>rogresa (tumor cresce)
+    </div>
+
+    <div class="mn-card">
+      <div class="title">Profilaxia pancreatite pós-CPER</div>
+      <span class="mnemonic">INDO + RL</span><br>
+      Indometacina retal 100mg + Ringer Lactato agressivo
+    </div>
+
+    <div style="margin-top: 28px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #444; text-align: center;">
+      coledocolitiase_pocket.html · Carol · 2026
+    </div>
+  </div>
+
+</div>
+
+<script>
+function show(i) {
+  document.querySelectorAll('.panel').forEach((p,j) => p.classList.toggle('active', j===i));
+  document.querySelectorAll('.tab').forEach((t,j) => t.classList.toggle('active', j===i));
+  document.querySelectorAll('.panel')[i].scrollTop = 0;
+}
+</script>
+
+</body>
+</html>

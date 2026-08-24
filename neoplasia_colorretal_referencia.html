@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neoplasia Colorretal · Resumo Cirúrgico · carolzita</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
+:root{
+  --bg:#0d1117; --bg2:#161b22; --bg3:#1c232e; --border:#2a3140;
+  --text:#c9d1d9; --dim:#8b949e;
+  --orange:#ff7a18; --orange-bg:#2a1505;
+  --purple:#b083f0; --purple-bg:#1e1430;
+  --cyan:#3dd6d0; --cyan-bg:#06201f;
+  --red:#f87171; --green:#4ade80; --yellow:#fbbf24; --blue:#60a5fa;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-serif;font-size:15px;line-height:1.6;padding-bottom:3rem}
+.head{background:linear-gradient(135deg,#1a1005,#161b22 60%);border-bottom:1px solid var(--border);padding:1.5rem 1.25rem 1.1rem}
+.head h1{font-size:1.55rem;font-weight:700;color:#fff;letter-spacing:-.5px;display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
+.head h1 em{color:var(--orange);font-style:normal}
+.head .sub{color:var(--dim);font-size:12.5px;margin-top:.35rem;font-family:'IBM Plex Mono',monospace}
+.badges{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.7rem}
+.bdg{font-family:'IBM Plex Mono',monospace;font-size:10px;padding:.18rem .55rem;border-radius:20px;border:1px solid var(--border);color:var(--dim);background:var(--bg3)}
+.bdg.o{color:var(--orange);border-color:#5c2e0a}
+.bdg.p{color:var(--purple);border-color:#3b2566}
+.bdg.c{color:var(--cyan);border-color:#0c4a47}
+.tabs{position:sticky;top:0;z-index:50;display:flex;gap:.35rem;overflow-x:auto;background:var(--bg2);border-bottom:1px solid var(--border);padding:.55rem .75rem;scrollbar-width:thin}
+.tabs::-webkit-scrollbar{height:5px}.tabs::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+.tab{flex-shrink:0;font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:600;padding:.45rem .8rem;border-radius:8px;cursor:pointer;color:var(--dim);border:1px solid transparent;white-space:nowrap;transition:.15s;user-select:none}
+.tab:hover{background:var(--bg3);color:var(--text)}
+.tab.on{background:var(--orange-bg);color:var(--orange);border-color:#5c2e0a}
+.wrap{max-width:880px;margin:0 auto;padding:1.5rem 1.25rem}
+.sec{display:none;animation:fade .25s}
+.sec.on{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+h2{font-size:1.15rem;color:#fff;font-weight:700;margin:.2rem 0 1rem;display:flex;align-items:center;gap:.5rem;padding-bottom:.5rem;border-bottom:1px solid var(--border)}
+h3{font-size:.95rem;color:var(--orange);font-weight:600;margin:1.4rem 0 .6rem;font-family:'IBM Plex Mono',monospace}
+p{margin:.5rem 0}
+.kid{color:var(--cyan);font-style:italic;font-size:.92em}
+ul{margin:.4rem 0 .6rem 1.2rem}li{margin:.28rem 0}
+strong{color:#fff;font-weight:600}
+.box{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:1rem 1.1rem;margin:.9rem 0}
+.box.o{border-left:3px solid var(--orange)}
+.box.p{border-left:3px solid var(--purple)}
+.box.c{border-left:3px solid var(--cyan)}
+.box.r{border-left:3px solid var(--red)}
+.box.g{border-left:3px solid var(--green)}
+.box-t{font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:1px;margin-bottom:.5rem;font-weight:700}
+.o .box-t{color:var(--orange)}.p .box-t{color:var(--purple)}.c .box-t{color:var(--cyan)}.r .box-t{color:var(--red)}.g .box-t{color:var(--green)}
+table{width:100%;border-collapse:collapse;margin:.8rem 0;font-size:13px}
+th,td{text-align:left;padding:.5rem .6rem;border-bottom:1px solid var(--border);vertical-align:top}
+th{font-family:'IBM Plex Mono',monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:.5px;color:var(--purple);background:var(--bg3)}
+td strong{color:var(--orange)}
+.tag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:9.5px;padding:.1rem .4rem;border-radius:4px;background:var(--bg3);border:1px solid var(--border);color:var(--dim);margin:0 .15rem}
+.mnem{background:var(--purple-bg);border:1px solid #3b2566;border-radius:10px;padding:.85rem 1rem;margin:.7rem 0}
+.mnem-w{font-family:'IBM Plex Mono',monospace;font-weight:700;color:var(--purple);letter-spacing:2px;font-size:1rem;margin-bottom:.3rem}
+.trap{background:var(--bg2);border:1px solid #5c2e0a;border-left:3px solid var(--orange);border-radius:10px;padding:.7rem .9rem;margin:.6rem 0;font-size:13.5px}
+.trap b{color:var(--orange)}
+.q{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:1rem 1.1rem;margin:1rem 0}
+.q-b{font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;color:var(--cyan);letter-spacing:1px;margin-bottom:.5rem}
+.q-stem{font-weight:500;color:#fff;margin-bottom:.6rem}
+.q-alt{margin:.25rem 0;padding-left:.4rem}
+details{margin-top:.6rem;border-top:1px dashed var(--border);padding-top:.5rem}
+summary{cursor:pointer;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--green);font-weight:600}
+.ans{margin-top:.5rem;font-size:13.5px;color:var(--text)}
+.ans b{color:var(--green)}
+.step{display:flex;gap:.7rem;margin:.5rem 0;align-items:flex-start}
+.stp{background:var(--bg2);border:1px solid var(--border);border-radius:11px;padding:.7rem .9rem;margin:.6rem 0;display:flex;gap:.7rem;align-items:flex-start}
+.stp .n{flex-shrink:0;width:24px;height:24px;border-radius:7px;background:var(--orange-bg);color:var(--orange);border:1px solid #5c2e0a;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;margin-top:2px}
+.stp .c{flex:1}
+.stp .fase{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:1.3px;text-transform:uppercase;color:var(--orange);display:block}
+.stp .ttl{color:#fff;font-weight:600;font-size:14.5px;margin-bottom:.15rem}
+.pq{border-left:2px solid var(--purple);background:var(--purple-bg);border-radius:0 8px 8px 0;padding:.5rem .75rem;margin-top:.5rem;font-size:13px}
+.pq b{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--purple);display:block}
+.grn{background:rgba(74,222,128,.09);border:1px solid rgba(74,222,128,.3);border-left:3px solid var(--green);border-radius:10px;padding:.7rem .9rem;margin:.6rem 0;font-size:13.5px;color:var(--green);font-style:italic}
+.grn .box-t{color:var(--green);font-style:normal}
+.grn strong{color:#8ef0aa;font-style:normal}
+.step-n{flex-shrink:0;width:26px;height:26px;border-radius:50%;background:var(--orange-bg);color:var(--orange);border:1px solid #5c2e0a;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700}
+.step-c b{color:#fff}
+.hand{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin:.7rem 0}
+.hand-c{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:.7rem .85rem}
+.hand-c.l{border-top:2px solid var(--cyan)}.hand-c.r{border-top:2px solid var(--orange)}
+.hand-t{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1px;margin-bottom:.35rem;font-weight:700}
+.l .hand-t{color:var(--cyan)}.r .hand-t{color:var(--orange)}
+svg{width:100%;height:auto;background:var(--bg2);border:1px solid var(--border);border-radius:12px;margin:.8rem 0}
+.cap{font-size:11px;color:var(--dim);text-align:center;font-family:'IBM Plex Mono',monospace;margin-top:-.3rem}
+@media(max-width:600px){.hand{grid-template-columns:1fr}.head h1{font-size:1.3rem}}
+</style>
+</head>
+<body>
+
+<div class="head">
+  <h1>🎗️ Neoplasia <em>Colorretal</em></h1>
+  <div class="sub">// resumo cirúrgico completo · carolzita · cv 2026</div>
+  <div class="badges">
+    <span class="bdg o">NCCN 2025</span>
+    <span class="bdg p">AJCC 8ª ed.</span>
+    <span class="bdg c">USPSTF 2021 (45a)</span>
+    <span class="bdg">TNT · Watch-and-Wait</span>
+    <span class="bdg">NICHE / dostarlimab</span>
+    <span class="bdg">Sabiston · Zollinger</span>
+  </div>
+</div>
+
+<div class="tabs" id="tabs"></div>
+<div class="wrap" id="wrap"></div>
+
+<script>
+const SECS = [
+{id:'vg', t:'🩺 Visão Geral', html:`
+<h2>🩺 Visão Geral & Quadro Clínico</h2>
+<p>O <strong>câncer colorretal (CCR)</strong> é o adenocarcinoma que surge da mucosa do cólon ou reto, na imensa maioria (~85–90%) pela <strong>sequência adenoma→carcinoma</strong> (via cromossômica/APC). <span class="kid">(Um pólipo — bolinha na parede do intestino — vai acumulando "erros" ao longo dos anos até virar câncer.)</span></p>
+
+<div class="box o"><div class="box-t">Três vias moleculares (cai em prova)</div>
+<ul>
+<li><strong>CIN — instabilidade cromossômica</strong> (~85%): APC → KRAS → TP53. Via clássica do adenoma tubular.</li>
+<li><strong>MSI — instabilidade de microssatélites</strong> (~15%): defeito no reparo de erros de pareamento (dMMR). Esporádica (metilação de <em>MLH1</em>) ou germinativa (<strong>Lynch</strong>). <span class="kid">(A "revisão ortográfica" do DNA quebra e os erros se acumulam rápido.)</span></li>
+<li><strong>CIMP — metilação (via serrilhada)</strong>: pólipos serrilhados, associada a <strong>BRAF V600E</strong>.</li>
+</ul></div>
+
+<div class="box c"><div class="box-t">Quadro clínico por sítio — PEGA clássico</div>
+<table>
+<tr><th>Cólon direito</th><th>Cólon esquerdo</th><th>Reto</th></tr>
+<tr>
+<td>Lúmen largo, fezes líquidas → <strong>massa palpável, anemia ferropriva, melena, astenia</strong>. Obstrui tardiamente.</td>
+<td>Lúmen estreito, fezes sólidas → <strong>alteração do hábito, fezes em fita, obstrução, hematoquezia</strong>.</td>
+<td><strong>Hematoquezia, tenesmo, urgência, alteração do calibre</strong>. Toque retal essencial.</td>
+</tr>
+</table>
+<p class="kid">(Do lado direito o cano é largo e as fezes líquidas: o tumor cresce escondido e o sinal é a anemia. Do lado esquerdo o cano é fino e as fezes duras: entope e sangra.)</p>
+</div>
+
+<div class="trap"><b>🪤 Pega:</b> Homem/mulher idoso com <strong>anemia ferropriva sem causa aparente</strong> = colonoscopia obrigatória (câncer de cólon direito até prova em contrário).</div>
+
+<h3>// Epidemiologia & fatores de risco</h3>
+<ul>
+<li>3º câncer mais incidente; grande causa de morte por câncer no Brasil e no mundo.</li>
+<li><strong>Modificáveis:</strong> dieta rica em carne vermelha/processada, obesidade, sedentarismo, álcool, tabaco.</li>
+<li><strong>Não modificáveis:</strong> idade, DII (RCU > Crohn), história familiar, síndromes hereditárias.</li>
+<li><strong>Protetores:</strong> atividade física, fibras, AAS/AINE (quimioprevenção — Lynch).</li>
+</ul>
+
+<div class="box p"><div class="box-t">Síndromes hereditárias — não confundir</div>
+<ul>
+<li><strong>Lynch (HNPCC)</strong>: autossômica dominante, genes de <em>reparo (MMR)</em>, CCR direito, idade jovem, tumores metacrônicos, associação com CA endométrio/ovário/urotélio. Critérios de <strong>Amsterdam II</strong> e <strong>Bethesda</strong>. Sem "tapete" de pólipos.</li>
+<li><strong>PAF (FAP)</strong>: mutação <em>APC</em>, <strong>&gt;100 pólipos adenomatosos</strong>, 100% de risco de CCR → <strong>proctocolectomia profilática</strong>. Gardner (osteomas/dentes/desmoide), Turcot (tumor SNC).</li>
+<li><strong>PAF atenuada</strong>: &lt;100 pólipos, câncer mais tardio.</li>
+<li><strong>MUTYH</strong>: autossômica <em>recessiva</em>, fenótipo tipo PAF atenuada.</li>
+</ul></div>
+`},
+
+{id:'rt', t:'🔎 Rastreio', html:`
+<h2>🔎 Rastreio & Prevenção</h2>
+
+<div class="box g"><div class="box-t">Risco médio — início aos 45 anos ⚠️ (atualização)</div>
+<p>Desde 2021 (USPSTF, ACS, ACG) o rastreio de <strong>risco médio inicia aos 45 anos</strong> (antes era 50), pela alta de CCR de início precoce. Segue até <strong>75 anos</strong>; de 76–85 individualizar; após 85 não rastrear.</p>
+</div>
+
+<table>
+<tr><th>Método</th><th>Intervalo</th><th>Observação</th></tr>
+<tr><td><strong>Colonoscopia</strong></td><td>10 anos</td><td>Padrão-ouro: diagnostica <em>e</em> trata (polipectomia)</td></tr>
+<tr><td><strong>FIT</strong> (imunoquímico fecal)</td><td>Anual</td><td>Mais usado em programas populacionais; + custo-efetivo</td></tr>
+<tr><td>FIT-DNA (Cologuard)</td><td>1–3 anos</td><td>Maior sensibilidade, menor especificidade</td></tr>
+<tr><td>Retossigmoidoscopia flexível</td><td>5 anos (ou 10 + FIT anual)</td><td>Não avalia cólon direito</td></tr>
+<tr><td>Colono-TC (virtual)</td><td>5 anos</td><td>Achado &gt;6 mm → colono óptica</td></tr>
+<tr><td>Sangue oculto guáiaco (gFOBT)</td><td>Anual</td><td>Em desuso vs. FIT</td></tr>
+</table>
+
+<div class="trap"><b>🪤 Pega:</b> Qualquer teste não-colonoscópico <strong>positivo</strong> (FIT+, sangue oculto+, colono-TC com lesão) obriga <strong>colonoscopia diagnóstica</strong>. É o erro mais cobrado.</div>
+
+<div class="box o"><div class="box-t">Grupos de alto risco — começar antes</div>
+<ul>
+<li><strong>História familiar</strong> (1º grau com CCR ou adenoma avançado): iniciar aos <strong>40 anos</strong> OU 10 anos antes da idade do caso índice, o que vier primeiro; colono a cada 5 anos.</li>
+<li><strong>Lynch</strong>: colonoscopia a cada <strong>1–2 anos a partir de 20–25 anos</strong> (ou 2–5 anos antes do caso mais precoce).</li>
+<li><strong>PAF clássica</strong>: retossigmoidoscopia/colonoscopia anual a partir de <strong>10–12 anos</strong>.</li>
+<li><strong>DII (RCU/Crohn colônico)</strong>: colono de vigilância <strong>8 anos após início dos sintomas</strong>, com biópsias seriadas/cromoendoscopia.</li>
+</ul></div>
+
+<h3>// Vigilância pós-polipectomia (essência)</h3>
+<ul>
+<li><strong>Baixo risco</strong> (1–2 adenomas tubulares &lt;10 mm, displasia baixa): repetir em <strong>7–10 anos</strong>.</li>
+<li><strong>Alto risco</strong> (≥3 adenomas, ≥10 mm, viloso, displasia de alto grau): repetir em <strong>3 anos</strong>.</li>
+<li>Ressecção fragmentada de lesão séssil grande: controle precoce (6 meses).</li>
+</ul>
+`},
+
+{id:'est', t:'📊 Estadiamento', html:`
+<h2>📊 Estadiamento — AJCC 8ª / TNM</h2>
+
+<div class="box p"><div class="box-t">T — profundidade de invasão</div>
+<ul>
+<li><strong>Tis</strong>: carcinoma in situ (intramucoso, não passa a muscular da mucosa)</li>
+<li><strong>T1</strong>: invade submucosa</li>
+<li><strong>T2</strong>: invade muscular própria</li>
+<li><strong>T3</strong>: atravessa a muscular própria → subserosa/tecidos pericólicos</li>
+<li><strong>T4a</strong>: perfura o peritônio visceral · <strong>T4b</strong>: invade órgão/estrutura adjacente</li>
+</ul></div>
+
+<div class="box c"><div class="box-t">N — linfonodos · M — metástase</div>
+<ul>
+<li><strong>N1</strong>: 1–3 linfonodos (N1c = depósitos tumorais sem LN+) · <strong>N2</strong>: ≥4 linfonodos</li>
+<li><strong>M1a</strong>: 1 órgão · <strong>M1b</strong>: &gt;1 órgão · <strong>M1c</strong>: peritônio</li>
+</ul></div>
+
+<table>
+<tr><th>Estádio</th><th>TNM</th><th>Conduta-âncora</th></tr>
+<tr><td><strong>0</strong></td><td>Tis N0</td><td>Ressecção local / polipectomia</td></tr>
+<tr><td><strong>I</strong></td><td>T1–2 N0</td><td>Cirurgia isolada</td></tr>
+<tr><td><strong>II</strong></td><td>T3–4 N0</td><td>Cirurgia ± QT adjuvante se alto risco</td></tr>
+<tr><td><strong>III</strong></td><td>qqT N1–2</td><td>Cirurgia + <strong>QT adjuvante</strong> (FOLFOX/CAPOX)</td></tr>
+<tr><td><strong>IV</strong></td><td>qqT qqN M1</td><td>QT sistêmica ± metastasectomia (fígado/pulmão)</td></tr>
+</table>
+
+<div class="box o"><div class="box-t">Marcadores obrigatórios no laudo</div>
+<ul>
+<li><strong>≥12 linfonodos</strong> examinados = adequação oncológica (menos que isso pode subestadiar).</li>
+<li><strong>MMR/MSI</strong> em TODOS os CCR: rastreia Lynch, é <em>fator prognóstico</em> (dMMR = melhor prognóstico no estádio II) e <em>preditivo</em> (dMMR responde a imunoterapia e NÃO se beneficia de 5-FU isolado no estádio II).</li>
+<li><strong>RAS (KRAS/NRAS) e BRAF</strong>: obrigatórios no estádio IV — definem uso de anti-EGFR (só se RAS/BRAF selvagem e tumor <em>esquerdo</em>).</li>
+<li><strong>CEA</strong> pré-operatório: base para seguimento (não serve para diagnóstico/rastreio).</li>
+</ul></div>
+
+<div class="trap"><b>🪤 Pega:</b> No <strong>estádio II dMMR/MSI-H</strong>, a QT adjuvante com fluoropirimidina isolada <strong>não traz benefício</strong> (pode até piorar) — não indicar de rotina.</div>
+
+<h3>// Fatores de alto risco no estádio II (indicam adjuvância)</h3>
+<ul>
+<li>T4, &lt;12 linfonodos examinados, invasão angiolinfática/perineural, tumor pouco diferenciado (exceto se dMMR), perfuração/obstrução ao diagnóstico, margem comprometida.</li>
+</ul>
+`},
+
+{id:'trc', t:'🧬 Tto por Sítio — Cólon', html:`
+<h2>🧬 Tratamento Cirúrgico — Câncer de Cólon</h2>
+<p>Princípio oncológico universal: <strong>ressecção do segmento + seu pedículo vascular na origem</strong> (que carrega a drenagem linfática) com margens longitudinais adequadas e ≥12 linfonodos. <span class="kid">(Tira-se o pedaço doente junto com o "cabo de alimentação" dele, porque é por ali que o câncer se espalha.)</span></p>
+
+<div class="box o"><div class="box-t">Ressecção por localização do tumor</div>
+<table>
+<tr><th>Sítio do tumor</th><th>Cirurgia</th><th>Pedículo ligado</th></tr>
+<tr><td>Ceco / cólon ascendente</td><td><strong>Colectomia direita</strong></td><td>Ileocólica + cólica direita</td></tr>
+<tr><td>Flexura hepática / transverso proximal</td><td><strong>Colectomia direita ampliada</strong></td><td>+ ramo direito da cólica média</td></tr>
+<tr><td>Transverso médio</td><td>Transversectomia ou colectomia estendida</td><td>Cólica média</td></tr>
+<tr><td>Flexura esplênica</td><td><strong>Colectomia esquerda</strong> (± estendida)</td><td>Cólica esquerda ± cólica média esq.</td></tr>
+<tr><td>Descendente</td><td><strong>Colectomia esquerda</strong></td><td>MI (mesentérica inferior) alta</td></tr>
+<tr><td>Sigmoide</td><td><strong>Sigmoidectomia</strong></td><td>Sigmoidianas / MI</td></tr>
+</table></div>
+
+<div class="box p"><div class="box-t">CME / D3 — conceito moderno</div>
+<p><strong>Excisão Mesocólica Completa</strong> (Hohenberger 2009): dissecção no plano embriológico avascular, ligadura vascular <strong>central (D3)</strong> na origem, com envelope mesocólico íntegro. Melhora coleta linfonodal e sobrevida. <span class="kid">(Descolar o intestino como quem retira um envelope fechado, sem rasgar, cortando o cabo bem na raiz.)</span></p>
+</div>
+
+<h3>// Situações especiais</h3>
+<ul>
+<li><strong>Obstrução no cólon esquerdo:</strong> opções = colectomia com colostomia (Hartmann), ressecção + anastomose primária ± lavagem, ou <strong>stent como ponte para cirurgia</strong> em casos selecionados.</li>
+<li><strong>CCR + pólipo maligno (pT1)</strong>: polipectomia pode bastar se margem &gt;1 mm, bem diferenciado, sem invasão angiolinfática (critérios de Haggitt/Kikuchi). Caso contrário → colectomia.</li>
+<li><strong>Metástase hepática ressecável (estádio IV):</strong> ressecção do primário + metastasectomia pode ser curativa; QT perioperatória.</li>
+<li><strong>dMMR estádio II/III:</strong> imunoterapia neoadjuvante (nivolumab+ipilimumab — NICHE-2) alcança respostas patológicas completas altíssimas; campo em ascensão, ainda não substituiu cirurgia como padrão no cólon.</li>
+</ul>
+
+<div class="trap"><b>🪤 Pega:</b> A extensão da colectomia é ditada pela <strong>drenagem linfática do pedículo</strong>, não pela margem do tumor. Por isso um tumor pequeno de sigmoide leva todo o território da mesentérica inferior.</div>
+`},
+
+{id:'tre', t:'🎯 Tto por Sítio — Reto', html:`
+<h2>🎯 Tratamento Cirúrgico — Câncer de Reto</h2>
+<p>O reto (últimos ~15 cm) tem particularidades: <strong>pelve estreita, esfíncter a preservar e maior risco de recidiva local</strong> → por isso RM de pelve, TME e neoadjuvância são centrais.</p>
+
+<div class="box c"><div class="box-t">Estadiamento local — o que muda</div>
+<ul>
+<li><strong>RM de pelve</strong>: define T, N, <strong>margem circunferencial (CRM)</strong> e invasão extramural venosa (EMVI). Ecoendoscopia para T1–T2.</li>
+<li>Reto alto se comporta como cólon; reto médio/baixo exige atenção ao esfíncter e à CRM.</li>
+</ul></div>
+
+<div class="box o"><div class="box-t">TME — Excisão Total do Mesorreto (Heald)</div>
+<p>Dissecção do reto <strong>em bloco com todo o mesorreto</strong> no plano avascular "santo" (holy plane), envelope íntegro. Reduz recidiva local de ~30% para &lt;10%. É o padrão-ouro técnico. Para tumor de reto alto, <strong>TME parcial (5 cm distais ao tumor)</strong> é suficiente.</p>
+</div>
+
+<div class="box p"><div class="box-t">Cirurgias — escolha pela distância à margem anal</div>
+<table>
+<tr><th>Procedimento</th><th>Indicação</th></tr>
+<tr><td><strong>RAB — ressecção anterior baixa</strong></td><td>Reto médio/alto com margem distal ≥1–2 cm; preserva esfíncter, anastomose colorretal/coloanal</td></tr>
+<tr><td><strong>Amputação abdominoperineal (Miles)</strong></td><td>Tumor muito baixo com invasão do esfíncter/elevador → colostomia definitiva</td></tr>
+<tr><td>Excisão local transanal (TEM/TAMIS)</td><td>T1 precoce, &lt;3 cm, bem diferenciado, sem risco → seleção rigorosa</td></tr>
+<tr><td>Hartmann</td><td>Paciente frágil/urgência: ressecção + colostomia sem anastomose</td></tr>
+</table></div>
+
+<div class="trap"><b>🪤 Pega:</b> Margem distal aceitável no reto = <strong>≥1 cm no reto baixo pós-neoadjuvância</strong> (2 cm no clássico). Não é a distância à margem anal que decide isoladamente, e sim margem distal segura + preservação esfincteriana viável.</div>
+
+<h3>// Neoadjuvância — quem recebe</h3>
+<ul>
+<li><strong>Reto localmente avançado (cT3/T4 e/ou N+)</strong>: neoadjuvância antes da TME.</li>
+<li><strong>TNT (Total Neoadjuvant Therapy)</strong> — tendência atual: TODA a QT + RT antes da cirurgia (quimiorradioterapia + quimioterapia de consolidação/indução). Maior resposta patológica completa, mais adesão, mais candidatos a preservação de órgão.</li>
+<li>Esquemas: RT longa (~50 Gy/25 fx com capecitabina) OU RT curta (25 Gy/5 fx) + QT.</li>
+</ul>
+
+<div class="box g"><div class="box-t">Watch-and-Wait (preservação de órgão)</div>
+<p>Pacientes com <strong>resposta clínica completa (cCR)</strong> após neoadjuvância/TNT podem ser observados sem cirurgia (Habr-Gama), com vigilância estreita. Recidiva (regrowth) → cirurgia de resgate com TME.</p>
+</div>
+
+<div class="box c"><div class="box-t">⭐ Reto dMMR/MSI-H — mudança de paradigma</div>
+<p>Estudo de <strong>dostarlimab</strong> (anti-PD-1, MSK) em reto dMMR localmente avançado: <strong>100% de resposta clínica completa</strong>, todos evitaram RT e cirurgia. Imunoterapia neoadjuvante vira preferencial nesse subgrupo. Assunto quente de prova.</p>
+</div>
+`},
+
+{id:'an', t:'🫀 Anatomia & Vascularização', html:`
+<h2>🫀 Anatomia Vascular do Cólon & Reto</h2>
+<p>A divisão embriológica manda no suprimento: <strong>intestino médio</strong> (até 2/3 proximais do transverso) → <strong>artéria mesentérica superior (AMS)</strong>; <strong>intestino posterior</strong> (transverso distal → reto alto) → <strong>artéria mesentérica inferior (AMI)</strong>; reto médio/baixo → ramos ilíaca interna/pudenda.</p>
+
+<svg viewBox="0 0 640 420" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="640" height="420" fill="#161b22"/>
+  <!-- aorta -->
+  <rect x="305" y="30" width="16" height="320" fill="#f87171" opacity="0.85"/>
+  <text x="326" y="50" fill="#f87171" font-size="12" font-family="monospace">Aorta</text>
+  <!-- AMS -->
+  <line x1="313" y1="95" x2="180" y2="120" stroke="#ff7a18" stroke-width="4"/>
+  <text x="120" y="112" fill="#ff7a18" font-size="12" font-family="monospace">AMS</text>
+  <!-- ramos AMS -->
+  <line x1="220" y1="112" x2="140" y2="180" stroke="#ff7a18" stroke-width="3"/>
+  <text x="70" y="185" fill="#ff7a18" font-size="10" font-family="monospace">Ileocólica</text>
+  <line x1="235" y1="110" x2="175" y2="150" stroke="#ff7a18" stroke-width="3"/>
+  <text x="120" y="150" fill="#ff7a18" font-size="10" font-family="monospace">Cólica D</text>
+  <line x1="255" y1="107" x2="255" y2="70" stroke="#ff7a18" stroke-width="3"/>
+  <text x="262" y="68" fill="#ff7a18" font-size="10" font-family="monospace">Cólica média</text>
+  <!-- AMI -->
+  <line x1="313" y1="235" x2="450" y2="255" stroke="#b083f0" stroke-width="4"/>
+  <text x="455" y="250" fill="#b083f0" font-size="12" font-family="monospace">AMI</text>
+  <line x1="400" y1="248" x2="470" y2="180" stroke="#b083f0" stroke-width="3"/>
+  <text x="475" y="178" fill="#b083f0" font-size="10" font-family="monospace">Cólica E</text>
+  <line x1="425" y1="252" x2="490" y2="290" stroke="#b083f0" stroke-width="3"/>
+  <text x="495" y="292" fill="#b083f0" font-size="10" font-family="monospace">Sigmoidianas</text>
+  <line x1="440" y1="256" x2="440" y2="330" stroke="#b083f0" stroke-width="3"/>
+  <text x="446" y="345" fill="#b083f0" font-size="10" font-family="monospace">Retal superior</text>
+  <!-- arco de Riolano / marginal -->
+  <path d="M 140 180 Q 300 300 470 180" fill="none" stroke="#3dd6d0" stroke-width="2" stroke-dasharray="5,4"/>
+  <text x="250" y="270" fill="#3dd6d0" font-size="10" font-family="monospace">Arcada marginal (Drummond)</text>
+  <!-- ponto de Griffiths -->
+  <circle cx="470" cy="180" r="6" fill="#fbbf24"/>
+  <text x="482" y="165" fill="#fbbf24" font-size="10" font-family="monospace">Griffiths (flex. espl.)</text>
+  <!-- ponto de Sudeck -->
+  <circle cx="440" cy="330" r="6" fill="#fbbf24"/>
+  <text x="452" y="332" fill="#fbbf24" font-size="10" font-family="monospace">Sudeck</text>
+</svg>
+<div class="cap">AMS (laranja) irriga cólon direito · AMI (roxo) irriga cólon esquerdo/reto alto · arcada marginal conecta ambos</div>
+
+<div class="box o"><div class="box-t">Pontos-chave arteriais</div>
+<ul>
+<li><strong>Artéria ileocólica</strong>: ramo mais constante da AMS — referência da colectomia direita.</li>
+<li><strong>Arcada marginal de Drummond</strong>: arco contínuo à borda mesentérica que une AMS↔AMI; garante colateralidade.</li>
+<li><strong>Arco de Riolano</strong>: comunicação central (cólica média ↔ cólica esquerda) — inconstante.</li>
+<li><strong>Ponto de Griffiths</strong> (flexura esplênica) e <strong>ponto de Sudeck</strong> (junção retossigmoide): <em>watershed</em> — áreas de menor colateralidade, risco de isquemia anastomótica.</li>
+</ul></div>
+
+<div class="box p"><div class="box-t">Drenagem venosa & linfática</div>
+<ul>
+<li><strong>Veia mesentérica inferior (VMI)</strong>: drena para a veia esplênica → porta; ligada junto na borda inferior do pâncreas nas colectomias esquerdas.</li>
+<li>Linfa acompanha as artérias → por isso a <strong>ligadura alta central (D3)</strong> retira o território linfonodal.</li>
+</ul></div>
+
+<div class="box c"><div class="box-t">Reto — suprimento triplo (pega de prova)</div>
+<ul>
+<li><strong>Retal superior</strong> (da AMI) — ramo terminal.</li>
+<li><strong>Retal média</strong> (da ilíaca interna).</li>
+<li><strong>Retal inferior</strong> (da pudenda interna).</li>
+<li>Nervos hipogástricos/plexo pélvico correm junto ao mesorreto → lesão causa <strong>disfunção urinária e sexual</strong>. TME preserva esses nervos.</li>
+</ul></div>
+
+<div class="trap"><b>🪤 Pega:</b> Após ligadura alta da AMI, a viabilidade do cólon esquerdo depende da <strong>arcada marginal via cólica média (AMS)</strong>. O ponto de Griffiths é justamente onde essa colateral pode faltar → isquemia.</div>
+`},
+
+{id:'tx', t:'🔪 Técnica Cirúrgica', html:`
+<h2>🔪 Técnica — Colectomia (foco esquerda/sigmoide) & RAB</h2>
+
+<div class="box o"><div class="box-t">Preparo & posição</div>
+<ul>
+<li><strong>Posição:</strong> Lloyd-Davies (litotomia modificada) para lesões esquerdas/reto — dá acesso perineal e ao ânus para grampeador transanal. Decúbito dorsal para colectomia direita.</li>
+<li>Braços junto ao corpo, coxins, sondagem vesical, antibioticoprofilaxia, profilaxia de TEV (DII/câncer = pró-trombótico).</li>
+<li>Abordagem laparoscópica/robótica é padrão quando factível (menor morbidade, mesma oncologia).</li>
+</ul></div>
+
+<h3>// Passo a passo — sigmoidectomia / RAB laparoscópica</h3>
+<div class="grn"><div class="box-t">🟢 tradução simples</div>A cirurgia do cólon é a <strong>mesma lógica da gastrectomia D2</strong>, com outros nomes: liga-se o vaso <strong>na origem</strong> porque os linfonodos moram na raiz do pedículo, e retira-se o <strong>envelope de gordura inteiro</strong> junto com o intestino, sem rasgá-lo. No cólon esse envelope se chama mesocólon (CME); no reto, mesorreto (TME).</div>
+
+<div class="stp"><div class="n">1</div><div class="c"><span class="fase">exposição</span><div class="ttl">Inventário e posicionamento</div>
+Trendelenburg + rotação para a direita; afastar o delgado para o quadrante superior direito. Identificar o <strong>promontório</strong> e a <strong>AMI tensionada</strong>.
+<div class="pq"><b>por quê</b>A gravidade faz o trabalho do auxiliar. E o promontório é a referência fixa: é ali que se entra no plano correto, porque a AMI se destaca sob tensão como uma corda.</div></div></div>
+
+<div class="stp"><div class="n">2</div><div class="c"><span class="fase">plano — passo que protege o ureter</span><div class="ttl">Abordagem medial-para-lateral</div>
+Incisar o peritônio <strong>sob o pedículo da AMI</strong> e criar o plano avascular entre a <strong>fáscia de Toldt e a de Gerota</strong>, identificando o <strong>ureter esquerdo</strong> e os vasos gonadais, que devem ficar <strong>para baixo</strong>.
+<div class="pq"><b>por quê</b>É o passo que previne a complicação mais cobrada. O ureter cruza os ilíacos exatamente na área da ligadura da AMI. Entrando medial e mantendo o plano <em>acima</em> da Gerota, o ureter permanece no retroperitônio e nunca sobe com a peça. Quem entra lateral primeiro perde essa proteção.</div></div></div>
+
+<div class="stp"><div class="n">3</div><div class="c"><span class="fase">vascular — decisão oncológica</span><div class="ttl">Ligadura da AMI e da VMI</div>
+Ligadura <strong>alta na origem da aorta</strong> (D3/CME) ou <strong>baixa, preservando a cólica esquerda</strong>. VMI seccionada na borda inferior do pâncreas.
+<div class="pq"><b>por quê</b>O <em>trade-off</em> clássico: a ligadura <strong>alta</strong> colhe os linfonodos apicais e dá mais comprimento para a anastomose descer sem tensão; a <strong>baixa</strong> preserva a cólica esquerda e a perfusão do coto proximal, especialmente relevante no idoso e no vasculopata. Não há diferença de sobrevida comprovada — o que muda é o risco de isquemia da anastomose.</div></div></div>
+
+<div class="stp"><div class="n">4</div><div class="c"><span class="fase">mobilização</span><div class="ttl">Goteira parietocólica e abaixamento da flexura esplênica</div>
+Liberar a goteira esquerda e, quando necessário, <strong>abaixar a flexura esplênica</strong> para permitir anastomose sem tensão.
+<div class="pq"><b>por quê</b>Anastomose colorretal baixa sob tensão vaza. E o abaixamento é onde ocorre a <strong>lesão esplênica por tração</strong> — o baço está preso ao ângulo pelo ligamento esplenocólico.</div></div></div>
+
+<div class="stp"><div class="n">5</div><div class="c"><span class="fase">fase do reto — o plano santo</span><div class="ttl">TME — excisão total do mesorreto</div>
+Dissecção no <strong>plano avascular embrionário ("holy plane" de Heald)</strong>, entre a fáscia própria do mesorreto e a fáscia pré-sacral, preservando os <strong>plexos hipogástricos</strong>, até o assoalho pélvico.
+<div class="pq"><b>por quê</b>O mesorreto sai <strong>íntegro, como um envelope fechado</strong> — é isso que derrubou a recidiva local de 30% para menos de 10%. Rasgar a fáscia própria semeia a pelve. E os plexos correm justamente na parede desse plano: lesá-los causa <strong>disfunção urinária e sexual</strong>, a morbidade silenciosa da cirurgia do reto.</div></div></div>
+
+<div class="stp"><div class="n">6</div><div class="c"><span class="fase">secção distal</span><div class="ttl">Grampeador linear articulado abaixo do tumor</div>
+Margem distal adequada; idealmente <strong>um único disparo</strong>, transversal ao reto.
+<div class="pq"><b>por quê</b>Cada disparo adicional cria <strong>cruzamento de linhas de grampos</strong> — ponto de isquemia e sítio preferencial de deiscência, exatamente como na anastomose grampeada de delgado. Na pelve estreita do homem obeso é o passo tecnicamente mais difícil.</div></div></div>
+
+<div class="stp"><div class="n">7</div><div class="c"><span class="fase">retirada</span><div class="ttl">Peça por miniincisão protegida e secção proximal</div>
+Extração com protetor de parede; secção proximal em <strong>cólon bem vascularizado</strong>, com sangramento arterial na borda.
+<div class="pq"><b>por quê</b>O protetor evita <strong>implante tumoral na ferida</strong>. E a perfusão do coto proximal é o fator que o cirurgião ainda controla — bordas pálidas ou com sangramento apenas venoso pedem ressecção adicional.</div></div></div>
+
+<div class="stp"><div class="n">8</div><div class="c"><span class="fase">anastomose</span><div class="ttl">EEA transanal, dupla grampeada, com os dois testes</div>
+Grampeador circular transanal. <strong>Conferir os dois anéis (donuts) completos</strong>, fazer o <strong>air-leak test</strong> e avaliar a perfusão com <strong>verde de indocianina</strong>.
+<div class="pq"><b>por quê</b>São três verificações independentes de três falhas diferentes: os <em>donuts</em> confirmam que a secção foi <strong>circunferencial completa</strong>; o teste de ar confirma a <strong>estanqueidade</strong>; a indocianina confirma a <strong>perfusão</strong>, que é a causa que nenhum dos outros dois detecta.</div></div></div>
+
+<div class="stp"><div class="n">9</div><div class="c"><span class="fase">proteção</span><div class="ttl">Ileostomia de proteção</div>
+Indicada em anastomose <strong>muito baixa</strong>, <strong>pós-neoadjuvância</strong> ou com fatores de risco associados.
+<div class="pq"><b>por quê</b>A ileostomia <strong>não impede</strong> a fístula — ela <strong>reduz a gravidade</strong> quando a fístula ocorre, desviando o trânsito e evitando a peritonite fecal. É paliação do desfecho, não prevenção do evento. Contrapartida: cerca de 20% nunca são revertidas.</div></div></div>
+
+<div class="box c"><div class="box-t">as 4 checagens antes de fechar</div>
+<strong>1)</strong> O ureter esquerdo foi visto e afastado? <strong>2)</strong> Os dois <em>donuts</em> estão completos? <strong>3)</strong> O air-leak test foi negativo? <strong>4)</strong> O coto proximal sangra arterialmente?</div>
+
+<div class="hand">
+  <div class="hand-c l"><div class="hand-t">✋ MÃO ESQUERDA (não dominante)</div>
+  <ul>
+  <li><strong>Grasper atraumático / Babcock</strong>: tração e exposição do mesocólon</li>
+  <li>Contra-tração para abrir o plano avascular</li>
+  <li>Aberta: pinça de <strong>Duval/Allis</strong> segurando o cólon</li>
+  </ul></div>
+  <div class="hand-c r"><div class="hand-t">🖐️ MÃO DIREITA (dominante)</div>
+  <ul>
+  <li><strong>Bisturi ultrassônico / LigaSure / tesoura monopolar</strong>: dissecção e selagem</li>
+  <li><strong>Clipador / grampeador</strong> nos pedículos</li>
+  <li>Aberta: tesoura de Metzenbaum + porta-agulha</li>
+  </ul></div>
+</div>
+
+<div class="box p"><div class="box-t">Fios & grampos — quando usar</div>
+<ul>
+<li><strong>Ligadura de pedículos:</strong> clipe/hemolok ou selagem (LigaSure) na laparoscopia; fio <strong>seda/vicryl 2-0/0</strong> ou transfixação na cirurgia aberta.</li>
+<li><strong>Anastomose grampeada:</strong> grampeador linear (secção) + circular EEA (colorretal). Padrão para reto baixo.</li>
+<li><strong>Anastomose manual:</strong> monofilamento absorvível <strong>PDS/Vicryl 3-0/4-0</strong>, pontos totais ou em dois planos.</li>
+<li><strong>Fechamento de aponeurose:</strong> PDS 1 (loop). <strong>Pele:</strong> náilon/grampos.</li>
+<li><strong>Estomia:</strong> maturação com Vicryl 3-0.</li>
+</ul></div>
+
+<div class="trap"><b>🪤 Pega:</b> Antes de ligar a AMI, sempre identificar e afastar o <strong>ureter esquerdo</strong> — a lesão ureteral é complicação clássica e cobrada. Cateter ureteral ajuda em reoperações/tumor volumoso.</div>
+`},
+
+{id:'cp', t:'⚠️ Complicações', html:`
+<h2>⚠️ Complicações & Seguimento</h2>
+
+<div class="box r"><div class="box-t">Fístula/deiscência anastomótica — a mais temida</div>
+<ul>
+<li>Mais frequente nas anastomoses <strong>baixas (colorretal/coloanal)</strong> e pós-neoadjuvância.</li>
+<li>Fatores: tensão, má vascularização (watershed), desnutrição, tabagismo, corticoide, emergência.</li>
+<li>Quadro: dor, febre, leucocitose, saída de conteúdo pelo dreno, íleo, peritonite/sepse (4º–7º dia).</li>
+<li>Prevenção: anastomose sem tensão, boa perfusão (indocianina), <strong>ileostomia de proteção</strong>, teste de vazamento.</li>
+<li>Manejo: desde antibiótico/drenagem percutânea (contida) até reabordagem com estomia/desmontagem.</li>
+</ul></div>
+
+<div class="box o"><div class="box-t">Demais complicações</div>
+<ul>
+<li><strong>Lesão ureteral</strong> (esquerda) e vesical.</li>
+<li><strong>Disfunção urinária/sexual</strong> por lesão de plexos pélvicos na TME.</li>
+<li><strong>Síndrome da ressecção anterior baixa (LARS)</strong>: urgência, fragmentação e incontinência após RAB.</li>
+<li>Isquemia de coto/estomia, sangramento, ISC, íleo prolongado, obstrução por bridas.</li>
+<li>Complicações de estomia: retração, prolapso, hérnia paraestomal, dermatite.</li>
+</ul></div>
+
+<div class="box g"><div class="box-t">Seguimento oncológico (pós-curativo, estádios II–III)</div>
+<ul>
+<li><strong>CEA</strong> a cada 3–6 meses por 2–3 anos, depois semestral até 5 anos.</li>
+<li><strong>TC tórax/abdome/pelve</strong> anual (até 3–5 anos) — mais frequente em alto risco.</li>
+<li><strong>Colonoscopia</strong> em 1 ano (ou perioperatória se obstruído); se normal, 3 anos; depois 5 anos.</li>
+<li>Metástases mais comuns: <strong>fígado</strong> (via porta) &gt; pulmão. Reto baixo pode ir a pulmão direto (retal inferior → cava).</li>
+</ul></div>
+
+<div class="trap"><b>🪤 Pega:</b> Elevação isolada e progressiva do <strong>CEA</strong> no seguimento = investigar recidiva com imagem (TC/PET), mesmo com exames normais.</div>
+`},
+
+{id:'pr', t:'🎯 Pega-Ratões', html:`
+<h2>🎯 Pega-Ratões — Alta Recorrência em Banca</h2>
+
+<div class="trap"><b>🪤 Rastreio aos 45:</b> risco médio começa aos <strong>45 anos</strong> (mudança 2021), não 50. Erro clássico em prova atualizada.</div>
+<div class="trap"><b>🪤 Teste positivo:</b> FIT/sangue oculto/colono-TC positivos → SEMPRE colonoscopia. Não repetir o mesmo teste.</div>
+<div class="trap"><b>🪤 Anemia ferropriva:</b> idoso com anemia ferropriva = câncer de cólon <strong>direito</strong> até prova em contrário.</div>
+<div class="trap"><b>🪤 Extensão da colectomia:</b> definida pela <strong>drenagem linfática do pedículo</strong>, não pela margem do tumor.</div>
+<div class="trap"><b>🪤 ≥12 linfonodos:</b> mínimo para estadiamento N adequado.</div>
+<div class="trap"><b>🪤 Estádio III:</b> = QT adjuvante (FOLFOX/CAPOX). Estádio II só se alto risco.</div>
+<div class="trap"><b>🪤 dMMR estádio II:</b> NÃO se beneficia de 5-FU isolado; melhor prognóstico basal.</div>
+<div class="trap"><b>🪤 Anti-EGFR:</b> só em tumor <strong>RAS/BRAF selvagem E de cólon esquerdo/reto</strong> (lateralidade importa).</div>
+<div class="trap"><b>🪤 Reto:</b> localmente avançado (T3/4 ou N+) → neoadjuvância (TNT) ANTES da TME.</div>
+<div class="trap"><b>🪤 Reto dMMR:</b> dostarlimab neoadjuvante → cCR de 100%, preservação de órgão.</div>
+<div class="trap"><b>🪤 PAF:</b> &gt;100 pólipos, mutação APC, risco ~100% → proctocolectomia profilática.</div>
+<div class="trap"><b>🪤 Lynch:</b> genes de reparo (MMR), CCR direito jovem, colono a cada 1–2 anos desde 20–25a.</div>
+<div class="trap"><b>🪤 CEA:</b> serve para seguimento/prognóstico, NÃO para rastreio ou diagnóstico.</div>
+<div class="trap"><b>🪤 Watershed:</b> Griffiths (flexura esplênica) e Sudeck (retossigmoide) = risco de isquemia anastomótica.</div>
+
+<div class="mnem"><div class="mnem-w">TNM → CONDUTA</div>
+<div>I = cirurgia · II = cirurgia (± QT se alto risco) · III = cirurgia + QT · IV = QT ± metastasectomia</div></div>
+<div class="mnem"><div class="mnem-w">FOLFOX / CAPOX</div>
+<div>Adjuvância do estádio III (e II alto risco) · oxaliplatina + fluoropirimidina · 3–6 meses</div></div>
+`},
+
+{id:'qz', t:'📝 Questões RS', html:`
+<h2>📝 Questões — Bancas RS (itens representativos)</h2>
+<p class="kid">(Itens ORIGINAIS no estilo das bancas — HCPA · GHC · Santa Casa POA · PUC-RS · AMRIGS — para treino, não reprodução literal de prova.)</p>
+
+<div class="q"><div class="q-b">// HCPA · estilo</div>
+<div class="q-stem">Homem, 62 anos, anemia ferropriva e fadiga, sem sangramento visível. Melhor conduta inicial:</div>
+<div class="q-alt">A) Repor ferro e reavaliar em 6 meses</div>
+<div class="q-alt">B) Endoscopia digestiva alta apenas</div>
+<div class="q-alt">C) Colonoscopia (± EDA) para investigar neoplasia colorretal</div>
+<div class="q-alt">D) FIT e, se negativo, alta</div>
+<details><summary>▸ resposta</summary><div class="ans"><b>C.</b> Anemia ferropriva em homem idoso obriga investigação de CCR (cólon direito), independente de sangramento aparente.</div></details></div>
+
+<div class="q"><div class="q-b">// GHC · estilo</div>
+<div class="q-stem">Sobre o rastreamento de CCR em risco médio segundo diretrizes atuais:</div>
+<div class="q-alt">A) Inicia aos 50 anos com colonoscopia obrigatória</div>
+<div class="q-alt">B) Inicia aos 45 anos; colonoscopia a cada 10 anos é uma opção</div>
+<div class="q-alt">C) FIT positivo permite repetir FIT em 1 ano</div>
+<div class="q-alt">D) Encerra o rastreio aos 60 anos</div>
+<details><summary>▸ resposta</summary><div class="ans"><b>B.</b> Desde 2021 o rastreio de risco médio inicia aos 45 anos; FIT+ exige colonoscopia; segue até ~75 anos.</div></details></div>
+
+<div class="q"><div class="q-b">// Santa Casa POA · estilo</div>
+<div class="q-stem">Adenocarcinoma de sigmoide, T3N1. Além da sigmoidectomia com ligadura vascular adequada, o tratamento inclui:</div>
+<div class="q-alt">A) Apenas seguimento</div>
+<div class="q-alt">B) Radioterapia adjuvante isolada</div>
+<div class="q-alt">C) Quimioterapia adjuvante (FOLFOX/CAPOX)</div>
+<div class="q-alt">D) Neoadjuvância com quimiorradioterapia</div>
+<details><summary>▸ resposta</summary><div class="ans"><b>C.</b> Estádio III (N+) de cólon = QT adjuvante. Neoadjuvância com RT é para o RETO, não para o cólon.</div></details></div>
+
+<div class="q"><div class="q-b">// PUC-RS · estilo</div>
+<div class="q-stem">Sobre a Excisão Total do Mesorreto (TME) no câncer de reto:</div>
+<div class="q-alt">A) É indicada apenas em tumores de reto alto</div>
+<div class="q-alt">B) Dissecção no plano avascular preservando o mesorreto íntegro, reduzindo recidiva local</div>
+<div class="q-alt">C) Dispensa avaliação da margem circunferencial</div>
+<div class="q-alt">D) Aumenta a recidiva local comparada à dissecção romba</div>
+<details><summary>▸ resposta</summary><div class="ans"><b>B.</b> A TME (Heald) no plano "santo" com envelope íntegro reduziu a recidiva local para &lt;10% e preserva plexos autonômicos.</div></details></div>
+
+<div class="q"><div class="q-b">// AMRIGS · estilo</div>
+<div class="q-stem">Paciente com &gt;100 pólipos adenomatosos colônicos e mutação de APC. Conduta definitiva:</div>
+<div class="q-alt">A) Polipectomias endoscópicas seriadas indefinidamente</div>
+<div class="q-alt">B) Colonoscopia anual sem cirurgia</div>
+<div class="q-alt">C) Proctocolectomia profilática</div>
+<div class="q-alt">D) Quimioprevenção isolada com AAS</div>
+<details><summary>▸ resposta</summary><div class="ans"><b>C.</b> PAF clássica tem risco de CCR próximo a 100% → proctocolectomia profilática (com IPAA ou ileostomia definitiva conforme o caso).</div></details></div>
+
+<div class="q"><div class="q-b">// HCPA · estilo</div>
+<div class="q-stem">Número mínimo de linfonodos que deve ser examinado para adequado estadiamento N no CCR:</div>
+<div class="q-alt">A) 6 · B) 8 · C) 12 · D) 20</div>
+<details><summary>▸ resposta</summary><div class="ans"><b>C.</b> ≥12 linfonodos é o padrão de adequação oncológica.</div></details></div>
+
+<div class="q"><div class="q-b">// GHC · estilo</div>
+<div class="q-stem">Câncer de reto médio cT3N1. Estratégia atual mais adequada:</div>
+<div class="q-alt">A) Cirurgia (TME) imediata e QT adjuvante</div>
+<div class="q-alt">B) Terapia neoadjuvante total (TNT) seguida de TME (ou watch-and-wait se cCR)</div>
+<div class="q-alt">C) Radioterapia isolada definitiva</div>
+<div class="q-alt">D) Amputação abdominoperineal de rotina</div>
+<details><summary>▸ resposta</summary><div class="ans"><b>B.</b> Reto localmente avançado → neoadjuvância (TNT tende a ser preferida); cCR permite preservação de órgão.</div></details></div>
+
+<div class="q"><div class="q-b">// Santa Casa POA · estilo</div>
+<div class="q-stem">Durante colectomia esquerda, estrutura que deve ser identificada e protegida antes da ligadura da AMI:</div>
+<div class="q-alt">A) Ducto torácico · B) Ureter esquerdo · C) Veia cava · D) Nervo frênico</div>
+<details><summary>▸ resposta</summary><div class="ans"><b>B.</b> O ureter esquerdo cruza próximo à origem da AMI; lesão ureteral é complicação clássica.</div></details></div>
+
+<div class="q"><div class="q-b">// PUC-RS · estilo</div>
+<div class="q-stem">Sobre o teste de MMR/MSI no CCR, é correto:</div>
+<div class="q-alt">A) Só deve ser feito em metástase</div>
+<div class="q-alt">B) É preditivo de resposta à imunoterapia e rastreia Lynch</div>
+<div class="q-alt">C) dMMR indica pior prognóstico no estádio II</div>
+<div class="q-alt">D) Não influencia a adjuvância</div>
+<details><summary>▸ resposta</summary><div class="ans"><b>B.</b> MMR/MSI deve ser feito em todos: rastreia Lynch, é prognóstico (dMMR = melhor no II) e preditivo (responde a checkpoint inhibitors).</div></details></div>
+
+<div class="q"><div class="q-b">// AMRIGS · estilo</div>
+<div class="q-stem">Tumor de ceco. Cirurgia oncológica adequada:</div>
+<div class="q-alt">A) Sigmoidectomia · B) Colectomia esquerda · C) Colectomia direita com ligadura ileocólica · D) Transversectomia</div>
+<details><summary>▸ resposta</summary><div class="ans"><b>C.</b> Tumor de ceco/ascendente → colectomia direita, ligando pedículos ileocólico e cólico direito na origem.</div></details></div>
+`}
+];
+
+const tabsEl=document.getElementById('tabs'), wrapEl=document.getElementById('wrap');
+SECS.forEach((s,i)=>{
+  const t=document.createElement('div');t.className='tab'+(i===0?' on':'');t.textContent=s.t;t.onclick=()=>go(i);tabsEl.appendChild(t);
+  const d=document.createElement('div');d.className='sec'+(i===0?' on':'');d.id='sec-'+s.id;d.innerHTML=s.html;wrapEl.appendChild(d);
+});
+function go(i){
+  document.querySelectorAll('.tab').forEach((t,k)=>t.classList.toggle('on',k===i));
+  document.querySelectorAll('.sec').forEach((d,k)=>d.classList.toggle('on',k===i));
+  document.querySelectorAll('.tab')[i].scrollIntoView({inline:'center',block:'nearest',behavior:'smooth'});
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+document.addEventListener('keydown',e=>{
+  const on=[...document.querySelectorAll('.tab')].findIndex(t=>t.classList.contains('on'));
+  if(e.key==='ArrowRight'&&on<SECS.length-1)go(on+1);
+  if(e.key==='ArrowLeft'&&on>0)go(on-1);
+});
+</script>
+</body>
+</html>

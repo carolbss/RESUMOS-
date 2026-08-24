@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Linfedema · pocket</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d1117;--card:#16161f;--card2:#1c1c27;--line:#2a2a38;
+  --txt:#ececf4;--muted:#9a9ab0;
+  --laranja:#f97316;--roxo:#a855f7;--ciano:#22d3ee;--vermelho:#f87171;--amarelo:#fbbf24;--verde:#34d399;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{overflow-x:hidden}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;font-size:17px;line-height:1.6;padding-bottom:30px}
+.top{padding:22px 18px 12px;position:sticky;top:0;background:linear-gradient(180deg,var(--bg) 70%,transparent);z-index:5}
+.kick{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:26px;line-height:1.1;margin-top:4px}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:6px 18px 12px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;padding:9px 15px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted);white-space:nowrap;cursor:pointer;transition:.15s}
+.tab.on{background:var(--laranja);border-color:var(--laranja);color:#0a0a0f}
+.panel{display:none;padding:6px 18px 40px;animation:f .25s}
+.panel.on{display:block}
+@keyframes f{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+h2{font-family:'Syne',sans-serif;font-size:21px;color:var(--laranja);margin:18px 0 10px}
+h3{font-family:'Syne',sans-serif;font-size:16px;color:#fff;margin:16px 0 6px}
+p{margin:10px 0}
+ul{list-style:none;margin:8px 0}
+li{padding:6px 0 6px 22px;position:relative}
+li::before{content:"▸";position:absolute;left:0;top:7px;color:var(--laranja);font-size:13px}
+strong{color:#fff;font-weight:600}
+.s{color:var(--ciano);font-style:italic;font-size:.92em}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0}
+.box{border-radius:12px;padding:13px 15px;margin:13px 0;border:1px solid;font-size:15px}
+.prova{background:rgba(168,85,247,.1);border-color:rgba(168,85,247,.4)}
+.prova .l{color:var(--roxo)}
+.mac{background:rgba(34,211,238,.1);border-color:rgba(34,211,238,.4)}
+.mac .l{color:var(--ciano)}
+.warn{background:rgba(248,113,113,.1);border-color:rgba(248,113,113,.4)}
+.warn .l{color:var(--vermelho)}
+.l{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-size:10px;background:rgba(168,85,247,.25);color:var(--roxo);padding:2px 6px;border-radius:5px;margin-left:5px;font-family:'JetBrains Mono',monospace}
+.kv{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)}
+.kv:last-child{border:none}
+.kv .k{flex:0 0 36%;color:var(--ciano);font-family:'JetBrains Mono',monospace;font-size:13px}
+.kv .v{flex:1;font-size:15px}
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="kick">carolzita · pocket 🚑</div>
+  <h1>Linfedema 💧</h1>
+</div>
+<div class="tabs">
+  <div class="tab on" data-t="0">📋 Base</div>
+  <div class="tab" data-t="1">📊 ISL/Dx</div>
+  <div class="tab" data-t="2">🔍 DDx</div>
+  <div class="tab" data-t="3">🧣 CDT</div>
+  <div class="tab" data-t="4">🔬 Cirurgia</div>
+  <div class="tab" data-t="5">☠️ Traps</div>
+</div>
+
+<!-- 0 -->
+<div class="panel on" data-p="0">
+  <h2>📋 O básico</h2>
+  <p>💧 Acúmulo de líquido <strong>rico em proteína</strong> → inflamação → <strong>fibrose</strong></p>
+  <h3>🧬 Primário</h3>
+  <ul>
+    <li>👶 Milroy (congênito)</li>
+    <li>🚺 Praecox/Meige (puberdade · <strong>o + comum</strong>)</li>
+    <li>👵 Tarda (&gt;35a)</li>
+  </ul>
+  <h3>🦟 Secundário (o + comum no geral)</h3>
+  <div class="card">
+    <div class="kv"><div class="k">🌍 Mundo</div><div class="v"><strong>filariose</strong> (W. bancrofti)</div></div>
+    <div class="kv"><div class="k">🏥 Desenvolvido</div><div class="v"><strong>câncer mama</strong>: linfadenectomia axilar + RT → braço</div></div>
+  </div>
+  <div class="box prova"><span class="l">alto rendimento <span class="banca">HCPA·GHC</span></span>🌍 Filariose = mundo · 🎗️ câncer/RT = país desenvolvido</div>
+</div>
+
+<!-- 1 -->
+<div class="panel" data-p="1">
+  <h2>📊 ISL 0–III</h2>
+  <div class="card">
+    <div class="kv"><div class="k">0</div><div class="v">subclínico (sem edema)</div></div>
+    <div class="kv"><div class="k">I</div><div class="v">cacifo · <strong>REDUZ com elevação</strong></div></div>
+    <div class="kv"><div class="k">II</div><div class="v"><strong>NÃO reduz</strong> · Stemmer + · fibrose</div></div>
+    <div class="kv"><div class="k">III</div><div class="v">elefantíase linfostática</div></div>
+  </div>
+  <div class="box prova"><span class="l">alto rendimento <span class="banca">SC-POA·AMRIGS</span></span>✋ <strong>Sinal de Stemmer +</strong> = não consegue pinçar a pele na base do 2º dedo do pé!</div>
+  <ul>
+    <li>🎯 Dx é <strong>clínico</strong> (Stemmer, dorso do pé, unilateral)</li>
+    <li>📷 <strong>Linfocintilografia</strong> confirma · <strong>ICG</strong> planeja cirurgia</li>
+  </ul>
+</div>
+
+<!-- 2 -->
+<div class="panel" data-p="2">
+  <h2>🔍 Diferenciais</h2>
+  <div class="card">
+    <div class="kv"><div class="k">💧 Linfedema</div><div class="v">unilateral · <strong>pega o pé</strong> · Stemmer +</div></div>
+    <div class="kv"><div class="k">🍐 Lipedema</div><div class="v"><strong>bilateral · POUPA o pé</strong> · Stemmer −</div></div>
+    <div class="kv"><div class="k">🦵 Venoso</div><div class="v">varizes · dermatite ocre · úlcera maleolar</div></div>
+  </div>
+  <div class="box warn"><span class="l">☠️ pega-ratão</span>🍐 <strong>Lipedema POUPA o pé</strong> e é bilateral simétrico (Stemmer −)!</div>
+  <h3>⚡ Complicações</h3>
+  <ul>
+    <li>🦠 <strong>Erisipela/celulite</strong> de repetição (a + comum)</li>
+    <li>🟣 <strong>Stewart-Treves</strong> = linfangiossarcoma no braço pós-mastectomia</li>
+  </ul>
+  <div class="box prova"><span class="l">alto rendimento <span class="banca">PUC</span></span>🟣 Nódulo violáceo que não cicatriza no membro linfedematoso → <strong>Stewart-Treves</strong> (biópsia!)</div>
+</div>
+
+<!-- 3 -->
+<div class="panel" data-p="3">
+  <h2>🧣 CDT (padrão-ouro)</h2>
+  <div class="box prova"><span class="l">alto rendimento</span>🥇 <strong>Terapia descongestiva = 1ª linha p/ todos os estágios!</strong> Crônico → manutenção pra vida toda</div>
+  <h3>4 pilares</h3>
+  <div class="card">
+    <div class="kv"><div class="k">1 🤲</div><div class="v">drenagem linfática manual</div></div>
+    <div class="kv"><div class="k">2 🧣</div><div class="v">compressão (faixa curta → malha)</div></div>
+    <div class="kv"><div class="k">3 🏃</div><div class="v">exercícios sob compressão</div></div>
+    <div class="kv"><div class="k">4 🧴</div><div class="v">cuidado da pele (evita erisipela)</div></div>
+  </div>
+  <div class="box warn"><span class="l">☠️ pega-ratão</span>💊 <strong>DIURÉTICO NÃO trata linfedema!</strong> (líquido proteico não mobiliza) 🚫</div>
+</div>
+
+<!-- 4 -->
+<div class="panel" data-p="4">
+  <h2>🔬 Cirurgia (refratários)</h2>
+  <h3>💚 Fisiológica (inicial)</h3>
+  <ul>
+    <li>🔗 <strong>LVA</strong> (linfovenosa) — ICG <strong>linear</strong>, estágio I-II</li>
+    <li>🫘 <strong>VLNT</strong> (transfere linfonodo) — ICG com <strong>refluxo dérmico</strong></li>
+  </ul>
+  <h3>✂️ Excisional (avançado)</h3>
+  <ul>
+    <li>🫧 <strong>Lipoaspiração</strong> — componente fibrogorduroso (IIb-III)</li>
+    <li>🔪 <strong>Charles</strong> — elefantíase grave</li>
+  </ul>
+  <div class="box mac"><span class="l">🧠 macete</span>ICG linear → LVA · refluxo dérmico → VLNT · sólido → lipoaspiração 🎯</div>
+  <p>🪡 LVA = supermicrocirurgia, náilon 11-0/12-0</p>
+</div>
+
+<!-- 5 -->
+<div class="panel" data-p="5">
+  <h2>☠️ Pega-ratões</h2>
+  <div class="box warn"><span class="l">trap 1</span>Diurético NÃO trata linfedema 🚫</div>
+  <div class="box warn"><span class="l">trap 2</span>Filariose=mundo · câncer/RT=desenvolvido 🌍</div>
+  <div class="box warn"><span class="l">trap 3</span>ISL I reduz · II não reduz com elevação 📊</div>
+  <div class="box warn"><span class="l">trap 4</span>Lipedema poupa o pé (Stemmer −) 🍐</div>
+  <div class="box warn"><span class="l">trap 5</span>Stewart-Treves = linfangiossarcoma 🟣</div>
+  <div class="box warn"><span class="l">trap 6</span>CDT é padrão-ouro; cirurgia só refratário 🧣</div>
+  <div class="box warn"><span class="l">trap 7</span>Linfocintilografia dx · ICG planeja 📷</div>
+  <div class="box warn"><span class="l">trap 8</span>ICG linear→LVA · refluxo→VLNT 🔬</div>
+  <div class="box mac"><span class="l">✅ resumo de bolso</span>Líquido proteico→fibrose · filariose(mundo)/câncer-RT(desenv.) · ISL 0-III (I reduz, II não, III elefantíase) · Stemmer+ base 2º dedo · dx clínico+linfocintilografia · <strong>CDT</strong> (sem diurético!) · cirurgia LVA/VLNT/lipo · erisipela + Stewart-Treves 🎓</div>
+</div>
+
+<script>
+var tabs=document.querySelectorAll('.tab'),panels=document.querySelectorAll('.panel');
+tabs.forEach(function(t){t.addEventListener('click',function(){
+  tabs.forEach(function(x){x.classList.remove('on')});
+  panels.forEach(function(x){x.classList.remove('on')});
+  t.classList.add('on');
+  document.querySelector('.panel[data-p="'+t.dataset.t+'"]').classList.add('on');
+})});
+</script>
+</body>
+</html>

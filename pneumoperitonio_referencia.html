@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pneumoperitônio &amp; Acesso Laparoscópico — Referência CV 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d1117; --bg2:#161b22; --bg3:#1c2230; --line:#2a3038;
+  --txt:#c9d1d9; --txt2:#8b949e; --txt3:#6e7681;
+  --orange:#ff7b29; --orange-d:#3a2410;
+  --purple:#a371f7; --purple-d:#241a3a;
+  --cyan:#39c5cf; --cyan-d:#0f2e30;
+  --red:#f85149; --green:#3fb950; --yellow:#d29922;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font-family:'IBM Plex Sans',sans-serif;line-height:1.6;font-size:15px;padding-bottom:60px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 18px}
+header{padding:30px 0 16px;border-bottom:1px solid var(--line)}
+h1{font-family:'IBM Plex Serif',serif;font-size:26px;font-weight:600;letter-spacing:-.3px}
+h1 .accent{color:var(--orange)}
+.sub{color:var(--txt2);font-size:13px;margin-top:6px;font-family:'IBM Plex Mono',monospace}
+.tabs{position:sticky;top:0;z-index:20;background:var(--bg);display:flex;gap:4px;overflow-x:auto;padding:10px 18px;border-bottom:1px solid var(--line);scrollbar-width:thin}
+.tabs::-webkit-scrollbar{height:5px}.tabs::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
+.tab{flex:0 0 auto;background:var(--bg2);border:1px solid var(--line);color:var(--txt2);padding:8px 14px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;font-family:'IBM Plex Mono',monospace;transition:.15s}
+.tab:hover{color:var(--txt);border-color:var(--orange)}
+.tab.active{background:var(--orange);color:#0d1117;border-color:var(--orange)}
+.panel{display:none;padding:24px 0;animation:fade .25s}
+.panel.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1}}
+h2{font-family:'IBM Plex Serif',serif;font-size:20px;color:var(--orange);margin:26px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+h2:first-child{margin-top:0}
+h3{font-size:16px;color:var(--txt);margin:18px 0 8px;font-weight:600}
+p{margin:8px 0}
+.lay{color:var(--cyan);font-style:italic;font-size:.93em}
+ul,ol{margin:8px 0 8px 22px}li{margin:4px 0}
+strong{color:#fff;font-weight:600}
+code{font-family:'IBM Plex Mono',monospace;background:var(--bg3);padding:1px 6px;border-radius:4px;font-size:.88em;color:var(--orange)}
+.card{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0}
+.box{border-left:4px solid var(--orange);background:var(--orange-d);border-radius:0 10px 10px 0;padding:12px 16px;margin:14px 0}
+.box.hy{border-left-color:var(--purple);background:var(--purple-d)}
+.box.mn{border-left-color:var(--cyan);background:var(--cyan-d)}
+.box .lbl{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;font-weight:600;margin-bottom:6px;display:block}
+.box .lbl{color:var(--orange)}.box.hy .lbl{color:var(--purple)}.box.mn .lbl{color:var(--cyan)}
+.banca{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:600;padding:1px 7px;border-radius:20px;background:#2a1f44;color:var(--purple);border:1px solid #3a2a5a;margin-left:6px;vertical-align:middle}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--bg3);color:var(--orange);font-family:'IBM Plex Mono',monospace;font-size:11.5px;text-transform:uppercase;letter-spacing:.5px;position:sticky;top:0}
+td strong{color:var(--cyan)}
+.tag{font-family:'IBM Plex Mono',monospace;font-size:11px;padding:2px 8px;border-radius:5px;font-weight:600}
+.t-b{background:#0f2a16;color:var(--green)}
+.t-m{background:#3a1414;color:var(--red)}
+.t-w{background:#3a2e0d;color:var(--yellow)}
+svg{max-width:100%;height:auto;display:block;margin:16px auto;background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:10px}
+.q{background:var(--bg2);border:1px solid var(--line);border-left:4px solid var(--purple);border-radius:0 10px 10px 0;padding:14px 16px;margin:16px 0}
+.q .stem{font-weight:500}
+.alt{margin:8px 0 0 0;padding-left:4px}
+.alt div{padding:3px 0;color:var(--txt2)}
+details{margin-top:10px;border-top:1px dashed var(--line);padding-top:8px}
+summary{cursor:pointer;color:var(--cyan);font-weight:600;font-size:13px;font-family:'IBM Plex Mono',monospace}
+details[open] summary{margin-bottom:6px}
+.ans{color:var(--green);font-weight:600}
+.foot{color:var(--txt3);font-size:11px;text-align:center;margin-top:30px;font-family:'IBM Plex Mono',monospace}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:640px){.grid2{grid-template-columns:1fr}h1{font-size:21px}}
+.pill{display:inline-block;width:11px;height:11px;border-radius:3px;vertical-align:middle;margin-right:5px}
+.legend{font-size:12px;color:var(--txt2);font-family:'IBM Plex Mono',monospace;margin-top:10px}
+.flow{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:18px 16px;margin:16px 0}
+.frow{display:flex;align-items:stretch;gap:10px;margin:0 0 6px}
+.fdec{flex:1;background:var(--bg3);border:1px solid var(--purple);border-radius:10px;padding:10px 12px;font-size:13.5px}
+.fdec b{color:var(--purple);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.5px}
+.fout{flex:0 0 auto;display:flex;flex-direction:column;justify-content:center;gap:6px;min-width:150px}
+.chip{border-radius:8px;padding:7px 11px;font-size:13px;font-weight:600;text-align:center;font-family:'IBM Plex Sans'}
+.chip.res{background:#3a1414;color:#ff9d9d;border:1px solid var(--red)}
+.chip.eus{background:#3a2e0d;color:#ffd970;border:1px solid var(--yellow)}
+.chip.vig{background:#0f2a16;color:#8ff0a8;border:1px solid var(--green)}
+.fdown{text-align:center;color:var(--txt3);font-size:18px;line-height:1;margin:1px 0}
+@media(max-width:640px){.frow{flex-direction:column}.fout{min-width:0}}
+</style>
+</head>
+<body>
+<header class="wrap"><h1>Pneumoperitônio <span class="accent">&amp; Vias de Acesso</span></h1><div class="sub">Referência CV 2026 · Veress × Hasson · pressão de abertura · Durant · ERAS · Cochrane</div><div class="legend"><span class="pill" style="background:var(--orange)"></span>conteúdo geral<span class="pill" style="background:var(--purple);margin-left:14px"></span>alto rendimento / prova<span class="pill" style="background:var(--cyan);margin-left:14px"></span>analogia &amp; mnemônico</div></header>
+<nav class="tabs">
+  <button class="tab active" data-t="vg">🗺️ Visão Geral</button>
+  <button class="tab" data-t="fis">🌬️ Fisiologia</button>
+  <button class="tab" data-t="an">📍 Sítios</button>
+  <button class="tab" data-t="ver">🪡 Veress</button>
+  <button class="tab" data-t="has">🔓 Hasson</button>
+  <button class="tab" data-t="comp">⚠️ Complicações</button>
+  <button class="tab" data-t="quest">📝 Questões</button>
+  <button class="tab" data-t="pega">🪤 Pega-ratão</button>
+  <button class="tab" data-t="mn">🧠 Mnemônicos</button>
+</nav>
+<main class="wrap">
+<section class="panel active" id="vg">
+<h2>Por que insuflar?</h2>
+<p>O <strong>pneumoperitônio</strong> cria o espaço de trabalho que afasta a parede abdominal das vísceras, permitindo visão e manipulação na laparoscopia. O gás padrão é o <strong>CO₂</strong>: não é inflamável (permite eletrocautério), tem alta difusibilidade/solubilidade (rápida eliminação pulmonar se houver embolia) e é barato.</p>
+<p class="lay">(Pense em montar uma barraca: o CO₂ é o ar que "estufa" a barriga e cria o teto sob o qual você trabalha. Escolhemos um "ar" que não pega fogo perto da faísca do bisturi.)</p>
+<div class="box hy"><span class="lbl">★ As 3 vias de entrada</span>
+<strong>1) Veress (fechada)</strong> — agulha às cegas, insufla e depois passa o trocarte · <strong>2) Hasson (aberta)</strong> — minilaparotomia sob visão · <strong>3) Trocarte óptico/inserção direta</strong> — entra vendo as camadas. <strong>Não há técnica comprovadamente superior</strong> em desfecho global (Cochrane); a escolha é guiada pelo paciente e pela experiência. <span class="banca">HCPA</span></div>
+<h3>Pressão de trabalho</h3>
+<p>Padrão clássico <code>12–15 mmHg</code>. Há tendência ao <strong>baixo fluxo/baixa pressão (8–12 mmHg)</strong> para reduzir repercussão hemodinâmica e dor pós-operatória, quando a exposição permite. A insuflação deve ser <strong>lenta no início</strong> (1 L/min) para evitar reflexo vagal.</p>
+</section><section class="panel" id="fis">
+<h2>Repercussões do CO₂ e da PIA</h2>
+<table>
+<tr><th>Sistema</th><th>Efeito</th><th>Mecanismo</th></tr>
+<tr><td><strong>Respiratório</strong></td><td>Hipercapnia, acidose respiratória</td><td>Absorção peritoneal de CO₂ → ↑PaCO₂; ↓complacência pela PIA → ↑ventilação necessária</td></tr>
+<tr><td><strong>Cardiovascular</strong></td><td>↓retorno venoso e ↓débito se PIA alta; ↑RVS</td><td>Compressão da veia cava inferior; pressão >15 mmHg compromete pré-carga</td></tr>
+<tr><td><strong>Reflexo vagal</strong></td><td><strong>Bradicardia/assistolia</strong> na insuflação rápida</td><td>Estiramento peritoneal súbito → vagotônico. Conduta: parar insuflação, atropina</td></tr>
+<tr><td><strong>Renal</strong></td><td>Oligúria transitória</td><td>Compressão das veias renais + ativação do SRAA; reverte ao desinsuflar</td></tr>
+<tr><td><strong>Posição</strong></td><td>Trendelenburg ↑PIC/edema; proclive ↓retorno venoso</td><td>Somatório posição + PIA</td></tr>
+</table>
+<div class="box"><span class="lbl">aplicada</span>Paciente cardiopata/DPOC tolera mal PIA alta → preferir <strong>baixa pressão</strong> e atenção ao EtCO₂. Hipercapnia intraoperatória → ajustar ventilação antes de suspeitar de embolia.</div>
+</section><section class="panel" id="an">
+<h2>Onde puncionar — referências</h2>
+<p>O <strong>umbigo</strong> é o sítio padrão: ali a linha alba é mais fina e as três camadas (pele–fáscia–peritônio) estão fundidas. Risco: logo abaixo está a <strong>bifurcação aórtica (≈L4)</strong> e os grandes vasos — por isso a agulha entra angulada para longe deles.</p>
+<svg viewBox="0 0 520 240" xmlns="http://www.w3.org/2000/svg">
+<rect x="0" y="0" width="520" height="240" fill="none"/>
+<ellipse cx="260" cy="120" rx="180" ry="95" fill="#1c2230" stroke="#2a3038"/>
+<circle cx="260" cy="120" r="6" fill="#ff7b29"/><text x="248" y="145" fill="#8b949e" font-size="11" font-family="monospace">umbigo</text>
+<circle cx="150" cy="70" r="6" fill="#a371f7"/><text x="92" y="60" fill="#a371f7" font-size="11" font-family="monospace">Palmer (LSE)</text>
+<line x1="260" y1="120" x2="260" y2="210" stroke="#f85149" stroke-dasharray="4 3"/><text x="268" y="200" fill="#f85149" font-size="11" font-family="monospace">aorta / bifurcação L4</text>
+<text x="200" y="30" fill="#39c5cf" font-size="12" font-family="monospace">parede abdominal anterior</text>
+</svg>
+<div class="box hy"><span class="lbl">★ Ponto de Palmer</span>Hipocôndrio <strong>esquerdo</strong>, ~3 cm abaixo do rebordo costal na linha hemiclavicular. Indicado quando há <strong>aderências periumbilicais</strong>, cirurgia abdominal prévia, hérnia umbilical, gestante &gt;14 sem, ou <strong>após 3 tentativas falhas</strong> no umbigo. Esvaziar o estômago (sonda) antes — risco de lesão gástrica. <span class="banca">AMRIGS</span> <span class="banca">PUC-RS</span></div>
+<p>Trocartes acessórios: inseridos sob <strong>visão direta</strong>, lateralmente aos <strong>vasos epigástricos inferiores</strong> (transiluminação ajuda a evitá-los).</p>
+</section><section class="panel" id="ver">
+<h2>Técnica de Veress (fechada)</h2>
+<p class="lay">(A agulha de Veress tem uma ponta cortante por fora e um "miolo" rombo com mola: ao furar a última camada, a resistência some e o miolo dispara para a frente, protegendo as vísceras.)</p>
+<h3>Passo a passo</h3>
+<ol>
+<li>Supino, mesa neutra (Trendelenburg só <strong>após</strong> confirmar entrada). Esvaziar bexiga e estômago.</li>
+<li>Testar a mola da agulha. Incisão na borda inferior do umbigo.</li>
+<li>Elevar a parede (campo/pinça) e inserir a agulha a <strong>45°</strong> (magro) a <strong>90°</strong> (obeso), em direção à pelve, longe dos grandes vasos. Sentir os 2 "cliques" (fáscia e peritônio).</li>
+<li>Confirmar posição e insuflar lentamente.</li>
+</ol>
+<div class="box hy"><span class="lbl">★ Testes de segurança do Veress</span>
+<strong>(1)</strong> Aspiração/irrigação (não retornar sangue/conteúdo entérico) · <strong>(2)</strong> Gota pendente ("hanging drop" — a gota é sugada ao elevar a parede) · <strong>(3)</strong> Teste da seringa · <strong>(4)</strong> <strong>Pressão de abertura &lt;10 mmHg</strong> com fluxo livre. <strong>O melhor preditor isolado de posição intraperitoneal correta é a pressão de abertura baixa</strong> (&lt;10, idealmente &lt;8 mmHg); os demais testes têm baixa sensibilidade. <span class="banca">HCPA</span> <span class="banca">GHC</span></div>
+<div class="box mn"><span class="lbl">analogia</span>Insuflar pela pressão, não pelo volume: pressão alta de abertura = ponta fora do peritônio (pré-peritoneal, epíplon ou víscera).</div>
+</section><section class="panel" id="has">
+<h2>Técnica de Hasson (aberta)</h2>
+<p>Essencialmente uma <strong>minilaparotomia</strong> umbilical: incisão, abertura da aponeurose e do peritônio <strong>sob visão direta</strong>, colocação de cânula romba com cone de vedação e <strong>fios de reparo</strong> na fáscia; insufla-se depois.</p>
+<div class="box hy"><span class="lbl">★ Quando preferir a aberta</span>
+Gestante <strong>&gt;24 semanas</strong>, obesidade, suspeita de aderências, cirurgia abdominal prévia, <strong>crianças</strong> (parede fina, vísceras próximas). Reduz o risco de <strong>lesão vascular maior</strong> e de embolia gasosa, mas <strong>não reduz</strong> a lesão de alça intestinal (pode até igualar/aumentar). <span class="banca">Santa Casa</span></div>
+<h3>Instrumentos por mão</h3>
+<table><tr><th>Tempo</th><th>Mão esquerda</th><th>Mão direita</th></tr>
+<tr><td>Abertura da fáscia</td><td>Afastador Farabeuf / pinça de campo elevando</td><td>Bisturi / tesoura de Metzenbaum</td></tr>
+<tr><td>Reparo</td><td>Pinça dente-de-rato</td><td>Porta-agulha + fio absorvível 0/2-0 (Vicryl)</td></tr>
+<tr><td>Cânula</td><td>Estabiliza a cânula</td><td>Insere o obturador rombo</td></tr></table>
+</section><section class="panel" id="comp">
+<h2>Complicações da entrada e do pneumoperitônio</h2>
+<table>
+<tr><th>Complicação</th><th>Sinais</th><th>Conduta</th></tr>
+<tr><td><span class="tag t-m">grave</span> <strong>Lesão vascular maior</strong> (aorta, cava, ilíacos)</td><td>Sangue na agulha/trocarte, hipotensão</td><td><strong>Laparotomia imediata</strong>, compressão, controle proximal/distal. Não retirar o trocarte que tampona</td></tr>
+<tr><td><span class="tag t-m">grave</span> <strong>Lesão visceral</strong> (intestino)</td><td>Conteúdo entérico, odor; pode passar despercebida</td><td>Reparo; alto índice de suspeição (lesão tardia = peritonite no PO)</td></tr>
+<tr><td><span class="tag t-w">atenção</span> <strong>Embolia gasosa por CO₂</strong></td><td><strong>↓EtCO₂ súbito</strong>, hipotensão, sopro "em moinho d'água", hipoxemia</td><td>Parar insuflação, 100% O₂, <strong>manobra de Durant (decúbito lateral ESQUERDO + Trendelenburg)</strong>, aspirar gás do AD por cateter central</td></tr>
+<tr><td><span class="tag t-w">atenção</span> <strong>Enfisema subcutâneo</strong></td><td>Crepitação, <strong>↑EtCO₂</strong></td><td>Geralmente autolimitado; reduzir pressão; vigiar pneumomediastino</td></tr>
+<tr><td><span class="tag t-b">comum</span> <strong>Insuflação pré-peritoneal</strong></td><td>Pressão de abertura alta, distensão assimétrica</td><td>Reposicionar; desinsuflar e recolocar</td></tr>
+<tr><td><span class="tag t-b">comum</span> Lesão de vasos epigástricos</td><td>Sangramento pelo trocarte acessório</td><td>Sutura transfixante / tamponamento com balão</td></tr>
+<tr><td><span class="tag t-b">comum</span> <strong>Bradicardia vagal</strong></td><td>Na insuflação rápida</td><td>Parar insuflação, atropina, reinsuflar devagar</td></tr>
+<tr><td><span class="tag t-w">tardia</span> Hérnia de trocarte</td><td>Abaulamento no sítio ≥10 mm</td><td><strong>Fechar a fáscia de portais ≥10 mm</strong> (Vicryl 0)</td></tr>
+</table>
+<div class="box mn"><span class="lbl">★ não confunda</span>Embolia gasosa = <strong>↓EtCO₂</strong> (gás obstrui a saída) · Enfisema subcutâneo/hipercapnia = <strong>↑EtCO₂</strong> (mais CO₂ absorvido).</div>
+</section><section class="panel" id="quest"><h2>Questões — estilo das bancas RS</h2><p class="sub" style="margin-bottom:14px">Itens originais no estilo das bancas (não reprodução literal de provas).</p>
+<div class="q"><div class="stem"><span class="banca">HCPA</span> Durante a punção com agulha de Veress, qual achado melhor confirma o posicionamento intraperitoneal correto?</div><div class="alt"><div>A) Aspiração sem retorno de sangue</div><div>B) Teste da gota pendente positivo</div><div>C) Pressão de abertura &lt; 10 mmHg com fluxo livre</div><div>D) Som de "clique" duplo</div></div><details><summary>Ver resposta</summary><p class="ans">C.</p><p>Os testes clássicos têm baixa sensibilidade isolada; a <strong>pressão de abertura baixa (&lt;10 mmHg)</strong> com gás fluindo livremente é o indicador mais confiável.</p></details></div>
+<div class="q"><div class="stem"><span class="banca">AMRIGS</span> Paciente com três cirurgias abdominais prévias e suspeita de aderências periumbilicais. O sítio de entrada mais adequado é:</div><div class="alt"><div>A) Umbigo a 90°</div><div>B) Ponto de Palmer (hipocôndrio esquerdo)</div><div>C) Linha média infraumbilical</div><div>D) Fossa ilíaca direita</div></div><details><summary>Ver resposta</summary><p class="ans">B.</p><p><strong>Ponto de Palmer</strong> (LSE, ~3 cm abaixo do rebordo na linha hemiclavicular) é a alternativa ao umbigo quando há aderências/cirurgia prévia; esvaziar o estômago antes.</p></details></div>
+<div class="q"><div class="stem"><span class="banca">PUC-RS</span> Durante insuflação rápida, o paciente apresenta bradicardia súbita e hipotensão. A conduta imediata é:</div><div class="alt"><div>A) Aumentar a pressão para 20 mmHg</div><div>B) Interromper a insuflação e administrar atropina</div><div>C) Manobra de Durant</div><div>D) Converter para laparotomia</div></div><details><summary>Ver resposta</summary><p class="ans">B.</p><p>Quadro de <strong>reflexo vagal</strong> ao estiramento peritoneal: parar a insuflação e atropina; reinsuflar lentamente.</p></details></div>
+<div class="q"><div class="stem"><span class="banca">GHC</span> Queda abrupta do EtCO₂, hipotensão e sopro cardíaco "em moinho d'água" durante a insuflação sugerem:</div><div class="alt"><div>A) Enfisema subcutâneo</div><div>B) Pneumotórax hipertensivo</div><div>C) Embolia gasosa por CO₂</div><div>D) Reflexo vagal</div></div><details><summary>Ver resposta</summary><p class="ans">C.</p><p><strong>Embolia gasosa</strong>: ↓EtCO₂ súbito. Conduta: parar insuflação, 100% O₂, <strong>Durant (decúbito lateral E + Trendelenburg)</strong>, aspirar gás do AD.</p></details></div>
+<div class="q"><div class="stem"><span class="banca">Santa Casa</span> Sobre a manobra de Durant na embolia gasosa por CO₂, está correto afirmar:</div><div class="alt"><div>A) Decúbito lateral direito + proclive</div><div>B) Decúbito lateral esquerdo + Trendelenburg</div><div>C) Decúbito ventral</div><div>D) Posição de litotomia</div></div><details><summary>Ver resposta</summary><p class="ans">B.</p><p><strong>Decúbito lateral esquerdo + Trendelenburg</strong> desloca o êmbolo gasoso para o ápice do AD, longe da via de saída do VD, permitindo aspiração.</p></details></div>
+<div class="q"><div class="stem"><span class="banca">HCPA</span> A vantagem da técnica aberta (Hasson) sobre a fechada (Veress) é a redução de:</div><div class="alt"><div>A) Lesão de alça intestinal</div><div>B) Lesão vascular maior e embolia gasosa</div><div>C) Tempo operatório</div><div>D) Enfisema subcutâneo</div></div><details><summary>Ver resposta</summary><p class="ans">B.</p><p>A entrada aberta reduz <strong>lesão vascular maior</strong> e embolia; <strong>não</strong> reduz a lesão intestinal.</p></details></div>
+<div class="q"><div class="stem"><span class="banca">AMRIGS</span> O CO₂ é o gás de escolha para o pneumoperitônio principalmente porque:</div><div class="alt"><div>A) É mais barato que o ar ambiente</div><div>B) Não é inflamável e tem alta solubilidade</div><div>C) Causa menos hipercapnia</div><div>D) Não é absorvido pelo peritônio</div></div><details><summary>Ver resposta</summary><p class="ans">B.</p><p><strong>Não inflamável</strong> (segurança com eletrocautério) e <strong>altamente solúvel</strong> (eliminação pulmonar rápida em caso de embolia).</p></details></div>
+<div class="q"><div class="stem"><span class="banca">PUC-RS</span> Qual achado capnográfico é esperado no enfisema subcutâneo extenso?</div><div class="alt"><div>A) Queda do EtCO₂</div><div>B) Elevação do EtCO₂</div><div>C) EtCO₂ inalterado</div><div>D) Onda em platô ausente</div></div><details><summary>Ver resposta</summary><p class="ans">B.</p><p>Mais superfície de absorção de CO₂ → <strong>↑EtCO₂/hipercapnia</strong>. Contrasta com a embolia gasosa, que <strong>reduz</strong> o EtCO₂.</p></details></div>
+<div class="q"><div class="stem"><span class="banca">GHC</span> Para reduzir a hérnia incisional de portal, recomenda-se fechar a aponeurose de trocartes com diâmetro:</div><div class="alt"><div>A) ≥ 5 mm</div><div>B) ≥ 8 mm</div><div>C) ≥ 10 mm</div><div>D) Todos, independentemente do diâmetro</div></div><details><summary>Ver resposta</summary><p class="ans">C.</p><p>Fechamento fascial de portais <strong>≥10 mm</strong> (especialmente o umbilical) reduz hérnia de trocarte.</p></details></div>
+<div class="q"><div class="stem"><span class="banca">Santa Casa</span> Em paciente cardiopata com baixa reserva, a estratégia de pneumoperitônio mais adequada é:</div><div class="alt"><div>A) Pressão de 18–20 mmHg para melhor exposição</div><div>B) Baixa pressão (8–12 mmHg) e monitorização do EtCO₂</div><div>C) Insuflação rápida inicial</div><div>D) Trendelenburg acentuado contínuo</div></div><details><summary>Ver resposta</summary><p class="ans">B.</p><p>PIA elevada compromete retorno venoso e débito; preferir <strong>baixa pressão</strong> e vigilância da hipercapnia.</p></details></div>
+</section>
+<section class="panel" id="pega">
+<h2>Pega-ratões clássicos</h2>
+<ul>
+<li><span class="em">🎯</span><strong>Pressão de abertura &lt;10 mmHg</strong> = melhor confirmação do Veress (os outros testes são pouco sensíveis).</li>
+<li><span class="em">🧭</span><strong>Palmer</strong> = hipocôndrio <strong>esquerdo</strong> (não direito) — esvaziar estômago antes.</li>
+<li><span class="em">🫀</span>Embolia gasosa = <strong>↓EtCO₂</strong>; enfisema/hipercapnia = <strong>↑EtCO₂</strong>.</li>
+<li><span class="em">↩️</span>Durant = decúbito lateral <strong>esquerdo</strong> + Trendelenburg.</li>
+<li><span class="em">💓</span>Bradicardia na insuflação = <strong>reflexo vagal</strong> → parar e atropina (não é embolia).</li>
+<li><span class="em">🔓</span>Hasson reduz lesão vascular, <strong>não</strong> reduz lesão intestinal.</li>
+<li><span class="em">🔥</span>CO₂ é escolhido por <strong>não ser inflamável</strong> (eletrocautério) e ser solúvel.</li>
+<li><span class="em">🪡</span>Insuflar guiado por <strong>pressão</strong>, não por volume.</li>
+</ul>
+</section><section class="panel" id="mn">
+<h2>Mnemônicos</h2>
+<div class="box mn"><span class="lbl">🪡 4 testes do Veress</span><p>Aspiração · Gota pendente · Seringa · <strong>Pressão de abertura &lt;10</strong> (o que vale).</p></div>
+<div class="box mn"><span class="lbl">↩️ DURANT</span><p><strong>D</strong>ecúbito lateral <strong>E</strong>squerdo + Trendelenburg → embolia gasosa.</p></div>
+<div class="box mn"><span class="lbl">🧭 PALMER = LSE</span><p><strong>P</strong>onto à esquerda · usar se <strong>A</strong>derência/cirurgia prévia · esvaziar estômago.</p></div>
+<div class="box mn"><span class="lbl">🫁 EtCO₂</span><p>Embolia ⬇️ · Enfisema/hipercapnia ⬆️.</p></div>
+<p class="foot">// pneumoperitônio · carolzita · CV 2026 · Cochrane (entrada) · consenso de baixa pressão · Sabiston · Zollinger</p>
+</section>
+</main>
+
+<script>
+document.querySelectorAll('.tab').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    document.getElementById(b.dataset.t).classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+});
+</script>
+</body>
+</html>

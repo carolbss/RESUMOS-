@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aneurismas Periféricos — Referência CV 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d1117;--panel:#161b22;--panel2:#1c232c;--line:#2a323c;--tx:#e6edf3;--mut:#8b949e;--or:#ff7a18;--or2:#ff9a4d;--orbg:rgba(255,122,24,.10);--pu:#b083f0;--pu2:#c9a7ff;--pubg:rgba(176,131,240,.12);--cy:#3dd6d0;--cy2:#5fe3dd;--cybg:rgba(61,214,208,.10);--red:#ff5f56;--grn:#3fb950}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font-family:'IBM Plex Sans',sans-serif;line-height:1.55;padding:0 0 60px}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px}
+header{padding:30px 0 14px;border-bottom:1px solid var(--line)}
+h1{font-size:30px;font-weight:700;letter-spacing:-.5px}h1 .b{color:var(--or)}
+.sub{color:var(--mut);font-size:14px;margin-top:6px;font-family:'IBM Plex Mono',monospace}
+nav{position:sticky;top:0;background:var(--bg);z-index:10;border-bottom:1px solid var(--line);overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch}
+nav .inner{max-width:920px;margin:0 auto;padding:0 12px;display:flex;gap:2px}
+nav button{background:none;border:none;color:var(--mut);font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.5px;text-transform:uppercase;padding:14px 11px;cursor:pointer;border-bottom:2px solid transparent;transition:.15s}
+nav button:hover{color:var(--tx)}nav button.on{color:var(--or);border-bottom-color:var(--or)}
+section{display:none;padding:26px 0;animation:f .25s}section.on{display:block}
+@keyframes f{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+h2{font-size:20px;color:var(--or);margin:26px 0 12px;font-weight:600;border-bottom:1px solid var(--line);padding-bottom:6px}h2:first-child{margin-top:0}
+h3{font-size:15px;margin:18px 0 8px;font-weight:600;color:var(--or2)}
+p,li{font-size:14.5px}
+ul{margin:8px 0 8px 4px;list-style:none}li{padding:3px 0 3px 24px;position:relative}li .em{position:absolute;left:0}
+.lay{color:var(--cy2);font-style:italic;font-size:13.5px}
+.box{border-left:3px solid var(--or);background:var(--orbg);border-radius:0 8px 8px 0;padding:12px 16px;margin:14px 0}
+.box.pu{border-color:var(--pu);background:var(--pubg)}.box.cy{border-color:var(--cy);background:var(--cybg)}
+.box .lbl{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--or);margin-bottom:6px;font-weight:600}
+.stx{counter-reset:st;margin:14px 0}
+.st{counter-increment:st;background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:13px 15px 13px 50px;margin:11px 0;position:relative}
+.st::before{content:counter(st);position:absolute;left:13px;top:13px;width:25px;height:25px;border-radius:7px;background:var(--or);color:#0d1117;font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:12.5px;display:flex;align-items:center;justify-content:center}
+.st .fase{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1.3px;text-transform:uppercase;color:var(--or);display:block}
+.st .ttl{font-weight:700;font-size:15px;color:#fff;margin-bottom:3px}
+.st p{margin:4px 0;font-size:13.8px}
+.pq{border-left:3px solid var(--pu);background:var(--pubg);border-radius:0 8px 8px 0;padding:8px 12px;margin:8px 0;font-size:13.3px}
+.pq b{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;color:var(--pu2);display:block}
+.mh2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+.mh{border-radius:9px;padding:8px 11px;font-size:12.5px;border:1px solid var(--line)}
+.mh.e{background:rgba(63,185,80,.07);border-color:rgba(63,185,80,.3)}
+.mh.d{background:var(--orbg);border-color:rgba(255,122,24,.3)}
+.mh b{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1.1px;text-transform:uppercase;display:block}
+.mh.e b{color:var(--grn)} .mh.d b{color:var(--or2)}
+.box.gr{border-left-color:var(--grn);background:rgba(63,185,80,.09);color:var(--grn);font-style:italic}
+.box.gr .lbl{color:var(--grn);font-style:normal}
+.box.gr b,.box.gr strong{color:#8ee79a;font-style:normal}
+@media(max-width:640px){.mh2{grid-template-columns:1fr}}
+
+.box.pu .lbl{color:var(--pu2)}.box.cy .lbl{color:var(--cy2)}
+.box li::before{content:"▸";color:var(--or);position:absolute;left:6px}.box li{padding-left:22px}
+.box.pu li::before{color:var(--pu)}.box.cy li::before{color:var(--cy)}.box li .em{display:none}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.5px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--panel2);color:var(--or2);font-weight:600;font-family:'IBM Plex Mono',monospace;font-size:12px}
+.hi{color:var(--pu2);font-weight:600}.mn{font-family:'IBM Plex Mono',monospace;color:var(--cy2)}
+.steps{counter-reset:s;list-style:none;margin:6px 0}
+.steps li{padding:8px 8px 8px 40px;border-bottom:1px solid var(--line)}
+.steps li::before{counter-increment:s;content:counter(s);background:var(--or);color:#0d1117;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:12px;width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;position:absolute;left:4px;top:8px}
+.steps li .em{display:none}.steps li:last-child{border-bottom:none}
+.hand{font-family:'IBM Plex Mono',monospace;font-size:11px;padding:1px 6px;border-radius:4px;margin-right:4px}
+.hL{background:rgba(63,185,80,.15);color:#56d364}.hR{background:rgba(255,122,24,.15);color:var(--or2)}
+.kbd{font-family:'IBM Plex Mono',monospace;background:var(--panel2);padding:1px 6px;border-radius:4px;font-size:12.5px;color:var(--or2)}
+.q{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:16px 0}
+.q .src{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--pu2);letter-spacing:1px;text-transform:uppercase}
+.q .stem{margin:8px 0 10px;font-weight:500}
+.q .alt{padding:4px 0 4px 24px;position:relative;font-size:14px}.q .alt .let{position:absolute;left:0;font-family:'IBM Plex Mono',monospace;color:var(--mut)}
+.q .alt.ok{color:var(--grn)}.q .alt.ok .let{color:var(--grn)}
+.q details{margin-top:10px;border-top:1px dashed var(--line);padding-top:10px}
+.q summary{cursor:pointer;color:var(--cy2);font-size:13px;font-family:'IBM Plex Mono',monospace}
+.q .exp{font-size:13.5px;color:var(--mut);margin-top:8px}
+.svgwrap{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px;margin:14px 0;text-align:center}
+.svgwrap figcaption{color:var(--mut);font-size:12px;margin-top:8px;font-family:'IBM Plex Mono',monospace}
+.pill{display:inline-block;background:var(--panel2);border:1px solid var(--line);border-radius:20px;padding:3px 12px;margin:3px 4px 3px 0;font-size:12.5px;font-family:'IBM Plex Mono',monospace}.pill .hi{color:var(--pu2)}
+.note{font-size:12px;color:var(--mut);border-top:1px solid var(--line);margin-top:30px;padding-top:14px;font-family:'IBM Plex Mono',monospace}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<h1>🎈 Aneurismas <span class="b">Periféricos</span></h1>
+<div class="sub">Poplíteo &amp; Femoral · CV 2026 · SVS 2022 (Poplíteo) + ESVS 2019/2024</div>
+</div></header>
+<nav><div class="inner" id="nav"></div></nav>
+<div class="wrap">
+
+<section id="geral" class="on">
+<h2>🧭 Definição &amp; epidemiologia</h2>
+<p>Aneurismas periféricos = dilatações <span class="hi">≥1,5× o diâmetro normal</span> de artérias fora da aorta/território visceral, mais comumente <b>poplíteo</b> (o mais frequente de todos os periféricos, e o 2º mais comum do corpo depois do AAA) e <b>femoral</b>. <span class="lay">(a mesma "bexiga" que pode se formar na aorta também pode aparecer em outras mangueiras do corpo — mais frequentemente atrás do joelho)</span></p>
+<h3>Epidemiologia-chave</h3>
+<div class="pill"><span class="hi">Homens, &gt;65 anos</span> (predomínio marcante)</div>
+<div class="pill">Tabagismo, HAS, aterosclerose</div>
+<div class="pill"><span class="hi">Bilateral em até 50%</span> dos casos de aneurisma poplíteo</div>
+<div class="pill"><span class="hi">AAA concomitante em ~30-50%</span> dos aneurismas poplíteos</div>
+<div class="box pu"><div class="lbl">⚠️ Pega-ratão de prova — regra de ouro</div>
+<p>Todo paciente com <span class="hi">aneurisma poplíteo deve ser rastreado para AAA</span> (e vice-versa — todo AAA deve ter as poplíteas palpadas/avaliadas), pela altíssima associação entre os dois. Também investigar o <b>lado contralateral</b>, pela alta taxa de bilateralidade.</p></div>
+</section>
+
+<section id="clinica">
+<h2>🩺 Quadro clínico</h2>
+<ul>
+<li><span class="em">🤫</span><b>Maioria assintomática</b> — achado ao exame físico (massa pulsátil na fossa poplítea) ou em imagem de rotina.</li>
+<li><span class="em">🦵</span><b>Sintomas compressivos</b>: edema (compressão venosa), dor/parestesia (compressão do nervo tibial), TVP secundária.</li>
+<li><span class="em">⚡</span><b>Trombose aguda</b> — forma de apresentação mais temida: isquemia aguda de membro, às vezes catastrófica pela falta de colaterais bem desenvolvidas.</li>
+<li><span class="em">🦶</span><b>Embolização distal</b> ("trash foot" / dedos azuis) — de trombo mural dentro do saco aneurismático, mesmo sem trombose total.</li>
+<li><span class="em">💥</span><b>Rotura</b> — rara no poplíteo (diferente do AAA), mas pode ocorrer.</li>
+</ul>
+<div class="box pu"><div class="lbl">⚠️ Pega-ratão de prova</div>
+<p>Ao contrário do AAA, a <span class="hi">principal complicação temida do aneurisma poplíteo é a TROMBOSE/EMBOLIZAÇÃO (não a rotura)</span> — sendo a maior causa de amputação relacionada a essa doença.</p></div>
+</section>
+
+<section id="anatomia">
+<h2>🫀 Anatomia &amp; achados de exame</h2>
+<p>A <b>artéria poplítea</b> corre na fossa poplítea, posterior ao joelho, entre os côndilos femorais; a <b>artéria femoral comum</b> corre no triângulo femoral, entre o ligamento inguinal, o adutor longo e o sartório.</p>
+<div class="box pu"><div class="lbl">⚠️ Achado clínico-chave</div>
+<p>Massa <span class="hi">pulsátil e expansível</span> na fossa poplítea (diferente de cisto de Baker, que não pulsa) ou na região inguinal (femoral) — sempre comparar com o lado contralateral e rastrear a aorta.</p></div>
+<figure class="svgwrap">
+<svg viewBox="0 0 300 220" xmlns="http://www.w3.org/2000/svg" style="max-width:100%">
+<line x1="150" y1="10" x2="150" y2="90" stroke="#e6edf3" stroke-width="10"/>
+<ellipse cx="150" cy="105" rx="20" ry="26" fill="#ff5f56" opacity=".45"/>
+<line x1="150" y1="131" x2="150" y2="210" stroke="#e6edf3" stroke-width="8"/>
+<text x="165" y="60" fill="#8b949e" font-family="IBM Plex Mono" font-size="11">a. femoral</text>
+<text x="163" y="112" fill="#ff9a4d" font-family="IBM Plex Mono" font-size="11">aneurisma</text>
+<text x="163" y="112" fill="#ff9a4d" font-family="IBM Plex Mono" font-size="11" dy="14">poplíteo</text>
+<text x="163" y="190" fill="#8b949e" font-family="IBM Plex Mono" font-size="11">tibiais/fibular</text>
+</svg>
+<figcaption>Aneurisma de artéria poplítea — fossa poplítea, posterior ao joelho</figcaption>
+</figure>
+</section>
+
+<section id="dx">
+<h2>🔬 Diagnóstico &amp; rastreio</h2>
+<ul>
+<li><span class="em">📡</span><b>Duplex</b> — exame de escolha para diagnóstico, medida do diâmetro e avaliação de trombo mural.</li>
+<li><span class="em">🖥️</span><b>AngioTC</b> — planejamento cirúrgico, avalia todo o "runoff" (leito distal) e a extensão do aneurisma.</li>
+</ul>
+<div class="box"><div class="lbl">🎯 Rastreio recíproco (regra de ouro)</div>
+<p>Paciente com <b>AAA</b> → palpar/avaliar poplíteas. Paciente com <b>aneurisma poplíteo</b> → rastrear <b>AAA</b> e a <b>poplítea contralateral</b>.</p></div>
+</section>
+
+<section id="conduta">
+<h2>📐 Indicação de tratamento</h2>
+<div class="box pu"><div class="lbl">⭐ Aneurisma poplíteo (SVS 2022)</div>
+<ul>
+<li><span class="hi">Sintomático (qualquer tamanho)</span>: reparo indicado — trombose/embolização/compressão.</li>
+<li><span class="hi">Assintomático ≥ 20 mm</span>: reparo eletivo recomendado (correlaciona com maior risco de trombose/complicação).</li>
+<li>Assintomático &lt;20mm: vigilância por imagem periódica.</li>
+<li>Considerar reparo em diâmetro menor se <b>trombo mural extenso</b> ou <b>runoff pobre</b> (risco de embolização/trombose apesar do tamanho absoluto).</li>
+</ul></div>
+<h3>Trombosado (isquemia aguda) — conduta por Rutherford</h3>
+<p>Segue a mesma lógica de estratificação de <b>Rutherford (I-III)</b> da isquemia arterial aguda: viável → pode-se tentar trombólise/trombectomia com tempo para preparo; ameaçado/irreversível → revascularização/amputação conforme o grau (ver tópico de Isquemia Arterial Aguda).</p>
+<h3>Aneurisma femoral</h3>
+<p>Reparo indicado em <b>sintomáticos</b> ou <b>assintomáticos ≥ 2,5-3 cm</b> (limiar menos padronizado que o poplíteo, mas segue princípio semelhante de risco de trombose/embolização/compressão).</p>
+<h3>Reparo — endovascular × aberto</h3>
+<table>
+<tr><th>&nbsp;</th><th>Aberto (bypass excluindo o aneurisma)</th><th>Endovascular (stent coberto)</th></tr>
+<tr><td>Durabilidade</td><td>Maior, padrão-ouro histórico</td><td>Menor em território de flexão (poplíteo) — risco de fratura/oclusão do stent</td></tr>
+<tr><td>Preferir quando</td><td>Bom risco cirúrgico, boa veia disponível</td><td>Alto risco cirúrgico, anatomia favorável, urgência</td></tr>
+</table>
+</section>
+
+<section id="tecnica">
+<h2>🔪 Técnica — Reparo aberto do aneurisma poplíteo</h2>
+<p class="note" style="border:none;margin:0 0 6px;padding:0"><span class="hand hL">ESQ</span> mão esquerda · <span class="hand hR">DIR</span> mão direita.</p>
+<div class="box gr"><div class="lbl">tradução simples</div>O aneurisma poplíteo não é tratado como o AAA. No AAA você <strong>troca o cano</strong> — abre o saco, tira o trombo, costura o enxerto dentro. Aqui você <strong>não toca no saco</strong>: liga as duas pontas para excluí-lo da circulação e constrói um <strong>desvio</strong> ao lado. É a diferença entre trocar um cano furado e simplesmente fechar as duas torneiras dele e passar uma mangueira nova por fora.</div>
+
+<h3>A · Abordagem medial (mais usada)</h3>
+<p class="note" style="border:none;margin:0 0 6px;padding:0"><span class="hand hL">ESQ</span> mão esquerda · <span class="hand hR">DIR</span> mão direita.</p>
+<p><b>Posição:</b> supino, joelho em leve flexão e rotação externa. <b>Acesso:</b> incisão medial na coxa distal/perna proximal.</p>
+
+<div class="stx">
+
+<div class="st">
+  <span class="fase">fase de acesso</span>
+  <div class="ttl">Expor a poplítea proximal e distal ao aneurisma</div>
+  <p>Dissecção entre os planos anatômicos.</p>
+  <div class="pq"><b>por quê</b>A via medial é preferida porque, ao contrário da posterior, permite estender a incisão proximal e distalmente com facilidade — essencial quando o aneurisma é longo ou quando o bypass vai precisar alcançar bem abaixo do joelho.</div>
+  <div class="mh2">
+    <div class="mh e"><b>mão esquerda</b>DeBakey afastando os planos sem traumatizar o nervo tibial adjacente</div>
+    <div class="mh d"><b>mão direita</b>Tesoura Metzenbaum na dissecção</div>
+  </div>
+</div>
+
+<div class="st">
+  <span class="fase">fase do conduto</span>
+  <div class="ttl">Colher a veia safena magna</div>
+  <p>Conduto de escolha, sobretudo se o bypass vai cruzar a linha do joelho.</p>
+  <div class="pq"><b>por quê</b>Cruzando a articulação, o enxerto sofre flexão repetida a cada passo que o paciente dá — a mesma razão pela qual próteses endovasculares fraturam nesse território. Só um conduto vivo e flexível, como a veia, tolera esse estresse mecânico repetitivo por anos.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de controle</span>
+  <div class="ttl">Heparinizar; controle vascular proximal e distal</div>
+  <p>Heparinização sistêmica.</p>
+  <div class="pq"><b>por quê</b>O controle nos dois lados do aneurisma é o que permite a próxima etapa com segurança — sem ele, ligar o saco seria trabalhar num campo ainda pressurizado.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase central — a decisão que separa do AAA</span>
+  <div class="ttl">Ligar o aneurisma, proximal e distal, sem abri-lo</div>
+  <p>Excluir o saco da circulação por ligadura — <strong>bypass com exclusão</strong>, não ressecção.</p>
+  <div class="pq"><b>por quê</b>Dissecar dentro da fossa poplítea para ressecar o saco arrisca lesar o <strong>nervo tibial</strong> e a <strong>veia poplítea</strong>, que ficam coladas à parede aneurismática depois de anos de compressão crônica. Ligar por fora, sem entrar no saco, evita esse plano perigoso — e funciona igualmente bem, porque o objetivo não é remover a doença, é tirá-la da circulação.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de reconstrução</span>
+  <div class="ttl">Bypass com safena, desviando o segmento excluído</div>
+  <p>Anastomoses término-laterais nos cotos proximal e distal com <span class="kbd">prolene 6-0</span>.</p>
+  <div class="pq"><b>por quê</b>Término-lateral, e não término-terminal, porque os cotos da própria artéria nativa (ligados, mas não seccionados) continuam ali; a anastomose lateral se soma a essa anatomia sem precisar reconstruir a continuidade original do vaso.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de verificação</span>
+  <div class="ttl">Checar pulso ou Doppler distal</div>
+  <p>Confirmação final antes de fechar.</p>
+  <div class="pq"><b>por quê</b>Mesma regra de qualquer bypass: a aparência da anastomose não substitui a prova de que o sangue está realmente chegando ao pé.</div>
+</div>
+
+</div>
+
+<div class="box cy"><div class="lbl">as 3 checagens do poplíteo</div>
+<b>1)</b> O aneurisma foi <strong>excluído</strong> (ligado), não aberto?<br>
+<b>2)</b> O conduto é veia, sobretudo se cruza o joelho?<br>
+<b>3)</b> Há pulso ou Doppler distal ao final?</div>
+
+<h3>B · Abordagem posterior</h3>
+<p>Alternativa quando é necessário <b>ressecar o saco aneurismático</b> — efeito compressivo local significativo sobre veia ou nervo. Permite acesso direto à fossa poplítea, mas com exposição proximal/distal mais limitada.</p>
+<div class="box pu"><div class="lbl">quando vale o risco de abrir o saco</div>A regra geral é excluir sem abrir — mas se o aneurisma já está comprimindo veia ou nervo o suficiente para causar sintomas, descomprimir fisicamente a fossa poplítea passa a valer o risco extra de dissecar naquele plano perigoso. É a exceção que confirma por que a técnica padrão evita esse acesso sempre que pode.</div>
+
+<h3>C · Endovascular (stent coberto)</h3>
+<p>Acesso femoral; endoprótese coberta cruzando o segmento aneurismático, excluindo-o do fluxo. Reservado para anatomia favorável (menos angulação/flexão) ou alto risco cirúrgico.</p>
+<div class="box pu"><div class="lbl">a mesma fragilidade do bypass sintético</div>Assim como o conduto protético cruzando o joelho fratura com a flexão repetida, o stent coberto nesse território tem o mesmo problema estrutural — é por isso que ele é reservado a quem tem pouca flexão do segmento ou não tolera cirurgia aberta, e não é a primeira escolha no paciente jovem e ativo.</div>
+</section>
+
+<section id="complic">
+<h2>⚠️ Complicações</h2>
+<ul>
+<li><span class="em">🧊</span>Trombose do bypass — principal causa de falha tardia.</li>
+<li><span class="em">🦵</span>Isquemia aguda perioperatória (se trombose/embolização não resolvida completamente).</li>
+<li><span class="em">🦶</span>Amputação — mais provável quando o diagnóstico ocorre já com trombose estabelecida e leito distal (runoff) pobre.</li>
+<li><span class="em">🩸</span>Lesão de estruturas adjacentes (nervo tibial, veia poplítea) na dissecção.</li>
+<li><span class="em">📈</span>Endoleak/fratura de stent (na via endovascular, especialmente pela mobilidade articular do joelho).</li>
+</ul>
+</section>
+
+<section id="pegas">
+<h2>🪤 Pega-ratões</h2>
+<div class="box pu"><div class="lbl">Os erros favoritos das bancas</div>
+<ul>
+<li>Aneurisma poplíteo = <b>aneurisma periférico mais comum</b>; associação forte e bidirecional com <b>AAA (~30-50%)</b> e com <b>bilateralidade (~50%)</b>.</li>
+<li>Principal risco do poplíteo é <span class="hi">trombose/embolização</span>, não rotura (diferente do AAA).</li>
+<li>Limiar de reparo eletivo do poplíteo assintomático: <span class="hi">≥ 20 mm (2 cm)</span> — bem menor que o limiar do AAA.</li>
+<li>Sintomático de <b>qualquer tamanho</b> tem indicação de reparo.</li>
+<li>Conduto de escolha no bypass: <b>veia safena autóloga</b>, não prótese de rotina.</li>
+<li>Técnica clássica aberta: <b>ligar e excluir</b> o aneurisma (não abrir/ressecar), fazendo bypass em paralelo — diferente do AAA, onde se abre o saco.</li>
+<li>Endovascular no poplíteo tem preocupação extra com <b>fratura de stent</b> pela flexão articular repetida do joelho.</li>
+<li>Cisto de Baker é diagnóstico diferencial — <b>não pulsa</b>, diferente do aneurisma.</li>
+</ul></div>
+</section>
+
+<section id="mnemo">
+<h2>🧠 Mnemônicos</h2>
+<div class="box cy"><div class="lbl">Coleção Aneurismas Periféricos</div>
+<ul>
+<li><span class="mn">"Poplíteo pede AAA" — rastreio recíproco sempre</span>.</li>
+<li><span class="mn">"P de Poplíteo, P de Perigo de Perder a perna" (trombose/embolização, não rotura)</span>.</li>
+<li><span class="mn">20 mm = gatilho do poplíteo (bem menor que o AAA)</span>.</li>
+<li><span class="mn">"Liga e desvia, não abre e tira" — técnica de exclusão + bypass</span>.</li>
+</ul></div>
+</section>
+
+<section id="questoes">
+<h2>📝 Questões — itens originais no estilo das bancas</h2>
+<p class="note" style="border:none;padding:0;margin:0 0 10px">Itens <b>originais</b> no padrão de cada banca (não reprodução literal).</p>
+
+<div class="q"><div class="src">HCPA · estilo</div>
+<div class="stem">Homem de 68 anos, em investigação de AAA de 5 cm, é encaminhado para avaliação vascular completa. Sobre a conduta em relação às artérias poplíteas nesse paciente:</div>
+<div class="alt"><span class="let">A)</span> Não há necessidade de avaliar as poplíteas, pois não há associação com AAA</div>
+<div class="alt ok"><span class="let">B)</span> Deve-se palpar/avaliar as poplíteas bilateralmente, pela alta associação entre AAA e aneurisma poplíteo</div>
+<div class="alt"><span class="let">C)</span> Avaliar apenas a poplítea esquerda</div>
+<div class="alt"><span class="let">D)</span> Essa avaliação só é necessária em mulheres</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> Até 30-50% dos pacientes com aneurisma poplíteo têm AAA associado (e vice-versa) — rastreio recíproco bilateral é mandatório.</div></details>
+</div>
+
+<div class="q"><div class="src">GHC · estilo</div>
+<div class="stem">Paciente com aneurisma poplíteo assintomático de 22 mm, identificado em USG de rotina. Segundo as diretrizes atuais (SVS 2022), a conduta mais apropriada é:</div>
+<div class="alt"><span class="let">A)</span> Vigilância anual, sem indicação de reparo</div>
+<div class="alt ok"><span class="let">B)</span> Reparo eletivo, já que atingiu o limiar de 20 mm</div>
+<div class="alt"><span class="let">C)</span> Amputação primária</div>
+<div class="alt"><span class="let">D)</span> Anticoagulação plena isolada, sem intervenção</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> O limiar de reparo eletivo para aneurisma poplíteo assintomático é ≥20 mm, bem menor que o do AAA, pelo alto risco de trombose/embolização mesmo em diâmetros moderados.</div></details>
+</div>
+
+<div class="q"><div class="src">Santa Casa POA · estilo</div>
+<div class="stem">A principal complicação associada a aneurismas de artéria poplítea, e principal causa de amputação relacionada a essa condição, é:</div>
+<div class="alt"><span class="let">A)</span> Rotura espontânea</div>
+<div class="alt ok"><span class="let">B)</span> Trombose/embolização distal do saco aneurismático</div>
+<div class="alt"><span class="let">C)</span> Infecção do saco aneurismático</div>
+<div class="alt"><span class="let">D)</span> Fístula arteriovenosa espontânea</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> Diferentemente do AAA, cuja principal ameaça é a rotura, o aneurisma poplíteo tem como principal risco a trombose in situ e a embolização distal de trombo mural, podendo levar a isquemia grave e amputação.</div></details>
+</div>
+
+<div class="q"><div class="src">PUC-RS · estilo</div>
+<div class="stem">Na técnica clássica de reparo aberto do aneurisma poplíteo por via medial, o procedimento correto consiste em:</div>
+<div class="alt"><span class="let">A)</span> Abrir o saco aneurismático e substituí-lo por enxerto tubular, como no AAA</div>
+<div class="alt ok"><span class="let">B)</span> Ligar o aneurisma proximal e distalmente, excluindo-o da circulação, e realizar bypass com veia safena</div>
+<div class="alt"><span class="let">C)</span> Ressecar completamente a artéria poplítea sem reconstrução</div>
+<div class="alt"><span class="let">D)</span> Realizar embolização percutânea isolada, sem cirurgia aberta</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> A técnica clássica é a exclusão do aneurisma por ligadura proximal e distal (sem abri-lo), associada a bypass — geralmente com veia safena — para restabelecer o fluxo.</div></details>
+</div>
+
+<div class="q"><div class="src">AMRIGS · estilo</div>
+<div class="stem">Sobre o reparo endovascular (stent coberto) de aneurisma de artéria poplítea, uma preocupação técnica específica desse território, relacionada à mobilidade articular, é:</div>
+<div class="alt"><span class="let">A)</span> Risco de embolia pulmonar maciça</div>
+<div class="alt ok"><span class="let">B)</span> Fratura ou oclusão do stent pela flexão repetida do joelho</div>
+<div class="alt"><span class="let">C)</span> Impossibilidade de acesso femoral</div>
+<div class="alt"><span class="let">D)</span> Necessidade obrigatória de amputação após o procedimento</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> A flexão repetida do joelho impõe estresse mecânico sobre o stent na região poplítea, com risco de fratura ou oclusão — por isso o reparo aberto ainda é considerado padrão-ouro em muitos centros para bons candidatos cirúrgicos.</div></details>
+</div>
+
+<div class="q"><div class="src">HCPA · estilo</div>
+<div class="stem">Mulher de 70 anos apresenta massa pulsátil e expansível na fossa poplítea direita, sem sintomas isquêmicos. O principal diagnóstico diferencial não pulsátil a ser considerado é:</div>
+<div class="alt"><span class="let">A)</span> Aneurisma femoral</div>
+<div class="alt ok"><span class="let">B)</span> Cisto de Baker</div>
+<div class="alt"><span class="let">C)</span> Trombose venosa profunda</div>
+<div class="alt"><span class="let">D)</span> Linfonodomegalia poplítea</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> O cisto de Baker é o principal diagnóstico diferencial de massa na fossa poplítea, mas caracteristicamente não é pulsátil, diferenciando-o do aneurisma verdadeiro.</div></details>
+</div>
+
+<div class="q"><div class="src">GHC · estilo</div>
+<div class="stem">Paciente com aneurisma de artéria poplítea assintomático, de 18 mm, mas com trombo mural extenso e leito distal (runoff) pobre à angioTC. A conduta mais apropriada é:</div>
+<div class="alt"><span class="let">A)</span> Vigilância isolada, pois está abaixo do limiar de 20 mm</div>
+<div class="alt ok"><span class="let">B)</span> Considerar reparo mesmo abaixo do limiar clássico, pelo risco elevado de trombose/embolização</div>
+<div class="alt"><span class="let">C)</span> Amputação primária preventiva</div>
+<div class="alt"><span class="let">D)</span> Anticoagulação isolada, sem necessidade de seguimento</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> Trombo mural extenso e runoff pobre são fatores de risco adicionais para complicação, justificando considerar reparo mesmo em diâmetro menor que o limiar padrão de 20mm.</div></details>
+</div>
+
+<div class="q"><div class="src">Santa Casa POA · estilo</div>
+<div class="stem">Paciente com aneurisma de artéria femoral comum sintomático (dor compressiva local). A conduta é:</div>
+<div class="alt"><span class="let">A)</span> Vigilância isolada, independente do tamanho</div>
+<div class="alt ok"><span class="let">B)</span> Reparo cirúrgico indicado, já que é sintomático</div>
+<div class="alt"><span class="let">C)</span> Anticoagulação plena como tratamento definitivo</div>
+<div class="alt"><span class="let">D)</span> Escleroterapia percutânea</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> Aneurismas periféricos sintomáticos (poplíteo ou femoral) têm indicação de reparo independentemente do diâmetro, pelo risco de complicações locais e sistêmicas.</div></details>
+</div>
+
+<div class="q"><div class="src">PUC-RS · estilo</div>
+<div class="stem">Em um paciente com aneurisma poplíteo trombosado, evoluindo com isquemia aguda de membro, a estratificação inicial da gravidade e a urgência do tratamento devem ser guiadas por:</div>
+<div class="alt"><span class="let">A)</span> Apenas o diâmetro do aneurisma</div>
+<div class="alt ok"><span class="let">B)</span> Classificação de Rutherford da isquemia aguda (viabilidade do membro)</div>
+<div class="alt"><span class="let">C)</span> Idade do paciente exclusivamente</div>
+<div class="alt"><span class="let">D)</span> Presença de AAA concomitante</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> Assim como na isquemia arterial aguda de outras etiologias, a classificação de Rutherford (viável, ameaçado, irreversível) orienta a urgência e a estratégia terapêutica no aneurisma poplíteo trombosado.</div></details>
+</div>
+
+<div class="q"><div class="src">AMRIGS · estilo</div>
+<div class="stem">Sobre a bilateralidade dos aneurismas de artéria poplítea, é correto afirmar que:</div>
+<div class="alt"><span class="let">A)</span> É extremamente rara, ocorrendo em menos de 5% dos casos</div>
+<div class="alt ok"><span class="let">B)</span> Ocorre em até cerca de 50% dos pacientes, justificando avaliação sistemática do lado contralateral</div>
+<div class="alt"><span class="let">C)</span> Só ocorre em pacientes com síndromes genéticas do tecido conjuntivo</div>
+<div class="alt"><span class="let">D)</span> É exclusiva de mulheres</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> A bilateralidade do aneurisma poplíteo é notavelmente alta (até ~50%), o que justifica a avaliação sistemática e cuidadosa do lado contralateral em todo paciente diagnosticado.</div></details>
+</div>
+</section>
+
+<div class="note">Fontes: SVS 2022 Clinical Practice Guidelines on Popliteal Artery Aneurysms · ESVS 2019/2024 Aneurysm Guidelines · Rutherford's Vascular Surgery · Sabiston. Questões originais para estudo. — carolzita · CV 2026</div>
+</div>
+<script>
+var secs=[['geral','🧭 Geral'],['clinica','🩺 Clínica'],['anatomia','🫀 Anatomia'],['dx','🔬 Diagnóstico'],['conduta','📐 Conduta'],['tecnica','🔪 Técnica'],['complic','⚠️ Complicações'],['pegas','🪤 Pega-ratões'],['mnemo','🧠 Mnemônicos'],['questoes','📝 Questões']];
+var nav=document.getElementById('nav');
+secs.forEach(function(s,i){var b=document.createElement('button');b.textContent=s[1];if(i===0)b.className='on';b.onclick=function(){document.querySelectorAll('nav button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');document.querySelectorAll('section').forEach(function(x){x.classList.remove('on')});document.getElementById(s[0]).classList.add('on');window.scrollTo({top:0,behavior:'smooth'})};nav.appendChild(b)});
+</script>
+</body>
+</html>

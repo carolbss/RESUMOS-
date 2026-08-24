@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pancreatite Crônica — carolzita</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0f; --bg2:#12121a; --card:#16161f; --card2:#1c1c27;
+  --line:#2a2a38; --txt:#e6e6ef; --muted:#9a9ab0;
+  --laranja:#f97316; --laranja-bg:rgba(249,115,22,.10);
+  --roxo:#a855f7; --roxo-bg:rgba(168,85,247,.10);
+  --ciano:#22d3ee; --ciano-bg:rgba(34,211,238,.10);
+  --verde:#34d399; --vermelho:#f87171; --amarelo:#fbbf24;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(1200px 600px at 50% -10%,#15151f 0%,var(--bg) 60%);color:var(--txt);font-family:'Inter',sans-serif;line-height:1.55;padding:0 0 80px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px}
+header{padding:40px 0 24px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(30px,6vw,46px);line-height:1.05;margin:8px 0 6px;letter-spacing:-.02em}
+.sub{color:var(--muted);font-size:15px;max-width:700px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tag{font-family:'JetBrains Mono',monospace;font-size:11px;padding:5px 10px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted)}
+.tag.r{color:var(--roxo);border-color:rgba(168,85,247,.35);background:var(--roxo-bg)}
+section{margin-top:14px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:12px;overflow:hidden;transition:border-color .2s}
+details[open]{border-color:rgba(249,115,22,.30)}
+summary{cursor:pointer;list-style:none;padding:18px 20px;display:flex;align-items:center;gap:13px;font-family:'Syne',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em;user-select:none}
+summary::-webkit-details-marker{display:none}
+.num{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--bg);background:var(--laranja);width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:0 0 auto}
+.chev{margin-left:auto;color:var(--muted);transition:transform .25s;font-size:14px}
+details[open] .chev{transform:rotate(90deg)}
+.body{padding:4px 22px 24px;font-size:15px}
+.body p{margin:10px 0}
+.body h4{font-family:'Syne',sans-serif;font-size:16px;color:var(--laranja);margin:20px 0 8px;letter-spacing:-.01em}
+.body ul{margin:8px 0 8px 4px;list-style:none}
+.body li{padding:4px 0 4px 20px;position:relative}
+.body li::before{content:"▸";position:absolute;left:0;color:var(--laranja);font-size:12px;top:6px}
+.body strong{color:#fff;font-weight:600}
+.simple{color:var(--verde);font-style:italic;font-size:.94em;display:block;margin:6px 0}
+.box.simplebox{background:rgba(52,211,153,.09);border-color:rgba(52,211,153,.32);color:var(--verde);font-style:italic}
+.box.simplebox .lbl{color:var(--verde);font-style:normal}
+.box.simplebox strong{color:#7fe8c0;font-style:normal}
+.stx{counter-reset:st;margin:12px 0}
+.st{counter-increment:st;background:var(--card2);border:1px solid var(--line);border-radius:13px;padding:14px 16px 14px 52px;margin:11px 0;position:relative}
+.st::before{content:counter(st);position:absolute;left:14px;top:13px;width:26px;height:26px;border-radius:8px;background:var(--laranja);color:#0a0a0f;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center}
+.st .fase{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:var(--laranja);display:block;margin-bottom:1px}
+.st .ttl{font-weight:700;font-size:15.5px;color:#fff;margin-bottom:4px}
+.st p{margin:5px 0;font-size:14px}
+.pq{border-left:3px solid var(--roxo);background:var(--roxo-bg);border-radius:0 9px 9px 0;padding:8px 12px;margin:9px 0;font-size:13.5px}
+.pq b{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.3px;text-transform:uppercase;color:var(--roxo);display:block;margin-bottom:2px}
+.mh2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:9px}
+.mh{border-radius:9px;padding:8px 11px;font-size:12.5px;border:1px solid var(--line)}
+.mh.e{background:rgba(52,211,153,.07);border-color:rgba(52,211,153,.3)}
+.mh.d{background:var(--laranja-bg);border-color:rgba(249,115,22,.3)}
+.mh b{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;display:block;margin-bottom:2px}
+.mh.e b{color:var(--verde)} .mh.d b{color:var(--laranja)}
+.fio{font-family:'JetBrains Mono',monospace;font-size:11.5px;background:var(--roxo-bg);color:var(--roxo);border:1px solid rgba(168,85,247,.35);padding:1px 6px;border-radius:5px;white-space:nowrap}
+@media(max-width:640px){.mh2{grid-template-columns:1fr}}
+.box{border-radius:12px;padding:13px 15px;margin:14px 0;font-size:14px;border:1px solid}
+.box.prova{background:var(--roxo-bg);border-color:rgba(168,85,247,.35)}
+.box.prova .lbl{color:var(--roxo)}
+.box.mac{background:var(--ciano-bg);border-color:rgba(34,211,238,.35)}
+.box.mac .lbl{color:var(--ciano)}
+.box.warn{background:rgba(248,113,113,.08);border-color:rgba(248,113,113,.3)}
+.box.warn .lbl{color:var(--vermelho)}
+.lbl{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-family:'JetBrains Mono',monospace;font-size:10px;background:rgba(168,85,247,.2);color:var(--roxo);padding:2px 7px;border-radius:6px;margin-left:6px;white-space:nowrap}
+.tbl{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
+.tbl table{width:100%;border-collapse:collapse;min-width:520px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--laranja);background:var(--card2)}
+td strong{color:#fff}
+.fio td:first-child{color:var(--ciano);font-family:'JetBrains Mono',monospace;font-weight:500}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin:14px 0}
+.gcard{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+.gcard .t{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--ciano);margin-bottom:4px}
+.gcard .d{font-size:13px;color:var(--muted)}
+.hands{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.hand{border-radius:12px;padding:14px;border:1px solid var(--line)}
+.hand.e{background:rgba(34,211,238,.06);border-color:rgba(34,211,238,.25)}
+.hand.d{background:rgba(249,115,22,.06);border-color:rgba(249,115,22,.25)}
+.hand .ht{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;font-weight:700}
+.hand.e .ht{color:var(--ciano)} .hand.d .ht{color:var(--laranja)}
+.hand li{font-size:13px}
+.steps{counter-reset:s;margin:10px 0}
+.step{counter-increment:s;position:relative;padding:11px 0 11px 46px;border-bottom:1px dashed var(--line)}
+.step:last-child{border-bottom:none}
+.step::before{content:counter(s);position:absolute;left:0;top:9px;width:30px;height:30px;border-radius:9px;background:var(--laranja-bg);border:1px solid rgba(249,115,22,.4);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:grid;place-items:center}
+.step b{color:#fff}
+svg{max-width:100%;height:auto;display:block;margin:16px auto}
+.fig{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.fig .cap{font-size:12px;color:var(--muted);text-align:center;margin-top:8px;font-family:'JetBrains Mono',monospace}
+footer{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+footer .ref{font-family:'JetBrains Mono',monospace;font-size:12px;margin-top:8px}
+a{color:var(--laranja)}
+@media(max-width:560px){.hands{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">carolzita · cirurgia geral · pâncreas</div>
+  <h1>Pancreatite Crônica</h1>
+  <p class="sub">Etiologia (TIGAR-O) · diagnóstico por imagem (Cambridge) · manejo da dor e insuficiência pancreática · <strong>ESCAPE trial</strong> (cirurgia precoce &gt; endoscopia escalonada) · técnicas cirúrgicas (Frey, Beger, Puestow, Whipple). Base: HaPanEU/UEG, ESCAPE trial (JAMA 2020, seguimento 2024), ACG, e pegadinhas das bancas do RS.</p>
+  <div class="tags">
+    <span class="tag">TIGAR-O</span>
+    <span class="tag">Cambridge</span>
+    <span class="tag">ESCAPE trial</span>
+    <span class="tag">Frey · Beger · Puestow</span>
+    <span class="tag">PERT</span>
+    <span class="tag r">HCPA · GHC · SC-POA · PUC · AMRIGS</span>
+  </div>
+</header>
+
+<!-- 1 ETIOLOGIA E FISIOPATOLOGIA -->
+<details open>
+  <summary><span class="num">1</span> Etiologia (TIGAR-O) &amp; fisiopatologia <span class="chev">▶</span></summary>
+  <div class="body">
+    <p><strong>Pancreatite crônica (PC)</strong> = síndrome fibroinflamatória <strong>irreversível</strong> do pâncreas, com destruição progressiva do parênquima exócrino e endócrino. <span class="simple">(diferente da pancreatite aguda, aqui o dano já virou cicatriz permanente — o pâncreas vai perdendo a capacidade de produzir enzimas e insulina aos poucos)</span></p>
+
+    <h4>Classificação TIGAR-O das causas</h4>
+    <div class="grid">
+      <div class="gcard"><div class="t">T — Tóxico-metabólica</div><div class="d"><strong>Álcool</strong> (causa mais comum, ~40-70%), tabagismo (fator de risco independente e sinérgico ao álcool), hipercalcemia, hipertrigliceridemia</div></div>
+      <div class="gcard"><div class="t">I — Idiopática</div><div class="d">Sem causa identificada — 2ª causa mais comum em muitas séries</div></div>
+      <div class="gcard"><div class="t">G — Genética</div><div class="d">PRSS1, SPINK1, CFTR — pensar em <strong>pancreatite hereditária</strong> se início jovem + história familiar</div></div>
+      <div class="gcard"><div class="t">A — Autoimune</div><div class="d">Tipo 1 (relacionada a IgG4) e Tipo 2 (associada a DII)</div></div>
+      <div class="gcard"><div class="t">R — Recorrente/grave (pancreatite aguda de repetição)</div><div class="d">Episódios repetidos de PA evoluindo para PC</div></div>
+      <div class="gcard"><div class="t">O — Obstrutiva</div><div class="d">Pâncreas divisum, estenose ductal, tumor, trauma prévio</div></div>
+    </div>
+    <div class="box mac"><span class="lbl">macete</span><strong>Álcool + tabagismo</strong> juntos multiplicam o risco (efeito sinérgico, não apenas somado) — sempre perguntar sobre os dois na anamnese, mesmo que o paciente minimize um deles.</div>
+
+    <h4>Fisiopatologia — o ciclo da fibrose</h4>
+    <p>Ativação repetida de <strong>células estreladas pancreáticas</strong> (semelhantes às hepáticas) leva à deposição progressiva de colágeno, obstrução ductal por rolhas proteicas/cálculos, atrofia acinar e, eventualmente, perda das ilhotas — culminando em insuficiência exócrina e depois endócrina (diabetes tipo 3c).</p>
+  </div>
+</details>
+
+<!-- 2 DIAGNOSTICO -->
+<details>
+  <summary><span class="num">2</span> Diagnóstico — imagem &amp; função pancreática <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Imagem — TC ou RM como 1ª linha (ACG)</h4>
+    <p>Achados clássicos: <strong>calcificações parenquimatosas</strong>, dilatação irregular do ducto pancreático principal ("colar de contas"), atrofia glandular, cálculos ductais.</p>
+
+    <div class="fig">
+      <svg viewBox="0 0 640 180" xmlns="http://www.w3.org/2000/svg">
+        <text x="320" y="18" fill="#9a9ab0" font-size="11" font-family="monospace" text-anchor="middle">classificação de Cambridge — gravidade por imagem</text>
+        <line x1="60" y1="140" x2="600" y2="140" stroke="#2a2a38" stroke-width="3"/>
+        <rect x="60"  y="132" width="100" height="16" fill="#34d399" opacity=".5"/>
+        <rect x="160" y="132" width="130" height="16" fill="#fbbf24" opacity=".5"/>
+        <rect x="290" y="132" width="150" height="16" fill="#f97316" opacity=".5"/>
+        <rect x="440" y="132" width="160" height="16" fill="#f87171" opacity=".5"/>
+        <text x="110" y="100" fill="#34d399" font-size="12" font-family="monospace" text-anchor="middle" font-weight="bold">Normal</text>
+        <text x="225" y="100" fill="#fbbf24" font-size="12" font-family="monospace" text-anchor="middle" font-weight="bold">Leve</text>
+        <text x="225" y="118" fill="#9a9ab0" font-size="9" font-family="monospace" text-anchor="middle">&lt;3 alterações no ducto</text>
+        <text x="365" y="100" fill="#f97316" font-size="12" font-family="monospace" text-anchor="middle" font-weight="bold">Moderada</text>
+        <text x="365" y="118" fill="#9a9ab0" font-size="9" font-family="monospace" text-anchor="middle">≥3 alterações</text>
+        <text x="520" y="100" fill="#f87171" font-size="12" font-family="monospace" text-anchor="middle" font-weight="bold">Grave</text>
+        <text x="520" y="118" fill="#9a9ab0" font-size="9" font-family="monospace" text-anchor="middle">cisto/obstrução/cálculo/</text>
+        <text x="520" y="130" fill="#9a9ab0" font-size="9" font-family="monospace" text-anchor="middle">invasão de órgão adjacente</text>
+        <text x="320" y="165" fill="#9a9ab0" font-size="10" font-family="monospace" text-anchor="middle">baseado em ducto principal + ramos secundários à CPRE/imagem</text>
+      </svg>
+      <div class="cap">Classificação de Cambridge estratifica a gravidade morfológica em normal → duvidosa → leve → moderada → grave, conforme o número e tipo de alterações ductais.</div>
+    </div>
+
+    <h4>Testes de função pancreática</h4>
+    <ul>
+      <li><strong>Elastase fecal</strong> — teste indireto mais usado na prática; valores baixos sugerem insuficiência exócrina.</li>
+      <li><strong>EUS (ecoendoscopia)</strong> — mais sensível para doença inicial (antes de calcificação evidente na TC), usando critérios ductais/parenquimatosos combinados.</li>
+    </ul>
+    <div class="box warn"><span class="lbl">⚠ pegadinha</span>A <strong>dor abdominal não se correlaciona bem</strong> com o grau de alteração morfológica na imagem — paciente com pâncreas muito calcificado pode ter pouca dor, e vice-versa. Não use a gravidade de imagem isoladamente para prever a intensidade dos sintomas.</div>
+  </div>
+</details>
+
+<!-- 3 MANEJO CLINICO -->
+<details>
+  <summary><span class="num">3</span> Manejo clínico — dor e insuficiência pancreática <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Insuficiência exócrina — reposição enzimática (PERT)</h4>
+    <ul>
+      <li>Desenvolve-se quando a função enzimática cai a <strong>&lt;10%</strong> da capacidade normal — surge tardiamente no curso da doença.</li>
+      <li>Manifesta-se como <strong>esteatorreia</strong> (fezes gordurosas, volumosas, fétidas), perda de peso, deficiência de vitaminas lipossolúveis (A, D, E, K).</li>
+      <li><strong>Reposição enzimática pancreática (PERT)</strong>: cápsulas com lipase/protease/amilase, administradas <strong>durante as refeições</strong> (não antes/depois) para se misturar ao bolo alimentar.</li>
+    </ul>
+
+    <h4>Insuficiência endócrina — diabetes tipo 3c</h4>
+    <p>Surge por destruição das ilhotas — diferente do diabetes tipo 1/2 clássico, tende a ser <strong>mais instável/frágil</strong> (perda concomitante de células alfa produtoras de glucagon, com maior risco de hipoglicemia no tratamento insulínico).</p>
+
+    <h4>Controle da dor — abordagem escalonada</h4>
+    <div class="steps">
+      <div class="step"><b>1. Medidas gerais</b>: cessação de álcool e tabaco (fundamental — reduz progressão e melhora dor), analgesia escalonada.</div>
+      <div class="step"><b>2. Enzimas pancreáticas</b> podem ter efeito analgésico discreto em alguns pacientes (mecanismo de feedback negativo na secreção), mas não é a indicação principal.</div>
+      <div class="step"><b>3. Opioides</b> frequentemente necessários — risco de dependência é uma preocupação real e documentada nessa população.</div>
+      <div class="step"><b>4. Intervenção (endoscópica ou cirúrgica)</b> quando dor refratária ao tratamento clínico — ver próxima seção sobre timing.</div>
+    </div>
+  </div>
+</details>
+
+<!-- 4 ESCAPE TRIAL -->
+<details>
+  <summary><span class="num">4</span> Endoscopia × cirurgia — o que mudou (ESCAPE trial) <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>A prática tradicional (refletida em diretrizes mais antigas, como a alemã S3 e HaPanEU/UEG 2017) preconiza <strong>step-up</strong>: clínico → endoscópico → cirurgia <strong>reservada como último recurso</strong>. O <strong>ESCAPE trial</strong> (JAMA 2020, com seguimento de longo prazo publicado em 2024) desafiou essa sequência.</p>
+
+    <div class="fig">
+      <svg viewBox="0 0 640 220" xmlns="http://www.w3.org/2000/svg">
+        <text x="320" y="20" fill="#9a9ab0" font-size="11" font-family="monospace" text-anchor="middle">ESCAPE trial — controle satisfatório da dor (seguimento longo)</text>
+        <line x1="80" y1="180" x2="560" y2="180" stroke="#2a2a38" stroke-width="1.5"/>
+        <line x1="80" y1="180" x2="80" y2="40" stroke="#2a2a38" stroke-width="1.5"/>
+        <text x="40" y="45" fill="#9a9ab0" font-size="9" font-family="monospace">100%</text>
+        <text x="40" y="182" fill="#9a9ab0" font-size="9" font-family="monospace">0%</text>
+        <!-- barra cirurgia precoce -->
+        <rect x="150" y="80" width="110" height="100" fill="#34d399" opacity=".5"/>
+        <text x="205" y="72" fill="#34d399" font-size="16" font-family="monospace" text-anchor="middle" font-weight="bold">71%</text>
+        <text x="205" y="200" fill="#34d399" font-size="11" font-family="monospace" text-anchor="middle">cirurgia precoce</text>
+        <!-- barra endoscopia -->
+        <rect x="380" y="127" width="110" height="53" fill="#f87171" opacity=".5"/>
+        <text x="435" y="119" fill="#f87171" font-size="16" font-family="monospace" text-anchor="middle" font-weight="bold">33%</text>
+        <text x="435" y="200" fill="#f87171" font-size="11" font-family="monospace" text-anchor="middle">endoscopia-primeiro</text>
+      </svg>
+      <div class="cap">No seguimento de longo prazo (~98 meses) do ESCAPE trial: 71% dos pacientes operados precocemente tinham controle satisfatório da dor, contra apenas 33% do grupo endoscopia-primeiro — que também precisou de significativamente mais reintervenções.</div>
+    </div>
+
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">ESCAPE trial — JAMA 2020 / ACS 2024</span></span>Em pacientes com <strong>ducto pancreático principal dilatado (≥5mm)</strong> e dor moderada/exacerbações frequentes, a <strong>cirurgia precoce</strong> (antes de esgotar tentativas endoscópicas) mostrou <strong>melhor controle da dor e menos reintervenções</strong> do que a abordagem endoscópica escalonada tradicional — achado que contraria a sequência "endoscopia sempre antes de cirurgia" ensinada classicamente.</div>
+    <div class="box warn"><span class="lbl">⚠ como a prova pode cobrar</span>Se a questão citar <strong>diretrizes mais antigas</strong> (S3/HaPanEU), a resposta esperada pode ser "step-up, cirurgia por último". Se citar <strong>evidência mais recente (ESCAPE)</strong>, a resposta é "cirurgia precoce tem melhor desfecho de dor". Preste atenção em qual referência a questão está usando.</div>
+
+    <h4>Indicações de cirurgia (consenso, independente do timing)</h4>
+    <ul>
+      <li>Dor intratável refratária a tratamento clínico/endoscópico.</li>
+      <li>Complicações locais: pseudocisto sintomático, obstrução biliar/duodenal, fístula, compressão vascular.</li>
+      <li><strong>Suspeita de malignidade</strong> — massa pancreática indeterminada em contexto de PC exige investigação/ressecção pela dificuldade de diferenciar de neoplasia por imagem.</li>
+    </ul>
+  </div>
+</details>
+
+<!-- 5 TECNICAS CIRURGICAS -->
+<details>
+  <summary><span class="num">5</span> Técnicas cirúrgicas <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>A escolha depende principalmente de <strong>dois fatores</strong>: calibre do ducto pancreático principal e presença/tamanho de massa inflamatória na cabeça do pâncreas.</p>
+
+        <div class="box simplebox"><span class="lbl">tradução simples</span>Na pancreatite crônica a dor tem <strong>duas origens possíveis</strong>, e cada uma pede uma operação diferente. Ou o <strong>cano está entupido</strong> e a pressão lá dentro dói — e aí basta <strong>abrir o cano no comprimento todo</strong> e ligá-lo a uma alça (drenagem). Ou existe uma <strong>massa inflamatória na cabeça</strong> comprimindo tudo em volta — e aí é preciso <strong>tirar esse núcleo</strong> (ressecção). Frey faz as duas coisas. Toda a decisão é: <strong>ducto dilatado? massa na cabeça?</strong></div>
+
+    <div class="box mac"><span class="lbl">a matriz da decisão</span>
+      <strong>Ducto dilatado (&gt; 7 mm) + cabeça normal</strong> → <strong>Puestow</strong> (só drenagem)<br>
+      <strong>Ducto dilatado + massa na cabeça</strong> → <strong>Frey</strong> (drenagem + ressecção do núcleo)<br>
+      <strong>Massa grande na cabeça + ducto fino</strong> → <strong>Beger</strong> (ressecção com preservação duodenal)<br>
+      <strong>Suspeita de malignidade ou <em>groove</em></strong> → <strong>Whipple</strong></div>
+
+    <h4>Puestow / Partington-Rochelle — pancreatojejunostomia látero-lateral</h4>
+    <div class="stx">
+
+      <div class="st">
+        <span class="fase">fase de exposição</span>
+        <div class="ttl">Abertura da retrocavidade e exposição do pâncreas</div>
+        <p>Laparotomia; abertura do <strong>ligamento gastrocólico</strong>, rebatendo o estômago cranialmente e o cólon transverso caudalmente, expondo toda a face anterior da glândula.</p>
+        <div class="pq"><b>por quê</b>A exposição precisa alcançar <strong>da cabeça à cauda</strong> — a drenagem só funciona se o ducto for aberto em toda a extensão dilatada. Exposição parcial gera drenagem parcial e dor persistente.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de localização</span>
+        <div class="ttl">Identificar o ducto de Wirsung</div>
+        <p>Localizar o ducto por <strong>palpação</strong>, <strong>ultrassonografia intraoperatória</strong> ou <strong>punção aspirativa</strong> com agulha fina até obter suco pancreático claro.</p>
+        <div class="pq"><b>por quê</b>Em glândula fibrótica o ducto não é visível e a superfície é toda igual ao tato. Punção com retorno de suco claro é a confirmação — e evita abrir o parênquima no lugar errado, o que sangra e não drena nada.</div>
+        <div class="mh2">
+          <div class="mh e"><b>mão esquerda</b>Estabiliza a glândula e comprime as bordas para hemostasia enquanto se abre</div>
+          <div class="mh d"><b>mão direita</b>Agulha de punção, depois bisturi/tesoura seguindo o ducto</div>
+        </div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de abertura — o passo que define o resultado</span>
+        <div class="ttl">Ductotomia longitudinal ampla</div>
+        <p>Abrir o Wirsung <strong>longitudinalmente</strong>, da cabeça até a cauda, ao longo de <strong>toda a porção dilatada</strong> — tipicamente 6 a 10 cm ou mais. Retirar cálculos intraductais.</p>
+        <div class="pq"><b>por quê</b>É a diferença entre Puestow e o antigo Duval (que só drenava a cauda). Abrir <strong>curto</strong> deixa segmentos com pressão elevada e a dor persiste — o motivo de falha mais comum da operação. A regra é ir <strong>até onde o ducto ainda está dilatado</strong>, e não até onde a exposição é confortável.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de reconstrução</span>
+        <div class="ttl">Anastomose látero-lateral em Y de Roux</div>
+        <p>Alça jejunal em Y de Roux aberta longitudinalmente na mesma extensão e anastomosada à ductotomia, em plano único com <span class="fio">absorvível 3-0/4-0</span>, pegando <strong>parênquima e cápsula</strong>, não apenas a mucosa ductal.</p>
+        <div class="pq"><b>por quê</b>O ponto pega o parênquima porque a parede ductal fibrótica é fina demais para sustentar sutura sozinha. E o <strong>Y de Roux</strong> é obrigatório aqui pela mesma razão de sempre: mantém o conteúdo entérico e a bile longe da anastomose pancreática.</div>
+      </div>
+
+    </div>
+    <div class="box prova"><span class="lbl">alto rendimento</span>O Puestow é <strong>drenagem pura</strong>: não retira parênquima, preserva função endócrina e exócrina e tem baixa mortalidade. Alívio da dor em <strong>~80% a curto prazo</strong>, com queda ao longo dos anos — sobretudo se houver massa cefálica não tratada.</div>
+
+    <h4>Frey — drenagem + ressecção do núcleo cefálico</h4>
+    <div class="stx">
+
+      <div class="st">
+        <span class="fase">fase de drenagem</span>
+        <div class="ttl">Mesma ductotomia longitudinal do Puestow</div>
+        <p>Abertura ampla do Wirsung no corpo e cauda.</p>
+        <div class="pq"><b>por quê</b>O Frey <strong>contém</strong> o Puestow — ele é o Puestow acrescido de um gesto na cabeça. Por isso é chamado de híbrido.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de ressecção — o que o diferencia</span>
+        <div class="ttl">Escavação do núcleo da cabeça pancreática</div>
+        <p><strong>Escavar</strong> o tecido fibroinflamatório do interior da cabeça, deixando uma <strong>casca posterior de parênquima</strong> junto ao duodeno e à via biliar. Não há dissecção retropancreática nem secção do colo.</p>
+        <div class="pq"><b>por quê</b>A escavação <strong>não segue plano anatômico formal</strong> — retira-se o miolo doente por dentro, como quem esvazia uma fruta pela abertura, mantendo a casca. Isso descomprime a via biliar intrapancreática e o duodeno <strong>sem</strong> desvascularizá-los, e é o que torna a operação tecnicamente mais simples e mais segura que o Beger.</div>
+        <div class="mh2">
+          <div class="mh e"><b>mão esquerda</b>Dedo por trás da cabeça, dentro do plano do Kocher, sentindo a espessura da casca que resta</div>
+          <div class="mh d"><b>mão direita</b>Cautério ou pinça escavando o núcleo, camada a camada</div>
+        </div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de reconstrução</span>
+        <div class="ttl">Anastomose única cobrindo ducto e cavidade cefálica</div>
+        <p>A mesma alça em Y de Roux é anastomosada <strong>à ductotomia e à cavidade escavada</strong>, em uma boca contínua.</p>
+        <div class="pq"><b>por quê</b>Uma anastomose só resolve os dois problemas — a pressão ductal e a massa cefálica. É por isso que o Frey se tornou a operação <strong>mais utilizada</strong> na pancreatite crônica com componente cefálico.</div>
+      </div>
+
+    </div>
+
+    <h4>Beger (DPPHR) — ressecção cefálica com preservação duodenal</h4>
+    <div class="stx">
+
+      <div class="st">
+        <span class="fase">fase de mobilização</span>
+        <div class="ttl">Kocher e criação do túnel retropancreático</div>
+        <p>Manobra de Kocher ampla; dissecção do plano entre a face posterior do colo e a <strong>veia mesentérica superior / porta</strong>.</p>
+        <div class="pq"><b>por quê</b>É o mesmo túnel do Whipple — e é o que torna o Beger uma <strong>ressecção verdadeira</strong>, com plano anatômico definido, e não uma escavação. Também é o que o torna tecnicamente mais exigente.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de secção</span>
+        <div class="ttl">Secção do colo pancreático</div>
+        <p>Seccionar o pâncreas sobre a veia porta, separando cabeça de corpo.</p>
+        <div class="pq"><b>por quê</b>É aqui que Beger e Frey se separam de vez: o Frey <strong>nunca secciona o colo</strong>. Seccionar cria duas superfícies pancreáticas e, portanto, <strong>duas anastomoses</strong> na reconstrução.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase crítica — o que preserva o duodeno</span>
+        <div class="ttl">Ressecção subtotal da cabeça poupando a arcada</div>
+        <p>Ressecar a cabeça <strong>subtotalmente</strong>, deixando uma lâmina de tecido junto à parede duodenal e à via biliar intrapancreática, preservando as <strong>arcadas pancreatoduodenais</strong>.</p>
+        <div class="pq"><b>por quê</b>É a razão de o duodeno sobreviver. As arcadas são a <strong>única irrigação</strong> do duodeno depois que a cabeça é retirada — as mesmas arcadas cuja anatomia compartilhada obriga a ressecção em bloco no Whipple. Aqui, preservá-las é o que permite <em>não</em> ressecar o duodeno.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de reconstrução</span>
+        <div class="ttl">Duas anastomoses com a alça em Y</div>
+        <p>Alça em Y de Roux anastomosada à <strong>cavidade cefálica remanescente</strong> e ao <strong>coto pancreático do corpo</strong>.</p>
+        <div class="pq"><b>por quê</b>Duas superfícies, duas bocas — e por isso mais risco de fístula que o Frey. Em troca, o Beger retira mais massa inflamatória, o que o favorece quando a cabeça é volumosa e o ducto <strong>não</strong> está dilatado.</div>
+      </div>
+
+    </div>
+
+    <div class="box mac"><span class="lbl">o que separa as três em uma linha</span>
+      <strong>Puestow</strong> abre o cano. <strong>Frey</strong> abre o cano e escava a cabeça por dentro. <strong>Beger</strong> secciona o colo e resseca a cabeça de verdade, preservando o duodeno pelas arcadas.</div>
+
+    <div class="box warn"><span class="lbl">⚠ antes de qualquer uma delas</span>
+      <strong>Excluir malignidade.</strong> Massa cefálica em pancreatite crônica é indistinguível de adenocarcinoma por imagem em uma parcela dos casos — e a pancreatite crônica é <strong>fator de risco</strong> para câncer de pâncreas. Na dúvida que persiste, a operação é o <strong>Whipple</strong>, não a drenagem.</div>
+
+    <div class="fig">
+      <svg viewBox="0 0 640 220" xmlns="http://www.w3.org/2000/svg">
+        <text x="320" y="18" fill="#9a9ab0" font-size="11" font-family="monospace" text-anchor="middle">critérios de escolha — ducto × massa na cabeça</text>
+        <line x1="80" y1="190" x2="80" y2="40" stroke="#2a2a38" stroke-width="1.5"/>
+        <line x1="80" y1="190" x2="580" y2="190" stroke="#2a2a38" stroke-width="1.5"/>
+        <text x="30" y="45" fill="#9a9ab0" font-size="9" font-family="monospace">ducto</text>
+        <text x="30" y="58" fill="#9a9ab0" font-size="9" font-family="monospace">dilatado</text>
+        <text x="30" y="185" fill="#9a9ab0" font-size="9" font-family="monospace">ducto fino</text>
+        <text x="560" y="205" fill="#9a9ab0" font-size="9" font-family="monospace" text-anchor="end">massa na cabeça →</text>
+
+        <rect x="100" y="45" width="200" height="65" fill="#22d3ee" opacity=".18" stroke="#22d3ee" stroke-width="1.5"/>
+        <text x="200" y="82" fill="#22d3ee" font-size="13" font-family="monospace" text-anchor="middle" font-weight="bold">Puestow</text>
+        <text x="200" y="98" fill="#9a9ab0" font-size="9" font-family="monospace" text-anchor="middle">só drenagem</text>
+
+        <rect x="310" y="45" width="220" height="65" fill="#34d399" opacity=".18" stroke="#34d399" stroke-width="1.5"/>
+        <text x="420" y="82" fill="#34d399" font-size="13" font-family="monospace" text-anchor="middle" font-weight="bold">Frey</text>
+        <text x="420" y="98" fill="#9a9ab0" font-size="9" font-family="monospace" text-anchor="middle">drenagem + núcleo da cabeça</text>
+
+        <rect x="310" y="120" width="220" height="60" fill="#a855f7" opacity=".18" stroke="#a855f7" stroke-width="1.5"/>
+        <text x="420" y="155" fill="#a855f7" font-size="13" font-family="monospace" text-anchor="middle" font-weight="bold">Beger (DPPHR)</text>
+        <text x="420" y="171" fill="#9a9ab0" font-size="9" font-family="monospace" text-anchor="middle">ressecção da cabeça, poupa duodeno</text>
+      </svg>
+      <div class="cap">Ducto dilatado + cabeça normal → Puestow. Ducto dilatado + massa na cabeça → Frey. Massa grande na cabeça, ducto fino → Beger. Suspeita de malignidade/groove → Whipple.</div>
+    </div>
+
+    <div class="box mac"><span class="lbl">macete</span><strong>Frey = "o híbrido"</strong> (drena + resseca núcleo, sem seguir plano anatômico formal). <strong>Beger = "ressecção verdadeira"</strong> da cabeça com plano de dissecção retropancreático, preservando duodeno e via biliar.</div>
+  </div>
+</details>
+
+<!-- 6 RISCO DE CANCER E QUESTOES -->
+<details>
+  <summary><span class="num">6</span> Risco de câncer, questões &amp; pega-ratões <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Risco de adenocarcinoma pancreático</h4>
+    <div class="tbl"><table>
+      <tr><th>Contexto</th><th>Risco</th></tr>
+      <tr><td>PC "comum" (não hereditária)</td><td>Baixo — ~2% em 10 anos; <strong>não justifica</strong> rastreio ativo ou cirurgia profilática de rotina</td></tr>
+      <tr><td><strong>PC hereditária</strong></td><td><strong>Alto</strong> — risco ao longo da vida de 40-55%; considerar ressecção profilática em casos selecionados</td></tr>
+    </table></div>
+    <div class="box warn"><span class="lbl">⚠ pegadinha</span>Não confundir os dois cenários — PC comum <strong>não</strong> justifica vigilância agressiva por si só, mas PC <strong>hereditária</strong> muda completamente a conduta de seguimento.</div>
+
+    <h4>10 questões representativas (originais, estilo das 5 bancas)</h4>
+
+    <div class="box prova"><span class="lbl">Q1 <span class="banca">HCPA</span></span><strong>Qual a causa mais comum de pancreatite crônica?</strong><br>Resposta: <strong>álcool</strong> (TIGAR-O, tóxico-metabólica) — tabagismo potencializa o risco de forma sinérgica.</div>
+
+    <div class="box prova"><span class="lbl">Q2 <span class="banca">GHC</span></span><strong>Paciente com ducto pancreático dilatado ≥5mm e dor moderada persistente. Segundo o ESCAPE trial, qual abordagem tem melhor desfecho de dor?</strong><br>Resposta: <strong>cirurgia precoce</strong>, superior à endoscopia-primeiro em controle de dor e menor taxa de reintervenção.</div>
+
+    <div class="box prova"><span class="lbl">Q3 <span class="banca">AMRIGS</span></span><strong>Ducto pancreático muito dilatado, sem massa significativa na cabeça. Técnica cirúrgica de escolha?</strong><br>Resposta: <strong>Puestow/Partington-Rochelle</strong> (pancreatojejunostomia látero-lateral).</div>
+
+    <div class="box prova"><span class="lbl">Q4 <span class="banca">PUC-RS</span></span><strong>Massa inflamatória volumosa na cabeça do pâncreas com ducto pouco dilatado. Técnica preferida?</strong><br>Resposta: <strong>Beger (DPPHR)</strong> — ressecção da cabeça com preservação duodenal.</div>
+
+    <div class="box prova"><span class="lbl">Q5 <span class="banca">SC-POA</span></span><strong>Paciente com esteatorreia e perda de peso em PC avançada. Como orientar a administração de PERT?</strong><br>Resposta: cápsulas <strong>durante as refeições</strong>, para se misturarem ao bolo alimentar.</div>
+
+    <div class="box prova"><span class="lbl">Q6 <span class="banca">HCPA</span></span><strong>Qual o risco de câncer pancreático em 10 anos na PC comum, não hereditária?</strong><br>Resposta: <strong>baixo, ~2%</strong> — não justifica rastreio ativo de rotina.</div>
+
+    <div class="box prova"><span class="lbl">Q7 <span class="banca">GHC</span></span><strong>Paciente com PC hereditária confirmada. Conduta quanto ao risco oncológico?</strong><br>Resposta: risco ao longo da vida de <strong>40-55%</strong> — considerar ressecção profilática em casos selecionados.</div>
+
+    <div class="box prova"><span class="lbl">Q8 <span class="banca">AMRIGS</span></span><strong>Massa na região entre cabeça pancreática, duodeno e colédoco ("groove"). Técnica cirúrgica indicada?</strong><br>Resposta: <strong>duodenopancreatectomia (Whipple/PPPD)</strong>.</div>
+
+    <div class="box prova"><span class="lbl">Q9 <span class="banca">PUC-RS</span></span><strong>A intensidade da dor na PC se correlaciona bem com o grau de calcificação na imagem?</strong><br>Resposta: <strong>não</strong> — a correlação é fraca; não usar gravidade radiológica isolada para prever sintomas.</div>
+
+    <div class="box prova"><span class="lbl">Q10 <span class="banca">SC-POA</span></span><strong>Paciente com PC desenvolve diabetes. Qual tipo e principal cuidado no tratamento?</strong><br>Resposta: <strong>diabetes tipo 3c</strong> — maior risco de hipoglicemia por perda concomitante de glucagon (células alfa).</div>
+
+    <h4>Pega-ratões (as armadilhas clássicas)</h4>
+    <div class="box warn"><span class="lbl">☠ trap 1</span>ESCAPE trial inverteu a lógica clássica — <strong>cirurgia precoce pode ser melhor</strong>, não é mais sempre "último recurso".</div>
+    <div class="box warn"><span class="lbl">☠ trap 2</span>Dor <strong>não</strong> se correlaciona com gravidade de imagem.</div>
+    <div class="box warn"><span class="lbl">☠ trap 3</span>PC comum ≠ PC hereditária quanto ao risco de câncer — não generalizar a conduta de rastreio.</div>
+    <div class="box warn"><span class="lbl">☠ trap 4</span>Frey ≠ Beger — Frey combina drenagem+núcleo, Beger é ressecção verdadeira poupando duodeno.</div>
+    <div class="box warn"><span class="lbl">☠ trap 5</span>PERT deve ser tomado <strong>durante</strong> a refeição, não antes/depois.</div>
+    <div class="box warn"><span class="lbl">☠ trap 6</span>Diabetes tipo 3c tem <strong>mais risco de hipoglicemia</strong> que o diabetes tipo 2 comum.</div>
+    <div class="box warn"><span class="lbl">☠ trap 7</span>Álcool + tabagismo = efeito <strong>sinérgico</strong>, não apenas somado.</div>
+    <div class="box warn"><span class="lbl">☠ trap 8</span>Massa pancreática em PC sempre exige investigação — pode mascarar malignidade.</div>
+
+    <h4>Mnemônicos-resumo</h4>
+    <div class="box mac"><span class="lbl">macete geral</span>TIGAR-O = Tóxico(álcool)·Idiopática·Genética·Autoimune·Recorrente·Obstrutiva · Cambridge = normal→leve→moderada→grave · ESCAPE = cirurgia precoce &gt; endoscopia (71%×33%) · Puestow=só drena·Frey=drena+núcleo·Beger=resseca cabeça·Whipple=malignidade/groove · PC hereditária=40-55% risco Ca.</div>
+  </div>
+</details>
+
+<footer>
+  <div><strong>carolzita</strong> · Pancreatite Crônica · referência completa</div>
+  <div class="ref">Fontes: HaPanEU/United European Gastroenterology Evidence-Based Guidelines (2017) · ESCAPE Randomized Clinical Trial (JAMA 2020; seguimento de longo prazo, ACS 2024) · ACG Clinical Guideline · Cambridge Classification · Sabiston · Zollinger. Conteúdo educacional; questões são itens representativos originais.</div>
+</footer>
+</div>
+</body>
+</html>

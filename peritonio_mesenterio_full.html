@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Peritônio, Mesentério e Identificação de Alças | carolzita</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0c; --bg2:#111114; --bg3:#17171c; --line:#26262e;
+  --txt:#e6e6ea; --txt2:#a1a1aa; --txt3:#6b6b76;
+  --org:#f97316; --org-bg:rgba(249,115,22,.09); --org-ln:rgba(249,115,22,.32);
+  --pur:#a855f7; --pur-bg:rgba(168,85,247,.09); --pur-ln:rgba(168,85,247,.32);
+  --cya:#22d3ee; --cya-bg:rgba(34,211,238,.08); --cya-ln:rgba(34,211,238,.30);
+  --red:#f43f5e; --grn:#34d399;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;font-weight:300;line-height:1.65;padding:0 0 80px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+/* HERO */
+header{border-bottom:1px solid var(--line);background:
+  radial-gradient(1200px 300px at 15% -60%, rgba(249,115,22,.14), transparent 70%),
+  radial-gradient(900px 260px at 85% -40%, rgba(168,85,247,.12), transparent 70%);
+  padding:54px 0 34px;margin-bottom:34px}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--org);margin-bottom:14px}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2rem,5.2vw,3.3rem);line-height:1.04;letter-spacing:-.02em}
+h1 span{color:var(--org)}
+.sub{color:var(--txt2);font-size:1.02rem;margin-top:14px;max-width:70ch}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.chip{font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;
+  border:1px solid var(--line);background:var(--bg2);color:var(--txt2);padding:5px 11px;border-radius:999px}
+.chip.o{border-color:var(--org-ln);color:var(--org);background:var(--org-bg)}
+.chip.p{border-color:var(--pur-ln);color:var(--pur);background:var(--pur-bg)}
+.chip.c{border-color:var(--cya-ln);color:var(--cya);background:var(--cya-bg)}
+
+/* NAV */
+nav.toc{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:30px}
+nav.toc h4{font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--txt3);margin-bottom:12px}
+nav.toc ol{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:6px 18px;counter-reset:t}
+nav.toc a{counter-increment:t;color:var(--txt2);text-decoration:none;font-size:.88rem;display:block;padding:3px 0;border-bottom:1px dashed transparent}
+nav.toc a::before{content:counter(t,decimal-leading-zero);font-family:'JetBrains Mono',monospace;color:var(--org);font-size:.72rem;margin-right:9px}
+nav.toc a:hover{color:var(--txt);border-bottom-color:var(--org-ln)}
+
+/* SECTIONS */
+details.sec{border:1px solid var(--line);border-radius:14px;background:var(--bg2);margin-bottom:14px;overflow:hidden}
+details.sec[open]{border-color:var(--org-ln)}
+summary{cursor:pointer;list-style:none;padding:17px 20px;display:flex;align-items:center;gap:13px;
+  font-family:'Syne',sans-serif;font-weight:700;font-size:1.06rem;letter-spacing:-.01em}
+summary::-webkit-details-marker{display:none}
+summary .num{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--org);
+  border:1px solid var(--org-ln);background:var(--org-bg);border-radius:6px;padding:3px 7px;font-weight:500}
+summary .arw{margin-left:auto;color:var(--txt3);transition:transform .2s;font-size:.85rem}
+details[open] summary .arw{transform:rotate(90deg);color:var(--org)}
+summary:hover{background:var(--bg3)}
+.body{padding:4px 22px 24px;border-top:1px solid var(--line)}
+.body>*{margin-top:15px}
+h3{font-family:'Syne',sans-serif;font-weight:700;font-size:.98rem;color:var(--org);letter-spacing:.01em;
+  margin-top:24px;padding-bottom:5px;border-bottom:1px solid var(--org-ln)}
+h4{font-family:'Inter',sans-serif;font-weight:600;font-size:.9rem;color:var(--txt);margin-top:18px}
+p,li{font-size:.93rem;color:var(--txt)}
+ul,ol{padding-left:20px}
+li{margin:5px 0}
+li::marker{color:var(--org)}
+b,strong{font-weight:600;color:#fff}
+.kid{color:var(--txt3);font-style:italic;font-size:.86rem}
+code{font-family:'JetBrains Mono',monospace;font-size:.82rem;background:var(--bg3);border:1px solid var(--line);border-radius:5px;padding:1px 6px;color:var(--cya)}
+
+/* CALLOUTS */
+.box{border-left:3px solid var(--org);background:var(--org-bg);border-radius:0 10px 10px 0;padding:13px 16px}
+.box.p{border-color:var(--pur);background:var(--pur-bg)}
+.box.c{border-color:var(--cya);background:var(--cya-bg)}
+.box.r{border-color:var(--red);background:rgba(244,63,94,.08)}
+.box .tag{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;display:block;margin-bottom:6px;color:var(--org)}
+.box.p .tag{color:var(--pur)} .box.c .tag{color:var(--cya)} .box.r .tag{color:var(--red)}
+
+/* TABLES */
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.86rem}
+th{background:var(--bg3);color:var(--txt2);font-family:'JetBrains Mono',monospace;font-size:.68rem;
+  letter-spacing:.1em;text-transform:uppercase;font-weight:500;text-align:left;padding:10px 13px;border-bottom:1px solid var(--line)}
+td{padding:10px 13px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--txt)}
+tr:last-child td{border-bottom:none}
+tbody tr:hover{background:var(--bg3)}
+td.k{color:var(--org);font-weight:500;white-space:nowrap}
+td.j{color:var(--grn)} td.i{color:var(--cya)}
+
+/* GRIDS */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+.card{background:var(--bg3);border:1px solid var(--line);border-radius:11px;padding:14px 16px}
+.card h5{font-family:'Syne',sans-serif;font-weight:700;font-size:.88rem;color:var(--org);margin-bottom:7px}
+.card.c h5{color:var(--cya)} .card.c{border-color:var(--cya-ln);background:var(--cya-bg)}
+.card p{font-size:.86rem;color:var(--txt2)}
+.mn{font-family:'JetBrains Mono',monospace;color:var(--cya);font-weight:700;letter-spacing:.04em}
+
+/* STEPS */
+ol.steps{list-style:none;padding-left:0;counter-reset:s}
+ol.steps>li{counter-increment:s;position:relative;padding:11px 0 11px 46px;border-bottom:1px solid var(--line)}
+ol.steps>li:last-child{border-bottom:none}
+ol.steps>li::before{content:counter(s,decimal-leading-zero);position:absolute;left:0;top:11px;
+  font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--org);border:1px solid var(--org-ln);
+  background:var(--org-bg);border-radius:6px;padding:3px 6px}
+
+footer{border-top:1px solid var(--line);margin-top:40px;padding-top:22px;color:var(--txt3);font-size:.8rem}
+footer a{color:var(--txt2)}
+@media (max-width:640px){.body{padding:4px 15px 20px}summary{font-size:.96rem;padding:15px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">carolzita · anatomia cirúrgica · cv 2026</div>
+    <h1>Peritônio, mesentério e <span>identificação de alças</span></h1>
+    <p class="sub">Da membrana serosa ao plano de dissecção: como o abdome está compartimentado, o mesentério como órgão contínuo — anatomia, conteúdo, patologia e armadilhas — e como reconhecer com segurança qual alça está na sua mão no intraoperatório.</p>
+    <div class="meta">
+      <span class="chip o">laranja = conteúdo</span>
+      <span class="chip p">roxo = alto rendimento em prova</span>
+      <span class="chip c">ciano = mnemônico</span>
+      <span class="chip">Sabiston · Zollinger · Netter</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<nav class="toc">
+  <h4>Roteiro</h4>
+  <ol>
+    <a href="#s1">Embriologia em 60 segundos</a>
+    <a href="#s2">Peritônio: estrutura e inervação</a>
+    <a href="#s3">Compartimentos e recessos</a>
+    <a href="#s4">Bolsa omental e forame epiploico</a>
+    <a href="#s5">Intra × retroperitoneal</a>
+    <a href="#s6">Mesentério: anatomia e patologia</a>
+    <a href="#s7">Fáscias de coalescência</a>
+    <a href="#s8">Omentos e ligamentos</a>
+    <a href="#s9">Vascularização e linfáticos</a>
+    <a href="#s10">Identificar alças no intraoperatório</a>
+    <a href="#s11">Manobras de mobilização</a>
+    <a href="#s12">Armadilhas e complicações</a>
+    <a href="#s13">Alto rendimento para provas</a>
+    <a href="#s14">Grade de mnemônicos</a>
+  </ol>
+</nav>
+
+<!-- 1 -->
+<details class="sec" id="s1" open>
+  <summary><span class="num">01</span> Embriologia em 60 segundos <span class="arw">›</span></summary>
+  <div class="body">
+    <p>Todo o intestino primitivo nasce <b>suspenso na linha média por um meso dorsal</b> (só o intestino anterior tem também meso ventral, que gera fígado, ligamento falciforme e omento menor). <span class="kid">(Imagine uma corda de varal no meio das costas: o intestino é a roupa pendurada nela, e a corda leva junto os canos de sangue.)</span></p>
+    <ul>
+      <li><b>Rotação de 270° anti-horária</b> em torno do eixo da artéria mesentérica superior (AMS) → duodeno e cólon ascendente/descendente encostam na parede posterior e ficam <b>secundariamente retroperitoneais</b>.</li>
+      <li>Onde o meso encostou e fundiu-se ao peritônio parietal formam-se as <b>fáscias de coalescência (fáscia de Toldt)</b> — planos avasculares que o cirurgião reabre na mobilização. <span class="kid">(É como colar duas folhas de papel: dá para descolar de novo sem rasgar, se você achar a linha da cola.)</span></li>
+      <li>O meso ventral do intestino anterior explica por que o <b>ligamento hepatoduodenal</b> é a borda livre onde correm colédoco, artéria hepática e veia porta.</li>
+      <li>Falha de rotação → <b>má-rotação</b>: raiz do mesentério curta e vertical, ceco no quadrante superior direito, bridas de Ladd e risco de volvo de intestino médio.</li>
+    </ul>
+    <div class="box p"><span class="tag">alto rendimento</span>Tema clássico de banca: <b>o mesentério gira em torno da AMS</b>, e é por isso que o volvo de intestino médio compromete todo o território da AMS (do duodenojejunal até os 2/3 proximais do cólon transverso). Sinal do redemoinho (<i>whirlpool</i>) na TC = veia mesentérica superior girando em torno da AMS.</div>
+  </div>
+</details>
+
+<!-- 2 -->
+<details class="sec" id="s2">
+  <summary><span class="num">02</span> Peritônio: estrutura, fisiologia e inervação <span class="arw">›</span></summary>
+  <div class="body">
+    <h3>Estrutura</h3>
+    <ul>
+      <li>Membrana serosa de <b>mesotélio simples pavimentoso</b> sobre tecido conjuntivo frouxo, com área de superfície ≈ <b>1,7–2 m²</b> (comparável à superfície corporal — base da diálise peritoneal).</li>
+      <li><b>Peritônio parietal</b>: reveste a parede abdominal. <b>Peritônio visceral</b>: reveste as vísceras (é a "serosa" que você sutura).</li>
+      <li>Entre os dois: <b>cavidade peritoneal</b>, espaço virtual com 50–100 mL de líquido seroso rico em macrófagos. <span class="kid">(Duas camadas de plástico filme molhadas, deslizando uma na outra.)</span></li>
+      <li>Homem: cavidade <b>fechada</b>. Mulher: <b>aberta</b> pelas fímbrias tubárias → via de peritonite ascendente (Fitz-Hugh–Curtis).</li>
+    </ul>
+
+    <h3>Função cirurgicamente relevante</h3>
+    <ul>
+      <li><b>Absorção</b>: os estomas linfáticos do peritônio diafragmático absorvem líquido, partículas e bactérias → drenam para linfonodos mediastinais. Explica bacteremia rápida na peritonite e a eficácia da <b>posição de Fowler</b> para direcionar coleções à pelve (área de menor absorção).</li>
+      <li><b>Fibrinólise x aderência</b>: mesotélio lesado, isquemia, talco, dessecação e corpo estranho reduzem o ativador de plasminogênio local → fibrina não é lisada → <b>brida</b>. Daí: manipular pouco, irrigar, evitar dessecação, hemostasia meticulosa.</li>
+      <li>A <b>serosa</b> é a camada que sela anastomoses (aposição seromuscular). Segmentos sem serosa completa — <b>reto extraperitoneal, esôfago e face posterior do cólon ascendente/descendente</b> — têm anastomose de maior risco.</li>
+    </ul>
+
+    <h3>Inervação — a chave da semiologia</h3>
+    <div class="tw"><table>
+      <thead><tr><th>Característica</th><th>Peritônio visceral</th><th>Peritônio parietal</th></tr></thead>
+      <tbody>
+        <tr><td class="k">Fibras</td><td>Autonômicas, C amielínicas</td><td>Somáticas (nn. intercostais T7–T12, L1, frênico)</td></tr>
+        <tr><td class="k">Estímulo doloroso</td><td>Distensão, isquemia, tração do meso</td><td>Inflamação, irritação química/bacteriana, corte</td></tr>
+        <tr><td class="k">Dor</td><td>Vaga, mal localizada, na linha média conforme o segmento embrionário</td><td>Precisa, no ponto, com defesa e descompressão</td></tr>
+        <tr><td class="k">Localização</td><td>Anterior→epigástrio; médio→periumbilical; posterior→hipogástrio</td><td>Sobre o órgão acometido</td></tr>
+        <tr><td class="k">Exemplo</td><td>Apendicite inicial: dor periumbilical</td><td>Apendicite tardia: dor em McBurney</td></tr>
+      </tbody>
+    </table></div>
+    <div class="box"><span class="tag">correlação</span>Irritação do <b>peritônio diafragmático</b> (n. frênico, C3–C5) → <b>dor referida no ombro (sinal de Kehr)</b>: hemoperitônio, ar sob o diafragma, abscesso subfrênico. Já a dor no ombro pós-videolaparoscopia é o mesmo mecanismo com CO₂ residual.</div>
+    <div class="box p"><span class="tag">alto rendimento</span><b>Migração da dor</b> = mudança de peritônio visceral para parietal. É o dado semiológico de maior valor preditivo na apendicite e cai em prova todo ano.</div>
+  </div>
+</details>
+
+<!-- 3 -->
+<details class="sec" id="s3">
+  <summary><span class="num">03</span> Compartimentos, goteiras e recessos <span class="arw">›</span></summary>
+  <div class="body">
+    <p>O <b>mesocólon transverso</b> é o grande divisor: separa o andar <b>supramesocólico</b> do <b>inframesocólico</b>. <span class="kid">(É uma prateleira atravessada no meio do armário.)</span></p>
+
+    <h3>Andar supramesocólico</h3>
+    <ul>
+      <li><b>Subfrênico direito e esquerdo</b> (separados pelo ligamento falciforme).</li>
+      <li><b>Sub-hepático direito = recesso hepatorrenal ou bolsa de Morrison</b> — ponto <b>mais declive do abdome superior no decúbito dorsal</b>; primeira janela do FAST e local preferencial de abscesso pós-operatório.</li>
+      <li><b>Sub-hepático esquerdo</b> e <b>bolsa omental</b> (posterior ao estômago).</li>
+    </ul>
+
+    <h3>Andar inframesocólico</h3>
+    <ul>
+      <li>Dividido pela <b>raiz oblíqua do mesentério</b> em espaço inframesocólico <b>direito</b> (menor, fechado inferiormente pela raiz na junção ileocecal → tende a conter a coleção) e <b>esquerdo</b> (aberto para a pelve → drena para o Douglas).</li>
+      <li><b>Goteira parietocólica direita</b>: ampla e profunda, comunica livremente o espaço sub-hepático com a pelve → via preferencial de disseminação (ex.: pus da apendicite/úlcera perfurada chegando ao QID e ao subfrênico).</li>
+      <li><b>Goteira parietocólica esquerda</b>: rasa e barrada superiormente pelo <b>ligamento frenocólico (de Hensing)</b> → limita a passagem para o subfrênico esquerdo. O mesmo ligamento é o que se secciona ao abaixar o ângulo esplênico e é fonte de laceração esplênica por tração.</li>
+    </ul>
+
+    <h3>Pelve</h3>
+    <ul>
+      <li><b>Fundo de saco reto-uterino (Douglas)</b> na mulher e <b>retovesical</b> no homem: ponto mais declive de toda a cavidade em pé/semissentado → coleções, "grito de Douglas" no toque, punção/culdocentese.</li>
+      <li>Reto: terço superior intraperitoneal na face anterior e lateral; terço médio só anterior; terço inferior <b>extraperitoneal</b>. Define se a lesão retal é peritonizada ou não e a conduta no trauma.</li>
+    </ul>
+
+    <h3>Recessos que interessam</h3>
+    <ul>
+      <li><b>Recesso intersigmoide</b> — no ápice da raiz em V do mesossigmoide: marca o <b>ureter esquerdo</b> logo abaixo. Marco de segurança na sigmoidectomia.</li>
+      <li><b>Recessos paraduodenais</b> (de Landzert e Waldeyer) — sede das hérnias internas paraduodenais.</li>
+      <li><b>Recesso retrocecal</b> — abriga o apêndice retrocecal (60%).</li>
+    </ul>
+    <div class="box p"><span class="tag">alto rendimento</span>Sequência clássica: úlcera duodenal perfurada → conteúdo desce pela <b>goteira parietocólica direita</b> → dor em fossa ilíaca direita simulando apendicite. Saber a anatomia dos espaços explica o quadro e o local dos abscessos residuais.</div>
+  </div>
+</details>
+
+<!-- 4 -->
+<details class="sec" id="s4">
+  <summary><span class="num">04</span> Bolsa omental e forame epiploico <span class="arw">›</span></summary>
+  <div class="body">
+    <p><b>Bolsa omental (transcavidade dos epíplons)</b> = divertículo da cavidade peritoneal atrás do estômago e do omento menor. <span class="kid">(É o "quartinho dos fundos" atrás do estômago.)</span></p>
+    <ul>
+      <li><b>Acessos cirúrgicos</b>: (1) através do <b>ligamento gastrocólico</b> — via padrão nas gastrectomias e na necrosectomia pancreática; (2) através do <b>mesocólon transverso</b> — usado na gastrojejunostomia retrocólica; (3) pelo <b>omento menor</b>; (4) pelo <b>forame epiploico</b>.</li>
+      <li>Sede das <b>coleções pancreáticas</b> e do pseudocisto — a bolsa é o "reservatório natural" do suco pancreático.</li>
+    </ul>
+    <h3>Forame epiploico (de Winslow) — decorar as 4 bordas</h3>
+    <div class="tw"><table>
+      <thead><tr><th>Limite</th><th>Estrutura</th><th>Por que importa</th></tr></thead>
+      <tbody>
+        <tr><td class="k">Anterior</td><td>Ligamento hepatoduodenal (tríade portal: colédoco à direita, artéria hepática à esquerda, veia porta posterior)</td><td>É o que se clampeia na <b>manobra de Pringle</b></td></tr>
+        <tr><td class="k">Posterior</td><td>Veia cava inferior</td><td>Risco de lesão catastrófica ao aprofundar cegamente o dedo</td></tr>
+        <tr><td class="k">Superior</td><td>Lobo caudado (segmento I)</td><td>Referência de orientação hepática</td></tr>
+        <tr><td class="k">Inferior</td><td>Primeira porção do duodeno / artéria hepática comum</td><td>Ponto de entrada do dedo indicador</td></tr>
+      </tbody>
+    </table></div>
+    <div class="box"><span class="tag">manobra de pringle</span>Indicador na bolsa omental pelo forame, polegar sobre o ligamento hepatoduodenal → pinçamento digital ou com clampe vascular/torniquete. Controla sangramento de artéria hepática e porta. <b>Se não parar de sangrar</b>, pense em veias hepáticas, cava retro-hepática ou artéria hepática direita aberrante da AMS (que cursa posterolateral ao colédoco).</div>
+    <div class="box c"><span class="tag">mnemônico</span><span class="mn">"Duodeno embaixo, Cava atrás, Caudado em cima, Colédoco na frente"</span> — as 4 paredes do Winslow no sentido horário.</div>
+  </div>
+</details>
+
+<!-- 5 -->
+<details class="sec" id="s5">
+  <summary><span class="num">05</span> Intraperitoneal × retroperitoneal <span class="arw">›</span></summary>
+  <div class="body">
+    <div class="grid">
+      <div class="card"><h5>Intraperitoneais</h5><p>Estômago, 1ª porção do duodeno (bulbo), jejuno, íleo, ceco (variável), apêndice, cólon transverso, cólon sigmoide, terço superior do reto, fígado, vesícula, baço, cauda do pâncreas, útero, tubas e ovários.</p></div>
+      <div class="card"><h5>Retroperitoneais primários</h5><p>Aorta, VCI, rins, ureteres, adrenais, esôfago abdominal, reto médio/inferior.</p></div>
+      <div class="card"><h5>Retroperitoneais secundários</h5><p>Duodeno (2ª a 4ª porções), pâncreas (cabeça, colo, corpo), cólon ascendente e descendente. <span class="kid">(Eram pendurados e depois "colaram" na parede de trás.)</span></p></div>
+    </div>
+    <div class="box c"><span class="tag">mnemônico</span><span class="mn">SAD PUCKER</span> — <b>S</b>uprarrenal, <b>A</b>orta/VCI, <b>D</b>uodeno (2–4), <b>P</b>âncreas (exceto cauda), <b>U</b>reteres, <b>C</b>ólon ascendente e descendente, <b>K</b>idney (rins), <b>E</b>sôfago, <b>R</b>eto.</div>
+    <div class="box p"><span class="tag">alto rendimento</span>Consequência prática: <b>perfuração retroperitoneal</b> (duodeno 2ª porção pós-CPRE, cólon ascendente) dá pouco sinal peritoneal, quadro arrastado, ar retroperitoneal na TC e enfisema perinéfrico — alta taxa de diagnóstico tardio.</div>
+  </div>
+</details>
+
+<!-- 6 -->
+<details class="sec" id="s6">
+  <summary><span class="num">06</span> Mesentério: anatomia, patologia e princípios cirúrgicos <span class="arw">›</span></summary>
+  <div class="body">
+    <p><b>Meso</b> = dupla lâmina de peritônio que suspende a víscera e conduz artéria, veia, linfáticos, nervos e gordura. <span class="kid">(É o cabo de energia + internet + água do intestino, embrulhado em papel.)</span></p>
+
+    <h3>Mesentério — arquitetura</h3>
+    <ul>
+      <li><b>Raiz (borda parietal)</b>: ≈ 15 cm, oblíqua da <b>flexura duodenojejunal (à esquerda de L2)</b> até a <b>junção ileocecal (fossa ilíaca direita)</b>. Cruza por diante: 3ª porção do duodeno, aorta, VCI, ureter direito e vasos gonadais direitos. <span class="kid">(É a dobra onde o leque está preso na parede.)</span></li>
+      <li><b>Borda intestinal</b>: ≈ 6 m, pregueada em leque para caber num pedículo de 15 cm.</li>
+      <li><b>Altura</b>: ≈ 20 cm no ponto médio; menor perto da raiz e nas extremidades.</li>
+      <li><b>Camadas</b>: dois folhetos de mesotélio + tecido conjuntivo com <b>continuidade da fáscia mesentérica</b> com a fáscia de Toldt na área de coalescência. Entre os folhetos: artérias, veias, linfáticos, linfonodos, nervos autonômicos e tecido adiposo.</li>
+      <li><b>Orientação</b>: mesentério do <b>jejuno</b> se implanta <b>alto e à esquerda</b>; o do <b>íleo</b>, <b>baixo e à direita</b>. Seguir o meso até a raiz é o método mais confiável de definir proximal × distal.</li>
+      <li><b>Espessura da gordura</b> aumenta do jejuno para o íleo — dado usado para diferenciar as alças e sinal de doença quando exagerado (<i>creeping fat</i> da doença de Crohn).</li>
+    </ul>
+
+    <h3>O mesentério como órgão contínuo</h3>
+    <ul>
+      <li>Coffey e colaboradores (<i>Lancet Gastroenterol Hepatol</i> 2016; atualização 2021/2022) demonstraram que o mesentério é uma <b>estrutura única e ininterrupta</b>, do duodenojejunal ao mesorreto — não um conjunto de segmentos separados como se ensinava desde Treves.</li>
+      <li>A parte "ausente" no cólon ascendente e descendente é apenas a porção <b>coalescida</b> à parede posterior — pode ser reaberta pelo plano de Toldt, restituindo a continuidade.</li>
+      <li>Implicações cirúrgicas: fundamenta a <b>excisão mesocólica completa (CME) com ligadura vascular alta (CVL)</b> e a <b>ETM</b> — ressecar o segmento intestinal com o <b>envelope mesentérico íntegro</b>, sem violar a fáscia mesentérica (a violação libera células tumorais e aumenta recidiva local).</li>
+      <li>Funções reconhecidas: reservatório de <b>tecido linfoide e macrófagos</b>, órgão <b>endócrino</b> (leptina, adipocinas), regulação da coagulação e da glicemia, e barreira de contenção de processos inflamatórios.</li>
+    </ul>
+
+    <h3>Patologia do mesentério — o que aparece no plantão e na prova</h3>
+    <div class="tw"><table>
+      <thead><tr><th>Entidade</th><th>Chave diagnóstica</th><th>Conduta</th></tr></thead>
+      <tbody>
+        <tr><td class="k">Lesão mesentérica no trauma</td><td>Hematoma na raiz, desvascularização segmentar, "sinal do mesentério em nuvem" (<i>misty mesentery</i>) com líquido livre sem lesão de órgão sólido</td><td>Hematoma <b>expansivo, pulsátil ou na raiz</b> → exploração obrigatória (risco de lesão da AMS). Hematoma pequeno, não expansivo, na borda → observação com reavaliação da alça</td></tr>
+        <tr><td class="k">Desvascularização segmentar</td><td>Rasgo mesentérico perpendicular com alça pálida, sem pulso na arcada</td><td><b>Ressecção do segmento</b>, mesmo com alça aparentemente viável — necrose tardia e perfuração em 24–72 h</td></tr>
+        <tr><td class="k">Hérnia interna por defeito mesentérico</td><td>Dor desproporcional, obstrução intermitente, <i>whirl sign</i> na TC. Espaços de <b>Petersen</b> e do <b>mesojejuno</b> pós-bypass</td><td>Urgência: risco de estrangulamento de alça longa. Fechar defeitos com sutura não absorvível contínua na cirurgia índice</td></tr>
+        <tr><td class="k">Volvo de intestino médio</td><td>Má-rotação com raiz mesentérica curta; sinal do redemoinho (VMS girando em torno da AMS)</td><td>Destorção anti-horária + procedimento de Ladd</td></tr>
+        <tr><td class="k">Isquemia mesentérica</td><td>Dor desproporcional ao exame; embólica (poupa jejuno proximal, êmbolo distal à cólica média), trombótica, não oclusiva ou venosa</td><td>Angio-TC, revascularização/embolectomia, ressecção do inviável, <b>second look 24–48 h</b></td></tr>
+        <tr><td class="k">Paniculite mesentérica</td><td>Massa gordurosa com halo hipodenso ("sinal do halo gorduroso") e pseudocápsula; pode preceder linfoma</td><td>Geralmente conservadora; investigar neoplasia oculta</td></tr>
+        <tr><td class="k">Cisto mesentérico / linfangioma</td><td>Massa cística móvel no eixo perpendicular à raiz (sinal de Tillaux)</td><td>Enucleação; se aderido aos vasos, ressecção com o segmento intestinal</td></tr>
+        <tr><td class="k">Tumor desmoide</td><td>Fibromatose mesentérica; associação forte com <b>PAF/síndrome de Gardner</b> após colectomia</td><td>Terapia sistêmica e vigilância; cirurgia só em complicação — ressecção costuma custar intestino</td></tr>
+        <tr><td class="k">Carcinoide de íleo</td><td>Massa mesentérica calcificada com <b>retração em raios de roda</b> e fibrose desmoplásica</td><td>Ressecção em bloco com linfadenectomia mesentérica; risco de encarceramento da AMS</td></tr>
+        <tr><td class="k">Linfadenite mesentérica</td><td>Linfonodos ileocecais aumentados, íleo terminal espessado, apêndice normal (Yersinia, adenovírus)</td><td>Suporte — principal diagnóstico diferencial de apendicite em jovens</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>Princípios cirúrgicos de manejo do mesentério</h3>
+    <ul>
+      <li><b>Secção do meso</b>: transiluminar contra o foco, identificar as arcadas e seccionar <b>entre pinças hemostáticas com ligadura dupla</b> ou com energia (seladores). Em meso espesso e obeso, energia isolada tem maior taxa de hematoma — prefira ligadura.</li>
+      <li><b>Ressecção oncológica</b>: secção em <b>cunha (V) até a origem do pedículo</b>, para incluir os linfonodos intermediários e principais (≥12 linfonodos). Ressecção paliativa/benigna: secção <b>rente à alça</b>, poupando arcadas e comprimento.</li>
+      <li><b>Anastomose sob tensão</b>: manobras de alongamento — mobilização de Cattell-Braasch, incisões peritoneais transversais de relaxamento na face anterior e posterior do meso (poupando vasos), abaixamento do ângulo esplênico na colectomia esquerda.</li>
+      <li><b>Fechamento de defeitos</b>: sutura contínua não absorvível; alternativa aceita é deixar o defeito <b>francamente amplo</b>. O erro é o defeito parcial.</li>
+      <li><b>Hemostasia da raiz</b>: sangramento na raiz do mesentério exige compressão e exposição formal — nunca pinçar às cegas (AMS/VMS a milímetros).</li>
+      <li><b>Mesenterectomia extensa</b> → síndrome do intestino curto: preservar válvula ileocecal e ≥ 100–120 cm de delgado sempre que possível.</li>
+    </ul>
+
+    <h3>Demais mesos — mesocólon transverso</h3>
+    <ul>
+      <li><b>Raiz</b>: cruza o polo inferior do rim direito → 2ª porção do duodeno → cabeça e borda inferior do corpo do pâncreas → polo inferior do rim esquerdo.</li>
+      <li>Contém a <b>artéria cólica média</b> (ramo da AMS), que emerge da borda inferior do pâncreas — <b>ponto de sangramento arterial de difícil controle</b> se rasgada por tração.</li>
+      <li>É o teto do compartimento inframesocólico e o assoalho da bolsa omental. Fundido ao omento maior no <b>plano avascular de fusão</b> — é ali que se entra na bolsa sem sangrar e se faz a <b>omentectomia com preservação do mesocólon</b>.</li>
+      <li>Janela do mesocólon é a rota da <b>gastrojejunostomia retrocólica</b> e ponto de invasão tumoral no câncer gástrico.</li>
+    </ul>
+
+    <h3>Mesocólon sigmoide</h3>
+
+    <ul>
+      <li><b>Raiz em V invertido</b>: um ramo ao longo dos vasos ilíacos externos esquerdos, outro na frente do sacro até S3.</li>
+      <li>No ápice do V está o <b>recesso intersigmoide</b> e, logo abaixo, o <b>ureter esquerdo cruzando os vasos ilíacos</b>. Marco de ouro para não lesar o ureter.</li>
+      <li>Mesocólon longo + base estreita = substrato do <b>volvo de sigmoide</b>.</li>
+    </ul>
+
+    <h3>Mesoapêndice</h3>
+    <ul>
+      <li>Prega triangular da face posterior do mesentério ileal, contendo a <b>artéria apendicular</b> (ramo terminal da ileocólica, sem colaterais → apêndice é território terminal → necrose rápida).</li>
+    </ul>
+
+    <h3>Mesorreto</h3>
+    <ul>
+      <li>Gordura perirretal envolvida pela <b>fáscia própria do reto</b>, contendo vasos retais superiores e os linfonodos da drenagem retal.</li>
+      <li>Plano entre fáscia própria e fáscia pré-sacral (<b>plano "santo" de Heald</b>) = <b>excisão total do mesorreto (ETM)</b>, dissecção romba-cortante sob visão direta, que reduziu recidiva local de ~30% para &lt;10%.</li>
+      <li>Riscos do plano: <b>plexo hipogástrico superior</b> no promontório (ejaculação), <b>nervos erigentes/plexo pélvico</b> nas laterais (ereção, bexiga), <b>veias pré-sacrais</b> (hemorragia catastrófica se romper a fáscia pré-sacral).</li>
+    </ul>
+
+    <div class="box p"><span class="tag">alto rendimento</span>Sobre o mesentério, três blocos concentram as questões: <b>(1) a raiz</b> — trajeto oblíquo e estruturas que ela cruza; <b>(2) a vascularização</b> — arcadas, vasa recta e território terminal; <b>(3) a patologia</b> — hematoma expansivo no trauma, hérnia interna por defeito não fechado e isquemia mesentérica. Decorar as três raízes (mesentério oblíquo, mesocólon transverso pancreático-duodenal, mesossigmoide em V) resolve o resto da anatomia peritoneal.</div>
+  </div>
+</details>
+
+<!-- 7 -->
+<details class="sec" id="s7">
+  <summary><span class="num">07</span> Fáscias de coalescência e planos cirúrgicos <span class="arw">›</span></summary>
+  <div class="body">
+    <div class="tw"><table>
+      <thead><tr><th>Plano</th><th>Onde</th><th>Uso cirúrgico</th></tr></thead>
+      <tbody>
+        <tr><td class="k">Linha branca de Toldt</td><td>Reflexão peritoneal lateral do cólon ascendente e descendente</td><td>Incisão para mobilização látero-medial do cólon; plano avascular entre fáscia de Toldt e fáscia de Gerota</td></tr>
+        <tr><td class="k">Fáscia de Gerota</td><td>Envolve rim e gordura perirrenal</td><td><b>Deve permanecer intacta</b> — se você vê a gordura amarela brilhante do rim ou o ureter, está profundo demais</td></tr>
+        <tr><td class="k">Plano de Fredet</td><td>Entre o mesocólon direito e a fáscia pré-pancreática/duodenal</td><td>Dissecção medial-lateral na colectomia direita laparoscópica; expõe o tronco gastrocólico de Henle</td></tr>
+        <tr><td class="k">Fáscia de Treitz</td><td>Atrás do duodeno e da cabeça do pâncreas</td><td>Manobra de Kocher</td></tr>
+        <tr><td class="k">Fáscia pré-sacral / de Waldeyer</td><td>Posterior ao mesorreto</td><td>Limite posterior da ETM; romper = sangramento venoso pré-sacral</td></tr>
+        <tr><td class="k">Fáscia de Denonvilliers</td><td>Entre reto e próstata/vagina</td><td>Limite anterior da ETM; nervos cavernosos correm em suas laterais</td></tr>
+      </tbody>
+    </table></div>
+    <div class="box c"><span class="tag">regra de ouro</span><span class="mn">"Se sangrou, você saiu do plano."</span> Os planos embriológicos são avasculares e areolares — a "névoa sagrada" (<i>holy plane</i>) de tecido areolar frouxo indica que a dissecção está correta.</div>
+  </div>
+</details>
+
+<!-- 8 -->
+<details class="sec" id="s8">
+  <summary><span class="num">08</span> Omentos e ligamentos peritoneais <span class="arw">›</span></summary>
+  <div class="body">
+    <h3>Omento maior</h3>
+    <ul>
+      <li>Quatro folhetos peritoneais pendendo da grande curvatura gástrica, contendo os <b>vasos gastroepiploicos</b>.</li>
+      <li>"Polícia do abdome": migra e bloqueia focos inflamatórios (plastrão apendicular, bloqueio de úlcera perfurada — <b>epiploplastia de Graham</b>).</li>
+      <li>Rico em <b>manchas leitosas</b> (agregados linfoides) → sítio preferencial de carcinomatose ("omental cake").</li>
+      <li>Usos: patch de Graham, cobertura de anastomose, preenchimento de cavidade, omentoplastia em fístulas e infecção de esterno.</li>
+    </ul>
+    <h3>Omento menor e ligamentos</h3>
+    <div class="tw"><table>
+      <thead><tr><th>Ligamento</th><th>Conteúdo</th></tr></thead>
+      <tbody>
+        <tr><td class="k">Hepatogástrico</td><td>Ramos gástricos esquerdos; pode conter <b>artéria hepática esquerda acessória do ramo gástrico esquerdo</b> (15–20%)</td></tr>
+        <tr><td class="k">Hepatoduodenal</td><td>Tríade portal (colédoco, artéria hepática própria, veia porta) + linfonodos + nervos</td></tr>
+        <tr><td class="k">Gastrocólico</td><td>Vasos gastroepiploicos; porta de entrada da bolsa omental</td></tr>
+        <tr><td class="k">Gastroesplênico</td><td>Vasos gástricos curtos e gastroepiploicos esquerdos</td></tr>
+        <tr><td class="k">Esplenorrenal (lienorrenal)</td><td>Vasos esplênicos e cauda do pâncreas</td></tr>
+        <tr><td class="k">Falciforme / redondo</td><td>Veia umbilical obliterada; divide subfrênico D e E; marco do segmento IV</td></tr>
+        <tr><td class="k">Frenocólico (Hensing)</td><td>Sustenta o baço e barra a goteira esquerda</td></tr>
+      </tbody>
+    </table></div>
+    <div class="box r"><span class="tag">armadilha</span>Tração excessiva no ângulo esplênico ou no omento → avulsão da cápsula esplênica pelo ligamento frenocólico/gastroesplênico. Causa mais comum de <b>esplenectomia iatrogênica</b> em colectomia esquerda.</div>
+  </div>
+</details>
+
+<!-- 9 -->
+<details class="sec" id="s9">
+  <summary><span class="num">09</span> Vascularização, arcadas e linfáticos <span class="arw">›</span></summary>
+  <div class="body">
+    <h3>Territórios embrionários</h3>
+    <div class="tw"><table>
+      <thead><tr><th>Segmento</th><th>Artéria</th><th>Extensão</th></tr></thead>
+      <tbody>
+        <tr><td class="k">Intestino anterior</td><td>Tronco celíaco (T12)</td><td>Até a papila duodenal (2ª porção)</td></tr>
+        <tr><td class="k">Intestino médio</td><td>AMS (L1)</td><td>Da papila até os 2/3 proximais do cólon transverso</td></tr>
+        <tr><td class="k">Intestino posterior</td><td>AMI (L3)</td><td>Do 1/3 distal do transverso ao reto superior</td></tr>
+      </tbody>
+    </table></div>
+    <h3>Ramos e arcadas</h3>
+    <ul>
+      <li><b>AMS</b>: pancreatoduodenal inferior, jejunais e ileais (12–18), ileocólica (constante), cólica direita (inconstante, ausente em até 20%), cólica média.</li>
+      <li><b>AMI</b>: cólica esquerda, sigmoideanas, retal superior (ramo terminal).</li>
+      <li><b>Artéria marginal de Drummond</b>: arcada contínua junto à borda mesentérica do cólon, de onde saem os <b>vasa recta</b>. É o que mantém o cólon vivo após ligadura da AMI.</li>
+      <li><b>Arco de Riolano / artéria mesentérica tortuosa</b>: comunicação central entre AMS e AMI; hipertrofia na oclusão crônica.</li>
+      <li><b>Zonas de watershed</b>: <b>ponto crítico de Griffiths</b> (flexura esplênica, entre cólica média e cólica esquerda) e <b>ponto de Sudeck</b> (junção retossigmoide, entre última sigmoidea e retal superior) → sedes clássicas de <b>colite isquêmica</b> e de deiscência anastomótica.</li>
+      <li><b>Reto</b>: retal superior (AMI), retal média (ilíaca interna) e retal inferior (pudenda interna) — a rica anastomose explica por que o reto raramente isquemia mesmo com ligadura alta da AMI.</li>
+    </ul>
+    <h3>Venoso e linfático</h3>
+    <ul>
+      <li>VMS + veia esplênica (que recebe a VMI em ~40%) → <b>veia porta</b>, atrás do colo pancreático. <b>Tronco gastrocólico de Henle</b> (veia gastroepiploica direita + cólica direita superior + pancreatoduodenal anterossuperior): fonte temida de sangramento na colectomia direita.</li>
+      <li>A <b>VMI</b> ascende à esquerda do ângulo de Treitz e é ligada separadamente na colectomia esquerda oncológica.</li>
+      <li>Linfa segue as artérias: epicólicos → paracólicos → intermediários → principais (na origem do vaso). <b>Ligadura vascular alta (CVL)</b> na origem do pedículo é o que garante o estadiamento com ≥12 linfonodos.</li>
+      <li>Cisterna do quilo → ducto torácico. Lesão em dissecção retroperitoneal alta → <b>ascite quilosa</b>.</li>
+    </ul>
+    <div class="box p"><span class="tag">alto rendimento</span>Pergunta recorrente de banca: <b>por que o ângulo esplênico é o calcanhar de Aquiles do cólon?</b> Porque é o divisor de águas entre AMS e AMI (ponto de Griffiths), com marginal de Drummond descontínua em 5–7% das pessoas.</div>
+  </div>
+</details>
+
+<!-- 10 -->
+<details class="sec" id="s10" open>
+  <summary><span class="num">10</span> Identificando alças no intraoperatório <span class="arw">›</span></summary>
+  <div class="body">
+    <p>O objetivo prático é responder três perguntas em sequência: <b>(1) é delgado ou cólon? (2) se é delgado, é jejuno ou íleo? (3) estou proximal ou distal em relação à lesão?</b></p>
+
+    <h3>Passo 1 — Delgado × cólon (olhar de 2 segundos)</h3>
+    <div class="tw"><table>
+      <thead><tr><th>Achado</th><th>Delgado</th><th>Cólon</th></tr></thead>
+      <tbody>
+        <tr><td class="k">Tênias</td><td class="j">Ausentes — camada longitudinal completa e circunferencial</td><td class="i">Presentes: 3 faixas (livre, omental, mesocólica). Ausentes no reto e no apêndice</td></tr>
+        <tr><td class="k">Haustrações</td><td class="j">Ausentes</td><td class="i">Presentes (saculações entre as tênias)</td></tr>
+        <tr><td class="k">Apêndices epiploicos</td><td class="j">Ausentes</td><td class="i">Presentes (mais numerosos no sigmoide); ausentes no ceco e reto</td></tr>
+        <tr><td class="k">Calibre</td><td class="j">2,5–3,5 cm</td><td class="i">4–7 cm (ceco o maior)</td></tr>
+        <tr><td class="k">Cor e parede</td><td class="j">Rosada, parede lisa e mais espessa</td><td class="i">Acinzentada, parede mais fina e distensível</td></tr>
+        <tr><td class="k">Mobilidade</td><td class="j">Muito móvel em todo o trajeto</td><td class="i">Fixo em ascendente e descendente; móvel em transverso e sigmoide</td></tr>
+        <tr><td class="k">Arcadas</td><td class="j">Múltiplas, em leque (1–2 no jejuno, 4–5 no íleo)</td><td class="i">Arcada marginal única (Drummond) correndo paralela à borda</td></tr>
+        <tr><td class="k">Vasa recta</td><td class="j">Saem das arcadas; longos no jejuno e curtos no íleo</td><td class="i">Longos e retilíneos, da marginal direto à parede</td></tr>
+      </tbody>
+    </table></div>
+    <div class="box r"><span class="tag">cuidado com esta comparação</span>O <b>comprimento dos vasa recta</b> só é critério <b>dentro do delgado</b> (jejuno = longos, íleo = curtos). Entre delgado e cólon, o discriminador é o <b>padrão de arcadas</b>: leque de arcadas múltiplas no delgado × arcada marginal única no cólon. Comparar comprimento entre os dois segmentos gera confusão e contradiz a tabela jejuno × íleo.</div>
+    <div class="box c"><span class="tag">mnemônico</span><span class="mn">"TÊNIA + HAUSTRO + APÊNDICE EPIPLOICO = CÓLON"</span> — se faltar qualquer um dos três em cólon, você está no <b>reto</b> (tênias se fundem) ou no <b>ceco</b> (poucos epiploicos).</div>
+
+    <h3>Passo 2 — Jejuno × íleo</h3>
+    <div class="tw"><table>
+      <thead><tr><th>Característica</th><th>Jejuno (2/5 proximais)</th><th>Íleo (3/5 distais)</th></tr></thead>
+      <tbody>
+        <tr><td class="k">Localização</td><td class="j">Quadrante superior esquerdo</td><td class="i">Quadrante inferior direito e pelve</td></tr>
+        <tr><td class="k">Calibre</td><td class="j">Maior (3–4 cm)</td><td class="i">Menor (2–2,5 cm)</td></tr>
+        <tr><td class="k">Parede</td><td class="j">Espessa, sente-se firme entre os dedos</td><td class="i">Fina, "flácida"</td></tr>
+        <tr><td class="k">Pregas circulares (Kerckring)</td><td class="j">Altas, numerosas — palpáveis como cristas</td><td class="i">Baixas e ausentes no íleo distal</td></tr>
+        <tr><td class="k">Arcadas vasculares</td><td class="j">1 a 2 arcadas, <b>vasa recta longos e retos</b></td><td class="i">4 a 5 arcadas, <b>vasa recta curtos</b></td></tr>
+        <tr><td class="k">Gordura mesentérica</td><td class="j">Escassa: janelas translúcidas visíveis contra a luz</td><td class="i">Abundante, invade a borda da alça (<i>fat encroachment</i>)</td></tr>
+        <tr><td class="k">Cor</td><td class="j">Mais avermelhada (mais vascularizada)</td><td class="i">Mais pálida</td></tr>
+        <tr><td class="k">Tecido linfoide</td><td class="j">Escasso</td><td class="i"><b>Placas de Peyer</b> na borda antimesentérica</td></tr>
+      </tbody>
+    </table></div>
+    <div class="box c"><span class="tag">mnemônico</span><span class="mn">JEJUNO = "Janelas, Espesso, Justas (poucas arcadas), Um a dois arcos, Norte-esquerdo, Ocre-avermelhado"</span>. Na dúvida, <b>levante o mesentério contra a luz do foco</b>: se enxerga janelas translúcidas, é jejuno; se é uma parede de gordura opaca, é íleo.</div>
+
+    <h3>Passo 3 — Marcos anatômicos fixos (as "âncoras")</h3>
+    <div class="grid">
+      <div class="card"><h5>Ângulo de Treitz</h5><p>Ligamento suspensor do duodeno, à esquerda de L2, abaixo do mesocólon transverso. <b>Marco proximal absoluto</b>: é o início do jejuno e o ponto zero para contar alça. Acesso: levantar o cólon transverso e o omento em direção cefálica e procurar a transição fixa/móvel à esquerda da coluna.</p></div>
+      <div class="card"><h5>Válvula e junção ileocecal</h5><p><b>Marco distal absoluto.</b> Reconhecida pelo encontro do íleo terminal com o ceco e pela impressão da válvula. Referência para medir os 15–20 cm de íleo terminal preservados na ressecção.</p></div>
+      <div class="card"><h5>Confluência das tênias</h5><p>As três tênias convergem exatamente na <b>base do apêndice</b>. Se você não acha o apêndice, siga a tênia livre a partir do ceco — sempre chega.</p></div>
+      <div class="card"><h5>Raiz do mesentério</h5><p>Oblíqua do duodenojejunal (superior-esquerda) à junção ileocecal (inferior-direita). Traçando o meso até a raiz você define <b>proximal × distal</b> mesmo com o abdome revirado.</p></div>
+      <div class="card"><h5>Divertículo de Meckel</h5><p>Borda <b>antimesentérica</b>, ~60 cm da válvula ileocecal. Confirma que você está no íleo distal. Regra dos 2 (2% da população, 2 pés, 2 polegadas, 2 tecidos ectópicos, 2 anos).</p></div>
+      <div class="card"><h5>Promontório e goteiras</h5><p>Reorientação global quando o campo está desorganizado: promontório sacral no centro da pelve, goteira direita ampla, goteira esquerda barrada pelo frenocólico.</p></div>
+    </div>
+
+    <h3>Passo 4 — "Correr a alça" (running the bowel)</h3>
+    <ol class="steps">
+      <li><b>Evisceração controlada</b>: exteriorizar o delgado sobre compressas úmidas mornas, cobrindo o que não está sendo inspecionado. Nunca deixar alça seca ou sob tração.</li>
+      <li><b>Definir o ponto de partida</b>: se busca origem proximal (ex.: fístula alta, sangramento, obstrução), comece no <b>Treitz</b>; se busca patologia distal (obstrução baixa, Meckel, doença de Crohn), comece na <b>válvula ileocecal</b> e vá em sentido retrógrado — costuma ser mais rápido.</li>
+      <li><b>Técnica bimanual</b>: alça entre polegar e indicador das duas mãos, "passando" segmento por segmento de 10–15 cm, com rotação de 360° para inspecionar a borda mesentérica (onde escondem perfurações, hematomas e áreas isquêmicas).</li>
+      <li><b>Inspecionar sempre o meso junto</b>: hematoma mesentérico, desvascularização segmentar e rasgo mesentérico são achados que mudam conduta no trauma.</li>
+      <li><b>Marcar</b> o achado com clipe, ponto de reparo ou pinça atraumática (Babcock) para não perder a referência ao continuar.</li>
+      <li><b>Reposicionar em ordem anatômica</b> ao devolver as alças à cavidade: jejuno à esquerda/alto, íleo à direita/baixo, mesentério não torcido.</li>
+    </ol>
+
+    <h3>Passo 5 — Orientação do mesentério antes de anastomosar</h3>
+    <div class="box r"><span class="tag">erro grave</span>Antes de qualquer anastomose, confirme que o <b>mesentério dos dois cotos está no mesmo plano, sem rotação de 180°</b>. Alinhe as bordas antimesentéricas e verifique o meso em toda a extensão. Torção mesentérica = <b>volvo iatrogênico + isquemia + deiscência</b>. Feche ou deixe deliberadamente amplo o defeito mesentérico — brecha parcial é o substrato da <b>hérnia interna</b> (particularmente relevante em bypass gástrico: espaços de Petersen e do mesojejuno).</div>
+
+    <h3>Passo 6 — Avaliar viabilidade da alça</h3>
+    <ul>
+      <li><b>Clínicos clássicos</b> (após 15–20 min de compressa morna e liberação da constrição): retorno da <b>cor rosada</b>, <b>peristalse</b> ao estímulo, <b>pulso arterial no meso adjacente à borda</b> e <b>sangramento vivo na borda de secção</b>. São subjetivos e operador-dependentes.</li>
+      <li><b>Doppler</b> na borda antimesentérica e <b>fluorescência com verde de indocianina (ICG)</b> (0,1–0,25 mg/kg EV, fluorescência em 30–60 s) como adjuvantes. A evidência mais forte de ICG é em ressecções colorretais esquerdas para reduzir deiscência; no cenário de urgência os dados ainda são limitados a séries e metanálises pequenas, e a leitura visual permanece subjetiva.</li>
+      <li>Achados de <b>não viabilidade</b>: cor acinzentada/esverdeada/negra persistente, parede flácida sem peristalse, ausência de pulso mesentérico, odor. Na dúvida em ressecções extensas → <b>relaparotomia programada (second look) em 24–48 h</b>.</li>
+    </ul>
+
+    <h3>Passo 7 — Particularidades da videolaparoscopia</h3>
+    <ul>
+      <li>Perde-se a palpação: compense com <b>gravidade</b> (Trendelenburg + rotação lateral) para deslocar alças e expor a raiz.</li>
+      <li>Estratégia mais confiável: <b>ancorar no ceco/válvula ileocecal</b> e correr o íleo retrogradamente com duas pinças atraumáticas, em "mão sobre mão", sem soltar a alça.</li>
+      <li>Use marcação (clipe, sutura, tinta) sempre que interromper a sequência.</li>
+      <li>Alças distendidas na obstrução reduzem o espaço de trabalho e aumentam risco de enterotomia — limiar baixo para conversão ou mini-laparotomia auxiliada.</li>
+    </ul>
+
+    <h3>Passo 8 — Reconhecer a zona de transição na obstrução</h3>
+    <ul>
+      <li>Alças <b>proximais distendidas, com parede espessada e conteúdo líquido</b>; alças <b>distais colapsadas e vazias</b>. O ponto exato entre elas é a <b>zona de transição</b>.</li>
+      <li>Correr da alça <b>colapsada em direção proximal</b> costuma levar mais rápido ao ponto de obstrução do que o contrário.</li>
+      <li>Sinal de <b>fezes no delgado</b> (small bowel feces sign) na TC indica obstrução de baixo débito e localiza a transição no pré-operatório.</li>
+    </ul>
+
+    <div class="box p"><span class="tag">alto rendimento</span>Questões de banca sobre este bloco caem quase sempre em dois formatos: (1) tabela jejuno × íleo com foco em <b>arcadas e vasa recta</b>; (2) marco anatômico — <b>tênias convergem na base do apêndice</b>, <b>Treitz marca o início do jejuno</b>, <b>Meckel é antimesentérico</b>.</div>
+  </div>
+</details>
+
+<!-- 11 -->
+<details class="sec" id="s11">
+  <summary><span class="num">11</span> Manobras de mobilização peritoneal <span class="arw">›</span></summary>
+  <div class="body">
+    <div class="tw"><table>
+      <thead><tr><th>Manobra</th><th>Como</th><th>Expõe</th></tr></thead>
+      <tbody>
+        <tr><td class="k">Kocher</td><td>Incisão do peritônio lateral à 2ª porção do duodeno, deslocamento medial pelo plano de Treitz</td><td>Cabeça do pâncreas, colédoco distal, VCI, veia renal direita</td></tr>
+        <tr><td class="k">Cattell-Braasch</td><td>Kocher ampliado + mobilização do cólon direito + secção da raiz do mesentério ao longo da linha de Toldt até o Treitz</td><td>Todo o retroperitônio direito, VCI infra-hepática, aorta distal, 3ª/4ª porções do duodeno</td></tr>
+        <tr><td class="k">Mattox (rotação visceral medial esquerda)</td><td>Mobilização em bloco de cólon esquerdo, baço, cauda do pâncreas, fundo gástrico para a direita</td><td>Aorta suprarrenal, tronco celíaco, AMS proximal, ilíaca esquerda</td></tr>
+        <tr><td class="k">Linha de Toldt</td><td>Incisão da reflexão peritoneal lateral do cólon</td><td>Plano avascular pré-Gerota para colectomias</td></tr>
+        <tr><td class="k">Medial-lateral (laparoscópica)</td><td>Começa medialmente pelo pedículo vascular, entra no plano de Fredet/Toldt de dentro para fora</td><td>Permite ligadura vascular alta antes da manipulação do tumor (princípio "no touch")</td></tr>
+      </tbody>
+    </table></div>
+    <div class="box c"><span class="tag">mnemônico</span><span class="mn">"Kocher abre o duodeno, Cattell abre a direita, Mattox abre a esquerda"</span>.</div>
+  </div>
+</details>
+
+<!-- 12 -->
+<details class="sec" id="s12">
+  <summary><span class="num">12</span> Armadilhas anatômicas e complicações <span class="arw">›</span></summary>
+  <div class="body">
+    <div class="tw"><table>
+      <thead><tr><th>Situação</th><th>Mecanismo anatômico</th><th>Prevenção</th></tr></thead>
+      <tbody>
+        <tr><td class="k">Lesão ureteral esquerda</td><td>Ureter cruza os ilíacos sob o ápice do mesossigmoide</td><td>Identificar o recesso intersigmoide e visualizar o ureter antes de ligar o pedículo</td></tr>
+        <tr><td class="k">Lesão da cólica média</td><td>Emerge da borda inferior do pâncreas na raiz do mesocólon transverso</td><td>Não tracionar o transverso; abrir a bolsa pelo plano de fusão</td></tr>
+        <tr><td class="k">Sangramento do tronco de Henle</td><td>Confluência venosa frágil na face anterior do pâncreas</td><td>Dissecção cuidadosa no plano de Fredet, controle proximal antes de tracionar</td></tr>
+        <tr><td class="k">Lesão esplênica</td><td>Tração do ligamento frenocólico e gastroesplênico</td><td>Seccionar antes de tracionar; abaixar o ângulo sob visão</td></tr>
+        <tr><td class="k">Hemorragia pré-sacral</td><td>Ruptura da fáscia de Waldeyer e veias basivertebrais</td><td>Manter o plano da fáscia própria; se ocorrer, tamponar / tachinha estéril, não pinçar às cegas</td></tr>
+        <tr><td class="k">Hérnia interna</td><td>Defeito mesentérico não fechado (Petersen, mesojejuno, janela mesocólica)</td><td>Fechar com sutura não absorvível contínua</td></tr>
+        <tr><td class="k">Colite isquêmica pós-op</td><td>Watershed de Griffiths / marginal descontínua</td><td>Preservar a marginal; avaliar perfusão antes da anastomose</td></tr>
+        <tr><td class="k">Bridas e obstrução tardia</td><td>Lesão mesotelial e queda da fibrinólise peritoneal</td><td>Manipulação mínima, evitar dessecação, hemostasia, lavagem, preferir via laparoscópica</td></tr>
+        <tr><td class="k">Ascite quilosa</td><td>Lesão de linfáticos na raiz do mesentério / cisterna do quilo</td><td>Ligar tecido linfático em vez de coagular; dieta com TCM no pós-op</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</details>
+
+<!-- 13 -->
+<details class="sec" id="s13">
+  <summary><span class="num">13</span> Alto rendimento para as bancas do RS <span class="arw">›</span></summary>
+  <div class="body">
+    <p class="kid">Temas que se repetem nas provas de cirurgia geral e acesso direto de HCPA, GHC, Santa Casa POA, PUC-RS e AMRIGS. Trate como mapa de estudo, não como questões literais.</p>
+    <div class="grid">
+      <div class="card"><h5>Dor visceral × parietal</h5><p>Migração da dor, dor referida no ombro (Kehr), inervação segmentar. Aparece dentro de casos de apendicite, colecistite e úlcera perfurada.</p></div>
+      <div class="card"><h5>Espaços e abscessos</h5><p>Morrison como ponto mais declive em decúbito; Douglas em pé; goteira direita como via de disseminação.</p></div>
+      <div class="card"><h5>Forame de Winslow</h5><p>Os quatro limites e a manobra de Pringle. Questão anatômica pura, quase sempre pedindo o limite posterior (VCI).</p></div>
+      <div class="card"><h5>SAD PUCKER</h5><p>Classificação intra × retroperitoneal, sobretudo aplicada ao trauma duodenal e à perfuração pós-CPRE.</p></div>
+      <div class="card"><h5>Jejuno × íleo</h5><p>Arcadas, vasa recta, gordura mesentérica, pregas de Kerckring, placas de Peyer.</p></div>
+      <div class="card"><h5>Watershed</h5><p>Griffiths e Sudeck, marginal de Drummond, arco de Riolano, colite isquêmica pós-aneurismectomia.</p></div>
+      <div class="card"><h5>Ureter e mesossigmoide</h5><p>Relação com o recesso intersigmoide e os vasos ilíacos; lesão iatrogênica em colectomia esquerda.</p></div>
+      <div class="card"><h5>ETM e plano de Heald</h5><p>Fáscia própria do reto, Denonvilliers, Waldeyer, impacto na recidiva local.</p></div>
+      <div class="card"><h5>Meckel</h5><p>Regra dos 2, posição antimesentérica, conduta no achado incidental.</p></div>
+      <div class="card"><h5>Volvo</h5><p>Sigmoide (mesocólon longo, base estreita) e intestino médio (má-rotação, sinal do redemoinho).</p></div>
+    </div>
+  </div>
+</details>
+
+<!-- 14 -->
+<details class="sec" id="s14">
+  <summary><span class="num">14</span> Grade de mnemônicos <span class="arw">›</span></summary>
+  <div class="body">
+    <div class="grid">
+      <div class="card c"><h5>Retroperitônio</h5><p><span class="mn">SAD PUCKER</span> — Suprarrenal, Aorta/VCI, Duodeno 2-4, Pâncreas, Ureter, Cólon asc/desc, Kidney, Esôfago, Reto.</p></div>
+      <div class="card c"><h5>Winslow</h5><p><span class="mn">"Frente: tríade · Trás: cava · Cima: caudado · Baixo: duodeno"</span></p></div>
+      <div class="card c"><h5>Tríade portal</h5><p><span class="mn">"DAV"</span> — <b>D</b>ucto (colédoco) à direita, <b>A</b>rtéria à esquerda, <b>V</b>eia atrás.</p></div>
+      <div class="card c"><h5>Cólon</h5><p><span class="mn">"3 T · H · A"</span> — 3 Tênias, Haustros, Apêndices epiploicos. Faltou algum? reto ou ceco.</p></div>
+      <div class="card c"><h5>Jejuno</h5><p><span class="mn">"J de Janela"</span> — janelas translúcidas no meso, poucas arcadas, vasa recta longos, parede grossa.</p></div>
+      <div class="card c"><h5>Íleo</h5><p><span class="mn">"I de Invadido por gordura"</span> — muitas arcadas, vasa recta curtos, parede fina, placas de Peyer.</p></div>
+      <div class="card c"><h5>Meckel</h5><p><span class="mn">Regra dos 2</span> — 2% população, 2 pés da válvula, 2 polegadas, 2 tecidos ectópicos, 2 anos, 2:1 homens.</p></div>
+      <div class="card c"><h5>Watershed</h5><p><span class="mn">"GriffithS de Splênica · SudecK de retossigmoide"</span></p></div>
+      <div class="card c"><h5>Plano correto</h5><p><span class="mn">"Sangrou = saiu do plano"</span></p></div>
+      <div class="card c"><h5>Antes de anastomosar</h5><p><span class="mn">"Cor, Pulso, Peristalse, Sem torção"</span></p></div>
+    </div>
+  </div>
+</details>
+
+<footer>
+  <p><b>Referências.</b> Sabiston Textbook of Surgery, 21ª ed. — capítulos de cavidade peritoneal, intestino delgado e cólon. Zollinger's Atlas of Surgical Operations, 11ª ed. — exposição, mobilização e manobras. Netter, Atlas de Anatomia Humana, 8ª ed. — pranchas de peritônio, mesentério e irrigação intestinal. Coffey JC et al. <i>The mesentery: structure, function and role in disease</i>, Lancet Gastroenterol Hepatol 2016;1:238-247, e a atualização de 2021/2022 do mesmo grupo. Metanálises recentes sobre ICG em perfusão intestinal (cenário eletivo colorretal e de urgência).</p>
+  <p style="margin-top:10px">carolzita · anatomia cirúrgica · versão completa · julho de 2026</p>
+</footer>
+
+</div>
+</body>
+</html>
