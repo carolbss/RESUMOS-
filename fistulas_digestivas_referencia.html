@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fístulas Digestivas / Enterocutâneas — carolzita</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0f; --bg2:#12121a; --card:#16161f; --card2:#1c1c27;
+  --line:#2a2a38; --txt:#e6e6ef; --muted:#9a9ab0;
+  --laranja:#f97316; --laranja-bg:rgba(249,115,22,.10);
+  --roxo:#a855f7; --roxo-bg:rgba(168,85,247,.10);
+  --ciano:#22d3ee; --ciano-bg:rgba(34,211,238,.10);
+  --verde:#34d399; --vermelho:#f87171; --amarelo:#fbbf24;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(1200px 600px at 50% -10%,#15151f 0%,var(--bg) 60%);color:var(--txt);font-family:'Inter',sans-serif;line-height:1.55;padding:0 0 80px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px}
+header{padding:40px 0 24px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(28px,6vw,44px);line-height:1.05;margin:8px 0 6px;letter-spacing:-.02em}
+.sub{color:var(--muted);font-size:15px;max-width:720px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tag{font-family:'JetBrains Mono',monospace;font-size:11px;padding:5px 10px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted)}
+.tag.r{color:var(--roxo);border-color:rgba(168,85,247,.35);background:var(--roxo-bg)}
+section{margin-top:14px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:12px;overflow:hidden;transition:border-color .2s}
+details[open]{border-color:rgba(249,115,22,.30)}
+summary{cursor:pointer;list-style:none;padding:18px 20px;display:flex;align-items:center;gap:13px;font-family:'Syne',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em;user-select:none}
+summary::-webkit-details-marker{display:none}
+.num{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--bg);background:var(--laranja);width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:0 0 auto}
+.chev{margin-left:auto;color:var(--muted);transition:transform .25s;font-size:14px}
+details[open] .chev{transform:rotate(90deg)}
+.body{padding:4px 22px 24px;font-size:15px}
+.body p{margin:10px 0}
+.body h4{font-family:'Syne',sans-serif;font-size:16px;color:var(--laranja);margin:20px 0 8px;letter-spacing:-.01em}
+.body ul{margin:8px 0 8px 4px;list-style:none}
+.body li{padding:4px 0 4px 20px;position:relative}
+.body li::before{content:"▸";position:absolute;left:0;color:var(--laranja);font-size:12px;top:6px}
+.body strong{color:#fff;font-weight:600}
+.simple{color:var(--verde);font-style:italic;font-size:.94em;display:block;margin:6px 0}
+.box.simplebox{background:rgba(52,211,153,.09);border-color:rgba(52,211,153,.32);color:var(--verde);font-style:italic}
+.box.simplebox .lbl{color:var(--verde);font-style:normal}
+.box.simplebox strong{color:#7fe8c0;font-style:normal}
+.stx{counter-reset:st;margin:12px 0}
+.st{counter-increment:st;background:var(--card2);border:1px solid var(--line);border-radius:13px;padding:14px 16px 14px 52px;margin:11px 0;position:relative}
+.st::before{content:counter(st);position:absolute;left:14px;top:13px;width:26px;height:26px;border-radius:8px;background:var(--laranja);color:#0a0a0f;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center}
+.st .fase{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:var(--laranja);display:block;margin-bottom:1px}
+.st .ttl{font-weight:700;font-size:15.5px;color:#fff;margin-bottom:4px}
+.st p{margin:5px 0;font-size:14px}
+.pq{border-left:3px solid var(--roxo);background:var(--roxo-bg);border-radius:0 9px 9px 0;padding:8px 12px;margin:9px 0;font-size:13.5px}
+.pq b{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.3px;text-transform:uppercase;color:var(--roxo);display:block;margin-bottom:2px}
+.mh2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:9px}
+.mh{border-radius:9px;padding:8px 11px;font-size:12.5px;border:1px solid var(--line)}
+.mh.e{background:rgba(52,211,153,.07);border-color:rgba(52,211,153,.3)}
+.mh.d{background:var(--laranja-bg);border-color:rgba(249,115,22,.3)}
+.mh b{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;display:block;margin-bottom:2px}
+.mh.e b{color:var(--verde)} .mh.d b{color:var(--laranja)}
+.fio{font-family:'JetBrains Mono',monospace;font-size:11.5px;background:var(--roxo-bg);color:var(--roxo);border:1px solid rgba(168,85,247,.35);padding:1px 6px;border-radius:5px;white-space:nowrap}
+@media(max-width:640px){.mh2{grid-template-columns:1fr}}
+.box{border-radius:12px;padding:13px 15px;margin:14px 0;font-size:14px;border:1px solid}
+.box.prova{background:var(--roxo-bg);border-color:rgba(168,85,247,.35)}
+.box.prova .lbl{color:var(--roxo)}
+.box.mac{background:var(--ciano-bg);border-color:rgba(34,211,238,.35)}
+.box.mac .lbl{color:var(--ciano)}
+.box.warn{background:rgba(248,113,113,.08);border-color:rgba(248,113,113,.3)}
+.box.warn .lbl{color:var(--vermelho)}
+.lbl{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-family:'JetBrains Mono',monospace;font-size:10px;background:rgba(168,85,247,.2);color:var(--roxo);padding:2px 7px;border-radius:6px;margin-left:6px;white-space:nowrap}
+.tbl{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
+.tbl table{width:100%;border-collapse:collapse;min-width:520px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--laranja);background:var(--card2)}
+td strong{color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin:14px 0}
+.gcard{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+.gcard .t{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--ciano);margin-bottom:4px}
+.gcard .d{font-size:13px;color:var(--muted)}
+.steps{counter-reset:s;margin:10px 0}
+.step{counter-increment:s;position:relative;padding:11px 0 11px 46px;border-bottom:1px dashed var(--line)}
+.step:last-child{border-bottom:none}
+.step::before{content:counter(s);position:absolute;left:0;top:9px;width:30px;height:30px;border-radius:9px;background:var(--laranja-bg);border:1px solid rgba(249,115,22,.4);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:grid;place-items:center}
+.step b{color:#fff}
+svg{max-width:100%;height:auto;display:block;margin:16px auto}
+.fig{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.fig .cap{font-size:12px;color:var(--muted);text-align:center;margin-top:8px;font-family:'JetBrains Mono',monospace}
+footer{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+footer .ref{font-family:'JetBrains Mono',monospace;font-size:12px;margin-top:8px}
+a{color:var(--laranja)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">carolzita · cirurgia geral · abdome complexo</div>
+  <h1>Fístulas Digestivas / Enterocutâneas</h1>
+  <p class="sub">Comunicação anormal entre o TGI e a pele (ou outra víscera). ~<strong>75-85% iatrogênicas</strong> (deiscência de anastomose / enterotomia inadvertida). O manejo é <strong>SNAP</strong> (Sepse-pele · Nutrição · Anatomia · Plano) e o inimigo é a <strong>tríade letal sepse + desnutrição + distúrbio hidroeletrolítico</strong>. Fechamento espontâneo depende do débito e dos fatores <strong>FRIEND</strong>. Base: SNAP/SOWATS, ASPEN/ESPEN, revisões atuais e pegadinhas das 5 bancas do RS.</p>
+  <div class="tags">
+    <span class="tag">SNAP</span>
+    <span class="tag">FRIEND</span>
+    <span class="tag">Alto × baixo débito</span>
+    <span class="tag">Fistuloclise</span>
+    <span class="tag">Tríade letal</span>
+    <span class="tag r">HCPA · GHC · SC-POA · PUC · AMRIGS</span>
+  </div>
+</header>
+
+<!-- 1 DEFINICAO & CLASSIFICACAO -->
+<details open>
+  <summary><span class="num">1</span> Definição, etiologia &amp; classificação <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>Fístula é uma <strong>comunicação anormal entre duas superfícies epitelizadas</strong> <span class="simple">(um "cano furado" que liga o intestino a outro lugar que não deveria — a pele, outra alça, a bexiga...)</span>. A <strong>enterocutânea (FEC)</strong> liga o TGI à pele.</p>
+
+    <h4>Etiologia</h4>
+    <ul>
+      <li><strong>Iatrogênica / pós-operatória (~75-85%)</strong> — a grande maioria. Metade por <strong>deiscência de anastomose</strong>, metade por <strong>enterotomia inadvertida</strong> na lise de aderências.</li>
+      <li><strong>Espontânea (~15-25%)</strong> — a mais comum das espontâneas é a <strong>doença de Crohn</strong>; também malignidade, diverticulite, radioterapia, apendicite, isquemia, tuberculose.</li>
+      <li>Sítio mais comum: <strong>íleo</strong>.</li>
+    </ul>
+
+    <h4>Classificações (a banca cobra as três)</h4>
+    <div class="grid">
+      <div class="gcard"><div class="t">Anatômica</div><div class="d">Interna (víscera-víscera) × externa (víscera-pele); proximal × distal; por órgão de origem.</div></div>
+      <div class="gcard"><div class="t">Fisiológica (débito)</div><div class="d">Baixo &lt;200 · moderado 200-500 · <strong>alto &gt;500 mL/24h</strong>.</div></div>
+      <div class="gcard"><div class="t">Etiológica</div><div class="d">Iatrogênica × espontânea (doença de base).</div></div>
+    </div>
+
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">todas as bancas</span></span>Débito é o <strong>corte mais cobrado</strong>: <strong>baixo &lt;200 · moderado 200-500 · alto &gt;500 mL/dia</strong>. O débito é o <strong>principal fator prognóstico isolado</strong> para fechamento espontâneo e mortalidade — quanto mais alto, pior.</div>
+
+    <h4>A tríade que mata</h4>
+    <p>A mortalidade (10-30%) decorre da <strong>tríade letal: SEPSE + DESNUTRIÇÃO + DISTÚRBIO HIDROELETROLÍTICO</strong>. A causa de morte número 1 é a <strong>sepse</strong>, não a fístula em si.</p>
+  </div>
+</details>
+
+<!-- 2 FATORES FRIEND -->
+<details>
+  <summary><span class="num">2</span> Fechamento espontâneo &amp; fatores FRIEND <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>Cerca de <strong>1/3 das FEC fecham espontaneamente</strong>, quase sempre nas <strong>primeiras 4-6 semanas</strong> após controle da sepse e otimização nutricional. Se não fechou nesse período, dificilmente fechará sem cirurgia.</p>
+
+    <h4>FRIEND — fatores que IMPEDEM o fechamento</h4>
+    <div class="tbl"><table>
+      <tr><th>Letra</th><th>Fator</th></tr>
+      <tr><td><strong>F</strong></td><td><strong>F</strong>oreign body — corpo estranho (tela, fio)</td></tr>
+      <tr><td><strong>R</strong></td><td><strong>R</strong>adiation — enterite actínica</td></tr>
+      <tr><td><strong>I</strong></td><td><strong>I</strong>nflammation / <strong>I</strong>nfection — DII (Crohn), infecção/abscesso local</td></tr>
+      <tr><td><strong>E</strong></td><td><strong>E</strong>pithelialization — trajeto epitelizado</td></tr>
+      <tr><td><strong>N</strong></td><td><strong>N</strong>eoplasia — tumor no trajeto</td></tr>
+      <tr><td><strong>D</strong></td><td><strong>D</strong>istal obstruction — obstrução distal ao trajeto</td></tr>
+    </table></div>
+    <div class="box mac"><span class="lbl">mnemônico FRIEND</span>"O amigo que <strong>não deixa fechar</strong>": <strong>F</strong>oreign body · <strong>R</strong>adiation · <strong>I</strong>nflammation/Infection · <strong>E</strong>pithelialization · <strong>N</strong>eoplasia · <strong>D</strong>istal obstruction.</div>
+
+    <h4>Outros fatores desfavoráveis</h4>
+    <ul>
+      <li><strong>Alto débito</strong> (&gt;500 mL/dia).</li>
+      <li>Trajeto <strong>curto (&lt;2 cm)</strong> e <strong>defeito grande (&gt;1 cm)</strong> na parede intestinal.</li>
+      <li>Descontinuidade intestinal completa ("fístula terminal"/end fistula).</li>
+      <li>Origem <strong>proximal</strong> (jejuno/duodeno) — débito alto e enzimas agressivas.</li>
+      <li>Desnutrição grave, albumina baixa, sepse não controlada.</li>
+    </ul>
+    <div class="box warn"><span class="lbl">⚠ pegadinha</span>Presença de <strong>qualquer fator FRIEND</strong> torna o fechamento espontâneo improvável → planejar cirurgia. Não insistir indefinidamente em conservador se há corpo estranho, neoplasia ou obstrução distal.</div>
+  </div>
+</details>
+
+<!-- 3 SNAP -->
+<details>
+  <summary><span class="num">3</span> Manejo — protocolo SNAP / SOWATS <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>O manejo é <strong>sequencial e prioriza o que mata primeiro</strong>. Os dois acrônimos consagrados dizem a mesma coisa: <strong>SNAP</strong> (Manchester) e <strong>SOWATS</strong> (Maastricht). A sequência de "resgate" é <strong>Ressuscitação → Restituição → Reconstrução → Reabilitação</strong>.</p>
+
+    <div class="tbl"><table>
+      <tr><th>SNAP</th><th>SOWATS</th><th>Ação</th></tr>
+      <tr><td><strong>S</strong> — Sepse &amp; pele (Skin)</td><td><strong>S</strong> — Sepse</td><td>Drenar coleções/abscessos, ATB dirigido, controle do foco</td></tr>
+      <tr><td><strong>N</strong> — Nutrição</td><td><strong>O</strong>+<strong>W</strong> — Otimização nutricional + cuidado da ferida</td><td>Enteral se possível; TPN no alto débito; proteção da pele</td></tr>
+      <tr><td><strong>A</strong> — Anatomia</td><td><strong>A</strong> — Anatomia</td><td>Definir origem/trajeto: fistulografia, TC com contraste, trânsito</td></tr>
+      <tr><td><strong>P</strong> — Plano/Procedimento</td><td><strong>T</strong>+<strong>S</strong> — Timing + Surgical plan</td><td>Se não fechar: cirurgia definitiva no tempo certo</td></tr>
+    </table></div>
+
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">HCPA · GHC · PUC-RS</span></span>A <strong>PRIMEIRA prioridade é SEMPRE controle da sepse</strong> (drenagem + ATB). Operar para "fechar a fístula" na vigência de sepse e desnutrição é <strong>catastrófico</strong> — só se opera o abdome hostil depois de estabilizar.</div>
+
+    <div class="steps">
+      <div class="step"><b>Ressuscitação</b> — corrigir volemia e distúrbios hidroeletrolíticos (hipoK, hipoNa, acidose); alvo diurese ≥0,5 mL/kg/h.</div>
+      <div class="step"><b>Controle da sepse</b> — TC, drenagem percutânea de coleções, antibioticoterapia; controle do foco antes de tudo.</div>
+      <div class="step"><b>Cuidado da pele &amp; controle do efluente</b> — bolsas/estomaterapia, sistemas de vácuo; proteger a pele periostomal da digestão enzimática.</div>
+      <div class="step"><b>Suporte nutricional</b> — iniciar precoce; enteral preferencial se tolerado.</div>
+      <div class="step"><b>Definir anatomia</b> — só após estabilizar: fistulografia / TC / trânsito para mapear origem, trajeto e obstrução distal.</div>
+      <div class="step"><b>Aguardar fechamento espontâneo</b> — janela de 4-6 semanas; se não fechar, planejar cirurgia.</div>
+      <div class="step"><b>Cirurgia definitiva no tempo certo</b> — ressecção do segmento + anastomose, adiada até o abdome "amolecer".</div>
+    </div>
+  </div>
+</details>
+
+<!-- 4 NUTRICAO -->
+<details>
+  <summary><span class="num">4</span> Nutrição &amp; controle do efluente <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>O suporte nutricional é <strong>pilar do fechamento</strong> — reverte o catabolismo e repõe as perdas. A regra de ouro: <strong>"se o intestino funciona, use-o"</strong> (via enteral sempre que possível).</p>
+
+    <h4>Metas nutricionais</h4>
+    <ul>
+      <li><strong>25-35 kcal/kg/dia</strong> de calorias.</li>
+      <li><strong>1,5-2,5 g/kg/dia de proteína</strong> (maior nas perdas altas e no catabolismo grave).</li>
+      <li>Repor <strong>vitaminas e oligoelementos</strong> (zinco, vit. C — cofatores da cicatrização), especialmente no alto débito.</li>
+    </ul>
+
+    <h4>Via de nutrição</h4>
+    <div class="grid">
+      <div class="gcard"><div class="t">Enteral (preferencial)</div><div class="d">Se ≥100 cm de delgado funcionante distal à fístula. Protege a barreira mucosa e reduz translocação bacteriana.</div></div>
+      <div class="gcard"><div class="t">Parenteral (TPN)</div><div class="d">Alto débito, fístula proximal, intestino insuficiente ou não tolerância enteral. Central no início.</div></div>
+      <div class="gcard"><div class="t">Fistuloclise</div><div class="d">Reinfusão do efluente + dieta na alça distal, por cateter no orifício distal da fístula — recupera nutrição enteral em fístula proximal.</div></div>
+    </div>
+
+    <h4>Redução do débito (adjuvantes)</h4>
+    <ul>
+      <li>Jejum relativo / restrição de fluidos hipotônicos; solução de reidratação oral hipertônica.</li>
+      <li><strong>Inibidores de bomba de prótons</strong> (reduzem secreção gástrica).</li>
+      <li><strong>Análogos de somatostatina (octreotide)</strong> — podem <strong>reduzir o débito</strong>, mas <strong>não aumentam a taxa de fechamento nem a sobrevida</strong> (ponto de prova).</li>
+      <li>Antidiarreicos (loperamida) e agentes que espessam.</li>
+    </ul>
+
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">AMRIGS · SC-POA</span></span><strong>Octreotide reduz o volume do efluente, mas não comprovadamente aumenta o fechamento espontâneo.</strong> Cuidado com a pegadinha que afirma que ele "cura a fístula".</div>
+    <div class="box warn"><span class="lbl">⚠ pegadinha</span>Controle do efluente e da pele não é "detalhe de enfermagem": a <strong>dermatite pelo suco entérico</strong> causa dor, infecção e perde a chance de fechamento. Estomaterapia é parte do tratamento.</div>
+  </div>
+</details>
+
+<!-- 5 CIRURGIA -->
+<details>
+  <summary><span class="num">5</span> Cirurgia definitiva — timing &amp; técnica <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>A cirurgia é indicada quando a fístula <strong>não fecha</strong> após período conservador adequado ou há fator FRIEND. O <strong>timing é decisivo</strong>: operar cedo, no abdome inflamado/hostil, tem alta recidiva e mortalidade.</p>
+
+    <h4>Quando operar</h4>
+    <ul>
+      <li>Fístula persistente após <strong>~6 semanas</strong> de conservador sem sinais de fechamento.</li>
+      <li>Fator FRIEND presente (corpo estranho, neoplasia, obstrução distal, Crohn ativo, radiação, trajeto epitelizado).</li>
+      <li><strong>Aguardar a maturação do abdome</strong>: em reoperações complexas, esperar tipicamente <strong>3-6 meses (às vezes mais)</strong> para que as aderências "amoleçam" — reduz enterotomias iatrogênicas e recidiva.</li>
+    </ul>
+
+    <h4>Antes de operar — pré-requisitos</h4>
+    <ul>
+      <li><strong>Sepse controlada</strong>, <strong>nutrição otimizada</strong> (albumina/transferrina em recuperação), distúrbios hidroeletrolíticos corrigidos.</li>
+      <li>Anatomia bem definida (fistulografia/TC/trânsito).</li>
+    </ul>
+
+    <h4>Cirurgia definitiva — passo a passo</h4>
+    <div class="box simplebox"><span class="lbl">tradução simples</span>Aqui a técnica é a parte <strong>fácil</strong>. O que decide o resultado é <strong>quando</strong> você opera, não como. Operar cedo num abdome hostil e num paciente desnutrido tem alta recidiva e alta mortalidade — a mesma operação, feita meses depois no paciente recuperado, funciona.</div>
+
+    <div class="stx">
+
+      <div class="st">
+        <span class="fase">fase de acesso — a mais perigosa</span>
+        <div class="ttl">Entrada por área virgem e adesiólise completa</div>
+        <p>Incisão preferencialmente <strong>fora</strong> da cicatriz e do trajeto fistuloso. Adesiólise <strong>de todo o intestino</strong>, do Treitz à válvula ileocecal.</p>
+        <div class="pq"><b>por quê</b>É o passo que justifica esperar os 3–6 meses: com as aderências <strong>"amolecidas"</strong>, a adesiólise deixa de ser dissecção em bloco fibrótico e volta a ter plano. Operar antes disso produz <strong>enterotomias iatrogênicas múltiplas</strong> — e cada uma delas é uma nova fístula em potencial, no mesmo paciente que já tinha uma.</div>
+        <div class="mh2">
+          <div class="mh e"><b>mão esquerda</b>Contratração suave; nunca preensão firme de alça edemaciada e friável</div>
+          <div class="mh d"><b>mão direita</b>Tesoura fria; energia longe da parede intestinal</div>
+        </div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de inventário</span>
+        <div class="ttl">Identificar o segmento portador e procurar obstrução distal</div>
+        <p>Localizar o segmento da fístula e <strong>percorrer todo o intestino distal</strong> à procura de estenose ou obstrução.</p>
+        <div class="pq"><b>por quê</b>O "D" do <strong>FRIEND</strong> é obstrução distal — e ele é o fator que <strong>o cirurgião pode corrigir na mesa</strong>. Ressecar a fístula e deixar a estenose distal significa recidivar: o conteúdo continua encontrando resistência e busca de novo o caminho da parede.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de ressecção — a regra que reprova</span>
+        <div class="ttl">Ressecar o segmento portador, <strong>não suturar o orifício</strong></div>
+        <p><strong>Ressecção do segmento</strong> que contém a fístula, com margens em <strong>tecido sadio</strong>.</p>
+        <div class="pq"><b>por quê</b>O orifício é a <strong>consequência</strong>, não a doença. A parede ao redor está inflamada, epitelizada ou isquêmica — sutura em tecido assim <strong>recidiva</strong>. Simples rafia local é a pegadinha clássica, e o erro conceitual é confundir "fechar o buraco" com "tratar a fístula".</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de reconstrução</span>
+        <div class="ttl">Anastomose em tecido sadio, com fio absorvível</div>
+        <p>Anastomose primária com <span class="fio">Vicryl</span> ou <span class="fio">PDS</span>, respeitando os quatro pré-requisitos: perfusão, ausência de tensão, ausência de contaminação e paciente estável.</p>
+        <div class="pq"><b>por quê</b>São exatamente os mesmos quatro pilares de qualquer anastomose — e este é o paciente em que eles foram <strong>violados da primeira vez</strong>. A fístula, na maioria dos casos, é uma anastomose que falhou. Repetir o erro no mesmo paciente é o risco central da reoperação.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de parede</span>
+        <div class="ttl">Fechamento em abdome hostil</div>
+        <p>Fechamento por planos quando possível; em abdome hostil, considerar <strong>tela biológica</strong>, reconstrução em tempo posterior ou manejo de <strong>abdome aberto</strong>.</p>
+        <div class="pq"><b>por quê</b>Muitos desses pacientes vêm de <strong>laparostomia</strong> e têm perda de domicílio. Forçar o fechamento sob tensão gera <strong>síndrome compartimental</strong> — e tela sintética em contato com alça, nesse contexto, é o caminho para a <strong>fístula enteroatmosférica</strong>, a forma mais grave e de pior prognóstico.</div>
+      </div>
+
+    </div>
+
+    <div class="box mac"><span class="lbl">as 4 checagens antes de marcar a cirurgia</span>
+      <strong>1)</strong> A <strong>sepse</strong> está controlada?<br>
+      <strong>2)</strong> O paciente está <strong>nutrido</strong> (albumina e transferrina subindo)?<br>
+      <strong>3)</strong> A <strong>anatomia</strong> está definida por imagem?<br>
+      <strong>4)</strong> O abdome já <strong>amoleceu</strong> (3–6 meses)?<br>
+      Qualquer "não" — a cirurgia ainda não é hoje.
+    </div>
+
+    <div class="box warn"><span class="lbl">⚠ pegadinha</span><strong>Simples rafia local da fístula recidiva</strong> — a conduta definitiva padrão é <strong>ressecar o segmento e anastomosar em tecido saudável</strong>. Não confundir "fechar o buraco" com "tratar a fístula".</div>
+    <div class="box mac"><span class="lbl">macete do timing</span>"<strong>Pressa mata na fístula</strong>": estabilizar → nutrir → definir anatomia → esperar → operar tarde, com o paciente otimizado.</div>
+  </div>
+</details>
+
+<!-- 6 QUESTOES -->
+<details>
+  <summary><span class="num">6</span> Questões de banca, pega-ratões &amp; mnemônicos <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>10 questões representativas (originais, estilo das 5 bancas)</h4>
+
+    <div class="box prova"><span class="lbl">Q1 <span class="banca">HCPA</span></span><strong>Qual a causa mais frequente de fístula enterocutânea?</strong><br>Resposta: <strong>iatrogênica/pós-operatória</strong> (deiscência de anastomose ou enterotomia inadvertida) — 75-85%.</div>
+    <div class="box prova"><span class="lbl">Q2 <span class="banca">GHC</span></span><strong>Defina fístula de alto débito.</strong><br>Resposta: <strong>&gt;500 mL/24h</strong>.</div>
+    <div class="box prova"><span class="lbl">Q3 <span class="banca">AMRIGS</span></span><strong>Qual a PRIMEIRA prioridade no manejo de uma FEC?</strong><br>Resposta: <strong>controle da sepse</strong> (drenagem + antibiótico), antes de nutrição/cirurgia.</div>
+    <div class="box prova"><span class="lbl">Q4 <span class="banca">PUC-RS</span></span><strong>O que significa o acrônimo SNAP?</strong><br>Resposta: <strong>Sepse (e pele), Nutrição, Anatomia, Plano/Procedimento</strong>.</div>
+    <div class="box prova"><span class="lbl">Q5 <span class="banca">SC-POA</span></span><strong>Cite fatores que impedem o fechamento espontâneo (FRIEND).</strong><br>Resposta: <strong>corpo estranho, radiação, inflamação/infecção (Crohn), epitelização, neoplasia, obstrução distal</strong>.</div>
+    <div class="box prova"><span class="lbl">Q6 <span class="banca">HCPA</span></span><strong>Octreotide aumenta a taxa de fechamento espontâneo da fístula?</strong><br>Resposta: <strong>não</strong> — reduz o débito, mas não comprovadamente o fechamento nem a mortalidade.</div>
+    <div class="box prova"><span class="lbl">Q7 <span class="banca">GHC</span></span><strong>Via de nutrição preferencial na FEC quando o intestino funciona?</strong><br>Resposta: <strong>enteral</strong> (protege a barreira mucosa; reduz translocação).</div>
+    <div class="box prova"><span class="lbl">Q8 <span class="banca">AMRIGS</span></span><strong>Qual a causa espontânea mais comum de FEC?</strong><br>Resposta: <strong>doença de Crohn</strong>.</div>
+    <div class="box prova"><span class="lbl">Q9 <span class="banca">PUC-RS</span></span><strong>Tríade responsável pela mortalidade na FEC?</strong><br>Resposta: <strong>sepse + desnutrição + distúrbio hidroeletrolítico</strong>.</div>
+    <div class="box prova"><span class="lbl">Q10 <span class="banca">SC-POA</span></span><strong>Conduta cirúrgica definitiva padrão para fístula que não fecha?</strong><br>Resposta: <strong>ressecção do segmento + anastomose em tecido sadio</strong> (não a rafia local), após otimização e no tempo adequado.</div>
+
+    <h4>Pega-ratões (as armadilhas clássicas)</h4>
+    <div class="box warn"><span class="lbl">☠ trap 1</span>Sepse vem <strong>antes</strong> de tudo — operar em sepse/desnutrição é catastrófico.</div>
+    <div class="box warn"><span class="lbl">☠ trap 2</span>Octreotide reduz débito, <strong>não</strong> cura a fístula.</div>
+    <div class="box warn"><span class="lbl">☠ trap 3</span>Rafia local recidiva — a definitiva é <strong>ressecção + anastomose</strong>.</div>
+    <div class="box warn"><span class="lbl">☠ trap 4</span>Alto débito = <strong>&gt;500 mL/dia</strong> (não confundir os cortes).</div>
+    <div class="box warn"><span class="lbl">☠ trap 5</span>Fator FRIEND presente = fechamento espontâneo improvável → planejar cirurgia.</div>
+    <div class="box warn"><span class="lbl">☠ trap 6</span>Cirurgia definitiva é <strong>tardia</strong> (esperar o abdome amolecer), não precoce.</div>
+    <div class="box warn"><span class="lbl">☠ trap 7</span>Nutrição enteral é preferencial — TPN só quando não dá para usar o intestino.</div>
+    <div class="box warn"><span class="lbl">☠ trap 8</span>Crohn é a causa <strong>espontânea</strong> mais comum; iatrogênica é a global.</div>
+
+    <h4>Mnemônicos-resumo</h4>
+    <div class="box mac"><span class="lbl">macete geral</span>Débito: <strong>&lt;200 baixo · 200-500 moderado · &gt;500 alto</strong> · Tríade letal: <strong>sepse + desnutrição + HE</strong> · Manejo: <strong>SNAP</strong> (Sepse→Nutrição→Anatomia→Plano) · Não fecha se <strong>FRIEND</strong> · Nutrição: <strong>25-35 kcal/kg + 1,5-2,5 g prot/kg</strong>, enteral&gt;TPN · Octreotide: menos débito, mesmo fechamento · Cirurgia: <strong>tardia, ressecção + anastomose</strong>.</div>
+  </div>
+</details>
+
+<footer>
+  <div><strong>carolzita</strong> · Fístulas Digestivas / Enterocutâneas · referência completa</div>
+  <div class="ref">Fontes: protocolos SNAP (Manchester) e SOWATS (Maastricht) · diretrizes de terapia nutricional ASPEN/ESPEN · revisões atuais de manejo de FEC (2024-2026) · Sabiston · Zollinger. Conteúdo educacional; questões são itens representativos originais.</div>
+</footer>
+</div>
+</body>
+</html>

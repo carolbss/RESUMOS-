@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAV — Referência CV 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d1117;--panel:#161b22;--panel2:#1c232c;--line:#2a323c;--tx:#e6edf3;--mut:#8b949e;--or:#ff7a18;--or2:#ff9a4d;--orbg:rgba(255,122,24,.10);--pu:#b083f0;--pu2:#c9a7ff;--pubg:rgba(176,131,240,.12);--cy:#3dd6d0;--cy2:#5fe3dd;--cybg:rgba(61,214,208,.10);--red:#ff5f56;--grn:#3fb950}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font-family:'IBM Plex Sans',sans-serif;line-height:1.55;padding:0 0 60px}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px}
+header{padding:30px 0 14px;border-bottom:1px solid var(--line)}
+h1{font-size:30px;font-weight:700;letter-spacing:-.5px}h1 .b{color:var(--or)}
+.sub{color:var(--mut);font-size:14px;margin-top:6px;font-family:'IBM Plex Mono',monospace}
+nav{position:sticky;top:0;background:var(--bg);z-index:10;border-bottom:1px solid var(--line);overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch}
+nav .inner{max-width:920px;margin:0 auto;padding:0 12px;display:flex;gap:2px}
+nav button{background:none;border:none;color:var(--mut);font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.5px;text-transform:uppercase;padding:14px 11px;cursor:pointer;border-bottom:2px solid transparent;transition:.15s}
+nav button:hover{color:var(--tx)}nav button.on{color:var(--or);border-bottom-color:var(--or)}
+section{display:none;padding:26px 0;animation:f .25s}section.on{display:block}
+@keyframes f{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+h2{font-size:20px;color:var(--or);margin:26px 0 12px;font-weight:600;border-bottom:1px solid var(--line);padding-bottom:6px}h2:first-child{margin-top:0}
+h3{font-size:15px;margin:18px 0 8px;font-weight:600;color:var(--or2)}
+p,li{font-size:14.5px}
+ul{margin:8px 0 8px 4px;list-style:none}
+li{padding:3px 0 3px 24px;position:relative}li .em{position:absolute;left:0}
+.lay{color:var(--cy2);font-style:italic;font-size:13.5px}
+.box{border-left:3px solid var(--or);background:var(--orbg);border-radius:0 8px 8px 0;padding:12px 16px;margin:14px 0}
+.box.pu{border-color:var(--pu);background:var(--pubg)}.box.cy{border-color:var(--cy);background:var(--cybg)}
+.box .lbl{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--or);margin-bottom:6px;font-weight:600}
+.stx{counter-reset:st;margin:14px 0}
+.st{counter-increment:st;background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:13px 15px 13px 50px;margin:11px 0;position:relative}
+.st::before{content:counter(st);position:absolute;left:13px;top:13px;width:25px;height:25px;border-radius:7px;background:var(--or);color:#0d1117;font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:12.5px;display:flex;align-items:center;justify-content:center}
+.st .fase{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1.3px;text-transform:uppercase;color:var(--or);display:block}
+.st .ttl{font-weight:700;font-size:15px;color:#fff;margin-bottom:3px}
+.st p{margin:4px 0;font-size:13.8px}
+.pq{border-left:3px solid var(--pu);background:var(--pubg);border-radius:0 8px 8px 0;padding:8px 12px;margin:8px 0;font-size:13.3px}
+.pq b{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;color:var(--pu2);display:block}
+.mh2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+.mh{border-radius:9px;padding:8px 11px;font-size:12.5px;border:1px solid var(--line)}
+.mh.e{background:rgba(63,185,80,.07);border-color:rgba(63,185,80,.3)}
+.mh.d{background:var(--orbg);border-color:rgba(255,122,24,.3)}
+.mh b{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1.1px;text-transform:uppercase;display:block}
+.mh.e b{color:var(--grn)} .mh.d b{color:var(--or2)}
+.box.gr{border-left-color:var(--grn);background:rgba(63,185,80,.09);color:var(--grn);font-style:italic}
+.box.gr .lbl{color:var(--grn);font-style:normal}
+.box.gr b,.box.gr strong{color:#8ee79a;font-style:normal}
+@media(max-width:640px){.mh2{grid-template-columns:1fr}}
+
+.box.pu .lbl{color:var(--pu2)}.box.cy .lbl{color:var(--cy2)}
+.box li::before{content:"▸";color:var(--or);position:absolute;left:6px}.box li{padding-left:22px}
+.box.pu li::before{color:var(--pu)}.box.cy li::before{color:var(--cy)}.box li .em{display:none}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.5px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--panel2);color:var(--or2);font-weight:600;font-family:'IBM Plex Mono',monospace;font-size:12px}
+.hi{color:var(--pu2);font-weight:600}.mn{font-family:'IBM Plex Mono',monospace;color:var(--cy2)}
+.steps{counter-reset:s;list-style:none;margin:6px 0}
+.steps li{padding:8px 8px 8px 40px;border-bottom:1px solid var(--line)}
+.steps li::before{counter-increment:s;content:counter(s);background:var(--or);color:#0d1117;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:12px;width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;position:absolute;left:4px;top:8px}
+.steps li .em{display:none}.steps li:last-child{border-bottom:none}
+.hand{font-family:'IBM Plex Mono',monospace;font-size:11px;padding:1px 6px;border-radius:4px;margin-right:4px}
+.hL{background:rgba(63,185,80,.15);color:#56d364}.hR{background:rgba(255,122,24,.15);color:var(--or2)}
+.kbd{font-family:'IBM Plex Mono',monospace;background:var(--panel2);padding:1px 6px;border-radius:4px;font-size:12.5px;color:var(--or2)}
+.q{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:16px 0}
+.q .src{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--pu2);letter-spacing:1px;text-transform:uppercase}
+.q .stem{margin:8px 0 10px;font-weight:500}
+.q .alt{padding:4px 0 4px 24px;position:relative;font-size:14px}.q .alt .let{position:absolute;left:0;font-family:'IBM Plex Mono',monospace;color:var(--mut)}
+.q .alt.ok{color:var(--grn)}.q .alt.ok .let{color:var(--grn)}
+.q details{margin-top:10px;border-top:1px dashed var(--line);padding-top:10px}
+.q summary{cursor:pointer;color:var(--cy2);font-size:13px;font-family:'IBM Plex Mono',monospace}
+.q .exp{font-size:13.5px;color:var(--mut);margin-top:8px}
+.svgwrap{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px;margin:14px 0;text-align:center}
+.svgwrap figcaption{color:var(--mut);font-size:12px;margin-top:8px;font-family:'IBM Plex Mono',monospace}
+.pill{display:inline-block;background:var(--panel2);border:1px solid var(--line);border-radius:20px;padding:3px 12px;margin:3px 4px 3px 0;font-size:12.5px;font-family:'IBM Plex Mono',monospace}.pill .hi{color:var(--pu2)}
+.note{font-size:12px;color:var(--mut);border-top:1px solid var(--line);margin-top:30px;padding-top:14px;font-family:'IBM Plex Mono',monospace}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<h1>🔗 Fístula <span class="b">Arteriovenosa</span></h1>
+<div class="sub">Acesso vascular para hemodiálise · CV 2026 · KDOQI 2019 + ESVS 2018 + Rutherford/Sabiston</div>
+</div></header>
+<nav><div class="inner" id="nav"></div></nav>
+<div class="wrap">
+
+<section id="geral" class="on">
+<h2>🧭 Conceito</h2>
+<p>FAV = comunicação cirúrgica entre uma <span class="hi">artéria e uma veia</span> para criar um acesso de alto fluxo para hemodiálise. <span class="lay">(Liga um "cano de pressão alta" — a artéria — a um "cano de parede fina" — a veia; a veia engrossa e "arterializa", ficando forte o bastante para ser puncionada 3x/semana.)</span></p>
+<div class="box pu"><div class="lbl">⭐ Hierarquia do acesso (alto rendimento)</div>
+<ul>
+<li><span class="hi">FAV nativa (autóloga) &gt; prótese (AVG) &gt; cateter (CVC).</span></li>
+<li>A FAV nativa madura tem maior patência e menos infecção/trombose; o cateter é o pior (infecção e estenose venosa central).</li>
+<li>KDOQI 2019 saiu do "Fistula First" para o <span class="hi">ESKD Life-Plan (P-L-A-N)</span>: "acesso certo, no paciente certo, na hora certa, pelo motivo certo" — e <b>preservar veias</b>. Ainda assim, FAV nativa segue como o melhor acesso para a maioria.</li>
+</ul></div>
+<h3>📋 Princípios de escolha</h3>
+<div class="pill">Membro <span class="hi">não dominante</span> primeiro</div>
+<div class="pill"><span class="hi">Distal → proximal</span></div>
+<div class="pill">Preservar veias (evitar PICC/punções)</div>
+<div class="pill">Veia superficial &gt; profunda</div>
+</section>
+
+<section id="clinica">
+<h2>🩺 Indicação &amp; avaliação pré-operatória</h2>
+<ul>
+<li><span class="em">⏳</span>Criar com <b>antecedência</b> à diálise (a FAV precisa de semanas a meses para maturar). Considerar quando TFG baixa e diálise prevista em meses.</li>
+<li><span class="em">✋</span><b>Teste de Allen</b> antes de usar a artéria radial — confirma perfusão colateral da mão pela ulnar. <span class="lay">(aperta as duas artérias do punho, solta a ulnar e vê se a mão "reacende"; se não reacender, não use a radial)</span></li>
+<li><span class="em">🔊</span><b>Mapeamento por duplex (US):</b> artéria ≥2 mm, veia ≥2–2,5 mm de diâmetro, sem estenose central; avaliar continuidade venosa.</li>
+</ul>
+<div class="box"><div class="lbl">⚠️ Lembrar</div>
+<p>Cateteres prévios em subclávia/jugular causam <span class="hi">estenose venosa central</span> → edema do braço após a FAV. Preferir veias preservadas e evitar punção do membro destinado ao acesso.</p></div>
+</section>
+
+<section id="anatomia">
+<h2>🫀 Anatomia do membro superior</h2>
+<h3>Arterial</h3>
+<p>Subclávia → axilar → <b>braquial</b> (na fossa antecubital bifurca em <b>radial</b> e <b>ulnar</b>) → arcos palmares.</p>
+<h3>Venoso superficial</h3>
+<ul>
+<li><span class="em">📍</span><b>Cefálica</b> — face lateral (radial) do antebraço/braço → desemboca na axilar (arco cefálico = ponto de estenose).</li>
+<li><span class="em">📍</span><b>Basílica</b> — face medial (ulnar); é mais profunda → exige transposição/superficialização.</li>
+<li><span class="em">📍</span><b>Mediana cubital</b> — conecta cefálica e basílica na dobra do cotovelo.</li>
+</ul>
+<figure class="svgwrap">
+<svg viewBox="0 0 560 200" xmlns="http://www.w3.org/2000/svg" style="max-width:100%">
+<line x1="40" y1="150" x2="520" y2="150" stroke="#ff5f56" stroke-width="6"/>
+<text x="40" y="175" fill="#ff5f56" font-family="IBM Plex Mono" font-size="11">A. radial</text>
+<line x1="40" y1="60" x2="520" y2="60" stroke="#5fe3dd" stroke-width="6"/>
+<text x="40" y="48" fill="#5fe3dd" font-family="IBM Plex Mono" font-size="11">V. cefálica</text>
+<line x1="120" y1="150" x2="120" y2="60" stroke="#b083f0" stroke-width="4"/>
+<text x="130" y="110" fill="#b083f0" font-family="IBM Plex Mono" font-size="11">radiocefálica (punho)</text>
+<line x1="420" y1="150" x2="420" y2="60" stroke="#ff9a4d" stroke-width="4"/>
+<text x="300" y="40" fill="#ff9a4d" font-family="IBM Plex Mono" font-size="11">braquiocefálica (cotovelo)</text>
+<text x="200" y="195" fill="#8b949e" font-family="IBM Plex Mono" font-size="11">distal ◀── preferência ──▶ proximal</text>
+</svg>
+<figcaption>Sítios da FAV: do punho (1ª escolha) para o cotovelo</figcaption>
+</figure>
+</section>
+
+<section id="tipos">
+<h2>🪢 Tipos de acesso (ordem de preferência)</h2>
+<table>
+<tr><th>Acesso</th><th>Local</th><th>Comentário</th></tr>
+<tr><td><span class="hi">Radiocefálica (Brescia-Cimino)</span></td><td>Punho</td><td>1ª escolha distal. ✅ preserva proximal, ⬇️ steal/ICC · ❌ matura pior</td></tr>
+<tr><td>Tabaqueira (snuffbox)</td><td>Mais distal</td><td>Variante ainda mais distal da radiocefálica</td></tr>
+<tr><td>Braquiocefálica</td><td>Cotovelo</td><td>✅ alto fluxo, matura melhor · ❌ mais steal/ICC alto débito</td></tr>
+<tr><td>Braquiobasílica transposta</td><td>Braço</td><td>Basílica é profunda → transpor (1 ou 2 tempos)</td></tr>
+<tr><td>Prótese (AVG, PTFE)</td><td>Variável</td><td>Veias ruins; punciona antes · ❌ ⬆️ trombose/infecção</td></tr>
+<tr><td>endoAVF</td><td>Antebraço</td><td>Técnica endovascular (radial-ulnar proximal)</td></tr>
+</table>
+<div class="box"><div class="lbl">🔧 Tipos de anastomose</div>
+<ul>
+<li><span class="hi">Látero-terminal</span> (lado da artéria + ponta da veia) = <b>a mais usada</b>; bom fluxo, menos hipertensão venosa distal.</li>
+<li>Látero-lateral: maior risco de hipertensão venosa da mão. Término-terminal: menos usada.</li>
+</ul></div>
+</section>
+
+<section id="tecnica">
+<h2>🔪 Técnica — radiocefálica (látero-terminal)</h2>
+<p class="note" style="border:none;margin:0 0 6px;padding:0">Convenção: <span class="hand hL">ESQ</span> mão esquerda · <span class="hand hR">DIR</span> mão direita.</p>
+<div class="box gr"><div class="lbl">tradução simples</div>Uma FAV é uma <strong>obra de engenharia biológica</strong>: você pega uma veia feita para pressão baixíssima e a conecta direto numa artéria de pressão alta, na expectativa de que ela <strong>se transforme</strong> — pare mais grossa, mais resistente, "arterializada" — ao longo de semanas. A técnica só acelera ou atrapalha esse processo; quem faz o trabalho de verdade é a própria veia, depois que você sai da sala.</div>
+<p><b>Posição:</b> supino, braço abduzido em mesa de mão; garrote pneumático; anestesia local/bloqueio regional axilar.</p>
+
+<div class="stx">
+
+<div class="st">
+  <span class="fase">fase de acesso</span>
+  <div class="ttl">Incisão no punho, entre artéria radial e veia cefálica</div>
+  <p>Incisão longitudinal ou transversa, expondo os dois vasos no mesmo campo.</p>
+  <div class="pq"><b>por quê</b>O punho é o ponto <strong>mais distal</strong> possível onde artéria e veia adequadas ficam próximas o bastante para uma anastomose sem tensão. Começar distal preserva todo o território venoso proximal (cotovelo, braço) para uma segunda tentativa se esta falhar — é a mesma lógica de "gastar o capital vascular de fora para dentro".</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de dissecção</span>
+  <div class="ttl">Isolar veia e artéria; ligar colaterais</div>
+  <p>Dissecção e reparo com <em>vessel loops</em>; ligadura das tributárias venosas com <span class="kbd">seda 4-0</span>.</p>
+  <div class="pq"><b>por quê</b>Colaterais não ligadas roubam fluxo da fístula recém-criada — o sangue arterial encontra um caminho de menor resistência de volta ao sistema venoso profundo em vez de seguir pela veia principal, e a fístula não engorda como deveria.</div>
+  <div class="mh2">
+    <div class="mh e"><b>mão esquerda</b>DeBakey/Adson, apresentando os vasos sem traumatizar a íntima</div>
+    <div class="mh d"><b>mão direita</b>Metzenbaum na dissecção; tesoura ou bisturi nas ligaduras</div>
+  </div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de controle</span>
+  <div class="ttl">Heparinizar e clampear</div>
+  <p>Heparinização sistêmica ou local; microclampes (bulldog/Acland) na artéria e na veia.</p>
+  <div class="pq"><b>por quê</b>Vasos finos como os do punho toleram mal clampes grosseiros — o microclampe atraumático evita lesão da íntima que, numa artéria desse calibre, é suficiente para trombosar a anastomose horas depois.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de abertura</span>
+  <div class="ttl">Arteriotomia e espatulação da veia</div>
+  <p>Arteriotomia longitudinal de 6–8 mm com lâmina 11, ampliada com tesoura de Potts. <strong>Espatular</strong> a ponta da veia (abrir em bisel) para casar o calibre.</p>
+  <div class="pq"><b>por quê</b>Veia e artéria quase nunca têm o mesmo diâmetro. Espatular aumenta a circunferência da boca venosa sem alargar o vaso em si — é o truque geométrico que permite unir dois calibres diferentes numa linha de sutura sem tensão nem dobra.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de sutura — a decisão anatômica</span>
+  <div class="ttl">Anastomose látero-terminal contínua</div>
+  <p><span class="kbd">Prolene 6-0/7-0</span>, dois pontos-âncora (calcanhar e ponta), depois contínuo.</p>
+  <div class="pq"><b>por quê</b>Látero-terminal (veia terminal na lateral da artéria) é preferida à látero-lateral porque essa última deixa <strong>as duas bocas abertas ao fluxo</strong>, elevando a pressão em toda a árvore venosa distal da mão — a causa clássica de <strong>hipertensão venosa e edema de mão</strong>. Terminando a veia, só o segmento que interessa fica sob pressão arterial.</div>
+  <div class="mh2">
+    <div class="mh e"><b>mão esquerda</b>DeBakey/pinça fina estabilizando a borda</div>
+    <div class="mh d"><b>mão direita</b>Porta-agulha Castroviejo, pontos contínuos finos</div>
+  </div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de liberação — a ordem importa</span>
+  <div class="ttl">Soltar veia → artéria distal → artéria proximal</div>
+  <p>Liberar os clampes nessa sequência; lavar com salina heparinizada.</p>
+  <div class="pq"><b>por quê</b>Soltar a veia primeiro permite que qualquer ar ou debris residual escoe pelo lado venoso, de baixa pressão, antes de a artéria — de alta pressão — ser reconectada. É a mesma lógica de "lavar antes de pressurizar" que aparece em outras anastomoses vasculares.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de verificação</span>
+  <div class="ttl">Confirmar frêmito e sopro contínuo</div>
+  <p>Palpar o <strong>thrill</strong> (frêmito) ao longo do trajeto venoso; auscultar sopro contínuo.</p>
+  <div class="pq"><b>por quê</b>O frêmito é turbulência palpável — só existe se há <strong>alto fluxo através de uma anastomose patente</strong>. Sua ausência na mesa já prediz falha precoce, antes mesmo de qualquer imagem.</div>
+</div>
+
+</div>
+<p class="lay">No fim, a artéria "empurra" o sangue para dentro da veia: dá pra sentir um ronronar (frêmito) — é o sinal de que a fístula está funcionando.</p>
+
+<h3>Manutenção endovascular</h3>
+<div class="box pu"><div class="lbl">PTA — 1ª linha na estenose</div>Balão de alta pressão; alvo no arco cefálico costuma ser <strong>7–10 mm</strong>. Limite: <em>recoil</em> elástico e reestenose recorrente — a mesma parede que colapsou volta a colapsar.</div>
+<div class="box pu"><div class="lbl">stent revestido — na recorrência</div>Estenose recorrente ou ruptura do arco cefálico → stent revestido tem <strong>maior patência primária</strong> que PTA isolada ou stent não revestido, porque a cobertura impede a hiperplasia intimal de crescer <em>através</em> das malhas, que é como o stent metálico nu reestenosa.</div>
+<div class="box r"><div class="lbl">a armadilha clássica: antiagregar ≠ anticoagular</div>Pós-PTA ou stent de FAV → <strong>AAS 100 mg/dia</strong>. <strong>Não</strong> anticoagular de rotina — dupla antiagregação sem indicação própria só aumenta sangramento sem ganho de patência. Anticoagular apenas se houver indicação independente (FA, TEV, valva, trombose de repetição).</div>
+</section>
+
+<section id="maturacao">
+<h2>📈 Maturação</h2>
+<div class="box pu"><div class="lbl">⭐ Regra dos 6 (Rule of 6s)</div>
+<ul>
+<li><span class="hi">Veia ≥ 6 mm</span> de diâmetro</li>
+<li><span class="hi">≤ 6 mm</span> de profundidade da pele</li>
+<li><span class="hi">Fluxo ≥ 600 mL/min</span></li>
+<li><span class="hi">~6 semanas</span> de evolução (alguns acrescentam 6 cm de segmento reto puncionável)</li>
+</ul></div>
+<p>KDOQI 2019: <b>falha de maturação</b> = acesso que não pode ser usado para diálise em <span class="hi">6 meses</span>, apesar de intervenção radiológica/cirúrgica. Avaliação é primariamente clínica (inspeção, palpação do thrill); duplex se dúvida.</p>
+</section>
+
+<section id="complic">
+<h2>⚠️ Complicações</h2>
+<table>
+<tr><th>Complicação</th><th>Detalhe</th></tr>
+<tr><td><span class="hi">Estenose</span></td><td>Justa-anastomótica (mais comum) e arco cefálico → ⬇️ fluxo, ⬆️ pressão venosa. Tratar com angioplastia.</td></tr>
+<tr><td><span class="hi">Trombose</span></td><td>Causa nº1 de perda do acesso a longo prazo (geralmente sobre estenose).</td></tr>
+<tr><td><span class="hi">Síndrome do roubo (steal/DASS)</span></td><td>Isquemia da mão: dor, palidez, parestesia, frieza. Tratar: banding, <b>DRIL</b>, RUDI, ou ligadura.</td></tr>
+<tr><td>Aneurisma / pseudoaneurisma</td><td>Punção repetida no mesmo ponto ("one-site-itis").</td></tr>
+<tr><td>ICC de alto débito</td><td>Fístulas proximais/alto fluxo. <span class="hi">Sinal de Nicoladoni-Branham</span>: ⬇️FC ao comprimir a fístula.</td></tr>
+<tr><td>Infecção</td><td>Mais frequente em prótese e cateter que em FAV nativa.</td></tr>
+<tr><td>Estenose venosa central</td><td>Cateteres prévios → edema do membro.</td></tr>
+<tr><td>Neuropatia isquêmica monomélica (NIM)</td><td>Rara, grave; déficit neurológico agudo da mão, <b>com pulso presente</b> → ligar o acesso de urgência.</td></tr>
+</table>
+<div class="box cy"><div class="lbl">roubo × NIM — a distinção que a banca cobra</div>
+<b>Roubo (steal/DASS):</b> isquemia por desvio de fluxo — mão fria, dolorosa, pálida, <b>melhora ao comprimir a fístula</b>. Tratamento preserva o acesso: banding, DRIL, RUDI.<br>
+<b>NIM:</b> lesão neural direta, não isquêmica pura — déficit motor/sensitivo agudo <b>com pulso mantido</b>. É emergência de nervo, não de perfusão — <b>ligar o acesso</b>, sem tentar salvá-lo.</div>
+</section>
+
+<section id="pegas">
+<h2>🪤 Pega-ratões</h2>
+<div class="box pu"><div class="lbl">Os erros favoritos das bancas</div>
+<ul>
+<li>Melhor acesso = <b>FAV nativa</b> (não prótese, não cateter).</li>
+<li>Começar <b>distal e no membro não dominante</b>.</li>
+<li>Radiocefálica matura <b>pior</b>, mas tem <b>menos</b> steal/ICC; proximal matura melhor porém rouba mais.</li>
+<li><b>Regra dos 6</b> para maturação.</li>
+<li><b>Nicoladoni-Branham</b> (⬇️FC ao ocluir) = alto débito.</li>
+<li><b>Teste de Allen</b> antes de usar a radial.</li>
+<li>Anastomose mais usada = <b>látero-terminal</b>.</li>
+<li>Frêmito ausente / sopro só sistólico focal = estenose; ausência total de frêmito = trombose.</li>
+<li><b>Preservar veias</b> — evitar PICC e punções no braço do futuro acesso.</li>
+</ul></div>
+</section>
+
+<section id="mnemo">
+<h2>🧠 Mnemônicos</h2>
+<div class="box cy"><div class="lbl">Coleção FAV</div>
+<ul>
+<li><span class="mn">Regra dos 6</span>: 6 mm diâmetro · 6 mm profundidade · 600 mL/min · 6 semanas.</li>
+<li><span class="mn">Nativa &gt; Prótese &gt; Cateter</span> — quanto mais nativo e distal, melhor.</li>
+<li><span class="mn">P-L-A-N</span> (KDOQI 2019): Patient Life-Plan → Access Needs.</li>
+<li><span class="mn">Steal → "DRIL, RUDI, Banding, Ligar"</span>.</li>
+<li><span class="mn">Allen antes da radial</span>; <span class="mn">Branham = bradicardia ao comprimir</span>.</li>
+</ul></div>
+</section>
+
+<section id="questoes">
+<h2>📝 Questões — itens originais no estilo das bancas</h2>
+<p class="note" style="border:none;padding:0;margin:0 0 10px">Itens <b>originais</b> no padrão de cada banca (não reprodução literal).</p>
+
+<div class="q"><div class="src">HCPA · estilo</div>
+<div class="stem">Paciente com DRC em programação de hemodiálise, sem cateteres prévios e com bom leito vascular ao duplex. Qual o acesso de primeira escolha?</div>
+<div class="alt"><span class="let">A)</span> Cateter tunelizado em jugular interna</div>
+<div class="alt"><span class="let">B)</span> Prótese de PTFE em antebraço</div>
+<div class="alt ok"><span class="let">C)</span> Fístula radiocefálica (Brescia-Cimino) no membro não dominante</div>
+<div class="alt"><span class="let">D)</span> Fístula braquiocefálica no membro dominante</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>C.</b> FAV nativa, distal, no membro não dominante. A braquiocefálica é proximal (reservar) e o dominante não é a 1ª opção; prótese/cateter ficam para quando não há leito venoso adequado.</div></details>
+</div>
+
+<div class="q"><div class="src">GHC · estilo</div>
+<div class="stem">Sobre a maturação da FAV pela "regra dos 6", está correto:</div>
+<div class="alt"><span class="let">A)</span> Veia ≥ 2 mm, fluxo ≥ 200 mL/min em 2 semanas</div>
+<div class="alt ok"><span class="let">B)</span> Veia ≥ 6 mm, profundidade ≤ 6 mm, fluxo ≥ 600 mL/min por ~6 semanas</div>
+<div class="alt"><span class="let">C)</span> Fluxo ≥ 1.500 mL/min e diâmetro ≥ 10 mm</div>
+<div class="alt"><span class="let">D)</span> Maturação garantida em 48 horas</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> Diâmetro ≥6 mm, profundidade ≤6 mm, fluxo ≥600 mL/min, ~6 semanas.</div></details>
+</div>
+
+<div class="q"><div class="src">Santa Casa POA · estilo</div>
+<div class="stem">Paciente com FAV braquiocefálica de alto fluxo apresenta dispneia e, ao exame, bradicardia quando se comprime a fístula. O achado descrito (sinal de Nicoladoni-Branham) indica:</div>
+<div class="alt"><span class="let">A)</span> Trombose da fístula</div>
+<div class="alt"><span class="let">B)</span> Síndrome do roubo</div>
+<div class="alt ok"><span class="let">C)</span> Fístula de alto débito com repercussão cardíaca</div>
+<div class="alt"><span class="let">D)</span> Estenose venosa central</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>C.</b> A queda da FC ao ocluir a fístula (Branham) reflete o alto débito que sobrecarrega o coração; tratar reduzindo o fluxo (banding) ou ligando se ICC refratária.</div></details>
+</div>
+
+<div class="q"><div class="src">PUC-RS · estilo</div>
+<div class="stem">Durante a confecção de uma fístula radiocefálica, a anastomose escolhida com maior frequência e a sutura empregada são, respectivamente:</div>
+<div class="alt"><span class="let">A)</span> Término-terminal com categute 3-0</div>
+<div class="alt ok"><span class="let">B)</span> Látero-terminal (artéria/veia) com polipropileno 6-0 ou 7-0</div>
+<div class="alt"><span class="let">C)</span> Látero-lateral com Vicryl 2-0</div>
+<div class="alt"><span class="let">D)</span> Término-lateral com aço 4-0</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> Látero-terminal é a mais usada; sutura monofilamentar não absorvível fina (prolene 6-0/7-0). Fios absorvíveis não se usam em anastomose vascular.</div></details>
+</div>
+
+<div class="q"><div class="src">AMRIGS · estilo</div>
+<div class="stem">Três semanas após FAV radiocefálica, o paciente refere dor, palidez e parestesia da mão ipsilateral, que pioram durante a diálise. A principal hipótese é:</div>
+<div class="alt"><span class="let">A)</span> Infecção do acesso</div>
+<div class="alt ok"><span class="let">B)</span> Síndrome do roubo (steal)</div>
+<div class="alt"><span class="let">C)</span> Maturação normal</div>
+<div class="alt"><span class="let">D)</span> Aneurisma da fístula</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> Isquemia distal por desvio de fluxo arterial para a veia. Conduta conforme gravidade: banding, DRIL, RUDI ou ligadura.</div></details>
+</div>
+</section>
+
+<div class="note">Fontes: KDOQI 2019 (vascular access) · ESVS 2018 (acesso vascular) · Rutherford's Vascular Surgery · Sabiston. Questões originais para estudo. — carolzita · CV 2026</div>
+</div>
+<script>
+var secs=[['geral','🧭 Geral'],['clinica','🩺 Indicação'],['anatomia','🫀 Anatomia'],['tipos','🪢 Tipos'],['tecnica','🔪 Técnica'],['maturacao','📈 Maturação'],['complic','⚠️ Complicações'],['pegas','🪤 Pega-ratões'],['mnemo','🧠 Mnemônicos'],['questoes','📝 Questões']];
+var nav=document.getElementById('nav');
+secs.forEach(function(s,i){var b=document.createElement('button');b.textContent=s[1];if(i===0)b.className='on';b.onclick=function(){document.querySelectorAll('nav button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');document.querySelectorAll('section').forEach(function(x){x.classList.remove('on')});document.getElementById(s[0]).classList.add('on');window.scrollTo({top:0,behavior:'smooth'})};nav.appendChild(b)});
+</script>
+</body>
+</html>

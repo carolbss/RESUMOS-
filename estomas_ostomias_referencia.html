@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estomas / Ostomias — carolzita</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0f; --bg2:#12121a; --card:#16161f; --card2:#1c1c27;
+  --line:#2a2a38; --txt:#e6e6ef; --muted:#9a9ab0;
+  --laranja:#f97316; --laranja-bg:rgba(249,115,22,.10);
+  --roxo:#a855f7; --roxo-bg:rgba(168,85,247,.10);
+  --ciano:#22d3ee; --ciano-bg:rgba(34,211,238,.10);
+  --verde:#34d399; --vermelho:#f87171; --amarelo:#fbbf24;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(1200px 600px at 50% -10%,#15151f 0%,var(--bg) 60%);color:var(--txt);font-family:'Inter',sans-serif;line-height:1.55;padding:0 0 80px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px}
+header{padding:40px 0 24px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(28px,6vw,44px);line-height:1.05;margin:8px 0 6px;letter-spacing:-.02em}
+.sub{color:var(--muted);font-size:15px;max-width:730px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tag{font-family:'JetBrains Mono',monospace;font-size:11px;padding:5px 10px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted)}
+.tag.r{color:var(--roxo);border-color:rgba(168,85,247,.35);background:var(--roxo-bg)}
+section{margin-top:14px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:12px;overflow:hidden;transition:border-color .2s}
+details[open]{border-color:rgba(249,115,22,.30)}
+summary{cursor:pointer;list-style:none;padding:18px 20px;display:flex;align-items:center;gap:13px;font-family:'Syne',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em;user-select:none}
+summary::-webkit-details-marker{display:none}
+.num{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--bg);background:var(--laranja);width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:0 0 auto}
+.chev{margin-left:auto;color:var(--muted);transition:transform .25s;font-size:14px}
+details[open] .chev{transform:rotate(90deg)}
+.body{padding:4px 22px 24px;font-size:15px}
+.body p{margin:10px 0}
+.body h4{font-family:'Syne',sans-serif;font-size:16px;color:var(--laranja);margin:20px 0 8px;letter-spacing:-.01em}
+.body ul{margin:8px 0 8px 4px;list-style:none}
+.body li{padding:4px 0 4px 20px;position:relative}
+.body li::before{content:"▸";position:absolute;left:0;color:var(--laranja);font-size:12px;top:6px}
+.body strong{color:#fff;font-weight:600}
+.simple{color:var(--ciano);font-style:italic;font-size:.94em}
+.box{border-radius:12px;padding:13px 15px;margin:14px 0;font-size:14px;border:1px solid}
+.box.prova{background:var(--roxo-bg);border-color:rgba(168,85,247,.35)}
+.box.prova .lbl{color:var(--roxo)}
+.box.mac{background:var(--ciano-bg);border-color:rgba(34,211,238,.35)}
+.box.mac .lbl{color:var(--ciano)}
+.box.warn{background:rgba(248,113,113,.08);border-color:rgba(248,113,113,.3)}
+.box.warn .lbl{color:var(--vermelho)}
+.lbl{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-family:'JetBrains Mono',monospace;font-size:10px;background:rgba(168,85,247,.2);color:var(--roxo);padding:2px 7px;border-radius:6px;margin-left:6px;white-space:nowrap}
+.tbl{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
+.tbl table{width:100%;border-collapse:collapse;min-width:520px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--laranja);background:var(--card2)}
+td strong{color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin:14px 0}
+.gcard{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+.gcard .t{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--ciano);margin-bottom:4px}
+.gcard .d{font-size:13px;color:var(--muted)}
+.hands{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.hand{border-radius:12px;padding:14px;border:1px solid var(--line)}
+.hand.e{background:rgba(34,211,238,.06);border-color:rgba(34,211,238,.25)}
+.hand.d{background:rgba(249,115,22,.06);border-color:rgba(249,115,22,.25)}
+.hand .ht{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;font-weight:700}
+.hand.e .ht{color:var(--ciano)} .hand.d .ht{color:var(--laranja)}
+.hand li{font-size:13px}
+.steps{counter-reset:s;margin:10px 0}
+.step{counter-increment:s;position:relative;padding:11px 0 11px 46px;border-bottom:1px dashed var(--line)}
+.step:last-child{border-bottom:none}
+.step::before{content:counter(s);position:absolute;left:0;top:9px;width:30px;height:30px;border-radius:9px;background:var(--laranja-bg);border:1px solid rgba(249,115,22,.4);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:grid;place-items:center}
+.step b{color:#fff}
+svg{max-width:100%;height:auto;display:block;margin:16px auto}
+.fig{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.fig .cap{font-size:12px;color:var(--muted);text-align:center;margin-top:8px;font-family:'JetBrains Mono',monospace}
+footer{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+footer .ref{font-family:'JetBrains Mono',monospace;font-size:12px;margin-top:8px}
+a{color:var(--laranja)}
+@media(max-width:560px){.hands{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">carolzita · cirurgia geral · coloproctologia</div>
+  <h1>Estomas / Ostomias</h1>
+  <p class="sub">Ileostomia × colostomia, <strong>terminal × alça</strong>, temporária × definitiva. Por que a <strong>ileostomia é evertida (Brooke)</strong> e a colostomia rente à pele, a <strong>marcação pré-operatória</strong> pelo estomaterapeuta, o <strong>alto débito</strong> e a desidratação, e as complicações (isquemia, retração, separação mucocutânea; <strong>hérnia paraestomal</strong> como a tardia mais comum). Base: revisões atuais (WSES/MISSTO, ASCRS) e pegadinhas das 5 bancas do RS.</p>
+  <div class="tags">
+    <span class="tag">Brooke</span>
+    <span class="tag">Alça × terminal</span>
+    <span class="tag">Alto débito</span>
+    <span class="tag">Hérnia paraestomal</span>
+    <span class="tag">Marcação pré-op</span>
+    <span class="tag r">HCPA · GHC · SC-POA · PUC · AMRIGS</span>
+  </div>
+</header>
+
+<!-- 1 TIPOS -->
+<details open>
+  <summary><span class="num">1</span> Definições, tipos &amp; indicações <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>Estoma = <strong>abocamento cirúrgico de uma víscera oca à parede abdominal</strong> <span class="simple">(a alça do intestino é trazida para fora e costurada na pele, criando uma "boca" por onde saem as fezes numa bolsa)</span>. Pode ser de <strong>eliminação</strong> (fezes/urina) ou de <strong>nutrição</strong> (gastrostomia/jejunostomia).</p>
+
+    <h4>Ileostomia × colostomia</h4>
+    <div class="tbl"><table>
+      <tr><th></th><th>Ileostomia</th><th>Colostomia</th></tr>
+      <tr><td>Efluente</td><td><strong>Líquido, contínuo, enzimático (cáustico)</strong></td><td>Mais pastoso/formado, intermitente</td></tr>
+      <tr><td>Volume</td><td><strong>Alto</strong> (500–1000+ mL/d)</td><td>Menor</td></tr>
+      <tr><td>Confecção</td><td><strong>Evertida/protrusa (Brooke, ~2-3 cm)</strong></td><td>Geralmente <strong>rente à pele</strong></td></tr>
+      <tr><td>Local típico</td><td>Fossa ilíaca direita</td><td>Fossa ilíaca esquerda (sigmoide) / transversa</td></tr>
+      <tr><td>Risco principal</td><td><strong>Desidratação / distúrbio HE</strong>, dermatite</td><td>Hérnia paraestomal, prolapso</td></tr>
+    </table></div>
+
+    <h4>Terminal × alça</h4>
+    <div class="grid">
+      <div class="gcard"><div class="t">Terminal (end)</div><div class="d">Uma só boca funcionante. Ex.: colostomia à Hartmann, ileostomia após proctocolectomia total.</div></div>
+      <div class="gcard"><div class="t">Alça (loop)</div><div class="d">Alça exteriorizada com duas bocas (aferente/eferente). <strong>Derivação/proteção</strong> de anastomose distal; mais fácil de reverter.</div></div>
+      <div class="gcard"><div class="t">Em cano de espingarda</div><div class="d">Duas bocas separadas (double-barrel).</div></div>
+    </div>
+
+    <h4>Indicações</h4>
+    <ul>
+      <li><strong>Proteção de anastomose</strong> de risco (colorretal baixa) → <strong>ileostomia em alça</strong> desfuncionalizante.</li>
+      <li>Desvio por obstrução, perfuração/peritonite (Hartmann), trauma, incontinência, DII, câncer irressecável.</li>
+      <li>Definitiva: amputação abdominoperineal (Miles) → colostomia terminal definitiva.</li>
+    </ul>
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">GHC · SC-POA</span></span>Para <strong>proteger anastomose colorretal baixa</strong>, prefere-se hoje a <strong>ileostomia em alça</strong> à colostomia em alça — menos hérnia paraestomal, menos vazamento/dermatite e reversão mais simples. O ônus é a <strong>desidratação/alto débito</strong>.</div>
+  </div>
+</details>
+
+<!-- 2 CONFECCAO -->
+<details>
+  <summary><span class="num">2</span> Marcação pré-op &amp; técnica de confecção <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Marcação pré-operatória (estomaterapeuta) — reduz complicação</h4>
+    <ul>
+      <li>Marcar com o paciente <strong>sentado, em pé e deitado</strong>; local <strong>visível para ele</strong>.</li>
+      <li><strong>Através do músculo reto abdominal</strong> (reduz hérnia/prolapso), no ápice da eminência infraumbilical.</li>
+      <li><strong>Longe de</strong> proeminências ósseas (cristas ilíacas, rebordo costal), cicatrizes, dobras, cicatriz umbilical e da <strong>linha do cinto</strong>.</li>
+      <li>Superfície <strong>plana</strong> de ~5 cm para a placa aderir.</li>
+    </ul>
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">HCPA · AMRIGS</span></span>A <strong>marcação pré-operatória pelo estomaterapeuta</strong> e o cuidado pós-op são dos fatores que <strong>mais reduzem complicações</strong> e melhoram qualidade de vida. Local ideal: <strong>através do reto abdominal, plano, visível, longe de proeminências/dobras/cinto</strong>.</li></div>
+
+    <h4>Princípios técnicos</h4>
+    <ul>
+      <li><strong>Vascularização preservada</strong> e estoma <strong>sem tensão</strong> — o equilíbrio é não dividir mesentério em excesso (isquemia) nem deixar sob tração (retração).</li>
+      <li><strong>Ileostomia evertida à Brooke</strong>: protrusão de 2-3 cm, everte-se a mucosa sobre si mesma — <strong>afasta o efluente cáustico da pele</strong> e o joga na bolsa.</li>
+      <li>Colostomia costuma ser <strong>rente/pouco elevada</strong> (fezes menos agressivas).</li>
+      <li>Trajeto trans-retal; alguns colocam <strong>tela profilática</strong> em pacientes de risco para reduzir hérnia paraestomal.</li>
+    </ul>
+
+    <div class="fig">
+      <svg viewBox="0 0 640 190" xmlns="http://www.w3.org/2000/svg">
+        <text x="160" y="20" fill="#22d3ee" font-size="11" font-family="monospace" text-anchor="middle">ILEOSTOMIA (Brooke, evertida)</text>
+        <line x1="40" y1="130" x2="280" y2="130" stroke="#2a2a38" stroke-width="2"/>
+        <path d="M140 130 L140 90 Q140 70 160 70 Q180 70 180 90 L180 110 Q180 122 168 124 L152 124 Q140 122 140 110" fill="none" stroke="#f97316" stroke-width="7"/>
+        <text x="160" y="152" fill="#9a9ab0" font-size="10" font-family="monospace" text-anchor="middle">protrusa ~2-3 cm</text>
+        <text x="160" y="166" fill="#9a9ab0" font-size="9" font-family="monospace" text-anchor="middle">efluente longe da pele</text>
+        <text x="480" y="20" fill="#f97316" font-size="11" font-family="monospace" text-anchor="middle">COLOSTOMIA (rente)</text>
+        <line x1="360" y1="130" x2="600" y2="130" stroke="#2a2a38" stroke-width="2"/>
+        <path d="M455 130 L455 116 Q455 108 480 108 Q505 108 505 116 L505 130" fill="none" stroke="#a855f7" stroke-width="7"/>
+        <text x="480" y="152" fill="#9a9ab0" font-size="10" font-family="monospace" text-anchor="middle">rente à pele</text>
+      </svg>
+      <div class="cap">A ileostomia é evertida (Brooke) porque o efluente líquido/enzimático digere a pele; a colostomia, com fezes menos agressivas, pode ficar rente.</div>
+    </div>
+
+    <h4>Técnica — ileostomia terminal à Brooke</h4>
+    <div class="hands">
+      <div class="hand e">
+        <div class="ht">Mão esquerda (não dominante)</div>
+        <ul>
+          <li><strong>Pinça de Babcock</strong> tracionando gentilmente a alça pelo orifício</li>
+          <li>Apreensão da borda para everter a mucosa</li>
+        </ul>
+      </div>
+      <div class="hand d">
+        <div class="ht">Mão direita (dominante)</div>
+        <ul>
+          <li><strong>Porta-agulha</strong> com <strong>absorvível 3-0/4-0</strong> nos pontos de maturação</li>
+          <li>Pontos "de três mordidas" (derme–seromuscular–borda) para everter</li>
+        </ul>
+      </div>
+    </div>
+    <div class="steps">
+      <div class="step"><b>Confecção do orifício</b> — disco de pele circular no ponto marcado, trans-retal, do tamanho de dois dedos.</div>
+      <div class="step"><b>Exteriorização sem tensão</b> — passar a alça viável e bem vascularizada, ~5 cm acima da pele.</div>
+      <div class="step"><b>Fechar a parede/anastomose distal</b> antes de maturar (evita contaminação da bolsa).</div>
+      <div class="step"><b>Maturação evertida (Brooke)</b> — pontos de três mordidas evertendo a mucosa, protrusão final 2-3 cm.</div>
+      <div class="step"><b>Testar perfusão</b> (mucosa rósea) e <strong>acoplar a bolsa</strong> ainda na sala.</div>
+    </div>
+  </div>
+</details>
+
+<!-- 3 FISIOLOGIA & DEBITO -->
+<details>
+  <summary><span class="num">3</span> Fisiologia, débito &amp; alto débito <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>A <strong>ileostomia perde água e sódio</strong> em grande quantidade porque o cólon (que reabsorveria) foi excluído. Isso predispõe a <strong>desidratação, hipovolemia e lesão renal</strong> — a causa mais frequente de reinternação após ileostomia.</p>
+
+    <h4>Estoma de alto débito (HOS)</h4>
+    <ul>
+      <li>Definição: débito <strong>&gt;1000–2000 mL/dia</strong> por 1-3 dias (ou &gt;1500 mL/d sustentado).</li>
+      <li>Consequência: <strong>desidratação, hiponatremia/hipomagnesemia/hipocalemia, IRA pré-renal</strong>.</li>
+    </ul>
+
+    <h4>Manejo do alto débito (escalonado)</h4>
+    <ul>
+      <li><strong>Ressuscitação</strong> hidroeletrolítica IV; corrigir Na/K/Mg.</li>
+      <li><strong>Restringir líquidos hipotônicos</strong> (água/sucos livres pioram a perda de sódio) → oferecer <strong>solução de reidratação oral (SRO)</strong> com sódio.</li>
+      <li><strong>Antimotilidade</strong>: loperamida (1ª linha; doses altas), difenoxilato, codeína/ópio.</li>
+      <li><strong>Antissecretor</strong>: <strong>inibidor de bomba de prótons</strong>; octreotide em refratários.</li>
+      <li>Dieta: evitar gordura e açúcares simples; fibra <strong>engrossa</strong> (melhora vazamento/pele) mas <strong>não reduz</strong> a água total.</li>
+      <li>Investigar e tratar causa (sepse, obstrução parcial, suspensão abrupta de opioide, C. difficile).</li>
+    </ul>
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">GHC · PUC-RS</span></span>Alto débito = <strong>&gt;1000-2000 mL/dia</strong>. Pilar do manejo: <strong>restringir hipotônicos + SRO com sódio + loperamida + IBP</strong>. A <strong>água "pura" livre piora</strong> a hiponatremia — parece contraintuitivo, mas é pegadinha clássica.</div>
+    <div class="box mac"><span class="lbl">macete</span>Ileostomia = "perde sal e água". Trate com <strong>SRO salgada, loperamida e IBP</strong>; corte a água livre.</div>
+  </div>
+</details>
+
+<!-- 4 COMPLICACOES PRECOCES -->
+<details>
+  <summary><span class="num">4</span> Complicações precoces <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>As precoces (dias a ~3 meses) costumam ser <strong>técnicas / de má confecção ou marcação</strong>.</p>
+    <div class="tbl"><table>
+      <tr><th>Complicação</th><th>Causa / conduta</th></tr>
+      <tr><td><strong>Isquemia / necrose</strong></td><td>Divisão excessiva do mesentério ou tensão; avaliar profundidade (mucosa escura). Necrose abaixo da aponeurose = <strong>reoperação</strong></td></tr>
+      <tr><td><strong>Retração</strong></td><td>Tensão / mesentério espesso; convexidade na bolsa; revisar se grave</td></tr>
+      <tr><td><strong>Separação mucocutânea</strong></td><td>Desnutrição, isquemia, tensão, sutura ruim; curativo local, risco de estenose tardia</td></tr>
+      <tr><td><strong>Alto débito / desidratação</strong></td><td>Ver seção 3 — principal causa de reinternação da ileostomia</td></tr>
+      <tr><td><strong>Dermatite periestomal</strong></td><td>Efluente na pele (bolsa mal ajustada / estoma rente demais); placa convexa, estomaterapia</td></tr>
+      <tr><td><strong>Obstrução</strong></td><td>SBO no local do estoma; descompressão trans-estomal</td></tr>
+    </table></div>
+    <div class="box warn"><span class="lbl">⚠ pegadinha</span><strong>Necrose que se estende abaixo do plano aponeurótico</strong> (mucosa escura profunda) é grave → risco de perfuração intraperitoneal e peritonite → <strong>reoperação</strong>. Necrose superficial pode ser observada.</div>
+    <div class="box mac"><span class="lbl">macete</span>Precoce = <strong>técnica/marcação</strong> (isquemia, retração, separação, dermatite). Tardia = <strong>parede</strong> (hérnia, prolapso, estenose).</div>
+  </div>
+</details>
+
+<!-- 5 COMPLICACOES TARDIAS & REVERSAO -->
+<details>
+  <summary><span class="num">5</span> Complicações tardias &amp; reversão <span class="chev">▶</span></summary>
+  <div class="body">
+    <div class="tbl"><table>
+      <tr><th>Complicação</th><th>Nota</th></tr>
+      <tr><td><strong>Hérnia paraestomal</strong></td><td><strong>A tardia mais comum</strong> (colostomia até ~30-40%); é uma hérnia incisional no orifício do estoma. Assintomática → observar; sintomática/encarcerada → reparo (preferência por <strong>tela</strong>)</td></tr>
+      <tr><td><strong>Prolapso</strong></td><td>Protrusão de espessura total da alça (mais em colostomia em alça transversa); reduzir manualmente; ressecar se encarcerado/isquêmico</td></tr>
+      <tr><td><strong>Estenose</strong></td><td>Isquemia/separação prévia; dilatação ou revisão cirúrgica</td></tr>
+      <tr><td><strong>Varizes periestomais</strong></td><td>Hipertensão portal (caput medusae no estoma) — sangramento; tratar a HP</td></tr>
+    </table></div>
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">todas as bancas</span></span>A <strong>hérnia paraestomal é a complicação tardia mais comum</strong> (sobretudo em colostomia terminal). <strong>Tela profilática</strong> reduz a incidência; o reparo com tela reduz recidiva. Assintomática costuma ser <strong>observada</strong>.</div>
+
+    <h4>Reversão (fechamento)</h4>
+    <ul>
+      <li>Ileostomia em alça: reversão relativamente simples após cicatrização e checagem da anastomose distal (geralmente ~8-12 semanas).</li>
+      <li>Riscos da reversão: <strong>infecção de sítio cirúrgico, fístula/deiscência, obstrução e hérnia incisional no local</strong> (~10%).</li>
+      <li><strong>~20% dos estomas "temporários" nunca são revertidos</strong> (complicação da anastomose, risco cirúrgico, preferência).</li>
+    </ul>
+    <div class="box warn"><span class="lbl">⚠ pegadinha</span>Antes de reverter, confirmar a <strong>integridade da anastomose distal</strong> (enema contrastado/endoscopia). Reverter sobre uma anastomose com fístula = desastre.</div>
+  </div>
+</details>
+
+<!-- 6 QUESTOES -->
+<details>
+  <summary><span class="num">6</span> Questões de banca, pega-ratões &amp; mnemônicos <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>10 questões representativas (originais, estilo das 5 bancas)</h4>
+
+    <div class="box prova"><span class="lbl">Q1 <span class="banca">HCPA</span></span><strong>Por que a ileostomia é evertida (Brooke) e a colostomia rente?</strong><br>Resposta: o efluente ileal é <strong>líquido e enzimático (cáustico)</strong>; a eversão afasta-o da pele.</div>
+    <div class="box prova"><span class="lbl">Q2 <span class="banca">GHC</span></span><strong>Estoma preferido para proteger anastomose colorretal baixa?</strong><br>Resposta: <strong>ileostomia em alça</strong> (menos hérnia/vazamento; reversão mais fácil).</div>
+    <div class="box prova"><span class="lbl">Q3 <span class="banca">AMRIGS</span></span><strong>Complicação tardia mais comum dos estomas?</strong><br>Resposta: <strong>hérnia paraestomal</strong>.</div>
+    <div class="box prova"><span class="lbl">Q4 <span class="banca">PUC-RS</span></span><strong>Definição de estoma de alto débito?</strong><br>Resposta: <strong>&gt;1000–2000 mL/dia</strong> (por 1-3 dias).</div>
+    <div class="box prova"><span class="lbl">Q5 <span class="banca">SC-POA</span></span><strong>Paciente com ileostomia de alto débito e hiponatremia. Conduta com a ingesta de água livre?</strong><br>Resposta: <strong>restringir líquidos hipotônicos</strong> e usar <strong>SRO com sódio</strong> (água livre piora).</div>
+    <div class="box prova"><span class="lbl">Q6 <span class="banca">HCPA</span></span><strong>Onde deve ser marcado o estoma?</strong><br>Resposta: <strong>através do reto abdominal</strong>, área plana, visível, longe de proeminências ósseas/dobras/cinto.</div>
+    <div class="box prova"><span class="lbl">Q7 <span class="banca">GHC</span></span><strong>Primeira linha farmacológica para reduzir débito de ileostomia?</strong><br>Resposta: <strong>loperamida</strong> (antimotilidade) ± IBP (antissecretor).</div>
+    <div class="box prova"><span class="lbl">Q8 <span class="banca">AMRIGS</span></span><strong>Necrose de estoma que se estende abaixo da aponeurose. Conduta?</strong><br>Resposta: <strong>reoperação</strong> (risco de perfuração/peritonite).</div>
+    <div class="box prova"><span class="lbl">Q9 <span class="banca">PUC-RS</span></span><strong>Complicações precoces são geralmente relacionadas a quê?</strong><br>Resposta: <strong>problemas técnicos / má marcação</strong> (isquemia, retração, separação mucocutânea).</div>
+    <div class="box prova"><span class="lbl">Q10 <span class="banca">SC-POA</span></span><strong>O que confirmar antes de reverter um estoma de proteção?</strong><br>Resposta: <strong>integridade da anastomose distal</strong> (imagem/endoscopia).</div>
+
+    <h4>Pega-ratões (as armadilhas clássicas)</h4>
+    <div class="box warn"><span class="lbl">☠ trap 1</span>Ileostomia = <strong>evertida (Brooke)</strong>; colostomia = rente.</div>
+    <div class="box warn"><span class="lbl">☠ trap 2</span>Água livre <strong>piora</strong> a hiponatremia do alto débito — use SRO salgada.</div>
+    <div class="box warn"><span class="lbl">☠ trap 3</span>Tardia mais comum = <strong>hérnia paraestomal</strong>.</div>
+    <div class="box warn"><span class="lbl">☠ trap 4</span>Proteção de anastomose baixa = <strong>ileostomia em alça</strong> (não colostomia).</div>
+    <div class="box warn"><span class="lbl">☠ trap 5</span>Marcação: <strong>através do reto</strong>, longe de proeminências/cinto.</div>
+    <div class="box warn"><span class="lbl">☠ trap 6</span>Necrose <strong>abaixo da aponeurose</strong> = reoperar; superficial pode observar.</div>
+    <div class="box warn"><span class="lbl">☠ trap 7</span>Fibra engrossa o efluente mas <strong>não reduz</strong> a água total.</div>
+    <div class="box warn"><span class="lbl">☠ trap 8</span>~<strong>20%</strong> dos estomas "temporários" nunca são revertidos.</div>
+
+    <h4>Mnemônicos-resumo</h4>
+    <div class="box mac"><span class="lbl">macete geral</span>Ileostomia: <strong>líquida/cáustica → Brooke evertida, FID, alto débito, desidrata</strong> · colostomia: formada, rente, FIE · proteção de anastomose = <strong>ileo em alça</strong> · marcar <strong>trans-reto, plano, visível, longe de cinto/proeminências</strong> (estomaterapeuta) · alto débito <strong>&gt;1-2 L</strong> → restringe hipotônico + SRO + loperamida + IBP · precoce=técnica (isquemia/retração/separação) · tardia=<strong>hérnia paraestomal</strong> (tela)/prolapso/estenose · reverter só com anastomose íntegra.</div>
+  </div>
+</details>
+
+<footer>
+  <div><strong>carolzita</strong> · Estomas / Ostomias · referência completa</div>
+  <div class="ref">Fontes: revisão MISSTO–WSES de complicações de ostomias · ASCRS (colostomy/ileostomy) · revisões atuais de manejo de alto débito e hérnia paraestomal (PMC 2019-2025) · Sabiston · Zollinger. Conteúdo educacional; questões são itens representativos originais.</div>
+</footer>
+</div>
+</body>
+</html>

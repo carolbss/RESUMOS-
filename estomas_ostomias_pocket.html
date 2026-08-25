@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Estomas / Ostomias · pocket</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d1117;--card:#16161f;--card2:#1c1c27;--line:#2a2a38;
+  --txt:#ececf4;--muted:#9a9ab0;
+  --laranja:#f97316;--roxo:#a855f7;--ciano:#22d3ee;--vermelho:#f87171;--amarelo:#fbbf24;--verde:#34d399;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{overflow-x:hidden}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;font-size:17px;line-height:1.6;padding-bottom:30px}
+.top{padding:22px 18px 12px;position:sticky;top:0;background:linear-gradient(180deg,var(--bg) 70%,transparent);z-index:5}
+.kick{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:26px;line-height:1.1;margin-top:4px}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:6px 18px 12px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;padding:9px 15px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted);white-space:nowrap;cursor:pointer;transition:.15s}
+.tab.on{background:var(--laranja);border-color:var(--laranja);color:#0a0a0f}
+.panel{display:none;padding:6px 18px 40px;animation:f .25s}
+.panel.on{display:block}
+@keyframes f{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+h2{font-family:'Syne',sans-serif;font-size:21px;color:var(--laranja);margin:18px 0 10px}
+h3{font-family:'Syne',sans-serif;font-size:16px;color:#fff;margin:16px 0 6px}
+p{margin:10px 0}
+ul{list-style:none;margin:8px 0}
+li{padding:6px 0 6px 22px;position:relative}
+li::before{content:"▸";position:absolute;left:0;top:7px;color:var(--laranja);font-size:13px}
+strong{color:#fff;font-weight:600}
+.s{color:var(--ciano);font-style:italic;font-size:.92em}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0}
+.box{border-radius:12px;padding:13px 15px;margin:13px 0;border:1px solid;font-size:15px}
+.prova{background:rgba(168,85,247,.1);border-color:rgba(168,85,247,.4)}
+.prova .l{color:var(--roxo)}
+.mac{background:rgba(34,211,238,.1);border-color:rgba(34,211,238,.4)}
+.mac .l{color:var(--ciano)}
+.warn{background:rgba(248,113,113,.1);border-color:rgba(248,113,113,.4)}
+.warn .l{color:var(--vermelho)}
+.l{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-size:10px;background:rgba(168,85,247,.25);color:var(--roxo);padding:2px 6px;border-radius:5px;margin-left:5px;font-family:'JetBrains Mono',monospace}
+.kv{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)}
+.kv:last-child{border:none}
+.kv .k{flex:0 0 38%;color:var(--ciano);font-family:'JetBrains Mono',monospace;font-size:13px}
+.kv .v{flex:1;font-size:15px}
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="kick">carolzita · pocket 🚑</div>
+  <h1>Estomas / Ostomias 🎒</h1>
+</div>
+<div class="tabs">
+  <div class="tab on" data-t="0">📋 Tipos</div>
+  <div class="tab" data-t="1">✂️ Confecção</div>
+  <div class="tab" data-t="2">💧 Débito</div>
+  <div class="tab" data-t="3">⚡ Precoces</div>
+  <div class="tab" data-t="4">🕳️ Tardias</div>
+  <div class="tab" data-t="5">☠️ Traps</div>
+</div>
+
+<!-- 0 -->
+<div class="panel on" data-p="0">
+  <h2>📋 Ileo × Colo</h2>
+  <div class="card">
+    <div class="kv"><div class="k">💧 Ileostomia</div><div class="v">líquida/cáustica · alto volume · <strong>evertida</strong> · FID</div></div>
+    <div class="kv"><div class="k">💩 Colostomia</div><div class="v">formada · <strong>rente</strong> · FIE</div></div>
+  </div>
+  <h3>🔀 Terminal × alça</h3>
+  <ul>
+    <li>1️⃣ Terminal: 1 boca (Hartmann, Miles)</li>
+    <li>➿ Alça: 2 bocas · protege anastomose · reverte fácil</li>
+  </ul>
+  <div class="box prova"><span class="l">alto rendimento <span class="banca">GHC·SC-POA</span></span>🛡️ Proteger anastomose colorretal baixa → <strong>ileostomia em alça</strong> (menos hérnia/vazamento). Ônus = desidratação</div>
+</div>
+
+<!-- 1 -->
+<div class="panel" data-p="1">
+  <h2>✂️ Confecção</h2>
+  <div class="box prova"><span class="l">alto rendimento <span class="banca">HCPA·AMRIGS</span></span>📍 Marcação (estomaterapeuta): <strong>através do reto</strong>, plano, visível, LONGE de proeminências/dobras/<strong>cinto</strong></div>
+  <ul>
+    <li>🩸 Vascularização preservada + <strong>sem tensão</strong></li>
+    <li>🌸 <strong>Brooke</strong>: ileostomia evertida 2-3 cm (efluente longe da pele)</li>
+    <li>🧵 Maturação: pontos de 3 mordidas, absorvível</li>
+    <li>🕸️ Tela profilática em risco → menos hérnia</li>
+  </ul>
+  <div class="box mac"><span class="l">🧠 macete</span>Ileo evertida pq o suco digere a pele; colo rente pq fezes menos agressivas 🌸</div>
+</div>
+
+<!-- 2 -->
+<div class="panel" data-p="2">
+  <h2>💧 Alto débito</h2>
+  <div class="box prova"><span class="l">alto rendimento <span class="banca">GHC·PUC</span></span>📊 HOS = <strong>&gt;1000-2000 mL/dia</strong> → desidratação + hipoNa/hipoK/hipoMg + IRA</div>
+  <h3>🛠️ Manejo</h3>
+  <div class="card">
+    <div class="kv"><div class="k">🚱 Água livre</div><div class="v"><strong>RESTRINGIR</strong> (piora hipoNa!)</div></div>
+    <div class="kv"><div class="k">🧂 SRO</div><div class="v">reidratação oral com sódio</div></div>
+    <div class="kv"><div class="k">💊 Antimotilidade</div><div class="v">loperamida (1ª linha)</div></div>
+    <div class="kv"><div class="k">🧴 Antissecretor</div><div class="v">IBP · octreotide se refratário</div></div>
+  </div>
+  <div class="box warn"><span class="l">☠️ pega-ratão</span>🚱 <strong>Água pura PIORA a hiponatremia!</strong> Fibra engrossa mas não reduz a água total</div>
+</div>
+
+<!-- 3 -->
+<div class="panel" data-p="3">
+  <h2>⚡ Precoces (técnica)</h2>
+  <ul>
+    <li>🖤 <strong>Isquemia/necrose</strong> (mesentério dividido/tensão)</li>
+    <li>⬇️ <strong>Retração</strong></li>
+    <li>🔗 <strong>Separação mucocutânea</strong> (desnutrição/isquemia)</li>
+    <li>💧 Alto débito/desidratação (reinternação!)</li>
+    <li>🔴 Dermatite periestomal</li>
+    <li>🚧 Obstrução no estoma</li>
+  </ul>
+  <div class="box warn"><span class="l">☠️ pega-ratão</span>🖤 Necrose <strong>abaixo da aponeurose</strong> = REOPERAR (perfuração/peritonite). Superficial → observar</div>
+  <div class="box mac"><span class="l">🧠 macete</span>Precoce = técnica/marcação · Tardia = parede 🧱</div>
+</div>
+
+<!-- 4 -->
+<div class="panel" data-p="4">
+  <h2>🕳️ Tardias (parede)</h2>
+  <div class="card">
+    <div class="kv"><div class="k">🕳️ Hérnia paraestomal</div><div class="v"><strong>A + COMUM</strong> (colo ~30-40%) · tela</div></div>
+    <div class="kv"><div class="k">📤 Prolapso</div><div class="v">alça transversa · reduzir/ressecar</div></div>
+    <div class="kv"><div class="k">🔒 Estenose</div><div class="v">pós-isquemia/separação</div></div>
+    <div class="kv"><div class="k">🩸 Varizes</div><div class="v">hipertensão portal (caput)</div></div>
+  </div>
+  <div class="box prova"><span class="l">alto rendimento</span>🕳️ <strong>Hérnia paraestomal = tardia + comum!</strong> Tela profilática reduz · assintomática = observar</div>
+  <div class="box warn"><span class="l">☠️ pega-ratão</span>🔄 Antes de reverter: confirmar <strong>anastomose distal íntegra</strong>! ~20% nunca revertem</div>
+</div>
+
+<!-- 5 -->
+<div class="panel" data-p="5">
+  <h2>☠️ Pega-ratões</h2>
+  <div class="box warn"><span class="l">trap 1</span>Ileo evertida (Brooke) · colo rente 🌸</div>
+  <div class="box warn"><span class="l">trap 2</span>Água livre piora hipoNa → SRO salgada 🧂</div>
+  <div class="box warn"><span class="l">trap 3</span>Tardia + comum = hérnia paraestomal 🕳️</div>
+  <div class="box warn"><span class="l">trap 4</span>Proteger anastomose = ileo em alça ➿</div>
+  <div class="box warn"><span class="l">trap 5</span>Marcar através do reto, longe do cinto 📍</div>
+  <div class="box warn"><span class="l">trap 6</span>Necrose abaixo da aponeurose = reoperar 🖤</div>
+  <div class="box warn"><span class="l">trap 7</span>Fibra engrossa mas não reduz água 🌾</div>
+  <div class="box warn"><span class="l">trap 8</span>~20% dos estomas temporários nunca revertem 🔄</div>
+  <div class="box mac"><span class="l">✅ resumo de bolso</span>Ileo=líquida/Brooke/FID/alto débito/desidrata · colo=formada/rente/FIE · proteção=ileo em alça · marcar trans-reto/plano/longe cinto · HOS &gt;1-2L → restringe hipotônico+SRO+loperamida+IBP · precoce=técnica · tardia=hérnia paraestomal(tela) · reverter só com anastomose íntegra 🎓</div>
+</div>
+
+<script>
+var tabs=document.querySelectorAll('.tab'),panels=document.querySelectorAll('.panel');
+tabs.forEach(function(t){t.addEventListener('click',function(){
+  tabs.forEach(function(x){x.classList.remove('on')});
+  panels.forEach(function(x){x.classList.remove('on')});
+  t.classList.add('on');
+  document.querySelector('.panel[data-p="'+t.dataset.t+'"]').classList.add('on');
+})});
+</script>
+</body>
+</html>

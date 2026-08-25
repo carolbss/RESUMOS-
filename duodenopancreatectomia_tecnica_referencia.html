@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Duodenopancreatectomia — Técnica Cirúrgica · Referência CV 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d1117; --bg2:#161b22; --bg3:#1c2230; --line:#2a3038;
+  --txt:#c9d1d9; --txt2:#8b949e; --txt3:#6e7681;
+  --orange:#ff7b29; --orange-d:#3a2410;
+  --purple:#a371f7; --purple-d:#241a3a;
+  --cyan:#39c5cf; --cyan-d:#0f2e30;
+  --red:#f85149; --red-d:#3a1414; --green:#3fb950; --yellow:#d29922;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font-family:'IBM Plex Sans',sans-serif;line-height:1.6;font-size:15px;padding-bottom:60px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 18px}
+header{padding:30px 0 16px;border-bottom:1px solid var(--line)}
+h1{font-family:'IBM Plex Serif',serif;font-size:26px;font-weight:600;letter-spacing:-.3px}
+h1 .accent{color:var(--orange)}
+.sub{color:var(--txt2);font-size:13px;margin-top:6px;font-family:'IBM Plex Mono',monospace}
+.tabs{position:sticky;top:0;z-index:20;background:var(--bg);display:flex;gap:4px;overflow-x:auto;padding:10px 18px;border-bottom:1px solid var(--line);scrollbar-width:thin}
+.tabs::-webkit-scrollbar{height:5px}.tabs::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
+.tab{flex:0 0 auto;background:var(--bg2);border:1px solid var(--line);color:var(--txt2);padding:8px 14px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;font-family:'IBM Plex Mono',monospace;transition:.15s}
+.tab:hover{color:var(--txt);border-color:var(--orange)}
+.tab.active{background:var(--orange);color:#0d1117;border-color:var(--orange)}
+.panel{display:none;padding:24px 0;animation:fade .25s}
+.panel.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1}}
+h2{font-family:'IBM Plex Serif',serif;font-size:20px;color:var(--orange);margin:26px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+h2:first-child{margin-top:0}
+h3{font-size:16px;color:var(--txt);margin:18px 0 8px;font-weight:600}
+p{margin:8px 0}
+.lay{color:var(--cyan);font-style:italic;font-size:.93em}
+ul,ol{margin:8px 0 8px 22px}li{margin:4px 0}
+strong{color:#fff;font-weight:600}
+code{font-family:'IBM Plex Mono',monospace;background:var(--bg3);padding:1px 6px;border-radius:4px;font-size:.88em;color:var(--orange)}
+.card{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0}
+.box{border-left:4px solid var(--orange);background:var(--orange-d);border-radius:0 10px 10px 0;padding:12px 16px;margin:14px 0}
+.box.hy{border-left-color:var(--purple);background:var(--purple-d)}
+.box.mn{border-left-color:var(--cyan);background:var(--cyan-d)}
+.box.warn{border-left-color:var(--red);background:var(--red-d)}
+.box .lbl{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;font-weight:600;margin-bottom:6px;display:block}
+.box .lbl{color:var(--orange)}.box.hy .lbl{color:var(--purple)}.box.mn .lbl{color:var(--cyan)}.box.warn .lbl{color:var(--red)}
+.banca{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:600;padding:1px 7px;border-radius:20px;background:#2a1f44;color:var(--purple);border:1px solid #3a2a5a;margin-left:6px;vertical-align:middle}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--bg3);color:var(--orange);font-family:'IBM Plex Mono',monospace;font-size:11.5px;text-transform:uppercase;letter-spacing:.5px}
+td strong{color:var(--cyan)}
+.tag{font-family:'IBM Plex Mono',monospace;font-size:11px;padding:2px 8px;border-radius:5px;font-weight:600;white-space:nowrap}
+.t-b{background:#0f2a16;color:var(--green)}
+.t-m{background:#3a1414;color:var(--red)}
+.t-w{background:#3a2e0d;color:var(--yellow)}
+svg{max-width:100%;height:auto;display:block;margin:16px auto;background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:10px}
+.q{background:var(--bg2);border:1px solid var(--line);border-left:4px solid var(--purple);border-radius:0 10px 10px 0;padding:14px 16px;margin:16px 0}
+.q .stem{font-weight:500}
+.alt{margin:8px 0 0 0;padding-left:4px}
+.alt div{padding:3px 0;color:var(--txt2)}
+details{margin-top:10px;border-top:1px dashed var(--line);padding-top:8px}
+summary{cursor:pointer;color:var(--cyan);font-weight:600;font-size:13px;font-family:'IBM Plex Mono',monospace}
+details[open] summary{margin-bottom:6px}
+.ans{color:var(--green);font-weight:600}
+.foot{color:var(--txt3);font-size:11px;text-align:center;margin-top:30px;font-family:'IBM Plex Mono',monospace}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:640px){.grid2{grid-template-columns:1fr}h1{font-size:21px}}
+.pill{display:inline-block;width:11px;height:11px;border-radius:3px;vertical-align:middle;margin-right:5px}
+.legend{font-size:12px;color:var(--txt2);font-family:'IBM Plex Mono',monospace;margin-top:10px}
+.steps{counter-reset:st}
+.st{counter-increment:st;background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:14px 16px 14px 54px;margin:12px 0;position:relative}
+.st::before{content:counter(st);position:absolute;left:14px;top:13px;width:27px;height:27px;border-radius:8px;background:var(--orange);color:#0d1117;font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center}
+.st .ttl{font-weight:600;color:#fff;font-size:15.5px;margin-bottom:5px}
+.hands{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.h{border-radius:8px;padding:8px 11px;font-size:12.5px;border:1px solid var(--line)}
+.h.l{background:rgba(63,185,80,.08);border-color:rgba(63,185,80,.35)}
+.h.r{background:rgba(255,123,41,.08);border-color:rgba(255,123,41,.35)}
+.h b{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:3px}
+.h.l b{color:var(--green)}.h.r b{color:var(--orange)}
+@media(max-width:640px){.hands{grid-template-columns:1fr}}
+.fio{font-family:'IBM Plex Mono',monospace;font-size:11.5px;background:#241a3a;color:var(--purple);border:1px solid #3a2a5a;padding:1px 7px;border-radius:5px;white-space:nowrap}
+</style>
+</head>
+<body>
+<header class="wrap"><h1>Duodeno<span class="accent">pancreatectomia</span> — Técnica Cirúrgica</h1><div class="sub">Referência CV 2026 · Kausch-Whipple · PPPD · Child (PHG) · Blumgart · artery-first · ISGPS 2016/2017/2022 · ERAS 2019</div><div class="legend"><span class="pill" style="background:var(--orange)"></span>conteúdo geral<span class="pill" style="background:var(--purple);margin-left:14px"></span>alto rendimento / prova<span class="pill" style="background:var(--cyan);margin-left:14px"></span>analogia &amp; mnemônico</div></header>
+<nav class="tabs">
+  <button class="tab active" data-t="vg">🧭 Panorama</button>
+  <button class="tab" data-t="an">🩸 Anatomia</button>
+  <button class="tab" data-t="prep">🛏️ Preparo &amp; Posição</button>
+  <button class="tab" data-t="res">🔪 Ressecção</button>
+  <button class="tab" data-t="rec">🧵 Reconstrução</button>
+  <button class="tab" data-t="vasc">🩹 Vascular</button>
+  <button class="tab" data-t="comp">⚠️ Complicações</button>
+  <button class="tab" data-t="quest">📝 Questões</button>
+  <button class="tab" data-t="pega">🪤 Pega-ratões</button>
+  <button class="tab" data-t="mn">🧠 Mnemônicos</button>
+</nav>
+<main class="wrap">
+
+<section class="panel active" id="vg">
+<h2>O que é, e por que é "em bloco"</h2>
+<p>A <strong>duodenopancreatectomia cefálica (DPC)</strong> — também chamada <strong>cirurgia de Whipple</strong> ou <strong>Kausch-Whipple</strong> — ressecca em monobloco: <strong>cabeça e processo uncinado do pâncreas</strong>, <strong>todo o duodeno</strong>, os <strong>primeiros 10–15 cm de jejuno</strong>, a <strong>vesícula biliar e a via biliar distal</strong>, o <strong>antro gástrico</strong> (na versão clássica) e a <strong>linfadenectomia regional</strong>.</p>
+<div class="box"><span class="lbl">a razão anatômica</span>Cabeça do pâncreas e duodeno <strong>compartilham as mesmas arcadas arteriais</strong> (pancreatoduodenais anterior e posterior). Não é possível tirar uma sem desvascularizar o outro → ressecção obrigatoriamente <strong>em bloco</strong>.</div>
+<p class="lay">(Cabeça do pâncreas e duodeno são vizinhos que dividem o mesmo encanamento de água e luz. Se você demolir a casa de um, o outro fica sem abastecimento — então os dois têm que sair juntos.)</p>
+
+<h2>Nomenclatura e marcos históricos</h2>
+<table>
+<tr><th>Nome</th><th>Ano</th><th>Contribuição</th></tr>
+<tr><td><strong>Kausch</strong></td><td>1912</td><td>Primeira ressecção periampular bem-sucedida, em <strong>dois tempos</strong></td></tr>
+<tr><td><strong>Whipple</strong></td><td>1935 / 1940</td><td>Série em dois tempos (1935); <strong>um tempo único</strong> com anastomose pancreática (1940)</td></tr>
+<tr><td><strong>Child</strong></td><td>1944</td><td>Reconstrução em <strong>alça única</strong>, na ordem <strong>P → H → G</strong> (a mais usada até hoje)</td></tr>
+<tr><td><strong>Traverso-Longmire</strong></td><td>1978</td><td><strong>Preservação pilórica</strong> (PPPD)</td></tr>
+<tr><td><strong>Cattell / Warren</strong></td><td>1948/1960s</td><td>Pancreatojejunostomia <strong>ducto-mucosa</strong></td></tr>
+<tr><td><strong>Blumgart / Kleespies</strong></td><td>2000s</td><td>Anastomose pancreática <strong>transpancreática em U</strong> + ducto-mucosa</td></tr>
+</table>
+<div class="box hy"><span class="lbl">★ pegadinha de nomenclatura</span><strong>DPC</strong> = duodenopancreatectomia <strong>cefálica</strong> (parcial, a "Whipple"). <strong>DPT</strong> = duodenopancreatectomia <strong>total</strong> = pancreatectomia total (retira <em>todo</em> o pâncreas, geralmente com esplenectomia). Não são sinônimos. <span class="banca">Santa Casa</span> <span class="banca">PUC-RS</span></div>
+
+<h2>Indicações</h2>
+<table>
+<tr><th>Grupo</th><th>Exemplos</th></tr>
+<tr><td><strong>Malignas periampulares</strong></td><td>Adenocarcinoma ductal da cabeça; ampuloma; colangiocarcinoma distal; adenocarcinoma duodenal</td></tr>
+<tr><td><strong>Outras malignas</strong></td><td>TNE pancreático cefálico &gt;2 cm ou funcionante; metástase isolada (ex.: renal); GIST duodenal não ressecável localmente; sarcoma retroperitoneal com invasão</td></tr>
+<tr><td><strong>Pré-malignas / císticas</strong></td><td>IPMN de ducto principal ou misto na cabeça; MCN cefálico; NPS com margem inadequada por enucleação</td></tr>
+<tr><td><strong>Benignas</strong></td><td>Pancreatite crônica cefálica ("<em>head mass</em>") — comparar com <strong>Beger</strong> e <strong>Frey</strong>; estenose biliar/duodenal complexa</td></tr>
+<tr><td><strong>Trauma</strong></td><td>Lesão duodenopancreática grau IV–V com desvascularização e destruição do complexo (rara, alta mortalidade → damage control primeiro)</td></tr>
+</table>
+
+<h2>Clássica × preservadora de piloro (PPPD)</h2>
+<table>
+<tr><th>Aspecto</th><th>Whipple clássica</th><th>PPPD (Traverso-Longmire)</th></tr>
+<tr><td>Estômago</td><td><strong>Antrectomia</strong> + gastrojejunostomia</td><td>Piloro preservado; secção do duodeno <strong>~2 cm além do piloro</strong> + <strong>duodenojejunostomia</strong></td></tr>
+<tr><td>Sobrevida / R0</td><td colspan="2" style="text-align:center"><strong>Sem diferença</strong> em ECRs e metanálises (Cochrane)</td></tr>
+<tr><td>Tempo cirúrgico / sangramento</td><td>Maior</td><td><strong>Menor</strong></td></tr>
+<tr><td>DGE (esvaziamento gástrico lento)</td><td>Menor nas séries antigas</td><td>Historicamente maior; <strong>metanálises recentes não confirmam</strong> diferença</td></tr>
+<tr><td>Quando <u>não</u> preservar</td><td colspan="2">Tumor invadindo piloro/1ª porção duodenal, linfonodos peripilóricos suspeitos, úlcera péptica ativa, coto duodenal mal vascularizado</td></tr>
+</table>
+<div class="box mn"><span class="lbl">variante</span><strong>SSPPD</strong> (<em>subtotal stomach-preserving PD</em>): ressecca o anel pilórico mas preserva ~95% do estômago. Popular no Japão; tenta unir o melhor dos dois mundos.</div>
+
+<h2>Volume-outcome e vias de acesso</h2>
+<ul>
+<li><strong>Centro de alto volume</strong> (&gt;20 DPC/ano): mortalidade <strong>&lt;3–5%</strong>; baixo volume pode ultrapassar 10%. A diferença está menos na taxa de complicação e mais no <strong>failure to rescue</strong> (capacidade de resgatar o paciente complicado).</li>
+<li><strong>Morbidade global permanece 30–50%</strong> mesmo nos melhores centros — o Whipple é operação de baixa mortalidade e <em>alta</em> morbidade.</li>
+<li><strong>Laparoscópica:</strong> o ECR <strong>LEOPARD-2</strong> foi interrompido precocemente por mortalidade aumentada em centros de baixa experiência. Viável em mãos muito treinadas.</li>
+<li><strong>Robótica:</strong> resultados equivalentes em centros experientes; curva de aprendizado longa (~80 casos). Não é padrão de cuidado.</li>
+</ul>
+<div class="box hy"><span class="lbl">★ para prova</span>A via aberta permanece o <strong>padrão</strong>. Nenhuma via minimamente invasiva demonstrou superioridade oncológica. <span class="banca">HCPA</span> <span class="banca">GHC</span></div>
+</section>
+
+<section class="panel" id="an">
+<h2>Topografia: as quatro partes e o "colo sobre a veia"</h2>
+<p>Pâncreas retroperitoneal (exceto a cauda, intraperitoneal no ligamento esplenorrenal). Da direita para a esquerda: <strong>cabeça → colo → corpo → cauda</strong>, mais o <strong>processo uncinado</strong>, que se projeta para trás e para a esquerda, <strong>por trás</strong> da VMS/VP.</p>
+<svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg">
+<text x="18" y="22" fill="#8b949e" font-size="11" font-family="monospace">visão anterior — relações do colo pancreático</text>
+<path d="M150 70 Q80 155 150 240" fill="none" stroke="#39c5cf" stroke-width="12"/>
+<text x="62" y="60" fill="#39c5cf" font-size="11" font-family="monospace">duodeno (C)</text>
+<ellipse cx="212" cy="155" rx="58" ry="68" fill="#1c2230" stroke="#ff7b29" stroke-width="2"/>
+<text x="182" y="150" fill="#ff7b29" font-size="11" font-family="monospace">cabeça</text>
+<path d="M240 190 Q292 215 276 250" fill="none" stroke="#a371f7" stroke-width="9"/>
+<text x="282" y="262" fill="#a371f7" font-size="11" font-family="monospace">uncinado</text>
+<rect x="288" y="118" width="52" height="72" fill="#1c2230" stroke="#ff7b29" stroke-width="2"/>
+<text x="292" y="112" fill="#ff7b29" font-size="10.5" font-family="monospace">colo</text>
+<path d="M340 122 Q440 108 545 130" fill="none" stroke="#ff7b29" stroke-width="26" stroke-linecap="round"/>
+<text x="400" y="128" fill="#0d1117" font-size="11" font-family="monospace">corpo → cauda</text>
+<line x1="314" y1="40" x2="314" y2="290" stroke="#3fb950" stroke-width="9"/>
+<text x="322" y="56" fill="#3fb950" font-size="11" font-family="monospace">VMS → VP</text>
+<line x1="352" y1="60" x2="352" y2="290" stroke="#f85149" stroke-width="7"/>
+<text x="360" y="286" fill="#f85149" font-size="11" font-family="monospace">AMS</text>
+<line x1="196" y1="86" x2="288" y2="62" stroke="#d29922" stroke-width="6"/>
+<text x="292" y="58" fill="#d29922" font-size="11" font-family="monospace">GDA</text>
+<line x1="288" y1="62" x2="420" y2="52" stroke="#d29922" stroke-width="6"/>
+<text x="424" y="50" fill="#d29922" font-size="11" font-family="monospace">a. hepática comum</text>
+<line x1="270" y1="132" x2="314" y2="132" stroke="#3fb950" stroke-width="5"/>
+<text x="196" y="252" fill="#8b949e" font-size="10" font-family="monospace">tronco de Henle →</text>
+<line x1="286" y1="248" x2="314" y2="238" stroke="#3fb950" stroke-width="5"/>
+<text x="18" y="308" fill="#6e7681" font-size="10" font-family="monospace">verde = venoso · vermelho = arterial mesentérico · amarelo = eixo celíaco/GDA</text>
+</svg>
+
+<h2>Vascularização arterial — as arcadas</h2>
+<table>
+<tr><th>Arcada</th><th>Origem superior</th><th>Origem inferior</th></tr>
+<tr><td><strong>Pancreatoduodenal anterior</strong></td><td>a. pancreatoduodenal <strong>superior anterior</strong>, da <strong>GDA</strong></td><td>ramo anterior da a. pancreatoduodenal <strong>inferior</strong>, da <strong>AMS</strong></td></tr>
+<tr><td><strong>Pancreatoduodenal posterior</strong></td><td>a. pancreatoduodenal <strong>superior posterior</strong>, da <strong>GDA</strong> (1º ramo)</td><td>ramo posterior da a. pancreatoduodenal <strong>inferior</strong>, da <strong>AMS</strong></td></tr>
+</table>
+<p>Corpo e cauda recebem da <strong>a. esplênica</strong> (pancreática dorsal, pancreática magna, caudal) — por isso <strong>não</strong> são retirados na DPC.</p>
+<div class="box"><span class="lbl">a. gastroduodenal (GDA)</span>Ramo da <strong>hepática comum</strong>. É <strong>ligada</strong> na DPC. Antes de seccioná-la, faça o <strong>teste de clampeamento</strong>: clampear a GDA e palpar/Doppler a hepática própria. Se o fluxo hepático <em>cai</em>, existe estenose do tronco celíaco (mais comum: <strong>ligamento arqueado mediano</strong>) e o fígado está sendo perfundido <em>retrogradamente</em> pela GDA → ligar seria isquemia hepática/necrose.</div>
+<div class="box warn"><span class="lbl">variantes arteriais — decorar</span>
+<ul>
+<li><strong>Hepática direita substituída ou acessória vinda da AMS</strong> (~15–20%): sobe <strong>posterolateral à veia porta</strong>, à <strong>direita</strong> do colédoco, atravessando o campo da dissecção do uncinado e da linfadenectomia hilar. É a variante que mais causa lesão iatrogênica na DPC. <span class="banca">HCPA</span></li>
+<li><strong>Hepática esquerda substituída vinda da gástrica esquerda</strong> (~10%): corre no <strong>ligamento gastro-hepático (pars flaccida)</strong> — cuidado ao seccionar o pequeno omento.</li>
+<li><strong>Hepática comum vinda da AMS</strong> (tronco hepatomesentérico, raro): impede a ligadura convencional da GDA.</li>
+</ul>
+Sempre revisar a <strong>fase arterial da TC</strong> no pré-operatório.</div>
+
+<h2>Anatomia venosa — onde se sangra</h2>
+<ul>
+<li><strong>Confluência VMS–veia esplênica = veia porta</strong>, situada <strong>atrás do colo</strong> do pâncreas. O plano entre colo e VMS/VP é <strong>avascular na face anterior</strong> (não há tributárias anteriores) — é por isso que o "túnel retropancreático" é seguro.</li>
+<li><strong>Tronco gastrocólico de Henle</strong>: veia gastroepiploica direita + veia cólica média (± pancreatoduodenal superior anterior) → drena na face <strong>anterolateral direita da VMS</strong>. <strong>Deve ser ligado</strong> precocemente; sua avulsão é causa clássica de hemorragia grave.</li>
+<li><strong>Veia pancreatoduodenal inferior</strong> e <strong>1º ramo jejunal da VMS</strong> — passam <strong>por trás</strong> da AMS; são ligadas na fase do uncinado.</li>
+<li><strong>Veia gástrica esquerda (coronária)</strong> drena na porta ou na confluência — referência para a linfadenectomia.</li>
+</ul>
+
+<h2>Ductos e a margem que decide o R0</h2>
+<p>O <strong>ducto de Wirsung</strong> (principal) e o colédoco distal convergem na <strong>ampola de Vater</strong> (papila maior, 2ª porção duodenal); o <strong>ducto de Santorini</strong> drena na papila menor.</p>
+<div class="box hy"><span class="lbl">★ margem do uncinado / retroperitoneal / da AMS</span>É a <strong>margem mais frequentemente positiva</strong> e a que define o <strong>R0</strong> no adenocarcinoma. Também chamada <strong>"mesopâncreas"</strong> ou <strong>lâmina retroportal</strong>. Deve ser <strong>marcada com tinta</strong> pelo cirurgião antes de enviar a peça. Definição de R0 pelo protocolo de Leeds: <strong>tumor a &gt;1 mm</strong> da margem entintada. <span class="banca">HCPA</span> <span class="banca">Santa Casa</span></div>
+
+<h2>Linfadenectomia padrão (consenso ISGPS)</h2>
+<p>Estações a ressecar em bloco: <strong>5, 6, 8a, 12b1, 12b2, 12c, 13a, 13b, 14a e 14b (lado direito), 17a e 17b</strong>. Meta de qualidade: <strong>≥15 linfonodos</strong> examinados.</p>
+<div class="box warn"><span class="lbl">não faça</span><strong>Linfadenectomia estendida</strong> (periaórtica ampla, circunferencial na AMS) — vários ECRs mostraram <strong>ausência de ganho de sobrevida</strong> e <strong>mais diarreia e morbidade</strong> (por lesão do plexo nervoso mesentérico). Não é recomendada. <span class="banca">PUC-RS</span></div>
+</section>
+
+<section class="panel" id="prep">
+<h2>Avaliação e estadiamento pré-operatório</h2>
+<ul>
+<li><strong>TC de abdome com protocolo pancreático</strong> (trifásica, cortes finos): define ressecabilidade (contato arterial/venoso em graus) e mapeia variantes arteriais.</li>
+<li><strong>CA 19-9</strong> (interpretar só com bilirrubina normalizada; falso-negativo em Lewis-negativos, ~5–10% da população).</li>
+<li><strong>EUS + punção</strong>: obrigatório se haverá <strong>neoadjuvância</strong>; dispensável quando a imagem é típica e a cirurgia é imediata.</li>
+<li><strong>Laparoscopia diagnóstica seletiva</strong>: CA 19-9 muito elevado, tumor volumoso, suspeita de doença peritoneal, corpo/cauda.</li>
+<li><strong>Avaliação nutricional e funcional</strong>: albumina, perda ponderal, pré-habilitação, cessação de tabagismo.</li>
+</ul>
+<div class="box hy"><span class="lbl">★ drenagem biliar pré-operatória — NÃO é rotina</span>O ECR <strong>DROP</strong> (van der Gaag, NEJM 2010) mostrou <strong>mais complicações</strong> com stent de rotina antes da DPC. <br><strong>Indicações para drenar:</strong> colangite; neoadjuvância; cirurgia postergada com icterícia intensa; prurido intratável; disfunção renal/coagulopatia por colestase.<br>Se drenar, preferir <strong>stent metálico autoexpansível curto</strong> ao plástico (menos disfunção/colangite). <span class="banca">HCPA</span> <span class="banca">AMRIGS</span></div>
+
+<h2>ERAS para DPC (ERAS Society, Melloul et al., 2019/2020)</h2>
+<table>
+<tr><th>Item</th><th>Recomendação</th></tr>
+<tr><td>Preparo mecânico do cólon</td><td><span class="tag t-m">Não</span> fazer</td></tr>
+<tr><td>Jejum</td><td>Líquidos claros até <strong>2 h</strong>; sólidos até 6 h; <strong>carga de carboidrato</strong> pré-op</td></tr>
+<tr><td>Sonda nasogástrica</td><td><span class="tag t-m">Não</span> manter de rotina — <strong>retirar ao fim da cirurgia</strong></td></tr>
+<tr><td>Analgesia</td><td>Multimodal; <strong>peridural torácica</strong> ou bloqueio de parede/TAP; poupar opioide</td></tr>
+<tr><td>Fluidos</td><td>Euvolemia (balanço "near-zero"); evitar sobrecarga</td></tr>
+<tr><td>Normotermia / glicemia</td><td>Manter ativamente</td></tr>
+<tr><td>Dieta e deambulação</td><td><strong>Precoces</strong>, sem aguardar flatos</td></tr>
+<tr><td>Profilaxia de TEV</td><td>HBPM; considerar <strong>estendida por 28 dias</strong> em câncer</td></tr>
+<tr><td>Somatostatina/análogos</td><td><span class="tag t-w">Não</span> de rotina (uso seletivo em pâncreas mole/ducto fino, evidência inconsistente)</td></tr>
+</table>
+<div class="box"><span class="lbl">antibioticoprofilaxia</span>ECR <strong>JAMA 2023</strong> (D'Angelica et al.): <strong>piperacilina-tazobactam</strong> reduziu infecção de sítio cirúrgico em 30 dias frente à cefoxitina <strong>(19,8% vs 32,8%)</strong>, com redução também de fístula pancreática clinicamente relevante. Especialmente relevante em pacientes com <strong>stent biliar</strong> (bile colonizada). Redose intraoperatória a cada 2–3 h ou se perda &gt;1.500 mL.</div>
+
+<h2>Posicionamento, incisão e montagem da mesa</h2>
+<div class="card">
+<h3>Paciente</h3>
+<ul>
+<li><strong>Decúbito dorsal horizontal</strong>, braços abertos a 90° (ou o direito junto ao corpo, se o cirurgião opera à direita).</li>
+<li><strong>Coxim transverso</strong> na altura de T12–L1: abre o ângulo costo-ilíaco e projeta o andar supramesocólico.</li>
+<li>Mesa capaz de <strong>proclive (reverse Trendelenburg)</strong> — usado na dissecção hilar — e de <strong>rotação lateral</strong> para a esquerda (facilita Kocher) e para a direita (facilita o uncinado).</li>
+<li>Coxins em calcâneos/joelhos, manta térmica, compressor pneumático de panturrilhas.</li>
+<li><strong>Acessos:</strong> 2 veias periféricas calibrosas ± acesso central, <strong>pressão arterial invasiva</strong>, sonda vesical, SNG (retirada ao final), aquecedor de fluidos.</li>
+</ul>
+</div>
+<div class="card">
+<h3>Incisão</h3>
+<ul>
+<li><strong>Mediana xifo-umbilical ampliada</strong> — acesso rápido, extensível, boa para pacientes longilíneos.</li>
+<li><strong>Subcostal bilateral (chevron)</strong> ± extensão xifóide vertical (Mercedes) — melhor exposição do hilo e do retroperitônio em pacientes brevilíneos/obesos.</li>
+<li><strong>Afastador autostático</strong> obrigatório: Bookwalter, Thompson ou Omni-Tract, com valvas de subcostal e um afastador hepático.</li>
+</ul>
+</div>
+<div class="card">
+<h3>Instrumental de mesa (o que pedir)</h3>
+<div class="grid2">
+<div class="h l"><b>exposição / mão esquerda</b>Pinça atraumática longa (DeBakey/Duval), compressas úmidas, afastador maleável, aspirador, pinça de Babcock, clampe intestinal atraumático (Doyen)</div>
+<div class="h r"><b>dissecção / mão direita</b>Tesoura de Metzenbaum longa, dissector de Mixter/right-angle, eletrocautério com ponta fina, selante bipolar avançado (LigaSure/harmônico), clipadora ML/M, porta-agulha longo (Mayo-Hegar/Castroviejo para ducto fino)</div>
+</div>
+<p style="margin-top:10px"><strong>Vascular à mesa, sempre:</strong> Satinsky, bulldogs (Yasargil/DeBakey), fitas cardíacas (vessel loops), pinças de DeBakey vasculares, prolene 5-0/6-0 com agulha pequena, heparina para irrigação. <strong>Ultrassom intraoperatório</strong> disponível.</p>
+</div>
+</section>
+
+<section class="panel" id="res">
+<h2>Ressecção — sequência em 13 passos</h2>
+<p class="lay">(A cirurgia tem duas metades: primeiro se "desmonta" a cabeça do pâncreas com o duodeno — a ressecção; depois se "religa" o trânsito — a reconstrução. Antes de qualquer corte irreversível, o cirurgião checa se a peça <em>realmente</em> sai.)</p>
+
+<div class="steps">
+
+<div class="st"><div class="ttl">Inventário da cavidade (estadiamento cirúrgico)</div>
+Palpação e inspeção sistemáticas: <strong>superfície hepática</strong> (nódulos), <strong>peritônio e goteiras</strong> (implantes), <strong>ligamento de Treitz</strong>, <strong>raiz do mesentério</strong>, <strong>ascite</strong> (colher para citologia). Qualquer nódulo suspeito → <strong>biópsia de congelação</strong>. Doença M1 confirmada = abortar ressecção (fazer derivação apenas se sintomas obstrutivos).
+<div class="hands"><div class="h l"><b>mão esquerda</b>Retração hepática com afastador maleável / palpação bimanual</div><div class="h r"><b>mão direita</b>Palpação sistemática; pinça longa para biópsia; ultrassom intraoperatório se dúvida hepática</div></div>
+</div>
+
+<div class="st"><div class="ttl">Manobra de Kocher ampla</div>
+Incisar o peritônio lateral à <strong>2ª porção duodenal</strong> e mobilizar o bloco duodenopancreático para a esquerda, expondo <strong>veia cava inferior</strong>, <strong>veia renal esquerda</strong> e a face anterior da <strong>aorta</strong>. Permite palpar entre o polegar (anterior) e os dedos (posterior) a relação do tumor com a <strong>AMS</strong>. Estende-se ao <strong>Cattell-Braasch</strong> (mobilização do cólon direito + raiz do mesentério) quando se quer exposição máxima.
+<div class="hands"><div class="h l"><b>mão esquerda</b>Duval/Babcock tracionando o duodeno medialmente; compressa como "luva" de tração</div><div class="h r"><b>mão direita</b>Eletrocautério e Metzenbaum no plano avascular de fusão de Toldt; dissecção romba com gaze montada</div></div>
+</div>
+
+<div class="st"><div class="ttl">Abertura da retrocavidade dos epíploons</div>
+Separar o <strong>grande omento do cólon transverso</strong> (plano embriológico avascular) ou seccionar o <strong>ligamento gastrocólico</strong> preservando a arcada gastroepiploica quando indicado. Expõe a face anterior do <strong>corpo do pâncreas</strong>. Rebater aderências pâncreas-parede posterior do estômago.
+<div class="hands"><div class="h l"><b>mão esquerda</b>Tração do omento para cima; contra-tração do cólon transverso pelo auxiliar</div><div class="h r"><b>mão direita</b>Selante bipolar / harmônico para o plano omental</div></div>
+</div>
+
+<div class="st"><div class="ttl">Borda inferior do pâncreas → identificação da VMS + tronco de Henle</div>
+Na borda <strong>inferior</strong> do colo, dissecar até encontrar a <strong>veia mesentérica superior</strong> (referência: à direita da artéria cólica média). <strong>Ligar o tronco gastrocólico de Henle</strong> antes que ele seja avulsionado.
+<div class="hands"><div class="h l"><b>mão esquerda</b>DeBakey longa elevando a borda inferior do pâncreas</div><div class="h r"><b>mão direita</b>Mixter passando ao redor do tronco de Henle; ligadura <span class="fio">seda 2-0/3-0</span> ou clipe ML</div></div>
+<div class="box warn" style="margin:10px 0 0"><span class="lbl">armadilha</span>A avulsão do tronco de Henle ou de uma tributária da VMS gera sangramento venoso de difícil controle em campo profundo. <strong>Nunca traga hemostasia às cegas</strong> — comprima, exponha e repare com <span class="fio">prolene 5-0/6-0</span>.</div>
+</div>
+
+<div class="st"><div class="ttl">Colecistectomia e secção do ducto hepático comum</div>
+Colecistectomia (a vesícula segue com a peça). Seccionar a via biliar <strong>acima da inserção do cístico</strong>, no <strong>hepático comum</strong>. Colher <strong>bile para cultura</strong> (guia a antibioticoterapia se houver stent). Clampe atraumático (bulldog) no coto proximal evita contaminação. Enviar <strong>margem biliar para congelação</strong>.
+<div class="hands"><div class="h l"><b>mão esquerda</b>Tração do fundo vesical / do coto biliar distal com Allis</div><div class="h r"><b>mão direita</b>Metzenbaum; bisturi frio na secção ductal; clipe/bulldog no coto proximal</div></div>
+</div>
+
+<div class="st"><div class="ttl">Linfadenectomia do ligamento hepatoduodenal e da hepática comum</div>
+Esqueletizar o pedículo: dissecar as estações <strong>12b/12c</strong> (ao longo da via biliar e da hepática própria) e <strong>8a</strong> (anterior à hepática comum), rebatendo o tecido linfonodal <em>em direção à peça</em>. Manter a <strong>artéria hepática própria</strong> reparada com fita cardíaca. Atenção permanente à possível <strong>hepática direita substituída</strong> à direita/posterior à porta.
+<div class="hands"><div class="h l"><b>mão esquerda</b>Fita cardíaca tracionando a hepática própria / a veia porta</div><div class="h r"><b>mão direita</b>Mixter + clipes; tesoura fina; cautério bipolar</div></div>
+</div>
+
+<div class="st"><div class="ttl">Teste de clampeamento e ligadura da GDA</div>
+Identificar a <strong>GDA</strong> na origem da hepática comum. <strong>Clampear com bulldog</strong> e confirmar pulso/Doppler mantidos na hepática própria. Confirmado, <strong>ligar em continuidade e transfixar</strong> — deixar coto curto porém seguro (dupla ligadura + transfixação com <span class="fio">prolene 4-0</span> ou <span class="fio">seda 2-0</span>). Um coto mal tratado é a origem clássica do <strong>pseudoaneurisma</strong> tardio.
+<div class="hands"><div class="h l"><b>mão esquerda</b>Bulldog vascular na GDA; fita cardíaca de reparo</div><div class="h r"><b>mão direita</b>Mixter passando duas ligaduras + porta-agulha para transfixação</div></div>
+<div class="box hy" style="margin:10px 0 0"><span class="lbl">★ ligamento arqueado mediano</span>Se o clampeamento da GDA <strong>abolir</strong> o fluxo hepático → estenose do tronco celíaco. Conduta: <strong>liberar o ligamento arqueado</strong> (secção da fibras diafragmáticas) ou planejar <strong>revascularização/bypass</strong>. Nunca ligar a GDA nessa situação. <span class="banca">HCPA</span> <span class="banca">Santa Casa</span></div>
+</div>
+
+<div class="st"><div class="ttl">Secção gástrica ou duodenal</div>
+<strong>Clássica:</strong> antrectomia — secção do estômago com <strong>grampeador linear cortante</strong> na transição corpo-antro, após ligar os vasos da grande e pequena curvatura naquele nível.<br>
+<strong>PPPD:</strong> secção do duodeno <strong>~2 cm além do piloro</strong>, preservando a irrigação do coto (a. gástrica direita e ramos pilóricos).
+<div class="hands"><div class="h l"><b>mão esquerda</b>Babcock/Duval posicionando a alça a ser grampeada; compressa protegendo o campo</div><div class="h r"><b>mão direita</b>Grampeador linear cortante (carga azul/roxa conforme espessura); reforço da linha com <span class="fio">PDS 4-0</span> se necessário</div></div>
+</div>
+
+<div class="st"><div class="ttl">Túnel retropancreático</div>
+Criar o plano <strong>avascular</strong> entre a face posterior do <strong>colo</strong> e a face anterior da <strong>VMS/VP</strong>, de baixo para cima e de cima para baixo, até que os dedos/uma pinça se encontrem. Se o plano <strong>não abre</strong> → suspeitar de invasão venosa e <strong>reavaliar a estratégia</strong> (ressecção venosa planejada ou abordagem <em>artery-first</em>).
+<div class="hands"><div class="h l"><b>mão esquerda</b>Elevar o colo do pâncreas com o dedo indicador; fita cardíaca passada em volta do colo</div><div class="h r"><b>mão direita</b>Dissector romo / Mixter grande, movimentos delicados e paralelos à veia</div></div>
+</div>
+
+<div class="st"><div class="ttl">Secção jejunal e desmontagem do Treitz</div>
+Seccionar o jejuno a <strong>10–15 cm</strong> do ângulo de Treitz com grampeador linear; ligar os vasos do mesojejuno proximal; <strong>desfazer o ligamento de Treitz</strong> e passar o segmento jejunal <strong>por trás dos vasos mesentéricos</strong>, para a direita, unindo-o ao bloco duodenopancreático.
+<div class="hands"><div class="h l"><b>mão esquerda</b>Tração suave da alça através da janela retromesentérica</div><div class="h r"><b>mão direita</b>Grampeador linear; selante bipolar no mesojejuno</div></div>
+</div>
+
+<div class="st"><div class="ttl">Transecção do colo do pâncreas</div>
+Passar <strong>pontos hemostáticos em U</strong> nas bordas <strong>superior e inferior</strong> do pâncreas de cada lado da futura linha de secção (<span class="fio">prolene 3-0/4-0</span>) — controlam as <strong>artérias pancreáticas transversas</strong>. Seccionar com <strong>bisturi frio</strong> ou cautério em potência baixa (o calor excessivo lesa o parênquima e favorece fístula). <strong>Identificar o ducto de Wirsung</strong>, seccioná-lo com tesoura fina deixando-o levemente <strong>saliente (2–3 mm)</strong> em relação à superfície de corte. Enviar <strong>margem pancreática para congelação</strong>.
+<div class="hands"><div class="h l"><b>mão esquerda</b>Fita cardíaca ou dedo protegendo a VMS/VP por baixo do colo</div><div class="h r"><b>mão direita</b>Bisturi frio (lâmina 15) ou cautério; tesoura de íris/Potts para o ducto; porta-agulha fino</div></div>
+<div class="box mn" style="margin:10px 0 0"><span class="lbl">macete</span>Marcar o ducto com um <strong>cateter/stent fino</strong> (5–7 Fr) já nesse momento facilita muito a anastomose ducto-mucosa depois, sobretudo com ducto &lt;3 mm.</div>
+</div>
+
+<div class="st"><div class="ttl">Dissecção do processo uncinado — a margem da AMS</div>
+Etapa <strong>mais crítica</strong>. Com a peça tracionada para a direita, dissecar a lâmina retroportal ao longo da borda <strong>direita da AMS</strong>, ligando sequencialmente a <strong>a. pancreatoduodenal inferior</strong>, a <strong>veia pancreatoduodenal inferior</strong> e o <strong>1º ramo jejunal da VMS</strong>. Usar clipes e ligaduras finas; evitar energia cega junto à artéria (risco de lesão do plexo e da própria AMS).
+<div class="hands"><div class="h l"><b>mão esquerda</b>Tração firme e constante da peça para a direita (o auxiliar afasta a VMS para a esquerda com valva maleável/fita)</div><div class="h r"><b>mão direita</b>Mixter delicado + clipes; ligaduras <span class="fio">seda 3-0/4-0</span>; bipolar de precisão</div></div>
+<div class="box hy" style="margin:10px 0 0"><span class="lbl">★ ponto de não retorno</span>Após a secção pancreática e o início do uncinado, a ressecção é <strong>irreversível</strong>. Por isso as abordagens <em>artery-first</em> avaliam a margem da AMS <strong>antes</strong> desse momento. <span class="banca">GHC</span> <span class="banca">PUC-RS</span></div>
+</div>
+
+<div class="st"><div class="ttl">Retirada da peça, marcação e revisão</div>
+Retirar o espécime; <strong>marcar com tinta as margens</strong> (uncinado/AMS, posterior, biliar, pancreática, gástrica/duodenal) e orientar para o patologista. Revisar hemostasia do leito, testar integridade do coto pancreático, irrigar, posicionar drenos e conferir compressas.
+<div class="hands"><div class="h l"><b>mão esquerda</b>Apresenta a peça orientada; compressa quente no leito</div><div class="h r"><b>mão direita</b>Tinta nanquim para margens; revisão com bipolar/clipe</div></div>
+</div>
+
+</div>
+</section>
+
+<section class="panel" id="rec">
+<h2>Ordem de Child: P → H → G</h2>
+<p>Reconstrução clássica em <strong>alça única</strong>, ascendida <strong>retrocólica</strong> (transmesocólica, pela direita da artéria cólica média), na sequência:</p>
+<table>
+<tr><th>Ordem</th><th>Anastomose</th><th>Motivo da posição</th></tr>
+<tr><td><span class="tag t-m">1ª</span></td><td><strong>Pancreato</strong>jejunostomia (PJ)</td><td>Mais proximal e mais frágil — precisa da alça sem tensão</td></tr>
+<tr><td><span class="tag t-w">2ª</span></td><td><strong>Hepático</strong>jejunostomia (HJ)</td><td><strong>~30–50 mm distal</strong> à PJ; se houver fístula pancreática, o suco não fica em contato com a biliar</td></tr>
+<tr><td><span class="tag t-b">3ª</span></td><td><strong>Gastro</strong>/duodenojejunostomia (GJ/DJ)</td><td>Mais distal (~40–60 cm) — protege as duas anteriores do refluxo alimentar</td></tr>
+</table>
+<div class="box mn"><span class="lbl">mnemônico</span><strong>P-H-G</strong> = "<strong>P</strong>âncreas, <strong>H</strong>epático, <strong>G</strong>astro" — de <em>dentro para fora</em>, do mais frágil ao mais robusto. <span class="banca">AMRIGS</span></div>
+
+<h2>1 · Pancreatojejunostomia — as quatro técnicas</h2>
+
+<div class="card">
+<h3>a) Blumgart modificada (a mais difundida hoje)</h3>
+<ul>
+<li><strong>Plano posterior:</strong> 3–4 pontos <strong>transpancreáticos em U (colchoeiro)</strong> com <span class="fio">prolene 3-0 ou 4-0</span>, de fora a fora, atravessando <strong>toda a espessura</strong> do coto pancreático e pegando a <strong>serosa jejunal</strong>. <em>Ainda não amarrar.</em></li>
+<li><strong>Enterotomia</strong> pequena no jejuno, do tamanho exato do ducto.</li>
+<li><strong>Ducto-mucosa:</strong> 4–8 pontos separados com <span class="fio">PDS 5-0 ou 6-0</span> (monofilamento absorvível); ordem posterior → laterais → anterior. Stent interno curto (5–7 Fr) se ducto &lt;3 mm.</li>
+<li><strong>Fechamento:</strong> amarrar os pontos em U <strong>anteriormente</strong>, envolvendo o coto pancreático na parede jejunal.</li>
+</ul>
+<p class="lay">(É como enfiar a ponta de uma mangueirinha fina — o ducto — dentro de um furinho do intestino, e depois "abraçar" todo o cotovelo do pâncreas com fitas de amarrar, para nada vazar em volta.)</p>
+<p><strong>Evidência:</strong> metanálises e estudos com <em>propensity score</em> favorecem a Blumgart em relação à ducto-mucosa convencional para <strong>fístula clinicamente relevante</strong>; entretanto a <strong>revisão Cochrane atualizada (2025)</strong> considera a evidência <strong>muito incerta</strong>, sem diferença comprovada nos ECRs disponíveis. Na prática: escolha do cirurgião, com a técnica que ele domina.</p>
+</div>
+
+<div class="card">
+<h3>b) Ducto-mucosa clássica (Cattell-Warren) — dois planos</h3>
+<ul>
+<li>Plano posterior seromuscular contínuo/separado com <span class="fio">prolene ou seda 3-0</span>.</li>
+<li>Anastomose ducto-mucosa com <span class="fio">PDS 5-0/6-0</span>.</li>
+<li>Plano anterior seromuscular.</li>
+</ul>
+<p>Ideal com <strong>ducto dilatado (&gt;3 mm)</strong> e <strong>pâncreas fibrótico</strong>.</p>
+</div>
+
+<div class="card">
+<h3>c) Invaginação / <em>dunking</em> (telescopagem)</h3>
+<p>O coto pancreático é <strong>introduzido 1,5–2 cm dentro da luz jejunal</strong> e fixado em dois planos. Útil quando o <strong>ducto é muito fino</strong> e o <strong>pâncreas é mole</strong> (justamente o cenário de maior risco). Metanálises: <strong>equivalente</strong> à ducto-mucosa em taxa de fístula.</p>
+</div>
+
+<div class="card">
+<h3>d) Pancreatogastrostomia (PG)</h3>
+<p>Coto pancreático anastomosado à <strong>parede posterior do estômago</strong>. Vantagem teórica: ácido gástrico inativa as enzimas e a parede gástrica é espessa/bem vascularizada. <strong>ECR RECOPANC e metanálises: não reduz de forma consistente a fístula clinicamente relevante</strong>; pode aumentar hemorragia intraluminal e insuficiência exócrina tardia. Alternativa válida, não superior.</p>
+</div>
+
+<h2>2 · Hepaticojejunostomia</h2>
+<ul>
+<li><strong>Término-lateral</strong>, em <strong>plano único</strong>, a 30–50 mm distal à PJ.</li>
+<li>Fio: <span class="fio">PDS ou Monocryl 4-0 a 5-0</span> (monofilamento absorvível — fio trançado/inabsorvível favorece litíase).</li>
+<li><strong>Ducto dilatado (&gt;8 mm)</strong> → sutura <strong>contínua</strong>. <strong>Ducto fino</strong> → pontos <strong>separados</strong>, nós extraluminais.</li>
+<li>Sem tensão, sem esqueletizar demais o coto biliar (a irrigação vem das artérias em 3 e 9 horas).</li>
+<li><strong>Dreno transanastomótico não é rotina.</strong></li>
+</ul>
+
+<h2>3 · Gastrojejunostomia / duodenojejunostomia</h2>
+<ul>
+<li>A <strong>40–60 cm</strong> distal à HJ.</li>
+<li><strong>Antecólica × retrocólica:</strong> metanálises <strong>não mostram diferença consistente</strong> em DGE. A antecólica é a mais empregada por simplicidade e por afastar a anastomose do leito pancreático.</li>
+<li>Manual em dois planos (<span class="fio">PDS 3-0</span> interno + <span class="fio">seda/PDS 3-0</span> seromuscular) ou mecânica com grampeador linear + fechamento manual da enterotomia.</li>
+<li><strong>Enteroenterostomia de Braun</strong> (entre aferente e eferente): pode reduzir refluxo biliar e DGE — evidência moderada.</li>
+</ul>
+
+<h2>Resumo dos fios — tabela de bolso</h2>
+<table>
+<tr><th>Estrutura</th><th>Fio sugerido</th><th>Padrão</th></tr>
+<tr><td>Pontos em U transpancreáticos (Blumgart)</td><td><span class="fio">Prolene 3-0 / 4-0</span></td><td>Colchoeiro em U, amarrados ao final</td></tr>
+<tr><td>Ducto-mucosa pancreática</td><td><span class="fio">PDS 5-0 / 6-0</span></td><td>Separados, 4–8 pontos</td></tr>
+<tr><td>Plano seromuscular da PJ</td><td><span class="fio">Prolene / seda 3-0</span></td><td>Separados ou contínuo</td></tr>
+<tr><td>Hepaticojejunostomia</td><td><span class="fio">PDS / Monocryl 4-0–5-0</span></td><td>Contínuo se dilatado; separados se fino</td></tr>
+<tr><td>Gastrojejunostomia (interno)</td><td><span class="fio">PDS 3-0</span></td><td>Contínuo</td></tr>
+<tr><td>Gastrojejunostomia (externo)</td><td><span class="fio">Seda / PDS 3-0</span></td><td>Separados seromusculares</td></tr>
+<tr><td>Ligadura da GDA</td><td><span class="fio">Seda 2-0 + prolene 4-0</span></td><td>Dupla ligadura + transfixação</td></tr>
+<tr><td>Venorrafia / anastomose venosa</td><td><span class="fio">Prolene 5-0 / 6-0</span></td><td>Contínuo com <em>growth factor</em></td></tr>
+<tr><td>Aponeurose</td><td><span class="fio">PDS 1 alça (loop)</span></td><td>Contínuo, relação fio:ferida 4:1</td></tr>
+</table>
+
+<h2>Drenos: a pergunta mais cobrada</h2>
+<div class="box hy"><span class="lbl">★ três conceitos que caem</span>
+<ol>
+<li><strong>Não drenar de rotina é perigoso.</strong> O ECR de <strong>Van Buren (2014)</strong> comparando DPC com e sem dreno foi <strong>interrompido precocemente</strong> por <strong>mortalidade maior</strong> no braço sem dreno.</li>
+<li><strong>Drenagem seletiva pelo risco</strong> (Fistula Risk Score) é aceitável: risco desprezível/baixo pode dispensar dreno.</li>
+<li><strong>Retirada precoce (POD 3)</strong> quando a <strong>amilase do dreno no POD1 é &lt;5.000 U/L</strong> reduz fístula, complicações e tempo de internação (ECR de Bassi). </li>
+</ol>
+<span class="banca">HCPA</span> <span class="banca">GHC</span> <span class="banca">Santa Casa</span></div>
+</section>
+
+<section class="panel" id="vasc">
+<h2>Ressecção venosa (VMS / veia porta)</h2>
+<p>Contato ou invasão da confluência <strong>não contraindica</strong> a ressecção, desde que seja <strong>reconstruível</strong> e se obtenha <strong>R0</strong>. Sobrevida comparável à DPC padrão quando as margens são negativas; morbidade discretamente maior.</p>
+<table>
+<tr><th>Tipo (ISGPS)</th><th>Técnica</th><th>Reconstrução</th></tr>
+<tr><td><strong>Tipo 1</strong></td><td>Venorrafia lateral parcial</td><td>Sutura direta <span class="fio">prolene 5-0/6-0</span></td></tr>
+<tr><td><strong>Tipo 2</strong></td><td>Ressecção lateral com <em>patch</em></td><td>Enxerto em <em>patch</em> (peritônio, v. jugular, safena, bovino)</td></tr>
+<tr><td><strong>Tipo 3</strong></td><td>Ressecção <strong>segmentar</strong> + anastomose primária</td><td>Término-terminal (mobilizar hepatoduodenal/direita para ganhar comprimento; ≤3–4 cm)</td></tr>
+<tr><td><strong>Tipo 4</strong></td><td>Ressecção segmentar + <strong>interposição</strong></td><td>Enxerto (v. jugular interna, femoral superficial, PTFE)</td></tr>
+</table>
+<div class="card">
+<h3>Como se faz na prática</h3>
+<ul>
+<li><strong>Heparinizar</strong> (sistêmica 50–70 UI/kg ou apenas irrigação heparinizada, conforme protocolo).</li>
+<li>Clampes: <strong>Satinsky</strong> tangencial (tipos 1–2); ou <strong>bulldogs/clampes vasculares</strong> proximal (VP), distal (VMS) e na <strong>veia esplênica</strong> para ressecção segmentar.</li>
+<li>Sequência clássica: completar toda a dissecção arterial e do uncinado <strong>antes</strong> de clampear — <strong>minimizar o tempo de clampeamento</strong> (idealmente &lt;30 min).</li>
+<li>Anastomose <strong>sem tensão</strong>, com <em>growth factor</em> (nó frouxo que se acomoda ao reperfundir), <span class="fio">prolene 5-0/6-0</span>.</li>
+<li>Se a <strong>veia esplênica</strong> for sacrificada e não reimplantada → risco de <strong>hipertensão portal segmentar sinistral</strong> e varizes gástricas tardias.</li>
+</ul>
+</div>
+<div class="box warn"><span class="lbl">ressecção arterial</span><strong>Não é padrão.</strong> Ressecção da AMS ou do tronco celíaco tem morbimortalidade elevada e benefício oncológico não estabelecido. Conceitos modernos em centros de referência: <strong>operação TRIANGLE</strong> (limpeza do triângulo entre TC, AMS e VMS/VP) e <strong>arterial divestment</strong> (descolamento periadventicial sem ressecar a artéria) após neoadjuvância.</div>
+
+<h2>Abordagens <em>artery-first</em></h2>
+<p>Objetivo: expor e avaliar a <strong>margem da AMS antes do ponto de não retorno</strong>, permitindo abortar uma ressecção inviável e diminuindo o sangramento (a artéria é controlada antes das veias). Descrevem-se <strong>seis</strong> vias:</p>
+<table>
+<tr><th>Via</th><th>Como se chega</th></tr>
+<tr><td><strong>Posterior</strong></td><td>Após Kocher extenso, expõe-se a AMS na sua origem aórtica por trás da cabeça</td></tr>
+<tr><td><strong>Inferior / infracólica</strong></td><td>Pela raiz do mesentério, abaixo do cólon transverso, seguindo a AMS de baixo para cima</td></tr>
+<tr><td><strong>Medial-uncinada</strong></td><td>Entre VMS e uncinado, dissecando a AMS pela sua borda direita</td></tr>
+<tr><td><strong>Esquerda posterior</strong></td><td>Pelo ligamento de Treitz, à esquerda, expondo AMS entre aorta e veia renal esquerda</td></tr>
+<tr><td><strong>Superior</strong></td><td>Pela borda superior do pâncreas, seguindo a hepática comum e o tronco celíaco</td></tr>
+<tr><td><strong>Mesentérica (Nakao / <em>mesopancreas-first</em>)</strong></td><td>Isolamento vascular precoce com <em>no-touch</em> tumoral</td></tr>
+</table>
+<div class="box mn"><span class="lbl">como decorar as 6 vias</span>Pense num relógio ao redor da AMS: <strong>atrás, embaixo, no meio, à esquerda, em cima, e pela raiz do mesentério</strong>.</div>
+</section>
+
+<section class="panel" id="comp">
+<h2>Fístula pancreática pós-operatória (POPF) — ISGPS 2016</h2>
+<div class="box hy"><span class="lbl">★ definição</span><strong>Amilase no líquido do dreno &gt; 3× o limite superior da normalidade sérica</strong>, a partir do <strong>3º dia pós-operatório (POD3)</strong>, <strong>associada a repercussão clínica</strong>.</div>
+<table>
+<tr><th>Grau</th><th>O que acontece</th><th>Conduta</th></tr>
+<tr><td><strong>Leak bioquímico (BL)</strong><br><span class="tag t-b">antigo grau A</span></td><td>Amilase elevada, <strong>sem</strong> repercussão clínica</td><td><strong>Não é fístula.</strong> Nenhuma mudança de manejo; retirar dreno</td></tr>
+<tr><td><strong>Grau B</strong> <span class="tag t-w">clinicamente relevante</span></td><td><strong>Muda o manejo</strong>: dreno mantido &gt;3 semanas, drenagem percutânea/endoscópica, antibiótico, análogo de somatostatina, NPT, hemorragia sem reoperação</td><td>Suporte, drenagem dirigida, ATB, nutrição</td></tr>
+<tr><td><strong>Grau C</strong> <span class="tag t-m">grave</span></td><td><strong>Reoperação</strong>, <strong>falência orgânica</strong> ou <strong>óbito</strong> atribuível à fístula</td><td>Reabordagem: drenagem ampla, desconexão da anastomose ou <strong>pancreatectomia total de resgate</strong></td></tr>
+</table>
+<div class="box warn"><span class="lbl">pegadinha campeã</span>A partir de 2016, <strong>o antigo "grau A" deixou de ser fístula</strong> e passou a se chamar <strong>leak bioquímico</strong>. Só existem <strong>graus B e C</strong> como fístula. <span class="banca">HCPA</span> <span class="banca">PUC-RS</span> <span class="banca">AMRIGS</span></div>
+
+<h3>Fistula Risk Score (Callery) — os 4 preditores</h3>
+<table>
+<tr><th>Variável</th><th>Pontos</th></tr>
+<tr><td><strong>Textura pancreática mole</strong></td><td>0 (dura) — 2 (mole)</td></tr>
+<tr><td><strong>Patologia</strong> (ampuloma, duodenal, cística, TNE = maior risco; adenocarcinoma/pancreatite = menor)</td><td>0–1</td></tr>
+<tr><td><strong>Diâmetro do ducto</strong> (≤1 mm = 4 pontos; ≥5 mm = 0)</td><td>0–4</td></tr>
+<tr><td><strong>Perda sanguínea intraoperatória</strong> (&gt;1.000 mL = 2)</td><td>0–3</td></tr>
+</table>
+<p>Interpretação: <strong>0</strong> = desprezível · <strong>1–2</strong> baixo · <strong>3–6</strong> intermediário · <strong>7–10</strong> alto.</p>
+<div class="box mn"><span class="lbl">macete</span><strong>Pâncreas mole + ducto fino = pesadelo.</strong> É a combinação de maior risco (ampuloma e TNE, que não obstruem o ducto, são justamente os que mais fistulizam).</div>
+
+<h2>Esvaziamento gástrico retardado (DGE) — ISGPS 2007</h2>
+<table>
+<tr><th>Grau</th><th>SNG necessária</th><th>Dieta sólida</th></tr>
+<tr><td><strong>A</strong></td><td>POD 4–7, ou reinserção após POD3</td><td>Não tolera até <strong>POD7</strong></td></tr>
+<tr><td><strong>B</strong></td><td>POD 8–14, ou reinserção após POD7</td><td>Não tolera até <strong>POD14</strong></td></tr>
+<tr><td><strong>C</strong></td><td>&gt;14 dias, ou reinserção após POD14</td><td>Não tolera até <strong>POD21</strong></td></tr>
+</table>
+<p><strong>É a complicação mais frequente</strong> da DPC (15–40%). Conduta: descartar causa <strong>secundária</strong> (coleção, fístula, abscesso → TC!), SNG, procinético (eritromicina como agonista da motilina), suporte nutricional (enteral por sonda nasojejunal &gt; parenteral).</p>
+<div class="box warn"><span class="lbl">nunca esqueça</span><strong>DGE tardio é fístula até prova em contrário.</strong> Sempre pedir TC de abdome antes de rotular como DGE "primário".</div>
+
+<h2>Hemorragia pós-pancreatectomia (PPH) — ISGPS 2007</h2>
+<p>Classificada por <strong>três eixos</strong>:</p>
+<ul>
+<li><strong>Tempo:</strong> <span class="tag t-b">precoce</span> ≤24 h (falha técnica de hemostasia) · <span class="tag t-m">tardia</span> &gt;24 h (erosão por fístula/abscesso, <strong>pseudoaneurisma</strong>)</li>
+<li><strong>Local:</strong> intraluminal (hematêmese/melena — linha de anastomose, úlcera) · extraluminal (dreno sanguinolento, hipotensão)</li>
+<li><strong>Gravidade:</strong> leve (queda &lt;3 g/dL Hb, sem repercussão) · grave (transfusão &gt;3 U, instabilidade, intervenção)</li>
+</ul>
+<div class="box hy"><span class="lbl">★ sentinel bleed</span><strong>Sangramento sentinela</strong> = pequeno sangramento pelo dreno ou melena autolimitada, dias após a cirurgia, em paciente com fístula. <strong>É um aviso de pseudoaneurisma iminente</strong> (coto da GDA, hepática, esplênica) e exige <strong>angio-TC + arteriografia de urgência</strong>, sem esperar. <br><strong>Tratamento de 1ª linha: endovascular</strong> (embolização ou stent recoberto), não a reoperação. <span class="banca">HCPA</span> <span class="banca">GHC</span> <span class="banca">Santa Casa</span></div>
+
+<h2>Pancreatite aguda pós-pancreatectomia (PPAP) — ISGPS 2022</h2>
+<p>Entidade recentemente definida: inflamação aguda do <strong>remanescente pancreático</strong> nos <strong>3 primeiros dias</strong> de pós-operatório. Diagnóstico exige <strong>três critérios</strong>:</p>
+<ol>
+<li><strong>Hiperamilasemia/hiperlipasemia pós-operatória (POH)</strong> acima do limite superior, <strong>sustentada nos POD1 e POD2</strong>;</li>
+<li><strong>Alterações radiológicas</strong> compatíveis com pancreatite aguda;</li>
+<li><strong>Deterioração clínica relevante</strong>.</li>
+</ol>
+<p>Graduação: <strong>POH</strong> (só bioquímico) · <strong>grau B</strong> (impacto clínico) · <strong>grau C</strong> (grave, falência orgânica/reoperação/óbito). A validação prospectiva internacional (2.902 DPC) encontrou <strong>PPAP em 7,5%</strong> (6,3% B e 1,2% C), com POH em ~24%, e mostrou aumento marcado de UTI, internação e custos conforme o grau. É <strong>preditor precoce de POPF</strong>.</p>
+
+<h2>Fístula quilosa (chyle leak) — ISGPS 2017</h2>
+<p>Drenagem <strong>leitosa</strong> com <strong>triglicerídeos ≥110 mg/dL</strong> no líquido, a partir do <strong>POD3</strong>. Graus A (dieta), B (dieta pobre em TG/TCM ± NPT, octreotide), C (intervenção). Mais comum após linfadenectomia extensa.</p>
+
+<h2>Outras complicações e sequelas</h2>
+<ul>
+<li><strong>Coleção/abscesso intra-abdominal</strong> → drenagem percutânea guiada.</li>
+<li><strong>Fístula biliar</strong> (menos comum, geralmente autolimitada com dreno).</li>
+<li><strong>Colangite de repetição</strong> por estenose da HJ (tardia).</li>
+<li><strong>Insuficiência exócrina</strong> → repor <strong>enzimas pancreáticas</strong> (lipase 40.000–50.000 UI por refeição principal); má absorção, esteatorreia, perda de peso.</li>
+<li><strong>Diabetes pós-pancreatectomia (tipo 3c)</strong>; após <strong>pancreatectomia total</strong>, diabetes <strong>lábil</strong> ("brittle") com risco de hipoglicemia grave por falta de glucagon.</li>
+<li><strong>Esteatose hepática</strong> pós-DPC (relacionada à insuficiência exócrina e à desnutrição).</li>
+<li><strong>Úlcera marginal</strong> na gastro/duodenojejunostomia → IBP.</li>
+</ul>
+</section>
+
+<section class="panel" id="quest">
+<h2>Questões — estilo das bancas do RS</h2>
+<p class="lay">(Questões originais, elaboradas no formato e no nível habitualmente cobrados por cada banca — não são reproduções literais de provas.)</p>
+
+<div class="q"><div class="stem"><strong>1.</strong> <span class="banca">HCPA</span> Durante uma duodenopancreatectomia cefálica, ao clampear a artéria gastroduodenal antes de sua ligadura, o cirurgião nota abolição do pulso na artéria hepática própria. A conduta mais adequada é:</div>
+<div class="alt"><div>a) Ligar a GDA normalmente, pois a circulação colateral se estabelece em 24 h</div><div>b) Suspender a operação e programar revascularização em segundo tempo</div><div>c) Investigar e tratar estenose do tronco celíaco — habitualmente por secção do ligamento arqueado mediano — antes de ligar a GDA</div><div>d) Ligar a GDA e realizar anastomose portocava profilática</div><div>e) Realizar embolização intraoperatória da artéria esplênica</div></div>
+<details><summary>Ver resposta</summary><p class="ans">Resposta: C</p><p>A perda de fluxo hepático ao clampear a GDA indica que o fígado é perfundido <strong>retrogradamente</strong> através das arcadas pancreatoduodenais, por estenose do tronco celíaco (mais frequentemente por compressão do ligamento arqueado mediano). Ligar a GDA nessa condição causa isquemia hepática e das anastomoses biliares. A conduta é liberar o ligamento arqueado ou planejar revascularização — <em>no mesmo tempo cirúrgico</em>.</p></details></div>
+
+<div class="q"><div class="stem"><strong>2.</strong> <span class="banca">GHC</span> Homem de 66 anos, 9º dia de pós-operatório de DPC, com fístula pancreática em manejo conservador, apresenta pequeno sangramento pelo dreno abdominal, autolimitado, sem repercussão hemodinâmica. Qual a conduta?</div>
+<div class="alt"><div>a) Observação clínica com hemogramas seriados</div><div>b) Reoperação imediata para revisão das anastomoses</div><div>c) Angiotomografia e arteriografia de urgência, com tratamento endovascular se identificado pseudoaneurisma</div><div>d) Endoscopia digestiva alta e, se normal, alta hospitalar</div><div>e) Transfusão profilática e reposição de fatores de coagulação</div></div>
+<details><summary>Ver resposta</summary><p class="ans">Resposta: C</p><p>Trata-se do <strong>sangramento sentinela</strong> — aviso de pseudoaneurisma erosivo (habitualmente do coto da GDA) em vigência de fístula. A investigação e o tratamento <strong>endovascular</strong> constituem a primeira linha; a espera pode culminar em hemorragia cataclísmica. Observação isolada é o erro clássico.</p></details></div>
+
+<div class="q"><div class="stem"><strong>3.</strong> <span class="banca">Santa Casa POA</span> Segundo a definição atualizada do ISGPS (2016) para fístula pancreática pós-operatória, é correto afirmar:</div>
+<div class="alt"><div>a) Amilase no dreno acima de três vezes o valor sérico normal no POD3, isoladamente, define fístula grau A</div><div>b) O antigo grau A foi renomeado "leak bioquímico" e não é considerado fístula</div><div>c) O grau B é definido pela necessidade de reoperação</div><div>d) A dosagem de lipase no dreno substituiu a amilase no critério diagnóstico</div><div>e) A definição exige a demonstração de trajeto fistuloso por fistulografia</div></div>
+<details><summary>Ver resposta</summary><p class="ans">Resposta: B</p><p>Na revisão de 2016 o grau A tornou-se <strong>leak bioquímico</strong>, sem impacto clínico e <strong>fora</strong> da definição de fístula. Grau B = mudança no manejo; grau C = reoperação, falência orgânica ou óbito. O critério bioquímico permanece <strong>amilase &gt;3× o LSN sérico a partir do POD3</strong>, mas exige repercussão clínica.</p></details></div>
+
+<div class="q"><div class="stem"><strong>4.</strong> <span class="banca">PUC-RS</span> Sobre a duodenopancreatectomia com preservação pilórica (Traverso-Longmire) comparada à técnica clássica com antrectomia, é correto afirmar:</div>
+<div class="alt"><div>a) Apresenta sobrevida oncológica inferior por margens gástricas menores</div><div>b) Reduz significativamente a incidência de fístula pancreática</div><div>c) Não apresenta diferença em sobrevida ou taxa de ressecção R0, com menor tempo operatório e menor sangramento</div><div>d) Está indicada mesmo quando há linfonodos peripilóricos acometidos</div><div>e) Elimina o risco de esvaziamento gástrico retardado</div></div>
+<details><summary>Ver resposta</summary><p class="ans">Resposta: C</p><p>ECRs e a revisão Cochrane demonstram <strong>equivalência oncológica</strong> entre PPPD e Whipple clássica, com menor tempo operatório e menor perda sanguínea na PPPD. Não elimina o DGE (historicamente até mais frequente, embora metanálises recentes não confirmem). Acometimento peripilórico ou do bulbo <strong>contraindica</strong> a preservação.</p></details></div>
+
+<div class="q"><div class="stem"><strong>5.</strong> <span class="banca">AMRIGS</span> Paciente no 12º dia após DPC não tolera dieta sólida e necessitou reinserção de sonda nasogástrica no POD9. Segundo o ISGPS, o esvaziamento gástrico retardado é classificado como grau:</div>
+<div class="alt"><div>a) A</div><div>b) B</div><div>c) C</div><div>d) D</div><div>e) Não se classifica como DGE</div></div>
+<details><summary>Ver resposta</summary><p class="ans">Resposta: B</p><p>Grau B: sonda nasogástrica necessária entre <strong>POD8 e POD14</strong> (ou reinserida após o POD7) e/ou intolerância a sólidos até o <strong>POD14</strong>. Antes de aceitar o diagnóstico, é obrigatório excluir causa secundária (coleção, fístula, abscesso) com tomografia.</p></details></div>
+
+<div class="q"><div class="stem"><strong>6.</strong> <span class="banca">HCPA</span> Qual estrutura vascular é a principal responsável por hemorragia grave durante a dissecção da borda inferior do colo pancreático na DPC e deve ser identificada e ligada precocemente?</div>
+<div class="alt"><div>a) Veia gástrica esquerda (coronária)</div><div>b) Tronco gastrocólico de Henle</div><div>c) Veia pancreatoduodenal superior posterior</div><div>d) Veia mesentérica inferior</div><div>e) Veia cólica direita acessória</div></div>
+<details><summary>Ver resposta</summary><p class="ans">Resposta: B</p><p>O <strong>tronco gastrocólico de Henle</strong> (gastroepiploica direita + cólica média ± pancreatoduodenal superior anterior) desemboca na face anterolateral direita da VMS; sua avulsão durante a tração provoca sangramento venoso profundo e de difícil controle. Deve ser identificado e ligado antes de qualquer tração vigorosa.</p></details></div>
+
+<div class="q"><div class="stem"><strong>7.</strong> <span class="banca">GHC</span> Sobre a variante anatômica da artéria hepática direita substituída originada da artéria mesentérica superior, é correto afirmar:</div>
+<div class="alt"><div>a) Ocorre em cerca de 40% da população</div><div>b) Trafega anteriormente à veia porta e à esquerda do colédoco</div><div>c) Trafega posterolateralmente à veia porta, à direita do colédoco, e pode ser lesada na dissecção do uncinado e na linfadenectomia hilar</div><div>d) Deve ser sistematicamente ligada, pois há suprimento colateral suficiente</div><div>e) Origina-se do tronco celíaco em todos os casos</div></div>
+<details><summary>Ver resposta</summary><p class="ans">Resposta: C</p><p>Presente em cerca de 15–20% dos casos, cursa <strong>posterolateral à veia porta, à direita do colédoco</strong>, exatamente no campo da dissecção. Deve ser identificada na fase arterial da TC e preservada — a ligadura pode causar isquemia hepática direita e necrose biliar.</p></details></div>
+
+<div class="q"><div class="stem"><strong>8.</strong> <span class="banca">Santa Casa POA</span> Quanto ao uso de drenos abdominais após duodenopancreatectomia, a evidência atual sustenta que:</div>
+<div class="alt"><div>a) A omissão sistemática do dreno reduz a mortalidade</div><div>b) O ensaio randomizado que comparou DPC com e sem dreno foi interrompido por maior mortalidade no grupo sem dreno, e a retirada precoce é segura quando a amilase do dreno no POD1 é baixa</div><div>c) O dreno deve ser mantido no mínimo por 21 dias em todos os pacientes</div><div>d) A amilase do dreno não tem valor preditivo para fístula</div><div>e) Drenos aspirativos estão formalmente contraindicados</div></div>
+<details><summary>Ver resposta</summary><p class="ans">Resposta: B</p><p>O ECR de Van Buren (2014) foi <strong>interrompido precocemente</strong> por mortalidade aumentada no braço sem dreno. A estratégia atual é <strong>drenagem seletiva pelo risco (FRS)</strong> associada à <strong>retirada precoce no POD3</strong> quando a amilase do dreno no POD1 é inferior a 5.000 U/L.</p></details></div>
+
+<div class="q"><div class="stem"><strong>9.</strong> <span class="banca">PUC-RS</span> Na reconstrução de Child após DPC, a ordem correta das anastomoses, do coto pancreático em direção distal, é:</div>
+<div class="alt"><div>a) Hepaticojejunostomia → pancreatojejunostomia → gastrojejunostomia</div><div>b) Pancreatojejunostomia → gastrojejunostomia → hepaticojejunostomia</div><div>c) Pancreatojejunostomia → hepaticojejunostomia → gastrojejunostomia</div><div>d) Gastrojejunostomia → pancreatojejunostomia → hepaticojejunostomia</div><div>e) Hepaticojejunostomia → gastrojejunostomia → pancreatojejunostomia</div></div>
+<details><summary>Ver resposta</summary><p class="ans">Resposta: C</p><p>A ordem <strong>P → H → G</strong> posiciona a anastomose mais frágil (pancreática) na porção mais proximal da alça, mantém a biliar afastada dela (~30–50 mm) e coloca a gástrica por último (~40–60 cm), protegendo as duas primeiras do refluxo alimentar.</p></details></div>
+
+<div class="q"><div class="stem"><strong>10.</strong> <span class="banca">AMRIGS</span> Segundo o Fistula Risk Score, qual combinação representa o <strong>maior</strong> risco de fístula pancreática clinicamente relevante após DPC?</div>
+<div class="alt"><div>a) Pâncreas fibrótico, ducto de 6 mm, adenocarcinoma ductal, sangramento de 200 mL</div><div>b) Pâncreas mole, ducto de 1 mm, ampuloma, sangramento de 1.200 mL</div><div>c) Pâncreas fibrótico, ducto de 2 mm, pancreatite crônica, sangramento de 800 mL</div><div>d) Pâncreas mole, ducto de 8 mm, adenocarcinoma ductal, sangramento de 100 mL</div><div>e) Pâncreas fibrótico, ducto de 5 mm, colangiocarcinoma distal, sangramento de 1.500 mL</div></div>
+<details><summary>Ver resposta</summary><p class="ans">Resposta: B</p><p>Os quatro componentes do FRS são <strong>textura mole</strong>, <strong>ducto fino (≤3 mm, máximo se ≤1 mm)</strong>, <strong>patologia de baixo risco obstrutivo</strong> (ampuloma, duodenal, cística, TNE) e <strong>maior perda sanguínea</strong>. A alternativa B soma todos os fatores desfavoráveis. Adenocarcinoma ductal e pancreatite crônica cursam com pâncreas fibrótico e ducto dilatado — <em>protegem</em> contra a fístula.</p></details></div>
+</section>
+
+<section class="panel" id="pega">
+<h2>Pega-ratões</h2>
+<div class="box warn"><span class="lbl">1 · DPC ≠ DPT</span><strong>DPC</strong> = duodenopancreatectomia <strong>cefálica</strong> (a Whipple). <strong>DPT</strong> = <strong>total</strong>. A prova troca as siglas ou descreve "pancreatectomia total" e pergunta sobre a anastomose pancreática — que <strong>não existe</strong> na total.</div>
+<div class="box warn"><span class="lbl">2 · Grau A de POPF não existe mais</span>Desde 2016 é <strong>leak bioquímico</strong>. Alternativa que fala em "fístula grau A" está desatualizada.</div>
+<div class="box warn"><span class="lbl">3 · Amilase alta no dreno sozinha não é fístula</span>Precisa de <strong>repercussão clínica</strong>. E o marco temporal é o <strong>POD3</strong>, não o POD1.</div>
+<div class="box warn"><span class="lbl">4 · Não ligue a GDA sem o teste de clampeamento</span>Estenose do tronco celíaco (ligamento arqueado) transforma a GDA na única via de perfusão hepática.</div>
+<div class="box warn"><span class="lbl">5 · Drenagem biliar pré-operatória não é rotina</span>Após o ECR DROP, drenar "porque está ictérico" <strong>aumenta</strong> complicações. Só com indicação específica (colangite, neoadjuvância, cirurgia postergada, prurido/coagulopatia).</div>
+<div class="box warn"><span class="lbl">6 · Pâncreas mole + ducto fino = alto risco</span>Contraintuitivo: o <strong>ampuloma</strong> e o <strong>TNE</strong> fistulizam mais que o adenocarcinoma ductal, porque não obstruem o ducto e o parênquima permanece mole.</div>
+<div class="box warn"><span class="lbl">7 · DGE tardio = fístula até prova em contrário</span>Nunca rotule DGE sem TC. A maioria dos DGE "graves" é <strong>secundária</strong> a coleção/fístula.</div>
+<div class="box warn"><span class="lbl">8 · Sangramento sentinela não se observa</span>Vai para <strong>angio-TC/arteriografia</strong>. Primeira linha de tratamento é <strong>endovascular</strong>, não reoperação às cegas.</div>
+<div class="box warn"><span class="lbl">9 · Linfadenectomia estendida não aumenta sobrevida</span>Só aumenta diarreia e morbidade. O padrão é a <strong>linfadenectomia regional (ISGPS)</strong>, com meta de ≥15 linfonodos.</div>
+<div class="box warn"><span class="lbl">10 · Cirurgia sem dreno não é "moderno"</span>O ECR sem dreno foi <strong>interrompido por mortalidade</strong>. O moderno é <strong>drenar seletivo e retirar cedo</strong>.</div>
+<div class="box warn"><span class="lbl">11 · A margem que reprova é a do uncinado</span>A margem <strong>retroperitoneal / da AMS / mesopâncreas</strong> é a mais positiva — e R0 exige tumor a <strong>&gt;1 mm</strong> da tinta.</div>
+<div class="box warn"><span class="lbl">12 · Pancreatogastrostomia não é superior</span>Apesar do racional atraente, os ECRs (RECOPANC) não mostraram redução consistente de fístula clinicamente relevante.</div>
+<div class="box warn"><span class="lbl">13 · Ordem da reconstrução</span>Child é <strong>P → H → G</strong>. Inverter para "H → P → G" é a distração mais comum.</div>
+<div class="box warn"><span class="lbl">14 · Corpo e cauda não entram no Whipple</span>Recebem irrigação da <strong>esplênica</strong>, não das arcadas pancreatoduodenais. Tumor de corpo/cauda → <strong>pancreatectomia distal + esplenectomia</strong>.</div>
+</section>
+
+<section class="panel" id="mn">
+<h2>Mnemônicos</h2>
+<div class="box mn"><span class="lbl">o que sai na peça — "D-V-P-J-A"</span><strong>D</strong>uodeno inteiro · <strong>V</strong>esícula + via biliar distal · <strong>P</strong>âncreas (cabeça + uncinado) · <strong>J</strong>ejuno proximal · <strong>A</strong>ntro (só na clássica) — mais os <strong>linfonodos</strong>.</div>
+<div class="box mn"><span class="lbl">ordem da reconstrução — "PHG"</span><strong>P</strong>âncreas primeiro, <strong>H</strong>epático no meio, <strong>G</strong>astro por último. <em>"Pra Hoje, Grude nessa ordem."</em></div>
+<div class="box mn"><span class="lbl">graus de POPF — "B muda, C corta"</span><strong>B</strong> = muda o <strong>manejo</strong> · <strong>C</strong> = <strong>corta</strong> de novo (reoperação), falência orgânica ou óbito. E o antigo A virou "só bioquímico".</div>
+<div class="box mn"><span class="lbl">FRS — "TPDS"</span><strong>T</strong>extura (mole) · <strong>P</strong>atologia (ampuloma/TNE/cística/duodenal) · <strong>D</strong>ucto (fino) · <strong>S</strong>angramento (alto).</div>
+<div class="box mn"><span class="lbl">DGE — regra do 7-14-21</span>Grau <strong>A</strong> = sólidos só depois do POD<strong>7</strong> · <strong>B</strong> = POD<strong>14</strong> · <strong>C</strong> = POD<strong>21</strong>. E as sondas: 4–7 / 8–14 / &gt;14 dias.</div>
+<div class="box mn"><span class="lbl">as três perguntas antes de cortar o pâncreas</span><strong>1)</strong> A GDA pode ser ligada? (teste de clampeamento) · <strong>2)</strong> O túnel retropancreático abre? (VMS/VP livre) · <strong>3)</strong> A margem da AMS está livre? (<em>artery-first</em>). Se as três respostas forem "sim", segue-se ao <strong>ponto de não retorno</strong>.</div>
+<div class="box mn"><span class="lbl">PPAP — "3 em 3"</span><strong>3 critérios</strong> (hiperamilasemia sustentada + radiologia + clínica), nos <strong>3 primeiros dias</strong>, com <strong>3 níveis</strong> (POH / B / C).</div>
+<div class="box mn"><span class="lbl">tipos de ressecção venosa — "1 costura, 2 remenda, 3 emenda, 4 enxerta"</span><strong>1</strong> venorrafia · <strong>2</strong> <em>patch</em> · <strong>3</strong> segmentar término-terminal · <strong>4</strong> segmentar com interposição.</div>
+<div class="box mn"><span class="lbl">hemorragia tardia — "sentinela avisa, endovascular resolve"</span>Sangramento sentinela + fístula = pseudoaneurisma. Angio-TC → arteriografia → embolização/stent recoberto.</div>
+<div class="foot">carolzita · CV 2026 · Duodenopancreatectomia — Técnica Cirúrgica<br>Fontes: ISGPS (POPF 2016 e corrigendum 2024; DGE e PPH 2007; chyle leak 2017; PPAP 2022) · ERAS Society — DPC 2019/2020 · Cochrane 2025 (pancreatojejunostomia) · D'Angelica et al., JAMA 2023;329:1579 · van der Gaag et al., NEJM 2010 (DROP) · Van Buren et al., Ann Surg 2014 · Callery et al. (FRS) · NCCN · Sabiston Textbook of Surgery · Zollinger's Atlas of Surgical Operations</div>
+</section>
+
+</main>
+<script>
+document.querySelectorAll('.tab').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    document.getElementById(b.dataset.t).classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+});
+</script>
+</body>
+</html>

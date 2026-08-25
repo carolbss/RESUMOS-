@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dissecção de Aorta — Referência CV 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d1117;--panel:#161b22;--panel2:#1c232c;--line:#2a323c;--tx:#e6edf3;--mut:#8b949e;--or:#ff7a18;--or2:#ff9a4d;--orbg:rgba(255,122,24,.10);--pu:#b083f0;--pu2:#c9a7ff;--pubg:rgba(176,131,240,.12);--cy:#3dd6d0;--cy2:#5fe3dd;--cybg:rgba(61,214,208,.10);--red:#ff5f56;--grn:#3fb950}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font-family:'IBM Plex Sans',sans-serif;line-height:1.55;padding:0 0 60px}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px}
+header{padding:30px 0 14px;border-bottom:1px solid var(--line)}
+h1{font-size:30px;font-weight:700;letter-spacing:-.5px}h1 .b{color:var(--or)}
+.sub{color:var(--mut);font-size:14px;margin-top:6px;font-family:'IBM Plex Mono',monospace}
+nav{position:sticky;top:0;background:var(--bg);z-index:10;border-bottom:1px solid var(--line);overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch}
+nav .inner{max-width:920px;margin:0 auto;padding:0 12px;display:flex;gap:2px}
+nav button{background:none;border:none;color:var(--mut);font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.5px;text-transform:uppercase;padding:14px 11px;cursor:pointer;border-bottom:2px solid transparent;transition:.15s}
+nav button:hover{color:var(--tx)}nav button.on{color:var(--or);border-bottom-color:var(--or)}
+section{display:none;padding:26px 0;animation:f .25s}section.on{display:block}
+@keyframes f{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+h2{font-size:20px;color:var(--or);margin:26px 0 12px;font-weight:600;border-bottom:1px solid var(--line);padding-bottom:6px}h2:first-child{margin-top:0}
+h3{font-size:15px;margin:18px 0 8px;font-weight:600;color:var(--or2)}
+p,li{font-size:14.5px}
+ul{margin:8px 0 8px 4px;list-style:none}li{padding:3px 0 3px 24px;position:relative}li .em{position:absolute;left:0}
+.lay{color:var(--cy2);font-style:italic;font-size:13.5px}
+.box{border-left:3px solid var(--or);background:var(--orbg);border-radius:0 8px 8px 0;padding:12px 16px;margin:14px 0}
+.box.pu{border-color:var(--pu);background:var(--pubg)}.box.cy{border-color:var(--cy);background:var(--cybg)}
+.box .lbl{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--or);margin-bottom:6px;font-weight:600}
+.stx{counter-reset:st;margin:14px 0}
+.st{counter-increment:st;background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:13px 15px 13px 50px;margin:11px 0;position:relative}
+.st::before{content:counter(st);position:absolute;left:13px;top:13px;width:25px;height:25px;border-radius:7px;background:var(--or);color:#0d1117;font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:12.5px;display:flex;align-items:center;justify-content:center}
+.st .fase{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1.3px;text-transform:uppercase;color:var(--or);display:block}
+.st .ttl{font-weight:700;font-size:15px;color:#fff;margin-bottom:3px}
+.st p{margin:4px 0;font-size:13.8px}
+.pq{border-left:3px solid var(--pu);background:var(--pubg);border-radius:0 8px 8px 0;padding:8px 12px;margin:8px 0;font-size:13.3px}
+.pq b{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;color:var(--pu2);display:block}
+.mh2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+.mh{border-radius:9px;padding:8px 11px;font-size:12.5px;border:1px solid var(--line)}
+.mh.e{background:rgba(63,185,80,.07);border-color:rgba(63,185,80,.3)}
+.mh.d{background:var(--orbg);border-color:rgba(255,122,24,.3)}
+.mh b{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1.1px;text-transform:uppercase;display:block}
+.mh.e b{color:var(--grn)} .mh.d b{color:var(--or2)}
+.box.gr{border-left-color:var(--grn);background:rgba(63,185,80,.09);color:var(--grn);font-style:italic}
+.box.gr .lbl{color:var(--grn);font-style:normal}
+.box.gr b,.box.gr strong{color:#8ee79a;font-style:normal}
+@media(max-width:640px){.mh2{grid-template-columns:1fr}}
+
+.box.pu .lbl{color:var(--pu2)}.box.cy .lbl{color:var(--cy2)}
+.box li::before{content:"▸";color:var(--or);position:absolute;left:6px}.box li{padding-left:22px}
+.box.pu li::before{color:var(--pu)}.box.cy li::before{color:var(--cy)}.box li .em{display:none}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.5px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--panel2);color:var(--or2);font-weight:600;font-family:'IBM Plex Mono',monospace;font-size:12px}
+.hi{color:var(--pu2);font-weight:600}.mn{font-family:'IBM Plex Mono',monospace;color:var(--cy2)}
+.steps{counter-reset:s;list-style:none;margin:6px 0}
+.steps li{padding:8px 8px 8px 40px;border-bottom:1px solid var(--line)}
+.steps li::before{counter-increment:s;content:counter(s);background:var(--or);color:#0d1117;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:12px;width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;position:absolute;left:4px;top:8px}
+.steps li .em{display:none}.steps li:last-child{border-bottom:none}
+.hand{font-family:'IBM Plex Mono',monospace;font-size:11px;padding:1px 6px;border-radius:4px;margin-right:4px}
+.hL{background:rgba(63,185,80,.15);color:#56d364}.hR{background:rgba(255,122,24,.15);color:var(--or2)}
+.kbd{font-family:'IBM Plex Mono',monospace;background:var(--panel2);padding:1px 6px;border-radius:4px;font-size:12.5px;color:var(--or2)}
+.q{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:16px 0}
+.q .src{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--pu2);letter-spacing:1px;text-transform:uppercase}
+.q .stem{margin:8px 0 10px;font-weight:500}
+.q .alt{padding:4px 0 4px 24px;position:relative;font-size:14px}.q .alt .let{position:absolute;left:0;font-family:'IBM Plex Mono',monospace;color:var(--mut)}
+.q .alt.ok{color:var(--grn)}.q .alt.ok .let{color:var(--grn)}
+.q details{margin-top:10px;border-top:1px dashed var(--line);padding-top:10px}
+.q summary{cursor:pointer;color:var(--cy2);font-size:13px;font-family:'IBM Plex Mono',monospace}
+.q .exp{font-size:13.5px;color:var(--mut);margin-top:8px}
+.svgwrap{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px;margin:14px 0;text-align:center}
+.svgwrap figcaption{color:var(--mut);font-size:12px;margin-top:8px;font-family:'IBM Plex Mono',monospace}
+.pill{display:inline-block;background:var(--panel2);border:1px solid var(--line);border-radius:20px;padding:3px 12px;margin:3px 4px 3px 0;font-size:12.5px;font-family:'IBM Plex Mono',monospace}.pill .hi{color:var(--pu2)}
+.note{font-size:12px;color:var(--mut);border-top:1px solid var(--line);margin-top:30px;padding-top:14px;font-family:'IBM Plex Mono',monospace}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<h1>💥 Dissecção de <span class="b">Aorta</span></h1>
+<div class="sub">Síndrome Aórtica Aguda · CV 2026 · ESC/ESVS 2024 PAAD + Stanford/DeBakey + SVS/STS 2020</div>
+</div></header>
+<nav><div class="inner" id="nav"></div></nav>
+<div class="wrap">
+
+<section id="geral" class="on">
+<h2>🧭 Definição &amp; fisiopatologia</h2>
+<p>Dissecção = <span class="hi">rasgo na íntima</span> que permite ao sangue penetrar na camada média da parede aórtica, criando um <b>falso lúmen</b> paralelo ao verdadeiro. Integra o espectro das <b>síndromes aórticas agudas</b>, junto com hematoma intramural e úlcera aterosclerótica penetrante. <span class="lay">(imagina uma mangueira de 3 camadas — como um cano de jardim — que rasga por dentro; a água passa a correr também entre as camadas, formando um "segundo cano falso" dentro da parede, que pode romper para fora a qualquer momento)</span></p>
+<h3>Fatores de risco</h3>
+<div class="pill"><span class="hi">HAS mal controlada</span> (o mais comum)</div>
+<div class="pill">Aterosclerose</div>
+<div class="pill">Doenças do tecido conjuntivo (Marfan, Ehlers-Danlos vascular, Loeys-Dietz)</div>
+<div class="pill">Válvula aórtica bicúspide</div>
+<div class="pill">Gestação (3º trimestre, em predispostos)</div>
+<div class="pill">Trauma / uso de cocaína</div>
+<div class="pill">Aneurisma aórtico prévio</div>
+</section>
+
+<section id="classif">
+<h2>📊 Classificação — Stanford × DeBakey</h2>
+<table>
+<tr><th>Stanford</th><th>DeBakey</th><th>Extensão</th><th>Conduta</th></tr>
+<tr><td rowspan="2"><b>A</b></td><td>I</td><td>Ascendente + arco + descendente</td><td rowspan="2"><span class="hi">Cirurgia de urgência</span></td></tr>
+<tr><td>II</td><td>Só ascendente</td></tr>
+<tr><td><b>B</b></td><td>III (IIIa restrita a torácica; IIIb estende ao abdome)</td><td>Só descendente (após a subclávia esquerda)</td><td>Clínico, salvo se complicado</td></tr>
+</table>
+<div class="box pu"><div class="lbl">⭐ Regra de ouro — memorizar</div>
+<p><span class="hi">Qualquer envolvimento de AORTA ASCENDENTE = Stanford A = cirurgia de emergência</span>, independentemente de onde começou ou até onde se estende distalmente. <span class="hi">Stanford B</span> (só descendente, distal à subclávia esquerda) = tratamento <b>clínico inicial</b>, cirurgia/endovascular reservados para complicações.</p></div>
+<p class="lay">(pensa na aorta ascendente como a "sala de máquinas" perto do coração: se rasgar ali, o risco de parar o coração — tamponamento, insuficiência da válvula aórtica, infarto — é imenso e exige cirurgia já; a parte descendente é "cano mais simples", dá para tratar só controlando a pressão, na maioria das vezes)</p>
+<p>Mortalidade da dissecção tipo A não tratada: <b>~1-2% por hora</b> nas primeiras 24-48h.</p>
+</section>
+
+<section id="clinica">
+<h2>🩺 Quadro clínico</h2>
+<div class="box pu"><div class="lbl">⚡ Dor clássica</div>
+<p><span class="hi">Dor torácica súbita, lancinante ("em facada"), migratória</span> — irradia para dorso/interescapular à medida que a dissecção progride distalmente. Intensidade máxima já no início (diferente do IAM, que costuma crescer em crescendo).</p></div>
+<ul>
+<li><span class="em">💔</span>Síncope, hipotensão/choque — sugerem <b>tamponamento</b> ou ruptura (tipo A).</li>
+<li><span class="em">🩺</span><b>Assimetria de pulsos</b> e de PA entre os membros — achado clássico de má perfusão de ramos.</li>
+<li><span class="em">🫀</span><b>Sopro diastólico</b> de insuficiência aórtica aguda (dissecção retrógrada envolvendo a raiz).</li>
+<li><span class="em">🧠</span>Déficit neurológico focal (AVC — obstrução de carótida).</li>
+<li><span class="em">🦵</span>Isquemia aguda de membro (obstrução de ramo ilíaco/femoral) — <b>malperfusão</b>.</li>
+<li><span class="em">💩</span>Dor abdominal (isquemia mesentérica) — malperfusão visceral, alta mortalidade se não reconhecida rápido.</li>
+</ul>
+</section>
+
+<section id="dx">
+<h2>🔬 Diagnóstico</h2>
+<ul>
+<li><span class="em">🖥️</span><b>AngioTC de tórax/abdome/pelve</b> — exame de escolha na maioria: rápido, disponível, define extensão, ramos envolvidos e malperfusão.</li>
+<li><span class="em">🫀</span><b>Ecocardiograma transesofágico (ETE)</b> — se paciente instável, permite diagnóstico à beira-leito/centro cirúrgico, avalia valva aórtica e derrame pericárdico.</li>
+<li><span class="em">🩻</span>RX de tórax: alargamento de mediastino — inespecífico, não exclui.</li>
+<li><span class="em">🧪</span>D-dímero: alto valor preditivo negativo quando baixa probabilidade pré-teste, mas não substitui a imagem em alta suspeita.</li>
+</ul>
+<div class="box"><div class="lbl">🎯 Achados na TC</div>
+<p><span class="hi">Flap intimal</span> separando lúmen verdadeiro (menor, mais opacificado, contínuo com aorta não dissecada) e falso lúmen (maior, sinal do "beak"/bico, fluxo mais lento).</p></div>
+</section>
+
+<section id="conduta">
+<h2>📐 Conduta clínica inicial &amp; malperfusão</h2>
+<div class="box pu"><div class="lbl">🚑 Manejo médico inicial (todo paciente, enquanto define-se cirurgia)</div>
+<ul>
+<li><span class="hi">Controle agressivo de FC e PA</span>: <b>betabloqueador IV</b> primeiro (reduz FC e a força de ejeção/dP/dt, "impulso" que propaga o rasgo) — depois vasodilatador se necessário.</li>
+<li>Meta: <b>FC ≤ 60 bpm</b>, <b>PAS 100–120 mmHg</b> (ou a mínima que mantenha perfusão de órgãos).</li>
+<li>Analgesia efetiva (dor também eleva PA/FC).</li>
+</ul></div>
+<div class="box pu"><div class="lbl">⚠️ Pega-ratão de prova</div>
+<p><span class="hi">NUNCA usar vasodilatador puro (ex.: nitroprussiato) antes do betabloqueador</span> — vasodilatação isolada causa taquicardia reflexa, aumentando o dP/dt e propagando a dissecção. Sempre <b>betabloqueador primeiro</b>.</p></div>
+<h3>Critérios de tipo B complicado (indicam intervenção)</h3>
+<div class="box cy"><div class="lbl">🚨 Complicado = intervir</div>
+<ul>
+<li>Malperfusão (visceral, renal, de membro)</li>
+<li>Ruptura ou iminência de ruptura (hematoma periaórtico, hemotórax, expansão rápida do falso lúmen)</li>
+<li>Dor refratária ou HAS refratária a tratamento máximo</li>
+</ul></div>
+<p>Tipo B <b>não complicado</b> → tratamento clínico isolado (controle de PA/FC + seguimento por imagem). Tipo B <b>complicado</b> → <span class="hi">TEVAR (endoprótese torácica) é a 1ª linha</span> (ESC/ESVS 2024 elevou a indicação de intervenção precoce e TEVAR como 1ª escolha nesse cenário).</p>
+</section>
+
+<section id="tecnica">
+<h2>🔪 Técnica cirúrgica</h2>
+<p class="note" style="border:none;margin:0 0 6px;padding:0"><span class="hand hL">ESQ</span> mão esquerda · <span class="hand hR">DIR</span> mão direita.</p>
+<div class="box gr"><div class="lbl">tradução simples</div>A dissecção rasgou a parede da aorta em <strong>duas camadas</strong> — uma verdadeira via, por onde o sangue sempre passou, e uma falsa via, criada pelo próprio rasgo. Toda a técnica gira em torno de uma pergunta única: <strong>como devolver o sangue ao lúmen verdadeiro sem trabalhar num tecido que se desfaz ao ser manuseado?</strong> É por isso que se canula longe da aorta doente, se reforça toda sutura, e se prefere tapar o rasgo por dentro (TEVAR) sempre que a anatomia permite.</div>
+
+<h3>A · Tipo A — cirurgia aberta de urgência</h3>
+<p class="note" style="border:none;margin:0 0 6px;padding:0"><span class="hand hL">ESQ</span> mão esquerda · <span class="hand hR">DIR</span> mão direita.</p>
+<p><b>Posição:</b> supino. <b>Acesso:</b> esternotomia mediana, circulação extracorpórea (CEC) com canulação arterial periférica (femoral/axilar).</p>
+
+<div class="stx">
+
+<div class="st">
+  <span class="fase">fase de acesso e canulação</span>
+  <div class="ttl">Esternotomia e CEC por via periférica</div>
+  <p>Esternotomia mediana; heparinização plena; CEC via canulação arterial axilar ou femoral, e venosa em átrio direito.</p>
+  <div class="pq"><b>por quê</b>Canular diretamente a aorta ascendente dissecada é entrar às cegas no <strong>falso lúmen</strong> — o sangue da CEC passaria a perfundir o compartimento errado desde o início do bypass, agravando a dissecção em vez de tratá-la. A axilar ou femoral entram num segmento de aorta ainda não envolvido, garantindo que o fluxo da bomba siga o lúmen verdadeiro.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de proteção cerebral</span>
+  <div class="ttl">Parada circulatória hipotérmica</div>
+  <p>Resfriamento e parada circulatória, com perfusão cerebral anterógrada ou retrógrada conforme o caso.</p>
+  <div class="pq"><b>por quê</b>A anastomose no arco aórtico não pode ser feita com clampe — não há um segmento de arco "livre" para clampear sem incluir os vasos que irrigam o cérebro. Parar a circulação sob hipotermia profunda é o que permite operar num campo aberto e exsangue, sem clampe, protegendo o cérebro pela redução do metabolismo.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de ressecção</span>
+  <div class="ttl">Ressecar o rasgo primário; avaliar a valva</div>
+  <p>Ressecar o segmento com o rasgo primário (geralmente ascendente); reparar a valva (ressuspensão comissural) ou substituí-la se insuficiência importante ou raiz muito dilatada (Bentall se a raiz estiver acometida).</p>
+  <div class="pq"><b>por quê</b>O rasgo primário é a <strong>porta de entrada</strong> do sangue no falso lúmen — removê-lo é o que interrompe a progressão da dissecção. A avaliação da valva não é acessória: a dissecção frequentemente desinsere as comissuras da valva aórtica, e ignorá-la deixa o paciente com uma insuficiência aórtica aguda não tratada.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de reconstrução — o cuidado com o tecido</span>
+  <div class="ttl">Interpor tubo de Dacron com anastomoses reforçadas</div>
+  <p>Tubo de Dacron na ascendente, com ou sem hemiarco, anastomoses reforçadas com <strong>felt (teflon)</strong>.</p>
+  <div class="pq"><b>por quê</b>O tecido dissecado é friável — as duas camadas separadas pelo hematoma não seguram um ponto direto como a aorta íntegra seguraria. O felt funciona como uma arruela: distribui a tensão da sutura sobre uma área maior, evitando que o fio corte a parede fina em vez de fixá-la.</div>
+  <div class="mh2">
+    <div class="mh e"><b>mão esquerda</b>DeBakey estabilizando a parede friável sem esmagar</div>
+    <div class="mh d"><b>mão direita</b>Porta-agulha, pontos reforçados através do felt</div>
+  </div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de encerramento</span>
+  <div class="ttl">Reaquecer, sair de CEC, hemostasia meticulosa</div>
+  <p>Reaquecimento; retirada gradual da CEC; hemostasia rigorosa.</p>
+  <div class="pq"><b>por quê</b>Tecido friável mais coagulopatia de bypass prolongado é a combinação que mais sangra em cirurgia cardíaca — a hemostasia aqui consome tanto tempo quanto a reconstrução em si, e apressá-la é a causa mais comum de reoperação por sangramento.</div>
+</div>
+
+</div>
+
+<h3>B · Tipo B complicado — TEVAR (1ª linha)</h3>
+<div class="stx">
+
+<div class="st">
+  <span class="fase">fase de acesso</span>
+  <div class="ttl">Acesso femoral e fio no lúmen verdadeiro</div>
+  <p>Fio-guia rígido através do lúmen verdadeiro, confirmado por angiografia ou IVUS.</p>
+  <div class="pq"><b>por quê</b>Mesma regra de qualquer endovascular sobre lúmen dissecado: se o fio progride no falso lúmen, a prótese vai selar o compartimento errado e pode agravar a malperfusão em vez de resolvê-la.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de cobertura — o alvo é o rasgo, não o tubo inteiro</span>
+  <div class="ttl">Posicionar a endoprótese sobre o rasgo primário</div>
+  <p>Cobrir o <strong>entry tear</strong>, com zona de selagem proximal adequada, após a subclávia esquerda quando possível.</p>
+  <div class="pq"><b>por quê</b>Não é preciso cobrir toda a dissecção — só o ponto de entrada. Fechada a porta de entrada, o falso lúmen deixa de ser pressurizado, trombosa progressivamente e o lúmen verdadeiro reassume o fluxo total. É a mesma lógica de "tratar a causa, não a extensão" já vista noutras revascularizações.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase terapêutica</span>
+  <div class="ttl">Excluir o falso lúmen e redirecionar o fluxo</div>
+  <p>Objetivo: estancar a malperfusão e prevenir expansão ou ruptura.</p>
+  <div class="pq"><b>por quê</b>A malperfusão de ramos viscerais ou de membro é o que torna um tipo B "complicado" — e ela resolve quando o lúmen verdadeiro volta a ser dominante, porque os óstios dos ramos costumam se originar dele.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de verificação</span>
+  <div class="ttl">Angiografia de controle</div>
+  <p>Avaliar necessidade de fenestração adicional se a malperfusão persistir.</p>
+  <div class="pq"><b>por quê</b>Cobrir o rasgo proximal nem sempre resolve rasgos secundários mais distais que continuam alimentando o falso lúmen — a fenestração é o recurso para quando o problema persiste apesar da cobertura correta.</div>
+</div>
+
+</div>
+<p class="lay">(TEVAR = "tapar o buraco" por dentro com uma prótese que empurra o fluxo de volta para o cano certo — o lúmen verdadeiro — sem precisar abrir o tórax)</p>
+</section>
+
+<section id="complic">
+<h2>⚠️ Complicações</h2>
+<ul>
+<li><span class="em">💔</span><b>Tamponamento cardíaco</b> — principal causa de morte precoce em tipo A.</li>
+<li><span class="em">🫀</span>Insuficiência aórtica aguda / IAM (dissecção envolvendo óstios coronarianos, mais comum a coronária direita).</li>
+<li><span class="em">🧠</span>AVC (malperfusão carotídea, embolização, hipoperfusão intraoperatória).</li>
+<li><span class="em">💩</span>Isquemia mesentérica — malperfusão visceral, mortalidade muito alta se diagnóstico tardio.</li>
+<li><span class="em">🦵</span>Isquemia de membro por má perfusão ilíaca/femoral.</li>
+<li><span class="em">🩸</span>Sangramento pós-CEC (tecido friável do tipo A).</li>
+<li><span class="em">🔁</span>Dissecção residual/persistência de falso lúmen patente — necessita vigilância por imagem a longo prazo.</li>
+</ul>
+</section>
+
+<section id="pegas">
+<h2>🪤 Pega-ratões</h2>
+<div class="box pu"><div class="lbl">Os erros favoritos das bancas</div>
+<ul>
+<li>Qualquer envolvimento de <b>ascendente = Stanford A = cirurgia</b>, mesmo que a dor/origem pareça distal.</li>
+<li><b>Betabloqueador SEMPRE antes</b> do vasodilatador — nunca o inverso (taquicardia reflexa propaga a dissecção).</li>
+<li>Dor <b>migratória</b> e <b>máxima já no início</b> — diferencia de IAM (crescendo) e de outras causas de dor torácica.</li>
+<li><b>Assimetria de pulsos/PA</b> entre membros é achado clássico, mas sua ausência <b>não exclui</b> dissecção.</li>
+<li>Tipo B <b>não complicado</b> = tratamento clínico; só malperfusão/ruptura/dor-HAS refratária mudam a conduta para intervenção.</li>
+<li><b>TEVAR é 1ª linha</b> no tipo B complicado (não cirurgia aberta, reservada a casos não passíveis de endovascular).</li>
+<li>Canulação para CEC evita o falso lúmen — usar sítio periférico (femoral/axilar), não a aorta doente diretamente.</li>
+<li>D-dímero <b>não substitui</b> a angioTC em alta suspeita clínica.</li>
+<li>DeBakey I e II = ambos Stanford A (não confundir II como "menos grave" só porque é mais restrito).</li>
+</ul></div>
+</section>
+
+<section id="mnemo">
+<h2>🧠 Mnemônicos</h2>
+<div class="box cy"><div class="lbl">Coleção Dissecção</div>
+<ul>
+<li><span class="mn">"A de Ascendente, A de Ação (cirurgia)"</span>.</li>
+<li><span class="mn">"B de aBdome não, fica na descendente" — B não envolve ascendente</span>.</li>
+<li><span class="mn">Beta antes do vaso — "trava o motor antes de abrir a mangueira"</span>.</li>
+<li><span class="mn">Dor: súbita + máxima + migratória = "SMM" dissecção</span>.</li>
+<li><span class="mn">B complicado: Malperfusão, Ruptura, dor/HAS refratária — "M-R-R"</span>.</li>
+</ul></div>
+</section>
+
+<section id="questoes">
+<h2>📝 Questões — itens originais no estilo das bancas</h2>
+<p class="note" style="border:none;padding:0;margin:0 0 10px">Itens <b>originais</b> no padrão de cada banca (não reprodução literal).</p>
+
+<div class="q"><div class="src">HCPA · estilo</div>
+<div class="stem">Homem de 58 anos, hipertenso mal controlado, com dor torácica súbita, lancinante, irradiando para o dorso, associada a assimetria de pulsos radiais. AngioTC mostra dissecção envolvendo aorta ascendente e descendente. A conduta é:</div>
+<div class="alt"><span class="let">A)</span> Controle clínico de PA e alta hospitalar após estabilização</div>
+<div class="alt ok"><span class="let">B)</span> Cirurgia de urgência (Stanford A)</div>
+<div class="alt"><span class="let">C)</span> TEVAR eletivo em 30 dias</div>
+<div class="alt"><span class="let">D)</span> Anticoagulação plena e observação</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> Envolvimento de aorta ascendente = Stanford A, independentemente da extensão distal — cirurgia de urgência pelo altíssimo risco de tamponamento/ruptura.</div></details>
+</div>
+
+<div class="q"><div class="src">GHC · estilo</div>
+<div class="stem">No manejo clínico inicial da dissecção aórtica aguda, antes de considerar vasodilatadores, a classe farmacológica que deve ser administrada primeiro é:</div>
+<div class="alt"><span class="let">A)</span> Diurético de alça</div>
+<div class="alt ok"><span class="let">B)</span> Betabloqueador intravenoso</div>
+<div class="alt"><span class="let">C)</span> Bloqueador de canal de cálcio di-hidropiridínico</div>
+<div class="alt"><span class="let">D)</span> Nitroprussiato isolado</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> O betabloqueador reduz FC e a força de contração (dP/dt), evitando a taquicardia reflexa que ocorreria se um vasodilatador fosse usado isoladamente primeiro — o que propagaria a dissecção.</div></details>
+</div>
+
+<div class="q"><div class="src">Santa Casa POA · estilo</div>
+<div class="stem">Paciente com dissecção tipo B (Stanford), sem envolvimento de ascendente, evolui com dor abdominal intensa e acidose láctica, sugestivos de isquemia mesentérica. Essa apresentação caracteriza:</div>
+<div class="alt"><span class="let">A)</span> Tipo B não complicado — manter tratamento clínico</div>
+<div class="alt ok"><span class="let">B)</span> Tipo B complicado (malperfusão) — indicação de TEVAR de urgência</div>
+<div class="alt"><span class="let">C)</span> Falso positivo — repetir angioTC em 24h</div>
+<div class="alt"><span class="let">D)</span> Indicação de cirurgia aberta obrigatória, TEVAR contraindicado</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> Malperfusão visceral define dissecção tipo B complicada — intervenção urgente indicada, sendo o TEVAR a 1ª linha terapêutica nesse cenário (ESC/ESVS 2024).</div></details>
+</div>
+
+<div class="q"><div class="src">PUC-RS · estilo</div>
+<div class="stem">Na cirurgia de dissecção tipo A, a canulação arterial para circulação extracorpórea é preferencialmente realizada em sítio periférico (femoral ou axilar) em vez de diretamente na aorta ascendente doente, pelo motivo de:</div>
+<div class="alt"><span class="let">A)</span> Ser tecnicamente mais rápida</div>
+<div class="alt ok"><span class="let">B)</span> Evitar canulação inadvertida do falso lúmen e má perfusão sistêmica</div>
+<div class="alt"><span class="let">C)</span> Reduzir o custo do procedimento</div>
+<div class="alt"><span class="let">D)</span> Ser obrigatória por lei em cirurgia cardíaca</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> Canular diretamente a aorta ascendente dissecada arrisca perfundir o falso lúmen, causando má perfusão de órgãos e agravando a dissecção — por isso prefere-se um sítio periférico e seguro.</div></details>
+</div>
+
+<div class="q"><div class="src">AMRIGS · estilo</div>
+<div class="stem">Segundo a classificação de DeBakey, uma dissecção que se origina na aorta ascendente e se estende até a aorta descendente corresponde ao tipo:</div>
+<div class="alt"><span class="let">A)</span> DeBakey II</div>
+<div class="alt ok"><span class="let">B)</span> DeBakey I</div>
+<div class="alt"><span class="let">C)</span> DeBakey IIIa</div>
+<div class="alt"><span class="let">D)</span> DeBakey IIIb</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> DeBakey I: origem na ascendente, estendendo-se ao arco e à descendente. DeBakey II: restrita à ascendente. Ambos correspondem a Stanford A.</div></details>
+</div>
+
+<div class="q"><div class="src">HCPA · estilo</div>
+<div class="stem">Um achado ao exame físico especialmente sugestivo de dissecção retrógrada envolvendo a raiz aórtica, com repercussão valvar, é:</div>
+<div class="alt"><span class="let">A)</span> Sopro sistólico em foco pulmonar</div>
+<div class="alt ok"><span class="let">B)</span> Sopro diastólico de insuficiência aórtica aguda</div>
+<div class="alt"><span class="let">C)</span> Terceira bulha isolada</div>
+<div class="alt"><span class="let">D)</span> Estalido de abertura mitral</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> A dissecção que atinge a raiz aórtica pode desestruturar o aparato valvar, causando insuficiência aórtica aguda com sopro diastólico — achado clássico e de alerta para acometimento proximal.</div></details>
+</div>
+
+<div class="q"><div class="src">GHC · estilo</div>
+<div class="stem">Paciente com dissecção tipo B, PA controlada, sem dor refratária, sem sinais de malperfusão ou de ruptura iminente na angioTC. A conduta mais apropriada nesse momento é:</div>
+<div class="alt"><span class="let">A)</span> TEVAR de urgência</div>
+<div class="alt"><span class="let">B)</span> Cirurgia aberta imediata</div>
+<div class="alt ok"><span class="let">C)</span> Tratamento clínico com controle rigoroso de FC/PA e seguimento por imagem</div>
+<div class="alt"><span class="let">D)</span> Alta hospitalar sem seguimento</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>C.</b> Tipo B não complicado é tratado clinicamente (controle de FC/PA), com seguimento seriado por imagem para detectar precocemente sinais de complicação.</div></details>
+</div>
+
+<div class="q"><div class="src">Santa Casa POA · estilo</div>
+<div class="stem">Qual exame de imagem é considerado de escolha inicial, na maioria dos serviços, para o diagnóstico de dissecção aórtica aguda em paciente hemodinamicamente estável?</div>
+<div class="alt"><span class="let">A)</span> Radiografia de tórax</div>
+<div class="alt ok"><span class="let">B)</span> AngioTC de tórax/abdome/pelve</div>
+<div class="alt"><span class="let">C)</span> Ressonância magnética de urgência</div>
+<div class="alt"><span class="let">D)</span> Ecocardiograma transtorácico isolado</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> A angioTC é rápida, amplamente disponível e define extensão, ramos acometidos e sinais de malperfusão — exame de escolha na maioria dos cenários com paciente estável.</div></details>
+</div>
+
+<div class="q"><div class="src">PUC-RS · estilo</div>
+<div class="stem">Em paciente instável, hemodinamicamente incapaz de ser transportado para tomografia, o exame que permite diagnóstico rápido à beira-leito ou já no centro cirúrgico é:</div>
+<div class="alt"><span class="let">A)</span> Ressonância magnética</div>
+<div class="alt ok"><span class="let">B)</span> Ecocardiograma transesofágico</div>
+<div class="alt"><span class="let">C)</span> Arteriografia convencional</div>
+<div class="alt"><span class="let">D)</span> USG Doppler de carótidas</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> O ETE pode ser realizado à beira-leito ou já no centro cirúrgico em pacientes instáveis, fornecendo diagnóstico rápido e avaliação da valva aórtica/derrame pericárdico.</div></details>
+</div>
+
+<div class="q"><div class="src">AMRIGS · estilo</div>
+<div class="stem">A principal causa de óbito precoce em pacientes com dissecção aórtica tipo A não tratada cirurgicamente é:</div>
+<div class="alt"><span class="let">A)</span> Insuficiência renal aguda</div>
+<div class="alt ok"><span class="let">B)</span> Tamponamento cardíaco</div>
+<div class="alt"><span class="let">C)</span> Trombose venosa profunda</div>
+<div class="alt"><span class="let">D)</span> Pneumonia aspirativa</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> A ruptura para o saco pericárdico com tamponamento é a principal causa de morte precoce na dissecção tipo A não operada — daí a urgência cirúrgica absoluta.</div></details>
+</div>
+</section>
+
+<div class="note">Fontes: ESC/ESVS 2024 (Peripheral Arterial and Aortic Diseases) · Classificação Stanford/DeBakey · SVS/STS 2020 Reporting Standards · Rutherford's Vascular Surgery · Sabiston. Questões originais para estudo. — carolzita · CV 2026</div>
+</div>
+<script>
+var secs=[['geral','🧭 Geral'],['classif','📊 Classificação'],['clinica','🩺 Clínica'],['dx','🔬 Diagnóstico'],['conduta','📐 Conduta'],['tecnica','🔪 Técnica'],['complic','⚠️ Complicações'],['pegas','🪤 Pega-ratões'],['mnemo','🧠 Mnemônicos'],['questoes','📝 Questões']];
+var nav=document.getElementById('nav');
+secs.forEach(function(s,i){var b=document.createElement('button');b.textContent=s[1];if(i===0)b.className='on';b.onclick=function(){document.querySelectorAll('nav button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');document.querySelectorAll('section').forEach(function(x){x.classList.remove('on')});document.getElementById(s[0]).classList.add('on');window.scrollTo({top:0,behavior:'smooth'})};nav.appendChild(b)});
+</script>
+</body>
+</html>

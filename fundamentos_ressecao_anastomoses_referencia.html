@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fundamentos de Ressecção Intestinal e Anastomoses — Referência CV 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d1117; --bg2:#161b22; --bg3:#1c2230; --line:#2a3038;
+  --txt:#c9d1d9; --txt2:#8b949e; --txt3:#6e7681;
+  --orange:#ff7b29; --orange-d:#3a2410;
+  --purple:#a371f7; --purple-d:#241a3a;
+  --cyan:#39c5cf; --cyan-d:#0f2e30;
+  --red:#f85149; --green:#3fb950; --yellow:#d29922;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font-family:'IBM Plex Sans',sans-serif;line-height:1.6;font-size:15px;padding-bottom:60px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 18px}
+header{padding:30px 0 16px;border-bottom:1px solid var(--line)}
+h1{font-family:'IBM Plex Serif',serif;font-size:25px;font-weight:600;letter-spacing:-.3px}
+h1 .accent{color:var(--orange)}
+.sub{color:var(--txt2);font-size:13px;margin-top:6px;font-family:'IBM Plex Mono',monospace}
+.tabs{position:sticky;top:0;z-index:20;background:var(--bg);display:flex;gap:4px;overflow-x:auto;padding:10px 18px;border-bottom:1px solid var(--line);scrollbar-width:thin}
+.tabs::-webkit-scrollbar{height:5px}.tabs::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
+.tab{flex:0 0 auto;background:var(--bg2);border:1px solid var(--line);color:var(--txt2);padding:8px 14px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;font-family:'IBM Plex Mono',monospace;transition:.15s}
+.tab:hover{color:var(--txt);border-color:var(--orange)}
+.tab.active{background:var(--orange);color:#0d1117;border-color:var(--orange)}
+.panel{display:none;padding:24px 0;animation:fade .25s}
+.panel.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1}}
+h2{font-family:'IBM Plex Serif',serif;font-size:20px;color:var(--orange);margin:26px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+h2:first-child{margin-top:0}
+h3{font-size:16px;color:var(--txt);margin:18px 0 8px;font-weight:600}
+p{margin:8px 0}
+.lay{color:var(--cyan);font-style:italic;font-size:.93em}
+ul,ol{margin:8px 0 8px 22px}li{margin:4px 0}
+strong{color:#fff;font-weight:600}
+code{font-family:'IBM Plex Mono',monospace;background:var(--bg3);padding:1px 6px;border-radius:4px;font-size:.88em;color:var(--orange)}
+.card{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0}
+.box{border-left:4px solid var(--orange);background:var(--orange-d);border-radius:0 10px 10px 0;padding:12px 16px;margin:14px 0}
+.box.hy{border-left-color:var(--purple);background:var(--purple-d)}
+.box.mn{border-left-color:var(--cyan);background:var(--cyan-d)}
+.box.warn{border-left-color:var(--red);background:#2c1414}
+.box .lbl{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;font-weight:600;margin-bottom:6px;display:block}
+.box .lbl{color:var(--orange)}.box.hy .lbl{color:var(--purple)}.box.mn .lbl{color:var(--cyan)}.box.warn .lbl{color:var(--red)}
+.banca{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:600;padding:1px 7px;border-radius:20px;background:#2a1f44;color:var(--purple);border:1px solid #3a2a5a;margin-left:6px;vertical-align:middle}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--bg3);color:var(--orange);font-family:'IBM Plex Mono',monospace;font-size:11.5px;text-transform:uppercase;letter-spacing:.5px;position:sticky;top:0}
+td strong{color:var(--cyan)}
+.tag{font-family:'IBM Plex Mono',monospace;font-size:11px;padding:2px 8px;border-radius:5px;font-weight:600}
+.t-b{background:#0f2a16;color:var(--green)}
+.t-m{background:#3a1414;color:var(--red)}
+.t-w{background:#3a2e0d;color:var(--yellow)}
+svg{max-width:100%;height:auto;display:block;margin:16px auto;background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:10px}
+.q{background:var(--bg2);border:1px solid var(--line);border-left:4px solid var(--purple);border-radius:0 10px 10px 0;padding:14px 16px;margin:16px 0}
+.q .stem{font-weight:500}
+.alt{margin:8px 0 0 0;padding-left:4px}
+.alt div{padding:3px 0;color:var(--txt2)}
+details{margin-top:10px;border-top:1px dashed var(--line);padding-top:8px}
+summary{cursor:pointer;color:var(--cyan);font-weight:600;font-size:13px;font-family:'IBM Plex Mono',monospace}
+details[open] summary{margin-bottom:6px}
+.ans{color:var(--green);font-weight:600}
+.foot{color:var(--txt3);font-size:11px;text-align:center;margin-top:30px;font-family:'IBM Plex Mono',monospace}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:640px){.grid2{grid-template-columns:1fr}h1{font-size:20px}}
+.pill{display:inline-block;width:11px;height:11px;border-radius:3px;vertical-align:middle;margin-right:5px}
+.legend{font-size:12px;color:var(--txt2);font-family:'IBM Plex Mono',monospace;margin-top:10px}
+.hand{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0}
+.hand>div{background:var(--bg3);border:1px solid var(--line);border-radius:9px;padding:11px 13px;font-size:.92em}
+.hand .L{border-top:3px solid var(--cyan)}
+.hand .R{border-top:3px solid var(--orange)}
+.hand b{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1px;display:block;margin-bottom:5px}
+.hand .L b{color:var(--cyan)}.hand .R b{color:var(--orange)}
+.step{counter-reset:s;list-style:none;margin:10px 0 10px 0}
+.step li{position:relative;padding-left:42px;margin:11px 0;min-height:28px}
+.step li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:0;width:28px;height:28px;background:var(--orange);color:#0d1117;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:.82rem}
+@media(max-width:640px){.hand{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <h1>Fundamentos de <span class="accent">Ressecção Intestinal</span> &amp; Anastomoses</h1>
+  <div class="sub">Referência completa · CV 2026 · Sabiston · Zollinger · HTLT/HIGHLOW · PILLAR III · ICG-COLORAL · ESPEN/AGA (SIC)</div>
+  <div class="legend"><span class="pill" style="background:var(--orange)"></span>conteúdo geral<span class="pill" style="background:var(--purple);margin-left:14px"></span>alto rendimento / prova<span class="pill" style="background:var(--cyan);margin-left:14px"></span>analogia &amp; mnemônico</div>
+</header>
+<nav class="tabs">
+  <button class="tab active" data-t="vg">🗺️ Visão Geral</button>
+  <button class="tab" data-t="dec">🔪 Decisão de Ressecção</button>
+  <button class="tab" data-t="est">🛡️ Estruturas Nobres</button>
+  <button class="tab" data-t="ana">🧵 Anastomoses</button>
+  <button class="tab" data-t="sto">🔀 Estomas &amp; Desvio</button>
+  <button class="tab" data-t="del">📏 Delgado &amp; SIC</button>
+  <button class="tab" data-t="quest">📝 Questões</button>
+  <button class="tab" data-t="pega">🪤 Pega-ratão</button>
+  <button class="tab" data-t="mn">🧠 Mnemônicos</button>
+</nav>
+<main class="wrap">
+
+<section class="panel active" id="vg">
+<h2>Territórios vasculares: AMS × AMI</h2>
+<p>Todo o raciocínio de "até onde posso ressecar" começa em saber <strong>de onde vem o sangue</strong> de cada segmento. O intestino é irrigado por dois eixos principais que se comunicam entre si.</p>
+<table>
+<tr><th>Eixo</th><th>Território</th><th>Ramos principais</th></tr>
+<tr><td><strong>AMS</strong> (mesentérica superior)</td><td>Treitz → jejuno → íleo → ceco → cólon ascendente → 2/3 proximais do transverso</td><td>Jejunais, ileais, ileocólica, cólica direita (inconstante), cólica média</td></tr>
+<tr><td><strong>AMI</strong> (mesentérica inferior)</td><td>1/3 distal do transverso → descendente → sigmoide → reto superior</td><td>Cólica esquerda, sigmoideas, retal superior</td></tr>
+<tr><td><strong>Ilíaca interna</strong></td><td>Reto médio e inferior</td><td>Retais média e inferior — por isso o reto baixo sobrevive mesmo após ligadura da AMI na origem</td></tr>
+</table>
+<div class="fig">
+<svg viewBox="0 0 680 260" role="img" aria-label="Territórios vasculares do trato gastrointestinal">
+<line x1="40" y1="90" x2="640" y2="90" stroke="#8b949e" stroke-width="1"/>
+<text x="340" y="72" fill="#8b949e" font-family="IBM Plex Mono" font-size="11" text-anchor="middle">arcada marginal (Drummond)</text>
+<path d="M210,90 Q275,40 340,90" fill="none" stroke="#d29922" stroke-width="1.4" stroke-dasharray="4 3"/>
+<text x="275" y="32" fill="#d29922" font-family="IBM Plex Mono" font-size="11" text-anchor="middle">arco de Riolan</text>
+<circle cx="279" cy="90" r="9" fill="#3a2e0d" stroke="#d29922"/><text x="279" y="94" fill="#ffd970" font-size="11" text-anchor="middle">1</text>
+<circle cx="523" cy="90" r="9" fill="#3a2e0d" stroke="#d29922"/><text x="523" y="94" fill="#ffd970" font-size="11" text-anchor="middle">2</text>
+<rect x="40" y="104" width="112" height="52" rx="8" fill="#0f2e30" stroke="#39c5cf"/><text x="96" y="124" fill="#fff" font-size="13" text-anchor="middle">Delgado</text><text x="96" y="142" fill="#39c5cf" font-size="11" text-anchor="middle">AMS</text>
+<rect x="162" y="104" width="112" height="52" rx="8" fill="#0f2e30" stroke="#39c5cf"/><text x="218" y="124" fill="#fff" font-size="13" text-anchor="middle">Cólon D/T</text><text x="218" y="142" fill="#39c5cf" font-size="11" text-anchor="middle">AMS</text>
+<rect x="284" y="104" width="112" height="52" rx="8" fill="#3a2410" stroke="#ff7b29"/><text x="340" y="124" fill="#fff" font-size="13" text-anchor="middle">Cólon desc</text><text x="340" y="142" fill="#ffb27a" font-size="11" text-anchor="middle">AMI</text>
+<rect x="406" y="104" width="112" height="52" rx="8" fill="#3a2410" stroke="#ff7b29"/><text x="462" y="124" fill="#fff" font-size="13" text-anchor="middle">Sigmoide</text><text x="462" y="142" fill="#ffb27a" font-size="11" text-anchor="middle">AMI</text>
+<rect x="528" y="104" width="112" height="52" rx="8" fill="#241a3a" stroke="#a371f7"/><text x="584" y="124" fill="#fff" font-size="13" text-anchor="middle">Reto</text><text x="584" y="142" fill="#c9aef9" font-size="11" text-anchor="middle">multi-origem</text>
+<text x="40" y="190" fill="#8b949e" font-size="12">① Ponto de Griffith — watershed no ângulo esplênico</text>
+<text x="40" y="210" fill="#8b949e" font-size="12">② Ponto de Sudeck — watershed na transição retossigmoide</text>
+</svg>
+</div>
+<div class="box hy"><span class="lbl">★ tema de prova</span><strong>Pontos de Griffith (ângulo esplênico)</strong> e <strong>Sudeck (retossigmoide)</strong> são as "zonas mortas" de menor reserva colateral — locais clássicos de isquemia em choque, cirurgia de aorta e ressecção anterior baixa. <span class="banca">HCPA</span> <span class="banca">Santa Casa POA</span></div>
+<p class="lay">(a arcada marginal é a "estrada secundária" que corre junto ao intestino; o arco de Riolan é um "atalho" mais central que só vira protagonista quando a estrada principal está bloqueada — estenose de AMS, ligadura de AMI)</p>
+</section>
+
+<section class="panel" id="dec">
+<h2>Como decidir até onde ressecar</h2>
+<h3>Avaliação de viabilidade (o "check" na hora da cirurgia)</h3>
+<ul>
+<li><strong>Cor</strong> da alça — rosada e viva vs. cianótica/enegrecida.</li>
+<li><strong>Peristalse</strong> presente.</li>
+<li><strong>Sangramento pulsátil</strong> nas bordas de secção — o clássico "sangra bem, tá viável".</li>
+<li>Textura/temperatura da serosa.</li>
+<li><strong>Doppler intraoperatório</strong> se dúvida na borda de ressecção.</li>
+</ul>
+<div class="box hy"><span class="lbl">★ tecnologia atual — ICG</span>A <strong>angiografia com fluorescência de indocianina verde (ICG)</strong> é usada como adjunto para avaliar perfusão. O <strong>PILLAR III</strong> (Jafari, <em>Dis Colon Rectum</em> 2021) mostrou que o ICG mudou a linha de transecção em uma parcela relevante dos casos de ressecção anterior baixa. Porém o <strong>ICG-COLORAL</strong> (JAMA Surg 2024/2025, 1136 pacientes, excluindo RAB) <strong>não reduziu deiscência</strong> de forma significativa. <strong>Conclusão para prova:</strong> ICG é adjunto promissor, mas não substitui o julgamento clínico — evidência ainda conflitante fora da ressecção anterior baixa. <span class="banca">R3/vascular</span></div>
+
+<h3>Margem oncológica × margem em doença benigna</h3>
+<p>Em <strong>neoplasia</strong>, você não resseca só o que está isquêmico — resseca a <strong>margem longitudinal + o território linfonodal correspondente</strong>, o que implica <strong>ligadura vascular na origem</strong> ("high tie"). Em <strong>doença benigna</strong> (Crohn, isquemia focal), o princípio é o oposto: <strong>poupar intestino</strong>, ligando o mesentério próximo à alça.</p>
+<div class="box hy"><span class="lbl">★ tema de prova — high tie × low tie</span>No câncer retal, ligar a AMI na origem (<strong>high tie</strong>) × distal à cólica esquerda (<strong>low tie</strong>) foi testado no <strong>HTLT trial</strong> (Fujii, <em>BJS Open</em> 2018): <strong>sem diferença</strong> em deiscência (17,7% × 16,3%) nem sobrevida em 5 anos. O <strong>HIGHLOW trial</strong> (Maggioni, <em>Ann Surg</em> 2019) mostrou que <strong>low tie reduz disfunção geniturinária</strong> sem afetar sobrevida. <strong>Mensagem de prova:</strong> ligadura alta não é obrigatória para margem oncológica adequada nem para anastomose sem tensão. <span class="banca">HCPA R3</span> <span class="banca">PUC-RS</span></div>
+<div class="box warn"><span class="lbl">pegadinha</span>No Crohn e outras doenças benignas, <strong>margem microscópica ampla não muda recorrência</strong> — bastam ~2 cm de margem macroscópica normal. Ressecar "mais" só aumenta risco de síndrome do intestino curto sem ganho oncológico (porque não é câncer).</div>
+</section>
+
+<section class="panel" id="est">
+<h2>Estruturas nobres — o que NUNCA pode ser lesado</h2>
+<table>
+<tr><th>Estrutura</th><th>Momento de risco</th></tr>
+<tr><td><strong>Ureteres</strong> (bilateral)</td><td>Mobilização do cólon esquerdo/sigmoide — o ureter esquerdo cruza os vasos ilíacos perto da bifurcação</td></tr>
+<tr><td><strong>Duodeno</strong> (D2/D3)</td><td>Manobra de Kocher, mobilização do ângulo hepático</td></tr>
+<tr><td><strong>Baço</strong></td><td>Mobilização do ângulo esplênico — lesão capsular é causa clássica de esplenectomia "acidental"</td></tr>
+<tr><td><strong>Vasos gonadais</strong></td><td>Dissecção retroperitoneal, ressecções pélvicas</td></tr>
+<tr><td><strong>Plexo hipogástrico / nervos autonômicos pélvicos</strong></td><td>Dissecção do reto — lesão causa disfunção urinária/sexual</td></tr>
+<tr><td><strong>Vasos ilíacos, aorta, cava</strong></td><td>Dissecção retroperitoneal profunda</td></tr>
+<tr><td><strong>Pâncreas</strong></td><td>A AMS passa por trás do colo pancreático — cuidado na ligadura alta oncológica</td></tr>
+</table>
+<div class="box warn"><span class="lbl">pegadinha clássica</span>Confundir o ureter com um vaso ou uma alça fibrosada durante a mobilização do cólon esquerdo é o erro mais cobrado nas provas de cirurgia geral e coloproctologia.</div>
+</section>
+
+<section class="panel" id="ana">
+<h2>Anastomose primária × desvio de trânsito</h2>
+<table>
+<tr><th>Favorece anastomose primária</th><th>Favorece estoma/desvio</th></tr>
+<tr><td>Perfusão adequada nas bordas</td><td>Peritonite fecal / contaminação grosseira</td></tr>
+<tr><td>Sem peritonite</td><td>Choque, instabilidade hemodinâmica</td></tr>
+<tr><td>Estável, sem vasopressor</td><td>Uso de droga vasoativa</td></tr>
+<tr><td>Sem desnutrição grave</td><td>Desnutrição grave, imunossupressão</td></tr>
+<tr><td>Anastomose sem tensão</td><td>Edema importante de alças</td></tr>
+<tr><td>Cirurgia eletiva</td><td>Damage control / urgência com múltiplas comorbidades</td></tr>
+</table>
+
+<h3>Anastomoses mais comuns e suas patologias típicas</h3>
+<table>
+<tr><th>Anastomose</th><th>Cirurgia</th><th>Patologias associadas</th></tr>
+<tr><td><strong>Jejuno-jejunal / íleo-ileal</strong></td><td>Enterectomia segmentar</td><td>Isquemia mesentérica, Crohn, brida obstrutiva, hérnia encarcerada, tumor de delgado, trauma</td></tr>
+<tr><td><strong>Ileocólica</strong></td><td>Hemicolectomia direita</td><td>Neoplasia de ceco/cólon direito, Crohn ileocecal, carcinoide apendicular</td></tr>
+<tr><td><strong>Colocólica</strong></td><td>Colectomia segmentar</td><td>Neoplasia, vólvulo</td></tr>
+<tr><td><strong>Colorretal</strong></td><td>Sigmoidectomia / retossigmoidectomia</td><td>Neoplasia de sigmoide/reto, diverticulite complicada (fora da fase aguda), vólvulo de sigmoide</td></tr>
+<tr><td><strong>Coloanal</strong></td><td>Ressecção interesfincteriana</td><td>Neoplasia de reto baixo poupando esfíncter</td></tr>
+<tr><td><strong>Íleo-retal</strong></td><td>Colectomia subtotal</td><td>RCU com reto preservado, polipose familiar, megacólon</td></tr>
+<tr><td><strong>Íleo-anal com bolsa (J-pouch)</strong></td><td>Proctocolectomia restauradora</td><td>RCU, PAF — pancolectomia com reconstrução</td></tr>
+</table>
+
+<div class="fig" style="background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:14px;margin:16px 0">
+<img src="mapa_anastomoses.png" alt="Mapa das anastomoses intestinais mais comuns, sobre os territórios da AMS e AMI, com cirurgia e patologias associadas" style="width:100%;height:auto;display:block;border-radius:10px;margin:0">
+<div style="text-align:center;color:var(--txt2);font-size:12px;font-family:'IBM Plex Mono',monospace;margin-top:8px">Mapa de anastomoses sobre os territórios AMS/AMI — cirurgia e patologias associadas a cada uma</div>
+</div>
+
+<h3>Instrumentação — mão D × mão E</h3>
+<p>Regra geral: <strong>mão direita = mão ativa</strong> (corta, dissecca, grampeia, sutura); <strong>mão esquerda = exposição e contratração</strong>. <span class="lay">(uma mão trabalha, a outra segura e estica o tecido pra a primeira enxergar)</span></p>
+<div class="hand">
+<div class="R"><b>MÃO DIREITA (ativa)</b>
+<ul><li>Porta-agulha / agulha</li><li>Tesoura de Metzenbaum</li><li>Bisturi / energia (LigaSure, Harmonic)</li><li>Grampeador GIA/TA</li><li>Mixter (dissecção do pedículo)</li></ul></div>
+<div class="L"><b>MÃO ESQUERDA (exposição)</b>
+<ul><li>Pinça DeBakey (atraumática)</li><li>Babcock (preensão de alça)</li><li>Allis (espécime a ressecar)</li><li>Tração/contratração do mesentério</li><li>Na lap: grasper atraumático</li></ul></div>
+</div>
+
+<h3>Passo a passo — anastomose grampeada látero-lateral (functional end-to-end)</h3>
+<ol class="step">
+<li><b>Alinhar as alças</b> antimesentericamente, lado a lado.</li>
+<li><b>Enterotomias</b> nas bordas antimesentéricas com bisturi/energia.</li>
+<li><b>Introduzir os ramos do GIA</b> em cada alça e disparar — cria a anastomose látero-lateral.</li>
+<li><b>Inspecionar a linha de grampos</b> — hemostasia da linha (comum sangrar um pouco na mucosa).</li>
+<li><b>Fechar a enterotomia comum</b> com TA ou sutura manual em plano único/duplo.</li>
+<li><b>Checar patência e perfusão</b> antes de fechar a brecha mesentérica.</li>
+</ol>
+
+<h3>Tabela de fios — o que e quando</h3>
+<table>
+<tr><th>Momento</th><th>Fio / dispositivo</th><th>Observação</th></tr>
+<tr><td>2-0 / 3-0 Vicryl ou selador</td><td><strong>Ligadura do mesentério</strong></td><td>Vaso a vaso; próximo à alça em doença benigna, na origem em oncologia</td></tr>
+<tr><td>GIA 75/80 + TA 60</td><td><strong>Anastomose grampeada</strong></td><td>Látero-lateral funcional término-terminal — a mais usada</td></tr>
+<tr><td>3-0 / 4-0 PDS ou Vicryl (interno) + 3-0 seda (Lembert externo)</td><td><strong>Anastomose manual em 2 planos</strong></td><td>Plano interno hemostático (total) + seromuscular externo</td></tr>
+<tr><td>3-0/4-0 monofilamento</td><td><strong>Anastomose manual em plano único</strong></td><td>Pontos extramucosos, preferida por muitos em intestino delgado</td></tr>
+<tr><td>0 ou 1 PDS / loop</td><td><strong>Fechamento de aponeurose</strong></td><td>Absorção lenta, razão fio:ferida 4:1</td></tr>
+<tr><td>3-0 Vicryl</td><td><strong>Maturação de estoma</strong></td><td>Eversão mucocutânea (técnica de Brooke)</td></tr>
+</table>
+<div class="box mn"><span class="lbl">macete dos fios</span>Mesentério friável (Crohn, inflamação) → liga perto da alça, devagar. Plano interno hemostático = absorvível; plano externo seromuscular pode ser seda. Tecido que demora a cicatrizar (imunossupressão, corticoide) pede fio de absorção mais lenta.</div>
+</section>
+
+<section class="panel" id="sto">
+<h2>Desvio de trânsito — principais locais</h2>
+<table>
+<tr><th>Estoma</th><th>Indicação típica</th></tr>
+<tr><td><strong>Ileostomia em alça (loop)</strong></td><td>Proteção de anastomose colorretal baixa/coloanal — a mais comum para "proteger" e não para tratar</td></tr>
+<tr><td><strong>Colostomia em alça</strong></td><td>Proteção de anastomose ou descompressão (vólvulo, obstrução)</td></tr>
+<tr><td><strong>Colostomia terminal (Hartmann)</strong></td><td>Anastomose insegura — peritonite, instabilidade — retossigmoidectomia sem reconstrução</td></tr>
+<tr><td><strong>Ileostomia terminal</strong></td><td>Pancolectomia sem reconstrução (RCU grave, megacólon tóxico)</td></tr>
+</table>
+<div class="box hy"><span class="lbl">★ tema de prova</span>A <strong>ileostomia em alça protetora</strong> não evita a deiscência, mas <strong>reduz a gravidade clínica e a necessidade de reoperação</strong> quando ela ocorre — é a estratégia padrão após ressecção anterior baixa de alto risco. Custo: risco de <strong>desidratação e lesão renal aguda</strong> pelo alto débito, exigindo orientação e seguimento ambulatorial estruturado. <span class="banca">GHC</span> <span class="banca">AMRIGS</span></div>
+</section>
+
+<section class="panel" id="del">
+<h2>Ressecção de delgado — quanto posso tirar</h2>
+<p>Comprimento total do delgado no adulto: <strong>275–850 cm</strong> (média ~600 cm) — grande variação individual, por isso o registro correto é sempre o <strong>comprimento remanescente</strong>, não o ressecado.</p>
+<div class="box hy"><span class="lbl">★ síndrome do intestino curto (SIC)</span>Definição de consenso (Pironi/ESPEN, <em>Nutr Clin Pract</em> 2023; StatPearls 2023): remanescente <strong>&lt; 200 cm</strong> a partir do Treitz. Risco de <strong>dependência de nutrição parenteral</strong> aumenta muito com remanescente <strong>&lt; 75 cm</strong>, independente de manter o cólon em continuidade. <span class="banca">HCPA R3</span></div>
+<ul>
+<li><strong>Válvula ileocecal</strong> — sua perda piora o prognóstico mesmo com comprimento remanescente razoável (trânsito mais rápido, perda de barreira bacteriana).</li>
+<li><strong>Cólon em continuidade</strong> — funciona como órgão de "resgate calórico" (fermentação de carboidratos não absorvidos), reduzindo o remanescente mínimo necessário.</li>
+<li><strong>Regra prática:</strong> preservar o máximo possível — ressecar só o segmento comprometido, com margem mínima necessária.</li>
+</ul>
+<div class="box mn"><span class="lbl">macete</span>Em <strong>isquemia mesentérica aguda maciça</strong>, considere <strong>second-look em 24–48h</strong> antes de ressecar tudo que parece necrótico de cara — evita ressecção excessiva e preserva comprimento de intestino.</div>
+</section>
+
+<section class="panel" id="quest">
+<h2>Questões — estilo das bancas RS</h2>
+<p class="sub" style="margin-bottom:14px">Itens originais no estilo das bancas (não reprodução literal de provas).</p>
+
+<div class="q"><div class="stem"><span class="banca">HCPA</span> O ponto de menor reserva vascular colateral no cólon, mais suscetível a isquemia em estados de baixo fluxo, é:</div><div class="alt"><div>A) Ceco</div><div>B) Ângulo hepático</div><div>C) Ângulo esplênico (ponto de Griffith)</div><div>D) Reto médio</div></div><details><summary>Ver resposta</summary><p class="ans">C.</p><p>O <strong>ponto de Griffith</strong> marca a junção dos territórios da AMS e AMI, com menor reserva colateral pela arcada marginal.</p></details></div>
+
+<div class="q"><div class="stem"><span class="banca">PUC-RS</span> Durante hemicolectomia esquerda por neoplasia, o high tie (ligadura da AMI na origem) em relação ao low tie apresenta, segundo o HTLT trial:</div><div class="alt"><div>A) Menor taxa de deiscência</div><div>B) Maior sobrevida em 5 anos</div><div>C) Sem diferença em deiscência ou sobrevida</div><div>D) Contraindicação absoluta ao low tie</div></div><details><summary>Ver resposta</summary><p class="ans">C.</p><p>O <strong>HTLT trial</strong> (Fujii 2018) não mostrou diferença significativa em deiscência nem sobrevida entre high e low tie.</p></details></div>
+
+<div class="q"><div class="stem"><span class="banca">Santa Casa</span> Comparado ao high tie, o low tie de AMI está associado a:</div><div class="alt"><div>A) Maior recidiva local</div><div>B) Menor disfunção geniturinária (HIGHLOW trial)</div><div>C) Maior taxa de linfadenectomia</div><div>D) Necessidade obrigatória de estoma</div></div><details><summary>Ver resposta</summary><p class="ans">B.</p><p>O <strong>HIGHLOW trial</strong> (Maggioni 2019) mostrou <strong>menor disfunção geniturinária</strong> com low tie, sem prejuízo de sobrevida.</p></details></div>
+
+<div class="q"><div class="stem"><span class="banca">GHC</span> Em ressecção intestinal por doença isquêmica com múltiplas alças de viabilidade duvidosa, a conduta mais adequada é:</div><div class="alt"><div>A) Ressecar tudo que parece necrótico de imediato, sem retorno</div><div>B) Ressecar o segmento claramente necrótico e programar second-look em 24-48h</div><div>C) Não ressecar nada e reavaliar em 7 dias</div><div>D) Ressecção total do delgado por segurança</div></div><details><summary>Ver resposta</summary><p class="ans">B.</p><p>O <strong>second-look</strong> evita ressecção excessiva e ajuda a preservar comprimento intestinal, reduzindo risco de síndrome do intestino curto.</p></details></div>
+
+<div class="q"><div class="stem"><span class="banca">AMRIGS</span> A síndrome do intestino curto é definida, por consenso atual, como remanescente de delgado a partir do ligamento de Treitz:</div><div class="alt"><div>A) &lt; 400 cm</div><div>B) &lt; 200 cm</div><div>C) &lt; 50 cm</div><div>D) &lt; 600 cm</div></div><details><summary>Ver resposta</summary><p class="ans">B.</p><p>Consenso ESPEN/AGA: SIC = remanescente <strong>&lt; 200 cm</strong>.</p></details></div>
+
+<div class="q"><div class="stem"><span class="banca">HCPA</span> Estrutura em maior risco de lesão durante a mobilização do cólon esquerdo e sigmoide:</div><div class="alt"><div>A) Ureter direito</div><div>B) Ureter esquerdo</div><div>C) Ducto colédoco</div><div>D) Veia cava inferior</div></div><details><summary>Ver resposta</summary><p class="ans">B.</p><p>O <strong>ureter esquerdo</strong> cruza os vasos ilíacos próximo à bifurcação, no trajeto de mobilização do cólon esquerdo.</p></details></div>
+
+<div class="q"><div class="stem"><span class="banca">PUC-RS</span> Paciente com peritonite fecal e instabilidade hemodinâmica após perfuração de sigmoide. A conduta cirúrgica mais apropriada é:</div><div class="alt"><div>A) Anastomose primária protegida por ileostomia</div><div>B) Sigmoidectomia com colostomia terminal (Hartmann)</div><div>C) Anastomose primária sem proteção</div><div>D) Ressecção subtotal do cólon com íleo-retal</div></div><details><summary>Ver resposta</summary><p class="ans">B.</p><p>Instabilidade + peritonite fecal contraindicam anastomose primária → <strong>procedimento de Hartmann</strong>.</p></details></div>
+
+<div class="q"><div class="stem"><span class="banca">Santa Casa</span> Sobre o uso rotineiro de angiografia com ICG para avaliar perfusão anastomótica, o ensaio ICG-COLORAL (excluindo ressecção anterior baixa) mostrou:</div><div class="alt"><div>A) Redução significativa e definitiva da deiscência</div><div>B) Ausência de redução significativa da deiscência</div><div>C) Contraindicação ao uso de ICG</div><div>D) Substituição completa da avaliação clínica</div></div><details><summary>Ver resposta</summary><p class="ans">B.</p><p>O ICG-COLORAL <strong>não</strong> reduziu significativamente a deiscência fora da ressecção anterior baixa — evidência ainda conflitante.</p></details></div>
+
+<div class="q"><div class="stem"><span class="banca">GHC</span> A ileostomia em alça protetora após ressecção anterior baixa de alto risco tem como principal objetivo:</div><div class="alt"><div>A) Evitar completamente a deiscência</div><div>B) Reduzir a gravidade clínica e necessidade de reoperação em caso de deiscência</div><div>C) Substituir a anastomose</div><div>D) Aumentar o tempo cirúrgico sem benefício clínico</div></div><details><summary>Ver resposta</summary><p class="ans">B.</p><p>A ileostomia protetora <strong>não evita</strong> a deiscência, mas reduz suas consequências clínicas e a necessidade de reoperação.</p></details></div>
+
+<div class="q"><div class="stem"><span class="banca">AMRIGS</span> Fator mais relevante para determinar prognóstico de dependência de nutrição parenteral em síndrome do intestino curto:</div><div class="alt"><div>A) Idade do paciente</div><div>B) Comprimento remanescente de delgado e presença de cólon em continuidade</div><div>C) Tipo de fio usado na anastomose</div><div>D) Via de acesso (aberta × laparoscópica)</div></div><details><summary>Ver resposta</summary><p class="ans">B.</p><p>Remanescente <strong>&lt; 75 cm</strong> associa-se a maior dependência de NP; cólon em continuidade melhora o prognóstico.</p></details></div>
+
+</section>
+
+<section class="panel" id="pega">
+<h2>Pega-ratões</h2>
+<ul>
+<li><span class="em">🔪</span>Viabilidade se avalia por <strong>cor, peristalse e sangramento pulsátil</strong> — ICG é adjunto, não substitui o julgamento clínico.</li>
+<li><span class="em">🎯</span><strong>High tie ≠ obrigatório</strong> para margem oncológica adequada (HTLT trial).</li>
+<li><span class="em">🩺</span>Low tie <strong>reduz disfunção geniturinária</strong> sem prejuízo de sobrevida (HIGHLOW trial).</li>
+<li><span class="em">⚠️</span><strong>Ureter esquerdo</strong> é a estrutura mais lesada na mobilização do cólon esquerdo.</li>
+<li><span class="em">🚫</span>Instabilidade + peritonite fecal = <strong>Hartmann</strong>, não anastomose primária.</li>
+<li><span class="em">💧</span>Ileostomia protetora <strong>não evita</strong> deiscência, só reduz gravidade — mas causa risco de desidratação/AKI.</li>
+<li><span class="em">📏</span>SIC = remanescente <strong>&lt; 200 cm</strong>; <strong>&lt; 75 cm</strong> = alto risco de dependência de NP.</li>
+<li><span class="em">🔁</span>Isquemia maciça duvidosa → <strong>second-look</strong>, não ressecção total de imediato.</li>
+</ul>
+</section>
+
+<section class="panel" id="mn">
+<h2>Mnemônicos</h2>
+<div class="box mn"><span class="lbl">🗺️ Watersheds</span><p><strong>G</strong>riffith no ângulo <strong>e</strong>splênico, <strong>S</strong>udeck no retos<strong>s</strong>igmoide — as duas "zonas mortas" da vascularização colônica.</p></div>
+<div class="box mn"><span class="lbl">✋ Mão D × mão E</span><p><strong>D</strong>ireita = <strong>D</strong>issecca/corta/sutura (ativa). <strong>E</strong>squerda = <strong>E</strong>xpõe e tra<strong>Ç</strong>a (contratração).</p></div>
+<div class="box mn"><span class="lbl">🔀 Quando NÃO anastomosar</span><p><strong>PICHS</strong>: <strong>P</strong>eritonite, <strong>I</strong>nstabilidade, <strong>C</strong>hoque/vasopressor, <strong>H</strong>ipoalbuminemia/desnutrição, <strong>S</strong>epse grave → estoma.</p></div>
+<div class="box mn"><span class="lbl">📏 Delgado curto</span><p>200 = define SIC · 75 = alto risco de depender de NP para sempre.</p></div>
+<p class="foot">// fundamentos de ressecção intestinal e anastomoses · carolzita · CV 2026 · Sabiston · Zollinger · HTLT trial (BJS Open 2018) · HIGHLOW trial (Ann Surg 2019) · PILLAR III (Dis Colon Rectum 2021) · ICG-COLORAL (2024/2025) · Pironi/ESPEN (Nutr Clin Pract 2023)</p>
+</section>
+
+</main>
+
+<script>
+document.querySelectorAll('.tab').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    document.getElementById(b.dataset.t).classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+});
+</script>
+</body>
+</html>

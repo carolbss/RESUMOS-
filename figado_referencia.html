@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fígado — carolzita</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0f; --bg2:#12121a; --card:#16161f; --card2:#1c1c27;
+  --line:#2a2a38; --txt:#e6e6ef; --muted:#9a9ab0;
+  --laranja:#f97316; --laranja-bg:rgba(249,115,22,.10);
+  --roxo:#a855f7; --roxo-bg:rgba(168,85,247,.10);
+  --ciano:#22d3ee; --ciano-bg:rgba(34,211,238,.10);
+  --verde:#34d399; --vermelho:#f87171; --amarelo:#fbbf24;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(1200px 600px at 50% -10%,#15151f 0%,var(--bg) 60%);color:var(--txt);font-family:'Inter',sans-serif;line-height:1.55;padding:0 0 80px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px}
+header{padding:40px 0 24px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(30px,6vw,46px);line-height:1.05;margin:8px 0 6px;letter-spacing:-.02em}
+.sub{color:var(--muted);font-size:15px;max-width:700px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tag{font-family:'JetBrains Mono',monospace;font-size:11px;padding:5px 10px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted)}
+.tag.r{color:var(--roxo);border-color:rgba(168,85,247,.35);background:var(--roxo-bg)}
+section{margin-top:14px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:12px;overflow:hidden;transition:border-color .2s}
+details[open]{border-color:rgba(249,115,22,.30)}
+summary{cursor:pointer;list-style:none;padding:18px 20px;display:flex;align-items:center;gap:13px;font-family:'Syne',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em;user-select:none}
+summary::-webkit-details-marker{display:none}
+.num{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--bg);background:var(--laranja);width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:0 0 auto}
+.chev{margin-left:auto;color:var(--muted);transition:transform .25s;font-size:14px}
+details[open] .chev{transform:rotate(90deg)}
+.body{padding:4px 22px 24px;font-size:15px}
+.body p{margin:10px 0}
+.body h4{font-family:'Syne',sans-serif;font-size:16px;color:var(--laranja);margin:20px 0 8px;letter-spacing:-.01em}
+.body ul{margin:8px 0 8px 4px;list-style:none}
+.body li{padding:4px 0 4px 20px;position:relative}
+.body li::before{content:"▸";position:absolute;left:0;color:var(--laranja);font-size:12px;top:6px}
+.body strong{color:#fff;font-weight:600}
+.simple{color:var(--ciano);font-style:italic;font-size:.94em}
+.box{border-radius:12px;padding:13px 15px;margin:14px 0;font-size:14px;border:1px solid}
+.box.prova{background:var(--roxo-bg);border-color:rgba(168,85,247,.35)}
+.box.prova .lbl{color:var(--roxo)}
+.box.mac{background:var(--ciano-bg);border-color:rgba(34,211,238,.35)}
+.box.mac .lbl{color:var(--ciano)}
+.box.warn{background:rgba(248,113,113,.08);border-color:rgba(248,113,113,.3)}
+.box.warn .lbl{color:var(--vermelho)}
+.lbl{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-family:'JetBrains Mono',monospace;font-size:10px;background:rgba(168,85,247,.2);color:var(--roxo);padding:2px 7px;border-radius:6px;margin-left:6px;white-space:nowrap}
+.tbl{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
+.tbl table{width:100%;border-collapse:collapse;min-width:520px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--laranja);background:var(--card2)}
+td strong{color:#fff}
+.fio td:first-child{color:var(--ciano);font-family:'JetBrains Mono',monospace;font-weight:500}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin:14px 0}
+.gcard{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+.gcard .t{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--ciano);margin-bottom:4px}
+.gcard .d{font-size:13px;color:var(--muted)}
+.hands{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.hand{border-radius:12px;padding:14px;border:1px solid var(--line)}
+.hand.e{background:rgba(34,211,238,.06);border-color:rgba(34,211,238,.25)}
+.hand.d{background:rgba(249,115,22,.06);border-color:rgba(249,115,22,.25)}
+.hand .ht{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;font-weight:700}
+.hand.e .ht{color:var(--ciano)} .hand.d .ht{color:var(--laranja)}
+.hand li{font-size:13px}
+.steps{counter-reset:s;margin:10px 0}
+.step{counter-increment:s;position:relative;padding:11px 0 11px 46px;border-bottom:1px dashed var(--line)}
+.step:last-child{border-bottom:none}
+.step::before{content:counter(s);position:absolute;left:0;top:9px;width:30px;height:30px;border-radius:9px;background:var(--laranja-bg);border:1px solid rgba(249,115,22,.4);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:grid;place-items:center}
+.step b{color:#fff}
+svg{max-width:100%;height:auto;display:block;margin:16px auto}
+.fig{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.fig .cap{font-size:12px;color:var(--muted);text-align:center;margin-top:8px;font-family:'JetBrains Mono',monospace}
+footer{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+footer .ref{font-family:'JetBrains Mono',monospace;font-size:12px;margin-top:8px}
+a{color:var(--laranja)}
+@media(max-width:560px){.hands{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">carolzita · cirurgia geral · fígado</div>
+  <h1>Fígado</h1>
+  <p class="sub">Nódulos hepáticos (hemangioma × HNF × adenoma × CHC) · abscesso hepático (piogênico × amebiano) · hipertensão portal (<strong>Baveno VII</strong>, varizes, TIPS) · anatomia segmentar de Couinaud. Base: ACG 2024 (Focal Liver Lesions), EASL (tumores benignos), Baveno VII 2022, e pegadinhas das bancas do RS.</p>
+  <div class="tags">
+    <span class="tag">Couinaud</span>
+    <span class="tag">LI-RADS</span>
+    <span class="tag">Baveno VII</span>
+    <span class="tag">TIPS</span>
+    <span class="tag">MELD</span>
+    <span class="tag r">HCPA · GHC · SC-POA · PUC · AMRIGS</span>
+  </div>
+</header>
+
+<!-- 1 ANATOMIA -->
+<details open>
+  <summary><span class="num">1</span> Anatomia segmentar &amp; vascularização <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Classificação de Couinaud — 8 segmentos funcionais</h4>
+    <p>Baseada na distribuição dos ramos portais e nas veias hepáticas (que correm <strong>entre</strong> os segmentos, marcando os planos de divisão), <strong>não</strong> na anatomia externa (lobos direito/esquerdo pela fissura umbilical). <span class="simple">(o fígado é dividido em 8 "quartos" independentes, cada um com sua própria entrada de sangue e saída de bile — como apartamentos que compartilham prédio mas têm portas próprias)</span></p>
+    <ul>
+      <li><strong>Segmento I</strong> = lobo caudado (independente, drena direto na cava)</li>
+      <li><strong>Segmentos II, III</strong> = lobo esquerdo lateral</li>
+      <li><strong>Segmento IV (a/b)</strong> = lobo esquerdo medial (quadrado)</li>
+      <li><strong>Segmentos V, VI, VII, VIII</strong> = lobo direito</li>
+    </ul>
+    <div class="box mac"><span class="lbl">macete</span>Numeração em <strong>sentido horário</strong> a partir do caudado (I), visto de frente, começando pela esquerda: II-III (lateral esq.) → IV (medial) → V (ântero-inf. direito) → VI (póstero-inf.) → VII (póstero-sup.) → VIII (ântero-sup.).</div>
+
+    <h4>Tríade portal &amp; veias hepáticas</h4>
+    <ul>
+      <li><strong>Veia porta</strong> (70-75% do fluxo, pouco oxigenado, drenagem esplâncnica) + <strong>artéria hepática</strong> (25-30%, alta O₂) + <strong>ducto biliar</strong> — correm juntos <strong>dentro</strong> dos segmentos (pedículos portais).</li>
+      <li><strong>3 veias hepáticas</strong> (direita, média, esquerda) drenam para a <strong>VCI</strong> e correm <strong>entre</strong> os segmentos — usadas como referência cirúrgica para planos de secção.</li>
+      <li><strong>Veia hepática média</strong> divide fígado direito/esquerdo "verdadeiro" (linha de Cantlie/fissura principal — vesícula biliar até VCI), diferente da fissura umbilical (divisão anatômica clássica em lobo D/E).</li>
+    </ul>
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">HCPA · AMRIGS</span></span><strong>Manobra de Pringle</strong> = clampeamento do ligamento hepatoduodenal (via porta + artéria hepática + colédoco) para controle de hemorragia em trauma/ressecção. <strong>Não controla</strong> sangramento das veias hepáticas/cava retro-hepática (drenagem sistêmica direta).</div>
+  </div>
+</details>
+
+<!-- 2 NODULOS BENIGNOS -->
+<details>
+  <summary><span class="num">2</span> Nódulos hepáticos benignos <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>Achado incidental comum em exames de imagem. A abordagem inicial (ACG 2024, EASL) é <strong>TC ou RM multifásica com contraste</strong> — biópsia não é rotina se a imagem for característica.</p>
+
+    <h4>Comparativo dos 3 principais</h4>
+    <div class="tbl"><table>
+      <tr><th></th><th>Hemangioma</th><th>HNF (FNH)</th><th>Adenoma hepático</th></tr>
+      <tr><td><strong>Frequência</strong></td><td>Mais comum (1º)</td><td>2º mais comum</td><td>Raro</td></tr>
+      <tr><td><strong>Perfil</strong></td><td>Qualquer idade/sexo</td><td>Mulheres jovens (mas não hormônio-dependente)</td><td><strong>Mulheres jovens em ACO</strong>; esteroides anabolizantes em homens</td></tr>
+      <tr><td><strong>Imagem clássica</strong></td><td>Realce nodular periférico <strong>centrípeto</strong> (\"puddle sign\")</td><td><strong>Cicatriz central</strong>, hipercaptante na fase hepatobiliar (contraste gadoxético)</td><td>Heterogêneo, sem cicatriz central; pode ter gordura/hemorragia interna</td></tr>
+      <tr><td><strong>Risco</strong></td><td>Sangramento raríssimo</td><td>Praticamente nenhum (não tem risco de ruptura/malignização)</td><td><strong>Sangramento e malignização</strong> (subtipo β-catenina)</td></tr>
+      <tr><td><strong>Conduta</strong></td><td>Expectante, mesmo se grande e assintomático (regra geral)</td><td>Expectante; suspender ACO não é obrigatório</td><td>Depende de tamanho/subtipo (ver abaixo)</td></tr>
+    </table></div>
+
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">todas as bancas</span></span>Pegadinha clássica: <strong>HNF não precisa suspender anticoncepcional nem operar</strong> — diferente do <strong>adenoma</strong>, onde a suspensão hormonal é indicada e pode até promover regressão. Não confundir as duas lesões em mulher jovem com achado incidental!</div>
+
+    <h4>Adenoma hepático — a lesão que exige decisão cirúrgica</h4>
+    <ul>
+      <li><strong>Fatores de risco</strong>: ACO/esteroides anabolizantes, obesidade, síndrome metabólica, glicogenoses.</li>
+      <li><strong>Subtipos moleculares</strong> (relevantes por risco): inflamatório (mais comum, risco de sangramento), <strong>β-catenina mutado</strong> (maior risco de malignização, mais comum em homens), HNF1α-inativado (associado a esteatose, baixo risco).</li>
+    </ul>
+    <div class="box warn"><span class="lbl">⚠ regra de decisão — tamanho e sexo</span><strong>&gt;5 cm</strong> = indicação de <strong>ressecção</strong> (risco de sangramento e malignização sobe muito). <strong>Em homens</strong>, indicação de ressecção <strong>independente do tamanho</strong> (maior risco de malignização/subtipo β-catenina). &lt;5 cm em mulher: suspender hormônio + seguimento com imagem; se não regredir ou crescer, considerar ressecção.</div>
+
+    <h4>Cistos hepáticos simples</h4>
+    <p>Achado incidental frequentíssimo, geralmente assintomático — conduta expectante. Diferenciar de <strong>doença hepática policística</strong> e de <strong>cisto hidático</strong> (Echinococcus — história epidemiológica, sorologia, cuidado com PAAF pelo risco de choque anafilático/disseminação).</p>
+  </div>
+</details>
+
+<!-- 3 CHC / LI-RADS -->
+<details>
+  <summary><span class="num">3</span> Nódulo em fígado cirrótico &amp; LI-RADS <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>Em paciente <strong>cirrótico</strong>, todo nódulo novo é <strong>carcinoma hepatocelular (CHC) até prova em contrário</strong> — muda completamente a lógica diagnóstica em relação ao fígado não-cirrótico.</p>
+    <h4>Padrão de imagem "washout"</h4>
+    <ul>
+      <li><strong>Hipercaptação na fase arterial</strong> + <strong>washout (lavagem) na fase portal/tardia</strong> = padrão característico de CHC — permite diagnóstico <strong>sem biópsia</strong> em nódulo &gt;1 cm em fígado cirrótico (sistema <strong>LI-RADS</strong>).</li>
+      <li>Nódulo &lt;1 cm → seguimento com US/exame seriado em 3-6 meses.</li>
+    </ul>
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">HCPA · SC-POA</span></span>Diferente do fígado normal (onde nódulo incidental costuma ser benigno e a conduta é expectante), no <strong>fígado cirrótico</strong> a regra se inverte: <strong>investigar ativamente</strong> com imagem trifásica; padrão washout dispensa biópsia.</div>
+  </div>
+</details>
+
+<!-- 4 ABSCESSO -->
+<details>
+  <summary><span class="num">4</span> Abscesso hepático <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Piogênico × Amebiano — o comparativo mais cobrado</h4>
+    <div class="tbl"><table>
+      <tr><th></th><th>Piogênico</th><th>Amebiano</th></tr>
+      <tr><td><strong>Agente</strong></td><td>Polimicrobiano (E. coli, Klebsiella, anaeróbios)</td><td><strong>Entamoeba histolytica</strong></td></tr>
+      <tr><td><strong>Origem mais comum</strong></td><td><strong>Via biliar</strong> (colangite, coledocolitíase) &gt; portal (apendicite/diverticulite) &gt; criptogênico</td><td>Colite amebiana → via porta</td></tr>
+      <tr><td><strong>Localização</strong></td><td>Múltiplos, qualquer lobo</td><td><strong>Único</strong>, lobo direito (~80%)</td></tr>
+      <tr><td><strong>Epidemiologia</strong></td><td>Idade avançada, comorbidades biliares</td><td>Jovens, área endêmica, viagem recente</td></tr>
+      <tr><td><strong>Sorologia</strong></td><td>Não se aplica</td><td><strong>Positiva em &gt;90%</strong></td></tr>
+      <tr><td><strong>Tratamento</strong></td><td><strong>Drenagem percutânea + ATB</strong> empírico amplo espectro</td><td><strong>Metronidazol isolado</strong> na maioria dos casos — drenagem só em situações específicas</td></tr>
+    </table></div>
+
+    <div class="box mac"><span class="lbl">macete</span>Piogênico = <strong>múltiplo, biliar, dreno + ATB</strong>. Amebiano = <strong>único, lobo D, jovem viajante, só remédio (metronidazol)</strong>.</div>
+
+    <h4>Quando drenar o abscesso amebiano (exceção à regra do "só remédio")</h4>
+    <ul>
+      <li>Dúvida diagnóstica entre piogênico × amebiano</li>
+      <li>Abscesso volumoso com risco iminente de ruptura</li>
+      <li>Resposta clínica inadequada ao metronidazol em 3-5 dias</li>
+      <li>Localização em lobo esquerdo (maior risco de ruptura para pericárdio)</li>
+      <li>Gestação</li>
+    </ul>
+
+    <h4>Tratamento do abscesso piogênico — passo a passo</h4>
+    <div class="steps">
+      <div class="step"><b>1. Antibioticoterapia empírica</b> de amplo espectro cobrindo Gram-negativos entéricos e anaeróbios (ex: cefalosporina de 3ª geração + metronidazol, ou piperacilina-tazobactam), ajustada por cultura de sangue/abscesso.</div>
+      <div class="step"><b>2. Drenagem percutânea guiada por imagem (US/TC)</b> = 1ª escolha para a maioria dos casos — aspiração (abscessos &lt;4-5 cm) ou cateter de demora (maiores/multiloculados).</div>
+      <div class="step"><b>3. Drenagem cirúrgica (preferencialmente laparoscópica)</b> reservada para: falha da drenagem percutânea, abscesso multiloculado espesso, necessidade de tratar fonte intra-abdominal concomitante (ex: apendicite, diverticulite), sinais de peritonite.</div>
+    </div>
+    <div class="box warn"><span class="lbl">⚠ pegadinha</span>Choque com falência de múltiplos órgãos é <strong>contraindicação</strong> para cirurgia — priorizar drenagem percutânea e estabilização.</div>
+  </div>
+</details>
+
+<!-- 5 HIPERTENSAO PORTAL -->
+<details>
+  <summary><span class="num">5</span> Hipertensão portal · Baveno VII <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Fisiopatologia — o gradiente que importa</h4>
+    <p><strong>HVPG (gradiente de pressão venosa hepática)</strong> = padrão-ouro para medir hipertensão portal. <strong>HVPG ≥10 mmHg</strong> define <strong>hipertensão portal clinicamente significativa (CSPH)</strong> — ponto de corte que prediz risco de descompensação (varizes, ascite, encefalopatia).</p>
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">Baveno VII 2022</span></span>Métodos <strong>não invasivos</strong> ganharam peso: <strong>elastografia hepática (LSM)</strong> combinada com <strong>plaquetas</strong> e <strong>elastografia esplênica (SSM)</strong> permitem estimar CSPH e triar necessidade de endoscopia sem HVPG/EDA em todo paciente.</div>
+
+    <h4>Critérios de Baveno VI/VII para dispensar endoscopia de rastreio</h4>
+    <p><strong>LSM &lt;15 kPa + plaquetas &gt;150.000</strong> = baixa probabilidade de varizes de risco → dispensa endoscopia de rastreio em cirrose compensada. <strong>LSM &gt;25 kPa</strong> = alta probabilidade de CSPH (regra de "rule-in").</p>
+
+    <h4>Primeira descompensação — conceito reformulado</h4>
+    <p>Baveno VII redefine "primeira descompensação" como o evento clínico que marca a transição para cirrose descompensada: <strong>hemorragia varicosa, ascite ou encefalopatia hepática</strong> — o foco deixou de ser só sangramento e passou a ser a progressão global da doença.</p>
+
+    <h4>Profilaxia primária de sangramento varicoso</h4>
+    <div class="tbl"><table>
+      <tr><th>Cenário</th><th>Conduta</th></tr>
+      <tr><td>Varizes de <strong>alto risco</strong> (grandes, red signs, Child C)</td><td><strong>Betabloqueador não seletivo</strong> (carvedilol preferencial) OU ligadura elástica</td></tr>
+      <tr><td>CSPH compensada, sem varizes de alto risco</td><td>Carvedilol para <strong>prevenir descompensação</strong> (não só sangramento) — mudança de paradigma do Baveno VII</td></tr>
+      <tr><td>Varizes de baixo risco</td><td>Seguimento endoscópico periódico</td></tr>
+    </table></div>
+
+    <h4>Sangramento agudo — manejo</h4>
+    <div class="steps">
+      <div class="step"><b>Estabilização</b>: via aérea, reposição volêmica cautelosa (evitar hipervolemia — piora pressão portal), transfusão restritiva (Hb alvo ~7-8 g/dL).</div>
+      <div class="step"><b>Droga vasoativa</b> (terlipressina, octreotide ou somatostatina) o mais precoce possível, antes mesmo da endoscopia.</div>
+      <div class="step"><b>ATB profilático</b> (norfloxacino ou ceftriaxone) — reduz mortalidade, ressangramento e infecção em cirróticos com sangramento GI.</div>
+      <div class="step"><b>Endoscopia em até 12h</b>: ligadura elástica (varizes esofágicas) ou cianoacrilato (varizes gástricas).</div>
+      <div class="step"><b>TIPS precoce ("pré-emptivo")</b> em pacientes de alto risco (Child C ou Child B + sangramento ativo à EDA) dentro de 24-72h, mesmo sem falha do tratamento inicial — reduz ressangramento e mortalidade.</div>
+    </div>
+    <div class="box warn"><span class="lbl">⚠ pegadinha</span>Baveno VII <strong>desencoraja</strong> uso rotineiro de plasma fresco congelado e fator VIIa recombinante para correção de coagulopatia no sangramento varicoso — não é conduta-padrão.</div>
+
+    <h4>TIPS — indicações-chave</h4>
+    <ul>
+      <li>Sangramento varicoso refratário ou recorrente apesar do tratamento combinado (farmacológico + endoscópico).</li>
+      <li><strong>Ascite refratária</strong> com necessidade de <strong>≥3 paracenteses de grande volume/ano</strong> — indicação de TIPS como 1ª linha nesse cenário (Baveno VII).</li>
+      <li>Contraindicações relativas: encefalopatia hepática grave prévia, insuficiência cardíaca direita, doença hepática muito avançada (MELD muito alto).</li>
+    </ul>
+
+    <h4>Escore MELD — para que serve</h4>
+    <p>Baseado em <strong>bilirrubina, creatinina e INR</strong> (± sódio no MELD-Na) — prediz mortalidade em 90 dias e prioriza fila de transplante hepático. <span class="simple">(é a "nota" que diz o quão doente está o fígado e quem precisa de transplante primeiro)</span></p>
+  </div>
+</details>
+
+<!-- 6 QUESTOES / PEGA-RATOES -->
+<details>
+  <summary><span class="num">6</span> Questões de banca, pega-ratões &amp; mnemônicos <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>10 questões representativas (originais, estilo das 5 bancas)</h4>
+
+    <div class="box prova"><span class="lbl">Q1 <span class="banca">HCPA</span></span><strong>Mulher jovem, usuária de ACO, nódulo hepático incidental com cicatriz central hipercaptante na fase hepatobiliar. Diagnóstico e conduta?</strong><br>Resposta: <strong>HNF</strong> — conduta expectante; não é necessário suspender o ACO.</div>
+
+    <div class="box prova"><span class="lbl">Q2 <span class="banca">GHC</span></span><strong>Adenoma hepático de 6 cm em mulher jovem. Conduta?</strong><br>Resposta: <strong>ressecção cirúrgica</strong> (&gt;5 cm = indicação independente de sintomas, pelo risco de sangramento/malignização).</div>
+
+    <div class="box prova"><span class="lbl">Q3 <span class="banca">AMRIGS</span></span><strong>Adenoma hepático de 3 cm em homem. Conduta?</strong><br>Resposta: <strong>ressecção</strong> — em homens, indicação independe do tamanho (maior risco de malignização).</div>
+
+    <div class="box prova"><span class="lbl">Q4 <span class="banca">PUC-RS</span></span><strong>Nódulo de 2 cm em fígado cirrótico, hipercaptante na fase arterial com washout portal. Precisa de biópsia?</strong><br>Resposta: <strong>não</strong> — padrão LI-RADS/washout permite diagnóstico de CHC sem biópsia em fígado cirrótico.</div>
+
+    <div class="box prova"><span class="lbl">Q5 <span class="banca">SC-POA</span></span><strong>Homem jovem, viagem recente a área endêmica, abscesso hepático único em lobo direito, sorologia positiva. Tratamento?</strong><br>Resposta: <strong>metronidazol</strong> isolado — abscesso amebiano típico, sem necessidade de drenagem de rotina.</div>
+
+    <div class="box prova"><span class="lbl">Q6 <span class="banca">HCPA</span></span><strong>Paciente com colangite prévia, abscessos hepáticos múltiplos. Tratamento?</strong><br>Resposta: <strong>drenagem percutânea + antibiótico</strong> de amplo espectro — piogênico de origem biliar.</div>
+
+    <div class="box prova"><span class="lbl">Q7 <span class="banca">GHC</span></span><strong>Qual manobra controla sangramento na tríade portal mas NÃO controla sangramento das veias hepáticas?</strong><br>Resposta: <strong>manobra de Pringle</strong> (clampeamento do ligamento hepatoduodenal).</div>
+
+    <div class="box prova"><span class="lbl">Q8 <span class="banca">AMRIGS</span></span><strong>Segundo Baveno VII, LSM &lt;15 kPa + plaquetas &gt;150.000. Conduta quanto à endoscopia de rastreio?</strong><br>Resposta: <strong>dispensa</strong> endoscopia de rastreio — baixa probabilidade de varizes de risco.</div>
+
+    <div class="box prova"><span class="lbl">Q9 <span class="banca">PUC-RS</span></span><strong>Cirrótico Child C com sangramento varicoso ativo à EDA. Considerar TIPS precoce?</strong><br>Resposta: <strong>sim</strong> — TIPS pré-emptivo em 24-72h reduz ressangramento e mortalidade nesse perfil de risco.</div>
+
+    <div class="box prova"><span class="lbl">Q10 <span class="banca">SC-POA</span></span><strong>Paciente com ascite refratária, 4 paracenteses de grande volume no último ano. Indicação?</strong><br>Resposta: <strong>TIPS</strong> — indicado como 1ª linha nesse cenário pelo Baveno VII.</div>
+
+    <h4>Pega-ratões (as armadilhas clássicas)</h4>
+    <div class="box warn"><span class="lbl">☠ trap 1</span>HNF <strong>não</strong> precisa suspender ACO — diferente do adenoma.</div>
+    <div class="box warn"><span class="lbl">☠ trap 2</span>Adenoma em <strong>homem</strong> = ressecar independente do tamanho.</div>
+    <div class="box warn"><span class="lbl">☠ trap 3</span>Nódulo em fígado <strong>cirrótico</strong> muda a lógica — é CHC até provar o contrário.</div>
+    <div class="box warn"><span class="lbl">☠ trap 4</span>Abscesso amebiano típico = <strong>só medicamento</strong>, drenar é exceção.</div>
+    <div class="box warn"><span class="lbl">☠ trap 5</span>Pringle <strong>não</strong> controla sangramento de veias hepáticas/cava.</div>
+    <div class="box warn"><span class="lbl">☠ trap 6</span>Reposição volêmica <strong>excessiva</strong> no sangramento varicoso piora a pressão portal.</div>
+    <div class="box warn"><span class="lbl">☠ trap 7</span>Plasma fresco/fator VIIa <strong>não</strong> são rotina na coagulopatia do sangramento varicoso (Baveno VII).</div>
+    <div class="box warn"><span class="lbl">☠ trap 8</span>Fissura umbilical ≠ divisão funcional real (linha de Cantlie/veia hepática média).</div>
+
+    <h4>Mnemônicos-resumo</h4>
+    <div class="box mac"><span class="lbl">macete geral</span>Hemangioma = realce <strong>centrípeto</strong> · HNF = <strong>cicatriz central</strong>, sem risco · Adenoma = <strong>hormônio + risco</strong>, &gt;5cm ou homem = operar · Piogênico = <strong>múltiplo+biliar+dreno</strong> · Amebiano = <strong>único+D+metronidazol</strong> · CSPH = <strong>HVPG≥10</strong> · Baveno = <strong>carvedilol + TIPS precoce</strong>.</div>
+  </div>
+</details>
+
+<footer>
+  <div><strong>carolzita</strong> · Fígado · referência completa</div>
+  <div class="ref">Fontes: ACG Clinical Guideline — Focal Liver Lesions (2024) · EASL Clinical Practice Guidelines on Benign Liver Tumours · Baveno VII Consensus (2022) · LI-RADS · Sabiston · Zollinger. Conteúdo educacional; questões são itens representativos originais.</div>
+</footer>
+</div>
+</body>
+</html>

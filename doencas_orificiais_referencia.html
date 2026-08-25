@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doenças Orificiais — carolzita</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0f; --bg2:#12121a; --card:#16161f; --card2:#1c1c27;
+  --line:#2a2a38; --txt:#e6e6ef; --muted:#9a9ab0;
+  --laranja:#f97316; --laranja-bg:rgba(249,115,22,.10);
+  --roxo:#a855f7; --roxo-bg:rgba(168,85,247,.10);
+  --ciano:#22d3ee; --ciano-bg:rgba(34,211,238,.10);
+  --verde:#34d399; --vermelho:#f87171; --amarelo:#fbbf24;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(1200px 600px at 50% -10%,#15151f 0%,var(--bg) 60%);color:var(--txt);font-family:'Inter',sans-serif;line-height:1.55;padding:0 0 80px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px}
+header{padding:40px 0 24px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(30px,6vw,46px);line-height:1.05;margin:8px 0 6px;letter-spacing:-.02em}
+.sub{color:var(--muted);font-size:15px;max-width:700px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tag{font-family:'JetBrains Mono',monospace;font-size:11px;padding:5px 10px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted)}
+.tag.r{color:var(--roxo);border-color:rgba(168,85,247,.35);background:var(--roxo-bg)}
+section{margin-top:14px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:12px;overflow:hidden;transition:border-color .2s}
+details[open]{border-color:rgba(249,115,22,.30)}
+summary{cursor:pointer;list-style:none;padding:18px 20px;display:flex;align-items:center;gap:13px;font-family:'Syne',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em;user-select:none}
+summary::-webkit-details-marker{display:none}
+.num{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--bg);background:var(--laranja);width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:0 0 auto}
+.chev{margin-left:auto;color:var(--muted);transition:transform .25s;font-size:14px}
+details[open] .chev{transform:rotate(90deg)}
+.body{padding:4px 22px 24px;font-size:15px}
+.body p{margin:10px 0}
+.body h4{font-family:'Syne',sans-serif;font-size:16px;color:var(--laranja);margin:20px 0 8px;letter-spacing:-.01em}
+.body ul{margin:8px 0 8px 4px;list-style:none}
+.body li{padding:4px 0 4px 20px;position:relative}
+.body li::before{content:"▸";position:absolute;left:0;color:var(--laranja);font-size:12px;top:6px}
+.body strong{color:#fff;font-weight:600}
+.simple{color:var(--verde);font-style:italic;font-size:.94em;display:block;margin:6px 0}
+.box.simplebox{background:rgba(52,211,153,.09);border-color:rgba(52,211,153,.32);color:var(--verde);font-style:italic}
+.box.simplebox .lbl{color:var(--verde);font-style:normal}
+.box.simplebox strong{color:#7fe8c0;font-style:normal}
+.stx{counter-reset:st;margin:12px 0}
+.st{counter-increment:st;background:var(--card2);border:1px solid var(--line);border-radius:13px;padding:14px 16px 14px 52px;margin:11px 0;position:relative}
+.st::before{content:counter(st);position:absolute;left:14px;top:13px;width:26px;height:26px;border-radius:8px;background:var(--laranja);color:#0a0a0f;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center}
+.st .fase{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:var(--laranja);display:block;margin-bottom:1px}
+.st .ttl{font-weight:700;font-size:15.5px;color:#fff;margin-bottom:4px}
+.st p{margin:5px 0;font-size:14px}
+.pq{border-left:3px solid var(--roxo);background:var(--roxo-bg);border-radius:0 9px 9px 0;padding:8px 12px;margin:9px 0;font-size:13.5px}
+.pq b{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.3px;text-transform:uppercase;color:var(--roxo);display:block;margin-bottom:2px}
+.mh2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:9px}
+.mh{border-radius:9px;padding:8px 11px;font-size:12.5px;border:1px solid var(--line)}
+.mh.e{background:rgba(52,211,153,.07);border-color:rgba(52,211,153,.3)}
+.mh.d{background:var(--laranja-bg);border-color:rgba(249,115,22,.3)}
+.mh b{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;display:block;margin-bottom:2px}
+.mh.e b{color:var(--verde)} .mh.d b{color:var(--laranja)}
+.fio{font-family:'JetBrains Mono',monospace;font-size:11.5px;background:var(--roxo-bg);color:var(--roxo);border:1px solid rgba(168,85,247,.35);padding:1px 6px;border-radius:5px;white-space:nowrap}
+@media(max-width:640px){.mh2{grid-template-columns:1fr}}
+.box{border-radius:12px;padding:13px 15px;margin:14px 0;font-size:14px;border:1px solid}
+.box.prova{background:var(--roxo-bg);border-color:rgba(168,85,247,.35)}
+.box.prova .lbl{color:var(--roxo)}
+.box.mac{background:var(--ciano-bg);border-color:rgba(34,211,238,.35)}
+.box.mac .lbl{color:var(--ciano)}
+.box.warn{background:rgba(248,113,113,.08);border-color:rgba(248,113,113,.3)}
+.box.warn .lbl{color:var(--vermelho)}
+.lbl{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-family:'JetBrains Mono',monospace;font-size:10px;background:rgba(168,85,247,.2);color:var(--roxo);padding:2px 7px;border-radius:6px;margin-left:6px;white-space:nowrap}
+.tbl{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
+.tbl table{width:100%;border-collapse:collapse;min-width:520px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--laranja);background:var(--card2)}
+td strong{color:#fff}
+.fio td:first-child{color:var(--ciano);font-family:'JetBrains Mono',monospace;font-weight:500}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin:14px 0}
+.gcard{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+.gcard .t{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--ciano);margin-bottom:4px}
+.gcard .d{font-size:13px;color:var(--muted)}
+.hands{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.hand{border-radius:12px;padding:14px;border:1px solid var(--line)}
+.hand.e{background:rgba(34,211,238,.06);border-color:rgba(34,211,238,.25)}
+.hand.d{background:rgba(249,115,22,.06);border-color:rgba(249,115,22,.25)}
+.hand .ht{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;font-weight:700}
+.hand.e .ht{color:var(--ciano)} .hand.d .ht{color:var(--laranja)}
+.hand li{font-size:13px}
+.steps{counter-reset:s;margin:10px 0}
+.step{counter-increment:s;position:relative;padding:11px 0 11px 46px;border-bottom:1px dashed var(--line)}
+.step:last-child{border-bottom:none}
+.step::before{content:counter(s);position:absolute;left:0;top:9px;width:30px;height:30px;border-radius:9px;background:var(--laranja-bg);border:1px solid rgba(249,115,22,.4);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:grid;place-items:center}
+.step b{color:#fff}
+svg{max-width:100%;height:auto;display:block;margin:16px auto}
+.fig{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.fig .cap{font-size:12px;color:var(--muted);text-align:center;margin-top:8px;font-family:'JetBrains Mono',monospace}
+footer{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+footer .ref{font-family:'JetBrains Mono',monospace;font-size:12px;margin-top:8px}
+a{color:var(--laranja)}
+@media(max-width:560px){.hands{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">carolzita · cirurgia geral · coloproctologia</div>
+  <h1>Doenças Orificiais</h1>
+  <p class="sub">Hemorroidas (classificação de Goligher, ASCRS 2024) · Fissura anal (esfincterotomia lateral interna, ASCRS 2023) · Abscesso e fístula anorretal (regra de Goodsall, classificação de Parks, ASCRS 2022) · <strong>Fournier</strong> (emergência — FGSI, debridamento amplo). Base: ASCRS Clinical Practice Guidelines 2022–2024 e pegadinhas das bancas do RS.</p>
+  <div class="tags">
+    <span class="tag">Goligher</span>
+    <span class="tag">Parks</span>
+    <span class="tag">Goodsall</span>
+    <span class="tag">LEIL</span>
+    <span class="tag">FGSI</span>
+    <span class="tag r">HCPA · GHC · SC-POA · PUC · AMRIGS</span>
+  </div>
+</header>
+
+<!-- 1 ANATOMIA -->
+<details open>
+  <summary><span class="num">1</span> Anatomia do canal anal <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Linha pectínea (denteada) — o divisor de águas</h4>
+    <p>Separa o canal anal em duas regiões embriologicamente distintas — <strong>tudo na prova gira em torno dessa linha</strong>: <span class="simple">(é como uma linha imaginária no meio do canal anal que separa "duas cidades diferentes" com leis próprias)</span></p>
+    <div class="tbl"><table>
+      <tr><th></th><th>Acima da linha (proximal)</th><th>Abaixo da linha (distal)</th></tr>
+      <tr><td><strong>Origem</strong></td><td>Endoderma (intestino primitivo)</td><td>Ectoderma (proctodeu)</td></tr>
+      <tr><td><strong>Epitélio</strong></td><td>Colunar/glandular</td><td>Escamoso</td></tr>
+      <tr><td><strong>Inervação</strong></td><td><strong>Visceral</strong> — indolor</td><td><strong>Somática</strong> (n. pudendo) — dolorosa</td></tr>
+      <tr><td><strong>Drenagem venosa</strong></td><td>V. retal superior → porta</td><td>V. retal inferior → cava</td></tr>
+      <tr><td><strong>Drenagem linfática</strong></td><td>Ilíacos internos</td><td>Inguinais</td></tr>
+      <tr><td><strong>Hemorroida típica</strong></td><td><strong>Interna</strong> (indolor, sangra)</td><td><strong>Externa</strong> (dolorosa se trombosa)</td></tr>
+    </table></div>
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">todas as bancas</span></span>Hemorroida <strong>interna trombosada não dói</strong> (inervação visceral) — quem dói é a <strong>externa trombosada</strong> (inervação somática). Pegadinha clássica de prova.</div>
+
+    <h4>Complexo esfincteriano</h4>
+    <ul>
+      <li><strong>Esfíncter interno</strong> = musculatura lisa, involuntária, continuação da m. circular do reto. Responsável pelo <strong>tônus de repouso (~85%)</strong>.</li>
+      <li><strong>Esfíncter externo</strong> = musculatura estriada, voluntária (n. pudendo), 3 porções (subcutânea, superficial, profunda).</li>
+      <li><strong>Linha de Hilton (anocutânea)</strong> = transição entre epitélio anal e pele perianal, ~1–1,5 cm distal à linha pectínea.</li>
+    </ul>
+
+    <h4>Espaços perirretais (por onde o pus caminha)</h4>
+    <div class="grid">
+      <div class="gcard"><div class="t">Interesfincteriano</div><div class="d">Entre esfíncter interno e externo — origem da maioria dos abscessos/fístulas (glândulas de Chiari/criptoglandulares)</div></div>
+      <div class="gcard"><div class="t">Isquiorretal</div><div class="d">Lateral ao esfíncter externo, abaixo do m. elevador do ânus</div></div>
+      <div class="gcard"><div class="t">Supraelevador</div><div class="d">Acima do elevador do ânus — comunica com pelve</div></div>
+      <div class="gcard"><div class="t">Perianal</div><div class="d">Mais superficial, subcutâneo, ao redor do ânus</div></div>
+    </div>
+    <p class="simple">(pense nesses espaços como "corredores" dentro da parede anal por onde a infecção pode se espalhar — o tipo de abscesso/fístula depende de qual corredor o pus usou)</p>
+  </div>
+</details>
+
+<!-- 2 HEMORROIDAS -->
+<details>
+  <summary><span class="num">2</span> Doença hemorroidária <span class="chev">▶</span></summary>
+  <div class="body">
+    <p><strong>Hemorroidas</strong> = coxins vasculares normais do canal anal que se tornam sintomáticos (ingurgitamento, prolapso, sangramento). Não são "varizes" — são estruturas anatômicas normais hipertrofiadas.</p>
+
+    <h4>Classificação de Goligher (hemorroida interna)</h4>
+    <div class="tbl"><table>
+      <tr><th>Grau</th><th>Característica</th></tr>
+      <tr><td><strong>I</strong></td><td>Sangra, <strong>não prolapsa</strong></td></tr>
+      <tr><td><strong>II</strong></td><td>Prolapsa ao esforço, <strong>redução espontânea</strong></td></tr>
+      <tr><td><strong>III</strong></td><td>Prolapsa, precisa de <strong>redução manual</strong></td></tr>
+      <tr><td><strong>IV</strong></td><td><strong>Irredutível</strong> / prolapso permanente</td></tr>
+    </table></div>
+
+    <h4>Tratamento — ASCRS 2024, escalonado</h4>
+    <div class="steps">
+      <div class="step"><b>Grau I–II / III selecionados</b>: dieta rica em fibra + fluidos + mudança de hábito intestinal como base (1ª linha).</div>
+      <div class="step"><b>Falha do tratamento clínico</b>: procedimentos ambulatoriais — <strong>ligadura elástica</strong> (mais eficaz), escleroterapia, fotocoagulação infravermelha.</div>
+      <div class="step"><b>Grau III–IV / falha ambulatorial</b>: hemorroidectomia cirúrgica (Milligan-Morgan aberta ou Ferguson fechada) ou <strong>PPH (hemorroidopexia por grampeamento)</strong> / <strong>THD</strong> (desarterialização hemorroidária guiada por Doppler).</div>
+      <div class="step"><b>Externa trombosada</b>: excisão precoce (&lt;72h do início da dor) alivia sintomas mais rápido que conduta expectante.</div>
+    </div>
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">ASCRS 2024</span></span>Avaliação endoscópica completa do cólon é indicada em <strong>pacientes selecionados</strong> com hemorroida sintomática e sangramento retal — não assumir que todo sangramento é "só hemorroida" sem excluir neoplasia, principalmente &gt;45–50 anos ou sinais de alarme.</div>
+
+    <h4>Hemorroidectomia — passo a passo (Milligan-Morgan / Ferguson)</h4>
+    <div class="box simplebox"><span class="lbl">tradução simples</span>Os coxins hemorroidários <strong>não são doença</strong> — são estruturas normais que ajudam na continência fina, e todo mundo tem três. A operação não "arranca hemorroida": ela retira <strong>o coxim que prolapsou</strong> e deixa os outros no lugar. É por isso que a regra de ouro é <strong>preservar pontes de mucosa</strong> entre eles.</div>
+
+    <div class="stx">
+
+      <div class="st">
+        <span class="fase">fase de exposição</span>
+        <div class="ttl">Posicionamento e exposição do canal anal</div>
+        <p>Litotomia ou <strong>jack-knife</strong> (canivete). Afastador de <strong>Hill-Ferguson</strong> ou espéculo anal, com boa iluminação.</p>
+        <div class="pq"><b>por quê</b>A escolha da posição é sobre <strong>onde está a lesão</strong> e sobre drenagem de sangue: o jack-knife expõe melhor a face posterior e mantém o campo seco; a litotomia é mais versátil quando há acesso transanal associado.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de apresentação</span>
+        <div class="ttl">Tração do mamilo e incisão em raquete</div>
+        <p>Pinça de <strong>Allis</strong> tracionando o mamilo; incisão em "raquete" na base, com o cabo da raquete voltado para fora.</p>
+        <div class="pq"><b>por quê</b>O formato de raquete existe para que a ferida cutânea seja <strong>mais larga na saída</strong> — permitindo que ela drene e cicatrize de fora para dentro. Ferida estreita na margem retém secreção e fecha por cima antes do fundo.</div>
+        <div class="mh2">
+          <div class="mh e"><b>mão esquerda</b>Allis tracionando o mamilo para fora e para cima, expondo o plano</div>
+          <div class="mh d"><b>mão direita</b>Bisturi elétrico ou tesoura na incisão em raquete</div>
+        </div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase crítica — define a continência</span>
+        <div class="ttl">Dissecção do coxim <em>preservando</em> o esfíncter interno</div>
+        <p>Dissecar o plexo vascular <strong>acima</strong> das fibras esbranquiçadas do <strong>esfíncter interno</strong>, que deve ser visualizado e deixado íntegro.</p>
+        <div class="pq"><b>por quê</b>O esfíncter interno é responsável por cerca de <strong>70–85% do tônus de repouso</strong> — ele é o músculo da continência involuntária, para gases e fezes líquidas. Lesá-lo aqui produz incontinência permanente numa operação que era eletiva e benigna. É a razão de a dissecção ser feita <em>vendo</em> o músculo, e não por planos presumidos.</div>
+        <div class="mh2">
+          <div class="mh e"><b>mão esquerda</b>Mantém a tração constante, abrindo o plano entre coxim e esfíncter</div>
+          <div class="mh d"><b>mão direita</b>Tesoura ou cautério em toques curtos, rente ao coxim</div>
+        </div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase vascular</span>
+        <div class="ttl">Ligadura do pedículo</div>
+        <p>Ligar o pedículo vascular <strong>acima da linha pectínea</strong> com <span class="fio">categute cromado 2-0/3-0</span> ou <span class="fio">Vicryl</span>.</p>
+        <div class="pq"><b>por quê</b>Ligar <strong>acima</strong> da pectínea coloca o ponto em território de inervação <strong>visceral</strong>, que não dói. Ponto abaixo da linha, em mucosa somática inervada pelo pudendo, causa dor intensa e desproporcional — é um dos motivos clássicos de dor pós-operatória excessiva.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de fechamento — a regra de ouro</span>
+        <div class="ttl">Ferida aberta ou fechada, sempre com pontes de mucosa</div>
+        <p><strong>Milligan-Morgan</strong>: ferida aberta. <strong>Ferguson</strong>: fechada com <span class="fio">Vicryl 3-0</span> contínuo. Em ambas, <strong>preservar pontes de mucosa</strong> entre os três mamilos clássicos (3, 7 e 11 h em litotomia).</p>
+        <div class="pq"><b>por quê</b>As pontes são o que impede a cicatrização <strong>circunferencial</strong>. Uma cicatriz que dá a volta completa no canal anal se retrai como um anel e produz <strong>estenose anal</strong> — complicação de correção difícil e altamente incapacitante. Ressecar os três coxins sem pontes é o erro que transforma uma cirurgia de qualidade de vida num problema permanente.</div>
+      </div>
+
+    </div>
+
+    <div class="box mac"><span class="lbl">as 3 checagens da hemorroidectomia</span>
+      <strong>1)</strong> O esfíncter interno foi <strong>visto</strong> e está íntegro?<br>
+      <strong>2)</strong> O pedículo foi ligado <strong>acima</strong> da linha pectínea?<br>
+      <strong>3)</strong> Restaram <strong>pontes de mucosa</strong> entre os sítios operados?
+    </div>
+    <div class="box warn"><span class="lbl">⚠ complicações no tempo</span><strong>Imediata:</strong> retenção urinária (a mais comum). <strong>7–10 dias:</strong> sangramento tardio, quando cai a escara — o paciente já está em casa e volta ao pronto-socorro. <strong>Tardia:</strong> estenose anal e incontinência.</div>
+  </div>
+</details>
+
+<!-- 3 FISSURA -->
+<details>
+  <summary><span class="num">3</span> Fissura anal <span class="chev">▶</span></summary>
+  <div class="body">
+    <p><strong>Fissura anal</strong> = laceração linear do canal anal distal (abaixo da linha pectínea), tipicamente na <strong>linha média posterior</strong> (~90%, menor perfusão dessa região) — mulheres têm maior incidência de fissura <strong>anterior</strong> (parto).</p>
+
+    <h4>Tríade da fissura crônica</h4>
+    <ul>
+      <li><strong>Papila hipertrófica</strong> (proximal)</li>
+      <li><strong>Fissura</strong> propriamente dita (com fibras do esfíncter interno visíveis na base, se crônica)</li>
+      <li><strong>Plicoma sentinela</strong> ("hemorroida sentinela", distal)</li>
+    </ul>
+    <div class="box warn"><span class="lbl">⚠ fissura atípica</span>Fissura <strong>fora da linha média</strong>, múltipla, ou indolor → pensar em <strong>Crohn, tuberculose, sífilis, HIV, leucemia ou neoplasia</strong> — não tratar como fissura comum sem investigar.</div>
+
+    <h4>Fisiopatologia — o ciclo vicioso</h4>
+    <p>Trauma local (fezes endurecidas) → <strong>hipertonia do esfíncter interno</strong> → espasmo → <strong>redução do fluxo sanguíneo</strong> na comissura posterior (zona relativamente isquêmica) → cicatrização prejudicada → dor → mais espasmo. <span class="simple">(o músculo aperta tanto de dor que corta o próprio sangue que cicatrizaria o machucado)</span></p>
+
+    <h4>Tratamento — ASCRS 2023, escalonado</h4>
+    <div class="steps">
+      <div class="step"><b>Aguda (&lt;6–8 semanas)</b>: medidas conservadoras (fibra, banho de assento, analgesia) — tratamento não-operatório é seguro e deve ser 1ª linha.</div>
+      <div class="step"><b>Crônica</b>: agente farmacológico tópico para reduzir tônus esfincteriano — <strong>nitroglicerina tópica</strong> ou <strong>bloqueador de canal de cálcio</strong> (diltiazem/nifedipina tópicos), cura ~50-60%.</div>
+      <div class="step"><b>Falha do BCC</b>: <strong>toxina botulínica</strong> intraesfincteriana como alternativa/próximo passo.</div>
+      <div class="step"><b>Refratária</b>: <strong>esfincterotomia lateral interna (LEIL)</strong> = padrão-ouro cirúrgico.</div>
+    </div>
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">HCPA · GHC · PUC</span></span><strong>LEIL fortemente recomendada</strong> como tratamento cirúrgico de escolha na fissura crônica refratária. Nitroglicerina pode causar <strong>cefaleia</strong> limitando adesão — BCC tópico é alternativa com menos efeito colateral.</div>
+
+    <h4>Esfincterotomia lateral interna — passo a passo</h4>
+    <div class="box simplebox"><span class="lbl">tradução simples</span>A fissura não cicatriza porque o <strong>esfíncter fica contraído</strong> — e músculo contraído aperta os vasinhos que levam sangue justamente à linha média posterior, que já é a área menos irrigada do canal. Cortar <strong>uma parte</strong> do esfíncter quebra esse ciclo: relaxa, chega sangue, cicatriza. Toda a técnica é sobre cortar <strong>o suficiente e não mais que isso</strong>.</div>
+
+    <div class="stx">
+
+      <div class="st">
+        <span class="fase">fase de exposição</span>
+        <div class="ttl">Posicionamento</div>
+        <p>Litotomia ou jack-knife, com afastador anal expondo o canal.</p>
+        <div class="pq"><b>por quê</b>A exposição precisa permitir <strong>palpar o sulco interesfincteriano</strong> — é ele, e não a visão, que guia a secção.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de acesso — nunca posterior</span>
+        <div class="ttl">Incisão radial <strong>lateral</strong>, às 3 h ou 9 h</div>
+        <p>Incisão na posição lateral. <strong>Nunca</strong> na linha média posterior, onde está a fissura.</p>
+        <div class="pq"><b>por quê</b>Dois motivos que se somam. A linha média posterior é a região de <strong>menor perfusão</strong> do canal anal — cortar ali agrava exatamente a isquemia que causou a fissura. E a secção posterior cria a deformidade em <strong>"buraco de fechadura" (keyhole)</strong>, uma fenda que não fecha e causa escape de gases e sujidade. Lateral não tem nenhum dos dois problemas.</div>
+        <div class="mh2">
+          <div class="mh e"><b>mão esquerda</b>Afastador mantendo o canal aberto; dedo palpando o sulco interesfincteriano</div>
+          <div class="mh d"><b>mão direita</b>Bisturi lâmina 11 na incisão radial lateral</div>
+        </div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de identificação</span>
+        <div class="ttl">Achar o plano interesfincteriano</div>
+        <p>Identificar por <strong>palpação e dissecção romba</strong> o sulco entre o esfíncter interno (liso, esbranquiçado) e o externo (estriado, avermelhado).</p>
+        <div class="pq"><b>por quê</b>Os dois esfíncteres são distinguíveis <strong>pela cor e pela textura</strong> — o interno é músculo liso, pálido e involuntário; o externo é estriado, avermelhado e voluntário. Confundir os dois e seccionar o externo produz incontinência franca, não apenas a flatos.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de secção — o limite</span>
+        <div class="ttl">Secção <strong>parcial</strong> do esfíncter interno, até a altura da linha pectínea</div>
+        <p>Seccionar o esfíncter interno <strong>somente</strong> até o nível da linha pectínea — técnica aberta ou fechada (subcutânea). Alguns serviços adotam a "tailored", limitando a secção ao comprimento da própria fissura.</p>
+        <div class="pq"><b>por quê</b>É a troca central da operação: <strong>quanto mais se corta, mais cicatriza a fissura e mais se perde continência</strong>. A linha pectínea é o limite convencionado porque acima dela a secção adicional não melhora a cicatrização e só subtrai tônus. O paciente sai curado da fissura e passa a ter escape para flatos — troca ruim numa doença benigna.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de encerramento</span>
+        <div class="ttl">Hemostasia e fechamento simples</div>
+        <p>Hemostasia cuidadosa e fechamento da pele.</p>
+        <div class="pq"><b>por quê</b>O plano interesfincteriano sangra em lençol e o hematoma nessa loja é doloroso e favorece infecção — que num canal anal significa abscesso interesfincteriano.</div>
+      </div>
+
+    </div>
+    <div class="box mac"><span class="lbl">as 3 checagens da LEIL</span>
+      <strong>1)</strong> A incisão é <strong>lateral</strong> (3 h ou 9 h), não posterior?<br>
+      <strong>2)</strong> O músculo seccionado é o <strong>interno</strong> (liso, pálido)?<br>
+      <strong>3)</strong> A secção parou <strong>na linha pectínea</strong>?
+    </div>
+    <div class="box warn"><span class="lbl">⚠ complicação temida</span><strong>Incontinência</strong>, sobretudo a flatos. É a razão de toda a limitação técnica — e é por isso que na mulher multípara, com esfíncter já comprometido pelo parto, muitos preferem <strong>esgotar o tratamento tópico e a toxina</strong> antes de operar.</div>
+  </div>
+</details>
+
+<!-- 4 ABSCESSO E FISTULA -->
+<details>
+  <summary><span class="num">4</span> Abscesso anorretal &amp; fístula-em-ânus <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Origem comum: teoria criptoglandular</h4>
+    <p>~90% dos abscessos/fístulas se originam da <strong>obstrução das glândulas anais (de Chiari)</strong> na linha pectínea, que infectam e formam abscesso no espaço interesfincteriano — que então se propaga pelos espaços perirretais. <strong>O abscesso é a fase aguda; a fístula é a fase crônica</strong> do mesmo processo (túnel epitelizado remanescente).</p>
+
+    <h4>Classificação de Parks (fístula) — a mais cobrada</h4>
+    <div class="tbl"><table>
+      <tr><th>Tipo</th><th>Trajeto</th><th>Frequência</th></tr>
+      <tr><td><strong>Interesfincteriano</strong></td><td>Entre esfíncter interno/externo, direto à pele</td><td>~70% — mais comum</td></tr>
+      <tr><td><strong>Transesfincteriano</strong></td><td>Cruza ambos os esfíncteres → fossa isquiorretal</td><td>~25%</td></tr>
+      <tr><td><strong>Supraesfincteriano</strong></td><td>Sobe acima do elevador do ânus e desce à pele</td><td>Raro, complexo</td></tr>
+      <tr><td><strong>Extraesfincteriano</strong></td><td>Contorna todo aparelho esfincteriano (origem pélvica, ex: Crohn, DIP)</td><td>Raro</td></tr>
+    </table></div>
+
+    <h4>Regra de Goodsall — prevê o trajeto pelo orifício externo</h4>
+    <div class="box mac"><span class="lbl">macete</span>Trace uma linha transversal imaginária pelo ânus. <strong>Orifício externo ANTERIOR</strong> a essa linha → trajeto <strong>RETO/radial</strong> direto à cripta mais próxima. <strong>Orifício externo POSTERIOR</strong> → trajeto <strong>CURVO</strong>, convergindo para a linha média posterior (frequentemente fístula em ferradura). <span class="simple">(imagine um relógio: se o buraco de fora está na "frente", o túnel é retinho; se está atrás, o túnel faz uma curva)</span></div>
+    <div class="box warn"><span class="lbl">⚠ exceção de Goodsall</span>Orifícios externos <strong>&gt;3 cm</strong> da margem anal tendem a não seguir a regra — frequentemente têm trajeto complexo/curvo independente da posição.</div>
+
+    <h4>Tratamento do abscesso — sempre drenagem</h4>
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">todas as bancas</span></span><strong>Drenagem cirúrgica imediata</strong> é o tratamento do abscesso anorretal — <strong>antibiótico isolado NUNCA substitui a drenagem</strong>. ATB adjuvante reservado para imunossuprimidos, celulite extensa, sinais sistêmicos ou próteses valvares/cardíacas.</div>
+    <ul>
+      <li><strong>Perianal/isquiorretal</strong>: drenagem simples via incisão cutânea próxima ao ânus.</li>
+      <li><strong>Interesfincteriano</strong>: drenagem interna via canal anal.</li>
+      <li><strong>Supraelevador</strong>: cuidado — drenagem incorreta pode criar trajeto fistuloso complexo; guiar por imagem se necessário.</li>
+      <li>~30-50% dos abscessos evoluem para fístula crônica após a drenagem.</li>
+    </ul>
+
+    <h4>Tratamento da fístula — depende da complexidade esfincteriana</h4>
+    <div class="steps">
+      <div class="step"><b>Fístula simples (interesfincteriana ou transesfincteriana baixa, &lt;⅓ do esfíncter)</b>: <strong>fistulotomia</strong> (abertura completa do trajeto) = padrão-ouro, baixo risco de incontinência.</div>
+      <div class="step"><b>Fístula complexa (alta, anterior em mulher, múltiplos trajetos, Crohn, incontinência prévia)</b>: técnicas <strong>poupadoras de esfíncter</strong> — sedenho (seton) de drenagem/corte, <strong>retalho de avanço mucoso (LIFT)</strong>, plugue de fístula, cola de fibrina, VAAFT.</div>
+      <div class="step"><b>Sedenho (seton)</b>: fio/dreno atravessando o trajeto — <strong>drenante</strong> (mantém drenagem, permite maturação antes de 2º tempo) ou <strong>cortante</strong> (corta lentamente o esfíncter, fibrosando à medida que secciona, reduzindo risco de incontinência súbita).</div>
+    </div>
+    <div class="box warn"><span class="lbl">⚠ regra de ouro</span>Quanto <strong>mais esfíncter a fístula envolve</strong>, maior o risco de incontinência com fistulotomia — por isso fístulas altas/complexas exigem abordagem estagiada e poupadora de esfíncter.</div>
+
+    <h4>Fístula em ferradura (horseshoe)</h4>
+    <p>Trajeto profundo posterior conectando os dois lados via <strong>espaço interesfincteriano posterior profundo</strong> — tratamento clássico: <strong>procedimento de Hanley</strong> (desbridamento da fossa posterior + drenagem em contra-abertura + sedenhos nos ramos laterais).</p>
+  </div>
+</details>
+
+<!-- 5 FOURNIER -->
+<details>
+  <summary><span class="num">5</span> Gangrena de Fournier — emergência cirúrgica <span class="chev">▶</span></summary>
+  <div class="body">
+    <p><strong>Fasciite necrotizante</strong> do períneo/genitália, <strong>polimicrobiana</strong> (sinérgica aeróbia-anaeróbia), com trombose de pequenos vasos subcutâneos → necrose rapidamente progressiva. <span class="simple">(uma infecção muito agressiva que "come" a pele e o tecido embaixo dela na região genital, correndo pelos planos entre os músculos — é uma emergência que mata rápido se não operar)</span></p>
+
+    <h4>Fatores de risco</h4>
+    <ul>
+      <li><strong>Diabetes mellitus</strong> (mais comum), imunossupressão, obesidade, alcoolismo, doença vascular periférica.</li>
+      <li>Portas de entrada: abscesso perianal/isquiorretal, infecção urogenital, trauma local, cirurgia perineal recente.</li>
+    </ul>
+
+    <h4>Diagnóstico — é CLÍNICO, não esperar imagem</h4>
+    <ul>
+      <li><strong>Dor desproporcional</strong> ao exame, edema, eritema com progressão rápida (horas), <strong>crepitação</strong> (gás em tecidos), necrose cutânea, toxemia sistêmica.</li>
+      <li><strong>TC</strong> pode ajudar a definir extensão (gás nos tecidos, trajeto retroperitoneal) mas <strong>não deve atrasar</strong> a ida ao centro cirúrgico quando a suspeita clínica é alta.</li>
+      <li><strong>LRINEC</strong> pode auxiliar mas tem baixo valor preditivo isolado — não deve ser usado para excluir o diagnóstico.</li>
+    </ul>
+    <div class="box mac"><span class="lbl">escore prognóstico</span><strong>FGSI</strong> (Fournier's Gangrene Severity Index) — 9 parâmetros fisiológicos/laboratoriais (temperatura, FC, FR, Na, K, creatinina, bicarbonato, hematócrito, leucócitos). <strong>Score &gt;9 → ~75% de mortalidade</strong>; ≤9 → ~78% de sobrevida. Usado para prognóstico, não para decidir se opera.</div>
+
+    <h4>Tratamento — os 3 pilares simultâneos</h4>
+    <div class="steps">
+      <div class="step"><b>1. Ressuscitação/estabilização</b>: fluidos, suporte hemodinâmico, correção de distúrbios metabólicos (glicemia!).</div>
+      <div class="step"><b>2. Antibioticoterapia empírica de amplo espectro</b>: cobertura para Gram+, Gram- e anaeróbios (ex: piperacilina-tazobactam ou carbapenêmico + clindamicina — a clindamicina reduz produção de toxinas).</div>
+      <div class="step"><b>3. Debridamento cirúrgico AMPLO E IMEDIATO</b>: excisão de todo tecido necrótico até sangramento/tecido viável — <strong>não adiar para "aguardar demarcação"</strong> (diferente da pancreatite!). Frequentemente necessita <strong>múltiplas reabordagens ("second-look") em 24-48h</strong>.</div>
+    </div>
+    <div class="box warn"><span class="lbl">⚠ pegadinha de prova</span>Diferente da necrose pancreática (que se posterga), na <strong>Fournier o debridamento é IMEDIATO</strong> — cada hora de atraso aumenta mortalidade. Não esperar antibiótico "fazer efeito" antes de operar.</div>
+
+    <h4>Pontos técnicos</h4>
+    <ul>
+      <li><strong>Testículos geralmente são poupados</strong> (irrigação testicular é independente — origem na aorta, não no pudendo) — orquiectomia raramente necessária a menos que haja envolvimento direto.</li>
+      <li><strong>Colostomia de derivação</strong> considerada se houver envolvimento esfincteriano extenso, incontinência fecal contaminando a ferida, ou trajeto retal/perirretal envolvido.</li>
+      <li>Cistostomia suprapúbica se uretra envolvida.</li>
+      <li><strong>Terapia a vácuo (VAC)</strong> tem se mostrado útil no manejo da ferida aberta pós-debridamento — reduz tempo de internação e acelera fechamento.</li>
+      <li>Reconstrução (enxertos, retalhos) planejada em etapa tardia, após controle da infecção.</li>
+    </ul>
+  </div>
+</details>
+
+<!-- 6 QUESTOES / PEGA-RATOES -->
+<details>
+  <summary><span class="num">6</span> Questões de banca, pega-ratões &amp; mnemônicos <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>10 questões representativas (originais, estilo das 5 bancas)</h4>
+
+    <div class="box prova"><span class="lbl">Q1 <span class="banca">HCPA</span></span><strong>Por que a hemorroida interna trombosada é indolor e a externa é dolorosa?</strong><br>Resposta: acima da linha pectínea a inervação é <strong>visceral</strong> (indolor); abaixo é <strong>somática</strong> (n. pudendo, dolorosa).</div>
+
+    <div class="box prova"><span class="lbl">Q2 <span class="banca">GHC</span></span><strong>Hemorroida interna grau III. Conduta de 1ª linha se falhar tratamento clínico?</strong><br>Resposta: procedimento ambulatorial — <strong>ligadura elástica</strong> é o mais eficaz; cirurgia reservada para falha/grau IV.</div>
+
+    <div class="box prova"><span class="lbl">Q3 <span class="banca">AMRIGS</span></span><strong>Fissura anal crônica refratária a tratamento clínico. Cirurgia de escolha?</strong><br>Resposta: <strong>esfincterotomia lateral interna (LEIL)</strong>, incisão lateral, nunca posterior.</div>
+
+    <div class="box prova"><span class="lbl">Q4 <span class="banca">PUC-RS</span></span><strong>Fissura anal fora da linha média, indolor. O que pensar?</strong><br>Resposta: causa atípica — <strong>Crohn, TB, sífilis, HIV, neoplasia</strong>. Investigar antes de tratar como fissura comum.</div>
+
+    <div class="box prova"><span class="lbl">Q5 <span class="banca">SC-POA</span></span><strong>Orifício fistuloso externo a 2 cm posterior ao ânus. Trajeto provável pela regra de Goodsall?</strong><br>Resposta: <strong>curvo</strong>, convergindo para linha média posterior (possível ferradura).</div>
+
+    <div class="box prova"><span class="lbl">Q6 <span class="banca">HCPA</span></span><strong>Abscesso perianal. Antibiótico isolado é tratamento adequado?</strong><br>Resposta: <strong>NÃO</strong> — drenagem cirúrgica é obrigatória; ATB é adjuvante em casos selecionados.</div>
+
+    <div class="box prova"><span class="lbl">Q7 <span class="banca">GHC</span></span><strong>Fístula transesfincteriana alta, envolvendo &gt;⅓ do esfíncter. Fistulotomia primária é adequada?</strong><br>Resposta: <strong>não</strong> — risco de incontinência; usar sedenho/técnica poupadora de esfíncter (LIFT, seton).</div>
+
+    <div class="box prova"><span class="lbl">Q8 <span class="banca">AMRIGS</span></span><strong>Paciente diabético com dor perineal desproporcional, crepitação e toxemia. Conduta?</strong><br>Resposta: suspeita de <strong>Fournier</strong> — ATB amplo espectro + <strong>debridamento cirúrgico imediato</strong>, sem esperar exames.</div>
+
+    <div class="box prova"><span class="lbl">Q9 <span class="banca">PUC-RS</span></span><strong>Na Fournier, os testículos costumam ser poupados. Por quê?</strong><br>Resposta: irrigação testicular <strong>independente</strong> (origem aórtica), não compartilha o suprimento cutâneo perineal acometido.</div>
+
+    <div class="box prova"><span class="lbl">Q10 <span class="banca">SC-POA</span></span><strong>Paciente com sangramento retal atribuído a hemorroidas, 55 anos. Conduta antes de tratar?</strong><br>Resposta: <strong>colonoscopia/avaliação endoscópica completa</strong> para excluir neoplasia antes de assumir causa hemorroidária.</div>
+
+    <h4>Pega-ratões (as armadilhas clássicas)</h4>
+    <div class="box warn"><span class="lbl">☠ trap 1</span>Hemorroida <strong>interna</strong> trombosada = indolor; <strong>externa</strong> = dolorosa (inervação).</div>
+    <div class="box warn"><span class="lbl">☠ trap 2</span>Fissura fora da linha média/múltipla = investigar causa secundária.</div>
+    <div class="box warn"><span class="lbl">☠ trap 3</span>Esfincterotomia é sempre <strong>lateral</strong>, nunca posterior (piora a fenda).</div>
+    <div class="box warn"><span class="lbl">☠ trap 4</span>ATB <strong>nunca substitui drenagem</strong> no abscesso anorretal.</div>
+    <div class="box warn"><span class="lbl">☠ trap 5</span>Fístula alta/complexa → NÃO fazer fistulotomia primária (incontinência).</div>
+    <div class="box warn"><span class="lbl">☠ trap 6</span>Fournier: debridamento é <strong>imediato</strong>, diferente da necrose pancreática (que se adia).</div>
+    <div class="box warn"><span class="lbl">☠ trap 7</span>Goodsall tem <strong>exceção</strong> para orifícios &gt;3 cm da margem anal.</div>
+    <div class="box warn"><span class="lbl">☠ trap 8</span>Hemorroidectomia circunferencial sem pontes de mucosa → estenose anal.</div>
+
+    <h4>Mnemônicos-resumo</h4>
+    <div class="box mac"><span class="lbl">macete geral</span><strong>Goligher I-IV</strong> (sangra→prolapsa→reduz manual→irredutível) · <strong>Goodsall</strong> (anterior=reto / posterior=curvo) · <strong>Parks</strong> (inter&gt;trans&gt;supra&gt;extra, em frequência decrescente) · LEIL = <strong>lateral</strong>, nunca posterior · Fournier = <strong>ATB + debridar JÁ</strong>.</div>
+  </div>
+</details>
+
+<footer>
+  <div><strong>carolzita</strong> · Doenças Orificiais · referência completa</div>
+  <div class="ref">Fontes: ASCRS Clinical Practice Guidelines — Hemorrhoids (2024), Anal Fissures (2023), Anorectal Abscess/Fistula-in-Ano (2022) · Fournier's Gangrene Severity Index (Laor et al.) · Sabiston · Zollinger. Conteúdo educacional; questões são itens representativos originais.</div>
+</footer>
+</div>
+</body>
+</html>

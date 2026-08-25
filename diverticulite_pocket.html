@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Diverticulite · pocket</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d1117;--card:#16161f;--card2:#1c1c27;--line:#2a2a38;
+  --txt:#ececf4;--muted:#9a9ab0;
+  --laranja:#f97316;--roxo:#a855f7;--ciano:#22d3ee;--vermelho:#f87171;--amarelo:#fbbf24;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{overflow-x:hidden}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;font-size:17px;line-height:1.6;padding-bottom:30px}
+.top{padding:22px 18px 12px;position:sticky;top:0;background:linear-gradient(180deg,var(--bg) 70%,transparent);z-index:5}
+.kick{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:29px;line-height:1.05;margin-top:4px}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:6px 18px 12px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;padding:9px 15px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted);white-space:nowrap;cursor:pointer;transition:.15s}
+.tab.on{background:var(--laranja);border-color:var(--laranja);color:#0a0a0f}
+.panel{display:none;padding:6px 18px 40px;animation:f .25s}
+.panel.on{display:block}
+@keyframes f{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+h2{font-family:'Syne',sans-serif;font-size:21px;color:var(--laranja);margin:18px 0 10px}
+h3{font-family:'Syne',sans-serif;font-size:16px;color:#fff;margin:16px 0 6px}
+p{margin:10px 0}
+ul{list-style:none;margin:8px 0}
+li{padding:6px 0 6px 22px;position:relative}
+li::before{content:"▸";position:absolute;left:0;top:7px;color:var(--laranja);font-size:13px}
+strong{color:#fff;font-weight:600}
+.s{color:#34d399;font-style:italic;font-size:.92em}
+.gr{background:rgba(52,211,153,.10);border-color:rgba(52,211,153,.4);color:#34d399;font-style:italic}
+.gr .l{color:#34d399;font-style:normal}
+.gr strong,.gr b{color:#7fe8c0;font-style:normal}
+.step{flex-direction:column;gap:6px}
+.hd2{display:flex;gap:12px;align-items:flex-start}
+.fase{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--laranja);display:block}
+.pq{border-left:2px solid var(--roxo);background:rgba(168,85,247,.10);border-radius:0 7px 7px 0;padding:7px 10px;font-size:14px;width:100%}
+.pq b{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--roxo);display:block}
+.fio{font-family:'JetBrains Mono',monospace;font-size:12px;background:rgba(168,85,247,.14);color:var(--roxo);border:1px solid var(--roxo);padding:1px 6px;border-radius:5px;white-space:nowrap}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0}
+.box{border-radius:12px;padding:13px 15px;margin:13px 0;border:1px solid;font-size:15px}
+.prova{background:rgba(168,85,247,.1);border-color:rgba(168,85,247,.4)}
+.prova .l{color:var(--roxo)}
+.mac{background:rgba(34,211,238,.1);border-color:rgba(34,211,238,.4)}
+.mac .l{color:var(--ciano)}
+.warn{background:rgba(248,113,113,.1);border-color:rgba(248,113,113,.4)}
+.warn .l{color:var(--vermelho)}
+.l{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-size:10px;background:rgba(168,85,247,.25);color:var(--roxo);padding:2px 6px;border-radius:5px;margin-left:5px;font-family:'JetBrains Mono',monospace}
+.kv{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)}
+.kv:last-child{border:none}
+.kv .k{flex:0 0 42%;color:var(--ciano);font-family:'JetBrains Mono',monospace;font-size:13px}
+.kv .v{flex:1;font-size:15px}
+.step{display:flex;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line)}
+.step:last-child{border:none}
+.step .n{flex:0 0 30px;height:30px;border-radius:9px;background:rgba(249,115,22,.15);border:1px solid rgba(249,115,22,.45);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;display:grid;place-items:center;font-size:14px}
+.step .x{flex:1}
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="kick">carolzita · pocket 🚑</div>
+  <h1>Diverticulite Aguda</h1>
+</div>
+
+<div class="tabs" id="tabs">
+  <div class="tab on" data-t="dx">🔍 Diagnóstico</div>
+  <div class="tab" data-t="hinchey">🪜 Hinchey/WSES</div>
+  <div class="tab" data-t="trat">💊 Tratamento</div>
+  <div class="tab" data-t="passos">🔪 Cirurgia</div>
+  <div class="tab" data-t="maos">✋ Mãos & Fios</div>
+  <div class="tab" data-t="compl">⚠️ Complicações</div>
+  <div class="tab" data-t="mac">🎯 Macetes</div>
+</div>
+
+<!-- DIAGNÓSTICO -->
+<div class="panel on" id="dx">
+  <h2>🔍 Quadro & diagnóstico</h2>
+  <div class="card">
+    <div class="kv"><div class="k">📍 Local #1</div><div class="v">Sigmoide (Ocidente) · "apendicite da esquerda"</div></div>
+    <div class="kv"><div class="k">🌏 Direita</div><div class="v">Ásia/jovens — pode simular apendicite</div></div>
+    <div class="kv"><div class="k">🤒 Clínica</div><div class="v">Dor FIE + febre + alteração do hábito</div></div>
+    <div class="kv"><div class="k">🧱 Lesão</div><div class="v">Pseudodivertículo (mucosa+submucosa) no ponto do vaso reto</div></div>
+  </div>
+
+  <h3>🖥️ Imagem</h3>
+  <ul>
+    <li>👑 <strong>TC c/ contraste = padrão-ouro</strong> (dx + gravidade + classifica)</li>
+    <li>Achados: espessamento &gt;4 mm + <strong>fat stranding</strong> + abscesso/gás livre</li>
+    <li>📈 <strong>PCR &gt;150</strong> → maior chance de complicação/perfuração</li>
+  </ul>
+
+  <div class="box warn"><span class="l">🚫 Nunca na fase aguda</span>
+    <strong>Colonoscopia é CONTRAINDICADA</strong> (risco de perfurar). Fazer <strong>4–6 semanas depois</strong> para excluir <strong>câncer colorretal</strong> (o CA simula diverticulite). ⏳
+  </div>
+  <div class="box prova"><span class="l">Cai na prova <span class="banca">HCPA·PUC</span></span>
+    Imagem inicial = <strong>TC</strong> (não enema, não colono). Colono só tardia.
+  </div>
+</div>
+
+<!-- HINCHEY -->
+<div class="panel" id="hinchey">
+  <h2>🪜 Hinchey (modificada) & WSES</h2>
+  <div class="card">
+    <div class="kv"><div class="k">I 🫧</div><div class="v">Abscesso <strong>pericólico</strong>/fleimão</div></div>
+    <div class="kv"><div class="k">II 🎈</div><div class="v">Abscesso <strong>pélvico / à distância</strong></div></div>
+    <div class="kv"><div class="k">III 💧</div><div class="v">Peritonite <strong>purulenta</strong> difusa</div></div>
+    <div class="kv"><div class="k">IV 💩</div><div class="v">Peritonite <strong>fecal</strong> (perfuração livre)</div></div>
+  </div>
+
+  <h3>🧩 Modificada (TC)</h3>
+  <ul>
+    <li>0️⃣ leve · <strong>Ia</strong> fleimão · <strong>Ib</strong> abscesso pericólico (&lt;5 cm)</li>
+    <li>II abscesso distante · III purulenta · IV fecal</li>
+  </ul>
+
+  <h3>📊 WSES 2020</h3>
+  <ul>
+    <li>1A gás/líquido pericólico (sem abscesso) · 1B abscesso ≤4 cm</li>
+    <li>2A abscesso &gt;4 cm · 2B gás distante (perfuração contida)</li>
+    <li>3 purulenta · 4 fecal</li>
+  </ul>
+
+  <div class="box mac"><span class="l">🧠 Macete de ouro</span>
+    <strong>1 e 2 = abscesso → dá pra drenar.</strong> <strong>3 e 4 = vai pra faca.</strong> Quanto maior o número, pior. III purulenta 💧 × IV fecal 💩.
+  </div>
+</div>
+
+<!-- TRATAMENTO -->
+<div class="panel" id="trat">
+  <h2>💊 Tratamento</h2>
+  <h3>😌 Não complicada</h3>
+  <ul>
+    <li>💥 <strong>Nem sempre ATB!</strong> AVOD · DIABOLO · DINAMO → seguro sem ATB se <strong>imunocompetente + sem sepse + tolera VO</strong></li>
+    <li>🏠 Ambulatorial + reavaliar em <strong>7 dias</strong></li>
+    <li>💉 ATB reservado: sepse, imunossupressão, gestante, comorbidade, sem VO</li>
+  </ul>
+
+  <h3>🔥 Complicada</h3>
+  <div class="card">
+    <div class="kv"><div class="k">Abscesso &lt;4–5 cm</div><div class="v">💉 ATB IV isolado</div></div>
+    <div class="kv"><div class="k">Abscesso ≥4–5 cm</div><div class="v">🪡 Drenagem percutânea + ATB</div></div>
+    <div class="kv"><div class="k">Hinchey III (estável)</div><div class="v">🔪 Sigmoidectomia + <strong>anastomose primária</strong> ± ileostomia</div></div>
+    <div class="kv"><div class="k">Hinchey IV / instável</div><div class="v">🎒 <strong>Hartmann</strong> (colostomia terminal)</div></div>
+  </div>
+
+  <div class="box warn"><span class="l">🚱 Lavado laparoscópico FORA</span>
+    Braço <strong>LOLA (LADIES)</strong> encerrado: mais morbidade, reintervenção, abscessos e <strong>cânceres perdidos</strong>. Lavar sem ressecar ≠ tratamento.
+  </div>
+
+  <h3>🗓️ Eletiva — quando</h3>
+  <ul>
+    <li>Após <strong>complicada</strong>, fístula, estenose, doença arrastada, suspeita de CA</li>
+    <li>🚫 <strong>Idade &lt;50 NÃO</strong> é indicação isolada · não conta nº de crises</li>
+    <li>✂️ Margem distal <strong>no reto proximal</strong> (tira toda junção retossigmóidea)</li>
+  </ul>
+  <div class="box prova"><span class="l">Cai na prova <span class="banca">SC-POA·HCPA</span></span>
+    Estável → <strong>anastomose primária ± ileostomia</strong> &gt; Hartmann. Hartmann = instável/imunossup/fecal.
+  </div>
+</div>
+
+<!-- CIRURGIA -->
+<div class="panel" id="passos">
+  <h2>🔪 Sigmoidectomia — 9 passos</h2>
+  <div class="box gr"><span class="l">🟢 tradução simples</span>A operação é sempre a mesma: <strong>tirar o sigmoide doente</strong>. O que muda é depois — <strong>emendar agora</strong> (AP) ou <strong>emendar depois</strong> (Hartmann). E isso não depende só do Hinchey: depende de <strong>como o paciente está na mesa</strong>.</div>
+
+  <div class="step"><div class="hd2"><div class="n">1</div><div class="x"><span class="fase">controle de foco</span>🛏️ <strong>Lloyd-Davies</strong> + Trendelenburg · lavagem exaustiva · <strong>classificar Hinchey na mesa</strong></div></div>
+  <div class="pq"><b>por quê</b>Hinchey original é classificação <strong>cirúrgica</strong> — nasceu p/ ser aplicada na mesa. É aqui que se separa <strong>III purulenta × IV fecal</strong>, e isso muda a reconstrução.</div></div>
+
+  <div class="step"><div class="hd2"><div class="n">2</div><div class="x"><span class="fase">mobilização</span>✂️ Liberar cólon E pela <strong>linha branca de Toldt</strong></div></div>
+  <div class="pq"><b>por quê</b>Na diverticulite o plano está <strong>obliterado pela inflamação</strong>. A via lateral, mais grosseira, costuma ser <strong>mais segura na urgência</strong> que a medial elegante da oncológica.</div></div>
+
+  <div class="step"><div class="hd2"><div class="n">3</div><div class="x"><span class="fase">crítico</span>🚨 <strong>Identificar o ureter esquerdo</strong> · ± cateter ureteral</div></div>
+  <div class="pq"><b>por quê</b>Risco <strong>maior que no câncer</strong>: a inflamação crônica <strong>puxa o ureter para dentro do bloco</strong> e apaga os planos. Por isso o cateter tem indicação mais liberal aqui. ⚠️</div></div>
+
+  <div class="step"><div class="hd2"><div class="n">4</div><div class="x"><span class="fase">vascular</span>🩸 Ligar sigmoideos · <strong>preservar a cólica esquerda</strong></div></div>
+  <div class="pq"><b>por quê</b>Aqui <strong>não há necessidade oncológica</strong> de ligar na origem — sem linfonodo apical p/ colher, liga-se mais distal e <strong>preserva perfusão</strong>, que é o que a anastomose em campo contaminado mais precisa.</div></div>
+
+  <div class="step"><div class="hd2"><div class="n">5</div><div class="x"><span class="fase">mobilização</span>Abaixar o <strong>ângulo esplênico</strong> se preciso</div></div>
+  <div class="pq"><b>por quê</b>"Sem tensão" é o único dos 4 pré-requisitos da anastomose que ainda está <strong>totalmente sob controle</strong> do cirurgião em campo inflamado.</div></div>
+
+  <div class="step"><div class="hd2"><div class="n">6</div><div class="x"><span class="fase">evita recidiva</span>🔻 Secção distal no <strong>RETO PROXIMAL</strong> — tira toda a junção retossigmóidea</div></div>
+  <div class="pq"><b>por quê</b>Detalhe mais cobrado. Sigmoide distal residual = <strong>causa nº1 de recidiva</strong>. Referência: onde as <strong>tênias se dispersam</strong>, começa o reto. Margem proximal <strong>não</strong> precisa tirar todos os divertículos. 📏</div></div>
+
+  <div class="step"><div class="hd2"><div class="n">7</div><div class="x"><span class="fase">secção proximal</span>🔺 Cólon <strong>sem inflamação aguda</strong>, sangrando arterial</div></div>
+  <div class="pq"><b>por quê</b>Anastomosar cólon inflamado + hipoperfundido = os 2 fatores de deiscência juntos. E o retossigmoide já é <strong>Sudeck</strong>, watershed natural. 🫀</div></div>
+
+  <div class="step"><div class="hd2"><div class="n">8</div><div class="x"><span class="fase">a decisão</span>🔗 <strong>AP</strong> (EEA + air-leak + donuts) <strong>×</strong> 🎒 <strong>Hartmann</strong></div></div>
+  <div class="pq"><b>por quê</b>A pergunta não é qual é melhor, é: <strong>este paciente cicatriza uma anastomose agora?</strong> AP é segura no estável e gera <strong>muito mais reconstrução de trânsito</strong>. Hartmann parece "mais seguro" mas <strong>transfere o risco</strong>: evita a fístula hoje ao custo de um estoma que muitas vezes <strong>nunca é revertido</strong>. ⚖️</div></div>
+
+  <div class="step"><div class="hd2"><div class="n">9</div><div class="x"><span class="fase">proteção</span>🛡️ Ileostomia em alça seletiva</div></div>
+  <div class="pq"><b>por quê</b>Mesmo princípio do reto: <strong>não impede a fístula, reduz a gravidade</strong>. Meio-termo entre AP desprotegida e Hartmann.</div></div>
+
+  <div class="box warn"><span class="l">🎒 Se Hartmann — os detalhes</span>
+    Colostomia terminal FIE + fechar o coto retal.<br>
+    🧵 <strong>Marcar o coto com fio longo</strong> (ou clipes) e deixá-lo o <strong>mais longo possível</strong> — na reversão a pelve estará cheia de aderências e o coto retraído. O fio é o que permite achá-lo.<br>
+    Reversão em 3–6 meses — <strong>e nem sempre acontece</strong>.
+  </div>
+
+  <div class="box mac"><span class="l">🧠 4 checagens antes de anastomosar na urgência</span>
+    ① Estável, sem DVA crescente? ② Purulenta (III), não fecal (IV)? ③ Secção chegou ao <strong>reto proximal</strong>? ④ Coto sangra arterial e chega <strong>sem tensão</strong>?<br>
+    Qualquer "não" → Hartmann ou ileostomia.
+  </div>
+</div>
+
+<!-- MÃOS & FIOS -->
+<div class="panel" id="maos">
+  <h2>✋ Mãos & fios</h2>
+  <div class="card">
+    <h3>🖐️ Mão direita (dissecar/cortar)</h3>
+    <ul>
+      <li>✂️ Metzenbaum / cautério</li>
+      <li>🔥 LigaSure / ultrassônico (pedículos)</li>
+      <li>🔫 Grampeadores linear + circular EEA</li>
+    </ul>
+    <h3>🤚 Mão esquerda (expor/tracionar)</h3>
+    <ul>
+      <li>🥄 Babcock / DeBakey (segurar cólon sem trauma)</li>
+      <li>↔️ Pinça longa p/ contra-tração do mesentério</li>
+      <li>💧 Aspirador na peritonite</li>
+    </ul>
+  </div>
+
+  <h3>🧵 Fios</h3>
+  <div class="card">
+    <div class="kv"><div class="k">Ligadura AMI</div><div class="v">Vicryl 2-0/3-0 · clipe · selante</div></div>
+    <div class="kv"><div class="k">Anastomose</div><div class="v">Grampeador EEA (dupla-grampeada)</div></div>
+    <div class="kv"><div class="k">Reforço/manual</div><div class="v">Prolene/seda 3-0 + Vicryl 3-0</div></div>
+    <div class="kv"><div class="k">Coto retal (Hartmann)</div><div class="v">Linear ou Vicryl 3-0 + fio-marca</div></div>
+    <div class="kv"><div class="k">Estoma</div><div class="v">Vicryl 3-0/4-0 (mucocutânea)</div></div>
+    <div class="kv"><div class="k">Aponeurose</div><div class="v">PDS 1 / Náilon 1 (4:1)</div></div>
+    <div class="kv"><div class="k">Pele</div><div class="v">Náilon 3-0 · peritonite → 2ª intenção</div></div>
+  </div>
+</div>
+
+<!-- COMPLICAÇÕES -->
+<div class="panel" id="compl">
+  <h2>⚠️ Complicações</h2>
+  <h3>🦠 Da doença</h3>
+  <ul>
+    <li>🎈 Abscesso · 💥 perfuração/peritonite · 🚧 obstrução (estenose)</li>
+    <li>🔀 <strong>Fístula colovesical</strong> (a + comum) → pneumatúria/fecalúria/ITU repetição</li>
+    <li>🩸 Sangramento diverticular (direito, <strong>indolor</strong>, autolimitado ≠ diverticulite)</li>
+  </ul>
+  <h3>🏥 Pós-operatórias</h3>
+  <ul>
+    <li>💔 <strong>Fístula/deiscência</strong> (pior em cólon E, urgência, contaminação)</li>
+    <li>🚨 Lesão do <strong>ureter E</strong> · lesão esplênica (ângulo)</li>
+    <li>🕳️ Infecção de ferida · íleo · abscesso residual</li>
+    <li>🎒 Estoma que <strong>não é revertido</strong> (Hartmann permanente)</li>
+  </ul>
+  <div class="box mac"><span class="l">💨 Air-leak test</span>
+    Sempre testar a anastomose (ar sob água + checar donuts). Vazou → refaz ponto ou protege c/ ileostomia.
+  </div>
+</div>
+
+<!-- MACETES -->
+<div class="panel" id="mac">
+  <h2>🎯 Macetes & pega-ratões</h2>
+  <div class="box mac"><span class="l">🧠 Top pegadinhas</span>
+    <ul>
+      <li>🌏 Ocidente = sigmoide · Ásia/jovem = direita</li>
+      <li>🚫 Colono proibida na fase aguda (só 4–6 sem depois)</li>
+      <li>💊 Não complicada + imunocompetente = pode <strong>sem ATB</strong></li>
+      <li>🎈 Abscesso ≥4–5 cm → <strong>drenar</strong>, não operar de cara</li>
+      <li>💧III × 💩IV: purulenta vs fecal (IV/instável = Hartmann)</li>
+      <li>🔗 Estável → <strong>anastomose primária</strong> &gt; Hartmann</li>
+      <li>🎂 Idade &lt;50 <strong>não</strong> indica cirurgia eletiva</li>
+      <li>✂️ Margem distal <strong>no reto</strong> (reduz recidiva)</li>
+      <li>🚨 Sempre achar o <strong>ureter E</strong> antes de ligar AMI</li>
+      <li>🚱 Lavado laparoscópico isolado = fora (LOLA)</li>
+      <li>🧵 Hartmann: <strong>marcar o coto com fio</strong> e deixá-lo longo</li>
+      <li>🩸 Aqui a ligadura <strong>não precisa</strong> ser na origem — preserva perfusão</li>
+      <li>🚨 Ureter é <strong>mais</strong> arriscado que no câncer (inflamação puxa)</li>
+      <li>📏 Tênias se dispersam = começou o reto</li>
+    </ul>
+  </div>
+  <div class="box prova"><span class="l">Bancas RS <span class="banca">resumão</span></span>
+    <ul>
+      <li><strong>HCPA:</strong> TC padrão-ouro · colono contraindicada · ATB seletivo</li>
+      <li><strong>GHC:</strong> III × IV · TC classifica (Hinchey modificada)</li>
+      <li><strong>SC-POA:</strong> Hartmann × anastomose primária na urgência</li>
+      <li><strong>PUC-RS:</strong> eletiva não por idade · margem no reto · ureter</li>
+      <li><strong>AMRIGS:</strong> fístula colovesical · lavado fora (LOLA)</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+const tabs=document.querySelectorAll('.tab');
+const panels=document.querySelectorAll('.panel');
+tabs.forEach(t=>t.addEventListener('click',()=>{
+  tabs.forEach(x=>x.classList.remove('on'));
+  panels.forEach(p=>p.classList.remove('on'));
+  t.classList.add('on');
+  document.getElementById(t.dataset.t).classList.add('on');
+  window.scrollTo({top:0,behavior:'smooth'});
+}));
+</script>
+</body>
+</html>

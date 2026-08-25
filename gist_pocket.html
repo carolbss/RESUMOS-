@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>GIST · pocket</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d1117;--card:#16161f;--card2:#1c1c27;--line:#2a2a38;
+  --txt:#ececf4;--muted:#9a9ab0;
+  --laranja:#f97316;--roxo:#a855f7;--ciano:#22d3ee;--vermelho:#f87171;--amarelo:#fbbf24;--verde:#34d399;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{overflow-x:hidden}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;font-size:17px;line-height:1.6;padding-bottom:30px}
+.top{padding:22px 18px 12px;position:sticky;top:0;background:linear-gradient(180deg,var(--bg) 70%,transparent);z-index:5}
+.kick{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:26px;line-height:1.1;margin-top:4px}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:6px 18px 12px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;padding:9px 15px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted);white-space:nowrap;cursor:pointer;transition:.15s}
+.tab.on{background:var(--laranja);border-color:var(--laranja);color:#0a0a0f}
+.panel{display:none;padding:6px 18px 40px;animation:f .25s}
+.panel.on{display:block}
+@keyframes f{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+h2{font-family:'Syne',sans-serif;font-size:21px;color:var(--laranja);margin:18px 0 10px}
+h3{font-family:'Syne',sans-serif;font-size:16px;color:#fff;margin:16px 0 6px}
+p{margin:10px 0}
+ul{list-style:none;margin:8px 0}
+li{padding:6px 0 6px 22px;position:relative}
+li::before{content:"▸";position:absolute;left:0;top:7px;color:var(--laranja);font-size:13px}
+strong{color:#fff;font-weight:600}
+.s{color:var(--verde);font-style:italic;font-size:.92em}
+.gr{background:rgba(52,211,153,.10);border-color:rgba(52,211,153,.4);color:var(--verde);font-style:italic}
+.gr .l{color:var(--verde);font-style:normal}
+.gr strong,.gr b{color:#7fe8c0;font-style:normal}
+.step{flex-direction:column;gap:6px}
+.hd2{display:flex;gap:12px;align-items:flex-start}
+.fase{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--laranja);display:block}
+.pq{border-left:2px solid var(--roxo);background:rgba(168,85,247,.10);border-radius:0 7px 7px 0;padding:7px 10px;font-size:14px;width:100%}
+.pq b{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--roxo);display:block}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0}
+.box{border-radius:12px;padding:13px 15px;margin:13px 0;border:1px solid;font-size:15px}
+.prova{background:rgba(168,85,247,.1);border-color:rgba(168,85,247,.4)}
+.prova .l{color:var(--roxo)}
+.mac{background:rgba(34,211,238,.1);border-color:rgba(34,211,238,.4)}
+.mac .l{color:var(--ciano)}
+.warn{background:rgba(248,113,113,.1);border-color:rgba(248,113,113,.4)}
+.warn .l{color:var(--vermelho)}
+.l{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-size:10px;background:rgba(168,85,247,.25);color:var(--roxo);padding:2px 6px;border-radius:5px;margin-left:5px;font-family:'JetBrains Mono',monospace}
+.kv{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)}
+.kv:last-child{border:none}
+.kv .k{flex:0 0 44%;color:var(--ciano);font-family:'JetBrains Mono',monospace;font-size:13px}
+.kv .v{flex:1;font-size:15px}
+.step{display:flex;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line)}
+.step:last-child{border:none}
+.step .n{flex:0 0 30px;height:30px;border-radius:9px;background:rgba(249,115,22,.15);border:1px solid rgba(249,115,22,.45);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;display:grid;place-items:center;font-size:14px}
+.step .x{flex:1}
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="kick">carolzita · pocket 🚑</div>
+  <h1>GIST 🎯</h1>
+</div>
+<div class="tabs">
+  <div class="tab on" data-t="0">🧬 Origem</div>
+  <div class="tab" data-t="1">🔬 IHQ/mutação</div>
+  <div class="tab" data-t="2">📊 Risco</div>
+  <div class="tab" data-t="3">🔪 Cirurgia</div>
+  <div class="tab" data-t="4">💊 Imatinibe</div>
+  <div class="tab" data-t="5">☠️ Traps</div>
+</div>
+
+<!-- 0 -->
+<div class="panel on" data-p="0">
+  <h2>🧬 O que é o GIST</h2>
+  <ul>
+    <li>🥇 Sarcoma <strong>mais comum do TGI</strong></li>
+    <li>⚡ Origem: <strong>células de Cajal</strong> (marcapasso do intestino)</li>
+    <li>🎈 Cresce na <strong>muscular própria</strong> → massa <strong>subepitelial</strong> (mucosa preservada)</li>
+  </ul>
+  <div class="card">
+    <div class="kv"><div class="k">🫃 Estômago</div><div class="v"><strong>~60%</strong> · mais indolente</div></div>
+    <div class="kv"><div class="k">🌀 Delgado</div><div class="v">~30% · mais agressivo</div></div>
+    <div class="kv"><div class="k">🩸 Sintoma #1</div><div class="v">HDA / anemia (ulcera a mucosa)</div></div>
+    <div class="kv"><div class="k">🎯 Metástase</div><div class="v"><strong>fígado + peritônio</strong></div></div>
+  </div>
+  <div class="box prova"><span class="l">alto rendimento <span class="banca">HCPA·GHC</span></span>🚫 GIST <strong>não</strong> vai para linfonodo → <strong>sem linfadenectomia</strong>!</div>
+</div>
+
+<!-- 1 -->
+<div class="panel" data-p="1">
+  <h2>🔬 Imuno + molecular</h2>
+  <div class="card">
+    <div class="kv"><div class="k">CD117 (KIT)</div><div class="v">✅ ~95%</div></div>
+    <div class="kv"><div class="k">DOG1</div><div class="v">✅ ~95% (salva o CD117 neg)</div></div>
+    <div class="kv"><div class="k">CD34</div><div class="v">~70% (inespecífico)</div></div>
+  </div>
+  <div class="box mac"><span class="l">🧠 macete</span>GIST = <strong>KIT-DOG que morde a parede</strong> 🐶</div>
+  <h3>🧬 Mutação → guia a droga</h3>
+  <ul>
+    <li>🟩 <strong>KIT éxon 11</strong> = mais comum + melhor resposta ao imatinibe</li>
+    <li>🟨 <strong>KIT éxon 9</strong> = dose dobrada (800 mg)</li>
+    <li>🟥 <strong>PDGFRA D842V</strong> = <strong>RESISTENTE</strong> ao imatinibe → avapritinibe</li>
+  </ul>
+  <div class="box warn"><span class="l">☠️ pega-ratão</span>Não biopsiar percutâneo GIST ressecável — é <strong>friável</strong>, semeia peritônio! Se precisar → <strong>EUS-FNA</strong> 🎣</div>
+</div>
+
+<!-- 2 -->
+<div class="panel" data-p="2">
+  <h2>📊 Estratificação (Miettinen/AFIP)</h2>
+  <div class="box prova"><span class="l">alto rendimento</span>📐 <strong>TAMANHO + MITOSE + SÍTIO</strong> — 3 variáveis! Mitose contada em <strong>5 mm²</strong> (corte ≤5 vs &gt;5) ✂️</div>
+  <div class="card">
+    <div class="kv"><div class="k">🟢 Gástrico ≤2cm, baixa mitose</div><div class="v"><strong>~benigno</strong> (vigiar ok)</div></div>
+    <div class="kv"><div class="k">🔴 Delgado/reto</div><div class="v">mais agressivo p/ mesmo tamanho</div></div>
+    <div class="kv"><div class="k">💀 &gt;10cm + alta mitose</div><div class="v">~86-90% metástase</div></div>
+  </div>
+  <div class="box mac"><span class="l">🧠 macete</span>Mesmo tamanho, <strong>fora do estômago = pior</strong>. Por isso o sítio entra na conta! 🗺️</div>
+</div>
+
+<!-- 3 -->
+<div class="panel" data-p="3">
+  <h2>🔪 Cirurgia — 6 passos</h2>
+  <div class="box gr"><span class="l">🟢 tradução simples</span>O GIST é o <strong>oposto do adenocarcinoma</strong>: não anda por linfonodo, não infiltra em volta, e vem dentro de uma <strong>casca</strong>. Toda a técnica existe para <strong>não encostar no tumor</strong>. 🥚</div>
+
+  <div class="box prova"><span class="l">★ o contraste que a banca adora</span>
+  <div class="kv"><div class="k">Linfonodos</div><div class="v">Adeno = <strong>D2</strong> · GIST = <strong>nenhum</strong></div></div>
+  <div class="kv"><div class="k">Margem</div><div class="v">Adeno = <strong>5/8 cm</strong> · GIST = só <strong>negativa</strong></div></div>
+  <div class="kv"><div class="k">Operação</div><div class="v">Adeno = gastrectomia · GIST = <strong>cunha</strong></div></div>
+  <div class="kv"><div class="k">Metástase</div><div class="v">GIST = <strong>fígado + peritônio</strong></div></div>
+  </div>
+
+  <div class="step"><div class="hd2"><div class="n">1</div><div class="x"><span class="fase">estadiamento</span><strong>Inventário</strong> — fígado e peritônio · relação com <strong>cárdia/piloro</strong></div></div>
+  <div class="pq"><b>por quê</b>A distância até cárdia e piloro decide cunha × gastrectomia setorial. É <strong>geometria</strong>, não oncologia. 📐</div></div>
+
+  <div class="step"><div class="hd2"><div class="n">2</div><div class="x"><span class="fase">exposição — a regra</span>Apreender o <strong>tecido peritumoral</strong> ou fio de reparo · <strong>NUNCA o tumor</strong></div></div>
+  <div class="pq"><b>por quê</b>Friável + <strong>pseudocápsula</strong>. Rompeu — mesmo com uma pinça, mesmo por um instante — vira <strong>contaminação peritoneal</strong> e alto risco. Nenhum outro tumor do TGI é assim. 🥚</div></div>
+
+  <div class="step"><div class="hd2"><div class="n">3</div><div class="x"><span class="fase">ressecção</span><strong>Cunha</strong> com endo-GIA · margem macroscópica sadia · <strong>sem linfadenectomia</strong></div></div>
+  <div class="pq"><b>por quê</b>Dissemina por via <strong>hematogênica e implante</strong>, não linfática. E <strong>empurra</strong> o tecido em vez de infiltrar — a doença acaba onde a cápsula acaba. R1 micro <strong>não</strong> indica reoperação de rotina. 🚫</div></div>
+
+  <div class="step"><div class="hd2"><div class="n">4</div><div class="x"><span class="fase">verificação</span>Conferir <strong>patência</strong> — sem estenose de cárdia/piloro</div></div>
+  <div class="pq"><b>por quê</b>É a indicação mais elegante do imatinibe <strong>neoadjuvante</strong>: encolher para <strong>poupar órgão</strong> (cárdia, piloro, esfíncter anal) — não para ganhar sobrevida. 💊</div></div>
+
+  <div class="step"><div class="hd2"><div class="n">5</div><div class="x"><span class="fase">extração</span><strong>Endobag sempre</strong> — sem contato com parede/portal 🛍️</div></div>
+  <div class="pq"><b>por quê</b>A peça <strong>é</strong> o inóculo. Contato com o portal = <strong>implante em cicatriz de trocarte</strong>. Todo o cuidado se perde se a peça sair solta.</div></div>
+
+  <div class="step"><div class="hd2"><div class="n">6</div><div class="x"><span class="fase">encerramento</span>Rafia de reforço absorvível · hemostasia cuidadosa</div></div>
+  <div class="pq"><b>por quê</b>GIST é <strong>hipervascularizado</strong> — é por isso que ulcera e sangra, e por isso o sintoma nº1 é HDA/anemia. 🩸</div></div>
+
+  <h3>✋ Mãos (wedge gástrico VL)</h3>
+  <div class="card">
+    <div class="kv"><div class="k">🫲 Esquerda</div><div class="v">grasper no tecido <strong>peritumoral</strong> (nunca o tumor)</div></div>
+    <div class="kv"><div class="k">🫱 Direita</div><div class="v">grampeador linear + ultrassônico</div></div>
+  </div>
+
+  <h3>🗺️ Por sítio</h3>
+  <ul>
+    <li>🌀 <strong>Delgado</strong> → enterectomia + anastomose (mais agressivo p/ mesmo tamanho)</li>
+    <li>🔻 <strong>Duodeno</strong> → cunha se possível; DPC só se inevitável</li>
+    <li>🍑 <strong>Reto baixo</strong> → neoadjuvância p/ preservar esfíncter</li>
+    <li>🫃 <strong>Cárdia/piloro</strong> → neoadjuvância p/ viabilizar a cunha</li>
+  </ul>
+
+  <div class="box mac"><span class="l">🧠 as 3 checagens (+1)</span>① Pseudocápsula <strong>íntegra</strong>? ② Margem macro negativa? ③ Peça <strong>em saco</strong>?<br>+ ④ <strong>Não pedi linfadenectomia por reflexo?</strong> 🚫</div>
+</div>
+
+<!-- 4 -->
+<div class="panel" data-p="4">
+  <h2>💊 Imatinibe (TKI)</h2>
+  <div class="card">
+    <div class="kv"><div class="k">➕ Adjuvante</div><div class="v"><strong>≥3 anos</strong> se <strong>alto risco</strong></div></div>
+    <div class="kv"><div class="k">🔽 Neoadjuvante</div><div class="v">poupar órgão (cárdia/reto/duodeno)</div></div>
+    <div class="kv"><div class="k">🥇 1ª linha metast.</div><div class="v">imatinibe 400 (800 se éxon 9)</div></div>
+  </div>
+  <div class="box mac"><span class="l">🧠 linhas metastático</span><strong>I → S → R → R</strong>: Imatinibe · Sunitinibe · Regorafenibe · Ripretinibe. D842V → <strong>avapritinibe</strong> 💥</div>
+  <div class="box prova"><span class="l">alto rendimento <span class="banca">GHC·SC-POA</span></span>📷 Resposta pode ser por <strong>queda de densidade (Choi)</strong> — o tumor "amolece" antes de encolher. Não é falha!</div>
+</div>
+
+<!-- 5 -->
+<div class="panel" data-p="5">
+  <h2>☠️ Pega-ratões</h2>
+  <div class="box warn"><span class="l">trap 1</span>Sem linfadenectomia (≠ adenoca) 🚫</div>
+  <div class="box warn"><span class="l">trap 2</span>Margem R0 negativa, não larga em cm 📏</div>
+  <div class="box warn"><span class="l">trap 3</span>PDGFRA D842V = resistente ao imatinibe 🟥</div>
+  <div class="box warn"><span class="l">trap 4</span>Não biopsiar percutâneo ressecável (friável) 🎣</div>
+  <div class="box warn"><span class="l">trap 5</span>Delgado/reto = mais agressivo que gástrico 🌀</div>
+  <div class="box warn"><span class="l">trap 6</span>Romper pseudocápsula = doença peritoneal 🥚</div>
+  <div class="box warn"><span class="l">trap 7</span>Mitose contada em 5 mm² (≤5 vs >5) ✂️</div>
+  <div class="box warn"><span class="l">trap 8</span>Adjuvante só no alto risco 💊</div>
+  <div class="box warn"><span class="l">trap 9</span>Peça sem <strong>endobag</strong> = implante em cicatriz de trocarte 🛍️</div>
+  <div class="box warn"><span class="l">trap 10</span><strong>R1 microscópico não indica reoperação</strong> de rotina 📏</div>
+  <div class="box mac"><span class="l">🧠 o contraste</span>Adeno: D2 + margem em cm · <strong>GIST: nada de linfonodo + margem só negativa</strong></div>
+  <div class="box mac"><span class="l">✅ resumo de bolso</span>Cajal · CD117+DOG1 · risco=tamanho+mitose(/5mm²)+sítio · R0 sem linfadenectomia, pseudocápsula íntegra · imatinibe (adj ≥3a alto risco) · D842V→avapritinibe · metástase=fígado+peritônio 🎓</div>
+</div>
+
+<script>
+var tabs=document.querySelectorAll('.tab'),panels=document.querySelectorAll('.panel');
+tabs.forEach(function(t){t.addEventListener('click',function(){
+  tabs.forEach(function(x){x.classList.remove('on')});
+  panels.forEach(function(x){x.classList.remove('on')});
+  t.classList.add('on');
+  document.querySelector('.panel[data-p="'+t.dataset.t+'"]').classList.add('on');
+})});
+</script>
+</body>
+</html>

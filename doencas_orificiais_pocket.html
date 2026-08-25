@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Doenças Orificiais · pocket</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d1117;--card:#16161f;--card2:#1c1c27;--line:#2a2a38;
+  --txt:#ececf4;--muted:#9a9ab0;
+  --laranja:#f97316;--roxo:#a855f7;--ciano:#22d3ee;--vermelho:#f87171;--amarelo:#fbbf24;--verde:#34d399;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{overflow-x:hidden}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;font-size:17px;line-height:1.6;padding-bottom:30px}
+.top{padding:22px 18px 12px;position:sticky;top:0;background:linear-gradient(180deg,var(--bg) 70%,transparent);z-index:5}
+.kick{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:27px;line-height:1.05;margin-top:4px}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:6px 18px 12px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;padding:9px 15px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted);white-space:nowrap;cursor:pointer;transition:.15s}
+.tab.on{background:var(--laranja);border-color:var(--laranja);color:#0a0a0f}
+.panel{display:none;padding:6px 18px 40px;animation:f .25s}
+.panel.on{display:block}
+@keyframes f{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+h2{font-family:'Syne',sans-serif;font-size:21px;color:var(--laranja);margin:18px 0 10px}
+h3{font-family:'Syne',sans-serif;font-size:16px;color:#fff;margin:16px 0 6px}
+p{margin:10px 0}
+ul{list-style:none;margin:8px 0}
+li{padding:6px 0 6px 22px;position:relative}
+li::before{content:"▸";position:absolute;left:0;top:7px;color:var(--laranja);font-size:13px}
+strong{color:#fff;font-weight:600}
+.s{color:var(--ciano);font-style:italic;font-size:.92em}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0}
+.box{border-radius:12px;padding:13px 15px;margin:13px 0;border:1px solid;font-size:15px}
+.prova{background:rgba(168,85,247,.1);border-color:rgba(168,85,247,.4)}
+.prova .l{color:var(--roxo)}
+.mac{background:rgba(34,211,238,.1);border-color:rgba(34,211,238,.4)}
+.mac .l{color:var(--ciano)}
+.warn{background:rgba(248,113,113,.1);border-color:rgba(248,113,113,.4)}
+.warn .l{color:var(--vermelho)}
+.l{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-size:10px;background:rgba(168,85,247,.25);color:var(--roxo);padding:2px 6px;border-radius:5px;margin-left:5px;font-family:'JetBrains Mono',monospace}
+.kv{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)}
+.kv:last-child{border:none}
+.kv .k{flex:0 0 42%;color:var(--ciano);font-family:'JetBrains Mono',monospace;font-size:13px}
+.kv .v{flex:1;font-size:15px}
+.step{display:flex;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line)}
+.step:last-child{border:none}
+.step .n{flex:0 0 30px;height:30px;border-radius:9px;background:rgba(249,115,22,.15);border:1px solid rgba(249,115,22,.45);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;display:grid;place-items:center;font-size:14px}
+.step .x{flex:1}
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="kick">carolzita · pocket 🚑</div>
+  <h1>Doenças Orificiais 🍑🔥</h1>
+</div>
+<div class="tabs">
+  <div class="tab on" data-t="0">📍 Anatomia</div>
+  <div class="tab" data-t="1">🩸 Hemorroida</div>
+  <div class="tab" data-t="2">⚡ Fissura</div>
+  <div class="tab" data-t="3">🕳️ Abscesso/Fístula</div>
+  <div class="tab" data-t="4">🚨 Fournier</div>
+  <div class="tab" data-t="5">☠️ Traps</div>
+</div>
+
+<!-- 0 ANATOMIA -->
+<div class="panel on" data-p="0">
+  <h2>📍 Linha pectínea = divisor</h2>
+  <div class="card">
+    <div class="kv"><div class="k">⬆️ Acima</div><div class="v">Visceral · <strong>indolor</strong> · v.retal sup→porta</div></div>
+    <div class="kv"><div class="k">⬇️ Abaixo</div><div class="v">Somática (pudendo) · <strong>dolorosa</strong> · v.retal inf→cava</div></div>
+  </div>
+  <div class="box prova"><span class="l">alto rendimento</span>🎯 Hemorroida <strong>interna</strong> trombosada = <strong>indolor</strong>. <strong>Externa</strong> trombosada = <strong>dói</strong>. Decoreba nº1!</div>
+  <h3>🏠 Espaços perirretais</h3>
+  <ul>
+    <li>🔹 Interesfincteriano — origem +comum</li>
+    <li>🔹 Isquiorretal</li>
+    <li>🔹 Supraelevador</li>
+    <li>🔹 Perianal</li>
+  </ul>
+</div>
+
+<!-- 1 HEMORROIDA -->
+<div class="panel" data-p="1">
+  <h2>🩸 Goligher (interna)</h2>
+  <div class="card">
+    <div class="kv"><div class="k">Grau I</div><div class="v">Sangra, não prolapsa</div></div>
+    <div class="kv"><div class="k">Grau II</div><div class="v">Prolapsa, reduz sozinha</div></div>
+    <div class="kv"><div class="k">Grau III</div><div class="v">Prolapsa, reduz manual</div></div>
+    <div class="kv"><div class="k">Grau IV</div><div class="v">Irredutível</div></div>
+  </div>
+  <h3>🪜 Escalonamento (ASCRS 2024)</h3>
+  <div class="card">
+    <div class="step"><div class="n">1</div><div class="x">🥗 Fibra + fluidos + hábito intestinal</div></div>
+    <div class="step"><div class="n">2</div><div class="x">💍 Ligadura elástica (melhor opção ambulatorial)</div></div>
+    <div class="step"><div class="n">3</div><div class="x">🔪 Hemorroidectomia / PPH / THD (III-IV, falha)</div></div>
+  </div>
+  <div class="box warn"><span class="l">☠️ complicação</span>Ressecar <strong>circunferencial</strong> sem pontes de mucosa → <strong>estenose anal</strong>. Preservar pontes entre 3-7-11h!</div>
+  <div class="box prova"><span class="l">alto rendimento</span>🔍 Sangramento "hemorroidário" em &gt;45-50a → <strong>colonoscopia antes</strong> de assumir, excluir neoplasia.</div>
+</div>
+
+<!-- 2 FISSURA -->
+<div class="panel" data-p="2">
+  <h2>⚡ Tríade + ciclo vicioso</h2>
+  <ul>
+    <li>🔺 Papila hipertrófica</li>
+    <li>➖ Fissura (linha média <strong>posterior</strong> 90%)</li>
+    <li>🔻 Plicoma sentinela</li>
+  </ul>
+  <div class="box warn"><span class="l">☠️ atípica</span>Fora da linha média/múltipla/indolor → pensar <strong>Crohn, TB, sífilis, HIV, câncer</strong>.</div>
+  <h3>🪜 Tratamento (ASCRS 2023)</h3>
+  <div class="card">
+    <div class="step"><div class="n">1</div><div class="x">🥗 Conservador (fibra, banho de assento) — 1ª linha se aguda</div></div>
+    <div class="step"><div class="n">2</div><div class="x">🧴 Nitroglicerina ou BCC tópico (diltiazem/nifedipina)</div></div>
+    <div class="step"><div class="n">3</div><div class="x">💉 Toxina botulínica se falha do BCC</div></div>
+    <div class="step"><div class="n">4</div><div class="x">🔪 <strong>LEIL</strong> = padrão-ouro se refratária</div></div>
+  </div>
+  <div class="box prova"><span class="l">alto rendimento</span>✂️ Esfincterotomia é sempre <strong>LATERAL</strong> (3h ou 9h) — <strong>nunca posterior</strong>!</div>
+  <div class="box warn"><span class="l">☠️ complicação</span><strong>Incontinência fecal</strong> (flatos) — não seccionar além da linha pectínea.</div>
+</div>
+
+<!-- 3 ABSCESSO/FISTULA -->
+<div class="panel" data-p="3">
+  <h2>🕳️ Parks (fístula)</h2>
+  <div class="card">
+    <div class="kv"><div class="k">Inter-esf.</div><div class="v"><strong>~70%</strong> — mais comum</div></div>
+    <div class="kv"><div class="k">Trans-esf.</div><div class="v">~25%</div></div>
+    <div class="kv"><div class="k">Supra-esf.</div><div class="v">Raro, complexo</div></div>
+    <div class="kv"><div class="k">Extra-esf.</div><div class="v">Raro (Crohn/DIP)</div></div>
+  </div>
+  <div class="box mac"><span class="l">🧠 Goodsall</span>Orifício <strong>ANTERIOR</strong> → trajeto <strong>reto</strong> 📏. Orifício <strong>POSTERIOR</strong> → trajeto <strong>curvo</strong> 🌙 (pode ser ferradura). Exceção: &gt;3cm da margem foge à regra.</div>
+  <h3>💊 Abscesso</h3>
+  <div class="box prova"><span class="l">alto rendimento</span>🚫 <strong>ATB nunca substitui drenagem!</strong> Drenagem cirúrgica sempre.</div>
+  <h3>🧵 Fístula</h3>
+  <ul>
+    <li>✅ Simples (baixa) → <strong>fistulotomia</strong> = padrão-ouro</li>
+    <li>⚠️ Complexa/alta → <strong>seton</strong>, LIFT, plugue — poupar esfíncter</li>
+  </ul>
+  <div class="box warn"><span class="l">☠️ regra de ouro</span>Quanto <strong>mais esfíncter</strong> envolvido, maior risco de incontinência → NÃO fistulotomia primária em fístula alta.</div>
+</div>
+
+<!-- 4 FOURNIER -->
+<div class="panel" data-p="4">
+  <h2>🚨 Emergência cirúrgica</h2>
+  <p>Fasciite necrotizante do períneo 🔥 — <strong>DM</strong> = principal fator de risco.</p>
+  <div class="card">
+    <div class="kv"><div class="k">🩺 Diagnóstico</div><div class="v"><strong>CLÍNICO</strong> — dor desproporcional, crepitação, toxemia</div></div>
+    <div class="kv"><div class="k">📊 FGSI</div><div class="v">&gt;9 = ~75% mortalidade</div></div>
+  </div>
+  <h3>🪜 3 pilares SIMULTÂNEOS</h3>
+  <div class="card">
+    <div class="step"><div class="n">1</div><div class="x">💧 Ressuscitação/estabilização</div></div>
+    <div class="step"><div class="n">2</div><div class="x">💊 ATB amplo espectro + clindamicina</div></div>
+    <div class="step"><div class="n">3</div><div class="x">🔪 Debridamento AMPLO e <strong>IMEDIATO</strong> (± re-look 24-48h)</div></div>
+  </div>
+  <div class="box warn"><span class="l">☠️ pega-ratão</span>Diferente da pancreatite necrosante: aqui <strong>NÃO se espera demarcar</strong> — opera JÁ!</div>
+  <div class="box mac"><span class="l">💡 detalhe técnico</span>Testículos costumam ser <strong>poupados</strong> (irrigação independente, origem aórtica). VAC ajuda na ferida aberta.</div>
+</div>
+
+<!-- 5 TRAPS -->
+<div class="panel" data-p="5">
+  <h2>☠️ Pega-ratões</h2>
+  <div class="box warn"><span class="l">trap 1</span>Interna trombosada = indolor · Externa = dói 🩸</div>
+  <div class="box warn"><span class="l">trap 2</span>Fissura atípica → investigar causa secundária 🔬</div>
+  <div class="box warn"><span class="l">trap 3</span>LEIL é sempre <strong>lateral</strong>, nunca posterior ✂️</div>
+  <div class="box warn"><span class="l">trap 4</span>ATB não substitui drenagem no abscesso 🚫</div>
+  <div class="box warn"><span class="l">trap 5</span>Fístula alta → não fistulotomia primária ⚠️</div>
+  <div class="box warn"><span class="l">trap 6</span>Fournier = debridar <strong>JÁ</strong>, não adiar 🚨</div>
+  <div class="box warn"><span class="l">trap 7</span>Goodsall tem exceção &gt;3cm 📏</div>
+  <div class="box warn"><span class="l">trap 8</span>Hemorroidectomia sem pontes → estenose 🎗️</div>
+  <div class="box mac"><span class="l">✅ resumo de bolso</span>Linha pectínea separa tudo · Goligher I-IV · LEIL lateral · ATB nunca sozinho · Goodsall ant=reto/post=curvo · Fournier=debridar já 🎓</div>
+</div>
+
+<script>
+var tabs=document.querySelectorAll('.tab'),panels=document.querySelectorAll('.panel');
+tabs.forEach(function(t){t.addEventListener('click',function(){
+  tabs.forEach(function(x){x.classList.remove('on')});
+  panels.forEach(function(x){x.classList.remove('on')});
+  t.classList.add('on');
+  document.querySelector('.panel[data-p="'+t.dataset.t+'"]').classList.add('on');
+})});
+</script>
+</body>
+</html>

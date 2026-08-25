@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Fístulas Digestivas · pocket</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d1117;--card:#16161f;--card2:#1c1c27;--line:#2a2a38;
+  --txt:#ececf4;--muted:#9a9ab0;
+  --laranja:#f97316;--roxo:#a855f7;--ciano:#22d3ee;--vermelho:#f87171;--amarelo:#fbbf24;--verde:#34d399;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{overflow-x:hidden}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;font-size:17px;line-height:1.6;padding-bottom:30px}
+.top{padding:22px 18px 12px;position:sticky;top:0;background:linear-gradient(180deg,var(--bg) 70%,transparent);z-index:5}
+.kick{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:26px;line-height:1.1;margin-top:4px}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:6px 18px 12px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;padding:9px 15px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted);white-space:nowrap;cursor:pointer;transition:.15s}
+.tab.on{background:var(--laranja);border-color:var(--laranja);color:#0a0a0f}
+.panel{display:none;padding:6px 18px 40px;animation:f .25s}
+.panel.on{display:block}
+@keyframes f{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+h2{font-family:'Syne',sans-serif;font-size:21px;color:var(--laranja);margin:18px 0 10px}
+h3{font-family:'Syne',sans-serif;font-size:16px;color:#fff;margin:16px 0 6px}
+p{margin:10px 0}
+ul{list-style:none;margin:8px 0}
+li{padding:6px 0 6px 22px;position:relative}
+li::before{content:"▸";position:absolute;left:0;top:7px;color:var(--laranja);font-size:13px}
+strong{color:#fff;font-weight:600}
+.s{color:var(--ciano);font-style:italic;font-size:.92em}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0}
+.box{border-radius:12px;padding:13px 15px;margin:13px 0;border:1px solid;font-size:15px}
+.prova{background:rgba(168,85,247,.1);border-color:rgba(168,85,247,.4)}
+.prova .l{color:var(--roxo)}
+.mac{background:rgba(34,211,238,.1);border-color:rgba(34,211,238,.4)}
+.mac .l{color:var(--ciano)}
+.warn{background:rgba(248,113,113,.1);border-color:rgba(248,113,113,.4)}
+.warn .l{color:var(--vermelho)}
+.l{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-size:10px;background:rgba(168,85,247,.25);color:var(--roxo);padding:2px 6px;border-radius:5px;margin-left:5px;font-family:'JetBrains Mono',monospace}
+.kv{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)}
+.kv:last-child{border:none}
+.kv .k{flex:0 0 42%;color:var(--ciano);font-family:'JetBrains Mono',monospace;font-size:13px}
+.kv .v{flex:1;font-size:15px}
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="kick">carolzita · pocket 🚑</div>
+  <h1>Fístulas Digestivas 🕳️</h1>
+</div>
+<div class="tabs">
+  <div class="tab on" data-t="0">📋 Base</div>
+  <div class="tab" data-t="1">🚫 FRIEND</div>
+  <div class="tab" data-t="2">🎯 SNAP</div>
+  <div class="tab" data-t="3">🍽️ Nutrição</div>
+  <div class="tab" data-t="4">🔪 Cirurgia</div>
+  <div class="tab" data-t="5">☠️ Traps</div>
+</div>
+
+<!-- 0 -->
+<div class="panel on" data-p="0">
+  <h2>📋 O básico</h2>
+  <ul>
+    <li>🔧 <strong>75-85% iatrogênica</strong> (deiscência de anastomose / enterotomia)</li>
+    <li>🌱 Espontânea → <strong>Crohn</strong> é a #1</li>
+    <li>📍 Sítio mais comum: <strong>íleo</strong></li>
+  </ul>
+  <h3>💧 Débito (decorar!)</h3>
+  <div class="card">
+    <div class="kv"><div class="k">🟢 Baixo</div><div class="v">&lt;200 mL/24h</div></div>
+    <div class="kv"><div class="k">🟡 Moderado</div><div class="v">200-500 mL/24h</div></div>
+    <div class="kv"><div class="k">🔴 Alto</div><div class="v"><strong>&gt;500 mL/24h</strong></div></div>
+  </div>
+  <div class="box prova"><span class="l">alto rendimento</span>💀 Tríade letal: <strong>SEPSE + DESNUTRIÇÃO + DISTÚRBIO HIDROELETROLÍTICO</strong>. Morte #1 = sepse!</div>
+</div>
+
+<!-- 1 -->
+<div class="panel" data-p="1">
+  <h2>🚫 FRIEND — não fecha se...</h2>
+  <div class="card">
+    <div class="kv"><div class="k">F</div><div class="v">🧵 Foreign body (corpo estranho/tela)</div></div>
+    <div class="kv"><div class="k">R</div><div class="v">☢️ Radiation</div></div>
+    <div class="kv"><div class="k">I</div><div class="v">🔥 Inflammation/Infection (Crohn)</div></div>
+    <div class="kv"><div class="k">E</div><div class="v">🧱 Epithelialization</div></div>
+    <div class="kv"><div class="k">N</div><div class="v">🦠 Neoplasia</div></div>
+    <div class="kv"><div class="k">D</div><div class="v">⛔ Distal obstruction</div></div>
+  </div>
+  <div class="box mac"><span class="l">🧠 macete</span>O "amigo" FRIEND que <strong>impede o fechamento</strong> 🚪</div>
+  <p>➕ Também ruim: alto débito, trajeto curto &lt;2cm, defeito &gt;1cm, origem proximal.</p>
+  <div class="box prova"><span class="l">alto rendimento</span>~⅓ fecha sozinha, quase sempre em <strong>4-6 semanas</strong>. Passou disso → cirurgia.</div>
+</div>
+
+<!-- 2 -->
+<div class="panel" data-p="2">
+  <h2>🎯 SNAP</h2>
+  <div class="card">
+    <div class="kv"><div class="k">S</div><div class="v">🦠 <strong>Sepse</strong> + pele → drenar + ATB (1º!)</div></div>
+    <div class="kv"><div class="k">N</div><div class="v">🍽️ Nutrição</div></div>
+    <div class="kv"><div class="k">A</div><div class="v">🗺️ Anatomia (fistulografia/TC)</div></div>
+    <div class="kv"><div class="k">P</div><div class="v">📅 Plano / Procedimento</div></div>
+  </div>
+  <div class="box prova"><span class="l">alto rendimento <span class="banca">HCPA·GHC·PUC</span></span>🥇 <strong>SEPSE é SEMPRE a 1ª prioridade!</strong> Operar em sepse/desnutrição = catástrofe ⚠️</div>
+  <p>🔄 Sequência: Ressuscitação → Restituição → Reconstrução → Reabilitação.</p>
+  <p>🇳🇱 SOWATS = mesma ideia (Sepse·Otimização·Wound·Anatomia·Timing·Surgery).</p>
+</div>
+
+<!-- 3 -->
+<div class="panel" data-p="3">
+  <h2>🍽️ Nutrição</h2>
+  <div class="card">
+    <div class="kv"><div class="k">🔥 Calorias</div><div class="v">25-35 kcal/kg/dia</div></div>
+    <div class="kv"><div class="k">🥩 Proteína</div><div class="v">1,5-2,5 g/kg/dia</div></div>
+  </div>
+  <div class="box mac"><span class="l">🧠 regra de ouro</span>"Intestino funcionando? <strong>USE-O!</strong>" → enteral &gt; parenteral 🌟</div>
+  <ul>
+    <li>🥤 Enteral: protege mucosa, reduz translocação</li>
+    <li>💉 TPN: alto débito, fístula proximal, intestino insuficiente</li>
+    <li>♻️ <strong>Fistuloclise</strong>: reinfundir efluente na alça distal</li>
+  </ul>
+  <div class="box warn"><span class="l">☠️ pega-ratão</span><strong>Octreotide</strong> reduz o débito, mas <strong>NÃO</strong> aumenta o fechamento nem a sobrevida! 💊</div>
+</div>
+
+<!-- 4 -->
+<div class="panel" data-p="4">
+  <h2>🔪 Cirurgia</h2>
+  <ul>
+    <li>⏰ <strong>Tardia!</strong> Esperar o abdome "amolecer" (~3-6 meses em reop complexa)</li>
+    <li>✅ Só operar com <strong>sepse controlada + nutrido</strong></li>
+    <li>✂️ Padrão = <strong>ressecção do segmento + anastomose</strong> em tecido sadio</li>
+    <li>🧵 Anastomose: absorvível (Vicryl/PDS)</li>
+  </ul>
+  <div class="box warn"><span class="l">☠️ pega-ratão</span><strong>Rafia local RECIDIVA!</strong> Não é "fechar o buraco" — é ressecar o segmento 🔁</div>
+  <div class="box mac"><span class="l">🧠 macete do timing</span>"Pressa mata na fístula" — estabilizar → nutrir → anatomia → esperar → operar ⏳</div>
+</div>
+
+<!-- 5 -->
+<div class="panel" data-p="5">
+  <h2>☠️ Pega-ratões</h2>
+  <div class="box warn"><span class="l">trap 1</span>Sepse ANTES de tudo — nunca operar em sepse 🦠</div>
+  <div class="box warn"><span class="l">trap 2</span>Octreotide: menos débito, mesmo fechamento 💊</div>
+  <div class="box warn"><span class="l">trap 3</span>Rafia local recidiva → ressecção + anastomose ✂️</div>
+  <div class="box warn"><span class="l">trap 4</span>Alto débito = &gt;500 mL/dia 💧</div>
+  <div class="box warn"><span class="l">trap 5</span>Fator FRIEND → não fecha sozinha 🚫</div>
+  <div class="box warn"><span class="l">trap 6</span>Cirurgia é TARDIA, não precoce ⏰</div>
+  <div class="box warn"><span class="l">trap 7</span>Enteral &gt; TPN sempre que possível 🥤</div>
+  <div class="box warn"><span class="l">trap 8</span>Crohn = espontânea #1; iatrogênica = global #1 🌱</div>
+  <div class="box mac"><span class="l">✅ resumo de bolso</span>Débito: &lt;200·200-500·&gt;500 · SNAP (sepse 1º!) · não fecha=FRIEND · 25-35kcal+1,5-2,5g prot/kg, enteral&gt;TPN · octreotide=só débito · cirurgia tardia=ressecção+anastomose 🎓</div>
+</div>
+
+<script>
+var tabs=document.querySelectorAll('.tab'),panels=document.querySelectorAll('.panel');
+tabs.forEach(function(t){t.addEventListener('click',function(){
+  tabs.forEach(function(x){x.classList.remove('on')});
+  panels.forEach(function(x){x.classList.remove('on')});
+  t.classList.add('on');
+  document.querySelector('.panel[data-p="'+t.dataset.t+'"]').classList.add('on');
+})});
+</script>
+</body>
+</html>

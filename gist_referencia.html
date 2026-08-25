@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GIST — Tumor Estromal Gastrointestinal — carolzita</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0f; --bg2:#12121a; --card:#16161f; --card2:#1c1c27;
+  --line:#2a2a38; --txt:#e6e6ef; --muted:#9a9ab0;
+  --laranja:#f97316; --laranja-bg:rgba(249,115,22,.10);
+  --roxo:#a855f7; --roxo-bg:rgba(168,85,247,.10);
+  --ciano:#22d3ee; --ciano-bg:rgba(34,211,238,.10);
+  --verde:#34d399; --vermelho:#f87171; --amarelo:#fbbf24;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(1200px 600px at 50% -10%,#15151f 0%,var(--bg) 60%);color:var(--txt);font-family:'Inter',sans-serif;line-height:1.55;padding:0 0 80px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px}
+header{padding:40px 0 24px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(28px,6vw,44px);line-height:1.05;margin:8px 0 6px;letter-spacing:-.02em}
+.sub{color:var(--muted);font-size:15px;max-width:720px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tag{font-family:'JetBrains Mono',monospace;font-size:11px;padding:5px 10px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted)}
+.tag.r{color:var(--roxo);border-color:rgba(168,85,247,.35);background:var(--roxo-bg)}
+section{margin-top:14px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:12px;overflow:hidden;transition:border-color .2s}
+details[open]{border-color:rgba(249,115,22,.30)}
+summary{cursor:pointer;list-style:none;padding:18px 20px;display:flex;align-items:center;gap:13px;font-family:'Syne',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em;user-select:none}
+summary::-webkit-details-marker{display:none}
+.num{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--bg);background:var(--laranja);width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:0 0 auto}
+.chev{margin-left:auto;color:var(--muted);transition:transform .25s;font-size:14px}
+details[open] .chev{transform:rotate(90deg)}
+.body{padding:4px 22px 24px;font-size:15px}
+.body p{margin:10px 0}
+.body h4{font-family:'Syne',sans-serif;font-size:16px;color:var(--laranja);margin:20px 0 8px;letter-spacing:-.01em}
+.body ul{margin:8px 0 8px 4px;list-style:none}
+.body li{padding:4px 0 4px 20px;position:relative}
+.body li::before{content:"▸";position:absolute;left:0;color:var(--laranja);font-size:12px;top:6px}
+.body strong{color:#fff;font-weight:600}
+.simple{color:var(--verde);font-style:italic;font-size:.94em;display:block;margin:6px 0}
+.box.simplebox{background:rgba(52,211,153,.09);border-color:rgba(52,211,153,.32);color:var(--verde);font-style:italic}
+.box.simplebox .lbl{color:var(--verde);font-style:normal}
+.box.simplebox strong{color:#7fe8c0;font-style:normal}
+.stx{counter-reset:st;margin:12px 0}
+.st{counter-increment:st;background:var(--card2);border:1px solid var(--line);border-radius:13px;padding:14px 16px 14px 52px;margin:11px 0;position:relative}
+.st::before{content:counter(st);position:absolute;left:14px;top:13px;width:26px;height:26px;border-radius:8px;background:var(--laranja);color:#0a0a0f;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center}
+.st .fase{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:var(--laranja);display:block;margin-bottom:1px}
+.st .ttl{font-weight:700;font-size:15.5px;color:#fff;margin-bottom:4px}
+.st p{margin:5px 0;font-size:14px}
+.pq{border-left:3px solid var(--roxo);background:var(--roxo-bg);border-radius:0 9px 9px 0;padding:8px 12px;margin:9px 0;font-size:13.5px}
+.pq b{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.3px;text-transform:uppercase;color:var(--roxo);display:block;margin-bottom:2px}
+.mh2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:9px}
+.mh{border-radius:9px;padding:8px 11px;font-size:12.5px;border:1px solid var(--line)}
+.mh.e{background:rgba(52,211,153,.07);border-color:rgba(52,211,153,.3)}
+.mh.d{background:var(--laranja-bg);border-color:rgba(249,115,22,.3)}
+.mh b{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;display:block;margin-bottom:2px}
+.mh.e b{color:var(--verde)} .mh.d b{color:var(--laranja)}
+.fio{font-family:'JetBrains Mono',monospace;font-size:11.5px;background:var(--roxo-bg);color:var(--roxo);border:1px solid rgba(168,85,247,.35);padding:1px 6px;border-radius:5px;white-space:nowrap}
+@media(max-width:640px){.mh2{grid-template-columns:1fr}}
+.box{border-radius:12px;padding:13px 15px;margin:14px 0;font-size:14px;border:1px solid}
+.box.prova{background:var(--roxo-bg);border-color:rgba(168,85,247,.35)}
+.box.prova .lbl{color:var(--roxo)}
+.box.mac{background:var(--ciano-bg);border-color:rgba(34,211,238,.35)}
+.box.mac .lbl{color:var(--ciano)}
+.box.warn{background:rgba(248,113,113,.08);border-color:rgba(248,113,113,.3)}
+.box.warn .lbl{color:var(--vermelho)}
+.lbl{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-family:'JetBrains Mono',monospace;font-size:10px;background:rgba(168,85,247,.2);color:var(--roxo);padding:2px 7px;border-radius:6px;margin-left:6px;white-space:nowrap}
+.tbl{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
+.tbl table{width:100%;border-collapse:collapse;min-width:520px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--laranja);background:var(--card2)}
+td strong{color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin:14px 0}
+.gcard{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+.gcard .t{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--ciano);margin-bottom:4px}
+.gcard .d{font-size:13px;color:var(--muted)}
+.hands{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.hand{border-radius:12px;padding:14px;border:1px solid var(--line)}
+.hand.e{background:rgba(34,211,238,.06);border-color:rgba(34,211,238,.25)}
+.hand.d{background:rgba(249,115,22,.06);border-color:rgba(249,115,22,.25)}
+.hand .ht{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;font-weight:700}
+.hand.e .ht{color:var(--ciano)} .hand.d .ht{color:var(--laranja)}
+.hand li{font-size:13px}
+.steps{counter-reset:s;margin:10px 0}
+.step{counter-increment:s;position:relative;padding:11px 0 11px 46px;border-bottom:1px dashed var(--line)}
+.step:last-child{border-bottom:none}
+.step::before{content:counter(s);position:absolute;left:0;top:9px;width:30px;height:30px;border-radius:9px;background:var(--laranja-bg);border:1px solid rgba(249,115,22,.4);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:grid;place-items:center}
+.step b{color:#fff}
+svg{max-width:100%;height:auto;display:block;margin:16px auto}
+.fig{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.fig .cap{font-size:12px;color:var(--muted);text-align:center;margin-top:8px;font-family:'JetBrains Mono',monospace}
+footer{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+footer .ref{font-family:'JetBrains Mono',monospace;font-size:12px;margin-top:8px}
+a{color:var(--laranja)}
+@media(max-width:560px){.hands{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">carolzita · cirurgia geral · oncologia cirúrgica</div>
+  <h1>GIST — Tumor Estromal Gastrointestinal</h1>
+  <p class="sub">O sarcoma mais comum do TGI, originado das <strong>células intersticiais de Cajal</strong> (marcapasso do intestino). <strong>CD117/KIT + DOG1</strong> são a assinatura imuno-histoquímica; a mutação de <strong>KIT/PDGFRA</strong> guia a terapia-alvo. Risco pela tríade <strong>tamanho + índice mitótico + sítio</strong> (Miettinen/AFIP). Cirurgia R0 sem linfadenectomia + <strong>imatinibe</strong>. Base: NCCN GIST 2024, ESMO 2022, Miettinen &amp; Lasota (AFIP), e pegadinhas das 5 bancas do RS.</p>
+  <div class="tags">
+    <span class="tag">CD117 / DOG1</span>
+    <span class="tag">Células de Cajal</span>
+    <span class="tag">Miettinen/AFIP</span>
+    <span class="tag">Imatinibe</span>
+    <span class="tag">R0 sem linfadenectomia</span>
+    <span class="tag r">HCPA · GHC · SC-POA · PUC · AMRIGS</span>
+  </div>
+</header>
+
+<!-- 1 QUADRO & EPIDEMIOLOGIA -->
+<details open>
+  <summary><span class="num">1</span> Quadro clínico &amp; epidemiologia <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>O GIST é o <strong>tumor mesenquimal (sarcoma) mais comum do trato gastrointestinal</strong>, embora represente só ~1% das neoplasias do TGI. Origina-se das <strong>células intersticiais de Cajal</strong> <span class="simple">(as "células-marcapasso" que comandam os movimentos do intestino, ficam na parede do tubo digestivo)</span>, o que explica por que o tumor cresce na <strong>camada muscular própria</strong> e faz abaulamento <strong>subepitelial</strong> (mucosa preservada por cima).</p>
+
+    <h4>Distribuição por sítio (decorar a ordem)</h4>
+    <ul>
+      <li><strong>Estômago ~60%</strong> (mais comum) — em geral <strong>indolente</strong></li>
+      <li><strong>Intestino delgado ~30%</strong> — comportamento <strong>mais agressivo</strong> para mesmo tamanho/mitose</li>
+      <li>Cólon/reto ~5% · esôfago &lt;1% · <strong>GIST extra-gastrointestinal</strong> (mesentério, omento, retroperitônio) — raro</li>
+    </ul>
+
+    <h4>Apresentação clínica</h4>
+    <ul>
+      <li>Muitos são <strong>achados incidentais</strong> (EDA, TC, cirurgia por outra causa) — pequenos e assintomáticos.</li>
+      <li>Sintomático: <strong>hemorragia digestiva</strong> (mais comum — ulceração da mucosa que recobre o tumor → HDA/melena/anemia), dor/massa abdominal, saciedade precoce, obstrução (delgado).</li>
+      <li><strong>Metástase:</strong> padrão <strong>hematogênico e peritoneal</strong> — fígado e peritônio. <strong>Linfonodo é raríssimo</strong> (ponto-chave!).</li>
+    </ul>
+
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">HCPA · GHC</span></span>GIST <strong>não faz metástase linfonodal</strong> na prática (diferente de adenocarcinoma) → <strong>não se faz linfadenectomia</strong> de rotina. Metástase é para <strong>fígado e peritônio</strong>.</div>
+
+    <h4>Síndromes associadas (GIST familiar/sindrômico)</h4>
+    <ul>
+      <li><strong>Tríade de Carney</strong> (GIST gástrico + paraganglioma + condroma pulmonar) — mulheres jovens; não-hereditária.</li>
+      <li><strong>Carney-Stratakis</strong> (GIST + paraganglioma, mutação SDH) — hereditária.</li>
+      <li><strong>NF1 (neurofibromatose tipo 1)</strong> — GISTs múltiplos de delgado, geralmente <strong>KIT/PDGFRA wild-type</strong>.</li>
+    </ul>
+  </div>
+</details>
+
+<!-- 2 IMUNO & MOLECULAR -->
+<details>
+  <summary><span class="num">2</span> Diagnóstico · imuno-histoquímica &amp; molecular <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Imuno-histoquímica — a assinatura</h4>
+    <div class="tbl"><table>
+      <tr><th>Marcador</th><th>Positividade</th><th>Comentário</th></tr>
+      <tr><td><strong>CD117 (c-KIT)</strong></td><td><strong>~95%</strong></td><td>Marcador clássico do GIST</td></tr>
+      <tr><td><strong>DOG1</strong></td><td>~95%</td><td>Útil nos <strong>CD117-negativos</strong> (ex.: PDGFRA)</td></tr>
+      <tr><td>CD34</td><td>~70%</td><td>Inespecífico, menos confiável</td></tr>
+      <tr><td>DESmina</td><td>Negativo (raro +)</td><td>Positivo aponta leiomioma/leiomiossarcoma</td></tr>
+      <tr><td>S100</td><td>Negativo</td><td>Positivo aponta schwannoma</td></tr>
+    </table></div>
+    <div class="box mac"><span class="lbl">macete IHQ</span>GIST = <strong>"KIT-DOG que morde a parede"</strong>: CD117 + DOG1. Se CD117 negativo mas DOG1 positivo → ainda é GIST (pense em <strong>PDGFRA</strong>).</div>
+
+    <h4>Biologia molecular — decide o alvo terapêutico</h4>
+    <ul>
+      <li><strong>Mutação KIT (~75-80%)</strong> — <strong>éxon 11</strong> é a mais comum e a <strong>mais sensível ao imatinibe</strong>. Éxon 9 responde melhor a <strong>dose dobrada (800 mg)</strong>.</li>
+      <li><strong>Mutação PDGFRA (~10%)</strong> — a variante <strong>D842V (éxon 18)</strong> é <strong>RESISTENTE ao imatinibe</strong> → usar <strong>avapritinibe</strong>.</li>
+      <li><strong>Wild-type / deficiente de SDH (~10-15%)</strong> — inclui NF1, pediátrico e Carney; menor resposta ao imatinibe.</li>
+    </ul>
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">PUC-RS · AMRIGS</span></span><strong>PDGFRA D842V = resistência primária ao imatinibe.</strong> Pegadinha clássica: "GIST que não responde ao imatinibe" → pensar nessa mutação.</div>
+
+    <h4>Quando (e como) biopsiar</h4>
+    <ul>
+      <li><strong>Lesão ressecável e claramente GIST na imagem</strong> → em geral <strong>NÃO biopsiar</strong> antes: o tumor é <strong>friável</strong> e a punção pode causar <strong>ruptura, sangramento e disseminação peritoneal</strong>.</li>
+      <li>Se biópsia for necessária (dúvida diagnóstica, planejamento neoadjuvante, doença metastática): preferir <strong>EUS-FNA/biópsia por agulha</strong> (via endoscópica), evitando trajeto percutâneo.</li>
+    </ul>
+    <div class="box warn"><span class="lbl">⚠ pegadinha</span>Biópsia <strong>percutânea</strong> de GIST ressecável é <strong>contraindicada de rotina</strong> — risco de ruptura tumoral e semeadura peritoneal. A via de escolha, se preciso, é a <strong>ecoendoscópica</strong>.</div>
+  </div>
+</details>
+
+<!-- 3 RISCO -->
+<details>
+  <summary><span class="num">3</span> Estratificação de risco — Miettinen / AFIP <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>O prognóstico do GIST depende de <strong>três variáveis</strong>, não de duas. A classificação de <strong>Miettinen &amp; Lasota (AFIP)</strong> acrescentou o <strong>sítio anatômico</strong> aos parâmetros clássicos de tamanho e mitose — porque o mesmo tamanho/mitose se comporta muito pior fora do estômago.</p>
+
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">todas as bancas</span></span>A tríade prognóstica do GIST = <strong>TAMANHO + ÍNDICE MITÓTICO + SÍTIO</strong>. O índice mitótico é contado em <strong>5 mm²</strong> (equivale a ~20-25 CGA nos microscópios modernos, historicamente descrito como "50 CGA"). Corte-chave: <strong>≤5 vs &gt;5 mitoses/5 mm²</strong>.</div>
+
+    <div class="tbl"><table>
+      <tr><th>Tamanho</th><th>Mitoses /5&nbsp;mm²</th><th>Estômago</th><th>Delgado</th></tr>
+      <tr><td>≤2 cm</td><td>≤5</td><td><strong>Muito baixo / nenhum</strong></td><td>Muito baixo</td></tr>
+      <tr><td>&gt;2–5 cm</td><td>≤5</td><td>Baixo</td><td>Baixo-moderado</td></tr>
+      <tr><td>&gt;5–10 cm</td><td>≤5</td><td>Baixo-moderado</td><td><strong>Alto</strong></td></tr>
+      <tr><td>&gt;10 cm</td><td>≤5</td><td>Moderado</td><td><strong>Alto</strong></td></tr>
+      <tr><td>qualquer &gt;2 cm</td><td>&gt;5</td><td>Moderado–<strong>alto</strong></td><td><strong>Alto</strong></td></tr>
+      <tr><td>&gt;10 cm</td><td>&gt;5</td><td><strong>Alto (~86%)</strong></td><td><strong>Alto (~90%)</strong></td></tr>
+    </table></div>
+
+    <div class="fig">
+      <svg viewBox="0 0 640 200" xmlns="http://www.w3.org/2000/svg">
+        <text x="320" y="16" fill="#9a9ab0" font-size="11" font-family="monospace" text-anchor="middle">risco de metástase — GIST &gt;10 cm, alta mitose: estômago × delgado</text>
+        <line x1="90" y1="165" x2="560" y2="165" stroke="#2a2a38" stroke-width="1.5"/>
+        <line x1="90" y1="165" x2="90" y2="35" stroke="#2a2a38" stroke-width="1.5"/>
+        <text x="52" y="40" fill="#9a9ab0" font-size="9" font-family="monospace">100%</text>
+        <text x="60" y="167" fill="#9a9ab0" font-size="9" font-family="monospace">0%</text>
+        <rect x="150" y="52" width="110" height="113" fill="#f97316" opacity=".55"/>
+        <text x="205" y="44" fill="#f97316" font-size="15" font-family="monospace" text-anchor="middle" font-weight="bold">~86%</text>
+        <text x="205" y="184" fill="#9a9ab0" font-size="11" font-family="monospace" text-anchor="middle">estômago</text>
+        <rect x="380" y="46" width="110" height="119" fill="#f87171" opacity=".55"/>
+        <text x="435" y="38" fill="#f87171" font-size="15" font-family="monospace" text-anchor="middle" font-weight="bold">~90%</text>
+        <text x="435" y="184" fill="#9a9ab0" font-size="11" font-family="monospace" text-anchor="middle">delgado</text>
+      </svg>
+      <div class="cap">Para o MESMO tamanho e mitose elevada, o GIST de delgado é sistematicamente mais agressivo que o gástrico — daí o sítio entrar na estratificação (Miettinen).</div>
+    </div>
+
+    <h4>Pontos que a banca adora</h4>
+    <ul>
+      <li>GIST gástrico <strong>≤2 cm com baixa mitose</strong> é essencialmente <strong>benigno</strong> → pode-se vigiar pequenos gástricos.</li>
+      <li>O <strong>reto</strong> comporta-se como o delgado (agressivo) — mesmo pequeno, tem potencial maligno.</li>
+      <li>Nenhum GIST é 100% "benigno garantido" fora do grupo ≤2 cm gástrico de baixa mitose — por isso o termo preferido é <strong>estratificação de risco</strong>, não "benigno vs maligno".</li>
+    </ul>
+  </div>
+</details>
+
+<!-- 4 CIRURGIA -->
+<details>
+  <summary><span class="num">4</span> Tratamento cirúrgico · técnica &amp; instrumentação <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>A <strong>ressecção cirúrgica completa (R0)</strong> é o tratamento curativo do GIST localizado. O princípio oncológico é <strong>margem microscopicamente negativa com pseudocápsula íntegra</strong> — <strong>não</strong> se buscam margens amplas em centímetros como no adenocarcinoma, e <strong>não</strong> se faz linfadenectomia.</p>
+
+    <h4>Princípios oncológicos (decorar)</h4>
+    <ul>
+      <li><strong>Ressecção em bloco, sem romper a pseudocápsula</strong> — a ruptura tumoral (espontânea ou iatrogênica) piora drasticamente o prognóstico e equivale a doença peritoneal.</li>
+      <li><strong>Sem linfadenectomia</strong> de rotina (metástase nodal é rara).</li>
+      <li>Margem <strong>negativa</strong> basta; não é necessária margem larga. No estômago, <strong>ressecção em cunha (wedge)</strong> costuma ser suficiente.</li>
+      <li>Manuseio delicado ("no-touch" do tumor) — usar sacos de extração para retirada.</li>
+    </ul>
+
+    <h4>Posição &amp; montagem (GIST gástrico laparoscópico — cenário mais comum)</h4>
+    <ul>
+      <li><strong>Posição:</strong> decúbito dorsal, pernas abertas (francesa) ou supino; proclive (anti-Trendelenburg) leve. Cirurgião conforme localização da lesão.</li>
+      <li><strong>Pneumoperitônio</strong> 12–15 mmHg; ótica de 30°.</li>
+      <li>Trocartes: óptica supra/infraumbilical + 2-3 de trabalho em disposição de "leque" para o estômago.</li>
+    </ul>
+
+    <div class="hands">
+      <div class="hand e">
+        <div class="ht">Mão esquerda (não dominante)</div>
+        <ul>
+          <li><strong>Pinça atraumática</strong> (Johann/grasper) — apreende tecido <strong>peritumoral</strong> ou fio de reparo, <strong>nunca o tumor diretamente</strong> (evita ruptura)</li>
+          <li>Tração/contra-tração para expor o plano de secção</li>
+        </ul>
+      </div>
+      <div class="hand d">
+        <div class="ht">Mão direita (dominante)</div>
+        <ul>
+          <li><strong>Grampeador linear</strong> (endo-GIA) para a cunha gástrica</li>
+          <li><strong>Bisturi ultrassônico / ssselante</strong> (dissecção e hemostasia)</li>
+          <li>Porta-agulha nas rafias de reforço</li>
+        </ul>
+      </div>
+    </div>
+
+<div class="box simplebox"><span class="lbl">tradução simples</span>O GIST é o <strong>oposto do adenocarcinoma</strong>. Ele não caminha pelos linfonodos, então não se faz esvaziamento. Ele não infiltra a parede em volta, então basta uma margem que seja negativa — não interessa quantos centímetros. E ele vem dentro de uma <strong>casca</strong>: enquanto a casca estiver íntegra, o tumor está contido. Romper a casca é semear a barriga inteira. Toda a técnica existe para <strong>não encostar no tumor</strong>.</div>
+
+    <div class="box prova"><span class="lbl">★ o contraste que a banca adora</span>
+    <table style="width:100%;border-collapse:collapse;margin-top:6px;font-size:13.5px">
+      <tr><th style="text-align:left;padding:4px 6px">&nbsp;</th><th style="text-align:left;padding:4px 6px">Adenocarcinoma gástrico</th><th style="text-align:left;padding:4px 6px">GIST</th></tr>
+      <tr><td style="padding:4px 6px"><strong>Linfonodos</strong></td><td style="padding:4px 6px">Linfadenectomia <strong>D2</strong></td><td style="padding:4px 6px"><strong>Nenhuma</strong> — não dissemina por via linfática</td></tr>
+      <tr><td style="padding:4px 6px"><strong>Margem</strong></td><td style="padding:4px 6px">5 cm (intestinal) / 8 cm (difuso)</td><td style="padding:4px 6px">Apenas <strong>negativa (R0)</strong>, sem medida</td></tr>
+      <tr><td style="padding:4px 6px"><strong>Operação</strong></td><td style="padding:4px 6px">Gastrectomia subtotal ou total</td><td style="padding:4px 6px"><strong>Cunha (wedge)</strong> costuma bastar</td></tr>
+      <tr><td style="padding:4px 6px"><strong>Metástase</strong></td><td style="padding:4px 6px">Linfonodo, peritônio, fígado</td><td style="padding:4px 6px"><strong>Fígado e peritônio</strong></td></tr>
+    </table></div>
+
+    <div class="stx">
+
+      <div class="st">
+        <span class="fase">fase de estadiamento</span>
+        <div class="ttl">Inventário e localização da lesão</div>
+        <p>Avaliar <strong>fígado e superfície peritoneal</strong> — os dois sítios de metástase. Localizar o tumor e, sobretudo, definir sua relação com <strong>cárdia e piloro</strong>. Lesões da parede posterior exigem abertura da retrocavidade.</p>
+        <div class="pq"><b>por quê</b>A distância até cárdia e piloro é o que decide se a cunha é possível ou se será preciso gastrectomia setorial com reconstrução. É uma decisão de <strong>geometria</strong>, não de oncologia — o GIST não exige margem larga, mas exige que o estômago continue funcionando.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de exposição — a regra que define a operação</span>
+        <div class="ttl">Apreender o tecido peritumoral, nunca o tumor</div>
+        <p>Reparo com <strong>pontos no tecido peritumoral</strong> ou preensão da parede gástrica adjacente com pinça atraumática. <strong>Jamais</strong> pinçar a lesão diretamente. Manipulação mínima, sem tração sobre a massa.</p>
+        <div class="pq"><b>por quê</b>O GIST é <strong>friável</strong> e revestido por uma <strong>pseudocápsula</strong>. Enquanto ela estiver íntegra, a doença está contida. Rompê-la — mesmo com uma pinça, mesmo por um instante — converte doença localizada e curável em <strong>contaminação peritoneal</strong>: o caso passa a ser tratado como alto risco/disseminado. Nenhum outro tumor do TGI tem essa fragilidade.</div>
+        <div class="mh2">
+          <div class="mh e"><b>mão esquerda</b>Johann/grasper no tecido <strong>peritumoral</strong> ou no fio de reparo; contratração expondo o plano</div>
+          <div class="mh d"><b>mão direita</b>Selante ultrassônico na dissecção; grampeador linear</div>
+        </div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de ressecção</span>
+        <div class="ttl">Cunha (wedge) com margem macroscópica sadia</div>
+        <p><span class="fio">Endo-GIA</span> circundando a lesão, incluindo uma faixa de <strong>parede macroscopicamente sadia</strong>. Sem linfadenectomia. Sem contar centímetros.</p>
+        <div class="pq"><b>por quê</b>Duas ausências deliberadas. <strong>Sem linfadenectomia</strong> porque o GIST dissemina por via <strong>hematogênica e por implante</strong>, não linfática — esvaziar linfonodo aqui só acrescenta morbidade. E <strong>sem margem em centímetros</strong> porque o GIST empurra o tecido em vez de infiltrá-lo: a doença termina onde a pseudocápsula termina. R1 microscópico, aliás, não tem impacto claro em sobrevida e <strong>não indica reoperação</strong> de rotina.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de verificação</span>
+        <div class="ttl">Conferir patência e ausência de deformidade</div>
+        <p>Confirmar que a linha de grampos não estenosou a <strong>cárdia</strong> nem o <strong>piloro</strong>. Lesões justacárdicas ou justapilóricas podem exigir gastrectomia setorial, ou <strong>neoadjuvância prévia</strong> para permitir a cunha.</p>
+        <div class="pq"><b>por quê</b>Aqui está a indicação mais elegante do imatinibe neoadjuvante: não para "aumentar a sobrevida", mas para <strong>encolher o tumor e poupar órgão</strong> — preservar a cárdia, o piloro ou o esfíncter anal. É o mesmo raciocínio do reto baixo.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de extração</span>
+        <div class="ttl">Retirada em saco protetor</div>
+        <p>Peça sempre em <span class="fio">endobag</span>, sem contato com a parede abdominal nem com os portais.</p>
+        <div class="pq"><b>por quê</b>Mesma lógica do passo 2, agora no fim: a peça é o próprio inóculo. Contato com o portal pode gerar <strong>implante em cicatriz de trocarte</strong>. Todo o cuidado de não romper a cápsula se perde se a peça sair solta.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de encerramento</span>
+        <div class="ttl">Rafia de reforço, hemostasia e estanqueidade</div>
+        <p>Reforço da linha de grampos com <span class="fio">Vicryl 3-0</span> ou <span class="fio">PDS 3-0</span> seromuscular, conforme a técnica. Revisar hemostasia e testar estanqueidade quando aplicável.</p>
+        <div class="pq"><b>por quê</b>O GIST é <strong>hipervascularizado</strong> — é por isso que sangra e ulcera, e é por isso que o sintoma inicial mais comum é HDA ou anemia. O leito e a linha de grampos merecem revisão cuidadosa.</div>
+      </div>
+
+    </div>
+
+    <h4>Situações particulares por sítio</h4>
+    <ul>
+      <li><strong>Delgado</strong> — <strong>enterectomia segmentar + anastomose</strong>. Sítio de comportamento mais agressivo que o gástrico para o mesmo tamanho.</li>
+      <li><strong>Duodeno</strong> — ressecção em cunha quando possível; duodenopancreatectomia só se inevitável.</li>
+      <li><strong>Reto baixo</strong> — considerar <strong>neoadjuvância</strong> para preservação esfincteriana.</li>
+      <li><strong>Cárdia / piloro</strong> — neoadjuvância para viabilizar a cunha e evitar gastrectomia total.</li>
+    </ul>
+
+    <div class="box mac"><span class="lbl">as 3 checagens do GIST</span>
+      <strong>1)</strong> A pseudocápsula está <strong>íntegra</strong> — ninguém pinçou o tumor?<br>
+      <strong>2)</strong> A margem está macroscopicamente negativa (sem contar centímetros)?<br>
+      <strong>3)</strong> A peça vai sair <strong>em saco</strong>?<br>
+      E a quarta, que não é de técnica: <strong>não pedi linfadenectomia por reflexo?</strong>
+    </div>
+
+    <h4>Fios &amp; energia</h4>
+    <ul>
+      <li>Rafias gástricas de reforço: <strong>absorvível multifilamentar</strong> (poliglactina/Vicryl 3-0) ou <strong>PDS</strong>; seromuscular com absorvível.</li>
+      <li>Selagem de vasos curtos/gastroepiploicos: <strong>energia ultrassônica ou seladora bipolar</strong>.</li>
+      <li>GIST de delgado → <strong>enterectomia segmentar + anastomose</strong>; reto baixo → às vezes neoadjuvância para permitir preservação esfincteriana.</li>
+    </ul>
+
+    <div class="box warn"><span class="lbl">⚠ pegadinha</span>Ruptura da pseudocápsula (intraoperatória ou espontânea) = <strong>contaminação peritoneal</strong> → passa a ser considerado alto risco / doença disseminada. Por isso apreende-se o <strong>tecido peritumoral</strong>, nunca o tumor.</div>
+  </div>
+</details>
+
+<!-- 5 SISTEMICO -->
+<details>
+  <summary><span class="num">5</span> Terapia-alvo · imatinibe (neo/adjuvante &amp; metastático) <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>O <strong>imatinibe</strong> (mesilato) é um <strong>inibidor de tirosina-quinase (TKI)</strong> que bloqueia KIT e PDGFRA — revolucionou o GIST avançado. A escolha e a dose dependem da <strong>mutação</strong>.</p>
+
+    <h4>Adjuvante</h4>
+    <ul>
+      <li>Indicado no <strong>alto risco</strong> de recidiva após R0 → <strong>imatinibe por ≥3 anos</strong> (superior a 1 ano em sobrevida — trial SSGXVIII/AIO).</li>
+      <li>Não indicado em baixo/muito baixo risco.</li>
+    </ul>
+
+    <h4>Neoadjuvante</h4>
+    <ul>
+      <li>Tumores <strong>localmente avançados / borderline</strong> ou em local onde a cirurgia mutilaria (cárdia, reto, duodeno) → imatinibe <strong>reduz o tumor</strong> e permite cirurgia poupadora de órgão.</li>
+      <li>Avaliar resposta com imagem; operar no <strong>máximo de resposta / platô</strong> (geralmente 6-12 meses). <strong>Fazer estudo mutacional antes</strong> — se D842V, o imatinibe não funciona.</li>
+    </ul>
+
+    <h4>Doença metastática / irressecável — linhas</h4>
+    <div class="tbl"><table>
+      <tr><th>Linha</th><th>Droga</th><th>Observação</th></tr>
+      <tr><td>1ª</td><td><strong>Imatinibe 400 mg</strong></td><td>800 mg se <strong>KIT éxon 9</strong></td></tr>
+      <tr><td>2ª</td><td><strong>Sunitinibe</strong></td><td>Progressão/intolerância ao imatinibe</td></tr>
+      <tr><td>3ª</td><td><strong>Regorafenibe</strong></td><td></td></tr>
+      <tr><td>4ª</td><td><strong>Ripretinibe</strong></td><td></td></tr>
+      <tr><td>Especial</td><td><strong>Avapritinibe</strong></td><td>GIST com <strong>PDGFRA D842V</strong></td></tr>
+    </table></div>
+    <div class="box mac"><span class="lbl">macete das linhas</span><strong>"I-S-R-R"</strong>: <strong>I</strong>matinibe → <strong>S</strong>unitinibe → <strong>R</strong>egorafenibe → <strong>R</strong>ipretinibe. Fora da fila: <strong>avapritinibe</strong> para o D842V.</div>
+
+    <div class="box prova"><span class="lbl">alto rendimento <span class="banca">GHC · SC-POA</span></span>Resposta ao imatinibe na imagem pode ser por <strong>queda de densidade (Choi)</strong> e não só por redução de tamanho (RECIST) — o tumor "amolece"/necrosa antes de encolher. Não interpretar ausência de encolhimento imediato como falha.</div>
+  </div>
+</details>
+
+<!-- 6 QUESTOES -->
+<details>
+  <summary><span class="num">6</span> Questões de banca, pega-ratões &amp; mnemônicos <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>10 questões representativas (originais, estilo das 5 bancas)</h4>
+
+    <div class="box prova"><span class="lbl">Q1 <span class="banca">HCPA</span></span><strong>De qual célula se origina o GIST?</strong><br>Resposta: <strong>células intersticiais de Cajal</strong> (marcapasso do TGI).</div>
+    <div class="box prova"><span class="lbl">Q2 <span class="banca">GHC</span></span><strong>Marcadores imuno-histoquímicos característicos do GIST?</strong><br>Resposta: <strong>CD117 (c-KIT) e DOG1</strong> positivos.</div>
+    <div class="box prova"><span class="lbl">Q3 <span class="banca">AMRIGS</span></span><strong>Quais as três variáveis da estratificação de risco de Miettinen/AFIP?</strong><br>Resposta: <strong>tamanho + índice mitótico + sítio anatômico</strong>.</div>
+    <div class="box prova"><span class="lbl">Q4 <span class="banca">PUC-RS</span></span><strong>Paciente com GIST não responde ao imatinibe. Mutação mais provável?</strong><br>Resposta: <strong>PDGFRA D842V</strong> (éxon 18) — resistência primária; usar avapritinibe.</div>
+    <div class="box prova"><span class="lbl">Q5 <span class="banca">SC-POA</span></span><strong>Deve-se realizar linfadenectomia na ressecção de GIST gástrico?</strong><br>Resposta: <strong>não</strong> — metástase linfonodal é rara; ressecção R0 sem linfadenectomia.</div>
+    <div class="box prova"><span class="lbl">Q6 <span class="banca">HCPA</span></span><strong>GIST gástrico de 3 cm, mucosa íntegra, ressecável, aspecto típico. Conduta quanto à biópsia pré-operatória?</strong><br>Resposta: <strong>não biopsiar por via percutânea</strong> — risco de ruptura/semeadura; ressecar (ou EUS-FNA se dúvida).</div>
+    <div class="box prova"><span class="lbl">Q7 <span class="banca">GHC</span></span><strong>Sítios mais comuns de metástase do GIST?</strong><br>Resposta: <strong>fígado e peritônio</strong> (hematogênica/transcelômica).</div>
+    <div class="box prova"><span class="lbl">Q8 <span class="banca">AMRIGS</span></span><strong>Duração recomendada do imatinibe adjuvante no GIST de alto risco?</strong><br>Resposta: <strong>pelo menos 3 anos</strong>.</div>
+    <div class="box prova"><span class="lbl">Q9 <span class="banca">PUC-RS</span></span><strong>GIST volumoso na cárdia — como permitir cirurgia poupadora?</strong><br>Resposta: <strong>imatinibe neoadjuvante</strong> para reduzir o tumor.</div>
+    <div class="box prova"><span class="lbl">Q10 <span class="banca">SC-POA</span></span><strong>GIST gástrico de 1,5 cm com baixo índice mitótico — comportamento esperado?</strong><br>Resposta: <strong>muito baixo risco / essencialmente benigno</strong> — vigilância é aceitável.</div>
+
+    <h4>Pega-ratões (as armadilhas clássicas)</h4>
+    <div class="box warn"><span class="lbl">☠ trap 1</span>GIST <strong>não</strong> exige linfadenectomia — confundir com adenocarcinoma gástrico é erro clássico.</div>
+    <div class="box warn"><span class="lbl">☠ trap 2</span>Margem do GIST é <strong>negativa (R0)</strong>, não "ampla em cm" — não replique a regra do melanoma/adenoca.</div>
+    <div class="box warn"><span class="lbl">☠ trap 3</span><strong>PDGFRA D842V é resistente ao imatinibe</strong> — nem todo GIST responde à droga.</div>
+    <div class="box warn"><span class="lbl">☠ trap 4</span>Não biopsiar por via percutânea GIST ressecável — <strong>friável, semeia peritônio</strong>.</div>
+    <div class="box warn"><span class="lbl">☠ trap 5</span>Delgado/reto do MESMO tamanho é <strong>mais agressivo</strong> que gástrico — o sítio importa.</div>
+    <div class="box warn"><span class="lbl">☠ trap 6</span>Ruptura da pseudocápsula = doença de alto risco/peritoneal — apreender o <strong>tecido peritumoral</strong>, nunca o tumor.</div>
+    <div class="box warn"><span class="lbl">☠ trap 7</span>Índice mitótico é contado em <strong>5 mm²</strong> (corte ≤5 vs &gt;5), não "por campo aleatório".</div>
+    <div class="box warn"><span class="lbl">☠ trap 8</span>Adjuvante só no <strong>alto risco</strong> — não medicar baixo/muito baixo risco.</div>
+
+    <h4>Mnemônicos-resumo</h4>
+    <div class="box mac"><span class="lbl">macete geral</span>Origem: <strong>Cajal</strong> · IHQ: <strong>CD117 + DOG1</strong> · Risco: <strong>tamanho + mitose(/5mm²) + sítio</strong> (delgado/reto pior) · Cirurgia: <strong>R0 sem linfadenectomia, pseudocápsula íntegra, wedge no estômago</strong> · Alvo: <strong>imatinibe</strong> (adjuvante ≥3a no alto risco; neoadjuvante p/ poupar órgão) · Resistente: <strong>PDGFRA D842V → avapritinibe</strong> · Metástase: <strong>fígado + peritônio</strong> (nodal raro).</div>
+  </div>
+</details>
+
+<footer>
+  <div><strong>carolzita</strong> · GIST — Tumor Estromal Gastrointestinal · referência completa</div>
+  <div class="ref">Fontes: NCCN Clinical Practice Guidelines — GIST (2024) · ESMO GIST Guidelines 2022 · Miettinen &amp; Lasota (AFIP), Semin Diagn Pathol · trial SSGXVIII/AIO (adjuvante 3 anos) · Sabiston · Zollinger. Conteúdo educacional; questões são itens representativos originais.</div>
+</footer>
+</div>
+</body>
+</html>

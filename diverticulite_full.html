@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diverticulite Aguda — carolzita</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0f; --bg2:#12121a; --card:#16161f; --card2:#1c1c27;
+  --line:#2a2a38; --txt:#e6e6ef; --muted:#9a9ab0;
+  --laranja:#f97316; --laranja-bg:rgba(249,115,22,.10);
+  --roxo:#a855f7; --roxo-bg:rgba(168,85,247,.10);
+  --ciano:#22d3ee; --ciano-bg:rgba(34,211,238,.10);
+  --verde:#34d399; --vermelho:#f87171; --amarelo:#fbbf24;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(1200px 600px at 50% -10%,#15151f 0%,var(--bg) 60%);color:var(--txt);font-family:'Inter',sans-serif;line-height:1.55;padding:0 0 80px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px}
+header{padding:40px 0 24px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(30px,6vw,46px);line-height:1.05;margin:8px 0 6px;letter-spacing:-.02em}
+.sub{color:var(--muted);font-size:15px;max-width:680px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tag{font-family:'JetBrains Mono',monospace;font-size:11px;padding:5px 10px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted)}
+.tag.r{color:var(--roxo);border-color:rgba(168,85,247,.35);background:var(--roxo-bg)}
+section{margin-top:14px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:12px;overflow:hidden;transition:border-color .2s}
+details[open]{border-color:rgba(249,115,22,.30)}
+summary{cursor:pointer;list-style:none;padding:18px 20px;display:flex;align-items:center;gap:13px;font-family:'Syne',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em;user-select:none}
+summary::-webkit-details-marker{display:none}
+.num{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--bg);background:var(--laranja);width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:0 0 auto}
+.chev{margin-left:auto;color:var(--muted);transition:transform .25s;font-size:14px}
+details[open] .chev{transform:rotate(90deg)}
+.body{padding:4px 22px 24px;font-size:15px}
+.body p{margin:10px 0}
+.body h4{font-family:'Syne',sans-serif;font-size:16px;color:var(--laranja);margin:20px 0 8px;letter-spacing:-.01em}
+.body ul{margin:8px 0 8px 4px;list-style:none}
+.body li{padding:4px 0 4px 20px;position:relative}
+.body li::before{content:"▸";position:absolute;left:0;color:var(--laranja);font-size:12px;top:6px}
+.body strong{color:#fff;font-weight:600}
+.simple{color:var(--verde);font-style:italic;font-size:.94em;display:block;margin:6px 0}
+.box.simplebox{background:rgba(52,211,153,.09);border-color:rgba(52,211,153,.32);color:var(--verde);font-style:italic}
+.box.simplebox .lbl{color:var(--verde);font-style:normal}
+.box.simplebox strong{color:#7fe8c0;font-style:normal}
+.stx{counter-reset:st;margin:12px 0}
+.st{counter-increment:st;background:var(--card2);border:1px solid var(--line);border-radius:13px;padding:14px 16px 14px 52px;margin:11px 0;position:relative}
+.st::before{content:counter(st);position:absolute;left:14px;top:13px;width:26px;height:26px;border-radius:8px;background:var(--laranja);color:#0a0a0f;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center}
+.st .fase{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:var(--laranja);display:block;margin-bottom:1px}
+.st .ttl{font-weight:700;font-size:15.5px;color:#fff;margin-bottom:4px}
+.st p{margin:5px 0;font-size:14px}
+.pq{border-left:3px solid var(--roxo);background:var(--roxo-bg);border-radius:0 9px 9px 0;padding:8px 12px;margin:9px 0;font-size:13.5px}
+.pq b{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.3px;text-transform:uppercase;color:var(--roxo);display:block;margin-bottom:2px}
+.mh2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:9px}
+.mh{border-radius:9px;padding:8px 11px;font-size:12.5px;border:1px solid var(--line)}
+.mh.e{background:rgba(52,211,153,.07);border-color:rgba(52,211,153,.3)}
+.mh.d{background:var(--laranja-bg);border-color:rgba(249,115,22,.3)}
+.mh b{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;display:block;margin-bottom:2px}
+.mh.e b{color:var(--verde)} .mh.d b{color:var(--laranja)}
+.fio{font-family:'JetBrains Mono',monospace;font-size:11.5px;background:var(--roxo-bg);color:var(--roxo);border:1px solid rgba(168,85,247,.35);padding:1px 6px;border-radius:5px;white-space:nowrap}
+@media(max-width:640px){.mh2{grid-template-columns:1fr}}
+.box{border-radius:12px;padding:13px 15px;margin:14px 0;font-size:14px;border:1px solid}
+.box.prova{background:var(--roxo-bg);border-color:rgba(168,85,247,.35)}
+.box.prova .lbl{color:var(--roxo)}
+.box.mac{background:var(--ciano-bg);border-color:rgba(34,211,238,.35)}
+.box.mac .lbl{color:var(--ciano)}
+.box.warn{background:rgba(248,113,113,.08);border-color:rgba(248,113,113,.3)}
+.box.warn .lbl{color:var(--vermelho)}
+.lbl{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-family:'JetBrains Mono',monospace;font-size:10px;background:rgba(168,85,247,.2);color:var(--roxo);padding:2px 7px;border-radius:6px;margin-left:6px;white-space:nowrap}
+.tbl{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
+.tbl table{width:100%;border-collapse:collapse;min-width:520px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--laranja);background:var(--card2)}
+td strong{color:#fff}
+.fio td:first-child{color:var(--ciano);font-family:'JetBrains Mono',monospace;font-weight:500}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin:14px 0}
+.gcard{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+.gcard .t{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--ciano);margin-bottom:4px}
+.gcard .d{font-size:13px;color:var(--muted)}
+.hands{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.hand{border-radius:12px;padding:14px;border:1px solid var(--line)}
+.hand.e{background:rgba(34,211,238,.06);border-color:rgba(34,211,238,.25)}
+.hand.d{background:rgba(249,115,22,.06);border-color:rgba(249,115,22,.25)}
+.hand .ht{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;font-weight:700}
+.hand.e .ht{color:var(--ciano)} .hand.d .ht{color:var(--laranja)}
+.hand li{font-size:13px}
+.steps{counter-reset:s;margin:10px 0}
+.step{counter-increment:s;position:relative;padding:11px 0 11px 46px;border-bottom:1px dashed var(--line)}
+.step:last-child{border-bottom:none}
+.step::before{content:counter(s);position:absolute;left:0;top:9px;width:30px;height:30px;border-radius:9px;background:var(--laranja-bg);border:1px solid rgba(249,115,22,.4);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:grid;place-items:center}
+.step b{color:#fff}
+svg{max-width:100%;height:auto;display:block;margin:16px auto}
+.fig{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.fig .cap{font-size:12px;color:var(--muted);text-align:center;margin-top:8px;font-family:'JetBrains Mono',monospace}
+footer{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+footer .ref{font-family:'JetBrains Mono',monospace;font-size:12px;margin-top:8px}
+a{color:var(--laranja)}
+@media(max-width:560px){.hands{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">carolzita · cirurgia geral · abdome agudo inflamatório</div>
+  <h1>Diverticulite Aguda</h1>
+  <p class="sub"><strong>Sigmoide</strong> = local #1 (Ocidente) · classificação de <strong>Hinchey (modificada)</strong> e <strong>WSES</strong> · não complicada = ATB seletivo / ambulatorial · abscesso &gt;4–5 cm = drenagem percutânea · <strong>Hinchey III/IV</strong> = cirurgia (sigmoidectomia — Hartmann × anastomose primária). Base: WSES 2020, ASCRS 2020, ESCP 2020 e pegadinhas das bancas do RS.</p>
+  <div class="tags">
+    <span class="tag">Hinchey</span>
+    <span class="tag">WSES</span>
+    <span class="tag">DIABOLO / DINAMO</span>
+    <span class="tag">LADIES / LOLA / DIVA</span>
+    <span class="tag">Hartmann</span>
+    <span class="tag r">HCPA · GHC · SC-POA · PUC · AMRIGS</span>
+  </div>
+</header>
+
+<!-- 1 QUADRO CLÍNICO -->
+<details open>
+  <summary><span class="num">1</span> Quadro clínico & diagnóstico <span class="chev">▶</span></summary>
+  <div class="body">
+    <p><strong>Diverticulite</strong> = inflamação/infecção de um divertículo do cólon (na verdade <strong>pseudodivertículo</strong> — só mucosa e submucosa herniando pela camada muscular, nos pontos de entrada dos vasos retos). <span class="simple">(bolsinhas na parede do intestino grosso que inflamam quando entopem e a parede fica machucada)</span></p>
+
+    <h4>Apresentação típica</h4>
+    <ul>
+      <li><strong>Dor em fossa ilíaca esquerda (FIE)</strong> — "apendicite do lado esquerdo". No Ocidente 95% é sigmoide/cólon esquerdo.</li>
+      <li><strong>Febre</strong>, alteração do hábito intestinal (constipação ou diarreia), náuseas.</li>
+      <li>Massa palpável em FIE / defesa localizada; <strong>peritonismo difuso</strong> = perfuração.</li>
+      <li><strong>Pneumatúria / fecalúria / infecção urinária de repetição</strong> = fístula colovesical (complicação tardia).</li>
+    </ul>
+    <p class="simple">(no oriente/asiáticos a diverticulite costuma ser do lado DIREITO e em pessoas mais jovens — pegadinha clássica)</p>
+
+    <h4>Diagnóstico — a imagem que a banca cobra</h4>
+    <ul>
+      <li><strong>TC de abdome e pelve com contraste EV (± VO)</strong> = <strong>padrão-ouro</strong>. Define diagnóstico, gravidade (abscesso, ar/líquido livre) e classifica (Hinchey/WSES). <span class="simple">(a tomografia é a rainha aqui — vê a bolsa inflamada, o pus e o furo)</span></li>
+      <li>Achados: espessamento parietal (&gt;4 mm), <strong>borramento/densificação da gordura pericólica</strong> ("fat stranding"), divertículos, abscesso, gás/líquido extraluminal.</li>
+      <li><strong>Colonoscopia é CONTRAINDICADA na fase aguda</strong> (risco de perfuração). Fazer <strong>4–6 semanas após</strong> resolução para excluir neoplasia (o câncer pode simular diverticulite).</li>
+      <li>Laboratório: leucocitose, <strong>PCR</strong> (PCR &gt;150 mg/L aumenta chance de complicação/perfuração), hemograma.</li>
+    </ul>
+
+    <div class="box prova"><span class="lbl">Tema de prova <span class="banca">HCPA · PUC-RS</span></span>
+      Colonoscopia <strong>na fase aguda está proibida</strong> — só após 4–6 semanas, para descartar câncer colorretal. E a imagem inicial de escolha é a <strong>TC</strong>, não o enema opaco nem a colono.
+    </div>
+  </div>
+</details>
+
+<!-- 2 CLASSIFICAÇÕES -->
+<details>
+  <summary><span class="num">2</span> Classificação — Hinchey & WSES <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Hinchey original (1978) — cirúrgica/intraoperatória</h4>
+    <div class="tbl"><table>
+      <tr><th>Estágio</th><th>Achado</th><th>Conduta habitual</th></tr>
+      <tr><td><strong>I</strong></td><td>Abscesso <strong>pericólico</strong> ou fleimão confinado ao mesentério</td><td>ATB ± drenagem se &gt;4–5 cm</td></tr>
+      <tr><td><strong>II</strong></td><td>Abscesso <strong>pélvico / retroperitoneal / à distância</strong></td><td>Drenagem percutânea + ATB</td></tr>
+      <tr><td><strong>III</strong></td><td>Peritonite <strong>purulenta</strong> generalizada</td><td>Cirurgia (sigmoidectomia)</td></tr>
+      <tr><td><strong>IV</strong></td><td>Peritonite <strong>fecal / estercorácea</strong> (perfuração livre)</td><td>Cirurgia urgente</td></tr>
+    </table></div>
+
+    <h4>Hinchey modificada (Wasvary/Sher) — incorpora a TC</h4>
+    <div class="tbl"><table>
+      <tr><th>Estágio</th><th>Definição na TC</th></tr>
+      <tr><td><strong>0</strong></td><td>Diverticulite clínica leve (sem achados de complicação)</td></tr>
+      <tr><td><strong>Ia</strong></td><td>Inflamação pericólica confinada / fleimão (sem abscesso)</td></tr>
+      <tr><td><strong>Ib</strong></td><td>Abscesso pericólico (&lt;5 cm, próximo à parede)</td></tr>
+      <tr><td><strong>II</strong></td><td>Abscesso pélvico / à distância</td></tr>
+      <tr><td><strong>III</strong></td><td>Peritonite purulenta generalizada</td></tr>
+      <tr><td><strong>IV</strong></td><td>Peritonite fecal</td></tr>
+    </table></div>
+
+    <h4>Classificação WSES (2020) — a mais atual, "operacional"</h4>
+    <ul>
+      <li><strong>Não complicada</strong>: inflamação sem abscesso/perfuração (~Hinchey 0).</li>
+      <li><strong>Complicada Estágio 1A</strong>: gás/bolhas pericólicas ou pequena quantidade de líquido pericólico <strong>sem abscesso</strong> (&lt;5 cm de gás isolado).</li>
+      <li><strong>1B</strong>: abscesso &le; 4 cm.</li>
+      <li><strong>2A</strong>: abscesso &gt; 4 cm.</li>
+      <li><strong>2B</strong>: gás distante/livre (&lt;5 cm da parede) — perfuração contida.</li>
+      <li><strong>3</strong>: peritonite purulenta difusa.</li>
+      <li><strong>4</strong>: peritonite fecal.</li>
+    </ul>
+
+    <div class="box mac"><span class="lbl">Como não confundir</span>
+      Regra de bolso: <strong>Hinchey I–II = abscesso</strong> (pericólico → à distância); <strong>III = pus difuso</strong>; <strong>IV = fezes no peritônio</strong>. Quanto maior o número, pior. "1 e 2 dá pra drenar; 3 e 4 vai pra faca."
+    </div>
+    <div class="box prova"><span class="lbl">Tema de prova <span class="banca">GHC · AMRIGS</span></span>
+      A banca adora perguntar a diferença entre <strong>Hinchey III (purulenta)</strong> e <strong>IV (fecal)</strong>, e que a <strong>Hinchey modificada</strong> foi criada para incorporar a <strong>TC</strong> (abscessos Ib/II). A WSES não elege uma classificação única como superior.
+    </div>
+  </div>
+</details>
+
+<!-- 3 TRATAMENTO NÃO COMPLICADA -->
+<details>
+  <summary><span class="num">3</span> Tratamento — diverticulite NÃO complicada <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Antibiótico? Nem sempre! (mudança de paradigma)</h4>
+    <p>Dois grandes ensaios randomizados — <strong>AVOD</strong> (Suécia) e <strong>DIABOLO</strong> (Holanda) — mostraram que, na diverticulite <strong>não complicada</strong> em pacientes <strong>imunocompetentes e sem sepse</strong>, <strong>omitir o antibiótico não aumenta complicações, recorrência ou necessidade de cirurgia</strong>. O ensaio <strong>DINAMO</strong> estendeu isso ao <strong>manejo ambulatorial sem ATB</strong>.</p>
+    <ul>
+      <li><strong>Tratamento sintomático / observacional</strong> (analgesia, hidratação, dieta) é seguro em não complicada selecionada.</li>
+      <li><strong>ATB reservado</strong> para: imunossupressão, sepse/sinais sistêmicos, comorbidades relevantes, gestação, incapacidade de VO, ou falha da observação.</li>
+      <li><strong>Manejo ambulatorial</strong> se o paciente tolera VO, sem comorbidade grave, com suporte domiciliar. Reavaliar em <strong>7 dias</strong> (antes se piorar).</li>
+    </ul>
+
+    <h4>Quando internar</h4>
+    <ul>
+      <li>Sepse, imunossupressão, intolerância à VO, dor não controlada, idade avançada com comorbidades, falha do tratamento ambulatorial.</li>
+      <li>ATB IV empírico cobre <strong>Gram-negativos + anaeróbios</strong> (ex.: ceftriaxona + metronidazol, ou ampicilina-sulbactam/amoxicilina-clavulanato; ciprofloxacino + metronidazol se alergia).</li>
+    </ul>
+
+    <div class="box warn"><span class="lbl">🚩 Pericolic gas isolado</span>
+      Na sub-análise do DIABOLO, mesmo Hinchey 1a com <strong>gás pericólico isolado</strong> foi manejado sem cirurgia. Mas o painel WSES <strong>recomenda ATB</strong> quando há gás extraluminal pericólico (é sinal de microperfuração).
+    </div>
+  </div>
+</details>
+
+<!-- 4 TRATAMENTO COMPLICADA -->
+<details>
+  <summary><span class="num">4</span> Tratamento — diverticulite COMPLICADA <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Abscesso (Hinchey I–II / WSES 1B–2A)</h4>
+    <ul>
+      <li><strong>Abscesso pequeno (&lt; 4–5 cm)</strong> → <strong>ATB IV</strong> isolado, muitas vezes resolve.</li>
+      <li><strong>Abscesso &ge; 4–5 cm</strong> → <strong>drenagem percutânea guiada por TC/US</strong> + ATB (evita cirurgia na fase aguda). <span class="simple">(coloca um dreno pela pele até a bolsa de pus, sem abrir a barriga)</span></li>
+      <li>Falha da drenagem/ATB (não melhora em 48–72 h) → cirurgia.</li>
+    </ul>
+
+    <h4>Peritonite (Hinchey III–IV / WSES 3–4)</h4>
+    <ul>
+      <li><strong>Cirurgia de urgência com ressecção do segmento doente (sigmoidectomia)</strong> é o padrão. O <strong>lavado laparoscópico</strong> (só lavar sem ressecar) <strong>caiu em desuso</strong>: o braço LOLA do LADIES foi encerrado precocemente por maior morbidade, reintervenção, abscessos e <strong>câncer não diagnosticado</strong>.</li>
+      <li><strong>Hinchey IV (fecal)</strong> ou paciente instável/frágil → <strong>Cirurgia de Hartmann</strong> (ressecção do sigmoide + colostomia terminal + fechamento do coto retal). <span class="simple">(tira o pedaço doente, fecha embaixo e traz a boca do intestino pra fora — a "bolsinha")</span></li>
+      <li><strong>Paciente estável / peritonite purulenta selecionada</strong> → <strong>ressecção com anastomose primária ± ileostomia de proteção</strong>. Os ensaios (DIVA/LADIES, DIVERTI, Oberkofler, SCANDIV) mostram anastomose primária <strong>segura</strong>, com <strong>maior taxa de reconstrução do trânsito</strong> e menos estoma permanente que o Hartmann.</li>
+    </ul>
+
+    <div class="box prova"><span class="lbl">Tema de prova <span class="banca">Santa Casa POA · HCPA</span></span>
+      Tendência atual (ASCRS/WSES 2020): em paciente <strong>estável</strong>, prefira <strong>anastomose primária (com ou sem ileostomia)</strong> ao Hartmann. Hartmann fica para <strong>instável, imunossuprimido ou peritonite fecal (Hinchey IV)</strong>. O <strong>lavado laparoscópico não substitui a ressecção</strong>.
+    </div>
+    <div class="box mac"><span class="lbl">Fístulas / obstrução</span>
+      Complicações crônicas (<strong>fístula colovesical</strong> — a mais comum; colovaginal; estenose; massa inflamatória persistente) → <strong>cirurgia eletiva</strong> (não resolvem sozinhas).
+    </div>
+  </div>
+</details>
+
+<!-- 5 CIRURGIA ELETIVA -->
+<details>
+  <summary><span class="num">5</span> Ressecção eletiva — quando indicar <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>Após recuperação, a decisão é <strong>individualizada</strong> (não mais "operar após 2 episódios" automaticamente, nem operar por idade jovem).</p>
+    <ul>
+      <li><strong>Considerar eletiva</strong> após diverticulite <strong>complicada</strong> (abscesso tratado, perfuração contida) — recorrência de até ~40–60%, muitas vezes pior.</li>
+      <li><strong>Complicações crônicas</strong>: fístula, estenose sintomática, doença "smoldering" (arrastada), suspeita de câncer.</li>
+      <li><strong>Idade &lt; 50 anos: NÃO é indicação isolada</strong> de ressecção (1B, ASCRS 2020).</li>
+      <li><strong>Imunossuprimidos</strong>: individualizar (maior risco de recorrência grave).</li>
+      <li>Extensão: <strong>ressecar todo o sigmoide</strong>, com margem em cólon saudável em cima e <strong>anastomose no reto proximal</strong> (a margem distal no reto reduz recidiva). Não é preciso ressecar todo cólon com divertículos.</li>
+      <li><strong>Via laparoscópica preferida</strong> quando há expertise.</li>
+    </ul>
+    <div class="box prova"><span class="lbl">Tema de prova <span class="banca">PUC-RS · AMRIGS</span></span>
+      Ponto quente: a margem <strong>distal deve estar no reto</strong> (junção retossigmóidea totalmente removida) — deixar sigmoide distal aumenta recidiva. E a decisão de operar eletivamente <strong>não</strong> se baseia em número de crises ou idade, mas em <strong>gravidade/qualidade de vida/complicações</strong>.
+    </div>
+  </div>
+</details>
+
+<!-- 6 ANATOMIA -->
+<details>
+  <summary><span class="num">6</span> Anatomia & vascularização <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Por que o sigmoide?</h4>
+    <ul>
+      <li>É o segmento de <strong>menor calibre</strong> e <strong>maior pressão intraluminal</strong> (Lei de Laplace) → maior herniação da mucosa nos pontos fracos.</li>
+      <li>Os <strong>pseudodivertículos</strong> surgem onde os <strong>vasos retos (vasa recta)</strong> penetram a camada muscular — por isso o sangramento diverticular é arterial.</li>
+    </ul>
+
+    <h4>Vascularização (o que se liga na cirurgia)</h4>
+    <ul>
+      <li><strong>Sigmoide e cólon esquerdo</strong>: <strong>artéria mesentérica inferior (AMI)</strong> → cólica esquerda + artérias sigmoideas + <strong>retal (hemorroidária) superior</strong>.</li>
+      <li>Colaterais: <strong>arcada marginal de Drummond</strong> e <strong>arco de Riolan</strong> (conectam AMS↔AMI) garantem perfusão do cólon esquerdo mesmo após ligadura da AMI.</li>
+      <li><strong>Ponto crítico de Sudeck</strong>: junção retossigmoide (última sigmoidea × retal superior) — zona de anastomose vascular pobre, atenção na viabilidade da anastomose.</li>
+      <li>Drenagem venosa: veia mesentérica inferior (desemboca na veia esplênica). <strong>Ureter esquerdo</strong> cruza os vasos ilíacos por baixo do mesossigmoide — <strong>estrutura em risco</strong>.</li>
+    </ul>
+
+    <div class="fig">
+      <svg viewBox="0 0 460 300" role="img" aria-label="Vascularização do sigmoide e AMI">
+        <defs><style>.o{fill:none;stroke:#f97316;stroke-width:3}.c{fill:none;stroke:#22d3ee;stroke-width:2.5}.rd{fill:none;stroke:#f87171;stroke-width:2.5}.t{fill:#9a9ab0;font-family:monospace;font-size:10px}.w{fill:#e6e6ef;font-family:monospace;font-size:11px}</style></defs>
+        <text x="150" y="22" class="w">AMI → sigmoide</text>
+        <line class="o" x1="230" y1="40" x2="230" y2="120"/>
+        <text x="238" y="60" class="t">AMI</text>
+        <path class="o" d="M230 90 C180 100 150 110 120 130"/>
+        <text x="90" y="128" class="t">cólica E</text>
+        <path class="o" d="M230 110 C200 140 180 160 160 185"/>
+        <path class="o" d="M230 118 C210 150 200 175 185 200"/>
+        <text x="150" y="205" class="t">sigmoideas</text>
+        <path class="rd" d="M230 120 C232 160 234 200 236 240"/>
+        <text x="242" y="235" class="t">retal superior</text>
+        <path class="c" d="M100 130 C90 170 110 210 160 230 C210 250 236 245 236 240" stroke-dasharray="5 4"/>
+        <text x="70" y="185" class="t">marginal (Drummond)</text>
+        <circle cx="220" cy="222" r="5" fill="#fbbf24"/>
+        <text x="200" y="270" class="t">ponto de Sudeck</text>
+      </svg>
+      <div class="cap">AMI e ramos · colateral marginal · ponto de Sudeck (amarelo)</div>
+    </div>
+    <div class="box mac"><span class="lbl">Ureter esquerdo</span> Identificar e proteger o ureter esquerdo (cruza os ilíacos) é <strong>obrigatório</strong> antes de ligar a AMI/vasos sigmoideos. Cateter ureteral pode ajudar em casos inflamados/reoperações.</div>
+  </div>
+</details>
+
+<!-- 7 PASSO A PASSO -->
+<details>
+  <summary><span class="num">7</span> Passo a passo — sigmoidectomia (Hartmann × AP) <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Posição & preparo</h4>
+    <ul>
+      <li><strong>Litotomia modificada (Lloyd-Davies)</strong>, Trendelenburg + rotação para a direita — permite acesso perineal (grampeador transanal) e afasta o delgado. <span class="simple">(pernas apoiadas e cabeça baixinha, pra intestino fino "escorrer" pra cima)</span></li>
+      <li>SVD, SNG, antibioticoprofilaxia, tromboprofilaxia; ± cateter ureteral esquerdo.</li>
+      <li>Via <strong>laparoscópica</strong> (eletiva/estável) ou <strong>laparotomia mediana</strong> (urgência/peritonite).</li>
+    </ul>
+
+    <h4>Etapas — sigmoidectomia com anastomose primária</h4>
+    <div class="box simplebox"><span class="lbl">tradução simples</span>A operação é sempre a mesma: <strong>tirar o sigmoide doente</strong>. O que muda é o que se faz depois — <strong>emendar na hora</strong> (anastomose primária) ou <strong>deixar para emendar depois</strong> (Hartmann). E essa decisão não depende do Hinchey isoladamente: depende de <strong>como o paciente está na mesa</strong>.</div>
+
+    <div class="stx">
+
+      <div class="st">
+        <span class="fase">fase de controle de foco</span>
+        <div class="ttl">Inventário, lavagem e classificação de Hinchey</div>
+        <p>Na urgência: aspirar, <strong>lavagem exaustiva</strong>, avaliar a extensão da contaminação e classificar o Hinchey <strong>intraoperatoriamente</strong>.</p>
+        <div class="pq"><b>por quê</b>O Hinchey original é uma classificação <strong>cirúrgica</strong> — nasceu para ser aplicada na mesa. É aqui que se decide entre purulenta (III) e fecal (IV), e essa distinção muda a reconstrução. A TC classifica antes; o olho confirma na hora.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de mobilização</span>
+        <div class="ttl">Liberação do cólon esquerdo pela linha branca de Toldt</div>
+        <p>Abordagem medial-para-lateral (eletiva) ou lateral pela <strong>linha branca de Toldt</strong> (urgência, tecidos inflamados), liberando aderências ao retroperitônio.</p>
+        <div class="pq"><b>por quê</b>Na diverticulite o plano está <strong>obliterado pela inflamação</strong> — o mesocólon adere ao retroperitônio e os planos embrionários desaparecem. Por isso a via lateral, mais "grosseira", costuma ser mais segura na urgência do que a medial elegante da cirurgia oncológica.</div>
+        <div class="mh2">
+          <div class="mh e"><b>mão esquerda</b>Babcock ou DeBakey tracionando o cólon medialmente, sem apertar alça inflamada</div>
+          <div class="mh d"><b>mão direita</b>Tesoura/cautério na linha de Toldt; aspirador na peritonite</div>
+        </div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase crítica</span>
+        <div class="ttl">Identificar e proteger o ureter esquerdo</div>
+        <p>Localizar o ureter e os vasos gonadais <strong>antes de qualquer ligadura</strong>. Considerar <strong>cateter ureteral</strong> em fleimão volumoso, fístula ou reoperação.</p>
+        <div class="pq"><b>por quê</b>Aqui o risco é <strong>maior que no câncer</strong>: o processo inflamatório crônico <strong>puxa o ureter para dentro do bloco</strong> e apaga os planos que normalmente o protegem. É a lesão clássica da diverticulite operada, e a razão de o cateter ureteral ter indicação mais liberal nesse cenário do que na cirurgia oncológica.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase vascular</span>
+        <div class="ttl">Ligadura dos vasos sigmoideos</div>
+        <p>Ligar os vasos sigmoideos; a AMI pode ser ligada alta para facilitar a mobilização, <strong>preservando a cólica esquerda</strong> sempre que possível.</p>
+        <div class="pq"><b>por quê</b>Diferença conceitual em relação ao câncer: aqui <strong>não há necessidade oncológica</strong> de ligadura na origem. Como não se colhem linfonodos apicais, a ligadura pode ser mais distal e <strong>preservar perfusão</strong> — que é justamente o que a anastomose em campo contaminado mais precisa.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de mobilização</span>
+        <div class="ttl">Abaixar o ângulo esplênico se necessário</div>
+        <p>Mobilizar o ângulo para permitir anastomose sem tensão. Cuidado com a tração do baço.</p>
+        <div class="pq"><b>por quê</b>Sem tensão é um dos quatro pré-requisitos da anastomose — e em campo inflamado, o único dos quatro que ainda está totalmente sob controle do cirurgião.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de secção distal — a que evita recidiva</span>
+        <div class="ttl">Secção no <strong>reto proximal</strong>, removendo toda a junção retossigmóidea</div>
+        <p>Grampeador linear <strong>abaixo</strong> da junção retossigmóidea, no reto proximal — onde as tênias se dispersam.</p>
+        <div class="pq"><b>por quê</b>É o detalhe técnico mais cobrado da diverticulite. A margem distal <strong>no reto</strong> reduz drasticamente a recidiva; deixar sigmoide distal residual é a causa nº 1 de doença recorrente após a ressecção. A referência anatômica é o <strong>desaparecimento das tênias</strong> — onde elas se dispersam em camada longitudinal contínua, começa o reto. E a margem <strong>proximal</strong> não precisa remover todos os divertículos: basta cólon saudável e bem perfundido.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de secção proximal</span>
+        <div class="ttl">Cólon saudável e bem vascularizado</div>
+        <p>Seccionar em segmento sem inflamação aguda, com <strong>sangramento arterial</strong> na borda. Retirar a peça.</p>
+        <div class="pq"><b>por quê</b>Anastomosar cólon com diverticulite aguda ativa ou hipoperfundido é combinar os dois principais fatores de deiscência — e o retossigmoide já é a área de <strong>Sudeck</strong>, watershed natural entre AMI e ilíaca interna.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de reconstrução — a decisão</span>
+        <div class="ttl">Anastomose primária × Hartmann</div>
+        <p><strong>Estável, sem peritonite fecal, sem imunossupressão</strong> → anastomose colorretal com <span class="fio">EEA transanal</span>, dupla grampeada, com <strong>air-leak test</strong> e checagem dos <em>donuts</em> ± ileostomia de proteção.<br>
+        <strong>Instável, imunossuprimido, desnutrido ou Hinchey IV</strong> → <strong>Hartmann</strong>.</p>
+        <div class="pq"><b>por quê</b>A pergunta não é "qual operação é melhor", e sim <strong>este paciente cicatriza uma anastomose agora?</strong> Os ensaios (DIVA/LADIES, DIVERTI, SCANDIV, Oberkofler) mostraram que a anastomose primária é <strong>segura no paciente estável</strong> e — o desfecho que realmente importa — resulta em <strong>muito mais reconstrução de trânsito</strong>. O Hartmann tem a armadilha de ser vendido como "mais seguro" quando na verdade transfere o risco: evita a fístula hoje ao custo de um estoma que <strong>frequentemente nunca é revertido</strong>.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de proteção</span>
+        <div class="ttl">Ileostomia de proteção seletiva</div>
+        <p>Em alça, quando há contaminação, desnutrição, imunossupressão ou anastomose muito baixa.</p>
+        <div class="pq"><b>por quê</b>Mesmo princípio do câncer de reto: <strong>não impede a fístula, reduz a gravidade dela</strong>. É o meio-termo entre anastomose desprotegida e Hartmann.</div>
+      </div>
+
+    </div>
+
+    <div class="box warn"><span class="lbl">Se Hartmann — os detalhes que caem</span>
+      Ressecção do sigmoide + <strong>colostomia terminal</strong> na fossa ilíaca esquerda + <strong>fechamento do coto retal</strong> (grampeado ou suturado).<br>
+      <strong>Marcar o coto com fio longo inabsorvível</strong> (ou clipes) — na reversão, meses depois, a pelve estará repleta de aderências e o coto retraído: o fio é o que permite encontrá-lo. Deixar o coto o <strong>mais longo possível</strong> pela mesma razão.<br>
+      Reversão em 3–6 meses — <strong>e nem sempre acontece</strong>.
+    </div>
+
+    <div class="box mac"><span class="lbl">as 4 checagens antes de anastomosar na urgência</span>
+      <strong>1)</strong> O paciente está estável, sem vasopressor crescente?<br>
+      <strong>2)</strong> A contaminação é purulenta (III), não fecal (IV)?<br>
+      <strong>3)</strong> A secção distal chegou ao <strong>reto proximal</strong>?<br>
+      <strong>4)</strong> O coto proximal sangra arterialmente e chega sem tensão?<br>
+      Qualquer "não" → considerar Hartmann ou proteger com ileostomia.
+    </div>
+  </div>
+</details>
+
+<!-- 8 INSTRUMENTAÇÃO -->
+<details>
+  <summary><span class="num">8</span> Instrumentação — mão D × mão E & fios <span class="chev">▶</span></summary>
+  <div class="body">
+    <div class="hands">
+      <div class="hand d">
+        <div class="ht">Mão direita (dominante — dissecar/cortar)</div>
+        <ul>
+          <li>Tesoura de Metzenbaum / eletrocautério (monopolar) — dissecção</li>
+          <li>Selante de vasos (LigaSure / bisturi ultrassônico) — pedículos</li>
+          <li>Grampeador linear (secção do reto) e circular EEA (anastomose)</li>
+          <li>Porta-agulhas na sutura de reforço</li>
+        </ul>
+      </div>
+      <div class="hand e">
+        <div class="ht">Mão esquerda (não dominante — expor/tracionar)</div>
+        <ul>
+          <li>Pinça atraumática de Babcock / DeBakey — segurar cólon sem traumatizar</li>
+          <li>Pinça anatômica longa para tração e contra-tração do mesentério</li>
+          <li>Na laparoscopia: grasper atraumático expõe o plano; afastador do delgado</li>
+          <li>Aspirador na peritonite (lavagem)</li>
+        </ul>
+      </div>
+    </div>
+
+    <h4>Tabela de fios — o que e quando</h4>
+    <div class="tbl"><table>
+      <tr><th>Momento</th><th>Fio / material</th><th>Observação</th></tr>
+      <tr class="fio"><td>Ligadura AMI / sigmoideas</td><td>Poliglactina 2-0/3-0 (Vicryl), clipe ou selante</td><td>Ligadura dupla / transfixação em vaso calibroso</td></tr>
+      <tr class="fio"><td>Anastomose grampeada</td><td>Grampeador circular EEA + linear</td><td>Dupla-grampeada; teste de ar sob água</td></tr>
+      <tr class="fio"><td>Reforço da anastomose</td><td>Poliglecaprone/Poliglactina 3-0/4-0</td><td>Pontos separados seromusculares se necessário</td></tr>
+      <tr class="fio"><td>Anastomose manual (2 planos)</td><td>Polipropileno/seda 3-0 (seromuscular) + Vicryl 3-0 (total)</td><td>Quando não usar grampeador</td></tr>
+      <tr class="fio"><td>Fechamento do coto retal (Hartmann)</td><td>Grampeador linear ou Vicryl 3-0</td><td>Marcar com fio inabsorvível p/ reversão</td></tr>
+      <tr class="fio"><td>Maturação do estoma</td><td>Poliglactina 3-0/4-0</td><td>Colo–pele mucocutânea</td></tr>
+      <tr class="fio"><td>Aponeurose</td><td>PDS 1 / Náilon 1 (loop)</td><td>Relação fio:ferida 4:1</td></tr>
+      <tr class="fio"><td>Pele</td><td>Náilon 3-0/4-0 ou grampos</td><td>Peritonite → considerar ferida aberta / 2ª intenção</td></tr>
+    </table></div>
+  </div>
+</details>
+
+<!-- 9 COMPLICAÇÕES -->
+<details>
+  <summary><span class="num">9</span> Complicações <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Da doença</h4>
+    <ul>
+      <li><strong>Abscesso</strong> (I–II) · <strong>perfuração/peritonite</strong> (III–IV) · <strong>obstrução</strong> (estenose inflamatória) · <strong>fístulas</strong> (colovesical &gt; colovaginal &gt; coloentérica/colocutânea).</li>
+      <li><strong>Sangramento diverticular</strong> (mais frequente no cólon direito; costuma ser indolor e autolimitado — distinguir da diverticulite).</li>
+    </ul>
+    <h4>Pós-operatórias</h4>
+    <ul>
+      <li><strong>Fístula/deiscência anastomótica</strong> (maior em cólon esquerdo, urgência, contaminação, desnutrição).</li>
+      <li><strong>Lesão ureteral</strong> esquerda, lesão esplênica na mobilização do ângulo.</li>
+      <li>Infecção de ferida, abscesso residual, íleo prolongado.</li>
+      <li>Complicações do estoma (retração, prolapso, hérnia paraestomal); <strong>não reversão do Hartmann</strong> (estoma acaba permanente em parcela relevante).</li>
+    </ul>
+    <div class="box mac"><span class="lbl">Air-leak test</span> Sempre testar a anastomose colorretal (ar sob água + checar donuts do grampeador). Vazamento → refazer ponto ou proteger com ileostomia.</div>
+  </div>
+</details>
+
+<!-- 10 QUESTÕES DE PROVA -->
+<details>
+  <summary><span class="num">10</span> Banco de questões — bancas RS <span class="chev">▶</span></summary>
+  <div class="body">
+    <p class="simple">(itens representativos, elaborados no estilo das bancas — não são reproduções literais)</p>
+
+    <div class="box prova"><span class="lbl">Questão 1 <span class="banca">HCPA</span></span>
+      Homem, 58 a, dor em FIE + febre. TC: espessamento do sigmoide, densificação da gordura e <strong>abscesso pélvico de 6 cm</strong>. Conduta inicial? <br><strong>R:</strong> Drenagem percutânea guiada por imagem + ATB IV (Hinchey II / WSES 2A). Cirurgia só se falha.
+    </div>
+    <div class="box prova"><span class="lbl">Questão 2 <span class="banca">GHC</span></span>
+      Qual a diferença entre Hinchey III e IV? <br><strong>R:</strong> III = peritonite <strong>purulenta</strong> generalizada; IV = peritonite <strong>fecal/estercorácea</strong> (perfuração livre com fezes). IV é mais grave e favorece Hartmann.
+    </div>
+    <div class="box prova"><span class="lbl">Questão 3 <span class="banca">Santa Casa POA</span></span>
+      Paciente <strong>estável</strong> com peritonite purulenta (Hinchey III). Melhor opção cirúrgica atual? <br><strong>R:</strong> Sigmoidectomia com <strong>anastomose primária ± ileostomia de proteção</strong> (menos estoma permanente que Hartmann; lavado laparoscópico não substitui ressecção).
+    </div>
+    <div class="box prova"><span class="lbl">Questão 4 <span class="banca">PUC-RS</span></span>
+      Após 1º episódio de diverticulite <strong>não complicada</strong>, quando indicar sigmoidectomia eletiva? <br><strong>R:</strong> Decisão individualizada — <strong>não</strong> se baseia em idade &lt;50 anos nem no número de crises; pesa gravidade, complicações e qualidade de vida.
+    </div>
+    <div class="box prova"><span class="lbl">Questão 5 <span class="banca">AMRIGS</span></span>
+      Mulher, 45 a, <strong>pneumatúria e ITU de repetição</strong> após diverticulites. Diagnóstico e conduta? <br><strong>R:</strong> Fístula <strong>colovesical</strong> — indicação de <strong>cirurgia eletiva</strong> (ressecção do sigmoide + fechamento da bexiga).
+    </div>
+    <div class="box prova"><span class="lbl">Questão 6 <span class="banca">HCPA</span></span>
+      Diverticulite não complicada, imunocompetente, sem sepse, tolera VO. É obrigatório antibiótico? <br><strong>R:</strong> <strong>Não</strong> — AVOD/DIABOLO/DINAMO mostram segurança do manejo sintomático sem ATB em casos selecionados.
+    </div>
+    <div class="box prova"><span class="lbl">Questão 7 <span class="banca">GHC</span></span>
+      Exame de escolha para diagnóstico na fase aguda e qual está contraindicado? <br><strong>R:</strong> <strong>TC com contraste</strong> é padrão-ouro; <strong>colonoscopia é contraindicada na fase aguda</strong> (fazer 4–6 semanas após, para excluir câncer).
+    </div>
+    <div class="box prova"><span class="lbl">Questão 8 <span class="banca">PUC-RS</span></span>
+      Estrutura anatômica em maior risco na ligadura dos vasos sigmoideos? <br><strong>R:</strong> <strong>Ureter esquerdo</strong> (cruza os vasos ilíacos sob o mesossigmoide).
+    </div>
+    <div class="box prova"><span class="lbl">Questão 9 <span class="banca">Santa Casa POA</span></span>
+      Na sigmoidectomia por diverticulite, onde deve estar a margem <strong>distal</strong>? <br><strong>R:</strong> No <strong>reto proximal</strong> — remover toda a junção retossigmóidea reduz recidiva.
+    </div>
+    <div class="box prova"><span class="lbl">Questão 10 <span class="banca">AMRIGS</span></span>
+      Por que o lavado laparoscópico caiu em desuso na Hinchey III? <br><strong>R:</strong> Braço LOLA (LADIES) encerrado precocemente por <strong>mais morbidade, reintervenção, abscessos e cânceres não diagnosticados</strong> vs. ressecção.
+    </div>
+  </div>
+</details>
+
+<!-- 11 MACETES -->
+<details>
+  <summary><span class="num">11</span> Grid de macetes & pega-ratões <span class="chev">▶</span></summary>
+  <div class="body">
+    <div class="grid">
+      <div class="gcard"><div class="t">Direita ≠ Esquerda</div><div class="d">Ocidente = sigmoide (esquerda); Ásia/jovens = direita. Direita pode simular apendicite.</div></div>
+      <div class="gcard"><div class="t">Colono proibida</div><div class="d">Nunca na fase aguda; só 4–6 sem depois, p/ excluir câncer.</div></div>
+      <div class="gcard"><div class="t">ATB seletivo</div><div class="d">Não complicada + imunocompetente + sem sepse = pode sem ATB.</div></div>
+      <div class="gcard"><div class="t">4–5 cm</div><div class="d">Abscesso ≥4–5 cm → drenagem percutânea, não bisturi de cara.</div></div>
+      <div class="gcard"><div class="t">III × IV</div><div class="d">Purulenta vs fecal. IV e instável = Hartmann.</div></div>
+      <div class="gcard"><div class="t">AP &gt; Hartmann</div><div class="d">Estável → anastomose primária ± ileostomia (menos estoma permanente).</div></div>
+      <div class="gcard"><div class="t">Idade não conta</div><div class="d">&lt;50 anos NÃO é indicação isolada de cirurgia eletiva.</div></div>
+      <div class="gcard"><div class="t">Fístula colovesical</div><div class="d">Pneumatúria/fecalúria = a fístula mais comum → cirurgia eletiva.</div></div>
+      <div class="gcard"><div class="t">Margem no reto</div><div class="d">Distal no reto proximal; não precisa tirar todo cólon com divertículos.</div></div>
+      <div class="gcard"><div class="t">Ureter esquerdo</div><div class="d">Sempre identificar antes de ligar a AMI.</div></div>
+      <div class="gcard"><div class="t">Lavado fora</div><div class="d">Lavagem laparoscópica isolada não substitui ressecção (LOLA).</div></div>
+      <div class="gcard"><div class="t">Sangramento ≠ dor</div><div class="d">Sangramento diverticular = indolor (direito); diverticulite = dor/febre.</div></div>
+    </div>
+  </div>
+</details>
+
+<footer>
+  <strong>carolzita</strong> · Diverticulite Aguda — referência completa
+  <div class="ref">Fontes: WSES 2020 (Sartelli et al., World J Emerg Surg) · ASCRS 2020 (Treatment of Left-Sided Colonic Diverticulitis) · ESCP 2020 (Schultz et al.) · Trials: AVOD, DIABOLO, DINAMO, LADIES (LOLA/DIVA), SCANDIV, DIVERTI, Oberkofler · Sabiston, Zollinger.</div>
+</footer>
+</div>
+</body>
+</html>

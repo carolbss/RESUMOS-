@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CirurgiaRS · Residência Médica 2026 · Carolina</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+
+    :root {
+      --bg:#0d0f14; --bg2:#13151c; --bg3:#1a1d26; --border:#252836;
+      --text:#c9cdd8; --text-dim:#6b7280;
+      --orange:#f97316; --orange-dim:#431a06; --orange-bg:#1c1208;
+      --purple:#a855f7; --purple-dim:#3b1668; --purple-bg:#17102a;
+      --cyan:#22d3ee;   --cyan-dim:#064e5a;   --cyan-bg:#071318;
+      --emerald:#10b981;--emerald-dim:#064e3b;--emerald-bg:#071c15;
+      --red:#ef4444; --green:#22c55e; --yellow:#eab308;
+    }
+
+    * { box-sizing:border-box; margin:0; padding:0; }
+    html, body { height:100%; overflow:hidden; }
+    body { background:var(--bg); color:var(--text); font-family:'Inter',sans-serif; font-size:14px; display:flex; flex-direction:column; }
+
+    /* TOP BAR */
+    .topbar { height:56px; background:var(--bg2); border-bottom:1px solid var(--border); display:flex; align-items:center; padding:0 1.25rem; gap:0.75rem; flex-shrink:0; z-index:200; overflow-x:auto; scrollbar-width:none; }
+    .topbar::-webkit-scrollbar { display:none; }
+    .brand { display:flex; align-items:baseline; gap:0.4rem; flex-shrink:0; }
+    .brand-name { font-family:'Syne',sans-serif; font-size:1.05rem; font-weight:800; color:#fff; letter-spacing:-0.5px; }
+    .brand-name span { color:var(--orange); }
+    .brand-year { font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--text-dim); letter-spacing:1px; }
+    .sep { width:1px; height:28px; background:var(--border); flex-shrink:0; }
+    .tab { display:flex; align-items:center; gap:0.45rem; padding:0.4rem 0.85rem; border-radius:8px; cursor:pointer; font-size:12px; font-weight:500; color:var(--text-dim); border:1px solid transparent; transition:all 0.18s; white-space:nowrap; flex-shrink:0; user-select:none; }
+    .tab:hover { background:var(--bg3); color:var(--text); }
+    .tab.active { background:var(--bg3); color:#fff; }
+    .dot { width:7px; height:7px; border-radius:50%; flex-shrink:0; }
+    .t-home .dot { background:var(--orange); }
+    .t-home.active { border-color:var(--orange-dim); }
+    .kbd { font-family:'JetBrains Mono',monospace; font-size:9px; color:var(--text-dim); background:var(--bg); border:1px solid var(--border); border-radius:3px; padding:0.05rem 0.3rem; margin-left:0.25rem; }
+    .topbar-end { margin-left:auto; display:flex; align-items:center; gap:0.5rem; flex-shrink:0; }
+    .pill { font-family:'JetBrains Mono',monospace; font-size:10px; padding:0.2rem 0.55rem; border-radius:20px; border:1px solid var(--border); color:var(--text-dim); background:var(--bg3); white-space:nowrap; }
+    .pill.green { border-color:var(--emerald-dim); color:var(--emerald); }
+    .pill.amber { border-color:#78350f; color:#f59e0b; }
+
+    /* DROPDOWN */
+    .dd-wrap { position:relative; flex-shrink:0; }
+    .dd-btn { display:flex; align-items:center; gap:0.45rem; padding:0.4rem 0.85rem; border-radius:8px; cursor:pointer; font-size:12px; font-weight:500; color:var(--text-dim); border:1px solid transparent; transition:all 0.18s; white-space:nowrap; user-select:none; }
+    .dd-btn:hover { background:var(--bg3); color:var(--text); }
+    .dd-btn.dd-open, .dd-btn.dd-active { background:var(--bg3); color:#fff; border-color:var(--border); }
+    .dd-arrow { font-size:10px; opacity:.5; transition:transform .22s; }
+    .dd-btn.dd-open .dd-arrow { transform:rotate(180deg); }
+    .dd-menu { position:fixed; top:64px; left:0; background:var(--bg2); border:1px solid var(--border); border-radius:14px; width:340px; max-height:78vh; overflow-y:auto; padding:0.5rem; z-index:1000; box-shadow:0 12px 40px rgba(0,0,0,.75); opacity:0; pointer-events:none; transform:translateY(-6px); transition:opacity .18s, transform .18s; }
+    .dd-menu.dd-open { opacity:1; pointer-events:all; transform:translateY(0); }
+    .dd-menu::-webkit-scrollbar { width:8px; }
+    .dd-menu::-webkit-scrollbar-thumb { background:var(--border); border-radius:8px; }
+    .dd-group-lbl { font-family:'JetBrains Mono',monospace; font-size:9px; text-transform:uppercase; letter-spacing:1.5px; color:var(--text-dim); padding:0.5rem 0.5rem 0.2rem; opacity:.6; }
+    .dd-item { display:flex; align-items:center; gap:0.55rem; padding:0.45rem 0.6rem; border-radius:8px; cursor:pointer; transition:background .15s; font-size:12.5px; font-weight:500; color:var(--text-dim); border:1px solid transparent; }
+    .dd-item:hover { background:var(--bg3); color:#fff; }
+    .dd-item.dd-cur { background:var(--bg3); color:#fff; border-color:var(--border); }
+    .dd-item.pendente .dd-name { opacity:.55; }
+    .dd-dot { width:7px; height:7px; border-radius:50%; flex-shrink:0; }
+    .dd-name { flex:1; }
+    .dd-type { font-family:'JetBrains Mono',monospace; font-size:9px; padding:0.1rem 0.35rem; border-radius:4px; border:1px solid var(--border); color:var(--text-dim); background:var(--bg); }
+    .dd-type.pend { color:#f59e0b; border-color:#78350f; }
+    .dd-k { font-family:'JetBrains Mono',monospace; font-size:9px; color:var(--text-dim); background:var(--bg); border:1px solid var(--border); border-radius:3px; padding:0.05rem 0.3rem; flex-shrink:0; min-width:16px; text-align:center; }
+    .dd-sep { height:1px; background:var(--border); margin:0.3rem 0.25rem; }
+
+    /* WORKSPACE */
+    .workspace { flex:1; position:relative; overflow:hidden; }
+    .panel { position:absolute; inset:0; display:none; overflow:auto; }
+    .panel.active { display:block; }
+
+    /* LINK PANEL — substitui iframe; funciona com file:// local */
+    .link-screen { display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; padding:2.5rem; text-align:center; gap:0; }
+    .link-dot { width:52px; height:52px; border-radius:50%; margin-bottom:1.25rem; flex-shrink:0; }
+    .link-title { font-family:'Syne',sans-serif; font-size:1.55rem; font-weight:800; color:#fff; margin-bottom:.45rem; line-height:1.2; max-width:540px; }
+    .link-sub { font-size:13px; color:var(--text-dim); margin-bottom:1.4rem; max-width:480px; line-height:1.75; }
+    .link-tags { display:flex; gap:.35rem; flex-wrap:wrap; justify-content:center; margin-bottom:2rem; }
+    .link-tag { font-family:'JetBrains Mono',monospace; font-size:9px; background:var(--bg3); border:1px solid var(--border); border-radius:4px; padding:.15rem .4rem; color:var(--text-dim); }
+    .link-btns { display:flex; gap:.75rem; align-items:center; flex-wrap:wrap; justify-content:center; }
+    .link-open { display:inline-flex; align-items:center; gap:.4rem; padding:.7rem 1.6rem; border-radius:10px; font-size:13px; font-weight:600; text-decoration:none; color:#fff; transition:opacity .2s; letter-spacing:.2px; }
+    .link-open:hover { opacity:.82; }
+    .link-back { background:transparent; border:1px solid var(--border); color:var(--text-dim); padding:.7rem 1.25rem; border-radius:10px; cursor:pointer; font-size:13px; font-family:'Inter',sans-serif; transition:all .2s; }
+    .link-back:hover { background:var(--bg3); color:var(--text); border-color:color-mix(in srgb,var(--orange) 35%,var(--border)); }
+    .link-tip { font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--text-dim); margin-top:1.5rem; opacity:.45; letter-spacing:.3px; }
+
+    /* PENDENTE — placeholder de arquivo ainda não produzido */
+    .pend-screen { display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; padding:2rem; text-align:center; gap:1rem; }
+    .pend-tag { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:3px; color:#f59e0b; text-transform:uppercase; background:#78350f33; border:1px solid #78350f; padding:0.25rem 0.75rem; border-radius:6px; }
+    .pend-title { font-family:'Syne',sans-serif; font-size:1.6rem; font-weight:800; color:#fff; }
+    .pend-sub { font-size:13px; color:var(--text-dim); max-width:480px; line-height:1.7; }
+    .pend-meta { font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--text-dim); background:var(--bg3); border:1px solid var(--border); border-radius:8px; padding:0.6rem 1rem; max-width:520px; line-height:1.6; }
+
+    /* BACK */
+    .back-btn { position:fixed; bottom:1.25rem; right:1.25rem; background:var(--bg2); border:1px solid var(--orange-dim); border-radius:50px; padding:0.5rem 1rem; display:none; align-items:center; gap:0.5rem; font-size:11px; font-weight:600; color:var(--orange); cursor:pointer; z-index:300; transition:all 0.2s; box-shadow:0 4px 24px rgba(0,0,0,.6); font-family:'JetBrains Mono',monospace; }
+    .back-btn:hover { background:var(--orange-bg); }
+    .back-btn.visible { display:flex; }
+
+    /* HOME */
+    .home-wrap { max-width:1060px; margin:0 auto; padding:2.5rem 2rem 3rem; }
+    .hero { display:grid; grid-template-columns:1fr auto; gap:2rem; align-items:start; margin-bottom:2rem; padding-bottom:2rem; border-bottom:1px solid var(--border); }
+    .hero-tag { font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--cyan); text-transform:uppercase; letter-spacing:3px; margin-bottom:0.6rem; }
+    .hero h1 { font-family:'Syne',sans-serif; font-size:2.6rem; font-weight:800; color:#fff; letter-spacing:-1.5px; line-height:1.05; margin-bottom:0.75rem; }
+    .hero h1 em { color:var(--orange); font-style:normal; }
+    .hero-sub { color:var(--text-dim); font-size:13.5px; line-height:1.75; max-width:460px; }
+    .hero-right { display:flex; flex-direction:column; gap:0.75rem; align-items:flex-end; }
+    .hstat { text-align:right; }
+    .hstat-num { font-family:'Syne',sans-serif; font-size:2.2rem; font-weight:800; line-height:1; }
+    .hstat-lbl { font-family:'JetBrains Mono',monospace; font-size:9px; text-transform:uppercase; letter-spacing:1px; color:var(--text-dim); }
+    .hstat:nth-child(1) .hstat-num { color:var(--orange); }
+    .hstat:nth-child(2) .hstat-num { color:var(--cyan); }
+    .hstat:nth-child(3) .hstat-num { color:var(--purple); }
+    .hstat:nth-child(4) .hstat-num { color:var(--emerald); }
+
+    .bancas { display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap; margin-bottom:1.75rem; }
+    .bancas-lbl { font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--text-dim); text-transform:uppercase; letter-spacing:1px; }
+    .bchip { background:var(--purple-bg); border:1px solid var(--purple-dim); color:var(--purple); font-family:'JetBrains Mono',monospace; font-size:10px; padding:0.2rem 0.6rem; border-radius:6px; font-weight:700; }
+
+    .grp-head { font-family:'JetBrains Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:2px; color:var(--text-dim); margin:1.6rem 0 0.7rem; opacity:.75; display:flex; align-items:center; gap:0.6rem; }
+    .grp-head::before { content:''; width:18px; height:2px; border-radius:2px; background:var(--c,var(--border)); }
+    .grp-head:first-of-type { margin-top:0; }
+
+    .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-bottom:0.5rem; }
+    .card { background:var(--bg2); border:1px solid var(--border); border-radius:16px; padding:1.25rem; cursor:pointer; transition:transform .22s, box-shadow .22s, border-color .22s; position:relative; }
+    .card:hover { transform:translateY(-4px); box-shadow:0 14px 40px rgba(0,0,0,.5); border-color:color-mix(in srgb, var(--c) 50%, var(--border)); }
+    .card.pendente { opacity:.72; }
+    .card.pendente:hover { opacity:1; }
+    .card-bar { height:3px; border-radius:2px; margin-bottom:1rem; background:linear-gradient(90deg, var(--c), color-mix(in srgb, var(--c) 55%, #ffffff)); }
+    .card-num { font-family:'JetBrains Mono',monospace; font-size:10px; margin-bottom:0.4rem; color:var(--c); }
+    .card-title { font-family:'Syne',sans-serif; font-size:0.95rem; font-weight:700; color:#fff; margin-bottom:0.2rem; line-height:1.3; }
+    .card-sub { font-size:11px; color:var(--text-dim); margin-bottom:0.8rem; font-style:italic; }
+    .card-tags { display:flex; flex-wrap:wrap; gap:0.3rem; margin-bottom:0.8rem; }
+    .ctag { font-family:'JetBrains Mono',monospace; font-size:9px; background:var(--bg3); border:1px solid var(--border); border-radius:4px; padding:0.15rem 0.4rem; color:var(--text-dim); }
+    .card-cta { font-size:12px; font-weight:600; display:flex; align-items:center; gap:0.35rem; color:var(--c); }
+    .card-pend-badge { position:absolute; top:0.9rem; right:0.9rem; font-family:'JetBrains Mono',monospace; font-size:9px; color:#f59e0b; background:#78350f33; border:1px solid #78350f; border-radius:4px; padding:0.1rem 0.4rem; letter-spacing:.5px; }
+
+    .two-col { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1.5rem 0; }
+    .box { background:var(--bg2); border:1px solid var(--border); border-radius:16px; padding:1.3rem; }
+    .box-head { font-family:'Syne',sans-serif; font-weight:700; color:#fff; font-size:0.9rem; margin-bottom:1rem; display:flex; align-items:center; gap:0.6rem; }
+    .box-head::before { content:''; width:3px; height:14px; border-radius:2px; }
+    .bh-o::before { background:var(--orange); }
+    .bh-c::before { background:var(--cyan); }
+
+    .order-steps { display:flex; flex-direction:column; gap:0.5rem; max-height:540px; overflow-y:auto; padding-right:4px; }
+    .order-steps::-webkit-scrollbar { width:6px; }
+    .order-steps::-webkit-scrollbar-thumb { background:var(--border); border-radius:8px; }
+    .ostep { display:flex; align-items:center; gap:0.6rem; background:var(--bg3); border:1px solid var(--border); border-radius:10px; padding:0.6rem 0.85rem; cursor:pointer; transition:all 0.2s; }
+    .ostep:hover { border-color:color-mix(in srgb, var(--c) 45%, var(--border)); background:color-mix(in srgb, var(--c) 9%, var(--bg3)); }
+    .ostep.pendente { opacity:.65; }
+    .ostep-n { width:24px; height:24px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:'JetBrains Mono',monospace; font-size:10px; font-weight:700; flex-shrink:0; background:color-mix(in srgb, var(--c) 18%, var(--bg2)); color:var(--c); }
+    .ostep-lbl { font-size:12px; font-weight:600; color:#fff; }
+    .ostep-sub { font-size:10px; color:var(--text-dim); }
+
+    .qr-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:0.65rem; }
+    .qr-item { background:var(--bg3); border:1px solid var(--border); border-radius:10px; padding:0.75rem; }
+    .qr-lbl { font-family:'JetBrains Mono',monospace; font-size:9px; text-transform:uppercase; letter-spacing:1px; color:var(--orange); margin-bottom:0.3rem; }
+    .qr-val { font-size:12.5px; color:#fff; font-weight:600; margin-bottom:0.15rem; line-height:1.3; }
+    .qr-det { font-size:11px; color:var(--text-dim); line-height:1.5; }
+
+    .mnem-mini { display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; max-height:540px; overflow-y:auto; padding-right:4px; }
+    .mnem-mini::-webkit-scrollbar { width:6px; }
+    .mnem-mini::-webkit-scrollbar-thumb { background:var(--border); border-radius:8px; }
+    .mc { background:var(--cyan-bg); border:1px solid var(--cyan-dim); border-radius:10px; padding:0.75rem; }
+    .mc-w { font-family:'JetBrains Mono',monospace; font-size:0.9rem; font-weight:700; color:var(--cyan); letter-spacing:2px; margin-bottom:0.35rem; }
+    .mc-d { font-size:11px; color:var(--text-dim); line-height:1.5; }
+
+    .home-footer { margin-top:1.5rem; padding-top:1.25rem; text-align:center; font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--text-dim); border-top:1px solid var(--border); letter-spacing:.5px; line-height:1.7; }
+
+    @media (max-width:960px) {
+      .cards { grid-template-columns:1fr 1fr; }
+      .qr-grid { grid-template-columns:repeat(2,1fr); }
+      .two-col { grid-template-columns:1fr; }
+      .hero { grid-template-columns:1fr; }
+      .hero-right { flex-direction:row; }
+    }
+    @media (max-width:600px) {
+      .hero h1 { font-size:1.9rem; }
+      .cards { grid-template-columns:1fr; }
+      .qr-grid { grid-template-columns:1fr 1fr; }
+      .home-wrap { padding:1.25rem 1rem 2rem; }
+      .kbd { display:none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">
+    <div class="brand-name">Cirurgia<span>RS</span></div>
+    <div class="brand-year">2026</div>
+  </div>
+  <div class="sep"></div>
+  <div class="tab t-home active" onclick="show('home')"><div class="dot"></div>Início<span class="kbd">1</span></div>
+  <div class="dd-wrap" id="ddWrap">
+    <div class="dd-btn" id="ddBtn" onclick="toggleDD()">
+      <div class="dot" id="ddDot" style="background:var(--text-dim)"></div>
+      Resumos
+      <span class="dd-arrow">▾</span>
+    </div>
+    <div class="dd-menu" id="ddMenu"></div>
+  </div>
+  <div class="topbar-end">
+    <div class="pill">carolina</div>
+    <div class="pill green" id="pillReady">0 prontos</div>
+    <div class="pill amber" id="pillPend">0 pendentes</div>
+  </div>
+</div>
+
+<div class="workspace" id="workspace">
+  <div class="panel active" id="panel-home">
+    <div class="home-wrap">
+      <div class="hero">
+        <div>
+          <div class="hero-tag">// banco de resumos cirúrgicos · residência médica rs · cv 2026</div>
+          <h1>Residência<br><em>Cirúrgica</em><br>RS 2026</h1>
+          <p class="hero-sub">
+            Resumos interativos de técnica cirúrgica, anatomia, diagnóstico diferencial e temas de prova. Use a aba <strong style="color:var(--text)">Início</strong>, o menu <strong style="color:var(--text)">Resumos</strong> ou os atalhos de teclado para navegar. Cards com badge <span style="color:#f59e0b;font-family:'JetBrains Mono',monospace;font-size:11px;">PENDENTE</span> têm a entrada catalogada mas o HTML ainda não foi produzido nesta versão.
+          </p>
+        </div>
+        <div class="hero-right" id="heroStats"></div>
+      </div>
+
+      <div class="bancas">
+        <span class="bancas-lbl">Bancas cobertas:</span>
+        <span class="bchip">HCPA</span>
+        <span class="bchip">GHC</span>
+        <span class="bchip">Santa Casa POA</span>
+        <span class="bchip">PUC-RS</span>
+        <span class="bchip">AMRIGS</span>
+      </div>
+
+      <div id="cardsContainer"></div>
+
+      <div class="two-col">
+        <div class="box">
+          <div class="box-head bh-c">Sugestão de Ordem de Estudo</div>
+          <div class="order-steps" id="orderSteps"></div>
+        </div>
+        <div class="box">
+          <div class="box-head bh-c">Mnemônicos Essenciais</div>
+          <div class="mnem-mini" id="mnemContainer"></div>
+        </div>
+      </div>
+
+      <div class="box" style="margin-bottom:1.5rem;">
+        <div class="box-head bh-o">Referência Rápida — High-Yield para Provas</div>
+        <div class="qr-grid" id="qrContainer"></div>
+      </div>
+
+      <div class="home-footer" id="homeFooter"></div>
+    </div>
+  </div>
+</div>
+
+<div class="back-btn" id="backBtn" onclick="show('home')">← Início</div>
+
+<script>
+/* ═══════════════════════════════════════════════════════════════════
+   REGISTRO ÚNICO DE RESUMOS  ·  carolzita
+   Para ADICIONAR um resumo: acrescente UM objeto ao array RESUMOS.
+   Cards, menu, painéis, ordem de estudo, atalhos e estatísticas são
+   gerados automaticamente.
+
+   Campos:
+     id        → identificador curto e único
+     grupo     → tema (cards e menu são agrupados por ele)
+     titulo    → título do card / item do menu
+     subtitulo → linha de fontes/descrição curta
+     tipo      → 'Full' ou 'Pocket'
+     cor       → cor de destaque (hex)
+     arquivo   → nome do HTML do resumo
+     tags      → array de etiquetas curtas
+     atalho    → (opcional) tecla numérica 0–9 para navegação rápida
+     status    → (opcional) 'pendente' enquanto o HTML não existe
+   ═══════════════════════════════════════════════════════════════════ */
+  const RESUMOS = [
+    { id:'tc', grupo:'Radiologia', titulo:'Tomografia do Zero · Ler TC', atalho:'2', subtitulo:'Densidade (UH) · janelas · contraste · método · macetes de anatomia', tipo:'Full', cor:'#f97316', arquivo:'tomografia_do_zero.html', tags:['Hounsfield', 'Janelas', 'Contraste', 'Macetes', 'Não-perder'] },
+    { id:'ptc', grupo:'Radiologia', titulo:'Pocket — Tomografia do Zero', subtitulo:'UH · janelas · contraste · roteiro · macetes por órgão', tipo:'Pocket', cor:'#fbbf24', arquivo:'tomografia_do_zero_pocket.html', tags:['Hounsfield', 'Janelas', 'Macetes', 'Não-perder'] },
+    { id:'per', grupo:'Anatomia Peritoneal', titulo:'Peritônio, Mesentério & Identificação de Alças', atalho:'3', subtitulo:'Espaços · Winslow · mesentério como órgão · patologia mesentérica · reconhecer alça no intraop.', tipo:'Full', cor:'#f97316', arquivo:'peritonio_mesenterio_full.html', tags:['SAD PUCKER', 'Winslow', 'Raiz do mesentério', 'Jejuno × Íleo', 'Treitz', 'Bancas RS'] },
+    { id:'pper', grupo:'Anatomia Peritoneal', titulo:'Pocket — Peritônio & Alças', subtitulo:'Delgado × cólon · jejuno × íleo · marcos · correr a alça · viabilidade', tipo:'Pocket', cor:'#fbbf24', arquivo:'peritonio_mesenterio_pocket.html', tags:['Delgado × Cólon', 'Arcadas', 'Treitz', 'Viabilidade', 'Bancas'] },
+    { id:'pne', grupo:'Fundamentos Laparoscópicos', titulo:'Pneumoperitônio · Veress × Hasson', subtitulo:'CO₂ 12–15 mmHg · 4 testes Veress · Durant · ERAS', tipo:'Full', cor:'#94a3b8', arquivo:'pneumoperitonio_referencia.html', tags:['Veress', 'Hasson', 'Embolia gasosa', 'Durant', 'Bancas RS'] },
+    { id:'ppne', grupo:'Fundamentos Laparoscópicos', titulo:'Pocket — Pneumoperitônio', subtitulo:'CO₂ · 4 testes · Durant · Bancas RS', tipo:'Pocket', cor:'#cbd5e1', arquivo:'pneumoperitonio_pocket.html', tags:['12 mmHg', '4 Testes', 'Embolia', 'Bancas'] },
+    { id:'a1', grupo:'Apendicectomia', titulo:'Apendicectomia · Guia Completo', subtitulo:'Alvarado · TNO × cirurgia · anatomia · laparo + aberta passo a passo · mãos/fios', tipo:'Full', cor:'#22d3ee', arquivo:'apendicectomia_guia_completo.html', tags:['Alvarado', 'MANTRELS', 'Tênia livre', 'Endoloop', 'McBurney/grid-iron', 'Artéria apendicular', 'Carcinoide', 'Plastrão', 'Mãos', 'Fios', 'Complicações', 'Bancas RS'] },
+    { id:'pa', grupo:'Apendicectomia', titulo:'Pocket — Apendicectomia', subtitulo:'Alvarado · tênia · 8 passos laparo · 6 passos aberta · mãos/fios · traps', tipo:'Pocket', cor:'#a855f7', arquivo:'apendicectomia_pocket.html', tags:['MANTRELS', 'Tênia livre', 'Endoloop', 'McBurney', 'Carcinoide 2 cm', 'Mãos', 'Fios', 'Bancas RS'] },
+    { id:'colec', grupo:'Colecistectomia', titulo:'Colecistite & Colecistectomia (VL + Aberta)', subtitulo:'TG18 · Calot/CVS · 7 passos laparo + 6 aberta · mãos/fios · bailouts · Strasberg', tipo:'Full', cor:'#f59e0b', arquivo:'colecistite_referencia.html', tags:['TG18', 'Murphy', 'Calot', 'CVS', 'Tração ínfero-lateral', 'Luschka', 'Bailout', 'Subtotal fenestrante/reconstituinte', 'Conversão', 'Strasberg', 'Mirizzi/Csendes', 'Mãos', 'Bancas RS'] },
+    { id:'pcolec', grupo:'Colecistectomia', titulo:'Pocket — Colecistite', subtitulo:'TG18 · timing · CVS · 7 passos laparo · 6 aberta · bailouts · Strasberg', tipo:'Pocket', cor:'#fbbf24', arquivo:'colecistite_pocket.html', tags:['TG18', 'CVS', 'Bailout', 'Subtotal', 'Luschka', 'Strasberg', 'Bancas'] },
+    { id:'cdl', grupo:'Vias Biliares', titulo:'Coledocolitíase · ASGE 2019', subtitulo:'ASGE 2019 · CIO · exploração em 8 passos · transcística × coledocotomia · Kehr · Mirizzi', tipo:'Full', cor:'#eab308', arquivo:'coledocolitiase_full_3.html', tags:['ASGE 2019', 'CPRE', 'LCBDE', 'CIO', 'Transcística', 'Coledocotomia longitudinal', '3 e 9 horas', 'Kehr', 'Biloma', 'Derivação biliodigestiva', 'Mirizzi/Csendes', 'Mãos', 'Bancas RS'] },
+    { id:'polv', grupo:'Vias Biliares', titulo:'Pólipos de Vesícula Biliar', subtitulo:'Critérios de malignidade · tamanho de risco · indicação cirúrgica', tipo:'Full', cor:'#a16207', arquivo:'polipos_vesicula_full.html', tags:['Pólipo >1cm', 'USG', 'Risco de malignidade', 'Colecistectomia profilática'] },
+    { id:'ppolv', grupo:'Vias Biliares', titulo:'Pocket — Pólipos de Vesícula', subtitulo:'Tamanho de corte · fatores de risco · seguimento × cirurgia', tipo:'Pocket', cor:'#fcd34d', arquivo:'polipos_vesicula_pocket.html', tags:['USG', 'Seguimento', 'Bancas'] },
+    { id:'pcdl', grupo:'Vias Biliares', titulo:'Pocket — Coledocolitíase', subtitulo:'ASGE · CIO · exploração em 8 passos · transcística × coledocotomia · Kehr · Mirizzi', tipo:'Pocket', cor:'#facc15', arquivo:'coledocolitiase_pocket.html', tags:['ASGE', 'CPRE', 'CIO', 'Transcística', '3 e 9 horas', 'Kehr', 'Biloma', 'Mirizzi', 'Bancas'] },
+    { id:'acb', grupo:'Vias Biliares', titulo:'Doenças Biliares Acalculosas', subtitulo:'Colecistite acalculosa · Pólipos · Todani · CEP', tipo:'Full', cor:'#ca8a04', arquivo:'biliar_acalculosa_REFERENCIA.html', tags:['Acalculosa', 'Pólipos 10mm', 'Todani I–V', 'CEP', 'Bancas RS'] },
+    { id:'pacb', grupo:'Vias Biliares', titulo:'Pocket — Acalculosas', subtitulo:'PAISES · Todani · UTI · CEP & transplante', tipo:'Pocket', cor:'#fde047', arquivo:'biliar_acalculosa_POCKET.html', tags:['PAISES', 'Todani', 'UTI', 'PSC'] },
+    { id:'vbm', grupo:'Vias Biliares', titulo:'Vias Biliares Malignas · Bismuth-Corlette', subtitulo:'Ca vesícula · Bismuth-Corlette · colecistectomia radical e Klatskin passo a passo · caudado · mãos/fios', tipo:'Full', cor:'#b45309', arquivo:'neoplasias_vias_biliares_REF.html', tags:['Bismuth I–IV', 'Klatskin', 'T1a × T1b', 'Segmentectomia IVb/V', 'Em bloco', 'Caudado', 'Congelação de margem', 'Embolização portal', 'Hepaticojejunostomia', 'NCCN', 'Mãos', 'Bancas RS'] },
+    { id:'pvbm', grupo:'Vias Biliares', titulo:'Pocket — Vias Biliares Malignas', subtitulo:'Bismuth · radical em 3 passos · Klatskin em 5 passos · caudado · mãos/fios', tipo:'Pocket', cor:'#f59e0b', arquivo:'neoplasias_vias_biliares_POCKET.html', tags:['Bismuth', 'Klatskin', 'T1a×T1b', 'IVb/V', 'Em bloco', 'Caudado', 'Congelação', 'Bancas'] },
+    { id:'ca', grupo:'Vias Biliares', titulo:'Colangite Aguda · Tokyo 2018', subtitulo:'Charcot/Reynolds · TG18 · sinais por frequência · drenagem · coledocotomia em 7 passos · complicações da CPRE', tipo:'Full', cor:'#2dd4bf', arquivo:'colangite_aguda_full.html', tags:['Charcot', 'Reynolds', 'TG18 I–III', 'CPRE', 'Pancreatite pós-CPRE', 'Indometacina retal', 'Idoso/imunossuprimido', 'Pneumobilia', 'Kehr', 'Coledocotomia', 'Mãos', 'Fios', 'Bancas RS'] },
+    { id:'pca', grupo:'Vias Biliares', titulo:'Pocket — Colangite Aguda', subtitulo:'CHARCOT · HIPCO · Fluxograma · Bancas RS', tipo:'Pocket', cor:'#5eead4', arquivo:'pocket_colangite_aguda.html', tags:['Tríade/Pêntade', 'TG18', 'ATB', 'CPRE'] },
+    { id:'npa', grupo:'Pâncreas', titulo:'Neoplasias Císticas e TNE · Kyoto 2024', subtitulo:'IPMN · MCN · SCN · SPN · Insulinoma · Gastrinoma', tipo:'Full', cor:'#9f1239', arquivo:'neoplasias_pancreas_referencia.html', tags:['IPMN HRS', 'TNE', 'Passaro', 'Bancas RS'] },
+    { id:'pnpa', grupo:'Pâncreas', titulo:'Pocket — Neoplasias Pancreáticas', subtitulo:'Algoritmo Kyoto · Passaro · WHO G1–G3 · NEC', tipo:'Pocket', cor:'#fb7185', arquivo:'neoplasias_pancreas_pocket.html', tags:['IPMN', 'TNE', 'Passaro', 'Bancas'] },
+    { id:'pag', grupo:'Pâncreas', titulo:'Pancreatite Aguda · Atlanta 2012', subtitulo:'Atlanta 2012 · WATERFALL · step-up em 4 degraus · necrosectomia e finger fracture · PONCHO', tipo:'Full', cor:'#dc2626', arquivo:'pancreatite_aguda_referencia.html', tags:['Atlanta', 'BISAP', 'WATERFALL', 'Necrose infectada', 'Step-up/PANTER', 'Regra das 4 semanas', 'WON', 'VARD/LAMS', 'Finger fracture', 'PONCHO', 'Mãos', 'Bancas RS'] },
+    { id:'ppag', grupo:'Pâncreas', titulo:'Pocket — Pancreatite Aguda', subtitulo:'Critérios · gravidade · WATERFALL · step-up em 4 degraus · finger fracture · PONCHO', tipo:'Pocket', cor:'#f87171', arquivo:'pancreatite_aguda_pocket.html', tags:['Atlanta', 'BISAP', 'WATERFALL', 'Step-up', '4 semanas', 'WON', 'VARD', 'Finger fracture', 'PONCHO', 'Bancas'] },
+    { id:'pcr', grupo:'Pâncreas', titulo:'Pancreatite Crônica', subtitulo:'TIGAR-O · ESCAPE · Puestow, Frey e Beger passo a passo · matriz ducto × massa · mãos/fios', tipo:'Full', cor:'#991b1b', arquivo:'pancreatite_cronica_referencia.html', tags:['TIGAR-O', 'ESCAPE', 'Puestow/Partington', 'Frey', 'Beger/DPPHR', 'Ducto × massa', 'Arcadas pancreatoduodenais', 'Diabetes 3c', 'PERT', 'Mãos', 'Bancas RS'] },
+    { id:'ppcr', grupo:'Pâncreas', titulo:'Pocket — Pancreatite Crônica', subtitulo:'TIGAR-O · ESCAPE · Puestow × Frey × Beger passo a passo · matriz ducto × massa', tipo:'Pocket', cor:'#ef4444', arquivo:'pancreatite_cronica_pocket.html', tags:['TIGAR-O', 'ESCAPE', 'Puestow', 'Frey', 'Beger', 'Ducto × massa', 'Arcadas', 'PERT', 'Bancas'] },
+    { id:'dpc', grupo:'Pâncreas', titulo:'Periampulares & Duodenopancreatectomia', subtitulo:'4 origens · NCCN · 13 passos · mãos/fios · Child PHG · Blumgart · artery-first · ISGPS', tipo:'Full', cor:'#881337', arquivo:'duodenopancreatectomia_whipple_referencia.html', tags:['Periampulares', 'Courvoisier', 'NCCN', 'Kausch-Whipple', 'PPPD', 'GDA/lig. arqueado', 'Uncinado/AMS', 'Blumgart', 'FRS', 'POPF/DGE/PPH/PPAP', 'Sentinel bleed', 'ERAS', 'mFOLFIRINOX', 'Bancas RS'] },
+    { id:'dpct', grupo:'Pâncreas', titulo:'Duodenopancreatectomia — Técnica Cirúrgica', subtitulo:'Passo a passo cirúrgico · dissecção · reconstrução · manejo do coto pancreático', tipo:'Full', cor:'#9d174d', arquivo:'duodenopancreatectomia_tecnica_referencia.html', tags:['Técnica cirúrgica', 'Reconstrução', 'Coto pancreático', 'Whipple'] },
+    { id:'pdpct', grupo:'Pâncreas', titulo:'Pocket — Duodenopancreatectomia (Técnica)', subtitulo:'Roteiro passo a passo · pontos críticos da dissecção e reconstrução', tipo:'Pocket', cor:'#fbcfe8', arquivo:'duodenopancreatectomia_tecnica_pocket.html', tags:['Técnica cirúrgica', 'Whipple', 'Bancas'] },
+    { id:'pdpc', grupo:'Pâncreas', titulo:'Pocket — Periampular & DPC', subtitulo:'4 tumores · D-V-P-J-A · 13 passos · P→H→G · fios · traps', tipo:'Pocket', cor:'#fda4af', arquivo:'duodenopancreatectomia_pocket.html', tags:['P-A-C-D', 'NCCN', '13 passos', 'PHG', 'Fios', 'FRS', 'ISGPS', 'Artery-first'] },
+    { id:'up', grupo:'Estômago', titulo:'Úlcera Péptica · Complicações', subtitulo:'Johnson · Forrest · Graham 5 passos · GDA 3 pontos · vagotomias · pós-gastrectomia · mãos/fios', tipo:'Full', cor:'#7c2d12', arquivo:'ulcera_peptica_referencia.html', tags:['Perfuração', 'Forrest', 'Graham patch', 'GDA 3 pontos', 'Heineke-Mikulicz', 'HSV/Latarjet', 'LARP', 'Antrectomia', 'Billroth I/II', 'Y de Roux', 'Dumping', 'Alça aferente', 'Refluxo alcalino', 'Mãos', 'Fios', 'Bancas RS'] },
+    { id:'pup', grupo:'Estômago', titulo:'Pocket — Úlcera Péptica', subtitulo:'Forrest · Graham 5 passos · GDA 3 pontos · vagotomias · pós-gastrectomia', tipo:'Pocket', cor:'#ea580c', arquivo:'ulcera_peptica_pocket.html', tags:['Graham', 'Forrest', 'GDA 3 pontos', 'Heineke-Mikulicz', 'LARP', 'Latarjet', 'Y de Roux', 'Dumping', 'Alça aferente', 'Bancas'] },
+    { id:'ng', grupo:'Estômago', titulo:'Neoplasia Gástrica · JGCA 7ª ed', subtitulo:'Lauren · TNM · estações D1/D2 · gastrectomia em 11 passos · margens · mãos/fios · FLOT', tipo:'Full', cor:'#db2777', arquivo:'neoplasia_gastrica_full_v1.html', tags:['Lauren', 'Borrmann', 'D2', 'Estações 7-8a-9', 'Lavado peritoneal', 'Margens 5/8 cm', 'Y de Roux', 'Esofagojejunostomia', 'Fístula pancreática', 'FLOT', 'Mãos', 'Fios', 'JGCA', 'Bancas RS'] },
+    { id:'png', grupo:'Estômago', titulo:'Pocket — Neoplasia Gástrica', subtitulo:'Lauren · Borrmann · D1×D2 · 11 passos da gastrectomia · margens · mãos/fios', tipo:'Pocket', cor:'#f472b6', arquivo:'neoplasia_gastrica_pocket.html', tags:['Lauren', 'Borrmann', 'D2', 'Estação 7', 'Lavado', 'Margens 5/8', 'Y de Roux', 'FLOT', 'Bancas'] },
+    { id:'gist', grupo:'Estômago', titulo:'GIST · Tumor Estromal Gastrointestinal', subtitulo:'Cajal · CD117/DOG1 · Miettinen · cirurgia em 6 passos · pseudocápsula · imatinibe', tipo:'Full', cor:'#7c2d12', arquivo:'gist_referencia.html', tags:['CD117', 'DOG1', 'Miettinen', 'Pseudocápsula', 'Wedge', 'Sem linfadenectomia', 'R0 sem margem em cm', 'Endobag', 'Imatinibe', 'D842V', 'Neoadjuvante poupa órgão', 'Mãos', 'Bancas RS'] },
+    { id:'gistp', grupo:'Estômago', titulo:'Pocket — GIST', subtitulo:'Origem · IHQ/mutação · risco · cirurgia em 6 passos · imatinibe · traps', tipo:'Pocket', cor:'#ea580c', arquivo:'gist_pocket.html', tags:['CD117', 'DOG1', 'Miettinen', 'Pseudocápsula', 'Wedge', 'Sem linfadenectomia', 'Endobag', 'Imatinibe', 'D842V', 'Bancas'] },
+    { id:'eso', grupo:'Esôfago', titulo:'Esôfago · Ca, Acalasia, DRGE', subtitulo:'DRGE/hiato · Chicago 4.0 · Nissen 7 passos · Heller-Dor 4 · esofagectomia · mãos/fios', tipo:'Full', cor:'#7c3aed', arquivo:'esofago_referencia.html', tags:['Ca esôfago', 'Acalasia', 'Chicago 4.0', 'Nissen', 'Shoeshine', 'Collis', 'Heller-Dor', 'Miotomia gástrica', 'Ivor-Lewis/McKeown/Transhiatal', 'Tubo gástrico', 'Gastroepiploica direita', 'Mãos', 'Fios', 'Bancas RS'] },
+    { id:'peso', grupo:'Esôfago', titulo:'Pocket — Esôfago', subtitulo:'DRGE · acalasia · Nissen 7 passos · Heller-Dor · esofagectomia · mãos/fios', tipo:'Pocket', cor:'#a78bfa', arquivo:'esofago_pocket.html', tags:['Acalasia', 'Nissen', 'Shoeshine', 'Heller-Dor', 'Miotomia gástrica', 'Tubo gástrico', 'Cervical×torácica', 'DRGE', 'Bancas'] },
+    { id:'rcu', grupo:'Cólon & Intestino', titulo:'Retocolite Ulcerativa · ECCO · Mayo', subtitulo:'Contínua · Montreal · Truelove · regra do dia 3 · IPAA em 7 passos · mãos/fios', tipo:'Full', cor:'#16a34a', arquivo:'retocolite_ulcerativa.html', tags:['Contínua', 'Montreal', 'Truelove-Witts', 'Regra do dia 3', 'Megacólon tóxico', 'IPAA', 'Bolsa em J', 'Cuffite', 'Bolsite', 'Close rectal', '2 e 3 estágios', 'Mãos', 'Bancas RS'] },
+    { id:'prcu', grupo:'Cólon & Intestino', titulo:'Pocket — Retocolite Ulcerativa', subtitulo:'Montreal · Truelove · regra do dia 3 · IPAA em 7 passos · bolsite × cuffite', tipo:'Pocket', cor:'#4ade80', arquivo:'pocket_retocolite_ulcerativa.html', tags:['Contínua', 'Montreal', 'Truelove', 'Dia 3', 'Megacólon', 'IPAA', 'Bolsa J', 'Bolsite/Cuffite', 'Bancas'] },
+    { id:'cro', grupo:'Cólon & Intestino', titulo:'Doença de Crohn · ECCO · Montreal', subtitulo:'Transmural salteada · Montreal · ressecção ileocecal em 9 passos · Kono-S · estenoplastias · mãos/fios', tipo:'Full', cor:'#15803d', arquivo:'crohn_full.html', tags:['Montreal', 'Transmural', 'Correr o delgado', 'Margem macroscópica', 'Mesentério perto da alça', 'Kono-S', 'Estenoplastia HM/Finney/Michelassi', 'Coffey', 'LIR!C', 'Rutgeerts', 'Intestino curto', 'Mãos', 'Bancas RS'] },
+    { id:'pcro', grupo:'Cólon & Intestino', titulo:'Pocket — Doença de Crohn', subtitulo:'Skip lesions · Montreal · 9 passos da ileocecal · Kono-S · estenoplastias · mãos/fios', tipo:'Pocket', cor:'#34d399', arquivo:'crohn_pocket.html', tags:['Montreal', 'Correr o delgado', 'Margem macroscópica', 'Kono-S', 'Estenoplastia', 'LIR!C', 'Rutgeerts', 'Bancas'] },
+    { id:'ncr', grupo:'Cólon & Intestino', titulo:'Neoplasia Colorretal · TNM', subtitulo:'Rastreio 45a · TNM · CME/TME · sigmoidectomia em 9 passos · TNT · mãos/fios', tipo:'Full', cor:'#059669', arquivo:'neoplasia_colorretal_referencia.html', tags:['TNM', 'CME/TME', '≥12 LN', 'Medial-lateral', 'Ureter esquerdo', 'AMI alta×baixa', 'Griffiths/Sudeck', 'Air-leak/donuts', 'Indocianina', 'Ileostomia de proteção', 'LARS', 'TNT', 'Watch-and-Wait', 'Mãos', 'Bancas RS'] },
+    { id:'pncr', grupo:'Cólon & Intestino', titulo:'Pocket — Neoplasia Colorretal', subtitulo:'Rastreio · TNM · 9 passos da sigmoidectomia/RAB · TME · mãos/fios', tipo:'Pocket', cor:'#6ee7b7', arquivo:'neoplasia_colorretal_pocket.html', tags:['TNM', 'CME/TME', 'Medial-lateral', 'Ureter E', 'AMI alta×baixa', 'Donuts/air-leak', 'Indocianina', 'TNT', 'Bancas'] },
+    { id:'obi', grupo:'Cólon & Intestino', titulo:'Obstrução Intestinal', subtitulo:'Delgado × cólon · WSES/Gastrografin · adesiólise, volvo de sigmoide e de ceco passo a passo · mãos/fios', tipo:'Full', cor:'#0d9488', arquivo:'obstrucao_intestinal_full.html', tags:['Brida/ASBO', 'Gastrografin', 'Regra das 72h', 'Alça fechada', 'Volvo sigmoide', 'Volvo de ceco', 'Detorcer ou não', 'Viabilidade/indocianina', 'Enterotomia iatrogênica', 'Hartmann', 'Ogilvie', 'Mãos', 'Bancas RS'] },
+    { id:'pobi', grupo:'Cólon & Intestino', titulo:'Pocket — Obstrução Intestinal', subtitulo:'Delgado × cólon · Gastrografin · adesiólise e volvos passo a passo · mãos/fios', tipo:'Pocket', cor:'#5eead4', arquivo:'obstrucao_intestinal_pocket.html', tags:['Brida', 'Gastrografin', '72h', 'Volvo', 'Detorcer ou não', 'Tesoura fria', 'Ileocólica×colorretal', 'Ogilvie', 'Bancas'] },
+    { id:'div', grupo:'Cólon & Intestino', titulo:'Diverticulite · Hinchey', subtitulo:'Hinchey/WSES · ATB seletivo · sigmoidectomia em 9 passos · Hartmann × AP · mãos/fios', tipo:'Full', cor:'#0891b2', arquivo:'diverticulite_full.html', tags:['Hinchey', 'WSES 2020', 'Hartmann', 'Anastomose primária', 'Margem no reto', 'Ureter esquerdo', 'LOLA/LADIES', 'Fístula colovesical', 'Coto marcado', 'Ileostomia', 'Mãos', 'Bancas RS'] },
+    { id:'cdir', grupo:'Cólon & Intestino', titulo:'Colectomia Direita', subtitulo:'Indicações · vasos ileocólicos · linfadenectomia · anastomose íleo-cólica', tipo:'Full', cor:'#0369a1', arquivo:'colectomia_direita.html', tags:['Ângulo hepático', 'Vasos ileocólicos', 'Anastomose', 'CME'] },
+    { id:'pcdir', grupo:'Cólon & Intestino', titulo:'Pocket — Colectomia Direita', subtitulo:'Passo a passo · pedículos · anastomose · complicações', tipo:'Pocket', cor:'#38bdf8', arquivo:'pocket_colectomia_direita.html', tags:['Técnica', 'Anastomose', 'Bancas'] },
+    { id:'pdiv', grupo:'Cólon & Intestino', titulo:'Pocket — Diverticulite', subtitulo:'Hinchey/WSES · manejo · sigmoidectomia em 9 passos · Hartmann × AP · mãos/fios', tipo:'Pocket', cor:'#67e8f9', arquivo:'diverticulite_pocket.html', tags:['Hinchey', 'WSES', 'Hartmann', 'Anastomose primária', 'Margem no reto', 'Ureter E', 'LOLA', 'Coto marcado', 'Bancas'] },
+    { id:'orif', grupo:'Cólon & Intestino', titulo:'Doenças Orificiais', subtitulo:'Linha pectínea · Goligher · hemorroidectomia e LEIL passo a passo · Parks/Goodsall · Fournier', tipo:'Full', cor:'#0e7490', arquivo:'doencas_orificiais_referencia.html', tags:['Hemorroidas', 'Goligher', 'Milligan-Morgan/Ferguson', 'Pontes de mucosa', 'Esfíncter interno', 'LEIL lateral', 'Keyhole', 'Fissura', 'Parks', 'Goodsall', 'Seton/LIFT', 'Fournier', 'Mãos', 'Bancas RS'] },
+    { id:'porif', grupo:'Cólon & Intestino', titulo:'Pocket — Doenças Orificiais', subtitulo:'Pectínea · Goligher · hemorroidectomia 5 passos · LEIL 5 passos · Goodsall · Fournier', tipo:'Pocket', cor:'#22d3ee', arquivo:'doencas_orificiais_pocket.html', tags:['Goodsall', 'Goligher', 'Pontes de mucosa', 'Esfíncter interno', 'LEIL lateral', 'Keyhole', 'Parks', 'Fournier', 'Bancas'] },
+    { id:'fec', grupo:'Cólon & Intestino', titulo:'Fístulas Digestivas / Enterocutâneas', subtitulo:'Débito · SNAP/SOWATS · FRIEND · nutrição · cirurgia tardia em 5 passos · mãos/fios', tipo:'Full', cor:'#7c2d12', arquivo:'fistulas_digestivas_referencia.html', tags:['SNAP', 'SOWATS', 'FRIEND', 'Alto débito', 'Octreotide', 'Fistuloclise', 'Obstrução distal', 'Ressecção × rafia', 'Enteroatmosférica', 'Timing 3-6 meses', 'Bancas RS'] },
+    { id:'fecp', grupo:'Cólon & Intestino', titulo:'Pocket — Fístulas Digestivas', subtitulo:'Débito · FRIEND · SNAP · nutrição · cirurgia tardia em 5 passos', tipo:'Pocket', cor:'#ea580c', arquivo:'fistulas_digestivas_pocket.html', tags:['SNAP', 'FRIEND', 'Octreotide', 'Obstrução distal', 'Ressecção × rafia', 'Enteroatmosférica', 'Timing', 'Bancas'] },
+    { id:'estm', grupo:'Cólon & Intestino', titulo:'Estomas / Ostomias', subtitulo:'Ileo × colo · marcação · confecção em 6 passos · alto débito · hérnia paraestomal · mãos/fios', tipo:'Full', cor:'#7c2d12', arquivo:'estomas_ostomias_referencia.html', tags:['Brooke', 'Marcação trans-retal', '3 mordidas', 'Mesentério: tensão×isquemia', 'Alto débito/HOS', 'Necrose abaixo da aponeurose', 'Hérnia paraestomal', 'Ileostomia de proteção', 'Reversão', 'Mãos', 'Bancas RS'] },
+    { id:'estmp', grupo:'Cólon & Intestino', titulo:'Pocket — Estomas / Ostomias', subtitulo:'Tipos · confecção em 6 passos · débito · complicações · traps', tipo:'Pocket', cor:'#ea580c', arquivo:'estomas_ostomias_pocket.html', tags:['Brooke', 'Marcação', '3 mordidas', 'Alto débito', 'Necrose/aponeurose', 'Paraestomal', 'Proteção', 'Bancas'] },
+    { id:'lig', grupo:'Cólon & Intestino', titulo:'Por que Ligo Onde Ligo · Transversal', subtitulo:'As 4 forças da ligadura · 10 operações cruzadas · watersheds · perguntas de visita', tipo:'Full', cor:'#f97316', arquivo:'ligaduras_vasculares_transversal.html', tags:['Transversal', 'Ligadura alta×baixa', 'Linfonodo na origem', 'Griffiths/Sudeck', 'Drummond', 'Gastroduodenal', 'Tubo gástrico', 'Bolsa ileal', 'Crohn', 'GIST', 'Discussão de visita'] },
+    { id:'fra', grupo:'Cólon & Intestino', titulo:'Fundamentos de Ressecção Intestinal & Anastomoses', subtitulo:'AMS/AMI · viabilidade · 7 passos da grampeada · manual 1×2 planos · mãos/fios · estomas · SIC', tipo:'Full', cor:'#1e40af', arquivo:'fundamentos_ressecao_anastomoses_referencia.html', tags:['Griffith/Sudeck', 'High×low tie', '4 pré-requisitos', 'GIA/TA', 'Submucosa', 'Brecha mesentérica', 'Deiscência', 'Estomas', 'SIC', 'Mãos', 'Bancas RS'] },
+    { id:'pfra', grupo:'Cólon & Intestino', titulo:'Pocket — Fundamentos de Ressecção & Anastomoses', subtitulo:'Vascularização · decisão · 7 passos da anastomose · fios · desvio · delgado', tipo:'Pocket', cor:'#60a5fa', arquivo:'fundamentos_ressecao_anastomoses_pocket.html', tags:['AMS/AMI', '4 pré-requisitos', 'GIA/TA', 'Submucosa', 'Brecha mesentérica', 'Estomas', 'Bancas'] },
+    { id:'fig', grupo:'Fígado', titulo:'Fígado · Nódulos, Abscessos, HP', subtitulo:'Nódulos benignos × malignos · abscessos · HP', tipo:'Full', cor:'#65a30d', arquivo:'figado_referencia.html', tags:['HNF', 'Hemangioma', 'Abscesso', 'HP', 'Bancas RS'] },
+    { id:'pfig', grupo:'Fígado', titulo:'Pocket — Fígado', subtitulo:'Nódulos · abscessos · hipertensão portal', tipo:'Pocket', cor:'#a3e635', arquivo:'figado_pocket.html', tags:['Nódulos', 'Abscesso', 'HP', 'Bancas'] },
+    { id:'hi', grupo:'Hérnias', titulo:'Hérnia Inguinal · Referência Completa', subtitulo:'Fruchaud · EHS · Lichtenstein em 9 passos · TAPP×TEP · Doom/Pain · epônimas · mãos/fios', tipo:'Full', cor:'#38bdf8', arquivo:'hernia_inguinal_referencia.html', tags:['Hesselbach', 'Fruchaud', 'EHS L/M/F', 'Lichtenstein', 'Shouldice/McVay', 'TEP/TAPP', 'Triangle of Doom', 'Triangle of Pain', 'Corona mortis', 'Richter/Littré/Amyand', 'Deslizante', 'Inguinodinia', 'Watchful waiting', 'Mãos', 'Fios', 'Bancas RS'] },
+    { id:'hpa', grupo:'Hérnias', titulo:'Hérnias da Parede Abdominal', subtitulo:'EHS · planos de tela · umbilical e Rives-Stoppa passo a passo · TAR × Ramirez · mãos/fios', tipo:'Full', cor:'#0284c7', arquivo:'hernias_parede_abdominal.html', tags:['Incisional', 'EHS M/L/W', 'Onlay-Inlay-Sublay-Underlay', 'Rives-Stoppa', 'TAR', 'Ramirez', 'Nervos T7-L1', 'Bridging', 'IPOM/eTEP', 'STITCH 4:1', 'Mãos', 'Bancas RS'] },
+    { id:'phpa', grupo:'Hérnias', titulo:'Pocket — Hérnias (inguinal + parede)', subtitulo:'Inguinal · Lichtenstein 9 passos · epônimas · EHS · telas · Rives/TAR · mãos/fios', tipo:'Pocket', cor:'#7dd3fc', arquivo:'hernias_pocket.html', tags:['Direta×indireta', 'Fruchaud', 'Lichtenstein', 'Doom/Pain', 'Richter', 'EHS', 'O-I-S-U', 'Rives', 'TAR', 'T7-L1', 'IPOM', 'STITCH', 'Bancas'] },
+    { id:'mam', grupo:'Mama', titulo:'Patologia Mamária', subtitulo:'Benigno × maligno · BI-RADS · conservadora e mastectomia passo a passo · nervos axilares · Z0011', tipo:'Full', cor:'#c026d3', arquivo:'patologia_mamaria_full.html', tags:['BI-RADS', 'Margem no tumor on ink', 'Orientação da peça', 'Clipe no leito', 'Retalho fino×grosso', 'Torácico longo', 'Toracodorsal', 'Intercostobraquial', 'SLNB', 'Z0011', 'Madden/Patey/Halsted', 'Mãos', 'Bancas RS'] },
+    { id:'pmam', grupo:'Mama', titulo:'Pocket — Patologia Mamária', subtitulo:'BI-RADS · conservadora em 6 passos · mastectomia em 5 · nervos axilares · Z0011', tipo:'Pocket', cor:'#e879f9', arquivo:'patologia_mamaria_pocket.html', tags:['BI-RADS', 'Orientação da peça', 'Clipe no leito', 'Torácico longo', 'Toracodorsal', 'Intercostobraquial', 'SLNB', 'Z0011', 'Bancas'] },
+    { id:'ba', grupo:'Baço & Adrenal', titulo:'Baço e Adrenal', subtitulo:'AAST · esplenectomia em 5 passos · OPSI · feocromocitoma · adrenalectomia em 5 passos', tipo:'Full', cor:'#9333ea', arquivo:'baco_adrenal_referencia.html', tags:['AAST', 'Esplenectomia de urgência', 'Hilo esplênico', 'OPSI', 'Alfa antes de beta', 'Veia adrenal direita', 'Adrenalectomia laparoscópica', 'Hiperaldo/AVS', 'Incidentaloma', 'Mãos', 'Bancas RS'] },
+    { id:'pba', grupo:'Baço & Adrenal', titulo:'Pocket — Baço e Adrenal', subtitulo:'AAST · esplenectomia em 5 passos · OPSI · adrenalectomia em 5 passos · feocromocitoma', tipo:'Pocket', cor:'#c084fc', arquivo:'baco_adrenal_pocket.html', tags:['AAST', 'Esplenectomia', 'Hilo esplênico', 'OPSI', 'Alfa antes de beta', 'Veia adrenal', 'Adrenalectomia', 'Bancas'] },
+    { id:'mel', grupo:'Pele & Partes Moles', titulo:'Melanoma e Sarcomas', subtitulo:'Breslow · excisão ampla em 4 passos · SLNB/MSLT-II · ressecção de sarcoma em 5 passos · pseudocápsula', tipo:'Full', cor:'#7e22ce', arquivo:'melanoma_sarcomas_referencia.html', tags:['Breslow', 'Margens platô 2cm', 'BLS antes da excisão', 'MSLT-II', 'FNCLCC', 'Trajeto da biópsia', 'Pseudocápsula', 'Nunca enuclear', 'Cirurgia poupadora', 'STRASS', 'Bancas RS'] },
+    { id:'pmel', grupo:'Pele & Partes Moles', titulo:'Pocket — Melanoma e Sarcomas', subtitulo:'Breslow · excisão ampla em 4 passos · SLNB · ressecção de sarcoma em 5 passos · pseudocápsula', tipo:'Pocket', cor:'#a855f7', arquivo:'melanoma_sarcomas_pocket.html', tags:['Breslow', 'BLS antes da excisão', 'MSLT-II', 'Pseudocápsula', 'Nunca enuclear', 'Cirurgia poupadora', 'Bancas'] },
+    { id:'bar', grupo:'Bariátrica', titulo:'Cirurgia Bariátrica', subtitulo:'ASMBS/IFSO 2022 · sleeve 4 passos · bypass 5 passos · brechas · nutrição · mãos/fios', tipo:'Full', cor:'#e11d48', arquivo:'bariatrica_referencia.html', tags:['IMC', 'ASMBS/IFSO 2022', 'Sleeve', 'Bougie', 'Ângulo de His', 'Fundo residual', 'Bypass', '3 alças', 'Petersen', 'Hérnia interna', 'Úlcera marginal', 'Wernicke', 'Mãos', 'Fios', 'Bancas RS'] },
+    { id:'pbar', grupo:'Bariátrica', titulo:'Pocket — Bariátrica', subtitulo:'ASMBS/IFSO 2022 · sleeve 4 passos · bypass 5 passos · brechas · nutrição · traps', tipo:'Pocket', cor:'#fb7185', arquivo:'bariatrica_pocket.html', tags:['ASMBS/IFSO 2022', 'Sleeve', 'Bougie', 'Ângulo de His', 'Bypass', 'Petersen', 'Hérnia interna', 'Wernicke', 'Bancas'] },
+    { id:'hd', grupo:'Hemorragia Digestiva', titulo:'HDA e HDB · Forrest · Glasgow-Blatchford', subtitulo:'EDA × colonoscopia · Forrest · GBS · Rockall', tipo:'Full', cor:'#b91c1c', arquivo:'hemorragia_digestiva_referencia.html', tags:['HDA', 'HDB', 'Forrest', 'GBS', 'Bancas RS'] },
+    { id:'phd', grupo:'Hemorragia Digestiva', titulo:'Pocket — HDA/HDB', subtitulo:'Forrest · Scores · EDA × colonoscopia', tipo:'Pocket', cor:'#ef4444', arquivo:'hemorragia_digestiva_pocket.html', tags:['Forrest', 'GBS', 'Rockall', 'Bancas'] },
+    { id:'por', grupo:'Acesso Vascular', titulo:'Portocath · Salim × Cancian', subtitulo:'Sítios · Seldinger em 7 passos · ponta cavoatrial · Huber · pinch-off · mãos', tipo:'Full', cor:'#1d4ed8', arquivo:'portocath_referencia.html', tags:['Seldinger', 'VJI direita', 'Fio-guia', 'Peel-away', 'Embolia gasosa', 'Cavoatrial', 'Agulha de Huber', 'Pinch-off', 'Mãos', 'Bancas RS'] },
+    { id:'ppor', grupo:'Acesso Vascular', titulo:'Pocket — Portocath', subtitulo:'Sítios · Seldinger em 7 passos · cavoatrial · Huber · complicações', tipo:'Pocket', cor:'#3b82f6', arquivo:'portocath_pocket.html', tags:['VJI direita', 'Fio-guia', 'Peel-away', 'Embolia gasosa', 'Cavoatrial', 'Huber', 'Pinch-off', 'Bancas'] },
+    { id:'fav', grupo:'Acesso Vascular', titulo:'FAV · Acesso de Hemodiálise', subtitulo:'KDOQI 2019 · Regra dos 6 · confecção em 7 passos · stent revestido · roubo × NIM', tipo:'Full', cor:'#2563eb', arquivo:'fistula_arteriovenosa_referencia.html', tags:['KDOQI 2019', 'Regra dos 6', 'Espatulação', 'Látero-terminal', 'Ordem de liberação', 'Arco cefálico', 'Stent revestido', 'Roubo × NIM', 'DRIL', 'Mãos', 'Bancas RS'] },
+    { id:'pfav', grupo:'Acesso Vascular', titulo:'Pocket — FAV', subtitulo:'KDOQI · Regra dos 6 · confecção em 7 passos · stent revestido · roubo × NIM', tipo:'Pocket', cor:'#60a5fa', arquivo:'fav_pocket.html', tags:['KDOQI', 'Regra dos 6', 'Látero-terminal', 'Arco cefálico', 'Stent revestido', 'Roubo × NIM', 'DRIL', 'Bancas'] },
+    { id:'aaa', grupo:'Aorta', titulo:'Aneurisma de Aorta Abdominal (AAA)', subtitulo:'SVS · USPSTF · OSR e EVAR passo a passo · fístula aortoentérica · colo do aneurisma', tipo:'Full', cor:'#7c2d12', arquivo:'aaa_referencia.html', tags:['≥3.0 cm', '5.5/5.0', '3-12-6', 'Veia renal esquerda', 'Fechar o saco', 'Fístula aortoentérica', 'Colo infrarrenal', 'Endoleak I-V', 'Mãos', 'Bancas RS'] },
+    { id:'paaa', grupo:'Aorta', titulo:'Pocket — AAA', subtitulo:'Screening 3-12-6 · OSR e EVAR passo a passo · fístula aortoentérica · colo', tipo:'Pocket', cor:'#ea580c', arquivo:'aaa_pocket.html', tags:['Screening', '3-12-6', 'Veia renal esquerda', 'Fechar o saco', 'Fístula aortoentérica', 'Colo infrarrenal', 'Endoleak', 'Bancas'] },
+    { id:'dis', grupo:'Aorta', titulo:'Dissecção Aórtica · Stanford', subtitulo:'Stanford A × B · canulação periférica · tipo A em 5 passos · TEVAR em 4 · felt', tipo:'Full', cor:'#9a3412', arquivo:'dissecao_aorta_referencia.html', tags:['Stanford', 'DeBakey', 'Canulação axilar/femoral', 'Parada circulatória', 'Bentall', 'Felt/teflon', 'Entry tear', 'TEVAR', 'Fenestração', 'Mãos', 'Bancas RS'] },
+    { id:'pdis', grupo:'Aorta', titulo:'Pocket — Dissecção Aórtica', subtitulo:'Stanford A × B · tipo A em 5 passos · TEVAR em 4 · felt · entry tear', tipo:'Pocket', cor:'#fb923c', arquivo:'dissecao_aorta_pocket.html', tags:['Stanford', 'DeBakey', 'Canulação periférica', 'Bentall', 'Felt', 'Entry tear', 'TEVAR', 'Bancas'] },
+    { id:'taaa', grupo:'Aorta', titulo:'Aorta Torácica & Toracoabdominal', subtitulo:'Crawford I–V · limiares · reparo aberto em 7 passos · bypass átrio-femoral · Adamkiewicz', tipo:'Full', cor:'#7c2d12', arquivo:'aorta_toracica_taaa_referencia.html', tags:['Crawford I-V', 'Bypass átrio-femoral', 'Clampe sequencial', 'Inclusão', 'Reimplante em ilha', 'Adamkiewicz T8-L1', 'Perfusão renal fria', 'Reperfusão sequencial', 'TEVAR/F-BEVAR', 'Marfan', 'Mãos', 'Bancas RS'] },
+    { id:'taaap', grupo:'Aorta', titulo:'Pocket — Aorta Torácica & TAAA', subtitulo:'Crawford · limiares · reparo aberto em 7 passos · Adamkiewicz · isquemia medular', tipo:'Pocket', cor:'#ea580c', arquivo:'aorta_toracica_taaa_pocket.html', tags:['Crawford', 'Bypass átrio-femoral', 'Inclusão', 'Adamkiewicz', 'Reperfusão sequencial', 'TEVAR', 'Bancas'] },
+    { id:'daop', grupo:'Vascular Periférico', titulo:'DAOP · Rutherford · Fontaine', subtitulo:'Claudicação · CLTI · WIfI · TASC · angioplastia, bypass e endarterectomia passo a passo', tipo:'Full', cor:'#b91c1c', arquivo:'daop_referencia.html', tags:['Fontaine', 'Rutherford', 'WIfI', 'TASC', 'Cruzar no lúmen verdadeiro', 'Stent como resgate', 'Safena in situ', 'Valvulótomo', 'Endarterectomia femoral', 'Mãos', 'Bancas RS'] },
+    { id:'pdaop', grupo:'Vascular Periférico', titulo:'Pocket — DAOP', subtitulo:'Fontaine · Rutherford · ITB · angioplastia e bypass passo a passo · valvulótomo', tipo:'Pocket', cor:'#f87171', arquivo:'daop_pocket.html', tags:['Fontaine', 'ITB', 'TASC', 'Lúmen verdadeiro', 'Stent', 'Safena in situ', 'Valvulótomo', 'Bancas'] },
+    { id:'iaa', grupo:'Vascular Periférico', titulo:'Isquemia Arterial Aguda', subtitulo:'6 Ps · Rutherford · embolectomia em 7 passos · in-flow/back-flow · fasciotomia · trombólise', tipo:'Full', cor:'#dc2626', arquivo:'isquemia_aguda_referencia.html', tags:['6 Ps', 'Rutherford', 'Fogarty', 'In-flow/back-flow', 'Fasciotomia 4 lojas', 'Síndrome de reperfusão', 'Trombólise dirigida', 'Mãos', 'Bancas RS'] },
+    { id:'piaa', grupo:'Vascular Periférico', titulo:'Pocket — Isquemia Aguda', subtitulo:'6 Ps · Rutherford · embolectomia em 7 passos · in-flow/back-flow · fasciotomia', tipo:'Pocket', cor:'#fca5a5', arquivo:'isquemia_aguda_pocket.html', tags:['6 Ps', 'Rutherford', 'Fogarty', 'In-flow/back-flow', 'Fasciotomia', 'Reperfusão', 'Bancas'] },
+    { id:'ime', grupo:'Vascular Periférico', titulo:'Isquemia Mesentérica', subtitulo:'Aguda × crônica · angina · Griffith/Sudeck', tipo:'Full', cor:'#c2410c', arquivo:'isquemia_mesenterica_referencia.html', tags:['Embolia AMS', 'Angina', 'Second-look', 'Bancas RS'] },
+    { id:'pime', grupo:'Vascular Periférico', titulo:'Pocket — Isquemia Mesentérica', subtitulo:'Aguda × crônica · conduta', tipo:'Pocket', cor:'#fdba74', arquivo:'isquemia_mesenterica_pocket.html', tags:['AMS', 'Second-look', 'Bancas'] },
+    { id:'car', grupo:'Vascular Periférico', titulo:'Doença Carotídea', subtitulo:'NASCET · indicações · CEA em 9 passos · I-C-E / E-C-I · patch · CAS · nervos', tipo:'Full', cor:'#7c3aed', arquivo:'carotidea_referencia.html', tags:['NASCET', 'CEA × CAS', 'Clampe I-C-E', 'Desclampe E-C-I', 'Shunt', 'Patch', 'Degrau distal', 'Hipoglosso/vago', 'Hematoma cervical', 'Hiperperfusão', 'Mãos', 'Bancas RS'] },
+    { id:'pcar', grupo:'Vascular Periférico', titulo:'Pocket — Doença Carotídea', subtitulo:'NASCET · CEA em 8 passos · I-C-E / E-C-I · patch · nervos · hiperperfusão', tipo:'Pocket', cor:'#a78bfa', arquivo:'carotidea_pocket.html', tags:['NASCET', 'CEA', 'I-C-E', 'E-C-I', 'Shunt', 'Patch', 'Degrau distal', 'Hipoglosso', 'Bancas'] },
+    { id:'tvp', grupo:'Vascular Periférico', titulo:'Trombose Venosa Profunda', subtitulo:'Wells · D-dímero · anticoagulação · filtro', tipo:'Full', cor:'#1d4ed8', arquivo:'tvp_referencia.html', tags:['Wells', 'Anticoag.', 'Filtro', 'Bancas RS'] },
+    { id:'ptvp', grupo:'Vascular Periférico', titulo:'Pocket — TVP', subtitulo:'Wells · D-dímero · manejo', tipo:'Pocket', cor:'#60a5fa', arquivo:'tvp_pocket.html', tags:['Wells', 'DOAC', 'Bancas'] },
+    { id:'vcr', grupo:'Vascular Periférico', titulo:'Doença Venosa Crônica', subtitulo:'CEAP · varizes · úlcera · ablação', tipo:'Full', cor:'#0d9488', arquivo:'venosa_cronica_referencia.html', tags:['CEAP', 'Varizes', 'Úlcera', 'Bancas RS'] },
+    { id:'pvcr', grupo:'Vascular Periférico', titulo:'Pocket — Doença Venosa Crônica', subtitulo:'CEAP · tratamento · ablação', tipo:'Pocket', cor:'#5eead4', arquivo:'venosa_cronica_pocket.html', tags:['CEAP', 'Ablação', 'Bancas'] },
+    { id:'ape', grupo:'Vascular Periférico', titulo:'Aneurismas Periféricos', subtitulo:'Poplíteo em 6 passos · ligar e excluir · femoral · visceral · esplênico', tipo:'Full', cor:'#a16207', arquivo:'aneurismas_perifericos_referencia.html', tags:['Poplíteo', 'Ligar e excluir', 'Bypass com exclusão', 'Safena cruza o joelho', 'Nervo tibial', 'Endovascular stent coberto', 'Esplênico', 'Mãos', 'Bancas RS'] },
+    { id:'pape', grupo:'Vascular Periférico', titulo:'Pocket — Aneurismas Periféricos', subtitulo:'Poplíteo em 6 passos · ligar e excluir · visceral · esplênico', tipo:'Pocket', cor:'#fbbf24', arquivo:'aneurismas_perifericos_pocket.html', tags:['Poplíteo', 'Ligar e excluir', 'Safena', 'Nervo tibial', 'Stent coberto', 'Esplênico', 'Bancas'] },
+    { id:'tva', grupo:'Vascular Periférico', titulo:'Trauma Vascular', subtitulo:'Sinais duros × moles · reparo · shunt', tipo:'Full', cor:'#991b1b', arquivo:'trauma_vascular_referencia.html', tags:['Sinais duros', 'Shunt', 'Fasciotomia', 'Bancas RS'] },
+    { id:'ptva', grupo:'Vascular Periférico', titulo:'Pocket — Trauma Vascular', subtitulo:'Sinais duros/moles · conduta', tipo:'Pocket', cor:'#f87171', arquivo:'trauma_vascular_pocket.html', tags:['Sinais duros', 'Shunt', 'Bancas'] },
+    { id:'vas', grupo:'Vascular Periférico', titulo:'Vasculites & Desfiladeiro Torácico', subtitulo:'Buerger · Takayasu · TOS neurogênico/vascular', tipo:'Full', cor:'#7e22ce', arquivo:'vasculites_desfiladeiro_referencia.html', tags:['Buerger', 'Takayasu', 'TOS', 'Bancas RS'] },
+    { id:'pvas', grupo:'Vascular Periférico', titulo:'Pocket — Vasculites & Desfiladeiro', subtitulo:'Buerger · Takayasu · TOS', tipo:'Pocket', cor:'#c084fc', arquivo:'vasculites_desfiladeiro_pocket.html', tags:['Buerger', 'TOS', 'Bancas'] },
+    { id:'ped', grupo:'Vascular Periférico', titulo:'Pé Diabético', subtitulo:'Tríade · Wagner/WIfI · desbridamento cortante em 4 passos · descarga IWGDF 2023 · infecção', tipo:'Full', cor:'#b45309', arquivo:'pe_diabetico_referencia.html', tags:['Tríade', 'Wagner', 'WIfI', 'Probe-to-bone', 'Desbridamento cortante', 'Descarga não-removível', 'IDSA/IWGDF', 'Mönckeberg', 'Bancas RS'] },
+    { id:'pped', grupo:'Vascular Periférico', titulo:'Pocket — Pé Diabético', subtitulo:'Tríade · Wagner/WIfI · desbridamento em 4 passos · descarga · infecção', tipo:'Pocket', cor:'#fbbf24', arquivo:'pe_diabetico_pocket.html', tags:['Wagner', 'WIfI', 'Probe-to-bone', 'Desbridamento cortante', 'Descarga não-removível', 'Bancas'] },
+    { id:'amp', grupo:'Vascular Periférico', titulo:'Amputações & Sd. Compartimental', subtitulo:'Δ-P · fasciotomia de perna em 6 passos · posterior profundo · níveis de amputação', tipo:'Full', cor:'#a21caf', arquivo:'amputacoes_sindrome_compartimental_referencia.html', tags:['Δ-P<30', 'Dupla incisão', 'Posterior profundo', 'Pele aberta', 'Nível de amputação', 'Transtibial×transfemoral', 'Bancas RS'] },
+    { id:'pamp', grupo:'Vascular Periférico', titulo:'Pocket — Amputações & Sd. Compartimental', subtitulo:'Δ-P · fasciotomia em 6 passos · posterior profundo · níveis de amputação', tipo:'Pocket', cor:'#e879f9', arquivo:'amputacoes_sindrome_compartimental_pocket.html', tags:['Δ-P<30', 'Dupla incisão', 'Posterior profundo', 'Pele aberta', 'Transtibial×transfemoral', 'Bancas'] },
+    { id:'tep', grupo:'Vascular Periférico', titulo:'TEP & Anticoagulação', subtitulo:'Wells · PESI · trombólise · DOAC × HNF', tipo:'Full', cor:'#0e7490', arquivo:'tep_anticoagulacao_referencia.html', tags:['Wells', 'PESI', 'Trombólise', 'Bancas RS'] },
+    { id:'ptep', grupo:'Vascular Periférico', titulo:'Pocket — TEP & Anticoagulação', subtitulo:'Wells · PESI · anticoag.', tipo:'Pocket', cor:'#22d3ee', arquivo:'tep_anticoagulacao_pocket.html', tags:['PESI', 'DOAC', 'Bancas'] },
+    { id:'linf', grupo:'Vascular Periférico', titulo:'Linfedema', subtitulo:'ISL 0–III · Stemmer · filariose/câncer · CDT · LVA/VLNT', tipo:'Full', cor:'#7c2d12', arquivo:'linfedema_referencia.html', tags:['ISL', 'Stemmer', 'CDT', 'LVA', 'Stewart-Treves', 'Bancas RS'] },
+    { id:'linfp', grupo:'Vascular Periférico', titulo:'Pocket — Linfedema', subtitulo:'ISL · Stemmer · DDx · CDT · cirurgia', tipo:'Pocket', cor:'#ea580c', arquivo:'linfedema_pocket.html', tags:['ISL', 'Stemmer', 'CDT', 'Bancas'] },
+    { id:'ctr', grupo:'Cirurgia Torácica', titulo:'Cirurgia Torácica · Pleura, Pneumotórax, Ca Pulmão', subtitulo:'Light · empiema EFO · pneumotórax · dreno e toracotomia com por quês · VATS', tipo:'Full', cor:'#0891b2', arquivo:'cirurgia_toracica_full.html', tags:['Light', 'Empiema EFO', 'Pneumotórax', 'TNM 8ª ed', 'Borda superior da costela', 'Breque de dedo', 'Finochietto gradual', 'Intubação seletiva', 'VATS', 'Bancas RS'] },
+    { id:'pctr', grupo:'Cirurgia Torácica', titulo:'Pocket — Cirurgia Torácica', subtitulo:'Light · EFO · Big 6 · dreno e toracotomia com por quês · VATS', tipo:'Pocket', cor:'#22d3ee', arquivo:'cirurgia_toracica_pocket.html', tags:['Light', 'Big 6', 'TNM', 'Borda superior da costela', 'Finochietto gradual', 'Intubação seletiva', 'Bancas'] },
+    { id:'atls', grupo:'Trauma', titulo:'ATLS & Trauma Torácico', subtitulo:'ABCDE · choque · ISR · FAST · TCE · toracotomia de ressuscitação e cricotireoidostomia com por quês', tipo:'Full', cor:'#dc2626', arquivo:'atls_trauma_toracico_referencia.html', tags:['ABCDE', 'GCS', 'PTM 1:1:1', 'Damage Control', 'Toracotomia de ressuscitação', 'Cross-clamp aorta', 'Cricotireoidostomia', '1/3 inferior', 'Capnografia', 'Bancas RS'] },
+    { id:'patls', grupo:'Trauma', titulo:'Pocket — ATLS & Trauma Torácico', subtitulo:'ABCDE · classes choque · GCS · NOM · toracotomia de ressuscitação e cricotireoidostomia', tipo:'Pocket', cor:'#f87171', arquivo:'atls_trauma_toracico_pocket.html', tags:['ABCDE', 'GCS', 'Choque', 'Toracotomia de ressuscitação', 'Cricotireoidostomia', 'Bancas'] },
+    { id:'tab', grupo:'Trauma', titulo:'Trauma Abdominal', subtitulo:'FAST · laparotomia × NOM · damage control', tipo:'Full', cor:'#b91c1c', arquivo:'trauma_abdominal_referencia.html', tags:['FAST', 'NOM', 'Damage control', 'Bancas RS'] },
+    { id:'ptab', grupo:'Trauma', titulo:'Pocket — Trauma Abdominal', subtitulo:'FAST · NOM · conduta', tipo:'Pocket', cor:'#fca5a5', arquivo:'trauma_abdominal_pocket.html', tags:['FAST', 'NOM', 'Bancas'] },
+    { id:'rmt', grupo:'Trauma', titulo:'Resposta Metabólica ao Trauma', subtitulo:'Fases Cuthbertson · mediadores · cicatrização', tipo:'Full', cor:'#9a3412', arquivo:'resposta_metabolica_trauma_full.html', tags:['Ebb/Flow', 'Mediadores', 'Cicatrização', 'Bancas RS'] },
+    { id:'prmt', grupo:'Trauma', titulo:'Pocket — Resposta Metabólica ao Trauma', subtitulo:'Ebb × Flow · cicatrização', tipo:'Pocket', cor:'#fb923c', arquivo:'resposta_metabolica_trauma_pocket.html', tags:['Ebb/Flow', 'Bancas'] },
+    { id:'qmd', grupo:'Trauma', titulo:'Queimaduras', subtitulo:'SCQ · Parkland · profundidade · via aérea', tipo:'Full', cor:'#c2410c', arquivo:'queimaduras_referencia.html', tags:['Parkland', 'SCQ', 'Regra dos 9', 'Bancas RS'] },
+    { id:'pqmd', grupo:'Trauma', titulo:'Pocket — Queimaduras', subtitulo:'Parkland · SCQ · conduta', tipo:'Pocket', cor:'#fdba74', arquivo:'queimaduras_pocket.html', tags:['Parkland', 'SCQ', 'Bancas'] },
+    { id:'cht', grupo:'Trauma', titulo:'Choque & Transfusão', subtitulo:'Classes ATLS · protocolo maciço · 1:1:1', tipo:'Full', cor:'#991b1b', arquivo:'choque_transfusao_referencia.html', tags:['Classes', 'Maciça', '1:1:1', 'Bancas RS'] },
+    { id:'pcht', grupo:'Trauma', titulo:'Pocket — Choque & Transfusão', subtitulo:'Classes · transfusão maciça', tipo:'Pocket', cor:'#f87171', arquivo:'choque_transfusao_pocket.html', tags:['Classes', '1:1:1', 'Bancas'] },
+    { id:'chq', grupo:'Trauma', titulo:'Choques — Todos os Tipos', subtitulo:'Hemorrágico · cardiogênico · distributivo · obstrutivo · vasoativas · DCS', tipo:'Full', cor:'#e11d48', arquivo:'choques_full.html', tags:['HCDO', 'ATLS', 'Vasoativas', 'REBOA', 'DCS', 'Bancas RS'] },
+    { id:'pchq', grupo:'Trauma', titulo:'Pocket — Choques (Todos os Tipos)', subtitulo:'Classificação · ATLS · séptico · obstrutivo · drogas · DCS', tipo:'Pocket', cor:'#fb7185', arquivo:'choques_pocket.html', tags:['HCDO', 'Vasoativas', 'DCS', 'Bancas'] },
+    { id:'ace', grupo:'Perioperatório', titulo:'Projeto ACERTO · BRASPEN', subtitulo:'Jejum abreviado · ERAS · nutrição perioperatória', tipo:'Full', cor:'#16a34a', arquivo:'acerto_referencia.html', tags:['ACERTO', 'ERAS', 'Jejum', 'Bancas RS'] },
+    { id:'pace', grupo:'Perioperatório', titulo:'Pocket — Projeto ACERTO', subtitulo:'Jejum abreviado · carboidrato · ERAS', tipo:'Pocket', cor:'#4ade80', arquivo:'acerto_pocket.html', tags:['ACERTO', 'Jejum', 'Bancas'] },
+    { id:'cpo', grupo:'Perioperatório', titulo:'Complicações Perioperatórias', subtitulo:'Febre · FA · TEP · deiscência · fístula', tipo:'Full', cor:'#65a30d', arquivo:'complicacoes_perioperatorias_referencia.html', tags:['Febre PO', 'Deiscência', 'Fístula', 'Bancas RS'] },
+    { id:'pcpo', grupo:'Perioperatório', titulo:'Pocket — Complicações Perioperatórias', subtitulo:'Febre · deiscência · manejo', tipo:'Pocket', cor:'#a3e635', arquivo:'complicacoes_perioperatorias_pocket.html', tags:['Febre PO', 'Deiscência', 'Bancas'] },
+    { id:'inst', grupo:'Perioperatório', titulo:'Instrumentos Cirúrgicos · Nomenclatura & Manuseio', subtitulo:'4 tempos cirúrgicos · pinças · porta-agulhas · afastadores · energia · zona neutra · mãos/fios', tipo:'Full', cor:'#7c2d12', arquivo:'instrumentos_cirurgicos_referencia.html', tags:['Diérese/Hemostasia/Preensão/Síntese', 'Allis×Babcock', 'DeBakey vascular', 'Mixter', 'Zona neutra', 'RSI', 'Mãos', 'Bancas RS'] },
+    { id:'pinst', grupo:'Perioperatório', titulo:'Pocket — Instrumentos Cirúrgicos', subtitulo:'4 tempos · pinças · fios/agulhas · afastadores · segurança · traps', tipo:'Pocket', cor:'#ea580c', arquivo:'instrumentos_cirurgicos_pocket.html', tags:['Allis×Babcock', 'DeBakey vascular', 'Zona neutra', 'RSI', 'Bancas'] },
+    { id:'cica', grupo:'Perioperatório', titulo:'Cicatrização & Fios de Sutura', subtitulo:'4 fases · colágeno III→I · força tênsil · queloide × hipertrófica · fios', tipo:'Full', cor:'#7c2d12', arquivo:'cicatrizacao_fios_referencia.html', tags:['Colágeno III→I', 'Queloide', 'Prolene', 'PDS', '4:1', 'Bancas RS'] },
+    { id:'cicap', grupo:'Perioperatório', titulo:'Pocket — Cicatrização & Fios', subtitulo:'Fases · fechamento · fatores · fios · técnica', tipo:'Pocket', cor:'#ea580c', arquivo:'cicatrizacao_fios_pocket.html', tags:['Colágeno', 'Queloide', 'Prolene', 'PDS', 'Bancas'] }
+  ];
+
+  const MNEMONICOS = [
+    { w:'I 8 10 EGGs AT 12', d:'Hiatos do diafragma na TC: VCI em T8 · Esôfago em T10 · Aorta em T12' },
+    { w:'MANTRELS',        d:'Score Alvarado · ≥7 opera · 5–6 observa · ≤4 improvável' },
+    { w:'2 + 1',           d:'Endoloops: 2 proximais + 1 distal · coto &lt;1 cm · apend. e colecist.' },
+    { w:'CVS',             d:'Critical View of Safety · obrigatório antes de clipar o ducto biliar' },
+    { w:'4 Fs',            d:'Fat · Female · Forty · Fertile → risco de colelitíase' },
+    { w:'ABSCESSO↑ ISC↓',  d:'Laparo: abscesso intra-abd mais comum · ISC menos comum. Cai em todas as bancas.' },
+    { w:'DiRETA=DENTRO',   d:'Hérnia direta passa pelo triângulo de Hesselbach · medial aos vasos epigástricos' },
+    { w:'MIVE',            d:'Hesselbach: M. reto + Inferior epigástrica + Via inguinal + Estruturas' },
+    { w:'CME = D3',        d:'Complete Mesocolic Excision · Hohenberger 2009 · ≥12 linfonodos' },
+    { w:'FOLFOX III',      d:'Estadio III = QT adjuvante · FOLinato + 5-FU + OXaliplatina · 6 meses' },
+    { w:'CHARCOT',         d:'Febre + Dor HD + Icterícia · tríade clássica · 50–70% na colangite' },
+    { w:'HIPCO',           d:'Grau III TG18: Hipotensão · Inteligência↓ · Pulmão · Creatinina&gt;2 · Outros → drenar &lt;24h' },
+    { w:'F-E-C',           d:'Hierarquia KDOQI 2019: FAV nativa &gt; Enxerto AV &gt; Cateter' },
+    { w:'REGRA DOS 6',     d:'Maturação FAV · 6 mm calibre · 6 mm profundidade · 6 sem · 600 mL/min' },
+    { w:'DASS / DRIL',     d:'Roubo arterial pós-FAV (Dialysis Access Steal) · trat.: Distal Revasc + Interval Ligation' },
+    { w:'≥3.0 cm',         d:'Definição de AAA · screening USPSTF: homens 65–75 que já fumaram (uma vez)' },
+    { w:'5.5 / 5.0',       d:'Limiar de reparo eletivo · 5.5 cm homens · 5.0 cm mulheres · ou crescimento &gt;0.5 cm/6 m' },
+    { w:'3 – 12 – 6',      d:'Vigilância SVS: 3.0–3.9→a cada 3 anos · 4.0–4.9→12 m · 5.0–5.4→6 m' },
+    { w:'PHG',             d:'Reconstrução Whipple: Pancreato → Hepático → Gastrojejuno' },
+    { w:'INDICA cx',       d:'Kyoto 2024 IPMN HRS: Icterícia · Nódulo ≥5 mm · Ducto ≥10 mm · Citologia positiva · A — ressecar' },
+    { w:'WHIPPLE TRIAD',   d:'Insulinoma: sintomas neuroglicop. + glicemia &lt;55 + alívio com glicose' },
+    { w:'PAISES',          d:'Pólipo vesícula maligno: Pólipo séssil · Asiático · Idade &gt;60 · Solitário · Espessamento · Size ≥10 mm' },
+    { w:'TODANI I–V',      d:'Cistos biliares · I extra-hepático (mais comum, ressecar + Y de Roux) · V = Caroli intra-hepático' },
+    { w:'BISMUTH I–IV',    d:'Klatskin: I infra-bifurcação · II bifurcação · IIIa/IIIb extensão hepato D/E · IV bilateral' },
+    { w:'FORREST',         d:'Úlcera HDA: Ia jato · Ib babação · IIa vaso visível · IIb coágulo · IIc hematina · III base limpa' },
+    { w:'4 TESTES VERESS', d:'Aspiração · gota cai · seringa · pressão inicial &lt;10 mmHg · confirmam posição intraperit.' },
+    { w:'DURANT',          d:'Embolia gasosa: decúbito lateral E + Trendelenburg → bloqueia êmbolo no AD' },
+    { w:'LIGHT',           d:'Exsudato (qualquer 1): Prot líq/soro &gt;0,5 · DHL líq/soro &gt;0,6 · DHL líq &gt;2/3 LSN' },
+    { w:'EFO',             d:'Empiema: Exsudativa→Fibrinopurulenta→Organização · Dreno→VATS→Descorticação→Pleurostomia' },
+    { w:'HOPAT-P',         d:'Big 6 tórax: Hemotórax maciço·Obstrução VA·PTX Hipertensivo·Aberto·Tamponamento·tórax instável+Pulm.' },
+    { w:'I→II cirurgia',   d:'Ca pulmão: I–II=lobectomia · III=QT+RT multimodal · IV=alvo(EGFR/ALK)/imuno/QT' },
+    { w:'YERSINIA ≠ CROHN', d:'Yersinia: autolimitada · febre+DID · sorologia/cultura · ATB só se grave · lesão íleo terminal' },
+    { w:'SAD PUCKER',      d:'Retroperitônio: Suprarrenal · Aorta/VCI · Duodeno 2–4 · Pâncreas · Ureter · Cólon asc/desc · Kidney · Esôfago · Reto' },
+    { w:'3 T + H + A',     d:'Cólon = 3 Tênias + Haustros + Apêndices epiploicos · delgado não tem nenhum dos três' },
+    { w:'J de JANELA',     d:'Jejuno: janelas translúcidas no meso · 1–2 arcadas · parede espessa · Íleo = gordura invadindo + 4–5 arcadas' },
+    { w:'WINSLOW',         d:'Frente tríade portal (Pringle) · atrás VCI · cima caudado · baixo duodeno' },
+    { w:'GriffithS/SudecK',d:'Watershed do cólon: Griffiths = flexura eSplênica · Sudeck = retossigmoide' }
+  ];
+
+  const QUICKREF = [
+    { lbl:'Densidade na TC (UH)',  val:'Ar −1000 · Água 0 · Osso +1000', det:'Sangue agudo +50/+80 (claro) × líquido simples ~0 (escuro)' },
+    { lbl:'Bifurcação da aorta',   val:'≈ L4 ≈ umbigo',           det:'Cristas ilíacas · confluência da VCI é mais baixa (~L5)' },
+    { lbl:'Score de Alvarado',     val:'≥7 pts → Opera',          det:'MANTRELS · 5–6 = observa · ≤4 improvável' },
+    { lbl:'Apêndice + comum',      val:'Retrocecal 65%',           det:'Psoas (+) · Pélvico 25% → Obturador (+)' },
+    { lbl:'Laparo × Aberta',       val:'Abscesso ↑ · ISC ↓',       det:'Inversão clássica · cai em todas as bancas RS' },
+    { lbl:'Endoloops',             val:'2 + 1',                    det:'2 proximais (ceco) + 1 distal · coto &lt;1 cm' },
+    { lbl:'Triângulo de Calot',    val:'CVS antes de clipar',      det:'2 estruturas + janela peritonizada' },
+    { lbl:'Bile leak Strasberg A', val:'CPRE + prótese biliar',    det:'Drenagem percutânea se coleção' },
+    { lbl:'Coledocolitíase ASGE',  val:'Forte → CPRE pré',         det:'CBD&gt;6mm + BT&gt;4 ou estone visível' },
+    { lbl:'Klatskin Bismuth IIIb', val:'Hepatectomia E ampliada',  det:'Sempre ressecar caudado (segmento I)' },
+    { lbl:'CA vesícula T1b',       val:'Radicalizar',              det:'Ressecção IVb/V + linfadenectomia · T1a = colec. cura' },
+    { lbl:'Pólipo vesícula 10 mm', val:'Colecistectomia',          det:'PAISES · 6–9 mm depende de fator de risco' },
+    { lbl:'Cisto Todani I',        val:'Ressecção + Y de Roux',    det:'NUNCA drenagem interna · risco de colangiocarcinoma' },
+    { lbl:'IPMN HRS',              val:'Whipple/Pancreatect.',     det:'Ducto ≥10 mm · nódulo ≥5 mm · icterícia · citol +' },
+    { lbl:'Forrest IIa',           val:'EDA terapêutica',          det:'Clip + epinefrina + termocoag. · re-sangra ~50%' },
+    { lbl:'Massa hepato-port. + HDA', val:'Sengstaken/Linton',     det:'Cirrose · varizes esofágicas · TIPS se refratário' },
+    { lbl:'AAA screening',         val:'USG abd. único',           det:'Homens 65–75 que já fumaram (uma vez na vida)' },
+    { lbl:'AAA EVAR vs aberta',    val:'EVAR ↓mort. precoce',      det:'A longo prazo se equiparam · vigilância anual obrigatória' },
+    { lbl:'Endoleak Tipo II',      val:'Mais comum',               det:'AMI/lombar · observar; intervir se ↑ saco aneurismático' },
+    { lbl:'FAV — escolha',         val:'Radiocefálica (Brescia-Cimino)', det:'1ª opção se anatomia favorável · preservar veias' },
+    { lbl:'FAV maturação',         val:'Regra dos 6',              det:'6 mm calibre · 6 mm profundidade · 6 sem · 600 mL/min' },
+    { lbl:'DASS pós-FAV',          val:'Roubo arterial',           det:'Tratar com DRIL · banding · ligadura se grave' },
+    { lbl:'Portocath posição',     val:'Junção cavoatrial',        det:'Confirmar com RX tórax · evitar ponta no AD' },
+    { lbl:'Pneumoperitônio',       val:'CO₂ 12–15 mmHg',           det:'Veress = Hasson em mãos experientes (RCT 2024)' },
+    { lbl:'Hérnia de trocar',      val:'Fechar fáscia ≥10 mm',     det:'Vicryl 0 · umbilical · AMRIGS 2024' },
+    { lbl:'Sequência Murphy',      val:'Dor → Anorexia → Vômito',  det:'Vômito antes da dor → outro diagnóstico' },
+    { lbl:'Light — Exsudato',     val:'Prot&gt;0,5 · DHL&gt;0,6 · DHL&gt;2/3', det:'Qualquer 1 dos 3 critérios → exsudato confirmado' },
+    { lbl:'PTX Hipertensivo',     val:'Punção 2°EIC LHC ANTES do RX', det:'Diagnóstico clínico · depois dreno 5°EIC LAM' },
+    { lbl:'Hemotórax maciço',     val:'&gt;1500 mL ou &gt;200 mL/h×2–4h', det:'Indicação de toracotomia de urgência' },
+    { lbl:'Empiema pH',           val:'&lt;7,0 = drenar IMEDIATO',  det:'7,0–7,2 borderline · purulento macro = sem esperar lab' },
+    { lbl:'Delgado × cólon',       val:'Padrão de arcadas',        det:'Delgado = leque de arcadas · cólon = marginal única de Drummond' },
+    { lbl:'Jejuno × íleo',         val:'1–2 × 4–5 arcadas',        det:'Jejuno: parede espessa, janelas no meso · Íleo: gordura invade a alça' },
+    { lbl:'Raiz do mesentério',    val:'Treitz → ileocecal',       det:'≈15 cm, oblíqua · cruza 3ª porção do duodeno, aorta, VCI, ureter D' },
+    { lbl:'Base do apêndice',      val:'Convergência das tênias',  det:'Seguir a tênia livre a partir do ceco sempre encontra' },
+    { lbl:'Hematoma mesentérico',  val:'Raiz/expansivo = explorar',det:'AMS a milímetros · desvascularização segmentar → ressecar' },
+    { lbl:'Ureter esquerdo',       val:'Recesso intersigmoide',    det:'Ápice do V do mesossigmoide · marco antes de ligar o pedículo' },
+    { lbl:'Forame de Winslow',     val:'Posterior = VCI',          det:'Anterior = ligamento hepatoduodenal → manobra de Pringle' }
+  ];
+
+  /* ═══════════════ MOTOR ═══════════════ */
+  const byId = Object.fromEntries(RESUMOS.map(r => [r.id, r]));
+  const PANELS = ['home', ...RESUMOS.map(r => r.id)];
+
+  function grupos() {
+    const ord = [], map = {};
+    RESUMOS.forEach(r => { if (!map[r.grupo]) { map[r.grupo] = []; ord.push(r.grupo); } map[r.grupo].push(r); });
+    return ord.map(g => [g, map[g]]);
+  }
+
+  function renderDropdown() {
+    let h = '';
+    grupos().forEach(([g, items], gi) => {
+      if (gi > 0) h += '<div class="dd-sep"></div>';
+      h += `<div class="dd-group-lbl">${g}</div>`;
+      items.forEach(r => {
+        const k = r.atalho ? `<span class="dd-k">${r.atalho}</span>` : '<span class="dd-k">·</span>';
+        const pend = r.status === 'pendente';
+        const typeClass = pend ? 'dd-type pend' : 'dd-type';
+        const typeLabel = pend ? 'Pend' : r.tipo;
+        h += `<div class="dd-item${pend?' pendente':''}" data-id="${r.id}" onclick="showFromDD('${r.id}')">`
+           + `<div class="dd-dot" style="background:${r.cor}"></div>`
+           + `<span class="dd-name">${r.titulo}</span>`
+           + `<span class="${typeClass}">${typeLabel}</span>${k}</div>`;
+      });
+    });
+    document.getElementById('ddMenu').innerHTML = h;
+  }
+
+  function renderCards() {
+    let h = '', n = 0;
+    grupos().forEach(([g, items]) => {
+      h += `<div class="grp-head" style="--c:${items[0].cor}">${g}</div><div class="cards">`;
+      items.forEach(r => {
+        n++;
+        const num = String(n).padStart(2, '0');
+        const tags = r.tags.map(t => `<span class="ctag">${t}</span>`).join('');
+        const pend = r.status === 'pendente';
+        h += `<div class="card${pend?' pendente':''}" style="--c:${r.cor}" onclick="openResumo('${r.id}')">`
+           + (pend ? `<div class="card-pend-badge">PENDENTE</div>` : '')
+           + `<div class="card-bar"></div>`
+           + `<div class="card-num">// ${num} · ${g.toUpperCase()}</div>`
+           + `<div class="card-title">${r.titulo}</div>`
+           + `<div class="card-sub">${r.subtitulo}</div>`
+           + `<div class="card-tags">${tags}</div>`
+           + `<div class="card-cta">${pend?'Ver pendência →':'Abrir →'}</div></div>`;
+      });
+      h += `</div>`;
+    });
+    document.getElementById('cardsContainer').innerHTML = h;
+  }
+
+  function renderOrder() {
+    let h = '';
+    RESUMOS.forEach((r, i) => {
+      const pend = r.status === 'pendente' ? ' pendente' : '';
+      h += `<div class="ostep${pend}" style="--c:${r.cor}" onclick="show('${r.id}')">`
+         + `<div class="ostep-n">${i + 1}</div>`
+         + `<div><div class="ostep-lbl">${r.grupo} · ${r.titulo}</div>`
+         + `<div class="ostep-sub">${r.subtitulo}</div></div></div>`;
+    });
+    document.getElementById('orderSteps').innerHTML = h;
+  }
+
+  function renderMnemonics() {
+    document.getElementById('mnemContainer').innerHTML =
+      MNEMONICOS.map(m => `<div class="mc"><div class="mc-w">${m.w}</div><div class="mc-d">${m.d}</div></div>`).join('');
+  }
+
+  function renderQuickref() {
+    document.getElementById('qrContainer').innerHTML =
+      QUICKREF.map(q => `<div class="qr-item"><div class="qr-lbl">${q.lbl}</div><div class="qr-val">${q.val}</div><div class="qr-det">${q.det}</div></div>`).join('');
+  }
+
+  function renderPanels() {
+    let h = '';
+    RESUMOS.forEach(r => {
+      if (r.status === 'pendente') {
+        h += `<div class="panel" id="panel-${r.id}"><div class="pend-screen">`
+           + `<div class="pend-tag">resumo pendente · arquivo não produzido</div>`
+           + `<div class="pend-title">${r.titulo}</div>`
+           + `<div class="pend-sub">Esta entrada está catalogada no índice mas o HTML do resumo ainda não foi gerado nesta versão. Quando o Full e o Pocket forem produzidos no padrão carolzita, o arquivo <code style="color:#f59e0b">${r.arquivo}</code> aparecerá aqui automaticamente.</div>`
+           + `<div class="pend-meta">grupo: ${r.grupo} · tipo: ${r.tipo} · cor: ${r.cor}<br>tags: ${r.tags.join(' · ')}</div>`
+           + `</div></div>`;
+      } else {
+        const tags = r.tags.map(t => `<span class="link-tag">${t}</span>`).join('');
+        h += `<div class="panel" id="panel-${r.id}"><div class="link-screen">`
+           + `<div class="link-dot" style="background:${r.cor}"></div>`
+           + `<div class="link-title">${r.titulo}</div>`
+           + `<div class="link-sub">${r.subtitulo}</div>`
+           + `<div class="link-tags">${tags}</div>`
+           + `<div class="link-btns">`
+           + `<a class="link-open" href="${r.arquivo}" target="_blank" style="background:${r.cor}">Abrir resumo ↗</a>`
+           + `<button class="link-back" onclick="show('home')">← Índice</button>`
+           + `</div>`
+           + `<div class="link-tip">// ${r.arquivo}</div>`
+           + `</div></div>`;
+      }
+    });
+    document.getElementById('workspace').insertAdjacentHTML('beforeend', h);
+  }
+
+  function renderHero() {
+    const temas = grupos().length;
+    const prontos = RESUMOS.filter(r => r.status !== 'pendente').length;
+    const pendentes = RESUMOS.length - prontos;
+    document.getElementById('heroStats').innerHTML =
+        `<div class="hstat"><div class="hstat-num">${RESUMOS.length}</div><div class="hstat-lbl">Entradas</div></div>`
+      + `<div class="hstat"><div class="hstat-num">${temas}</div><div class="hstat-lbl">Temas</div></div>`
+      + `<div class="hstat"><div class="hstat-num">${prontos}</div><div class="hstat-lbl">Prontos</div></div>`
+      + `<div class="hstat"><div class="hstat-num">${pendentes}</div><div class="hstat-lbl">Pendentes</div></div>`;
+    document.getElementById('pillReady').textContent = `${prontos} prontos`;
+    document.getElementById('pillPend').textContent = `${pendentes} pendentes`;
+  }
+
+  function renderFooter() {
+    const atalhos = RESUMOS.filter(r => r.atalho)
+      .map(r => `${r.atalho} ${r.titulo.split(' — ')[0].split(' · ')[0]}`).join(' · ');
+    document.getElementById('homeFooter').innerHTML =
+      `// cirurgiaRS · carolina · 2026 · sabiston · zollinger · netter · KDOQI · SVS · ESVS 2024 · NCCN · ATLS · BRASPEN · ECCO<br>`
+      + `<span style="opacity:.5;">atalhos: 1 início · ${atalhos} · esc = início · demais resumos pelo menu Resumos</span>`;
+  }
+
+  function show(id) {
+    PANELS.forEach(p => {
+      const el = document.getElementById('panel-' + p);
+      if (el) el.classList.toggle('active', p === id);
+    });
+    document.querySelector('.t-home').classList.toggle('active', id === 'home');
+    document.getElementById('backBtn').classList.toggle('visible', id !== 'home');
+    updateDDState(id);
+    if (id === 'home') document.getElementById('panel-home').scrollTop = 0;
+  }
+
+  function openResumo(id) {
+    const r = byId[id];
+    if (!r) return;
+    if (r.status === 'pendente') { show(id); return; }
+    window.open(r.arquivo, '_blank');
+  }
+
+  function updateDDState(id) {
+    document.querySelectorAll('.dd-item').forEach(el => el.classList.toggle('dd-cur', el.dataset.id === id));
+    const btn = document.getElementById('ddBtn');
+    const dot = document.getElementById('ddDot');
+    if (byId[id]) { btn.classList.add('dd-active'); dot.style.background = byId[id].cor; }
+    else { btn.classList.remove('dd-active'); dot.style.background = 'var(--text-dim)'; }
+  }
+
+  function toggleDD() {
+    const btn = document.getElementById('ddBtn'), menu = document.getElementById('ddMenu');
+    const opening = !btn.classList.contains('dd-open');
+    btn.classList.toggle('dd-open');
+    if (opening) {
+      const r = btn.getBoundingClientRect();
+      menu.style.top = (r.bottom + 8) + 'px';
+      menu.style.left = r.left + 'px';
+    }
+    menu.classList.toggle('dd-open');
+  }
+  function closeDD() {
+    document.getElementById('ddBtn').classList.remove('dd-open');
+    document.getElementById('ddMenu').classList.remove('dd-open');
+  }
+  function showFromDD(id) { closeDD(); openResumo(id); }
+
+  document.addEventListener('click', e => {
+    if (!document.getElementById('ddWrap').contains(e.target)) closeDD();
+  });
+
+  let keymap = { '1':'home', 'Escape':'home' };
+  function buildKeymap() { RESUMOS.forEach(r => { if (r.atalho) keymap[r.atalho] = r.id; }); }
+  document.addEventListener('keydown', e => {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (keymap[e.key]) { show(keymap[e.key]); closeDD(); }
+  });
+
+  renderDropdown();
+  renderCards();
+  renderOrder();
+  renderMnemonics();
+  renderQuickref();
+  renderPanels();
+  renderHero();
+  renderFooter();
+  buildKeymap();
+</script>
+</body>
+</html>

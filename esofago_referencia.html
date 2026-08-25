@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Esôfago — carolzita</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0f; --bg2:#12121a; --card:#16161f; --card2:#1c1c27;
+  --line:#2a2a38; --txt:#e6e6ef; --muted:#9a9ab0;
+  --laranja:#f97316; --laranja-bg:rgba(249,115,22,.10);
+  --roxo:#a855f7; --roxo-bg:rgba(168,85,247,.10);
+  --ciano:#22d3ee; --ciano-bg:rgba(34,211,238,.10);
+  --verde:#34d399; --vermelho:#f87171; --amarelo:#fbbf24;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(1200px 600px at 50% -10%,#15151f 0%,var(--bg) 60%);color:var(--txt);font-family:'Inter',sans-serif;line-height:1.55;padding:0 0 80px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px}
+header{padding:40px 0 24px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(30px,6vw,46px);line-height:1.05;margin:8px 0 6px;letter-spacing:-.02em}
+.sub{color:var(--muted);font-size:15px;max-width:700px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tag{font-family:'JetBrains Mono',monospace;font-size:11px;padding:5px 10px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted)}
+.tag.r{color:var(--roxo);border-color:rgba(168,85,247,.35);background:var(--roxo-bg)}
+section{margin-top:14px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:12px;overflow:hidden;transition:border-color .2s}
+details[open]{border-color:rgba(249,115,22,.30)}
+summary{cursor:pointer;list-style:none;padding:18px 20px;display:flex;align-items:center;gap:13px;font-family:'Syne',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em;user-select:none}
+summary::-webkit-details-marker{display:none}
+.num{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--bg);background:var(--laranja);width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:0 0 auto}
+.chev{margin-left:auto;color:var(--muted);transition:transform .25s;font-size:14px}
+details[open] .chev{transform:rotate(90deg)}
+.body{padding:4px 22px 24px;font-size:15px}
+.body p{margin:10px 0}
+.body h4{font-family:'Syne',sans-serif;font-size:16px;color:var(--laranja);margin:20px 0 8px;letter-spacing:-.01em}
+.body ul{margin:8px 0 8px 4px;list-style:none}
+.body li{padding:4px 0 4px 20px;position:relative}
+.body li::before{content:"▸";position:absolute;left:0;color:var(--laranja);font-size:12px;top:6px}
+.body strong{color:#fff;font-weight:600}
+.simple{color:var(--verde);font-style:italic;font-size:.94em;display:block;margin:6px 0}
+.box.simplebox{background:rgba(52,211,153,.09);border-color:rgba(52,211,153,.32);color:var(--verde);font-style:italic}
+.box.simplebox .lbl{color:var(--verde);font-style:normal}
+.box.simplebox strong{color:#7fe8c0;font-style:normal}
+.stx{counter-reset:st;margin:12px 0}
+.st{counter-increment:st;background:var(--card2);border:1px solid var(--line);border-radius:13px;padding:14px 16px 14px 52px;margin:11px 0;position:relative}
+.st::before{content:counter(st);position:absolute;left:14px;top:13px;width:26px;height:26px;border-radius:8px;background:var(--laranja);color:#0a0a0f;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center}
+.st .fase{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:var(--laranja);display:block;margin-bottom:1px}
+.st .ttl{font-weight:700;font-size:15.5px;color:#fff;margin-bottom:4px}
+.st p{margin:5px 0;font-size:14px}
+.pq{border-left:3px solid var(--roxo);background:var(--roxo-bg);border-radius:0 9px 9px 0;padding:8px 12px;margin:9px 0;font-size:13.5px}
+.pq b{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.3px;text-transform:uppercase;color:var(--roxo);display:block;margin-bottom:2px}
+.mh2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:9px}
+.mh{border-radius:9px;padding:8px 11px;font-size:12.5px;border:1px solid var(--line)}
+.mh.e{background:rgba(52,211,153,.07);border-color:rgba(52,211,153,.3)}
+.mh.d{background:var(--laranja-bg);border-color:rgba(249,115,22,.3)}
+.mh b{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;display:block;margin-bottom:2px}
+.mh.e b{color:var(--verde)} .mh.d b{color:var(--laranja)}
+.fio{font-family:'JetBrains Mono',monospace;font-size:11.5px;background:var(--roxo-bg);color:var(--roxo);border:1px solid rgba(168,85,247,.35);padding:1px 6px;border-radius:5px;white-space:nowrap}
+@media(max-width:640px){.mh2{grid-template-columns:1fr}}
+.box{border-radius:12px;padding:13px 15px;margin:14px 0;font-size:14px;border:1px solid}
+.box.prova{background:var(--roxo-bg);border-color:rgba(168,85,247,.35)}
+.box.prova .lbl{color:var(--roxo)}
+.box.mac{background:var(--ciano-bg);border-color:rgba(34,211,238,.35)}
+.box.mac .lbl{color:var(--ciano)}
+.box.warn{background:rgba(248,113,113,.08);border-color:rgba(248,113,113,.3)}
+.box.warn .lbl{color:var(--vermelho)}
+.lbl{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-family:'JetBrains Mono',monospace;font-size:10px;background:rgba(168,85,247,.2);color:var(--roxo);padding:2px 7px;border-radius:6px;margin-left:6px;white-space:nowrap}
+.tbl{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
+.tbl table{width:100%;border-collapse:collapse;min-width:520px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--laranja);background:var(--card2)}
+td strong{color:#fff}
+.fio td:first-child{color:var(--ciano);font-family:'JetBrains Mono',monospace;font-weight:500}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin:14px 0}
+.gcard{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+.gcard .t{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--ciano);margin-bottom:4px}
+.gcard .d{font-size:13px;color:var(--muted)}
+.hands{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.hand{border-radius:12px;padding:14px;border:1px solid var(--line)}
+.hand.e{background:rgba(34,211,238,.06);border-color:rgba(34,211,238,.25)}
+.hand.d{background:rgba(249,115,22,.06);border-color:rgba(249,115,22,.25)}
+.hand .ht{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;font-weight:700}
+.hand.e .ht{color:var(--ciano)} .hand.d .ht{color:var(--laranja)}
+.hand li{font-size:13px}
+.steps{counter-reset:s;margin:10px 0}
+.step{counter-increment:s;position:relative;padding:11px 0 11px 46px;border-bottom:1px dashed var(--line)}
+.step:last-child{border-bottom:none}
+.step::before{content:counter(s);position:absolute;left:0;top:9px;width:30px;height:30px;border-radius:9px;background:var(--laranja-bg);border:1px solid rgba(249,115,22,.4);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:grid;place-items:center}
+.step b{color:#fff}
+svg{max-width:100%;height:auto;display:block;margin:16px auto}
+.fig{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.fig .cap{font-size:12px;color:var(--muted);text-align:center;margin-top:8px;font-family:'JetBrains Mono',monospace}
+footer{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+footer .ref{font-family:'JetBrains Mono',monospace;font-size:12px;margin-top:8px}
+a{color:var(--laranja)}
+@media(max-width:560px){.hands{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">carolzita · cirurgia geral · esôfago</div>
+  <h1>Esôfago — DRGE, Acalasia & Câncer</h1>
+  <p class="sub">Três grandes temas do esôfago em um só bloco: <strong>DRGE + hérnia de hiato</strong> (fundoplicaturas — Nissen 360° × Toupet 270° × Dor 180°), <strong>acalasia</strong> (Chicago 4.0 · POEM × Heller-Dor × dilatação · não esquecer Chagas no Brasil) e <strong>câncer de esôfago</strong> (CEC × adenocarcinoma · TNM AJCC 8ª · CROSS/FLOT · esofagectomia Ivor-Lewis × McKeown × transhiatal). Base: SAGES GERD 2023, SAGES Hérnia de Hiato 2024, SAGES POEM 2024, Chicago Classification 4.0, NCCN 2.2026, AJCC 8ª ed.</p>
+  <div class="tags">
+    <span class="tag">Nissen · Toupet · Dor</span>
+    <span class="tag">DeMeester · Barrett</span>
+    <span class="tag">Chicago 4.0 · Eckardt</span>
+    <span class="tag">POEM · Heller</span>
+    <span class="tag">CROSS · FLOT</span>
+    <span class="tag">Ivor-Lewis · McKeown</span>
+    <span class="tag r">HCPA · GHC · SC-POA · PUC · AMRIGS</span>
+  </div>
+</header>
+
+<!-- 1 PANORAMA -->
+<details open>
+  <summary><span class="num">1</span> Panorama — as 3 doenças <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>O esôfago cai em prova por <strong>três eixos</strong> que a banca gosta de misturar: doença do refluxo, distúrbio motor (acalasia) e neoplasia. A pegadinha é diferenciar clínica e conduta.</p>
+    <div class="tbl"><table>
+      <tr><th>—</th><th>DRGE / hérnia hiato</th><th>Acalasia</th><th>Câncer de esôfago</th></tr>
+      <tr><td><strong>Sintoma-chave</strong></td><td>Pirose + regurgitação; disfagia é <em>alarme</em></td><td>Disfagia <strong>paradoxal</strong> (sólido = líquido), regurgitação</td><td>Disfagia <strong>progressiva</strong> (sólido→líquido) + perda ponderal</td></tr>
+      <tr><td><strong>Mecanismo</strong></td><td>EEI incompetente / hérnia hiatal</td><td>EEI que não relaxa + aperistalse</td><td>Tumor obstrutivo (CEC ou ADC)</td></tr>
+      <tr><td><strong>Exame-rei</strong></td><td>pHmetria 24h (+EDA, manometria)</td><td>Manometria de alta resolução (HRM)</td><td>EDA + biópsia; estadiar com TC/PET/EUS</td></tr>
+      <tr><td><strong>Idade típica</strong></td><td>Qualquer; obesos</td><td>25–60 a (bimodal)</td><td>&gt;50–60 a</td></tr>
+      <tr><td><strong>Cirurgia</strong></td><td>Fundoplicatura</td><td>Miotomia (POEM/Heller) ou dilatação</td><td>Esofagectomia ± neoadjuvância</td></tr>
+    </table></div>
+    <div class="box warn"><span class="lbl">Sinais de alarme (disfagia)</span>
+      Disfagia, odinofagia, <strong>emagrecimento</strong>, anemia, hematêmese, vômitos persistentes, história familiar → <strong>EDA obrigatória</strong> antes de rotular como DRGE simples. Disfagia nunca é só refluxo até prova em contrário.
+    </div>
+  </div>
+</details>
+
+<!-- 2 DRGE DX -->
+<details>
+  <summary><span class="num">2</span> DRGE & hérnia de hiato — dx & classificação <span class="chev">▶</span></summary>
+  <div class="body">
+    <p><strong>DRGE</strong> = refluxo do conteúdo gástrico que causa sintomas incômodos e/ou lesão. <span class="simple">(o "esfíncter" da entrada do estômago fica frouxo e deixa o ácido subir)</span></p>
+    <h4>Quadro clínico</h4>
+    <ul>
+      <li><strong>Típicos</strong>: pirose e regurgitação.</li>
+      <li><strong>Atípicos/extraesofágicos</strong>: tosse crônica, laringite, asma, erosão dentária, dor torácica não cardíaca.</li>
+    </ul>
+    <h4>Diagnóstico (o que a banca cobra)</h4>
+    <ul>
+      <li><strong>Prova terapêutica com IBP</strong> em sintomas típicos sem alarme = pode iniciar sem exame.</li>
+      <li><strong>EDA</strong>: indicada se alarme; classifica esofagite por <strong>Los Angeles (A–D)</strong> e rastreia <strong>Barrett</strong>.</li>
+      <li><strong>pHmetria de 24h (± impedância)</strong> = padrão-ouro para confirmar refluxo <strong>antes de operar</strong>; calcula o <strong>escore de DeMeester</strong> (&gt;14,7 = anormal).</li>
+      <li><strong>Manometria de alta resolução</strong>: obrigatória no pré-operatório — localiza o EEI e <strong>exclui acalasia</strong> (contraindica fundoplicatura total).</li>
+    </ul>
+    <h4>Hérnia de hiato — classificação (SAGES)</h4>
+    <div class="tbl"><table>
+      <tr><th>Tipo</th><th>Nome</th><th>Característica</th></tr>
+      <tr><td><strong>I</strong></td><td>Deslizamento (sliding)</td><td>JEG sobe acima do diafragma. 95% dos casos; ligada à DRGE.</td></tr>
+      <tr><td><strong>II</strong></td><td>Paraesofágica pura (rolling)</td><td>Fundo gástrico herniado, <strong>JEG normal</strong> no lugar.</td></tr>
+      <tr><td><strong>III</strong></td><td>Mista</td><td>JEG deslocada + fundo herniado (a paraesofágica mais comum).</td></tr>
+      <tr><td><strong>IV</strong></td><td>Complexa</td><td>Outro órgão no saco (cólon, baço, delgado).</td></tr>
+    </table></div>
+    <div class="box prova"><span class="lbl">Barrett <span class="banca">HCPA · GHC</span></span>
+      <strong>Esôfago de Barrett</strong> = metaplasia do epitélio escamoso para <strong>colunar intestinal</strong> (com células caliciformes). É lesão pré-maligna do <strong>adenocarcinoma</strong>. Vigilância endoscópica por displasia; displasia de alto grau/CA intramucoso → <strong>ressecção endoscópica (EMR/ESD) ± ablação</strong>.
+    </div>
+  </div>
+</details>
+
+<!-- 3 DRGE TTO -->
+<details>
+  <summary><span class="num">3</span> DRGE — tratamento & fundoplicaturas <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Clínico</h4>
+    <ul>
+      <li>Medidas comportamentais: perda de peso, elevar cabeceira, evitar deitar após comer, reduzir gordura/álcool/cafeína.</li>
+      <li><strong>IBP</strong> = base do tratamento clínico.</li>
+    </ul>
+    <h4>Indicações de cirurgia antirrefluxo</h4>
+    <ul>
+      <li>Refluxo <strong>comprovado</strong> (pHmetria/DeMeester) + falha/dependência/efeitos adversos do IBP, ou preferência do paciente por parar a medicação.</li>
+      <li>Complicações: esofagite grave refratária, estenose, regurgitação volumosa.</li>
+      <li>Toda <strong>hérnia paraesofágica sintomática</strong> (tipos II–IV) → reparo.</li>
+    </ul>
+    <h4>Tipos de fundoplicatura</h4>
+    <div class="tbl"><table>
+      <tr><th>Técnica</th><th>Grau</th><th>Quando</th></tr>
+      <tr><td><strong>Nissen</strong></td><td>360° (total)</td><td>Padrão na DRGE com motilidade normal. Maior controle do refluxo.</td></tr>
+      <tr><td><strong>Toupet</strong></td><td>270° posterior</td><td>Preferida se dismotilidade / peristalse fraca; menos disfagia e gas-bloat.</td></tr>
+      <tr><td><strong>Dor</strong></td><td>180° anterior</td><td>Válvula parcial anterior — clássica <strong>após miotomia de Heller</strong>.</td></tr>
+    </table></div>
+    <div class="box mac"><span class="lbl">SAGES 2023 · pontos de prova</span>
+      Fundoplicatura <strong>parcial</strong> (Toupet/Dor) tem <strong>menos disfagia</strong> que a total; escolha por preferência do paciente. Um <strong>tempo obrigatório</strong> de qualquer reparo de hérnia hiatal é <strong>reposicionar a JEG na posição infradiafragmática</strong> e fechar os pilares. Divisão dos vasos gástricos curtos é opcional. Nunca fazer fundoplicatura total em acalasia não diagnosticada.
+    </div>
+    <div class="box warn"><span class="lbl">Alternativas</span>
+      <strong>LINX</strong> (esfíncter magnético) e conversão a <strong>Y-de-Roux</strong> (obesos/reoperação por falha) são opções em casos selecionados.
+    </div>
+  </div>
+</details>
+
+<!-- 4 ACALASIA DX -->
+<details>
+  <summary><span class="num">4</span> Acalasia — Chicago 4.0 & diagnóstico <span class="chev">▶</span></summary>
+  <div class="body">
+    <p><strong>Acalasia</strong> = distúrbio motor primário com <strong>perda dos neurônios inibitórios do plexo mioentérico</strong> → EEI que <strong>não relaxa</strong> + <strong>aperistalse</strong> do corpo. <span class="simple">(a válvula de baixo fica travada fechada e o esôfago não empurra a comida)</span></p>
+    <h4>Clínica</h4>
+    <ul>
+      <li><strong>Disfagia paradoxal</strong> (para sólidos E líquidos desde o início), regurgitação, perda de peso, dor torácica, tosse noturna.</li>
+      <li>Complicação tardia: <strong>megaesôfago</strong> e risco aumentado de <strong>CEC</strong>.</li>
+    </ul>
+    <h4>Diagnóstico</h4>
+    <ul>
+      <li><strong>EDA</strong> primeiro — obrigatória para <strong>excluir pseudoacalasia</strong> (tumor de cárdia infiltrando a JEG). Mostra estase e resistência à passagem.</li>
+      <li><strong>Esofagografia baritada</strong>: afilamento em "<strong>bico de pássaro</strong>" (bird beak), dilatação, nível hidroaéreo, ausência de bolha gástrica.</li>
+      <li><strong>Manometria de alta resolução (HRM)</strong> = padrão-ouro. Achados: <strong>IRP elevado</strong> (EEI não relaxa) + <strong>100% de peristalse ausente</strong>.</li>
+    </ul>
+    <h4>Chicago Classification 4.0 — subtipos</h4>
+    <div class="tbl"><table>
+      <tr><th>Tipo</th><th>HRM</th><th>Resposta ao tratamento</th></tr>
+      <tr><td><strong>I</strong> clássica</td><td>Aperistalse, <strong>sem</strong> pressurização panesofágica</td><td>Boa</td></tr>
+      <tr><td><strong>II</strong></td><td><strong>Pressurização panesofágica</strong> ≥20% das degluti­ções</td><td><strong>Melhor</strong> resposta (95%)</td></tr>
+      <tr><td><strong>III</strong> espástica</td><td>≥20% de contrações <strong>prematuras/espásticas</strong></td><td><strong>Pior</strong> resposta → POEM (miotomia longa e ajustável)</td></tr>
+    </table></div>
+    <div class="box prova"><span class="lbl">Chagas — pegadinha brasileira <span class="banca">GHC · AMRIGS</span></span>
+      No Brasil, sempre lembrar da <strong>acalasia chagásica</strong> (destruição do plexo de Auerbach pelo <em>T. cruzi</em>) — quadro idêntico ao megaesôfago idiopático. Classificação radiológica de <strong>Rezende</strong> (graus I–IV) orienta conduta; grau IV (dolicomegaesôfago) pode exigir <strong>esofagectomia</strong>.
+    </div>
+    <div class="box mac"><span class="lbl">Escore de Eckardt</span>
+      Quantifica sintomas (disfagia, regurgitação, dor, perda de peso; 0–12). <strong>Eckardt ≤3</strong> = sucesso do tratamento; usado no seguimento.
+    </div>
+  </div>
+</details>
+
+<!-- 5 ACALASIA TTO -->
+<details>
+  <summary><span class="num">5</span> Acalasia — tratamento <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>Não há cura da aperistalse — o objetivo é <strong>reduzir a pressão do EEI</strong> para aliviar disfagia.</p>
+    <div class="tbl"><table>
+      <tr><th>Opção</th><th>Mecanismo</th><th>Notas</th></tr>
+      <tr><td><strong>POEM</strong></td><td>Miotomia endoscópica por túnel submucoso</td><td>Alta eficácia; miotomia <strong>ajustável</strong> → <strong>melhor no tipo III</strong>. Desvantagem: <strong>DRGE</strong> pós (sem válvula antirrefluxo).</td></tr>
+      <tr><td><strong>Heller laparoscópica + fundoplicatura parcial (Dor)</strong></td><td>Miotomia cirúrgica + válvula anti-refluxo</td><td>Padrão cirúrgico duradouro; a <strong>Dor 180°</strong> protege do refluxo e cobre a mucosa.</td></tr>
+      <tr><td><strong>Dilatação pneumática</strong></td><td>Balão rompe fibras do EEI</td><td>Eficaz (tipos I/II); risco de <strong>perfuração</strong>; costuma precisar repetir.</td></tr>
+      <tr><td><strong>Toxina botulínica</strong></td><td>Bloqueia acetilcolina no EEI</td><td>Efeito <strong>temporário</strong>; reservada a idosos/alto risco cirúrgico.</td></tr>
+    </table></div>
+    <div class="box mac"><span class="lbl">SAGES POEM 2024 · como escolher</span>
+      Tipos <strong>I e II</strong>: POEM, Heller-Dor ou dilatação são válidos. Tipo <strong>III (espástico)</strong>: <strong>POEM preferido</strong> (miotomia mais longa alcança o segmento espástico). Megaesôfago avançado/tortuoso (Rezende IV) refratário → <strong>esofagectomia</strong>.
+    </div>
+    <div class="box warn"><span class="lbl">Complicação temida</span>
+      <strong>Perfuração da mucosa</strong> durante a miotomia. Testar integridade (azul de metileno / endoscopia intraoperatória) e cobrir com a fundoplicatura Dor.
+    </div>
+  </div>
+</details>
+
+<!-- 6 CANCER -->
+<details>
+  <summary><span class="num">6</span> Câncer de esôfago — histologia, TNM & tratamento <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Dois tipos (a comparação clássica de prova)</h4>
+    <div class="tbl"><table>
+      <tr><th>—</th><th>Carcinoma espinocelular (CEC)</th><th>Adenocarcinoma (ADC)</th></tr>
+      <tr><td><strong>Local</strong></td><td>Terço <strong>médio/superior</strong></td><td>Terço <strong>distal / JEG</strong></td></tr>
+      <tr><td><strong>Fatores</strong></td><td>Tabaco + álcool, bebidas quentes, tilose, acalasia, estenose cáustica</td><td><strong>Barrett</strong>, DRGE crônica, obesidade, tabaco</td></tr>
+      <tr><td><strong>Tendência</strong></td><td>Mais comum no mundo/Brasil</td><td>Crescente no Ocidente</td></tr>
+    </table></div>
+    <h4>Diagnóstico & estadiamento</h4>
+    <ul>
+      <li><strong>EDA + biópsia</strong> confirma; <strong>EUS (ecoendoscopia)</strong> avalia T e N (profundidade e linfonodos).</li>
+      <li><strong>TC tórax/abdome + PET-CT</strong> para M; broncoscopia se tumor proximal (invasão de via aérea).</li>
+      <li>Estadiamento pelo <strong>TNM AJCC 8ª ed.</strong> — T1a (mucosa) × T1b (submucosa) muda a conduta.</li>
+    </ul>
+    <h4>Tratamento por estágio</h4>
+    <ul>
+      <li><strong>T1a (mucosa)</strong>: <strong>ressecção endoscópica (EMR/ESD)</strong> — poupa o esôfago.</li>
+      <li><strong>T1b–T2 N0 baixo risco</strong>: esofagectomia (± discussão de neoadjuvância).</li>
+      <li><strong>Localmente avançado (T3–4 ou N+)</strong>: <strong>neoadjuvância</strong> seguida de esofagectomia.</li>
+      <li><strong>Metastático</strong>: quimioterapia paliativa ± imunoterapia (checar HER2, PD-L1, MSI); paliação da disfagia (stent, RT).</li>
+    </ul>
+    <div class="box prova"><span class="lbl">Esquemas — decore <span class="banca">HCPA · PUC-RS</span></span>
+      <strong>CROSS</strong> = quimiorradioterapia neoadjuvante (carboplatina + paclitaxel + 41,4 Gy) — melhora sobrevida; pCR maior no <strong>CEC</strong> (~49%) que no ADC (~23%). <strong>FLOT</strong> = quimioterapia perioperatória (5-FU/leucovorina + oxaliplatina + docetaxel) — preferida no <strong>adenocarcinoma de JEG/estômago</strong>.
+    </div>
+    <div class="box mac"><span class="lbl">Siewert (JEG)</span>
+      Adenocarcinoma da junção: <strong>I</strong> (1–5 cm acima), <strong>II</strong> (cárdia, ±1 cm), <strong>III</strong> (2–5 cm abaixo, gástrico). Siewert I/II tende a esofagectomia; III trata como gástrico.
+    </div>
+  </div>
+</details>
+
+<!-- 7 ANATOMIA -->
+<details>
+  <summary><span class="num">7</span> Anatomia & vascularização do esôfago <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Segmentos & relações</h4>
+    <ul>
+      <li>Tubo de ~25 cm, da <strong>cricofaringe (C6, ~15 cm da arcada dentária)</strong> à <strong>JEG (~40 cm)</strong>. Sem serosa na maior parte → <strong>anastomoses mais frágeis</strong>.</li>
+      <li>3 estreitamentos: cricofaríngeo, aortobrônquico, diafragmático (hiatal).</li>
+      <li>Camadas: mucosa (escamoso), submucosa (rica em linfáticos → <strong>disseminação longitudinal precoce</strong>), muscular (¹⁄₃ superior estriada, ²⁄₃ inferior lisa).</li>
+    </ul>
+    <h4>Vascularização (segmentar — importante na esofagectomia)</h4>
+    <ul>
+      <li><strong>Cervical</strong>: artérias tireóideas inferiores.</li>
+      <li><strong>Torácico</strong>: ramos <strong>diretos da aorta</strong> (esofágicas) + brônquicas.</li>
+      <li><strong>Abdominal</strong>: gástrica esquerda + frênica inferior esquerda.</li>
+      <li>Drenagem venosa distal para a <strong>gástrica esquerda → porta</strong> (por isso surgem <strong>varizes esofágicas</strong> na hipertensão portal).</li>
+    </ul>
+    <div class="fig">
+      <svg viewBox="0 0 460 300" role="img" aria-label="Vascularização segmentar do esôfago">
+        <defs><style>.o{fill:none;stroke:#f97316;stroke-width:3}.c{fill:none;stroke:#22d3ee;stroke-width:2.5}.rd{fill:none;stroke:#f87171;stroke-width:2.5}.t{fill:#9a9ab0;font-family:monospace;font-size:10px}.w{fill:#e6e6ef;font-family:monospace;font-size:11px}</style></defs>
+        <path class="o" d="M215 30 C210 110 210 190 215 270"/>
+        <path class="o" d="M235 30 C240 110 240 190 235 270"/>
+        <text x="150" y="24" class="w">esôfago</text>
+        <line class="c" x1="215" y1="60" x2="150" y2="55"/>
+        <text x="60" y="58" class="t">tireóidea inf (cervical)</text>
+        <line class="rd" x1="235" y1="130" x2="310" y2="120"/>
+        <text x="315" y="118" class="t">ramos da aorta</text>
+        <line class="rd" x1="235" y1="160" x2="310" y2="165"/>
+        <text x="315" y="168" class="t">brônquicas</text>
+        <line class="c" x1="215" y1="240" x2="150" y2="250"/>
+        <text x="55" y="253" class="t">gástrica E → porta</text>
+        <circle cx="225" cy="255" r="5" fill="#fbbf24"/>
+        <text x="150" y="285" class="t">JEG (hiato · varizes)</text>
+      </svg>
+      <div class="cap">Suprimento segmentar: cervical (ciano) · torácico (vermelho, aorta) · abdominal → porta</div>
+    </div>
+    <div class="box mac"><span class="lbl">Por que importa</span>
+      A vascularização <strong>segmentar e sem arcada única</strong> explica o risco de <strong>isquemia da anastomose</strong> na reconstrução com tubo gástrico — a ponta do tubo depende da <strong>arcada gastroepiploica direita</strong>.
+    </div>
+  </div>
+</details>
+
+<!-- 8 PASSO A PASSO -->
+<details>
+  <summary><span class="num">8</span> Passo a passo — Nissen · Heller-Dor · esofagectomia <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Posição &amp; preparo (fundoplicatura / Heller)</h4>
+    <ul>
+      <li><strong>Decúbito dorsal com pernas abertas (posição francesa)</strong>, em anti-Trendelenburg — o cirurgião opera entre as pernas.</li>
+      <li>5 portais laparoscópicos; afastador hepático fixo no lobo esquerdo.</li>
+      <li>Bougie ou sonda calibradora disponível; endoscopia intraoperatória à mão.</li>
+    </ul>
+    <div class="box simplebox"><span class="lbl">tradução simples</span>O anti-Trendelenburg existe para que <strong>o estômago e as vísceras "caiam"</strong> para longe do hiato pela gravidade, abrindo o campo sem que ninguém precise segurá-las.</div>
+
+    <h4>Fundoplicatura de Nissen — passo a passo</h4>
+    <div class="box simplebox"><span class="lbl">tradução simples</span>São <strong>dois consertos numa cirurgia só</strong>: fechar o buraco alargado do diafragma (hiatoplastia) e construir uma <strong>gravata de estômago</strong> em volta do esôfago, que aperta quando o estômago enche. Fazer só um dos dois é a receita da recidiva.</div>
+
+    <div class="stx">
+
+      <div class="st">
+        <span class="fase">fase de acesso</span>
+        <div class="ttl">Abertura do ligamento gastro-hepático e exposição do pilar direito</div>
+        <p>Abrir a <em>pars flaccida</em> e expor o <strong>pilar diafragmático direito</strong>, que é a referência de toda a dissecção.</p>
+        <div class="pq"><b>por quê</b>Atenção à <strong>hepática esquerda substituta</strong>, que cruza exatamente a <em>pars flaccida</em> em cerca de 10% dos casos — a mesma variante que aparece na gastrectomia D2 e no Whipple.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase crítica — o que define o sucesso</span>
+        <div class="ttl">Dissecção dos pilares e do esôfago distal</div>
+        <p>Dissecção mediastinal do esôfago até obter <strong>≥ 2–3 cm de esôfago intra-abdominal sem tensão</strong>.</p>
+        <div class="pq"><b>por quê</b>É o passo que mais determina a durabilidade da cirurgia. A pressão do abdome é o que mantém o esôfago distal fechado — se ele volta para o tórax, o mecanismo se perde e a válvula falha. Comprimento insuficiente é a <strong>causa nº 1 de recidiva</strong>. Se não for possível obter os 2–3 cm, a indicação é <strong>gastroplastia de Collis</strong> (esôfago curto).</div>
+        <div class="mh2">
+          <div class="mh e"><b>mão esquerda</b>Penrose abraçando o esôfago, tracionando para baixo e expondo o mediastino</div>
+          <div class="mh d"><b>mão direita</b>Gancho monopolar em toques curtos; dissecção romba junto à parede esofágica</div>
+        </div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de preservação</span>
+        <div class="ttl">Janela retroesofágica preservando os vagos</div>
+        <p>Criar a janela por trás do esôfago identificando e preservando os <strong>troncos vagais anterior e posterior</strong>.</p>
+        <div class="pq"><b>por quê</b>Lesar os vagos aqui produz <strong>gastroparesia definitiva</strong> — e o paciente troca refluxo por estase gástrica, um resultado pior que a doença original. (Mesma anatomia da vagotomia, com objetivo oposto: lá se secciona de propósito, aqui se preserva a todo custo.)</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de liberação</span>
+        <div class="ttl">Divisão dos vasos gástricos curtos</div>
+        <p>Seccionar os gástricos curtos com selante, liberando o <strong>fundo gástrico</strong>.</p>
+        <div class="pq"><b>por quê</b>Fundo insuficientemente liberado gera <strong>válvula sob tensão</strong>, que roda, disfagia e se desfaz. A liberação é o que permite a válvula ser "frouxa".</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de reparo do hiato</span>
+        <div class="ttl">Hiatoplastia — aproximar os pilares posteriormente</div>
+        <p>Pontos separados posteriores com <span class="fio">fio inabsorvível 2-0</span> (Ethibond/seda), calibrando sobre <strong>bougie</strong>. Considerar tela em hiatos muito grandes.</p>
+        <div class="pq"><b>por quê</b>Sem fechar o hiato, a válvula perfeita <strong>migra para o tórax</strong> e a hérnia recidiva — é o erro de fazer metade da operação. O bougie evita o extremo oposto: hiato apertado demais causa disfagia persistente.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de construção</span>
+        <div class="ttl">Passar o fundo por trás do esôfago — <em>shoeshine test</em></div>
+        <p>Trazer o fundo pela janela retroesofágica e deslizá-lo de um lado ao outro, como quem <strong>engraxa um sapato</strong>, confirmando que não torceu.</p>
+        <span class="simple">(Se a "faixa" desliza livre para os dois lados, ela está reta. Se prende, está torcida.)</span>
+        <div class="pq"><b>por quê</b>Válvula torcida causa disfagia imediata e obriga a reoperação. O teste custa cinco segundos e é a única checagem antes de suturar.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de sutura</span>
+        <div class="ttl">Válvula de 360°, <strong>curta e frouxa</strong> — 2 cm</div>
+        <p>Suturar fundo-fundo <strong>incorporando a parede esofágica</strong>, com 2 a 3 pontos, sobre o bougie.</p>
+        <div class="pq"><b>por quê</b>"Curta e frouxa" (<em>short and floppy</em>) é o mantra: válvula longa ou apertada causa <strong>disfagia e síndrome gas-bloat</strong> — o paciente não consegue eructar nem vomitar. Incorporar a parede esofágica impede que a válvula deslize para baixo, produzindo a deformidade em <strong>ampulheta</strong>.</div>
+        <div class="mh2">
+          <div class="mh e"><b>mão esquerda</b>Grasper mantendo os dois lábios do fundo aproximados sem tensão</div>
+          <div class="mh d"><b>mão direita</b>Porta-agulha laparoscópico com <span class="fio">inabsorvível 2-0</span></div>
+        </div>
+      </div>
+
+    </div>
+    <div class="box mac"><span class="lbl">as 3 checagens do Nissen</span><strong>1)</strong> ≥ 2–3 cm de esôfago intra-abdominal sem tensão? <strong>2)</strong> Hiato fechado e calibrado? <strong>3)</strong> Válvula curta, frouxa e sem torção (<em>shoeshine</em>)?</div>
+
+    <h4>Heller-Dor (acalasia) — passo a passo</h4>
+    <div class="box simplebox"><span class="lbl">tradução simples</span>Na acalasia o problema é o contrário do refluxo: o esfíncter <strong>não abre</strong>. Então você <strong>corta o músculo</strong> por fora, deixando a mucosa intacta — como abrir a casca de uma linguiça sem furar o recheio. E como cortar o esfíncter cria refluxo, acrescenta-se uma válvula parcial.</div>
+
+    <div class="stx">
+
+      <div class="st">
+        <span class="fase">fase de exposição</span>
+        <div class="ttl">Exposição da junção esofagogástrica</div>
+        <p>Igual à da fundoplicatura, com dissecção suficiente para expor a JEG e o esôfago distal.</p>
+        <div class="pq"><b>por quê</b>A miotomia precisa ultrapassar a JEG — sem expor bem essa transição, a extensão gástrica fica insuficiente.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de miotomia — passo decisivo</span>
+        <div class="ttl">Miotomia longitudinal: ~6 cm no esôfago + <strong>2–3 cm no estômago</strong></div>
+        <p>Seccionar as fibras <strong>longitudinais e circulares</strong> até expor a mucosa, que deve abaular através da miotomia.</p>
+        <div class="pq"><b>por quê</b>A <strong>extensão gástrica é o que garante o alívio</strong>. A porção esofágica sozinha não resolve, porque o componente do esfíncter que não relaxa se estende abaixo da JEG. Miotomia gástrica curta é a <strong>causa nº 1 de disfagia persistente</strong> pós-Heller. Por outro lado, estendê-la demais aumenta o refluxo.</div>
+        <div class="mh2">
+          <div class="mh e"><b>mão esquerda</b>Grasper separando delicadamente as bordas musculares já seccionadas</div>
+          <div class="mh d"><b>mão direita</b>Gancho com energia mínima; dissecção romba preferida junto à mucosa</div>
+        </div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de verificação</span>
+        <div class="ttl">Testar a integridade da mucosa</div>
+        <p>Endoscopia intraoperatória ou insuflação com azul de metileno / ar sob líquido.</p>
+        <div class="pq"><b>por quê</b>A <strong>perfuração mucosa</strong> é a complicação intraoperatória típica e passa despercebida se não for procurada. Reconhecida e reparada no mesmo tempo, é um incidente; não reconhecida, é mediastinite.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de proteção</span>
+        <div class="ttl">Fundoplicatura anterior de Dor (180°)</div>
+        <p>Cobrir a miotomia com o fundo anterior, suturando às bordas musculares.</p>
+        <div class="pq"><b>por quê</b>Duas funções ao mesmo tempo: <strong>reduz o refluxo</strong> criado pela miotomia e <strong>cobre a mucosa exposta</strong>, protegendo eventual perfuração reparada. Válvula total (Nissen) aqui é proibida — em esôfago aperistáltico causaria obstrução funcional.</div>
+      </div>
+
+    </div>
+    <div class="box prova"><span class="lbl">alto rendimento</span>Na acalasia a fundoplicatura é sempre <strong>parcial</strong> (Dor anterior ou Toupet posterior), <strong>nunca total</strong>. O esôfago não tem peristalse para vencer uma válvula de 360°. <span class="banca">HCPA</span><span class="banca">AMRIGS</span></div>
+
+    <h4>Esofagectomia (câncer) — as 3 vias clássicas</h4>
+    <div class="tbl"><table>
+      <tr><th>Técnica</th><th>Acessos</th><th>Anastomose</th></tr>
+      <tr><td><strong>Ivor-Lewis</strong></td><td>Abdome + <strong>tórax direito</strong> (2 campos)</td><td><strong>Torácica</strong> (tumor de terço médio/distal)</td></tr>
+      <tr><td><strong>McKeown</strong></td><td>Abdome + tórax D + <strong>pescoço</strong> (3 campos)</td><td><strong>Cervical</strong> (tumores mais altos)</td></tr>
+      <tr><td><strong>Transhiatal</strong></td><td>Abdome + <strong>pescoço</strong> (sem toracotomia)</td><td>Cervical; sem abrir o tórax</td></tr>
+    </table></div>
+
+    <div class="stx">
+
+      <div class="st">
+        <span class="fase">fase abdominal</span>
+        <div class="ttl">Confecção do tubo gástrico</div>
+        <p>Liberar o estômago preservando <strong>obrigatoriamente a arcada gastroepiploica direita</strong>. Ligar gástrica esquerda (com a linfadenectomia), gástricos curtos e gastroepiploica esquerda. Tubulizar a grande curvatura com grampeador linear, criando um conduto de 4–5 cm de largura. <strong>Piloroplastia ou piloromiotomia</strong> conforme escola.</p>
+        <div class="pq"><b>por quê</b>Depois de ligados os outros pedículos, <strong>toda a perfusão do tubo depende da gastroepiploica direita</strong> — e a ponta do tubo, que é justamente onde se faz a anastomose, é a região <em>mais distal</em> desse suprimento. É por isso que a fístula esofagogástrica é tão frequente: a anastomose é feita na área de pior perfusão de todo o conduto. E o piloro precisa de drenagem porque a vagotomia é inevitável na esofagectomia.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase torácica ou mediastinal</span>
+        <div class="ttl">Mobilização esofágica e linfadenectomia</div>
+        <p>Ivor-Lewis/McKeown: toracotomia ou toracoscopia direita, com linfadenectomia mediastinal sob visão. Transhiatal: dissecção <strong>romba, às cegas</strong>, pelo hiato e pelo pescoço.</p>
+        <div class="pq"><b>por quê</b>Aborda-se pelo <strong>tórax direito</strong> porque o arco aórtico ocupa o lado esquerdo. E a diferença entre as vias é o <strong>trade-off</strong> central: a transhiatal evita a toracotomia (menos morbidade respiratória) ao custo de uma dissecção às cegas, com linfadenectomia mediastinal inferior e risco de sangramento não visualizado.</div>
+      </div>
+
+      <div class="st">
+        <span class="fase">fase de reconstrução</span>
+        <div class="ttl">Ascensão do conduto e anastomose</div>
+        <p>Subir o tubo gástrico pelo <strong>mediastino posterior</strong> (leito esofágico, o trajeto mais curto) e anastomosar no tórax ou no pescoço.</p>
+        <div class="pq"><b>por quê</b>É a decisão com o <em>trade-off</em> mais cobrado: a anastomose <strong>cervical</strong> tem <strong>mais fístula, porém menos grave</strong> — drena para o pescoço e se resolve com abertura da ferida. A <strong>torácica</strong> tem <strong>menos fístula, porém catastrófica</strong> — vaza no mediastino e causa mediastinite. Troca-se frequência por gravidade.</div>
+      </div>
+
+    </div>
+    <div class="box warn"><span class="lbl">⚠ o resumo da esofagectomia</span>Órgão de escolha: <strong>tubo gástrico</strong> (gastroepiploica direita). Alternativas: cólon, jejuno. Complicações-chave: <strong>fístula</strong> (perfusão da ponta), <strong>rouquidão por lesão do laríngeo recorrente</strong> (dissecção cervical), <strong>quilotórax</strong> (ducto torácico) e complicações respiratórias.</div>
+  </div>
+</details>
+
+<!-- 9 INSTRUMENTACAO -->
+<details>
+  <summary><span class="num">9</span> Instrumentação — mão D × mão E & fios <span class="chev">▶</span></summary>
+  <div class="body">
+    <div class="hands">
+      <div class="hand d">
+        <div class="ht">Mão direita (dominante — dissecar/cortar)</div>
+        <ul>
+          <li>Gancho/tesoura com energia (mono) — dissecção do hiato e miotomia</li>
+          <li>Selante de vasos (LigaSure/ultrassônico) — gástricos curtos</li>
+          <li>Porta-agulhas laparoscópico — pontos dos pilares e da válvula</li>
+          <li>Na esofagectomia: grampeador linear (tubo gástrico) e circular (anastomose)</li>
+        </ul>
+      </div>
+      <div class="hand e">
+        <div class="ht">Mão esquerda (não dominante — expor/tracionar)</div>
+        <ul>
+          <li>Grasper atraumático (Babcock/dente de rato fino) — tracionar o fundo gástrico</li>
+          <li>Pinça de preensão do "penrose" que abraça o esôfago para tração</li>
+          <li>Afastador hepático (fixo) para o lobo esquerdo do fígado</li>
+          <li>Aspirador/irrigador durante teste de vazamento</li>
+        </ul>
+      </div>
+    </div>
+    <h4>Tabela de fios — o que e quando</h4>
+    <div class="tbl"><table>
+      <tr><th>Momento</th><th>Fio / material</th><th>Observação</th></tr>
+      <tr class="fio"><td>Hiatoplastia (pilares)</td><td>Poliéster/seda 2-0 (Ethibond) inabsorvível</td><td>Pontos em X posteriores; calibrar sobre bougie 56–60 Fr</td></tr>
+      <tr class="fio"><td>Confecção da válvula (Nissen/Toupet/Dor)</td><td>Poliéster/seda 2-0/3-0 inabsorvível</td><td>Incorporar parede esofágica; válvula curta e frouxa</td></tr>
+      <tr class="fio"><td>Reforço da miotomia / mucosa lesada</td><td>Poliglactina 4-0 (Vicryl) fino</td><td>Sutura da mucosa se perfuração</td></tr>
+      <tr class="fio"><td>Tubo gástrico (esofagectomia)</td><td>Grampeador linear + reforço PDS/Vicryl 3-0</td><td>Invaginar linha de grampos</td></tr>
+      <tr class="fio"><td>Anastomose esôfago-gástrica</td><td>Grampeador circular EEA ou manual PDS 3-0/4-0</td><td>Testar; drenar; jejunostomia p/ nutrição</td></tr>
+      <tr class="fio"><td>Fechamento aponeurose</td><td>PDS 1 / náilon 1</td><td>Relação fio:ferida 4:1</td></tr>
+    </table></div>
+  </div>
+</details>
+
+<!-- 10 COMPLICAÇÕES -->
+<details>
+  <summary><span class="num">10</span> Complicações <span class="chev">▶</span></summary>
+  <div class="body">
+    <h4>Pós-fundoplicatura</h4>
+    <ul>
+      <li><strong>Disfagia precoce</strong> (edema/válvula apertada) — geralmente transitória; se persistente, dilatação.</li>
+      <li><strong>Síndrome gas-bloat</strong> — dificuldade de eructar/vomitar, distensão (mais na Nissen total).</li>
+      <li><strong>Recidiva / migração da válvula</strong> ("slipped/telescope"), herniação intratorácica.</li>
+      <li>Lesão de <strong>vago</strong> (gastroparesia), pneumotórax, lesão esplênica.</li>
+    </ul>
+    <h4>Pós-miotomia (acalasia)</h4>
+    <ul>
+      <li><strong>Perfuração da mucosa</strong> (intra-op) e <strong>DRGE</strong> (tardia — mais no POEM).</li>
+      <li>Miotomia gástrica insuficiente = <strong>disfagia persistente</strong> (a causa #1 de falha).</li>
+    </ul>
+    <h4>Pós-esofagectomia (as que matam)</h4>
+    <ul>
+      <li><strong>Fístula da anastomose</strong> (complicação-chave; cervical mais frequente, torácica mais grave → mediastinite).</li>
+      <li><strong>Complicações pulmonares</strong> (pneumonia — maior causa de morbimortalidade), quilotórax (ducto torácico), rouquidão (laríngeo recorrente), necrose do tubo gástrico.</li>
+    </ul>
+    <div class="box mac"><span class="lbl">Regra de ouro</span>
+      Anastomose esofágica falha porque o esôfago <strong>não tem serosa</strong> e a vascularização é <strong>segmentar</strong>. Tensão e isquemia = fístula.
+    </div>
+  </div>
+</details>
+
+<!-- 11 QUESTOES -->
+<details>
+  <summary><span class="num">11</span> Banco de questões — bancas RS <span class="chev">▶</span></summary>
+  <div class="body">
+    <p class="simple">(itens representativos, elaborados no estilo das bancas — não são reproduções literais)</p>
+    <div class="box prova"><span class="lbl">Questão 1 <span class="banca">HCPA</span></span>
+      Antes de indicar fundoplicatura em paciente com DRGE, qual exame é <strong>obrigatório</strong> para não operar uma acalasia por engano? <br><strong>R:</strong> <strong>Manometria esofágica de alta resolução</strong> (avalia motilidade e exclui acalasia). A pHmetria confirma o refluxo.
+    </div>
+    <div class="box prova"><span class="lbl">Questão 2 <span class="banca">GHC</span></span>
+      Homem, disfagia paradoxal e regurgitação; baritado com "bico de pássaro". Padrão-ouro diagnóstico e achado esperado? <br><strong>R:</strong> <strong>Manometria de alta resolução</strong> — IRP elevado + 100% de aperistalse (acalasia).
+    </div>
+    <div class="box prova"><span class="lbl">Questão 3 <span class="banca">Santa Casa POA</span></span>
+      Acalasia <strong>tipo III (espástica)</strong> pela Chicago 4.0. Qual a melhor opção terapêutica e por quê? <br><strong>R:</strong> <strong>POEM</strong> — permite miotomia mais longa e ajustável ao segmento espástico.
+    </div>
+    <div class="box prova"><span class="lbl">Questão 4 <span class="banca">PUC-RS</span></span>
+      Qual fundoplicatura é classicamente associada à miotomia de Heller e por quê? <br><strong>R:</strong> <strong>Dor (180° anterior)</strong> — controla o refluxo e <strong>cobre a miotomia</strong> (protege a mucosa exposta).
+    </div>
+    <div class="box prova"><span class="lbl">Questão 5 <span class="banca">AMRIGS</span></span>
+      No Brasil, causa importante de megaesôfago com clínica idêntica à acalasia idiopática? <br><strong>R:</strong> <strong>Doença de Chagas</strong> (destruição do plexo de Auerbach). Classificação radiológica de Rezende.
+    </div>
+    <div class="box prova"><span class="lbl">Questão 6 <span class="banca">HCPA</span></span>
+      Tipo histológico do câncer de esôfago associado a <strong>Barrett e DRGE</strong>, e sua localização típica? <br><strong>R:</strong> <strong>Adenocarcinoma</strong>, no <strong>terço distal / JEG</strong>. CEC = médio/superior, tabaco+álcool.
+    </div>
+    <div class="box prova"><span class="lbl">Questão 7 <span class="banca">GHC</span></span>
+      Câncer de esôfago localmente avançado (T3N1). Qual a estratégia neoadjuvante clássica (esquema CROSS)? <br><strong>R:</strong> <strong>Quimiorradioterapia neoadjuvante</strong> (carboplatina+paclitaxel + 41,4 Gy) seguida de esofagectomia.
+    </div>
+    <div class="box prova"><span class="lbl">Questão 8 <span class="banca">PUC-RS</span></span>
+      Tumor de esôfago restrito à <strong>mucosa (T1a)</strong>. Tratamento que poupa o órgão? <br><strong>R:</strong> <strong>Ressecção endoscópica (EMR/ESD)</strong>. Submucosa (T1b) já indica avaliar esofagectomia pelo risco linfonodal.
+    </div>
+    <div class="box prova"><span class="lbl">Questão 9 <span class="banca">Santa Casa POA</span></span>
+      Esofagectomia com abordagem <strong>abdominal + torácica direita</strong> e anastomose torácica — qual técnica? <br><strong>R:</strong> <strong>Ivor-Lewis</strong> (2 campos). McKeown acrescenta o pescoço (3 campos).
+    </div>
+    <div class="box prova"><span class="lbl">Questão 10 <span class="banca">AMRIGS</span></span>
+      Por que a anastomose <strong>cervical</strong> vaza mais mas costuma ser menos grave que a torácica? <br><strong>R:</strong> Drena para o pescoço (abre-se a incisão), enquanto a fístula <strong>torácica</strong> causa <strong>mediastinite</strong>. O esôfago sem serosa e com vascularização segmentar favorece a fístula.
+    </div>
+  </div>
+</details>
+
+<!-- 12 MACETES -->
+<details>
+  <summary><span class="num">12</span> Grid de macetes & pega-ratões <span class="chev">▶</span></summary>
+  <div class="body">
+    <div class="grid">
+      <div class="gcard"><div class="t">Manometria antes de operar DRGE</div><div class="d">Sempre exclui acalasia — nunca fundoplicatura total em acalasia.</div></div>
+      <div class="gcard"><div class="t">DeMeester &gt;14,7</div><div class="d">pHmetria confirma refluxo patológico antes da cirurgia.</div></div>
+      <div class="gcard"><div class="t">Hérnia II–IV sintomática</div><div class="d">Paraesofágica sintomática = reparo. JEG normal no tipo II.</div></div>
+      <div class="gcard"><div class="t">Barrett = adenocarcinoma</div><div class="d">Metaplasia colunar intestinal; vigilância por displasia.</div></div>
+      <div class="gcard"><div class="t">Disfagia paradoxal</div><div class="d">Sólido = líquido desde o início → pensar acalasia, não câncer.</div></div>
+      <div class="gcard"><div class="t">Bico de pássaro</div><div class="d">Baritado da acalasia; sempre fazer EDA p/ excluir pseudoacalasia.</div></div>
+      <div class="gcard"><div class="t">Tipo II = melhor</div><div class="d">Chicago 4.0: II responde melhor; III (espástico) responde pior → POEM.</div></div>
+      <div class="gcard"><div class="t">POEM causa refluxo</div><div class="d">Sem válvula antirrefluxo; vantagem no tipo III.</div></div>
+      <div class="gcard"><div class="t">Chagas no Brasil</div><div class="d">Megaesôfago chagásico; Rezende IV pode ir a esofagectomia.</div></div>
+      <div class="gcard"><div class="t">CEC × ADC</div><div class="d">CEC médio/álcool-tabaco; ADC distal/Barrett-obesidade.</div></div>
+      <div class="gcard"><div class="t">CROSS × FLOT</div><div class="d">CROSS = QRT neoadj (mais pCR no CEC); FLOT = QT perioperatória (ADC/JEG).</div></div>
+      <div class="gcard"><div class="t">T1a poupa órgão</div><div class="d">Mucosa → EMR/ESD; submucosa (T1b) → esofagectomia.</div></div>
+      <div class="gcard"><div class="t">Ivor × McKeown × transhiatal</div><div class="d">2 campos (torácica) × 3 campos (cervical) × sem toracotomia.</div></div>
+      <div class="gcard"><div class="t">Sem serosa = fístula</div><div class="d">Anastomose esofágica frágil; tensão/isquemia = vazamento.</div></div>
+      <div class="gcard"><div class="t">Miotomia gástrica</div><div class="d">Estender 2–3 cm no estômago; curta demais = disfagia persistente.</div></div>
+    </div>
+  </div>
+</details>
+
+<footer>
+  <strong>carolzita</strong> · Esôfago (DRGE · Acalasia · Câncer) — referência completa
+  <div class="ref">Fontes: SAGES GERD 2023 · SAGES Hérnia de Hiato 2024 · SAGES POEM 2024 · Chicago Classification 4.0 (2021) · NCCN Esophageal 2.2026 · AJCC 8ª ed. · CROSS · FLOT · Sabiston · Zollinger.</div>
+</footer>
+</div>
+</body>
+</html>
