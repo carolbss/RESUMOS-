@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="cz-tema" content="Nutrição Enteral no Pós-Operatório de Cirurgia Abdominal">
+<meta name="cz-grupo" content="Perioperatório">
+<meta name="cz-tags" content="nutrição enteral, sonda nasogástrica, sonda nasoenteral, jejunostomia, gastroparesia, íleo pós-operatório, ostomias, ERAS, ESPEN">
+<meta name="cz-ordem" content="35">
+<title>Nutrição Enteral no PO de Cirurgia Abdominal — carolzita</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#08080c; --bg2:#101019; --bg3:#161622;
+  --line:#26263a; --txt:#e6e6f0; --txt2:#9a9ab0;
+  --laranja:#f97316; --roxo:#a855f7; --ciano:#22d3ee;
+  --vermelho:#ef4444; --verde:#22c55e;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;font-size:15.5px;line-height:1.65;padding-bottom:80px}
+.wrap{max-width:980px;margin:0 auto;padding:0 18px}
+
+header{padding:52px 0 30px;border-bottom:1px solid var(--line);margin-bottom:26px}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--laranja);margin-bottom:12px}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(28px,5vw,46px);line-height:1.08;letter-spacing:-.02em}
+.sub{color:var(--txt2);margin-top:12px;font-size:15px;max-width:70ch}
+.refs{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--txt2);margin-top:18px;line-height:1.9}
+
+.legenda{display:flex;flex-wrap:wrap;gap:14px;margin:22px 0 6px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--txt2)}
+.legenda span{display:flex;align-items:center;gap:6px}
+.dot{width:9px;height:9px;border-radius:2px;display:inline-block}
+
+section{border:1px solid var(--line);border-radius:12px;margin-bottom:14px;background:var(--bg2);overflow:hidden}
+.sec-head{display:flex;align-items:center;gap:14px;padding:17px 20px;cursor:pointer;user-select:none;transition:background .15s}
+.sec-head:hover{background:var(--bg3)}
+.sec-head:focus-visible{outline:2px solid var(--laranja);outline-offset:-2px}
+.num{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--laranja);border:1px solid var(--laranja);border-radius:4px;padding:2px 7px;flex-shrink:0}
+.sec-head h2{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;flex:1;letter-spacing:-.01em}
+.chev{color:var(--txt2);font-size:13px;transition:transform .2s}
+section.open .chev{transform:rotate(90deg)}
+.sec-body{display:none;padding:4px 20px 24px}
+section.open .sec-body{display:block}
+
+h3{font-family:'Syne',sans-serif;font-size:14.5px;font-weight:700;color:var(--laranja);margin:22px 0 9px;letter-spacing:.01em}
+h3:first-child{margin-top:8px}
+h4{font-size:13.5px;font-weight:600;color:var(--txt);margin:15px 0 6px}
+p{margin-bottom:11px}
+ul,ol{margin:0 0 12px 20px}
+li{margin-bottom:6px}
+b,strong{color:#fff;font-weight:600}
+.pq{color:var(--txt2);font-style:italic;font-weight:400}
+code{font-family:'JetBrains Mono',monospace;font-size:12.5px;background:var(--bg3);padding:1px 6px;border-radius:4px;color:var(--ciano)}
+
+.box{border-left:3px solid var(--laranja);background:rgba(249,115,22,.06);padding:13px 16px;border-radius:0 8px 8px 0;margin:14px 0}
+.banca{border-left:3px solid var(--roxo);background:rgba(168,85,247,.07);padding:13px 16px;border-radius:0 8px 8px 0;margin:14px 0}
+.banca .tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--roxo);display:block;margin-bottom:7px}
+.mnemo{border-left:3px solid var(--ciano);background:rgba(34,211,238,.07);padding:13px 16px;border-radius:0 8px 8px 0;margin:14px 0}
+.mnemo .tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ciano);display:block;margin-bottom:7px}
+.alerta{border-left:3px solid var(--vermelho);background:rgba(239,68,68,.07);padding:13px 16px;border-radius:0 8px 8px 0;margin:14px 0}
+.alerta .tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--vermelho);display:block;margin-bottom:7px}
+.vasc{border-left:3px solid var(--verde);background:rgba(34,197,94,.07);padding:13px 16px;border-radius:0 8px 8px 0;margin:14px 0}
+.vasc .tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--verde);display:block;margin-bottom:7px}
+
+.tbl-wrap{overflow-x:auto;margin:14px 0;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:540px}
+th{background:var(--bg3);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}
+td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td:first-child{color:#fff;font-weight:500}
+
+.passo{display:flex;gap:14px;margin-bottom:15px;padding-bottom:15px;border-bottom:1px dashed var(--line)}
+.passo:last-child{border-bottom:none}
+.passo-n{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--laranja);font-weight:700;flex-shrink:0;width:26px;padding-top:2px}
+.maos{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:9px}
+.mao{background:var(--bg3);border-radius:7px;padding:9px 12px;font-size:12.5px}
+.mao .lbl{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--txt2);display:block;margin-bottom:4px}
+@media(max-width:620px){.maos{grid-template-columns:1fr}}
+
+.q{margin-bottom:20px;padding-bottom:18px;border-bottom:1px dashed var(--line)}
+.q:last-child{border-bottom:none;padding-bottom:0}
+.q-banca{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--roxo);display:block;margin-bottom:7px}
+.q-alt{margin:4px 0 0 4px;font-size:14px}
+.q-resp{margin-top:10px;background:var(--bg3);border-radius:7px;padding:10px 13px;font-size:13.5px}
+.q-resp b{color:var(--verde)}
+
+.ctrl{display:flex;gap:9px;margin-bottom:18px}
+.ctrl button{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;background:var(--bg2);color:var(--txt2);border:1px solid var(--line);border-radius:7px;padding:8px 14px;cursor:pointer;transition:.15s}
+.ctrl button:hover{color:var(--laranja);border-color:var(--laranja)}
+footer{margin-top:34px;padding-top:20px;border-top:1px solid var(--line);font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--txt2);line-height:1.9}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Perioperatório · Resumo 35</div>
+  <h1>Nutrição enteral no pós-operatório de cirurgia abdominal</h1>
+  <p class="sub">Quando iniciar, por qual sonda, como progredir — e como separar gastroparesia de íleo e de obstrução mecânica à beira do leito. Inclui técnica de jejunostomia de alimentação e manejo do paciente ostomizado.</p>
+  <div class="refs">
+    Sabiston 21ª ed. · Zollinger's Atlas 11ª ed. · Netter 8ª ed.<br>
+    ESPEN Practical Guideline: Clinical Nutrition in Surgery (2021) e ESPEN Guideline Update (2025)<br>
+    ASCRS/SAGES Enhanced Recovery After Colon and Rectal Surgery (2023) · ERAS Society · ISGPS
+  </div>
+  <div class="legenda">
+    <span><i class="dot" style="background:var(--laranja)"></i> conteúdo</span>
+    <span><i class="dot" style="background:var(--roxo)"></i> alto rendimento / banca</span>
+    <span><i class="dot" style="background:var(--ciano)"></i> mnemônico</span>
+    <span><i class="dot" style="background:var(--verde)"></i> nota vascular</span>
+    <span><i class="dot" style="background:var(--vermelho)"></i> armadilha</span>
+  </div>
+</header>
+
+<div class="ctrl">
+  <button onclick="todas(true)">Abrir tudo</button>
+  <button onclick="todas(false)">Fechar tudo</button>
+</div>
+
+<!-- 01 -->
+<section class="open">
+  <div class="sec-head" tabindex="0"><span class="num">01</span><h2>Fisiologia: por que o intestino para depois da cirurgia</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <h3>Íleo pós-operatório fisiológico</h3>
+    <p>É a hipomotilidade transitória que se segue a qualquer laparotomia. <span class="pq">(a barriga fica "de férias" por uns dias depois que o cirurgião mexe nela)</span> Tem três engrenagens:</p>
+    <ul>
+      <li><b>Fase neurogênica</b> — reflexo inibitório espino-simpático desencadeado pela manipulação visceral e pela incisão. Predomina nas primeiras horas.</li>
+      <li><b>Fase inflamatória</b> — a manipulação recruta macrófagos residentes da muscular própria, que liberam interleucinas e óxido nítrico e paralisam a musculatura lisa. Predomina de 3 a 24 h e é a fase que se prolonga em quem tem peritonite.</li>
+      <li><b>Fase farmacológica</b> — opioide agindo em receptor µ do plexo mioentérico. É a única totalmente reversível pelo médico.</li>
+    </ul>
+
+    <h3>Cronologia do retorno da motilidade</h3>
+    <div class="tbl-wrap">
+    <table>
+      <tr><th>Segmento</th><th>Retorno</th><th>Marcador clínico</th></tr>
+      <tr><td>Delgado</td><td>6–12 h</td><td>Nenhum — é silencioso. Por isso a dieta pode entrar antes de qualquer sinal.</td></tr>
+      <tr><td>Estômago</td><td>24–48 h</td><td>Queda do débito da sonda nasogástrica, ausência de náusea</td></tr>
+      <tr><td>Cólon</td><td>48–72 h</td><td>Flatos, evacuação</td></tr>
+    </table>
+    </div>
+
+    <div class="alerta">
+      <span class="tag">Armadilha clássica</span>
+      Esperar flato ou ruído hidroaéreo para liberar dieta é conduta <b>abandonada</b>. O flato é marcador de motilidade colônica, e a absorção acontece no delgado, que já está funcionando em 6–12 h. Ausculta abdominal tem baixíssima acurácia e não deve guiar prescrição de dieta.
+    </div>
+
+    <h3>Por que alimentar cedo funciona</h3>
+    <ul>
+      <li>Mantém a altura vilositária e a integridade da barreira intestinal, reduzindo translocação bacteriana.</li>
+      <li>Fornece glutamina ao enterócito e butirato ao colonócito — o butirato é o substrato energético direto do cólon e favorece a cicatrização da anastomose. O jejum prolongado reduz as bactérias produtoras de butirato.</li>
+      <li>Estimula o reflexo gastrocólico e encurta o próprio íleo.</li>
+      <li>Preserva o tecido linfoide associado ao intestino, com queda documentada de complicações infecciosas.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 02 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">02</span><h2>Anatomia e vascularização aplicadas</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <h3>Marcos do acesso enteral</h3>
+    <ul>
+      <li><b>Cárdia</b> — cerca de 40 cm da arcada dentária. Referência para o comprimento da sonda nasogástrica <span class="pq">(mede-se do nariz à orelha e da orelha ao apêndice xifoide)</span>.</li>
+      <li><b>Piloro</b> — a ultrapassagem é o objetivo da sonda pós-pilórica.</li>
+      <li><b>Ângulo de Treitz</b> — ângulo duodenojejunal, fixado pelo músculo suspensor do duodeno. É o divisor entre trato digestivo alto e baixo e o alvo real da sonda "nasoenteral": ponta <b>distal ao Treitz</b> é o que protege de refluxo.</li>
+      <li><b>Jejuno proximal</b> — 20 a 40 cm do Treitz: sítio padrão da jejunostomia de alimentação.</li>
+    </ul>
+
+    <h3>Vascularização relevante</h3>
+    <div class="tbl-wrap">
+    <table>
+      <tr><th>Estrutura</th><th>Suprimento</th><th>Aplicação</th></tr>
+      <tr><td>Estômago</td><td>Tronco celíaco: gástrica esquerda, gástrica direita, gastromental direita e esquerda, gástricas curtas</td><td>Rede anastomótica riquíssima — o estômago tolera ligadura de 3 dos 4 pedículos, base do tubo gástrico na esofagectomia</td></tr>
+      <tr><td>Duodeno</td><td>Arcadas pancreatoduodenais superior (tronco celíaco) e inferior (mesentérica superior)</td><td>Zona de transição entre os dois territórios — vulnerável em baixo fluxo</td></tr>
+      <tr><td>Jejuno / íleo</td><td>Mesentérica superior via arcadas e vasos retos</td><td>Jejuno: arcadas únicas e vasos retos longos. Íleo: múltiplas arcadas e vasos retos curtos — diferencia as alças no intraoperatório</td></tr>
+      <tr><td>Cólon</td><td>Mesentérica superior e inferior, unidas pela marginal de Drummond e pelo arco de Riolan</td><td>Ângulo esplênico é o ponto crítico de Griffiths — zona de transição isquêmica</td></tr>
+    </table>
+    </div>
+
+    <h3>Inervação e marca-passo gástrico</h3>
+    <p>O esvaziamento gástrico depende de três elementos: <b>tônus vagal</b>, <b>células intersticiais de Cajal</b> <span class="pq">(o "relógio" do estômago, que dá o ritmo das contrações — cerca de 3 por minuto)</span> localizadas na grande curvatura na transição corpo-antro, e a <b>coordenação antro-piloro-duodenal</b>.</p>
+    <p>Isso explica a gastroparesia de causa cirúrgica: lesão vagal na fundoplicatura, na esofagectomia e na gastrectomia; ressecção do marca-passo em gastrectomias amplas; desnervação e perda do duodeno na duodenopancreatectomia.</p>
+
+    <div class="vasc">
+      <span class="tag">Nota vascular</span>
+      <b>Isquemia mesentérica não oclusiva.</b> Alimentar o intestino aumenta a demanda de oxigênio esplâncnico em até 30%. Num paciente em vasopressor crescente, o fluxo mesentérico já está desviado — a dieta enteral pode precipitar necrose intestinal. É complicação rara, porém catastrófica, descrita sobretudo com dieta em dose plena e fórmula hiperosmolar em choque. Regra: <b>estabilidade hemodinâmica antes de aporte pleno</b>; dose trófica (10–20 mL/h) é aceitável em vasopressor estável e em desmame.
+    </div>
+  </div>
+</section>
+
+<!-- 03 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">03</span><h2>Quando iniciar — evidência atual</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <h3>Regra-mestra</h3>
+    <div class="box">
+      <b>Dentro de 24 horas.</b> O ESPEN 2021 e a atualização de 2025 recomendam iniciar nutrição oral ou por sonda assim que possível no paciente consciente e hemodinamicamente estável (Grau A), e por sonda dentro de 24 h quando se prevê ingesta oral abaixo de 50% das necessidades pelos sete dias seguintes (Grau A).
+    </div>
+
+    <h3>Hierarquia de vias</h3>
+    <ol>
+      <li><b>Via oral</b> — sempre a preferida. Dieta hospitalar normal ou suplemento oral.</li>
+      <li><b>Sonda</b> — quando via oral inviável ou insuficiente.</li>
+      <li><b>Parenteral suplementar</b> — se não atingir 50% da meta por via oral/enteral em 3 a 4 dias.</li>
+      <li><b>Parenteral total</b> — apenas com contraindicação formal à via enteral.</li>
+    </ol>
+
+    <h3>Cirurgia colorretal</h3>
+    <p>A diretriz ASCRS/SAGES 2023 recomenda <b>dieta regular dentro de 24 h</b> após cirurgia colorretal eletiva — recomendação forte com evidência de qualidade moderada (1B). A revisão Cochrane de 2019, com 17 ensaios randomizados, mostrou redução de cerca de 2 dias de internação, <b>sem aumento de deiscência anastomótica, infecção de ferida, pneumonia ou mortalidade</b>, e sem aumento significativo de náusea e vômito.</p>
+
+    <h3>Cirurgia do andar superior e pancreática</h3>
+    <p>O ESPEN recomenda considerar <b>sonda nasojejunal ou jejunostomia com cateter-agulha posicionadas distal à anastomose</b>, colocadas no intraoperatório, em todos os candidatos a nutrição enteral submetidos a cirurgia digestiva alta ou pancreática, com atenção especial ao desnutrido (Grau B). A jejunostomia realizada com técnica padronizada em centro especializado tem taxa de complicação de aproximadamente 1,5 a 6%.</p>
+
+    <div class="banca">
+      <span class="tag">Alto rendimento — HCPA / GHC / AMRIGS</span>
+      Três números que caem: <b>24 h</b> (início da dieta), <b>50%</b> (limiar de aporte que dispara a indicação de sonda ou de parenteral suplementar) e <b>3 a 4 dias</b> (prazo para associar parenteral suplementar). Guarde também: dieta precoce em cirurgia colorretal <b>não</b> aumenta deiscência — é a alternativa correta em quase toda questão sobre o tema.
+    </div>
+
+    <h3>Metas de aporte</h3>
+    <ul>
+      <li>Energia: 25 a 30 kcal/kg/dia de peso corporal atual (peso ajustado se obeso).</li>
+      <li>Proteína: 1,2 a 2,0 g/kg/dia — o paciente cirúrgico grave é o extremo superior.</li>
+      <li>Início: <b>10 a 20 mL/h</b>, progredindo de forma individualizada. O ESPEN é explícito de que atingir a meta pode levar de 5 a 7 dias, sobretudo quando a sonda é jejunal.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 04 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">04</span><h2>Vias de acesso: qual sonda, para quem</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <div class="tbl-wrap">
+    <table>
+      <tr><th>Acesso</th><th>Indicação</th><th>Vantagem</th><th>Limitação</th></tr>
+      <tr><td>Nasogástrica de alimentação</td><td>Primeira escolha quando se precisa de sonda em cirurgia colorretal e abdominal baixa/média</td><td>Passagem à beira-leito, sem imagem; permite dieta em bolus; fisiológica (preserva ação do ácido e do piloro)</td><td>Não protege de estase gástrica; inviável em gastroparesia</td></tr>
+      <tr><td>Nasoenteral pós-pilórica (ponta além do Treitz)</td><td>Intolerância gástrica documentada, alto risco de aspiração, ventilação mecânica prolongada, pancreatite grave, anastomose alta</td><td>Permite alimentar apesar da estase gástrica; possibilita descomprimir estômago e nutrir ao mesmo tempo</td><td>Exige guia eletromagnético, endoscopia, ultrassom ou radioscopia; obriga infusão contínua em bomba; migra e enrola com facilidade</td></tr>
+      <tr><td>Jejunostomia com cateter-agulha</td><td>Cirurgia esofágica, gástrica e pancreática de grande porte no desnutrido; previsão de nutrição enteral prolongada ou domiciliar</td><td>Acesso definitivo, não desloca, mantém aporte após alta</td><td>Requer laparotomia/laparoscopia; risco de obstrução, volvo em torno do ponto de fixação e fístula</td></tr>
+      <tr><td>Nasogástrica de descompressão (Levine, aberta)</td><td>Íleo, gastroparesia, obstrução — <b>não é via de dieta</b></td><td>Alivia distensão e reduz risco de vômito e aspiração</td><td>Uso rotineiro após laparotomia está <b>contraindicado</b> pelos protocolos de recuperação acelerada</td></tr>
+    </table>
+    </div>
+
+    <div class="banca">
+      <span class="tag">Alto rendimento — Santa Casa POA / PUC-RS</span>
+      <b>Descompressão nasogástrica de rotina após laparotomia eletiva está proscrita.</b> Metanálises mostram retorno mais rápido da função intestinal, menos complicações pulmonares e alta mais precoce sem a sonda. Ela é reintroduzida seletivamente diante de vômito, distensão ou íleo estabelecido. Não confundir com a sonda de alimentação.
+    </div>
+
+    <h3>Nasogástrica ou pós-pilórica? A evidência não é unânime</h3>
+    <ul>
+      <li>Metanálise com 15 ensaios randomizados e 966 pacientes: via pós-pilórica reduziu <b>pneumonia</b> (RR 0,63; IC95% 0,48–0,83), mas <b>sem diferença em aspiração</b> (RR 1,11) nem em vômitos.</li>
+      <li>Metanálise maior, com 41 estudos e 3.248 pacientes críticos: pós-pilórica com menor aspiração pulmonar, refluxo e pneumonia, menos intolerância e melhor percentual da meta atingida.</li>
+      <li>Revisão de 2023 sobre pneumonia aspirativa em nutrição enteral: <b>não encontrou diferença</b> na incidência entre gástrica e pós-pilórica e, pela facilidade do acesso, sugere a via gástrica como estratégia inicial, salvo indicação específica.</li>
+      <li>O próprio ESPEN <b>não recomenda a via pós-pilórica como primeira escolha</b>.</li>
+    </ul>
+
+    <div class="box">
+      <b>Síntese prática.</b> Comece pela gástrica. Migre para pós-pilórica quando houver intolerância documentada, alto risco de aspiração ou anastomose do andar superior. Não passe sonda pós-pilórica "profilaticamente" em todo mundo — além de não haver ganho consistente, há custo de tempo e de calorias perdidas na espera do posicionamento.
+    </div>
+
+    <h3>Confirmação do posicionamento</h3>
+    <p>Padrão-ouro é a <b>radiografia</b>. Ausculta do epigástrio após injeção de ar é método <b>abandonado</b> — não distingue posicionamento traqueal. Aspirado com pH ácido sugere posição gástrica; aspirado bilioso com pH acima de 6 sugere posição pós-pilórica, mas nenhum dos dois substitui a imagem antes da primeira infusão.</p>
+  </div>
+</section>
+
+<!-- 05 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">05</span><h2>Técnica: sonda pós-pilórica à beira-leito</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <h3>Posição do paciente</h3>
+    <p>Decúbito dorsal com cabeceira a 30–45°, cabeça em leve flexão cervical na introdução <span class="pq">(queixo no peito, que fecha a via aérea e abre o caminho do esôfago)</span>. Após ultrapassar o cárdia, <b>decúbito lateral direito</b> — a gravidade leva a ponta ao antro e ao piloro.</p>
+
+    <div class="passo">
+      <div class="passo-n">01</div>
+      <div><b>Preparo.</b> Sonda de poliuretano ou silicone com fio-guia, 8 a 12 Fr, ponta com peso ou não. Medir nariz–orelha–xifoide e acrescentar 20 a 30 cm para alcançar o jejuno. Lubrificar o fio-guia dentro da sonda e a ponta externamente. Considerar procinético 10 minutos antes: metoclopramida 10 mg IV ou eritromicina 250 mg IV — abrem o piloro e aumentam a taxa de sucesso.
+      <div class="maos">
+        <div class="mao"><span class="lbl">Mão esquerda</span>Estabiliza a cabeça e eleva discretamente a narina</div>
+        <div class="mao"><span class="lbl">Mão direita</span>Conduz a sonda paralela ao assoalho nasal, nunca em direção cranial</div>
+      </div>
+      </div>
+    </div>
+
+    <div class="passo">
+      <div class="passo-n">02</div>
+      <div><b>Passagem nasogástrica.</b> Avançar até a marca gástrica (aproximadamente 50–60 cm). Aspirar conteúdo e testar pH. No paciente entubado, a sonda desliza com mais facilidade porque o balonete do tubo orotraqueal já ocupa a traqueia — mas isso <b>não elimina</b> o risco de trajeto traqueobrônquico: perda de fio-guia, tosse ou queda da saturação obrigam a retirar.</div>
+    </div>
+
+    <div class="passo">
+      <div class="passo-n">03</div>
+      <div><b>Travessia pilórica.</b> Lateralizar à direita, insuflar 300–500 mL de ar no estômago para distender o antro e avançar lentamente, 2 a 3 cm por vez, com movimento rotatório horário. Resistência elástica com retorno da sonda indica enrolamento no fundo — recuar 10 cm e repetir.</div>
+    </div>
+
+    <div class="passo">
+      <div class="passo-n">04</div>
+      <div><b>Métodos assistidos.</b> Guia eletromagnético em tempo real é o mais prático em terapia intensiva. Ultrassom à beira-leito é alternativa validada, com taxa de sucesso em torno de 93% e tempo médio de cerca de 22 minutos, sem eventos adversos em séries publicadas. Endoscopia e radioscopia ficam para as falhas.</div>
+    </div>
+
+    <div class="passo">
+      <div class="passo-n">05</div>
+      <div><b>Confirmação e fixação.</b> Radiografia de abdome: a ponta deve cruzar a linha média para a esquerda e descer abaixo do corpo vertebral, à esquerda da coluna — sinal de que passou o Treitz. Retirar o fio-guia <b>somente depois</b> da confirmação, e nunca reintroduzi-lo com a sonda posicionada, pelo risco de perfuração. Fixar sem tração na asa nasal e marcar o comprimento externo com caneta para checagem diária.</div>
+    </div>
+
+    <div class="alerta">
+      <span class="tag">Armadilha</span>
+      Sonda pós-pilórica <b>não recebe dieta em bolus</b>. O jejuno não tem reservatório; bolus gera distensão, dor e diarreia osmótica. Infusão contínua em bomba, sempre.
+    </div>
+  </div>
+</section>
+
+<!-- 06 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">06</span><h2>Técnica: jejunostomia de alimentação</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <h3>Posição e preparo</h3>
+    <p>Decúbito dorsal horizontal, braços abertos, antissepsia e campos de laparotomia — habitualmente realizada ao final do tempo principal da esofagectomia, gastrectomia ou duodenopancreatectomia. Antibiótico profilático já em vigência do procedimento-índice.</p>
+
+    <h3>Passo a passo — técnica de Witzel</h3>
+    <div class="passo">
+      <div class="passo-n">01</div>
+      <div><b>Escolha da alça.</b> Identificar o ângulo de Treitz e medir 20 a 40 cm distalmente. A alça deve alcançar a parede sem tensão. Confirmar orientação proximal-distal para não alimentar em sentido retrógrado — erro grave e descrito.
+      <div class="maos">
+        <div class="mao"><span class="lbl">Mão esquerda</span>Pinça de Babcock apreendendo a alça sem esmagar a serosa</div>
+        <div class="mao"><span class="lbl">Mão direita</span>Palpação e mensuração com fita; tesoura de Metzenbaum para janela avascular do mesentério, se necessário</div>
+      </div>
+      </div>
+    </div>
+
+    <div class="passo">
+      <div class="passo-n">02</div>
+      <div><b>Sutura em bolsa.</b> Bolsa seromuscular de aproximadamente 1 cm na borda antimesentérica, com <b>polipropileno 4-0</b> ou <b>seda 3-0</b>. A borda antimesentérica é escolhida por ser a zona de menor densidade vascular <span class="pq">(o lado da alça "sem as veias grandes")</span>.
+      <div class="maos">
+        <div class="mao"><span class="lbl">Mão esquerda</span>Pinça anatômica dente de rato delicada tracionando a serosa</div>
+        <div class="mao"><span class="lbl">Mão direita</span>Porta-agulhas Mayo-Hegar com agulha cilíndrica 1/2 círculo</div>
+      </div>
+      </div>
+    </div>
+
+    <div class="passo">
+      <div class="passo-n">03</div>
+      <div><b>Enterotomia e introdução.</b> Punção ou pequena enterotomia no centro da bolsa com bisturi lâmina 11. Introduzir cateter 12–14 Fr por 15 a 20 cm no sentido <b>distal</b>. Amarrar a bolsa sobre o cateter, sem estrangular.</div>
+    </div>
+
+    <div class="passo">
+      <div class="passo-n">04</div>
+      <div><b>Túnel de Witzel.</b> Invaginar o cateter sob 4 a 5 cm de parede jejunal com pontos seromusculares seriados de <b>seda 3-0</b> ou polipropileno 4-0, criando um túnel antirrefluxo <span class="pq">(igual a enterrar uma mangueira debaixo da terra para nada vazar em volta)</span>.
+      <div class="maos">
+        <div class="mao"><span class="lbl">Mão esquerda</span>Pinça anatômica aproximando as bordas seromusculares sobre o cateter</div>
+        <div class="mao"><span class="lbl">Mão direita</span>Porta-agulhas com seda 3-0; pontos separados a cada 5–7 mm</div>
+      </div>
+      </div>
+    </div>
+
+    <div class="passo">
+      <div class="passo-n">05</div>
+      <div><b>Exteriorização e jejunopexia.</b> Exteriorizar o cateter por contra-abertura no quadrante superior esquerdo, no trajeto mais curto possível. Fixar a alça à parede abdominal com 4 pontos seromusculares de <b>seda 3-0</b> em quadrantes, obliterando o espaço entre alça e parede — é essa jejunopexia que previne <b>volvo</b> e <b>hérnia interna</b>, as complicações temidas.</div>
+    </div>
+
+    <div class="passo">
+      <div class="passo-n">06</div>
+      <div><b>Teste e fixação cutânea.</b> Infundir 20 mL de soro fisiológico verificando ausência de extravasamento. Fixar à pele com <b>náilon 2-0</b> e identificar o cateter com etiqueta — cateter de jejunostomia confundido com dreno e retirado por engano é evento adverso descrito.</div>
+    </div>
+
+    <h3>Tabela de fios</h3>
+    <div class="tbl-wrap">
+    <table>
+      <tr><th>Tempo</th><th>Fio</th><th>Racional</th></tr>
+      <tr><td>Sutura em bolsa</td><td>Polipropileno 4-0 ou seda 3-0, agulha cilíndrica</td><td>Inabsorvível, mantém a vedação enquanto o cateter permanece</td></tr>
+      <tr><td>Túnel de Witzel</td><td>Seda 3-0 ou polipropileno 4-0, pontos separados</td><td>Seromuscular; não transfixar a mucosa para não criar trajeto de vazamento</td></tr>
+      <tr><td>Jejunopexia</td><td>Seda 3-0, 4 pontos em quadrante</td><td>Previne volvo, hérnia interna e vazamento intraperitoneal</td></tr>
+      <tr><td>Fixação cutânea</td><td>Náilon 2-0</td><td>Resistente, permite retirada tardia sem reabsorção precoce</td></tr>
+    </table>
+    </div>
+
+    <div class="banca">
+      <span class="tag">Alto rendimento — PUC-RS / HCPA</span>
+      A complicação mais temida da jejunostomia de alimentação é o <b>volvo de delgado em torno do ponto de fixação</b>, seguido de <b>pneumatose e necrose intestinal por dieta em alça isquêmica ou obstruída</b>. Clínica: dor abdominal desproporcional e distensão que <b>surge com a progressão da dieta</b>. Conduta: <b>suspender a infusão imediatamente</b> e realizar tomografia. Nunca "forçar" a dieta em jejunostomia dolorosa.
+    </div>
+  </div>
+</section>
+
+<!-- 07 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">07</span><h2>Gastroparesia × íleo × obstrução</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <div class="box">
+      Por que separar importa: <b>gastroparesia isolada se trata passando a dieta adiante</b> (sonda pós-pilórica). <b>Íleo global não</b> — infundir dieta em delgado atônico gera distensão, hipertensão intra-abdominal e risco de isquemia. E <b>obstrução mecânica</b> tira o problema do campo nutricional.
+    </div>
+
+    <h3>Definições</h3>
+    <ul>
+      <li><b>Gastroparesia</b> — falha isolada do esvaziamento gástrico, com trânsito de delgado e cólon preservados.</li>
+      <li><b>Íleo</b> — hipomotilidade difusa envolvendo delgado e cólon, com o estômago junto como componente.</li>
+      <li><b>Esvaziamento gástrico retardado pós-pancreatectomia (ISGPS)</b> — definido pela necessidade de sonda nasogástrica além do 7º dia, incapacidade de tolerar dieta sólida, vômitos e necessidade de nutrição enteral ou parenteral. Graduado em A, B e C.</li>
+    </ul>
+
+    <h3>Tabela diferencial à beira do leito</h3>
+    <div class="tbl-wrap">
+    <table>
+      <tr><th>Parâmetro</th><th>Gastroparesia</th><th>Íleo</th><th>Obstrução mecânica</th></tr>
+      <tr><td>Débito da sonda nasogástrica</td><td>Alto</td><td>Alto</td><td>Alto, muitas vezes fecaloide</td></tr>
+      <tr><td>Trânsito distal (flatos / débito da ostomia)</td><td><b>Preservado</b></td><td>Ausente ou mínimo</td><td>Ausente, após fase de esvaziamento</td></tr>
+      <tr><td>Distensão</td><td>Epigástrica</td><td>Difusa e proporcional</td><td>Difusa, assimétrica, com alça sentinela</td></tr>
+      <tr><td>Dor</td><td>Peso, plenitude</td><td>Desconforto difuso</td><td>Cólica, em ondas</td></tr>
+      <tr><td>Radiografia</td><td>Câmara gástrica muito dilatada, nível único; delgado e cólon normais</td><td>Distensão difusa de delgado <b>e</b> cólon, gás até o reto, níveis no mesmo plano</td><td>Distensão proximal com <b>colapso distal</b>, níveis escalonados, ausência de gás distal</td></tr>
+      <tr><td>Tomografia</td><td>Sem ponto de transição</td><td>Sem ponto de transição, alças edemaciadas</td><td><b>Ponto de transição</b>, sinal das fezes de delgado</td></tr>
+    </table>
+    </div>
+
+    <div class="banca">
+      <span class="tag">Alto rendimento — GHC / AMRIGS</span>
+      O achado que separa íleo de obstrução na radiografia é a <b>presença de gás distal e no reto</b>: no íleo o gás está distribuído por todo o trajeto; na obstrução há colapso a jusante do ponto de transição. E o achado que separa gastroparesia de íleo é o <b>trânsito distal preservado</b> — em paciente ostomizado, o débito na bolsa é a resposta direta.
+    </div>
+
+    <h3>Ultrassom gástrico à beira-leito</h3>
+    <p>Método de escolha em terapia intensiva, já que a cintilografia de esvaziamento gástrico é inviável no paciente ventilado. Janela epigástrica, corte sagital do antro na altura da aorta e do lobo esquerdo do fígado, em decúbito dorsal e lateral direito.</p>
+    <ul>
+      <li>Área de secção transversa antral acima de aproximadamente <b>340 mm²</b> ou volume estimado acima de <b>1,5 mL/kg</b> indicam conteúdo gástrico significativo.</li>
+      <li>Serve para acompanhar resposta: queda da área antral em 24–48 h após procinético confirma gastroparesia responsiva.</li>
+    </ul>
+
+    <h3>Contexto etiológico</h3>
+    <div class="tbl-wrap">
+    <table>
+      <tr><th>Favorece gastroparesia</th><th>Favorece íleo</th></tr>
+      <tr><td>Cirurgia do andar superior, duodenopancreatectomia, esofagectomia, fundoplicatura, lesão vagal, diabetes prévio, opioide em infusão, hiperglicemia</td><td>Manipulação intestinal extensa, peritonite, sepse abdominal, hipocalemia e hipomagnesemia, sobrecarga volêmica com edema de alças, hematoma retroperitoneal, trauma raquimedular, bloqueador neuromuscular, vasopressor em dose alta</td></tr>
+    </table>
+    </div>
+
+    <div class="alerta">
+      <span class="tag">Regra temporal que salva</span>
+      Íleo pós-operatório fisiológico resolve em <b>3 a 5 dias</b>. Íleo que ultrapassa esse prazo, ou que <b>reaparece</b> depois de já ter havido trânsito, é sinal de complicação — coleção, abscesso, fístula, deiscência ou isquemia — até prova em contrário. Nesse cenário, tomografia com contraste, não mais um dia de procinético.
+    </div>
+
+    <h3>Achado contraintuitivo que cai em prova</h3>
+    <p>Após duodenopancreatectomia, a sonda nasojejunal <b>de rotina piora</b> o esvaziamento gástrico:</p>
+    <ul>
+      <li>Metanálise com 29 estudos e 5.930 pacientes: menores taxas de esvaziamento gástrico retardado nos pacientes <b>sem</b> jejunostomia ou sonda nasojejunal (logOR −0,618; p&lt;0,001); protocolo de recuperação acelerada também reduziu a incidência (logOR −0,712; p=0,008).</li>
+      <li>Coorte com escore de propensão em 428 pacientes: dieta oral precoce associou-se a <b>menos</b> esvaziamento gástrico retardado que nutrição nasojejunal precoce (7,4% versus 15%; p=0,005).</li>
+    </ul>
+    <p>Ou seja: a sonda jejunal é ferramenta de <b>resgate</b> na intolerância estabelecida, não profilaxia universal.</p>
+  </div>
+</section>
+
+<!-- 08 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">08</span><h2>Manejo da intolerância enteral</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <h3>Volume residual gástrico — o que mudou</h3>
+    <ul>
+      <li>Resíduos entre <b>200 e 500 mL</b> exigem medidas antiaspiração, mas <b>não</b> interrupção automática da dieta na ausência de outros sinais de intolerância.</li>
+      <li>Diretrizes atuais recomendam não interromper com resíduo abaixo de <b>500 mL</b>, ou abandonar a aferição rotineira — a não aferição não se mostrou inferior quanto a mortalidade, pneumonia associada à ventilação ou intolerância, com exceção de mais vômitos.</li>
+      <li>Atenção ao contexto: <b>sonda aberta em drenagem contínua</b> com débito alto ao longo de horas é fenômeno diferente do resíduo aspirado de forma intermitente — 1.200 mL em 24 h é intolerância franca, e não um número a ser relativizado.</li>
+    </ul>
+
+    <h3>Antes do procinético: corrija o corrigível</h3>
+    <ul>
+      <li>Reduzir opioide; analgesia multimodal, bloqueio de parede, anti-inflamatório se sem contraindicação.</li>
+      <li>Reduzir sedação; suspender bloqueador neuromuscular.</li>
+      <li>Corrigir <b>potássio, magnésio e fósforo</b> — a hipomagnesemia é subdiagnosticada e perpetua o íleo.</li>
+      <li>Controlar hiperglicemia — hiperglicemia aguda inibe diretamente o esvaziamento gástrico.</li>
+      <li>Revisar anticolinérgicos e reavaliar dose de vasopressor.</li>
+      <li>Cabeceira a 30–45°, controle da pressão do balonete, higiene oral com clorexidina.</li>
+    </ul>
+
+    <h3>Procinéticos</h3>
+    <div class="tbl-wrap">
+    <table>
+      <tr><th>Droga</th><th>Dose</th><th>Observação</th></tr>
+      <tr><td>Metoclopramida</td><td>10 mg IV a cada 6–8 h</td><td>Primeira escolha pelo perfil de segurança comparado à eritromicina. Vigiar sintomas extrapiramidais e prolongamento do intervalo QT</td></tr>
+      <tr><td>Eritromicina</td><td>250 mg (ou 3 mg/kg) IV a cada 6–8 h</td><td>Agonista de motilina, o mais potente. <b>A eficácia cai a cerca de um terço após 72 h</b> — suspender em 3 dias. Prolonga QT e seleciona resistência</td></tr>
+      <tr><td>Associação</td><td>—</td><td>Dados insuficientes para recomendação formal; usada empiricamente em refratários</td></tr>
+    </table>
+    </div>
+
+    <div class="mnemo">
+      <span class="tag">Mnemônico — MOTOR parado</span>
+      Antes de culpar o intestino, revise <b>M-O-T-O-R</b>:<br>
+      <b>M</b>agnésio e potássio baixos · <b>O</b>pioide em infusão · <b>T</b>omografia se íleo além do 5º dia · <b>O</b>bstrução mecânica excluída · <b>R</b>essuscitação excessiva (edema de alça)
+    </div>
+
+    <h3>Escada de decisão</h3>
+    <ol>
+      <li>Corrigir causas reversíveis + medidas antiaspiração.</li>
+      <li>Metoclopramida, reavaliando em 24–48 h.</li>
+      <li>Persistindo com trânsito distal preservado: <b>sonda pós-pilórica</b>, mantendo a nasogástrica aberta para descompressão simultânea.</li>
+      <li>Persistindo sem atingir 50% da meta em 3–4 dias: <b>parenteral suplementar</b>.</li>
+      <li>Sinais de complicação intra-abdominal: imagem e reoperação — sai do campo nutricional.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- 09 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">09</span><h2>Anastomose primária × ostomia</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <h3>A pergunta direta</h3>
+    <div class="box">
+      Ter anastomose ou ter estoma <b>não muda</b> o momento nem a via de início da dieta. O receio de "poupar a anastomose" é histórico, não fisiológico: a dieta precoce estimula peristalse, mantém a altura vilositária e fornece butirato ao colonócito, favorecendo a cicatrização.
+    </div>
+    <p>O que <b>realmente</b> muda a decisão é: (1) o <b>nível</b> da anastomose — esofagogástrica, gastrojejunal ou pancreática pedem sonda distal a ela; (2) a <b>estabilidade hemodinâmica</b>; (3) a presença de contraindicação formal à via enteral.</p>
+
+    <h3>O estoma como janela diagnóstica</h3>
+    <p>Vantagem clínica subestimada: no paciente ostomizado você tem <b>acesso direto ao trânsito distal</b>, que a maioria dos pacientes não oferece. Bolsa com débito preservado e sonda nasogástrica com alto débito equivale a gastroparesia. Bolsa seca por mais de 12–24 h com distensão difusa equivale a íleo — ou a obstrução.</p>
+
+    <div class="alerta">
+      <span class="tag">Armadilha no ostomizado</span>
+      Bolsa vazia + distensão + alto débito gástrico é <b>obstrução até prova em contrário</b>, e o próprio estoma é o ponto de estenose em potencial. Sempre: inspecionar a coloração da mucosa, <b>digitalizar o orifício aponeurótico</b>, procurar hérnia paraestomal, prolapso e torção da alça exteriorizada. Depois, tomografia com contraste.
+    </div>
+
+    <h3>Ileostomia de alto débito</h3>
+    <p>Definição prática: acima de <b>1.000 a 1.500 mL em 24 h</b>. É complicação metabólica, não apenas incômodo — leva a desidratação, lesão renal aguda e distúrbio hidroeletrolítico, e é causa frequente de reinternação após ileostomia.</p>
+    <ul>
+      <li>Balanço hídrico rigoroso; <b>magnésio sérico seriado</b>, além de sódio, potássio e função renal.</li>
+      <li>Inibidor de bomba de prótons em dose plena — reduz o volume de secreção que chega ao estoma.</li>
+      <li>Loperamida antes das refeições ou das infusões; codeína como segunda linha.</li>
+      <li>Evitar bolus e fórmulas hiperosmolares; preferir fórmula <b>isosmolar, polimérica, com fibra solúvel</b>.</li>
+      <li>Restringir líquidos hipotônicos livres e usar solução de reidratação oral em vez de água pura — a água pura piora a perda de sódio no ostomizado de alto débito.</li>
+      <li>Investigar causa: sepse intra-abdominal, obstrução parcial, colite por <i>C. difficile</i>, síndrome do intestino curto, retirada abrupta de corticoide.</li>
+    </ul>
+
+    <div class="alerta">
+      <span class="tag">Dupla perda</span>
+      Paciente com sonda nasogástrica aberta <b>e</b> ileostomia tem <b>duas vias simultâneas de perda</b>. A perda gástrica gera alcalose metabólica hipoclorêmica e hipocalêmica; a perda estomal gera acidose e depleção de sódio e magnésio. Repor separadamente, guiado por gasometria e eletrólitos — não por "regra de bolso".
+    </div>
+  </div>
+</section>
+
+<!-- 10 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">10</span><h2>Contraindicações e complicações</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <h3>Contraindicações à via enteral</h3>
+    <ul>
+      <li>Obstrução intestinal mecânica distal ao acesso.</li>
+      <li>Isquemia mesentérica.</li>
+      <li>Choque não ressuscitado, com vasopressor em escalada e hipoperfusão ativa.</li>
+      <li>Síndrome compartimental abdominal.</li>
+      <li>Fístula de alto débito sem possibilidade de acesso distal a ela.</li>
+      <li>Íleo grave com distensão progressiva e intolerância absoluta.</li>
+      <li>Sangramento digestivo ativo e significativo.</li>
+    </ul>
+    <p class="pq">Observação: abdome aberto, peritonite tratada, fístula de baixo débito e pancreatite grave <b>não</b> são contraindicações — em vários desses cenários a via enteral é justamente o tratamento.</p>
+
+    <h3>Complicações da nutrição enteral</h3>
+    <div class="tbl-wrap">
+    <table>
+      <tr><th>Complicação</th><th>Mecanismo</th><th>Prevenção / conduta</th></tr>
+      <tr><td>Broncoaspiração</td><td>Refluxo do conteúdo gástrico; decúbito baixo; estase</td><td>Cabeceira 30–45°, infusão contínua, procinético, via pós-pilórica em alto risco</td></tr>
+      <tr><td>Trajeto traqueobrônquico na passagem</td><td>Sonda de pequeno calibre com fio-guia em paciente sedado</td><td>Confirmação radiológica antes da primeira infusão; ausculta de ar <b>não</b> valida</td></tr>
+      <tr><td>Diarreia</td><td>Osmolaridade, velocidade, sorbitol em medicações, antibiótico, <i>C. difficile</i></td><td>Fórmula isosmolar com fibra solúvel, reduzir velocidade, revisar medicação líquida, pesquisar toxina</td></tr>
+      <tr><td>Síndrome de realimentação</td><td>Pico de insulina desloca fósforo, potássio e magnésio para o intracelular</td><td>Identificar risco (desnutrição, jejum prolongado, alcoolismo), iniciar com 10–15 kcal/kg/dia, <b>tiamina antes</b> da glicose, dosar fósforo diariamente</td></tr>
+      <tr><td>Obstrução da sonda</td><td>Fórmula espessa, medicação triturada, ausência de lavagem</td><td>Lavar com 20–30 mL de água a cada 4 h e após cada medicação; nunca reintroduzir fio-guia</td></tr>
+      <tr><td>Necrose intestinal não oclusiva</td><td>Demanda esplâncnica aumentada em baixo fluxo</td><td>Não progredir dieta em vasopressor crescente; dor desproporcional e acidose lática exigem suspender e investigar</td></tr>
+      <tr><td>Erosão e necrose de asa nasal / sinusite</td><td>Tração e permanência prolongada</td><td>Fixação sem tensão, alternar narina, indicar acesso definitivo se previsão maior que 4 semanas</td></tr>
+    </table>
+    </div>
+
+    <div class="mnemo">
+      <span class="tag">Mnemônico — 24 / 50 / 500</span>
+      <b>24</b> horas para iniciar · <b>50%</b> da meta é o limiar que dispara sonda ou parenteral suplementar · <b>500</b> mL é o resíduo abaixo do qual não se suspende a dieta.
+    </div>
+  </div>
+</section>
+
+<!-- 11 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">11</span><h2>Questões no estilo das bancas do RS</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <p class="pq">Questões originais, escritas no estilo de cada banca. Não são reprodução de provas passadas.</p>
+
+    <div class="q">
+      <span class="q-banca">Estilo HCPA</span>
+      <p>Mulher de 62 anos, quarto dia de pós-operatório de retossigmoidectomia com anastomose primária, evolui com náusea e distensão. Sobre a conduta nutricional, assinale a alternativa correta:</p>
+      <div class="q-alt">a) A dieta deve ser suspensa até a eliminação de flatos.</div>
+      <div class="q-alt">b) A presença de anastomose colorretal contraindica dieta antes do quinto dia.</div>
+      <div class="q-alt">c) A dieta precoce em cirurgia colorretal reduz o tempo de internação sem aumentar a taxa de deiscência.</div>
+      <div class="q-alt">d) A descompressão nasogástrica de rotina deve ser instituída em todas as laparotomias.</div>
+      <div class="q-resp"><b>Resposta: C.</b> A diretriz ASCRS/SAGES 2023 recomenda dieta regular em 24 h (1B), com redução de cerca de 2 dias de internação e sem aumento de deiscência, infecção de ferida, pneumonia ou mortalidade. Flato é marcador colônico e não condiciona a dieta; descompressão de rotina está proscrita.</div>
+    </div>
+
+    <div class="q">
+      <span class="q-banca">Estilo GHC</span>
+      <p>Paciente em ventilação mecânica, com ileostomia funcionante e débito preservado na bolsa, apresenta sonda nasogástrica aberta com 300 mL em 6 horas. A conduta mais adequada é:</p>
+      <div class="q-alt">a) Suspender toda a nutrição e iniciar parenteral total.</div>
+      <div class="q-alt">b) Corrigir eletrólitos, reduzir opioide, iniciar metoclopramida e progredir para sonda pós-pilórica mantendo a nasogástrica em drenagem.</div>
+      <div class="q-alt">c) Manter a dieta em bolus pela sonda nasogástrica.</div>
+      <div class="q-alt">d) Indicar laparotomia exploradora imediata.</div>
+      <div class="q-resp"><b>Resposta: B.</b> Trânsito distal preservado com alto débito gástrico define gastroparesia, e não íleo global nem obstrução. Corrige-se o reversível, usa-se procinético e passa-se a dieta adiante do estômago. Parenteral entra apenas se não se atingir 50% da meta em 3 a 4 dias.</div>
+    </div>
+
+    <div class="q">
+      <span class="q-banca">Estilo Santa Casa de Misericórdia de POA</span>
+      <p>Sobre o esvaziamento gástrico retardado após duodenopancreatectomia, é correto afirmar:</p>
+      <div class="q-alt">a) A sonda nasojejunal de rotina reduz sua incidência.</div>
+      <div class="q-alt">b) A definição do ISGPS inclui a necessidade de sonda nasogástrica além do sétimo dia.</div>
+      <div class="q-alt">c) É contraindicação absoluta à nutrição enteral.</div>
+      <div class="q-alt">d) A eritromicina mantém eficácia estável por até 14 dias de uso.</div>
+      <div class="q-resp"><b>Resposta: B.</b> A definição do ISGPS baseia-se na necessidade prolongada de sonda nasogástrica, intolerância a sólidos, vômitos e necessidade de suporte nutricional. A alternativa A está invertida: metanálise com 5.930 pacientes mostrou <b>menos</b> esvaziamento retardado nos pacientes sem sonda jejunal. A eficácia da eritromicina cai a cerca de um terço após 72 h.</div>
+    </div>
+
+    <div class="q">
+      <span class="q-banca">Estilo PUC-RS</span>
+      <p>Homem de 68 anos, sétimo dia de pós-operatório de esofagectomia com jejunostomia de alimentação, apresenta dor abdominal desproporcional e distensão que se iniciaram após aumento da velocidade de infusão. A primeira medida é:</p>
+      <div class="q-alt">a) Aumentar a diluição da dieta e manter a infusão.</div>
+      <div class="q-alt">b) Suspender a infusão e realizar tomografia de abdome.</div>
+      <div class="q-alt">c) Trocar a fórmula por oligomérica e reavaliar em 24 horas.</div>
+      <div class="q-alt">d) Prescrever loperamida.</div>
+      <div class="q-resp"><b>Resposta: B.</b> Dor desproporcional que surge com a progressão da dieta em jejunostomia levanta a suspeita de volvo em torno do ponto de fixação ou de pneumatose e necrose por dieta em alça obstruída. Suspender e investigar por imagem; jamais insistir na infusão.</div>
+    </div>
+
+    <div class="q">
+      <span class="q-banca">Estilo AMRIGS</span>
+      <p>Quanto às vias de nutrição enteral no paciente cirúrgico, assinale a alternativa correta:</p>
+      <div class="q-alt">a) A via pós-pilórica é a primeira escolha recomendada pelas diretrizes europeias.</div>
+      <div class="q-alt">b) Resíduo gástrico de 300 mL obriga a suspensão imediata da dieta.</div>
+      <div class="q-alt">c) A via gástrica é razoável como estratégia inicial, reservando-se a pós-pilórica à intolerância documentada ou ao alto risco de aspiração.</div>
+      <div class="q-alt">d) A ausculta epigástrica após injeção de ar confirma adequadamente o posicionamento.</div>
+      <div class="q-resp"><b>Resposta: C.</b> O ESPEN não recomenda a via pós-pilórica como primeira escolha. Resíduos entre 200 e 500 mL exigem medidas antiaspiração, mas não suspensão automática. A confirmação de posicionamento é radiológica; a ausculta de ar está abandonada.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 12 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">12</span><h2>Grade de mnemônicos e números-chave</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <div class="mnemo">
+      <span class="tag">Cronologia da motilidade — 6 / 24 / 48</span>
+      Delgado 6–12 h · Estômago 24–48 h · Cólon 48–72 h. Como a absorção é do delgado, a dieta entra antes do flato.
+    </div>
+    <div class="mnemo">
+      <span class="tag">24 / 50 / 500</span>
+      Iniciar em <b>24 h</b> · sonda ou parenteral suplementar se abaixo de <b>50%</b> da meta · não suspender por resíduo abaixo de <b>500 mL</b>.
+    </div>
+    <div class="mnemo">
+      <span class="tag">MOTOR parado — antes do procinético</span>
+      <b>M</b>agnésio e potássio · <b>O</b>pioide · <b>T</b>omografia se além do 5º dia · <b>O</b>bstrução excluída · <b>R</b>essuscitação excessiva.
+    </div>
+    <div class="mnemo">
+      <span class="tag">Estoma é o juiz</span>
+      Bolsa <b>com</b> débito + sonda alta = gastroparesia → passe a dieta adiante.<br>
+      Bolsa <b>sem</b> débito + distensão difusa = íleo ou obstrução → não passe dieta, investigue.
+    </div>
+    <div class="mnemo">
+      <span class="tag">Progressão</span>
+      Começar em <b>10–20 mL/h</b>; meta <b>25–30 kcal/kg/dia</b> e <b>1,2–2,0 g/kg/dia</b> de proteína; atingir a meta pode levar <b>5 a 7 dias</b>.
+    </div>
+    <div class="mnemo">
+      <span class="tag">Ileostomia de alto débito</span>
+      Acima de <b>1.000–1.500 mL/24 h</b>: magnésio, inibidor de bomba, loperamida, solução de reidratação em vez de água pura, e caçar sepse ou obstrução por trás.
+    </div>
+  </div>
+</section>
+
+<footer>
+  carolzita · Perioperatório · Nutrição enteral no PO de cirurgia abdominal<br>
+  Sabiston · Zollinger · Netter · ESPEN 2021/2025 · ASCRS-SAGES 2023 · ISGPS<br>
+  Questões originais no estilo HCPA · GHC · Santa Casa POA · PUC-RS · AMRIGS
+</footer>
+
+</div>
+<script>
+document.querySelectorAll('.sec-head').forEach(function(h){
+  function t(){h.parentElement.classList.toggle('open')}
+  h.addEventListener('click',t);
+  h.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t()}});
+});
+function todas(abrir){
+  document.querySelectorAll('section').forEach(function(s){
+    s.classList.toggle('open',abrir);
+  });
+}
+</script>
+</body>
+</html>

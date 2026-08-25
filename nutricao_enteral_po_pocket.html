@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="cz-tema" content="Nutrição Enteral no PO — POCKET">
+<meta name="cz-grupo" content="Perioperatório">
+<meta name="cz-tags" content="pocket, nutrição enteral, sonda, gastroparesia, íleo, ostomia">
+<meta name="cz-ordem" content="35">
+<title>Nutrição Enteral PO — pocket</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#08080c; --bg2:#101019; --bg3:#181826;
+  --line:#26263a; --txt:#e6e6f0; --txt2:#9a9ab0;
+  --laranja:#f97316; --roxo:#a855f7; --ciano:#22d3ee;
+  --vermelho:#ef4444; --verde:#22c55e;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;font-size:15px;line-height:1.6;display:flex;flex-direction:column;overflow:hidden}
+
+.top{padding:14px 16px 0;flex-shrink:0;border-bottom:1px solid var(--line)}
+.top .eyebrow{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--laranja)}
+.top h1{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;margin:4px 0 10px;letter-spacing:-.01em}
+
+.tabs{display:flex;gap:7px;overflow-x:auto;padding-bottom:11px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex-shrink:0;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;background:var(--bg2);color:var(--txt2);border:1px solid var(--line);border-radius:20px;padding:7px 14px;cursor:pointer;white-space:nowrap;transition:.15s}
+.tab.on{background:var(--laranja);color:#08080c;border-color:var(--laranja);font-weight:700}
+
+.deck{flex:1;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.deck::-webkit-scrollbar{display:none}
+.card{flex:0 0 100%;scroll-snap-align:start;overflow-y:auto;padding:18px 16px 60px}
+
+h2{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:var(--laranja);margin-bottom:12px}
+h3{font-size:13px;font-weight:700;color:#fff;margin:16px 0 6px;text-transform:uppercase;letter-spacing:.05em}
+h3:first-of-type{margin-top:6px}
+p{margin-bottom:10px}
+ul{margin:0 0 11px 17px}
+li{margin-bottom:6px}
+b{color:#fff;font-weight:600}
+.pq{color:var(--txt2);font-style:italic}
+
+.chip{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:11px;background:var(--bg3);border:1px solid var(--line);border-radius:6px;padding:3px 9px;margin:0 5px 6px 0;color:var(--ciano)}
+
+.box{border-left:3px solid var(--laranja);background:rgba(249,115,22,.07);padding:11px 13px;border-radius:0 7px 7px 0;margin:12px 0;font-size:14px}
+.banca{border-left:3px solid var(--roxo);background:rgba(168,85,247,.08);padding:11px 13px;border-radius:0 7px 7px 0;margin:12px 0;font-size:14px}
+.mnemo{border-left:3px solid var(--ciano);background:rgba(34,211,238,.08);padding:11px 13px;border-radius:0 7px 7px 0;margin:12px 0;font-size:14px}
+.alerta{border-left:3px solid var(--vermelho);background:rgba(239,68,68,.08);padding:11px 13px;border-radius:0 7px 7px 0;margin:12px 0;font-size:14px}
+.vasc{border-left:3px solid var(--verde);background:rgba(34,197,94,.08);padding:11px 13px;border-radius:0 7px 7px 0;margin:12px 0;font-size:14px}
+.tag{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.15em;text-transform:uppercase;display:block;margin-bottom:6px}
+.banca .tag{color:var(--roxo)} .mnemo .tag{color:var(--ciano)} .alerta .tag{color:var(--vermelho)} .vasc .tag{color:var(--verde)} .box .tag{color:var(--laranja)}
+
+table{width:100%;border-collapse:collapse;font-size:12.5px;margin:11px 0}
+th{background:var(--bg3);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;text-align:left;padding:8px 9px;border-bottom:1px solid var(--line)}
+td{padding:8px 9px;border-bottom:1px solid var(--line);vertical-align:top}
+td:first-child{color:#fff;font-weight:500}
+
+.step{display:flex;gap:10px;margin-bottom:11px}
+.step-n{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--laranja);font-weight:700;flex-shrink:0;width:20px}
+.maos{display:grid;gap:6px;margin-top:6px}
+.mao{background:var(--bg3);border-radius:6px;padding:7px 10px;font-size:12px}
+.mao span{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--txt2);display:block;margin-bottom:2px}
+
+.dots{position:fixed;bottom:0;left:0;right:0;display:flex;justify-content:center;gap:6px;padding:12px;background:linear-gradient(transparent,var(--bg) 40%)}
+.dots i{width:6px;height:6px;border-radius:50%;background:var(--line);transition:.2s}
+.dots i.on{background:var(--laranja);width:18px;border-radius:3px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="eyebrow">Pocket · Perioperatório</div>
+  <h1>Nutrição enteral no PO abdominal</h1>
+  <div class="tabs" id="tabs"></div>
+</div>
+
+<div class="deck" id="deck">
+
+  <!-- 1 -->
+  <div class="card" data-t="Regras">
+    <h2>As regras que decidem</h2>
+    <div class="box">
+      <span class="tag">24 / 50 / 500</span>
+      Iniciar dieta em <b>24 h</b> · sonda ou parenteral suplementar se abaixo de <b>50%</b> da meta · não suspender por resíduo abaixo de <b>500 mL</b>.
+    </div>
+    <h3>Cronologia da motilidade</h3>
+    <span class="chip">Delgado 6–12 h</span><span class="chip">Estômago 24–48 h</span><span class="chip">Cólon 48–72 h</span>
+    <p>A absorção é do delgado — por isso <b>não se espera flato</b>. Ausculta abdominal não guia prescrição de dieta.</p>
+    <h3>Hierarquia</h3>
+    <ul>
+      <li>Via oral sempre primeiro.</li>
+      <li>Sonda se via oral inviável ou insuficiente.</li>
+      <li>Parenteral suplementar se abaixo de 50% da meta em 3–4 dias.</li>
+      <li>Parenteral total só com contraindicação enteral.</li>
+    </ul>
+    <h3>Metas</h3>
+    <span class="chip">25–30 kcal/kg/dia</span><span class="chip">1,2–2,0 g proteína/kg/dia</span><span class="chip">início 10–20 mL/h</span>
+    <p>Atingir a meta pode levar <b>5 a 7 dias</b>, sobretudo em sonda jejunal.</p>
+    <div class="banca">
+      <span class="tag">Banca</span>
+      Dieta em 24 h após cirurgia colorretal (ASCRS/SAGES 2023, 1B): reduz ~2 dias de internação <b>sem</b> aumentar deiscência, infecção de ferida, pneumonia ou mortalidade.
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <div class="card" data-t="Vias">
+    <h2>Qual sonda, para quem</h2>
+    <table>
+      <tr><th>Acesso</th><th>Quando</th></tr>
+      <tr><td>Nasogástrica</td><td>Primeira escolha em cirurgia colorretal e abdominal baixa/média</td></tr>
+      <tr><td>Pós-pilórica (além do Treitz)</td><td>Intolerância gástrica documentada, alto risco de aspiração, ventilação prolongada, anastomose alta</td></tr>
+      <tr><td>Jejunostomia</td><td>Esôfago, estômago, pâncreas no desnutrido; nutrição prolongada ou domiciliar</td></tr>
+      <tr><td>Levine aberta</td><td>Descompressão — <b>não é via de dieta</b></td></tr>
+    </table>
+    <div class="box">
+      Comece pela <b>gástrica</b>. O ESPEN <b>não</b> recomenda pós-pilórica como primeira escolha; revisão de 2023 não achou diferença de pneumonia aspirativa entre as duas vias.
+    </div>
+    <div class="alerta">
+      <span class="tag">Proscrito</span>
+      Descompressão nasogástrica <b>de rotina</b> após laparotomia eletiva. Reintroduzir apenas seletivamente diante de vômito, distensão ou íleo estabelecido.
+    </div>
+    <h3>Confirmação</h3>
+    <p>Radiografia é o padrão. <b>Ausculta de ar no epigástrio está abandonada</b> — não exclui trajeto traqueal. Ponta pós-pilórica cruza a linha média à esquerda da coluna.</p>
+    <div class="alerta">
+      <span class="tag">Nunca</span>
+      Sonda pós-pilórica <b>não recebe bolus</b> — o jejuno não tem reservatório. Infusão contínua em bomba.
+    </div>
+  </div>
+
+  <!-- 3 -->
+  <div class="card" data-t="Diferencial">
+    <h2>Gastroparesia × íleo × obstrução</h2>
+    <table>
+      <tr><th></th><th>Gastro</th><th>Íleo</th><th>Obstrução</th></tr>
+      <tr><td>Trânsito distal</td><td><b>Presente</b></td><td>Ausente</td><td>Ausente</td></tr>
+      <tr><td>Distensão</td><td>Epigástrica</td><td>Difusa</td><td>Assimétrica</td></tr>
+      <tr><td>Dor</td><td>Plenitude</td><td>Difusa</td><td>Cólica</td></tr>
+      <tr><td>Raio-X</td><td>Só câmara gástrica</td><td>Gás até o reto</td><td>Colapso distal, níveis escalonados</td></tr>
+      <tr><td>TC</td><td>Sem transição</td><td>Sem transição</td><td><b>Ponto de transição</b></td></tr>
+    </table>
+    <div class="mnemo">
+      <span class="tag">Estoma é o juiz</span>
+      Bolsa <b>com</b> débito + sonda alta = gastroparesia → passe a dieta adiante.<br>
+      Bolsa <b>sem</b> débito + distensão = íleo ou obstrução → não passe dieta, investigue.
+    </div>
+    <h3>Ultrassom gástrico</h3>
+    <p>Antro em corte sagital, na aorta e no lobo hepático esquerdo, decúbito dorsal e lateral direito. Área antral acima de <b>340 mm²</b> ou volume acima de <b>1,5 mL/kg</b> = conteúdo significativo.</p>
+    <div class="alerta">
+      <span class="tag">Regra temporal</span>
+      Íleo fisiológico resolve em <b>3–5 dias</b>. Além disso, ou se <b>reaparece</b> após já ter havido trânsito: coleção, abscesso, fístula, deiscência ou isquemia até prova em contrário → tomografia.
+    </div>
+    <div class="banca">
+      <span class="tag">Contraintuitivo — cai em prova</span>
+      Após duodenopancreatectomia, sonda nasojejunal <b>de rotina piora</b> o esvaziamento gástrico (logOR −0,618 a favor de <i>não</i> ter sonda; dieta oral precoce 7,4% × nasojejunal 15%). Sonda jejunal é <b>resgate</b>, não profilaxia.
+    </div>
+  </div>
+
+  <!-- 4 -->
+  <div class="card" data-t="Intolerância">
+    <h2>Manejo da intolerância</h2>
+    <h3>Antes do procinético</h3>
+    <ul>
+      <li>Reduzir opioide e sedação; suspender bloqueador neuromuscular.</li>
+      <li>Corrigir <b>K, Mg, P</b> — hipomagnesemia perpetua o íleo.</li>
+      <li>Controlar hiperglicemia.</li>
+      <li>Cabeceira 30–45°, pressão do balonete, higiene oral.</li>
+      <li>Medir <b>pressão intra-abdominal</b> pela sonda vesical.</li>
+    </ul>
+    <h3>Procinéticos</h3>
+    <table>
+      <tr><th>Droga</th><th>Dose</th><th>Nota</th></tr>
+      <tr><td>Metoclopramida</td><td>10 mg IV 6–8/6–8 h</td><td>Primeira escolha</td></tr>
+      <tr><td>Eritromicina</td><td>250 mg IV 6–8/6–8 h</td><td>Eficácia cai a 1/3 após <b>72 h</b> — suspender em 3 dias</td></tr>
+    </table>
+    <div class="mnemo">
+      <span class="tag">MOTOR parado</span>
+      <b>M</b>agnésio e potássio · <b>O</b>pioide · <b>T</b>omografia se além do 5º dia · <b>O</b>bstrução excluída · <b>R</b>essuscitação excessiva.
+    </div>
+    <h3>Escada</h3>
+    <ul>
+      <li>1. Corrigir reversíveis.</li>
+      <li>2. Metoclopramida, reavaliar em 24–48 h.</li>
+      <li>3. Pós-pilórica + nasogástrica aberta simultânea.</li>
+      <li>4. Parenteral suplementar se abaixo de 50% em 3–4 dias.</li>
+      <li>5. Sinais de complicação → imagem e reoperação.</li>
+    </ul>
+  </div>
+
+  <!-- 5 -->
+  <div class="card" data-t="Ostomia">
+    <h2>Ostomia e anastomose</h2>
+    <div class="box">
+      Ter anastomose ou ter estoma <b>não muda</b> o momento nem a via da dieta. O que muda é o <b>nível</b> da anastomose (alta pede sonda distal a ela), a estabilidade hemodinâmica e a contraindicação enteral.
+    </div>
+    <div class="alerta">
+      <span class="tag">Armadilha</span>
+      Bolsa vazia + distensão + alto débito gástrico = <b>obstrução até prova em contrário</b>. Inspecionar mucosa, <b>digitalizar o orifício aponeurótico</b>, procurar hérnia paraestomal, prolapso e torção. Depois, TC com contraste.
+    </div>
+    <h3>Ileostomia de alto débito</h3>
+    <p>Acima de <b>1.000–1.500 mL/24 h</b>. Leva a desidratação, lesão renal e reinternação.</p>
+    <ul>
+      <li>Balanço hídrico, <b>magnésio seriado</b>, Na, K, função renal.</li>
+      <li>Inibidor de bomba de prótons em dose plena.</li>
+      <li>Loperamida antes das infusões; codeína em segunda linha.</li>
+      <li>Fórmula <b>isosmolar, polimérica, com fibra solúvel</b>; sem bolus.</li>
+      <li>Solução de reidratação oral em vez de água pura.</li>
+      <li>Caçar a causa: sepse, obstrução parcial, <i>C. difficile</i>, intestino curto.</li>
+    </ul>
+    <div class="alerta">
+      <span class="tag">Dupla perda</span>
+      Sonda aberta <b>+</b> ileostomia = duas vias de perda. Gástrica → alcalose hipoclorêmica e hipocalêmica. Estomal → acidose com depleção de sódio e magnésio. Repor separadamente, guiado por gasometria.
+    </div>
+  </div>
+
+  <!-- 6 -->
+  <div class="card" data-t="Jejunostomia">
+    <h2>Jejunostomia — passo a passo</h2>
+    <p class="pq">Witzel, 20–40 cm distal ao Treitz, borda antimesentérica.</p>
+    <div class="step"><div class="step-n">01</div><div><b>Escolher a alça</b> 20–40 cm do Treitz; confirmar sentido proximal-distal.
+      <div class="maos"><div class="mao"><span>Esquerda</span>Babcock na alça, sem esmagar serosa</div><div class="mao"><span>Direita</span>Fita métrica; Metzenbaum se precisar de janela mesentérica</div></div></div></div>
+    <div class="step"><div class="step-n">02</div><div><b>Bolsa seromuscular</b> de 1 cm na borda antimesentérica, prolene 4-0 ou seda 3-0, agulha cilíndrica.</div></div>
+    <div class="step"><div class="step-n">03</div><div><b>Enterotomia</b> com lâmina 11; cateter 12–14 Fr introduzido 15–20 cm em sentido distal; amarrar a bolsa sem estrangular.</div></div>
+    <div class="step"><div class="step-n">04</div><div><b>Túnel de Witzel</b> 4–5 cm, pontos seromusculares de seda 3-0 a cada 5–7 mm <span class="pq">(enterrar a mangueira na terra)</span>.</div></div>
+    <div class="step"><div class="step-n">05</div><div><b>Jejunopexia</b> com 4 pontos de seda 3-0 em quadrantes — é o que previne <b>volvo</b> e <b>hérnia interna</b>.</div></div>
+    <div class="step"><div class="step-n">06</div><div><b>Teste</b> com 20 mL de soro; fixação cutânea com náilon 2-0 e <b>etiqueta</b> identificando o cateter.</div></div>
+    <div class="banca">
+      <span class="tag">Banca</span>
+      Dor desproporcional + distensão que <b>surge com a progressão da dieta</b> em jejunostomia = volvo ou necrose por dieta em alça obstruída. Conduta: <b>suspender a infusão e fazer TC</b>. Nunca insistir.
+    </div>
+  </div>
+
+  <!-- 7 -->
+  <div class="card" data-t="Contra/Complic">
+    <h2>Contraindicações e complicações</h2>
+    <h3>Contraindicações à via enteral</h3>
+    <ul>
+      <li>Obstrução mecânica distal ao acesso</li>
+      <li>Isquemia mesentérica</li>
+      <li>Choque não ressuscitado, vasopressor em escalada</li>
+      <li>Síndrome compartimental abdominal</li>
+      <li>Fístula de alto débito sem acesso distal</li>
+      <li>Sangramento digestivo ativo significativo</li>
+    </ul>
+    <p class="pq">Não são contraindicação: abdome aberto, peritonite tratada, fístula de baixo débito, pancreatite grave.</p>
+    <div class="vasc">
+      <span class="tag">Nota vascular</span>
+      Alimentar aumenta a demanda esplâncnica em até 30%. Em vasopressor crescente, risco de <b>isquemia mesentérica não oclusiva</b>. Dose trófica (10–20 mL/h) é aceitável em vasopressor estável; dose plena, só com estabilidade.
+    </div>
+    <h3>Complicações</h3>
+    <table>
+      <tr><th>Qual</th><th>Conduta</th></tr>
+      <tr><td>Broncoaspiração</td><td>Cabeceira 30–45°, infusão contínua, procinético, pós-pilórica</td></tr>
+      <tr><td>Trajeto traqueal</td><td>Confirmação radiológica antes da 1ª infusão</td></tr>
+      <tr><td>Diarreia</td><td>Isosmolar com fibra, reduzir velocidade, revisar medicação líquida, toxina</td></tr>
+      <tr><td>Realimentação</td><td>Iniciar 10–15 kcal/kg/dia, <b>tiamina antes da glicose</b>, fósforo diário</td></tr>
+      <tr><td>Obstrução da sonda</td><td>Lavar 20–30 mL de água 4/4 h e após medicação; nunca reintroduzir fio-guia</td></tr>
+    </table>
+  </div>
+
+</div>
+
+<div class="dots" id="dots"></div>
+
+<script>
+var deck=document.getElementById('deck'),
+    cards=[].slice.call(deck.querySelectorAll('.card')),
+    tabs=document.getElementById('tabs'),
+    dots=document.getElementById('dots');
+
+cards.forEach(function(c,i){
+  var b=document.createElement('button');
+  b.className='tab'+(i===0?' on':'');
+  b.textContent=c.dataset.t;
+  b.onclick=function(){deck.scrollTo({left:deck.clientWidth*i,behavior:'smooth'})};
+  tabs.appendChild(b);
+  var d=document.createElement('i');
+  if(i===0)d.className='on';
+  dots.appendChild(d);
+});
+
+var timer;
+deck.addEventListener('scroll',function(){
+  clearTimeout(timer);
+  timer=setTimeout(function(){
+    var i=Math.round(deck.scrollLeft/deck.clientWidth);
+    tabs.querySelectorAll('.tab').forEach(function(t,j){t.classList.toggle('on',j===i)});
+    dots.querySelectorAll('i').forEach(function(d,j){d.classList.toggle('on',j===i)});
+    var on=tabs.querySelectorAll('.tab')[i];
+    if(on)on.scrollIntoView({inline:'center',block:'nearest',behavior:'smooth'});
+  },90);
+});
+</script>
+</body>
+</html>
