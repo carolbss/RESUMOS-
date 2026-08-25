@@ -1,0 +1,2008 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HÉRNIAS INGUINAIS — Aula Completa para Residência</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0A0B0E;
+    --surface: #12141A;
+    --surface2: #1A1D26;
+    --border: #252836;
+    --text: #E2E4EE;
+    --text-dim: #8B8FA8;
+    --orange: #FF7A2F;
+    --orange-dim: rgba(255,122,47,0.12);
+    --orange-glow: rgba(255,122,47,0.25);
+    --purple: #A855F7;
+    --purple-dim: rgba(168,85,247,0.12);
+    --purple-glow: rgba(168,85,247,0.25);
+    --cyan: #22D3EE;
+    --cyan-dim: rgba(34,211,238,0.10);
+    --cyan-glow: rgba(34,211,238,0.22);
+    --red: #F87171;
+    --green: #4ADE80;
+    --yellow: #FCD34D;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  .hero {
+    background: linear-gradient(135deg, #0A0B0E 0%, #12141A 50%, #0D0F1A 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 60px 40px 50px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content:'';
+    position:absolute; top:-80px; right:-80px;
+    width:400px; height:400px;
+    background: radial-gradient(circle, rgba(255,122,47,0.08) 0%, transparent 70%);
+    pointer-events:none;
+  }
+  .hero::after {
+    content:'';
+    position:absolute; bottom:-60px; left:20%;
+    width:300px; height:300px;
+    background: radial-gradient(circle, rgba(168,85,247,0.06) 0%, transparent 70%);
+    pointer-events:none;
+  }
+  .hero-tag {
+    font-family:'Space Mono', monospace;
+    font-size:11px;
+    color:var(--orange);
+    letter-spacing:3px;
+    text-transform:uppercase;
+    margin-bottom:18px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .hero-tag::before { content:''; display:block; width:30px; height:1px; background:var(--orange); }
+  .hero h1 {
+    font-family:'Syne', sans-serif;
+    font-size:clamp(28px,5vw,58px);
+    font-weight:800;
+    line-height:1.05;
+    letter-spacing:-1px;
+    margin-bottom:16px;
+  }
+  .hero h1 span { color:var(--orange); }
+  .hero-sub {
+    font-size:14px;
+    color:var(--text-dim);
+    max-width:680px;
+    margin-bottom:28px;
+  }
+  .legend {
+    display:flex; flex-wrap:wrap; gap:14px; margin-top:10px;
+  }
+  .legend-item {
+    display:flex; align-items:center; gap:8px;
+    font-family:'Space Mono', monospace;
+    font-size:11px;
+    letter-spacing:1px;
+  }
+  .legend-dot {
+    width:10px; height:10px; border-radius:50%;
+  }
+
+  /* ── NAV ── */
+  .nav-sticky {
+    position: sticky; top:0; z-index:100;
+    background: rgba(10,11,14,0.95);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 30px;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .nav-sticky::-webkit-scrollbar { height: 3px; }
+  .nav-sticky::-webkit-scrollbar-track { background: var(--bg); }
+  .nav-sticky::-webkit-scrollbar-thumb { background: var(--border); border-radius:2px; }
+  .nav-inner {
+    display: inline-flex; gap: 0;
+  }
+  .nav-link {
+    display:inline-block;
+    padding: 14px 18px;
+    font-family:'Space Mono', monospace;
+    font-size:11px;
+    letter-spacing:1px;
+    color:var(--text-dim);
+    text-decoration:none;
+    text-transform:uppercase;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+    white-space:nowrap;
+  }
+  .nav-link:hover { color:var(--orange); border-bottom-color:var(--orange); }
+
+  /* ── LAYOUT ── */
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 30px 80px; }
+
+  /* ── SECTION ── */
+  .section {
+    margin-top: 70px;
+  }
+  .section-header {
+    display:flex; align-items:center; gap:16px;
+    margin-bottom: 32px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section-number {
+    font-family:'Space Mono', monospace;
+    font-size:11px;
+    color:var(--orange);
+    background: var(--orange-dim);
+    border: 1px solid var(--orange-glow);
+    padding: 4px 10px;
+    border-radius: 4px;
+    letter-spacing:2px;
+  }
+  .section-title {
+    font-family:'Syne', sans-serif;
+    font-size: clamp(18px, 3vw, 26px);
+    font-weight:700;
+    letter-spacing:-0.5px;
+  }
+
+  /* ── CALLOUT BOXES ── */
+  .box {
+    border-radius:8px;
+    padding:20px 24px;
+    margin:18px 0;
+    position:relative;
+    border-left: 3px solid;
+  }
+  .box-orange {
+    background: var(--orange-dim);
+    border-color: var(--orange);
+  }
+  .box-purple {
+    background: var(--purple-dim);
+    border-color: var(--purple);
+  }
+  .box-cyan {
+    background: var(--cyan-dim);
+    border-color: var(--cyan);
+  }
+  .box-red {
+    background: rgba(248,113,113,0.08);
+    border-color: var(--red);
+  }
+  .box-green {
+    background: rgba(74,222,128,0.08);
+    border-color: var(--green);
+  }
+  .box-label {
+    font-family:'Space Mono', monospace;
+    font-size:10px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:8px;
+    font-weight:700;
+  }
+  .box-orange .box-label { color:var(--orange); }
+  .box-purple .box-label { color:var(--purple); }
+  .box-cyan .box-label { color:var(--cyan); }
+  .box-red .box-label { color:var(--red); }
+  .box-green .box-label { color:var(--green); }
+
+  /* ── COLLAPSIBLE ── */
+  .collapse-btn {
+    width:100%;
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:16px 20px;
+    display:flex; justify-content:space-between; align-items:center;
+    cursor:pointer;
+    text-align:left;
+    transition:all 0.2s;
+    margin-bottom:4px;
+  }
+  .collapse-btn:hover { border-color:var(--orange); background:var(--surface2); }
+  .collapse-btn .btn-title {
+    font-family:'Syne', sans-serif;
+    font-weight:600;
+    font-size:15px;
+    color:var(--text);
+  }
+  .collapse-btn .btn-tag {
+    font-family:'Space Mono', monospace;
+    font-size:10px;
+    letter-spacing:1px;
+    padding:3px 8px;
+    border-radius:4px;
+    margin-left:10px;
+  }
+  .collapse-btn .arrow {
+    color:var(--text-dim);
+    font-size:18px;
+    transition:transform 0.3s;
+    flex-shrink:0;
+  }
+  .collapse-btn.open .arrow { transform: rotate(180deg); }
+  .collapse-btn.open { border-color:var(--orange); background:var(--orange-dim); }
+  .collapse-content {
+    display:none;
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-top:none;
+    border-radius:0 0 8px 8px;
+    padding:24px;
+    margin-bottom:12px;
+  }
+  .collapse-content.open { display:block; }
+
+  /* ── LAYER CARD ── */
+  .layer-card {
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:10px;
+    margin-bottom:16px;
+    overflow:hidden;
+  }
+  .layer-header {
+    padding:16px 20px;
+    display:flex; align-items:center; gap:14px;
+    cursor:pointer;
+    border-bottom:1px solid transparent;
+    transition:all 0.2s;
+  }
+  .layer-header:hover { background:var(--surface2); }
+  .layer-num {
+    width:36px; height:36px;
+    border-radius:50%;
+    background:var(--orange-dim);
+    border:1px solid var(--orange);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Space Mono', monospace;
+    font-size:12px;
+    color:var(--orange);
+    font-weight:700;
+    flex-shrink:0;
+  }
+  .layer-name {
+    font-family:'Syne', sans-serif;
+    font-weight:700;
+    font-size:15px;
+  }
+  .layer-sub {
+    font-size:12px;
+    color:var(--text-dim);
+    font-style:italic;
+  }
+  .layer-body {
+    padding:0 20px 20px;
+  }
+
+  /* ── TABLE ── */
+  .tbl-wrap { overflow-x:auto; margin:20px 0; }
+  table {
+    width:100%;
+    border-collapse:collapse;
+    font-size:13px;
+  }
+  th {
+    background:var(--surface2);
+    color:var(--orange);
+    font-family:'Space Mono', monospace;
+    font-size:11px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    padding:12px 14px;
+    text-align:left;
+    border-bottom:2px solid var(--orange-glow);
+  }
+  td {
+    padding:11px 14px;
+    border-bottom:1px solid var(--border);
+    vertical-align:top;
+  }
+  tr:hover td { background:var(--surface2); }
+  .td-purple { color:var(--purple); font-weight:600; }
+  .td-cyan { color:var(--cyan); }
+  .td-orange { color:var(--orange); }
+  .td-red { color:var(--red); }
+  .td-green { color:var(--green); }
+
+  /* ── DIAGRAM ASCII ── */
+  .diagram {
+    background:var(--surface2);
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:20px 24px;
+    font-family:'Space Mono', monospace;
+    font-size:12px;
+    line-height:1.6;
+    color:var(--cyan);
+    overflow-x:auto;
+    white-space:pre;
+    margin:16px 0;
+  }
+
+  /* ── STEP TIMELINE ── */
+  .timeline {
+    position:relative;
+    padding-left:40px;
+    margin:24px 0;
+  }
+  .timeline::before {
+    content:'';
+    position:absolute; left:14px; top:0; bottom:0;
+    width:2px;
+    background:linear-gradient(to bottom, var(--orange), var(--purple));
+    border-radius:1px;
+  }
+  .step {
+    position:relative;
+    margin-bottom:28px;
+  }
+  .step::before {
+    content:attr(data-n);
+    position:absolute;
+    left:-40px;
+    top:4px;
+    width:28px; height:28px;
+    background:var(--orange);
+    color:#000;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Space Mono', monospace;
+    font-size:11px;
+    font-weight:700;
+    flex-shrink:0;
+  }
+  .step-title {
+    font-family:'Syne', sans-serif;
+    font-weight:700;
+    font-size:15px;
+    color:var(--orange);
+    margin-bottom:6px;
+  }
+  .step-body { color:var(--text); }
+  .step-fase{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--orange);display:block;margin-bottom:1px;opacity:.85}
+  .pq{border-left:3px solid var(--purple);background:var(--purple-dim);border-radius:0 9px 9px 0;padding:9px 13px;margin:10px 0;font-size:14px}
+  .pq b{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:var(--purple);display:block;margin-bottom:2px}
+  .simple2{color:var(--green);font-style:italic;font-size:14px;display:block;margin:7px 0}
+  .box.box-green{background:rgba(74,222,128,.09);border-color:rgba(74,222,128,.35)}
+  .box.box-green .box-label{color:var(--green)}
+  .box.box-green p{color:var(--green);font-style:italic}
+  .box.box-green strong{color:#8ef0aa;font-style:normal}
+  .mh2{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px}
+  .mh{border-radius:10px;padding:9px 12px;font-size:13px;border:1px solid var(--border)}
+  .mh.e{background:rgba(74,222,128,.07);border-color:rgba(74,222,128,.3)}
+  .mh.d{background:var(--orange-dim);border-color:rgba(255,122,47,.3)}
+  .mh b{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;display:block;margin-bottom:2px}
+  .mh.e b{color:var(--green)} .mh.d b{color:var(--orange)}
+  .fio{font-family:'Space Mono',monospace;font-size:12px;background:var(--purple-dim);color:var(--purple);border:1px solid rgba(168,85,247,.35);padding:1px 6px;border-radius:5px;white-space:nowrap}
+  @media(max-width:640px){.mh2{grid-template-columns:1fr}}
+
+  /* ── HAND GRID ── */
+  .hand-grid {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+    margin:20px 0;
+  }
+  .hand-card {
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:18px;
+  }
+  .hand-title {
+    font-family:'Syne', sans-serif;
+    font-weight:700;
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin-bottom:12px;
+    padding-bottom:8px;
+    border-bottom:1px solid var(--border);
+  }
+  .hand-left .hand-title { color:var(--cyan); }
+  .hand-right .hand-title { color:var(--orange); }
+  .hand-item {
+    font-size:13px;
+    padding:5px 0;
+    border-bottom:1px solid var(--border);
+    display:flex; justify-content:space-between;
+  }
+  .hand-item:last-child { border-bottom:none; }
+
+  /* ── QUESTION CARD ── */
+  .question-card {
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:10px;
+    margin-bottom:20px;
+    overflow:hidden;
+  }
+  .q-header {
+    padding:14px 20px;
+    background:var(--purple-dim);
+    border-bottom:1px solid var(--purple-glow);
+    display:flex; justify-content:space-between; align-items:center;
+    flex-wrap:wrap; gap:8px;
+  }
+  .q-banca {
+    font-family:'Space Mono', monospace;
+    font-size:11px;
+    color:var(--purple);
+    letter-spacing:2px;
+  }
+  .q-year {
+    font-family:'Space Mono', monospace;
+    font-size:11px;
+    color:var(--text-dim);
+  }
+  .q-body { padding:20px; }
+  .q-text {
+    font-size:14px;
+    line-height:1.7;
+    margin-bottom:16px;
+    font-weight:500;
+  }
+  .q-alt {
+    padding:10px 14px;
+    border-radius:6px;
+    margin-bottom:6px;
+    font-size:13px;
+    border:1px solid var(--border);
+    cursor:pointer;
+    transition:all 0.2s;
+  }
+  .q-alt:hover { border-color:var(--purple); }
+  .q-alt.correct { background:rgba(74,222,128,0.12); border-color:var(--green); color:var(--green); }
+  .q-alt.wrong { background:rgba(248,113,113,0.08); border-color:var(--red); color:var(--red); }
+  .q-explain {
+    margin-top:14px;
+    padding:14px;
+    background:var(--surface2);
+    border-radius:6px;
+    font-size:13px;
+    display:none;
+  }
+  .q-explain.show { display:block; }
+  .btn-reveal {
+    margin-top:14px;
+    background:var(--purple-dim);
+    border:1px solid var(--purple);
+    color:var(--purple);
+    padding:8px 20px;
+    border-radius:6px;
+    font-family:'Space Mono', monospace;
+    font-size:11px;
+    letter-spacing:1px;
+    cursor:pointer;
+    transition:all 0.2s;
+  }
+  .btn-reveal:hover { background:var(--purple); color:#fff; }
+
+  /* ── BADGE ── */
+  .badge {
+    display:inline-block;
+    padding:2px 8px;
+    border-radius:4px;
+    font-family:'Space Mono', monospace;
+    font-size:10px;
+    letter-spacing:1px;
+    font-weight:700;
+  }
+  .badge-orange { background:var(--orange-dim); color:var(--orange); border:1px solid var(--orange-glow); }
+  .badge-purple { background:var(--purple-dim); color:var(--purple); border:1px solid var(--purple-glow); }
+  .badge-cyan { background:var(--cyan-dim); color:var(--cyan); border:1px solid var(--cyan-glow); }
+  .badge-red { background:rgba(248,113,113,0.12); color:var(--red); border:1px solid rgba(248,113,113,0.3); }
+
+  /* ── GRID 2COL ── */
+  .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:16px 0; }
+  @media(max-width:640px){ .grid2,.hand-grid{ grid-template-columns:1fr; } }
+
+  /* ── MISC ── */
+  h3 {
+    font-family:'Syne', sans-serif;
+    font-weight:700;
+    font-size:16px;
+    color:var(--text);
+    margin:24px 0 10px;
+  }
+  h4 {
+    font-family:'Syne', sans-serif;
+    font-weight:600;
+    font-size:14px;
+    color:var(--orange);
+    margin:18px 0 8px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+  }
+  p { margin-bottom:10px; }
+  ul,ol { padding-left:22px; margin-bottom:10px; }
+  li { margin-bottom:5px; }
+  strong { color:var(--orange); font-weight:600; }
+  em { color:var(--cyan); font-style:italic; }
+  .dim { color:var(--text-dim); font-size:13px; font-style:italic; }
+  .mono { font-family:'Space Mono', monospace; }
+  hr { border:none; border-top:1px solid var(--border); margin:24px 0; }
+
+  /* ── SVG ANATOMY ── */
+  .anatomy-svg-wrap {
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:20px;
+    margin:20px 0;
+    overflow:hidden;
+  }
+  .anatomy-svg-wrap svg { width:100%; height:auto; display:block; }
+
+  /* ── COMPARE CARD ── */
+  .compare-wrap {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:0;
+    border:1px solid var(--border);
+    border-radius:10px;
+    overflow:hidden;
+    margin:20px 0;
+  }
+  .compare-col { padding:20px; }
+  .compare-col.direct { background:rgba(168,85,247,0.06); border-right:1px solid var(--border); }
+  .compare-col.indirect { background:rgba(34,211,238,0.05); }
+  .compare-col-title {
+    font-family:'Syne', sans-serif;
+    font-weight:800;
+    font-size:18px;
+    margin-bottom:14px;
+    padding-bottom:10px;
+    border-bottom:2px solid;
+  }
+  .compare-col.direct .compare-col-title { color:var(--purple); border-color:var(--purple); }
+  .compare-col.indirect .compare-col-title { color:var(--cyan); border-color:var(--cyan); }
+  .compare-row { font-size:13px; padding:6px 0; border-bottom:1px solid var(--border); }
+  .compare-row:last-child { border-bottom:none; }
+  .compare-row strong { color:var(--text-dim); font-size:11px; font-family:'Space Mono',monospace; display:block; margin-bottom:2px; }
+  @media(max-width:640px){ .compare-wrap{ grid-template-columns:1fr; } }
+
+  /* ── MNEMONIC ── */
+  .mnemonic-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+    gap:12px;
+    margin:16px 0;
+  }
+  .mnemonic-card {
+    background:var(--cyan-dim);
+    border:1px solid var(--cyan-glow);
+    border-radius:8px;
+    padding:16px;
+  }
+  .mnemonic-card .m-title {
+    font-family:'Space Mono', monospace;
+    font-size:20px;
+    font-weight:700;
+    color:var(--cyan);
+    margin-bottom:8px;
+  }
+  .mnemonic-card .m-text {
+    font-size:12px;
+    line-height:1.6;
+    color:var(--text);
+  }
+  .mnemonic-card .m-letter {
+    color:var(--cyan);
+    font-weight:700;
+  }
+
+  /* ── SUTURE TABLE ── */
+  .suture-item {
+    display:flex; justify-content:space-between; align-items:center;
+    padding:10px 14px;
+    border-bottom:1px solid var(--border);
+    font-size:13px;
+    flex-wrap:wrap; gap:8px;
+  }
+  .suture-step { color:var(--text-dim); font-family:'Space Mono',monospace; font-size:11px; }
+  .suture-fio { color:var(--orange); font-weight:600; }
+  .suture-why { color:var(--text-dim); font-size:12px; font-style:italic; }
+
+  /* ── PRINT ── */
+  @media print {
+    .nav-sticky { display:none; }
+    .hero { padding:20px; }
+    .collapse-content { display:block !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">Cirurgia Geral · Residência Médica 2026</div>
+  <h1>HÉRNIAS<br><span>INGUINAIS</span></h1>
+  <p class="hero-sub">Aula completa para residentes — Anatomia cirúrgica em camadas, técnica aberta, complicações, diferencial direto vs indireto e questões das principais bancas do RS.</p>
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:var(--orange)"></div> CONTEÚDO PRINCIPAL</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--purple)"></div> ALTO RENDIMENTO / PROVA</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--cyan)"></div> MNEMÔNICO / DICA</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--red)"></div> COMPLICAÇÃO / PERIGO</div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav-sticky">
+  <div class="nav-inner">
+    <a class="nav-link" href="#intro">Introdução</a>
+    <a class="nav-link" href="#anatomia">Anatomia</a>
+    <a class="nav-link" href="#camadas">Camadas</a>
+    <a class="nav-link" href="#direta-indireta">Direta vs Indireta</a>
+    <a class="nav-link" href="#tecnica">Técnica Cirúrgica</a>
+    <a class="nav-link" href="#instrumentos">Instrumentos & Mãos</a>
+    <a class="nav-link" href="#fios">Fios</a>
+    <a class="nav-link" href="#complicacoes">Complicações</a>
+    <a class="nav-link" href="#questoes">Questões de Prova</a>
+    <a class="nav-link" href="#mnemonicos">Mnemonicos</a>
+  </div>
+</nav>
+
+<div class="container">
+
+<!-- ══════════════════════════════════════════
+     SEÇÃO 1 — INTRODUÇÃO INTUITIVA
+════════════════════════════════════════════ -->
+<div class="section" id="intro">
+  <div class="section-header">
+    <span class="section-number">01</span>
+    <h2 class="section-title">Introdução Intuitiva — Por que hérnias acontecem?</h2>
+  </div>
+
+  <div class="box box-orange">
+    <div class="box-label">🧠 Analogia Fundamental</div>
+    <p>Pense na parede abdominal como a <strong>parede de um prédio antigo</strong>. Ela tem janelas, portas, tubulações que passam por ela. Toda vez que você perfura uma parede para passar um cano, você cria um <strong>ponto fraco</strong>. A região inguinal é exatamente isso: um ponto onde estruturas atravessam a parede abdominal, e isso a torna a <strong>região mais fraca do abdome</strong>.</p>
+    <p class="dim">(É como quando você faz um buraco na parede pra passar um cabo — se o buraco for grande demais, as coisas do outro lado começam a "vazar" por ele.)</p>
+  </div>
+
+  <h3>Por que a região inguinal é tão fraca?</h3>
+  <ul>
+    <li>O <strong>canal inguinal</strong> é um túnel de ~4 cm que perfura a parede muscular do abdome, criando descontinuidade estrutural</li>
+    <li>Nesse canal passam: o funículo espermático (homem) ou o ligamento redondo (mulher)</li>
+    <li>Os músculos oblíquo interno e transverso abdominal têm fibras <strong>em arco</strong> — deixam uma fenda na parte inferior</li>
+    <li>O triângulo de Hesselbach tem apenas a fáscia transversalis como suporte — sem músculo cobrindo</li>
+  </ul>
+
+  <div class="grid2">
+    <div class="box box-purple">
+      <div class="box-label">⭐ PROVA — Por que homens têm mais hérnia?</div>
+      <p>Durante o desenvolvimento fetal, o testículo migra do retroperitônio para a bolsa escrotal, abrindo o <strong>processo vaginal</strong> (um divertículo peritoneal). Quando esse processo não fecha completamente, cria-se a predisposição à hérnia indireta. Em mulheres, o ligamento redondo passa pelo mesmo canal, mas é estrutura muito menor — o anel permanece mais fechado.</p>
+      <p class="dim">(O testículo é como um elevador que desce e deixa o poço aberto atrás dele. Se o poço não fechar direito, o intestino desce depois.)</p>
+    </div>
+    <div class="box box-cyan">
+      <div class="box-label">💡 Para Lembrar</div>
+      <p>Epidemiologia geral:<br>
+      • Hérnia inguinal = <strong>75%</strong> de todas as hérnias<br>
+      • <strong>Indireta > Direta</strong> nos dois sexos<br>
+      • Homens: risco de vida de 27%<br>
+      • Mulheres: risco de vida de 3%<br>
+      • Cirurgia mais comum em cirurgia geral no mundo</p>
+    </div>
+  </div>
+
+  <h3>A lógica da hérnia — 3 tipos no canal inguinal</h3>
+  <div class="tbl-wrap">
+  <table>
+    <tr><th>Tipo</th><th>Trajeto</th><th>Relação Epigástrica</th><th>Frequência</th></tr>
+    <tr><td class="td-cyan"><strong>Indireta</strong></td><td>Pelo anel inguinal profundo → canal inguinal → anel superficial</td><td class="td-purple">LATERAL aos epigástricos inferiores</td><td>65–70%</td></tr>
+    <tr><td class="td-purple"><strong>Direta</strong></td><td>Através do triângulo de Hesselbach diretamente</td><td class="td-purple">MEDIAL aos epigástricos inferiores</td><td>25–30%</td></tr>
+    <tr><td class="td-orange"><strong>Femoral</strong></td><td>Abaixo do ligamento inguinal, pelo canal femoral</td><td>—</td><td>5% (mais em mulheres)</td></tr>
+  </table>
+  </div>
+
+  <div class="box box-red">
+    <div class="box-label">⚠️ CONCEITO CRÍTICO — Encarceramento vs Estrangulamento</div>
+    <p><strong>Encarceramento:</strong> o saco herniário saiu e não consegue mais voltar — mas ainda tem circulação. <em>(Fica preso, mas vivo.)</em><br>
+    <strong>Estrangulamento:</strong> o conteúdo ficou preso E perdeu a circulação — isquemia → necrose → perfuração. <em>(Preso e morrendo.)</em> URGÊNCIA CIRÚRGICA.</p>
+    <p>Hérnia femoral tem MAIOR risco de estrangulamento que inguinal — pelo anel femoral ser rígido (osso + ligamentos).</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SEÇÃO 2 — ANATOMIA AVANÇADA
+════════════════════════════════════════════ -->
+<div class="section" id="anatomia">
+  <div class="section-header">
+    <span class="section-number">02</span>
+    <h2 class="section-title">Anatomia Cirúrgica — Estruturas-Chave</h2>
+  </div>
+
+  <!-- SVG Anatomy Diagram -->
+  <div class="anatomy-svg-wrap">
+    <div style="text-align:center; margin-bottom:12px; font-family:'Space Mono',monospace; font-size:11px; color:var(--text-dim); letter-spacing:2px;">VISÃO ESQUEMÁTICA DA REGIÃO INGUINAL — PAREDE ANTERIOR</div>
+    <svg viewBox="0 0 700 360" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="arr" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L6,3 z" fill="#FF7A2F"/>
+        </marker>
+      </defs>
+      <!-- Background -->
+      <rect width="700" height="360" fill="#12141A"/>
+      <!-- ESPINHA ILÍACA -->
+      <ellipse cx="60" cy="90" rx="40" ry="25" fill="#1A1D26" stroke="#3A3D4A" stroke-width="1.5"/>
+      <text x="60" y="94" text-anchor="middle" fill="#8B8FA8" font-size="9" font-family="Space Mono">EIAS</text>
+      <!-- TUBÉRCULO PÚBICO -->
+      <ellipse cx="620" cy="280" rx="35" ry="20" fill="#1A1D26" stroke="#3A3D4A" stroke-width="1.5"/>
+      <text x="620" y="284" text-anchor="middle" fill="#8B8FA8" font-size="9" font-family="Space Mono">Púbis</text>
+      <!-- LIG INGUINAL -->
+      <line x1="90" y1="100" x2="595" y2="270" stroke="#FF7A2F" stroke-width="3" stroke-dasharray="8,3"/>
+      <text x="300" y="200" fill="#FF7A2F" font-size="11" font-family="Space Mono" transform="rotate(-17,300,200)">Lig. Inguinal (Poupart)</text>
+      <!-- TRATO ILIOPÚBICO -->
+      <line x1="95" y1="118" x2="590" y2="288" stroke="#A855F7" stroke-width="2" stroke-dasharray="6,4"/>
+      <text x="220" y="235" fill="#A855F7" font-size="10" font-family="Space Mono" transform="rotate(-17,220,235)">Trato Iliopúbico</text>
+      <!-- VASOS EPIGÁSTRICOS -->
+      <line x1="430" y1="60" x2="500" y2="255" stroke="#22D3EE" stroke-width="2.5"/>
+      <text x="455" y="140" fill="#22D3EE" font-size="10" font-family="Space Mono" transform="rotate(75,455,140)">V. Epigástricos Inf.</text>
+      <!-- ANEL INGUINAL PROFUNDO -->
+      <ellipse cx="340" cy="130" rx="22" ry="14" fill="none" stroke="#22D3EE" stroke-width="2"/>
+      <text x="290" y="115" fill="#22D3EE" font-size="10" font-family="Space Mono">Anel Prof.</text>
+      <!-- ANEL INGUINAL SUPERFICIAL -->
+      <ellipse cx="570" cy="256" rx="18" ry="11" fill="none" stroke="#FF7A2F" stroke-width="2"/>
+      <text x="540" y="242" fill="#FF7A2F" font-size="10" font-family="Space Mono">Anel Superf.</text>
+      <!-- TRIANGULO HESSELBACH -->
+      <polygon points="500,255 570,256 530,190" fill="rgba(168,85,247,0.15)" stroke="#A855F7" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <text x="515" y="228" fill="#A855F7" font-size="9" font-family="Space Mono">Hesselbach</text>
+      <!-- FUNICULO -->
+      <path d="M340,140 Q430,185 565,252" stroke="#4ADE80" stroke-width="2.5" fill="none" stroke-dasharray="5,3"/>
+      <text x="420" y="215" fill="#4ADE80" font-size="10" font-family="Space Mono" transform="rotate(-17,420,215)">Funículo Espermático</text>
+      <!-- NERVO ILIOINGUINAL -->
+      <path d="M180,155 Q350,170 530,250" stroke="#FCD34D" stroke-width="1.5" fill="none" stroke-dasharray="3,4"/>
+      <text x="260" y="165" fill="#FCD34D" font-size="9" font-family="Space Mono">N. Ilioinguinal</text>
+      <!-- CORONA MORTIS label -->
+      <circle cx="510" cy="260" r="8" fill="rgba(248,113,113,0.2)" stroke="#F87171" stroke-width="1.5"/>
+      <text x="480" y="292" fill="#F87171" font-size="9" font-family="Space Mono">Corona Mortis</text>
+      <!-- LEGENDA -->
+      <rect x="10" y="300" width="680" height="55" fill="#1A1D26" rx="4"/>
+      <text x="20" y="315" fill="#FF7A2F" font-size="9" font-family="Space Mono">— Lig. Inguinal</text>
+      <text x="120" y="315" fill="#A855F7" font-size="9" font-family="Space Mono">-- Trato Iliopúbico</text>
+      <text x="250" y="315" fill="#22D3EE" font-size="9" font-family="Space Mono">— V. Epigástricos</text>
+      <text x="380" y="315" fill="#4ADE80" font-size="9" font-family="Space Mono">-- Funículo</text>
+      <text x="460" y="315" fill="#FCD34D" font-size="9" font-family="Space Mono">-- N. Ilioinguinal</text>
+      <text x="580" y="315" fill="#F87171" font-size="9" font-family="Space Mono">● Corona Mortis</text>
+      <text x="20" y="348" fill="#8B8FA8" font-size="8" font-family="Space Mono">Hérnia INDIRETA: passa pelo anel profundo (lateral aos epigástricos). Hérnia DIRETA: atravessa o triângulo de Hesselbach (medial).</text>
+    </svg>
+  </div>
+
+  <!-- MÚSCULOS -->
+  <button class="collapse-btn" onclick="toggleCollapse(this)">
+    <span>
+      <span class="btn-title">🏗️ Músculos da Parede Abdominal Inferior</span>
+      <span class="badge badge-orange">ANATOMIA</span>
+    </span>
+    <span class="arrow">▾</span>
+  </button>
+  <div class="collapse-content">
+    <div class="tbl-wrap">
+    <table>
+      <tr><th>Músculo</th><th>Origem → Inserção</th><th>Aponeurose</th><th>Papel no Canal Inguinal</th></tr>
+      <tr>
+        <td class="td-orange"><strong>Oblíquo Externo</strong></td>
+        <td>Costelas 5–12 → crista ilíaca + linha alba</td>
+        <td>Forma o <em>teto do canal inguinal anterior</em> + anel superficial</td>
+        <td>Abre-se para expor o canal. <em>(É a "porta da frente" que o cirurgião abre primeiro.)</em></td>
+      </tr>
+      <tr>
+        <td class="td-cyan"><strong>Oblíquo Interno</strong></td>
+        <td>Crista ilíaca + fáscia toracolombar → costelas 10–12</td>
+        <td>Fibras em arco sobre o canal → forma o <em>teto do canal</em></td>
+        <td>Ao se contrair, comprime o funículo — mecanismo de válvula fisiológica</td>
+      </tr>
+      <tr>
+        <td class="td-purple"><strong>Transverso Abdominal</strong></td>
+        <td>Fáscia toracolombar + costelas 7–12 → linha alba</td>
+        <td>Junto com o oblíquo interno forma o <em>tendão conjunto</em> (falx inguinalis)</td>
+        <td>A fáscia transversalis derivada deste músculo forma o <em>assoalho real</em> do canal</td>
+      </tr>
+      <tr>
+        <td><strong>Cremaster</strong></td>
+        <td>Derivado do oblíquo interno</td>
+        <td>Envolve o funículo espermático</td>
+        <td>Quando dividido no intraoperatório, facilita identificar o saco herniário</td>
+      </tr>
+    </table>
+    </div>
+
+    <div class="box box-cyan">
+      <div class="box-label">💡 Mnemônico — Camadas da Parede (de fora pra dentro)</div>
+      <p class="mono" style="font-size:13px; letter-spacing:1px;">
+        <span style="color:var(--cyan)">P</span>ele →
+        <span style="color:var(--cyan)">C</span>amper →
+        <span style="color:var(--cyan)">S</span>carpa →
+        <span style="color:var(--cyan)">O</span>blíquo Externo →
+        <span style="color:var(--cyan)">O</span>blíquo Interno →
+        <span style="color:var(--cyan)">T</span>ransverso →
+        <span style="color:var(--cyan)">F</span>áscia Transversalis →
+        <span style="color:var(--cyan)">G</span>ordura pré-peritoneal →
+        <span style="color:var(--cyan)">P</span>eritônio
+      </p>
+      <p style="margin-top:8px; font-size:13px;"><strong>"PCSOOTFGP"</strong> — <em>"Por Causa Sua, Opero Ótimas Telas Firmíssimas, Grande Preceptora"</em></p>
+    </div>
+  </div>
+
+  <!-- LIGAMENTOS -->
+  <button class="collapse-btn" onclick="toggleCollapse(this)">
+    <span>
+      <span class="btn-title">🔗 Ligamentos — Os Pontos de Fixação da Tela</span>
+      <span class="badge badge-purple">ALTA FREQUÊNCIA EM PROVA</span>
+    </span>
+    <span class="arrow">▾</span>
+  </button>
+  <div class="collapse-content">
+    <div class="tbl-wrap">
+    <table>
+      <tr><th>Ligamento</th><th>Anatomia</th><th>Importância Cirúrgica</th><th>Pegadinha de Prova</th></tr>
+      <tr>
+        <td class="td-orange"><strong>Inguinal (Poupart)</strong></td>
+        <td>Borda inferior da aponeurose do oblíquo externo; vai da EIAS ao tubérculo púbico</td>
+        <td>Estrutura de fixação inferior na técnica de Bassini e McVay. Margem inferior do canal inguinal</td>
+        <td class="td-purple">Forma o <em>TETO</em> do canal femoral — não confundir com assoalho inguinal</td>
+      </tr>
+      <tr>
+        <td class="td-cyan"><strong>Lacunar (Gimbernat)</strong></td>
+        <td>Extensão medial do ligamento inguinal; em leque → ligamento de Cooper</td>
+        <td>Limita medialmente o anel femoral. Na hérnia femoral encarcerada, divide-se para reduzir o conteúdo</td>
+        <td class="td-red">Cuidado com a veia femoral ao cortar o Gimbernat!</td>
+      </tr>
+      <tr>
+        <td class="td-purple"><strong>Cooper (Pectíneo)</strong></td>
+        <td>Periósteo do pecten do osso púbico</td>
+        <td>Ponto de ancoragem na técnica de McVay e na hernioplastia laparoscópica (TAPP/TEP)</td>
+        <td class="td-purple">McVay usa Cooper → indicada para hérnia femoral</td>
+      </tr>
+      <tr>
+        <td><strong>Trato Iliopúbico</strong></td>
+        <td>Faixa fibrosa paralela e profunda ao lig. inguinal; vai da EIAS ao ramo superior do púbis</td>
+        <td>Estrutura de fixação inferior na abordagem laparoscópica. Mais resistente que o lig. inguinal</td>
+        <td>Não é visível na cirurgia aberta tradicional — só na abordagem pré-peritoneal</td>
+      </tr>
+    </table>
+    </div>
+  </div>
+
+  <!-- NERVOS -->
+  <button class="collapse-btn" onclick="toggleCollapse(this)">
+    <span>
+      <span class="btn-title">⚡ Nervos da Região Inguinal — Anatomia e Risco Cirúrgico</span>
+      <span class="badge badge-red">COMPLICAÇÕES</span>
+    </span>
+    <span class="arrow">▾</span>
+  </button>
+  <div class="collapse-content">
+    <div class="tbl-wrap">
+    <table>
+      <tr><th>Nervo</th><th>Origem</th><th>Trajeto</th><th>Lesão → Consequência</th><th>Onde Está no Campo</th></tr>
+      <tr>
+        <td class="td-orange"><strong>Ilioinguinal</strong><br><span class="dim">(L1)</span></td>
+        <td>Plexo lombar L1</td>
+        <td>Perfura o m. transverso → corre DENTRO do canal inguinal acima do funículo → sai pelo anel superficial</td>
+        <td class="td-red">Lesão → anestesia/hipoestesia na face medial da coxa, raiz do pênis e escroto</td>
+        <td>Encontrado ao abrir o canal, geralmente acima e lateral ao funículo. <strong>IDENTIFICAR e PRESERVAR</strong></td>
+      </tr>
+      <tr>
+        <td class="td-cyan"><strong>Iliohipogástrico</strong><br><span class="dim">(L1)</span></td>
+        <td>Plexo lombar L1</td>
+        <td>Corre entre oblíquo interno e transverso → perfura oblíquo interno ~2 cm medial à EIAS</td>
+        <td class="td-red">Lesão → anestesia suprapúbica e região inguinal medial</td>
+        <td>Superficial ao oblíquo interno, aparece logo ao afastar os músculos. Pode ser confundido com fáscia</td>
+      </tr>
+      <tr>
+        <td class="td-purple"><strong>Ramo Genital do Genitofemoral</strong><br><span class="dim">(L1-L2)</span></td>
+        <td>Plexo lombar L1-L2</td>
+        <td>Desce retroperitonealmente → entra pelo anel inguinal profundo JUNTO com o funículo espermático (ramo genital)</td>
+        <td class="td-red">Lesão → perda do reflexo cremastérico, dor em face anterior da coxa (ramo femoral)</td>
+        <td>Passa DENTRO do funículo espermático — identificado ao dissecar o cremaster</td>
+      </tr>
+    </table>
+    </div>
+
+    <div class="box box-red">
+      <div class="box-label">⚠️ NEURALGIA PÓS-HERNIOPLASTIA — 3 síndromes que caem em prova</div>
+      <ul>
+        <li><strong>Dor crônica pós-hernioplastia</strong>: afeta até 15% dos pacientes. Causa mais comum = compressão ou aprisionamento de nervo pela tela (neuralgias por corpo estranho)</li>
+        <li><strong>Síndrome da dor inguinal</strong>: queimação + hiperestesia na distribuição do ilioinguinal</li>
+        <li><strong>Compressão do genitofemoral</strong>: dor tipo neuralgia na face anterior da coxa</li>
+      </ul>
+    </div>
+
+    <!-- VASCULARIZAÇÃO -->
+    <h3>Vascularização — Corona Mortis e os Vasos de Risco</h3>
+    <div class="tbl-wrap">
+    <table>
+      <tr><th>Vaso</th><th>Trajeto</th><th>Risco</th></tr>
+      <tr><td class="td-orange"><strong>Vasos Epigástricos Inferiores</strong></td><td>Nasce da ilíaca externa → sobe medialmente ao anel inguinal profundo → vai para o reto abdominal</td><td>Lesão no acesso ao espaço de Retzius (laparoscopia). São o <em>marcador anatômico</em> entre hérnia direta e indireta</td></tr>
+      <tr><td class="td-red"><strong>Corona Mortis</strong> <span class="badge badge-red">PROVA!</span></td><td>Anastomose anômala entre vasos obturatório e ilíaco externo/epigástrico. Presente em 10–30% das pessoas</td><td class="td-red">Presente sobre o ligamento de Cooper. Lesão → hemorragia GRAVE no espaço retropúbico. Difícil controle. Nome foi dado pelos cirurgiões medievais pois a lesão era frequentemente fatal.</td></tr>
+      <tr><td class="td-cyan"><strong>Vasos Testiculares (Gonadais)</strong></td><td>Nasce da aorta → desce retroperitonealmente → entra pelo anel profundo → corre no funículo</td><td>Lesão → atrofia testicular. Tração excessiva do funículo durante a cirurgia → isquemia</td></tr>
+      <tr><td><strong>Vasos Deferentes</strong></td><td>Dentro do funículo, junto com os vasos testiculares</td><td>Lesão bilateral → infertilidade. Preservar sempre</td></tr>
+    </table>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SEÇÃO 3 — ANATOMIA EM CAMADAS
+════════════════════════════════════════════ -->
+<div class="section" id="camadas">
+  <div class="section-header">
+    <span class="section-number">03</span>
+    <h2 class="section-title">Anatomia Cirúrgica Por Camadas — O Que o Cirurgião Vê</h2>
+  </div>
+
+  <div class="box box-orange">
+    <div class="box-label">🎯 Como Usar Esta Seção</div>
+    <p>Cada camada abaixo descreve o que você vê conforme vai abrindo a cirurgia. Siga a ordem: é exatamente assim que você vai operar. Para cada camada: anatomia → aspecto visual intraoperatório → erros comuns → o que pode dar errado.</p>
+  </div>
+
+  <!-- CAMADAS COLLAPSIBLES -->
+
+  <div class="layer-card">
+    <div class="layer-header" onclick="toggleLayer(this)">
+      <div class="layer-num">1</div>
+      <div>
+        <div class="layer-name">Pele e Tecido Subcutâneo</div>
+        <div class="layer-sub">Incisão de pele — primeira mão do bisturi</div>
+      </div>
+      <span class="arrow" style="margin-left:auto; color:var(--text-dim); font-size:18px;">▾</span>
+    </div>
+    <div class="layer-body" style="display:none;">
+      <div class="grid2">
+        <div>
+          <h4>O Que o Cirurgião Faz</h4>
+          <p>Incisão transversa (ligeiramente oblíqua) de 5–8 cm, paralela ao ligamento inguinal, 2 cm acima. Localizar-se em relação ao <strong>tubérculo púbico</strong> medialmente e à <strong>EIAS</strong> lateralmente.</p>
+          <p class="dim">(É como cortar um envelope em cima: você precisa saber onde está o conteúdo antes de abrir.)</p>
+        </div>
+        <div>
+          <h4>O Que o Cirurgião Vê</h4>
+          <p>Pele levemente espessa → gordura subcutânea amarela (camada de Camper) → membrana fibrosa esbranquiçada logo abaixo (fáscia de Scarpa).</p>
+          <div class="box box-cyan">
+            <div class="box-label">💡 Dica</div>
+            <p>A incisão é paralela às linhas de Langer — menor tensão, cicatriz melhor.</p>
+          </div>
+        </div>
+      </div>
+      <div class="box box-red">
+        <div class="box-label">⚠️ Erros Comuns do R1</div>
+        <ul>
+          <li>Incisão muito medial → dificulta exposição lateral (anel profundo)</li>
+          <li>Incisão muito inferior → risco de entrar no escroto</li>
+          <li>Hemostasia inadequada da Scarpa → hematoma pós-op</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="layer-card">
+    <div class="layer-header" onclick="toggleLayer(this)">
+      <div class="layer-num">2</div>
+      <div>
+        <div class="layer-name">Fáscia de Scarpa</div>
+        <div class="layer-sub">Membrana fibrosa profunda do subcutâneo</div>
+      </div>
+      <span class="arrow" style="margin-left:auto; color:var(--text-dim); font-size:18px;">▾</span>
+    </div>
+    <div class="layer-body" style="display:none;">
+      <p><strong>Aspecto:</strong> Membrana esbranquiçada, brilhante, mais firme que a gordura. Não é um músculo — é apenas uma membrana fibrosa.</p>
+      <p class="dim">(É como o papel laminado que você encontra dentro de uma embalagem: não tem função nobre, mas precisa ser aberto com cuidado.)</p>
+      <p><strong>Importância cirúrgica:</strong> Deve ser aberta e, ao fechar, pode ser suturada separadamente para reduzir hematoma pós-op. No fechamento, a Scarpa fechada melhora o resultado estético e diminui seroma.</p>
+      <div class="box box-purple">
+        <div class="box-label">⭐ Pegadinha de Prova</div>
+        <p>A fáscia de Scarpa é contínua com a <strong>fáscia de Colles</strong> no períneo e com a <strong>fáscia de Dartos</strong> no escroto. Isso é relevante em rupturas da uretra bulbar: a urina extravasada segue essas fáscias e vai para o escroto e abdome, mas NÃO para a coxa (porque a Scarpa prende na fascia lata).</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="layer-card">
+    <div class="layer-header" onclick="toggleLayer(this)">
+      <div class="layer-num">3</div>
+      <div>
+        <div class="layer-name">Aponeurose do Oblíquo Externo + Anel Superficial</div>
+        <div class="layer-sub">A "Porta de Entrada" do Canal Inguinal</div>
+      </div>
+      <span class="arrow" style="margin-left:auto; color:var(--text-dim); font-size:18px;">▾</span>
+    </div>
+    <div class="layer-body" style="display:none;">
+      <div class="grid2">
+        <div>
+          <h4>Aspecto Visual</h4>
+          <p>Brilhante, nacarada, com fibras diagonais visíveis indo de lateral-superior para medial-inferior. É como ver "listras" na gordura — são as fibras da aponeurose.</p>
+          <p class="dim">(Como a diagonal de um campo de futebol visto de cima: as fibras vão em diagonal, não retas.)</p>
+        </div>
+        <div>
+          <h4>Técnica de Abertura</h4>
+          <ol>
+            <li>Identificar o <strong>anel inguinal superficial</strong> medialmente (onde o funículo emerge)</li>
+            <li>Introduzir tesoura de Metzenbaum no anel</li>
+            <li>Abrir a aponeurose ao longo das fibras (de medial para lateral)</li>
+            <li>Criar retalhos superior e inferior para exposição</li>
+          </ol>
+        </div>
+      </div>
+      <div class="box box-orange">
+        <div class="box-label">🎯 O Anel Superficial</div>
+        <p>Formado por dois pilares: <strong>pilar lateral</strong> (vai para o tubérculo púbico) e <strong>pilar medial</strong> (vai para a sínfise). Entre eles passa o funículo espermático. Na hérnia direta, o saco sai medialmente ao anel superficial, empurrando-o. Na indireta, o saco sai pelo anel profundo.</p>
+      </div>
+      <div class="box box-red">
+        <div class="box-label">⚠️ NERVO ILIOINGUINAL — identificar aqui!</div>
+        <p>Logo ao abrir a aponeurose, o nervo ilioinguinal aparece correndo em cima (ou ao lado) do funículo. Identificá-lo e retratá-lo com uma vessel loop ou simplesmente afastá-lo. <strong>Não cortar.</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="layer-card">
+    <div class="layer-header" onclick="toggleLayer(this)">
+      <div class="layer-num">4</div>
+      <div>
+        <div class="layer-name">Canal Inguinal — Paredes e Funículo Espermático</div>
+        <div class="layer-sub">O coração da cirurgia</div>
+      </div>
+      <span class="arrow" style="margin-left:auto; color:var(--text-dim); font-size:18px;">▾</span>
+    </div>
+    <div class="layer-body" style="display:none;">
+      <div class="box box-orange">
+        <div class="box-label">🏗️ As 4 Paredes do Canal Inguinal</div>
+        <div class="tbl-wrap">
+        <table>
+          <tr><th>Parede</th><th>Estrutura</th><th>Relevância</th></tr>
+          <tr><td class="td-orange"><strong>Anterior</strong></td><td>Aponeurose do oblíquo externo (em toda extensão) + m. oblíquo interno (1/3 lateral)</td><td>O que você acabou de abrir</td></tr>
+          <tr><td class="td-cyan"><strong>Posterior</strong></td><td>Fáscia transversalis + tendão conjunto medialmente</td><td>É aqui que a hérnia DIRETA ocorre — fraqueza desta parede</td></tr>
+          <tr><td class="td-purple"><strong>Teto (Superior)</strong></td><td>Arco do m. oblíquo interno + m. transverso</td><td>Ao se contrair, fecha o canal como uma válvula — mecanismo fisiológico anti-hérnia</td></tr>
+          <tr><td><strong>Assoalho (Inferior)</strong></td><td>Ligamento inguinal (Poupart) + trato iliopúbico</td><td>Local de fixação inferior da tela na Lichtenstein</td></tr>
+        </table>
+        </div>
+      </div>
+
+      <h4>Funículo Espermático — O Que Está Dentro</h4>
+      <p>O funículo é envolvido pela <strong>fáscia espermática interna</strong> (derivada da fáscia transversalis) e pelo <strong>músculo cremaster</strong>. Dentro dele:</p>
+      <ul>
+        <li><strong>Ducto deferente</strong> — cordão branco endurecido, posterior — <em>"o cabo de vassoura"</em></li>
+        <li><strong>Artéria testicular</strong> — delicada, tortuosa</li>
+        <li><strong>Artéria do ducto deferente</strong></li>
+        <li><strong>Plexo pampiniforme</strong> (veias testiculares) — emaranhado venoso</li>
+        <li><strong>Ramo genital do n. genitofemoral</strong></li>
+        <li><strong>Linfáticos</strong></li>
+      </ul>
+      <p class="dim">(O funículo é como um cabo USB: por fora parece uma coisa só, mas por dentro tem vários fios diferentes — cada um com sua função.)</p>
+
+      <div class="box box-red">
+        <div class="box-label">⚠️ Lesão do Ducto Deferente</div>
+        <p>O ducto deferente É O MAIS FÁCIL de identificar — firme, cilíndrico. Mas também o mais fácil de cortar em dissecção difícil. Lesão bilateral → infertilidade. Sempre confirmar visualmente antes de qualquer corte no funículo.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="layer-card">
+    <div class="layer-header" onclick="toggleLayer(this)">
+      <div class="layer-num">5</div>
+      <div>
+        <div class="layer-name">Músculo Cremaster — Divisão e Identificação do Saco</div>
+        <div class="layer-sub">O véu que cobre o saco herniário</div>
+      </div>
+      <span class="arrow" style="margin-left:auto; color:var(--text-dim); font-size:18px;">▾</span>
+    </div>
+    <div class="layer-body" style="display:none;">
+      <p><strong>Aspecto:</strong> Músculo estriado vermelho-pálido, fibras orientadas longitudinalmente envolvendo o funículo. É visível ao dissecar o funículo da parede.</p>
+      <p><strong>Técnica:</strong> Abrir o cremaster longitudinalmente com tesoura ou eletrocautério. Ao fazer isso, o saco herniário (quando presente = hérnia indireta) aparece como uma estrutura translúcida/branca, globosa, NO TOPO do funículo.</p>
+      <p class="dim">(O cremaster é como o casulo de uma borboleta: ao abrir, você encontra o que estava escondido dentro — o saco herniário.)</p>
+      <div class="box box-cyan">
+        <div class="box-label">💡 Dica Intraoperatória</div>
+        <p>Na hérnia INDIRETA: o saco fica na porção ANTEROSSUPERIOR do funículo.<br>
+        Na hérnia DIRETA: o saco irrompe através da parede posterior medialmente — não está "dentro" do funículo.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="layer-card">
+    <div class="layer-header" onclick="toggleLayer(this)">
+      <div class="layer-num">6</div>
+      <div>
+        <div class="layer-name">Fáscia Transversalis + Triângulo de Hesselbach</div>
+        <div class="layer-sub">A parede posterior — onde tudo decide</div>
+      </div>
+      <span class="arrow" style="margin-left:auto; color:var(--text-dim); font-size:18px;">▾</span>
+    </div>
+    <div class="layer-body" style="display:none;">
+      <div class="box box-purple">
+        <div class="box-label">⭐ TRIÂNGULO DE HESSELBACH — Cai Em Toda Prova</div>
+        <p>Delimitado por 3 estruturas:</p>
+        <ul>
+          <li><strong>Lateral:</strong> Vasos epigástricos inferiores <em>(o marco mais importante!)</em></li>
+          <li><strong>Inferior/medial:</strong> Ligamento inguinal</li>
+          <li><strong>Medial:</strong> Borda lateral do músculo reto abdominal</li>
+        </ul>
+        <p>O assoalho do triângulo é formado apenas pela <strong>fáscia transversalis</strong> — sem músculo. Portanto é a área mais fraca da parede posterior. <strong>Hérnia direta ocorre aqui.</strong></p>
+        <p class="dim">(É como a parte mais fina de uma tela de proteção. Se você apertar a tela, ela vai ceder exatamente onde é mais fina.)</p>
+      </div>
+      <h4>Os Vasos Epigástricos — O Marco Central da Cirurgia</h4>
+      <p>Ao dissecar a parede posterior, você verá os vasos epigástricos inferiores como <strong>estruturas avermelhadas pulsáteis</strong> (artéria + veias) subindo em direção ao músculo reto. Esses vasos são o <strong>divisor de águas anatômico</strong>:</p>
+      <ul>
+        <li>Saco <strong>LATERAL</strong> aos epigástricos → hérnia <strong>INDIRETA</strong></li>
+        <li>Saco <strong>MEDIAL</strong> aos epigástricos → hérnia <strong>DIRETA</strong></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SEÇÃO 4 — DIRETA VS INDIRETA
+════════════════════════════════════════════ -->
+<div class="section" id="direta-indireta">
+  <div class="section-header">
+    <span class="section-number">04</span>
+    <h2 class="section-title">Hérnia Direta vs Indireta — Explicação Definitiva</h2>
+  </div>
+
+  <div class="compare-wrap">
+    <div class="compare-col direct">
+      <div class="compare-col-title">DIRETA</div>
+      <div class="compare-row"><strong>RELAÇÃO COM EPIGÁSTRICOS</strong> Medial (passa pelo triângulo de Hesselbach)</div>
+      <div class="compare-row"><strong>ANEL INGUINAL PROFUNDO</strong> Não passa pelo anel profundo</div>
+      <div class="compare-row"><strong>ORIGEM</strong> Fraqueza adquirida da fáscia transversalis</div>
+      <div class="compare-row"><strong>SACO HERNIÁRIO</strong> Sem saco verdadeiro — é a própria fáscia transversalis abaulando</div>
+      <div class="compare-row"><strong>RISCO ESTRANGULAMENTO</strong> Menor — orifício amplo</div>
+      <div class="compare-row"><strong>EPIDEMIOLOGIA</strong> Adultos, bilateral, associada a esforço, obesidade, tosse crônica</div>
+      <div class="compare-row"><strong>INTRAOPERATÓRIO</strong> Abaulamento medial ao levantar o funículo; reduz facilmente com pressão digital</div>
+      <div class="compare-row"><strong>IMAGEM</strong> Bulge medial, não desce para o escroto</div>
+    </div>
+    <div class="compare-col indirect">
+      <div class="compare-col-title">INDIRETA</div>
+      <div class="compare-row"><strong>RELAÇÃO COM EPIGÁSTRICOS</strong> Lateral (passa pelo anel inguinal profundo)</div>
+      <div class="compare-row"><strong>ANEL INGUINAL PROFUNDO</strong> PASSA pelo anel profundo — segue o trajeto embriológico do testículo</div>
+      <div class="compare-row"><strong>ORIGEM</strong> Persistência do processo vaginal — ou seja, congênita/predisposição</div>
+      <div class="compare-row"><strong>SACO HERNIÁRIO</strong> Saco verdadeiro de peritônio; pode ser longo, descendo até o escroto</div>
+      <div class="compare-row"><strong>RISCO ESTRANGULAMENTO</strong> Maior — anel profundo pode ser estreito</div>
+      <div class="compare-row"><strong>EPIDEMIOLOGIA</strong> Qualquer idade, mais em crianças e jovens; mais frequente</div>
+      <div class="compare-row"><strong>INTRAOPERATÓRIO</strong> Saco na porção anterossuperior do funículo; ao abrir o cremaster, aparece o saco translúcido</div>
+      <div class="compare-row"><strong>IMAGEM</strong> Pode descer para o escroto; oblíqua, segue o canal inguinal</div>
+    </div>
+  </div>
+
+  <div class="box box-cyan">
+    <div class="box-label">💡 MACETE DEFINITIVO — Nunca Mais Confundir</div>
+    <p style="font-size:16px; font-family:'Space Mono',monospace; margin-bottom:10px;">
+      <span style="color:var(--purple)">D</span>ireta = <span style="color:var(--purple)">D</span>entro do triângulo<br>
+      <span style="color:var(--cyan)">I</span>ndireta = <span style="color:var(--cyan)">I</span>nfiltrou pelo anel
+    </p>
+    <p>Outra forma: pense nos vasos epigástricos como um <strong>árbitro no meio do campo</strong>. Hérnia do lado de fora (lateral) = indireta. Hérnia do lado de dentro (medial) = direta.</p>
+    <p class="dim">(É como uma fronteira numa cidade: quem está do lado de lá do rio = uma categoria; do lado de cá = outra categoria.)</p>
+  </div>
+
+  <!-- DIAGRAMA -->
+  <div class="anatomy-svg-wrap">
+    <div style="text-align:center; margin-bottom:12px; font-family:'Space Mono',monospace; font-size:11px; color:var(--text-dim);">VISÃO AXIAL ESQUEMÁTICA — DIFERENCIAL INTRAOPERATÓRIO</div>
+    <svg viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg">
+      <rect width="600" height="220" fill="#12141A"/>
+      <!-- Anel profundo -->
+      <ellipse cx="180" cy="100" rx="35" ry="22" fill="rgba(34,211,238,0.1)" stroke="#22D3EE" stroke-width="2"/>
+      <text x="180" y="105" text-anchor="middle" fill="#22D3EE" font-size="10" font-family="Space Mono">Anel Prof.</text>
+      <!-- Funiculo -->
+      <rect x="155" y="88" width="290" height="24" rx="12" fill="rgba(74,222,128,0.1)" stroke="#4ADE80" stroke-width="1.5"/>
+      <text x="300" y="104" text-anchor="middle" fill="#4ADE80" font-size="10" font-family="Space Mono">Funículo Espermático</text>
+      <!-- Vasos epigastricos -->
+      <line x1="310" y1="20" x2="310" y2="200" stroke="#22D3EE" stroke-width="2.5"/>
+      <text x="315" y="30" fill="#22D3EE" font-size="10" font-family="Space Mono">V. Epigástricos</text>
+      <!-- DIRETA -->
+      <ellipse cx="430" cy="110" rx="55" ry="40" fill="rgba(168,85,247,0.15)" stroke="#A855F7" stroke-width="2" stroke-dasharray="5,3"/>
+      <text x="430" y="108" text-anchor="middle" fill="#A855F7" font-size="13" font-family="Syne" font-weight="700">DIRETA</text>
+      <text x="430" y="124" text-anchor="middle" fill="#A855F7" font-size="9" font-family="Space Mono">MEDIAL aos epigástricos</text>
+      <!-- INDIRETA -->
+      <ellipse cx="150" cy="60" rx="45" ry="30" fill="rgba(34,211,238,0.12)" stroke="#22D3EE" stroke-width="2" stroke-dasharray="5,3"/>
+      <text x="150" y="58" text-anchor="middle" fill="#22D3EE" font-size="13" font-family="Syne" font-weight="700">INDIRETA</text>
+      <text x="150" y="72" text-anchor="middle" fill="#22D3EE" font-size="9" font-family="Space Mono">LATERAL / pelo anel</text>
+      <!-- Hesselbach -->
+      <polygon points="310,180 450,180 450,120 310,120" fill="rgba(168,85,247,0.08)" stroke="#A855F7" stroke-width="1" stroke-dasharray="3,3"/>
+      <text x="385" y="165" text-anchor="middle" fill="#A855F7" font-size="9" font-family="Space Mono">Hesselbach</text>
+      <!-- Ligamento inguinal -->
+      <line x1="100" y1="190" x2="550" y2="190" stroke="#FF7A2F" stroke-width="2.5"/>
+      <text x="320" y="207" text-anchor="middle" fill="#FF7A2F" font-size="10" font-family="Space Mono">Ligamento Inguinal (Poupart)</text>
+    </svg>
+  </div>
+
+  <!-- Classificação de Nyhus -->
+  <button class="collapse-btn" onclick="toggleCollapse(this)">
+    <span>
+      <span class="btn-title">📊 Classificação de Nyhus — Tabela Completa</span>
+      <span class="badge badge-purple">PROVA AMRIGS / HCPA</span>
+    </span>
+    <span class="arrow">▾</span>
+  </button>
+  <div class="collapse-content">
+    <div class="tbl-wrap">
+    <table>
+      <tr><th>Tipo</th><th>Descrição</th><th>Característica</th></tr>
+      <tr><td class="td-cyan"><strong>I</strong></td><td>Indireta — anel inguinal profundo normal</td><td>Hérnia do lactente; processo vaginal patente</td></tr>
+      <tr><td class="td-cyan"><strong>II</strong></td><td>Indireta — anel inguinal profundo dilatado, parede posterior íntegra</td><td>Adultos jovens; saco não desce ao escroto</td></tr>
+      <tr><td class="td-purple"><strong>III-A</strong></td><td>Direta</td><td>Fraqueza da parede posterior</td></tr>
+      <tr><td class="td-cyan"><strong>III-B</strong></td><td>Indireta — anel muito dilatado, comprometendo parede posterior; escrotal</td><td>Hérnias grandes, com saco escrotal; mais difíceis</td></tr>
+      <tr><td class="td-orange"><strong>III-C</strong></td><td>Femoral</td><td>Canal femoral</td></tr>
+      <tr><td class="td-red"><strong>IV</strong></td><td>Recidivadas (qualquer tipo)</td><td>Indica abordagem pré-peritoneal ou laparoscópica</td></tr>
+    </table>
+    </div>
+    <div class="box box-purple">
+      <div class="box-label">⭐ O Que as Bancas Perguntam Sobre Nyhus</div>
+      <p>A classificação mais cobrada em prova é o diferencial entre <strong>III-B</strong> (indireta grande) e <strong>IV</strong> (recidivada) — ambas têm indicação preferencial de abordagem posterior/laparoscópica. Saber que <strong>III-C = hérnia femoral</strong> também é frequente.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SEÇÃO 5 — TÉCNICA CIRÚRGICA PASSO A PASSO
+════════════════════════════════════════════ -->
+<div class="section" id="tecnica">
+  <div class="section-header">
+    <span class="section-number">05</span>
+    <h2 class="section-title">Técnica Cirúrgica — Passo a Passo da Hernioplastia Aberta</h2>
+  </div>
+
+  <!-- POSIÇÃO + PREPARO -->
+  <div class="grid2">
+    <div class="box box-orange">
+      <div class="box-label">🛏️ POSIÇÃO DO PACIENTE</div>
+      <ul>
+        <li><strong>Decúbito dorsal</strong> (de barriga pra cima) horizontal</li>
+        <li>Opcional: leve inclinação de Trendelenburg reverso para afastar vísceras do canal</li>
+        <li>Mesa com acesso a ambos os lados</li>
+        <li>Braço ipsilateral ao operador ao longo do corpo ou em 90°</li>
+      </ul>
+    </div>
+    <div class="box box-orange">
+      <div class="box-label">🧼 PREPARO E PARAMENTAÇÃO</div>
+      <ul>
+        <li>Degermação com clorexidina alcoólica</li>
+        <li>Campo do umbigo até metade da coxa</li>
+        <li>Genitália excluída do campo ou coberta à parte</li>
+        <li>Anestesia: <strong>geral, raquidiana ou local com sedação</strong></li>
+        <li>Sondagem vesical: geralmente desnecessária em cirurgia eletiva simples</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- LICHTENSTEIN PASSO A PASSO -->
+  <div class="box box-purple" style="margin:24px 0 16px;">
+    <div class="box-label">⭐ TÉCNICA DE LICHTENSTEIN — PADRÃO OURO MUNDIAL</div>
+    <p>A <strong>hernioplastia de Lichtenstein</strong> é a técnica mais realizada no mundo para hérnia inguinal em adultos. Sem tensão. Com tela. Recidiva &lt;1% nos primeiros 5 anos. <em>É o que vai cair na prova.</em></p>
+  </div>
+
+  <div class="box box-green" style="margin:22px 0 14px;">
+    <div class="box-label">🟢 TRADUÇÃO SIMPLES</div>
+    <p>A virilha tem um <strong>furo obrigatório</strong> — o lugar por onde o testículo desceu e por onde o funículo passa a vida inteira. Não dá para fechar esse furo. Então a cirurgia moderna não tenta costurar o buraco (isso é tensão, dor e recidiva): ela <strong>forra a parede inteira por trás com um remendo</strong>, o funículo continua passando, e a pressão da barriga aplica a tela contra a parede.</p>
+  </div>
+
+  <div class="timeline">
+
+    <div class="step" data-n="1">
+      <div class="step-title"><span class="step-fase">fase de acesso</span>Incisão de pele</div>
+      <div class="step-body">
+        <p>Transversa de <strong>5–8 cm, 2 cm acima do ligamento inguinal</strong>, do tubérculo púbico em direção à EIAS. Bisturi frio (lâmina 10 ou 15). Hemostasia ponto a ponto com eletrocautério.</p>
+        <div class="pq"><b>por quê</b>A transversa acompanha as <strong>linhas de tensão da pele</strong> — cicatriz melhor e menos dolorosa que a oblíqua clássica. E a hemostasia meticulosa do subcutâneo evita o hematoma que depois é confundido com recidiva precoce.</div>
+        <div class="mh2">
+          <div class="mh e"><b>mão esquerda</b>Gaze fazendo contratração da pele, estabilizando a área</div>
+          <div class="mh d"><b>mão direita</b>Bisturi frio; depois cautério na hemostasia</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step" data-n="2">
+      <div class="step-title"><span class="step-fase">fase de parede</span>Subcutâneo e fáscia de Scarpa</div>
+      <div class="step-body">
+        <p>Metzenbaum ou Mayo separando o subcutâneo. Identificar e abrir a <strong>fáscia de Scarpa</strong>. Expor a aponeurose brilhante do oblíquo externo.</p>
+        <div class="pq"><b>por quê</b>Scarpa é a referência que diz que você chegou ao plano certo — abaixo dela está a aponeurose. Quem não a reconhece fica dissecando gordura e perde o plano.</div>
+      </div>
+    </div>
+
+    <div class="step" data-n="3">
+      <div class="step-title"><span class="step-fase">fase de abertura — cuidado com nervo</span>Abertura da aponeurose do oblíquo externo</div>
+      <div class="step-body">
+        <p>Identificar o <strong>anel inguinal superficial</strong> medialmente, introduzir a Metzenbaum por ele e abrir a aponeurose <strong>no sentido das fibras</strong>, lateralmente. Criar dois retalhos (superior e inferior) com Farabeuf.</p>
+        <div class="pq"><b>por quê</b>Abrir no sentido das fibras permite fechar depois com bordas que se reconhecem, sem tensão. E abrir <strong>a partir do anel superficial</strong> garante que a tesoura entra num espaço já aberto, sem lesar o que está por baixo.</div>
+        <div class="box box-red"><div class="box-label">⚠️ NERVO ILIOINGUINAL</div><p>É <strong>aqui</strong> que ele aparece — correndo <strong>sobre o funículo</strong>, paralelo a ele. Identificar agora e vigiar durante toda a cirurgia. Não seccionar, não prender em ponto.</p></div>
+        <div class="mh2">
+          <div class="mh e"><b>mão esquerda</b>Farabeuf mantendo os retalhos afastados e a aponeurose sob tensão</div>
+          <div class="mh d"><b>mão direita</b>Metzenbaum abrindo no sentido das fibras</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step" data-n="4">
+      <div class="step-title"><span class="step-fase">fase de exposição</span>Mobilização do funículo espermático</div>
+      <div class="step-body">
+        <p>Dissecar o funículo do assoalho do canal com dedo ou Mixter. Passar <strong>Penrose ou vessel loop</strong> em volta para retraí-lo. Dissecar circunferencialmente do <strong>anel profundo</strong> (lateral) ao <strong>superficial</strong> (medial).</p>
+        <span class="simple2">(É passar uma correia por trás de um cano para poder puxá-lo e trabalhar em volta.)</span>
+        <div class="pq"><b>por quê</b>Só com o funículo suspenso é possível ver o <strong>assoalho inteiro</strong> — e é o assoalho que a tela vai cobrir. Dissecção incompleta deixa parte do triângulo de Hesselbach sem reforço, que é onde a recidiva aparece.</div>
+        <div class="box box-red"><div class="box-label">⚠️ RAMO GENITAL DO GENITOFEMORAL</div><p>Corre <strong>dentro</strong> do funículo, junto aos vasos cremastéricos. É lesado ao dissecar o funículo com pressa ou com energia.</p></div>
+      </div>
+    </div>
+
+    <div class="step" data-n="5">
+      <div class="step-title"><span class="step-fase">fase diagnóstica</span>Abertura do cremaster e identificação do saco</div>
+      <div class="step-body">
+        <p>Abrir o cremaster longitudinalmente. <strong>Indireta</strong>: saco na porção <strong>anterossuperior</strong> do funículo — translúcido, globoso. <strong>Direta</strong>: abaulamento da parede posterior, <strong>medial</strong> aos vasos epigástricos, irrompendo pela fáscia transversalis.</p>
+        <div class="pq"><b>por quê</b>É o momento em que o diagnóstico se define — e o critério é <strong>anatômico, não clínico</strong>: a relação com os <strong>vasos epigástricos inferiores</strong>. Lateral = indireta (pelo anel profundo, congênita). Medial = direta (pelo Hesselbach, adquirida por fraqueza da transversalis).</div>
+        <div class="box box-purple"><div class="box-label">⭐ PEDIDO CLÁSSICO EM PROVA</div><p>"No intraoperatório, como distinguir direta de indireta?" → <strong>Relação com os vasos epigástricos inferiores.</strong> Lateral = indireta · Medial = direta.</p></div>
+      </div>
+    </div>
+
+    <div class="step" data-n="6">
+      <div class="step-title"><span class="step-fase">fase de tratamento do saco</span>Ligadura alta ou invaginação</div>
+      <div class="step-body">
+        <p><strong>Indireta:</strong> separar o saco dos elementos do funículo, abrir e inspecionar o conteúdo, <strong>ligadura alta do colo</strong> com transfixante <span class="fio">Vicryl 2-0</span>, ressecar o excesso. Saco pequeno: invaginar sem abrir.<br>
+        <strong>Direta:</strong> <strong>invaginar</strong> a fáscia transversalis com sutura contínua ou pontos separados. Não é necessário abrir.</p>
+        <div class="pq"><b>por quê</b>"Ligadura <strong>alta</strong>" significa no <strong>colo</strong>, ao nível do anel profundo — se sobrar saco distal ao ponto, sobra peritônio herniado e a hérnia recidiva. Já na direta não há saco verdadeiro a ligar: o que há é uma parede posterior frouxa, e abri-la só acrescenta risco sem benefício.</div>
+        <div class="mh2">
+          <div class="mh e"><b>mão esquerda</b>Pinças de Allis apresentando o saco aberto; Penrose mantendo o funículo afastado</div>
+          <div class="mh d"><b>mão direita</b>Dissecção romba do saco; porta-agulha na transfixação do colo</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step" data-n="7">
+      <div class="step-title"><span class="step-fase">fase de reforço — passo decisivo</span>Preparo e posicionamento da tela</div>
+      <div class="step-body">
+        <p>Polipropileno monofilamentar, <strong>7–8 × 15 cm</strong>. Cortar <strong>fenda em V</strong> no canto lateral, criando dois ramos que abraçam o funículo. Posicionar de modo a:</p>
+        <ul>
+          <li>Cobrir o <strong>triângulo de Hesselbach</strong> medialmente, ultrapassando <strong>1–2 cm além do tubérculo púbico</strong></li>
+          <li>Cobrir o <strong>anel inguinal profundo</strong> lateralmente</li>
+          <li>Ficar <strong>plana e levemente frouxa</strong>, sem dobras</li>
+        </ul>
+        <div class="pq"><b>por quê</b>A tela não fecha o defeito — ela <strong>forra o assoalho inteiro</strong>, e é por isso que a técnica é "sem tensão". A sobra além do tubérculo púbico existe porque a recidiva medial, no púbis, é a mais comum do Lichtenstein. E a tela é colocada <strong>levemente frouxa</strong> de propósito: ela contrai cerca de 20% com a cicatrização — tela esticada vira tela curta.</div>
+        <span class="simple2">(É como forrar uma parede rachada com uma placa maior que a rachadura, em vez de tentar costurar a rachadura.)</span>
+      </div>
+    </div>
+
+    <div class="step" data-n="8">
+      <div class="step-title"><span class="step-fase">fase de fixação</span>Sutura da tela e recriação do anel profundo</div>
+      <div class="step-body">
+        <p><span class="fio">Prolene 2-0</span> ou <span class="fio">Vicryl 2-0</span>:</p>
+        <ul>
+          <li><strong>Inferior</strong> — contínua ao longo do <strong>ligamento inguinal</strong></li>
+          <li><strong>Medial e superior</strong> — pontos no <strong>tendão conjunto</strong> e na bainha do reto</li>
+          <li><strong>Lateral</strong> — cruzar os dois ramos da fenda e fixá-los entre si, recriando o <strong>novo anel profundo</strong>, calibrado para passar a ponta de uma Kelly com folga mínima</li>
+        </ul>
+        <div class="pq"><b>por quê</b>Os quatro perigos da fixação, cada um com sua consequência: ponto no <strong>ilioinguinal</strong> → dor crônica (inguinodinia); anel <strong>apertado demais</strong> → isquemia do testículo e orquite isquêmica; fixação <strong>muito lateral</strong> → aprisionamento do genitofemoral; ponto <strong>abaixo do ligamento inguinal</strong> → vasos femorais.</div>
+        <div class="box box-red"><div class="box-label">⚠️ OS 3 NERVOS DA REGIÃO</div><p><strong>Ilioinguinal</strong> (sobre o funículo) · <strong>Ílio-hipogástrico</strong> (acima, na aponeurose) · <strong>Ramo genital do genitofemoral</strong> (dentro do funículo). Os três respondem pela <strong>inguinodinia crônica</strong>, complicação mais frequente hoje que a própria recidiva.</p></div>
+      </div>
+    </div>
+
+    <div class="step" data-n="9">
+      <div class="step-title"><span class="step-fase">fase de fechamento</span>Reposicionamento e síntese por planos</div>
+      <div class="step-body">
+        <p>Afrouxar os afastadores e <strong>reposicionar o funículo sobre a tela</strong>. Fechar a aponeurose do oblíquo externo com <span class="fio">Vicryl 2-0/0</span> contínuo, Scarpa com <span class="fio">Vicryl 3-0</span> e pele com <span class="fio">Monocryl 4-0</span> intradérmico.</p>
+        <div class="pq"><b>por quê</b>O funículo volta <strong>por cima</strong> da tela — nunca por baixo, ou ficaria comprimido entre a tela e a parede. E fechar a aponeurose devolve o canal inguinal ao seu formato, restabelecendo o mecanismo de <em>shutter</em> que fecha o anel na contração abdominal.</div>
+        <div class="box box-cyan"><div class="box-label">💡 DRENO?</div><p>Desnecessário na hernioplastia primária não complicada. Considerar apenas em hérnia volumosa com grande espaço morto — Penrose por 24–48 h.</p></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="box box-cyan" style="margin-top:18px">
+    <div class="box-label">🧠 AS 3 CHECAGENS ANTES DE FECHAR</div>
+    <p><strong>1)</strong> A tela ultrapassa o tubérculo púbico em 1–2 cm e cobre todo o Hesselbach?<br>
+    <strong>2)</strong> O novo anel profundo admite a ponta da Kelly — nem apertado, nem largo?<br>
+    <strong>3)</strong> Os três nervos estão íntegros e livres de pontos?</p>
+  </div>
+
+  <h3>Orifício miopectíneo de Fruchaud — o conceito que unifica tudo</h3>
+  <div class="box box-green"><div class="box-label">🟢 TRADUÇÃO SIMPLES</div><p>É a <strong>janela única</strong> da virilha por onde <em>todas</em> as hérnias dessa região saem — inguinal direta, indireta e femoral. Um só buraco, três saídas. Por isso as técnicas modernas por dentro (TEP/TAPP, Stoppa) não tratam "um tipo de hérnia": elas <strong>tapam a janela inteira</strong> de uma vez.</p></div>
+  <div class="tbl-wrap"><table>
+    <tr><th>Limite</th><th>Estrutura</th></tr>
+    <tr><td>Superior</td><td>Arco do músculo <span class="td-orange">oblíquo interno e transverso</span> (tendão conjunto)</td></tr>
+    <tr><td>Inferior</td><td><span class="td-orange">Ligamento pectíneo (de Cooper)</span> / ramo púbico</td></tr>
+    <tr><td>Medial</td><td>Borda lateral do <span class="td-orange">músculo reto</span> abdominal</td></tr>
+    <tr><td>Lateral</td><td>Músculo <span class="td-orange">iliopsoas</span></td></tr>
+  </table></div>
+  <p>O <strong>ligamento inguinal</strong> atravessa o orifício e o divide em dois andares: acima saem as <strong>inguinais</strong> (direta e indireta); abaixo sai a <strong>femoral</strong>. A parede posterior de todo o orifício é a <strong>fáscia transversalis</strong> — quando ela falha, alguma hérnia aparece.</p>
+  <div class="box box-purple"><div class="box-label">⭐ POR QUE ISSO CAI</div><p>Explica de uma vez: por que a tela pré-peritoneal cobre <strong>os três</strong> tipos simultaneamente; por que hérnia femoral coexiste com inguinal e passa despercebida na via anterior; e por que a recidiva após Lichtenstein pode aparecer como <strong>femoral</strong> — a via anterior não cobre o andar de baixo.</p></div>
+
+  <h3>Classificação EHS — a que se usa hoje</h3>
+  <p>Substituiu Nyhus e Gilbert na prática. Registra <strong>três dados</strong> em uma linha:</p>
+  <div class="tbl-wrap"><table>
+    <tr><th>Eixo</th><th>Códigos</th></tr>
+    <tr><td><strong>Tipo</strong></td><td><span class="td-cyan">L</span> lateral (indireta) · <span class="td-cyan">M</span> medial (direta) · <span class="td-cyan">F</span> femoral</td></tr>
+    <tr><td><strong>Tamanho do defeito</strong></td><td><span class="td-orange">1</span> ≤ 1,5 cm (1 polpa digital) · <span class="td-orange">2</span> 1,5–3 cm · <span class="td-orange">3</span> &gt; 3 cm</td></tr>
+    <tr><td><strong>Primária ou recidivada</strong></td><td><span class="td-purple">P</span> primária · <span class="td-purple">R</span> recidivada</td></tr>
+  </table></div>
+  <div class="box box-cyan"><div class="box-label">🧠 COMO ESCREVER</div><p>Hérnia indireta de 2 cm, primária → <strong>L2P</strong>. Recidiva direta grande → <strong>M3R</strong>. A "polpa digital" (~1,5 cm) é a régua intraoperatória oficial.</p></div>
+  <p class="dim">Nyhus (I a IV) ainda aparece em provas antigas: I = indireta com anel normal · II = indireta com anel dilatado, assoalho íntegro · III = defeito do assoalho (IIIa direta, IIIb indireta grande/mista, IIIc femoral) · IV = recidivada.</p>
+
+  <h3>Videolaparoscopia — os dois triângulos que não se toca</h3>
+  <div class="box box-green"><div class="box-label">🟢 TRADUÇÃO SIMPLES</div><p>Quando você olha a virilha <strong>por dentro</strong>, existem duas áreas onde grampear é proibido: numa passam <strong>vasos grandes</strong> (se furar, sangra muito), na outra passam <strong>nervos</strong> (se prender, dói para sempre). Os nomes dizem tudo.</p></div>
+  <div class="tbl-wrap"><table>
+    <tr><th>Triângulo</th><th>Limites</th><th>Conteúdo</th><th>Risco</th></tr>
+    <tr><td><span class="td-red">Triangle of Doom</span><br>(triângulo fatal)</td><td>Medial: <strong>ducto deferente</strong> · Lateral: <strong>vasos gonadais</strong> · Ápice: anel inguinal profundo</td><td><strong>Vasos ilíacos externos</strong>, veia femoral</td><td>Hemorragia catastrófica</td></tr>
+    <tr><td><span class="td-red">Triangle of Pain</span><br>(triângulo da dor)</td><td>Medial: vasos gonadais · Lateral: <strong>trato iliopúbico</strong></td><td><strong>Nervo femoral</strong>, cutâneo femoral lateral, ramo femoral do genitofemoral</td><td>Inguinodinia crônica incapacitante</td></tr>
+  </table></div>
+  <div class="box box-red"><div class="box-label">⚠️ REGRA DE OURO DA FIXAÇÃO LAPAROSCÓPICA</div><p><strong>Nunca grampear abaixo do trato iliopúbico</strong>, nem lateralmente aos vasos gonadais. Acima do trato e medial, é seguro. Muitos serviços já usam <strong>fixação com cola de fibrina ou nenhuma fixação</strong> (tela autofixante) exatamente para eliminar esse risco.</p></div>
+  <div class="tbl-wrap"><table>
+    <tr><th></th><th>TAPP (transabdominal pré-peritoneal)</th><th>TEP (totalmente extraperitoneal)</th></tr>
+    <tr><td>Acesso</td><td>Entra na cavidade, abre o peritônio e cria o espaço</td><td><strong>Nunca entra</strong> na cavidade — dissecção só no espaço pré-peritoneal</td></tr>
+    <tr><td>Vantagem</td><td>Anatomia mais familiar; permite inventariar a cavidade e avaliar o lado oposto</td><td>Sem aderência visceral, sem lesão de alça, sem hérnia de trocarte intraperitoneal</td></tr>
+    <tr><td>Desvantagem</td><td>Risco de lesão visceral e hérnia de trocarte; precisa fechar o peritônio</td><td>Curva de aprendizado maior; espaço de trabalho pequeno; conversão se perfurar o peritônio</td></tr>
+    <tr><td>Indicação preferencial</td><td><strong>Bilateral</strong>, recidiva após reparo anterior, hérnia encarcerada</td><td>Primária uni ou bilateral em mãos treinadas</td></tr>
+  </table></div>
+  <div class="box box-purple"><div class="box-label">⭐ QUANDO ESCOLHER LAPAROSCOPIA</div><p><strong>Bilateral</strong> (uma anestesia, dois reparos, mesmos portais) · <strong>recidiva após via anterior</strong> (campo virgem, sem fibrose) · mulheres (maior incidência de femoral oculta, que a via anterior não cobre) · retorno precoce ao trabalho. <span class="td-dim">Contra: anestesia geral obrigatória, custo, curva de aprendizado.</span></p></div>
+
+  <h3>Situações especiais que caem em prova</h3>
+  <div class="tbl-wrap"><table>
+    <tr><th>Situação</th><th>Definição</th><th>Conduta</th></tr>
+    <tr><td><strong>Hérnia de Richter</strong></td><td>Apenas a <strong>borda antimesentérica</strong> da alça está no saco — a luz permanece pérvia</td><td><span class="td-red">Estrangula sem obstruir</span>. Não há parada de eliminação de flatos, e por isso o diagnóstico atrasa. Necrose com quadro "leve"</td></tr>
+    <tr><td><strong>Hérnia de Littré</strong></td><td>Contém <strong>divertículo de Meckel</strong></td><td>Ressecção do divertículo + reparo</td></tr>
+    <tr><td><strong>Hérnia de Amyand</strong></td><td>Contém o <strong>apêndice cecal</strong></td><td>Apêndice normal → reparo com tela. Apendicite/perfuração → apendicectomia e <strong>reparo sem tela</strong> (campo contaminado)</td></tr>
+    <tr><td><strong>Hérnia deslizante</strong></td><td>Uma <strong>víscera forma a parede do saco</strong> (cólon à esquerda, bexiga, ceco à direita)</td><td><span class="td-red">Não tentar dissecar a víscera do saco</span> — risco de lesão de alça ou de bexiga. Reduzir em bloco e reparar</td></tr>
+    <tr><td><strong>Hérnia femoral</strong></td><td>Abaixo do ligamento inguinal, medial à veia femoral</td><td>Mais comum <strong>na mulher</strong>; <strong>alto risco de estrangulamento</strong> → operar sempre, mesmo assintomática. Reparo ideal: <strong>pré-peritoneal</strong> ou McVay (Cooper)</td></tr>
+  </table></div>
+  <div class="box box-cyan"><div class="box-label">🧠 SINAL DE HOWSHIP-ROMBERG</div><p>Dor na face medial da coxa que piora à extensão e rotação interna do quadril — clássico da <strong>hérnia obturatória</strong>, típica da idosa magra ("<em>little old lady's hernia</em>"), que se apresenta como obstrução intestinal sem massa palpável.</p></div>
+
+  <h3>Conduta expectante — <em>watchful waiting</em></h3>
+  <p>Homens com hérnia inguinal <strong>mínima ou assintomática</strong> podem ser observados com segurança: o risco de estrangulamento é muito baixo (&lt; 0,3% ao ano). Contudo, cerca de <strong>70% cruzam para cirurgia em 5–10 anos</strong> por surgimento de sintomas — a observação adia, não substitui.</p>
+  <div class="box box-red"><div class="box-label">⚠️ NÃO SE OBSERVA</div><p><strong>Hérnia femoral</strong> (alto risco de estrangular) · sintomática · encarcerada · irredutível · em mulher (maior chance de ser femoral). <strong>Hérnia encarcerada com sinais de estrangulamento é cirurgia de urgência.</strong></p></div>
+
+  <h3>Outras Técnicas Cirúrgicas — O Que Cai em Prova</h3>
+  <div class="tbl-wrap">
+  <table>
+    <tr><th>Técnica</th><th>Princípio Biomecânico</th><th>Fixação</th><th>Vantagem</th><th>Desvantagem/Indicação Especial</th></tr>
+    <tr>
+      <td class="td-orange"><strong>Lichtenstein</strong> <span class="badge badge-orange">PADRÃO OURO</span></td>
+      <td>Sem tensão com tela</td>
+      <td>Tela de polipropileno sobre parede posterior</td>
+      <td>Recidiva &lt;1%; pode ser sob anestesia local</td>
+      <td>Corpo estranho; contraindicado em campo infectado</td>
+    </tr>
+    <tr>
+      <td class="td-purple"><strong>Bassini</strong></td>
+      <td>Com tensão — aproximação de estruturas</td>
+      <td>Tendão conjunto (oblíquo interno + transverso) ao ligamento inguinal</td>
+      <td>Sem tela; histórica; útil em campo infectado</td>
+      <td>Tensão → maior recidiva (~10–15%); não recomendada como padrão</td>
+    </tr>
+    <tr>
+      <td class="td-cyan"><strong>Shouldice</strong></td>
+      <td>Com tensão — reparo em 4 camadas da fáscia transversalis</td>
+      <td>Imbrincação da fáscia transversalis + tendão conjunto ao lig inguinal (4 suturas contínuas)</td>
+      <td>Melhor resultado entre as técnicas sem tela (&lt;2% em centros especializados)</td>
+      <td>Tecnicamente difícil; exige experiência; sem tela</td>
+    </tr>
+    <tr>
+      <td class="td-red"><strong>McVay</strong> <span class="badge badge-red">FEMORAL!</span></td>
+      <td>Com tensão — usa o ligamento de Cooper</td>
+      <td>Tendão conjunto ao ligamento de Cooper (pectíneo)</td>
+      <td><strong>ÚNICA técnica aberta que corrige hérnia femoral</strong></td>
+      <td>Alta tensão → pode precisar incisão relaxante; mais dolorosa</td>
+    </tr>
+  </table>
+  </div>
+
+  <div class="box box-purple">
+    <div class="box-label">⭐ O Que As Bancas Adoram Perguntar Sobre Técnicas</div>
+    <ul>
+      <li><strong>Qual técnica usa o ligamento de Cooper?</strong> → McVay (e abordagem laparoscópica)</li>
+      <li><strong>Qual é indicada para hérnia femoral na técnica aberta?</strong> → McVay</li>
+      <li><strong>Qual é o padrão ouro atual?</strong> → Lichtenstein (aberta) / TAPP ou TEP (laparoscópica)</li>
+      <li><strong>Qual técnica NÃO usa tela e tem menor recidiva?</strong> → Shouldice</li>
+      <li><strong>Em campo infectado, qual usar?</strong> → Bassini ou Shouldice (sem material protético)</li>
+      <li><strong>Qual tem maior tensão e pode precisar incisão relaxante?</strong> → McVay</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SEÇÃO 6 — INSTRUMENTOS E MÃOS
+════════════════════════════════════════════ -->
+<div class="section" id="instrumentos">
+  <div class="section-header">
+    <span class="section-number">06</span>
+    <h2 class="section-title">Instrumentos — Mão Direita vs Mão Esquerda</h2>
+  </div>
+
+  <div class="box box-orange" style="margin-bottom:20px;">
+    <div class="box-label">💡 Lógica Geral</div>
+    <p><strong>Mão direita</strong> = instrumentos de ação (corte, coagulação, sutura, dissecção ativa). <strong>Mão esquerda</strong> = instrumentos de exposição (tração, afastamento, contratração). O cirurgião é destro, atuando pelo lado direito da mesa.</p>
+  </div>
+
+  <div class="hand-grid">
+    <div class="hand-card hand-left">
+      <div class="hand-title">✋ MÃO ESQUERDA — Exposição e Controle</div>
+      <div class="hand-item"><span>Abertura de pele</span><span style="color:var(--text-dim)">Gaze / contratração</span></div>
+      <div class="hand-item"><span>Dissecção subcutânea</span><span style="color:var(--text-dim)">Farabeuf / afastador de Volkmann</span></div>
+      <div class="hand-item"><span>Abertura oblíquo ext.</span><span style="color:var(--text-dim)">Farabeuf afastando retalho superior</span></div>
+      <div class="hand-item"><span>Isolamento funículo</span><span style="color:var(--text-dim)">Dedo indicador / Penrose</span></div>
+      <div class="hand-item"><span>Dissecção do saco</span><span style="color:var(--text-dim)">Pinça de Allis ou Kelly curva</span></div>
+      <div class="hand-item"><span>Fixação da tela — inferior</span><span style="color:var(--text-dim)">Afasta tecidos / expõe lig. inguinal</span></div>
+      <div class="hand-item"><span>Sutura da aponeurose</span><span style="color:var(--text-dim)">Pinça dente de rato para apreender borda</span></div>
+      <div class="hand-item"><span>Fechamento de pele</span><span style="color:var(--text-dim)">Pinça Adson com dente / Micro-Adson</span></div>
+    </div>
+
+    <div class="hand-card hand-right">
+      <div class="hand-title">🤚 MÃO DIREITA — Ação e Precisão</div>
+      <div class="hand-item"><span>Abertura de pele</span><span style="color:var(--text-dim)">Bisturi cabo 3 + lâmina 10</span></div>
+      <div class="hand-item"><span>Hemostasia</span><span style="color:var(--text-dim)">Eletrocautério (bisturi elétrico)</span></div>
+      <div class="hand-item"><span>Dissecção subcutânea</span><span style="color:var(--text-dim)">Tesoura de Mayo curva / Metzenbaum</span></div>
+      <div class="hand-item"><span>Abertura oblíquo ext.</span><span style="color:var(--text-dim)">Tesoura de Metzenbaum curva</span></div>
+      <div class="hand-item"><span>Isolamento funículo</span><span style="color:var(--text-dim)">Disector de Mixter (ângulo-reto)</span></div>
+      <div class="hand-item"><span>Abertura do saco</span><span style="color:var(--text-dim)">Tesoura de Metzenbaum / bisturi</span></div>
+      <div class="hand-item"><span>Ligadura do saco</span><span style="color:var(--text-dim)">Porta-agulha de Hegar + Vicryl 2-0</span></div>
+      <div class="hand-item"><span>Fixação da tela</span><span style="color:var(--text-dim)">Porta-agulha + Prolene 2-0</span></div>
+      <div class="hand-item"><span>Fechamento aponeurose</span><span style="color:var(--text-dim)">Porta-agulha + Vicryl 0</span></div>
+      <div class="hand-item"><span>Fechamento pele</span><span style="color:var(--text-dim)">Porta-agulha + Monocryl 4-0 intradérmico</span></div>
+    </div>
+  </div>
+
+  <h3>Pinças e Instrumentos — Tabela de Referência Rápida</h3>
+  <div class="tbl-wrap">
+  <table>
+    <tr><th>Instrumento</th><th>Uso Principal</th><th>Quando Usar</th></tr>
+    <tr><td class="td-orange"><strong>Bisturi Cabo 3 + Lâmina 10/15</strong></td><td>Incisão de pele e tecidos</td><td>Incisão inicial; abertura precisa do saco</td></tr>
+    <tr><td><strong>Tesoura de Metzenbaum</strong></td><td>Dissecção delicada de tecidos moles</td><td>Abertura oblíquo ext.; dissecção funículo; abertura saco</td></tr>
+    <tr><td><strong>Tesoura de Mayo</strong></td><td>Corte de estruturas mais firmes</td><td>Subcutâneo; cremaster; tecidos mais espessos</td></tr>
+    <tr><td class="td-cyan"><strong>Disector de Mixter (Ângulo-Reto)</strong></td><td>Dissecar ao redor de estruturas tubulares sem visualização direta</td><td>Passar o Penrose ao redor do funículo; isolar vasos</td></tr>
+    <tr><td><strong>Afastador de Farabeuf</strong></td><td>Afastamento de bordas da incisão</td><td>Durante toda a cirurgia; criar exposição</td></tr>
+    <tr><td><strong>Afastador de Volkmann</strong></td><td>Afastamento de músculos</td><td>Exposição lateral do campo; afastar oblíquo interno</td></tr>
+    <tr><td><strong>Pinça de Allis</strong></td><td>Preensão de tecidos (com dentes)</td><td>Segurar bordas do saco herniário; bordas da aponeurose</td></tr>
+    <tr><td><strong>Pinça Kelly Curva</strong></td><td>Preensão hemostática e dissecção romba</td><td>Hemostasia de vasos pequenos; dissecção do saco</td></tr>
+    <tr><td><strong>Pinça Babcock</strong></td><td>Preensão atraumática de vísceras</td><td>Segurar alça intestinal se o saco for aberto e houver conteúdo</td></tr>
+    <tr><td class="td-purple"><strong>Porta-Agulha de Hegar</strong></td><td>Sutura</td><td>Ligadura do saco; fixação da tela; fechamento</td></tr>
+    <tr><td><strong>Pinça Adson com Dente</strong></td><td>Preensão da pele durante sutura</td><td>Fechamento intradérmico da pele</td></tr>
+  </table>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SEÇÃO 7 — FIOS
+════════════════════════════════════════════ -->
+<div class="section" id="fios">
+  <div class="section-header">
+    <span class="section-number">07</span>
+    <h2 class="section-title">Fios de Sutura — Qual, Quando e Por Quê</h2>
+  </div>
+
+  <div class="box box-orange">
+    <div class="box-label">Lógica Geral dos Fios</div>
+    <p><strong>Monofilamentares inabsorvíveis</strong> (Prolene) → onde precisa de suporte permanente (fixação da tela ao ligamento inguinal — estrutura que não regenera). <strong>Multifilamentares absorvíveis</strong> (Vicryl) → onde o tecido vai curar e ganhar força sozinho (aponeurose, subcutâneo). <strong>Monofilamentares absorvíveis</strong> (Monocryl) → pele, pelo bom resultado estético.</p>
+  </div>
+
+  <div class="box box-orange" style="padding:0; overflow:hidden;">
+    <div class="suture-item" style="background:var(--surface2); border-bottom:1px solid var(--border);">
+      <span style="font-family:'Syne',sans-serif; font-weight:700; font-size:13px; color:var(--orange);">TEMPO CIRÚRGICO</span>
+      <span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--orange);">FIO</span>
+      <span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--orange);">TIPO</span>
+      <span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--orange);">MOTIVO</span>
+    </div>
+    <div class="suture-item">
+      <span class="suture-step">Ligadura do saco herniário</span>
+      <span class="suture-fio">Vicryl 2-0 ou Prolene 2-0</span>
+      <span class="suture-why">Transfixante + nó — peritoneal, absorção segura</span>
+    </div>
+    <div class="suture-item">
+      <span class="suture-step">Fixação inferior da tela (ao lig. inguinal)</span>
+      <span class="suture-fio">Prolene 2-0 (monofilamentar inabsorvível)</span>
+      <span class="suture-why">Ligamento inguinal não remodelará — suporte permanente necessário</span>
+    </div>
+    <div class="suture-item">
+      <span class="suture-step">Fixação superior da tela (ao tendão conjunto)</span>
+      <span class="suture-fio">Vicryl 2-0 ou Prolene 2-0</span>
+      <span class="suture-why">Tendão conjunto tem regeneração — alguns preferem absorvível aqui</span>
+    </div>
+    <div class="suture-item">
+      <span class="suture-step">Fixação dos ramos da tela (novo anel profundo)</span>
+      <span class="suture-fio">Prolene 2-0</span>
+      <span class="suture-why">Ponto único — posição crítica; inabsorvível garante manutenção</span>
+    </div>
+    <div class="suture-item">
+      <span class="suture-step">Fechamento da aponeurose do oblíquo externo</span>
+      <span class="suture-fio">Vicryl 2-0 ou 0 contínuo</span>
+      <span class="suture-why">Absorvível suficiente — a aponeurose vai regenerar força em 6 semanas</span>
+    </div>
+    <div class="suture-item">
+      <span class="suture-step">Fechamento da fáscia de Scarpa</span>
+      <span class="suture-fio">Vicryl 3-0 pontos separados</span>
+      <span class="suture-why">Reduz espaço morto → previne hematoma/seroma</span>
+    </div>
+    <div class="suture-item">
+      <span class="suture-step">Fechamento intradérmico de pele</span>
+      <span class="suture-fio">Monocryl 4-0 (ou 3-0)</span>
+      <span class="suture-why">Monofilamentar absorvível → mínima reação tecidual → cicatriz mais fina</span>
+    </div>
+  </div>
+
+  <div class="box box-cyan" style="margin-top:16px;">
+    <div class="box-label">💡 Fio Inabsorvível X Absorvível — Regra Rápida</div>
+    <p>Se o tecido tem <strong>capacidade de regenerar resistência</strong> → absorvível é suficiente.<br>
+    Se o tecido é <strong>fibra colágena densa que não regenera</strong> (ligamento, osso) → inabsorvível obrigatório.<br>
+    <em>Exceção clínica:</em> em técnicas sem tela (Shouldice), a fáscia transversalis recebe suturas de aço inoxidável (na técnica original) ou Prolene — pois a estrutura criada precisa de suporte permanente.</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SEÇÃO 8 — COMPLICAÇÕES
+════════════════════════════════════════════ -->
+<div class="section" id="complicacoes">
+  <div class="section-header">
+    <span class="section-number">08</span>
+    <h2 class="section-title">Complicações — Anatomia, Prevenção e Conduta</h2>
+  </div>
+
+  <div class="tbl-wrap">
+  <table>
+    <tr><th>Complicação</th><th>Frequência</th><th>Causa Anatômica / Técnica</th><th>Prevenção</th><th>Conduta</th></tr>
+    <tr>
+      <td class="td-orange"><strong>Hematoma</strong></td>
+      <td>3–5%</td>
+      <td>Hemostasia inadequada de subcutâneo ou espaço morto do saco</td>
+      <td>Hemostasia cuidadosa; fechar fáscia de Scarpa; não deixar espaço morto</td>
+      <td>Pequenos: conservador. Grande / tenso: drenagem cirúrgica</td>
+    </tr>
+    <tr>
+      <td class="td-orange"><strong>Seroma</strong></td>
+      <td>2–10%</td>
+      <td>Acúmulo de linfa/exsudato no espaço previamente ocupado pelo saco herniário</td>
+      <td>Deixar saco distal in situ (aberto) em hérnias grandes; compressa fria</td>
+      <td>Aspiração se sintomático. Geralmente resolve espontaneamente</td>
+    </tr>
+    <tr>
+      <td class="td-red"><strong>Infecção de Ferida</strong></td>
+      <td>1–3%</td>
+      <td>Contaminação de campo; hematoma → superinfecção</td>
+      <td>Técnica asséptica; profilaxia antibiótica (cefazolina 1g EV); curta duração</td>
+      <td>Superficial: antibiótico. Profunda com tela: desbridamento ± remoção da tela</td>
+    </tr>
+    <tr>
+      <td class="td-red"><strong>Dor Crônica</strong></td>
+      <td>10–15%</td>
+      <td>Aprisionamento nervoso na tela (ilioinguinal, iliohipogástrico, genitofemoral)</td>
+      <td>Identificar e preservar nervos; não passar sutura em nervos; não fixar tela muito lateralmente</td>
+      <td>Analgésicos; bloqueio nervoso; neurectomia em casos refratários</td>
+    </tr>
+    <tr>
+      <td class="td-red"><strong>Recidiva</strong></td>
+      <td>&lt;1% (Lichtenstein) / 10–15% (sem tela)</td>
+      <td>Tensão excessiva; fixação inadequada da tela; tela pequena; hérnia perdida (hérnia em pantalona)</td>
+      <td>Técnica correta; tela adequada; identificar hérnias combinadas</td>
+      <td>Reoperação — preferir abordagem laparoscópica (campo virgem)</td>
+    </tr>
+    <tr>
+      <td class="td-red"><strong>Orquite Isquêmica</strong></td>
+      <td>0.5–1%</td>
+      <td>Lesão/trombose de vasos testiculares ou do plexo pampiniforme durante dissecção do saco escrotal</td>
+      <td>Dissecção cuidadosa; em saco escrotal volumoso, seccionar e deixar distal in situ</td>
+      <td>Orquite → conservador (anti-inflamatório). Atrofia → orquiectomia se necessário</td>
+    </tr>
+    <tr>
+      <td class="td-red"><strong>Lesão do Ducto Deferente</strong></td>
+      <td>&lt;1%</td>
+      <td>Confusão com estrutura do saco; dissecção agressiva</td>
+      <td>Identificar o ducto antes de qualquer corte; é firme, cilíndrico</td>
+      <td>Reconstituição imediata se identificada (vasovastostomia); infertilidade se bilateral</td>
+    </tr>
+    <tr>
+      <td class="td-red"><strong>Lesão Vascular (Corona Mortis / Epigástricos)</strong></td>
+      <td>Raro</td>
+      <td>Corona mortis sobre o Cooper; epigástricos ao abrir anel profundo</td>
+      <td>Identificar vasos antes de cortar; cautela sobre o Cooper na McVay/laparoscopia</td>
+      <td>Hemostasia imediata com compressão + clipe/ligadura</td>
+    </tr>
+  </table>
+  </div>
+
+  <div class="box box-purple">
+    <div class="box-label">⭐ HÉRNIA EM PANTALONA (Tipo Pantalon)</div>
+    <p>Coexistência de hérnia direta E indireta no mesmo lado, com o funículo no centro (como duas pernas de uma calça). Frequência: 15–20% das hérnias. <strong>Perigo:</strong> o cirurgião pode tratar apenas uma e deixar a outra → falsa impressão de sucesso → recidiva precoce. Identificar sempre os vasos epigástricos e inspecionar ambos os lados.</p>
+    <p class="dim">(Como uma calça com duas pernas: você pode arrumar uma perna e esquecer a outra, que vai rasgar de novo.)</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SEÇÃO 9 — QUESTÕES DE PROVA
+════════════════════════════════════════════ -->
+<div class="section" id="questoes">
+  <div class="section-header">
+    <span class="section-number">09</span>
+    <h2 class="section-title">Questões das Bancas — AMRIGS · HCPA · GHC · PUC-RS · Santa Casa POA</h2>
+  </div>
+
+  <div class="box box-purple" style="margin-bottom:24px;">
+    <div class="box-label">📋 Como Usar Esta Seção</div>
+    <p>Clique em "Ver Gabarito + Comentário" para revelar a resposta e a explicação completa. As questões abaixo são baseadas no padrão das bancas citadas e nos temas mais cobrados nos últimos anos.</p>
+  </div>
+
+  <!-- QUESTÃO 1 -->
+  <div class="question-card">
+    <div class="q-header">
+      <span class="q-banca">AMRIGS · CIRURGIA GERAL</span>
+      <span class="q-year">Padrão 2022–2024</span>
+    </div>
+    <div class="q-body">
+      <div class="q-text">Durante hernioplastia inguinal aberta à direita, o cirurgião identifica o saco herniário na porção ântero-superior do funículo espermático, lateralmente aos vasos epigástricos inferiores. Qual é o diagnóstico intraoperatório e qual estrutura anatômica delimita, junto com o ligamento inguinal e o músculo reto abdominal, o espaço por onde essa hérnia NÃO passa?</div>
+      <div class="q-alt" onclick="selectAlt(this, false)">(A) Hérnia direta; triângulo de Hesselbach</div>
+      <div class="q-alt" onclick="selectAlt(this, false)">(B) Hérnia indireta; ligamento lacunar de Gimbernat</div>
+      <div class="q-alt" onclick="selectAlt(this, true)">(C) Hérnia indireta; vasos epigástricos inferiores</div>
+      <div class="q-alt" onclick="selectAlt(this, false)">(D) Hérnia direta; vasos epigástricos inferiores</div>
+      <div class="q-alt" onclick="selectAlt(this, false)">(E) Hérnia indireta; ligamento inguinal</div>
+      <button class="btn-reveal" onclick="revealExplain(this)">VER GABARITO + COMENTÁRIO</button>
+      <div class="q-explain">
+        <p><strong style="color:var(--green)">Gabarito: C</strong></p>
+        <p><strong>Raciocínio:</strong> O saco na porção ântero-superior do funículo + <strong>lateral</strong> aos vasos epigástricos = hérnia <strong>indireta</strong>. A hérnia indireta segue o trajeto do processo vaginal pelo anel inguinal profundo, que fica lateral aos vasos epigástricos inferiores. O triângulo de Hesselbach, por definição, é o local da hérnia DIRETA — e é delimitado pelos vasos epigástricos (lateralmente), ligamento inguinal (inferiormente) e reto abdominal (medialmente). Portanto a hérnia indireta NÃO passa pelo triângulo de Hesselbach, e o elemento que o delimita lateralmente são os vasos epigástricos inferiores.</p>
+        <p><strong>Alternativa A:</strong> Errada — seria hérnia direta, medial aos epigástricos, através do triângulo de Hesselbach.</p>
+        <p><strong>Alternativa B:</strong> Errada — o Gimbernat delimita o anel femoral, não o triângulo de Hesselbach.</p>
+        <p><strong>Alternativa D:</strong> Errada — seria hérnia direta (lateral ao anel profundo, medial aos epigástricos).</p>
+        <p><strong>Alternativa E:</strong> Errada — o ligamento inguinal delimita inferiormente o Hesselbach, e também forma o assoalho do canal inguinal.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUESTÃO 2 -->
+  <div class="question-card">
+    <div class="q-header">
+      <span class="q-banca">HCPA · CIRURGIA GERAL</span>
+      <span class="q-year">Padrão 2021–2024</span>
+    </div>
+    <div class="q-body">
+      <div class="q-text">Paciente do sexo feminino, 62 anos, com hérnia inguinal à direita de difícil redução, encarcerada há 8 horas, sem sinais de peritonite. Qual é a técnica cirúrgica aberta mais indicada neste cenário e por quê?</div>
+      <div class="q-alt" onclick="selectAlt(this, false)">(A) Lichtenstein, pois é o padrão ouro para todas as hérnias inguinais</div>
+      <div class="q-alt" onclick="selectAlt(this, false)">(B) Bassini, pois é a técnica mais segura em qualquer urgência herniária</div>
+      <div class="q-alt" onclick="selectAlt(this, true)">(C) McVay, pois mulheres têm maior prevalência de hérnia femoral, que essa técnica é a única aberta a corrigir adequadamente</div>
+      <div class="q-alt" onclick="selectAlt(this, false)">(D) Shouldice, pois é a técnica sem tela mais eficaz e pode ser usada com campo eventualmente contaminado</div>
+      <div class="q-alt" onclick="selectAlt(this, false)">(E) Lichtenstein, pois a tela sintética não está contraindicada em hérnia encarcerada sem necrose</div>
+    </div>
+    <div class="q-body" style="padding-top:0;">
+      <button class="btn-reveal" onclick="revealExplain(this)">VER GABARITO + COMENTÁRIO</button>
+      <div class="q-explain">
+        <p><strong style="color:var(--green)">Gabarito: C</strong></p>
+        <p><strong>Raciocínio:</strong> Em mulheres com quadro clínico de hérnia inguinal, sempre pensar em <strong>hérnia femoral</strong> — ela é proporcionalmente mais comum em mulheres do que em homens (anatomia pélvica mais ampla). O encarceramento é mais frequente na hérnia femoral pelo anel rígido. No intraoperatório, ao explorar o campo, o cirurgião pode encontrar hérnia femoral e não inguinal. A única técnica aberta que trata adequadamente a hérnia femoral (ao fixar o tendão conjunto ao ligamento de Cooper, fechando o espaço femoral) é a <strong>McVay</strong>.</p>
+        <p><strong>Sobre a Lichtenstein (alternativas A e E):</strong> É o padrão ouro para hérnia INGUINAL, mas não trata a hérnia femoral. Além disso, em campo com risco de contaminação (conteúdo com sofrimento vascular potencial), a tela é controversa.</p>
+        <p><strong>Sobre a Shouldice (D):</strong> Excelente técnica sem tela, mas não corrige a femoral.</p>
+        <p><strong>Pérola:</strong> "Mulher + hérnia inguinal + encarceramento → pensar em FEMORAL → McVay"</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUESTÃO 3 -->
+  <div class="question-card">
+    <div class="q-header">
+      <span class="q-banca">GHC / PUC-RS · CIRURGIA GERAL</span>
+      <span class="q-year">Padrão 2022–2025</span>
+    </div>
+    <div class="q-body">
+      <div class="q-text">Após hernioplastia inguinal direita por técnica de Lichtenstein há 3 meses, paciente evolui com dor em queimação na face medial da coxa direita e raiz do escroto, sem recidiva herniária ao exame. O nervo mais provavelmente lesado é:</div>
+      <div class="q-alt" onclick="selectAlt(this, false)">(A) Nervo iliohipogástrico</div>
+      <div class="q-alt" onclick="selectAlt(this, true)">(B) Nervo ilioinguinal</div>
+      <div class="q-alt" onclick="selectAlt(this, false)">(C) Ramo femoral do nervo genitofemoral</div>
+      <div class="q-alt" onclick="selectAlt(this, false)">(D) Ramo genital do nervo genitofemoral</div>
+      <div class="q-alt" onclick="selectAlt(this, false)">(E) Nervo femoral</div>
+      <button class="btn-reveal" onclick="revealExplain(this)">VER GABARITO + COMENTÁRIO</button>
+      <div class="q-explain">
+        <p><strong style="color:var(--green)">Gabarito: B — Nervo Ilioinguinal</strong></p>
+        <p><strong>Raciocínio:</strong> O nervo ilioinguinal (L1) é o mais frequentemente lesado na hernioplastia inguinal. Ele corre dentro do canal inguinal, sobre o funículo, e é facilmente aprisionado durante a fixação da tela ou seco durante a abertura da aponeurose. Sua lesão causa: <strong>hipoestesia/anestesia na face medial da coxa + raiz do escroto/lábio maior + face ântero-medial do escroto</strong> — exatamente o descrito na questão.</p>
+        <p><strong>Alternativa A (Iliohipogástrico):</strong> Lesão causaria anestesia suprapúbica e inguinal medial, não escrotal.</p>
+        <p><strong>Alternativa C (Ramo femoral do genitofemoral):</strong> Anestesia na face anterior da coxa (triângulo femoral de Scarpa).</p>
+        <p><strong>Alternativa D (Ramo genital do genitofemoral):</strong> Perda do reflexo cremastérico; dor no escroto, mas o território mais clássico de queimação pós-cirúrgica da face medial da coxa aponta para o ilioinguinal.</p>
+        <p><strong>Alternativa E (Femoral):</strong> Lesão grave, causaria fraqueza de flexão do quadril e extensão do joelho — não é o quadro descrito.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUESTÃO 4 -->
+  <div class="question-card">
+    <div class="q-header">
+      <span class="q-banca">AMRIGS · SANTA CASA POA</span>
+      <span class="q-year">Padrão 2023–2025</span>
+    </div>
+    <div class="q-body">
+      <div class="q-text">A "Corona Mortis" é estrutura de especial importância na hernioplastia inguinal. Assinale a alternativa CORRETA sobre ela:</div>
+      <div class="q-alt" onclick="selectAlt(this, false)">(A) É um nervo que anastomosa o ilioinguinal com o genitofemoral, presente em 100% dos pacientes</div>
+      <div class="q-alt" onclick="selectAlt(this, false)">(B) É uma anastomose arterial entre os vasos epigástricos superiores e inferiores, sobre o ligamento inguinal</div>
+      <div class="q-alt" onclick="selectAlt(this, true)">(C) É uma anastomose vascular entre os vasos obturatório e ilíaco externo/epigástrico inferior, localizada sobre o ligamento de Cooper, presente em 10–30% dos pacientes</div>
+      <div class="q-alt" onclick="selectAlt(this, false)">(D) É sinônimo do trato iliopúbico, estrutura que delimita inferiormente o canal femoral</div>
+      <div class="q-alt" onclick="selectAlt(this, false)">(E) É uma veia tributária do plexo pampiniforme sem relevância cirúrgica</div>
+      <button class="btn-reveal" onclick="revealExplain(this)">VER GABARITO + COMENTÁRIO</button>
+      <div class="q-explain">
+        <p><strong style="color:var(--green)">Gabarito: C</strong></p>
+        <p><strong>Raciocínio:</strong> Corona Mortis ("coroa da morte") é uma anastomose vascular anômala entre o vaso obturatório (ramo da ilíaca interna) e os vasos epigástricos inferiores ou ilíacos externos. Está localizada sobre ou atrás do ligamento de Cooper. Sua importância é crítica na hernioplastia laparoscópica (TAPP/TEP) e na McVay, pois a fixação ao Cooper pode lacerá-la → hemorragia grave no espaço retropúbico. O nome "morte" foi dado porque a lesão era frequentemente fatal antes das técnicas modernas de hemostasia. Prevalência: 10–30% das pessoas.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUESTÃO 5 -->
+  <div class="question-card">
+    <div class="q-header">
+      <span class="q-banca">PUC-RS · HCPA</span>
+      <span class="q-year">Padrão 2020–2024</span>
+    </div>
+    <div class="q-body">
+      <div class="q-text">Lactente de 6 meses, masculino, com hérnia inguinal indireta direita diagnosticada ao nascimento. A conduta mais adequada é:</div>
+      <div class="q-alt" onclick="selectAlt(this, false)">(A) Aguardar até os 2 anos de idade para resolução espontânea, pois o processo vaginal frequentemente fecha sozinho</div>
+      <div class="q-alt" onclick="selectAlt(this, false)">(B) Correção eletiva somente após os 5 anos, quando o risco anestésico é menor</div>
+      <div class="q-alt" onclick="selectAlt(this, true)">(C) Correção cirúrgica eletiva precoce após o diagnóstico, sem esperar, pois o risco de encarceramento em lactentes é elevado (até 30%)</div>
+      <div class="q-alt" onclick="selectAlt(this, false)">(D) Uso de cinta herniária até os 18 meses enquanto aguarda fechamento espontâneo</div>
+      <div class="q-alt" onclick="selectAlt(this, false)">(E) Correção cirúrgica apenas se houver episódio de encarceramento</div>
+      <button class="btn-reveal" onclick="revealExplain(this)">VER GABARITO + COMENTÁRIO</button>
+      <div class="q-explain">
+        <p><strong style="color:var(--green)">Gabarito: C</strong></p>
+        <p><strong>Raciocínio:</strong> Em lactentes e crianças menores de 1 ano, a hérnia inguinal indireta NÃO fecha espontaneamente (diferente da hérnia umbilical, que fecha). O risco de encarceramento no primeiro ano de vida é de 25–30%, muito maior que em adultos. Portanto, a indicação é correção cirúrgica PRECOCE, eletiva, logo após o diagnóstico. Em prematuros, pode-se aguardar até a alta hospitalar para evitar complicações peri-anestésicas, mas a cirurgia não deve ser indefinidamente adiada. A técnica em crianças é a herniorrafia simples (ligadura alta do saco) sem uso de tela.</p>
+        <p><strong>Atenção:</strong> Cinta herniária é CONTRAINDICADA em crianças — pode causar atrofia testicular por compressão.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SEÇÃO 10 — MNEMONICOS
+════════════════════════════════════════════ -->
+<div class="section" id="mnemonicos">
+  <div class="section-header">
+    <span class="section-number">10</span>
+    <h2 class="section-title">Grade de Mnemônicos — Fixação Rápida</h2>
+  </div>
+
+  <div class="mnemonic-grid">
+    <div class="mnemonic-card">
+      <div class="m-title">DIME</div>
+      <div class="m-text">
+        <span class="m-letter">D</span>ireta → <span class="m-letter">M</span>edial aos epigástricos<br>
+        <span class="m-letter">I</span>ndireta → <span class="m-letter">L</span>ateral aos epigástricos<br><br>
+        <em>"Direta vai pra dentro, Indireta sai pelo lado"</em>
+      </div>
+    </div>
+    <div class="mnemonic-card">
+      <div class="m-title">HESSELBACH</div>
+      <div class="m-text">
+        Limites: <span class="m-letter">E</span>pigástrico (lateral), <span class="m-letter">R</span>eto (medial), <span class="m-letter">L</span>igamento inguinal (inferior)<br><br>
+        <em>"ERL — Epigástrico, Reto, Ligamento"</em>
+      </div>
+    </div>
+    <div class="mnemonic-card">
+      <div class="m-title">McVAY</div>
+      <div class="m-text">
+        <span class="m-letter">M</span>cVay = <span class="m-letter">M</span>ulher = <span class="m-letter">M</span>as que é femoral!<br><br>
+        McVay usa o Cooper.<br>
+        Única técnica aberta para hérnia FEMORAL.
+      </div>
+    </div>
+    <div class="mnemonic-card">
+      <div class="m-title">3 NERVOS</div>
+      <div class="m-text">
+        <span class="m-letter">I</span>lioinguinal (dentro do canal)<br>
+        <span class="m-letter">I</span>liohipogástrico (acima do canal)<br>
+        <span class="m-letter">G</span>enitofemoral (pelo anel profundo)<br><br>
+        <em>"Os 3 I.I.G da inguinal"</em>
+      </div>
+    </div>
+    <div class="mnemonic-card">
+      <div class="m-title">CORONA</div>
+      <div class="m-text">
+        <span class="m-letter">C</span>ooper + <span class="m-letter">O</span>bturatório + <span class="m-letter">R</span>isco = Corona Mortis<br><br>
+        Sobre o Cooper.<br>
+        10–30% prevalência.<br>
+        Risco de hemorragia FATAL.
+      </div>
+    </div>
+    <div class="mnemonic-card">
+      <div class="m-title">CAMADAS</div>
+      <div class="m-text">
+        <span class="m-letter">P</span>ela <span class="m-letter">C</span>idade <span class="m-letter">S</span>egura<br>
+        <span class="m-letter">O</span>s <span class="m-letter">O</span>peradores <span class="m-letter">T</span>rabalham<br>
+        <span class="m-letter">F</span>irme <span class="m-letter">G</span>arantia <span class="m-letter">P</span>eritoneal<br><br>
+        Pele-Camper-Scarpa-OExterno-OInterno-Transverso-FTransversalis-Gordura-Peritônio
+      </div>
+    </div>
+    <div class="mnemonic-card">
+      <div class="m-title">ILIOINGUINAL</div>
+      <div class="m-text">
+        Lesão → <span class="m-letter">E</span>scroto + <span class="m-letter">M</span>edial coxa<br><br>
+        <em>"IlIoINguINal → tem IN de INterno → anestesia INterna da coxa + escroto"</em>
+      </div>
+    </div>
+    <div class="mnemonic-card">
+      <div class="m-title">RECIDIVA</div>
+      <div class="m-text">
+        Maior recidiva: <span class="m-letter">B</span>assini (10–15%)<br>
+        Menor sem tela: <span class="m-letter">S</span>houldice (&lt;2%)<br>
+        Menor com tela: <span class="m-letter">L</span>ichtenstein (&lt;1%)<br><br>
+        <em>"BSL — do pior ao melhor"</em>
+      </div>
+    </div>
+  </div>
+
+  <!-- Resumo Final -->
+  <div class="box box-purple" style="margin-top:32px;">
+    <div class="box-label">⭐ RESUMO FINAL — OS 10 PONTOS QUE AS BANCAS COBRAM SEMPRE</div>
+    <ol style="line-height:2.2;">
+      <li>Hérnia INDIRETA passa pelo <strong>anel inguinal profundo</strong> = LATERAL aos epigástricos</li>
+      <li>Hérnia DIRETA passa pelo <strong>triângulo de Hesselbach</strong> = MEDIAL aos epigástricos</li>
+      <li>Hesselbach: epigástrico (lat) + reto (med) + lig. inguinal (inf)</li>
+      <li>McVay usa COOPER → única aberta para hérnia FEMORAL</li>
+      <li>Shouldice = melhor sem tela; Lichtenstein = padrão ouro com tela</li>
+      <li>Nervo mais lesado na hernioplastia = <strong>ilioinguinal</strong> (dor + anestesia escroto/coxa medial)</li>
+      <li>Corona Mortis = anastomose obturatório-epigástrico/ilíaco externo, sobre Cooper</li>
+      <li>Em mulheres com hérnia inguinal encarcerada → suspeitar de FEMORAL → McVay</li>
+      <li>Lactente com hérnia inguinal → cirurgia PRECOCE (risco de encarceramento até 30%)</li>
+      <li>Tela contraindicada em campo INFECTADO → Bassini ou Shouldice</li>
+    </ol>
+  </div>
+
+  <!-- Referências -->
+  <div style="margin-top:40px; padding:24px; background:var(--surface); border:1px solid var(--border); border-radius:8px;">
+    <div style="font-family:'Space Mono',monospace; font-size:11px; color:var(--text-dim); letter-spacing:2px; margin-bottom:16px;">REFERÊNCIAS</div>
+    <ul style="font-size:13px; color:var(--text-dim); line-height:2;">
+      <li>Townsend CM et al. <em>Sabiston Textbook of Surgery</em>. 21st ed. Elsevier, 2022.</li>
+      <li>Zollinger RM, Ellison EC. <em>Zollinger's Atlas of Surgical Operations</em>. 10th ed. McGraw-Hill, 2016.</li>
+      <li>Netter FH. <em>Atlas of Human Anatomy</em>. 7th ed. Elsevier, 2019.</li>
+      <li>HerniaSurge Group. <em>International Guidelines for Groin Hernia Management</em>. Hernia. 2018;22(1):1-165.</li>
+      <li>Miserez M et al. <em>The European Hernia Society groin hernia classification</em>. Hernia. 2007;11(6):535-40.</li>
+      <li>Burcharth J et al. <em>Nationwide prevalence of groin hernia repair</em>. PLoS ONE. 2013;8(1).</li>
+      <li>Eklund A et al. <em>Chronic pain after open inguinal hernia repair</em>. Br J Surg. 2010;97(6):827-34.</li>
+    </ul>
+  </div>
+</div>
+
+</div><!-- /container -->
+
+<script>
+function toggleCollapse(btn) {
+  btn.classList.toggle('open');
+  const content = btn.nextElementSibling;
+  content.classList.toggle('open');
+}
+
+function toggleLayer(header) {
+  const body = header.nextElementSibling;
+  const arrow = header.querySelector('.arrow');
+  if (body.style.display === 'none' || body.style.display === '') {
+    body.style.display = 'block';
+    arrow.style.transform = 'rotate(180deg)';
+    header.style.borderBottom = '1px solid var(--border)';
+  } else {
+    body.style.display = 'none';
+    arrow.style.transform = 'rotate(0)';
+    header.style.borderBottom = '1px solid transparent';
+  }
+}
+
+function selectAlt(el, correct) {
+  const alts = el.parentElement.querySelectorAll('.q-alt');
+  alts.forEach(a => a.classList.remove('correct','wrong'));
+  el.classList.add(correct ? 'correct' : 'wrong');
+}
+
+function revealExplain(btn) {
+  const explain = btn.nextElementSibling;
+  explain.classList.toggle('show');
+  btn.textContent = explain.classList.contains('show') ? 'OCULTAR COMENTÁRIO' : 'VER GABARITO + COMENTÁRIO';
+}
+
+// Nav active highlight on scroll
+const sections = document.querySelectorAll('.section');
+const navLinks = document.querySelectorAll('.nav-link');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    const top = s.getBoundingClientRect().top;
+    if (top <= 80) current = s.id;
+  });
+  navLinks.forEach(l => {
+    l.style.color = l.getAttribute('href') === '#' + current ? 'var(--orange)' : '';
+    l.style.borderBottomColor = l.getAttribute('href') === '#' + current ? 'var(--orange)' : 'transparent';
+  });
+});
+</script>
+</body>
+</html>

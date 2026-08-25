@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🗜️ Instrumentos Cirúrgicos — Pocket</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d1117;--panel:#161b22;--panel2:#1c232c;--line:#2a323c;--tx:#e6edf3;--mut:#8b949e;--or:#ff7a18;--or2:#ff9a4d;--orbg:rgba(255,122,24,.10);--pu:#b083f0;--pu2:#c9a7ff;--pubg:rgba(176,131,240,.12);--cy:#3dd6d0;--cy2:#5fe3dd;--cybg:rgba(61,214,208,.10);--grn:#3fb950;--red:#f85149}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font-family:'IBM Plex Sans',sans-serif;line-height:1.5;padding:0 0 40px}
+.sheet{max-width:430px;margin:0 auto;min-height:100vh;background:var(--bg)}
+header{padding:22px 20px 0;display:flex;justify-content:space-between;align-items:baseline}
+.logo{font-size:22px;font-weight:700;letter-spacing:-.5px}.logo .b{color:var(--or)}
+.kick{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--or);text-transform:uppercase}
+nav{position:sticky;top:0;background:var(--bg);z-index:5;border-bottom:1px solid var(--line);overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;margin-top:14px}
+nav .in{display:flex;padding:0 16px}
+nav button{background:none;border:none;color:var(--mut);font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.5px;text-transform:uppercase;padding:13px 11px;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px}
+nav button.on{color:var(--or);border-bottom-color:var(--or)}
+section{display:none;padding:20px;animation:f .2s}section.on{display:block}
+@keyframes f{from{opacity:0}to{opacity:1}}
+h2{font-size:18px;color:var(--or);font-weight:600;padding-bottom:8px;border-bottom:1px solid var(--line);margin-bottom:14px}
+h3{font-size:13px;margin:16px 0 6px;font-weight:600;color:var(--or2)}
+p,li{font-size:14px}
+.it{color:var(--cy2);font-style:italic;font-size:13px}
+.box{border-left:3px solid var(--or);background:var(--orbg);border-radius:0 8px 8px 0;padding:11px 14px;margin:14px 0}
+.box.pu{border-color:var(--pu);background:var(--pubg)}.box.cy{border-color:var(--cy);background:var(--cybg)}.box.red{border-color:var(--red);background:rgba(248,81,73,.10)}
+.box .lbl{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--or);margin-bottom:6px;font-weight:600}
+.box.pu .lbl{color:var(--pu2)}.box.cy .lbl{color:var(--cy2)}.box.red .lbl{color:#ff9d9d}
+.big{font-size:16px;font-weight:600}
+.tbl{border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:12px 0;background:var(--panel)}
+.row{display:flex;align-items:center;gap:10px;padding:10px 13px;border-bottom:1px solid var(--line);font-size:13.5px}.row:last-child{border-bottom:none}
+.row .v{flex:0 0 auto;color:var(--or2);font-weight:700;font-family:'IBM Plex Mono',monospace;min-width:56px}
+.hand{font-family:'IBM Plex Mono',monospace;font-size:11px;padding:1px 6px;border-radius:5px;font-weight:600}
+.L{background:rgba(63,185,80,.15);color:#56d364}.R{background:rgba(255,122,24,.15);color:var(--or2)}
+ul{list-style:none;margin:4px 0}li{padding:4px 0 4px 24px;position:relative}li .em{position:absolute;left:0}
+.hi{color:var(--pu2);font-weight:600}.mn{font-family:'IBM Plex Mono',monospace;color:var(--cy2);font-weight:600}
+.foot{text-align:center;color:var(--mut);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1px;padding:18px;border-top:1px solid var(--line);margin-top:10px}
+</style>
+</head>
+<body>
+<div class="sheet">
+<header><div class="logo">🗜️ <span class="b">IC</span></div><div class="kick">Pocket</div></header>
+<nav><div class="in" id="nav"></div></nav>
+
+<section id="vg" class="on">
+<h2>🗺️ 4 Tempos Cirúrgicos</h2>
+<div class="tbl">
+<div class="row"><span class="v">Diérese</span><span>bisturi · tesouras · eletrocautério</span></div>
+<div class="row"><span class="v">Hemostasia</span><span>mosquito · Kelly · Crile · Pean</span></div>
+<div class="row"><span class="v">Preensão</span><span>dente-de-rato · Allis · Babcock</span></div>
+<div class="row"><span class="v">Síntese</span><span>porta-agulha · fios · agulhas</span></div>
+</div>
+<h3>✋ Mão D × mão E (regra geral)</h3>
+<p><span class="hand R">DIREITA</span> ativa — bisturi, porta-agulha, energia<br><span class="hand L">ESQUERDA</span> exposição — pinça anatômica, afastador, contratração</p>
+<div class="box pu"><div class="lbl">⭐ Preensões</div><p class="it">Precisão (tripé, pega de caneta) × Palmar/força (pega em arco) — precisão = cortes curtos; palmar = incisões longas, menos fadiga</p></div>
+</section>
+
+<section id="mesa">
+<h2>🪑 Mesa Cirúrgica</h2>
+<div class="tbl">
+<div class="row"><span class="v">Mayo</span><span>sobre o paciente — só o uso imediato</span></div>
+<div class="row"><span class="v">Auxiliar</span><span>back table — estoque completo</span></div>
+</div>
+<p class="it">Ordem na Mayo: bisturi/tesouras → hemostáticas → preensão/afastadores → porta-agulha/fios (segue os 4 tempos)</p>
+<div class="box pu"><div class="lbl">⭐ Contagem inicial</div><p class="it">Compressas + agulhas + instrumentais, antes da incisão — base da prevenção de item retido</p></div>
+</section>
+
+<section id="die">
+<h2>✂️ Diérese</h2>
+<div class="tbl">
+<div class="row"><span class="v">Lâmina 10</span><span>incisão de pele padrão</span></div>
+<div class="row"><span class="v">Lâmina 11</span><span>incisão puntiforme (abscesso/trocarte)</span></div>
+<div class="row"><span class="v">Lâmina 15</span><span>curta e delicada (plástica/vascular)</span></div>
+<div class="row"><span class="v">Metzenbaum</span><span>dissecção fina — NUNCA corta fio</span></div>
+<div class="row"><span class="v">Mayo</span><span>corte grosso — fáscia e fio</span></div>
+<div class="row"><span class="v">Potts-Smith</span><span>angulada — arteriotomia</span></div>
+</div>
+<div class="box red"><div class="lbl">🚫 pegadinha</div><p class="it">Metzenbaum para cortar fio/gaze = embota a lâmina. Fio é sempre Mayo.</p></div>
+</section>
+
+<section id="pin">
+<h2>🗜️ Pinças &amp; Hemostasia</h2>
+<div class="tbl">
+<div class="row"><span class="v">DeBakey</span><span>anatômica atraumática — vaso/intestino</span></div>
+<div class="row"><span class="v">Dente-rato</span><span>traumática — pele/fáscia</span></div>
+<div class="row"><span class="v">Allis</span><span>traumática — SAI com a peça</span></div>
+<div class="row"><span class="v">Babcock</span><span>atraumática — FICA no paciente</span></div>
+<div class="row"><span class="v">Mosquito</span><span>vasos finos</span></div>
+<div class="row"><span class="v">Kelly/Crile</span><span>vasos médios</span></div>
+<div class="row"><span class="v">Pean</span><span>pedículos maiores</span></div>
+<div class="row"><span class="v">Mixter</span><span>ângulo reto — retrovascular/Calot</span></div>
+</div>
+<div class="box pu"><div class="lbl">⭐ Vascular</div><p class="it">DeBakey vascular / Satinsky = dupla fileira de dentes finos, atraumático em grandes vasos. Bulldog = oclusão temporária de vaso fino/médio.</p></div>
+<p class="it">Empunhadura: tripé — polegar + <strong>anular</strong> nos anéis, indicador/médio estabilizam a haste.</p>
+</section>
+
+<section id="agu">
+<h2>🪡 Porta-agulhas &amp; Fios</h2>
+<div class="tbl">
+<div class="row"><span class="v">Mayo-Hegar</span><span>uso geral</span></div>
+<div class="row"><span class="v">Crile-Wood</span><span>fino, delicado</span></div>
+<div class="row"><span class="v">Ryder</span><span>microcirurgia/vascular fino</span></div>
+</div>
+<h3>Agulhas</h3>
+<div class="tbl">
+<div class="row"><span class="v">Cortante</span><span>pele/tecido denso</span></div>
+<div class="row"><span class="v">Reverse-cut</span><span>pele — menos rasgo</span></div>
+<div class="row"><span class="v">Cônica</span><span>vísceras/vasos — não corta</span></div>
+<div class="row"><span class="v">Romba</span><span>fígado/baço — menos picada</span></div>
+</div>
+<h3>Fios — o que e quando</h3>
+<ul>
+<li><span class="em">🩹</span>Pele: Nylon/Prolene 3-0/5-0 ou Monocryl subcuticular</li>
+<li><span class="em">🧷</span>Aponeurose: PDS/Náilon 0/1 · razão 4:1</li>
+<li><span class="em">🪡</span>Víscera: Vicryl/PDS 3-0/4-0</li>
+<li><span class="em">🔗</span>Pedículo: Vicryl 0/2-0</li>
+<li><span class="em">🩸</span>Vascular: Prolene mono 5-0 a 9-0</li>
+</ul>
+<div class="box cy"><div class="lbl">🧠 macete</div><p class="mn">Mais zeros = fio mais FINO. Absorvível fica menos tempo; monofilamento desliza sem serrar.</p></div>
+</section>
+
+<section id="afa">
+<h2>🖐️ Afastadores</h2>
+<div class="tbl">
+<div class="row"><span class="v">Farabeuf</span><span>superficial, pequeno</span></div>
+<div class="row"><span class="v">Richardson</span><span>parede abdominal</span></div>
+<div class="row"><span class="v">Deaver</span><span>vísceras profundas</span></div>
+<div class="row"><span class="v">Doyen</span><span>campo pélvico</span></div>
+<div class="row"><span class="v">Gelpi/Weitlaner</span><span>autoestático pequeno</span></div>
+<div class="row"><span class="v">Balfour</span><span>autoestático abdominal</span></div>
+<div class="row"><span class="v">Bookwalter</span><span>sistema em anel — grandes cirurgias</span></div>
+</div>
+</section>
+
+<section id="ene">
+<h2>⚡ Energia &amp; Segurança</h2>
+<ul>
+<li><span class="em">⚡</span>Monopolar: placa de retorno, risco de queimadura</li>
+<li><span class="em">🎯</span>Bipolar: só entre as pontas, sem placa</li>
+<li><span class="em">🔒</span>LigaSure: sela vaso até ~7mm</li>
+<li><span class="em">〰️</span>Harmônico: vibração, sem corrente no paciente</li>
+</ul>
+<div class="box pu"><div class="lbl">⭐ Zona neutra</div><p class="it">384.000 lesões percutâneas/ano · 23% cirúrgicas · 59% cirurgião/19% instrumentador · agulha cortante 51-77% (fechamento fáscia). Zona neutra ≥75% = 59% proteção.</p></div>
+<div class="box pu"><div class="lbl">⭐ Item retido (RSI)</div><p class="it">1,34/10.000 procedimentos (2016-23, em queda). Maior risco: laparotomia exploradora, transplante, laparoscopia diagnóstica, neuro/coluna.</p></div>
+<div class="box red"><div class="lbl">🚫 pegadinha</div><p class="it">Contagem "falso-negativa" é o cenário mais perigoso — inspeção visual da cavidade é sempre obrigatória.</p></div>
+</section>
+
+<section id="peg">
+<h2>🪤 Pega-ratões</h2>
+<ul>
+<li><span class="em">✂️</span>Metzenbaum não corta fio/gaze</li>
+<li><span class="em">🗜️</span>Allis sai · Babcock fica</li>
+<li><span class="em">💉</span>Cônica = víscera/vaso · cortante = pele</li>
+<li><span class="em">🧵</span>Mais zeros = fio mais fino</li>
+<li><span class="em">🩸</span>Clampe vascular ≠ hemostática comum</li>
+<li><span class="em">🛡️</span>Zona neutra ≠ substitui contagem</li>
+<li><span class="em">🔢</span>Inspeção visual sempre, mesmo com contagem OK</li>
+</ul>
+</section>
+
+<section id="mn">
+<h2>🧠 Mnemônicos</h2>
+<div class="box cy"><div class="lbl">🗺️ 4 tempos</div><p class="mn">D-H-P-S: Diérese · Hemostasia · Preensão · Síntese</p></div>
+<div class="box cy"><div class="lbl">🗜️ Allis × Babcock</div><p class="mn">A = Adeus (sai) · B = Bem guardado (fica)</p></div>
+<div class="box cy"><div class="lbl">🪡 Zeros</div><p class="mn">Mais zero = mais fino, tipo fio de cabelo</p></div>
+<div class="box cy"><div class="lbl">✋ Mãos</div><p class="mn">Direita Dissecca · Esquerda Expõe</p></div>
+</section>
+
+<div class="foot">← deslize as abas →</div>
+</div>
+<script>
+var s=[['vg','🗺️ 4 Tempos'],['mesa','🪑 Mesa'],['die','✂️ Diérese'],['pin','🗜️ Pinças'],['agu','🪡 Fios'],['afa','🖐️ Afastad.'],['ene','⚡ Segurança'],['peg','🪤 Pegas'],['mn','🧠 Mnem']];
+var n=document.getElementById('nav');
+s.forEach(function(x,i){var b=document.createElement('button');b.textContent=x[1];if(i===0)b.className='on';b.onclick=function(){document.querySelectorAll('nav button').forEach(function(y){y.classList.remove('on')});b.classList.add('on');document.querySelectorAll('section').forEach(function(y){y.classList.remove('on')});document.getElementById(x[0]).classList.add('on');document.querySelector('.sheet').scrollIntoView()};n.appendChild(b)});
+</script>
+</body>
+</html>

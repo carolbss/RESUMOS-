@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🩸 Hemorragia Digestiva — Pocket</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d1117;--panel:#161b22;--panel2:#1c232c;--line:#2a323c;--tx:#e6edf3;--mut:#8b949e;--or:#ff7a18;--or2:#ff9a4d;--orbg:rgba(255,122,24,.10);--pu:#b083f0;--pu2:#c9a7ff;--pubg:rgba(176,131,240,.12);--cy:#3dd6d0;--cy2:#5fe3dd;--cybg:rgba(61,214,208,.10);--grn:#3fb950;--red:#f85149}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font-family:'IBM Plex Sans',sans-serif;line-height:1.5;padding:0 0 40px}
+.sheet{max-width:430px;margin:0 auto;min-height:100vh;background:var(--bg)}
+header{padding:22px 20px 0;display:flex;justify-content:space-between;align-items:baseline}
+.logo{font-size:23px;font-weight:700;letter-spacing:-.5px}.logo .b{color:var(--or)}
+.kick{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--or);text-transform:uppercase}
+nav{position:sticky;top:0;background:var(--bg);z-index:5;border-bottom:1px solid var(--line);overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;margin-top:14px}
+nav .in{display:flex;padding:0 16px}
+nav button{background:none;border:none;color:var(--mut);font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.5px;text-transform:uppercase;padding:13px 11px;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px}
+nav button.on{color:var(--or);border-bottom-color:var(--or)}
+section{display:none;padding:20px;animation:f .2s}section.on{display:block}
+@keyframes f{from{opacity:0}to{opacity:1}}
+h2{font-size:18px;color:var(--or);font-weight:600;padding-bottom:8px;border-bottom:1px solid var(--line);margin-bottom:14px}
+h3{font-size:13px;margin:16px 0 6px;font-weight:600;color:var(--or2)}
+p,li{font-size:14px}
+.step{display:flex;align-items:flex-start;gap:10px;padding:7px 0}
+.num{flex:0 0 auto;width:24px;height:24px;border-radius:6px;background:var(--or);color:#0d1117;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:13px;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.it{color:var(--cy2);font-style:italic;font-size:13px}
+.box{border-left:3px solid var(--or);background:var(--orbg);border-radius:0 8px 8px 0;padding:11px 14px;margin:14px 0}
+.box.pu{border-color:var(--pu);background:var(--pubg)}.box.cy{border-color:var(--cy);background:var(--cybg)}
+.box .lbl{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--or);margin-bottom:6px;font-weight:600}
+.box.pu .lbl{color:var(--pu2)}.box.cy .lbl{color:var(--cy2)}
+.big{font-size:16px;font-weight:600}
+.tbl{border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:12px 0;background:var(--panel)}
+.row{display:flex;align-items:center;gap:10px;padding:10px 13px;border-bottom:1px solid var(--line);font-size:13.5px}.row:last-child{border-bottom:none}
+.row .v{flex:0 0 auto;color:var(--or2);font-weight:700;font-family:'IBM Plex Mono',monospace;min-width:40px}
+.hand{font-family:'IBM Plex Mono',monospace;font-size:11px;padding:1px 6px;border-radius:5px;font-weight:600}
+.L{background:rgba(63,185,80,.15);color:#56d364}.R{background:rgba(255,122,24,.15);color:var(--or2)}
+ul{list-style:none;margin:4px 0}li{padding:4px 0 4px 24px;position:relative}li .em{position:absolute;left:0}
+.hi{color:var(--pu2);font-weight:600}.mn{font-family:'IBM Plex Mono',monospace;color:var(--cy2);font-weight:600}
+.foot{text-align:center;color:var(--mut);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1px;padding:18px;border-top:1px solid var(--line);margin-top:10px}
+</style>
+</head>
+<body>
+<div class="sheet">
+<header><div class="logo">🩸 <span class="b">HD</span></div><div class="kick">Pocket</div></header>
+<nav><div class="in" id="nav"></div></nav>
+<section id="vg" class="on">
+<h2>🗺️ Visão geral</h2>
+<div class="box pu"><div class="lbl">⭐ Primeiro</div><p class="big">ressuscitar + restritiva</p><p class="it">2 acessos · transfundir Hb &lt; 7 (8 se cardiopata)</p></div>
+<ul>
+<li><span class="em">⬆️</span><span class="hi">HDA</span> = acima de Treitz (hematêmese/melena)</li>
+<li><span class="em">⬇️</span><span class="hi">HDB</span> = abaixo (hematoquezia)</li>
+<li><span class="em">⚠️</span>Hematoquezia maciça pode ser HDA → excluir alto</li>
+</ul>
+</section><section id="nv">
+<h2>🩸 HDA não-varicosa</h2>
+<p class="it">Úlcera péptica. EDA &lt;24h · eritromicina IV pré · IBP.</p>
+<div class="tbl">
+<div class="row"><span class="v">Ia</span><span>jato → 🎯 tratar</span></div>
+<div class="row"><span class="v">Ib</span><span>babação → 🎯 tratar</span></div>
+<div class="row"><span class="v">IIa</span><span>vaso visível → 🎯 tratar</span></div>
+<div class="row"><span class="v">IIb</span><span>coágulo → remover/avaliar</span></div>
+<div class="row"><span class="v">IIc</span><span>hematina → IBP</span></div>
+<div class="row"><span class="v">III</span><span>base limpa → IBP + alta</span></div>
+</div>
+<div class="box pu"><div class="lbl">⭐ Terapia</div><p class="it">dupla: adrenalina + 2º método (clipe/térmico). Falha → embolização (TAE).</p></div>
+</section><section id="var">
+<h2>🫀 HDA varicosa</h2>
+<div class="box pu"><div class="lbl">⭐ Baveno VII — VAET</div>
+<ul>
+<li><span class="em">💉</span><span class="hi">V</span>asoativo (terli/somato/octreo) 2–5d</li>
+<li><span class="em">🦠</span><span class="hi">A</span>ntibiótico (ceftriaxona) desde admissão</li>
+<li><span class="em">🔗</span><span class="hi">E</span>BL (ligadura) p/ esofágicas · cianoacrilato p/ gástricas</li>
+<li><span class="em">🩹</span><span class="hi">T</span>IPS precoce (&lt;72h) se Child C≤13 / B&gt;7 ativo</li>
+</ul></div>
+<p class="it">Balão = ponte. Profilaxia 2ª: BB não seletivo + EBL.</p>
+</section><section id="hdb">
+<h2>🔻 HDB (ACG 2023)</h2>
+<div class="tbl">
+<div class="row"><span class="v">🟢</span><span>Estável → colono <b>não urgente</b></span></div>
+<div class="row"><span class="v">🔴</span><span>Instável → <b>angio-TC</b> → embolização</span></div>
+<div class="row"><span class="v">🏠</span><span>Oakland ≤8 → alta precoce</span></div>
+</div>
+<p class="it">Causa + comum = <span class="hi">diverticular</span>. Intermitente → cintilografia hemácias marcadas.</p>
+</section><section id="esc">
+<h2>📊 Escores</h2>
+<div class="tbl">
+<div class="row"><span class="v">GBS</span><span>pré-EDA · <b>0–1 → casa</b></span></div>
+<div class="row"><span class="v">Rock</span><span>pré/pós-EDA · mortalidade/ressangr.</span></div>
+<div class="row"><span class="v">AIMS65</span><span>mortalidade</span></div>
+<div class="row"><span class="v">Oak</span><span>HDB · ≤8 ambulatorial</span></div>
+</div>
+</section><section id="peg">
+<h2>🪤 Pega-ratões</h2>
+<ul>
+<li><span class="em">🩸</span>Restritiva Hb &lt; 7</li>
+<li><span class="em">🎯</span>Tratar Forrest Ia/Ib/IIa</li>
+<li><span class="em">🦠</span>Varicosa = ATB desde a admissão</li>
+<li><span class="em">🔻</span>HDB estável = colono não urgente</li>
+<li><span class="em">🚫</span>TXA não (HALT-IT)</li>
+<li><span class="em">📊</span>GBS 0–1 → alta</li>
+</ul>
+</section><section id="mn">
+<h2>🧠 Mnemônicos</h2>
+<div class="box cy"><div class="lbl">🩸 FORREST</div><p class="mn">I–IIa tratar · IIc/III só IBP</p></div>
+<div class="box cy"><div class="lbl">🫀 VAET</div><p class="mn">Vasoativo · ATB · EBL · TIPS</p></div>
+<div class="box cy"><div class="lbl">📊 GBS 0–1</div><p class="mn">→ casa</p></div>
+</section>
+<div class="foot">← deslize as abas →</div>
+</div>
+<script>
+var s=[['vg','🗺️ Geral'],['nv','🩸 HDA não-var'],['var','🫀 Varicosa'],['hdb','🔻 HDB'],['esc','📊 Escores'],['peg','🪤 Pegas'],['mn','🧠 Mnem']];
+var n=document.getElementById('nav');
+s.forEach(function(x,i){var b=document.createElement('button');b.textContent=x[1];if(i===0)b.className='on';b.onclick=function(){document.querySelectorAll('nav button').forEach(function(y){y.classList.remove('on')});b.classList.add('on');document.querySelectorAll('section').forEach(function(y){y.classList.remove('on')});document.getElementById(x[0]).classList.add('on');document.querySelector('.sheet').scrollIntoView()};n.appendChild(b)});
+</script>
+</body>
+</html>

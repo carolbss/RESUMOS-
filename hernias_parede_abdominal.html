@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hérnias da Parede Abdominal — Resumo carolzita</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0f; --bg2:#12121a; --card:#15151f; --card2:#1b1b27;
+  --border:#26263a; --txt:#e8e8f0; --muted:#9494ab;
+  --orange:#f97316; --purple:#a855f7; --cyan:#22d3ee;
+  --orange-dim:rgba(249,115,22,.12); --purple-dim:rgba(168,85,247,.12); --cyan-dim:rgba(34,211,238,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;line-height:1.6;font-size:16px}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px 120px}
+header{padding:48px 20px 28px;text-align:center;border-bottom:1px solid var(--border);
+  background:radial-gradient(120% 100% at 50% 0%, rgba(249,115,22,.10), transparent 60%)}
+header .kicker{font-family:'JetBrains Mono',monospace;color:var(--orange);font-size:.8rem;letter-spacing:.18em;text-transform:uppercase}
+header h1{font-family:'Syne',sans-serif;font-weight:800;font-size:2.5rem;line-height:1.1;margin:10px 0 6px;
+  background:linear-gradient(100deg,#fff,#f97316 60%,#a855f7);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+header p{color:var(--muted);font-size:.95rem;max-width:640px;margin:0 auto}
+.refs{margin-top:16px;font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--muted)}
+.refs b{color:var(--cyan)}
+nav{position:sticky;top:0;z-index:50;background:rgba(10,10,15,.9);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border);padding:10px 0;margin-bottom:8px}
+nav .navin{max-width:960px;margin:0 auto;padding:0 20px;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+nav .navin::-webkit-scrollbar{display:none}
+nav a{white-space:nowrap;font-size:.78rem;font-weight:600;color:var(--muted);text-decoration:none;
+  padding:6px 12px;border-radius:20px;border:1px solid var(--border);transition:.15s}
+nav a:hover{color:var(--txt);border-color:var(--orange);background:var(--orange-dim)}
+.legend{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin:22px 0 6px;font-size:.8rem}
+.legend span{display:flex;align-items:center;gap:6px;color:var(--muted)}
+.dot{width:11px;height:11px;border-radius:50%;display:inline-block}
+.dot.o{background:var(--orange)} .dot.p{background:var(--purple)} .dot.c{background:var(--cyan)}
+section{margin-top:18px}
+details{background:var(--card);border:1px solid var(--border);border-radius:14px;margin-bottom:14px;overflow:hidden}
+details[open]{border-color:#33334d}
+summary{cursor:pointer;list-style:none;padding:18px 22px;display:flex;align-items:center;gap:14px;
+  font-family:'Syne',sans-serif;font-weight:700;font-size:1.18rem;user-select:none}
+summary::-webkit-details-marker{display:none}
+summary .ico{font-size:1.3rem;line-height:1}
+summary .chev{margin-left:auto;color:var(--muted);transition:.2s;font-size:1.1rem}
+details[open] summary .chev{transform:rotate(90deg)}
+summary:hover{background:var(--card2)}
+.body{padding:4px 22px 24px;border-top:1px solid var(--border)}
+.body h4{font-family:'Syne',sans-serif;color:var(--orange);font-size:1.02rem;margin:20px 0 8px}
+.body p{margin:8px 0}
+.body ul{margin:8px 0 8px 4px;list-style:none}
+.body ul li{position:relative;padding-left:20px;margin:6px 0}
+.body ul li::before{content:"▸";position:absolute;left:0;color:var(--orange)}
+.body ol{margin:8px 0 8px 22px}
+.body ol li{margin:7px 0}
+.simple{color:#3fb950;font-style:italic;font-size:.9em}
+.green{background:rgba(63,185,80,.10);border-left:3px solid #3fb950;border-radius:8px;padding:12px 16px;margin:14px 0;color:#3fb950;font-style:italic}
+.green .tag{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:#3fb950;font-weight:600;display:block;margin-bottom:4px;font-style:normal}
+.green b,.green strong{color:#8ee79a;font-style:normal}
+.stx{counter-reset:st;margin:10px 0}
+.st{counter-increment:st;background:var(--card2);border:1px solid var(--border);border-radius:13px;padding:14px 16px 14px 52px;margin:11px 0;position:relative}
+.st::before{content:counter(st);position:absolute;left:14px;top:13px;width:26px;height:26px;border-radius:8px;background:var(--orange);color:#0a0a0f;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center}
+.st .fase{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);display:block;margin-bottom:1px}
+.st .ttl{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:#fff;margin-bottom:4px}
+.st p{margin:5px 0;font-size:.93rem}
+.pq{border-left:3px solid var(--purple);background:var(--purple-dim);border-radius:0 8px 8px 0;padding:8px 12px;margin:9px 0;font-size:.9rem}
+.pq b{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;color:var(--purple);display:block;margin-bottom:2px}
+.mh2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:9px}
+.mh{border-radius:9px;padding:8px 11px;font-size:.85rem;border:1px solid var(--border)}
+.mh.e{background:rgba(63,185,80,.07);border-color:rgba(63,185,80,.3)}
+.mh.d{background:var(--orange-dim);border-color:rgba(249,115,22,.3)}
+.mh b{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:2px}
+.mh.e b{color:#3fb950} .mh.d b{color:var(--orange)}
+.fio{font-family:'JetBrains Mono',monospace;font-size:.78rem;background:var(--purple-dim);color:var(--purple);border:1px solid rgba(168,85,247,.35);padding:1px 6px;border-radius:5px;white-space:nowrap}
+@media(max-width:640px){.mh2{grid-template-columns:1fr}}
+b,strong{color:#fff;font-weight:700}
+.hot{background:var(--purple-dim);border-left:3px solid var(--purple);border-radius:8px;padding:12px 16px;margin:14px 0}
+.hot .tag{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--purple);font-weight:600;display:block;margin-bottom:4px}
+.mnem{background:var(--cyan-dim);border-left:3px solid var(--cyan);border-radius:8px;padding:12px 16px;margin:14px 0}
+.mnem .tag{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan);font-weight:600;display:block;margin-bottom:4px}
+.mnem b{color:var(--cyan)}
+.warn{background:rgba(234,179,8,.1);border-left:3px solid #eab308;border-radius:8px;padding:12px 16px;margin:14px 0;font-size:.92rem}
+.tbl{overflow-x:auto;margin:14px 0;border:1px solid var(--border);border-radius:10px}
+table{width:100%;border-collapse:collapse;font-size:.88rem;min-width:520px}
+th{background:var(--card2);color:var(--orange);font-family:'Syne',sans-serif;text-align:left;padding:10px 14px;font-size:.82rem;text-transform:uppercase;letter-spacing:.05em}
+td{padding:10px 14px;border-top:1px solid var(--border);vertical-align:top}
+tr:hover td{background:rgba(255,255,255,.02)}
+td .pt{color:var(--purple);font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:14px 0}
+.gc{background:var(--card2);border:1px solid var(--border);border-radius:10px;padding:14px 16px}
+.gc h5{font-family:'Syne',sans-serif;color:var(--cyan);font-size:.95rem;margin-bottom:6px}
+.gc p{font-size:.86rem;color:var(--muted);margin:0}
+figure{margin:18px 0;background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:16px;text-align:center}
+figure svg{max-width:100%;height:auto}
+figcaption{color:var(--muted);font-size:.78rem;margin-top:10px;font-family:'JetBrains Mono',monospace}
+.pill{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:.7rem;padding:2px 9px;border-radius:12px;margin:2px 3px 2px 0;font-weight:600}
+.pill.n1{background:var(--orange-dim);color:var(--orange);border:1px solid var(--orange)}
+.pill.n2{background:var(--purple-dim);color:var(--purple);border:1px solid var(--purple)}
+.q{background:var(--card2);border:1px solid var(--border);border-radius:10px;padding:14px 16px;margin:12px 0}
+.q .banca{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--purple);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+.q .en{margin:6px 0 8px;font-size:.94rem}
+.q .alt{font-size:.9rem;color:var(--muted);margin:3px 0}
+.q .ans{margin-top:8px;font-size:.9rem;color:var(--cyan);border-top:1px dashed var(--border);padding-top:8px}
+.q .ans b{color:var(--cyan)}
+footer{text-align:center;color:var(--muted);font-size:.75rem;margin-top:40px;font-family:'JetBrains Mono',monospace}
+mark{background:var(--orange-dim);color:var(--orange);padding:0 4px;border-radius:4px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="kicker">carolzita · cirurgia da parede abdominal</div>
+  <h1>Hérnias da Parede Abdominal</h1>
+  <p>Umbilical · Epigástrica · Incisional · Ventral. Da classificação EHS ao Rives-Stoppa e TAR. Anatomia, técnica passo-a-passo, telas e o que mais cai nas bancas do RS.</p>
+  <div class="refs">📚 <b>Sabiston</b> 21ª · <b>Zollinger's Atlas</b> 11ª · <b>Netter</b> · EHS/AHS Umbilical-Epigástrica 2020 · EHS Incisional Mediana 2023 · EHS Emergência PVIH 2025 · STITCH 2015</div>
+</header>
+
+<nav><div class="navin">
+  <a href="#clinica">Clínica/Tipos</a>
+  <a href="#class">Classificação EHS</a>
+  <a href="#anatomia">Anatomia/Vasos</a>
+  <a href="#fisio">Fisiopatologia</a>
+  <a href="#dx">Diagnóstico</a>
+  <a href="#planos">Telas/Planos</a>
+  <a href="#cirurgia">Cirurgia passo-a-passo</a>
+  <a href="#maos">Mãos/Fios</a>
+  <a href="#complic">Complicações</a>
+  <a href="#banca">Bancas RS</a>
+  <a href="#mnem">Mnemônicos</a>
+  <a href="#pega">Pega-ratões</a>
+</div></nav>
+
+<div class="wrap">
+
+<div class="legend">
+  <span><i class="dot o"></i> Conteúdo</span>
+  <span><i class="dot p"></i> Tema quente de prova (+banca)</span>
+  <span><i class="dot c"></i> Mnemônico / macete</span>
+</div>
+
+<!-- 1. CLÍNICA -->
+<section id="clinica"><details open>
+<summary><span class="ico">🩺</span> Quadro clínico e tipos <span class="chev">›</span></summary>
+<div class="body">
+<h4>Definições</h4>
+<ul>
+<li><b>Hérnia da parede abdominal (ventral):</b> protrusão de conteúdo intra-abdominal através de defeito da fáscia da parede anterior <span class="simple">(uma "janela" na parede da barriga por onde a tripa empurra para fora)</span></li>
+<li><b>Primária:</b> surge em ponto anatomicamente fraco, sem cirurgia prévia — <b>umbilical, epigástrica, de Spiegel</b></li>
+<li><b>Incisional:</b> ocorre em cicatriz de laparotomia prévia — é a mais frequente e a mais complexa</li>
+</ul>
+
+<div class="tbl"><table>
+<tr><th>Tipo</th><th>Localização</th><th>Ponto fraco</th><th>Perfil / detalhe</th></tr>
+<tr><td><b>Umbilical</b></td><td>Centro no umbigo</td><td>Anel umbilical (linha alba)</td><td>Adulto: mulher, obesa, multípara. Congênita ≠ adquirida</td></tr>
+<tr><td><b>Epigástrica</b></td><td>Linha alba, acima do umbigo (xifoide→umbigo)</td><td>Forames de vasos perfurantes na linha alba</td><td>Homem jovem; pequenas; frequentemente só gordura pré-peritoneal; podem ser múltiplas</td></tr>
+<tr><td><b>Incisional</b></td><td>Sobre cicatriz cirúrgica</td><td>Falha da cicatrização aponeurótica</td><td><span class="pt">Mais comum das ventrais operadas</span>; ~12,8% após laparotomia mediana em 2 anos</td></tr>
+<tr><td><b>de Spiegel</b></td><td>Linha semilunar (borda lateral do reto), abaixo da linha arqueada</td><td>Aponeurose de Spiegel</td><td>Intersticial (entre camadas) → difícil de palpar, alto risco de encarceramento</td></tr>
+<tr><td><b>Suprapúbica</b></td><td>M5 — abaixo, junto ao púbis</td><td>Incisões de Pfannenstiel/mediana baixa</td><td>Reparo desafiador (fixação óssea/Cooper)</td></tr>
+</table></div>
+
+<h4>Sintomas</h4>
+<ul>
+<li>Abaulamento que aumenta ao esforço/Valsalva e reduz ao deitar (redutível)</li>
+<li>Desconforto/dor local; pode ser assintomática (achado)</li>
+<li><b>Encarceramento:</b> irredutível sem sofrimento vascular · <b>Estrangulamento:</b> comprometimento vascular → dor intensa, sinais inflamatórios, obstrução, toxemia — <span class="pt">emergência cirúrgica</span></li>
+</ul>
+
+<div class="hot"><span class="tag">◆ tema quente · epigástrica x diástase</span>
+<b>Diástase dos retos</b> = afastamento dos retos com <u>linha alba íntegra</u> e <u>sem defeito fascial</u> → <b>NÃO é hérnia, não tem anel, não estrangula, não se opera de rotina</b>. A hérnia epigástrica tem defeito puntiforme na linha alba. Distinção clássica de prova.</div>
+</div>
+</details></section>
+
+<!-- 2. CLASSIFICAÇÃO -->
+<section id="class"><details>
+<summary><span class="ico">📐</span> Classificação EHS (a mais cobrada) <span class="chev">›</span></summary>
+<div class="body">
+<p>Classificação da <b>European Hernia Society (Muysoms, 2009)</b> — organiza <b>localização + largura + tipo (primária vs incisional)</b>. Padroniza a comunicação e é a referência atual.</p>
+
+<h4>Localização — MEDIANAS (M)</h4>
+<div class="tbl"><table>
+<tr><th>Zona</th><th>Limite</th></tr>
+<tr><td><b>M1</b> subxifoidea</td><td>do xifoide até 3 cm abaixo</td></tr>
+<tr><td><b>M2</b> epigástrica</td><td>3 cm abaixo do xifoide até 3 cm acima do umbigo</td></tr>
+<tr><td><b>M3</b> umbilical</td><td>3 cm acima até 3 cm abaixo do umbigo</td></tr>
+<tr><td><b>M4</b> infraumbilical</td><td>3 cm abaixo do umbigo até 3 cm acima do púbis</td></tr>
+<tr><td><b>M5</b> suprapúbica</td><td>até 3 cm acima do púbis</td></tr>
+</table></div>
+
+<h4>Localização — LATERAIS (L)</h4>
+<ul>
+<li><b>L1</b> subcostal · <b>L2</b> flanco · <b>L3</b> ilíaca · <b>L4</b> lombar</li>
+</ul>
+
+<div class="hot"><span class="tag">◆ tema quente · largura (W)</span>
+Medir a <b>maior largura transversal</b> do defeito:
+<ul>
+<li><b>W1 &lt; 4 cm</b> (pequena)</li>
+<li><b>W2 = 4–10 cm</b> (média)</li>
+<li><b>W3 ≥ 10 cm</b> (grande)</li>
+</ul>
+A largura ≥10 cm e a natureza incisional foram <b>preditores independentes de complicações/recidiva</b> em coortes recentes de validação (2024).</div>
+
+<div class="mnem"><span class="tag">macete</span>
+<b>"M do meio, L do lado; W = 4 e 10"</b> — Medianas numeradas de cima (xifoide) para baixo (púbis); Laterais idem; corte da largura em 4 e 10 cm.</div>
+
+<p style="color:var(--muted);font-size:.88rem">Classificações históricas para <b>hérnia incisional</b>: <b>Chevrel</b> (localização + tamanho + recidiva) e <b>PUC</b>. Para <b>defeitos gigantes</b>: conceito de <b>"perda de domicílio"</b> (loss of domain) — volume do saco ≥ 20–25% do volume da cavidade abdominal.</p>
+</div>
+</details></section>
+
+<!-- 3. ANATOMIA -->
+<section id="anatomia"><details>
+<summary><span class="ico">🫀</span> Anatomia e vascularização <span class="chev">›</span></summary>
+<div class="body">
+<figure>
+<svg viewBox="0 0 460 300" xmlns="http://www.w3.org/2000/svg">
+<rect x="0" y="0" width="460" height="300" fill="#12121a"/>
+<!-- silhueta abdome -->
+<rect x="150" y="20" width="160" height="260" rx="30" fill="#1b1b27" stroke="#26263a"/>
+<!-- linha alba -->
+<line x1="230" y1="30" x2="230" y2="270" stroke="#f97316" stroke-width="3"/>
+<text x="236" y="50" fill="#f97316" font-size="11" font-family="monospace">linha alba</text>
+<!-- umbigo -->
+<circle cx="230" cy="150" r="7" fill="#0a0a0f" stroke="#a855f7" stroke-width="2"/>
+<text x="242" y="154" fill="#a855f7" font-size="10" font-family="monospace">umbigo (M3)</text>
+<!-- linha semilunar -->
+<path d="M175 40 Q168 150 175 260" stroke="#22d3ee" stroke-width="2" fill="none"/>
+<path d="M285 40 Q292 150 285 260" stroke="#22d3ee" stroke-width="2" fill="none"/>
+<text x="60" y="150" fill="#22d3ee" font-size="10" font-family="monospace">linha semilunar</text>
+<text x="60" y="164" fill="#22d3ee" font-size="10" font-family="monospace">(Spiegel)</text>
+<!-- linha arqueada -->
+<line x1="150" y1="195" x2="310" y2="195" stroke="#eab308" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="316" y="199" fill="#eab308" font-size="10" font-family="monospace">arqueada</text>
+<!-- vasos epigastricos -->
+<line x1="205" y1="30" x2="212" y2="150" stroke="#f87171" stroke-width="2"/>
+<line x1="212" y1="150" x2="205" y2="270" stroke="#f87171" stroke-width="2"/>
+<text x="316" y="80" fill="#f87171" font-size="10" font-family="monospace">epigástrica sup.</text>
+<text x="316" y="250" fill="#f87171" font-size="10" font-family="monospace">epigástrica inf.</text>
+<text x="60" y="250" fill="#9494ab" font-size="10" font-family="monospace">M1 → M5</text>
+</svg>
+<figcaption>Marcos da parede abdominal anterior: linha alba, linha semilunar, linha arqueada e eixo epigástrico</figcaption>
+</figure>
+
+<h4>Camadas da parede (do superficial ao profundo)</h4>
+<ol>
+<li>Pele → tecido subcutâneo (fáscia de <b>Camper</b> gordurosa + fáscia de <b>Scarpa</b> membranosa)</li>
+<li><b>Oblíquo externo</b> → <b>oblíquo interno</b> → <b>transverso do abdome</b> (laterais); <b>reto abdominal</b> (mediano), envolto pela <b>bainha do reto</b></li>
+<li><b>Fáscia transversalis</b> → gordura pré-peritoneal → <b>peritônio</b></li>
+</ol>
+
+<div class="hot"><span class="tag">◆ tema quente · linha arqueada (de Douglas)</span>
+<b>Acima</b> da linha arqueada: bainha do reto <u>anterior</u> (obl. externo + metade obl. interno) e <u>posterior</u> (metade obl. interno + transverso). <b>Abaixo</b>: <u>todas</u> as aponeuroses passam à frente do reto → <b>parede posterior só fáscia transversalis</b> (ponto fraco → hérnia de Spiegel e local do plano de Rives-Stoppa acabar).</div>
+
+<h4>Vascularização</h4>
+<ul>
+<li><b>Epigástrica superior</b> (ramo da torácica interna/mamária) — desce por trás do reto</li>
+<li><b>Epigástrica inferior</b> (ramo da ilíaca externa) — sobe por trás do reto; anastomose entre as duas dentro do músculo <span class="simple">(dois "canos" que se encontram dentro do músculo reto)</span></li>
+<li>Perfurantes lateralmente das <b>intercostais/lombares</b>; a <b>epigástrica inferior</b> forma a borda lateral do triângulo de Hesselbach</li>
+</ul>
+<h4>Inervação (crítica no TAR)</h4>
+<ul>
+<li>Nervos <b>toracoabdominais T7–T11, subcostal (T12) e ílio-hipogástrico/ilioinguinal (L1)</b> correm <b>entre oblíquo interno e transverso</b> e penetram a bainha lateralmente</li>
+<li>Entram no reto pela sua <b>borda lateral (linha semilunar)</b> → preservá-los evita denervação e "abaulamento" do reto</li>
+</ul>
+</div>
+</details></section>
+
+<!-- 4. FISIOPATOLOGIA -->
+<section id="fisio"><details>
+<summary><span class="ico">⚠️</span> Fisiopatologia e fatores de risco <span class="chev">›</span></summary>
+<div class="body">
+<h4>Por que a incisional acontece</h4>
+<ul>
+<li>Falha na cicatrização da aponeurose: distúrbio do <b>colágeno (I/III ↓)</b>, atividade aumentada de <b>metaloproteinases</b></li>
+<li>Fatores mecânicos: técnica de fechamento inadequada, tensão excessiva, sutura curta demais</li>
+</ul>
+<h4>Fatores de risco</h4>
+<div class="grid">
+<div class="gc"><h5>Paciente</h5><p>Obesidade, tabagismo, DM, desnutrição/hipoalbuminemia, DPOC (tosse), imunossupressão, idade, aneurisma de aorta (defeito de colágeno)</p></div>
+<div class="gc"><h5>Cirúrgico</h5><p>Incisão mediana, cirurgia de urgência, infecção de sítio cirúrgico (ISC), reoperação, ostomia prévia</p></div>
+<div class="gc"><h5>Técnico</h5><p>Fio inadequado, razão sutura:ferida &lt; 4:1, pontos largos, deiscência prévia</p></div>
+</div>
+
+<div class="hot"><span class="tag">◆ tema quente · STITCH 2015 (Lancet)</span>
+Fechamento de laparotomia mediana com técnica de <b>"small bites" (pontos pequenos: 5 mm de borda × 5 mm de intervalo)</b> vs pontos largos reduziu hérnia incisional em 1 ano de <b>21% → 13%</b>. Recomendação atual: <b>sutura contínua, fio monofilamentar de absorção lenta (PDS), razão sutura:ferida ≥ 4:1</b> (regra de Jenkins).</div>
+
+<div class="mnem"><span class="tag">macete · regra 4:1</span>
+<b>Sutura = 4 × comprimento da ferida.</b> Ferida de 15 cm → gaste ≥ 60 cm de fio. Pontos pequenos e próximos ganham da "mordida" larga.</div>
+
+<p style="color:var(--muted);font-size:.88rem"><b>Tela profilática</b> em fechamento de laparotomia em pacientes de altíssimo risco (ex.: aneurisma de aorta, obesos) reduz incisional — recomendação condicional (PRIMA trial).</p>
+</div>
+</details></section>
+
+<!-- 5. DIAGNÓSTICO -->
+<section id="dx"><details>
+<summary><span class="ico">🔍</span> Diagnóstico e indicação <span class="chev">›</span></summary>
+<div class="body">
+<h4>Exame físico</h4>
+<ul>
+<li>Palpação do defeito e do anel, redutibilidade, manobra de Valsalva em pé e deitado</li>
+<li>Avaliar pele, cicatriz, sinais de estrangulamento</li>
+</ul>
+<h4>Imagem</h4>
+<ul>
+<li><b>USG</b> — inicial, dinâmica, boa para pequenas/ocultas e diástase</li>
+<li><b>TC de abdome</b> — padrão para hérnias complexas/incisionais: mede defeito, avalia conteúdo, perda de domicílio, planeja separação de componentes</li>
+</ul>
+
+<div class="hot"><span class="tag">◆ tema quente · watchful waiting</span>
+<b>Assintomática umbilical/epigástrica</b> → <b>conduta expectante é segura</b> (EHS/AHS 2020, recomendação fraca). <b>Sintomática</b> → reparo. <b>Encarcerada/estrangulada</b> → cirurgia de urgência. Toda hérnia sintomática ou com anel &gt; 1 cm tende a ser reparada com <b>tela</b>.</div>
+</div>
+</details></section>
+
+<!-- 6. TELAS / PLANOS -->
+<section id="planos"><details>
+<summary><span class="ico">🧵</span> Telas e planos de posicionamento <span class="chev">›</span></summary>
+<div class="body">
+<p>O <b>plano da tela</b> em relação ao músculo/fáscia é assunto obrigatório. Do mais superficial ao mais profundo:</p>
+<div class="tbl"><table>
+<tr><th>Plano</th><th>Onde</th><th>Comentário</th></tr>
+<tr><td><b>Onlay</b></td><td>Sobre a aponeurose anterior</td><td>Fácil; ↑ seroma/ISC; descolamento subcutâneo amplo</td></tr>
+<tr><td><b>Inlay</b> (bridging)</td><td>Preenchendo o defeito ("ponte")</td><td><span class="pt">Maior recidiva — evitar como técnica isolada</span></td></tr>
+<tr><td><b>Sublay retromuscular</b> (Rives-Stoppa)</td><td>Retrorretal, atrás do músculo e à frente da bainha posterior/transversalis</td><td><span class="pt">Padrão-ouro atual</span>: bem vascularizado, menor recidiva/infecção</td></tr>
+<tr><td><b>Pré-peritoneal</b></td><td>Entre transversalis e peritônio</td><td>Recomendado para umbilical/epigástrica aberta (flat mesh)</td></tr>
+<tr><td><b>Underlay / IPOM</b></td><td>Intraperitoneal (contato com vísceras)</td><td>Laparoscópica; exige <b>tela de dupla face/revestida</b></td></tr>
+</table></div>
+
+<div class="mnem"><span class="tag">mnemônico · planos</span>
+<b>"O-I-S-U"</b> de fora para dentro: <b>O</b>nlay → <b>I</b>nlay → <b>S</b>ublay (retromuscular/pré-peritoneal) → <b>U</b>nderlay (IPOM).</div>
+
+<h4>Telas</h4>
+<ul>
+<li><b>Polipropileno</b> (macroporo) — padrão em plano extraperitoneal; NÃO em contato com alça</li>
+<li><b>PTFEe / compostas (dupla face)</b> — para IPOM intraperitoneal</li>
+<li><b>Biológica/biossintética</b> — campo contaminado/infectado (custo alto, evidência limitada)</li>
+<li>Regra: <b>sobreposição (overlap) ≥ 3–5 cm</b> além das bordas do defeito em todas as direções</li>
+</ul>
+
+<div class="hot"><span class="tag">◆ tema quente · campo contaminado (EHS emergência 2025)</span>
+Em emergência com contaminação (CDC I limpo-contaminado a ≥II), a decisão <b>tela × reparo tecidual</b> foi o foco das novas diretrizes EHS 2025 (Paris). Tendência: <b>tela sintética macroporosa em plano retromuscular/pré-peritoneal</b> é segura em muitos cenários limpos-contaminados; evitar tela intraperitoneal em contaminação franca.</div>
+</div>
+</details></section>
+
+<!-- 7. CIRURGIA -->
+<section id="cirurgia"><details>
+<summary><span class="ico">🔪</span> Técnica cirúrgica passo-a-passo <span class="chev">›</span></summary>
+<div class="body">
+<h4>Posição e preparo (geral)</h4>
+<ul>
+<li><b>Decúbito dorsal</b>, braços abertos ou junto ao corpo; SVD nas grandes; profilaxia antibiótica (cefazolina) e antitrombótica</li>
+<li>Anestesia geral (grandes) ou raqui/local (umbilical pequena)</li>
+<li>Nas grandes W3, avisar a anestesia: o fechamento da linha média eleva a pressão intra-abdominal — monitorar pico de pressão inspiratória</li>
+</ul>
+
+<div class="green"><span class="tag">tradução simples</span>Todo reparo de hérnia responde à mesma pergunta: <b>onde eu coloco o reforço?</b> A tela pode ir por cima do músculo, no meio dele, ou por dentro da barriga. Quanto mais "por dentro", mais a própria pressão do abdome empurra a tela contra a parede e a segura — e menos ela recidiva.</div>
+
+<h4>A) Umbilical / epigástrica — tela pré-peritoneal</h4>
+<div class="stx">
+
+<div class="st">
+<span class="fase">fase de acesso</span>
+<div class="ttl">Incisão peri ou infraumbilical curvilínea</div>
+<p>Bisturi frio, seguindo a prega natural. Dissecção do tecido celular subcutâneo até identificar o <b>anel herniário</b>.</p>
+<div class="pq"><b>por quê</b>A incisão curvilínea acompanha a cicatriz umbilical e desaparece nela. Incisão vertical sobre o umbigo deixa cicatriz visível e devasculariza o retalho.</div>
+<div class="mh2">
+<div class="mh e"><b>mão esquerda</b>Gaze fazendo contratração da pele</div>
+<div class="mh d"><b>mão direita</b>Bisturi lâmina 15</div>
+</div>
+</div>
+
+<div class="st">
+<span class="fase">fase de dissecção</span>
+<div class="ttl">Saco herniário — reduzir ou ressecar</div>
+<p>Dissecar o saco até o colo. Reduzir o conteúdo; <b>ressecar o saco se aderido ou volumoso</b>. Na epigástrica, frequentemente há <b>apenas gordura pré-peritoneal</b>, sem saco verdadeiro.</p>
+<div class="pq"><b>por quê</b>Saco deixado in situ é a principal origem do <b>seroma</b> pós-operatório — a cavidade residual continua produzindo líquido. Na epigástrica, procurar um saco que não existe leva a dissecção desnecessária.</div>
+</div>
+
+<div class="st">
+<span class="fase">fase de preparo do plano</span>
+<div class="ttl">Delimitar o anel e criar o espaço pré-peritoneal</div>
+<p>Palpar e delimitar a borda aponeurótica em toda a circunferência. Dissecção <b>romba, circunferencial</b>, entre o peritônio e a aponeurose, criando espaço para <b>overlap ≥ 3 cm</b> em todas as direções.</p>
+<div class="pq"><b>por quê</b>O overlap é o que impede a migração e a recidiva na borda. Espaço insuficiente obriga a dobrar a tela — e tela dobrada enruga, encapsula e falha.</div>
+<div class="mh2">
+<div class="mh e"><b>mão esquerda</b>Farabeuf ou Richardson mantendo a borda elevada</div>
+<div class="mh d"><b>mão direita</b>Dissecção romba com dedo, gaze montada ou Kittner</div>
+</div>
+</div>
+
+<div class="st">
+<span class="fase">fase de reforço</span>
+<div class="ttl">Posicionar e fixar a tela plana</div>
+<p>Tela de <b>polipropileno macroporo</b> plana no espaço pré-peritoneal, desdobrada e sem rugas, fixada com pontos cardinais.</p>
+<div class="pq"><b>por quê</b>Pré-peritoneal significa <b>atrás</b> da parede: a própria pressão intra-abdominal empurra a tela contra a aponeurose e a mantém aplicada. É o princípio de Pascal aplicado à hernioplastia — e a razão de o plano posterior ser superior ao onlay.</div>
+</div>
+
+<div class="st">
+<span class="fase">fase de fechamento</span>
+<div class="ttl">Aproximar a aponeurose sobre a tela e reinserir o umbigo</div>
+<p>Fechar o defeito com <b>monofilamentar de absorção lenta</b> por cima da tela. <b>Onfaloplastia</b>: reinserir a base do umbigo à aponeurose. Fechar subcutâneo e pele.</p>
+<div class="pq"><b>por quê</b>Fechar o defeito converte a tela de "ponte" em "reforço" — <b>bridging tem recidiva muito maior</b>. E sem onfaloplastia o umbigo fica raso e projetado, queixa estética frequente.</div>
+</div>
+
+</div>
+<div class="warn">Defeito &lt; 1 cm: mesmo assim a tela reduz recidiva frente à rafia simples. A imbricação isolada ("cura de Mayo") está <b>abandonada</b> como padrão.</div>
+
+<h4>B) Incisional — Rives-Stoppa (sublay retromuscular)</h4>
+<div class="green"><span class="tag">tradução simples</span>Você abre uma "gaveta" atrás do músculo reto e coloca a tela lá dentro. A gaveta tem duas paredes: a de trás isola a tela das vísceras, a da frente reconstrói a linha média. A tela fica <b>ensanduichada</b>, sem tocar nem a pele nem o intestino.</div>
+
+<div class="stx">
+
+<div class="st">
+<span class="fase">fase de acesso</span>
+<div class="ttl">Reabertura da cicatriz e liberação de aderências</div>
+<p>Reabrir a mediana, liberar aderências viscerais em toda a extensão da cicatriz, dissecar e reduzir o saco.</p>
+<div class="pq"><b>por quê</b>A adesiólise completa é o que permite fechar a bainha posterior sem alça interposta — e é também o passo onde ocorre a <b>enterotomia inadvertida</b>, complicação que contraindica implantar tela sintética naquele tempo.</div>
+</div>
+
+<div class="st">
+<span class="fase">fase de abertura do plano</span>
+<div class="ttl">Entrar no espaço retrorretal</div>
+<p>Abrir a <b>bainha posterior do reto</b> junto à linha alba, <b>bilateralmente</b>, cerca de 5 mm lateral à borda medial — e entrar no espaço entre o músculo reto e a sua bainha posterior.</p>
+<div class="pq"><b>por quê</b>É o plano avascular clássico. Abrir longe demais da linha média encurta a bainha posterior e depois não sobra tecido para fechá-la na linha média.</div>
+<div class="mh2">
+<div class="mh e"><b>mão esquerda</b>Afastador elevando o músculo reto; contratração constante</div>
+<div class="mh d"><b>mão direita</b>Eletrocautério ou Metzenbaum abrindo a bainha; dissecção romba no plano</div>
+</div>
+</div>
+
+<div class="st">
+<span class="fase">fase crítica — nervos</span>
+<div class="ttl">Dissecar lateralmente até a linha semilunar</div>
+<p>Progredir lateralmente <b>até a linha semilunar</b>, identificando e <b>preservando os feixes neurovasculares</b> que perfuram a bainha posterior e entram na <b>borda lateral do reto</b>.</p>
+<div class="pq"><b>por quê</b>São os nervos <b>T7–L1</b>, e eles são a inervação motora do reto abdominal. Seccioná-los denerva o músculo, que atrofia e vira um retalho fibroso inútil — recidiva funcional mesmo com a tela bem posicionada.</div>
+</div>
+
+<div class="st">
+<span class="fase">fase de isolamento</span>
+<div class="ttl">Fechar a bainha posterior e o peritônio na linha média</div>
+<p>Sutura contínua da bainha posterior/peritônio, criando um <b>assoalho contínuo</b> que separa a futura tela das vísceras.</p>
+<div class="pq"><b>por quê</b>É esse fechamento que permite usar <b>polipropileno simples</b> em vez de tela composta cara: sem contato com a víscera, não há aderência, erosão nem fístula. Se a bainha posterior não fechar, ou se fecha o peritônio, ou se usa tela de dupla face.</div>
+</div>
+
+<div class="st">
+<span class="fase">fase de reforço</span>
+<div class="ttl">Tela retromuscular ampla</div>
+<p>Tela no plano retromuscular com <b>overlap ≥ 5 cm</b> em todas as direções, estendida lateralmente até onde o plano foi dissecado. Fixação mínima.</p>
+<div class="pq"><b>por quê</b>A tela é mantida no lugar pela <b>pressão intra-abdominal</b> e pelo próprio sanduíche muscular — por isso a fixação pode ser mínima, e menos fixação significa menos dor crônica.</div>
+</div>
+
+<div class="st">
+<span class="fase">fase de reconstrução</span>
+<div class="ttl">Fechar a bainha anterior / linha alba à frente da tela</div>
+<p>Restaurar a linha média com <span class="fio">PDS 1 ou 0</span> contínuo, <b>small bites</b>, razão fio:ferida <b>≥ 4:1</b>.</p>
+<div class="pq"><b>por quê</b>Restaurar a linha alba devolve a <b>função</b> da parede — o reto volta a trabalhar no seu eixo. Reparo que só coloca tela sem fechar a linha média é <b>bridging</b>: tapa o buraco, mas não reconstrói a musculatura.</div>
+</div>
+
+</div>
+
+<h4>C) Grandes defeitos — separação de componentes</h4>
+<div class="green"><span class="tag">tradução simples</span>Quando as bordas não se encontram, você não puxa mais forte — você <b>solta uma camada lateral</b> para que a parede "escorregue" em direção ao meio. É como soltar as costuras laterais de uma camisa apertada para conseguir fechar os botões da frente.</div>
+<div class="tbl"><table>
+<tr><th>Técnica</th><th>Plano</th><th>Ganho / indicação</th></tr>
+<tr><td><b>Anterior (Ramirez)</b></td><td>Secção da aponeurose do <b>oblíquo externo</b> lateral à semilunar</td><td>Avanço medial; ↑ complicações de ferida (retalhos amplos, devascularização da pele)</td></tr>
+<tr><td><b>Posterior + TAR</b></td><td>Incisão da lamela posterior do oblíquo interno e secção do <b>transverso do abdome</b> 0,5 cm medial aos feixes neurovasculares</td><td><span class="pt">Amplia o plano retromuscular</span> para telas gigantes; W3 ≥ 10 cm; <b>preserva a inervação</b> do reto</td></tr>
+</table></div>
+<div class="hot"><span class="tag">◆ tema quente · TAR (transversus abdominis release)</span>
+Evolução do Rives-Stoppa. Após abrir o retrorretal, faz-se incisão na <b>lamela posterior do oblíquo interno ~5 mm medial aos nervos</b>, dividindo o <b>transverso do abdome</b>; cria-se um plano contínuo de lateral a lateral para tela muito ampla, com <b>fechamento da linha média sob baixa tensão</b>. Indicado para defeitos W2 grandes/W3.</div>
+<div class="pq"><b>por que o TAR preserva os nervos e o Ramirez não</b>Os feixes T7–L1 correm <b>entre o oblíquo interno e o transverso</b>. O TAR entra <b>medial</b> a eles e secciona apenas o transverso, deixando os nervos no plano lateral intactos. O Ramirez secciona o oblíquo externo, mais superficial — não lesa nervo, mas exige retalhos cutâneos amplos, e é daí que vêm as complicações de ferida.</div>
+<div class="mnem"><span class="tag">macete · qual técnica</span>
+<b>Defeito 4–10 cm → Rives-Stoppa.</b> <b>&gt; 10 cm (até ~15) → PCS/TAR.</b> Sempre buscar <b>fechamento da linha alba + tela retromuscular</b>; "bridging" (tela em ponte) só se impossível fechar.</div>
+
+<h4>D) Laparoscópica / robótica (IPOM, eTEP, TARM)</h4>
+<ul>
+<li><b>IPOM</b>: tela composta intraperitoneal com fixação (tackers/sutura transfascial); menos ISC, mais dor de fixação</li>
+<li><b>eTEP / TARM robótico</b>: reproduz o plano retromuscular por via minimamente invasiva — tendência atual</li>
+</ul>
+<div class="pq"><b>por que a tela do IPOM é diferente</b>No IPOM a tela fica <b>em contato direto com as vísceras</b>. Polipropileno nu nesse plano adere à alça, erode e fistuliza — por isso é obrigatória a <b>tela composta de dupla face</b>, com a face visceral antiaderente.</div>
+
+</div>
+</details></section>
+
+<!-- 8. MÃOS / FIOS -->
+<section id="maos"><details>
+<summary><span class="ico">🖐️</span> Mãos, pinças e fios <span class="chev">›</span></summary>
+<div class="body">
+<h4>Distribuição das mãos (cirurgião destro)</h4>
+<div class="tbl"><table>
+<tr><th>Momento</th><th>Mão esquerda</th><th>Mão direita</th></tr>
+<tr><td>Incisão de pele</td><td>Gaze/tração da pele (contra-tração)</td><td><b>Bisturi lâmina 15/23</b></td></tr>
+<tr><td>Dissecção do saco</td><td>Pinça <b>Adson</b> com dente / afastador de Farabeuf</td><td><b>Tesoura de Metzenbaum</b> ou eletrocautério</td></tr>
+<tr><td>Redução do conteúdo</td><td>Pinça atraumática segurando borda</td><td>Digito-redução / pinça anatômica</td></tr>
+<tr><td>Criar plano pré-peritoneal/retrorretal</td><td>Afastador (Farabeuf/Richardson) mantendo exposição</td><td>Dissecção romba (dedo/gaze/Kittner) + Metzenbaum</td></tr>
+<tr><td>Posicionar tela</td><td>Pinça <b>Allis/DeBakey</b> orientando a borda</td><td>Fixação (sutura/tacker)</td></tr>
+<tr><td>Fechar aponeurose</td><td><b>Pinça dente-de-rato</b> apresentando a borda</td><td><b>Porta-agulha</b> com monofilamento</td></tr>
+</table></div>
+
+<h4>Fios (o que usar e quando)</h4>
+<ul>
+<li><b>Fechamento da aponeurose/linha alba:</b> monofilamentar de <b>absorção lenta — PDS (polidioxanona) 1 ou 0</b>, contínuo, small bites, razão ≥ 4:1 <span class="simple">(fio que segura por muitas semanas até a fáscia cicatrizar)</span></li>
+<li><b>Fixação de tela:</b> polipropileno 2-0/0 (pontos em U) ou tacker (laparoscopia)</li>
+<li><b>Subcutâneo:</b> absorvível 3-0 (Vicryl/Monocryl)</li>
+<li><b>Pele:</b> Monocryl 4-0 intradérmico ou grampos</li>
+</ul>
+
+<div class="warn">⚠️ Evitar <b>categute</b> e fios de absorção rápida na aponeurose (recidiva). Fio inabsorvível na aponeurose é opção, mas ↑ dor crônica e infecção do fio.</div>
+</div>
+</details></section>
+
+<!-- 9. COMPLICAÇÕES -->
+<section id="complic"><details>
+<summary><span class="ico">🚑</span> Complicações <span class="chev">›</span></summary>
+<div class="body">
+<h4>Precoces</h4>
+<ul>
+<li><b>Seroma</b> — a mais comum, sobretudo onlay/IPOM; puncionar só se sintomático/infectado</li>
+<li>Hematoma; <b>infecção de sítio cirúrgico</b> (pode evoluir para infecção da tela)</li>
+<li>Lesão visceral/enterotomia (dissecção de aderências) → risco de fístula</li>
+<li><b>Síndrome compartimental abdominal</b> em fechamentos de grandes defeitos com perda de domicílio</li>
+</ul>
+<h4>Tardias</h4>
+<ul>
+<li><b>Recidiva</b> — 23–50% nas incisionais; maior em bridging, defeito largo, ISC prévia, obesidade, tabagismo</li>
+<li><b>Dor crônica</b> (fixação/aprisionamento nervoso)</li>
+<li>Retração/migração/erosão da tela para víscera (fístula) — típico de tela não revestida intraperitoneal</li>
+</ul>
+
+<div class="hot"><span class="tag">◆ tema quente · infecção da tela</span>
+Tela de <b>polipropileno macroporosa</b> geralmente pode ser salva com curativos/drenagem. Tela de <b>PTFEe</b> infectada quase sempre precisa ser <b>removida</b>. Em campo francamente infectado, preferir <b>reparo sem tela sintética</b> ou tela biológica.</div>
+</div>
+</details></section>
+
+<!-- 10. BANCAS -->
+<section id="banca"><details>
+<summary><span class="ico">🎯</span> Questões estilo bancas RS <span class="chev">›</span></summary>
+<div class="body">
+<p style="color:var(--muted);font-size:.86rem">Itens representativos (não reproduções literais) no estilo HCPA · GHC · Santa Casa POA · PUC-RS · AMRIGS.</p>
+
+<div class="q"><span class="banca">HCPA</span>
+<div class="en">1. Homem, 34 anos, nódulo doloroso 1,5 cm na linha média a 4 cm acima do umbigo, redutível, sem cicatriz prévia. Diagnóstico e conteúdo mais provável:</div>
+<div class="alt">a) Umbilical — alça delgada · b) Epigástrica — gordura pré-peritoneal · c) Spiegel — cólon · d) Diástase — nenhum</div>
+<div class="ans"><b>b.</b> Hérnia <b>epigástrica</b> (linha alba supraumbilical), frequentemente contendo apenas <b>gordura pré-peritoneal</b>.</div>
+</div>
+
+<div class="q"><span class="banca">GHC</span>
+<div class="en">2. Na classificação EHS de hérnias ventrais, um defeito incisional de 12 cm de largura na região umbilical corresponde a:</div>
+<div class="alt">a) M3 W2 · b) M2 W3 · c) M3 W3 · d) L3 W3</div>
+<div class="ans"><b>c.</b> Localização <b>M3 (umbilical)</b>, largura <b>W3 (≥10 cm)</b>.</div>
+</div>
+
+<div class="q"><span class="banca">Santa Casa POA</span>
+<div class="en">3. Qual conduta para hérnia umbilical <b>assintomática</b> de 1 cm em adulto hígido, segundo diretriz EHS/AHS?</div>
+<div class="alt">a) Cirurgia imediata com tela · b) Cura de Mayo · c) Conduta expectante (watchful waiting) · d) Faixa compressiva definitiva</div>
+<div class="ans"><b>c.</b> <b>Watchful waiting</b> é seguro para assintomáticas (recomendação fraca 2020).</div>
+</div>
+
+<div class="q"><span class="banca">PUC-RS</span>
+<div class="en">4. O ensaio STITCH demonstrou que, no fechamento de laparotomia mediana, a técnica de "small bites":</div>
+<div class="alt">a) Aumenta hérnia incisional · b) Reduz hérnia incisional (21%→13%) · c) Não altera recidiva · d) Aumenta deiscência aguda</div>
+<div class="ans"><b>b.</b> Pontos pequenos (5×5 mm), razão ≥4:1, monofilamento de absorção lenta → <b>menos incisional</b>.</div>
+</div>
+
+<div class="q"><span class="banca">AMRIGS</span>
+<div class="en">5. O plano considerado padrão-ouro atual para tela em hérnia incisional, com menor recidiva e infecção, é:</div>
+<div class="alt">a) Onlay · b) Inlay (bridging) · c) Sublay retromuscular (Rives-Stoppa) · d) Underlay intraperitoneal</div>
+<div class="ans"><b>c.</b> <b>Sublay retromuscular</b> (Rives-Stoppa) — plano bem vascularizado, isolado das vísceras.</div>
+</div>
+
+<div class="q"><span class="banca">HCPA</span>
+<div class="en">6. Na técnica de TAR, a secção é feita medialmente a que estrutura, para preservá-la?</div>
+<div class="alt">a) Vasos epigástricos inferiores · b) Feixes neurovasculares toracoabdominais · c) Linha alba · d) Artéria ilíaca</div>
+<div class="ans"><b>b.</b> Incisão ~5 mm <b>medial aos feixes neurovasculares</b> na lamela posterior do oblíquo interno.</div>
+</div>
+
+<div class="q"><span class="banca">GHC</span>
+<div class="en">7. Abaixo da linha arqueada (de Douglas), a parede posterior da bainha do reto é formada essencialmente por:</div>
+<div class="alt">a) Aponeurose do transverso · b) Oblíquo interno · c) Apenas fáscia transversalis · d) Peritônio parietal isolado</div>
+<div class="ans"><b>c.</b> Todas as aponeuroses passam à frente → posterior fica <b>só fáscia transversalis</b> (ponto fraco).</div>
+</div>
+
+<div class="q"><span class="banca">Santa Casa POA</span>
+<div class="en">8. Diferencie hérnia epigástrica de diástase dos retos. A diástase caracteriza-se por:</div>
+<div class="alt">a) Anel fascial palpável · b) Risco de estrangulamento · c) Linha alba íntegra, sem defeito fascial · d) Indicação cirúrgica obrigatória</div>
+<div class="ans"><b>c.</b> Diástase = afastamento com <b>linha alba íntegra</b>, sem anel, sem risco de estrangular; não se opera de rotina.</div>
+</div>
+
+<div class="q"><span class="banca">PUC-RS</span>
+<div class="en">9. Hérnia da linha semilunar, abaixo da linha arqueada, com caráter intersticial e alto risco de encarceramento:</div>
+<div class="alt">a) Umbilical · b) de Spiegel · c) Lombar · d) Suprapúbica</div>
+<div class="ans"><b>b.</b> Hérnia <b>de Spiegel</b> — pela aponeurose de Spiegel na linha semilunar.</div>
+</div>
+
+<div class="q"><span class="banca">AMRIGS</span>
+<div class="en">10. Qual a técnica de separação de componentes que utiliza a secção da aponeurose do oblíquo externo lateralmente à linha semilunar?</div>
+<div class="alt">a) TAR · b) Rives-Stoppa · c) Separação anterior de Ramirez · d) IPOM</div>
+<div class="ans"><b>c.</b> <b>Separação anterior (Ramirez)</b> — secção do oblíquo externo; TAR é posterior (transverso).</div>
+</div>
+</div>
+</details></section>
+
+<!-- 11. MNEMÔNICOS -->
+<section id="mnem"><details open>
+<summary><span class="ico">🧠</span> Mnemônicos e alto rendimento <span class="chev">›</span></summary>
+<div class="body">
+<div class="mnem"><span class="tag">classificação EHS</span><b>M do meio · L do lado · W = 4 e 10</b> — M1–M5 mediana (xifoide→púbis), L1–L4 lateral, W1&lt;4 · W2 4–10 · W3≥10 cm.</div>
+<div class="mnem"><span class="tag">planos de tela</span><b>O-I-S-U</b> → Onlay · Inlay · Sublay · Underlay (superficial → profundo).</div>
+<div class="mnem"><span class="tag">fechamento de fáscia</span><b>4:1 + small bites + PDS</b> (STITCH). Regra de Jenkins: fio = 4× a ferida.</div>
+<div class="mnem"><span class="tag">qual técnica pelo tamanho</span><b>4–10 → Rives-Stoppa · &gt;10 → TAR/PCS.</b> Bridging só se não fechar.</div>
+<div class="mnem"><span class="tag">emergência</span><b>Encarcerada = irredutível · Estrangulada = isquêmica</b> → cirurgia imediata.</div>
+<div class="mnem"><span class="tag">complicação nº1</span><b>Seroma</b> (onlay/IPOM). Recidiva incisional 23–50%.</div>
+</div>
+</details></section>
+
+<!-- 12. PEGA-RATÕES -->
+<section id="pega"><details open>
+<summary><span class="ico">🪤</span> Pega-ratões (armadilhas de prova) <span class="chev">›</span></summary>
+<div class="body">
+<ul>
+<li><b>Diástase NÃO é hérnia</b> — linha alba íntegra, sem anel, sem estrangular. Erro clássico marcar "operar".</li>
+<li><b>Hérnia epigástrica costuma ter só gordura pré-peritoneal</b>, não alça — e pode ser <b>múltipla</b>.</li>
+<li><b>"Cura de Mayo" (imbricação em paletó) está abandonada</b> como padrão; tela reduz recidiva mesmo em defeitos pequenos.</li>
+<li><b>Inlay/bridging tem a MAIOR recidiva</b> — não confundir "sublay" (bom) com "inlay" (ruim).</li>
+<li><b>Tela intraperitoneal exige tela revestida/dupla face</b> — polipropileno puro em contato com alça → aderência/fístula.</li>
+<li><b>TAR corta o transverso (posterior); Ramirez corta o oblíquo externo (anterior)</b> — não trocar.</li>
+<li><b>Abaixo da linha arqueada</b> a bainha posterior some (só transversalis) — base da Spiegel e limite do plano de Rives.</li>
+<li><b>STITCH = small bites</b> reduz incisional; não confundir com "pontos largos protegem".</li>
+<li><b>Assintomática umbilical</b> → expectante é aceitável; não é "sempre operar".</li>
+<li><b>Overlap da tela ≥ 3–5 cm</b> em todas as direções; tela justa ao defeito recidiva.</li>
+</ul>
+</div>
+</details></section>
+
+<footer>carolzita · Hérnias da Parede Abdominal · EHS/AHS 2020 · EHS Incisional 2023 · EHS Emergência 2025 · STITCH 2015 · Sabiston 21ª · Zollinger 11ª</footer>
+
+</div>
+</body>
+</html>

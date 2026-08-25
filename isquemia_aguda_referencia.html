@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Isquemia Arterial Aguda — Referência CV 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d1117;--panel:#161b22;--panel2:#1c232c;--line:#2a323c;--tx:#e6edf3;--mut:#8b949e;--or:#ff7a18;--or2:#ff9a4d;--orbg:rgba(255,122,24,.10);--pu:#b083f0;--pu2:#c9a7ff;--pubg:rgba(176,131,240,.12);--cy:#3dd6d0;--cy2:#5fe3dd;--cybg:rgba(61,214,208,.10);--red:#ff5f56;--grn:#3fb950}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font-family:'IBM Plex Sans',sans-serif;line-height:1.55;padding:0 0 60px}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px}
+header{padding:30px 0 14px;border-bottom:1px solid var(--line)}
+h1{font-size:30px;font-weight:700;letter-spacing:-.5px}h1 .b{color:var(--or)}
+.sub{color:var(--mut);font-size:14px;margin-top:6px;font-family:'IBM Plex Mono',monospace}
+nav{position:sticky;top:0;background:var(--bg);z-index:10;border-bottom:1px solid var(--line);overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch}
+nav .inner{max-width:920px;margin:0 auto;padding:0 12px;display:flex;gap:2px}
+nav button{background:none;border:none;color:var(--mut);font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.5px;text-transform:uppercase;padding:14px 11px;cursor:pointer;border-bottom:2px solid transparent;transition:.15s}
+nav button:hover{color:var(--tx)}nav button.on{color:var(--or);border-bottom-color:var(--or)}
+section{display:none;padding:26px 0;animation:f .25s}section.on{display:block}
+@keyframes f{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+h2{font-size:20px;color:var(--or);margin:26px 0 12px;font-weight:600;border-bottom:1px solid var(--line);padding-bottom:6px}h2:first-child{margin-top:0}
+h3{font-size:15px;margin:18px 0 8px;font-weight:600;color:var(--or2)}
+p,li{font-size:14.5px}
+ul{margin:8px 0 8px 4px;list-style:none}li{padding:3px 0 3px 24px;position:relative}li .em{position:absolute;left:0}
+.lay{color:var(--cy2);font-style:italic;font-size:13.5px}
+.box{border-left:3px solid var(--or);background:var(--orbg);border-radius:0 8px 8px 0;padding:12px 16px;margin:14px 0}
+.box.pu{border-color:var(--pu);background:var(--pubg)}.box.cy{border-color:var(--cy);background:var(--cybg)}
+.box .lbl{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--or);margin-bottom:6px;font-weight:600}
+.stx{counter-reset:st;margin:14px 0}
+.st{counter-increment:st;background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:13px 15px 13px 50px;margin:11px 0;position:relative}
+.st::before{content:counter(st);position:absolute;left:13px;top:13px;width:25px;height:25px;border-radius:7px;background:var(--or);color:#0d1117;font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:12.5px;display:flex;align-items:center;justify-content:center}
+.st .fase{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1.3px;text-transform:uppercase;color:var(--or);display:block}
+.st .ttl{font-weight:700;font-size:15px;color:#fff;margin-bottom:3px}
+.st p{margin:4px 0;font-size:13.8px}
+.pq{border-left:3px solid var(--pu);background:var(--pubg);border-radius:0 8px 8px 0;padding:8px 12px;margin:8px 0;font-size:13.3px}
+.pq b{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;color:var(--pu2);display:block}
+.mh2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+.mh{border-radius:9px;padding:8px 11px;font-size:12.5px;border:1px solid var(--line)}
+.mh.e{background:rgba(63,185,80,.07);border-color:rgba(63,185,80,.3)}
+.mh.d{background:var(--orbg);border-color:rgba(255,122,24,.3)}
+.mh b{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1.1px;text-transform:uppercase;display:block}
+.mh.e b{color:var(--grn)} .mh.d b{color:var(--or2)}
+.box.gr{border-left-color:var(--grn);background:rgba(63,185,80,.09);color:var(--grn);font-style:italic}
+.box.gr .lbl{color:var(--grn);font-style:normal}
+.box.gr b,.box.gr strong{color:#8ee79a;font-style:normal}
+@media(max-width:640px){.mh2{grid-template-columns:1fr}}
+
+.box.pu .lbl{color:var(--pu2)}.box.cy .lbl{color:var(--cy2)}
+.box li::before{content:"▸";color:var(--or);position:absolute;left:6px}.box li{padding-left:22px}
+.box.pu li::before{color:var(--pu)}.box.cy li::before{color:var(--cy)}.box li .em{display:none}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.5px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--panel2);color:var(--or2);font-weight:600;font-family:'IBM Plex Mono',monospace;font-size:12px}
+.hi{color:var(--pu2);font-weight:600}.mn{font-family:'IBM Plex Mono',monospace;color:var(--cy2)}
+.steps{counter-reset:s;list-style:none;margin:6px 0}
+.steps li{padding:8px 8px 8px 40px;border-bottom:1px solid var(--line)}
+.steps li::before{counter-increment:s;content:counter(s);background:var(--or);color:#0d1117;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:12px;width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;position:absolute;left:4px;top:8px}
+.steps li .em{display:none}.steps li:last-child{border-bottom:none}
+.hand{font-family:'IBM Plex Mono',monospace;font-size:11px;padding:1px 6px;border-radius:4px;margin-right:4px}
+.hL{background:rgba(63,185,80,.15);color:#56d364}.hR{background:rgba(255,122,24,.15);color:var(--or2)}
+.kbd{font-family:'IBM Plex Mono',monospace;background:var(--panel2);padding:1px 6px;border-radius:4px;font-size:12.5px;color:var(--or2)}
+.q{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:16px 0}
+.q .src{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--pu2);letter-spacing:1px;text-transform:uppercase}
+.q .stem{margin:8px 0 10px;font-weight:500}
+.q .alt{padding:4px 0 4px 24px;position:relative;font-size:14px}.q .alt .let{position:absolute;left:0;font-family:'IBM Plex Mono',monospace;color:var(--mut)}
+.q .alt.ok{color:var(--grn)}.q .alt.ok .let{color:var(--grn)}
+.q details{margin-top:10px;border-top:1px dashed var(--line);padding-top:10px}
+.q summary{cursor:pointer;color:var(--cy2);font-size:13px;font-family:'IBM Plex Mono',monospace}
+.q .exp{font-size:13.5px;color:var(--mut);margin-top:8px}
+.svgwrap{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px;margin:14px 0;text-align:center}
+.svgwrap figcaption{color:var(--mut);font-size:12px;margin-top:8px;font-family:'IBM Plex Mono',monospace}
+.pill{display:inline-block;background:var(--panel2);border:1px solid var(--line);border-radius:20px;padding:3px 12px;margin:3px 4px 3px 0;font-size:12.5px;font-family:'IBM Plex Mono',monospace}.pill .hi{color:var(--pu2)}
+.note{font-size:12px;color:var(--mut);border-top:1px solid var(--line);margin-top:30px;padding-top:14px;font-family:'IBM Plex Mono',monospace}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<h1>⚡ Isquemia Arterial <span class="b">Aguda</span> (IAA)</h1>
+<div class="sub">Isquemia Aguda de MMII · CV 2026 · ESVS 2020 ALI Guidelines + Rutherford/Sabiston</div>
+</div></header>
+<nav><div class="inner" id="nav"></div></nav>
+<div class="wrap">
+
+<section id="geral" class="on">
+<h2>🧭 Definição &amp; etiologia</h2>
+<p>Isquemia arterial aguda (IAA) = <span class="hi">redução súbita (&lt;2 semanas) da perfusão arterial de um membro</span>, ameaçando sua viabilidade. <span class="lay">(a "mangueira" que leva sangue de repente fica tampada — diferente da DAOP crônica, aqui não deu tempo de o corpo criar "desvios" — as colaterais — então o efeito é muito mais grave e rápido)</span> <b>Emergência vascular</b>: mortalidade hospitalar 6–9%, amputação em ~6% na internação.</p>
+<h3>Etiologia — as duas grandes causas</h3>
+<table>
+<tr><th>&nbsp;</th><th>Embolia</th><th>Trombose in situ</th></tr>
+<tr><td>Origem</td><td>Coração (FA, IAM, trombo mural, valvopatia) ou aneurisma proximal</td><td>Placa aterosclerótica pré-existente que trombosa; enxerto/stent que ocluiu</td></tr>
+<tr><td>Início</td><td>Súbito, dramático</td><td>Mais insidioso — pode ter "avisos" prévios (claudicação)</td></tr>
+<tr><td>Colaterais</td><td>Pouco desenvolvidas → isquemia mais grave</td><td>Já desenvolvidas (DAOP prévia) → quadro um pouco mais tolerável</td></tr>
+<tr><td>Membro contralateral</td><td>Pulsos costumam ser normais</td><td>Muitas vezes também com DAOP (pulsos reduzidos)</td></tr>
+<tr><td>Local típico</td><td>Bifurcações arteriais (femoral comum a mais comum, também poplítea, aortoilíaca)</td><td>Segmento previamente estenótico (femoropoplíteo)</td></tr>
+</table>
+<div class="box pu"><div class="lbl">⚠️ Pega-ratão de prova</div>
+<p>Fibrilação atrial é a <span class="hi">causa cardíaca mais comum de embolia arterial periférica</span>. História de claudicação prévia + pulsos contralaterais reduzidos aponta para <b>trombose</b>, não embolia.</p></div>
+<h3>Outras causas</h3>
+<ul>
+<li><span class="em">🔪</span>Trauma vascular (iatrogênico — cateterismo — ou externo).</li>
+<li><span class="em">🧬</span>Dissecção arterial estendendo-se aos membros.</li>
+<li><span class="em">🩸</span>Estados de hipercoagulabilidade / trombofilias.</li>
+<li><span class="em">💉</span>Trombose de enxerto ou stent prévio.</li>
+</ul>
+</section>
+
+<section id="clinica">
+<h2>🩺 Quadro clínico — os 6 P's</h2>
+<div class="box pu"><div class="lbl">⚡ Os 6 P's da isquemia aguda</div>
+<ul>
+<li><span class="hi">Pain</span> (dor) — geralmente o primeiro sintoma.</li>
+<li><span class="hi">Pallor</span> (palidez).</li>
+<li><span class="hi">Pulselessness</span> (ausência de pulso).</li>
+<li><span class="hi">Paresthesia</span> (parestesia) — sinal de sofrimento neural, <b>já indica urgência</b>.</li>
+<li><span class="hi">Paralysis</span> (paralisia) — sinal tardio, <b>membro em risco iminente</b>.</li>
+<li><span class="hi">Poiquilotermia</span> (perda da temperatura/esfriamento).</li>
+</ul></div>
+<p class="lay">(imagina desligar a energia de uma casa: primeiro dá desconforto — dor —, depois as luzes apagam — palidez —, e por último os aparelhos param de funcionar de vez — paralisia. Parestesia e paralisia são os "alarmes vermelhos" de que o nervo está morrendo)</p>
+<div class="box"><div class="lbl">🎯 Sinal mais importante para decisão terapêutica</div>
+<p><b>Déficit motor/sensitivo</b> (parestesia/paralisia) = isquemia avançada, indica intervenção <b>imediata</b>, sem tempo para exames demorados.</p></div>
+</section>
+
+<section id="rutherford">
+<h2>📊 Classificação de Rutherford (IAA)</h2>
+<table>
+<tr><th>Categoria</th><th>Descrição</th><th>Doppler arterial</th><th>Doppler venoso</th><th>Conduta</th></tr>
+<tr><td><b>I</b> — Viável</td><td>Sem déficit sensitivo/motor</td><td>Audível</td><td>Audível</td><td>Não emergencial imediata; investigar e tratar em horas</td></tr>
+<tr><td><b>IIa</b> — Marginalmente ameaçado</td><td>Déficit sensitivo mínimo (dedos) ou ausente; sem déficit motor</td><td>Inaudível</td><td>Audível</td><td>Salvável se tratado prontamente</td></tr>
+<tr><td><b>IIb</b> — Imediatamente ameaçado</td><td>Déficit sensitivo além dos dedos + dor de repouso; déficit motor leve/moderado</td><td>Inaudível</td><td>Audível</td><td><span class="hi">Revascularização imediata</span></td></tr>
+<tr><td><b>III</b> — Irreversível</td><td>Anestesia profunda, paralisia completa (rigor muscular)</td><td>Inaudível</td><td>Inaudível</td><td><span class="hi">Amputação primária</span> — revascularizar mata o paciente (síndrome de reperfusão maciça)</td></tr>
+</table>
+<div class="box pu"><div class="lbl">⚠️ Pega-ratão clássico</div>
+<p>Rutherford <b>III</b> = membro <b>já morto</b> (rigidez muscular, anestesia completa) → tentar salvar é <span class="hi">contraindicado</span>: libera toxinas/potássio maciços na reperfusão → parada cardíaca. Conduta é <b>amputação</b>, não revascularização.</p></div>
+</section>
+
+<section id="dx">
+<h2>🔬 Diagnóstico</h2>
+<ul>
+<li><span class="em">🩺</span><b>Clínico</b> é soberano — os 6 P's + Doppler de bolso definem a categoria de Rutherford e a urgência.</li>
+<li><span class="em">📡</span><b>Doppler arterial/venoso portátil</b> à beira-leito — diferencia I / IIa / IIb / III rapidamente.</li>
+<li><span class="em">❤️</span><b>ECG</b> — rastrear FA/IAM (causa embólica).</li>
+<li><span class="em">🖥️</span><b>AngioTC</b> — se o membro for <b>viável (I/IIa)</b> e houver tempo, define nível e etiologia (êmbolo × trombose) antes de definir a técnica.</li>
+<li><span class="em">💉</span><b>Arteriografia intraoperatória</b> — quando IIb (não há tempo para imagem prévia) ou para checar resultado da revascularização.</li>
+</ul>
+<div class="box"><div class="lbl">⏱️ Regra de ouro</div>
+<p>Categoria <b>IIb = sala de cirurgia agora</b>, sem atrasar por exames de imagem prolongados. Categoria I/IIa permite investigação para planejar a melhor estratégia.</p></div>
+</section>
+
+<section id="conduta">
+<h2>📐 Conduta inicial &amp; estratégia</h2>
+<div class="box pu"><div class="lbl">🚑 Primeiras medidas (todo paciente)</div>
+<ul>
+<li><span class="hi">Heparinização sistêmica imediata</span> (bólus + infusão) assim que a suspeita é feita — impede propagação do trombo.</li>
+<li>Analgesia; membro pendente/protegido, sem compressão.</li>
+<li>Avaliar comorbidades cardíacas (frequentemente é a causa).</li>
+</ul></div>
+<h3>Escolha da técnica por categoria/etiologia</h3>
+<table>
+<tr><th>Cenário</th><th>Conduta preferencial</th></tr>
+<tr><td>Êmbolo, categoria I/IIa, curto tempo de isquemia</td><td>Embolectomia com cateter de Fogarty (aberta) ou trombectomia/trombólise endovascular</td></tr>
+<tr><td>Trombose in situ sobre DAOP prévia</td><td>Trombólise dirigida por cateter ± angioplastia da lesão de base, ou bypass cirúrgico</td></tr>
+<tr><td>Categoria IIb</td><td>Revascularização cirúrgica de urgência (embolectomia/bypass)</td></tr>
+<tr><td>Categoria III</td><td><span class="hi">Amputação primária</span> (sem tentativa de revascularização)</td></tr>
+</table>
+<p class="lay">(trombólise = "dissolver" o coágulo aos poucos com remédio direto no local; embolectomia com Fogarty = "puxar" o coágulo com um cateter-balão, como desentupir um cano puxando a sujeira com um balãozinho inflado)</p>
+</section>
+
+<section id="tecnica">
+<h2>🔪 Técnica cirúrgica</h2>
+<div class="box gr"><div class="lbl">tradução simples</div>A embolectomia não é "tirar o trombo" — é <strong>recuperar um leito arterial que ninguém viu por horas</strong>. O balão do Fogarty resolve a mecânica em minutos; o que decide se a perna sobrevive é tudo o que vem <strong>depois</strong> do fluxo voltar: o sangue que retorna carrega o que a isquemia produziu, e o músculo que incha dentro de uma loja fechada pode matar o membro <em>de novo</em>, mesmo com a artéria pérvia.</div>
+
+<p><b>Posição:</b> supino. <b>Acesso:</b> arteriotomia sobre a bifurcação femoral comum — sítio mais comum de embolia para membros inferiores.</p>
+
+<h3>Embolectomia com cateter de Fogarty</h3>
+<div class="stx">
+
+<div class="st">
+  <span class="fase">fase de acesso</span>
+  <div class="ttl">Dissecção da bifurcação femoral</div>
+  <p>Dissecção da femoral comum, superficial e profunda, com controle proximal e distal.</p>
+  <div class="pq"><b>por quê</b>A bifurcação é abordada porque é ali que o êmbolo <strong>encalha</strong> — o calibre estreita subitamente e a corrente que vinha livre pela aorta e ilíaca para de repente. Controlar os três ramos <em>antes</em> de tocar o trombo evita perder o controle se ele fragmentar.</div>
+  <div class="mh2">
+    <div class="mh e"><b>mão esquerda</b>DeBakey atraumática, expondo e reparando os três vasos</div>
+    <div class="mh d"><b>mão direita</b>Metzenbaum na dissecção do plano</div>
+  </div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de controle</span>
+  <div class="ttl">Heparinizar e clampear</div>
+  <p>Heparinização sistêmica; clampeio com bulldog ou clampe atraumático.</p>
+  <div class="pq"><b>por quê</b>A heparina aqui não é profilaxia — é para impedir que o <strong>sangue estagnado a jusante da obstrução</strong> coagule ainda mais durante a manipulação, criando um segundo trombo enquanto você trata o primeiro.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de abertura</span>
+  <div class="ttl">Arteriotomia na femoral comum</div>
+  <p>Arteriotomia transversa ou longitudinal, conforme a preferência e a possibilidade de fechamento.</p>
+  <div class="pq"><b>por quê</b>A transversa facilita fechamento primário sem estreitar o vaso; a longitudinal dá mais campo de manobra para o Fogarty, mas pode exigir patch — a mesma lógica de "abrir no eixo que não compromete o fechamento" já vista em outras arteriotomias.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de extração — o gesto central</span>
+  <div class="ttl">Passar o Fogarty proximal e distal</div>
+  <p>Introduzir o balão <strong>proximalmente</strong>, insuflar além do trombo e retrair, "puxando" o material para fora. Repetir <strong>distalmente</strong>. Continuar até obter <strong>in-flow</strong> (jato proximal pulsátil) e <strong>back-flow</strong> (retorno distal satisfatório).</p>
+  <div class="pq"><b>por quê</b>São <strong>duas checagens independentes</strong>, e as duas são necessárias. In-flow prova que a via de entrada está livre; back-flow prova que o <strong>leito distal</strong> — onde mora o trombo secundário que se forma a jusante da obstrução original — também foi limpo. Parar só com in-flow bom é o erro clássico: a perna parece revascularizada e trombosa de novo em horas porque o leito distal ficou sujo.</div>
+  <div class="mh2">
+    <div class="mh e"><b>mão esquerda</b>Estabiliza a arteriotomia com reparo, sem deixar o vaso torcer</div>
+    <div class="mh d"><b>mão direita</b>Introduz e insufla o Fogarty; controla a pressão do balão ao retrair</div>
+  </div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de verificação</span>
+  <div class="ttl">Arteriografia intraoperatória de controle</div>
+  <p>Contraste pela arteriotomia para checar o leito distal e excluir trombo residual antes de fechar.</p>
+  <div class="pq"><b>por quê</b>In-flow e back-flow são <strong>sinais indiretos</strong>; a arteriografia é a única confirmação <strong>direta</strong> de que não sobrou trombo segmentar mais distal, fora do alcance do balão. É a diferença entre "parece bom" e "está confirmado".</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de fechamento</span>
+  <div class="ttl">Fechar a arteriotomia</div>
+  <p><span class="kbd">Prolene 6-0</span>; considerar patch se o vaso for pequeno ou calcificado.</p>
+  <div class="pq"><b>por quê</b>Mesma regra da carótida: fechamento primário em vaso fino <strong>estreita</strong> o calibre. O patch devolve a luz e reduz o risco de reoclusão precoce na própria linha de sutura.</div>
+</div>
+
+<div class="st">
+  <span class="fase">fase de decisão — a mais importante do dia</span>
+  <div class="ttl">Avaliar a necessidade de fasciotomia</div>
+  <p>Considerar fasciotomia das 4 lojas se isquemia prolongada (<strong>&gt; 4–6 h</strong>) ou se o membro estiver com edema tenso ao desclampear.</p>
+  <div class="pq"><b>por quê</b>É aqui que a operação realmente se decide, e não na retirada do trombo. Reperfundir um músculo que ficou isquêmico horas <strong>o faz inchar</strong> — e a loja muscular é inextensível. Sem fasciotomia, a própria pressão que o músculo edemaciado gera <strong>colapsa os capilares que acabaram de ser reabertos</strong>: a artéria está pérvia e o tecido morre mesmo assim. Não é uma complicação a monitorar — é um segundo procedimento a decidir <em>na mesma cirurgia</em>.</div>
+</div>
+
+</div>
+
+<div class="box cy"><div class="lbl">as 4 checagens da embolectomia</div>
+<b>1)</b> Há <strong>in-flow</strong> pulsátil proximal?<br>
+<b>2)</b> Há <strong>back-flow</strong> satisfatório distal?<br>
+<b>3)</b> A arteriografia de controle confirma <strong>ausência de trombo residual</strong>?<br>
+<b>4)</b> O membro precisa de <strong>fasciotomia</strong> — mesmo que a artéria esteja perfeita?</div>
+
+<h3>Trombólise dirigida por cateter (endovascular)</h3>
+<ol class="steps">
+<li>Acesso arterial percutâneo; posicionar cateter multi-fenestrado dentro do trombo sob fluoroscopia.</li>
+<li>Infusão contínua de trombolítico (ex.: alteplase) em baixa dose local, com reavaliações seriadas (6–24h).</li>
+<li>Tratar a lesão residual causal (angioplastia/stent) após lise do trombo.</li>
+</ol>
+<p class="lay">Indicada quando há <b>tempo</b> (Rutherford I/IIa), sem déficit neurológico e sem contraindicação a trombolítico (ex.: sangramento ativo, cirurgia/AVC recentes).</p>
+<div class="box pu"><div class="lbl">o mesmo princípio, outra velocidade</div>A trombólise troca a rapidez da embolectomia pela <strong>seletividade</strong> — dissolve o trombo mas também trata a placa/estenose que o originou, algo que o Fogarty não faz. O preço é o tempo: só cabe quando o Rutherford ainda permite esperar.</div>
+</section>
+
+<section id="reperfusao">
+<h2>🚨 Síndrome de reperfusão &amp; fasciotomia</h2>
+<p>Isquemia prolongada seguida de reperfusão libera <b>potássio, mioglobina, ácido lático e radicais livres</b> na circulação sistêmica: <span class="hi">hipercalemia, acidose metabólica, mioglobinúria (IRA), arritmias e até parada cardíaca</span>.</p>
+<div class="box pu"><div class="lbl">🧨 Síndrome compartimental</div>
+<p>Edema do músculo dentro da fáscia inextensível → aumento da pressão compartimental → nova isquemia (mesmo com o vaso revascularizado). Clínica: <b>dor desproporcional</b>, tensão à palpação, dor à extensão passiva, parestesia. <span class="hi">Fasciotomia das 4 lojas da perna</span> não deve ser postergada.</p></div>
+<p class="lay">(depois de "reabrir a mangueira", o músculo incha dentro de um "envelope" apertado — a fáscia — e o próprio inchaço passa a comprimir os vasos de novo; corta-se o envelope para aliviar a pressão)</p>
+</section>
+
+<section id="complic">
+<h2>⚠️ Complicações</h2>
+<ul>
+<li><span class="em">💔</span>Síndrome de reperfusão / hipercalemia / arritmia.</li>
+<li><span class="em">🧊</span>Reoclusão precoce (trombo residual).</li>
+<li><span class="em">🦵</span>Síndrome compartimental (se fasciotomia tardia).</li>
+<li><span class="em">🩸</span>Sangramento relacionado à trombólise/anticoagulação.</li>
+<li><span class="em">✂️</span>Amputação maior (se isquemia irreversível ou falha terapêutica).</li>
+<li><span class="em">❤️</span>Mortalidade elevada — a causa de base (cardíaca) frequentemente domina o prognóstico.</li>
+</ul>
+</section>
+
+<section id="pegas">
+<h2>🪤 Pega-ratões</h2>
+<div class="box pu"><div class="lbl">Os erros favoritos das bancas</div>
+<ul>
+<li>Parestesia/paralisia = sinais de <b>gravidade neural</b>, indicam urgência, não "espere e reavalie".</li>
+<li><b>Rutherford III (irreversível)</b> → <b>amputação</b>, NÃO revascularizar (mata por hipercalemia/reperfusão).</li>
+<li><b>Doppler venoso inaudível</b> = achado que separa IIb de III (edema/trombose venosa concomitante em isquemia muito avançada) — reforça irreversibilidade.</li>
+<li><b>FA</b> é a causa cardioembólica mais comum; local mais comum de impactação: <b>bifurcação femoral</b>.</li>
+<li>Trombose in situ costuma ter <b>DAOP prévia/claudicação</b> e pulsos contralaterais reduzidos — diferencia de embolia.</li>
+<li><b>Heparinizar imediatamente</b> ao suspeitar, mesmo antes da confirmação de imagem.</li>
+<li>Categoria IIb não espera angioTC — vai <b>direto para o centro cirúrgico</b>.</li>
+<li>Fasciotomia: não esperar "para ver se piora" — dor desproporcional + tensão = indicação.</li>
+</ul></div>
+</section>
+
+<section id="mnemo">
+<h2>🧠 Mnemônicos</h2>
+<div class="box cy"><div class="lbl">Coleção Isquemia Aguda</div>
+<ul>
+<li><span class="mn">6 P's: Pain, Pallor, Pulselessness, Paresthesia, Paralysis, Poiquilotermia</span>.</li>
+<li><span class="mn">"P de Paralisia = Perde o membro" — sinal tardio e grave</span>.</li>
+<li><span class="mn">Rutherford: I espera · IIa dá tempo · IIb corre pra sala · III amputa</span>.</li>
+<li><span class="mn">"Doppler venoso mudo = membro morto" (III)</span>.</li>
+<li><span class="mn">Embolia = bifurcação + FA · Trombose = lesão prévia + claudicação</span>.</li>
+</ul></div>
+</section>
+
+<section id="questoes">
+<h2>📝 Questões — itens originais no estilo das bancas</h2>
+<p class="note" style="border:none;padding:0;margin:0 0 10px">Itens <b>originais</b> no padrão de cada banca (não reprodução literal).</p>
+
+<div class="q"><div class="src">HCPA · estilo</div>
+<div class="stem">Mulher de 74 anos, portadora de fibrilação atrial não anticoagulada, apresenta dor súbita em perna direita há 3 horas, com palidez, ausência de pulsos poplíteo e distais, sem déficit sensitivo ou motor. Doppler arterial e venoso audíveis. A categoria de Rutherford e a conduta são:</div>
+<div class="alt"><span class="let">A)</span> III — amputação primária</div>
+<div class="alt"><span class="let">B)</span> IIb — revascularização de urgência na próxima hora</div>
+<div class="alt ok"><span class="let">C)</span> I — heparinização e investigação/tratamento em horas, sem caráter de extrema urgência</div>
+<div class="alt"><span class="let">D)</span> IIa — trombólise contraindicada por princípio</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>C.</b> Sem déficit sensitivo/motor e Doppler audível = Rutherford I (viável). Heparinizar e investigar/tratar sem a urgência extrema do IIb, mas ainda como emergência vascular.</div></details>
+</div>
+
+<div class="q"><div class="src">GHC · estilo</div>
+<div class="stem">Homem de 68 anos com claudicação intermitente crônica evolui com piora súbita da dor em panturrilha esquerda, parestesia em pododáctilos e Doppler arterial inaudível, venoso audível. A conduta mais adequada é:</div>
+<div class="alt"><span class="let">A)</span> Observação e reavaliação em 24 horas</div>
+<div class="alt ok"><span class="let">B)</span> Revascularização de urgência (Rutherford IIb)</div>
+<div class="alt"><span class="let">C)</span> Amputação primária</div>
+<div class="alt"><span class="let">D)</span> Alta com anticoagulante oral</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> Déficit sensitivo além dos dedos configura IIb (imediatamente ameaçado) — revascularização de urgência, sem atrasar por exames demorados.</div></details>
+</div>
+
+<div class="q"><div class="src">Santa Casa POA · estilo</div>
+<div class="stem">Paciente com isquemia aguda de membro inferior apresenta anestesia completa do pé, paralisia total e rigidez muscular à palpação da panturrilha; Doppler arterial e venoso inaudíveis. A conduta correta é:</div>
+<div class="alt"><span class="let">A)</span> Embolectomia de urgência</div>
+<div class="alt"><span class="let">B)</span> Trombólise dirigida por cateter</div>
+<div class="alt ok"><span class="let">C)</span> Amputação primária, sem tentativa de revascularização</div>
+<div class="alt"><span class="let">D)</span> Fasciotomia isolada</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>C.</b> Rutherford III (irreversível): rigidez muscular e anestesia completa indicam necrose já estabelecida; revascularizar libera potássio/mioglobina maciços e pode ser fatal — a conduta é amputação.</div></details>
+</div>
+
+<div class="q"><div class="src">PUC-RS · estilo</div>
+<div class="stem">Na embolectomia com cateter de Fogarty para isquemia aguda de membro inferior por embolia originada em fibrilação atrial, o local de arteriotomia mais frequentemente utilizado é:</div>
+<div class="alt"><span class="let">A)</span> Artéria poplítea</div>
+<div class="alt ok"><span class="let">B)</span> Bifurcação da artéria femoral comum</div>
+<div class="alt"><span class="let">C)</span> Artéria tibial posterior</div>
+<div class="alt"><span class="let">D)</span> Aorta infrarrenal</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> A bifurcação femoral é o sítio de impactação embólica mais comum em membros inferiores, sendo a arteriotomia sobre essa região a via de acesso clássica para a embolectomia com Fogarty.</div></details>
+</div>
+
+<div class="q"><div class="src">AMRIGS · estilo</div>
+<div class="stem">Após revascularização bem-sucedida de isquemia aguda com tempo de isquemia prolongado, o paciente evolui, horas depois, com dor desproporcional na perna, tensão à palpação da panturrilha e dor à extensão passiva dos dedos. A conduta imediata é:</div>
+<div class="alt"><span class="let">A)</span> Analgesia e observação</div>
+<div class="alt ok"><span class="let">B)</span> Fasciotomia das quatro lojas da perna</div>
+<div class="alt"><span class="let">C)</span> Reoperar a anastomose arterial</div>
+<div class="alt"><span class="let">D)</span> Iniciar heparina em dose plena</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> Quadro clássico de síndrome compartimental por reperfusão — fasciotomia sem demora para evitar necrose muscular/nervosa irreversível.</div></details>
+</div>
+
+<div class="q"><div class="src">HCPA · estilo</div>
+<div class="stem">Entre os achados que diferenciam etiologicamente embolia de trombose in situ como causa de isquemia aguda de membro, é característico da trombose in situ:</div>
+<div class="alt"><span class="let">A)</span> Início dramático e súbito, sem sintomas prévios</div>
+<div class="alt ok"><span class="let">B)</span> História de claudicação intermitente prévia e pulsos contralaterais reduzidos</div>
+<div class="alt"><span class="let">C)</span> Fibrilação atrial associada</div>
+<div class="alt"><span class="let">D)</span> Colaterais pouco desenvolvidas</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> Trombose in situ ocorre sobre DAOP prévia; a claudicação antecedente e a redução de pulsos contralaterais (doença sistêmica) apontam para essa etiologia, diferente da embolia (início súbito, sem história prévia).</div></details>
+</div>
+
+<div class="q"><div class="src">GHC · estilo</div>
+<div class="stem">Qual a primeira medida terapêutica a ser adotada diante da suspeita clínica de isquemia arterial aguda de membro, mesmo antes da confirmação por exame de imagem?</div>
+<div class="alt"><span class="let">A)</span> Angiotomografia de urgência</div>
+<div class="alt ok"><span class="let">B)</span> Heparinização sistêmica imediata</div>
+<div class="alt"><span class="let">C)</span> Trombólise sistêmica em bólus</div>
+<div class="alt"><span class="let">D)</span> Antibioticoterapia profilática</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> A heparinização sistêmica deve ser iniciada assim que a suspeita clínica é levantada, para impedir a propagação do trombo, independentemente da confirmação por imagem.</div></details>
+</div>
+
+<div class="q"><div class="src">Santa Casa POA · estilo</div>
+<div class="stem">Na síndrome de reperfusão após revascularização de isquemia aguda prolongada, os distúrbios metabólicos mais esperados incluem:</div>
+<div class="alt"><span class="let">A)</span> Hipocalemia e alcalose metabólica</div>
+<div class="alt ok"><span class="let">B)</span> Hipercalemia, acidose metabólica e mioglobinúria</div>
+<div class="alt"><span class="let">C)</span> Hipernatremia isolada</div>
+<div class="alt"><span class="let">D)</span> Hipoglicemia grave</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> A reperfusão de tecido isquêmico libera potássio, mioglobina e ácido lático na circulação — hipercalemia, acidose metabólica e risco de IRA por mioglobinúria, podendo causar arritmias graves.</div></details>
+</div>
+
+<div class="q"><div class="src">PUC-RS · estilo</div>
+<div class="stem">Paciente com isquemia aguda Rutherford IIa (déficit sensitivo mínimo, sem déficit motor, Doppler arterial inaudível/venoso audível), sem contraindicações a trombolítico. Uma estratégia terapêutica adequada nesse cenário é:</div>
+<div class="alt"><span class="let">A)</span> Amputação primária</div>
+<div class="alt ok"><span class="let">B)</span> Trombólise dirigida por cateter, com reavaliações seriadas</div>
+<div class="alt"><span class="let">C)</span> Conduta expectante sem anticoagulação</div>
+<div class="alt"><span class="let">D)</span> Fasciotomia profilática imediata</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> Rutherford IIa permite tempo para investigação/tratamento menos emergencial; na ausência de contraindicações, a trombólise dirigida por cateter é uma opção válida, com reavaliação do resultado.</div></details>
+</div>
+
+<div class="q"><div class="src">AMRIGS · estilo</div>
+<div class="stem">Sobre o exame com Doppler portátil na avaliação inicial da isquemia aguda de membro, é correto afirmar que:</div>
+<div class="alt"><span class="let">A)</span> É dispensável, pois a clínica basta isoladamente</div>
+<div class="alt ok"><span class="let">B)</span> A presença de sinal venoso audível associado a sinal arterial inaudível ajuda a classificar o grau de Rutherford e orientar a urgência</div>
+<div class="alt"><span class="let">C)</span> Só deve ser realizado após a angiotomografia</div>
+<div class="alt"><span class="let">D)</span> Substitui a necessidade de exame físico</div>
+<details><summary>Resposta &amp; comentário</summary><div class="exp"><b>B.</b> O Doppler de bolso (arterial e venoso) complementa o exame clínico à beira-leito, ajudando a distinguir as categorias de Rutherford (ex.: venoso inaudível associa-se a estágios mais avançados/irreversíveis).</div></details>
+</div>
+</section>
+
+<div class="note">Fontes: ESVS 2020 Clinical Practice Guidelines on the Management of Acute Limb Ischaemia · Classificação de Rutherford (SVS) · Rutherford's Vascular Surgery · Sabiston. Questões originais para estudo. — carolzita · CV 2026</div>
+</div>
+<script>
+var secs=[['geral','🧭 Geral'],['clinica','🩺 Clínica'],['rutherford','📊 Rutherford'],['dx','🔬 Diagnóstico'],['conduta','📐 Conduta'],['tecnica','🔪 Técnica'],['reperfusao','🚨 Reperfusão'],['complic','⚠️ Complicações'],['pegas','🪤 Pega-ratões'],['mnemo','🧠 Mnemônicos'],['questoes','📝 Questões']];
+var nav=document.getElementById('nav');
+secs.forEach(function(s,i){var b=document.createElement('button');b.textContent=s[1];if(i===0)b.className='on';b.onclick=function(){document.querySelectorAll('nav button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');document.querySelectorAll('section').forEach(function(x){x.classList.remove('on')});document.getElementById(s[0]).classList.add('on');window.scrollTo({top:0,behavior:'smooth'})};nav.appendChild(b)});
+</script>
+</body>
+</html>

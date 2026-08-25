@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hemorragia Digestiva Alta e Baixa — Referência CV 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d1117; --bg2:#161b22; --bg3:#1c2230; --line:#2a3038;
+  --txt:#c9d1d9; --txt2:#8b949e; --txt3:#6e7681;
+  --orange:#ff7b29; --orange-d:#3a2410;
+  --purple:#a371f7; --purple-d:#241a3a;
+  --cyan:#39c5cf; --cyan-d:#0f2e30;
+  --red:#f85149; --green:#3fb950; --yellow:#d29922;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font-family:'IBM Plex Sans',sans-serif;line-height:1.6;font-size:15px;padding-bottom:60px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 18px}
+header{padding:30px 0 16px;border-bottom:1px solid var(--line)}
+h1{font-family:'IBM Plex Serif',serif;font-size:26px;font-weight:600;letter-spacing:-.3px}
+h1 .accent{color:var(--orange)}
+.sub{color:var(--txt2);font-size:13px;margin-top:6px;font-family:'IBM Plex Mono',monospace}
+.tabs{position:sticky;top:0;z-index:20;background:var(--bg);display:flex;gap:4px;overflow-x:auto;padding:10px 18px;border-bottom:1px solid var(--line);scrollbar-width:thin}
+.tabs::-webkit-scrollbar{height:5px}.tabs::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
+.tab{flex:0 0 auto;background:var(--bg2);border:1px solid var(--line);color:var(--txt2);padding:8px 14px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;font-family:'IBM Plex Mono',monospace;transition:.15s}
+.tab:hover{color:var(--txt);border-color:var(--orange)}
+.tab.active{background:var(--orange);color:#0d1117;border-color:var(--orange)}
+.panel{display:none;padding:24px 0;animation:fade .25s}
+.panel.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1}}
+h2{font-family:'IBM Plex Serif',serif;font-size:20px;color:var(--orange);margin:26px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+h2:first-child{margin-top:0}
+h3{font-size:16px;color:var(--txt);margin:18px 0 8px;font-weight:600}
+p{margin:8px 0}
+.lay{color:var(--cyan);font-style:italic;font-size:.93em}
+ul,ol{margin:8px 0 8px 22px}li{margin:4px 0}
+strong{color:#fff;font-weight:600}
+code{font-family:'IBM Plex Mono',monospace;background:var(--bg3);padding:1px 6px;border-radius:4px;font-size:.88em;color:var(--orange)}
+.card{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0}
+.box{border-left:4px solid var(--orange);background:var(--orange-d);border-radius:0 10px 10px 0;padding:12px 16px;margin:14px 0}
+.box.hy{border-left-color:var(--purple);background:var(--purple-d)}
+.box.mn{border-left-color:var(--cyan);background:var(--cyan-d)}
+.box .lbl{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;font-weight:600;margin-bottom:6px;display:block}
+.box .lbl{color:var(--orange)}.box.hy .lbl{color:var(--purple)}.box.mn .lbl{color:var(--cyan)}
+.banca{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:600;padding:1px 7px;border-radius:20px;background:#2a1f44;color:var(--purple);border:1px solid #3a2a5a;margin-left:6px;vertical-align:middle}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--bg3);color:var(--orange);font-family:'IBM Plex Mono',monospace;font-size:11.5px;text-transform:uppercase;letter-spacing:.5px;position:sticky;top:0}
+td strong{color:var(--cyan)}
+.tag{font-family:'IBM Plex Mono',monospace;font-size:11px;padding:2px 8px;border-radius:5px;font-weight:600}
+.t-b{background:#0f2a16;color:var(--green)}
+.t-m{background:#3a1414;color:var(--red)}
+.t-w{background:#3a2e0d;color:var(--yellow)}
+svg{max-width:100%;height:auto;display:block;margin:16px auto;background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:10px}
+.q{background:var(--bg2);border:1px solid var(--line);border-left:4px solid var(--purple);border-radius:0 10px 10px 0;padding:14px 16px;margin:16px 0}
+.q .stem{font-weight:500}
+.alt{margin:8px 0 0 0;padding-left:4px}
+.alt div{padding:3px 0;color:var(--txt2)}
+details{margin-top:10px;border-top:1px dashed var(--line);padding-top:8px}
+summary{cursor:pointer;color:var(--cyan);font-weight:600;font-size:13px;font-family:'IBM Plex Mono',monospace}
+details[open] summary{margin-bottom:6px}
+.ans{color:var(--green);font-weight:600}
+.foot{color:var(--txt3);font-size:11px;text-align:center;margin-top:30px;font-family:'IBM Plex Mono',monospace}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:640px){.grid2{grid-template-columns:1fr}h1{font-size:21px}}
+.pill{display:inline-block;width:11px;height:11px;border-radius:3px;vertical-align:middle;margin-right:5px}
+.legend{font-size:12px;color:var(--txt2);font-family:'IBM Plex Mono',monospace;margin-top:10px}
+.flow{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:18px 16px;margin:16px 0}
+.frow{display:flex;align-items:stretch;gap:10px;margin:0 0 6px}
+.fdec{flex:1;background:var(--bg3);border:1px solid var(--purple);border-radius:10px;padding:10px 12px;font-size:13.5px}
+.fdec b{color:var(--purple);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.5px}
+.fout{flex:0 0 auto;display:flex;flex-direction:column;justify-content:center;gap:6px;min-width:150px}
+.chip{border-radius:8px;padding:7px 11px;font-size:13px;font-weight:600;text-align:center;font-family:'IBM Plex Sans'}
+.chip.res{background:#3a1414;color:#ff9d9d;border:1px solid var(--red)}
+.chip.eus{background:#3a2e0d;color:#ffd970;border:1px solid var(--yellow)}
+.chip.vig{background:#0f2a16;color:#8ff0a8;border:1px solid var(--green)}
+.fdown{text-align:center;color:var(--txt3);font-size:18px;line-height:1;margin:1px 0}
+@media(max-width:640px){.frow{flex-direction:column}.fout{min-width:0}}
+</style>
+</head>
+<body>
+<header class="wrap"><h1>Hemorragia <span class="accent">Digestiva</span> · HDA &amp; HDB</h1><div class="sub">Referência CV 2026 · Forrest · Glasgow-Blatchford/Rockall · Baveno VII · ACG 2021/2023</div><div class="legend"><span class="pill" style="background:var(--orange)"></span>conteúdo geral<span class="pill" style="background:var(--purple);margin-left:14px"></span>alto rendimento / prova<span class="pill" style="background:var(--cyan);margin-left:14px"></span>analogia &amp; mnemônico</div></header>
+<nav class="tabs">
+  <button class="tab active" data-t="vg">🗺️ Visão Geral</button>
+  <button class="tab" data-t="hdanv">🩸 HDA não-varicosa</button>
+  <button class="tab" data-t="hdav">🫀 HDA varicosa</button>
+  <button class="tab" data-t="hdb">🔻 HDB</button>
+  <button class="tab" data-t="esc">📊 Escores</button>
+  <button class="tab" data-t="cir">🔪 Refratário/Cx</button>
+  <button class="tab" data-t="quest">📝 Questões</button>
+  <button class="tab" data-t="pega">🪤 Pega-ratão</button>
+  <button class="tab" data-t="mn">🧠 Mnemônicos</button>
+</nav>
+<main class="wrap">
+<section class="panel active" id="vg">
+<h2>Onde está o sangramento?</h2>
+<p>A divisão é pelo <strong>ângulo de Treitz</strong>: acima = <strong>HDA</strong> (hematêmese, melena); abaixo = <strong>HDB</strong> (hematoquezia/enterorragia). A HDA é mais comum.</p>
+<div class="box hy"><span class="lbl">★ Primeiro: ressuscitar</span>ABC, 2 acessos calibrosos, cristaloide, tipagem. <strong>Transfusão restritiva: Hb &lt; 7 g/dL</strong> (alvo 7–9); limiar 8 se cardiopatia/instabilidade — <strong>ACG 2021</strong>. Sangue excessivo piora desfecho. <span class="banca">HCPA</span> <span class="banca">AMRIGS</span></div>
+<div class="box mn"><span class="lbl">★ armadilha</span><strong>Hematoquezia maciça pode ser HDA</strong> de alto fluxo. Sempre <strong>excluir HDA</strong> (SNG/EDA) antes de assumir origem baixa quando há instabilidade.</div>
+<p class="lay">(Treitz é a "fronteira": acima vomita-se sangue ou sai fezes pretas; abaixo, sangue vivo pelo ânus. Mas um sangramento alto muito rápido também pode descer vermelho.)</p>
+</section><section class="panel" id="hdanv">
+<h2>HDA não-varicosa (úlcera péptica)</h2>
+<p>Causa nº 1 = <strong>úlcera péptica</strong> (H. pylori, AINEs). Conduta: <strong>EDA dentro de 24 h</strong> (ACG 2021); <strong>eritromicina IV</strong> 20–90 min antes (procinético, melhora visão); IBP IV.</p>
+<h3>Classificação de Forrest (guia a terapia)</h3>
+<table>
+<tr><th>Forrest</th><th>Achado</th><th>Risco / Conduta</th></tr>
+<tr><td><strong>Ia</strong></td><td>Sangramento em <strong>jato</strong></td><td><span class="tag t-m">alto</span> terapia endoscópica</td></tr>
+<tr><td><strong>Ib</strong></td><td>Sangramento em <strong>babação</strong></td><td><span class="tag t-m">alto</span> terapia endoscópica</td></tr>
+<tr><td><strong>IIa</strong></td><td><strong>Vaso visível</strong> não sangrante</td><td><span class="tag t-m">alto</span> terapia endoscópica</td></tr>
+<tr><td><strong>IIb</strong></td><td><strong>Coágulo aderente</strong></td><td><span class="tag t-w">interm.</span> remover coágulo → tratar se vaso</td></tr>
+<tr><td><strong>IIc</strong></td><td>Hematina (mancha plana)</td><td><span class="tag t-b">baixo</span> IBP, sem terapia</td></tr>
+<tr><td><strong>III</strong></td><td>Base <strong>limpa</strong></td><td><span class="tag t-b">baixo</span> IBP, alta precoce</td></tr>
+</table>
+<div class="box hy"><span class="lbl">★ terapia endoscópica</span>Indicada para <strong>Ia, Ib, IIa</strong> (e IIb após remoção do coágulo). Padrão = <strong>dupla terapia</strong>: injeção de adrenalina <strong>+</strong> 2º método (térmico/clipe). IBP IV em bolus/infusão pós-terapia. <span class="banca">PUC-RS</span> <span class="banca">GHC</span></div>
+<p>Falha da endoscopia → <strong>embolização arterial transcateter (TAE)</strong> antes da cirurgia. Pesquisar/erradicar <strong>H. pylori</strong>.</p>
+</section><section class="panel" id="hdav">
+<h2>HDA varicosa — Baveno VII</h2>
+<p>Suspeitar em cirrótico/hipertensão portal. O tratamento combina droga + endoscopia + antibiótico.</p>
+<div class="box hy"><span class="lbl">★ pacote Baveno VII</span>
+<ul>
+<li><strong>Vasoativo o quanto antes</strong> (terlipressina, somatostatina ou octreotida) por <strong>2–5 dias</strong> — iniciar antes da EDA.</li>
+<li><strong>Antibiótico profilático desde a admissão</strong> (ceftriaxona) por até 7 dias — reduz infecção, ressangramento e mortalidade.</li>
+<li><strong>EDA precoce (≤12 h)</strong>: <strong>ligadura elástica (EBL)</strong> para varizes esofágicas; <strong>cianoacrilato</strong> para varizes gástricas.</li>
+<li><strong>TIPS pré-emptivo precoce (≤72 h, ideal &lt;24 h)</strong> se alto risco: <strong>Child C ≤13</strong> ou <strong>Child B &gt;7 com sangramento ativo</strong>. Alvo PPG &lt; 12 mmHg.</li>
+<li>Balão (Sengstaken-Blakemore) = <strong>ponte</strong> temporária para sangramento incontrolável.</li>
+</ul>
+<span class="banca">Santa Casa</span> <span class="banca">HCPA</span></div>
+<p>Profilaxia secundária: <strong>betabloqueador não seletivo (carvedilol/propranolol) + EBL</strong>.</p>
+</section><section class="panel" id="hdb">
+<h2>Hemorragia digestiva baixa — ACG 2023</h2>
+<div class="flow">
+<div class="frow"><div class="fdec"><b>HEMATOQUEZIA</b><br>Ressuscitar · excluir HDA (se instável/maciça)</div>
+<div class="fout"><div class="chip eus">estável</div><div class="chip res">instável + ativo</div></div></div>
+<div class="frow"><div class="fdec"><b>ESTÁVEL</b><br>Colonoscopia <strong>não urgente</strong> (não precisa &lt;24 h)</div></div>
+<div class="frow"><div class="fdec"><b>INSTÁVEL c/ sangramento significativo</b><br><strong>Angio-TC</strong> → se extravasamento → IR/<strong>embolização</strong></div></div>
+</div>
+<div class="box hy"><span class="lbl">★ mudanças-chave (2023)</span><strong>Colonoscopia urgente (&lt;24 h) NÃO melhora desfecho</strong> → fazer não urgente, com bom preparo. Instável → <strong>angio-TC primeiro</strong>. <strong>Oakland ≤ 8</strong> → alta precoce/ambulatorial. <span class="banca">AMRIGS</span> <span class="banca">PUC-RS</span></div>
+<h3>Causas de HDB</h3>
+<p><strong>Doença diverticular</strong> (mais comum), angiodisplasia, colite isquêmica, neoplasia/pós-polipectomia, doença orificial (hemorroidas). Sangramento intermitente sem foco → <strong>cintilografia com hemácias marcadas</strong>.</p>
+</section><section class="panel" id="esc">
+<h2>Escores de risco</h2>
+<table>
+<tr><th>Escore</th><th>Uso</th><th>Ponto-chave</th></tr>
+<tr><td><strong>Glasgow-Blatchford (GBS)</strong></td><td>HDA, <strong>pré-EDA</strong></td><td><strong>0–1 → alta ambulatorial</strong> (muito baixo risco). Preferido para triagem</td></tr>
+<tr><td><strong>Rockall</strong></td><td>HDA, pré e <strong>pós</strong>-EDA</td><td>Mortalidade e ressangramento (inclui achado endoscópico)</td></tr>
+<tr><td><strong>AIMS65</strong></td><td>HDA</td><td>Bom para <strong>mortalidade</strong></td></tr>
+<tr><td><strong>Oakland</strong></td><td><strong>HDB</strong></td><td>≤8 → candidato a manejo ambulatorial</td></tr>
+</table>
+<div class="box mn"><span class="lbl">analogia</span>GBS é o "porteiro" antes da EDA (decide quem vai pra casa); Rockall precisa "olhar lá dentro" (achado endoscópico).</div>
+</section><section class="panel" id="cir">
+<h2>Refratário e cirurgia</h2>
+<ul>
+<li><strong>HDA não-varicosa refratária</strong>: falha de EDA → <strong>TAE</strong> (embolização) → cirurgia (sutura da úlcera, pilorplastia/gastrectomia em casos selecionados).</li>
+<li><strong>HDA varicosa refratária</strong>: balão (ponte) → <strong>TIPS</strong> de resgate.</li>
+<li><strong>HDB refratária</strong>: angio-TC + embolização; cirurgia (colectomia segmentar guiada por localização, ou subtotal se foco não identificado e instabilidade).</li>
+</ul>
+<div class="box hy"><span class="lbl">★ TXA — não!</span><strong>Ácido tranexâmico não é recomendado de rotina</strong> na HDA: o ensaio <strong>HALT-IT</strong> não mostrou benefício de mortalidade e aumentou eventos tromboembólicos (TEV/convulsões). Pega-ratão clássico. <span class="banca">GHC</span></div>
+</section><section class="panel" id="quest"><h2>Questões — estilo das bancas RS</h2><p class="sub" style="margin-bottom:14px">Itens originais no estilo das bancas (não reprodução literal de provas).</p>
+<div class="q"><div class="stem"><span class="banca">HCPA</span> Qual o limiar transfusional recomendado para a maioria dos pacientes com hemorragia digestiva alta (ACG 2021)?</div><div class="alt"><div>A) Hb &lt; 10 g/dL</div><div>B) Hb &lt; 9 g/dL</div><div>C) Hb &lt; 7 g/dL (estratégia restritiva)</div><div>D) Transfundir todos à admissão</div></div><details><summary>Ver resposta</summary><p class="ans">C.</p><p>Estratégia <strong>restritiva: Hb &lt; 7 g/dL</strong> (alvo 7–9); limiar 8 se cardiopatia. Transfusão liberal piora desfechos.</p></details></div>
+<div class="q"><div class="stem"><span class="banca">PUC-RS</span> Úlcera com vaso visível não sangrante (Forrest IIa). A conduta endoscópica é:</div><div class="alt"><div>A) Apenas IBP, sem terapia</div><div>B) Alta imediata</div><div>C) Terapia endoscópica dupla (adrenalina + 2º método)</div><div>D) Cirurgia</div></div><details><summary>Ver resposta</summary><p class="ans">C.</p><p>Forrest <strong>Ia/Ib/IIa</strong> = alto risco → <strong>terapia dupla</strong> + IBP IV.</p></details></div>
+<div class="q"><div class="stem"><span class="banca">Santa Casa</span> Cirrótico Child B com varizes esofágicas sangrantes. Além da ligadura elástica, o pacote inicial inclui:</div><div class="alt"><div>A) Vasoativo + antibiótico profilático desde a admissão</div><div>B) TXA + plasma</div><div>C) Apenas IBP</div><div>D) Betabloqueador imediato em dose alta</div></div><details><summary>Ver resposta</summary><p class="ans">A.</p><p>Baveno VII: <strong>vasoativo</strong> (terlipressina/somatostatina/octreotida) 2–5 dias + <strong>ATB</strong> (ceftriaxona) desde a admissão.</p></details></div>
+<div class="q"><div class="stem"><span class="banca">GHC</span> Paciente cirrótico Child C (≤13) com sangramento varicoso controlado endoscopicamente. Medida que reduz ressangramento precoce:</div><div class="alt"><div>A) TIPS pré-emptivo precoce (&lt;72 h)</div><div>B) Repetir EDA em 30 dias</div><div>C) Apenas betabloqueador</div><div>D) Paracentese seriada</div></div><details><summary>Ver resposta</summary><p class="ans">A.</p><p><strong>TIPS pré-emptivo precoce</strong> (&lt;72 h, ideal &lt;24 h) é indicado em alto risco (Child C ≤13 ou Child B &gt;7 com sangramento ativo).</p></details></div>
+<div class="q"><div class="stem"><span class="banca">AMRIGS</span> Paciente estável com hematoquezia. Segundo a ACG 2023, a conduta diagnóstica é:</div><div class="alt"><div>A) Colonoscopia de urgência em &lt; 24 h</div><div>B) Angiografia imediata</div><div>C) Colonoscopia não urgente com preparo adequado</div><div>D) Laparotomia exploradora</div></div><details><summary>Ver resposta</summary><p class="ans">C.</p><p>Em <strong>estável</strong>, colonoscopia <strong>não urgente</strong>; a urgente (&lt;24 h) não melhora desfecho.</p></details></div>
+<div class="q"><div class="stem"><span class="banca">PUC-RS</span> Paciente instável com hematoquezia volumosa e ativa. O exame inicial mais indicado é:</div><div class="alt"><div>A) Colonoscopia urgente</div><div>B) Angio-TC de abdome</div><div>C) Cintilografia com hemácias marcadas</div><div>D) Cápsula endoscópica</div></div><details><summary>Ver resposta</summary><p class="ans">B.</p><p>Instável com sangramento ativo → <strong>angio-TC</strong> → embolização por IR se extravasamento.</p></details></div>
+<div class="q"><div class="stem"><span class="banca">HCPA</span> A causa mais comum de hemorragia digestiva baixa é:</div><div class="alt"><div>A) Angiodisplasia</div><div>B) Doença diverticular</div><div>C) Neoplasia de cólon</div><div>D) Colite isquêmica</div></div><details><summary>Ver resposta</summary><p class="ans">B.</p><p><strong>Doença diverticular</strong> é a causa mais frequente de HDB.</p></details></div>
+<div class="q"><div class="stem"><span class="banca">GHC</span> Sobre o uso de ácido tranexâmico (TXA) na HDA, o ensaio HALT-IT demonstrou:</div><div class="alt"><div>A) Redução significativa de mortalidade</div><div>B) Ausência de benefício de mortalidade e aumento de eventos tromboembólicos</div><div>C) Redução de ressangramento sem riscos</div><div>D) Indicação como primeira linha</div></div><details><summary>Ver resposta</summary><p class="ans">B.</p><p><strong>HALT-IT</strong>: TXA <strong>sem</strong> benefício de mortalidade e com <strong>mais TEV</strong> → não recomendado de rotina.</p></details></div>
+<div class="q"><div class="stem"><span class="banca">Santa Casa</span> Glasgow-Blatchford de 0–1 em paciente com HDA significa:</div><div class="alt"><div>A) Internação em UTI</div><div>B) Necessidade de EDA imediata</div><div>C) Muito baixo risco — candidato a alta com seguimento ambulatorial</div><div>D) Indicação cirúrgica</div></div><details><summary>Ver resposta</summary><p class="ans">C.</p><p><strong>GBS 0–1</strong> = muito baixo risco → alta ambulatorial (ACG 2021).</p></details></div>
+<div class="q"><div class="stem"><span class="banca">AMRIGS</span> Antes de assumir hemorragia digestiva baixa em paciente instável com hematoquezia, é fundamental:</div><div class="alt"><div>A) Iniciar betabloqueador</div><div>B) Excluir HDA de alto fluxo (SNG/EDA)</div><div>C) Realizar cintilografia</div><div>D) Indicar colectomia</div></div><details><summary>Ver resposta</summary><p class="ans">B.</p><p>Hematoquezia maciça pode ser <strong>HDA brisk</strong>; <strong>excluir origem alta</strong> primeiro.</p></details></div>
+</section>
+<section class="panel" id="pega">
+<h2>Pega-ratões</h2>
+<ul>
+<li><span class="em">🩸</span>Transfusão <strong>restritiva Hb &lt; 7</strong> (8 se cardiopata).</li>
+<li><span class="em">⏱️</span>EDA &lt; 24 h na HDA; eritromicina IV pré-EDA.</li>
+<li><span class="em">🎯</span>Terapia endoscópica = Forrest <strong>Ia/Ib/IIa</strong> (dupla terapia).</li>
+<li><span class="em">🫀</span>Varicosa = vasoativo + <strong>ATB desde a admissão</strong>; TIPS precoce no alto risco.</li>
+<li><span class="em">🔻</span>HDB estável → colono <strong>não urgente</strong>; instável → <strong>angio-TC</strong>.</li>
+<li><span class="em">🚫</span><strong>TXA não</strong> (HALT-IT).</li>
+<li><span class="em">🔀</span>Hematoquezia maciça pode ser HDA → excluir alto.</li>
+<li><span class="em">📊</span>GBS 0–1 → alta.</li>
+</ul>
+</section><section class="panel" id="mn">
+<h2>Mnemônicos</h2>
+<div class="box mn"><span class="lbl">🩸 FORREST</span><p>Ia jato · Ib babação · IIa vaso visível · IIb coágulo · IIc hematina · III base limpa. <strong>Tratar I–IIa</strong>.</p></div>
+<div class="box mn"><span class="lbl">🫀 Baveno (varicosa)</span><p><strong>V-A-E-T</strong>: Vasoativo · Antibiótico · EBL/Endoscopia · TIPS precoce no alto risco.</p></div>
+<div class="box mn"><span class="lbl">🔻 HDB 2023</span><p>Estável = colono não urgente · Instável = angio-TC → embolização.</p></div>
+<div class="box mn"><span class="lbl">📊 GBS 0–1</span><p>Casa! (alta ambulatorial).</p></div>
+<p class="foot">// hemorragia digestiva · carolzita · CV 2026 · ACG 2021 (HDA) · Baveno VII · ACG 2023 (HDB) · HALT-IT</p>
+</section>
+</main>
+
+<script>
+document.querySelectorAll('.tab').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    document.getElementById(b.dataset.t).classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Instrumentos Cirúrgicos — Nomenclatura, Classificação & Manuseio — Referência CV 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d1117; --bg2:#161b22; --bg3:#1c2230; --line:#2a3038;
+  --txt:#c9d1d9; --txt2:#8b949e; --txt3:#6e7681;
+  --orange:#ff7b29; --orange-d:#3a2410;
+  --purple:#a371f7; --purple-d:#241a3a;
+  --cyan:#39c5cf; --cyan-d:#0f2e30;
+  --red:#f85149; --green:#3fb950; --yellow:#d29922;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font-family:'IBM Plex Sans',sans-serif;line-height:1.6;font-size:15px;padding-bottom:60px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 18px}
+header{padding:30px 0 16px;border-bottom:1px solid var(--line)}
+h1{font-family:'IBM Plex Serif',serif;font-size:25px;font-weight:600;letter-spacing:-.3px}
+h1 .accent{color:var(--orange)}
+.sub{color:var(--txt2);font-size:13px;margin-top:6px;font-family:'IBM Plex Mono',monospace}
+.tabs{position:sticky;top:0;z-index:20;background:var(--bg);display:flex;gap:4px;overflow-x:auto;padding:10px 18px;border-bottom:1px solid var(--line);scrollbar-width:thin}
+.tabs::-webkit-scrollbar{height:5px}.tabs::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
+.tab{flex:0 0 auto;background:var(--bg2);border:1px solid var(--line);color:var(--txt2);padding:8px 14px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;font-family:'IBM Plex Mono',monospace;transition:.15s}
+.tab:hover{color:var(--txt);border-color:var(--orange)}
+.tab.active{background:var(--orange);color:#0d1117;border-color:var(--orange)}
+.panel{display:none;padding:24px 0;animation:fade .25s}
+.panel.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1}}
+h2{font-family:'IBM Plex Serif',serif;font-size:20px;color:var(--orange);margin:26px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+h2:first-child{margin-top:0}
+h3{font-size:16px;color:var(--txt);margin:18px 0 8px;font-weight:600}
+p{margin:8px 0}
+.lay{color:var(--cyan);font-style:italic;font-size:.93em}
+ul,ol{margin:8px 0 8px 22px}li{margin:4px 0}
+strong{color:#fff;font-weight:600}
+code{font-family:'IBM Plex Mono',monospace;background:var(--bg3);padding:1px 6px;border-radius:4px;font-size:.88em;color:var(--orange)}
+.card{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0}
+.box{border-left:4px solid var(--orange);background:var(--orange-d);border-radius:0 10px 10px 0;padding:12px 16px;margin:14px 0}
+.box.hy{border-left-color:var(--purple);background:var(--purple-d)}
+.box.mn{border-left-color:var(--cyan);background:var(--cyan-d)}
+.box.warn{border-left-color:var(--red);background:#2c1414}
+.box .lbl{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;font-weight:600;margin-bottom:6px;display:block}
+.box .lbl{color:var(--orange)}.box.hy .lbl{color:var(--purple)}.box.mn .lbl{color:var(--cyan)}.box.warn .lbl{color:var(--red)}
+.banca{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:600;padding:1px 7px;border-radius:20px;background:#2a1f44;color:var(--purple);border:1px solid #3a2a5a;margin-left:6px;vertical-align:middle}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--bg3);color:var(--orange);font-family:'IBM Plex Mono',monospace;font-size:11.5px;text-transform:uppercase;letter-spacing:.5px;position:sticky;top:0}
+td strong{color:var(--cyan)}
+.tag{font-family:'IBM Plex Mono',monospace;font-size:11px;padding:2px 8px;border-radius:5px;font-weight:600}
+.t-b{background:#0f2a16;color:var(--green)}
+.t-m{background:#3a1414;color:var(--red)}
+.t-w{background:#3a2e0d;color:var(--yellow)}
+svg{max-width:100%;height:auto;display:block;margin:16px auto;background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:10px}
+.q{background:var(--bg2);border:1px solid var(--line);border-left:4px solid var(--purple);border-radius:0 10px 10px 0;padding:14px 16px;margin:16px 0}
+.q .stem{font-weight:500}
+.alt{margin:8px 0 0 0;padding-left:4px}
+.alt div{padding:3px 0;color:var(--txt2)}
+details{margin-top:10px;border-top:1px dashed var(--line);padding-top:8px}
+summary{cursor:pointer;color:var(--cyan);font-weight:600;font-size:13px;font-family:'IBM Plex Mono',monospace}
+details[open] summary{margin-bottom:6px}
+.ans{color:var(--green);font-weight:600}
+.foot{color:var(--txt3);font-size:11px;text-align:center;margin-top:30px;font-family:'IBM Plex Mono',monospace}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:640px){.grid2{grid-template-columns:1fr}h1{font-size:20px}}
+.pill{display:inline-block;width:11px;height:11px;border-radius:3px;vertical-align:middle;margin-right:5px}
+.legend{font-size:12px;color:var(--txt2);font-family:'IBM Plex Mono',monospace;margin-top:10px}
+.hand{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0}
+.hand>div{background:var(--bg3);border:1px solid var(--line);border-radius:9px;padding:11px 13px;font-size:.92em}
+.hand .L{border-top:3px solid var(--cyan)}
+.hand .R{border-top:3px solid var(--orange)}
+.hand b{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1px;display:block;margin-bottom:5px}
+.hand .L b{color:var(--cyan)}.hand .R b{color:var(--orange)}
+.step{counter-reset:s;list-style:none;margin:10px 0 10px 0}
+.step li{position:relative;padding-left:42px;margin:11px 0;min-height:28px}
+.step li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:0;width:28px;height:28px;background:var(--orange);color:#0d1117;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:.82rem}
+@media(max-width:640px){.hand{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <h1>Instrumentos <span class="accent">Cirúrgicos</span> — Nomenclatura, Classificação &amp; Manuseio</h1>
+  <div class="sub">Referência completa · CV 2026 · Sabiston · Zollinger · Netter · AORN/AST 2024-25 (segurança) · RSI medRxiv 2025</div>
+  <div class="legend"><span class="pill" style="background:var(--orange)"></span>conteúdo geral<span class="pill" style="background:var(--purple);margin-left:14px"></span>alto rendimento / prova<span class="pill" style="background:var(--cyan);margin-left:14px"></span>analogia &amp; explicação simples</div>
+</header>
+<nav class="tabs">
+  <button class="tab active" data-t="vg">🗺️ Classificação Geral</button>
+  <button class="tab" data-t="mesa">🪑 Mesa Cirúrgica</button>
+  <button class="tab" data-t="die">✂️ Diérese</button>
+  <button class="tab" data-t="pin">🗜️ Pinças &amp; Hemostasia</button>
+  <button class="tab" data-t="agu">🪡 Porta-agulhas &amp; Fios</button>
+  <button class="tab" data-t="afa">🖐️ Afastadores</button>
+  <button class="tab" data-t="ene">⚡ Energia &amp; Segurança</button>
+  <button class="tab" data-t="quest">📝 Questões</button>
+  <button class="tab" data-t="pega">🪤 Pega-ratão</button>
+  <button class="tab" data-t="mn">🧠 Mnemônicos</button>
+</nav>
+<main class="wrap">
+
+<section class="panel active" id="vg">
+<h2>Os 4 tempos cirúrgicos fundamentais</h2>
+<p>Todo instrumento existe para servir a um dos <strong>tempos cirúrgicos</strong> — a lógica que organiza qualquer operação, da apendicectomia à cirurgia vascular. <span class="lay">(pensa nos tempos cirúrgicos como as fases de uma receita de bolo: primeiro corta os ingredientes, depois controla o que vaza, depois segura e mostra o que interessa, e no fim junta tudo de novo)</span></p>
+<table>
+<tr><th>Tempo</th><th>O que é</th><th>Instrumentos típicos</th></tr>
+<tr><td><strong>Diérese</strong></td><td>Separar/cortar tecidos para criar acesso</td><td>Bisturi, tesouras (Metzenbaum, Mayo), eletrocautério</td></tr>
+<tr><td><strong>Hemostasia</strong></td><td>Controlar sangramento durante a diérese</td><td>Pinças hemostáticas (mosquito, Kelly, Crile, Pean), eletrocautério, ligaduras</td></tr>
+<tr><td><strong>Preensão &amp; exposição</strong></td><td>Segurar, tracionar e expor o campo</td><td>Pinças de preensão (dente-de-rato, Allis, Babcock), afastadores</td></tr>
+<tr><td><strong>Síntese</strong></td><td>Reconstituir a continuidade dos tecidos</td><td>Porta-agulha, fios, agulhas, grampeadores</td></tr>
+</table>
+<div class="box hy"><span class="lbl">★ tema de prova</span>Bancas RS adoram pedir para <strong>associar um instrumento ao seu tempo cirúrgico</strong> ou identificar o instrumento errado numa lista (ex.: "qual das opções NÃO é um instrumento de hemostasia?"). Decorar a tabela acima resolve a maioria dessas questões. <span class="banca">HCPA</span> <span class="banca">AMRIGS</span></div>
+
+<h3>A regra de ouro: mão direita ativa, mão esquerda expõe</h3>
+<p>Em praticamente toda a instrumentação cirúrgica (destro-operada, que é a maioria dos serviços), vale o princípio geral: <strong>mão direita = mão que corta, dissecca, sutura e maneja o instrumento "ativo"</strong>; <strong>mão esquerda = mão que expõe, traciona e contra-traciona o tecido</strong> para a mão direita enxergar e trabalhar. <span class="lay">(uma mão faz o trabalho fino, a outra segura e puxa o "pano" pra a primeira ver o que está fazendo)</span></p>
+<div class="hand">
+<div class="R"><b>MÃO DIREITA (ativa)</b>
+<ul><li>Bisturi / tesoura de corte</li><li>Porta-agulha</li><li>Pinça hemostática ao ligar/pinçar um vaso</li><li>Eletrocautério / energia</li></ul></div>
+<div class="L"><b>MÃO ESQUERDA (exposição)</b>
+<ul><li>Pinça anatômica / dente-de-rato (contratração)</li><li>Afastador manual</li><li>Pinça de preensão (Allis/Babcock) segurando o espécime</li><li>Aspirador, quando necessário</li></ul></div>
+</div>
+<div class="box warn"><span class="lbl">pegadinha</span>Essa regra descreve o padrão geral do <strong>cirurgião</strong> operando — não confundir com a divisão de tarefas entre cirurgião e instrumentador/auxiliar, que é outra lógica (quem passa, quem afasta, quem corta o fio).</div>
+
+<h3>Anatomia funcional da mão do cirurgião</h3>
+<p>Duas preensões biomecânicas explicam praticamente toda a empunhadura de instrumental fino:</p>
+<ul>
+<li><strong>Pinça de precisão (tripé)</strong> — polegar + indicador + médio opondo-se, como segurar uma caneta. Usada em bisturi (pega de caneta), tesouras finas, pinças em anel (porta-agulha, tesoura) quando a prioridade é <strong>controle fino</strong>.</li>
+<li><strong>Preensão palmar (de força)</strong> — o instrumento é fechado na palma, estabilizado pelos dedos ulnares, com o polegar/indicador livres para ajuste fino. Usada em pega "em arco" do bisturi para incisões longas e, cada vez mais, em porta-agulhas durante pontos contínuos longos.</li>
+</ul>
+<div class="box mn"><span class="lbl">macete</span>Pega de caneta = precisão, cortes curtos e curvos. Pega em arco/palmar = potência e uniformidade, cortes longos e retos — e menos fadiga na mão em cirurgias longas. <span class="lay">(é a diferença entre escrever com uma caneta e cortar um pedaço de papel grande com a mão toda — cada uma serve pra uma coisa)</span></div>
+</section>
+
+<section class="panel" id="mesa">
+<h2>Organização da mesa cirúrgica</h2>
+<p>Duas mesas distintas compõem o campo estéril:</p>
+<table>
+<tr><th>Mesa</th><th>Função</th><th>Quem controla</th></tr>
+<tr><td><strong>Mesa de Mayo</strong></td><td>Fica sobre o paciente; contém apenas os instrumentos de uso <strong>imediato</strong> do tempo cirúrgico em curso</td><td>Instrumentador, a poucos centímetros do campo</td></tr>
+<tr><td><strong>Mesa auxiliar (back table)</strong></td><td>Estoque completo de instrumentais, compressas e fios da caixa cirúrgica</td><td>Instrumentador, mais distante do campo</td></tr>
+</table>
+<p class="lay">(a mesa de Mayo é como a bancada de trabalho de um marceneiro — só as ferramentas que ele vai usar AGORA; a mesa auxiliar é o armário de ferramentas, mais longe, com tudo guardado)</p>
+
+<h3>Sequência lógica de organização na Mayo</h3>
+<ol class="step">
+<li><b>Bisturi e tesouras</b> — primeiro tempo (diérese), ficam na posição mais acessível.</li>
+<li><b>Pinças hemostáticas</b> — prontas para o tempo seguinte (hemostasia), geralmente já montadas em fileira.</li>
+<li><b>Pinças de preensão e afastadores manuais</b> — para o tempo de exposição.</li>
+<li><b>Porta-agulha, fios e agulhas</b> — por último, para o tempo de síntese, preparados só quando o fechamento se aproxima.</li>
+</ol>
+<div class="box hy"><span class="lbl">★ tema de prova</span>A organização da mesa <strong>segue a ordem cronológica dos tempos cirúrgicos</strong> — não é aleatória. Isso reduz tempo cirúrgico e risco de instrumento perdido/contado errado. <span class="banca">GHC</span></div>
+
+<h3>Contagem inicial</h3>
+<p>Antes da incisão, instrumentador e circulante realizam a <strong>contagem inicial audível de compressas, agulhas e instrumentais</strong> (contagem "de base"), repetida antes do fechamento de cavidades e ao final — ponto central da prevenção de <strong>item cirúrgico retido</strong> (detalhado na aba Energia &amp; Segurança).</p>
+</section>
+
+<section class="panel" id="die">
+<h2>Diérese — bisturi e tesouras</h2>
+<h3>Bisturi: cabos e lâminas</h3>
+<table>
+<tr><th>Cabo</th><th>Uso</th></tr>
+<tr><td><strong>Nº 3</strong></td><td>O mais usado — recebe lâminas 10, 11, 12, 15</td></tr>
+<tr><td><strong>Nº 4</strong></td><td>Maior, mais robusto — recebe lâminas 20 a 25 (grandes incisões de pele/fáscia)</td></tr>
+<tr><td><strong>Nº 7</strong></td><td>Fino, alongado — microcirurgia, vascular, plástica</td></tr>
+</table>
+<table>
+<tr><th>Lâmina</th><th>Formato</th><th>Uso típico</th></tr>
+<tr><td><strong>10</strong></td><td>Curva clássica</td><td>Incisão de pele padrão</td></tr>
+<tr><td><strong>11</strong></td><td>Triangular, ponta fina</td><td>Incisões puntiformes — drenagem de abscesso, arteriotomia, portais de trocarte</td></tr>
+<tr><td><strong>15</strong></td><td>Pequena curva</td><td>Incisões curtas e delicadas — pediatria, plástica, vascular periférico</td></tr>
+<tr><td><strong>20-23</strong></td><td>Grandes, curvas</td><td>Incisões extensas de pele/fáscia (cabo 4)</td></tr>
+</table>
+
+<h3>Empunhadura do bisturi</h3>
+<div class="grid2">
+<div class="card"><strong>Pega de caneta</strong><p>Polegar-indicador-médio, tripé de precisão. Incisões curtas, curvas, delicadas (pele fina, plástica).</p></div>
+<div class="card"><strong>Pega em arco (violino)</strong><p>Cabo apoiado na palma, dedos ao longo da lâmina, movimento do ombro/cotovelo. Incisões longas e retas, profundidade uniforme (laparotomia mediana).</p></div>
+</div>
+
+<h3>Tesouras</h3>
+<table>
+<tr><th>Tesoura</th><th>Características</th><th>Uso</th></tr>
+<tr><td><strong>Metzenbaum</strong></td><td>Delicada, ponta romba e curva, lâminas finas</td><td><strong>Dissecção</strong> de tecidos finos/planos (subcutâneo, peritônio, pedículos) — nunca para cortar fio ou gaze (embota a ponta)</td></tr>
+<tr><td><strong>Mayo</strong></td><td>Robusta, reta ou curva</td><td><strong>Corte grosseiro</strong> — fáscia, fios de sutura, tecido espesso</td></tr>
+<tr><td><strong>Íris</strong></td><td>Pequena, pontas finas retas</td><td>Microcirurgia, ajustes finos, oftalmologia</td></tr>
+<tr><td><strong>Potts-Smith</strong></td><td>Angulada em 45-60°, ponta fina</td><td>Arteriotomias e cirurgia vascular</td></tr>
+</table>
+<div class="box warn"><span class="lbl">pegadinha clássica</span>Usar <strong>Metzenbaum para cortar fio</strong> é um dos erros mais cobrados e mais cometidos na prática — embota a lâmina de dissecção fina em segundos. Fio e gaze são sempre trabalho da <strong>Mayo</strong>.</div>
+
+<h3>Instrumentação mão D × mão E na diérese</h3>
+<div class="hand">
+<div class="R"><b>MÃO DIREITA</b><ul><li>Bisturi ou tesoura de corte</li></ul></div>
+<div class="L"><b>MÃO ESQUERDA</b><ul><li>Pinça anatômica/dente-de-rato fixando e contratracionando o tecido a ser cortado</li></ul></div>
+</div>
+</section>
+
+<section class="panel" id="pin">
+<h2>Pinças — preensão e hemostasia</h2>
+<h3>Pinças de preensão (dissecção/tração)</h3>
+<table>
+<tr><th>Pinça</th><th>Tipo</th><th>Uso</th></tr>
+<tr><td><strong>Anatômica (DeBakey)</strong></td><td>Atraumática, sem dente</td><td>Tecido delicado — vasos, intestino, estruturas que ficam no paciente</td></tr>
+<tr><td><strong>Dente-de-rato</strong></td><td>Traumática, com dentes</td><td>Pele, fáscia, tecido resistente — segura firme com menos força de esmagamento</td></tr>
+<tr><td><strong>Allis</strong></td><td>Traumática, serrilhada</td><td>Segura o <strong>espécime a ser ressecado</strong> — nunca em tecido que permanecerá no paciente</td></tr>
+<tr><td><strong>Babcock</strong></td><td>Atraumática, fenestrada, ponta arredondada</td><td>Segura estruturas que <strong>ficam</strong> — alça intestinal, apêndice, trompa, ureter</td></tr>
+<tr><td><strong>Foerster/Duval</strong></td><td>Em anel, fenestrada</td><td>Segura peça cirúrgica, compressa ou órgão maior (ex.: vesícula)</td></tr>
+</table>
+<div class="box mn"><span class="lbl">macete</span>Allis <strong>sai</strong> com a peça (vai embora), Babcock <strong>fica</strong> com o paciente (não traumatiza). <span class="lay">(pensa no Allis como uma garra que agarra o lixo pra jogar fora, e o Babcock como uma mão gentil que segura algo que você quer guardar intacto)</span></div>
+
+<h3>Pinças hemostáticas</h3>
+<table>
+<tr><th>Pinça</th><th>Tamanho/Formato</th><th>Uso</th></tr>
+<tr><td><strong>Mosquito (Halsted)</strong></td><td>Pequena, delicada</td><td>Vasos finos, subcutâneo</td></tr>
+<tr><td><strong>Kelly</strong></td><td>Média, serrilha parcial na ponta</td><td>Vasos e pedículos de médio calibre</td></tr>
+<tr><td><strong>Crile</strong></td><td>Média, serrilha em todo o comprimento</td><td>Semelhante à Kelly, pega mais firme</td></tr>
+<tr><td><strong>Rochester-Pean</strong></td><td>Grande, sem serrilha completa</td><td>Pedículos maiores (mesoapêndice, omento)</td></tr>
+<tr><td><strong>Mixter</strong></td><td>Ângulo reto (90°)</td><td>Dissecção retrovascular/retrobiliar; passar fio ao redor de estrutura (ex.: ducto cístico, Calot)</td></tr>
+</table>
+
+<h3>Pinças vasculares</h3>
+<table>
+<tr><th>Pinça</th><th>Característica</th><th>Uso</th></tr>
+<tr><td><strong>Bulldog</strong></td><td>Clampe atraumático pequeno, mola própria</td><td>Oclusão temporária de vasos finos/médios (ex.: durante anastomose de FAV)</td></tr>
+<tr><td><strong>DeBakey vascular</strong></td><td>Ramos longos, dupla fileira de dentes finos atraumáticos</td><td>Clampeamento de aorta e grandes vasos sem lesar a íntima</td></tr>
+<tr><td><strong>Satinsky</strong></td><td>Angulada, clampe parcial (tangencial)</td><td>Clampeamento lateral/parcial (ex.: cava, aorta em anastomose término-lateral)</td></tr>
+</table>
+<div class="box hy"><span class="lbl">★ tema de prova — subespecialidade vascular</span>A diferença entre um clampe vascular <strong>atraumático</strong> (DeBakey, com múltiplas fileiras finas de dentes que distribuem a força) e uma pinça hemostática comum (que esmagaria a parede do vaso) é pergunta clássica de prova para quem mira cirurgia vascular. <span class="banca">R3 vascular</span> <span class="banca">Santa Casa POA</span></div>
+
+<h3>Técnica de preensão da pinça</h3>
+<p>Empunhadura em <strong>tripé</strong>: polegar num anel, <strong>anular</strong> (não o médio) no outro anel, indicador e médio estabilizando a haste próximo à articulação. Isso permite abrir/fechar a pinça sem tirar os dedos dos anéis — controle fino e rápido. <span class="lay">(é como segurar uma tesourinha de unha bem devagar, com o indicador guiando a ponta pra não errar)</span></p>
+</section>
+
+<section class="panel" id="agu">
+<h2>Porta-agulhas, agulhas e fios</h2>
+<h3>Porta-agulhas</h3>
+<table>
+<tr><th>Porta-agulha</th><th>Característica</th><th>Uso</th></tr>
+<tr><td><strong>Mayo-Hegar</strong></td><td>Robusto, uso geral</td><td>Sutura de pele, fáscia, a maioria dos tecidos</td></tr>
+<tr><td><strong>Crile-Wood</strong></td><td>Mais fino e longo</td><td>Sutura delicada, espaços profundos</td></tr>
+<tr><td><strong>Ryder</strong></td><td>Muito fino</td><td>Microcirurgia, anastomose vascular fina</td></tr>
+</table>
+<h3>Empunhadura do porta-agulha</h3>
+<div class="grid2">
+<div class="card"><strong>Pega em anel (tipo tesoura)</strong><p>Polegar e anular nos anéis. Máximo controle e trava de segurança, mas pode gerar fadiga digital em pontos contínuos longos.</p></div>
+<div class="card"><strong>Pega palmar</strong><p>Instrumento fechado na palma, sem os dedos nos anéis. Mais rápida para suturas contínuas longas, reduz fadiga — cada vez mais usada por cirurgiões experientes.</p></div>
+</div>
+
+<h3>Agulhas — ponta e curvatura</h3>
+<table>
+<tr><th>Tipo de ponta</th><th>Formato</th><th>Uso</th></tr>
+<tr><td><strong>Cortante (cutting)</strong></td><td>Triangular, aresta voltada para dentro da curva</td><td>Pele e tecidos densos — mas pode "rasgar" na direção errada</td></tr>
+<tr><td><strong>Reverse-cutting</strong></td><td>Triangular, aresta voltada para fora</td><td>Pele — reduz risco de a sutura "cortar" o tecido (menos rasgo)</td></tr>
+<tr><td><strong>Cônica (tapered/atraumática)</strong></td><td>Ponta arredondada, sem corte</td><td>Vísceras, vasos, peritônio, tecidos moles — não deve cortar</td></tr>
+<tr><td><strong>Romba (blunt)</strong></td><td>Ponta sem capacidade de perfurar tecido firme</td><td>Fígado, baço, rim — reduz risco de picada acidental em tecido friável</td></tr>
+</table>
+<p>Curvaturas mais usadas: <strong>3/8 de círculo</strong> (a mais versátil, uso geral), 1/2 círculo (espaços profundos/estreitos), 1/4 círculo (microcirurgia/oftalmo).</p>
+
+<h3>Classificação dos fios de sutura</h3>
+<table>
+<tr><th>Critério</th><th>Categorias</th><th>Exemplos</th></tr>
+<tr><td>Estrutura</td><td>Monofilamento (menos atrito/infecção, mais memória) × Multifilamento/trançado (mais maleável, mais atrito e reservatório bacteriano)</td><td>Mono: Prolene, Nylon, PDS, Monocryl. Multi: Seda, Vicryl, Algodão</td></tr>
+<tr><td>Absorção</td><td>Absorvível (perde força tênsil em dias-semanas) × Inabsorvível (permanece)</td><td>Absorvível: Categute, Vicryl, Monocryl, PDS. Inabsorvível: Seda, Nylon, Prolene, Algodão</td></tr>
+<tr><td>Calibre (USP)</td><td>Quanto mais zeros, mais fino</td><td>0/1 (grosso, fáscia) → 2-0/3-0 (vísceras/subcutâneo) → 4-0/5-0 (pele/vasos médios) → 6-0 a 9-0 (microcirurgia/vascular fino)</td></tr>
+</table>
+
+<h3>Tabela de fios — o que e quando</h3>
+<table>
+<tr><th>Situação</th><th>Fio</th><th>Observação</th></tr>
+<tr><td>Pele</td><td>Nylon/Prolene 3-0 a 5-0 (pontos separados) ou Monocryl subcuticular</td><td>Monocryl para resultado estético, sem necessidade de retirada</td></tr>
+<tr><td>Aponeurose/fáscia</td><td>PDS ou Náilon 0/1 (contínuo)</td><td>Fio de absorção lenta ou inabsorvível — razão fio:ferida 4:1</td></tr>
+<tr><td>Vísceras/anastomose entérica</td><td>Vicryl ou PDS 3-0/4-0</td><td>Absorvível — plano interno hemostático + externo seromuscular</td></tr>
+<tr><td>Ligadura de pedículos</td><td>Vicryl 0/2-0 ou algodão</td><td>Vaso a vaso ou em massa, conforme o pedículo</td></tr>
+<tr><td>Anastomose vascular</td><td>Prolene monofilamento 5-0/6-0 (vasos médios) a 7-0/8-0/9-0 (microcirurgia)</td><td>Monofilamento sempre — desliza sem serrar a íntima</td></tr>
+<tr><td>Maturação de estoma</td><td>Vicryl 3-0</td><td>Eversão mucocutânea (técnica de Brooke)</td></tr>
+</table>
+<div class="box mn"><span class="lbl">macete dos fios</span>Quem fica dentro do corpo e precisa sumir → absorvível. Quem precisa deslizar sem serrar (vaso, microcirurgia) → monofilamento. Quanto mais fino o tecido/vaso, mais zeros no fio. <span class="lay">(pensa nos zeros como "quanto mais zero, mais fininho o cabelo do fio")</span></div>
+</section>
+
+<section class="panel" id="afa">
+<h2>Afastadores</h2>
+<h3>Manuais (mão do auxiliar)</h3>
+<table>
+<tr><th>Afastador</th><th>Formato</th><th>Uso</th></tr>
+<tr><td><strong>Farabeuf</strong></td><td>Pequeno, dupla lâmina em "L"</td><td>Planos superficiais — pele, subcutâneo</td></tr>
+<tr><td><strong>Richardson</strong></td><td>Lâmina retangular em ângulo</td><td>Parede abdominal, planos médios</td></tr>
+<tr><td><strong>Deaver</strong></td><td>Curvo, largo</td><td>Vísceras profundas — afasta fígado, alças</td></tr>
+<tr><td><strong>Doyen</strong></td><td>Curvo, formato de "S"</td><td>Campo pélvico/suprapúbico</td></tr>
+</table>
+<h3>Autoestáticos (liberam a mão do auxiliar)</h3>
+<table>
+<tr><th>Afastador</th><th>Uso</th></tr>
+<tr><td><strong>Gelpi</strong></td><td>Pequeno, ponta em gancho — superficial/subcutâneo</td></tr>
+<tr><td><strong>Weitlaner</strong></td><td>Pequeno-médio — cirurgia cervical, superficial</td></tr>
+<tr><td><strong>Balfour</strong></td><td>Abdominal, com valva central opcional para bexiga</td></tr>
+<tr><td><strong>Bookwalter / Omni</strong></td><td>Sistema em anel com múltiplas lâminas fixáveis — grandes cirurgias abdominais (Whipple, cirurgia hepatobiliar)</td></tr>
+</table>
+<div class="box hy"><span class="lbl">★ tema de prova</span>Afastadores autoestáticos <strong>reduzem a necessidade de segundo auxiliar</strong> e são especialmente valorizados em serviços com equipe reduzida — ponto frequentemente cobrado em questões sobre organização de sala cirúrgica. <span class="banca">GHC</span></div>
+<p class="lay">(um afastador manual é como pedir pra um amigo segurar a cortina aberta pra você ver; o autoestático é uma presilha que prende a cortina sozinha, e seu amigo fica livre pra ajudar em outra coisa)</p>
+</section>
+
+<section class="panel" id="ene">
+<h2>Energia cirúrgica</h2>
+<table>
+<tr><th>Dispositivo</th><th>Mecanismo</th><th>Observação de segurança</th></tr>
+<tr><td><strong>Monopolar</strong></td><td>Corrente passa do bisturi elétrico, pelo paciente, até a placa de retorno</td><td>Corta e coagula; risco de queimadura no local da placa e queimaduras capacitivas em laparoscopia</td></tr>
+<tr><td><strong>Bipolar</strong></td><td>Corrente circula só entre as duas pontas da pinça</td><td>Mais seguro perto de nervos e estruturas nobres; não precisa de placa de retorno</td></tr>
+<tr><td><strong>LigaSure (vessel sealing)</strong></td><td>Compressão + energia funde colágeno/elastina da parede vascular</td><td>Sela vasos até ~7 mm — substitui ligadura manual em muitos tempos cirúrgicos</td></tr>
+<tr><td><strong>Bisturi harmônico (ultrassônico)</strong></td><td>Vibração mecânica de alta frequência corta e coagula por fricção</td><td>Menor dispersão térmica lateral, sem corrente elétrica atravessando o paciente</td></tr>
+</table>
+
+<h2>Segurança na passagem de instrumentos — zona neutra</h2>
+<p>A <strong>zona neutra (neutral zone / hands-free technique)</strong> é uma área demarcada no campo estéril (cuba, tapete magnético) onde o instrumentador deposita o instrumento cortante/perfurante para o cirurgião pegar — <strong>nunca mão a mão diretamente</strong>. <span class="lay">(em vez de passar a tesoura de mão em mão, os dois combinam um "pratinho" onde um deixa e o outro pega, pra ninguém se cortar sem querer)</span></p>
+<div class="box hy"><span class="lbl">★ dado atual — segurança do campo cirúrgico</span>Nos EUA ocorrem cerca de <strong>384.000 lesões percutâneas/ano</strong> em profissionais de saúde; <strong>23% delas em procedimentos cirúrgicos</strong>. Entre as lesões cirúrgicas, <strong>59% acometem o cirurgião</strong> e <strong>19% o instrumentador (1º auxílio instrumental)</strong>. Agulhas de sutura cortantes respondem por <strong>51-77%</strong> das lesões, principalmente no <strong>fechamento de fáscia/músculo</strong>. Uso da zona neutra em ≥75% dos casos conferiu <strong>59% de proteção</strong> em procedimentos com perda sanguínea ≥100 mL (AST/AORN, 2024-25). <span class="banca">Bancas RS</span></div>
+
+<h2>Prevenção de item cirúrgico retido (RSI)</h2>
+<p>A <strong>contagem de compressas, agulhas e instrumentais</strong> (inicial, antes do fechamento de cavidades, e final) é a principal barreira contra o item cirúrgico retido — evento considerado "nunca deveria acontecer" (never event).</p>
+<div class="box hy"><span class="lbl">★ dado atual</span>Estudo descritivo dos EUA (medRxiv 2025) estimou incidência combinada de <strong>1,34 por 10.000 procedimentos</strong> entre 2016-2023, em queda de 1,63 (2016) para 1,08 (2023) por 10.000 — com platô durante 2020-2021 (pandemia). Maior risco em <strong>laparotomia exploradora, transplante, laparoscopia diagnóstica e cirurgia neuro/coluna</strong> (todas &gt;2,0/10.000). <span class="banca">HCPA</span> <span class="banca">PUC-RS</span></div>
+<p>Fatores de risco clássicos (Gawande et al.): <strong>cirurgia de emergência</strong>, <strong>mudança não planejada de procedimento</strong> intraoperatória e <strong>IMC elevado</strong>. Adjuntos tecnológicos (código de barras, radiofrequência/RFID) reduzem erro, mas <strong>não substituem</strong> a contagem manual confiável e a inspeção da cavidade antes do fechamento.</p>
+<div class="box warn"><span class="lbl">pegadinha</span>A "contagem falso-negativa" (contagem que parece correta mas há retenção) é o cenário <strong>mais perigoso</strong> — por isso a inspeção visual da cavidade pelo cirurgião antes de fechar é etapa obrigatória, independentemente da contagem numérica bater.</div>
+</section>
+
+<section class="panel" id="quest">
+<h2>Questões — estilo das bancas RS</h2>
+<p class="sub" style="margin-bottom:14px">Itens originais no estilo das bancas (não reprodução literal de provas).</p>
+
+<div class="q"><div class="stem"><span class="banca">HCPA</span> Durante uma colecistectomia, o auxiliar utiliza uma tesoura Metzenbaum para cortar o fio de reparo da vesícula. A principal consequência técnica dessa escolha é:</div><div class="alt"><div>A) Nenhuma, tesouras são intercambiáveis</div><div>B) Embotamento da lâmina fina de dissecção</div><div>C) Maior risco de infecção</div><div>D) Aumento do tempo cirúrgico apenas</div></div><details><summary>Ver resposta</summary><p class="ans">B.</p><p>A <strong>Metzenbaum</strong> é desenhada para dissecção delicada; cortar fio ou gaze embota rapidamente sua lâmina fina. Fio é sempre trabalho da <strong>Mayo</strong>.</p></details></div>
+
+<div class="q"><div class="stem"><span class="banca">PUC-RS</span> Em relação à pinça de Allis e à pinça de Babcock, é correto afirmar:</div><div class="alt"><div>A) Ambas são atraumáticas</div><div>B) A Allis segura estruturas que permanecerão no paciente</div><div>C) A Babcock é fenestrada e atraumática, usada em estruturas que ficam no paciente</div><div>D) São a mesma pinça com nomes diferentes</div></div><details><summary>Ver resposta</summary><p class="ans">C.</p><p>A <strong>Babcock</strong> é atraumática e fenestrada, indicada para estruturas que permanecem (alça intestinal, apêndice). A <strong>Allis</strong> é traumática/serrilhada e deve ser reservada ao espécime a ser ressecado.</p></details></div>
+
+<div class="q"><div class="stem"><span class="banca">Santa Casa</span> Sobre clampes vasculares atraumáticos tipo DeBakey, a característica que permite o clampeamento de grandes vasos sem lesar a íntima é:</div><div class="alt"><div>A) Ponta serrilhada única e agressiva</div><div>B) Dupla fileira de dentes finos que distribuem a força de compressão</div><div>C) Ausência total de contato com a parede vascular</div><div>D) Uso exclusivo com energia bipolar</div></div><details><summary>Ver resposta</summary><p class="ans">B.</p><p>A dupla fileira de dentes finos <strong>distribui</strong> a força de compressão ao longo de uma área maior, reduzindo o trauma pontual à parede do vaso.</p></details></div>
+
+<div class="q"><div class="stem"><span class="banca">GHC</span> A zona neutra (hands-free technique) na passagem de instrumentos cortantes tem como objetivo principal:</div><div class="alt"><div>A) Acelerar o tempo cirúrgico</div><div>B) Evitar contato simultâneo de duas mãos com o mesmo instrumento cortante</div><div>C) Reduzir custo de material cirúrgico</div><div>D) Substituir a necessidade de contagem de compressas</div></div><details><summary>Ver resposta</summary><p class="ans">B.</p><p>A zona neutra evita que cirurgião e instrumentador manipulem o mesmo instrumento cortante <strong>ao mesmo tempo</strong>, reduzindo lesões percutâneas.</p></details></div>
+
+<div class="q"><div class="stem"><span class="banca">AMRIGS</span> Em relação à agulha de sutura, a ponta cônica (tapered/atraumática) é preferida em:</div><div class="alt"><div>A) Pele</div><div>B) Fáscia densa</div><div>C) Vísceras e vasos</div><div>D) Tecido cicatricial fibroso</div></div><details><summary>Ver resposta</summary><p class="ans">C.</p><p>A ponta cônica não corta o tecido — ideal para <strong>vísceras, vasos e peritônio</strong>, onde um corte inadvertido geraria sangramento ou deiscência.</p></details></div>
+
+<div class="q"><div class="stem"><span class="banca">HCPA</span> Sobre a numeração USP dos fios de sutura, é correto afirmar que:</div><div class="alt"><div>A) Quanto mais zeros, mais grosso o fio</div><div>B) Quanto mais zeros, mais fino o fio</div><div>C) A numeração não se relaciona ao calibre</div><div>D) 0 é o fio mais fino disponível</div></div><details><summary>Ver resposta</summary><p class="ans">B.</p><p>Na escala USP, <strong>mais zeros = fio mais fino</strong> (ex.: 4-0 é mais fino que 2-0; 6-0 é mais fino que 4-0).</p></details></div>
+
+<div class="q"><div class="stem"><span class="banca">PUC-RS</span> A principal barreira para prevenção de item cirúrgico retido, mesmo com adjuntos tecnológicos (RFID, código de barras) disponíveis, continua sendo:</div><div class="alt"><div>A) A radiografia de rotina em todo procedimento</div><div>B) A contagem manual confiável associada à inspeção da cavidade pelo cirurgião</div><div>C) O uso exclusivo de compressas com marcador radiopaco</div><div>D) A experiência isolada do circulante de sala</div></div><details><summary>Ver resposta</summary><p class="ans">B.</p><p>Tecnologia é <strong>adjunto</strong>, não substitui a contagem manual confiável nem a inspeção visual da cavidade antes do fechamento — reforçado pela literatura mais recente sobre RSI.</p></details></div>
+
+<div class="q"><div class="stem"><span class="banca">Santa Casa</span> Um cirurgião opta por pega palmar (em vez de pega em anel) do porta-agulha durante uma sutura contínua longa de aponeurose. A justificativa mais adequada é:</div><div class="alt"><div>A) Maior precisão em pontos isolados</div><div>B) Redução de fadiga digital em suturas contínuas longas</div><div>C) Obrigatoriedade em todo tipo de sutura</div><div>D) Substituição da necessidade de porta-agulha</div></div><details><summary>Ver resposta</summary><p class="ans">B.</p><p>A pega palmar reduz a fadiga digital em movimentos repetitivos de suturas contínuas longas, mantendo velocidade sem sacrificar controle relevante nesse contexto.</p></details></div>
+
+</section>
+
+<section class="panel" id="pega">
+<h2>Pega-ratões</h2>
+<ul>
+<li><span class="em">✂️</span>Metzenbaum <strong>nunca</strong> corta fio ou gaze — só a Mayo.</li>
+<li><span class="em">🗜️</span>Allis <strong>sai</strong> com o espécime; Babcock <strong>fica</strong> com o paciente.</li>
+<li><span class="em">💉</span>Ponta cônica (tapered) para vísceras/vasos; cortante para pele/tecido denso.</li>
+<li><span class="em">🧵</span>Mais zeros = fio <strong>mais fino</strong> (não mais grosso).</li>
+<li><span class="em">🩸</span>Clampe vascular atraumático ≠ pinça hemostática comum — dupla fileira de dentes finos distribui a força.</li>
+<li><span class="em">🛡️</span>Zona neutra evita contato simultâneo de duas mãos com instrumento cortante — não elimina a necessidade de contagem.</li>
+<li><span class="em">🔢</span>Contagem "falso-negativa" é o cenário mais perigoso de item retido — inspeção visual da cavidade é sempre obrigatória.</li>
+<li><span class="em">✋</span>Regra geral: mão direita ativa (corta/sutura), mão esquerda expõe (contratração) — mas isso descreve o cirurgião, não a divisão de papéis da equipe.</li>
+</ul>
+</section>
+
+<section class="panel" id="mn">
+<h2>Mnemônicos</h2>
+<div class="box mn"><span class="lbl">🗺️ 4 tempos cirúrgicos</span><p><strong>D</strong>iérese → <strong>H</strong>emostasia → <strong>P</strong>reensão/exposição → <strong>S</strong>íntese. <strong>"D-H-P-S"</strong> — do corte ao fechamento.</p></div>
+<div class="box mn"><span class="lbl">🗜️ Allis × Babcock</span><p>A de Allis = <strong>A</strong>deus (sai com a peça). B de Babcock = fica <strong>B</strong>em guardado (permanece no paciente).</p></div>
+<div class="box mn"><span class="lbl">🪡 Zeros do fio</span><p>Quanto mais zero, mais fino o "cabelo" do fio — 6-0 é um fio de cabelo, 0 é quase um cordão.</p></div>
+<div class="box mn"><span class="lbl">✋ Mão D × mão E</span><p><strong>D</strong>ireita = <strong>D</strong>issecca/corta/sutura (ativa). <strong>E</strong>squerda = <strong>E</strong>xpõe e contra<strong>t</strong>rai.</p></div>
+<div class="box mn"><span class="lbl">🛡️ Zona neutra</span><p>Nunca mão a mão — sempre "pratinho": um deixa, o outro pega.</p></div>
+<p class="foot">// instrumentos cirúrgicos — nomenclatura, classificação e manuseio · carolzita · CV 2026 · Sabiston · Zollinger · Netter · AST/AORN sharps safety (2024-25) · RSI incidence medRxiv (2025) · Gawande et al., NEJM 2003</p>
+</section>
+
+</main>
+
+<script>
+document.querySelectorAll('.tab').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    document.getElementById(b.dataset.t).classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+});
+</script>
+</body>
+</html>
