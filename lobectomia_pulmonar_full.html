@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="cz-tema" content="Lobectomia Pulmonar">
+<meta name="cz-grupo" content="Cirurgia Torácica">
+<meta name="cz-tags" content="lobectomia, câncer de pulmão, hilo pulmonar, VATS, toracotomia, ppoFEV1, torção do lobo médio, linfadenectomia mediastinal">
+<meta name="cz-ordem" content="36">
+<title>Lobectomia Pulmonar — carolzita</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#08080c; --bg2:#101019; --bg3:#161622;
+  --line:#26263a; --txt:#e6e6f0; --txt2:#9a9ab0;
+  --laranja:#f97316; --roxo:#a855f7; --ciano:#22d3ee;
+  --vermelho:#ef4444; --verde:#22c55e;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;font-size:15.5px;line-height:1.65;padding-bottom:80px}
+.wrap{max-width:980px;margin:0 auto;padding:0 18px}
+
+header{padding:52px 0 30px;border-bottom:1px solid var(--line);margin-bottom:26px}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--laranja);margin-bottom:12px}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(28px,5vw,46px);line-height:1.08;letter-spacing:-.02em}
+.sub{color:var(--txt2);margin-top:12px;font-size:15px;max-width:70ch}
+.refs{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--txt2);margin-top:18px;line-height:1.9}
+
+.legenda{display:flex;flex-wrap:wrap;gap:14px;margin:22px 0 6px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--txt2)}
+.legenda span{display:flex;align-items:center;gap:6px}
+.dot{width:9px;height:9px;border-radius:2px;display:inline-block}
+
+section{border:1px solid var(--line);border-radius:12px;margin-bottom:14px;background:var(--bg2);overflow:hidden}
+.sec-head{display:flex;align-items:center;gap:14px;padding:17px 20px;cursor:pointer;user-select:none;transition:background .15s}
+.sec-head:hover{background:var(--bg3)}
+.sec-head:focus-visible{outline:2px solid var(--laranja);outline-offset:-2px}
+.num{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--laranja);border:1px solid var(--laranja);border-radius:4px;padding:2px 7px;flex-shrink:0}
+.sec-head h2{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;flex:1;letter-spacing:-.01em}
+.chev{color:var(--txt2);font-size:13px;transition:transform .2s}
+section.open .chev{transform:rotate(90deg)}
+.sec-body{display:none;padding:4px 20px 24px}
+section.open .sec-body{display:block}
+
+h3{font-family:'Syne',sans-serif;font-size:14.5px;font-weight:700;color:var(--laranja);margin:22px 0 9px;letter-spacing:.01em}
+h3:first-child{margin-top:8px}
+h4{font-size:13.5px;font-weight:600;color:var(--txt);margin:15px 0 6px}
+p{margin-bottom:11px}
+ul,ol{margin:0 0 12px 20px}
+li{margin-bottom:6px}
+b,strong{color:#fff;font-weight:600}
+.pq{color:var(--txt2);font-style:italic;font-weight:400}
+code{font-family:'JetBrains Mono',monospace;font-size:12.5px;background:var(--bg3);padding:1px 6px;border-radius:4px;color:var(--ciano)}
+
+.box{border-left:3px solid var(--laranja);background:rgba(249,115,22,.06);padding:13px 16px;border-radius:0 8px 8px 0;margin:14px 0}
+.banca{border-left:3px solid var(--roxo);background:rgba(168,85,247,.07);padding:13px 16px;border-radius:0 8px 8px 0;margin:14px 0}
+.banca .tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--roxo);display:block;margin-bottom:7px}
+.mnemo{border-left:3px solid var(--ciano);background:rgba(34,211,238,.07);padding:13px 16px;border-radius:0 8px 8px 0;margin:14px 0}
+.mnemo .tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ciano);display:block;margin-bottom:7px}
+.alerta{border-left:3px solid var(--vermelho);background:rgba(239,68,68,.07);padding:13px 16px;border-radius:0 8px 8px 0;margin:14px 0}
+.alerta .tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--vermelho);display:block;margin-bottom:7px}
+.vasc{border-left:3px solid var(--verde);background:rgba(34,197,94,.07);padding:13px 16px;border-radius:0 8px 8px 0;margin:14px 0}
+.vasc .tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--verde);display:block;margin-bottom:7px}
+
+.tbl-wrap{overflow-x:auto;margin:14px 0;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:540px}
+th{background:var(--bg3);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}
+td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td:first-child{color:#fff;font-weight:500}
+
+.passo{display:flex;gap:14px;margin-bottom:15px;padding-bottom:15px;border-bottom:1px dashed var(--line)}
+.passo:last-child{border-bottom:none}
+.passo-n{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--laranja);font-weight:700;flex-shrink:0;width:26px;padding-top:2px}
+.maos{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:9px}
+.mao{background:var(--bg3);border-radius:7px;padding:9px 12px;font-size:12.5px}
+.mao .lbl{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--txt2);display:block;margin-bottom:4px}
+@media(max-width:620px){.maos{grid-template-columns:1fr}}
+
+.q{margin-bottom:20px;padding-bottom:18px;border-bottom:1px dashed var(--line)}
+.q:last-child{border-bottom:none;padding-bottom:0}
+.q-banca{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--roxo);display:block;margin-bottom:7px}
+.q-alt{margin:4px 0 0 4px;font-size:14px}
+.q-resp{margin-top:10px;background:var(--bg3);border-radius:7px;padding:10px 13px;font-size:13.5px}
+.q-resp b{color:var(--verde)}
+
+.ctrl{display:flex;gap:9px;margin-bottom:18px}
+.ctrl button{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;background:var(--bg2);color:var(--txt2);border:1px solid var(--line);border-radius:7px;padding:8px 14px;cursor:pointer;transition:.15s}
+.ctrl button:hover{color:var(--laranja);border-color:var(--laranja)}
+footer{margin-top:34px;padding-top:20px;border-top:1px solid var(--line);font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--txt2);line-height:1.9}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Cirurgia Torácica · Resumo 36</div>
+  <h1>Lobectomia pulmonar</h1>
+  <p class="sub">Indicação oncológica e benigna, anatomia do hilo aplicada à dissecção, ordem de ligadura veia–artéria–brônquio, VATS × toracotomia, linfadenectomia mediastinal e as duas armadilhas que mais caem: ppoFEV1 mal calculado e torção do lobo remanescente.</p>
+  <div class="refs">
+    Sabiston 21ª ed. · Zollinger's Atlas 11ª ed. · Netter 8ª ed.<br>
+    NCCN Guidelines Non-Small Cell Lung Cancer v2024 · IASLC Lymph Node Map · ACCP Physiologic Evaluation (CHEST 2013) · BTS Guideline for Lung Cancer Fitness for Surgery<br>
+    JCOG0802 e CALGB 140503 (NEJM 2022/2023, ressecção sublobar × lobectomia) · VIOLET Trial (Lancet Respir Med 2022, VATS × toracotomia aberta)
+  </div>
+  <div class="legenda">
+    <span><i class="dot" style="background:var(--laranja)"></i> conteúdo</span>
+    <span><i class="dot" style="background:var(--roxo)"></i> alto rendimento / banca</span>
+    <span><i class="dot" style="background:var(--ciano)"></i> mnemônico</span>
+    <span><i class="dot" style="background:var(--verde)"></i> nota vascular</span>
+    <span><i class="dot" style="background:var(--vermelho)"></i> armadilha</span>
+  </div>
+</header>
+
+<div class="ctrl">
+  <button onclick="todas(true)">Abrir tudo</button>
+  <button onclick="todas(false)">Fechar tudo</button>
+</div>
+
+<!-- 01 -->
+<section class="open">
+  <div class="sec-head" tabindex="0"><span class="num">01</span><h2>Quadro clínico e indicações</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <h3>Indicação principal: câncer de pulmão de não pequenas células (CPNPC)</h3>
+    <p>Lobectomia com linfadenectomia mediastinal é o tratamento padrão-ouro para <b>estágios I e II</b> (e alguns IIIA selecionados) em paciente com reserva funcional adequada <span class="pq">(reserva funcional = "o pulmão que sobra dá conta de respirar sozinho depois")</span>. Compara-se sempre com a ressecção sublobar (segmentectomia/cunha), que era reservada a quem não tolerava lobectomia.</p>
+
+    <div class="banca">
+      <span class="tag">Atualização que muda a prova</span>
+      Dois ensaios randomizados recentes (<b>JCOG0802</b> e <b>CALGB 140503</b>, NEJM 2022 e 2023) mostraram que, em tumores periféricos <b>≤ 2 cm</b>, cN0, a <b>segmentectomia é não inferior</b> à lobectomia em sobrevida global, com função pulmonar levemente melhor no pós-operatório. Isso não elimina a lobectomia — continua sendo a resposta correta para tumores maiores, centrais, com invasão de fissura ou linfonodo hilar comprometido — mas quebrou o dogma antigo de "lobectomia sempre".
+    </div>
+
+    <h3>Indicações benignas / infecciosas</h3>
+    <ul>
+      <li><b>Bronquiectasias localizadas</b> a um lobo, refratárias a tratamento clínico, com hemoptise recorrente ou infecções de repetição.</li>
+      <li><b>Sequela de tuberculose</b> — lobo destruído, cavitação com micetoma (aspergiloma) refratário a antifúngico ou com hemoptise.</li>
+      <li><b>Abscesso pulmonar</b> que não responde a antibiótico e drenagem prolongados.</li>
+      <li><b>Hemoptise maciça</b> com origem localizada a um lobo, quando embolização arterial brônquica falha ou não está disponível.</li>
+      <li><b>Tumor carcinoide típico</b> central sem possibilidade de ressecção broncoplástica.</li>
+      <li>Enfisema lobar congênito (população pediátrica).</li>
+    </ul>
+
+    <h3>Apresentação clínica do câncer de pulmão</h3>
+    <p>Frequentemente assintomático e achado em imagem de rastreamento (tomografia de baixa dose em tabagista de alto risco). Quando sintomático: tosse persistente, hemoptise, dor torácica, dispneia, emagrecimento. Síndromes específicas por localização: <b>Pancoast</b> (ápice, plexo braquial e cadeia simpática — dor no ombro/braço, Horner), <b>síndrome da veia cava superior</b> (tumor central direito), <b>rouquidão</b> (invasão do nervo laríngeo recorrente, mais à esquerda pela relação com o arco aórtico).</p>
+  </div>
+</section>
+
+<!-- 02 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">02</span><h2>Anatomia e vascularização do hilo</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <h3>Lobos e fissuras</h3>
+    <ul>
+      <li><b>Pulmão direito</b> — 3 lobos (superior, médio, inferior). Fissura horizontal (menor) separa superior de médio; fissura oblíqua (maior) separa médio/superior de inferior.</li>
+      <li><b>Pulmão esquerdo</b> — 2 lobos (superior, incluindo a <b>língula</b>, e inferior), separados apenas pela fissura oblíqua. A língula é o equivalente anatômico e funcional do lobo médio à esquerda.</li>
+      <li>Segmentos broncopulmonares: direito 10 (superior 3, médio 2, inferior 5); esquerdo 8 a 10 a depender da nomenclatura (superior 4–5 incluindo língula 2, inferior 4–5) — usados no cálculo do ppoFEV1.</li>
+    </ul>
+
+    <h3>Artéria pulmonar</h3>
+    <p>A artéria pulmonar direita, ao entrar no hilo, emite o <b>tronco anterior</b> (irriga o segmento anterior do lobo superior) <b>antes</b> de entrar na fissura — é o primeiro ramo identificável na dissecção anterior. Dentro da fissura, torna-se <b>artéria interlobar</b> e emite o(s) ramo(s) <b>ascendente(s) posterior(es)</b> para o restante do lobo superior, depois os ramos para o lobo médio (lateral e medial) e, por fim, o <b>segmentar superior</b> e o <b>tronco basal</b> para o lobo inferior. À esquerda, a artéria pulmonar emite ramos apicoposterior e anterior próximo ao topo (às vezes com múltiplos ramos curtos e variáveis — a artéria pulmonar esquerda é mais variável e mais curta que a direita, daí maior risco de lesão), segue na fissura dando ramos linguais, depois segmentar superior e tronco basal do lobo inferior.</p>
+
+    <h3>Veias pulmonares</h3>
+    <p>A <b>veia pulmonar superior</b> drena o lobo superior (e, à direita, recebe também a veia do lobo médio — tributária anterior/média). A <b>veia pulmonar inferior</b> drena o lobo inferior (segmento superior + tronco basal comum). As veias ficam na porção <b>mais anterior e inferior</b> do hilo — geralmente a primeira estrutura visualizada e frequentemente a primeira a ser dividida na abordagem anterior padrão de VATS.</p>
+
+    <h3>Brônquios — eparterial × hiparterial</h3>
+    <p>O brônquio principal direito é curto (~2 cm até a origem do brônquio do lobo superior) e o brônquio do lobo superior direito é <b>eparterial</b> <span class="pq">(nasce acima da artéria pulmonar — único brônquio lobar nessa posição)</span>; todos os demais brônquios lobares são <b>hiparterial</b> (abaixo da artéria). Após o brônquio do lobo superior, o brônquio principal direito continua como <b>brônquio intermediário</b>, que dá origem ao brônquio do lobo médio e depois ao brônquio do lobo inferior — o segmentar superior do lobo inferior nasce posteriormente, quase em frente à origem do lobo médio. O brônquio principal esquerdo é mais longo (~5 cm) antes de bifurcar em lobo superior (que se divide em divisão superior e divisão lingular) e lobo inferior.</p>
+
+    <div class="vasc">
+      <span class="tag">Nota vascular</span>
+      A <b>artéria pulmonar esquerda</b> é mais curta, mais alta (passa sobre o brônquio principal esquerdo) e tem ramos mais numerosos e variáveis que a direita — é a estrutura hilar com maior risco de lesão inadvertida em lobectomia superior esquerda por VATS, sobretudo em campo com adenopatia calcificada aderida (linfonodonite silicótica/tuberculosa).
+    </div>
+
+    <h3>Linfonodos — mapa IASLC</h3>
+    <div class="tbl-wrap">
+    <table>
+      <tr><th>Estação</th><th>Localização</th><th>Categoria N</th></tr>
+      <tr><td>10, 11, 12, 13</td><td>Hilar, interlobar, lobar, segmentar</td><td>N1 (peri-hilar, mesmo lado)</td></tr>
+      <tr><td>2, 4</td><td>Paratraqueal superior e inferior</td><td>N2 (mediastinal, mesmo lado)</td></tr>
+      <tr><td>7</td><td>Subcarinal</td><td>N2</td></tr>
+      <tr><td>5, 6</td><td>Janela aortopulmonar, para-aórtico</td><td>N2 (só à esquerda)</td></tr>
+      <tr><td>8, 9</td><td>Paraesofágico, ligamento pulmonar</td><td>N2</td></tr>
+    </table>
+    </div>
+  </div>
+</section>
+
+<!-- 03 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">03</span><h2>Avaliação pré-operatória e seleção de candidatos</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <h3>Estadiamento mediastinal antes de operar</h3>
+    <p>PET-CT para triagem de linfonodos mediastinais e metástases a distância. Linfonodo mediastinal aumentado na tomografia (> 1 cm no eixo curto) ou PET-positivo exige confirmação invasiva — <b>EBUS-TBNA</b> (punção transbrônquica guiada por ultrassom endoscópico) ou mediastinoscopia cervical — antes de indicar ressecção, pois N2 confirmado muda o tratamento para terapia multimodal.</p>
+
+    <h3>Reserva funcional pulmonar</h3>
+    <p>Calcula-se o <b>ppoFEV1</b> (FEV1 pós-operatório previsto) considerando os segmentos que serão removidos: <code>ppoFEV1% = FEV1% pré-operatório × (segmentos funcionantes remanescentes / total de segmentos)</code>. O mesmo raciocínio se aplica à <b>DLCO</b> (capacidade de difusão).</p>
+    <div class="tbl-wrap">
+    <table>
+      <tr><th>ppoFEV1 e ppoDLCO</th><th>Conduta</th></tr>
+      <tr><td>Ambos &gt; 60%</td><td>Baixo risco — segue para cirurgia sem teste adicional</td></tr>
+      <tr><td>Um dos dois entre 30–60%</td><td>Teste de exercício cardiopulmonar (VO<sub>2</sub>max) ou teste de caminhada/subida de escada</td></tr>
+      <tr><td>Um dos dois &lt; 30%, ou VO<sub>2</sub>max &lt; 10 mL/kg/min (&lt;35% previsto)</td><td>Risco proibitivo para lobectomia — considerar ressecção sublobar, terapia não cirúrgica (radioterapia estereotáxica) ou ablação</td></tr>
+    </table>
+    </div>
+
+    <div class="banca">
+      <span class="tag">Alto rendimento — HCPA / BTS-ACCP</span>
+      <b>VO₂max é o divisor de águas</b> quando o ppoFEV1 ou ppoDLCO ficam na faixa intermediária: acima de 20 mL/kg/min (ou &gt;75% previsto) libera qualquer ressecção, incluindo pneumonectomia; abaixo de 10 mL/kg/min contraindica ressecção anatômica maior.
+    </div>
+
+    <h3>Otimização</h3>
+    <ul>
+      <li>Cessação do tabagismo — idealmente 4 semanas antes, reduz complicação pulmonar pós-operatória.</li>
+      <li>Reabilitação pulmonar pré-operatória (prehabilitation) em DPOC.</li>
+      <li>Avaliação cardiológica conforme risco cirúrgico (arritmia prévia, coronariopatia).</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 04 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">04</span><h2>Posicionamento e preparo</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <h3>Posição</h3>
+    <p><b>Decúbito lateral</b> com o lado <b>contralateral</b> para baixo (ex.: lobectomia direita → decúbito lateral esquerdo). Mesa <b>quebrada</b> na altura do quadril para abrir os espaços intercostais do lado operado <span class="pq">(a mesa dobra no meio, como uma banana, para "abrir" as costelas)</span>. <b>Coxim axilar</b> sob a axila que fica apoiada, para proteger o plexo braquial da compressão. Braço superior estendido para a frente em suporte (posição "de reza" nas abordagens por VATS) ou suspenso em arco. Membro inferior de baixo fletido e o de cima estendido, com coxim entre as pernas; pontos de apoio acolchoados (fíbula, maléolos, crista ilíaca).</p>
+
+    <h3>Ventilação e acesso</h3>
+    <p><b>Tubo de duplo lúmen</b> (ou bloqueador brônquico) para <b>ventilação monopulmonar seletiva</b>, colapsando o pulmão operado e permitindo exposição sem afastadores pulmonares agressivos. Confirmação de posição do tubo por broncoscopia antes do início.</p>
+
+    <div class="alerta">
+      <span class="tag">Armadilha</span>
+      Coxim axilar mal posicionado (ou ausente) é causa evitável de <b>neuropraxia de plexo braquial</b> pós-operatória — checar antes de fixar o paciente e antes de fechar os campos.
+    </div>
+  </div>
+</section>
+
+<!-- 05 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">05</span><h2>Vias de acesso: VATS × toracotomia</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <h3>VATS (cirurgia torácica vídeo-assistida)</h3>
+    <p>Padrão preferencial atual para tumores em estágio inicial tecnicamente ressecáveis por essa via (NCCN). Técnica uniportal ou com 3–4 portais, sem afastador de costela. O ensaio <b>VIOLET</b> (Lancet Respir Med 2022) mostrou menos complicações pós-operatórias e recuperação mais rápida com VATS, com resultado oncológico equivalente à toracotomia aberta em estágio inicial. Cirurgia robótica é extensão dessa mesma filosofia minimamente invasiva.</p>
+
+    <h3>Toracotomia posterolateral (via aberta)</h3>
+    <p>Incisão curvilínea da linha axilar posterior ao ponto médio entre a escápula e a coluna, geralmente no <b>5º espaço intercostal</b> (ajustado conforme o lobo-alvo). Divisão ou poupança do latíssimo do dorso e do serrátil anterior (técnica muscle-sparing), abertura pelo triângulo de ausculta, entrada no tórax pelo espaço intercostal escolhido, com afastador tipo <b>Finochietto aberto de forma gradual</b> <span class="pq">(abrir aos poucos evita quebrar a costela)</span> para minimizar fratura costal e neuralgia intercostal pós-operatória.</p>
+
+    <div class="banca">
+      <span class="tag">Alto rendimento — GHC / Santa Casa POA</span>
+      Reservar a toracotomia aberta para: tumor central com necessidade de broncoplastia/manga, invasão de parede torácica exigindo ressecção em bloco, hilo hostil por fibrose/calcificação extensa, sangramento intraoperatório não controlável por VATS, ou ausência de plano seguro de dissecção — <b>não</b> é "melhor" oncologicamente, é uma alternativa técnica quando a via minimamente invasiva não é segura.
+    </div>
+  </div>
+</section>
+
+<!-- 06 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">06</span><h2>Passo a passo: dissecção hilar individual</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <h3>Princípio geral</h3>
+    <p>A lobectomia anatômica exige <b>dissecção e divisão individual</b> de cada estrutura hilar (veia, artéria e brônquio), diferente de uma ressecção em massa. A ordem exata varia com a abordagem (anterior por VATS × fissura por toracotomia) e com o lobo, mas o raciocínio de segurança é sempre o mesmo: expor o vaso com margem proximal e distal <b>antes</b> de dividir, ter controle proximal disponível para conversão de emergência, e deixar o brônquio por último sempre que possível para evitar contaminação do campo vascular por secreção.</p>
+
+    <div class="passo">
+      <div class="passo-n">01</div>
+      <div><b>Exploração e liberação de aderências.</b> Inventário da cavidade, biópsia de linfonodo mediastinal suspeito por congelação se ainda não estadiado, liberação do ligamento pulmonar inferior.
+      <div class="maos">
+        <div class="mao"><span class="lbl">Mão esquerda</span>Pinça em anel (Duval) ou DeBakey tracionando o parênquima com delicadeza</div>
+        <div class="mao"><span class="lbl">Mão direita</span>Tesoura de Metzenbaum longa ou energia (bisturi harmônico/LigaSure) para aderências</div>
+      </div>
+      </div>
+    </div>
+
+    <div class="passo">
+      <div class="passo-n">02</div>
+      <div><b>Veia pulmonar (lobar).</b> Estrutura anterior e mais superficial — costuma ser a primeira a ser individualizada na abordagem por VATS. Dissecção circunferencial romba com margem proximal segura.
+      <div class="maos">
+        <div class="mao"><span class="lbl">Mão esquerda</span>Dissector em ângulo reto (right angle) contornando o vaso</div>
+        <div class="mao"><span class="lbl">Mão direita</span>Grampeador vascular endoscópico (carga branca/azul) posicionado após a passagem do dissector</div>
+      </div>
+      </div>
+    </div>
+
+    <div class="passo">
+      <div class="passo-n">03</div>
+      <div><b>Artéria pulmonar (ramos lobares).</b> A mais temida pelo risco de sangramento maciço — dissecar cada ramo individualmente, nunca "em bloco". Identificar o tronco anterior (à direita) antes de entrar na fissura.
+      <div class="maos">
+        <div class="mao"><span class="lbl">Mão esquerda</span>Dissector em ângulo reto delicado, atenção redobrada aos ramos curtos e variáveis (sobretudo à esquerda)</div>
+        <div class="mao"><span class="lbl">Mão direita</span>Grampeador vascular; para ramos muito curtos, ligadura dupla com fio inabsorvível antes de secção, como alternativa ao grampeador</div>
+      </div>
+      </div>
+    </div>
+
+    <div class="passo">
+      <div class="passo-n">04</div>
+      <div><b>Fissura.</b> Completada com grampeador de carga reforçada (buttress) para reduzir fuga aérea — a chamada técnica "fissureless" completa a fissura por último, depois de já ter controlado veia e artéria por dissecção direta no hilo, evitando dissecar uma fissura incompleta e friável.</div>
+    </div>
+
+    <div class="passo">
+      <div class="passo-n">05</div>
+      <div><b>Brônquio lobar.</b> Dissecado por último. Confirmar que é o brônquio correto (broncoscopia intraoperatória em caso de dúvida) antes de dividir — ressecção do brônquio errado é evento sentinela.
+      <div class="maos">
+        <div class="mao"><span class="lbl">Mão esquerda</span>Pinça de Allis ou tração delicada do lobo para expor o ângulo brônquico</div>
+        <div class="mao"><span class="lbl">Mão direita</span>Grampeador brônquico (carga verde/dourada, mais espessa) posicionado perpendicular ao eixo, com margem livre de tumor confirmada por congelação se necessário</div>
+      </div>
+      </div>
+    </div>
+
+    <div class="passo">
+      <div class="passo-n">06</div>
+      <div><b>Teste de estanqueidade e extração.</b> Insuflação manual sob soro na cavidade para checar fuga aérea na linha de grampeamento. Peça extraída em saco protetor (evita implante tumoral no trajeto do portal/ferida).</div>
+    </div>
+
+    <div class="alerta">
+      <span class="tag">Armadilha</span>
+      Sangramento de ramo arterial pulmonar durante dissecção por VATS é a principal causa de <b>conversão para toracotomia</b> — não é fracasso técnico, é decisão seguraç: comprimir com gaze montada, obter controle proximal e converter sem hesitar quando o sangramento não é controlado em segundos.
+    </div>
+  </div>
+</section>
+
+<!-- 07 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">07</span><h2>Linfadenectomia mediastinal</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <h3>Sistemática × amostragem</h3>
+    <p>A <b>linfadenectomia mediastinal sistemática</b> (dissecção completa das estações N1 e N2 do lado operado) é o padrão recomendado junto com a lobectomia oncológica, e não apenas a amostragem seletiva — permite estadiamento patológico correto e detecta N2 oculto, o que muda indicação de tratamento adjuvante.</p>
+    <ul>
+      <li>Direita: estações 2R, 4R, 7, 8, 9, além das N1 (10–13).</li>
+      <li>Esquerda: estações 5, 6, 7, 8, 9, além das N1 — a dissecção da janela aortopulmonar (5/6) expõe o <b>nervo laríngeo recorrente esquerdo</b>, que contorna o arco aórtico/ligamento arterial.</li>
+    </ul>
+
+    <div class="vasc">
+      <span class="tag">Nota vascular</span>
+      Vasos linfáticos e pequenas artérias brônquicas na dissecção subcarinal (estação 7) e paraesofágica (8) devem ser controlados com <b>clipe ou energia</b>, não apenas tração — lesão despercebida do <b>ducto torácico</b> nessa região é a origem da maioria dos quilotórax pós-lobectomia.
+    </div>
+
+    <div class="banca">
+      <span class="tag">Alto rendimento — PUC-RS / AMRIGS</span>
+      Nervo laríngeo recorrente esquerdo (dissecção da janela aortopulmonar) e nervo frênico (ao longo do pericárdio, de ambos os lados) são as duas estruturas nervosas mais citadas em prova como risco de lesão na linfadenectomia mediastinal — rouquidão e elevação do hemidiafragma, respectivamente.
+    </div>
+  </div>
+</section>
+
+<!-- 08 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">08</span><h2>Grampeadores e fios</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <div class="tbl-wrap">
+    <table>
+      <tr><th>Estrutura</th><th>Material</th><th>Racional</th></tr>
+      <tr><td>Veia e artéria pulmonar</td><td>Grampeador vascular endoscópico (carga branca/azul, altura de grampo menor)</td><td>Menor altura fecha adequadamente parede vascular fina; ligadura dupla com fio inabsorvível 2-0/0 como alternativa em ramos curtos ou como reforço</td></tr>
+      <tr><td>Brônquio lobar</td><td>Grampeador brônquico (carga verde/dourada, mais espessa)</td><td>Tecido cartilaginoso e mais espesso exige grampo mais alto; reforço com retalho de pericárdio ou pleura em coto de risco (após indução neoadjuvante, DM, desnutrição)</td></tr>
+      <tr><td>Fissura pulmonar</td><td>Grampeador linear com carga reforçada (buttress)</td><td>Reduz fuga aérea prolongada em parênquima enfisematoso ou fissura incompleta</td></tr>
+      <tr><td>Pexia do lobo remanescente</td><td>Fio inabsorvível 3-0 (seda ou polipropileno), pontos separados</td><td>Fixa o lobo médio (ou lobo remanescente) à pleura/parênquima adjacente — previne torção</td></tr>
+      <tr><td>Fixação do dreno torácico</td><td>Náilon 0 ou 1</td><td>Ponto em bolsa/U resistente à tração, retirada facilitada</td></tr>
+      <tr><td>Ligadura de ducto torácico (quando indicada)</td><td>Seda 2-0/3-0, ligadura em massa do tecido entre aorta e veia ázigos</td><td>Tratamento do quilotórax refratário</td></tr>
+    </table>
+    </div>
+  </div>
+</section>
+
+<!-- 09 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">09</span><h2>Torção do lobo remanescente — a armadilha clássica</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <div class="alerta">
+      <span class="tag">Clássico de prova</span>
+      Após <b>lobectomia superior direita</b>, o <b>lobo médio</b> perde parte da sua fixação natural (a fissura que o unia ao lobo superior desaparece) e passa a ter um pedículo broncovascular relativamente longo e estreito, ficando <b>hipermóvel</b> — pode <b>torcer sobre o próprio pedículo</b>. A torção compromete primeiro a drenagem venosa (parede mais fina, colaba antes), gerando <b>congestão hemorrágica e infarto</b> do lobo, antes de comprometer a artéria.
+    </div>
+
+    <h3>Prevenção</h3>
+    <p>Ao final de lobectomias que deixam um lobo médio (ou outro lobo) hipermóvel, realizar <b>pexia</b> (fixação) do lobo remanescente com alguns pontos separados de fio inabsorvível 3-0 à pleura parietal ou ao lobo vizinho — manobra simples, baixo custo, praticamente elimina a complicação.</p>
+
+    <h3>Reconhecimento</h3>
+    <p>Deterioração respiratória aguda, febre, imagem com opacificação rápida e progressiva do lobo remanescente no pós-operatório imediato, muitas vezes horas após a cirurgia — broncoscopia mostra torção/obliteração do brônquio no ponto de torção. É <b>emergência cirúrgica</b>: reoperação para destorcer (se viável) ou ressecar o lobo infartado.</p>
+
+    <div class="mnemo">
+      <span class="tag">Mnemônico</span>
+      <b>"Sem fissura, sem freio"</b> — todo lobo que perde a fissura que o prendia a um vizinho ressecado vira candidato a torção. Se sobrou hipermóvel, <b>pexia antes de fechar</b>.
+    </div>
+  </div>
+</section>
+
+<!-- 10 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">10</span><h2>Complicações</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <div class="tbl-wrap">
+    <table>
+      <tr><th>Complicação</th><th>Mecanismo / frequência</th><th>Conduta</th></tr>
+      <tr><td>Fuga aérea prolongada</td><td>Complicação mais comum; DPOC/enfisema, fissura incompleta, aderências pleurais</td><td>Manter dreno em selo d'água, válvula de Heimlich para manejo ambulatorial, pleurodese se persistir além de 5–7 dias</td></tr>
+      <tr><td>Fibrilação atrial</td><td>Muito comum (10–20%), mais em idosos, ressecções maiores, manipulação hilar/pericárdica</td><td>Controle de frequência/ritmo, correção de eletrólitos; alguns serviços fazem profilaxia com betabloqueador</td></tr>
+      <tr><td>Fístula broncopleural</td><td>Deiscência do coto brônquico — mais grave após pneumonectomia, mas ocorre em lobectomia; fator de risco: neoadjuvância, desnutrição, infecção</td><td>Drenagem pleural, controle de sepse, reoperação com reforço do coto (retalho muscular/pericárdico) em casos refratários</td></tr>
+      <tr><td>Torção do lobo remanescente</td><td>Ver seção 09 — pedículo hipermóvel sem fixação</td><td>Reoperação de urgência</td></tr>
+      <tr><td>Quilotórax</td><td>Lesão do ducto torácico na dissecção subcarinal/paraesofágica</td><td>Dieta com triglicerídeos de cadeia média ou jejum + nutrição parenteral, octreotide; ligadura cirúrgica do ducto se débito &gt; 1 L/dia ou persistência além de 2 semanas</td></tr>
+      <tr><td>Lesão do nervo laríngeo recorrente</td><td>Dissecção da janela aortopulmonar (mais à esquerda)</td><td>Rouquidão, avaliação otorrinolaringológica; frequentemente recupera-se de forma parcial</td></tr>
+      <tr><td>Lesão do nervo frênico</td><td>Dissecção próxima ao pericárdio</td><td>Elevação do hemidiafragma, disfunção respiratória restritiva; fisioterapia</td></tr>
+      <tr><td>Hemorragia intraoperatória</td><td>Lesão de ramo da artéria pulmonar na dissecção hilar</td><td>Compressão, controle proximal, conversão para toracotomia sem hesitar</td></tr>
+      <tr><td>Empiema / pneumonia</td><td>Espaço residual, atelectasia, tempo de dreno prolongado</td><td>Fisioterapia respiratória precoce, antibiótico dirigido, drenagem se coleção</td></tr>
+    </table>
+    </div>
+  </div>
+</section>
+
+<!-- 11 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">11</span><h2>Questões no estilo das bancas do RS</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <p class="pq">Questões originais, escritas no estilo de cada banca. Não são reprodução de provas passadas.</p>
+
+    <div class="q">
+      <span class="q-banca">Estilo HCPA</span>
+      <p>Homem de 68 anos, tabagista, com nódulo pulmonar periférico de 3,2 cm no lobo superior direito, cN0 ao PET-CT, sem linfonodo mediastinal suspeito. FEV1 pré-operatório 78% do previsto. A conduta cirúrgica mais adequada é:</p>
+      <div class="q-alt">a) Segmentectomia isolada, por ser sempre equivalente à lobectomia.</div>
+      <div class="q-alt">b) Lobectomia superior direita com linfadenectomia mediastinal sistemática.</div>
+      <div class="q-alt">c) Pneumonectomia direita profilática.</div>
+      <div class="q-alt">d) Radioterapia estereotáxica isolada, independentemente da função pulmonar.</div>
+      <div class="q-resp"><b>Resposta: B.</b> A não inferioridade da segmentectomia (JCOG0802/CALGB140503) vale para tumores periféricos ≤ 2 cm; acima disso, lobectomia com linfadenectomia sistemática continua sendo o padrão em paciente com reserva funcional adequada.</div>
+    </div>
+
+    <div class="q">
+      <span class="q-banca">Estilo GHC</span>
+      <p>Paciente com FEV1 pré-operatório de 55% do previsto será submetido a lobectomia inferior esquerda (5 dos 8-10 segmentos do pulmão esquerdo). O ppoFEV1 calculado fica na faixa intermediária de risco. A próxima etapa da avaliação é:</p>
+      <div class="q-alt">a) Contraindicar a cirurgia definitivamente.</div>
+      <div class="q-alt">b) Solicitar teste de exercício cardiopulmonar (VO2max) ou teste funcional de esforço.</div>
+      <div class="q-alt">c) Prosseguir para a cirurgia sem avaliação adicional.</div>
+      <div class="q-alt">d) Indicar pneumonectomia para simplificar o cálculo.</div>
+      <div class="q-resp"><b>Resposta: B.</b> ppoFEV1 ou ppoDLCO entre 30–60% define risco intermediário e exige teste de exercício cardiopulmonar antes da decisão final — VO2max acima de 20 mL/kg/min libera, abaixo de 10 contraindica ressecção maior.</div>
+    </div>
+
+    <div class="q">
+      <span class="q-banca">Estilo Santa Casa de Misericórdia de POA</span>
+      <p>No 1º dia de pós-operatório de lobectomia superior direita por VATS, o paciente evolui com queda súbita da saturação, febre e opacificação progressiva do lobo médio na radiografia de tórax. A hipótese mais provável e a conduta são:</p>
+      <div class="q-alt">a) Pneumonia associada a ventilação; iniciar antibiótico e observar.</div>
+      <div class="q-alt">b) Torção do lobo médio; reoperação de urgência.</div>
+      <div class="q-alt">c) Fibrilação atrial; controle de frequência apenas.</div>
+      <div class="q-alt">d) Fuga aérea prolongada; manter dreno em selo d'água.</div>
+      <div class="q-resp"><b>Resposta: B.</b> Após lobectomia superior direita, o lobo médio perde a fixação da fissura e pode torcer sobre seu próprio pedículo, com congestão venosa e infarto — quadro agudo, é emergência cirúrgica.</div>
+    </div>
+
+    <div class="q">
+      <span class="q-banca">Estilo PUC-RS</span>
+      <p>Durante linfadenectomia da estação subcarinal (7) em lobectomia inferior, ocorre lesão inadvertida de uma estrutura linfática entre a aorta e a veia ázigos, com surgimento de líquido leitoso pelo dreno torácico no 3º dia pós-operatório, em débito de 1.300 mL/dia. A conduta inicial mais apropriada é:</p>
+      <div class="q-alt">a) Ligadura cirúrgica imediata do ducto torácico, sem tentativa de tratamento conservador.</div>
+      <div class="q-alt">b) Dieta rica em triglicerídeos de cadeia longa para estimular a cicatrização do ducto.</div>
+      <div class="q-alt">c) Jejum ou dieta com triglicerídeos de cadeia média, associado a octreotide, com ligadura reservada para débito alto persistente.</div>
+      <div class="q-alt">d) Observação isolada, sem qualquer intervenção dietética.</div>
+      <div class="q-resp"><b>Resposta: C.</b> O tratamento inicial do quilotórax é conservador (jejum/TCM + octreotide); a ligadura cirúrgica do ducto torácico é reservada a débito acima de 1 L/dia ou persistência além de cerca de 2 semanas — o débito descrito já se aproxima desse limiar e reforça a indicação de intervenção se não responder rápido ao conservador.</div>
+    </div>
+
+    <div class="q">
+      <span class="q-banca">Estilo AMRIGS</span>
+      <p>Sobre a anatomia do hilo pulmonar aplicada à lobectomia, é correto afirmar:</p>
+      <div class="q-alt">a) O brônquio do lobo superior direito é hiparterial, como todos os demais brônquios lobares.</div>
+      <div class="q-alt">b) A artéria pulmonar esquerda é mais longa e menos variável que a direita.</div>
+      <div class="q-alt">c) O brônquio do lobo superior direito é eparterial, nascendo acima da artéria pulmonar.</div>
+      <div class="q-alt">d) As veias pulmonares ocupam a posição mais posterior do hilo em ambos os lados.</div>
+      <div class="q-resp"><b>Resposta: C.</b> O brônquio do lobo superior direito é o único brônquio lobar eparterial (acima da artéria). A artéria pulmonar esquerda é mais curta e mais variável que a direita. As veias pulmonares ocupam a posição anterior e inferior do hilo.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 12 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">12</span><h2>Grade de mnemônicos e números-chave</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <div class="mnemo">
+      <span class="tag">Ordem hilar — V-A-B</span>
+      Na abordagem anterior típica: <b>V</b>eia → <b>A</b>rtéria → <b>B</b>rônquio, com a fissura completada por último (técnica fissureless).
+    </div>
+    <div class="mnemo">
+      <span class="tag">ppoFEV1 / VO2max</span>
+      &gt; 60% ambos = libera direto · 30–60% = pede VO2max · VO2max &gt; 20 libera tudo, &lt; 10 contraindica ressecção maior.
+    </div>
+    <div class="mnemo">
+      <span class="tag">Sem fissura, sem freio</span>
+      Lobo que perdeu a fissura que o unia a um vizinho ressecado = candidato a torção → pexia antes de fechar.
+    </div>
+    <div class="mnemo">
+      <span class="tag">Eparterial é só um</span>
+      O brônquio do lobo superior direito é o único eparterial (acima da artéria) — todos os outros brônquios lobares são hiparteriais.
+    </div>
+    <div class="mnemo">
+      <span class="tag">Quilotórax — 1.000 / 2 semanas</span>
+      Débito acima de <b>1.000 mL/dia</b> ou persistência além de <b>2 semanas</b> de tratamento conservador = ligadura cirúrgica do ducto torácico.
+    </div>
+    <div class="mnemo">
+      <span class="tag">Segmentectomia entra em cena</span>
+      Não inferior à lobectomia só em tumor periférico <b>≤ 2 cm</b>, cN0 (JCOG0802/CALGB140503) — fora dessa faixa, lobectomia continua padrão.
+    </div>
+  </div>
+</section>
+
+<footer>
+  carolzita · Cirurgia Torácica · Lobectomia pulmonar<br>
+  Sabiston · Zollinger · Netter · NCCN NSCLC 2024 · IASLC Lymph Node Map · ACCP/BTS · JCOG0802 · CALGB140503 · VIOLET Trial<br>
+  Questões originais no estilo HCPA · GHC · Santa Casa POA · PUC-RS · AMRIGS
+</footer>
+
+</div>
+<script>
+document.querySelectorAll('.sec-head').forEach(function(h){
+  function t(){h.parentElement.classList.toggle('open')}
+  h.addEventListener('click',t);
+  h.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t()}});
+});
+function todas(abrir){
+  document.querySelectorAll('section').forEach(function(s){
+    s.classList.toggle('open',abrir);
+  });
+}
+</script>
+</body>
+</html>

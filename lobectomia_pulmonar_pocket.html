@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="cz-tema" content="Lobectomia Pulmonar — POCKET">
+<meta name="cz-grupo" content="Cirurgia Torácica">
+<meta name="cz-tags" content="pocket, lobectomia, hilo pulmonar, VATS, torção do lobo médio, ppoFEV1">
+<meta name="cz-ordem" content="36">
+<title>Lobectomia Pulmonar — pocket</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#08080c; --bg2:#101019; --bg3:#181826;
+  --line:#26263a; --txt:#e6e6f0; --txt2:#9a9ab0;
+  --laranja:#f97316; --roxo:#a855f7; --ciano:#22d3ee;
+  --vermelho:#ef4444; --verde:#22c55e;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;font-size:15px;line-height:1.6;display:flex;flex-direction:column;overflow:hidden}
+
+.top{padding:14px 16px 0;flex-shrink:0;border-bottom:1px solid var(--line)}
+.top .eyebrow{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--laranja)}
+.top h1{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;margin:4px 0 10px;letter-spacing:-.01em}
+
+.tabs{display:flex;gap:7px;overflow-x:auto;padding-bottom:11px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex-shrink:0;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;background:var(--bg2);color:var(--txt2);border:1px solid var(--line);border-radius:20px;padding:7px 14px;cursor:pointer;white-space:nowrap;transition:.15s}
+.tab.on{background:var(--laranja);color:#08080c;border-color:var(--laranja);font-weight:700}
+
+.deck{flex:1;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.deck::-webkit-scrollbar{display:none}
+.card{flex:0 0 100%;scroll-snap-align:start;overflow-y:auto;padding:18px 16px 60px}
+
+h2{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:var(--laranja);margin-bottom:12px}
+h3{font-size:13px;font-weight:700;color:#fff;margin:16px 0 6px;text-transform:uppercase;letter-spacing:.05em}
+h3:first-of-type{margin-top:6px}
+p{margin-bottom:10px}
+ul{margin:0 0 11px 17px}
+li{margin-bottom:6px}
+b{color:#fff;font-weight:600}
+.pq{color:var(--txt2);font-style:italic}
+
+.chip{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:11px;background:var(--bg3);border:1px solid var(--line);border-radius:6px;padding:3px 9px;margin:0 5px 6px 0;color:var(--ciano)}
+
+.box{border-left:3px solid var(--laranja);background:rgba(249,115,22,.07);padding:11px 13px;border-radius:0 7px 7px 0;margin:12px 0;font-size:14px}
+.banca{border-left:3px solid var(--roxo);background:rgba(168,85,247,.08);padding:11px 13px;border-radius:0 7px 7px 0;margin:12px 0;font-size:14px}
+.mnemo{border-left:3px solid var(--ciano);background:rgba(34,211,238,.08);padding:11px 13px;border-radius:0 7px 7px 0;margin:12px 0;font-size:14px}
+.alerta{border-left:3px solid var(--vermelho);background:rgba(239,68,68,.08);padding:11px 13px;border-radius:0 7px 7px 0;margin:12px 0;font-size:14px}
+.vasc{border-left:3px solid var(--verde);background:rgba(34,197,94,.08);padding:11px 13px;border-radius:0 7px 7px 0;margin:12px 0;font-size:14px}
+.tag{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.15em;text-transform:uppercase;display:block;margin-bottom:6px}
+.banca .tag{color:var(--roxo)} .mnemo .tag{color:var(--ciano)} .alerta .tag{color:var(--vermelho)} .vasc .tag{color:var(--verde)} .box .tag{color:var(--laranja)}
+
+table{width:100%;border-collapse:collapse;font-size:12.5px;margin:11px 0}
+th{background:var(--bg3);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;text-align:left;padding:8px 9px;border-bottom:1px solid var(--line)}
+td{padding:8px 9px;border-bottom:1px solid var(--line);vertical-align:top}
+td:first-child{color:#fff;font-weight:500}
+
+.step{display:flex;gap:10px;margin-bottom:11px}
+.step-n{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--laranja);font-weight:700;flex-shrink:0;width:20px}
+.maos{display:grid;gap:6px;margin-top:6px}
+.mao{background:var(--bg3);border-radius:6px;padding:7px 10px;font-size:12px}
+.mao span{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--txt2);display:block;margin-bottom:2px}
+
+.dots{position:fixed;bottom:0;left:0;right:0;display:flex;justify-content:center;gap:6px;padding:12px;background:linear-gradient(transparent,var(--bg) 40%)}
+.dots i{width:6px;height:6px;border-radius:50%;background:var(--line);transition:.2s}
+.dots i.on{background:var(--laranja);width:18px;border-radius:3px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="eyebrow">Pocket · Cirurgia Torácica</div>
+  <h1>Lobectomia pulmonar</h1>
+  <div class="tabs" id="tabs"></div>
+</div>
+
+<div class="deck" id="deck">
+
+  <!-- 1 -->
+  <div class="card" data-t="Indicações">
+    <h2>Quando indicar</h2>
+    <div class="box">
+      <span class="tag">Padrão-ouro</span>
+      Estágio I–II (e IIIA selecionado) de CPNPC, com reserva funcional adequada, sempre com linfadenectomia mediastinal sistemática.
+    </div>
+    <h3>Atualização que cai em prova</h3>
+    <p><b>JCOG0802 / CALGB140503</b>: segmentectomia é <b>não inferior</b> em tumores periféricos <b>≤ 2 cm</b>, cN0. Fora dessa faixa, lobectomia continua padrão.</p>
+    <h3>Também indicada em</h3>
+    <span class="chip">Bronquiectasia localizada</span><span class="chip">Sequela de TB / aspergiloma</span><span class="chip">Abscesso refratário</span><span class="chip">Hemoptise maciça localizada</span><span class="chip">Carcinoide central</span>
+  </div>
+
+  <!-- 2 -->
+  <div class="card" data-t="Pré-op">
+    <h2>Seleção do candidato</h2>
+    <h3>Estadiamento mediastinal</h3>
+    <p>Linfonodo mediastinal &gt;1 cm ou PET-positivo → <b>EBUS-TBNA ou mediastinoscopia</b> antes de operar.</p>
+    <h3>ppoFEV1 / ppoDLCO</h3>
+    <table>
+      <tr><th>Valor</th><th>Conduta</th></tr>
+      <tr><td>Ambos &gt; 60%</td><td>Libera direto</td></tr>
+      <tr><td>30–60%</td><td>VO2max ou teste de esforço</td></tr>
+      <tr><td>&lt; 30% ou VO2max &lt; 10</td><td>Contraindica ressecção maior</td></tr>
+    </table>
+    <div class="banca">
+      <span class="tag">Banca</span>
+      VO2max &gt; 20 mL/kg/min (ou &gt;75%) libera qualquer ressecção, até pneumonectomia; &lt; 10 contraindica.
+    </div>
+  </div>
+
+  <!-- 3 -->
+  <div class="card" data-t="Anatomia">
+    <h2>Hilo — o que importa</h2>
+    <ul>
+      <li><b>Veias</b> — posição anterior/inferior, primeira estrutura vista em VATS.</li>
+      <li><b>Artéria direita</b> — tronco anterior antes da fissura, depois ramos na fissura.</li>
+      <li><b>Artéria esquerda</b> — mais curta, mais alta, <b>mais variável</b> → maior risco de lesão.</li>
+      <li><b>Brônquio do LSD</b> — único <b>eparterial</b> (acima da artéria); todos os outros são hiparteriais.</li>
+    </ul>
+    <div class="vasc">
+      <span class="tag">Nota vascular</span>
+      Ducto torácico corre entre aorta e veia ázigos — risco na dissecção subcarinal (7) e paraesofágica (8): origem da maioria dos quilotórax pós-lobectomia.
+    </div>
+  </div>
+
+  <!-- 4 -->
+  <div class="card" data-t="Posição/Via">
+    <h2>Posição e via de acesso</h2>
+    <p>Decúbito lateral, lado <b>contralateral</b> para baixo, mesa quebrada, coxim axilar, tubo de duplo lúmen (ventilação monopulmonar).</p>
+    <table>
+      <tr><th>Via</th><th>Quando</th></tr>
+      <tr><td>VATS</td><td>Padrão para estágio inicial tecnicamente ressecável (VIOLET Trial: menos complicação, mesmo resultado oncológico)</td></tr>
+      <tr><td>Toracotomia posterolateral (5º EIC)</td><td>Tumor central com broncoplastia, invasão de parede, hilo hostil, sangramento não controlável em VATS</td></tr>
+    </table>
+    <div class="alerta">
+      <span class="tag">Armadilha</span>
+      Coxim axilar mal posicionado = neuropraxia de plexo braquial — checar antes de fechar campos.
+    </div>
+  </div>
+
+  <!-- 5 -->
+  <div class="card" data-t="Passo a passo">
+    <h2>Ordem hilar — V-A-B</h2>
+    <div class="step"><div class="step-n">01</div><div><b>Veia pulmonar</b> — anterior, primeira a individualizar.
+      <div class="maos"><div class="mao"><span>Esquerda</span>Dissector em ângulo reto contornando o vaso</div><div class="mao"><span>Direita</span>Grampeador vascular (carga branca/azul)</div></div></div></div>
+    <div class="step"><div class="step-n">02</div><div><b>Artéria pulmonar</b> — ramo a ramo, nunca em bloco; tronco anterior antes da fissura à direita.</div></div>
+    <div class="step"><div class="step-n">03</div><div><b>Fissura</b> — completada por último com grampeador reforçado (técnica fissureless).</div></div>
+    <div class="step"><div class="step-n">04</div><div><b>Brônquio</b> — por último; confirmar o brônquio certo (broncoscopia se dúvida); grampeador brônquico (carga verde/dourada).</div></div>
+    <div class="step"><div class="step-n">05</div><div><b>Teste de estanqueidade</b> — soro na cavidade, checa fuga aérea na linha de grampo.</div></div>
+    <div class="alerta">
+      <span class="tag">Armadilha</span>
+      Sangramento arterial em VATS não controlado em segundos → <b>converter para toracotomia</b>, sem hesitar.
+    </div>
+  </div>
+
+  <!-- 6 -->
+  <div class="card" data-t="Grampos/Fios">
+    <h2>Grampeadores e fios</h2>
+    <table>
+      <tr><th>Estrutura</th><th>Material</th></tr>
+      <tr><td>Veia/artéria</td><td>Grampeador vascular (branco/azul); fio 2-0/0 em ramo curto</td></tr>
+      <tr><td>Brônquio</td><td>Grampeador brônquico (verde/dourado); reforço com pericárdio se coto de risco</td></tr>
+      <tr><td>Fissura</td><td>Grampeador linear com carga reforçada (buttress)</td></tr>
+      <tr><td>Pexia do lobo remanescente</td><td>Fio inabsorvível 3-0, pontos separados</td></tr>
+      <tr><td>Dreno torácico</td><td>Náilon 0/1</td></tr>
+    </table>
+  </div>
+
+  <!-- 7 -->
+  <div class="card" data-t="Torção">
+    <h2>Torção do lobo remanescente</h2>
+    <div class="alerta">
+      <span class="tag">Clássico de prova</span>
+      Após lobectomia superior direita, o <b>lobo médio</b> perde a fissura que o prendia, fica hipermóvel e pode <b>torcer</b> — congestão venosa e infarto antes de comprometer a artéria.
+    </div>
+    <p><b>Prevenção:</b> pexia com fio inabsorvível 3-0 do lobo hipermóvel à pleura ou lobo vizinho, sempre que sobrar sem fixação.</p>
+    <p><b>Quadro:</b> deterioração aguda, febre, opacificação progressiva no PO imediato → <b>emergência cirúrgica</b>.</p>
+    <div class="mnemo">
+      <span class="tag">Sem fissura, sem freio</span>
+      Todo lobo que perdeu a fissura de um vizinho ressecado é candidato a torção — pexia antes de fechar.
+    </div>
+  </div>
+
+  <!-- 8 -->
+  <div class="card" data-t="Complicações">
+    <h2>Complicações</h2>
+    <table>
+      <tr><th>Complicação</th><th>Conduta</th></tr>
+      <tr><td>Fuga aérea prolongada</td><td>Dreno em selo d'água, válvula de Heimlich, pleurodese se &gt;5–7 dias</td></tr>
+      <tr><td>Fibrilação atrial</td><td>Muito comum (10–20%); controle de frequência/ritmo</td></tr>
+      <tr><td>Fístula broncopleural</td><td>Drenagem, sepse, reoperação com reforço do coto se refratária</td></tr>
+      <tr><td>Quilotórax</td><td>TCM/jejum + octreotide; ligadura se &gt;1L/dia ou &gt;2 semanas</td></tr>
+      <tr><td>Lesão do laríngeo recorrente</td><td>Dissecção da janela aortopulmonar (mais à esquerda) → rouquidão</td></tr>
+      <tr><td>Lesão do frênico</td><td>Dissecção perto do pericárdio → hemidiafragma elevado</td></tr>
+    </table>
+    <div class="mnemo">
+      <span class="tag">Quilotórax — 1.000/2 semanas</span>
+      Débito &gt;1.000 mL/dia ou persistência &gt;2 semanas de tratamento conservador = ligadura do ducto torácico.
+    </div>
+  </div>
+
+</div>
+
+<div class="dots" id="dots"></div>
+
+<script>
+var deck=document.getElementById('deck'),
+    cards=[].slice.call(deck.querySelectorAll('.card')),
+    tabs=document.getElementById('tabs'),
+    dots=document.getElementById('dots');
+
+cards.forEach(function(c,i){
+  var b=document.createElement('button');
+  b.className='tab'+(i===0?' on':'');
+  b.textContent=c.dataset.t;
+  b.onclick=function(){deck.scrollTo({left:deck.clientWidth*i,behavior:'smooth'})};
+  tabs.appendChild(b);
+  var d=document.createElement('i');
+  if(i===0)d.className='on';
+  dots.appendChild(d);
+});
+
+var timer;
+deck.addEventListener('scroll',function(){
+  clearTimeout(timer);
+  timer=setTimeout(function(){
+    var i=Math.round(deck.scrollLeft/deck.clientWidth);
+    tabs.querySelectorAll('.tab').forEach(function(t,j){t.classList.toggle('on',j===i)});
+    dots.querySelectorAll('i').forEach(function(d,j){d.classList.toggle('on',j===i)});
+    var on=tabs.querySelectorAll('.tab')[i];
+    if(on)on.scrollIntoView({inline:'center',block:'nearest',behavior:'smooth'});
+  },90);
+});
+</script>
+</body>
+</html>
