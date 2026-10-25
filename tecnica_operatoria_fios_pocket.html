@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="cz-tema" content="Técnica Operatória e Fios Cirúrgicos — POCKET">
+<meta name="cz-grupo" content="Perioperatório">
+<meta name="cz-tags" content="pocket, técnica operatória, fios, agulhas, fechamento de parede, anastomoses, grampeadores">
+<meta name="cz-ordem" content="22">
+<title>Técnica Operatória e Fios — pocket</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#08080c; --bg2:#101019; --bg3:#181826;
+  --line:#26263a; --txt:#e6e6f0; --txt2:#9a9ab0;
+  --laranja:#f97316; --roxo:#a855f7; --ciano:#22d3ee;
+  --vermelho:#ef4444; --verde:#22c55e;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;font-size:15px;line-height:1.6;display:flex;flex-direction:column;overflow:hidden}
+
+.top{padding:14px 16px 0;flex-shrink:0;border-bottom:1px solid var(--line)}
+.top .eyebrow{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--laranja)}
+.top h1{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;margin:4px 0 10px;letter-spacing:-.01em}
+
+.tabs{display:flex;gap:7px;overflow-x:auto;padding-bottom:11px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex-shrink:0;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;background:var(--bg2);color:var(--txt2);border:1px solid var(--line);border-radius:20px;padding:7px 14px;cursor:pointer;white-space:nowrap;transition:.15s}
+.tab.on{background:var(--laranja);color:#08080c;border-color:var(--laranja);font-weight:700}
+
+.deck{flex:1;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.deck::-webkit-scrollbar{display:none}
+.card{flex:0 0 100%;scroll-snap-align:start;overflow-y:auto;padding:18px 16px 60px}
+
+h2{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:var(--laranja);margin-bottom:12px}
+h3{font-size:13px;font-weight:700;color:#fff;margin:16px 0 6px;text-transform:uppercase;letter-spacing:.05em}
+h3:first-of-type{margin-top:6px}
+p{margin-bottom:10px}
+ul{margin:0 0 11px 17px}
+li{margin-bottom:6px}
+b{color:#fff;font-weight:600}
+.pq{color:var(--txt2);font-style:italic}
+
+.chip{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:11px;background:var(--bg3);border:1px solid var(--line);border-radius:6px;padding:3px 9px;margin:0 5px 6px 0;color:var(--ciano)}
+
+.box{border-left:3px solid var(--laranja);background:rgba(249,115,22,.07);padding:11px 13px;border-radius:0 7px 7px 0;margin:12px 0;font-size:14px}
+.banca{border-left:3px solid var(--roxo);background:rgba(168,85,247,.08);padding:11px 13px;border-radius:0 7px 7px 0;margin:12px 0;font-size:14px}
+.mnemo{border-left:3px solid var(--ciano);background:rgba(34,211,238,.08);padding:11px 13px;border-radius:0 7px 7px 0;margin:12px 0;font-size:14px}
+.alerta{border-left:3px solid var(--vermelho);background:rgba(239,68,68,.08);padding:11px 13px;border-radius:0 7px 7px 0;margin:12px 0;font-size:14px}
+.vasc{border-left:3px solid var(--verde);background:rgba(34,197,94,.08);padding:11px 13px;border-radius:0 7px 7px 0;margin:12px 0;font-size:14px}
+.tag{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.15em;text-transform:uppercase;display:block;margin-bottom:6px}
+.banca .tag{color:var(--roxo)} .mnemo .tag{color:var(--ciano)} .alerta .tag{color:var(--vermelho)} .vasc .tag{color:var(--verde)} .box .tag{color:var(--laranja)}
+
+table{width:100%;border-collapse:collapse;font-size:12.5px;margin:11px 0}
+th{background:var(--bg3);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;text-align:left;padding:8px 9px;border-bottom:1px solid var(--line)}
+td{padding:8px 9px;border-bottom:1px solid var(--line);vertical-align:top}
+td:first-child{color:#fff;font-weight:500}
+
+.step{display:flex;gap:10px;margin-bottom:11px}
+.step-n{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--laranja);font-weight:700;flex-shrink:0;width:20px}
+.maos{display:grid;gap:6px;margin-top:6px}
+.mao{background:var(--bg3);border-radius:6px;padding:7px 10px;font-size:12px}
+.mao span{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--txt2);display:block;margin-bottom:2px}
+
+.dots{position:fixed;bottom:0;left:0;right:0;display:flex;justify-content:center;gap:6px;padding:12px;background:linear-gradient(transparent,var(--bg) 40%)}
+.dots i{width:6px;height:6px;border-radius:50%;background:var(--line);transition:.2s}
+.dots i.on{background:var(--laranja);width:18px;border-radius:3px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+.fig{background:#fff;border-radius:10px;padding:10px 10px 0;margin:16px 0;overflow:hidden;cursor:zoom-in}
+.fig img{width:100%;height:auto;display:block;max-height:420px;object-fit:contain}
+.fig figcaption{background:var(--bg3);color:var(--txt2);font-family:'JetBrains Mono',monospace;font-size:10.5px;line-height:1.55;letter-spacing:.02em;margin:10px -10px 0;padding:9px 12px;border-top:2px solid var(--laranja)}
+.figs2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.figs2 .fig{margin:12px 0}
+@media(max-width:620px){.figs2{grid-template-columns:1fr}}
+.atl{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--laranja);border:1px solid var(--laranja);border-radius:4px;padding:1px 6px;margin:10px 0 4px}
+.lb{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;z-index:99;padding:14px;cursor:zoom-out}
+.lb.on{display:flex}
+.lb img{max-width:100%;max-height:100%;background:#fff;border-radius:8px}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="eyebrow">Pocket · Perioperatório</div>
+  <h1>Técnica operatória e fios</h1>
+  <div class="tabs" id="tabs"></div>
+</div>
+
+<div class="deck" id="deck">
+
+  <div class="card" data-t="Tempos">
+    <h2>Tempos e preparo</h2>
+    <div class="mnemo"><span class="tag">D-H-E-S</span><b>D</b>iérese · <b>H</b>emostasia · <b>E</b>xérese · <b>S</b>íntese. Afastamento é tempo <b>complementar</b>.</div>
+    <h3>Antes da incisão</h3>
+    <ul>
+      <li>Tricotomia só se atrapalhar — <b>tricotomizador</b>, nunca lâmina</li>
+      <li>Clorexidina alcoólica 2% · <b>esperar secar</b> antes do cautério</li>
+      <li>Cefazolina 2 g (3 g ≥ 120 kg) <b>≤ 60 min antes</b> · repique 4 h ou sangramento &gt; 1,5 L · parar em 24 h</li>
+      <li>Normotermia ≥ 36 °C · glicemia &lt; 180–200</li>
+      <li>Checklist OMS: antes da anestesia · antes da incisão · antes de sair</li>
+    </ul>
+    <table>
+      <tr><th>Altemeier</th><th>Infecção</th></tr>
+      <tr><td>I Limpa</td><td>1–2%</td></tr>
+      <tr><td>II Limpa-contaminada</td><td>5–10%</td></tr>
+      <tr><td>III Contaminada (supurada)</td><td>~15–20%</td></tr>
+      <tr><td>IV Infectada (perfurada, pus)</td><td>&gt; 30%</td></tr>
+    </table>
+    <div class="alerta"><span class="tag">Nervos</span>Abdução <b>&lt; 90°</b> (plexo braquial) · cotovelo em <b>supinação</b> (ulnar) · perneira longe da cabeça da fíbula (fibular comum).</div>
+  </div>
+
+  <div class="card" data-t="Parede">
+    <h2>Parede abdominal</h2>
+    <p>Pele → Camper → Scarpa → aponeurose (linha alba) → músculo → fáscia transversalis → gordura pré-peritoneal → peritônio.</p>
+    <div class="box"><span class="tag">Linha arqueada</span>Abaixo dela, toda a aponeurose passa <b>na frente</b> do reto; atrás só fica a transversalis. <span class="pq">(embaixo do umbigo o músculo fica com as "costas nuas")</span></div>
+    <table>
+      <tr><th>Artéria</th><th>Atenção</th></tr>
+      <tr><td>Epigástrica inferior (ilíaca externa)</td><td>Trocarte lateral, Pfannenstiel · limite lateral do Hesselbach</td></tr>
+      <tr><td>Epigástrica superior (torácica interna)</td><td>Colateral na oclusão aortoilíaca</td></tr>
+      <tr><td>Intercostais / lombares</td><td>Entre oblíquo interno e transverso (plano do TAP)</td></tr>
+    </table>
+    <h3>Incisões</h3>
+    <ul>
+      <li><b>Mediana</b>: rápida, ampliável — trauma e instabilidade; mais hérnia</li>
+      <li><b>Kocher</b>: via biliar · <b>Chevron</b>: Whipple, transplante</li>
+      <li><b>Pfannenstiel</b>: pelve · <b>McBurney</b>: apêndice, em grade</li>
+      <li>EHS/AHS: preferir <b>vídeo</b> ou <b>não mediana</b> quando seguro</li>
+    </ul>
+  </div>
+
+  <div class="card" data-t="Energia">
+    <h2>Diérese e energia</h2>
+    <span class="chip">10 pele</span><span class="chip">11 fura</span><span class="chip">15 detalhe</span><span class="chip">20–23 amplas</span>
+    <ul>
+      <li><b>Metzenbaum</b> disseca — nunca corta fio · <b>Mayo reta</b> corta fio · <b>Potts</b> arteriotomia</li>
+      <li>Corte: contínua, baixa voltagem · Coag: intermitente, alta voltagem</li>
+      <li><b>Bipolar</b> no marca-passo/CDI</li>
+      <li>Laparoscopia: <b>acoplamento capacitivo</b> — nunca trocarte híbrido</li>
+    </ul>
+    <div class="box"><span class="tag">5 e 7</span>Ultrassônico sela até <b>5 mm</b> · LigaSure até <b>7 mm</b>.</div>
+    <h3>Hemostasia</h3>
+    <ul>
+      <li>Temporária: compressão, Pringle, packing</li>
+      <li>Definitiva: ligadura, <b>transfixação</b> (coto curto ou sob tensão), clipe, energia</li>
+      <li>Ligadura: ponta para cima → fio por trás → 1º seminó na ponta → abre a pinça → nó quadrado → corta 3 mm (trançado) / 5 mm (mono)</li>
+    </ul>
+    <div class="alerta"><span class="tag">Fogo em sala</span>O₂ + cautério + campo. Álcool úmido + cautério = queimadura.</div>
+  </div>
+
+  <div class="card" data-t="Mãos">
+    <h2>Instrumental e mãos</h2>
+    <div class="box"><span class="tag">Regra</span><b>Direita executa</b> (corta, costura, pinça) · <b>esquerda expõe</b> (tensiona, apresenta).</div>
+    <table>
+      <tr><th>Momento</th><th>MD</th><th>ME</th></tr>
+      <tr><td>Incisão</td><td>Bisturi</td><td>Tensiona a pele</td></tr>
+      <tr><td>Dissecção</td><td>Metzenbaum / cautério</td><td>DeBakey, contratração</td></tr>
+      <tr><td>Ligadura</td><td>Hemostática, fio, nó</td><td>Apresenta o vaso</td></tr>
+      <tr><td>Síntese</td><td>Porta-agulha, agulha a 2/3</td><td>Dente de rato (pele, fáscia) · anatômica (alça, vaso)</td></tr>
+    </table>
+    <span class="chip">Kelly = metade</span><span class="chip">Crile = tudo</span><span class="chip">Kocher = dente</span><span class="chip">Babcock atraumática</span><span class="chip">Allis traumática</span><span class="chip">Mixter = ângulo reto</span>
+    <div class="alerta"><span class="tag">Nunca</span>Pinça com dente em alça ou vaso. Contagem: antes, ao fechar a cavidade, ao fechar a pele.</div>
+  </div>
+
+  <div class="card" data-t="Fios">
+    <h2>Fios — o essencial</h2>
+    <p>Mais zeros = mais fino. Trançado: nó firme, mas <b>capilaridade</b>. Mono: desliza, menos infecção, mais seminós.</p>
+    <table>
+      <tr><th>Fio</th><th>Meia-força</th><th>Some em</th></tr>
+      <tr><td>Monocryl / Caprofyl</td><td>~1 sem</td><td>~3 meses</td></tr>
+      <tr><td>Vicryl</td><td><b>3 sem</b></td><td>~2 meses</td></tr>
+      <tr><td>PDS II</td><td>60% em 6 sem</td><td>~6 meses</td></tr>
+      <tr><td>Prolene</td><td>Não perde</td><td>Nunca</td></tr>
+      <tr><td>Mononylon</td><td>−20%/ano</td><td>Hidrólise lenta</td></tr>
+      <tr><td>Seda</td><td>~1 ano</td><td>Fragmenta ~2 anos</td></tr>
+    </table>
+    <div class="mnemo"><span class="tag">O fio tem que durar mais que o buraco</span>Cólon 14–21 dias · esôfago 30–60 · bile ~30 · aponeurose meses · vaso nunca.</div>
+    <h3>Agulha</h3>
+    <ul>
+      <li><b>Cilíndrica</b>: víscera, vaso, aponeurose · <b>triangular reversa</b>: pele</li>
+      <li>1/2 cavidade · 3/8 pele · 5/8 pelve</li>
+      <li>Seminós: trançado 3–4 · mono 5–6 · <b>vaso 6–7</b></li>
+    </ul>
+  </div>
+
+  <div class="card" data-t="Macetes">
+    <h2>Os macetes</h2>
+    <div class="mnemo"><span class="tag">Frase-mãe</span><b>Seda amarra. Vicryl fecha. PDS sustenta. Prolene eterniza.</b></div>
+    <div class="mnemo"><span class="tag">T-E-L-A</span><b>T</b>ela → Prolene/PDS 2-0, nunca Vicryl · <b>E</b>spaço → Prolene 3-0 · <b>L</b>uz → absorvível · <b>A</b>nastomose → escada.<br><b>Prolene fecha espaço, não fecha luz</b> (exceto vaso e pâncreas).</div>
+    <div class="mnemo"><span class="tag">Escada</span>Cólon <b>V</b>ê, Esôfago <b>PeD</b>e, Bile <b>PeD</b>e Fino, Pâncreas e Vaso <b>PRO</b>vam.</div>
+    <div class="mnemo"><span class="tag">Calibre</span>Parede 1 → intestino 3-0 → bile/pâncreas 5-0 → vaso 5-0 a 7-0.</div>
+    <div class="alerta"><span class="tag">Nunca erre</span><b>Vaso = Prolene.</b><br><b>Urina e bile = absorvível</b> (permanente vira cálculo).</div>
+  </div>
+
+  <div class="card" data-t="Laparotomia">
+    <h2>Laparotomia — fio em cada momento</h2>
+    <div class="step"><div class="step-n">1</div><div><b>Pele</b> num corte só<div class="maos"><div class="mao"><span>ME</span>tensiona</div><div class="mao"><span>MD</span>lâmina 20–23 → cautério</div></div></div></div>
+    <div class="step"><div class="step-n">2</div><div><b>Linha alba e peritônio</b> entre duas Kelly, dedos protegendo alça<div class="maos"><div class="mao"><span>ME</span>Kelly, dedos sob a fáscia</div><div class="mao"><span>MD</span>bisturi → Mayo curva</div></div></div></div>
+    <div class="step"><div class="step-n">3</div><div><b>Exposição</b>: Gosset/Balfour + compressas úmidas</div></div>
+    <div class="step"><div class="step-n">4</div><div><b>Mesentério</b> entre hemostáticas<div class="maos"><div class="mao"><span>ME</span>apresenta contra a luz</div><div class="mao"><span>MD</span>Kelly, Mixter · <b>Seda 2-0</b> (0 se calibroso)</div></div></div></div>
+    <div class="step"><div class="step-n">5</div><div><b>Alça</b>: Doyen do lado que fica · GIA azul</div></div>
+    <div class="step"><div class="step-n">6</div><div><b>Anastomose</b><div class="maos"><div class="mao"><span>ME</span>DeBakey mostrando a submucosa</div><div class="mao"><span>MD</span><b>Vicryl 3-0</b> cilíndrica ½ + <b>Seda 3-0</b> Lembert</div></div></div></div>
+    <div class="step"><div class="step-n">7</div><div><b>Brecha mesentérica</b>: Vicryl 3-0 (Petersen: Prolene 3-0)</div></div>
+    <div class="step"><div class="step-n">8</div><div><b>Contagem</b>, troca de luvas; dreno por contra-abertura, <b>Seda 2-0</b></div></div>
+    <div class="step"><div class="step-n">9</div><div><b>Aponeurose</b> <b>PDS</b> contínua small bites (serviço: Vicryl 1)</div></div>
+    <div class="step"><div class="step-n">10</div><div><b>Subcutâneo</b> Vicryl 3-0 · <b>pele</b> Mononylon 4-0 separado (vídeo: Monocryl intradérmico)</div></div>
+  </div>
+
+  <div class="card" data-t="Mesa">
+    <h2>Mesa do serviço × evidência</h2>
+    <table>
+      <tr><th>Gesto</th><th>Serviço</th></tr>
+      <tr><td>Linha alba</td><td>Vicryl 1 <b>≠ diretriz (PDS)</b></td></tr>
+      <tr><td>Portal ≥ 10 mm</td><td>Vicryl 2-0</td></tr>
+      <tr><td>Oblíquo externo</td><td>Vicryl 3-0</td></tr>
+      <tr><td>Subcutâneo</td><td>Vicryl 3-0</td></tr>
+      <tr><td>Pele aberta / vídeo</td><td>Mononylon 4-0 / Monocryl intradérmico</td></tr>
+      <tr><td>Pedículo</td><td>Seda 0 / 2-0</td></tr>
+      <tr><td>Dreno</td><td>Seda 2-0</td></tr>
+      <tr><td>Cólon</td><td>Vicryl 3-0 + Seda</td></tr>
+      <tr><td>Esôfago</td><td>PDS 3-0</td></tr>
+      <tr><td>Colédoco-jejuno</td><td>Prolene 4-0 <b>≠ evidência (PDS 5-0)</b></td></tr>
+      <tr><td>Pâncreas-jejuno</td><td>Prolene 5-0 + Seda 0</td></tr>
+      <tr><td>Bariátrica GJ / Petersen</td><td>Caprofyl 3-0 / Prolene 3-0</td></tr>
+      <tr><td>Tela inguinal</td><td>Prolene 3-0</td></tr>
+    </table>
+    <div class="banca"><span class="tag">Dois pontos de prova</span>Serviço acerta o gesto e erra o material em <b>linha alba</b> e <b>via biliar</b>.</div>
+  </div>
+
+  <div class="card" data-t="Fechar">
+    <h2>Fechamento de parede</h2>
+    <div class="mnemo"><span class="tag">5 · 5 · 4 · PDS</span>Ponto de <b>5 mm</b>, a cada <b>5 mm</b>, fio:ferida <b>≥ 4:1</b>, <b>PDS</b> contínuo.</div>
+    <ul>
+      <li>Millbourn: hérnia <b>5,6% × 18%</b> · STITCH: 13% × 21%</li>
+      <li>Camada única aponeurótica; peritônio separado não ajuda</li>
+      <li>Tela profilática no alto risco (aneurisma, obeso, hérnia prévia)</li>
+      <li>Fechar portal ≥ 10 mm</li>
+      <li>Emergência: sem recomendação forte</li>
+    </ul>
+    <div class="alerta"><span class="tag">Deiscência</span>"<b>Água de carne</b>" no <b>5º–8º PO</b> → evisceração é emergência: compressa úmida, jejum, bloco.</div>
+    <h3>Pontos</h3>
+    <span class="chip">Everte: Donati, Wolff</span><span class="chip">Inverte: Lembert, Connell, Gambee</span><span class="chip">Alto risco: Smead-Jones</span>
+  </div>
+
+  <div class="card" data-t="Anastomose">
+    <h2>Anastomose e grampeador</h2>
+    <div class="mnemo"><span class="tag">V-T-C-A-E-S</span><b>V</b>ascularização · sem <b>T</b>ensão · <b>C</b>oaptação da submucosa · <b>A</b>ssepsia · t<b>É</b>cnica atraumática · sem e<b>S</b>tenose.</div>
+    <ul>
+      <li>Plano único = duplo · contínua = separados (fístula)</li>
+      <li>PDS <b>não</b> é superior no cólon (19% de estenose)</li>
+      <li>PDS na alça só em peritonite, desnutrição, rádio, corticoide</li>
+      <li>Choque, peritonite fecal, desnutrição grave → ostomia</li>
+    </ul>
+    <table>
+      <tr><th>Carga</th><th>Tecido</th></tr>
+      <tr><td>Branca 2,5</td><td>Vascular</td></tr>
+      <tr><td>Azul 3,5</td><td>Delgado, estômago fino</td></tr>
+      <tr><td>Verde 4,8</td><td>Estômago espesso, cólon edemaciado</td></tr>
+    </table>
+    <div class="box"><span class="tag">Circular</span>Maior que passe sem forçar · conferir <b>dois donuts</b> · teste do borracheiro.</div>
+  </div>
+
+  <div class="card" data-t="Tela/dreno">
+    <h2>Telas e drenos</h2>
+    <table>
+      <tr><th>Tela</th><th>Fio</th></tr>
+      <tr><td>Lichtenstein</td><td>Prolene 3-0 (U no púbis, contínua no inguinal)</td></tr>
+      <tr><td>Femoral</td><td>PDS 2-0</td></tr>
+      <tr><td>Onlay</td><td>Prolene 2-0</td></tr>
+      <tr><td>McVay</td><td>Prolene 2-0</td></tr>
+    </table>
+    <div class="banca"><span class="tag">Banca</span>Fixação não muda dor crônica; absorvível curto aumenta <b>recidiva</b>. Tela nunca com Vicryl.</div>
+    <h3>Drenos</h3>
+    <ul>
+      <li>Passivo: Penrose, Kehr · Ativo: Portovac, Blake</li>
+      <li><b>Contra-abertura</b>, fixar com Seda 2-0</li>
+      <li><b>Sem dreno de rotina</b>: colecistectomia eletiva, apêndice não complicado, colectomia eletiva</li>
+      <li>Dreno não previne fístula</li>
+    </ul>
+  </div>
+
+  <div class="card" data-t="Vascular">
+    <h2>Nota vascular</h2>
+    <div class="vasc"><span class="tag">Sempre Prolene</span>Não absorve · tromborresistente · desliza · mínima reação. Contínua evertida, agulhado nas duas pontas, <b>6–7 seminós</b>.</div>
+    <table>
+      <tr><th>Vaso</th><th>Fio</th></tr>
+      <tr><td>Aorta</td><td>3-0 / 4-0</td></tr>
+      <tr><td>Ilíaca, femoral</td><td>5-0</td></tr>
+      <tr><td>Poplítea, carótida</td><td>6-0</td></tr>
+      <tr><td>Tibiais, pediosa, FAV</td><td>6-0 / 7-0</td></tr>
+    </table>
+    <ul>
+      <li>No vaso doente: agulha <b>de dentro para fora</b> (prende a placa)</li>
+      <li>PTFE: fio de PTFE (furo = fio)</li>
+      <li>Aorta rota: mediana · abdome hostil/justarrenal: retroperitoneal E</li>
+    </ul>
+  </div>
+
+  <div class="card" data-t="Complicações">
+    <h2>Complicações</h2>
+    <table>
+      <tr><th>Problema</th><th>Culpado → prevenção</th></tr>
+      <tr><td>Hérnia incisional</td><td>Vicryl, pontos largos → PDS, 4:1</td></tr>
+      <tr><td>Cálculo biliar/vesical</td><td>Prolene, seda → absorvível</td></tr>
+      <tr><td>Úlcera marginal</td><td>Inabsorvível na GJ → Caprofyl</td></tr>
+      <tr><td>Estenose colônica</td><td>PDS → Vicryl 3-0</td></tr>
+      <tr><td>Sinus de fio</td><td>Trançado em campo sujo → mono</td></tr>
+      <tr><td>Queimadura</td><td>Placa, capacitivo, álcool</td></tr>
+      <tr><td>Corpo estranho</td><td>Contagem → RX se divergir</td></tr>
+    </table>
+    <div class="box"><span class="tag">Infecção de ferida</span>Até 30 dias (90 com implante) · <b>abrir e drenar</b> · antibiótico só se celulite &gt; 5 cm, sistêmico, imunossuprimido ou implante.</div>
+  </div>
+
+</div>
+
+<div class="dots" id="dots"></div>
+
+<script>
+var deck=document.getElementById('deck'),
+    cards=[].slice.call(deck.querySelectorAll('.card')),
+    tabs=document.getElementById('tabs'),
+    dots=document.getElementById('dots');
+
+cards.forEach(function(c,i){
+  var b=document.createElement('button');
+  b.className='tab'+(i===0?' on':'');
+  b.textContent=c.dataset.t;
+  b.onclick=function(){deck.scrollTo({left:deck.clientWidth*i,behavior:'smooth'})};
+  tabs.appendChild(b);
+  var d=document.createElement('i');
+  if(i===0)d.className='on';
+  dots.appendChild(d);
+});
+
+var timer;
+deck.addEventListener('scroll',function(){
+  clearTimeout(timer);
+  timer=setTimeout(function(){
+    var i=Math.round(deck.scrollLeft/deck.clientWidth);
+    tabs.querySelectorAll('.tab').forEach(function(t,j){t.classList.toggle('on',j===i)});
+    dots.querySelectorAll('i').forEach(function(d,j){d.classList.toggle('on',j===i)});
+    var on=tabs.querySelectorAll('.tab')[i];
+    if(on)on.scrollIntoView({inline:'center',block:'nearest',behavior:'smooth'});
+  },90);
+});
+</script>
+</body>
+</html>

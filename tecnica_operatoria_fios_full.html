@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="cz-tema" content="Técnica Operatória e Fios Cirúrgicos">
+<meta name="cz-grupo" content="Perioperatório">
+<meta name="cz-tags" content="técnica operatória, tempos fundamentais, incisões, eletrocirurgia, hemostasia, instrumental, fios, agulhas, nós, fechamento de parede, anastomoses, grampeadores, telas, drenos">
+<meta name="cz-ordem" content="22">
+<title>Técnica Operatória e Fios Cirúrgicos — carolzita</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#08080c; --bg2:#101019; --bg3:#161622;
+  --line:#26263a; --txt:#e6e6f0; --txt2:#9a9ab0;
+  --laranja:#f97316; --roxo:#a855f7; --ciano:#22d3ee;
+  --vermelho:#ef4444; --verde:#22c55e;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;font-size:15.5px;line-height:1.65;padding-bottom:80px}
+.wrap{max-width:980px;margin:0 auto;padding:0 18px}
+
+header{padding:52px 0 30px;border-bottom:1px solid var(--line);margin-bottom:26px}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--laranja);margin-bottom:12px}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(28px,5vw,46px);line-height:1.08;letter-spacing:-.02em}
+.sub{color:var(--txt2);margin-top:12px;font-size:15px;max-width:70ch}
+.refs{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--txt2);margin-top:18px;line-height:1.9}
+
+.legenda{display:flex;flex-wrap:wrap;gap:14px;margin:22px 0 6px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--txt2)}
+.legenda span{display:flex;align-items:center;gap:6px}
+.dot{width:9px;height:9px;border-radius:2px;display:inline-block}
+
+section{border:1px solid var(--line);border-radius:12px;margin-bottom:14px;background:var(--bg2);overflow:hidden}
+.sec-head{display:flex;align-items:center;gap:14px;padding:17px 20px;cursor:pointer;user-select:none;transition:background .15s}
+.sec-head:hover{background:var(--bg3)}
+.sec-head:focus-visible{outline:2px solid var(--laranja);outline-offset:-2px}
+.num{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--laranja);border:1px solid var(--laranja);border-radius:4px;padding:2px 7px;flex-shrink:0}
+.sec-head h2{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;flex:1;letter-spacing:-.01em}
+.chev{color:var(--txt2);font-size:13px;transition:transform .2s}
+section.open .chev{transform:rotate(90deg)}
+.sec-body{display:none;padding:4px 20px 24px}
+section.open .sec-body{display:block}
+
+h3{font-family:'Syne',sans-serif;font-size:14.5px;font-weight:700;color:var(--laranja);margin:22px 0 9px;letter-spacing:.01em}
+h3:first-child{margin-top:8px}
+h4{font-size:13.5px;font-weight:600;color:var(--txt);margin:15px 0 6px}
+p{margin-bottom:11px}
+ul,ol{margin:0 0 12px 20px}
+li{margin-bottom:6px}
+b,strong{color:#fff;font-weight:600}
+.pq{color:var(--txt2);font-style:italic;font-weight:400}
+code{font-family:'JetBrains Mono',monospace;font-size:12.5px;background:var(--bg3);padding:1px 6px;border-radius:4px;color:var(--ciano)}
+
+.box{border-left:3px solid var(--laranja);background:rgba(249,115,22,.06);padding:13px 16px;border-radius:0 8px 8px 0;margin:14px 0}
+.banca{border-left:3px solid var(--roxo);background:rgba(168,85,247,.07);padding:13px 16px;border-radius:0 8px 8px 0;margin:14px 0}
+.banca .tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--roxo);display:block;margin-bottom:7px}
+.mnemo{border-left:3px solid var(--ciano);background:rgba(34,211,238,.07);padding:13px 16px;border-radius:0 8px 8px 0;margin:14px 0}
+.mnemo .tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ciano);display:block;margin-bottom:7px}
+.alerta{border-left:3px solid var(--vermelho);background:rgba(239,68,68,.07);padding:13px 16px;border-radius:0 8px 8px 0;margin:14px 0}
+.alerta .tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--vermelho);display:block;margin-bottom:7px}
+.vasc{border-left:3px solid var(--verde);background:rgba(34,197,94,.07);padding:13px 16px;border-radius:0 8px 8px 0;margin:14px 0}
+.vasc .tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--verde);display:block;margin-bottom:7px}
+
+.tbl-wrap{overflow-x:auto;margin:14px 0;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:540px}
+th{background:var(--bg3);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}
+td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td:first-child{color:#fff;font-weight:500}
+
+.passo{display:flex;gap:14px;margin-bottom:15px;padding-bottom:15px;border-bottom:1px dashed var(--line)}
+.passo:last-child{border-bottom:none}
+.passo-n{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--laranja);font-weight:700;flex-shrink:0;width:26px;padding-top:2px}
+.maos{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:9px}
+.mao{background:var(--bg3);border-radius:7px;padding:9px 12px;font-size:12.5px}
+.mao .lbl{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--txt2);display:block;margin-bottom:4px}
+@media(max-width:620px){.maos{grid-template-columns:1fr}}
+
+.q{margin-bottom:20px;padding-bottom:18px;border-bottom:1px dashed var(--line)}
+.q:last-child{border-bottom:none;padding-bottom:0}
+.q-banca{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--roxo);display:block;margin-bottom:7px}
+.q-alt{margin:4px 0 0 4px;font-size:14px}
+.q-resp{margin-top:10px;background:var(--bg3);border-radius:7px;padding:10px 13px;font-size:13.5px}
+.q-resp b{color:var(--verde)}
+
+.ctrl{display:flex;gap:9px;margin-bottom:18px}
+.ctrl button{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;background:var(--bg2);color:var(--txt2);border:1px solid var(--line);border-radius:7px;padding:8px 14px;cursor:pointer;transition:.15s}
+.ctrl button:hover{color:var(--laranja);border-color:var(--laranja)}
+footer{margin-top:34px;padding-top:20px;border-top:1px solid var(--line);font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--txt2);line-height:1.9}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+
+.fig{background:#fff;border-radius:10px;padding:10px 10px 0;margin:16px 0;overflow:hidden;cursor:zoom-in}
+.fig img{width:100%;height:auto;display:block;max-height:520px;object-fit:contain}
+.fig figcaption{background:var(--bg3);color:var(--txt2);font-family:'JetBrains Mono',monospace;font-size:10.5px;line-height:1.55;letter-spacing:.02em;margin:10px -10px 0;padding:9px 12px;border-top:2px solid var(--laranja)}
+.figs2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.figs2 .fig{margin:12px 0}
+@media(max-width:620px){.figs2{grid-template-columns:1fr}}
+.atl{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--laranja);border:1px solid var(--laranja);border-radius:4px;padding:1px 6px;margin:10px 0 4px}
+.lb{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;z-index:99;padding:14px;cursor:zoom-out}
+.lb.on{display:flex}
+.lb img{max-width:100%;max-height:100%;background:#fff;border-radius:8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Perioperatório · Resumo 22</div>
+  <h1>Técnica operatória e fios cirúrgicos — do primeiro corte ao último ponto</h1>
+  <p class="sub">A base que atravessa todas as operações: tempos fundamentais, preparo e posicionamento, parede abdominal, incisões, energias, hemostasia, instrumental em cada mão, e a escolha do fio pelo <b>gesto</b> e pelo <b>órgão</b> — não pelo nome da cirurgia. Inclui a mesa de rotina do serviço comparada à evidência atual.</p>
+  <div class="refs">
+    Sabiston 21ª ed. · Zollinger's Atlas of Surgical Operations 11ª ed. · Netter — Atlas de Anatomia Humana 8ª ed.<br>
+    Diretriz EHS/AHS de fechamento da parede abdominal (Deerenberg, Br J Surg 2022) · STITCH (Lancet 2015) · Millbourn (Arch Surg 2009) · ESTOIH, 5 anos<br>
+    CDC 2017 e OMS 2018 — prevenção de infecção de sítio cirúrgico · Checklist de Cirurgia Segura OMS<br>
+    Metanálise pele absorvível × inabsorvível (27 ECRs, 5.096 pacientes) · Finn Mesh Study 5 anos · Registro sueco de 82.015 Lichtenstein · Cochrane — anastomose em plano único × duplo · Andrianello (520 DPTs pareadas) · Hepp-Couinaud
+  </div>
+  <div class="legenda">
+    <span><i class="dot" style="background:var(--laranja)"></i> conteúdo</span>
+    <span><i class="dot" style="background:var(--roxo)"></i> alto rendimento / banca</span>
+    <span><i class="dot" style="background:var(--ciano)"></i> mnemônico</span>
+    <span><i class="dot" style="background:var(--verde)"></i> nota vascular</span>
+    <span><i class="dot" style="background:var(--vermelho)"></i> armadilha</span>
+  </div>
+</header>
+
+<div class="ctrl">
+  <button onclick="todas(true)">Abrir tudo</button>
+  <button onclick="todas(false)">Fechar tudo</button>
+</div>
+
+<!-- 01 -->
+<section class="open">
+  <div class="sec-head" tabindex="0"><span class="num">01</span><h2>Tempos fundamentais e complementares</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <p>Toda operação, da drenagem de abscesso ao transplante, se decompõe em <b>quatro tempos fundamentais</b>.</p>
+    <div class="tbl-wrap"><table>
+      <tr><th>Tempo</th><th>Definição</th><th>Instrumentos típicos</th></tr>
+      <tr><td>1. Diérese</td><td>Divisão dos tecidos para criar a via de acesso <span class="pq">(abrir caminho até o que precisa ser operado)</span></td><td>Bisturi, tesoura, eletrocautério, divulsão romba, serra</td></tr>
+      <tr><td>2. Hemostasia</td><td>Controle do sangramento — preventiva, temporária ou definitiva <span class="pq">(fechar as torneirinhas de sangue)</span></td><td>Pinças hemostáticas, ligadura, clipes, energia, hemostáticos tópicos</td></tr>
+      <tr><td>3. Exérese / cirurgia propriamente dita</td><td>O ato terapêutico: ressecar, reparar, derivar, transplantar</td><td>Conforme o procedimento</td></tr>
+      <tr><td>4. Síntese</td><td>Reconstituição dos planos <span class="pq">(costurar tudo de volta no lugar)</span></td><td>Porta-agulha, fios, grampeadores, clipes de pele</td></tr>
+    </table></div>
+    <h3>Tempos complementares (auxiliares)</h3>
+    <ul>
+      <li><b>Preensão</b> — segurar sem traumatizar (anatômica, Allis, Babcock, Duval).</li>
+      <li><b>Divulsão</b> — separação romba por planos de clivagem natural <span class="pq">(afastar os tecidos empurrando, sem cortar)</span>: dedo, gaze montada, tesoura fechada que se abre.</li>
+      <li><b>Exposição / afastamento</b> — estático (Gosset, Finochietto, Balfour, Thompson) ou dinâmico (Farabeuf, Doyen, Volkmann, Deaver).</li>
+      <li><b>Aspiração</b> — Yankauer (rígido, campo aberto), Poole (camisa perfurada, grandes coleções).</li>
+    </ul>
+    <div class="mnemo"><span class="tag">Mnemônico</span><b>D-H-E-S</b> → Diérese, Hemostasia, Exérese, Síntese. "<b>D</b>eus <b>H</b>oje <b>E</b>stá <b>S</b>alvando."</div>
+    <div class="banca"><span class="tag">Alto rendimento · AMRIGS / Santa Casa POA</span>"A divulsão digital do espaço pré-peritoneal corresponde a qual tempo?" → <b>diérese</b> (diérese romba). Afastamento <b>não</b> é tempo fundamental — é complementar.</div>
+  </div>
+</section>
+
+<!-- 02 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">02</span><h2>Preparo, antissepsia, risco de infecção e posicionamento</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <h3>Preparo da pele e profilaxia</h3>
+    <ul>
+      <li><b>Tricotomia</b>: só se o pelo atrapalhar; tricotomizador elétrico, imediatamente antes. Lâmina de barbear aumenta infecção <span class="pq">(a lâmina faz microcortes por onde a bactéria entra)</span>.</li>
+      <li><b>Antissepsia</b>: clorexidina alcoólica 2% supera o PVPI em pele íntegra; do sítio da incisão para a periferia; <b>esperar secar</b> antes do eletrocautério. Mucosa, olho, ouvido → PVPI aquoso.</li>
+      <li><b>Degermação das mãos</b>: clorexidina degermante 2–4% ou PVPI (2–5 min na primeira), ou preparação alcoólica sem água.</li>
+      <li><b>Antibioticoprofilaxia</b>: cefazolina 2 g IV (3 g se ≥120 kg) <b>até 60 min antes da incisão</b> (vancomicina e quinolona: 120 min). Repique quando a cirurgia passa de 2 meias-vidas (cefazolina ≈ 4 h) ou sangramento &gt; 1.500 mL. Suspender em ≤ 24 h.</li>
+      <li><b>Pacote de prevenção</b>: normotermia (≥ 36 °C), glicemia &lt; 180–200 mg/dL, FiO₂ elevada, evitar transfusão desnecessária, troca de luvas e instrumental antes de fechar em cirurgia contaminada, fio com triclosan (CDC e OMS: considerar).</li>
+      <li><b>Checklist de Cirurgia Segura (OMS)</b>: antes da anestesia, antes da incisão (pausa cirúrgica), antes de sair da sala.</li>
+    </ul>
+    <h3>Classificação das feridas (Altemeier)</h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>Classe</th><th>Definição</th><th>Infecção esperada</th><th>Exemplo</th></tr>
+      <tr><td>I — Limpa</td><td>Eletiva, sem inflamação, sem abrir trato respiratório, digestivo ou geniturinário</td><td>1–2%</td><td>Herniorrafia, tireoidectomia, mastectomia</td></tr>
+      <tr><td>II — Limpa-contaminada</td><td>Abertura controlada de víscera oca, sem extravasamento significativo</td><td>5–10%</td><td>Colecistectomia eletiva, gastrectomia, colectomia preparada</td></tr>
+      <tr><td>III — Contaminada</td><td>Extravasamento grosseiro, inflamação aguda não purulenta, trauma &lt; 4–6 h, quebra grosseira de técnica</td><td>~15–20%</td><td>Apendicite supurada, enterotomia com extravasamento</td></tr>
+      <tr><td>IV — Infectada</td><td>Pus, víscera perfurada, trauma &gt; 6 h com tecido desvitalizado</td><td>&gt; 30%</td><td>Peritonite fecal, abscesso drenado</td></tr>
+    </table></div>
+    <div class="banca"><span class="tag">Alto rendimento · HCPA / GHC / AMRIGS</span>Par clássico: apendicite <b>supurada = III</b>; perfurada com peritonite = <b>IV</b>. Profilaxia é <b>até 60 min antes da incisão</b> — não "após o fechamento", e não por 7 dias.</div>
+    <h3>Posicionamento</h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>Posição</th><th>Indicação</th><th>Cuidados e riscos</th></tr>
+      <tr><td>Decúbito dorsal horizontal</td><td>Laparotomia, hérnia, mama</td><td>Braços em abdução <b>&lt; 90°</b> — acima disso, estiramento do plexo braquial</td></tr>
+      <tr><td>Trendelenburg</td><td>Pelve, apêndice, laparoscopia pélvica</td><td>↑ pressão intracraniana e intraocular, diafragma sobe, risco de o paciente escorregar</td></tr>
+      <tr><td>Proclive (Trendelenburg reverso)</td><td>Andar supramesocólico: vesícula, esôfago, bariátrica</td><td>Hipotensão por estase venosa nas pernas</td></tr>
+      <tr><td>Litotomia / Lloyd-Davies</td><td>Colorretal baixa, uro, gineco</td><td>Nervo <b>fibular comum</b> (compressão lateral do joelho); síndrome compartimental se &gt; 4 h</td></tr>
+      <tr><td>Decúbito lateral</td><td>Toracotomia, nefrectomia, esplenectomia aberta</td><td>Coxim axilar protege o plexo braquial do lado de baixo</td></tr>
+      <tr><td>Canivete (Kraske)</td><td>Anorretal, pilonidal</td><td>Coxins nas cristas ilíacas, ↓ retorno venoso</td></tr>
+    </table></div>
+    <div class="alerta"><span class="tag">Armadilha</span>Lesão nervosa de posicionamento é causa frequente de processo e é <b>evitável</b>: plexo braquial (abdução &gt; 90°, rotação da cabeça), <b>ulnar</b> (cotovelo em pronação — posicionar em <b>supinação</b>), fibular comum (perneira).</div>
+  </div>
+</section>
+
+<!-- 03 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">03</span><h2>Anatomia da parede abdominal e vascularização</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <h3>Planos, de fora para dentro (linha média infraumbilical)</h3>
+    <ol>
+      <li>Pele</li>
+      <li>Tela subcutânea — fáscia de <b>Camper</b> (gordurosa) e de <b>Scarpa</b> (membranosa; continua com o dartos e a fáscia de Colles)</li>
+      <li>Aponeurose — na linha média, a <b>linha alba</b> (fusão das aponeuroses dos oblíquos e do transverso)</li>
+      <li>Músculos — reto (medial); lateralmente oblíquo externo → oblíquo interno → transverso</li>
+      <li>Fáscia transversalis</li>
+      <li>Gordura pré-peritoneal</li>
+      <li>Peritônio parietal</li>
+    </ol>
+    <h3>Bainha do reto e linha arqueada (de Douglas)</h3>
+    <p>Acima da linha arqueada (≈ meio caminho entre umbigo e púbis): folheto <b>anterior</b> = oblíquo externo + lâmina anterior do oblíquo interno; folheto <b>posterior</b> = lâmina posterior do oblíquo interno + transverso. <b>Abaixo</b> dela, todas as aponeuroses passam pela frente — atrás do reto sobra só a fáscia transversalis. <span class="pq">(embaixo do umbigo, o "colete" do músculo só tem frente; as costas ficam nuas)</span> É o plano da tela retromuscular (Rives-Stoppa) e o ponto mais frágil.</p>
+    <h3>Vascularização</h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>Artéria</th><th>Origem</th><th>Território</th><th>Relevância cirúrgica</th></tr>
+      <tr><td>Epigástrica superior</td><td>Torácica interna</td><td>Reto supraumbilical</td><td>Anastomosa com a inferior — colateral na oclusão aortoilíaca</td></tr>
+      <tr><td>Epigástrica inferior</td><td>Ilíaca externa</td><td>Reto infraumbilical</td><td>Limite lateral do triângulo de Hesselbach; lesada em trocarte lateral e Pfannenstiel</td></tr>
+      <tr><td>Circunflexa ilíaca profunda</td><td>Ilíaca externa</td><td>Parede lateral inferior</td><td>Risco na McBurney ampliada</td></tr>
+      <tr><td>Intercostais 7–11, subcostal, lombares</td><td>Aorta</td><td>Parede lateral</td><td>Correm entre oblíquo interno e transverso (plano do bloqueio TAP)</td></tr>
+      <tr><td>Epigástrica superficial e circunflexa ilíaca superficial</td><td>Femoral</td><td>Subcutâneo</td><td>Sangram no Pfannenstiel e no acesso femoral</td></tr>
+    </table></div>
+    <p><b>Inervação</b>: T7–T11 (intercostais), T12 (subcostal), L1 (ílio-hipogástrico e ilioinguinal), todos entre oblíquo interno e transverso. <b>Drenagem venosa</b>: acima do umbigo → cava superior; abaixo → cava inferior; anastomoses periumbilicais = cabeça de medusa na hipertensão portal.</p>
+    <div class="banca"><span class="tag">Alto rendimento · PUC-RS / Santa Casa POA</span>Composição da bainha acima × abaixo da linha arqueada reaparece disfarçada em hérnia de <b>Spiegel</b> (borda lateral do reto, linha semilunar, geralmente abaixo do umbigo) e em tela retromuscular.</div>
+  </div>
+</section>
+
+<!-- 04 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">04</span><h2>Incisões — escolha, vantagens e desvantagens</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <div class="tbl-wrap"><table>
+      <tr><th>Incisão</th><th>Acesso</th><th>Vantagens</th><th>Desvantagens</th></tr>
+      <tr><td>Mediana (supra, infra, xifopúbica)</td><td>Toda a cavidade</td><td>Rápida, avascular (linha alba), não secciona músculo nem nervo, ampliável — padrão no trauma e na instabilidade</td><td>Mais hérnia incisional e deiscência; mais dor que as transversas</td></tr>
+      <tr><td>Paramediana</td><td>Andar lateralizado</td><td>Menos hérnia que a mediana (clássico)</td><td>Lenta, secciona vasos; praticamente abandonada</td></tr>
+      <tr><td>Kocher (subcostal D)</td><td>Vias biliares, fígado D</td><td>Ótima exposição hepatobiliar; menos hérnia</td><td>Secciona reto e intercostais; ruim para pelve</td></tr>
+      <tr><td>Chevron / Mercedes</td><td>Supramesocólico bilateral</td><td>Exposição máxima: transplante, hepatectomia, Whipple</td><td>Grande, dolorosa</td></tr>
+      <tr><td>Pfannenstiel</td><td>Pelve</td><td>Estética, resistente, pouca hérnia</td><td>Exposição limitada; epigástrica inferior e ilioinguinal em risco</td></tr>
+      <tr><td>McBurney (oblíqua) / Rockey-Davis (transversa)</td><td>Apêndice</td><td>Divulsão "em grade" preservando fibras; hérnia rara</td><td>Exposição restrita, difícil ampliar</td></tr>
+      <tr><td>Transversa infraumbilical</td><td>Cólon, pediatria</td><td>Segue as linhas de Langer → menos dor e hérnia</td><td>Mais tempo, mais sangramento</td></tr>
+      <tr><td>Toracofrenolaparotomia</td><td>Transição esofagogástrica, aorta toracoabdominal</td><td>Exposição incomparável do hiato e da aorta</td><td>Morbidade respiratória alta</td></tr>
+    </table></div>
+    <div class="banca"><span class="tag">Alto rendimento · HCPA / GHC</span>Diretriz EHS/AHS: preferir <b>laparoscopia</b> e, se aberto, <b>incisão não mediana</b> quando segura e factível. Na <b>emergência/instabilidade</b>, a mediana segue sendo a escolha — velocidade supera o risco tardio.</div>
+    <div class="vasc"><span class="tag">Nota vascular</span>Aorta abdominal: <b>mediana xifopúbica transperitoneal</b> no aneurisma roto (mais rápida); <b>retroperitoneal esquerda</b> (11º espaço) em abdome hostil, aorta justarrenal ou "coral reef" — menos íleo e menos complicação pulmonar, mas acesso ruim à ilíaca direita. Femoral: <b>longitudinal</b> (ampliável) × <b>transversa</b> (menos linfocele e infecção, pouco ampliável).</div>
+  </div>
+</section>
+
+<!-- 05 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">05</span><h2>Diérese: bisturi, tesouras e energias</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <h3>Lâminas</h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>Lâmina</th><th>Cabo</th><th>Uso</th></tr>
+      <tr><td>10</td><td>4</td><td>Pele em geral, ventre curvo largo</td></tr>
+      <tr><td>11</td><td>3 ou 7</td><td>Ponta lanceolada: abscesso, arteriotomia, retirada de pontos</td></tr>
+      <tr><td>12</td><td>3</td><td>Foice: ductos</td></tr>
+      <tr><td>15</td><td>3</td><td>Pequena e precisa: dermatológica, pediátrica, cistos</td></tr>
+      <tr><td>20 / 23</td><td>4</td><td>Incisões amplas, pele espessa, amputações</td></tr>
+    </table></div>
+    <ul>
+      <li><b>Arco de violino</b> (mão cheia): incisões longas de profundidade uniforme. <b>Caneta</b>: incisões curtas e precisas.</li>
+      <li>Cortar <b>perpendicular à pele</b>, num movimento firme, com a mão esquerda tensionando — cortes repetidos deixam borda irregular.</li>
+      <li><b>Metzenbaum</b>: dissecção delicada — nunca cortar fio com ela. <b>Mayo</b>: tecido resistente; a <b>reta</b> corta fio. <b>Potts</b> angulada: arteriotomia.</li>
+    </ul>
+    <h3>Eletrocirurgia</h3>
+    <p>Corrente alternada de <b>alta frequência (300 kHz–3 MHz)</b>; acima de 100 kHz não há despolarização neuromuscular <span class="pq">(a corrente vibra tão rápido que músculo e nervo não conseguem responder — por isso não dá choque nem arritmia)</span>. O efeito é só térmico.</p>
+    <div class="tbl-wrap"><table>
+      <tr><th></th><th>Corte</th><th>Coagulação</th><th>Blend</th></tr>
+      <tr><td>Onda</td><td>Contínua</td><td>Intermitente (ativa ~6% do tempo)</td><td>Intermediária</td></tr>
+      <tr><td>Voltagem</td><td>Baixa</td><td>Alta</td><td>Média</td></tr>
+      <tr><td>Efeito</td><td>Vaporização celular</td><td>Dessecação (contato) ou fulguração (arco)</td><td>Corta com hemostasia</td></tr>
+    </table></div>
+    <ul>
+      <li><b>Monopolar</b>: volta pela placa dispersiva — grande área, bem aderida, sobre músculo, longe de prótese metálica. Placa mal aderida = queimadura grave.</li>
+      <li><b>Bipolar</b>: a corrente fica entre as pontas da pinça — escolha em <b>marca-passo/CDI</b>, microcirurgia, estruturas nobres.</li>
+      <li><b>Laparoscopia</b>: falha de isolamento, <b>acoplamento capacitivo</b> (nunca trocarte híbrido metal-plástico), acoplamento direto — ativar só com a ponta visível.</li>
+    </ul>
+    <h3>Energias avançadas</h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>Dispositivo</th><th>Mecanismo</th><th>Sela vasos até</th><th>Observação</th></tr>
+      <tr><td>Ultrassônico (Harmonic)</td><td>Vibração ~55,5 kHz → desnaturação por atrito, 50–100 °C</td><td><b>5 mm</b></td><td>Pouca fumaça; a lâmina fica quente depois de usar</td></tr>
+      <tr><td>Bipolar avançado (LigaSure)</td><td>Bipolar + pressão → fusão de colágeno e elastina</td><td><b>7 mm</b></td><td>Dispersão lateral ~1,5–2 mm; desliga sozinho ao completar o selo</td></tr>
+      <tr><td>Argônio</td><td>Gás ionizado conduz a corrente sem contato</td><td>—</td><td>Sangramento difuso de fígado e baço; risco de embolia gasosa</td></tr>
+    </table></div>
+    <div class="alerta"><span class="tag">Armadilha</span>Não ativar o cautério com antisséptico alcoólico úmido nem em gás inflamável. <b>Fogo em sala</b> = oxidante (O₂) + ignição (cautério) + combustível (campos, tubo).</div>
+  </div>
+</section>
+
+<!-- 06 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">06</span><h2>Hemostasia e técnica da ligadura</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <ul>
+      <li><b>Preventiva</b>: vasoconstritor, torniquete, clampeamento antes de seccionar.</li>
+      <li><b>Temporária</b>: compressão, pinçamento, <b>manobra de Pringle</b> (clampear o ligamento hepatoduodenal — artéria hepática + porta), compressas perihepáticas, balão de Foley em ferida penetrante.</li>
+      <li><b>Definitiva</b>: ligadura simples, <b>transfixação</b> (o ponto atravessa o vaso para a ligadura não escorregar — obrigatória em coto arterial curto ou sob tensão), clipes metálicos ou Hem-o-lok, energia, sutura vascular.</li>
+    </ul>
+    <h3>Ligadura em 5 tempos</h3>
+    <div class="passo"><div class="passo-n">01</div><div>Pinçar com hemostática, <b>ponta para cima</b>, mordendo o mínimo de tecido.<div class="maos"><div class="mao"><span class="lbl">Mão esquerda</span>Pinça anatômica apresentando o vaso</div><div class="mao"><span class="lbl">Mão direita</span>Kelly/Crile curva, concavidade para cima</div></div></div></div>
+    <div class="passo"><div class="passo-n">02</div><div>Auxiliar levanta o cabo e mostra a ponta; o cirurgião passa o fio <b>por trás</b> da pinça.</div></div>
+    <div class="passo"><div class="passo-n">03</div><div>Primeiro seminó apertado contra a ponta — a pinça abre devagar, mantendo tração no fio.</div></div>
+    <div class="passo"><div class="passo-n">04</div><div>Segundo e terceiro seminós em direções opostas (nó quadrado).</div></div>
+    <div class="passo"><div class="passo-n">05</div><div>Cortar a <b>3 mm</b> (trançado) ou <b>5 mm</b> (monofilamento, que escorrega).<div class="maos"><div class="mao"><span class="lbl">Fio</span><b>Seda 0 / 2-0</b> no pedículo; <b>Vicryl 3-0</b> em vaso pequeno do subcutâneo</div><div class="mao"><span class="lbl">Tesoura</span>Mayo reta (fio)</div></div></div></div>
+    <h3>Hemostáticos tópicos</h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>Agente</th><th>Classe</th><th>Mecanismo</th><th>Observação</th></tr>
+      <tr><td>Celulose oxidada (Surgicel)</td><td>Passivo</td><td>Malha + pH ácido</td><td>Pode simular abscesso na TC; não deixar sobre nervo</td></tr>
+      <tr><td>Gelatina (Gelfoam) / colágeno</td><td>Passivo</td><td>Suporte para agregação plaquetária</td><td>Precisa de coagulação funcionante</td></tr>
+      <tr><td>Trombina tópica</td><td>Ativo</td><td>Fibrinogênio → fibrina</td><td>Funciona mesmo com plaquetopenia</td></tr>
+      <tr><td>Cola de fibrina / selante</td><td>Ativo</td><td>Fibrinogênio + trombina, "coágulo pronto"</td><td>Superfícies cruentas, linhas de grampo</td></tr>
+    </table></div>
+    <div class="alerta"><span class="tag">Armadilha</span>Hemostático tópico não resolve sangramento <b>arterial pulsátil</b>. Sangramento difuso apesar de boa técnica = pensar em coagulopatia — hipotermia, acidose, coagulopatia (+ hipocalcemia).</div>
+  </div>
+</section>
+
+<!-- 07 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">07</span><h2>Instrumental — o que vai em cada mão</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <div class="tbl-wrap"><table>
+      <tr><th>Função</th><th>Instrumentos</th></tr>
+      <tr><td>Diérese</td><td>Bisturi, tesouras (Mayo, Metzenbaum, Íris, Potts), eletrocautério, serra</td></tr>
+      <tr><td>Preensão</td><td>Anatômica (víscera, vaso), dente de rato (pele, aponeurose), DeBakey (atraumática, vascular), <b>Allis</b> (traumática — fáscia, borda que vai sair), <b>Babcock</b> (atraumática — alça, apêndice), Duval (pulmão), Foerster (gaze montada), Backhaus (campos)</td></tr>
+      <tr><td>Hemostasia</td><td>Halsted (mosquito); <b>Crile</b> — ranhuras em toda a ponta; <b>Kelly</b> — ranhuras só na metade distal; <b>Kocher/Rochester</b> — dente na ponta (traumática); <b>Mixter</b> — ângulo reto, passa fio ao redor de estruturas</td></tr>
+      <tr><td>Afastamento</td><td>Dinâmicos: Farabeuf, Volkmann, Doyen, Deaver, Richardson · Autoestáticos: Gosset, Balfour, Finochietto, Thompson</td></tr>
+      <tr><td>Síntese</td><td>Porta-agulha Mayo-Hegar (com cremalheira), Mathieu (mola), Castroviejo (micro)</td></tr>
+    </table></div>
+    <div class="banca"><span class="tag">Alto rendimento · Santa Casa POA / PUC-RS</span>Identificação por imagem: <b>Kelly × Crile</b> (metade × toda a ponta), <b>Kocher tem dente</b>, <b>Babcock atraumática × Allis traumática</b>.</div>
+    <h3>A regra das mãos (cirurgião destro)</h3>
+    <p><b>A direita executa</b> (corta, costura, pinça); <b>a esquerda expõe, tensiona e apresenta</b>.</p>
+    <div class="tbl-wrap"><table>
+      <tr><th>Momento</th><th>Mão direita</th><th>Mão esquerda</th></tr>
+      <tr><td>Incisão</td><td>Bisturi (arco de violino)</td><td>Tensiona a pele com polegar e indicador</td></tr>
+      <tr><td>Dissecção</td><td>Metzenbaum ou cautério</td><td>DeBakey/anatômica fazendo contratração</td></tr>
+      <tr><td>Hemostasia</td><td>Hemostática curva, concavidade para cima; conduz o fio e dá o nó</td><td>Apresenta o vaso; segura a pinça para o nó</td></tr>
+      <tr><td>Síntese</td><td>Porta-agulha (polegar e anular nos anéis, indicador guiando na haste); agulha a <b>2/3 da ponta</b>, pinçada na junção terço médio–distal do porta-agulha</td><td>Dente de rato em pele/aponeurose; <b>anatômica em víscera e vaso</b> — evertendo a borda para a agulha entrar a 90°</td></tr>
+    </table></div>
+    <ul>
+      <li>Instrumentadora entrega com firmeza, já na posição de uso, anéis para a mão.</li>
+      <li><b>Contagem</b> de compressas, agulhas e instrumentos: antes da incisão, ao fechar a cavidade e ao fechar a pele. Divergência = radiografia intraoperatória.</li>
+      <li><b>Zona neutra</b> para perfurocortantes — menos acidente com material biológico.</li>
+    </ul>
+    <div class="alerta"><span class="tag">Armadilha</span>Pinça com dente em alça intestinal ou vaso = lesão de parede. Dente só em pele e aponeurose.</div>
+  </div>
+</section>
+
+<!-- 08 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">08</span><h2>Fios: classificação, calibre e curva de força</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <h3>Três eixos — três perguntas</h3>
+    <ul>
+      <li><b>Absorção</b> — absorvível × inabsorvível. Pergunta: <i>por quanto tempo esse tecido precisa de ajuda?</i></li>
+      <li><b>Estrutura</b> — monofilamento × trançado. Pergunta: <i>o campo está contaminado? preciso que deslize?</i> <span class="pq">(o trançado é uma cordinha de vários fiozinhos: segura o nó melhor, mas a bactéria se esconde nos vãos)</span></li>
+      <li><b>Origem</b> — natural (categute, seda) × sintético. Naturais inflamam mais; sobrou a seda para ligadura.</li>
+    </ul>
+    <h3>Calibre</h3>
+    <p>7 → 5 → 2 → 1 → <b>0</b> → 2-0 → 3-0 → … → 11-0. <b>Quanto mais zeros, mais fino.</b> <span class="pq">(régua ao contrário: o "5-0" é bem mais fininho que o "1")</span></p>
+    <h3>Tabela mestre</h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>Fio</th><th>Química</th><th>Estrutura</th><th>Força tensil</th><th>Absorção total</th><th>Uso preferencial</th></tr>
+      <tr><td>Categute simples / cromado</td><td>Colágeno (± cromo)</td><td>Natural</td><td>7–10 / 10–21 dias</td><td>~70 / ~90 dias</td><td>Desuso; cromado em mucosa e períneo</td></tr>
+      <tr><td>Vicryl</td><td>Poliglactina 910</td><td>Trançado</td><td>75% em 2 sem · <b>50% em 3 sem</b></td><td>56–70 dias</td><td>Subcutâneo, alça, ligadura, urotélio</td></tr>
+      <tr><td>Vicryl Rapide</td><td>Poliglactina irradiada</td><td>Trançado</td><td>~50% em 5 dias</td><td>~42 dias</td><td>Pele que não se quer retirar ponto, mucosa, períneo</td></tr>
+      <tr><td>Monocryl / Caprofyl</td><td>Poliglecaprone 25</td><td>Mono</td><td>50–60% em 1 sem · 20–30% em 2 sem</td><td>91–119 dias</td><td><b>Intradérmica</b>, subcutâneo, gastrojejunal bariátrica</td></tr>
+      <tr><td>PDS II</td><td>Polidioxanona</td><td>Mono</td><td>80% em 2 sem · 70% em 4 · <b>60% em 6 sem</b></td><td>~6 meses</td><td><b>Aponeurose</b>, esôfago, via biliar, pediatria</td></tr>
+      <tr><td>Prolene</td><td>Polipropileno</td><td>Mono</td><td>Não perde</td><td>Não absorve</td><td><b>Vaso</b>, tela, espaço, pâncreas</td></tr>
+      <tr><td>Mononylon</td><td>Poliamida</td><td>Mono</td><td>Perde ~20% ao ano</td><td>Hidrólise lenta</td><td>Pele; alta memória</td></tr>
+      <tr><td>Ethibond</td><td>Poliéster</td><td>Trançado revestido</td><td>Não perde</td><td>Não absorve</td><td>Anel valvar, tendão; opção no pâncreas</td></tr>
+      <tr><td>Seda</td><td>Fibroína</td><td>Trançado natural</td><td>Perde quase toda em 1 ano</td><td>Fragmenta em ~2 anos</td><td>Ligadura, fixação de dreno, sobressutura</td></tr>
+      <tr><td>PTFE (Gore-Tex)</td><td>Politetrafluoretileno</td><td>Mono</td><td>Não perde</td><td>Não absorve</td><td>Prótese de PTFE (fio do tamanho do furo)</td></tr>
+      <tr><td>Farpado (V-Loc, Stratafix)</td><td>Conforme polímero</td><td>Farpas unidirecionais</td><td>Conforme polímero</td><td>Variável</td><td>Dispensa nó; sutura laparoscópica</td></tr>
+    </table></div>
+    <div class="banca"><span class="tag">Alto rendimento · todas as bancas</span>Seda é "inabsorvível" mas <b>fragmenta em ~2 anos</b>; náilon é inabsorvível mas <b>perde ~20% da força por ano</b> — nenhum dos dois serve para fixação permanente de tela ou anastomose vascular.</div>
+    <h3>Curva de força × janela de fragilidade — o conceito que explica tudo</h3>
+    <p>Todo tecido suturado passa por um período em que não se sustenta sozinho. O fio precisa segurar durante essa janela; depois dela, fio que sobra só gera reação, granuloma, estenose, úlcera ou cálculo.</p>
+    <div class="tbl-wrap"><table>
+      <tr><th>Tecido</th><th>Fase crítica</th><th>Assume sozinho</th><th>Fio necessário</th></tr>
+      <tr><td>Delgado e cólon</td><td>Colagenólise no 3º–5º dia</td><td>14–21 dias</td><td>Absorvível curto</td></tr>
+      <tr><td>Estômago</td><td>3º–5º dia, menos intensa</td><td>~21 dias</td><td>Absorvível curto ou longo</td></tr>
+      <tr><td>Esôfago</td><td>Prolongada, sem serosa</td><td>30–60 dias</td><td>Absorvível longo</td></tr>
+      <tr><td>Via biliar</td><td>Prolongada</td><td>~30 dias</td><td>Absorvível longo e fino</td></tr>
+      <tr><td>Trato urinário</td><td>14–21 dias</td><td>~21 dias</td><td>Absorvível obrigatório</td></tr>
+      <tr><td>Aponeurose</td><td>Meses</td><td>~50% em 6 sem; teto de 70–80% em 1 ano</td><td>Absorvível lento ou permanente</td></tr>
+      <tr><td>Pâncreas</td><td>Agressão enzimática contínua</td><td>Nunca plenamente</td><td>Permanente (ou poliéster)</td></tr>
+      <tr><td>Vaso</td><td>Permanente</td><td>Nunca</td><td>Inabsorvível obrigatório</td></tr>
+    </table></div>
+    <div class="banca"><span class="tag">Alto rendimento · HCPA / GHC</span>Por que a aponeurose pede absorção lenta: a fáscia ainda está frágil nos primeiros meses e a maioria das hérnias incisionais aparece no primeiro ano. Um fio que perde metade da força em 21 dias (Vicryl) abandona a parede no pior momento.</div>
+    <div class="mnemo"><span class="tag">Macete</span>"<b>O fio tem que durar mais que o buraco.</b>" Compare sempre janela de fragilidade × curva de força.</div>
+    <div class="mnemo"><span class="tag">1 · 2 · 6 meses</span>Absorção total: Vicryl ~2 · Monocryl ~3 · PDS ~6. Meia-força: Monocryl 1 sem &lt; Vicryl 3 sem &lt; PDS bem depois de 6 sem.</div>
+  </div>
+</section>
+
+<!-- 09 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">09</span><h2>Os macetes do fio e as duas regras absolutas</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <div class="mnemo"><span class="tag">Macete 1 · frase-mãe (função)</span><b>SEDA AMARRA. VICRYL FECHA. PDS SUSTENTA. PROLENE ETERNIZA.</b><br>Amarrar pedículo → Seda · fechar plano que cicatriza rápido (subcutâneo, alça) → Vicryl · sustentar tecido lento (aponeurose, esôfago, bile) → PDS · segurar para sempre (vaso, tela, espaço) → Prolene.</div>
+    <div class="mnemo"><span class="tag">Macete 2 · regra T-E-L-A</span><b>T</b>ela → Prolene 2-0/3-0 ou PDS 2-0, nunca Vicryl · <b>E</b>spaço (brecha mesentérica, Petersen, brecha de grampeador) → Prolene 3-0 · <b>L</b>uz (atravessa mucosa) → absorvível · <b>A</b>nastomose → pelo órgão (escada).<br>Regra de ouro: <b>Prolene fecha espaço, não fecha luz.</b> Exceções nobres: vaso e pâncreas na DPT.</div>
+    <div class="mnemo"><span class="tag">Macete 3 · escada das anastomoses</span>Quanto mais nobre o órgão, mais lento e mais fino o fio. "<b>Cólon Vê, Esôfago PeDe, Bile PeDe Fino, Pâncreas e Vaso PROvam.</b>"<br>Cólon → <b>V</b>icryl · Esôfago → <b>PD</b>S · Bile → <b>PD</b>S fino · Pâncreas e vaso → <b>PRO</b>lene.</div>
+    <div class="mnemo"><span class="tag">Macete 4 · calibre</span>Desce um número a cada degrau: parede <b>1</b> → intestino e estômago <b>3-0</b> → via biliar e pâncreas <b>5-0</b> → vaso <b>5-0 a 7-0</b>.</div>
+    <div class="alerta"><span class="tag">Nunca erre</span><b>1. Vaso = Prolene.</b> A anastomose vascular nunca ganha resistência própria à pressão; quem segura para sempre é o fio.<br><b>2. Urina e bile = absorvível.</b> Fio permanente em contato com urina ou bile é núcleo de cálculo — não é risco, é certeza.</div>
+  </div>
+</section>
+
+<!-- 10 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">10</span><h2>O fio em cada momento — laparotomia mediana do início ao fim</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <p class="pq">Uma laparotomia com ressecção e anastomose intestinal percorre quase todos os gestos. Cirurgião destro, à direita do paciente; decúbito dorsal, braços &lt; 90°.</p>
+    <div class="passo"><div class="passo-n">01</div><div><b>Pausa cirúrgica, antissepsia e campos</b> — clorexidina alcoólica seca, campos fixos com Backhaus; placa do cautério conferida.<div class="maos"><div class="mao"><span class="lbl">Mão esquerda</span>Pinça Cheron com gaze</div><div class="mao"><span class="lbl">Mão direita</span>Backhaus</div></div></div></div>
+    <div class="passo"><div class="passo-n">02</div><div><b>Incisão da pele</b> — único movimento, perpendicular; subcutâneo com cautério até a linha alba.<div class="maos"><div class="mao"><span class="lbl">Mão esquerda</span>Tensiona a pele / compressa</div><div class="mao"><span class="lbl">Mão direita</span>Bisturi lâmina 20–23 cabo 4 → cautério</div></div></div></div>
+    <div class="passo"><div class="passo-n">03</div><div><b>Abertura da linha alba e do peritônio</b> — peritônio pinçado e levantado entre duas pinças, aberto com bisturi; amplia-se com tesoura protegendo as alças com os dedos.<div class="maos"><div class="mao"><span class="lbl">Mão esquerda</span>Kelly no peritônio; dois dedos sob a aponeurose protegendo alça</div><div class="mao"><span class="lbl">Mão direita</span>Kelly → bisturi → Mayo curva</div></div></div></div>
+    <div class="passo"><div class="passo-n">04</div><div><b>Exposição e inventário</b> — afastador autostático (Gosset/Balfour), compressas úmidas, exploração sistemática.<div class="maos"><div class="mao"><span class="lbl">Mão esquerda</span>Palpação, Farabeuf/valva de Doyen</div><div class="mao"><span class="lbl">Mão direita</span>Palpação, posicionamento do afastador</div></div></div></div>
+    <div class="passo"><div class="passo-n">05</div><div><b>Ligadura do mesentério</b> — janela, pinçamento entre duas hemostáticas, secção e ligadura.<div class="maos"><div class="mao"><span class="lbl">Mão esquerda</span>Anatômica / apresenta o mesentério contra a luz</div><div class="mao"><span class="lbl">Mão direita</span>Kelly, Metzenbaum, Mixter · <b>Seda 2-0</b> (pedículo maior: <b>Seda 0</b> ou transfixar)</div></div></div></div>
+    <div class="passo"><div class="passo-n">06</div><div><b>Secção da alça</b> — clampes atraumáticos (Doyen) do lado que fica, Kocher do lado que sai; ou grampeador linear carga azul.<div class="maos"><div class="mao"><span class="lbl">Mão esquerda</span>Doyen intestinal</div><div class="mao"><span class="lbl">Mão direita</span>Bisturi / GIA</div></div></div></div>
+    <div class="passo"><div class="passo-n">07</div><div><b>Anastomose manual</b> — plano total contínuo ou extramucoso; sobressutura seromuscular se a escola pedir.<div class="maos"><div class="mao"><span class="lbl">Mão esquerda</span>DeBakey everte a borda, apresenta a submucosa</div><div class="mao"><span class="lbl">Mão direita</span>Porta-agulha · <b>Vicryl 3-0</b> agulha cilíndrica ½ 26 mm + <b>Seda 3-0</b> (Lembert)</div></div></div></div>
+    <div class="passo"><div class="passo-n">08</div><div><b>Fechamento da brecha mesentérica</b> — fecha espaço, não luz.<div class="maos"><div class="mao"><span class="lbl">Mão esquerda</span>Anatômica, cuidado com os vasos da borda</div><div class="mao"><span class="lbl">Mão direita</span><b>Vicryl 3-0</b> contínuo (Prolene 3-0 se Petersen/bariátrica)</div></div></div></div>
+    <div class="passo"><div class="passo-n">09</div><div><b>Revisão, contagem, troca de luvas e instrumental</b> (cirurgia contaminada); dreno só se indicado, por contra-abertura, fixado com <b>Seda 2-0</b>.</div></div>
+    <div class="passo"><div class="passo-n">10</div><div><b>Fechamento da parede</b> — aponeurose contínua, small bites, fio:ferida ≥ 4:1; subcutâneo; pele.<div class="maos"><div class="mao"><span class="lbl">Mão esquerda</span>Dente de rato evertendo a aponeurose / Farabeuf</div><div class="mao"><span class="lbl">Mão direita</span>Aponeurose <b>PDS 2-0 ou 0</b> (serviço: Vicryl 1) · subcutâneo <b>Vicryl 3-0</b> · pele <b>Mononylon 4-0</b> separado ou grampos</div></div></div></div>
+
+    <h3>A mesa do serviço — fio por gesto</h3>
+    <p>Padrão extraído das descrições cirúrgicas do serviço. Prolene e PDS <b>não aparecem nos gestos de rotina</b> — são fios de exceção.</p>
+    <div class="tbl-wrap"><table>
+      <tr><th>Gesto</th><th>Fio</th><th>Observação</th></tr>
+      <tr><td>Linha alba / laparotomia</td><td><b>Vicryl 1</b></td><td>Contínua; PDS 1 ou Prolene 0 se contaminado ou parede ruim</td></tr>
+      <tr><td>Aponeurose de portal ≥ 10 mm</td><td><b>Vicryl 2-0</b></td><td>Fechar sempre, sobretudo o umbilical</td></tr>
+      <tr><td>Oblíquo externo (inguinotomia)</td><td><b>Vicryl 3-0</b></td><td>Todas as hernioplastias</td></tr>
+      <tr><td>Peritônio</td><td>Vicryl 2-0</td><td>Opcional; não reduz aderência nem hérnia</td></tr>
+      <tr><td>Subcutâneo</td><td><b>Vicryl 3-0</b></td><td>Sem exceção</td></tr>
+      <tr><td>Pele — aberta/contaminada</td><td><b>Mononylon 4-0</b></td><td>Pontos separados</td></tr>
+      <tr><td>Pele — vídeo/limpa</td><td><b>Monocryl 3-0/4-0</b></td><td>Intradérmica</td></tr>
+      <tr><td>Ligadura de pedículo</td><td><b>Seda 0 / 2-0</b></td><td>Mesentérica inferior, gástricos, cística, gonadais</td></tr>
+      <tr><td>Fixação de dreno/cateter</td><td><b>Seda 2-0</b></td><td>Mononylon 2-0 no dreno de tórax</td></tr>
+      <tr><td>Sobressutura seroserosa</td><td>Seda 0/2-0/3-0</td><td>Alternativa: Prolene 3-0</td></tr>
+      <tr><td>Ogiva de Portocath</td><td>Vicryl 3-0</td><td>Na fáscia muscular</td></tr>
+      <tr><td>Pexia (ceco, gastrostomia, Witzel)</td><td>Seda / Vicryl 3-0</td><td>Witzel com Vicryl 3-0</td></tr>
+    </table></div>
+    <div class="banca"><span class="tag">Alto rendimento · banca</span>Pele com absorvível ou inabsorvível? Metanálise de <b>27 ECRs (5.096 pacientes)</b>: sem diferença de infecção, cicatriz ou deiscência — é conforto e custo. A banca ainda cobra a fórmula clássica: <b>monofilamento inabsorvível em pontos separados na ferida contaminada</b>.</div>
+  </div>
+</section>
+
+<!-- 11 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">11</span><h2>Agulhas, nós e pontos</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <h3>Agulhas</h3>
+    <ul>
+      <li><b>Cilíndrica</b> (redonda): afasta as fibras sem cortar — víscera, vaso, peritônio, aponeurose. <span class="pq">(como furar um balão com agulha de costura: entra sem rasgar)</span> Em fáscia dura, cilíndrica de ponta cortante (taper-cut).</li>
+      <li><b>Triangular</b> (cortante): pele e tecido denso. A convencional tem o gume na concavidade; a <b>reversa</b>, na convexidade — rasga menos em direção à borda.</li>
+      <li><b>Romba</b>: fígado, baço, rim e proteção contra acidente perfurocortante.</li>
+      <li><b>Curvatura</b>: 3/8 (pele, campo superficial) · <b>1/2</b> (cavidade, anastomose, parede) · 5/8 (pelve, canal anal) · reta (Keith).</li>
+      <li><b>Atraumático</b> = fio engastado na agulha; "traumático" = agulha com fundo onde se enfia o fio (furo maior).</li>
+    </ul>
+    <div class="tbl-wrap"><table>
+      <tr><th>Sítio</th><th>Agulha</th></tr>
+      <tr><td>Anastomose intestinal aberta</td><td>Cilíndrica 1/2, 26–30 mm</td></tr>
+      <tr><td>Bexiga / anastomose uro</td><td>Cilíndrica 1/2, 17–22 mm</td></tr>
+      <tr><td>Via biliar e ureter</td><td>Cilíndrica 1/2, 13–17 mm</td></tr>
+      <tr><td>Vascular</td><td>Cilíndrica 3/8 ou 1/2, 9–26 mm, <b>agulhado nas duas pontas</b></td></tr>
+      <tr><td>Parede abdominal</td><td>Cilíndrica 1/2, 26–48 mm ou "looped"</td></tr>
+      <tr><td>Pele</td><td>Triangular reversa 3/8, 19–24 mm</td></tr>
+    </table></div>
+    <div class="mnemo"><span class="tag">"Vicryl da gastro × Vicryl da uro"</span>É o <b>mesmo fio</b> (poliglactina 910). Muda calibre e agulha: gastro 3-0 com 26–30 mm; uro 3-0 a 5-0 com 17–22 mm. Está escrito na embalagem.</div>
+    <h3>Nós</h3>
+    <ul>
+      <li><b>Nó quadrado</b> — seminós em direções alternadas: padrão, não escorrega.</li>
+      <li><b>Nó de cirurgião</b> — primeiro seminó com <b>duas voltas</b> para segurar tecido sob tensão. <span class="pq">(uma voltinha a mais para o laço não afrouxar antes de terminar)</span></li>
+      <li><b>Nó de vaqueiro</b> (mesma direção) — escorrega, evitar.</li>
+      <li><b>Seminós</b>: trançado 3–4 · monofilamento 5–6 · <b>Prolene em vaso 6–7</b>. Apertar no plano do laço, sem estrangular (isquemia = deiscência).</li>
+    </ul>
+    <h3>Pontos</h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>Ponto</th><th>Técnica</th><th>Quando</th></tr>
+      <tr><td>Simples separado</td><td>Perpendicular, nó lateral</td><td>Universal; abre-se um ponto se infectar</td></tr>
+      <tr><td>Contínuo (chuleio)</td><td>Um fio percorre a ferida</td><td>Rápido, distribui tensão; se rompe, solta tudo</td></tr>
+      <tr><td>Ancorado (Reverdin)</td><td>Cada laçada passa na anterior</td><td>Hemostático em borda sangrante</td></tr>
+      <tr><td>Donati (colchoeiro vertical)</td><td>Longe-longe / perto-perto</td><td>Everte a borda; pele fina ou que inverte</td></tr>
+      <tr><td>Wolff (colchoeiro horizontal)</td><td>Duas passagens paralelas</td><td>Hemostasia de borda; risco de isquemia</td></tr>
+      <tr><td>Intradérmico</td><td>Contínuo na derme</td><td>Melhor estética — Monocryl 3-0/4-0</td></tr>
+      <tr><td>Smead-Jones</td><td>Longe-perto-perto-longe na aponeurose</td><td>Alto risco de deiscência</td></tr>
+      <tr><td>Ponto de retenção</td><td>Náilon 1 transfixando a parede, sobre coxim</td><td>Deiscência estabelecida; não previne hérnia</td></tr>
+      <tr><td>Lembert</td><td>Seromuscular invaginante</td><td>Plano externo de víscera</td></tr>
+      <tr><td>Connell / Cushing</td><td>Contínuo total em "U" / seromuscular paralelo</td><td>Plano interno invaginante e hemostático / plano externo</td></tr>
+      <tr><td>Gambee</td><td>Total invaginante em plano único</td><td>Anastomose em plano único</td></tr>
+    </table></div>
+    <div class="banca"><span class="tag">Alto rendimento · Santa Casa POA / AMRIGS</span>"Ponto que <b>everte</b>" → Donati, Wolff. "Ponto que <b>inverte</b>" → Lembert, Connell, Gambee. Em víscera quer-se inversão (serosa contra serosa); mucosa evertida é fator de fístula.</div>
+  </div>
+</section>
+
+<!-- 12 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">12</span><h2>Fechamento da parede abdominal — padrão atual</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <p>Diretriz <b>EHS/AHS 2022</b> para laparotomia eletiva — o bloco de maior densidade de prova da técnica operatória.</p>
+    <div class="tbl-wrap"><table>
+      <tr><th>Parâmetro</th><th>Recomendação</th><th>Racional</th></tr>
+      <tr><td>Técnica</td><td><b>Contínua</b>, camada única aponeurótica</td><td>Distribui tensão; não fechar peritônio separado</td></tr>
+      <tr><td>Pontos</td><td><b>Small bites</b>: 5–8 mm de aponeurose, a cada 5 mm</td><td>Millbourn: hérnia <b>5,6% × 18%</b> com pontos largos, e metade da infecção; STITCH: 13% × 21%</td></tr>
+      <tr><td>Fio:ferida</td><td><b>≥ 4:1</b></td><td>Abaixo disso, mais hérnia e deiscência</td></tr>
+      <tr><td>Fio</td><td><b>Monofilamento de absorção lenta</b> (PDS 2-0 com agulha pequena no small bites)</td><td>Segura durante toda a janela; menos dor e fístula de fio que o inabsorvível</td></tr>
+      <tr><td>Tensão</td><td>Aproximar, não estrangular</td><td>Sutura apertada isquemia e corta a fáscia</td></tr>
+      <tr><td>Tela profilática</td><td>Considerar em alto risco (aneurisma de aorta, obesidade, hérnia prévia)</td><td>Reduz hérnia incisional</td></tr>
+      <tr><td>Portais</td><td>Fechar aponeurose de portais <b>≥ 10 mm</b>, sobretudo umbilical</td><td>Hérnia de trocarte / Richter</td></tr>
+    </table></div>
+    <div class="mnemo"><span class="tag">5 · 5 · 4 · PDS</span>Ponto de <b>5 mm</b>, a cada <b>5 mm</b>, razão <b>4:1</b>, com <b>PDS</b>.</div>
+    <div class="banca"><span class="tag">Alto rendimento · HCPA / GHC — muito recorrente</span>"Qual técnica reduz hérnia incisional após mediana eletiva?" → <b>contínua, small bites, absorção lenta, 4:1</b>. Para <b>emergência</b> a evidência é fraca e as diretrizes não fazem recomendação forte — pegadinha frequente.</div>
+    <div class="alerta"><span class="tag">Armadilha</span>Fechar o peritônio em plano separado <b>não</b> reduz hérnia nem aderência — só gasta tempo.</div>
+  </div>
+</section>
+
+<!-- 13 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">13</span><h2>Anastomoses digestivas e grampeadores</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <h3>Os mandamentos</h3>
+    <ol>
+      <li><b>V</b>ascularização das duas bordas — sangramento ativo na borda é o melhor sinal; fluorescência (ICG) se disponível.</li>
+      <li>Sem <b>T</b>ensão — mobilizar (ângulo esplênico, Kocher, Cattell-Braasch) até as bordas se encostarem sozinhas.</li>
+      <li><b>C</b>oaptação da <b>submucosa</b> — é ela que segura o ponto.</li>
+      <li><b>A</b>ssepsia — isolar o campo, clampes atraumáticos.</li>
+      <li>T<b>E</b>cnica atraumática e hemostasia da linha.</li>
+      <li>Sem e<b>S</b>tenose.</li>
+    </ol>
+    <p>Choque, desnutrição grave, corticoide em dose alta, radiação intensa ou peritonite fecal → considerar <b>ostomia</b> em vez de anastomose.</p>
+    <h3>Escada completa de fios</h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>Degrau</th><th>Anastomose</th><th>Fio</th><th>Racional</th></tr>
+      <tr><td>1</td><td>Colo-colônica, ileocólica, entero-entérica</td><td><b>Vicryl 3-0</b> ± sobressutura Seda 2-0/3-0</td><td>Tem serosa, cicatriza em ~21 dias</td></tr>
+      <tr><td>2</td><td>Esôfago-gástrica / esôfago-jejunal</td><td><b>PDS 3-0</b> separados, sempre pegando submucosa</td><td>Sem serosa; cicatrização lenta</td></tr>
+      <tr><td>2</td><td>Gastroentero manual</td><td>PDS 3-0 ou Prolene 3-0 + Seda 0</td><td>Escola decide</td></tr>
+      <tr><td>2</td><td>Sobressutura de linha de grampo</td><td>Prolene 3-0 (aberta) ou PDS 3-0 (vídeo)</td><td>Sem superioridade entre eles</td></tr>
+      <tr><td>3</td><td>Colédoco/hepaticojejunal</td><td><b>PDS 5-0 ou 6-0</b></td><td>Bile degrada trançado; permanente vira cálculo</td></tr>
+      <tr><td>4</td><td>Pancreatojejunal ducto-mucosa</td><td><b>Prolene 5-0</b> (ou poliéster) + pâncreas-serosa Seda 0</td><td>Suco pancreático destrói absorvível</td></tr>
+      <tr><td>5</td><td>Vascular</td><td><b>Prolene 3-0 a 7-0</b>, contínua</td><td>Nunca ganha força própria</td></tr>
+      <tr><td>—</td><td>Bexiga, ureter</td><td>Vicryl ou Monocryl 3-0 a 5-0</td><td>Permanente vira cálculo</td></tr>
+      <tr><td>—</td><td>Bariátrica — gastrojejunal</td><td>Caprofyl 3-0</td><td>Inabsorvível na luz → úlcera marginal</td></tr>
+      <tr><td>—</td><td>Bariátrica — Petersen e mesentério</td><td>Prolene 3-0</td><td>Fecha espaço, não luz</td></tr>
+    </table></div>
+    <div class="box"><span class="tag">Ponto de decisão</span>Trocar Vicryl por PDS na anastomose intestinal faz sentido em peritonite, desnutrição, radioterapia, corticoide, isquemia relativa ou obstrução (colagenólise prolongada). Fora disso, é escola.</div>
+    <div class="banca"><span class="tag">Alto rendimento · AMRIGS / HCPA</span>PDS <b>não é superior</b> no cólon: um ensaio randomizado teve o braço colônico com PDS interrompido por <b>19% de estenose</b>. E plano único × duplo (Cochrane, 7 ECRs, 842 pacientes) e contínua × separados têm a <b>mesma taxa de fístula</b> — a sobressutura de seda é hábito, não exigência.</div>
+    <h3>Manual × mecânica</h3>
+    <ul>
+      <li><b>Plano único</b> extramucoso ou total (Gambee), monofilamento 3-0/4-0: rápido, barato, menos estenose.</li>
+      <li><b>Dois planos</b> (total contínuo + Lembert seromuscular): tradicional; mais isquemia relativa.</li>
+      <li><b>Mecânica</b>: rápida, ótima em campo profundo (pelve, esôfago) e controle de dano; sem superioridade consistente em fístula.</li>
+    </ul>
+    <h3>Grampeadores</h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>Tipo</th><th>Função</th><th>Detalhes</th></tr>
+      <tr><td>Linear cortante (GIA)</td><td>Grampeia e secciona</td><td><b>Branca 2,5 mm</b> (vascular) · <b>azul 3,5</b> (delgado, estômago fino) · <b>verde 4,8</b> (estômago espesso, cólon edemaciado)</td></tr>
+      <tr><td>Linear não cortante (TA)</td><td>Fecha coto</td><td>Coto duodenal, coto retal</td></tr>
+      <tr><td>Circular (EEA)</td><td>Término-terminal</td><td>25–33 mm, o maior que passe sem forçar; conferir os <b>dois "donuts" completos</b></td></tr>
+    </table></div>
+    <ul>
+      <li>Pré-compressão de ~15 s antes de disparar em tecido espesso.</li>
+      <li>Teste do borracheiro na colorretal baixa (ar transanal com a pelve alagada).</li>
+      <li>Evitar cruzar linhas de grampo — ponto de isquemia e fístula.</li>
+    </ul>
+    <div class="banca"><span class="tag">Alto rendimento · HCPA / PUC-RS</span>Fator de risco mais forte para fístula colorretal: <b>anastomose baixa</b> (&lt; 5–7 cm da margem anal), além de sexo masculino, radioterapia neoadjuvante, tabagismo e desnutrição.</div>
+  </div>
+</section>
+
+<!-- 14 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">14</span><h2>Telas — fixação</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <div class="tbl-wrap"><table>
+      <tr><th>Situação</th><th>Fio</th><th>Técnica</th></tr>
+      <tr><td>Lichtenstein</td><td><b>Prolene 3-0</b></td><td>Ponto em U no tubérculo púbico (sem pegar periósteo), contínua no ligamento inguinal, separados no oblíquo interno</td></tr>
+      <tr><td>Femoral pré-peritoneal</td><td>PDS 2-0</td><td>Fixação no púbis, obliterando o canal femoral</td></tr>
+      <tr><td>Incisional onlay</td><td>Prolene 2-0</td><td>Sobre aponeurose já fechada</td></tr>
+      <tr><td>Lombar (Grynfelt)</td><td>PDS 2-0</td><td>Cobrindo todo o defeito</td></tr>
+      <tr><td>TAPP / TEP</td><td>Grampeador, cola ou sem fixação</td><td>Fechar o peritônio (TAPP) com sutura ou clipador</td></tr>
+      <tr><td>McVay sem tela</td><td>Prolene 2-0</td><td>Cooper ao arco do transverso + incisão relaxadora</td></tr>
+    </table></div>
+    <div class="box"><span class="tag">O que diz a evidência</span>O material de fixação <b>não altera a dor crônica</b> (Finn Mesh Study, 5 anos: cola, tela autofixante e polipropileno iguais). Mas fio <b>absorvível de curta duração aumenta recidiva</b> (registro sueco, 82.015 Lichtenstein).</div>
+    <div class="mnemo"><span class="tag">Tela nunca com Vicryl</span>A integração da prótese leva 3–6 meses; o Vicryl entrega metade da força em 21 dias.</div>
+  </div>
+</section>
+
+<!-- 15 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">15</span><h2>Drenos</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <div class="tbl-wrap"><table>
+      <tr><th>Tipo</th><th>Exemplos</th><th>Mecanismo</th><th>Uso</th></tr>
+      <tr><td>Passivo</td><td>Penrose, tubulolaminar, Kehr</td><td>Capilaridade e gravidade</td><td>Abscesso, cavidade contaminada; Kehr na via biliar</td></tr>
+      <tr><td>Ativo (aspirativo)</td><td>Portovac, Jackson-Pratt, Blake</td><td>Pressão negativa, sistema fechado</td><td>Espaço morto (mastectomia, tireoide, incisional com descolamento)</td></tr>
+      <tr><td>Sump</td><td>Duplo lúmen</td><td>Aspiração com entrada de ar</td><td>Secreção espessa, fístula de alto débito</td></tr>
+    </table></div>
+    <ul>
+      <li>Exteriorizar por <b>contra-abertura</b>, nunca pela incisão; trajeto curto e retilíneo; fixar com <b>Seda 2-0</b>.</li>
+      <li>Dreno é terapêutico ou sentinela — <b>não previne fístula</b> e pode causá-la por erosão.</li>
+      <li><b>Sem dreno de rotina</b>: colecistectomia eletiva, apendicectomia não complicada, colectomia eletiva. Mantém indicação: pancreatectomia (amilase do dreno), esofagectomia, hemostasia incerta, espaço morto.</li>
+    </ul>
+    <div class="banca"><span class="tag">Alto rendimento · GHC / AMRIGS</span>"Qual situação NÃO indica dreno de rotina?" → colecistectomia eletiva, apendicectomia não complicada, colectomia eletiva.</div>
+  </div>
+</section>
+
+<!-- 16 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">16</span><h2>Rotina do serviço × evidência atual</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <div class="tbl-wrap"><table>
+      <tr><th>Gesto</th><th>Serviço</th><th>Evidência</th><th>Veredito</th></tr>
+      <tr><td>Linha alba</td><td>Vicryl 1</td><td>EHS/AHS 2022: contínua, small bites, <b>absorção lenta</b> — menos hérnia que absorção rápida</td><td><b>Divergência</b> — PDS seria o padrão</td></tr>
+      <tr><td>Técnica da linha alba</td><td>Contínua</td><td>5–8 mm a cada 5 mm, 4:1; ESTOIH 5 anos: 9,1% × 13,9% (sem significância)</td><td>Alinhado; falta o small bites</td></tr>
+      <tr><td>Portal ≥ 10 mm</td><td>Vicryl 2-0</td><td>Fechar a aponeurose</td><td>Alinhado</td></tr>
+      <tr><td>Pele</td><td>Mononylon / Monocryl 4-0</td><td>27 ECRs: sem diferença</td><td>Alinhado</td></tr>
+      <tr><td>Tela inguinal</td><td>Prolene 3-0</td><td>Material não muda dor; absorvível curto aumenta recidiva</td><td>Alinhado</td></tr>
+      <tr><td>Anastomose colônica</td><td>Vicryl 3-0 + Seda</td><td>Vicryl = PDS; plano único = duplo</td><td>Alinhado</td></tr>
+      <tr><td>Esôfago</td><td>PDS 3-0</td><td>Cicatrização lenta, sem serosa</td><td>Alinhado</td></tr>
+      <tr><td>Coledocojejunal</td><td>Prolene 4-0</td><td>Monofilamento <b>absorvível fino</b> (PDS 5-0/6-0); permanente associa cálculo e estenose</td><td><b>Divergência</b> — PDS 5-0</td></tr>
+      <tr><td>Pancreatojejunal</td><td>Prolene 5-0</td><td>Poliglactina retém só ~10% da força no suco pancreático; poliéster × PDS em 520 DPTs: fístula 11,6% × 22%</td><td>Alinhado; poliéster talvez melhor</td></tr>
+      <tr><td>Linha de grampo</td><td>Prolene ou PDS 3-0</td><td>Sem superioridade</td><td>Escola</td></tr>
+      <tr><td>Bariátrica — gastrojejunal</td><td>Caprofyl 3-0</td><td>Absorvível obrigatório (úlcera marginal)</td><td>Alinhado</td></tr>
+    </table></div>
+    <div class="banca"><span class="tag">Os dois pontos de prova</span><b>Vicryl 1 na linha alba</b> contraria a diretriz de 2022; <b>Prolene na via biliar</b> contraria o monofilamento absorvível fino. O serviço acerta o gesto e erra o material — exatamente os dois que a banca cobra.</div>
+    <div class="box"><span class="tag">Pergunta para o chefe</span>Quando pedirem um fio fora do esperado: "é pelo risco do paciente ou é preferência?" — separa regra de escola.</div>
+  </div>
+</section>
+
+<!-- 17 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">17</span><h2>Complicações — da técnica e do fio</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <h3>Infecção de sítio cirúrgico</h3>
+    <ul>
+      <li>Superficial e profunda: até <b>30 dias</b> (90 dias com implante). Órgão-cavidade: qualquer espaço manipulado.</li>
+      <li>Paciente: diabetes, tabagismo, obesidade, desnutrição, imunossupressão, colonização por <i>S. aureus</i>. Técnica: duração, hematoma, corpo estranho, hipotermia, quebra de assepsia.</li>
+      <li>Conduta: <b>abrir e drenar</b>; antibiótico só se celulite &gt; 5 cm, sinais sistêmicos, imunossupressão ou implante.</li>
+    </ul>
+    <h3>Deiscência aponeurótica e evisceração</h3>
+    <ul>
+      <li>1–3%; mortalidade de até 15–30%.</li>
+      <li>Sinal clássico: secreção serossanguinolenta abundante "<b>água de carne</b>" entre o <b>5º e o 8º PO</b>. <span class="pq">(um líquido rosado escorrendo da ferida — é o líquido de dentro da barriga escapando)</span></li>
+      <li>Fatores: infecção, pontos largos, fio:ferida &lt; 4:1, fio de absorção rápida, ↑ pressão abdominal (tosse, ascite, íleo), desnutrição, corticoide, quimioterapia.</li>
+      <li>Evisceração = emergência: compressa úmida estéril, jejum, ressutura no bloco; pontos de retenção ou peritoneostomia se a parede não fecha.</li>
+    </ul>
+    <h3>Outras</h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>Complicação</th><th>Mecanismo / fio implicado</th><th>Prevenção</th></tr>
+      <tr><td>Hérnia incisional (10–30% após mediana)</td><td>Vicryl na linha alba, pontos largos</td><td>PDS, contínua, small bites, 4:1; tela profilática no alto risco</td></tr>
+      <tr><td>Seroma</td><td>Espaço morto + secção linfática</td><td>Dreno aspirativo, pontos de adesão, compressão</td></tr>
+      <tr><td>Hematoma</td><td>Hemostasia incompleta, anticoagulação</td><td>Revisão antes de fechar</td></tr>
+      <tr><td>Queimadura elétrica</td><td>Placa mal aderida, acoplamento capacitivo, álcool úmido</td><td>Checar placa, sem trocarte híbrido, esperar secar</td></tr>
+      <tr><td>Corpo estranho retido</td><td>Falha de contagem</td><td>Contagem tripla, compressa radiopaca, RX se divergência</td></tr>
+      <tr><td>Lesão nervosa</td><td>Posicionamento, incisão lateral</td><td>Coxins, abdução &lt; 90°, respeitar o plano neurovascular</td></tr>
+      <tr><td>Fístula de anastomose</td><td>Isquemia, tensão, técnica</td><td>Os seis mandamentos; ostomia de proteção</td></tr>
+      <tr><td>Cálculo de anastomose biliar / vesical</td><td>Prolene, seda, náilon expostos à bile ou urina</td><td>PDS 5-0/6-0 na bile; Vicryl/Monocryl na urina</td></tr>
+      <tr><td>Úlcera marginal (bariátrica)</td><td>Inabsorvível na gastrojejunal</td><td>Caprofyl / Monocryl</td></tr>
+      <tr><td>Estenose colônica</td><td>PDS no cólon</td><td>Vicryl 3-0</td></tr>
+      <tr><td>Sinus / fístula de fio</td><td>Trançado em campo infectado (capilaridade)</td><td>Monofilamento em campo contaminado</td></tr>
+      <tr><td>Granuloma</td><td>Seda, categute</td><td>Sintético</td></tr>
+      <tr><td>Sangramento pela linha vascular</td><td>Prolene em prótese de PTFE (furo maior que o fio)</td><td>Fio de PTFE</td></tr>
+    </table></div>
+  </div>
+</section>
+
+<!-- 18 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">18</span><h2>Nota vascular — onde a variabilidade acaba</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <div class="vasc"><span class="tag">Por que sempre Prolene</span><b>Não absorve</b> (a anastomose nunca ganha resistência à pressão) · <b>tromborresistente</b> (superfície lisa) · <b>desliza</b> para ajustar a tensão da contínua sem serrar a íntima · <b>mínima reação</b> (menos hiperplasia intimal na linha de sutura).</div>
+    <div class="tbl-wrap"><table>
+      <tr><th>Vaso</th><th>Fio</th><th>Agulha</th></tr>
+      <tr><td>Aorta abdominal</td><td>Prolene 3-0 / 4-0</td><td>26–31 mm</td></tr>
+      <tr><td>Ilíacas</td><td>Prolene 5-0</td><td>17–22 mm</td></tr>
+      <tr><td>Femoral comum e profunda</td><td>Prolene 5-0</td><td>17 mm</td></tr>
+      <tr><td>Poplítea</td><td>Prolene 6-0</td><td>13 mm</td></tr>
+      <tr><td>Carótida</td><td>Prolene 6-0</td><td>13 mm</td></tr>
+      <tr><td>Tibiais e pediosa</td><td>Prolene 6-0 / 7-0</td><td>9–13 mm</td></tr>
+      <tr><td>Fístula arteriovenosa</td><td>Prolene 6-0 / 7-0</td><td>9–13 mm</td></tr>
+    </table></div>
+    <ul>
+      <li>Sutura <b>contínua evertida</b> (íntima com íntima), agulhado nas duas pontas.</li>
+      <li>No vaso doente, a agulha passa <b>de dentro para fora</b> — prende a placa contra a parede em vez de descolá-la.</li>
+      <li><b>6–7 seminós</b>: o monofilamento liso escorrega. Trançado travaria com 3–4 — é a troca segurança de nó × deslizamento.</li>
+      <li>Única exceção legítima ao Prolene: prótese de <b>PTFE</b> com fio de PTFE (diâmetro do fio = diâmetro do furo).</li>
+    </ul>
+    <div class="mnemo"><span class="tag">Macete vascular</span>Quanto menor o vaso, mais zeros e menor a agulha. Aorta 3-0 com agulha grande; tibial 7-0 com 9 mm.</div>
+  </div>
+</section>
+
+<!-- 19 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">19</span><h2>Temas de prova — bancas RS (questões originais no estilo)</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <div class="tbl-wrap"><table>
+      <tr><th>Banca</th><th>O que mais aparece</th></tr>
+      <tr><td>HCPA</td><td>Fechamento de parede (small bites, 4:1, absorção lenta); profilaxia (janela, repique); grampeadores e donuts; incisão para reduzir hérnia</td></tr>
+      <tr><td>GHC</td><td>Deiscência e conduta; dreno sim × não, contra-abertura; Altemeier; monopolar × bipolar no marca-passo; fio da via biliar</td></tr>
+      <tr><td>Santa Casa POA</td><td>Identificação de instrumental; tempos fundamentais; pontos evertentes × invaginantes; nó de cirurgião e seminós; fixação de tela</td></tr>
+      <tr><td>PUC-RS</td><td>Linha arqueada, bainha do reto, epigástrica inferior; física da eletrocirurgia; energias avançadas; bariátrica (luz × espaço)</td></tr>
+      <tr><td>AMRIGS</td><td>Propriedades dos fios; Altemeier com exemplos; clorexidina × PVPI, tricotomia; checklist OMS; anastomose manual</td></tr>
+    </table></div>
+    <div class="q"><span class="q-banca">Estilo HCPA</span><p>Paciente de 68 anos, desnutrido, laparotomia mediana por obstrução com peritonite fecal. Sobre o fechamento da parede:</p>
+      <div class="q-alt">a) Poliglactina 910 nº 1 contínua é a escolha de melhor evidência.</div>
+      <div class="q-alt">b) Fio de absorção lenta, contínua, pontos pequenos e relação fio:ferida ≥ 4:1.</div>
+      <div class="q-alt">c) Pontos separados totais com náilon são superiores à contínua.</div>
+      <div class="q-alt">d) Fechar o peritônio reduz hérnia incisional.</div>
+      <div class="q-resp"><b>Resposta: B.</b> Poliglactina é de absorção rápida (meia-força em 21 dias); peritônio separado não muda desfecho.</div></div>
+    <div class="q"><span class="q-banca">Estilo GHC</span><p>Na duodenopancreatectomia, o fio mais adequado para a anastomose coledocojejunal é:</p>
+      <div class="q-alt">a) Polipropileno 4-0</div><div class="q-alt">b) Seda 4-0</div><div class="q-alt">c) Polidioxanona 5-0</div><div class="q-alt">d) Poliglactina trançada 4-0</div>
+      <div class="q-resp"><b>Resposta: C.</b> Monofilamento absorvível fino. Permanente vira cálculo e estenose; trançado tem capilaridade e é degradado pela bile.</div></div>
+    <div class="q"><span class="q-banca">Estilo Santa Casa POA</span><p>Sobre a fixação da tela no Lichtenstein:</p>
+      <div class="q-alt">a) Absorvível de curta duração reduz a dor inguinal crônica.</div>
+      <div class="q-alt">b) O material não influencia a dor crônica, mas absorvível de curta duração associa-se a mais recidiva.</div>
+      <div class="q-alt">c) Cola de cianoacrilato aumenta recidiva em 5 anos.</div>
+      <div class="q-alt">d) Poliglactina 910 é a fixação de escolha.</div>
+      <div class="q-resp"><b>Resposta: B.</b></div></div>
+    <div class="q"><span class="q-banca">Estilo Santa Casa POA</span><p>Pinça hemostática com ranhuras em toda a extensão das mandíbulas e sem dentes:</p>
+      <div class="q-alt">a) Kelly</div><div class="q-alt">b) Crile</div><div class="q-alt">c) Kocher</div><div class="q-alt">d) Allis</div>
+      <div class="q-resp"><b>Resposta: B.</b> Kelly tem ranhuras só na metade distal; Kocher tem dente; Allis é de preensão.</div></div>
+    <div class="q"><span class="q-banca">Estilo PUC-RS</span><p>Bypass gástrico em Y de Roux. Associação correta entre gesto e fio:</p>
+      <div class="q-alt">a) Gastrojejunal com polipropileno; Petersen com absorvível.</div>
+      <div class="q-alt">b) Gastrojejunal com absorvível; Petersen com polipropileno.</div>
+      <div class="q-alt">c) Ambos com polipropileno.</div>
+      <div class="q-alt">d) Ambos com absorvível rápido.</div>
+      <div class="q-resp"><b>Resposta: B.</b> Inabsorvível na luz gástrica → úlcera marginal. Petersen é espaço e pede força permanente. <b>Prolene fecha espaço, não fecha luz.</b></div></div>
+    <div class="q"><span class="q-banca">Estilo PUC-RS</span><p>Portador de marca-passo em colectomia aberta. A conduta mais segura quanto à energia é:</p>
+      <div class="q-alt">a) Monopolar em coagulação com placa na coxa contralateral ao gerador.</div>
+      <div class="q-alt">b) Preferir bipolar; se monopolar for indispensável, placa de modo que o trajeto da corrente passe longe do gerador, com reprogramação/ímã disponível.</div>
+      <div class="q-alt">c) Ultrassônico é contraindicado.</div>
+      <div class="q-alt">d) Não há cuidado específico acima de 100 kHz.</div>
+      <div class="q-resp"><b>Resposta: B.</b></div></div>
+    <div class="q"><span class="q-banca">Estilo AMRIGS</span><p>Sobre anastomoses intestinais manuais, assinale a INCORRETA:</p>
+      <div class="q-alt">a) Plano único e duplo têm taxas semelhantes de fístula.</div>
+      <div class="q-alt">b) Contínua e separados têm desfecho equivalente.</div>
+      <div class="q-alt">c) Polidioxanona é comprovadamente superior à poliglactina no cólon.</div>
+      <div class="q-alt">d) Monofilamento é preferível em campo contaminado.</div>
+      <div class="q-resp"><b>Resposta: C.</b> Ensaio com braço colônico de PDS interrompido por 19% de estenose.</div></div>
+    <div class="q"><span class="q-banca">Estilo AMRIGS</span><p>Apendicectomia por apendicite supurada sem perfuração. Classificação da ferida e infecção esperada:</p>
+      <div class="q-alt">a) Limpa-contaminada, 5–10%</div><div class="q-alt">b) Contaminada, ~15–20%</div><div class="q-alt">c) Infectada, &gt; 30%</div><div class="q-alt">d) Limpa, 1–2%</div>
+      <div class="q-resp"><b>Resposta: B.</b> Inflamação aguda não purulenta / supurada sem perfuração = III. Perfurada com peritonite = IV.</div></div>
+    <div class="q"><span class="q-banca">Estilo HCPA — vascular</span><p>Anastomose femoropoplítea com veia safena invertida. Fio de escolha:</p>
+      <div class="q-alt">a) Polidioxanona 6-0</div><div class="q-alt">b) Polipropileno 6-0, agulhado nas duas pontas</div><div class="q-alt">c) Poliglactina 5-0</div><div class="q-alt">d) Poliéster trançado 5-0</div>
+      <div class="q-resp"><b>Resposta: B.</b> Inabsorvível, monofilamento, tromborresistente, contínua.</div></div>
+  </div>
+</section>
+
+<!-- 20 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">20</span><h2>Grade de mnemônicos e números-chave</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <div class="mnemo"><span class="tag">D-H-E-S</span>Diérese · Hemostasia · Exérese · Síntese.</div>
+    <div class="mnemo"><span class="tag">Seda · Vicryl · PDS · Prolene</span>Seda amarra. Vicryl fecha. PDS sustenta. Prolene eterniza.</div>
+    <div class="mnemo"><span class="tag">T-E-L-A</span>Tela → Prolene · Espaço → Prolene · Luz → absorvível · Anastomose → pelo órgão. <b>Prolene fecha espaço, não fecha luz.</b></div>
+    <div class="mnemo"><span class="tag">Escada</span>Cólon Vê, Esôfago PeDe, Bile PeDe Fino, Pâncreas e Vaso PROvam.</div>
+    <div class="mnemo"><span class="tag">Calibre</span>Parede 1 → intestino 3-0 → bile 5-0 → vaso 5-0 a 7-0.</div>
+    <div class="mnemo"><span class="tag">Duração</span>O fio tem que durar mais que o buraco.</div>
+    <div class="mnemo"><span class="tag">5 · 5 · 4 · PDS</span>Ponto de 5 mm, a cada 5 mm, razão 4:1, com PDS.</div>
+    <div class="mnemo"><span class="tag">1 · 2 · 6 meses</span>Absorção: Vicryl ~2 · Monocryl ~3 · PDS ~6.</div>
+    <div class="mnemo"><span class="tag">1 · 5 · 15 · 30</span>Infecção por classe: limpa · limpa-contaminada · contaminada · infectada.</div>
+    <div class="mnemo"><span class="tag">10-20-23 cortam · 11 fura · 15 detalha</span>Lâminas por função.</div>
+    <div class="mnemo"><span class="tag">Kelly = metade · Crile = tudo</span>Ranhuras da ponta. <b>Ko</b>cher tem dente = traumá<b>tico</b>.</div>
+    <div class="mnemo"><span class="tag">Redonda dentro, cortante fora</span>Cilíndrica em víscera, vaso e aponeurose; triangular na pele.</div>
+    <div class="mnemo"><span class="tag">Liso pede mais laço</span>Seminós: trançado 3–4 · monofilamento 5–6 · Prolene em vaso 6–7.</div>
+    <div class="mnemo"><span class="tag">5 e 7</span>Selamento: ultrassônico até 5 mm · bipolar avançado até 7 mm.</div>
+    <div class="mnemo"><span class="tag">Branco-Azul-Verde</span>Cargas: 2,5 (vascular) · 3,5 (delgado/estômago) · 4,8 mm (estômago espesso/cólon edemaciado).</div>
+    <div class="mnemo"><span class="tag">Salmão no 5º–8º PO</span>"Água de carne" na ferida = deiscência aponeurótica até prova em contrário.</div>
+    <div class="mnemo"><span class="tag">V-T-C-A-E-S</span>Anastomose sem fístula: Vascularização · sem Tensão · Coaptação da submucosa · Assepsia · técnica atraumática · sem eStenose.</div>
+    <div class="mnemo"><span class="tag">Cálculo</span>Urina e bile = absorvível. Permanente ali é certeza de cálculo.</div>
+    <div class="mnemo"><span class="tag">Contaminação</span>Campo sujo pede monofilamento; trançado tem capilaridade.</div>
+    <div class="mnemo"><span class="tag">Tela</span>Nunca com Vicryl — integra em 3–6 meses, o Vicryl entrega em 21 dias.</div>
+    <div class="mnemo"><span class="tag">Vascular</span>Menor o vaso, mais zeros e menor a agulha. Contínua, evertida, duplo agulhamento.</div>
+  </div>
+</section>
+
+<footer>
+  carolzita · Perioperatório · Técnica operatória e fios cirúrgicos (resumo único)<br>
+  Sabiston · Zollinger · Netter · EHS/AHS 2022 · STITCH · Millbourn · ESTOIH · CDC 2017 / OMS 2018 · Finn Mesh · registro sueco Lichtenstein · Cochrane anastomoses · Andrianello · Hepp-Couinaud<br>
+  Questões originais no estilo HCPA · GHC · Santa Casa POA · PUC-RS · AMRIGS
+</footer>
+
+</div>
+<script>
+document.querySelectorAll('.sec-head').forEach(function(h){
+  function t(){h.parentElement.classList.toggle('open')}
+  h.addEventListener('click',t);
+  h.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t()}});
+});
+function todas(abrir){
+  document.querySelectorAll('section').forEach(function(s){
+    s.classList.toggle('open',abrir);
+  });
+}
+</script>
+</body>
+</html>
