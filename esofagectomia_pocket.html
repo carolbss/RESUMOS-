@@ -1,669 +1,292 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Esofagectomia - Pocket OR</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            -webkit-touch-callout: none;
-            -webkit-user-select: none;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="cz-tema" content="Esofagectomia — POCKET">
+<meta name="cz-grupo" content="Esôfago">
+<meta name="cz-tags" content="pocket, esofagectomia, Ivor Lewis, McKeown, tubo gástrico, fístula, quilotórax">
+<meta name="cz-ordem" content="05">
+<title>Esofagectomia — pocket</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#08080c; --bg2:#101019; --bg3:#181826;
+  --line:#26263a; --txt:#e6e6f0; --txt2:#9a9ab0;
+  --laranja:#f97316; --roxo:#a855f7; --ciano:#22d3ee;
+  --vermelho:#ef4444; --verde:#22c55e;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;font-size:15px;line-height:1.6;display:flex;flex-direction:column;overflow:hidden}
 
-        html, body {
-            height: 100%;
-            width: 100%;
-            overflow: hidden;
-        }
+.top{padding:14px 16px 0;flex-shrink:0;border-bottom:1px solid var(--line)}
+.top .eyebrow{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--laranja)}
+.top h1{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;margin:4px 0 10px;letter-spacing:-.01em}
 
-        body {
-            background: #0f0f0f;
-            color: #e0e0e0;
-            font-family: 'Segoe UI', sans-serif;
-            font-size: 16px;
-        }
+.tabs{display:flex;gap:7px;overflow-x:auto;padding-bottom:11px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex-shrink:0;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;background:var(--bg2);color:var(--txt2);border:1px solid var(--line);border-radius:20px;padding:7px 14px;cursor:pointer;white-space:nowrap;transition:.15s}
+.tab.on{background:var(--laranja);color:#08080c;border-color:var(--laranja);font-weight:700}
 
-        .header {
-            background: linear-gradient(135deg, #ff9800 0%, #ffb84d 100%);
-            color: #000;
-            padding: 12px;
-            text-align: center;
-            font-weight: bold;
-            font-size: 18px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
-            z-index: 100;
-        }
+.deck{flex:1;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.deck::-webkit-scrollbar{display:none}
+.card{flex:0 0 100%;scroll-snap-align:start;overflow-y:auto;padding:18px 16px 60px}
 
-        .tabs-container {
-            background: #1a1a1a;
-            display: flex;
-            overflow-x: auto;
-            overflow-y: hidden;
-            border-bottom: 3px solid #ff9800;
-            padding: 0;
-            gap: 0;
-            scroll-behavior: smooth;
-            -webkit-overflow-scrolling: touch;
-        }
+h2{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:var(--laranja);margin-bottom:12px}
+h3{font-size:13px;font-weight:700;color:#fff;margin:16px 0 6px;text-transform:uppercase;letter-spacing:.05em}
+h3:first-of-type{margin-top:6px}
+p{margin-bottom:10px}
+ul{margin:0 0 11px 17px}
+li{margin-bottom:6px}
+b{color:#fff;font-weight:600}
+.pq{color:var(--txt2);font-style:italic}
 
-        .tab-btn {
-            flex: 0 0 auto;
-            padding: 12px 16px;
-            background: #1a1a1a;
-            color: #999;
-            border: none;
-            cursor: pointer;
-            white-space: nowrap;
-            font-size: 14px;
-            font-weight: 600;
-            border-bottom: 3px solid transparent;
-            transition: all 0.3s ease;
-        }
+.chip{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:11px;background:var(--bg3);border:1px solid var(--line);border-radius:6px;padding:3px 9px;margin:0 5px 6px 0;color:var(--ciano)}
 
-        .tab-btn.active {
-            color: #ff9800;
-            border-bottom-color: #ff9800;
-            background: rgba(255, 152, 0, 0.1);
-        }
+.box{border-left:3px solid var(--laranja);background:rgba(249,115,22,.07);padding:11px 13px;border-radius:0 7px 7px 0;margin:12px 0;font-size:14px}
+.banca{border-left:3px solid var(--roxo);background:rgba(168,85,247,.08);padding:11px 13px;border-radius:0 7px 7px 0;margin:12px 0;font-size:14px}
+.mnemo{border-left:3px solid var(--ciano);background:rgba(34,211,238,.08);padding:11px 13px;border-radius:0 7px 7px 0;margin:12px 0;font-size:14px}
+.alerta{border-left:3px solid var(--vermelho);background:rgba(239,68,68,.08);padding:11px 13px;border-radius:0 7px 7px 0;margin:12px 0;font-size:14px}
+.vasc{border-left:3px solid var(--verde);background:rgba(34,197,94,.08);padding:11px 13px;border-radius:0 7px 7px 0;margin:12px 0;font-size:14px}
+.tag{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.15em;text-transform:uppercase;display:block;margin-bottom:6px}
+.banca .tag{color:var(--roxo)} .mnemo .tag{color:var(--ciano)} .alerta .tag{color:var(--vermelho)} .vasc .tag{color:var(--verde)} .box .tag{color:var(--laranja)}
 
-        .tab-btn:active {
-            background: rgba(255, 152, 0, 0.2);
-        }
+table{width:100%;border-collapse:collapse;font-size:12.5px;margin:11px 0}
+th{background:var(--bg3);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;text-align:left;padding:8px 9px;border-bottom:1px solid var(--line)}
+td{padding:8px 9px;border-bottom:1px solid var(--line);vertical-align:top}
+td:first-child{color:#fff;font-weight:500}
 
-        .content-area {
-            height: calc(100% - 110px);
-            overflow-y: auto;
-            padding: 16px;
-            -webkit-overflow-scrolling: touch;
-        }
+.step{display:flex;gap:10px;margin-bottom:11px}
+.step-n{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--laranja);font-weight:700;flex-shrink:0;width:20px}
+.maos{display:grid;gap:6px;margin-top:6px}
+.mao{background:var(--bg3);border-radius:6px;padding:7px 10px;font-size:12px}
+.mao span{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--txt2);display:block;margin-bottom:2px}
 
-        .tab-content {
-            display: none;
-            animation: slideIn 0.3s ease;
-        }
+.dots{position:fixed;bottom:0;left:0;right:0;display:flex;justify-content:center;gap:6px;padding:12px;background:linear-gradient(transparent,var(--bg) 40%)}
+.dots i{width:6px;height:6px;border-radius:50%;background:var(--line);transition:.2s}
+.dots i.on{background:var(--laranja);width:18px;border-radius:3px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 
-        .tab-content.active {
-            display: block;
-        }
-
-        @keyframes slideIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        h2 {
-            color: #ff9800;
-            font-size: 18px;
-            margin: 16px 0 12px 0;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #ff9800;
-        }
-
-        h3 {
-            color: #00bcd4;
-            font-size: 14px;
-            margin: 12px 0 8px 0;
-            font-weight: 600;
-        }
-
-        p {
-            font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 10px;
-            color: #e0e0e0;
-        }
-
-        ul, ol {
-            margin-left: 16px;
-            margin-bottom: 10px;
-        }
-
-        li {
-            font-size: 14px;
-            margin-bottom: 6px;
-            color: #e0e0e0;
-        }
-
-        .highlight-orange {
-            color: #ff9800;
-            font-weight: 600;
-        }
-
-        .highlight-cyan {
-            color: #00bcd4;
-            font-weight: 600;
-        }
-
-        .highlight-purple {
-            color: #ce93d8;
-            font-weight: 600;
-        }
-
-        .explanation {
-            color: #888;
-            font-size: 12px;
-            font-style: italic;
-        }
-
-        .card {
-            background: rgba(255, 152, 0, 0.08);
-            border-left: 4px solid #ff9800;
-            padding: 12px;
-            margin: 10px 0;
-            border-radius: 3px;
-            font-size: 13px;
-        }
-
-        .card-high-yield {
-            background: rgba(156, 39, 176, 0.1);
-            border-left: 4px solid #9c27b0;
-        }
-
-        .card-mnemonic {
-            background: rgba(0, 188, 212, 0.08);
-            border-left: 4px solid #00bcd4;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 10px 0;
-            font-size: 12px;
-        }
-
-        th {
-            background: rgba(255, 152, 0, 0.2);
-            color: #ff9800;
-            padding: 8px;
-            text-align: left;
-            font-weight: 600;
-        }
-
-        td {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 8px;
-        }
-
-        .step {
-            background: rgba(0, 188, 212, 0.08);
-            padding: 10px;
-            margin: 8px 0;
-            border-left: 3px solid #00bcd4;
-            border-radius: 2px;
-            font-size: 13px;
-        }
-
-        .step-num {
-            color: #00bcd4;
-            font-weight: bold;
-            margin-right: 8px;
-        }
-
-        .mnemonic {
-            background: rgba(0, 188, 212, 0.12);
-            padding: 12px;
-            margin: 10px 0;
-            border-radius: 4px;
-            font-size: 13px;
-            border: 2px dashed #00bcd4;
-            text-align: center;
-            font-weight: 600;
-            color: #4dd0e1;
-        }
-
-        .danger {
-            background: rgba(244, 67, 54, 0.1);
-            border-left: 4px solid #f44336;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 2px;
-            font-size: 13px;
-            color: #ef5350;
-        }
-
-        .spacer {
-            height: 20px;
-        }
-
-        /* Scrollbar customizado */
-        ::-webkit-scrollbar {
-            width: 6px;
-            height: 6px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #1a1a1a;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #ff9800;
-            border-radius: 3px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #ffb84d;
-        }
-    </style>
+.fig{background:#fff;border-radius:10px;padding:10px 10px 0;margin:16px 0;overflow:hidden;cursor:zoom-in}
+.fig img{width:100%;height:auto;display:block;max-height:420px;object-fit:contain}
+.fig figcaption{background:var(--bg3);color:var(--txt2);font-family:'JetBrains Mono',monospace;font-size:10.5px;line-height:1.55;letter-spacing:.02em;margin:10px -10px 0;padding:9px 12px;border-top:2px solid var(--laranja)}
+.figs2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.figs2 .fig{margin:12px 0}
+@media(max-width:620px){.figs2{grid-template-columns:1fr}}
+.atl{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--laranja);border:1px solid var(--laranja);border-radius:4px;padding:1px 6px;margin:10px 0 4px}
+.lb{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;z-index:99;padding:14px;cursor:zoom-out}
+.lb.on{display:flex}
+.lb img{max-width:100%;max-height:100%;background:#fff;border-radius:8px}
+</style>
 </head>
 <body>
-    <div class="header">
-        🔪 ESOFAGECTOMIA - Pocket OR
-    </div>
 
-    <div class="tabs-container">
-        <button class="tab-btn active" onclick="openTab(event, 'diagnosis')">📋 Diagnóstico</button>
-        <button class="tab-btn" onclick="openTab(event, 'anatomy')">🫀 Anatomia</button>
-        <button class="tab-btn" onclick="openTab(event, 'preparation')">👤 Prep/Posição</button>
-        <button class="tab-btn" onclick="openTab(event, 'steps')">⚙️ Passos</button>
-        <button class="tab-btn" onclick="openTab(event, 'hands')">✋ Mãos</button>
-        <button class="tab-btn" onclick="openTab(event, 'sutures')">🪡 Fios</button>
-        <button class="tab-btn" onclick="openTab(event, 'complications')">⚠️ Complicações</button>
-        <button class="tab-btn" onclick="openTab(event, 'mnemonics')">💡 Mnemo</button>
-    </div>
+<div class="top">
+  <div class="eyebrow">Pocket · Esôfago</div>
+  <h1>Esofagectomia</h1>
+  <div class="tabs" id="tabs"></div>
+</div>
 
-    <div class="content-area">
-        <!-- TAB 1: DIAGNÓSTICO -->
-        <div id="diagnosis" class="tab-content active">
-            <h2>Indicações & Quadro Clínico</h2>
-            
-            <h3>Indicações</h3>
-            <p><span class="highlight-orange">MALIGNAS:</span> Câncer esofágico T0-T4a ressecável</p>
-            <p><span class="highlight-orange">BENIGNAS:</span> Barrett com displasia, megaesôfago, estenose refratária</p>
-            
-            <h3>Sintomas Clássicos</h3>
-            <ul>
-                <li><span class="highlight-orange">Disfagia</span> progressiva (sólidos → líquidos)</li>
-                <li>Perda ponderal (>10kg em oncológicos)</li>
-                <li>Regurgitação / Tosse aspirativa</li>
-                <li>Odisfagia <span class="explanation">(dor ao engolir)</span></li>
-            </ul>
+<div class="deck" id="deck">
 
-            <h3>Exames Pré-Op</h3>
-            <ul>
-                <li>✓ EDA + biópsia</li>
-                <li>✓ TC tórax-abdo-pelve</li>
-                <li>✓ PET-CT (oncológico)</li>
-                <li>✓ Espirometria</li>
-                <li>✓ ECG + Ecocardiograma</li>
-            </ul>
+  <div class="card" data-t="Quem">
+    <h2>Quem opera</h2>
+    <table>
+      <tr><th></th><th>Epidermoide</th><th>Adeno</th></tr>
+      <tr><td>Onde</td><td>Terço médio/superior</td><td>Distal, transição</td></tr>
+      <tr><td>Risco</td><td>Tabaco, álcool, <b>chimarrão</b>, megaesôfago, cáustico</td><td>Barrett, obesidade</td></tr>
+      <tr><td>Neoadjuvância</td><td><b>CROSS</b></td><td><b>FLOT</b> (ESOPEC)</td></tr>
+    </table>
+    <ul>
+      <li><b>T1a</b> → ressecção endoscópica</li>
+      <li><b>T1b</b> → esofagectomia</li>
+      <li><b>T3–T4a / N+</b> → neoadjuvância + cirurgia (6–8 sem após rádio)</li>
+      <li>Residual após CROSS → <b>nivolumabe</b> 1 ano</li>
+      <li>Epidermoide cervical → radioquimio definitiva</li>
+      <li>T4b / M1 → não opera</li>
+    </ul>
+    <div class="banca"><span class="tag">Estadiamento</span>T e N: <b>ecoendoscopia</b> · M: <b>PET-TC</b> · epidermoide médio/alto: <b>broncoscopia</b> · adeno de transição: laparoscopia.</div>
+    <p>Benigna: megaesôfago grau IV (trans-hiatal, Pinotti), estenose cáustica, perfuração inviável.</p>
+  </div>
 
-            <h3>Estadiamento</h3>
-            <p><span class="highlight-orange">I-II:</span> Melhor prognóstico, indicação clara</p>
-            <p><span class="highlight-orange">III:</span> Ressecável com neoadj.</p>
-            <p><span class="highlight-orange">IV:</span> Contraindica ressecção</p>
-        </div>
+  <div class="card" data-t="Anatomia">
+    <h2>Anatomia que decide</h2>
+    <span class="chip">15 cricofaríngeo</span><span class="chip">25 arco/brônquio E</span><span class="chip">40 hiato</span>
+    <ul>
+      <li><b>Sem serosa</b> — o ponto pega submucosa</li>
+      <li>Linfáticos longitudinais → metástase salta</li>
+    </ul>
+    <table>
+      <tr><th>Segmento</th><th>Artéria</th><th>Veia</th></tr>
+      <tr><td>Cervical</td><td>Tireóidea inf.</td><td>Tireóideas</td></tr>
+      <tr><td>Torácico</td><td>Aorta, brônquicas</td><td>Ázigo</td></tr>
+      <tr><td>Abdominal</td><td>Gástrica E</td><td>Porta</td></tr>
+    </table>
+    <div class="vasc"><span class="tag">Conduto</span>Vive da <b>gastroepiploica direita</b>. Abrir o omento <b>1–2 cm fora</b> da arcada. Gástrica E ligada, curtas seccionadas.</div>
+    <ul>
+      <li><b>Ducto torácico</b>: à direita entre aorta e ázigo; cruza para E em T4–T6</li>
+      <li><b>Recorrente E</b> no arco aórtico; <b>D</b> na subclávia — sulco traqueoesofágico</li>
+    </ul>
+  </div>
 
-        <!-- TAB 2: ANATOMIA -->
-        <div id="anatomy" class="tab-content">
-            <h2>Anatomia Essencial</h2>
-            
-            <h3>Estrutura do Esôfago</h3>
-            <ul>
-                <li><strong>Cervical:</strong> 5 cm</li>
-                <li><strong>Torácica:</strong> 12-14 cm</li>
-                <li><strong>Abdominal:</strong> 2-3 cm</li>
-            </ul>
+  <div class="card" data-t="Vias">
+    <h2>Escolha da via</h2>
+    <table>
+      <tr><th>Via</th><th>Incisões</th><th>Anastomose</th></tr>
+      <tr><td><b>Ivor Lewis</b></td><td>Abdome + tórax D</td><td>Tórax</td></tr>
+      <tr><td><b>McKeown</b></td><td>Tórax D + abdome + pescoço E</td><td>Pescoço</td></tr>
+      <tr><td><b>Trans-hiatal</b></td><td>Abdome + pescoço E</td><td>Pescoço</td></tr>
+      <tr><td>Toracoabdominal E</td><td>7º–8º espaço E</td><td>Tórax baixo</td></tr>
+    </table>
+    <div class="box"><span class="tag">ICAN</span>Intratorácica × cervical: fístula <b>12 × 34%</b> · recorrente <b>0 × 7%</b>.</div>
+    <div class="box"><span class="tag">Minimamente invasiva</span>TIME: pneumonia 9 × 29% · ROBOT: complicações 59 × 80%.</div>
+    <p>Conduto: <b>mediastino posterior</b> (preferido) · retroesternal se rádio no leito ou reconstrução tardia.</p>
+  </div>
 
-            <h3>Vascularização ARTERIAL</h3>
-            <div class="card card-high-yield">
-                <strong>ATA-GAG (MEMORIZAR!):</strong><br>
-                • A: Artéria <strong>T</strong>ireóidea inf. (cervical)<br>
-                • A: <strong>A</strong>orta torácica (torácica)<br>
-                • G: <strong>G</strong>ástrica esq. + frênica (abdominal)
-            </div>
+  <div class="card" data-t="Preparo">
+    <h2>Preparo e posição</h2>
+    <ul>
+      <li>Pré-habilitação, parar tabaco, nutrição (perda &gt; 10% → sonda/jejuno antes)</li>
+      <li>Cefazolina 2 g ≤ 60 min, repique 4/4 h</li>
+      <li><b>Duplo lúmen</b>, peridural torácica, PAI</li>
+      <li>CVC na <b>jugular D</b> (pescoço E livre)</li>
+      <li>Fluido restritivo</li>
+    </ul>
+    <table>
+      <tr><th>Tempo</th><th>Posição</th></tr>
+      <tr><td>Abdome</td><td>Dorsal, proclive</td></tr>
+      <tr><td>Tórax</td><td><b>Lateral esquerdo</b> (vídeo: prona)</td></tr>
+      <tr><td>Pescoço</td><td>Dorsal, cabeça para a D</td></tr>
+    </table>
+    <div class="alerta"><span class="tag">Ordem</span>Ivor Lewis: abdome → tórax. McKeown: <b>tórax primeiro</b> → abdome + pescoço.</div>
+  </div>
 
-            <h3>Drenagem VENOSA</h3>
-            <table>
-                <tr>
-                    <th>Local</th>
-                    <th>Veia</th>
-                </tr>
-                <tr>
-                    <td>Cervical</td>
-                    <td>Tireóidea inf. → Braquiocefálica</td>
-                </tr>
-                <tr>
-                    <td>Torácica</td>
-                    <td>Ázigo-hemiázigo</td>
-                </tr>
-                <tr>
-                    <td>Abdominal</td>
-                    <td>Gástrica esq. → Portal</td>
-                </tr>
-            </table>
+  <div class="card" data-t="Abdome">
+    <h2>Ivor Lewis — abdome</h2>
+    <div class="step"><div class="step-n">1</div><div><b>Laparotomia + inventário</b><div class="maos"><div class="mao"><span>ME</span>palpação, valva</div><div class="mao"><span>MD</span>cautério, afastador de rebordo</div></div></div></div>
+    <div class="step"><div class="step-n">2</div><div><b>Grande curvatura</b> fora da arcada, curtas seccionadas<div class="maos"><div class="mao"><span>ME</span>estômago com compressa — sem pinça no tubo</div><div class="mao"><span>MD</span>ultrassônico / <b>Seda 2-0</b></div></div></div></div>
+    <div class="step"><div class="step-n">3</div><div><b>Gástrica E na origem</b> + linfadenectomia celíaca<div class="maos"><div class="mao"><span>ME</span>eleva o estômago</div><div class="mao"><span>MD</span>Mixter · <b>grampo branco</b> ou <b>Seda 0</b> + transfixação</div></div></div></div>
+    <div class="step"><div class="step-n">4</div><div><b>Hiato</b> aberto, fita no esôfago</div></div>
+    <div class="step"><div class="step-n">5</div><div><b>Kocher</b> ± piloroplastia <b>Vicryl 3-0</b></div></div>
+    <div class="step"><div class="step-n">6</div><div><b>Tubo de 4–5 cm</b><div class="maos"><div class="mao"><span>ME</span>estica fundo × antro</div><div class="mao"><span>MD</span>linear <b>verde/roxa</b> · sobressutura <b>Prolene/PDS 4-0</b></div></div></div></div>
+    <div class="step"><div class="step-n">7</div><div><b>Jejunostomia</b> Witzel Vicryl 3-0, 30–40 cm do Treitz</div></div>
+    <div class="step"><div class="step-n">8</div><div><b>Parede</b> PDS contínua small bites</div></div>
+  </div>
 
-            <h3>Linfáticos</h3>
-            <p><span class="highlight-orange">SEGMENTAL</span> = rico, se espalha rápido</p>
-            <ul>
-                <li>Cervicais, mediastinais, gástricos, celíacos</li>
-            </ul>
+  <div class="card" data-t="Tórax">
+    <h2>Ivor Lewis — tórax</h2>
+    <div class="step"><div class="step-n">9</div><div><b>Toracotomia D 5º espaço</b>, pulmão D colapsado<div class="maos"><div class="mao"><span>ME</span>valva no pulmão</div><div class="mao"><span>MD</span>Finochietto</div></div></div></div>
+    <div class="step"><div class="step-n">10</div><div><b>Ázigo</b> ligada e seccionada<div class="maos"><div class="mao"><span>ME</span>apresenta a veia</div><div class="mao"><span>MD</span><b>grampo branco</b> ou Seda 0 + Prolene 4-0</div></div></div></div>
+    <div class="step"><div class="step-n">11</div><div><b>Esôfago em bloco</b> + subcarinais; clipar ramos aórticos<div class="maos"><div class="mao"><span>ME</span>fita tracionando</div><div class="mao"><span>MD</span>ultrassônico, clipes</div></div></div></div>
+    <div class="step"><div class="step-n">12</div><div><b>Ducto torácico</b> em massa entre aorta e ázigo — Seda 0</div></div>
+    <div class="step"><div class="step-n">13</div><div><b>Sobe o tubo</b> sem torção, margem ≥ 5 cm</div></div>
+    <div class="step"><div class="step-n">14</div><div><b>Anastomose acima da ázigo</b><div class="maos"><div class="mao"><span>ME</span>Allis abrindo o esôfago</div><div class="mao"><span>MD</span>bolsa <b>Prolene 2-0</b> · circular <b>25–29</b></div></div></div></div>
+    <div class="step"><div class="step-n">15</div><div>Omento sobre a anastomose · tubo fixado ao hiato · SNG além da anastomose</div></div>
+    <div class="step"><div class="step-n">16</div><div>Dreno 28 F · pericostais Vicryl 1</div></div>
+  </div>
 
-            <h3>Nervos Críticos</h3>
-            <ul>
-                <li><span class="danger">⚠️ VAGO: Lesão → gastroparesia, diarréia</span></li>
-                <li><span class="danger">⚠️ RECORRENTE: Lesão → disfonia</span></li>
-            </ul>
-        </div>
+  <div class="card" data-t="Pescoço">
+    <h2>McKeown e trans-hiatal</h2>
+    <h3>Cervicotomia esquerda</h3>
+    <ul>
+      <li>Borda anterior do ECM; carótida e jugular <b>para fora</b></li>
+      <li>Ligar tireóidea média, omo-hioideo</li>
+      <li><b>Sem afastador metálico no sulco</b> traqueoesofágico (recorrente)</li>
+      <li>Anastomose <b>PDS 3-0/4-0 separados</b> ou Orringer (linear posterior + anterior manual)</li>
+      <li>Pele frouxa + dreno — se fistular, abre</li>
+    </ul>
+    <h3>Trans-hiatal</h3>
+    <ul>
+      <li>Dissecção <b>romba</b>: mão pelo hiato, dedo pelo pescoço</li>
+      <li>Hipotensão na dissecção = compressão do coração</li>
+      <li>Abriu pleura → dreno de tórax</li>
+    </ul>
+    <div class="alerta"><span class="tag">Sangrou no mediastino</span>Não para com compressa → toracotomia/esternotomia. Ar no campo = membranosa da traqueia.</div>
+  </div>
 
-        <!-- TAB 3: PREPARAÇÃO/POSIÇÃO -->
-        <div id="preparation" class="tab-content">
-            <h2>Preparação & Posicionamento</h2>
-            
-            <h3>Posição 1: LAPAROTOMIA</h3>
-            <p><strong>SUPINO</strong> (costas para cima)</p>
-            <p>Tempo: 30-45 min</p>
-            <p>Incisão: Mediana supra-xifóide até umbigo</p>
+  <div class="card" data-t="Fios">
+    <h2>Fios e grampos</h2>
+    <table>
+      <tr><th>Momento</th><th>Material</th></tr>
+      <tr><td>Curtas, omento</td><td>Energia / Seda 2-0</td></tr>
+      <tr><td>Gástrica E, ázigo</td><td>Grampo branco / Seda 0 + transfixação</td></tr>
+      <tr><td>Tubo</td><td>Linear verde/roxa</td></tr>
+      <tr><td>Linha do tubo</td><td>Prolene/PDS 4-0</td></tr>
+      <tr><td>Piloroplastia</td><td>Vicryl 3-0</td></tr>
+      <tr><td>Anastomose torácica</td><td>Circular 25–29 · bolsa Prolene 2-0</td></tr>
+      <tr><td>Anastomose cervical</td><td><b>PDS 3-0/4-0</b></td></tr>
+      <tr><td>Tubo no hiato</td><td>Prolene 3-0</td></tr>
+      <tr><td>Ducto torácico</td><td>Seda 0</td></tr>
+      <tr><td>Pericostais</td><td>Vicryl 1</td></tr>
+      <tr><td>Aponeurose</td><td>PDS contínua</td></tr>
+    </table>
+    <div class="mnemo"><span class="tag">Esôfago PeDe</span>Sem serosa, cicatriza devagar → PDS na submucosa.</div>
+  </div>
 
-            <h3>Posição 2: TORACOTOMIA (se 3 campos)</h3>
-            <p><strong>Decúbito lateral esquerdo</strong></p>
-            <p>Braço esquerdo elevado</p>
-            <p>Tempo: 60-90 min</p>
-            <p>Incisão: 4º-5º espaço intercostal D</p>
+  <div class="card" data-t="Complicações">
+    <h2>Complicações</h2>
+    <table>
+      <tr><th>O quê</th><th>Faz o quê</th></tr>
+      <tr><td><b>Pneumonia</b> 15–30%</td><td>A mais comum — fisio, peridural, vídeo</td></tr>
+      <tr><td><b>Fístula</b> cervical</td><td>Abre a ferida, drena, jejuno</td></tr>
+      <tr><td><b>Fístula</b> torácica contida</td><td>Dreno + ATB + <b>vácuo endoscópico</b>/prótese</td></tr>
+      <tr><td>Fístula com sepse / tubo necrótico</td><td>Reoperar · esofagostomia cervical</td></tr>
+      <tr><td><b>Quilotórax</b></td><td>TG &gt; 110 · NPT/TCM, octreotide · &gt; 1 L/dia persistente → ligar ducto</td></tr>
+      <tr><td>Recorrente</td><td>Rouquidão, aspiração</td></tr>
+      <tr><td>Estenose</td><td>Dilatação seriada</td></tr>
+      <tr><td>Esvaziamento lento</td><td>Procinético, dilatação pilórica</td></tr>
+    </table>
+    <div class="alerta"><span class="tag">FA nova</span>= fístula ou pneumonia até prova em contrário → TC com contraste oral + endoscopia (viabilidade do tubo).</div>
+    <div class="box"><span class="tag">ECCG fístula</span>I sem mudança · II intervenção não cirúrgica · III cirurgia.</div>
+  </div>
 
-            <h3>Posição 3: CERVICOTOMIA</h3>
-            <p><strong>Supino novamente</strong></p>
-            <p>Tempo: 30-45 min</p>
-            <p>Incisão: Transversa esquerda 2-3 cm acima clavícula</p>
+  <div class="card" data-t="Macetes">
+    <h2>Macetes</h2>
+    <div class="mnemo"><span class="tag">15 · 25 · 40</span>Constrições a partir da arcada.</div>
+    <div class="mnemo"><span class="tag">T-A-G</span>Tireóidea · Aorta · Gástrica E.</div>
+    <div class="mnemo"><span class="tag">Ivor 2 · McKeown 3 · Hiatal 0</span>Incisões / toracotomia — e onde fica a anastomose.</div>
+    <div class="mnemo"><span class="tag">Adeno FLOTa, Epi CROSSa</span>Sobrou tumor → nivolumabe.</div>
+    <div class="mnemo"><span class="tag">T1a endo, T1b faca</span></div>
+    <div class="mnemo"><span class="tag">Direita alimenta o tubo</span>Gastroepiploica direita fica; gástrica esquerda sai.</div>
+    <div class="mnemo"><span class="tag">Pescoço vaza, tórax mata</span>Cervical: mais fístula, mais branda. Torácica: menos, mais grave.</div>
+    <div class="mnemo"><span class="tag">Leite no dreno</span>Ligar o ducto à direita, entre aorta e ázigo, acima do diafragma.</div>
+  </div>
 
-            <h3>Anestesia</h3>
-            <ul>
-                <li>✓ Intubação OT duplo-lúmen (se toracotomia)</li>
-                <li>✓ Monitorização invasiva (PA, PVC)</li>
-                <li>✓ Sonda vesical</li>
-                <li>✓ Jejum 8h</li>
-            </ul>
+</div>
 
-            <h3>Preparo Gástrico</h3>
-            <p><span class="highlight-orange">Dissecção do estômago:</span></p>
-            <ul>
-                <li>• Ligadura vasos curtos (preservar ramo antral!)</li>
-                <li>• Mobilização completa do fundo</li>
-                <li>• Avaliar vascularização (curva de Sasaki)</li>
-            </ul>
-        </div>
+<div class="dots" id="dots"></div>
 
-        <!-- TAB 4: PASSOS CIRÚRGICOS -->
-        <div id="steps" class="tab-content">
-            <h2>Passo a Passo Cirúrgico</h2>
+<script>
+var deck=document.getElementById('deck'),
+    cards=[].slice.call(deck.querySelectorAll('.card')),
+    tabs=document.getElementById('tabs'),
+    dots=document.getElementById('dots');
 
-            <h3>FASE I: Laparotomia (Supino)</h3>
-            <div class="step">
-                <span class="step-num">1.</span> Incisão mediana + exploração
-            </div>
-            <div class="step">
-                <span class="step-num">2.</span> Abertura omento menor
-            </div>
-            <div class="step">
-                <span class="step-num">3.</span> Ligadura vasos gástricos curtos
-            </div>
-            <div class="step">
-                <span class="step-num">4.</span> D2 linfadenectomia (celíaco, hepático, gástrico)
-            </div>
-            <div class="step">
-                <span class="step-num">5.</span> Dissecção transmediastinal esôfago torácico
-            </div>
+cards.forEach(function(c,i){
+  var b=document.createElement('button');
+  b.className='tab'+(i===0?' on':'');
+  b.textContent=c.dataset.t;
+  b.onclick=function(){deck.scrollTo({left:deck.clientWidth*i,behavior:'smooth'})};
+  tabs.appendChild(b);
+  var d=document.createElement('i');
+  if(i===0)d.className='on';
+  dots.appendChild(d);
+});
 
-            <h3>FASE II: Toracotomia D (Decúbito lat. esq.)</h3>
-            <div class="step">
-                <span class="step-num">1.</span> Incisão 4º-5º espaço intercostal
-            </div>
-            <div class="step">
-                <span class="step-num">2.</span> Ressecção 5ª costela
-            </div>
-            <div class="step">
-                <span class="step-num">3.</span> Separação pleura mediastinal
-            </div>
-            <div class="step">
-                <span class="step-num">4.</span> Dissecção esofágica em bloco (CUIDADO aorta!)
-            </div>
-            <div class="step">
-                <span class="step-num">5.</span> Linfadenectomia mediastinal (níveis 1-9)
-            </div>
-            <div class="step">
-                <span class="step-num">6.</span> Drenagem mediastinal 28-32F
-            </div>
-
-            <h3>FASE III: Cervicotomia (Supino retorno)</h3>
-            <div class="step">
-                <span class="step-num">1.</span> Incisão cervical transversa esquerda
-            </div>
-            <div class="step">
-                <span class="step-num">2.</span> Ligadura artéria tireóidea inferior
-            </div>
-            <div class="step">
-                <span class="step-num">3.</span> Remoção do esôfago (tração caudal)
-            </div>
-            <div class="step">
-                <span class="step-num">4.</span> <span class="highlight-orange">ANASTOMOSE ESOFAGOGÁSTRICA</span>
-            </div>
-            <div class="step">
-                <span class="step-num">5.</span> Drenagem cervical Penrose 1/4"
-            </div>
-
-            <h3>Anastomose: 3 Planos</h3>
-            <p><strong>Plano 1:</strong> Seromuscular-muscular (pontos separados 3-0)</p>
-            <p><strong>Plano 2:</strong> Mucosa-submucosa contínua (3-0 absorvível)</p>
-            <p><strong>Plano 3:</strong> Invaginação (pontos reforço)</p>
-        </div>
-
-        <!-- TAB 5: INSTRUMENTAÇÃO MÃOS -->
-        <div id="hands" class="tab-content">
-            <h2>Instrumentação Mão D vs E</h2>
-
-            <h3>Mão DIREITA (Cirurgião)</h3>
-            <ul>
-                <li><span class="highlight-orange">Bisturi eletrônico</span> - Dissecção/hemostasia</li>
-                <li><span class="highlight-orange">Pinça Kocher</span> - Dissecção</li>
-                <li><span class="highlight-orange">Tesoura vascular</span> - Corte vasos</li>
-                <li><span class="highlight-orange">Grampeador TA</span> - Vasos curtos</li>
-                <li><span class="highlight-orange">Pinça de sutura 3/8</span> - Anastomose</li>
-            </ul>
-
-            <h3>Mão ESQUERDA (Retração)</h3>
-            <ul>
-                <li><span class="highlight-orange">Pinça Allis</span> - Tração mucosa</li>
-                <li><span class="highlight-orange">Afastador Balfour</span> - Exposição abdominal</li>
-                <li><span class="highlight-orange">Compressa</span> - Hemostasia/proteção</li>
-                <li><span class="highlight-orange">Pinça Kelly</span> - Dissecção fina</li>
-                <li><span class="highlight-orange">Afastador Finochietto</span> - Torácico</li>
-            </ul>
-
-            <h3>Instrumentos Críticos</h3>
-            <p><span class="highlight-orange">Hemostasia vascular:</span></p>
-            <ul>
-                <li>Pince Kelly, Pean, Mosquito</li>
-                <li>Grampeador (TA, linear)</li>
-                <li>Clips vasculares</li>
-            </ul>
-
-            <p><span class="highlight-orange">Dissecção:</span></p>
-            <ul>
-                <li>Espátula maleável</li>
-                <li>Pinça dissecante fina</li>
-                <li>Tesoura Metzenbaum</li>
-            </ul>
-        </div>
-
-        <!-- TAB 6: FIOS/SUTURA -->
-        <div id="sutures" class="tab-content">
-            <h2>Fios Cirúrgicos & Sutura</h2>
-
-            <h3>Anastomose Esofagogástrica</h3>
-            <table>
-                <tr>
-                    <th>Plano</th>
-                    <th>Fio</th>
-                    <th>Técnica</th>
-                </tr>
-                <tr>
-                    <td>1º (Seromuscular)</td>
-                    <td><span class="highlight-cyan">Vicryl 3-0</span></td>
-                    <td>Pontos separados</td>
-                </tr>
-                <tr>
-                    <td>2º (Mucosa)</td>
-                    <td><span class="highlight-cyan">Poliglecaprona 3-0</span></td>
-                    <td>Contínua ancorada</td>
-                </tr>
-                <tr>
-                    <td>3º (Reforço)</td>
-                    <td><span class="highlight-cyan">Vicryl 4-0</span></td>
-                    <td>Pontos separados</td>
-                </tr>
-            </table>
-
-            <h3>Características Essenciais</h3>
-            <div class="card">
-                ✓ <span class="highlight-orange">ABSORVÍVEL</span> (não precisa retirar)<br>
-                ✓ <span class="highlight-orange">MONOFILAMENTADO</span> (menos reação)<br>
-                ✓ <span class="highlight-orange">3-0 a 4-0</span> (fino, delicado)<br>
-                ✗ Não-absorvível (risco erosão)
-            </div>
-
-            <h3>Outras Suturas</h3>
-            <p><span class="highlight-orange">Fechamento parede:</span> Vicryl 1 (pontos separados)</p>
-            <p><span class="highlight-orange">Pele:</span> Monocryl 4-0 intradérmica ou grampos</p>
-            <p><span class="highlight-orange">Vasos menores:</span> Clips vasculares</p>
-
-            <h3>Drenagem</h3>
-            <ul>
-                <li><span class="highlight-orange">Cervical:</span> Penrose 1/4" ou JP 19F</li>
-                <li><span class="highlight-orange">Torácica:</span> Tubo 28-32F (peito)</li>
-                <li><span class="highlight-orange">Abdominal:</span> Se necessário, JP</li>
-            </ul>
-        </div>
-
-        <!-- TAB 7: COMPLICAÇÕES -->
-        <div id="complications" class="tab-content">
-            <h2>Complicações Pós-Op</h2>
-
-            <h3>ANASTOMÓTICAS</h3>
-            <div class="danger">
-                <strong>🔴 FÍSTULA (5-15%)</strong><br>
-                Quando: POD 3-7<br>
-                Sinais: Febre + drenagem purulenta<br>
-                Manejo: Drenagem, NPT, antibióticos
-            </div>
-
-            <div class="danger">
-                <strong>🔴 ESTENOSE (10-15%)</strong><br>
-                Quando: Semanas-meses<br>
-                Sinais: Disfagia progressiva<br>
-                Manejo: Dilatação endoscópica
-            </div>
-
-            <h3>PULMONARES (MAIS FREQUENTES!)</h3>
-            <div class="danger">
-                <strong>🔴 PNEUMONIA (20-30%)</strong><br>
-                Manejo: Fisioterapia, antibióticos
-            </div>
-            <div class="danger">
-                <strong>🔴 DERRAME PLEURAL (30-40%)</strong><br>
-                Manejo: Drenagem se sintomático
-            </div>
-
-            <h3>NERVOS & ESTRUTURAS</h3>
-            <table>
-                <tr>
-                    <th>Estrutura</th>
-                    <th>Lesão (Freq.)</th>
-                    <th>Efeito</th>
-                </tr>
-                <tr>
-                    <td><span class="highlight-orange">Vago</span></td>
-                    <td>5-10%</td>
-                    <td>Gastroparesia, diarréia</td>
-                </tr>
-                <tr>
-                    <td><span class="highlight-orange">Recorrente</span></td>
-                    <td>10-30%</td>
-                    <td>Disfonia (rouca)</td>
-                </tr>
-                <tr>
-                    <td><span class="highlight-orange">Ducto torácico</span></td>
-                    <td>1-4%</td>
-                    <td>Quilotórax (linfa)</td>
-                </tr>
-            </table>
-
-            <h3>RED FLAGS 🚩</h3>
-            <p><span class="danger">Febre + taquicardia + dor cervical = FÍSTULA!</span></p>
-            <p><span class="danger">Drenagem branca = Quilotórax!</span></p>
-            <p><span class="danger">Rouquidão = Nervo recorrente!</span></p>
-        </div>
-
-        <!-- TAB 8: MNEMÔNICAS -->
-        <div id="mnemonics" class="tab-content">
-            <h2>Esquemas de Memorização</h2>
-
-            <div class="mnemonic">
-                ATA-GAG<br>
-                Artéria Tireóidea (cervical)<br>
-                Aorta-Artérias brônquicas (torácica)<br>
-                Gástrica-Artéria frênica (abdominal)
-            </div>
-
-            <div class="mnemonic">
-                CVC<br>
-                Cervical-Visceral-Celíaco<br>
-                (3 campos de acesso)
-            </div>
-
-            <h3>Complicações por Tempo</h3>
-            <p><strong>POD 0-3:</strong> Sangramento, pneumotórax</p>
-            <p><strong>POD 3-7:</strong> Fístula, quilotórax</p>
-            <p><strong>Semanas:</strong> Estenose, gastroparesia</p>
-
-            <h3>Checklist Pré-Op</h3>
-            <ul>
-                <li>☐ EDA + bióp</li>
-                <li>☐ TC tórax-abdo-pelve</li>
-                <li>☐ PET-CT (onco)</li>
-                <li>☐ Espiro + ECG</li>
-                <li>☐ Nutricional</li>
-                <li>☐ Fisio respiratória</li>
-            </ul>
-
-            <h3>Palavras-Chave em Provas</h3>
-            <p><span class="highlight-purple">→ "Estadio I/II"</span> = Boa indicação</p>
-            <p><span class="highlight-purple">→ "Toracotomia"</span> = 3 campos</p>
-            <p><span class="highlight-purple">→ "Quilotórax"</span> = Ducto torácico</p>
-            <p><span class="highlight-purple">→ "Rouquidão"</span> = Recorrente</p>
-            <p><span class="highlight-purple">→ "Necrose gástrica"</span> = Vasos curtos</p>
-        </div>
-
-        <div class="spacer"></div>
-    </div>
-
-    <script>
-        function openTab(evt, tabName) {
-            // Hide all tab contents
-            var contents = document.getElementsByClassName("tab-content");
-            for (var i = 0; i < contents.length; i++) {
-                contents[i].classList.remove("active");
-            }
-
-            // Remove active class from all buttons
-            var buttons = document.getElementsByClassName("tab-btn");
-            for (var i = 0; i < buttons.length; i++) {
-                buttons[i].classList.remove("active");
-            }
-
-            // Show the selected tab
-            document.getElementById(tabName).classList.add("active");
-            evt.currentTarget.classList.add("active");
-
-            // Scroll content to top
-            document.querySelector(".content-area").scrollTop = 0;
-        }
-
-        // Primeira aba ativa por padrão
-        window.addEventListener('DOMContentLoaded', function() {
-            document.querySelector('.tab-btn').classList.add('active');
-        });
-    </script>
+var timer;
+deck.addEventListener('scroll',function(){
+  clearTimeout(timer);
+  timer=setTimeout(function(){
+    var i=Math.round(deck.scrollLeft/deck.clientWidth);
+    tabs.querySelectorAll('.tab').forEach(function(t,j){t.classList.toggle('on',j===i)});
+    dots.querySelectorAll('i').forEach(function(d,j){d.classList.toggle('on',j===i)});
+    var on=tabs.querySelectorAll('.tab')[i];
+    if(on)on.scrollIntoView({inline:'center',block:'nearest',behavior:'smooth'});
+  },90);
+});
+</script>
 </body>
 </html>

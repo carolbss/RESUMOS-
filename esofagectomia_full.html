@@ -1,997 +1,505 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Esofagectomia - Resumo Cirúrgico</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="cz-tema" content="Esofagectomia">
+<meta name="cz-grupo" content="Esôfago">
+<meta name="cz-tags" content="esofagectomia, Ivor Lewis, McKeown, trans-hiatal, CROSS, FLOT, ESOPEC, tubo gástrico, gastroepiploica direita, fístula anastomótica, quilotórax, ECCG">
+<meta name="cz-ordem" content="05">
+<title>Esofagectomia — carolzita</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#08080c; --bg2:#101019; --bg3:#161622;
+  --line:#26263a; --txt:#e6e6f0; --txt2:#9a9ab0;
+  --laranja:#f97316; --roxo:#a855f7; --ciano:#22d3ee;
+  --vermelho:#ef4444; --verde:#22c55e;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;font-size:15.5px;line-height:1.65;padding-bottom:80px}
+.wrap{max-width:980px;margin:0 auto;padding:0 18px}
 
-        body {
-            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
-            color: #e0e0e0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.8;
-            padding: 20px;
-        }
+header{padding:52px 0 30px;border-bottom:1px solid var(--line);margin-bottom:26px}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--laranja);margin-bottom:12px}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(28px,5vw,46px);line-height:1.08;letter-spacing:-.02em}
+.sub{color:var(--txt2);margin-top:12px;font-size:15px;max-width:70ch}
+.refs{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--txt2);margin-top:18px;line-height:1.9}
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: #1f1f1f;
-            border-radius: 12px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
-            padding: 40px;
-        }
+.legenda{display:flex;flex-wrap:wrap;gap:14px;margin:22px 0 6px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--txt2)}
+.legenda span{display:flex;align-items:center;gap:6px}
+.dot{width:9px;height:9px;border-radius:2px;display:inline-block}
 
-        h1 {
-            text-align: center;
-            color: #fff;
-            margin-bottom: 10px;
-            font-size: 2.5em;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
+section{border:1px solid var(--line);border-radius:12px;margin-bottom:14px;background:var(--bg2);overflow:hidden}
+.sec-head{display:flex;align-items:center;gap:14px;padding:17px 20px;cursor:pointer;user-select:none;transition:background .15s}
+.sec-head:hover{background:var(--bg3)}
+.sec-head:focus-visible{outline:2px solid var(--laranja);outline-offset:-2px}
+.num{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--laranja);border:1px solid var(--laranja);border-radius:4px;padding:2px 7px;flex-shrink:0}
+.sec-head h2{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;flex:1;letter-spacing:-.01em}
+.chev{color:var(--txt2);font-size:13px;transition:transform .2s}
+section.open .chev{transform:rotate(90deg)}
+.sec-body{display:none;padding:4px 20px 24px}
+section.open .sec-body{display:block}
 
-        .subtitle {
-            text-align: center;
-            color: #ff9800;
-            margin-bottom: 30px;
-            font-style: italic;
-        }
+h3{font-family:'Syne',sans-serif;font-size:14.5px;font-weight:700;color:var(--laranja);margin:22px 0 9px;letter-spacing:.01em}
+h3:first-child{margin-top:8px}
+h4{font-size:13.5px;font-weight:600;color:var(--txt);margin:15px 0 6px}
+p{margin-bottom:11px}
+ul,ol{margin:0 0 12px 20px}
+li{margin-bottom:6px}
+b,strong{color:#fff;font-weight:600}
+.pq{color:var(--txt2);font-style:italic;font-weight:400}
+code{font-family:'JetBrains Mono',monospace;font-size:12.5px;background:var(--bg3);padding:1px 6px;border-radius:4px;color:var(--ciano)}
 
-        .section {
-            margin-bottom: 30px;
-            border-left: 5px solid #ff9800;
-            padding-left: 20px;
-        }
+.box{border-left:3px solid var(--laranja);background:rgba(249,115,22,.06);padding:13px 16px;border-radius:0 8px 8px 0;margin:14px 0}
+.banca{border-left:3px solid var(--roxo);background:rgba(168,85,247,.07);padding:13px 16px;border-radius:0 8px 8px 0;margin:14px 0}
+.banca .tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--roxo);display:block;margin-bottom:7px}
+.mnemo{border-left:3px solid var(--ciano);background:rgba(34,211,238,.07);padding:13px 16px;border-radius:0 8px 8px 0;margin:14px 0}
+.mnemo .tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ciano);display:block;margin-bottom:7px}
+.alerta{border-left:3px solid var(--vermelho);background:rgba(239,68,68,.07);padding:13px 16px;border-radius:0 8px 8px 0;margin:14px 0}
+.alerta .tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--vermelho);display:block;margin-bottom:7px}
+.vasc{border-left:3px solid var(--verde);background:rgba(34,197,94,.07);padding:13px 16px;border-radius:0 8px 8px 0;margin:14px 0}
+.vasc .tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--verde);display:block;margin-bottom:7px}
 
-        h2 {
-            color: #ff9800;
-            margin-bottom: 15px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            transition: all 0.3s ease;
-        }
+.tbl-wrap{overflow-x:auto;margin:14px 0;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:540px}
+th{background:var(--bg3);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}
+td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td:first-child{color:#fff;font-weight:500}
 
-        h2:hover {
-            color: #ffb84d;
-            transform: translateX(5px);
-        }
+.passo{display:flex;gap:14px;margin-bottom:15px;padding-bottom:15px;border-bottom:1px dashed var(--line)}
+.passo:last-child{border-bottom:none}
+.passo-n{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--laranja);font-weight:700;flex-shrink:0;width:26px;padding-top:2px}
+.maos{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:9px}
+.mao{background:var(--bg3);border-radius:7px;padding:9px 12px;font-size:12.5px}
+.mao .lbl{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--txt2);display:block;margin-bottom:4px}
+@media(max-width:620px){.maos{grid-template-columns:1fr}}
 
-        h3 {
-            color: #00bcd4;
-            margin: 15px 0 10px 0;
-            font-size: 1.2em;
-        }
+.q{margin-bottom:20px;padding-bottom:18px;border-bottom:1px dashed var(--line)}
+.q:last-child{border-bottom:none;padding-bottom:0}
+.q-banca{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--roxo);display:block;margin-bottom:7px}
+.q-alt{margin:4px 0 0 4px;font-size:14px}
+.q-resp{margin-top:10px;background:var(--bg3);border-radius:7px;padding:10px 13px;font-size:13.5px}
+.q-resp b{color:var(--verde)}
 
-        .toggle-btn {
-            width: 25px;
-            height: 25px;
-            background: #ff9800;
-            border: none;
-            border-radius: 3px;
-            color: #fff;
-            font-weight: bold;
-            cursor: pointer;
-            margin-right: 10px;
-            transition: all 0.3s ease;
-        }
+.ctrl{display:flex;gap:9px;margin-bottom:18px}
+.ctrl button{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;background:var(--bg2);color:var(--txt2);border:1px solid var(--line);border-radius:7px;padding:8px 14px;cursor:pointer;transition:.15s}
+.ctrl button:hover{color:var(--laranja);border-color:var(--laranja)}
+footer{margin-top:34px;padding-top:20px;border-top:1px solid var(--line);font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--txt2);line-height:1.9}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
 
-        .toggle-btn:hover {
-            background: #ffb84d;
-        }
-
-        .content {
-            display: none;
-            animation: fadeIn 0.3s ease;
-        }
-
-        .content.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .highlight-high-yield {
-            background: rgba(156, 39, 176, 0.2);
-            border-left: 4px solid #9c27b0;
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 4px;
-            color: #ce93d8;
-        }
-
-        .highlight-mnemonic {
-            background: rgba(0, 188, 212, 0.1);
-            border-left: 4px solid #00bcd4;
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 4px;
-            color: #4dd0e1;
-        }
-
-        .highlight-orange {
-            color: #ff9800;
-            font-weight: 600;
-        }
-
-        .explanation {
-            color: #9c9c9c;
-            font-size: 0.95em;
-            font-style: italic;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 15px 0;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 4px;
-            overflow: hidden;
-        }
-
-        th, td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid rgba(255, 152, 0, 0.2);
-        }
-
-        th {
-            background: rgba(255, 152, 0, 0.15);
-            color: #ff9800;
-            font-weight: 600;
-        }
-
-        tr:hover {
-            background: rgba(0, 188, 212, 0.05);
-        }
-
-        ul, ol {
-            margin-left: 20px;
-            margin-bottom: 15px;
-        }
-
-        li {
-            margin-bottom: 8px;
-        }
-
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin: 20px 0;
-        }
-
-        .card {
-            background: rgba(255, 152, 0, 0.05);
-            border: 1px solid rgba(255, 152, 0, 0.2);
-            padding: 15px;
-            border-radius: 6px;
-        }
-
-        .card h4 {
-            color: #ff9800;
-            margin-bottom: 10px;
-        }
-
-        .img-container {
-            text-align: center;
-            margin: 20px 0;
-        }
-
-        .img-container img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 6px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-            margin: 10px 0;
-        }
-
-        .img-label {
-            color: #ff9800;
-            font-size: 0.9em;
-            font-style: italic;
-            margin-top: 10px;
-        }
-
-        .mnemonics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-            margin: 20px 0;
-        }
-
-        .mnemonic-box {
-            background: rgba(0, 188, 212, 0.08);
-            border: 2px solid #00bcd4;
-            padding: 15px;
-            border-radius: 6px;
-            text-align: center;
-        }
-
-        .mnemonic-box strong {
-            color: #4dd0e1;
-            display: block;
-            margin-bottom: 8px;
-            font-size: 1.1em;
-        }
-
-        .footer {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 2px solid rgba(255, 152, 0, 0.3);
-            text-align: center;
-            color: #666;
-            font-size: 0.9em;
-        }
-
-        @media (max-width: 768px) {
-            .grid-2 {
-                grid-template-columns: 1fr;
-            }
-            .container {
-                padding: 20px;
-            }
-            h1 {
-                font-size: 1.8em;
-            }
-        }
-    </style>
+.fig{background:#fff;border-radius:10px;padding:10px 10px 0;margin:16px 0;overflow:hidden;cursor:zoom-in}
+.fig img{width:100%;height:auto;display:block;max-height:520px;object-fit:contain}
+.fig figcaption{background:var(--bg3);color:var(--txt2);font-family:'JetBrains Mono',monospace;font-size:10.5px;line-height:1.55;letter-spacing:.02em;margin:10px -10px 0;padding:9px 12px;border-top:2px solid var(--laranja)}
+.figs2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.figs2 .fig{margin:12px 0}
+@media(max-width:620px){.figs2{grid-template-columns:1fr}}
+.atl{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--laranja);border:1px solid var(--laranja);border-radius:4px;padding:1px 6px;margin:10px 0 4px}
+.lb{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;z-index:99;padding:14px;cursor:zoom-out}
+.lb.on{display:flex}
+.lb img{max-width:100%;max-height:100%;background:#fff;border-radius:8px}
+</style>
 </head>
 <body>
-    <div class="container">
-        <h1>ESOFAGECTOMIA</h1>
-        <p class="subtitle">Resumo completo para preparação de residência em cirurgia vascular</p>
+<div class="wrap">
 
-        <!-- SEÇÃO 1: QUADRO CLÍNICO -->
-        <div class="section">
-            <h2>
-                <button class="toggle-btn" onclick="toggleContent(this)">+</button>
-                📋 Quadro Clínico e Indicações
-            </h2>
-            <div class="content active">
-                <h3>Definição</h3>
-                <p>
-                    Esofagectomia é a <span class="highlight-orange">remoção total ou parcial do esôfago</span> 
-                    <span class="explanation">(o tubinho que leva comida e bebida da boca para o estômago)</span>, 
-                    frequentemente acompanhada da ressecção de estruturas adjacentes e reconstrução do trânsito digestivo.
-                </p>
+<header>
+  <div class="eyebrow">Esôfago · Resumo 05</div>
+  <h1>Esofagectomia — Ivor Lewis, McKeown e trans-hiatal</h1>
+  <p class="sub">Tirar o esôfago e subir o estômago como tubo até o tórax ou o pescoço. Quem opera e quando (endoscopia, neoadjuvância CROSS × FLOT), anatomia que decide a via, passo a passo com mãos e fios em cada tempo, o conduto gástrico, e as complicações que matam — fístula, necrose do tubo, quilotórax, pneumonia.</p>
+  <div class="refs">
+    Sabiston 21ª ed. · Zollinger's Atlas of Surgical Operations 11ª ed. · Netter 8ª ed.<br>
+    CROSS (van Hagen, NEJM 2012) · ESOPEC — FLOT × CROSS (Hoeppner, NEJM 2025) · CheckMate 577 (Kelly, NEJM 2021)<br>
+    TIME (Biere, Lancet 2012) · ROBOT (van der Sluis, Ann Surg 2019) · ICAN — anastomose intratorácica × cervical (van Workum, JAMA Surg 2021) · Hulscher (NEJM 2002)<br>
+    Esophagectomy Complications Consensus Group — ECCG (Low, Ann Surg 2015) · ERAS Society — esofagectomia (2019) · metanálises de terapia endoscópica a vácuo × prótese
+  </div>
+  <div class="legenda">
+    <span><i class="dot" style="background:var(--laranja)"></i> conteúdo</span>
+    <span><i class="dot" style="background:var(--roxo)"></i> alto rendimento / banca</span>
+    <span><i class="dot" style="background:var(--ciano)"></i> mnemônico</span>
+    <span><i class="dot" style="background:var(--verde)"></i> nota vascular</span>
+    <span><i class="dot" style="background:var(--vermelho)"></i> armadilha</span>
+  </div>
+</header>
 
-                <h3>Indicações Principais</h3>
-                <div class="highlight-high-yield">
-                    <strong>🎯 ALTA RELEVÂNCIA - Tópicos frequentes em provas:</strong>
-                    <ul>
-                        <li><strong>Malignas:</strong> Câncer de esôfago (epidermóide e adenocarcinoma) em estágios ressecáveis</li>
-                        <li><strong>Benignas:</strong> Esôfago de Barrett com displasia severa, estenose refratária, megaesôfago avançado (doença de Chagas)</li>
-                        <li><strong>Traumáticas:</strong> Perfuração irreparável, lesões por causticação grave</li>
-                        <li><strong>Refratárias:</strong> DRGE avançada não responsiva a clínica/cirurgia prévia, acalasia terminal</li>
-                    </ul>
-                </div>
+<div class="ctrl">
+  <button onclick="todas(true)">Abrir tudo</button>
+  <button onclick="todas(false)">Fechar tudo</button>
+</div>
 
-                <h3>Achados Clínicos Típicos</h3>
-                <table>
-                    <tr>
-                        <th>Sintoma</th>
-                        <th>Característica</th>
-                    </tr>
-                    <tr>
-                        <td><span class="highlight-orange">Disfagia</span> <span class="explanation">(dificuldade para engolir)</span></td>
-                        <td>Progressiva, primariamente para sólidos, depois líquidos</td>
-                    </tr>
-                    <tr>
-                        <td><span class="highlight-orange">Odisfagia</span></td>
-                        <td>Dor ao engolir (comum em causticação)</td>
-                    </tr>
-                    <tr>
-                        <td>Perda ponderal</td>
-                        <td>Pode ser acentuada (>10kg) em oncológicos</td>
-                    </tr>
-                    <tr>
-                        <td>Regurgitação</td>
-                        <td>Alimentos não digeridos (megaesôfago)</td>
-                    </tr>
-                    <tr>
-                        <td>Tosse e aspiração</td>
-                        <td>Fístula esofagotráqueal ou fistulização do tumor</td>
-                    </tr>
-                </table>
+<!-- 01 -->
+<section class="open">
+  <div class="sec-head" tabindex="0"><span class="num">01</span><h2>Quadro clínico, epidemiologia e estadiamento</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <h3>Dois cânceres diferentes</h3>
+    <div class="tbl-wrap"><table>
+      <tr><th></th><th>Carcinoma epidermoide</th><th>Adenocarcinoma</th></tr>
+      <tr><td>Onde</td><td>Terço <b>médio</b> e superior</td><td>Terço <b>distal</b> e transição esofagogástrica</td></tr>
+      <tr><td>Fatores</td><td>Tabagismo, álcool, <b>bebidas muito quentes (chimarrão)</b>, acalasia/megaesôfago, cáustico, tilose, HPV, dieta com nitrosaminas</td><td>DRGE → <b>Barrett</b>, obesidade central, tabagismo, sexo masculino, raça branca</td></tr>
+      <tr><td>Brasil / RS</td><td>Predomina; o <b>Rio Grande do Sul</b> tem das maiores incidências do país</td><td>Crescendo; predomina nos EUA e Europa</td></tr>
+      <tr><td>Resposta à radioquimio</td><td>Maior (resposta completa ~49% no CROSS)</td><td>Menor (~23%)</td></tr>
+    </table></div>
+    <h3>Sintomas</h3>
+    <ul>
+      <li><b>Disfagia progressiva</b> — sólidos → pastosos → líquidos. Aparece quando a luz já está &gt; 50–60% ocluída <span class="pq">(o cano só reclama quando já está mais da metade entupido — por isso o diagnóstico é tardio)</span>.</li>
+      <li><b>Perda de peso</b> (fator prognóstico), odinofagia, regurgitação, sialorreia.</li>
+      <li>Doença avançada: <b>rouquidão</b> (recorrente laríngeo), tosse ao deglutir (<b>fístula esôfago-traqueal</b>), hematêmese, soluço (frênico), linfonodo supraclavicular (Virchow).</li>
+    </ul>
+    <h3>Diagnóstico e estadiamento</h3>
+    <ul>
+      <li><b>Endoscopia com biópsia</b> — distância da arcada dentária, extensão, Barrett, cromoscopia (lugol no epidermoide).</li>
+      <li><b>TC de tórax e abdome</b> — T4, linfonodos, metástase. <b>PET-TC</b> — metástase oculta (muda conduta em ~15%).</li>
+      <li><b>Ecoendoscopia</b> — melhor para <b>T e N locorregional</b>; punção de linfonodo suspeito.</li>
+      <li><b>Broncoscopia</b> em tumor de terço médio/superior (epidermoide acima da carina) — invasão traqueobrônquica = T4b.</li>
+      <li><b>Laparoscopia</b> de estadiamento no adenocarcinoma de transição (carcinomatose oculta).</li>
+      <li>Transição esofagogástrica — <b>Siewert</b>: I (1–5 cm acima da cárdia, trata como esôfago) · II (1 cm acima a 2 cm abaixo) · III (2–5 cm abaixo, trata como estômago). TNM 8ª: epicentro até 2 cm abaixo da cárdia = esôfago.</li>
+    </ul>
+    <div class="banca"><span class="tag">Alto rendimento · HCPA / AMRIGS</span>Melhor exame para <b>T</b>: ecoendoscopia. Melhor para <b>M</b>: PET-TC. Epidermoide do terço médio → pedir <b>broncoscopia</b>. E o RS cai muito: epidermoide + <b>chimarrão quente</b> + tabaco + álcool.</div>
+  </div>
+</section>
 
-                <h3>Estadiamento (TNM 8ª ed.)</h3>
-                <p>Indicação cirúrgica: <span class="highlight-orange">Tumores ressecáveis (T0-T4a, N0-N3, M0)</span></p>
-                <p><span class="explanation">Câncer que ainda pode ser tirado cirurgicamente</span></p>
-            </div>
-        </div>
+<!-- 02 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">02</span><h2>Indicações e tratamento — quem vai para esofagectomia</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <div class="tbl-wrap"><table>
+      <tr><th>Estádio</th><th>Conduta</th></tr>
+      <tr><td>Displasia de alto grau / T1a (mucosa)</td><td><b>Ressecção endoscópica</b> (mucosectomia ou dissecção submucosa) ± ablação do Barrett. Linfonodo positivo &lt; 2%</td></tr>
+      <tr><td>T1b (submucosa)</td><td><b>Esofagectomia</b> (sm2–3: linfonodo em 20–40%). T1b sm1 de baixo risco: endoscópica em centros selecionados</td></tr>
+      <tr><td>T2 N0</td><td>Esofagectomia direta ou neoadjuvância (conforme risco)</td></tr>
+      <tr><td><b>T3–T4a ou N+</b></td><td><b>Neoadjuvância + esofagectomia</b></td></tr>
+      <tr><td>T4b (aorta, traqueia, vértebra) ou M1</td><td>Irressecável → radioquimio definitiva / sistêmico; paliação da disfagia (prótese)</td></tr>
+      <tr><td>Epidermoide do esôfago cervical</td><td><b>Radioquimio definitiva</b> (evita faringolaringoesofagectomia)</td></tr>
+    </table></div>
+    <h3>Neoadjuvância</h3>
+    <ul>
+      <li><b>CROSS</b>: carboplatina + paclitaxel semanais + 41,4 Gy → esofagectomia. Sobrevida mediana 49 × 24 meses contra cirurgia isolada; resposta patológica completa 29% (49% epidermoide). Padrão no <b>epidermoide</b>.</li>
+      <li><b>FLOT perioperatório</b> (5-FU, leucovorina, oxaliplatina, docetaxel): no <b>adenocarcinoma</b>, o <b>ESOPEC</b> (438 pacientes) mostrou sobrevida em 3 anos de <b>57% × 51%</b> e mediana de <b>66 × 37 meses</b> contra o CROSS — FLOT virou o padrão no adeno.</li>
+      <li><b>Adjuvância</b>: doença residual após CROSS + cirurgia R0 → <b>nivolumabe</b> por 1 ano (CheckMate 577: sobrevida livre de doença dobrou, 22 × 11 meses).</li>
+      <li>Cirurgia <b>6–8 semanas</b> após o fim da radioquimio.</li>
+    </ul>
+    <h3>Indicações benignas</h3>
+    <ul>
+      <li><b>Megaesôfago chagásico avançado</b> (grau IV de Rezende, dolicomegaesôfago) — esofagectomia trans-hiatal (escola de <b>Pinotti</b>, por frenotomia).</li>
+      <li>Estenose cáustica refratária à dilatação; perfuração extensa com esôfago inviável; Barrett com displasia multifocal não tratável endoscopicamente; acalasia terminal.</li>
+    </ul>
+    <h3>Contraindicações</h3>
+    <p>Metástase a distância, T4b, cirrose Child B/C ou hipertensão portal, VEF1 muito baixo, desempenho ruim (ECOG ≥ 3), cardiopatia grave.</p>
+    <div class="banca"><span class="tag">Alto rendimento · GHC / PUC-RS</span>T1a = <b>endoscopia</b>, não cirurgia. Epidermoide cervical = <b>radioquimio definitiva</b>. Adenocarcinoma localmente avançado = <b>FLOT</b> (ESOPEC); epidermoide = <b>CROSS</b>. Doença residual = <b>nivolumabe</b>.</div>
+  </div>
+</section>
 
-        <!-- SEÇÃO 2: ANATOMIA E VASCULARIZAÇÃO -->
-        <div class="section">
-            <h2>
-                <button class="toggle-btn" onclick="toggleContent(this)">+</button>
-                🫀 Anatomia e Vascularização
-            </h2>
-            <div class="content">
-                <h3>Localização e Extensão</h3>
-                <p>
-                    O esôfago é um <span class="highlight-orange">órgão tubular muscular de ~25cm</span> 
-                    <span class="explanation">(do tamanho de um polegar até o cotovelo)</span> que atravessa <strong>3 cavidades</strong>:
-                </p>
-                <ul>
-                    <li><strong>Cervical:</strong> 5 cm (pescoço)</li>
-                    <li><strong>Torácica:</strong> 12-14 cm (peito/pulmões)</li>
-                    <li><strong>Abdominal:</strong> 2-3 cm (acima do estômago)</li>
-                </ul>
+<!-- 03 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">03</span><h2>Anatomia e vascularização</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <h3>Esôfago</h3>
+    <ul>
+      <li>~25 cm, de C6 (cricofaríngeo) a T11 (cárdia). Cervical ~5 cm · torácico ~18 cm · abdominal ~2–3 cm.</li>
+      <li><b>Constrições</b> (da arcada dentária): <b>15 cm</b> cricofaríngeo · <b>22–25 cm</b> arco aórtico e brônquio principal esquerdo · <b>40 cm</b> hiato.</li>
+      <li><b>Sem serosa</b> — só adventícia. A camada que segura o ponto é a <b>submucosa</b>. <span class="pq">(o esôfago não tem a "capa plástica" que o intestino tem; o ponto precisa pegar a camada do meio, que é a mais forte)</span></li>
+      <li>Muscular: estriada no terço superior, lisa nos dois terços inferiores. Mucosa escamosa até a linha Z.</li>
+      <li>Linfáticos <b>longitudinais na submucosa</b> → metástase "salta" à distância do tumor; linfonodo pode estar no pescoço com tumor distal.</li>
+    </ul>
+    <h3>Irrigação arterial — segmentar e frágil</h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>Segmento</th><th>Artéria</th><th>Veia</th></tr>
+      <tr><td>Cervical</td><td><b>Tireóidea inferior</b> (tronco tireocervical)</td><td>Tireóidea inferior → braquiocefálica</td></tr>
+      <tr><td>Torácico</td><td><b>Ramos esofágicos da aorta</b> + brônquicas + intercostais</td><td><b>Ázigo</b> e hemiázigo</td></tr>
+      <tr><td>Abdominal</td><td><b>Gástrica esquerda</b> + frênica inferior esquerda</td><td>Gástrica esquerda (coronária) → <b>porta</b></td></tr>
+    </table></div>
+    <p>A anastomose portossistêmica do terço distal (gástrica esquerda × ázigo) explica as <b>varizes esofágicas</b> na hipertensão portal.</p>
+    <h3>O conduto gástrico</h3>
+    <ul>
+      <li>Vive da <b>artéria gastroepiploica direita</b> (da gastroduodenal) — <b>preservar a arcada a 1–2 cm da grande curvatura</b>. A gástrica direita ajuda; a gástrica esquerda é <b>ligada</b> (com linfadenectomia); as gástricas curtas são seccionadas.</li>
+      <li>A ponta do tubo (fundo) depende da <b>microcirculação intramural</b> — é a parte que necrosa e onde a anastomose vaza.</li>
+      <li>Alternativas se o estômago não serve: <b>cólon</b> (esquerdo isoperistáltico, pedículo na cólica esquerda/média) ou <b>jejuno</b> (supercarregado — anastomose microvascular no pescoço).</li>
+    </ul>
+    <h3>Estruturas em risco</h3>
+    <ul>
+      <li><b>Ducto torácico</b>: sobe pela direita, entre aorta e ázigo, atrás do esôfago; <b>cruza para a esquerda em T4–T6</b> e desemboca na junção jugulossubclávia <b>esquerda</b>. Lesão = quilotórax.</li>
+      <li><b>Laríngeo recorrente</b>: o esquerdo contorna o <b>arco aórtico</b>, o direito a <b>subclávia</b>; correm no sulco traqueoesofágico. Risco no tórax alto e no pescoço (anastomose cervical).</li>
+      <li><b>Vagos</b>: seccionados na esofagectomia → justificam a <b>piloroplastia/piloromiotomia</b> em alguns serviços (esvaziamento lento).</li>
+      <li><b>Membranosa da traqueia e brônquio esquerdo</b> — adjacentes ao terço médio; lesão na dissecção romba trans-hiatal.</li>
+      <li><b>Ázigo</b> — ligada e seccionada na toracotomia direita para liberar o esôfago.</li>
+    </ul>
+    <div class="vasc"><span class="tag">Nota vascular</span>Na dissecção trans-hiatal às cegas, o sangramento vem da <b>ázigo</b>, de <b>ramos esofágicos diretos da aorta</b> e da veia pulmonar inferior. Sangramento que não para com compressa no mediastino posterior = <b>toracotomia direita</b> ou esternotomia, sem hesitar.</div>
+    <div class="mnemo"><span class="tag">T-A-G, de cima para baixo</span><b>T</b>ireóidea inferior (pescoço) · <b>A</b>orta (tórax) · <b>G</b>ástrica esquerda (abdome). Veias na mesma ordem: tireóideas · ázigo · porta.</div>
+  </div>
+</section>
 
-                <h3>Camadas Histológicas</h3>
-                <table>
-                    <tr>
-                        <th>Camada</th>
-                        <th>Características</th>
-                    </tr>
-                    <tr>
-                        <td><strong>Mucosa</strong></td>
-                        <td>Epitélio estratificado pavimentoso (como pele). <span class="explanation">Fácil de descascar</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Submucosa</strong></td>
-                        <td><span class="highlight-orange">RICO EM VASOS!</span> Plexo vascular denso</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Muscular própria</strong></td>
-                        <td>2 camadas: circular (interna) + longitudinal (externa)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Adventícia</strong></td>
-                        <td>Sem serosa = aderências fáceis</td>
-                    </tr>
-                </table>
+<!-- 04 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">04</span><h2>Escolha da via e da anastomose</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <div class="tbl-wrap"><table>
+      <tr><th>Via</th><th>Incisões</th><th>Anastomose</th><th>Melhor para</th><th>Prós / contras</th></tr>
+      <tr><td><b>Ivor Lewis</b></td><td>Abdome + toracotomia <b>direita</b> (2 tempos)</td><td><b>Intratorácica</b> (acima da ázigo)</td><td>Terço médio-distal, transição Siewert I–II</td><td>Linfadenectomia mediastinal completa; menos fístula e recorrente que a cervical. Fístula intratorácica é mais grave</td></tr>
+      <tr><td><b>McKeown</b> (tri-incisional)</td><td>Toracotomia direita + abdome + <b>cervicotomia esquerda</b></td><td><b>Cervical</b></td><td>Terço <b>superior e médio</b>; margem proximal longa</td><td>Margem proximal máxima; fístula mais frequente porém menos grave (drena pelo pescoço); mais lesão do recorrente</td></tr>
+      <tr><td><b>Trans-hiatal</b> (Orringer; Pinotti)</td><td>Abdome + cervicotomia esquerda, <b>sem toracotomia</b></td><td>Cervical</td><td>Terço distal, megaesôfago, paciente com pulmão ruim</td><td>Menos complicação pulmonar; dissecção mediastinal às cegas, linfadenectomia limitada</td></tr>
+      <tr><td>Toracoabdominal esquerda</td><td>Incisão contínua pelo 7º–8º espaço E</td><td>Intratorácica baixa</td><td>Transição esofagogástrica</td><td>Ótima exposição do hiato; muita dor e complicação pulmonar</td></tr>
+      <tr><td><b>Minimamente invasiva / robótica</b></td><td>Videotoracoscopia (prona) + laparoscopia</td><td>Intratorácica ou cervical</td><td>Mesmas indicações</td><td><b>TIME</b>: infecção pulmonar 9% × 29% contra aberta; <b>ROBOT</b>: complicações 59% × 80%; mesma sobrevida</td></tr>
+    </table></div>
+    <h3>Cervical × intratorácica</h3>
+    <p><b>ICAN</b> (245 pacientes, esofagectomia minimamente invasiva): fístula <b>12% intratorácica × 34% cervical</b>; paralisia de recorrente <b>0% × 7%</b>. Tendência atual: Ivor Lewis com anastomose intratorácica quando a margem proximal permite.</p>
+    <div class="banca"><span class="tag">Alto rendimento · HCPA / Santa Casa POA</span>Ivor Lewis = <b>2 incisões</b> (abdome + tórax direito), anastomose <b>no tórax</b>. McKeown = <b>3 incisões</b>, anastomose <b>no pescoço</b>. Trans-hiatal = <b>sem toracotomia</b>. Trans-hiatal × transtorácica (Hulscher): sem diferença significativa de sobrevida global, menos complicação pulmonar na trans-hiatal; benefício da transtorácica em Siewert I com poucos linfonodos.</div>
+    <div class="alerta"><span class="tag">Armadilha</span>"Três campos" pode significar <b>três incisões</b> (McKeown) ou <b>linfadenectomia em três campos</b> (abdome + mediastino + pescoço, escola japonesa no epidermoide). Leia o contexto.</div>
+    <h3>Via do conduto</h3>
+    <ul>
+      <li><b>Mediastino posterior</b> (leito do esôfago): mais curta, preferida.</li>
+      <li><b>Retroesternal</b>: quando haverá radioterapia no leito, reconstrução tardia ou tumor residual no mediastino; ~2 cm mais longa — ressecar a cabeça da clavícula/manúbrio se a abertura torácica apertar o tubo.</li>
+      <li>Subcutânea: excepcional.</li>
+    </ul>
+  </div>
+</section>
 
-                <h3>Vascularização Arterial</h3>
-                <div class="highlight-high-yield">
-                    <strong>🎯 FUNDAMENTAL - Memorizar para prova:</strong>
-                    <p><strong>Esôfago cervical:</strong> <span class="highlight-orange">Artéria tireóidea inferior</span> 
-                    <span class="explanation">(ramo da subclávia)</span></p>
-                    
-                    <p><strong>Esôfago torácico:</strong> <span class="highlight-orange">Aorta torácica descendente + artérias brônquicas + intercostais</span> 
-                    <span class="explanation">(direto do "cano" que desce pelo peito)</span></p>
-                    
-                    <p><strong>Esôfago abdominal:</strong> <span class="highlight-orange">Artéria gástrica esquerda + artéria frênica inferior</span> 
-                    <span class="explanation">(o vaso que alimenta o estômago e o pulmão)</span></p>
-                </div>
+<!-- 05 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">05</span><h2>Posicionamento, anestesia e preparo</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <h3>Pré-operatório</h3>
+    <ul>
+      <li><b>Pré-habilitação</b>: parar tabagismo ≥ 4 semanas, fisioterapia respiratória, exercício, controle glicêmico.</li>
+      <li><b>Nutrição</b>: perda &gt; 10% ou albumina baixa → dieta por sonda nasoenteral ou jejunostomia antes da cirurgia; imunonutrição 5–7 dias.</li>
+      <li>Espirometria, ecocardiograma, avaliação de fragilidade; tratar a dentição (fonte de pneumonia).</li>
+      <li>Profilaxia: cefazolina 2 g (3 g se ≥ 120 kg) até 60 min antes, repique a cada 4 h; tromboprofilaxia mecânica + química.</li>
+    </ul>
+    <h3>Anestesia</h3>
+    <ul>
+      <li><b>Tubo de duplo lúmen</b> (ventilação monopulmonar esquerda na toracotomia direita); ventilação protetora.</li>
+      <li><b>Peridural torácica</b> (ou bloqueio paravertebral) — reduz pneumonia.</li>
+      <li>PA invasiva; acesso central na <b>jugular direita</b> (deixa o pescoço esquerdo livre).</li>
+      <li><b>Hidratação restritiva</b> e vasopressor se preciso — edema do conduto prejudica a anastomose.</li>
+    </ul>
+    <h3>Posições</h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>Tempo</th><th>Posição</th></tr>
+      <tr><td>Abdominal</td><td>Decúbito dorsal, leve proclive, braços abertos &lt; 90°</td></tr>
+      <tr><td>Torácico (aberto)</td><td><b>Decúbito lateral esquerdo</b>, braço direito em apoio, coxim axilar, mesa quebrada no flanco</td></tr>
+      <tr><td>Torácico (videotoracoscopia)</td><td>Prona ou semiprona — o pulmão cai para frente sozinho</td></tr>
+      <tr><td>Cervical</td><td>Dorsal, coxim sob os ombros, pescoço estendido e cabeça <b>virada para a direita</b></td></tr>
+    </table></div>
+    <div class="alerta"><span class="tag">Armadilha</span>No McKeown o tórax vem <b>primeiro</b> (lateral esquerdo), depois o paciente vira para abdome e pescoço. No Ivor Lewis o abdome vem <b>primeiro</b>, depois o tórax.</div>
+  </div>
+</section>
 
-                <h3>Drenagem Venosa</h3>
-                <table>
-                    <tr>
-                        <th>Segmento</th>
-                        <th>Drenagem</th>
-                    </tr>
-                    <tr>
-                        <td>Cervical</td>
-                        <td>Veias tireóideas inferiores → <strong>veia braquiocefálica</strong></td>
-                    </tr>
-                    <tr>
-                        <td>Torácica</td>
-                        <td><strong>Sistema ázigo-hemiázigo</strong> <span class="explanation">(rede de veias paralela à aorta)</span></td>
-                    </tr>
-                    <tr>
-                        <td>Abdominal</td>
-                        <td><strong>Veia gástrica esquerda → portal</strong> <span class="explanation">(drena pro fígado)</span></td>
-                    </tr>
-                </table>
+<!-- 06 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">06</span><h2>Passo a passo — Ivor Lewis aberta</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <h3>Tempo abdominal (decúbito dorsal)</h3>
+    <div class="passo"><div class="passo-n">01</div><div><b>Laparotomia mediana supraumbilical e inventário</b> — fígado, peritônio, tronco celíaco. Carcinomatose ou metástase → parar. Afastador de rebordo costal.<div class="maos"><div class="mao"><span class="lbl">Mão esquerda</span>Compressa e palpação; valva de Doyen</div><div class="mao"><span class="lbl">Mão direita</span>Bisturi → cautério; afastador autostático (Thompson/Rochard)</div></div></div></div>
+    <div class="passo"><div class="passo-n">02</div><div><b>Grande curvatura</b> — abrir o omento <b>longe da arcada gastroepiploica direita</b> (1–2 cm fora dela), do piloro até as gástricas curtas, que são seccionadas. <span class="pq">(o "cano" que vai alimentar o tubo corre colado na curvatura grande — corta-se do lado de fora dele, nunca encostando)</span><div class="maos"><div class="mao"><span class="lbl">Mão esquerda</span>Estômago tracionado para cima e para a direita com compressa — <b>nunca pinça no estômago que vai virar tubo</b></div><div class="mao"><span class="lbl">Mão direita</span>Bisturi ultrassônico ou ligadura com Kelly + <b>Seda 2-0</b></div></div></div></div>
+    <div class="passo"><div class="passo-n">03</div><div><b>Pequena curvatura e linfadenectomia</b> — abrir o omento menor (cuidado com artéria hepática esquerda acessória), linfonodos da hepática comum, esplênica e tronco celíaco; <b>ligar a gástrica esquerda na origem</b>.<div class="maos"><div class="mao"><span class="lbl">Mão esquerda</span>Eleva o estômago, expõe o pedículo</div><div class="mao"><span class="lbl">Mão direita</span>Mixter, Metzenbaum · <b>grampeador vascular branco</b> ou dupla ligadura <b>Seda 0 + transfixação</b></div></div></div></div>
+    <div class="passo"><div class="passo-n">04</div><div><b>Hiato</b> — abrir o peritônio sobre o hiato, dissecar os pilares, liberar o esôfago distal com margem de pilar se o tumor encostar; fita no esôfago.<div class="maos"><div class="mao"><span class="lbl">Mão esquerda</span>Fita/Penrose tracionando o esôfago</div><div class="mao"><span class="lbl">Mão direita</span>Cautério, tesoura longa</div></div></div></div>
+    <div class="passo"><div class="passo-n">05</div><div><b>Manobra de Kocher</b> — o piloro deve chegar ao hiato sem tensão. ± <b>Piloroplastia</b> (Heineke-Mikulicz) ou piloromiotomia — opcional, evidência fraca.<div class="maos"><div class="mao"><span class="lbl">Mão esquerda</span>Duodeno rebatido medialmente</div><div class="mao"><span class="lbl">Mão direita</span>Tesoura/cautério · piloroplastia <b>Vicryl 3-0</b> separados</div></div></div></div>
+    <div class="passo"><div class="passo-n">06</div><div><b>Confecção do tubo gástrico</b> — grampeamento linear seriado da pequena curvatura, do ângulo até o fundo, tubo de <b>4–5 cm</b> de largura. Pode ser feito no abdome ou já no tórax. Sobressutura da linha de grampos.<div class="maos"><div class="mao"><span class="lbl">Mão esquerda</span>Estica o estômago no sentido longitudinal (fundo para cima, antro para baixo)</div><div class="mao"><span class="lbl">Mão direita</span>Grampeador linear <b>carga verde/roxa</b> (tecido espesso) · sobressutura <b>Prolene 4-0</b> ou <b>PDS 4-0</b> contínuo</div></div></div></div>
+    <div class="passo"><div class="passo-n">07</div><div><b>Jejunostomia de alimentação</b> (Witzel), 30–40 cm do Treitz, fixada à parede.<div class="maos"><div class="mao"><span class="lbl">Mão esquerda</span>Apresenta a alça</div><div class="mao"><span class="lbl">Mão direita</span>Bolsa e túnel <b>Vicryl 3-0</b>; fixação na pele <b>Seda 2-0</b></div></div></div></div>
+    <div class="passo"><div class="passo-n">08</div><div><b>Fechamento</b> — aponeurose contínua (small bites, <b>PDS</b>; serviço: Vicryl 1), pele.</div></div>
 
-                <div class="highlight-mnemonic">
-                    <strong>💡 MNEMÔNICA - Vascularização Esofágica:</strong><br>
-                    <strong>"ATA-GAG"</strong><br>
-                    • <strong>A</strong>rtéria <strong>T</strong>ireóidea inferior (cérvico)<br>
-                    • <strong>A</strong>orta <strong>T</strong>orácica + brônquicas (tórax)<br>
-                    • <strong>G</strong>ástrica esquerda + <strong>A</strong>rtéria frênica <strong>G</strong>astroesofágica (abdômen)
-                </div>
+    <h3>Tempo torácico (decúbito lateral esquerdo)</h3>
+    <div class="passo"><div class="passo-n">09</div><div><b>Toracotomia posterolateral direita no 5º espaço</b>, poupando o grande dorsal se possível; pulmão direito colapsado.<div class="maos"><div class="mao"><span class="lbl">Mão esquerda</span>Afasta o pulmão com valva/compressa úmida</div><div class="mao"><span class="lbl">Mão direita</span>Bisturi, cautério; <b>afastador de Finochietto</b></div></div></div></div>
+    <div class="passo"><div class="passo-n">10</div><div><b>Ligamento pulmonar inferior e ázigo</b> — seccionar o ligamento; ligar e seccionar a <b>veia ázigo</b>.<div class="maos"><div class="mao"><span class="lbl">Mão esquerda</span>Pinça longa apresentando a ázigo</div><div class="mao"><span class="lbl">Mão direita</span>Mixter · <b>grampeador vascular branco</b> ou ligadura <b>Seda 0</b> + transfixação <b>Prolene 4-0</b></div></div></div></div>
+    <div class="passo"><div class="passo-n">11</div><div><b>Mobilização do esôfago em bloco</b> — abrir a pleura mediastinal anterior e posterior; levar junto linfonodos paraesofágicos e <b>subcarinais</b>; clipar ramos aórticos. Cuidado com a membranosa da traqueia e o brônquio esquerdo.<div class="maos"><div class="mao"><span class="lbl">Mão esquerda</span>Fita no esôfago, tração em sentido oposto à dissecção</div><div class="mao"><span class="lbl">Mão direita</span>Bisturi ultrassônico, clipes, Metzenbaum longa</div></div></div></div>
+    <div class="passo"><div class="passo-n">12</div><div><b>Ducto torácico</b> — ligadura em massa supradiafragmática, entre aorta e ázigo (rotina em muitos serviços, ou se lesado).<div class="maos"><div class="mao"><span class="lbl">Mão esquerda</span>Afasta o esôfago anteriormente</div><div class="mao"><span class="lbl">Mão direita</span>Mixter · <b>Seda 0</b> ou Prolene 2-0 em massa / clipes</div></div></div></div>
+    <div class="passo"><div class="passo-n">13</div><div><b>Subir o conduto pelo hiato</b> sem torção (linha de grampos voltada para a direita), ressecar a peça. <b>Margem proximal</b> ≥ 5 cm macroscópica; congelação se dúvida.<div class="maos"><div class="mao"><span class="lbl">Mão esquerda</span>Guia o tubo, conferindo a orientação</div><div class="mao"><span class="lbl">Mão direita</span>Grampeador linear para seccionar o esôfago/estômago</div></div></div></div>
+    <div class="passo"><div class="passo-n">14</div><div><b>Anastomose esofagogástrica intratorácica</b>, acima da ázigo. Circular: bolsa no esôfago, ogiva dentro, grampeador pela ponta do tubo e saída pela parede posterior; ou linear látero-lateral; ou manual. Avaliar perfusão (ICG se disponível).<div class="maos"><div class="mao"><span class="lbl">Mão esquerda</span>Allis/pinças atraumáticas abrindo a boca do esôfago para a ogiva</div><div class="mao"><span class="lbl">Mão direita</span>Bolsa <b>Prolene 2-0</b> · grampeador circular <b>25–29 mm</b> · fechamento do orifício do tubo com linear ou <b>PDS 3-0</b></div></div></div></div>
+    <div class="passo"><div class="passo-n">15</div><div><b>Cobertura e fixação</b> — omento ou pleura sobre a anastomose; tubo fixado ao hiato com 2–3 pontos para evitar herniação de alça. Sonda nasogástrica além da anastomose.<div class="maos"><div class="mao"><span class="lbl">Mão esquerda</span>Apresenta o omento</div><div class="mao"><span class="lbl">Mão direita</span>Fixação no pilar <b>Prolene 3-0</b> ou Seda 2-0 separados</div></div></div></div>
+    <div class="passo"><div class="passo-n">16</div><div><b>Drenagem e fechamento</b> — dreno de tórax 28 F (± dreno junto à anastomose); costelas com pontos pericostais; músculos por planos.<div class="maos"><div class="mao"><span class="lbl">Mão esquerda</span>Aproximador de costelas</div><div class="mao"><span class="lbl">Mão direita</span>Pericostais <b>Vicryl 1</b> ou PDS 1 · músculo <b>Vicryl 0/2-0</b> · subcutâneo <b>Vicryl 3-0</b> · pele grampos ou <b>Mononylon 4-0</b> · dreno fixo com <b>Seda 0</b></div></div></div></div>
+  </div>
+</section>
 
-                <h3>Drenagem Linfática</h3>
-                <p>
-                    <span class="highlight-orange">SEGMENTAL E RICA</span> - O esôfago tem <strong>múltiplos grupos linfonodais adjacentes</strong>:
-                </p>
-                <ul>
-                    <li>Cervicais (níveis I-VI)</li>
-                    <li>Mediastinais superiores, médios e inferiores</li>
-                    <li>Gástricos (esquerda, direita, perigástricos)</li>
-                    <li>Celíacos e hepáticos (extensão distal)</li>
-                </ul>
-                <p><span class="explanation">Isso é importante porque o tumor pode se espalhar rapidamente</span></p>
+<!-- 07 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">07</span><h2>McKeown e trans-hiatal — o que muda</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <h3>McKeown — anastomose cervical</h3>
+    <ol>
+      <li><b>Tórax primeiro</b> (lateral esquerdo ou prona): mobilização em bloco do esôfago até o desfiladeiro torácico, ázigo, ducto torácico, linfonodos ao longo dos recorrentes.</li>
+      <li><b>Abdome</b> (dorsal): conduto, Kocher, jejunostomia — como no Ivor Lewis.</li>
+      <li><b>Cervicotomia esquerda</b> na borda anterior do esternocleidomastóideo: afastar carótida e jugular <b>lateralmente</b>, ligar veia tireóidea média e omo-hioideo; abordar o esôfago <b>sem afastador metálico no sulco traqueoesofágico</b> (recorrente). Circundar com o dedo junto à coluna.</li>
+      <li>Puxar a peça pelo pescoço e subir o tubo pelo mediastino posterior (dentro de saco plástico/protetor).</li>
+      <li><b>Anastomose cervical</b>: manual em plano único com <b>PDS 3-0/4-0 separados</b> (pegando submucosa) ou semimecânica de <b>Orringer</b> (linear látero-lateral na parede posterior + parede anterior manual). Dreno Penrose ou aspirativo no pescoço; <b>pele frouxa</b> — se fistular, abre-se à beira do leito.</li>
+    </ol>
+    <h3>Trans-hiatal (Orringer)</h3>
+    <ol>
+      <li>Abdome: conduto e abertura ampla do hiato (± frenotomia anterior — <b>Pinotti</b>).</li>
+      <li>Pescoço: cervicotomia esquerda, esôfago circundado.</li>
+      <li><b>Dissecção romba mediastinal</b> pela mão do hiato e pelo dedo do pescoço, colada ao esôfago; monitorar PA (compressão cardíaca → hipotensão). <span class="pq">(o cirurgião "descola" o esôfago às cegas com a mão, de baixo, e com o dedo, de cima, até as mãos se encontrarem)</span></li>
+      <li>Retirada da peça pelo pescoço, conduto no leito, anastomose cervical.</li>
+      <li>Abrir a pleura sem querer é comum → <b>dreno de tórax</b> do lado lesado.</li>
+    </ol>
+    <div class="alerta"><span class="tag">Armadilha</span>Na trans-hiatal, sangramento mediastinal que não para com compressa = toracotomia ou esternotomia. Lesão da <b>membranosa da traqueia</b> se reconhece por vazamento de ar no campo cervical/ventilação — avançar o tubo além da lesão e reparar.</div>
+  </div>
+</section>
 
-                <h3>Inervação</h3>
-                <p><strong>Vagos:</strong> Fornecem <span class="highlight-orange">motricidade e sensação</span></p>
-                <p><strong>Simpáticos:</strong> Via gânglios celíacos</p>
-                <p><span class="explanation">Por isso sensação de dor e movimento são controlados por esses nervos</span></p>
-            </div>
-        </div>
+<!-- 08 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">08</span><h2>Fios e grampeadores — momento a momento</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <div class="tbl-wrap"><table>
+      <tr><th>Momento</th><th>Material</th><th>Por quê</th></tr>
+      <tr><td>Gástricas curtas, omentos</td><td>Energia ou <b>Seda 2-0</b></td><td>Ligadura de pedículo</td></tr>
+      <tr><td>Gástrica esquerda</td><td>Grampeador vascular <b>branco 2,5 mm</b> ou <b>Seda 0</b> + transfixação</td><td>Pedículo calibroso, coto curto</td></tr>
+      <tr><td>Ázigo</td><td>Grampeador vascular branco ou Seda 0 + <b>Prolene 4-0</b></td><td>Veia de alto fluxo</td></tr>
+      <tr><td>Tubo gástrico</td><td>Linear <b>verde/roxa</b> (estômago espesso)</td><td>Grampo baixo corta tecido espesso</td></tr>
+      <tr><td>Sobressutura da linha do tubo</td><td><b>Prolene 4-0</b> ou PDS 4-0 contínuo</td><td>Linha longa = ponto fraco; não atravessa mucosa</td></tr>
+      <tr><td>Piloroplastia</td><td><b>Vicryl 3-0</b> separados (Heineke-Mikulicz)</td><td>Luz digestiva — absorvível</td></tr>
+      <tr><td>Anastomose intratorácica</td><td>Circular <b>25–29 mm</b>; bolsa <b>Prolene 2-0</b></td><td>Bolsa precisa segurar a ogiva</td></tr>
+      <tr><td>Anastomose cervical manual</td><td><b>PDS 3-0 ou 4-0</b> separados, plano único</td><td>Sem serosa, cicatrização lenta → absorção lenta (escada: "Esôfago PeDe")</td></tr>
+      <tr><td>Fixação do tubo no hiato</td><td>Prolene 3-0 / Seda 2-0</td><td>Fecha espaço, não luz</td></tr>
+      <tr><td>Ducto torácico</td><td>Seda 0 / Prolene 2-0 em massa, clipes</td><td>Permanente</td></tr>
+      <tr><td>Jejunostomia (Witzel)</td><td>Vicryl 3-0 · pele Seda 2-0</td><td>—</td></tr>
+      <tr><td>Pericostais</td><td>Vicryl 1 / PDS 1</td><td>Aproxima costelas</td></tr>
+      <tr><td>Aponeurose</td><td><b>PDS</b> contínua, small bites (serviço: Vicryl 1)</td><td>EHS/AHS 2022</td></tr>
+      <tr><td>Pele</td><td>Grampos ou Mononylon 4-0</td><td>—</td></tr>
+      <tr><td>Drenos</td><td>Seda 0 (tórax) / Seda 2-0</td><td>—</td></tr>
+    </table></div>
+    <div class="banca"><span class="tag">Alto rendimento · banca</span>Anastomose esofágica: <b>monofilamento absorvível de absorção lenta</b> (PDS 3-0), pontos que pegam a <b>submucosa</b>. Inabsorvível na luz = úlcera e granuloma; Vicryl perde força antes de o esôfago cicatrizar.</div>
+  </div>
+</section>
 
-        <!-- SEÇÃO 3: TÉCNICA CIRÚRGICA -->
-        <div class="section">
-            <h2>
-                <button class="toggle-btn" onclick="toggleContent(this)">+</button>
-                🔪 Técnica Cirúrgica: Esofagectomia em 3 Campos
-            </h2>
-            <div class="content">
-                <h3>Modalidades Principais</h3>
-                <div class="grid-2">
-                    <div class="card">
-                        <h4>Transhiatal (2 campos)</h4>
-                        <p>• Incisões: <strong>Cervical + Abdominal</strong></p>
-                        <p>• Dissecção: Sem visão direta do tórax</p>
-                        <p>• Vantagem: Menor trauma pulmonar</p>
-                        <p>• Desvantagem: Linfadenectomia limitada</p>
-                    </div>
-                    <div class="card">
-                        <h4>Transtorácica/Ivor Lewis (3 campos)</h4>
-                        <p>• Incisões: <strong>Cervical + Torácica (D) + Abdominal</strong></p>
-                        <p>• Dissecção: Visão direta completa</p>
-                        <p>• Vantagem: Melhor linfadenectomia oncológica</p>
-                        <p>• Desvantagem: Maior morbidade pulmonar</p>
-                    </div>
-                </div>
+<!-- 09 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">09</span><h2>Pós-operatório</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <ul>
+      <li>Extubação em sala sempre que possível; UTI nas primeiras 24–48 h.</li>
+      <li><b>Analgesia peridural</b>, fisioterapia e deambulação no 1º dia; cabeceira a 30–45° (aspiração).</li>
+      <li><b>Sonda nasogástrica</b> descomprimindo o conduto (não reposicionar às cegas — pode perfurar a anastomose).</li>
+      <li><b>Dieta pela jejunostomia</b> a partir do 1º dia; via oral em geral do 3º ao 7º dia conforme protocolo (ERAS).</li>
+      <li>Fluido restritivo; manter PA (perfusão do tubo).</li>
+      <li>Drenos: observar aspecto — <b>leitoso</b> (quilo), <b>salivar/bile</b> (fístula), sangue.</li>
+      <li>Contraste ou endoscopia: não obrigatórios de rotina; por suspeita clínica.</li>
+      <li>Orientação de alta: refeições pequenas e frequentes, cabeceira elevada (refluxo no tubo), não deitar após comer.</li>
+    </ul>
+    <div class="alerta"><span class="tag">Sinal precoce</span><b>Fibrilação atrial nova</b> no pós-operatório de esofagectomia é marcador de complicação — fístula ou pneumonia até prova em contrário. Investigar com TC com contraste oral e endoscopia.</div>
+  </div>
+</section>
 
-                <h3>Posicionamento do Paciente</h3>
-                <div class="highlight-high-yield">
-                    <strong>Sequência de Posições:</strong>
-                    <ol>
-                        <li><strong>Supino</strong> (costas): Laparotomia e dissecção gástrica (30-45 min)</li>
-                        <li><strong>Prono modificado / Decúbito lateral esquerdo</strong>: Toracotomia (se 3 campos)</li>
-                        <li><strong>Supino novamente</strong>: Cervicotomia e anastomose</li>
-                    </ol>
-                </div>
+<!-- 10 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">10</span><h2>Complicações</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <p>Morbidade global 50–60%; mortalidade em 90 dias ~3–6% em centros de alto volume (volume do centro importa).</p>
+    <div class="tbl-wrap"><table>
+      <tr><th>Complicação</th><th>Frequência</th><th>Quadro</th><th>Conduta</th></tr>
+      <tr><td><b>Pneumonia</b></td><td>15–30% (a mais comum)</td><td>Febre, infiltrado, hipoxemia</td><td>Antibiótico, fisioterapia, broncoscopia; prevenção: minimamente invasiva, peridural, mobilização</td></tr>
+      <tr><td><b>Fístula anastomótica</b></td><td>Intratorácica ~10–15% · cervical ~15–35%</td><td>3º–10º dia: febre, taquicardia, FA, saliva no dreno, celulite cervical, derrame</td><td>Ver abaixo</td></tr>
+      <tr><td><b>Necrose do conduto</b></td><td>1–3%</td><td>Sepse precoce, mucosa negra na endoscopia</td><td>Reoperação urgente: ressecar, <b>esofagostomia cervical</b> + jejunostomia; reconstrução tardia (cólon)</td></tr>
+      <tr><td><b>Quilotórax</b></td><td>2–4%</td><td>Dreno leitoso que aumenta com dieta; triglicerídeos &gt; 110 mg/dL, quilomícrons</td><td>Jejum + NPT ou dieta com TCM, octreotide; débito &gt; 1 L/dia por ~5 dias ou queda nutricional → <b>ligadura do ducto</b> (ou embolização por linfangiografia)</td></tr>
+      <tr><td><b>Paralisia do recorrente</b></td><td>Até ~7–10% (mais na cervical)</td><td>Rouquidão, tosse fraca, aspiração</td><td>Fonoterapia, avaliação otorrino; bilateral = estridor, via aérea</td></tr>
+      <tr><td>Esvaziamento lento do tubo</td><td>10–20%</td><td>Vômitos, tubo dilatado no RX</td><td>Procinético, dilatação pilórica/toxina botulínica</td></tr>
+      <tr><td><b>Estenose da anastomose</b></td><td>20–40% (mais após fístula e na cervical)</td><td>Disfagia semanas a meses depois</td><td>Dilatação endoscópica seriada</td></tr>
+      <tr><td>Hérnia hiatal pós-esofagectomia</td><td>Até ~5–10% (mais na minimamente invasiva)</td><td>Dor, obstrução, alça no tórax</td><td>Correção cirúrgica (sintomática ou encarcerada)</td></tr>
+      <tr><td>Refluxo, dumping, perda de peso</td><td>Frequentes</td><td>—</td><td>Dieta fracionada, cabeceira elevada, IBP</td></tr>
+    </table></div>
+    <h3>Fístula anastomótica — conduta</h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>ECCG</th><th>Definição</th></tr>
+      <tr><td>Tipo I</td><td>Defeito local sem mudança de tratamento (achado de exame, dieta mantida)</td></tr>
+      <tr><td>Tipo II</td><td>Tratamento intervencionista não cirúrgico: drenagem por radiologia, prótese, terapia a vácuo, abertura da ferida cervical à beira do leito</td></tr>
+      <tr><td>Tipo III</td><td>Precisa de cirurgia</td></tr>
+    </table></div>
+    <ul>
+      <li><b>Cervical</b>: abrir a ferida, drenar, curativo, dieta pela jejunostomia — fecha na maioria.</li>
+      <li><b>Intratorácica contida</b>: jejum oral, antibiótico, drenagem do tórax, <b>terapia endoscópica a vácuo</b> ou prótese metálica recoberta. Metanálises favorecem o vácuo (mais fechamento, menos mortalidade).</li>
+      <li><b>Intratorácica com sepse, mediastinite ou conduto necrótico</b>: reoperação — desbridamento, drenagem; conduto inviável = ressecção e esofagostomia cervical.</li>
+      <li>Endoscopia precoce sempre para avaliar <b>viabilidade do tubo</b> — muda tudo.</li>
+    </ul>
+    <div class="banca"><span class="tag">Alto rendimento · GHC / PUC-RS</span>Dreno leitoso que piora quando volta a dieta = <b>quilotórax</b> → triglicerídeos &gt; 110 mg/dL no líquido. Tratamento inicial conservador; débito alto persistente → <b>ligadura do ducto torácico</b> à direita, entre aorta e ázigo, logo acima do diafragma.</div>
+  </div>
+</section>
 
-                <h3>FASE I: LAPAROTOMIA MEDIANA (Supino)</h3>
-                <p><strong>Tempo: ~30-45 min | Objetivo: Preparar estômago e dissecar esôfago abdominal/torácico</strong></p>
+<!-- 11 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">11</span><h2>Nota vascular</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <div class="vasc"><span class="tag">O conduto é um retalho pediculado</span>Todo o tubo vive de <b>uma artéria</b> — a gastroepiploica direita, ramo da gastroduodenal. Lesá-la (ao abrir o omento colado à curvatura, na manobra de Kocher agressiva ou na linfadenectomia do piloro) condena o conduto. A ponta, mais distante, vive de rede intramural: <b>congestão venosa</b> (torção, compressão no hiato ou na abertura torácica) mata tanto quanto falta de artéria.</div>
+    <ul>
+      <li><b>Fluorescência com indocianina</b>: mostra até onde o tubo está perfundido — permite ressecar a ponta mal perfundida antes da anastomose.</li>
+      <li><b>Supercarga</b>: anastomose microvascular de artéria/veia do conduto (cólon ou jejuno) com vasos cervicais quando a perfusão é limítrofe.</li>
+      <li><b>Pré-condicionamento isquêmico</b>: embolização da gástrica esquerda/esplênica dias a semanas antes (ainda em estudo).</li>
+      <li>Tronco celíaco estenosado (ligamento arqueado, aterosclerose): a gastroduodenal pode estar sendo alimentada <b>retrogradamente pela mesentérica superior</b> — avaliar na angiotomografia antes de ligar a gástrica esquerda.</li>
+      <li>Fístula aortoesofágica (rara, tardia): hematêmese sentinela + intervalo + sangramento maciço (tríade de <b>Chiari</b>) → endoprótese aórtica de emergência como ponte.</li>
+    </ul>
+  </div>
+</section>
 
-                <h4>Passo a passo:</h4>
-                <ol>
-                    <li><span class="highlight-orange"><strong>Incisão mediana supra-xifóide até umbigo</strong></span>
-                    <span class="explanation">(corte na linha do meio da barriga)</span></li>
-                    
-                    <li><strong>Exploração da cavidade abdominal</strong> - Verificar ressecabilidade, metástases</li>
-                    
-                    <li><span class="highlight-orange"><strong>Abertura do omento menor</strong></span>
-                    <span class="explanation">(a cortina que prende o estômago)</span> 
-                    - Ganhar acesso ao hiato esofágico</li>
-                    
-                    <li><strong>Dissecção do fundo gástrico:</strong>
-                        <ul>
-                            <li>Divulsão da <span class="highlight-orange">artéria esplênica curta</span> <span class="explanation">(vasinhos que nutrem a parte superior do estômago)</span></li>
-                            <li>Preservação do ramo antral (para evitar necrose gástrica)</li>
-                            <li>Mobilização completa do estômago</li>
-                        </ul>
-                    </li>
-                    
-                    <li><span class="highlight-orange"><strong>Linfadenectomia D2:</strong></span>
-                        <ul>
-                            <li>Remoção de linfonodos celíacos, hepáticos, esplênicos, perigástricos</li>
-                            <li>Dissecção da bolsa omental</li>
-                        </ul>
-                    </li>
-                    
-                    <li><strong>Abertura do diafragma</strong> (se 3 campos com toracotomia)
-                    <span class="explanation">(corta o "divisor" entre barriga e peito)</span></li>
-                    
-                    <li><strong>Dissecção transmediastinal do esôfago torácico</strong> (por dissecção digital/espátulas maleáveis)
-                    <span class="explanation">(separa o esôfago do peito com os dedos)</span></li>
-                </ol>
+<!-- 12 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">12</span><h2>Temas de prova — bancas RS (questões originais no estilo)</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <div class="q"><span class="q-banca">Estilo HCPA</span><p>Homem de 62 anos, tabagista e etilista, toma chimarrão diariamente, com disfagia progressiva. Endoscopia: lesão vegetante a 27 cm da arcada dentária; biópsia: carcinoma epidermoide. Além da TC e do PET-TC, o exame indispensável antes de definir a ressecção é:</p>
+      <div class="q-alt">a) Manometria esofágica</div><div class="q-alt">b) Broncoscopia</div><div class="q-alt">c) Laparoscopia diagnóstica</div><div class="q-alt">d) Esofagograma baritado</div>
+      <div class="q-resp"><b>Resposta: B.</b> Epidermoide de terço médio, junto à carina — afastar invasão traqueobrônquica (T4b). Laparoscopia de estadiamento é para o adenocarcinoma de transição.</div></div>
+    <div class="q"><span class="q-banca">Estilo GHC</span><p>Adenocarcinoma da transição esofagogástrica Siewert I, cT3N1M0, bom estado geral. Tratamento com melhor sobrevida segundo a evidência mais recente:</p>
+      <div class="q-alt">a) Esofagectomia imediata</div><div class="q-alt">b) Radioquimioterapia definitiva</div><div class="q-alt">c) Quimioterapia perioperatória FLOT + esofagectomia</div><div class="q-alt">d) Ressecção endoscópica</div>
+      <div class="q-resp"><b>Resposta: C.</b> ESOPEC: FLOT superou o CROSS no adenocarcinoma (mediana 66 × 37 meses).</div></div>
+    <div class="q"><span class="q-banca">Estilo Santa Casa POA</span><p>Sobre a esofagectomia de Ivor Lewis, é correto:</p>
+      <div class="q-alt">a) É feita por cervicotomia e laparotomia, sem toracotomia.</div>
+      <div class="q-alt">b) Combina laparotomia e toracotomia direita, com anastomose intratorácica.</div>
+      <div class="q-alt">c) Exige três incisões, com anastomose cervical.</div>
+      <div class="q-alt">d) É feita por toracotomia esquerda isolada.</div>
+      <div class="q-resp"><b>Resposta: B.</b> (a) é trans-hiatal; (c) é McKeown; (d) é a via de Sweet/toracoabdominal.</div></div>
+    <div class="q"><span class="q-banca">Estilo PUC-RS</span><p>A principal artéria que mantém a viabilidade do tubo gástrico após esofagectomia é:</p>
+      <div class="q-alt">a) Gástrica esquerda</div><div class="q-alt">b) Gastroepiploica direita</div><div class="q-alt">c) Gástricas curtas</div><div class="q-alt">d) Gastroepiploica esquerda</div>
+      <div class="q-resp"><b>Resposta: B.</b> A gástrica esquerda é ligada na linfadenectomia; curtas e gastroepiploica esquerda são seccionadas.</div></div>
+    <div class="q"><span class="q-banca">Estilo AMRIGS</span><p>5º dia de esofagectomia, dieta pela jejunostomia em progressão, dreno torácico direito com 1.400 mL/dia de líquido leitoso. Conduta inicial:</p>
+      <div class="q-alt">a) Toracotomia imediata</div><div class="q-alt">b) Suspender dieta enteral, NPT ou dieta com triglicerídeos de cadeia média, octreotide e dosar triglicerídeos no líquido</div><div class="q-alt">c) Pleurodese com talco</div><div class="q-alt">d) Retirar o dreno</div>
+      <div class="q-resp"><b>Resposta: B.</b> Quilotórax: conservador primeiro; persistindo &gt; 1 L/dia, ligadura do ducto torácico (ou embolização).</div></div>
+    <div class="q"><span class="q-banca">Estilo HCPA</span><p>7º dia de McKeown, febre, eritema e saída de saliva pela incisão cervical; paciente estável, endoscopia com tubo viável. Conduta:</p>
+      <div class="q-alt">a) Reoperação com ressecção do tubo</div><div class="q-alt">b) Abrir a ferida cervical, drenar, manter dieta pela jejunostomia</div><div class="q-alt">c) Prótese esofágica imediata em todos os casos</div><div class="q-alt">d) Liberar via oral</div>
+      <div class="q-resp"><b>Resposta: B.</b> Fístula cervical com conduto viável = ECCG tipo II, tratada à beira do leito.</div></div>
+    <div class="q"><span class="q-banca">Estilo GHC</span><p>Em relação à anastomose intratorácica × cervical após esofagectomia minimamente invasiva, o ensaio ICAN mostrou com a intratorácica:</p>
+      <div class="q-alt">a) Mais fístula e mais paralisia do recorrente</div><div class="q-alt">b) Menos fístula e menos paralisia do recorrente</div><div class="q-alt">c) Mesma fístula, mais estenose</div><div class="q-alt">d) Maior mortalidade</div>
+      <div class="q-resp"><b>Resposta: B.</b> Fístula 12% × 34%; recorrente 0% × 7%.</div></div>
+    <div class="q"><span class="q-banca">Estilo AMRIGS</span><p>Adenocarcinoma em Barrett restrito à mucosa (T1a), bem diferenciado, sem invasão linfovascular. Tratamento:</p>
+      <div class="q-alt">a) Esofagectomia trans-hiatal</div><div class="q-alt">b) Ressecção endoscópica + ablação do Barrett residual</div><div class="q-alt">c) CROSS + esofagectomia</div><div class="q-alt">d) Radioterapia exclusiva</div>
+      <div class="q-resp"><b>Resposta: B.</b> Risco linfonodal &lt; 2% no T1a.</div></div>
+  </div>
+</section>
 
-                <div class="highlight-mnemonic">
-                    <strong>📍 CHECKLIST Fase I:</strong><br>
-                    ☐ Exploração completa<br>
-                    ☐ Ligadura arterial curta<br>
-                    ☐ D2 linfadenectomia<br>
-                    ☐ Estômago totalmente mobilizado<br>
-                    ☐ Mediastino dissecado
-                </div>
+<!-- 13 -->
+<section>
+  <div class="sec-head" tabindex="0"><span class="num">13</span><h2>Grade de mnemônicos e números-chave</h2><span class="chev">▶</span></div>
+  <div class="sec-body">
+    <div class="mnemo"><span class="tag">15 · 25 · 40</span>Constrições a partir da arcada: cricofaríngeo · arco aórtico/brônquio esquerdo · hiato.</div>
+    <div class="mnemo"><span class="tag">T-A-G</span>Artérias de cima para baixo: <b>T</b>ireóidea inferior · <b>A</b>orta · <b>G</b>ástrica esquerda.</div>
+    <div class="mnemo"><span class="tag">Epi no meio, Adeno embaixo</span>Epidermoide no terço médio (tabaco, álcool, chimarrão); adeno no distal (Barrett, obesidade).</div>
+    <div class="mnemo"><span class="tag">Ivor 2 · McKeown 3 · Hiatal 0</span>Ivor Lewis: 2 incisões, anastomose no tórax · McKeown: 3 incisões, no pescoço · trans-hiatal: zero toracotomia.</div>
+    <div class="mnemo"><span class="tag">Adeno FLOTa, Epi CROSSa</span>Adenocarcinoma → FLOT (ESOPEC) · epidermoide → CROSS · sobrou tumor → nivolumabe.</div>
+    <div class="mnemo"><span class="tag">T1a endo, T1b faca</span>Mucosa → ressecção endoscópica · submucosa → esofagectomia.</div>
+    <div class="mnemo"><span class="tag">Direita alimenta o tubo</span>Gastroepiploica <b>direita</b> fica; gástrica <b>esquerda</b> sai.</div>
+    <div class="mnemo"><span class="tag">Esôfago PeDe</span>Anastomose esofágica com PDS, pegando submucosa — esôfago não tem serosa.</div>
+    <div class="mnemo"><span class="tag">Leite no dreno</span>Quilotórax: TG &gt; 110 · conservador · &gt; 1 L/dia persistente → ligar o ducto entre aorta e ázigo.</div>
+    <div class="mnemo"><span class="tag">FA = fístula</span>Fibrilação atrial nova no pós-operatório: procurar fístula e pneumonia.</div>
+    <div class="mnemo"><span class="tag">12 × 34</span>ICAN: fístula intratorácica 12% × cervical 34%.</div>
+    <div class="mnemo"><span class="tag">Pescoço vaza, tórax mata</span>Fístula cervical é mais frequente e se trata abrindo a ferida; a intratorácica é menos frequente, mas causa mediastinite.</div>
+  </div>
+</section>
 
-                <h3>FASE II: TORACOTOMIA POSTEROLATERAL D (Se 3 campos)</h3>
-                <p><strong>Tempo: ~60-90 min | Objetivo: Dissecção completa esôfago torácico + linfadenectomia</strong></p>
+<footer>
+  carolzita · Esôfago · Esofagectomia<br>
+  Sabiston · Zollinger · Netter · CROSS · ESOPEC · CheckMate 577 · TIME · ROBOT · ICAN · Hulscher · ECCG 2015 · ERAS Society 2019<br>
+  Questões originais no estilo HCPA · GHC · Santa Casa POA · PUC-RS · AMRIGS
+</footer>
 
-                <p>Posicionamento: <strong>Decúbito lateral esquerdo, braço esquerdo elevado</strong></p>
-
-                <ol>
-                    <li><span class="highlight-orange"><strong>Incisão 4º-5º espaço intercostal direito</strong></span>
-                    <span class="explanation">(abrir peito pelo lado)</span></li>
-                    
-                    <li><strong>Ressecção da 5ª costela</strong> para melhor acesso</li>
-                    
-                    <li><span class="highlight-orange"><strong>Dissecção esofágica em bloco:</strong></span>
-                        <ul>
-                            <li>Separação de pleura mediastinal</li>
-                            <li>Divulsão de vasos brônquicos e aórticos (HEMOSTASIA CUIDADOSA - risco de sangramento massivo)</li>
-                            <li>Preservação de vagos (se indicado) ou ressecção</li>
-                            <li>Linfadenectomia mediastinal (níveis 1-9)</li>
-                        </ul>
-                    </li>
-                    
-                    <li><strong>Controle proximal e distal do esôfago:</strong>
-                        <ul>
-                            <li>Ligadura de vasos esofágicos menores com clips ou ligadura</li>
-                            <li>Cuidado com aorta adjacente!</li>
-                        </ul>
-                    </li>
-                    
-                    <li><strong>Fechamento:</strong>
-                        <ul>
-                            <li>Drenagem mediastinal (tubo de drenagem 28-32F)</li>
-                            <li>Fechamento diafragmático (se aberto)</li>
-                            <li>Reinsuflação pulmonar</li>
-                            <li>Fechamento da parede torácica por planos</li>
-                        </ul>
-                    </li>
-                </ol>
-
-                <div class="highlight-high-yield">
-                    <strong>⚠️ CUIDADO - Estruturas críticas:</strong>
-                    <ul>
-                        <li>Aorta torácica (sangramento catastrófico)</li>
-                        <li>Vagos (lesão = gastroparesia)</li>
-                        <li>Ducto torácico (lesão = quilotórax)</li>
-                        <li>Artérias brônquicas (aderidas ao esôfago)</li>
-                    </ul>
-                </div>
-
-                <h3>FASE III: CERVICOTOMIA (Supino, retorno)</h3>
-                <p><strong>Tempo: ~30-45 min | Objetivo: Remover esôfago e fazer anastomose</strong></p>
-
-                <ol>
-                    <li><span class="highlight-orange"><strong>Incisão cervical transversa esquerda</strong></span>
-                    <span class="explanation">(cortinho de lado no pescoço)</span> 
-                    - <strong>2-3 cm acima clavícula, sternocleidomastoideo</strong></li>
-                    
-                    <li><strong>Dissecção dos planos:</strong>
-                        <ul>
-                            <li>Platisma</li>
-                            <li>Músculo esternocleidomastoideo (lateralmente)</li>
-                            <li>Identificação do esôfago cervical</li>
-                        </ul>
-                    </li>
-                    
-                    <li><strong>Ligadura de vasos cervicais:</strong>
-                        <ul>
-                            <li>Artéria tireóidea inferior (dupla ligadura)</li>
-                            <li>Veias tireóideas inferiores</li>
-                        </ul>
-                    </li>
-                    
-                    <li><span class="highlight-orange"><strong>Remoção do esôfago:</strong></span>
-                        <ul>
-                            <li>Dissecção completa do esôfago cervical</li>
-                            <li>Tração caudal para extrair peça (já dissecada nas fases anteriores)</li>
-                            <li>Linfadenectomia cervical (nível VI)</li>
-                        </ul>
-                    </li>
-                </ol>
-
-                <h3>ANASTOMOSE ESOFAGOGÁSTRICA CERVICAL</h3>
-                <div class="highlight-high-yield">
-                    <strong>🎯 MOMENTO CRÍTICO - Técnicas principais:</strong>
-                </div>
-
-                <h4>Opção A: Sutura Manual (Mais Comum)</h4>
-                <ol>
-                    <li><strong>Posicionamento:</strong> Estômago (neoesôfago) trazido até região cervical por retroesternal ou intramuscular</li>
-                    
-                    <li><strong>Seleção do local:</strong> <span class="highlight-orange">Fundo gástrico (parte superior do estômago)</span>
-                    <span class="explanation">(tem melhor vascularização)</span></li>
-                    
-                    <li><strong>Primeiro plano (seromuscular-muscular):</strong>
-                        <ul>
-                            <li>3 pontos de fixação laterais com <span class="highlight-orange">fio absorvível 3-0</span> <span class="explanation">(sutura que desaparece sozinha)</span></li>
-                            <li>Pontos separados na transição hiatal (ancoragem)</li>
-                        </ul>
-                    </li>
-                    
-                    <li><strong>Segundo plano (mucosa a mucosa ou sutura contínua):</strong>
-                        <ul>
-                            <li><span class="highlight-orange">Fio monofilamentado absorvível 3-0 ou 4-0</span> (poliglecaprona ou Vicryl)</li>
-                            <li><strong>Sutura contínua/ancorada:</strong> Inicia em ambos os lados, encontra no meio</li>
-                            <li>Cuidado com mucosa frágil - pontos delicados</li>
-                        </ul>
-                    </li>
-                    
-                    <li><strong>Terceiro plano (invaginação):</strong>
-                        <ul>
-                            <li>Pontos separados de reforço em mucosa-submucosa</li>
-                            <li>Invaginação suave para selar anastomose</li>
-                        </ul>
-                    </li>
-                </ol>
-
-                <h4>Opção B: Sutura Mecânica (Menos comum, circunferencial)</h4>
-                <ul>
-                    <li>Grampeador circular (CDH): Menos anastomótica, rápida</li>
-                    <li>Grampeador linear: Para anastomose lado-a-lado</li>
-                </ul>
-
-                <div class="highlight-mnemonic">
-                    <strong>💡 LEMBRETE - Fios em Anastomose:</strong><br>
-                    ✓ <strong>Absorvível</strong> (não precisa retirar)<br>
-                    ✓ <strong>Monofilamentado</strong> (menos reação)<br>
-                    ✓ <strong>Calibre 3-0 a 4-0</strong> (fino, delicado)<br>
-                    ✗ Não-absorvível (risco de erosão)
-                </div>
-
-                <h3>POSICIONAMENTO E INSTRUMENTOS MÃO ESQUERDA vs MÃO DIREITA</h3>
-                <table>
-                    <tr>
-                        <th>Momento</th>
-                        <th>Mão Direita (Cirurgião Principal)</th>
-                        <th>Mão Esquerda (Retração/Exposição)</th>
-                    </tr>
-                    <tr>
-                        <td><strong>Laparotomia - Abertura</strong></td>
-                        <td>Bisturi elétrico / Pinça dissecante</td>
-                        <td>Afastador de Balfour / Compressa</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Abertura omento menor</strong></td>
-                        <td>Pinça Kocher / Bisturi eletro</td>
-                        <td>Pinça Allis (retração)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Divisão vasos gástricos curtos</strong></td>
-                        <td>Grampeador vascular (TA)</td>
-                        <td>Compressa / Pinça Kelly</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Dissecção mediastinal</strong></td>
-                        <td>Espátula maleável / Pinça dissecante</td>
-                        <td>Afastador para visualização</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Toracotomia - Dissecção</strong></td>
-                        <td>Pinça cardíaca / Tesoura vascular</td>
-                        <td>Afastador intercostal / Retração</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Cervicotomia - Anastomose</strong></td>
-                        <td>Pinça de sutura 3/8 / Agulha</td>
-                        <td>Pinça Allis (tração) / Compressa</td>
-                    </tr>
-                </table>
-
-                <h3>PINÇAS CIRÚRGICAS RECOMENDADAS</h3>
-                <div class="grid-2">
-                    <div class="card">
-                        <h4>Dissecção e Hemostasia</h4>
-                        <ul>
-                            <li>Kocher (com dente)</li>
-                            <li>Kelly (dissecção vascular)</li>
-                            <li>Pean (hemostasia)</li>
-                            <li>Mosquito (pequenas estruturas)</li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <h4>Retração e Exposição</h4>
-                        <ul>
-                            <li>Allis (tração de mucosa)</li>
-                            <li>Balfour (afastador)</li>
-                            <li>Afastador Finochietto (torácico)</li>
-                            <li>Afastador Cushing (neurológico)</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <h3>DRENOS E FECHAMENTO</h3>
-                <ul>
-                    <li><strong>Drenagem cervical:</strong> Penrose 1/4" ou Jackson-Pratt 19F</li>
-                    <li><strong>Drenagem torácica:</strong> Tubo 28-32F (peito)</li>
-                    <li><strong>Fechamento da parede:</strong> Pontos separados 1 (vicryl ou poliglactina)</li>
-                    <li><strong>Pele:</strong> Sutura contínua intradermal 4-0 ou grampos</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- SEÇÃO 4: COMPLICAÇÕES -->
-        <div class="section">
-            <h2>
-                <button class="toggle-btn" onclick="toggleContent(this)">+</button>
-                ⚠️ Complicações Pós-Operatórias
-            </h2>
-            <div class="content">
-                <h3>Complicações Anastomóticas</h3>
-                <table>
-                    <tr>
-                        <th>Complicação</th>
-                        <th>Incidência</th>
-                        <th>Apresentação</th>
-                        <th>Manejo</th>
-                    </tr>
-                    <tr>
-                        <td><span class="highlight-orange"><strong>Fístula anastomótica</strong></span> <span class="explanation">(vazamento na costura)</span></td>
-                        <td>5-15%</td>
-                        <td>Febre, dor cervical, drenagem purulenta, pneumotórax</td>
-                        <td>NPT, drenagem, reintubação se grave; resutura se <24h</td>
-                    </tr>
-                    <tr>
-                        <td><span class="highlight-orange"><strong>Estenose</strong></span> <span class="explanation">(aperto na costura)</span></td>
-                        <td>10-15%</td>
-                        <td>Disfagia progressiva (semanas-meses)</td>
-                        <td>Dilatação endoscópica serial (geralmente <3 sessões)</td>
-                    </tr>
-                    <tr>
-                        <td>Sangramento anastomótico</td>
-                        <td>2-3%</td>
-                        <td>Hematemese, queda Hb</td>
-                        <td>EDA com hemostasia; transfusão se grande</td>
-                    </tr>
-                </table>
-
-                <h3>Complicações Pulmonares (Mais Frequentes!)</h3>
-                <div class="highlight-high-yield">
-                    <strong>🎯 CAUSA MAIS COMUM DE MORBIDADE:</strong>
-                    <ul>
-                        <li><strong>Pneumonia:</strong> 20-30% | Fisioterapia respiratória, antibióticos</li>
-                        <li><strong>Derrame pleural:</strong> 30-40% | Drenagem se sintomático</li>
-                        <li><strong>SDRA/insuficiência respiratória:</strong> 5-10% | VM/UTI</li>
-                        <li><strong>Atelectasia:</strong> Comum | Fisioterapia, broncoscopia</li>
-                    </ul>
-                </div>
-
-                <h3>Complicações Relacionadas a Estruturas Adjacentes</h3>
-                <table>
-                    <tr>
-                        <th>Estrutura</th>
-                        <th>Lesão</th>
-                        <th>Frequência</th>
-                        <th>Consequência</th>
-                    </tr>
-                    <tr>
-                        <td><strong>Ducto torácico</strong></td>
-                        <td>Lesão intra-operatória</td>
-                        <td><span class="highlight-orange">1-4%</span></td>
-                        <td><strong>Quilotórax</strong> (linfa na cavidade pleural) - NPT, pleurodese, ligadura</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Nervo vago</strong></td>
-                        <td>Lesão/secção</td>
-                        <td>~5-10% (depende dissecção)</td>
-                        <td>Gastroparesia (demora do estômago), diarréia, voz rouca</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Recorrente laríngeo</strong></td>
-                        <td>Tração/compressão</td>
-                        <td>~10-30%</td>
-                        <td>Disfonia transitória (rouca) ou permanente</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Pulmão/pleura</strong></td>
-                        <td>Perfuração</td>
-                        <td>2-3%</td>
-                        <td>Pneumotórax - drenagem, fechamento</td>
-                    </tr>
-                </table>
-
-                <h3>Complicações da Reconstrução Gástrica</h3>
-                <ul>
-                    <li><strong>Necrose gástrica:</strong> Raro (<1%), mas catastrófico - curva de Sasaki lesionada</li>
-                    <li><strong>Gastroparesia:</strong> Comum (15-25%) - demora na alimentação</li>
-                    <li><strong>Refluxo biliar:</strong> Frequente - azia e regurgitação</li>
-                    <li><strong>Síndrome do dumping:</strong> Passagem rápida de alimento</li>
-                </ul>
-
-                <h3>Complicações Sistêmicas/Gerais</h3>
-                <ul>
-                    <li><strong>Sepse:</strong> 10-15% | Relacionada a fístula ou pneumonia</li>
-                    <li><strong>Insuficiência renal:</strong> 5-10% | Hipovolemia, pigmentos</li>
-                    <li><strong>Tromboembolismo:</strong> 2-5% | Profilaxia com SCE + medicamentosa</li>
-                    <li><strong>Morte:</strong> 2-5% (mortalidade operatória) | Fístula + sepse + falência respiratória</li>
-                </ul>
-
-                <div class="highlight-mnemonic">
-                    <strong>🔴 RED FLAGS Pós-Op Imediato:</strong><br>
-                    • Febre + taquicardia + dor cervical = FÍSTULA!<br>
-                    • Crepitações + febre = Pneumonia<br>
-                    • Drenagem quilosa branca = Quilotórax<br>
-                    • Rouquidão = Vago/recorrente<br>
-                    • Pneumotórax = Lesão pleural
-                </div>
-            </div>
-        </div>
-
-        <!-- SEÇÃO 5: TÓPICOS DE PROVA -->
-        <div class="section">
-            <h2>
-                <button class="toggle-btn" onclick="toggleContent(this)">+</button>
-                🎓 Tópicos Recorrentes em Provas (HCPA, GHC, Santa Casa, PUC, AMRIGS)
-            </h2>
-            <div class="content">
-                <h3>Tópicos de ALTA Frequência</h3>
-                <div class="highlight-high-yield">
-                    <ol>
-                        <li><strong>Indicações de esofagectomia:</strong> Câncer vs benignas, estadiamento TNM</li>
-                        <li><strong>Técnicas cirúrgicas:</strong> Transhiatal vs 3 campos - vantagens/desvantagens</li>
-                        <li><strong>Complicações mais frequentes:</strong> Pneumonia, fístula, estenose</li>
-                        <li><strong>Anastomose:</strong> Material de sutura, técnica, local (cervical vs intratorácica)</li>
-                        <li><strong>Vascularização do estômago:</strong> Artéria gástrica esquerda, curvas</li>
-                        <li><strong>Diferença entre epidermóide e adenocarcinoma:</strong> Localização, prognóstico</li>
-                        <li><strong>Linfadenectomia:</strong> D1 vs D2, impacto em sobrevida</li>
-                        <li><strong>Contraindicações à ressecção:</strong> Metástases à distância, invasão de estrutura irressecável</li>
-                    </ol>
-                </div>
-
-                <h3>Questões Tipo (Estilo HCPA/SBCO)</h3>
-                <div class="card">
-                    <h4>Exemplo 1: Classificação e Técnica</h4>
-                    <p><em>"Paciente com câncer de esôfago terço médio (T3N1M0). Qual técnica é mais apropriada?"</em></p>
-                    <p><strong>Resposta esperada:</strong> Esofagectomia em 3 campos (transtorácica) porque:</p>
-                    <ul>
-                        <li>Terço médio requer acesso torácico</li>
-                        <li>N1+ requer linfadenectomia mediastinal completa</li>
-                        <li>Melhor controle oncológico</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <h4>Exemplo 2: Complicação Pós-Op</h4>
-                    <p><em>"POD5, paciente com febre 39°C, drenagem cervical com odor fétido. Qual é o diagnóstico?"</em></p>
-                    <p><strong>Resposta:</strong> Fístula anastomótica com abscesso cervical</p>
-                    <ul>
-                        <li>Suspeita: dias 3-7, febre + secreção purulenta</li>
-                        <li>Manejo: drenagem adequada, NPT, antibióticos, resutura se precoce</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <h4>Exemplo 3: Diferença Técnica</h4>
-                    <p><em>"Vantagem da esofagectomia transhiatal vs 3 campos?"</em></p>
-                    <p><strong>Transhiatal:</strong> Menos complicações pulmonares, recuperação mais rápida</p>
-                    <p><strong>3 campos:</strong> Melhor sobrevida em alguns estudos (oncológico)</p>
-                </div>
-
-                <h3>Palavras-Chave para Procurar em Questões</h3>
-                <ul>
-                    <li>🔴 "Estadio I/II" = Melhor prognóstico, esofagectomia curativa</li>
-                    <li>🔴 "Barrett com displasia" = Indicação clara para esofagectomia</li>
-                    <li>🔴 "Toracotomia" = 3 campos, melhor visualização</li>
-                    <li>🔴 "Quilotórax" = Lesão ducto torácico (1-4%)</li>
-                    <li>🔴 "Rouquidão" = Nervo recorrente</li>
-                    <li>🔴 "Necrose gástrica" = Lesão de vasos curtos</li>
-                    <li>🔴 "Anastomótica" = Fístula ou estenose</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- SEÇÃO 6: MNEMÔNICAS -->
-        <div class="section">
-            <h2>
-                <button class="toggle-btn" onclick="toggleContent(this)">+</button>
-                💡 Mnemônicas e Esquemas de Memorização
-            </h2>
-            <div class="content">
-                <h3>Mnemônicas Principais</h3>
-                <div class="mnemonics-grid">
-                    <div class="mnemonic-box">
-                        <strong>"VTA"</strong>
-                        <p><strong>V</strong>ias de acesso:<br>
-                        <strong>V</strong>ertebral (transhiatal)<br>
-                        <strong>T</strong>orácica (3 campos)<br>
-                        <strong>A</strong>natomia (essencial)</p>
-                    </div>
-
-                    <div class="mnemonic-box">
-                        <strong>"ATA-GAG"</strong>
-                        <p><strong>A</strong>rtéria <strong>T</strong>ireóidea<br>
-                        <strong>A</strong>orta/Artérias brônquicas<br>
-                        <strong>G</strong>ástrica/Artéria frênica<br>
-                        <span style="font-size: 0.85em">= Vascularização esofágica</span></p>
-                    </div>
-
-                    <div class="mnemonic-box">
-                        <strong>"DFC"</strong>
-                        <p><strong>D</strong>renagem séro-hemática<br>
-                        <strong>F</strong)ístula (complicação)</p>
-                        <strong>C</strong>losure (fechamento)
-                    </div>
-
-                    <div class="mnemonic-box">
-                        <strong>"CVC"</strong>
-                        <p><strong>C</strong>ervical (pescoço)<br>
-                        <strong>V</strong>isceral (tórax)<br>
-                        <strong>C</strong>elíaco (abdômen)<br>
-                        <span style="font-size: 0.85em">= 3 campos de dissecção</span></p>
-                    </div>
-                </div>
-
-                <h3>Grid de Memorização: Complicações</h3>
-                <table>
-                    <tr>
-                        <th colspan="3" style="background: rgba(156, 39, 176, 0.3); color: #ce93d8;">COMPLICAÇÕES POR TEMPO</th>
-                    </tr>
-                    <tr>
-                        <th>Tempo</th>
-                        <th>Anastomótica</th>
-                        <th>Estrutural</th>
-                    </tr>
-                    <tr>
-                        <td><strong>POD 0-3</strong></td>
-                        <td>Fístula (febre + secreção)</td>
-                        <td>Sangramento, pneumotórax</td>
-                    </tr>
-                    <tr>
-                        <td><strong>POD 3-7</strong></td>
-                        <td>Fístula com abscesso</td>
-                        <td>Quilotórax, sepse</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Semanas-Meses</strong></td>
-                        <td>Estenose (disfagia)</td>
-                        <td>Gastroparesia, refluxo</td>
-                    </tr>
-                </table>
-
-                <h3>Checklist Pré-Operatório</h3>
-                <table>
-                    <tr>
-                        <th>Preparação</th>
-                        <th>Justificativa</th>
-                    </tr>
-                    <tr>
-                        <td>❑ EDA + biópsia</td>
-                        <td>Confirmar diagnóstico, descartar segunda neoplasia</td>
-                    </tr>
-                    <tr>
-                        <td>❑ TC tórax-abdo-pelve</td>
-                        <td>Estadiamento, metástases, ressecabilidade</td>
-                    </tr>
-                    <tr>
-                        <td>❑ PET-CT (se onco)</td>
-                        <td>Detectar metástases à distância</td>
-                    </tr>
-                    <tr>
-                        <td>❑ Espirometria</td>
-                        <td>Avaliar risco pulmonar pós-op</td>
-                    </tr>
-                    <tr>
-                        <td>❑ Ecocardiograma</td>
-                        <td>Avaliar função cardíaca (toracotomia)</td>
-                    </tr>
-                    <tr>
-                        <td>❑ Nutricional</td>
-                        <td>Suporte nutricional pré-op (albumina, NPT)</td>
-                    </tr>
-                    <tr>
-                        <td>❑ Fisioterapia resp.</td>
-                        <td>Treinamento, reduz complicações pulmonares</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-
-        <!-- FOOTER -->
-        <div class="footer">
-            <p><strong>Referências:</strong> Sabiston Textbook of Surgery, Zollinger Atlas, Netter Anatomy, SBCO Guidelines 2023-2024</p>
-            <p><strong>Atualizado:</strong> Maio 2026 | <strong>Versão:</strong> 1.0 Completa</p>
-            <p style="margin-top: 10px; color: #00bcd4;">Para estudos em 100+ questões de provas vascular, aguarde versão "Pocket" otimizada para mobile!</p>
-        </div>
-    </div>
-
-    <script>
-        function toggleContent(btn) {
-            const content = btn.parentElement.nextElementSibling;
-            content.classList.toggle('active');
-            btn.textContent = content.classList.contains('active') ? '−' : '+';
-        }
-
-        // Abrir primeira seção por padrão
-        window.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('.toggle-btn')[0].textContent = '−';
-        });
-    </script>
+</div>
+<script>
+document.querySelectorAll('.sec-head').forEach(function(h){
+  function t(){h.parentElement.classList.toggle('open')}
+  h.addEventListener('click',t);
+  h.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t()}});
+});
+function todas(abrir){
+  document.querySelectorAll('section').forEach(function(s){
+    s.classList.toggle('open',abrir);
+  });
+}
+</script>
 </body>
 </html>
