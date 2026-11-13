@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anestesia para o Cirurgião — carolzita</title>
+<meta name="cz-tema" content="Anestesia para o Cirurgião">
+<meta name="cz-grupo" content="Perioperatório">
+<meta name="cz-tags" content="Via aérea, Sequência rápida, Anestésico local, Raqui × peridural, Hipertermia maligna">
+<meta name="cz-tipo" content="Full">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0f; --bg2:#12121a; --card:#16161f; --card2:#1c1c27;
+  --line:#2a2a38; --txt:#e6e6ef; --muted:#9a9ab0;
+  --laranja:#f97316; --laranja-bg:rgba(249,115,22,.10);
+  --roxo:#a855f7; --roxo-bg:rgba(168,85,247,.10);
+  --ciano:#22d3ee; --ciano-bg:rgba(34,211,238,.10);
+  --verde:#34d399; --vermelho:#f87171; --amarelo:#fbbf24;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(1200px 600px at 50% -10%,#15151f 0%,var(--bg) 60%);color:var(--txt);font-family:'Inter',sans-serif;line-height:1.55;padding:0 0 80px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px}
+header{padding:40px 0 24px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(30px,6vw,46px);line-height:1.05;margin:8px 0 6px;letter-spacing:-.02em}
+.sub{color:var(--muted);font-size:15px;max-width:700px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tag{font-family:'JetBrains Mono',monospace;font-size:11px;padding:5px 10px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted)}
+.tag.r{color:var(--roxo);border-color:rgba(168,85,247,.35);background:var(--roxo-bg)}
+section{margin-top:14px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:12px;overflow:hidden;transition:border-color .2s}
+details[open]{border-color:rgba(249,115,22,.30)}
+summary{cursor:pointer;list-style:none;padding:18px 20px;display:flex;align-items:center;gap:13px;font-family:'Syne',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em;user-select:none}
+summary::-webkit-details-marker{display:none}
+.num{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--bg);background:var(--laranja);width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:0 0 auto}
+.chev{margin-left:auto;color:var(--muted);transition:transform .25s;font-size:14px}
+details[open] .chev{transform:rotate(90deg)}
+.body{padding:4px 22px 24px;font-size:15px}
+.body p{margin:10px 0}
+.body h4{font-family:'Syne',sans-serif;font-size:16px;color:var(--laranja);margin:20px 0 8px;letter-spacing:-.01em}
+.body ul{margin:8px 0 8px 4px;list-style:none}
+.body li{padding:4px 0 4px 20px;position:relative}
+.body li::before{content:"▸";position:absolute;left:0;color:var(--laranja);font-size:12px;top:6px}
+.body strong{color:#fff;font-weight:600}
+.simple{color:var(--ciano);font-style:italic;font-size:.94em}
+.box{border-radius:12px;padding:13px 15px;margin:14px 0;font-size:14px;border:1px solid}
+.box.prova{background:var(--roxo-bg);border-color:rgba(168,85,247,.35)}
+.box.prova .lbl{color:var(--roxo)}
+.box.mac{background:var(--ciano-bg);border-color:rgba(34,211,238,.35)}
+.box.mac .lbl{color:var(--ciano)}
+.box.warn{background:rgba(248,113,113,.08);border-color:rgba(248,113,113,.3)}
+.box.warn .lbl{color:var(--vermelho)}
+.lbl{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-family:'JetBrains Mono',monospace;font-size:10px;background:rgba(168,85,247,.2);color:var(--roxo);padding:2px 7px;border-radius:6px;margin-left:6px;white-space:nowrap}
+.tbl{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
+.tbl table{width:100%;border-collapse:collapse;min-width:520px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--laranja);background:var(--card2)}
+td strong{color:#fff}
+.fio td:first-child{color:var(--ciano);font-family:'JetBrains Mono',monospace;font-weight:500}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin:14px 0}
+.gcard{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+.gcard .t{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--ciano);margin-bottom:4px}
+.gcard .d{font-size:13px;color:var(--muted)}
+.hands{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.hand{border-radius:12px;padding:14px;border:1px solid var(--line)}
+.hand.e{background:rgba(34,211,238,.06);border-color:rgba(34,211,238,.25)}
+.hand.d{background:rgba(249,115,22,.06);border-color:rgba(249,115,22,.25)}
+.hand .ht{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;font-weight:700}
+.hand.e .ht{color:var(--ciano)} .hand.d .ht{color:var(--laranja)}
+.hand li{font-size:13px}
+.steps{counter-reset:s;margin:10px 0}
+.step{counter-increment:s;position:relative;padding:11px 0 11px 46px;border-bottom:1px dashed var(--line)}
+.step:last-child{border-bottom:none}
+.step::before{content:counter(s);position:absolute;left:0;top:9px;width:30px;height:30px;border-radius:9px;background:var(--laranja-bg);border:1px solid rgba(249,115,22,.4);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:grid;place-items:center}
+.step b{color:#fff}
+svg{max-width:100%;height:auto;display:block;margin:16px auto}
+.fig{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.fig .cap{font-size:12px;color:var(--muted);text-align:center;margin-top:8px;font-family:'JetBrains Mono',monospace}
+footer{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+footer .ref{font-family:'JetBrains Mono',monospace;font-size:12px;margin-top:8px}
+a{color:var(--laranja)}
+@media(max-width:560px){.hands{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">carolzita · perioperatório · fisiologia aplicada</div>
+  <h1>Anestesia para o Cirurgião</h1>
+  <p class="sub">Via aérea (Mallampati, preditores, IOT, sequência rápida, crico) · fármacos de indução, opioides e bloqueadores neuromusculares · anestésicos locais e toxicidade (LAST) · raqui × peridural · cefaleia pós-punção · escada analgésica · anafilaxia e hipertermia maligna.</p>
+  <div class="tags"><span class="tag">Via aérea</span><span class="tag">Sequência rápida</span><span class="tag">Anestésico local</span><span class="tag">Raqui × peridural</span><span class="tag">Hipertermia maligna</span><span class="tag r">HCPA · GHC · SC-POA · PUC · AMRIGS</span></div>
+</header>
+
+<details open>
+  <summary><span class="num">1</span> Avaliação da via aérea <span class="chev">▶</span></summary>
+  <div class="body">
+
+<div class="tbl"><table><tr><th>Mallampati</th><th>Visualiza</th></tr>
+<tr><td>I</td><td>palato mole, fauces, úvula inteira, pilares</td></tr>
+<tr><td>II</td><td>palato mole, fauces, úvula</td></tr>
+<tr><td>III</td><td>palato mole, <strong>base da úvula</strong></td></tr>
+<tr><td>IV</td><td><strong>só palato duro</strong></td></tr></table></div>
+<p>III–IV sugerem laringoscopia difícil <span class="simple">(quanto menos da garganta aparece com a boca aberta, mais difícil é ver as cordas vocais para passar o tubo)</span>. Cormack-Lehane (I–IV) é a visão <strong>durante</strong> a laringoscopia.</p>
+<ul><li><strong>LEMON</strong>: Look (trauma facial, barba, obesidade), Evaluate 3-3-2 (abertura bucal 3 dedos, mento-hioide 3, hioide-tireoide 2), Mallampati, Obstrução, Neck mobility.</li>
+<li>Ventilação difícil com máscara — <strong>MOANS/BONES</strong>: barba, obesidade (IMC &gt;30), sem dentes, idade &gt;55, ronco/SAOS.</li>
+<li>Distância tireomentoniana &lt;6 cm, abertura bucal &lt;3 cm, pescoço curto/limitado.</li></ul>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">2</span> Via aérea definitiva, sequência rápida &amp; crico <span class="chev">▶</span></summary>
+  <div class="body">
+
+<ul><li><strong>Indicações de via aérea definitiva</strong>: incapacidade de proteger a via aérea (Glasgow ≤8), obstrução iminente (queimadura inalatória, hematoma cervical, trauma de face), hipoxemia/hipercapnia refratária, apneia, necessidade de anestesia geral, choque refratário.</li>
+<li><strong>Via aérea definitiva</strong> = tubo na traqueia com <strong>balonete insuflado</strong>, fixado e conectado a O₂ (orotraqueal, nasotraqueal, cirúrgica).</li>
+<li><strong>Confirmação</strong>: <strong>capnografia com curva sustentada</strong> (padrão-ouro), ausculta, RX para posição (2–4 cm acima da carina).</li></ul>
+<h4>Sequência rápida (estômago cheio)</h4>
+<div class="steps"><div class="step"><b>Preparo</b>: material, aspirador, plano B (bougie, máscara laríngea, crico).</div>
+<div class="step"><b>Pré-oxigenação</b> 3–5 min O₂ 100% (ou 8 capacidades vitais).</div>
+<div class="step"><b>Pré-tratamento/otimização</b> hemodinâmica (fluido, vasopressor).</div>
+<div class="step"><b>Indução</b> (etomidato, cetamina, propofol) + <strong>BNM imediato</strong> (succinilcolina 1–1,5 mg/kg ou rocurônio 1,2 mg/kg) — sem ventilar com pressão.</div>
+<div class="step"><b>Posicionamento/proteção</b> (pressão cricoide é opcional e controversa hoje).</div>
+<div class="step"><b>Intubação</b> e <b>confirmação</b> por capnografia.</div>
+<div class="step"><b>Pós-intubação</b>: sedoanalgesia, ventilação protetora.</div></div>
+<div class="box warn"><span class="lbl">não intubo, não oxigeno (CICO)</span><strong>Cricotireoidostomia cirúrgica</strong> (bisturi–bougie–tubo 6,0) pela membrana cricotireóidea <span class="simple">(abrir um furinho na frente do pescoço, entre as duas cartilagens, para o ar entrar)</span>. Em <strong>&lt;12 anos</strong>: cricotireoidostomia por punção (jet ventilation), pois a cartilagem cricoide sustenta a traqueia infantil. Contraindicação relativa: fratura de laringe, transecção traqueal → traqueostomia.</div>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">3</span> Fármacos da anestesia geral <span class="chev">▶</span></summary>
+  <div class="body">
+
+<div class="tbl"><table><tr><th>Indutor</th><th>Prós</th><th>Contras</th></tr>
+<tr><td><strong>Propofol</strong></td><td>rápido, antiemético, ↓PIC</td><td>hipotensão, apneia; síndrome de infusão (acidose, rabdo)</td></tr>
+<tr><td><strong>Etomidato</strong></td><td>estabilidade hemodinâmica (choque, cardiopata)</td><td><strong>supressão adrenal</strong> (11-β-hidroxilase), mioclonia</td></tr>
+<tr><td><strong>Cetamina</strong></td><td>mantém PA e drive, <strong>broncodilata</strong> (asma), analgesia</td><td>sialorreia, alucinações, ↑ consumo miocárdico</td></tr>
+<tr><td>Midazolam</td><td>amnésia</td><td>depressão respiratória (antídoto flumazenil)</td></tr></table></div>
+<ul><li><strong>Inalatórios</strong> (sevoflurano — indução inalatória em criança; desflurano; óxido nitroso — evitar em pneumotórax, obstrução intestinal, ouvido médio): todos os halogenados podem desencadear <strong>hipertermia maligna</strong>.</li>
+<li><strong>Opioides</strong>: fentanil, remifentanil (metabolismo plasmático, ultracurto), morfina; antídoto <strong>naloxona</strong>.</li></ul>
+<h4>Bloqueadores neuromusculares</h4>
+<div class="tbl"><table><tr><th></th><th>Succinilcolina (despolarizante)</th><th>Rocurônio (não despolarizante)</th></tr>
+<tr><td>Início/duração</td><td>45–60 s / 5–10 min</td><td>60–90 s / 30–60 min</td></tr>
+<tr><td>Reversão</td><td>colinesterase plasmática</td><td>neostigmina (+atropina) ou <strong>sugammadex</strong></td></tr>
+<tr><td>Contraindicações</td><td><strong>hipercalemia</strong>, queimado/esmagamento/imobilizado/denervação <strong>após 24–72 h</strong>, distrofias musculares, história de <strong>hipertermia maligna</strong>, deficiência de pseudocolinesterase</td><td>alergia</td></tr></table></div>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">4</span> Anestésicos locais &amp; LAST <span class="chev">▶</span></summary>
+  <div class="body">
+
+<ul><li><strong>Amidas</strong> (têm dois "i" no nome: l<strong>i</strong>doca<strong>í</strong>na, bupivacaína, ropivacaína) — metabolismo hepático. <strong>Ésteres</strong> (procaína, tetracaína, benzocaína) — metabolismo plasmático, mais alergia (PABA).</li>
+<li>Doses máximas: <strong>lidocaína 4,5 mg/kg (7 mg/kg com adrenalina)</strong>; <strong>bupivacaína 2,5 mg/kg (3 com adrenalina)</strong> — a mais cardiotóxica.</li>
+<li>Adrenalina: prolonga o efeito e reduz sangramento; tradicionalmente evitada em extremidades, mas é segura em dedos na concentração diluída (evidência atual).</li>
+<li><strong>Não funciona bem em abscesso</strong> <span class="simple">(a pus é ácida e o remédio fica na forma que não entra no nervo)</span>: pH ácido ioniza o anestésico, que não atravessa a membrana.</li></ul>
+<div class="box warn"><span class="lbl">LAST — toxicidade sistêmica</span>Gosto metálico, parestesia perioral, zumbido → agitação, <strong>convulsão</strong> → arritmia/assistolia (bupivacaína). Conduta: parar injeção, via aérea/O₂, benzodiazepínico para convulsão, <strong>emulsão lipídica 20%</strong> (bolus 1,5 mL/kg + infusão 0,25 mL/kg/min), RCP prolongada; evitar vasopressina, bloqueadores de cálcio, β-bloqueadores; adrenalina em doses reduzidas (&lt;1 µg/kg).</div>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">5</span> Neuroeixo: raqui × peridural <span class="chev">▶</span></summary>
+  <div class="body">
+
+<div class="tbl"><table><tr><th></th><th>Raquianestesia (subaracnóidea)</th><th>Peridural (epidural)</th></tr>
+<tr><td>Espaço</td><td>líquor (abaixo de L2 no adulto, L3 na criança)</td><td>antes da dura, qualquer nível (cateter torácico)</td></tr>
+<tr><td>Dose</td><td>pequena, bloqueio denso e rápido</td><td>volume grande, bloqueio segmentar, titulável</td></tr>
+<tr><td>Uso</td><td>cirurgia infraumbilical, cesárea</td><td><strong>analgesia pós-op</strong> (cateter), trabalho de parto</td></tr>
+<tr><td>Complicação típica</td><td>hipotensão/bradicardia (bloqueio simpático), <strong>cefaleia pós-punção</strong></td><td>injeção intravascular (LAST), raqui total, hematoma</td></tr></table></div>
+<ul><li><strong>Cefaleia pós-punção dural</strong>: piora em pé, melhora deitado, 24–72 h; agulha fina ponta de lápis previne; tratamento hidratação, cafeína, analgesia → <strong>blood patch</strong> <span class="simple">(injetar um pouquinho do sangue do próprio paciente no lugar do furo para tampar)</span>.</li>
+<li><strong>Contraindicações absolutas</strong>: recusa, infecção no local, coagulopatia/anticoagulação plena, hipovolemia grave não corrigida, HIC.</li>
+<li>Anticoagulantes (ASRA): suspender enoxaparina profilática <strong>12 h</strong> antes (terapêutica 24 h), retirar cateter e reiniciar ≥4 h depois.</li>
+<li><strong>Hematoma epidural</strong>: dor lombar + déficit motor progressivo → RM e <strong>descompressão em até 8 h</strong>.</li></ul>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">6</span> Dor, náusea &amp; crises intraoperatórias <span class="chev">▶</span></summary>
+  <div class="body">
+
+<ul><li><strong>Escada analgésica (OMS)</strong>: 1º degrau — dipirona/paracetamol/AINE; 2º — opioide fraco (tramadol, codeína) ± 1º; 3º — opioide forte (morfina, oxicodona, metadona) ± 1º; adjuvantes em todos (antidepressivo, anticonvulsivante, corticoide). Em cirurgia: <strong>analgesia multimodal</strong> poupadora de opioide (ERAS), bloqueios (TAP, ESP).</li>
+<li>Náusea/vômito PO — <strong>Apfel</strong>: mulher, não fumante, história de NVPO/cinetose, opioide pós-op → profilaxia multimodal (ondansetrona, dexametasona).</li></ul>
+<div class="box warn"><span class="lbl">anafilaxia intraoperatória</span>Causas: <strong>BNM</strong> (rocurônio, succinilcolina), antibióticos, látex, clorexidina. Hipotensão + broncoespasmo ± rash. <strong>Adrenalina EV</strong> titulada (10–50 µg bolus; 0,5 mg IM se sem acesso) + volume + suspender agente; dosar <strong>triptase</strong> em 1–2 h.</div>
+<div class="box warn"><span class="lbl">hipertermia maligna</span>Gatilhos: halogenados + succinilcolina; mutação <strong>RYR1</strong> (autossômica dominante). Primeiro sinal: <strong>↑ ETCO₂</strong> inexplicado + taquicardia, rigidez de masseter, depois hipertermia, acidose, hipercalemia, rabdomiólise. Conduta: suspender halogenado, hiperventilar com O₂ 100%, <strong>dantrolene 2,5 mg/kg</strong> (repetir até 10 mg/kg), resfriar, tratar K⁺.</div>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">7</span> Questões de banca, pega-ratões &amp; mnemônicos <span class="chev">▶</span></summary>
+  <div class="body">
+<h4>10 questões representativas (originais, estilo das 5 bancas)</h4>
+<div class="box prova"><span class="lbl">Q1 <span class="banca">HCPA</span></span><strong>Mallampati com visualização apenas do palato duro corresponde a qual classe?</strong><br>Resposta: <strong>IV</strong>.</div>
+<div class="box prova"><span class="lbl">Q2 <span class="banca">GHC</span></span><strong>Paciente grande queimado no 5º dia precisa ser reintubado. Por que evitar succinilcolina?</strong><br>Resposta: Risco de <strong>hipercalemia grave</strong> por suprarregulação de receptores (após 24–72 h de queimadura/denervação/imobilização). Usar rocurônio.</div>
+<div class="box prova"><span class="lbl">Q3 <span class="banca">AMRIGS</span></span><strong>Indutor de escolha em paciente asmático em broncoespasmo?</strong><br>Resposta: <strong>Cetamina</strong> (broncodilatadora).</div>
+<div class="box prova"><span class="lbl">Q4 <span class="banca">PUC-RS</span></span><strong>Confirmação mais confiável de intubação traqueal?</strong><br>Resposta: <strong>Capnografia</strong> com curva persistente.</div>
+<div class="box prova"><span class="lbl">Q5 <span class="banca">SC-POA</span></span><strong>Gosto metálico e convulsão após bloqueio com bupivacaína. Tratamento específico?</strong><br>Resposta: <strong>Emulsão lipídica 20%</strong> + benzodiazepínico + suporte.</div>
+<div class="box prova"><span class="lbl">Q6 <span class="banca">HCPA</span></span><strong>Criança de 8 anos com trauma facial grave, impossível intubar e ventilar. Via aérea de escolha?</strong><br>Resposta: <strong>Cricotireoidostomia por punção</strong> (cirúrgica é evitada &lt;12 anos).</div>
+<div class="box prova"><span class="lbl">Q7 <span class="banca">GHC</span></span><strong>Elevação súbita de ETCO₂ e rigidez de masseter durante sevoflurano. Diagnóstico e droga?</strong><br>Resposta: <strong>Hipertermia maligna</strong>; <strong>dantrolene</strong>.</div>
+<div class="box prova"><span class="lbl">Q8 <span class="banca">AMRIGS</span></span><strong>Cefaleia que piora em ortostase 2 dias após raquianestesia, sem melhora clínica. Conduta?</strong><br>Resposta: <strong>Blood patch</strong> epidural.</div>
+<div class="box prova"><span class="lbl">Q9 <span class="banca">PUC-RS</span></span><strong>Por que o anestésico local falha na drenagem de abscesso?</strong><br>Resposta: Meio <strong>ácido</strong> aumenta a forma ionizada, que não penetra na membrana neural.</div>
+<div class="box prova"><span class="lbl">Q10 <span class="banca">SC-POA</span></span><strong>Dose máxima de lidocaína com adrenalina?</strong><br>Resposta: <strong>7 mg/kg</strong> (sem adrenalina 4,5 mg/kg).</div>
+<h4>Pega-ratões (as armadilhas clássicas)</h4>
+<div class="box warn"><span class="lbl">☠ trap 1</span>Mallampati = boca aberta sem laringoscópio; Cormack-Lehane = na laringoscopia.</div>
+<div class="box warn"><span class="lbl">☠ trap 2</span>Succinilcolina é segura nas <strong>primeiras 24 h</strong> do queimado/trauma; o risco de hipercalemia vem depois.</div>
+<div class="box warn"><span class="lbl">☠ trap 3</span>Etomidato = estabilidade hemodinâmica, mas suprime a adrenal.</div>
+<div class="box warn"><span class="lbl">☠ trap 4</span>Crico cirúrgica contraindicada em criança &lt;12 anos.</div>
+<div class="box warn"><span class="lbl">☠ trap 5</span>Bupivacaína é a mais cardiotóxica; tratamento é lipídio 20%.</div>
+<div class="box warn"><span class="lbl">☠ trap 6</span>Primeiro sinal de hipertermia maligna é <strong>↑ ETCO₂</strong>, não a febre.</div>
+<div class="box warn"><span class="lbl">☠ trap 7</span>Óxido nitroso expande espaços aéreos — evitar em pneumotórax e obstrução intestinal.</div>
+<h4>Mnemônicos-resumo</h4>
+<div class="box mac"><span class="lbl">amida × éster</span>Amidas têm <strong>dois "i"</strong> (lidocaína, bupivacaína, ropivacaína) → fígado · Ésteres têm um "i" (procaína, tetracaína) → plasma, mais alergia.</div>
+<div class="box mac"><span class="lbl">Mallampati</span>I tudo · II úvula · III base da úvula · IV só palato duro.</div>
+  </div>
+</details>
+
+<footer>
+  <div><strong>carolzita</strong> · Anestesia para o Cirurgião · referência completa</div>
+  <div class="ref">Fontes: Sabiston 21ª ed. (Anesthesiology Principles, Pain Management) · Miller's Anesthesia 10ª ed. · ASA Difficult Airway Guidelines 2022 · ASRA Checklist for LAST 2020 · ATLS 11ª ed. (via aérea) · MHAUS (hipertermia maligna). Conteúdo educacional; questões são itens representativos originais no estilo das bancas, não reprodução de provas.</div>
+</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cirurgia Plástica: Enxertos, Retalhos & Feridas Complexas — carolzita</title>
+<meta name="cz-tema" content="Cirurgia Plástica: Enxertos, Retalhos &amp; Feridas Complexas">
+<meta name="cz-grupo" content="Pele &amp; Partes Moles">
+<meta name="cz-tags" content="Enxerto, Retalho, Lesão por pressão, Peritoniostomia, Z-plastia">
+<meta name="cz-tipo" content="Full">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0f; --bg2:#12121a; --card:#16161f; --card2:#1c1c27;
+  --line:#2a2a38; --txt:#e6e6ef; --muted:#9a9ab0;
+  --laranja:#f97316; --laranja-bg:rgba(249,115,22,.10);
+  --roxo:#a855f7; --roxo-bg:rgba(168,85,247,.10);
+  --ciano:#22d3ee; --ciano-bg:rgba(34,211,238,.10);
+  --verde:#34d399; --vermelho:#f87171; --amarelo:#fbbf24;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(1200px 600px at 50% -10%,#15151f 0%,var(--bg) 60%);color:var(--txt);font-family:'Inter',sans-serif;line-height:1.55;padding:0 0 80px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px}
+header{padding:40px 0 24px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(30px,6vw,46px);line-height:1.05;margin:8px 0 6px;letter-spacing:-.02em}
+.sub{color:var(--muted);font-size:15px;max-width:700px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tag{font-family:'JetBrains Mono',monospace;font-size:11px;padding:5px 10px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted)}
+.tag.r{color:var(--roxo);border-color:rgba(168,85,247,.35);background:var(--roxo-bg)}
+section{margin-top:14px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:12px;overflow:hidden;transition:border-color .2s}
+details[open]{border-color:rgba(249,115,22,.30)}
+summary{cursor:pointer;list-style:none;padding:18px 20px;display:flex;align-items:center;gap:13px;font-family:'Syne',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em;user-select:none}
+summary::-webkit-details-marker{display:none}
+.num{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--bg);background:var(--laranja);width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:0 0 auto}
+.chev{margin-left:auto;color:var(--muted);transition:transform .25s;font-size:14px}
+details[open] .chev{transform:rotate(90deg)}
+.body{padding:4px 22px 24px;font-size:15px}
+.body p{margin:10px 0}
+.body h4{font-family:'Syne',sans-serif;font-size:16px;color:var(--laranja);margin:20px 0 8px;letter-spacing:-.01em}
+.body ul{margin:8px 0 8px 4px;list-style:none}
+.body li{padding:4px 0 4px 20px;position:relative}
+.body li::before{content:"▸";position:absolute;left:0;color:var(--laranja);font-size:12px;top:6px}
+.body strong{color:#fff;font-weight:600}
+.simple{color:var(--ciano);font-style:italic;font-size:.94em}
+.box{border-radius:12px;padding:13px 15px;margin:14px 0;font-size:14px;border:1px solid}
+.box.prova{background:var(--roxo-bg);border-color:rgba(168,85,247,.35)}
+.box.prova .lbl{color:var(--roxo)}
+.box.mac{background:var(--ciano-bg);border-color:rgba(34,211,238,.35)}
+.box.mac .lbl{color:var(--ciano)}
+.box.warn{background:rgba(248,113,113,.08);border-color:rgba(248,113,113,.3)}
+.box.warn .lbl{color:var(--vermelho)}
+.lbl{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-family:'JetBrains Mono',monospace;font-size:10px;background:rgba(168,85,247,.2);color:var(--roxo);padding:2px 7px;border-radius:6px;margin-left:6px;white-space:nowrap}
+.tbl{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
+.tbl table{width:100%;border-collapse:collapse;min-width:520px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--laranja);background:var(--card2)}
+td strong{color:#fff}
+.fio td:first-child{color:var(--ciano);font-family:'JetBrains Mono',monospace;font-weight:500}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin:14px 0}
+.gcard{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+.gcard .t{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--ciano);margin-bottom:4px}
+.gcard .d{font-size:13px;color:var(--muted)}
+.hands{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.hand{border-radius:12px;padding:14px;border:1px solid var(--line)}
+.hand.e{background:rgba(34,211,238,.06);border-color:rgba(34,211,238,.25)}
+.hand.d{background:rgba(249,115,22,.06);border-color:rgba(249,115,22,.25)}
+.hand .ht{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;font-weight:700}
+.hand.e .ht{color:var(--ciano)} .hand.d .ht{color:var(--laranja)}
+.hand li{font-size:13px}
+.steps{counter-reset:s;margin:10px 0}
+.step{counter-increment:s;position:relative;padding:11px 0 11px 46px;border-bottom:1px dashed var(--line)}
+.step:last-child{border-bottom:none}
+.step::before{content:counter(s);position:absolute;left:0;top:9px;width:30px;height:30px;border-radius:9px;background:var(--laranja-bg);border:1px solid rgba(249,115,22,.4);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:grid;place-items:center}
+.step b{color:#fff}
+svg{max-width:100%;height:auto;display:block;margin:16px auto}
+.fig{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.fig .cap{font-size:12px;color:var(--muted);text-align:center;margin-top:8px;font-family:'JetBrains Mono',monospace}
+footer{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+footer .ref{font-family:'JetBrains Mono',monospace;font-size:12px;margin-top:8px}
+a{color:var(--laranja)}
+@media(max-width:560px){.hands{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">carolzita · cirurgia plástica para o cirurgião geral</div>
+  <h1>Cirurgia Plástica: Enxertos, Retalhos & Feridas Complexas</h1>
+  <p class="sub">Fechamento de feridas e linhas de tensão · enxertos (parcial × total, fases da pega) · retalhos (aleatório × axial, Mathes-Nahai, TRAM/DIEP/latíssimo/ALT, Z-plastia) · lesão por pressão · terapia por pressão negativa · peritoniostomia (Bogotá, Wittmann, Barker, VAC) · BIA-ALCL · fendas labiopalatinas · pioderma gangrenoso.</p>
+  <div class="tags"><span class="tag">Enxerto</span><span class="tag">Retalho</span><span class="tag">Lesão por pressão</span><span class="tag">Peritoniostomia</span><span class="tag">Z-plastia</span><span class="tag r">HCPA · GHC · SC-POA · PUC · AMRIGS</span></div>
+</header>
+
+<details open>
+  <summary><span class="num">1</span> Fechamento de feridas &amp; princípios <span class="chev">▶</span></summary>
+  <div class="body">
+
+<ul><li><strong>Primeira intenção</strong>: bordas aproximadas (sutura, enxerto, retalho). <strong>Segunda intenção</strong>: ferida aberta, cicatriza de dentro para fora com muita contração. <strong>Terceira intenção</strong> (fechamento primário retardado): deixa aberta, trata a contaminação e fecha em 3–5 dias.</li>
+<li>Incisões <strong>paralelas às linhas de tensão da pele (Langer / RSTL)</strong> e perpendiculares à ação muscular → cicatriz mais fina <span class="simple">(cortar no sentido das ruguinhas da pele, porque ela não puxa a cicatriz para os lados)</span>.</li>
+<li>Fechar por planos (subcutâneo/fáscia) para tirar tensão da pele; evitar bisel que desvasculariza a borda.</li>
+<li>Contraindicações relativas ao fechamento primário: ferida &gt;6–8 h contaminada, <strong>mordedura</strong> (exceto face), perda tecidual, perfusão ruim.</li></ul>
+<h4>Escada reconstrutiva</h4>
+<div class="steps"><div class="step"><b>Segunda intenção</b></div><div class="step"><b>Fechamento primário</b></div><div class="step"><b>Enxerto de pele</b></div><div class="step"><b>Retalho local</b></div><div class="step"><b>Retalho regional/pediculado</b></div><div class="step"><b>Retalho livre microcirúrgico</b></div></div>
+<p>Hoje fala-se em <strong>"elevador reconstrutivo"</strong>: pode-se pular degraus quando a opção mais complexa dá melhor resultado funcional.</p>
+<div class="tbl"><table><tr><th>Retirada de pontos</th><th>Dias</th></tr><tr><td>Face/pálpebra</td><td>3–5</td></tr><tr><td>Couro cabeludo</td><td>7–10</td></tr><tr><td>Tronco/abdome</td><td>10–14</td></tr><tr><td>Dorso, membros, planta, articulações</td><td>14–21</td></tr></table></div>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">2</span> Enxertos de pele <span class="chev">▶</span></summary>
+  <div class="body">
+
+<p><strong>Enxerto</strong> = tecido transferido <strong>sem</strong> pedículo vascular; depende do leito receptor <span class="simple">(é como plantar uma muda sem raiz: a terra embaixo precisa ser boa para ela pegar)</span>. Leito bom: músculo, fáscia, tecido de granulação limpo, periósteo/pericôndrio/paratendão. <strong>Não pega</strong> em osso sem periósteo, cartilagem sem pericôndrio, tendão sem paratendão, área irradiada, infectada.</p>
+<div class="tbl"><table><tr><th></th><th>Pele parcial (epiderme + parte da derme)</th><th>Pele total (epiderme + derme inteira)</th></tr>
+<tr><td>Instrumento</td><td>dermátomo (0,2–0,45 mm)</td><td>bisturi</td></tr>
+<tr><td>Área doadora</td><td>regenera sozinha (coxa, nádega)</td><td>precisa fechar primariamente (retroauricular, supraclavicular, inguinal, antebraço)</td></tr>
+<tr><td>Pega</td><td>mais fácil (menor demanda metabólica)</td><td>mais difícil</td></tr>
+<tr><td>Contração primária (logo ao retirar)</td><td>menor</td><td><strong>maior</strong> (mais elastina)</td></tr>
+<tr><td>Contração secundária (na cicatrização)</td><td><strong>maior</strong></td><td>menor</td></tr>
+<tr><td>Uso</td><td>grandes áreas, queimados, úlceras</td><td>face, mão, articulações</td></tr></table></div>
+<ul><li><strong>Malha (mesh)</strong>: expande 1,5–3×, drena seroma/hematoma, pior estética. <strong>Estampilha</strong>: ilhas pequenas, epitelização pelas bordas.</li>
+<li>Classificação por origem: autoenxerto, isoenxerto (gêmeo), aloenxerto/homoenxerto (cadáver, temporário), xenoenxerto (porco).</li></ul>
+<h4>Fases da pega</h4>
+<div class="steps"><div class="step"><b>Embebição plasmática</b> (0–48 h): nutrição por difusão do plasma do leito.</div><div class="step"><b>Inosculação</b> (48–72 h até ~5º dia): capilares do enxerto e do leito se alinham e conectam.</div><div class="step"><b>Revascularização/neovascularização</b> (5–7º dia): novos vasos crescem para o enxerto.</div><div class="step"><b>Maturação</b>: meses; reinervação 12–24 meses (dor → tato → temperatura).</div></div>
+<div class="box warn"><span class="lbl">por que o enxerto não pega</span><strong>Hematoma (principal)</strong> &gt; seroma &gt; cisalhamento &gt; infecção (estreptococo β-hemolítico &gt;10⁵ UFC/g contraindica) &gt; leito ruim. Prevenção: hemostasia, curativo de Brown/compressivo (bolster), imobilização, pressão negativa.</div>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">3</span> Retalhos <span class="chev">▶</span></summary>
+  <div class="body">
+
+<p><strong>Retalho</strong> = tecido que leva <strong>seu próprio suprimento vascular</strong> <span class="simple">(é como transplantar a planta com o vaso e a raiz juntos)</span>. Serve para leito sem vascularização (osso, tendão, prótese exposta), defeitos profundos e áreas que precisam de volume/resistência.</p>
+<div class="tbl"><table><tr><th>Critério</th><th>Tipos</th></tr>
+<tr><td>Vascularização</td><td><strong>Aleatório</strong> (plexo subdérmico; relação comprimento:base ~3:1 na face, 1–2:1 no tronco/membros) × <strong>axial</strong> (vaso nomeado)</td></tr>
+<tr><td>Movimento</td><td>avanço (V-Y), rotação, transposição (romboide/Limberg, bilobado), interpolação</td></tr>
+<tr><td>Localização</td><td>local · regional (pediculado) · à distância · <strong>livre</strong> (microanastomose)</td></tr>
+<tr><td>Composição</td><td>cutâneo, fasciocutâneo, muscular, musculocutâneo, osteocutâneo (fíbula livre)</td></tr></table></div>
+<h4>Mathes-Nahai (músculos)</h4>
+<div class="tbl"><table><tr><th>Tipo</th><th>Padrão</th><th>Exemplos</th></tr>
+<tr><td>I</td><td>1 pedículo</td><td>tensor da fáscia lata, gastrocnêmio</td></tr>
+<tr><td>II</td><td>1 dominante + menores (o mais comum)</td><td><strong>grácil</strong>, trapézio, reto femoral</td></tr>
+<tr><td>III</td><td>2 dominantes</td><td><strong>reto abdominal</strong> (epigástricas sup./inf.), glúteo máximo</td></tr>
+<tr><td>IV</td><td>segmentares</td><td>sartório, tibial anterior</td></tr>
+<tr><td>V</td><td>1 dominante + segmentares secundários</td><td><strong>latíssimo do dorso</strong> (toracodorsal), peitoral maior</td></tr></table></div>
+<h4>Retalhos que caem na prova</h4>
+<ul><li><strong>TRAM pediculado</strong>: reto abdominal com pele, nutrido pela <strong>epigástrica superior</strong> (reconstrução mamária). Contraindicação relativa: tabagismo, cicatriz subcostal/abdominoplastia prévia.</li>
+<li><strong>TRAM livre / DIEP</strong>: epigástrica <strong>inferior profunda</strong>; DIEP poupa o músculo (menos hérnia/abaulamento).</li>
+<li><strong>Latíssimo do dorso</strong>: a. toracodorsal (ramo da subescapular ← axilar).</li>
+<li><strong>ALT</strong> (anterolateral da coxa): ramo descendente da a. circunflexa femoral lateral — "cavalo de batalha" da microcirurgia.</li>
+<li><strong>Omento</strong>: gastroepiploicas — mediastinite/esternotomia, parede torácica.</li>
+<li><strong>Z-plastia</strong>: alonga a cicatriz e muda sua direção; <strong>60° → ganho ~75%</strong> de comprimento (45° → 50%, 30° → 25%). W-plastia: quebra a linha da cicatriz.</li>
+<li>Lábio: <strong>Karapandzic</strong> (lábio inferior), Abbé/Estlander. Fenda labial: <strong>Millard</strong> (rotação-avanço).</li></ul>
+<div class="box warn"><span class="lbl">sofrimento do retalho</span>Congestão venosa (arroxeado, enchimento rápido) é mais comum e mais urgente que isquemia arterial (pálido, frio). Retalho livre: monitorizar de 1/1 h nas primeiras 24–48 h; <strong>trombose da anastomose → reexplorar imediatamente</strong>. "Delay"/autonomização: secção parcial em etapas para aumentar a sobrevida.</div>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">4</span> Lesão por pressão (NPIAP) <span class="chev">▶</span></summary>
+  <div class="body">
+
+<p>Pressão sobre proeminência óssea maior que a pressão capilar (~32 mmHg) por ~2 h → isquemia. Fatores: pressão (principal), <strong>cisalhamento</strong>, fricção, umidade, desnutrição, imobilidade, sensibilidade ↓. Locais: <strong>sacro</strong>, ísquio, trocânter, calcâneo.</p>
+<div class="tbl"><table><tr><th>Estágio</th><th>Achado</th></tr>
+<tr><td>1</td><td>pele íntegra, eritema que <strong>não embranquece</strong></td></tr>
+<tr><td>2</td><td>perda parcial (derme exposta, bolha)</td></tr>
+<tr><td>3</td><td>perda total da pele, gordura visível, sem fáscia/músculo/osso</td></tr>
+<tr><td>4</td><td>exposição de fáscia, músculo, tendão, osso</td></tr>
+<tr><td>Não classificável</td><td>base coberta por esfacelo/escara (desbridar para estagiar)</td></tr>
+<tr><td>Tissular profunda</td><td>área roxa/marrom persistente, pele intacta</td></tr></table></div>
+<ul><li>Escalas: <strong>Braden</strong> (6 itens, 6–23; ≤16–18 risco) · <strong>Norton</strong> (5 itens; &lt;12 alto risco).</li>
+<li>Prevenção: mudança de decúbito 2/2 h, colchão de redistribuição, nutrição, controle de umidade.</li>
+<li>Tratamento: estágio 1–2 conservador; 3–4 desbridamento + curativo/pressão negativa + <strong>investigar osteomielite</strong> (biópsia óssea é padrão-ouro, RM sensível) + derivação fecal se contaminação + <strong>retalho</strong>.</li>
+<li>Retalhos: <strong>sacro</strong> → glúteo máximo (rotação/V-Y fasciocutâneo); <strong>ísquio</strong> → V-Y da coxa posterior, glúteo inferior, grácil; <strong>trocânter</strong> → tensor da fáscia lata. Recidiva alta (até 50–75%).</li></ul>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">5</span> Terapia por pressão negativa &amp; abdome aberto <span class="chev">▶</span></summary>
+  <div class="body">
+
+<p><strong>Pressão negativa (VAC)</strong> <span class="simple">(um curativo que funciona como um aspirador bem fraquinho: puxa a secreção e ajuda a ferida a fechar)</span>: –75 a –125 mmHg; reduz edema, aumenta perfusão e granulação, macro/microdeformação. Troca a cada 48–72 h.</p>
+<ul><li><strong>Contraindicações</strong>: malignidade na ferida, osteomielite não tratada, fístula não explorada, tecido necrótico com escara, <strong>vasos/órgãos expostos sem proteção</strong>.</li></ul>
+<h4>Peritoniostomia / abdome aberto (WSES)</h4>
+<p>Indicações: controle de danos, <strong>síndrome compartimental abdominal</strong>, peritonite grave com reabordagem programada, isquemia mesentérica (second look), impossibilidade de fechar sem tensão.</p>
+<div class="tbl"><table><tr><th>Técnica</th><th>Comentário</th></tr>
+<tr><td>Bolsa de <strong>Bogotá</strong></td><td>plástico estéril suturado à pele; barata; não drena, retração da fáscia</td></tr>
+<tr><td>Tela/zíper; <strong>Wittmann</strong> (velcro)</td><td>tração progressiva da fáscia</td></tr>
+<tr><td><strong>Barker</strong> (vacuum pack)</td><td>plástico fenestrado sobre as alças + compressas + drenos + adesivo, aspiração</td></tr>
+<tr><td><strong>NPWT comercial</strong> (ABThera)</td><td><strong>preferida</strong>; com <strong>tração fascial mediada por tela</strong> → maior taxa de fechamento primário</td></tr></table></div>
+<div class="box prova"><span class="lbl">alvo</span>Fechar a fáscia <strong>o mais cedo possível — idealmente em até 4–7 dias</strong>; depois disso aumentam fístula enteroatmosférica e hérnia planejada (enxerto sobre alças → reconstrução de parede em 6–12 meses).</div>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">6</span> Implantes, BIA-ALCL &amp; toxina botulínica <span class="chev">▶</span></summary>
+  <div class="body">
+
+<ul><li><strong>Contratura capsular</strong> (Baker I–IV): complicação mais comum do implante mamário; tratamento capsulotomia/capsulectomia.</li>
+<li><strong>Ruptura</strong> de silicone: <strong>RM</strong> é o melhor exame (sinal do "linguine").</li>
+<li><strong>BIA-ALCL</strong> <span class="simple">(um tipo raro de câncer do sangue que nasce na cápsula em volta da prótese texturizada)</span>: linfoma anaplásico de grandes células T, <strong>CD30+ / ALK–</strong>, associado a implantes <strong>texturizados</strong>; seroma tardio (média 8–10 anos) → punção do seroma para CD30/citologia; tratamento <strong>capsulectomia total en bloc + remoção do implante</strong> (bom prognóstico se restrito à cápsula).</li>
+<li>Expansores: atrofia do subcutâneo, hiperplasia da epiderme, neovascularização; contraindicados em pele irradiada/infectada.</li>
+<li><strong>Toxina botulínica A</strong>: bloqueia liberação de acetilcolina na placa; início 2–3 dias, pico 1–2 semanas, dura 3–4 meses; complicação típica = ptose palpebral por difusão.</li></ul>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">7</span> Fendas, pioderma gangrenoso &amp; miscelânea <span class="chev">▶</span></summary>
+  <div class="body">
+
+<ul><li><strong>Fenda labiopalatina</strong>: malformação craniofacial mais comum (~1:700); unilateral esquerda mais frequente. Regra dos <strong>10</strong> para queiloplastia (10 semanas, 10 lb, Hb 10). Lábio ~3 meses (<strong>Millard</strong>), palato 9–18 meses (antes da fala).</li>
+<li><strong>Pioderma gangrenoso</strong> <span class="simple">(uma ferida que piora quando mexe nela — o corpo ataca a própria pele)</span>: dermatose neutrofílica; úlcera dolorosa de borda <strong>violácea solapada</strong>; associa-se a <strong>DII</strong>, artrite, hemopatias; inclusive <strong>periestomal</strong> e em incisão. <strong>Patergia</strong>: piora com trauma → <strong>não desbridar</strong> agressivamente. Diagnóstico de exclusão (critérios Delphi); tratamento corticoide/ciclosporina, anti-TNF se DII.</li>
+<li><strong>Úlcera de Marjolin</strong>: CEC em cicatriz crônica de queimadura/ferida.</li>
+<li><strong>Queloide × cicatriz hipertrófica</strong>: queloide ultrapassa a borda e não regride; hipertrófica limita-se à cicatriz e regride. Tratamento: silicone, corticoide intralesional, pressão; ressecção isolada recidiva.</li></ul>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">8</span> Questões de banca, pega-ratões &amp; mnemônicos <span class="chev">▶</span></summary>
+  <div class="body">
+<h4>10 questões representativas (originais, estilo das 5 bancas)</h4>
+<div class="box prova"><span class="lbl">Q1 <span class="banca">HCPA</span></span><strong>Qual a principal causa de perda de enxerto de pele?</strong><br>Resposta: <strong>Hematoma</strong> (seguido de seroma, cisalhamento e infecção).</div>
+<div class="box prova"><span class="lbl">Q2 <span class="banca">GHC</span></span><strong>Enxerto de pele total contrai mais na fase primária ou secundária?</strong><br>Resposta: <strong>Primária</strong> (logo após a retirada); o parcial contrai mais na <strong>secundária</strong>.</div>
+<div class="box prova"><span class="lbl">Q3 <span class="banca">AMRIGS</span></span><strong>Z-plastia com ângulos de 60° proporciona ganho teórico de comprimento de quanto?</strong><br>Resposta: <strong>~75%</strong>.</div>
+<div class="box prova"><span class="lbl">Q4 <span class="banca">PUC-RS</span></span><strong>Retalho TRAM pediculado é nutrido por qual artéria?</strong><br>Resposta: <strong>Epigástrica superior</strong> (o livre e o DIEP pela epigástrica inferior profunda).</div>
+<div class="box prova"><span class="lbl">Q5 <span class="banca">SC-POA</span></span><strong>Lesão por pressão com exposição de osso no sacro. Estágio e investigação obrigatória?</strong><br>Resposta: <strong>Estágio 4</strong>; investigar <strong>osteomielite</strong> (biópsia óssea).</div>
+<div class="box prova"><span class="lbl">Q6 <span class="banca">HCPA</span></span><strong>Seroma tardio periprotético 9 anos após implante texturizado. Exame diagnóstico?</strong><br>Resposta: Punção do seroma com citologia/imunohistoquímica (<strong>CD30+, ALK–</strong>) — suspeita de BIA-ALCL.</div>
+<div class="box prova"><span class="lbl">Q7 <span class="banca">GHC</span></span><strong>Qual técnica de abdome aberto tem maior taxa de fechamento fascial primário?</strong><br>Resposta: <strong>Pressão negativa com tração fascial mediada por tela</strong>.</div>
+<div class="box prova"><span class="lbl">Q8 <span class="banca">AMRIGS</span></span><strong>Úlcera periestomal dolorosa com borda violácea em paciente com Crohn, que piorou após desbridamento. Hipótese?</strong><br>Resposta: <strong>Pioderma gangrenoso</strong> (patergia) — não desbridar; corticoide/anti-TNF.</div>
+<div class="box prova"><span class="lbl">Q9 <span class="banca">PUC-RS</span></span><strong>Músculo latíssimo do dorso é irrigado por qual artéria e qual o tipo de Mathes-Nahai?</strong><br>Resposta: <strong>Toracodorsal</strong>; tipo <strong>V</strong>.</div>
+<div class="box prova"><span class="lbl">Q10 <span class="banca">SC-POA</span></span><strong>Em qual leito um enxerto de pele não pega?</strong><br>Resposta: Osso sem periósteo, cartilagem sem pericôndrio, tendão sem paratendão, área irradiada ou infectada.</div>
+<h4>Pega-ratões (as armadilhas clássicas)</h4>
+<div class="box warn"><span class="lbl">☠ trap 1</span>Contração: <strong>total = primária</strong>, <strong>parcial = secundária</strong> (inverte fácil).</div>
+<div class="box warn"><span class="lbl">☠ trap 2</span>Fase de <strong>embebição</strong> (48 h) vem antes da inosculação.</div>
+<div class="box warn"><span class="lbl">☠ trap 3</span>Retalho congestivo (roxo) é mais comum e urgente que o pálido.</div>
+<div class="box warn"><span class="lbl">☠ trap 4</span>Lesão por pressão coberta por escara = <strong>não classificável</strong> até desbridar (exceto escara estável de calcâneo).</div>
+<div class="box warn"><span class="lbl">☠ trap 5</span>BIA-ALCL é linfoma <strong>T</strong>, CD30+ <strong>ALK negativo</strong>, de implante <strong>texturizado</strong>.</div>
+<div class="box warn"><span class="lbl">☠ trap 6</span>Pioderma gangrenoso: <strong>não desbridar</strong> (patergia).</div>
+<div class="box warn"><span class="lbl">☠ trap 7</span>Abdome aberto: fechar a fáscia até ~7 dias; depois, fístula e hérnia planejada.</div>
+<h4>Mnemônicos-resumo</h4>
+<div class="box mac"><span class="lbl">macete enxerto × retalho</span>Enxerto = muda sem raiz (depende do leito) · Retalho = planta com vaso. Fases da pega: <strong>E-I-R</strong> (Embebição → Inosculação → Revascularização).</div>
+<div class="box mac"><span class="lbl">Mathes-Nahai</span>I um · II o mais comum (grácil) · III dois dominantes (reto abdominal, glúteo) · IV segmentar (sartório) · V latíssimo/peitoral.</div>
+  </div>
+</details>
+
+<footer>
+  <div><strong>carolzita</strong> · Cirurgia Plástica: Enxertos, Retalhos & Feridas Complexas · referência completa</div>
+  <div class="ref">Fontes: Sabiston 21ª ed. (Plastic Surgery; Wound Healing) · Zollinger 11ª ed. · Netter · NPIAP 2019 (classificação de lesão por pressão) · Coccolini F et al. WSES open abdomen guidelines (World J Emerg Surg 2018) · FDA/ASPS BIA-ALCL 2023 · Maverakis E et al. Delphi criteria pyoderma gangrenosum (JAMA Dermatol 2018). Conteúdo educacional; questões são itens representativos originais no estilo das bancas, não reprodução de provas.</div>
+</footer>
+</div>
+</body>
+</html>

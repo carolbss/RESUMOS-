@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Câncer de Pele Não Melanoma (CBC & CEC) — carolzita</title>
+<meta name="cz-tema" content="Câncer de Pele Não Melanoma (CBC &amp; CEC)">
+<meta name="cz-grupo" content="Pele &amp; Partes Moles">
+<meta name="cz-tags" content="CBC, CEC, Zona H, Mohs, Margens, Marjolin">
+<meta name="cz-tipo" content="Full">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0f; --bg2:#12121a; --card:#16161f; --card2:#1c1c27;
+  --line:#2a2a38; --txt:#e6e6ef; --muted:#9a9ab0;
+  --laranja:#f97316; --laranja-bg:rgba(249,115,22,.10);
+  --roxo:#a855f7; --roxo-bg:rgba(168,85,247,.10);
+  --ciano:#22d3ee; --ciano-bg:rgba(34,211,238,.10);
+  --verde:#34d399; --vermelho:#f87171; --amarelo:#fbbf24;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(1200px 600px at 50% -10%,#15151f 0%,var(--bg) 60%);color:var(--txt);font-family:'Inter',sans-serif;line-height:1.55;padding:0 0 80px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px}
+header{padding:40px 0 24px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(30px,6vw,46px);line-height:1.05;margin:8px 0 6px;letter-spacing:-.02em}
+.sub{color:var(--muted);font-size:15px;max-width:700px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tag{font-family:'JetBrains Mono',monospace;font-size:11px;padding:5px 10px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted)}
+.tag.r{color:var(--roxo);border-color:rgba(168,85,247,.35);background:var(--roxo-bg)}
+section{margin-top:14px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:12px;overflow:hidden;transition:border-color .2s}
+details[open]{border-color:rgba(249,115,22,.30)}
+summary{cursor:pointer;list-style:none;padding:18px 20px;display:flex;align-items:center;gap:13px;font-family:'Syne',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em;user-select:none}
+summary::-webkit-details-marker{display:none}
+.num{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--bg);background:var(--laranja);width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:0 0 auto}
+.chev{margin-left:auto;color:var(--muted);transition:transform .25s;font-size:14px}
+details[open] .chev{transform:rotate(90deg)}
+.body{padding:4px 22px 24px;font-size:15px}
+.body p{margin:10px 0}
+.body h4{font-family:'Syne',sans-serif;font-size:16px;color:var(--laranja);margin:20px 0 8px;letter-spacing:-.01em}
+.body ul{margin:8px 0 8px 4px;list-style:none}
+.body li{padding:4px 0 4px 20px;position:relative}
+.body li::before{content:"▸";position:absolute;left:0;color:var(--laranja);font-size:12px;top:6px}
+.body strong{color:#fff;font-weight:600}
+.simple{color:var(--ciano);font-style:italic;font-size:.94em}
+.box{border-radius:12px;padding:13px 15px;margin:14px 0;font-size:14px;border:1px solid}
+.box.prova{background:var(--roxo-bg);border-color:rgba(168,85,247,.35)}
+.box.prova .lbl{color:var(--roxo)}
+.box.mac{background:var(--ciano-bg);border-color:rgba(34,211,238,.35)}
+.box.mac .lbl{color:var(--ciano)}
+.box.warn{background:rgba(248,113,113,.08);border-color:rgba(248,113,113,.3)}
+.box.warn .lbl{color:var(--vermelho)}
+.lbl{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-family:'JetBrains Mono',monospace;font-size:10px;background:rgba(168,85,247,.2);color:var(--roxo);padding:2px 7px;border-radius:6px;margin-left:6px;white-space:nowrap}
+.tbl{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
+.tbl table{width:100%;border-collapse:collapse;min-width:520px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--laranja);background:var(--card2)}
+td strong{color:#fff}
+.fio td:first-child{color:var(--ciano);font-family:'JetBrains Mono',monospace;font-weight:500}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin:14px 0}
+.gcard{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+.gcard .t{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--ciano);margin-bottom:4px}
+.gcard .d{font-size:13px;color:var(--muted)}
+.hands{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.hand{border-radius:12px;padding:14px;border:1px solid var(--line)}
+.hand.e{background:rgba(34,211,238,.06);border-color:rgba(34,211,238,.25)}
+.hand.d{background:rgba(249,115,22,.06);border-color:rgba(249,115,22,.25)}
+.hand .ht{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;font-weight:700}
+.hand.e .ht{color:var(--ciano)} .hand.d .ht{color:var(--laranja)}
+.hand li{font-size:13px}
+.steps{counter-reset:s;margin:10px 0}
+.step{counter-increment:s;position:relative;padding:11px 0 11px 46px;border-bottom:1px dashed var(--line)}
+.step:last-child{border-bottom:none}
+.step::before{content:counter(s);position:absolute;left:0;top:9px;width:30px;height:30px;border-radius:9px;background:var(--laranja-bg);border:1px solid rgba(249,115,22,.4);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:grid;place-items:center}
+.step b{color:#fff}
+svg{max-width:100%;height:auto;display:block;margin:16px auto}
+.fig{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.fig .cap{font-size:12px;color:var(--muted);text-align:center;margin-top:8px;font-family:'JetBrains Mono',monospace}
+footer{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+footer .ref{font-family:'JetBrains Mono',monospace;font-size:12px;margin-top:8px}
+a{color:var(--laranja)}
+@media(max-width:560px){.hands{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">carolzita · oncologia cutânea · cirurgia de pele</div>
+  <h1>Câncer de Pele Não Melanoma (CBC & CEC)</h1>
+  <p class="sub">Carcinoma basocelular e espinocelular: fatores de risco, subtipos, lesões precursoras (ceratose actínica, Bowen, Queyrat, Marjolin) · estratificação de risco (zona H) · margens · cirurgia micrográfica de Mohs · tratamentos não cirúrgicos · excisão elíptica passo a passo e reconstrução · dermatofibrossarcoma protuberans.</p>
+  <div class="tags"><span class="tag">CBC</span><span class="tag">CEC</span><span class="tag">Zona H</span><span class="tag">Mohs</span><span class="tag">Margens</span><span class="tag">Marjolin</span><span class="tag r">HCPA · GHC · SC-POA · PUC · AMRIGS</span></div>
+</header>
+
+<details open>
+  <summary><span class="num">1</span> Epidemiologia, fatores de risco &amp; clínica <span class="chev">▶</span></summary>
+  <div class="body">
+
+<p>Câncer mais comum do ser humano. <strong>CBC ~75–80%</strong>, <strong>CEC ~20%</strong> dos não melanoma. Fatores: <strong>radiação UV</strong> (CBC = exposição intermitente/infância; CEC = exposição <strong>cumulativa</strong>), fototipo claro, idade, <strong>imunossupressão (transplantados: CEC 65–250×)</strong>, radiação ionizante, arsênio, HPV, cicatrizes crônicas, síndromes (xeroderma pigmentoso, albinismo, <strong>Gorlin-Goltz</strong> — síndrome do nevo basocelular, gene PTCH1).</p>
+<div class="tbl"><table><tr><th></th><th>Carcinoma basocelular (CBC)</th><th>Carcinoma espinocelular (CEC)</th></tr>
+<tr><td>Origem</td><td>células basais da epiderme/folículo</td><td>queratinócitos suprabasais</td></tr>
+<tr><td>Aspecto</td><td><strong>pápula perolada com telangiectasias</strong>, borda enrolada, úlcera central ("úlcera roedora") <span class="simple">(uma bolinha brilhante que parece pérola, com veinhas em cima)</span></td><td>placa/nódulo queratótico, ferida que não cicatriza, corno cutâneo</td></tr>
+<tr><td>Local</td><td>face (nariz), 2/3 superiores; <strong>não acomete mucosa</strong>, palma ou planta</td><td>áreas fotoexpostas, lábio inferior, orelha, dorso das mãos; mucosas</td></tr>
+<tr><td>Comportamento</td><td>invasão local, <strong>metástase raríssima</strong> (&lt;0,1%)</td><td>metástase linfonodal 2–5% (até 20–30% em alto risco: lábio, orelha, cicatriz, imunossuprimido)</td></tr>
+<tr><td>Precursor</td><td>não tem</td><td><strong>ceratose actínica</strong>, Bowen (in situ), eritroplasia de <strong>Queyrat</strong> (Bowen da glande), leucoplasia, <strong>úlcera de Marjolin</strong> (cicatriz/queimadura crônica — mais agressiva)</td></tr></table></div>
+<h4>Subtipos do CBC</h4>
+<ul><li><strong>Nodular</strong> (mais comum, ~60%) · <strong>superficial</strong> (tronco, placa eritematosa descamativa) · <strong>pigmentado</strong> (diferencial com melanoma) · <strong>esclerodermiforme/morfeiforme</strong> e infiltrativo/micronodular (agressivos, bordas mal definidas, maior recidiva → Mohs).</li></ul>
+<p>Diagnóstico: <strong>biópsia</strong> (shave, punch ou excisional) antes do tratamento definitivo; dermatoscopia ajuda.</p>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">2</span> Estratificação de risco &amp; anatomia (zona H) <span class="chev">▶</span></summary>
+  <div class="body">
+
+<p><strong>Zona H</strong> da face <span class="simple">(um 'H' desenhado no meio do rosto: pálpebras, nariz, lábios, orelhas — onde o câncer volta mais e cada milímetro de pele conta)</span>: região centrofacial, pálpebras, sobrancelhas, periorbital, nariz, lábios, mento, mandíbula, pré/retroauricular, orelha, têmpora; além de genitália, mãos e pés.</p>
+<div class="tbl"><table><tr><th>Critério de ALTO risco (NCCN)</th><th>CBC</th><th>CEC</th></tr>
+<tr><td>Localização/tamanho</td><td>zona H qualquer tamanho; tronco/membros ≥2 cm</td><td>idem; ≥2 cm tronco/membros; ≥1 cm bochecha/fronte/couro cabeludo</td></tr>
+<tr><td>Bordas mal definidas</td><td>sim</td><td>sim</td></tr>
+<tr><td>Recidivado</td><td>sim</td><td>sim</td></tr>
+<tr><td>Imunossupressão</td><td>sim</td><td>sim</td></tr>
+<tr><td>Radioterapia prévia/cicatriz crônica</td><td>sim</td><td>sim</td></tr>
+<tr><td>Histologia</td><td>infiltrativa, esclerodermiforme, micronodular, basoescamosa</td><td>pouco diferenciado, desmoplásico, acantolítico</td></tr>
+<tr><td>Profundidade / nervo</td><td>invasão perineural</td><td><strong>&gt;2 mm</strong> ou além da gordura; <strong>invasão perineural</strong>, linfovascular</td></tr></table></div>
+<ul><li>Drenagem linfática: face → parótida/submandibular → cervical; CEC de lábio inferior → submentoniano/submandibular.</li>
+<li>Anatomia sensível na excisão facial: <strong>ramo temporal do nervo facial</strong> (cruza o arco zigomático, superficial — linha de Pitanguy), ramo marginal da mandíbula; borda livre palpebral (risco de ectrópio); asa nasal.</li></ul>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">3</span> Tratamento &amp; margens <span class="chev">▶</span></summary>
+  <div class="body">
+
+<div class="tbl"><table><tr><th>Situação</th><th>Tratamento</th><th>Margem clínica</th></tr>
+<tr><td>CBC baixo risco</td><td>excisão convencional</td><td><strong>4 mm</strong></td></tr>
+<tr><td>CEC baixo risco</td><td>excisão convencional</td><td><strong>4–6 mm</strong></td></tr>
+<tr><td>Alto risco (CBC ou CEC)</td><td><strong>Cirurgia micrográfica de Mohs</strong> (ou excisão com avaliação completa de margem — PDEMA)</td><td>Mohs: margem mínima com 100% da margem avaliada; convencional ≥6–10 mm</td></tr>
+<tr><td>CBC superficial / baixo risco, sem condição cirúrgica</td><td>curetagem e eletrocoagulação (não em área pilosa/zona H), <strong>imiquimode</strong>, <strong>5-fluoruracil</strong>, terapia fotodinâmica, crioterapia</td><td>—</td></tr>
+<tr><td>Inoperável / idoso / margem positiva sem nova cirurgia</td><td><strong>radioterapia</strong></td><td>—</td></tr>
+<tr><td>CBC avançado/metastático</td><td>inibidores da via Hedgehog (<strong>vismodegibe</strong>, sonidegibe)</td><td>—</td></tr>
+<tr><td>CEC avançado/metastático</td><td>imunoterapia anti-PD-1 (<strong>cemiplimabe</strong>)</td><td>—</td></tr></table></div>
+<ul><li><strong>Mohs</strong> <span class="simple">(o cirurgião tira uma fatia fininha, olha no microscópio na hora e só tira mais onde ainda tem câncer — poupa pele boa)</span>: indicado em alto risco, recidiva, zona H, bordas mal definidas, preservação tecidual; maior taxa de cura (~99% CBC primário).</li>
+<li>CEC com linfonodo clínico → PAAF/biópsia + <strong>esvaziamento</strong> (parotidectomia + cervical) + RT adjuvante; biópsia de linfonodo sentinela ainda não é padrão (considerar em alto risco).</li>
+<li>Margem comprometida → <strong>ampliação</strong> (ou Mohs, ou RT).</li>
+<li>Seguimento: CBC anual; CEC de alto risco a cada 3–6 meses por 2 anos. Transplantados: rever imunossupressão (trocar por inibidor de mTOR), quimioprevenção com <strong>nicotinamida</strong>/acitretina.</li></ul>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">4</span> Excisão elíptica: posição &amp; passo a passo <span class="chev">▶</span></summary>
+  <div class="body">
+
+<ul><li>Posição conforme o local; anestesia local com <strong>lidocaína 1–2% com adrenalina</strong> (máx. 7 mg/kg), aguardar 7–10 min para vasoconstrição.</li></ul>
+<div class="steps">
+<div class="step"><b>Marcação</b> da lesão + margem com caneta; elipse com eixo maior <strong>3–4× o menor</strong> e ângulos de ~30° nas pontas <span class="simple">(formato de olho ou de folha, para a pele fechar reta sem fazer 'orelhinha')</span>, orientada nas linhas de tensão (RSTL/Langer).</div>
+<div class="step"><b>Incisão</b> perpendicular à pele com lâmina 15, até a gordura (ou até a fáscia/pericôndrio em lesão profunda).</div>
+<div class="step"><b>Retirada</b> da peça em bloco, com profundidade uniforme; <strong>reparo de orientação</strong> com fio (ex.: 12 h = fio curto, 3 h = fio longo) para o patologista.</div>
+<div class="step"><b>Hemostasia</b> com bipolar/eletrocautério pontual.</div>
+<div class="step"><b>Descolamento</b> das bordas no plano subcutâneo para tirar tensão.</div>
+<div class="step"><b>Fechamento</b> em 2 planos: subdérmico invertido + pele. "Orelha de cachorro" na ponta → corrigir com excisão em triângulo (Burow).</div>
+<div class="step"><b>Defeito grande</b> → retalho local (avanço, rotação, bilobado no nariz, romboide/Limberg) ou enxerto de pele total (pálpebra, ponta nasal); na zona H com Mohs, reconstruir após margem livre.</div></div>
+<div class="hands"><div class="hand e"><div class="ht">✋ mão esquerda</div><ul><li>Pinça de Adson com dente (segura a borda/peça)</li><li>Gancho de pele (skin hook) para atraumatismo</li><li>Gaze</li></ul></div>
+<div class="hand d"><div class="ht">✋ mão direita</div><ul><li>Bisturi lâmina 15</li><li>Tesoura de Iris/Metzenbaum delicada (descolamento)</li><li>Porta-agulha de Webster/Castroviejo</li><li>Bipolar</li></ul></div></div>
+<div class="tbl fio"><table><tr><th>Fio</th><th>Onde</th></tr>
+<tr><td>Monocryl/Vicryl 4-0–5-0</td><td>subdérmico invertido (tira tensão)</td></tr>
+<tr><td>Nylon 5-0/6-0</td><td>pele da face (retirar em 5–7 dias)</td></tr>
+<tr><td>Nylon 4-0</td><td>tronco/membros (10–14 dias)</td></tr>
+<tr><td>Monocryl 4-0</td><td>intradérmica contínua (estética)</td></tr></table></div>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">5</span> Complicações &amp; diagnósticos diferenciais <span class="chev">▶</span></summary>
+  <div class="body">
+
+<ul><li>Margem comprometida/recidiva local; hematoma; deiscência; necrose de retalho (tabagismo); cicatriz hipertrófica; ectrópio (pálpebra inferior) e distorção da asa nasal; lesão do ramo temporal do facial.</li>
+<li><strong>Ceratoacantoma</strong>: crescimento rápido em semanas, cratera central com queratina; considerado variante de CEC bem diferenciado → excisão.</li>
+<li><strong>Dermatofibrossarcoma protuberans</strong>: sarcoma de baixo grau, tronco, placa endurecida que cresce lentamente, <strong>CD34+</strong>, t(17;22) COL1A1-PDGFB; recidiva local alta → <strong>Mohs ou margem ampla 2–3 cm</strong>; imatinibe se irressecável.</li>
+<li><strong>Carcinoma de Merkel</strong>: neuroendócrino, idoso imunossuprimido, nódulo violáceo indolor de crescimento rápido, <strong>CK20 perinuclear</strong>, poliomavírus; agressivo → excisão 1–2 cm + linfonodo sentinela + RT; imunoterapia (avelumabe).</li></ul>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">6</span> Questões de banca, pega-ratões &amp; mnemônicos <span class="chev">▶</span></summary>
+  <div class="body">
+<h4>10 questões representativas (originais, estilo das 5 bancas)</h4>
+<div class="box prova"><span class="lbl">Q1 <span class="banca">HCPA</span></span><strong>Pápula perolada com telangiectasias na asa nasal. Diagnóstico e tratamento de escolha?</strong><br>Resposta: <strong>CBC</strong> em zona H (alto risco) → <strong>cirurgia micrográfica de Mohs</strong>.</div>
+<div class="box prova"><span class="lbl">Q2 <span class="banca">GHC</span></span><strong>Qual neoplasia de pele é mais frequente em transplantados renais?</strong><br>Resposta: <strong>CEC</strong> (inverte a relação CBC:CEC).</div>
+<div class="box prova"><span class="lbl">Q3 <span class="banca">AMRIGS</span></span><strong>Lesão ulcerada em cicatriz antiga de queimadura. Nome e tipo histológico?</strong><br>Resposta: <strong>Úlcera de Marjolin</strong> — geralmente <strong>CEC</strong>, mais agressivo.</div>
+<div class="box prova"><span class="lbl">Q4 <span class="banca">PUC-RS</span></span><strong>Margem cirúrgica para CBC de baixo risco no tronco?</strong><br>Resposta: <strong>4 mm</strong>.</div>
+<div class="box prova"><span class="lbl">Q5 <span class="banca">SC-POA</span></span><strong>Qual lesão é precursora do CEC e pode ser tratada com 5-FU tópico ou crioterapia?</strong><br>Resposta: <strong>Ceratose actínica</strong>.</div>
+<div class="box prova"><span class="lbl">Q6 <span class="banca">HCPA</span></span><strong>Eritroplasia de Queyrat corresponde a quê?</strong><br>Resposta: <strong>CEC in situ (doença de Bowen) na glande/prepúcio</strong>.</div>
+<div class="box prova"><span class="lbl">Q7 <span class="banca">GHC</span></span><strong>CBC metastático ou localmente avançado irressecável. Classe de drogas?</strong><br>Resposta: <strong>Inibidores da via Hedgehog</strong> (vismodegibe, sonidegibe).</div>
+<div class="box prova"><span class="lbl">Q8 <span class="banca">AMRIGS</span></span><strong>Síndrome com múltiplos CBC na juventude, ceratocistos odontogênicos e depressões palmoplantares?</strong><br>Resposta: <strong>Gorlin-Goltz</strong> (nevo basocelular, PTCH1).</div>
+<div class="box prova"><span class="lbl">Q9 <span class="banca">PUC-RS</span></span><strong>Placa endurecida no tronco de crescimento lento, CD34+. Diagnóstico e cirurgia?</strong><br>Resposta: <strong>Dermatofibrossarcoma protuberans</strong> → Mohs ou margens amplas 2–3 cm.</div>
+<div class="box prova"><span class="lbl">Q10 <span class="banca">SC-POA</span></span><strong>Qual a proporção comprimento:largura ideal de uma excisão elíptica?</strong><br>Resposta: <strong>3–4:1</strong>, ângulos de ~30°.</div>
+<h4>Pega-ratões (as armadilhas clássicas)</h4>
+<div class="box warn"><span class="lbl">☠ trap 1</span>CBC <strong>não acomete mucosa</strong>; CEC sim.</div>
+<div class="box warn"><span class="lbl">☠ trap 2</span>CBC quase nunca metastatiza; CEC metastatiza para linfonodo.</div>
+<div class="box warn"><span class="lbl">☠ trap 3</span>Ceratoacantoma é tratado como CEC.</div>
+<div class="box warn"><span class="lbl">☠ trap 4</span>Curetagem/eletrocoagulação não em zona H nem em área pilosa.</div>
+<div class="box warn"><span class="lbl">☠ trap 5</span>CBC = UV intermitente; CEC = UV cumulativo.</div>
+<div class="box warn"><span class="lbl">☠ trap 6</span>Morfeiforme/esclerodermiforme = bordas mal definidas = Mohs.</div>
+<div class="box warn"><span class="lbl">☠ trap 7</span>Merkel: CK20 perinuclear, linfonodo sentinela.</div>
+<h4>Mnemônicos-resumo</h4>
+<div class="box mac"><span class="lbl">CBC × CEC</span><strong>B</strong>asocelular = <strong>B</strong>olinha perolada, <strong>B</strong>enzinho (não metastatiza) · <strong>E</strong>spinocelular = <strong>E</strong>scama, <strong>E</strong>spalha (linfonodo), <strong>E</strong>xposição cumulativa.</div>
+<div class="box mac"><span class="lbl">margens</span>Baixo risco: <strong>CBC 4 · CEC 4–6 mm</strong> · alto risco ou zona H: <strong>Mohs</strong>.</div>
+  </div>
+</details>
+
+<footer>
+  <div><strong>carolzita</strong> · Câncer de Pele Não Melanoma (CBC & CEC) · referência completa</div>
+  <div class="ref">Fontes: Sabiston 21ª ed. (Melanoma and Cutaneous Malignancies) · Zollinger 11ª ed. · NCCN Guidelines Basal Cell Skin Cancer v.2025 e Squamous Cell Skin Cancer v.2025 · AAD/ASDS Appropriate Use Criteria for Mohs · AJCC 8ª ed.. Conteúdo educacional; questões são itens representativos originais no estilo das bancas, não reprodução de provas.</div>
+</footer>
+</div>
+</body>
+</html>

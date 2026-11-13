@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tumores de Mediastino & Nódulo Pulmonar Solitário — carolzita</title>
+<meta name="cz-tema" content="Tumores de Mediastino &amp; Nódulo Pulmonar Solitário">
+<meta name="cz-grupo" content="Cirurgia Torácica">
+<meta name="cz-tags" content="ITMIG, Timoma, Masaoka, Fleischner, PET-CT, Metastasectomia">
+<meta name="cz-tipo" content="Full">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0f; --bg2:#12121a; --card:#16161f; --card2:#1c1c27;
+  --line:#2a2a38; --txt:#e6e6ef; --muted:#9a9ab0;
+  --laranja:#f97316; --laranja-bg:rgba(249,115,22,.10);
+  --roxo:#a855f7; --roxo-bg:rgba(168,85,247,.10);
+  --ciano:#22d3ee; --ciano-bg:rgba(34,211,238,.10);
+  --verde:#34d399; --vermelho:#f87171; --amarelo:#fbbf24;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(1200px 600px at 50% -10%,#15151f 0%,var(--bg) 60%);color:var(--txt);font-family:'Inter',sans-serif;line-height:1.55;padding:0 0 80px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px}
+header{padding:40px 0 24px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(30px,6vw,46px);line-height:1.05;margin:8px 0 6px;letter-spacing:-.02em}
+.sub{color:var(--muted);font-size:15px;max-width:700px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tag{font-family:'JetBrains Mono',monospace;font-size:11px;padding:5px 10px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted)}
+.tag.r{color:var(--roxo);border-color:rgba(168,85,247,.35);background:var(--roxo-bg)}
+section{margin-top:14px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:12px;overflow:hidden;transition:border-color .2s}
+details[open]{border-color:rgba(249,115,22,.30)}
+summary{cursor:pointer;list-style:none;padding:18px 20px;display:flex;align-items:center;gap:13px;font-family:'Syne',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em;user-select:none}
+summary::-webkit-details-marker{display:none}
+.num{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--bg);background:var(--laranja);width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:0 0 auto}
+.chev{margin-left:auto;color:var(--muted);transition:transform .25s;font-size:14px}
+details[open] .chev{transform:rotate(90deg)}
+.body{padding:4px 22px 24px;font-size:15px}
+.body p{margin:10px 0}
+.body h4{font-family:'Syne',sans-serif;font-size:16px;color:var(--laranja);margin:20px 0 8px;letter-spacing:-.01em}
+.body ul{margin:8px 0 8px 4px;list-style:none}
+.body li{padding:4px 0 4px 20px;position:relative}
+.body li::before{content:"▸";position:absolute;left:0;color:var(--laranja);font-size:12px;top:6px}
+.body strong{color:#fff;font-weight:600}
+.simple{color:var(--ciano);font-style:italic;font-size:.94em}
+.box{border-radius:12px;padding:13px 15px;margin:14px 0;font-size:14px;border:1px solid}
+.box.prova{background:var(--roxo-bg);border-color:rgba(168,85,247,.35)}
+.box.prova .lbl{color:var(--roxo)}
+.box.mac{background:var(--ciano-bg);border-color:rgba(34,211,238,.35)}
+.box.mac .lbl{color:var(--ciano)}
+.box.warn{background:rgba(248,113,113,.08);border-color:rgba(248,113,113,.3)}
+.box.warn .lbl{color:var(--vermelho)}
+.lbl{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-family:'JetBrains Mono',monospace;font-size:10px;background:rgba(168,85,247,.2);color:var(--roxo);padding:2px 7px;border-radius:6px;margin-left:6px;white-space:nowrap}
+.tbl{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
+.tbl table{width:100%;border-collapse:collapse;min-width:520px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--laranja);background:var(--card2)}
+td strong{color:#fff}
+.fio td:first-child{color:var(--ciano);font-family:'JetBrains Mono',monospace;font-weight:500}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin:14px 0}
+.gcard{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+.gcard .t{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--ciano);margin-bottom:4px}
+.gcard .d{font-size:13px;color:var(--muted)}
+.hands{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.hand{border-radius:12px;padding:14px;border:1px solid var(--line)}
+.hand.e{background:rgba(34,211,238,.06);border-color:rgba(34,211,238,.25)}
+.hand.d{background:rgba(249,115,22,.06);border-color:rgba(249,115,22,.25)}
+.hand .ht{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;font-weight:700}
+.hand.e .ht{color:var(--ciano)} .hand.d .ht{color:var(--laranja)}
+.hand li{font-size:13px}
+.steps{counter-reset:s;margin:10px 0}
+.step{counter-increment:s;position:relative;padding:11px 0 11px 46px;border-bottom:1px dashed var(--line)}
+.step:last-child{border-bottom:none}
+.step::before{content:counter(s);position:absolute;left:0;top:9px;width:30px;height:30px;border-radius:9px;background:var(--laranja-bg);border:1px solid rgba(249,115,22,.4);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:grid;place-items:center}
+.step b{color:#fff}
+svg{max-width:100%;height:auto;display:block;margin:16px auto}
+.fig{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.fig .cap{font-size:12px;color:var(--muted);text-align:center;margin-top:8px;font-family:'JetBrains Mono',monospace}
+footer{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+footer .ref{font-family:'JetBrains Mono',monospace;font-size:12px;margin-top:8px}
+a{color:var(--laranja)}
+@media(max-width:560px){.hands{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">carolzita · cirurgia torácica</div>
+  <h1>Tumores de Mediastino & Nódulo Pulmonar Solitário</h1>
+  <p class="sub">Compartimentos (ITMIG) e diferencial por localização · timoma (Masaoka-Koga, miastenia) · tumores germinativos (teratoma, seminoma, não seminomatoso) · neurogênicos · cistos · linfoma · timectomia por esternotomia e VATS · nódulo pulmonar solitário (Fleischner 2017, calcificações, PET) · metastasectomia pulmonar · avaliação funcional pré-ressecção · tumores de parede torácica.</p>
+  <div class="tags"><span class="tag">ITMIG</span><span class="tag">Timoma</span><span class="tag">Masaoka</span><span class="tag">Fleischner</span><span class="tag">PET-CT</span><span class="tag">Metastasectomia</span><span class="tag r">HCPA · GHC · SC-POA · PUC · AMRIGS</span></div>
+</header>
+
+<details open>
+  <summary><span class="num">1</span> Compartimentos &amp; diferencial <span class="chev">▶</span></summary>
+  <div class="body">
+
+<div class="tbl"><table><tr><th>Compartimento (ITMIG)</th><th>Conteúdo</th><th>Lesões</th></tr>
+<tr><td><strong>Pré-vascular (anterior)</strong></td><td>timo, gordura, linfonodos, tireoide ectópica</td><td><strong>"4 T"</strong>: <strong>T</strong>imoma, <strong>T</strong>eratoma/germinativos, <strong>T</strong>ireoide (bócio mergulhante), "<strong>T</strong>errível" linfoma</td></tr>
+<tr><td><strong>Visceral (médio)</strong></td><td>coração, traqueia, esôfago, grandes vasos, linfonodos</td><td>linfonodomegalia (linfoma, sarcoidose, metástase), <strong>cistos broncogênicos</strong>, pericárdicos, de duplicação esofágica</td></tr>
+<tr><td><strong>Paravertebral (posterior)</strong></td><td>cadeia simpática, nervos intercostais</td><td><strong>neurogênicos</strong> (schwannoma, neurofibroma; criança: neuroblastoma, ganglioneuroma)</td></tr></table></div>
+<ul><li>Adulto: timoma é a massa anterior mais comum; <strong>neurogênicos</strong> são os mais comuns no conjunto na <strong>criança</strong> (posterior).</li>
+<li>2/3 benignos no total; massa anterior em adulto jovem com sintomas → pensar linfoma/germinativo.</li>
+<li>Investigação: TC com contraste; RM (cistos, invasão vascular, extensão intraespinhal em neurogênico "em halteres"); <strong>β-hCG, AFP e LDH</strong> em todo homem jovem com massa anterior.</li>
+<li>Biópsia: massa anterior <strong>ressecável e típica de timoma não precisa de biópsia</strong> (risco de implante pela cápsula); biópsia (core/mediastinotomia de Chamberlain/VATS) se suspeita de linfoma ou germinativo, ou se irressecável.</li></ul>
+<div class="box warn"><span class="lbl">anestesia na massa mediastinal anterior</span>Risco de <strong>colapso cardiorrespiratório</strong> na indução (perda do tônus → compressão de via aérea/cava) <span class="simple">(quando o paciente dorme, a massa 'cai' sobre a traqueia e o coração)</span>. Manter ventilação espontânea, intubação acordado, posição semissentada, ECMO de prontidão nos casos graves.</div>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">2</span> Timoma &amp; timectomia <span class="chev">▶</span></summary>
+  <div class="body">
+
+<ul><li>40–60 anos; associa-se a <strong>miastenia gravis</strong> (30–50% dos timomas têm MG; 10–15% dos miastênicos têm timoma), aplasia pura de células vermelhas, hipogamaglobulinemia (Good).</li>
+<li>Classificação OMS (A, AB, B1–B3, carcinoma tímico); estadiamento <strong>Masaoka-Koga</strong>:</li></ul>
+<div class="tbl"><table><tr><th>Estágio</th><th>Definição</th><th>Conduta</th></tr>
+<tr><td>I</td><td>encapsulado</td><td>timectomia</td></tr>
+<tr><td>IIa / IIb</td><td>invasão capsular microscópica / gordura ou pleura mediastinal</td><td>timectomia (RT adjuvante em IIb selecionado)</td></tr>
+<tr><td>III</td><td>invasão de órgão adjacente (pericárdio, pulmão, vasos)</td><td>neoadjuvância se irressecável → ressecção en bloc + RT</td></tr>
+<tr><td>IVa / IVb</td><td>implantes pleurais/pericárdicos / metástase linfática ou hematogênica</td><td>multimodal</td></tr></table></div>
+<p>Fator prognóstico mais importante: <strong>ressecção completa (R0)</strong>.</p>
+<h4>Timectomia total estendida (esternotomia mediana) — passo a passo</h4>
+<div class="steps">
+<div class="step"><b>Preparo</b> do miastênico: estabilizar a MG (piridostigmina, imunoglobulina/plasmaférese pré-op se bulbar/respiratória); evitar bloqueador neuromuscular ou usar doses mínimas com monitorização.</div>
+<div class="step"><b>Posição</b> supina, coxim interescapular, braços ao longo do corpo.</div>
+<div class="step"><b>Esternotomia mediana</b> com serra (fúrcula → xifoide), afastador de Finochietto.</div>
+<div class="step"><b>Abertura das pleuras mediastinais</b> se necessário; identificar <strong>nervos frênicos</strong> bilaterais (limite lateral — preservar!) <span class="simple">(o nervo que faz o diafragma respirar passa colado nos dois lados do timo)</span>.</div>
+<div class="step"><b>Dissecção</b> dos polos inferiores sobre o pericárdio, subindo; ligar as <strong>veias tímicas</strong> (drenam na <strong>veia braquiocefálica esquerda</strong>) — cuidado para não lacerá-la.</div>
+<div class="step"><b>Polos superiores</b> (cornos cervicais) tracionados para baixo e liberados até a tireoide.</div>
+<div class="step"><b>Ressecção en bloc</b> com toda a gordura pericardiofrênica e aortopulmonar (tecido tímico ectópico — importante na MG).</div>
+<div class="step"><b>Hemostasia, dreno mediastinal</b>, fechamento do esterno com <strong>fios de aço</strong> (cerclagem 5–7 fios), fáscia e pele.</div></div>
+<p>VATS/robótica: equivalente oncológico para timomas pequenos (estágio I–II, &lt;5 cm), menos dor e permanência.</p>
+<div class="hands"><div class="hand e"><div class="ht">✋ mão esquerda</div><ul><li>Pinça de DeBakey longa (tração do timo)</li><li>Aspirador</li><li>Gaze montada</li></ul></div>
+<div class="hand d"><div class="ht">✋ mão direita</div><ul><li>Tesoura de Metzenbaum longa</li><li>Mixter + ligaduras/clipes nas veias tímicas</li><li>Bisturi elétrico/ultrassônico</li><li>Serra de esterno (abertura)</li></ul></div></div>
+<p>Complicações: lesão de frênico (paralisia diafragmática), lesão da braquiocefálica, crise miastênica pós-op (insuficiência respiratória), mediastinite/deiscência esternal, quilotórax.</p>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">3</span> Germinativos, neurogênicos, cistos &amp; linfoma <span class="chev">▶</span></summary>
+  <div class="body">
+
+<div class="tbl"><table><tr><th>Tumor</th><th>Marcadores</th><th>Tratamento</th></tr>
+<tr><td><strong>Teratoma maduro</strong> (o germinativo mais comum)</td><td>normais; calcificação, gordura, dentes na TC</td><td><strong>ressecção</strong></td></tr>
+<tr><td><strong>Seminoma</strong> (homem jovem)</td><td>β-hCG pode ↑ discretamente; <strong>AFP normal</strong></td><td><strong>quimio (BEP) ± RT</strong> — muito radio/quimiossensível</td></tr>
+<tr><td><strong>Não seminomatoso</strong> (coriocarcinoma, saco vitelino, embrionário)</td><td><strong>AFP e/ou β-hCG muito elevados</strong></td><td><strong>quimio (BEP)</strong> → ressecção de massa residual com marcadores normalizados</td></tr></table></div>
+<p>Sempre examinar os <strong>testículos</strong> (US) para excluir primário gonadal.</p>
+<ul><li><strong>Neurogênicos</strong> (paravertebral): schwannoma (mais comum no adulto), neurofibroma (NF1), ganglioneuroma; criança: <strong>neuroblastoma</strong> (catecolaminas urinárias VMA/HVA). Tumor em halteres (extensão pelo forame) → RM e abordagem com neurocirurgia.</li>
+<li><strong>Cistos</strong>: <strong>broncogênico</strong> (mais comum, subcarinal/paratraqueal) → ressecar se sintomático/infectado/crescendo; <strong>pericárdico</strong> ("cisto de água límpida", ângulo cardiofrênico <strong>direito</strong>) → observar; duplicação esofágica → ressecar.</li>
+<li><strong>Linfoma</strong> (Hodgkin esclerose nodular em jovens; linfoma B primário do mediastino): sintomas B; diagnóstico por <strong>biópsia com tecido suficiente</strong> (core/cirúrgica, não PAAF) → quimioterapia; cirurgia só para diagnóstico.</li>
+<li><strong>Bócio mergulhante</strong>: maioria removível por cervicotomia; esternotomia se componente posterior/maligno.</li></ul>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">4</span> Nódulo pulmonar solitário <span class="chev">▶</span></summary>
+  <div class="body">
+
+<p>Opacidade arredondada <strong>≤3 cm</strong>, cercada por parênquima, sem atelectasia/linfonodo associado (&gt;3 cm = <strong>massa</strong>, maligna até prova em contrário). Causa mais comum: <strong>granuloma</strong>; maligna mais comum: <strong>adenocarcinoma</strong>.</p>
+<div class="tbl"><table><tr><th>Favorece malignidade</th><th>Favorece benignidade</th></tr>
+<tr><td>idade &gt;50, tabagismo, câncer prévio, tamanho &gt;8 mm, <strong>espiculado</strong>, lobo superior, crescimento (duplicação 20–400 dias), componente em vidro fosco + sólido, captação no PET (SUV &gt;2,5)</td><td>&lt;35 anos, não fumante, <strong>estável há 2 anos</strong> (sólido), calcificação <strong>central, difusa, laminada ou em "pipoca"</strong> (hamartoma), gordura no nódulo (hamartoma)</td></tr></table></div>
+<div class="box mac"><span class="lbl">calcificações</span>Benignas: <strong>central, difusa sólida, laminada (concêntrica), pipoca</strong> · Suspeitas: <strong>excêntrica, puntiforme/salpicada, amorfa</strong>.</div>
+<h4>Fleischner 2017 — nódulo sólido único incidental (≥35 anos, sem câncer)</h4>
+<div class="tbl"><table><tr><th>Tamanho</th><th>Baixo risco</th><th>Alto risco</th></tr>
+<tr><td><strong>&lt;6 mm</strong></td><td>sem seguimento</td><td>TC opcional em 12 meses</td></tr>
+<tr><td><strong>6–8 mm</strong></td><td>TC 6–12 m, depois considerar 18–24 m</td><td>TC 6–12 m e 18–24 m</td></tr>
+<tr><td><strong>&gt;8 mm</strong></td><td colspan="2">TC em 3 meses, <strong>PET-CT</strong> ou <strong>biópsia</strong> (ou ressecção)</td></tr></table></div>
+<ul><li>Subsólido em vidro fosco puro ≥6 mm: TC 6–12 m e depois a cada 2 anos até 5 anos (cresce devagar — adenocarcinoma in situ/minimamente invasivo).</li>
+<li>Diagnóstico: biópsia transtorácica guiada por TC (periférico), broncoscopia/navegação/EBUS (central), ou <strong>ressecção em cunha por VATS com congelação</strong> (diagnóstica e terapêutica) → lobectomia se câncer.</li>
+<li>Rastreamento (USPSTF 2021): 50–80 anos, ≥20 maços-ano, fumante ou parou há &lt;15 anos → <strong>TC de baixa dose anual</strong> (Lung-RADS).</li></ul>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">5</span> Metastasectomia &amp; avaliação funcional <span class="chev">▶</span></summary>
+  <div class="body">
+
+<h4>Critérios de metastasectomia pulmonar</h4>
+<ul><li>Tumor primário <strong>controlado</strong> · ausência de doença extratorácica (ou controlável) · <strong>ressecção completa possível</strong> com reserva funcional adequada · sem melhor alternativa sistêmica.</li>
+<li>Melhores resultados: sarcoma, colorretal, rim, germinativo; intervalo livre de doença longo, poucas metástases, sem linfonodos.</li>
+<li>Técnica: <strong>ressecção em cunha</strong> preservadora de parênquima (VATS ou toracotomia para palpação).</li></ul>
+<h4>Avaliação funcional pré-ressecção (ACCP)</h4>
+<div class="steps"><div class="step"><b>Espirometria + DLCO</b> em todos.</div>
+<div class="step"><b>Calcular o previsto pós-operatório (ppo)</b>: ppo-VEF1 = VEF1 pré × (segmentos restantes / segmentos totais — 19) <span class="simple">(conta quanto de pulmão vai sobrar depois de tirar o pedaço doente)</span>; igual para DLCO.</div>
+<div class="step"><b>ppo-VEF1 e ppo-DLCO &gt;60%</b> → baixo risco, pode operar.</div>
+<div class="step"><b>Entre 30–60%</b> → teste de exercício simples (escada &gt;22 m ou shuttle &gt;400 m) → se insuficiente, <strong>ergoespirometria</strong>.</div>
+<div class="step"><b>VO₂máx &lt;10 mL/kg/min</b> (ou &lt;35% do previsto) ou ppo &lt;30% → alto risco; considerar ressecção sublobar/SBRT. VO₂ &gt;20 → baixo risco.</div></div>
+<h4>Tumores de parede torácica</h4>
+<ul><li>Benignos: <strong>osteocondroma</strong> (mais comum benigno), condroma, displasia fibrosa, desmoide. Malignos primários: <strong>condrossarcoma</strong> (mais comum, região costocondral anterior), sarcoma de Ewing (criança), plasmocitoma; muitos são metástase/invasão por contiguidade (mama, pulmão).</li>
+<li>Toda lesão cartilaginosa de parede crescente → tratar como condrossarcoma: <strong>ressecção ampla com margem de 4 cm</strong> + 1 costela acima e abaixo; reconstrução rígida (tela/metilmetacrilato) se defeito &gt;5 cm ou &gt;3–4 costelas anteriores/laterais; cobertura com retalho (latíssimo, peitoral).</li></ul>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">6</span> Questões de banca, pega-ratões &amp; mnemônicos <span class="chev">▶</span></summary>
+  <div class="body">
+<h4>10 questões representativas (originais, estilo das 5 bancas)</h4>
+<div class="box prova"><span class="lbl">Q1 <span class="banca">HCPA</span></span><strong>Homem de 25 anos com massa mediastinal anterior, AFP 3.000 ng/mL. Diagnóstico e conduta?</strong><br>Resposta: <strong>Tumor germinativo não seminomatoso</strong> → <strong>quimioterapia (BEP)</strong>, ressecção de massa residual depois.</div>
+<div class="box prova"><span class="lbl">Q2 <span class="banca">GHC</span></span><strong>Massa mediastinal anterior encapsulada de 4 cm em mulher de 50 anos com ptose flutuante. Precisa de biópsia antes?</strong><br>Resposta: <strong>Não</strong> — timoma ressecável típico: <strong>timectomia</strong> sem biópsia (risco de violar a cápsula).</div>
+<div class="box prova"><span class="lbl">Q3 <span class="banca">AMRIGS</span></span><strong>Massa paravertebral com extensão para o forame em halteres. Exame antes da cirurgia?</strong><br>Resposta: <strong>RM</strong> (extensão intraespinhal) e cirurgia combinada com neurocirurgia.</div>
+<div class="box prova"><span class="lbl">Q4 <span class="banca">PUC-RS</span></span><strong>Nódulo sólido de 5 mm em paciente de baixo risco. Conduta pela Fleischner?</strong><br>Resposta: <strong>Sem seguimento</strong> de rotina.</div>
+<div class="box prova"><span class="lbl">Q5 <span class="banca">SC-POA</span></span><strong>Qual padrão de calcificação sugere hamartoma?</strong><br>Resposta: <strong>"Pipoca"</strong> (e gordura no nódulo).</div>
+<div class="box prova"><span class="lbl">Q6 <span class="banca">HCPA</span></span><strong>Nódulo de 12 mm espiculado em lobo superior de tabagista. Próximo passo?</strong><br>Resposta: <strong>PET-CT</strong> e/ou biópsia/ressecção (nódulo &gt;8 mm de alto risco).</div>
+<div class="box prova"><span class="lbl">Q7 <span class="banca">GHC</span></span><strong>VEF1 pré de 2 L, lobectomia superior direita (3 segmentos de 19). ppo-VEF1 aproximado?</strong><br>Resposta: 2 × 16/19 ≈ <strong>1,68 L</strong>.</div>
+<div class="box prova"><span class="lbl">Q8 <span class="banca">AMRIGS</span></span><strong>Cisto de densidade líquida no ângulo cardiofrênico direito, assintomático. Diagnóstico e conduta?</strong><br>Resposta: <strong>Cisto pericárdico</strong> → observação.</div>
+<div class="box prova"><span class="lbl">Q9 <span class="banca">PUC-RS</span></span><strong>Estruturas a preservar lateralmente na timectomia?</strong><br>Resposta: <strong>Nervos frênicos</strong>.</div>
+<div class="box prova"><span class="lbl">Q10 <span class="banca">SC-POA</span></span><strong>Tumor maligno primário mais comum da parede torácica?</strong><br>Resposta: <strong>Condrossarcoma</strong>.</div>
+<h4>Pega-ratões (as armadilhas clássicas)</h4>
+<div class="box warn"><span class="lbl">☠ trap 1</span>Massa anterior: "4 T" — mas sempre <strong>β-hCG/AFP/LDH</strong> no homem jovem.</div>
+<div class="box warn"><span class="lbl">☠ trap 2</span>Timoma ressecável <strong>não</strong> se biopsia.</div>
+<div class="box warn"><span class="lbl">☠ trap 3</span>Seminoma: AFP <strong>normal</strong>; AFP alta = não seminomatoso.</div>
+<div class="box warn"><span class="lbl">☠ trap 4</span>Linfoma se diagnostica com tecido (core/cirúrgica), não PAAF, e se trata com quimio.</div>
+<div class="box warn"><span class="lbl">☠ trap 5</span>Indução anestésica na massa anterior pode colapsar a via aérea.</div>
+<div class="box warn"><span class="lbl">☠ trap 6</span>Calcificação <strong>excêntrica/salpicada</strong> é suspeita.</div>
+<div class="box warn"><span class="lbl">☠ trap 7</span>Nódulo sólido estável por 2 anos = benigno; vidro fosco precisa de 5 anos.</div>
+<h4>Mnemônicos-resumo</h4>
+<div class="box mac"><span class="lbl">massa anterior — "4 T"</span><strong>T</strong>imoma · <strong>T</strong>eratoma/germinativos · <strong>T</strong>ireoide · "<strong>T</strong>errível" linfoma.</div>
+<div class="box mac"><span class="lbl">ppo</span><strong>&gt;60% opera · 30–60% testa exercício · &lt;30% ou VO₂ &lt;10 = alto risco</strong>.</div>
+  </div>
+</details>
+
+<footer>
+  <div><strong>carolzita</strong> · Tumores de Mediastino & Nódulo Pulmonar Solitário · referência completa</div>
+  <div class="ref">Fontes: Sabiston 21ª ed. (Mediastinum; Lung) · Zollinger 11ª ed. · Netter · Carter BW et al. ITMIG mediastinal compartments (2014) · MacMahon H et al. Fleischner Society Guidelines (Radiology 2017) · Brunelli A et al. ACCP Physiologic Evaluation before Lung Resection (Chest 2013) · NCCN Thymomas and Thymic Carcinomas 2025. Conteúdo educacional; questões são itens representativos originais no estilo das bancas, não reprodução de provas.</div>
+</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avaliação Pré-operatória & Manejo de Medicações — carolzita</title>
+<meta name="cz-tema" content="Avaliação Pré-operatória &amp; Manejo de Medicações">
+<meta name="cz-grupo" content="Perioperatório">
+<meta name="cz-tags" content="ASA, RCRI, Child-Pugh, Anticoagulação, Profilaxia antibiótica, Clavien-Dindo">
+<meta name="cz-tipo" content="Full">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0f; --bg2:#12121a; --card:#16161f; --card2:#1c1c27;
+  --line:#2a2a38; --txt:#e6e6ef; --muted:#9a9ab0;
+  --laranja:#f97316; --laranja-bg:rgba(249,115,22,.10);
+  --roxo:#a855f7; --roxo-bg:rgba(168,85,247,.10);
+  --ciano:#22d3ee; --ciano-bg:rgba(34,211,238,.10);
+  --verde:#34d399; --vermelho:#f87171; --amarelo:#fbbf24;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(1200px 600px at 50% -10%,#15151f 0%,var(--bg) 60%);color:var(--txt);font-family:'Inter',sans-serif;line-height:1.55;padding:0 0 80px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px}
+header{padding:40px 0 24px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(30px,6vw,46px);line-height:1.05;margin:8px 0 6px;letter-spacing:-.02em}
+.sub{color:var(--muted);font-size:15px;max-width:700px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tag{font-family:'JetBrains Mono',monospace;font-size:11px;padding:5px 10px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted)}
+.tag.r{color:var(--roxo);border-color:rgba(168,85,247,.35);background:var(--roxo-bg)}
+section{margin-top:14px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:12px;overflow:hidden;transition:border-color .2s}
+details[open]{border-color:rgba(249,115,22,.30)}
+summary{cursor:pointer;list-style:none;padding:18px 20px;display:flex;align-items:center;gap:13px;font-family:'Syne',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em;user-select:none}
+summary::-webkit-details-marker{display:none}
+.num{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--bg);background:var(--laranja);width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:0 0 auto}
+.chev{margin-left:auto;color:var(--muted);transition:transform .25s;font-size:14px}
+details[open] .chev{transform:rotate(90deg)}
+.body{padding:4px 22px 24px;font-size:15px}
+.body p{margin:10px 0}
+.body h4{font-family:'Syne',sans-serif;font-size:16px;color:var(--laranja);margin:20px 0 8px;letter-spacing:-.01em}
+.body ul{margin:8px 0 8px 4px;list-style:none}
+.body li{padding:4px 0 4px 20px;position:relative}
+.body li::before{content:"▸";position:absolute;left:0;color:var(--laranja);font-size:12px;top:6px}
+.body strong{color:#fff;font-weight:600}
+.simple{color:var(--ciano);font-style:italic;font-size:.94em}
+.box{border-radius:12px;padding:13px 15px;margin:14px 0;font-size:14px;border:1px solid}
+.box.prova{background:var(--roxo-bg);border-color:rgba(168,85,247,.35)}
+.box.prova .lbl{color:var(--roxo)}
+.box.mac{background:var(--ciano-bg);border-color:rgba(34,211,238,.35)}
+.box.mac .lbl{color:var(--ciano)}
+.box.warn{background:rgba(248,113,113,.08);border-color:rgba(248,113,113,.3)}
+.box.warn .lbl{color:var(--vermelho)}
+.lbl{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-family:'JetBrains Mono',monospace;font-size:10px;background:rgba(168,85,247,.2);color:var(--roxo);padding:2px 7px;border-radius:6px;margin-left:6px;white-space:nowrap}
+.tbl{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
+.tbl table{width:100%;border-collapse:collapse;min-width:520px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--laranja);background:var(--card2)}
+td strong{color:#fff}
+.fio td:first-child{color:var(--ciano);font-family:'JetBrains Mono',monospace;font-weight:500}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin:14px 0}
+.gcard{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+.gcard .t{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--ciano);margin-bottom:4px}
+.gcard .d{font-size:13px;color:var(--muted)}
+.hands{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.hand{border-radius:12px;padding:14px;border:1px solid var(--line)}
+.hand.e{background:rgba(34,211,238,.06);border-color:rgba(34,211,238,.25)}
+.hand.d{background:rgba(249,115,22,.06);border-color:rgba(249,115,22,.25)}
+.hand .ht{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;font-weight:700}
+.hand.e .ht{color:var(--ciano)} .hand.d .ht{color:var(--laranja)}
+.hand li{font-size:13px}
+.steps{counter-reset:s;margin:10px 0}
+.step{counter-increment:s;position:relative;padding:11px 0 11px 46px;border-bottom:1px dashed var(--line)}
+.step:last-child{border-bottom:none}
+.step::before{content:counter(s);position:absolute;left:0;top:9px;width:30px;height:30px;border-radius:9px;background:var(--laranja-bg);border:1px solid rgba(249,115,22,.4);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:grid;place-items:center}
+.step b{color:#fff}
+svg{max-width:100%;height:auto;display:block;margin:16px auto}
+.fig{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.fig .cap{font-size:12px;color:var(--muted);text-align:center;margin-top:8px;font-family:'JetBrains Mono',monospace}
+footer{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+footer .ref{font-family:'JetBrains Mono',monospace;font-size:12px;margin-top:8px}
+a{color:var(--laranja)}
+@media(max-width:560px){.hands{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">carolzita · perioperatório · risco cirúrgico</div>
+  <h1>Avaliação Pré-operatória & Manejo de Medicações</h1>
+  <p class="sub">Exames pré-operatórios racionais · ASA I–VI · risco cardiovascular (RCRI/ACC-AHA 2024, METs) · pulmonar, renal, hepático (Child/MELD), endócrino · cronograma de suspensão de medicações · ponte de anticoagulação e antiagregantes · classificação da ferida e antibioticoprofilaxia · Clavien-Dindo.</p>
+  <div class="tags"><span class="tag">ASA</span><span class="tag">RCRI</span><span class="tag">Child-Pugh</span><span class="tag">Anticoagulação</span><span class="tag">Profilaxia antibiótica</span><span class="tag">Clavien-Dindo</span><span class="tag r">HCPA · GHC · SC-POA · PUC · AMRIGS</span></div>
+</header>
+
+<details open>
+  <summary><span class="num">1</span> Princípios &amp; exames pré-operatórios <span class="chev">▶</span></summary>
+  <div class="body">
+
+<p>Não existe "rotina" pré-operatória: pedir só o exame que <strong>muda a conduta</strong> <span class="simple">(só pedir exame se o resultado for mudar alguma coisa no que vamos fazer)</span>. Anamnese, exame físico e <strong>capacidade funcional</strong> valem mais que exames.</p>
+<div class="tbl"><table><tr><th>Exame</th><th>Quando pedir</th></tr>
+<tr><td>Hemograma</td><td>cirurgia com perda sanguínea esperada, anemia suspeita, idosos, DRC, câncer</td></tr>
+<tr><td>Coagulograma</td><td>hepatopatia, anticoagulante, sangramento pessoal/familiar, neurocirurgia, perda &gt;2 L</td></tr>
+<tr><td>Creatinina/eletrólitos</td><td>DRC, DM, HAS, IC, diurético/IECA, contraste, idosos</td></tr>
+<tr><td>Glicemia/HbA1c</td><td>DM, obesidade, corticoide</td></tr>
+<tr><td>ECG</td><td>doença coronariana, arritmia, IC, DAOP, doença cerebrovascular, cirurgia de risco intermediário/alto em paciente com fator de risco (não por idade isolada)</td></tr>
+<tr><td>RX de tórax</td><td>doença cardiopulmonar sintomática, cirurgia torácica/abdominal alta em idoso</td></tr>
+<tr><td>β-hCG</td><td>mulher em idade fértil</td></tr>
+<tr><td>Ecocardiograma</td><td>dispneia de causa desconhecida, IC com piora, sopro suspeito de estenose aórtica</td></tr></table></div>
+<div class="box mac"><span class="lbl">cirurgia de baixo risco</span>Catarata, cirurgia superficial, mama, endoscópica e ambulatorial → em geral nenhum exame em paciente estável.</div>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">2</span> ASA &amp; risco global <span class="chev">▶</span></summary>
+  <div class="body">
+
+<div class="tbl"><table><tr><th>ASA</th><th>Definição</th><th>Exemplos</th></tr>
+<tr><td>I</td><td>saudável</td><td>não fumante, sem doença</td></tr>
+<tr><td>II</td><td>doença sistêmica <strong>leve</strong>, sem limitação</td><td>tabagista, etilista social, gestante, IMC 30–40, HAS/DM controlados</td></tr>
+<tr><td>III</td><td>doença sistêmica <strong>grave</strong>, limitante</td><td>DM/HAS mal controlados, DPOC, IMC ≥40, diálise, IAM/AVC &gt;3 meses, marca-passo</td></tr>
+<tr><td>IV</td><td>doença grave, <strong>ameaça constante à vida</strong></td><td>IAM/AVC/stent &lt;3 meses, isquemia em curso, IC grave, sepse, insuficiência renal aguda sem diálise regular</td></tr>
+<tr><td>V</td><td>moribundo, não sobrevive sem a cirurgia</td><td>AAA roto, trauma maciço, HIC com efeito de massa</td></tr>
+<tr><td>VI</td><td>morte encefálica, doador de órgãos</td><td>—</td></tr></table></div>
+<p>Sufixo <strong>"E"</strong> = emergência. ASA prediz morbimortalidade global mas <strong>não é escore cardíaco</strong> e ignora o porte da cirurgia. Calculadoras: <strong>ACS NSQIP</strong> (individualizada).</p>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">3</span> Risco cardiovascular (ACC/AHA 2024) <span class="chev">▶</span></summary>
+  <div class="body">
+
+<h4>RCRI (Lee) — 1 ponto cada</h4>
+<ul><li>Cirurgia de alto risco (intraperitoneal, intratorácica, vascular suprainguinal)</li><li>Doença coronariana</li><li>Insuficiência cardíaca</li><li>Doença cerebrovascular</li><li>DM em uso de <strong>insulina</strong></li><li>Creatinina <strong>&gt;2 mg/dL</strong></li></ul>
+<p>0 → ~4% de eventos · 1 → 6% · 2 → 10% · ≥3 → ≥15% (estimativas atualizadas).</p>
+<div class="steps">
+<div class="step"><b>Cirurgia de emergência?</b> → operar, otimizar durante.</div>
+<div class="step"><b>Condição cardíaca ativa</b> (SCA, IC descompensada, arritmia grave, valvopatia grave sintomática)? → adiar e tratar.</div>
+<div class="step"><b>Risco estimado de MACE &lt;1%</b> → operar.</div>
+<div class="step"><b>Capacidade funcional ≥4 METs</b> <span class="simple">(consegue subir 2 lances de escada ou caminhar rápido sem cansar)</span> → operar sem testes adicionais.</div>
+<div class="step"><b>&lt;4 METs ou desconhecida</b> → considerar <strong>BNP/NT-proBNP</strong> e, se mudar conduta, teste de estresse.</div></div>
+<ul><li>Após <strong>IAM</strong>: aguardar ≥60 dias para cirurgia eletiva.</li>
+<li>Após <strong>stent farmacológico</strong>: idealmente ≥6 meses de DAPT (mínimo 3 se urgência oncológica); stent convencional ≥30 dias.</li>
+<li>β-bloqueador: <strong>não iniciar no dia da cirurgia</strong>; manter se já usa.</li>
+<li>Estatina: manter (iniciar em vascular).</li></ul>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">4</span> Pulmão, rim, fígado &amp; endócrino <span class="chev">▶</span></summary>
+  <div class="body">
+
+<ul><li><strong>Pulmonar</strong>: maior fator de risco é o <strong>sítio cirúrgico</strong> (abdome alto, tórax) e ASA; parar tabagismo (idealmente ≥4–8 semanas), fisioterapia/incentivador, tratar broncoespasmo. Espirometria só para ressecção pulmonar ou dispneia inexplicada.</li>
+<li><strong>Renal</strong>: evitar nefrotóxicos e hipotensão; diálise na véspera.</li></ul>
+<div class="tbl"><table><tr><th>Child-Pugh</th><th>Mortalidade abdominal</th><th>Conduta</th></tr>
+<tr><td>A (5–6)</td><td>~10%</td><td>pode operar</td></tr>
+<tr><td>B (7–9)</td><td>~30%</td><td>otimizar, cirurgia só se necessária</td></tr>
+<tr><td>C (10–15)</td><td>~80%</td><td><strong>evitar cirurgia eletiva</strong></td></tr></table></div>
+<p>MELD &lt;10 baixo risco; &gt;15–20 alto risco (considerar transplante antes).</p>
+<ul><li><strong>Diabetes</strong>: suspender metformina no dia (e 48 h se contraste/IRA); <strong>iSGLT2 suspender 3 dias antes</strong> (ertugliflozina 4) — risco de cetoacidose euglicêmica; insulina basal (NPH) <strong>50–80% da dose</strong> na véspera/manhã; alvo glicêmico 140–180 mg/dL.</li>
+<li><strong>Agonistas GLP-1</strong> (semaglutida): risco de estômago cheio — avaliar sintomas, dieta líquida 24 h antes ou suspender a dose semanal conforme protocolo; sequência rápida se dúvida.</li>
+<li><strong>Corticoide crônico</strong> (&gt;5 mg prednisona por &gt;3 semanas): manter dose habitual; <strong>hidrocortisona de estresse</strong> em cirurgia moderada/grande (50–100 mg na indução, depois 25–50 mg 8/8 h por 24–72 h).</li>
+<li><strong>Hipotireoidismo</strong> leve não adia; mixedema/tireotoxicose descompensada adia.</li></ul>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">5</span> Medicações crônicas: o que suspender e quando <span class="chev">▶</span></summary>
+  <div class="body">
+
+<div class="tbl"><table><tr><th>Droga</th><th>Conduta</th></tr>
+<tr><td>AAS (prevenção 2ª, stent)</td><td><strong>manter</strong> (exceto neurocirurgia, cirurgia de próstata transuretral, olho posterior)</td></tr>
+<tr><td>Clopidogrel / ticagrelor</td><td>suspender <strong>5 dias</strong></td></tr>
+<tr><td>Prasugrel</td><td>suspender <strong>7 dias</strong></td></tr>
+<tr><td>Varfarina</td><td>suspender <strong>5 dias</strong>; INR &lt;1,5 no dia; ponte só se alto risco trombótico</td></tr>
+<tr><td>DOAC (rivaroxabana, apixabana, edoxabana)</td><td>baixo risco de sangramento: <strong>1 dia</strong> (24 h); alto risco: <strong>2 dias</strong> (48 h); dabigatrana mais se ClCr ↓; <strong>sem ponte</strong></td></tr>
+<tr><td>Enoxaparina terapêutica (ponte)</td><td>última dose <strong>24 h</strong> antes (metade da dose diária)</td></tr>
+<tr><td>IECA/BRA</td><td>suspender na manhã (24 h) se hipotensão provável</td></tr>
+<tr><td>Diuréticos</td><td>suspender na manhã</td></tr>
+<tr><td>β-bloqueador, estatina, anticonvulsivante, antipsicótico, inaladores, levotiroxina</td><td><strong>manter</strong></td></tr>
+<tr><td>AINE</td><td>suspender 3–5 dias (ibuprofeno 1 dia)</td></tr>
+<tr><td>Estrogênio/ACO (alto risco de TEV)</td><td>considerar suspender 4–6 semanas</td></tr>
+<tr><td>Fitoterápicos (ginkgo, alho, ginseng)</td><td>suspender 1–2 semanas</td></tr></table></div>
+<div class="box prova"><span class="lbl">ponte de anticoagulação <span class="banca">HCPA</span></span>Indicação restrita (BRIDGE trial): <strong>prótese valvar mecânica mitral</strong>, TEV &lt;3 meses, AVC/AIT recente, CHA₂DS₂-VASc muito alto. FA comum <strong>não</strong> precisa de ponte. Reinício: 24 h (baixo risco de sangramento) ou 48–72 h (alto risco).</div>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">6</span> Classificação da ferida &amp; antibioticoprofilaxia <span class="chev">▶</span></summary>
+  <div class="body">
+
+<div class="tbl"><table><tr><th>Classe</th><th>Definição</th><th>ISC</th><th>Antibiótico</th></tr>
+<tr><td>I — Limpa</td><td>sem abrir trato GI/respiratório/urinário, sem inflamação (hérnia, tireoide, mama)</td><td>1–2%</td><td>só se prótese/tela ou consequência grave</td></tr>
+<tr><td>II — Limpo-contaminada</td><td>abre trato GI/biliar/urinário de forma controlada (colecistectomia, gastrectomia, colectomia eletiva)</td><td>3–11%</td><td><strong>profilaxia</strong></td></tr>
+<tr><td>III — Contaminada</td><td>quebra grosseira de técnica, extravasamento de conteúdo, inflamação aguda sem pus, trauma recente</td><td>10–17%</td><td>profilaxia/terapêutico</td></tr>
+<tr><td>IV — Suja/infectada</td><td>pus, víscera perfurada, tecido necrótico, trauma &gt;4–6 h</td><td>&gt;27%</td><td><strong>terapêutico</strong></td></tr></table></div>
+<ul><li><strong>Cefazolina 2 g</strong> (3 g se ≥120 kg) em <strong>até 60 min antes da incisão</strong>; repetir a cada <strong>4 h</strong> ou se sangramento &gt;1.500 mL; suspender em até 24 h.</li>
+<li>Colorretal: cefazolina + metronidazol (ou cefoxitina) ± preparo oral com antibiótico.</li>
+<li>Alergia grave a β-lactâmico: clindamicina ou vancomicina (vanco começa 120 min antes).</li>
+<li>Tricotomia só se necessária, com tricotomizador, imediatamente antes; clorexidina alcoólica na pele.</li></ul>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">7</span> Clavien-Dindo &amp; jejum (ACERTO/ERAS) <span class="chev">▶</span></summary>
+  <div class="body">
+
+<div class="tbl"><table><tr><th>Grau</th><th>Definição</th></tr>
+<tr><td>I</td><td>desvio do curso sem tratamento específico (antiemético, analgésico, diurético, eletrólito, fisioterapia, ferida aberta à beira do leito)</td></tr>
+<tr><td>II</td><td>tratamento farmacológico adicional, <strong>transfusão</strong>, NPT</td></tr>
+<tr><td>IIIa / IIIb</td><td>intervenção cirúrgica/endoscópica/radiológica <strong>sem / com anestesia geral</strong></td></tr>
+<tr><td>IVa / IVb</td><td>disfunção de <strong>um</strong> / <strong>múltiplos</strong> órgãos (UTI)</td></tr>
+<tr><td>V</td><td>óbito</td></tr></table></div>
+<ul><li>Jejum: <strong>sólidos 6–8 h</strong>, leite não humano 6 h, leite materno 4 h, <strong>líquidos claros 2 h</strong> — abreviação com bebida de carboidrato (maltodextrina 12,5%) 2 h antes (ACERTO).</li>
+<li>Preparo de cólon mecânico isolado não reduz complicações; combinado com antibiótico oral, sim.</li></ul>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">8</span> Questões de banca, pega-ratões &amp; mnemônicos <span class="chev">▶</span></summary>
+  <div class="body">
+<h4>10 questões representativas (originais, estilo das 5 bancas)</h4>
+<div class="box prova"><span class="lbl">Q1 <span class="banca">HCPA</span></span><strong>Paciente com DM em uso de insulina, creatinina 2,3 e cirurgia intraperitoneal. Pontuação no RCRI?</strong><br>Resposta: <strong>3 pontos</strong> (insulina, creatinina &gt;2, cirurgia de alto risco).</div>
+<div class="box prova"><span class="lbl">Q2 <span class="banca">GHC</span></span><strong>Paciente com IAM e stent há 5 semanas, já usando AAS. Classificação ASA?</strong><br>Resposta: <strong>ASA IV</strong> (evento coronariano/stent &lt;3 meses).</div>
+<div class="box prova"><span class="lbl">Q3 <span class="banca">AMRIGS</span></span><strong>Paciente com FA (CHA₂DS₂-VASc 3) em apixabana, colectomia eletiva. Conduta?</strong><br>Resposta: Suspender <strong>48 h</strong> antes (alto risco de sangramento), <strong>sem ponte</strong>.</div>
+<div class="box prova"><span class="lbl">Q4 <span class="banca">PUC-RS</span></span><strong>Qual iSGLT2 deve ser suspenso 3 dias antes e por quê?</strong><br>Resposta: Dapagliflozina/empagliflozina/canagliflozina — risco de <strong>cetoacidose euglicêmica</strong>.</div>
+<div class="box prova"><span class="lbl">Q5 <span class="banca">SC-POA</span></span><strong>Colecistectomia videolaparoscópica eletiva é cirurgia de que classe e qual a profilaxia?</strong><br>Resposta: <strong>Limpo-contaminada (II)</strong>; cefazolina 2 g até 60 min antes (em baixo risco pode ser omitida segundo algumas diretrizes).</div>
+<div class="box prova"><span class="lbl">Q6 <span class="banca">HCPA</span></span><strong>Paciente cirrótico Child C com hérnia umbilical sem complicação. Conduta?</strong><br>Resposta: <strong>Não operar eletivamente</strong>; tratar ascite/otimizar; operar só se complicação.</div>
+<div class="box prova"><span class="lbl">Q7 <span class="banca">GHC</span></span><strong>Paciente que caminha 4 quarteirões e sobe 2 andares sem sintomas, RCRI 1, cirurgia de risco elevado. Precisa de teste de estresse?</strong><br>Resposta: <strong>Não</strong> — capacidade ≥4 METs.</div>
+<div class="box prova"><span class="lbl">Q8 <span class="banca">AMRIGS</span></span><strong>Reabordagem endoscópica sob sedação para fístula pós-operatória é qual grau de Clavien-Dindo?</strong><br>Resposta: <strong>IIIa</strong> (sem anestesia geral).</div>
+<div class="box prova"><span class="lbl">Q9 <span class="banca">PUC-RS</span></span><strong>Paciente em prednisona 20 mg/dia há 6 meses, colectomia. Conduta?</strong><br>Resposta: Manter corticoide + <strong>hidrocortisona de estresse</strong> (ex.: 100 mg na indução).</div>
+<div class="box prova"><span class="lbl">Q10 <span class="banca">SC-POA</span></span><strong>Paciente com prótese mecânica mitral em varfarina. Precisa de ponte?</strong><br>Resposta: <strong>Sim</strong> — alto risco trombótico (enoxaparina terapêutica até 24 h antes).</div>
+<h4>Pega-ratões (as armadilhas clássicas)</h4>
+<div class="box warn"><span class="lbl">☠ trap 1</span>Idade isolada não indica ECG nem exames.</div>
+<div class="box warn"><span class="lbl">☠ trap 2</span>ASA não é escore cardíaco.</div>
+<div class="box warn"><span class="lbl">☠ trap 3</span>RCRI exige DM em <strong>insulina</strong> e creatinina <strong>&gt;2</strong>.</div>
+<div class="box warn"><span class="lbl">☠ trap 4</span>DOAC não faz ponte; varfarina só em alto risco trombótico.</div>
+<div class="box warn"><span class="lbl">☠ trap 5</span>Clopidogrel/ticagrelor 5 dias · prasugrel 7 dias · AAS em geral mantém.</div>
+<div class="box warn"><span class="lbl">☠ trap 6</span>β-bloqueador não se inicia na véspera (POISE).</div>
+<div class="box warn"><span class="lbl">☠ trap 7</span>Profilaxia: até 60 min antes, repetir cefazolina a cada 4 h, parar em 24 h.</div>
+<div class="box warn"><span class="lbl">☠ trap 8</span>Clavien IIIa sem anestesia geral · IIIb com.</div>
+<h4>Mnemônicos-resumo</h4>
+<div class="box mac"><span class="lbl">RCRI — órgão por órgão</span><strong>Coração</strong> 2 (coronariopatia + IC) · <strong>Cérebro</strong> 1 (AVC/AIT) · <strong>Rim</strong> 1 (Cr &gt;2) · <strong>Pâncreas</strong> 1 (DM em insulina) · <strong>Cirurgia</strong> 1 (intraperitoneal, intratorácica, vascular suprainguinal) = 6 itens.</div>
+<div class="box mac"><span class="lbl">suspensão</span>Clopi 5 · Prasu 7 · Varfa 5 · DOAC 1–2 dias · Enoxa terapêutica 24 h · iSGLT2 3 dias.</div>
+  </div>
+</details>
+
+<footer>
+  <div><strong>carolzita</strong> · Avaliação Pré-operatória & Manejo de Medicações · referência completa</div>
+  <div class="ref">Fontes: Sabiston 21ª ed. (Preoperative Evaluation) · Thompson A et al. 2024 ACC/AHA Guideline for Perioperative Cardiovascular Management for Noncardiac Surgery (Circulation 2024) · ASA Physical Status Classification (2020) · Douketis JD et al. ACCP Perioperative Management of Antithrombotic Therapy (Chest 2022) · Bratzler DW et al. ASHP/IDSA/SIS/SHEA antimicrobial prophylaxis · Projeto ACERTO · Dindo D, Clavien PA 2004. Conteúdo educacional; questões são itens representativos originais no estilo das bancas, não reprodução de provas.</div>
+</footer>
+</div>
+</body>
+</html>

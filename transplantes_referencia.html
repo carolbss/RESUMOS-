@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transplantes: Doação, Fígado & Rim — carolzita</title>
+<meta name="cz-tema" content="Transplantes: Doação, Fígado &amp; Rim">
+<meta name="cz-grupo" content="Transplantes">
+<meta name="cz-tags" content="MELD-Na, Milão, King&#x27;s College, Piggyback, Isquemia fria, Rejeição">
+<meta name="cz-tipo" content="Full">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0f; --bg2:#12121a; --card:#16161f; --card2:#1c1c27;
+  --line:#2a2a38; --txt:#e6e6ef; --muted:#9a9ab0;
+  --laranja:#f97316; --laranja-bg:rgba(249,115,22,.10);
+  --roxo:#a855f7; --roxo-bg:rgba(168,85,247,.10);
+  --ciano:#22d3ee; --ciano-bg:rgba(34,211,238,.10);
+  --verde:#34d399; --vermelho:#f87171; --amarelo:#fbbf24;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(1200px 600px at 50% -10%,#15151f 0%,var(--bg) 60%);color:var(--txt);font-family:'Inter',sans-serif;line-height:1.55;padding:0 0 80px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px}
+header{padding:40px 0 24px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(30px,6vw,46px);line-height:1.05;margin:8px 0 6px;letter-spacing:-.02em}
+.sub{color:var(--muted);font-size:15px;max-width:700px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tag{font-family:'JetBrains Mono',monospace;font-size:11px;padding:5px 10px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted)}
+.tag.r{color:var(--roxo);border-color:rgba(168,85,247,.35);background:var(--roxo-bg)}
+section{margin-top:14px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:12px;overflow:hidden;transition:border-color .2s}
+details[open]{border-color:rgba(249,115,22,.30)}
+summary{cursor:pointer;list-style:none;padding:18px 20px;display:flex;align-items:center;gap:13px;font-family:'Syne',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em;user-select:none}
+summary::-webkit-details-marker{display:none}
+.num{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--bg);background:var(--laranja);width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:0 0 auto}
+.chev{margin-left:auto;color:var(--muted);transition:transform .25s;font-size:14px}
+details[open] .chev{transform:rotate(90deg)}
+.body{padding:4px 22px 24px;font-size:15px}
+.body p{margin:10px 0}
+.body h4{font-family:'Syne',sans-serif;font-size:16px;color:var(--laranja);margin:20px 0 8px;letter-spacing:-.01em}
+.body ul{margin:8px 0 8px 4px;list-style:none}
+.body li{padding:4px 0 4px 20px;position:relative}
+.body li::before{content:"▸";position:absolute;left:0;color:var(--laranja);font-size:12px;top:6px}
+.body strong{color:#fff;font-weight:600}
+.simple{color:var(--ciano);font-style:italic;font-size:.94em}
+.box{border-radius:12px;padding:13px 15px;margin:14px 0;font-size:14px;border:1px solid}
+.box.prova{background:var(--roxo-bg);border-color:rgba(168,85,247,.35)}
+.box.prova .lbl{color:var(--roxo)}
+.box.mac{background:var(--ciano-bg);border-color:rgba(34,211,238,.35)}
+.box.mac .lbl{color:var(--ciano)}
+.box.warn{background:rgba(248,113,113,.08);border-color:rgba(248,113,113,.3)}
+.box.warn .lbl{color:var(--vermelho)}
+.lbl{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-family:'JetBrains Mono',monospace;font-size:10px;background:rgba(168,85,247,.2);color:var(--roxo);padding:2px 7px;border-radius:6px;margin-left:6px;white-space:nowrap}
+.tbl{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
+.tbl table{width:100%;border-collapse:collapse;min-width:520px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--laranja);background:var(--card2)}
+td strong{color:#fff}
+.fio td:first-child{color:var(--ciano);font-family:'JetBrains Mono',monospace;font-weight:500}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin:14px 0}
+.gcard{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+.gcard .t{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--ciano);margin-bottom:4px}
+.gcard .d{font-size:13px;color:var(--muted)}
+.hands{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.hand{border-radius:12px;padding:14px;border:1px solid var(--line)}
+.hand.e{background:rgba(34,211,238,.06);border-color:rgba(34,211,238,.25)}
+.hand.d{background:rgba(249,115,22,.06);border-color:rgba(249,115,22,.25)}
+.hand .ht{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;font-weight:700}
+.hand.e .ht{color:var(--ciano)} .hand.d .ht{color:var(--laranja)}
+.hand li{font-size:13px}
+.steps{counter-reset:s;margin:10px 0}
+.step{counter-increment:s;position:relative;padding:11px 0 11px 46px;border-bottom:1px dashed var(--line)}
+.step:last-child{border-bottom:none}
+.step::before{content:counter(s);position:absolute;left:0;top:9px;width:30px;height:30px;border-radius:9px;background:var(--laranja-bg);border:1px solid rgba(249,115,22,.4);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:grid;place-items:center}
+.step b{color:#fff}
+svg{max-width:100%;height:auto;display:block;margin:16px auto}
+.fig{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.fig .cap{font-size:12px;color:var(--muted);text-align:center;margin-top:8px;font-family:'JetBrains Mono',monospace}
+footer{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+footer .ref{font-family:'JetBrains Mono',monospace;font-size:12px;margin-top:8px}
+a{color:var(--laranja)}
+@media(max-width:560px){.hands{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">carolzita · transplantes · cirurgia de captação e implante</div>
+  <h1>Transplantes: Doação, Fígado & Rim</h1>
+  <p class="sub">Legislação brasileira · potencial doador e manutenção · ordem de captação e tempos de isquemia · rejeição e imunossupressão · transplante hepático (MELD-Na, Milão, King's College, técnica clássica × piggyback, complicações) · transplante renal (técnica extraperitoneal, complicações vasculares e urológicas).</p>
+  <div class="tags"><span class="tag">MELD-Na</span><span class="tag">Milão</span><span class="tag">King's College</span><span class="tag">Piggyback</span><span class="tag">Isquemia fria</span><span class="tag">Rejeição</span><span class="tag r">HCPA · GHC · SC-POA · PUC · AMRIGS</span></div>
+</header>
+
+<details open>
+  <summary><span class="num">1</span> Conceitos &amp; legislação brasileira <span class="chev">▶</span></summary>
+  <div class="body">
+
+<ul><li><strong>Autotransplante</strong> (mesmo indivíduo) · <strong>isotransplante</strong> (gêmeo idêntico) · <strong>alotransplante</strong> (mesma espécie — o padrão) · xenotransplante (outra espécie).</li>
+<li><strong>Ortotópico</strong> = no lugar do órgão nativo (fígado, coração) · <strong>heterotópico</strong> = em outro lugar (rim na fossa ilíaca, pâncreas).</li>
+<li><strong>Lei 9.434/1997</strong>: base do Sistema Nacional de Transplantes, lista única. <strong>Lei 10.211/2001</strong>: acabou com a doação presumida → doação de falecido depende de <strong>autorização da família</strong> (cônjuge ou parente maior de idade até 2º grau). Decreto 9.175/2017 regulamenta; CNCDO estaduais coordenam.</li>
+<li>Doador vivo: parente até 4º grau ou cônjuge; não parente só com autorização judicial.</li>
+<li>Morte encefálica: <strong>Resolução CFM 2.173/2017</strong> (ver resumo de PCR/ME).</li></ul>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">2</span> Potencial doador: seleção &amp; manutenção <span class="chev">▶</span></summary>
+  <div class="body">
+
+<div class="box warn"><span class="lbl">contraindicações absolutas</span>HIV (exceto para receptor HIV+ em protocolo), <strong>HTLV I/II</strong>, sepse não controlada, tuberculose ativa, neoplasia maligna ativa (exceções: <strong>CBC de pele, carcinoma in situ de colo uterino e alguns tumores primários do SNC</strong>), doença priônica.</div>
+<p>Hepatites B/C não são contraindicação absoluta (receptores sorologicamente compatíveis, antivirais).</p>
+<h4>Manutenção — "regra dos 100"</h4>
+<ul><li>PAS ≥100 mmHg (PAM ≥65), PVC 8–12, diurese ≥100 mL/h (0,5–1 mL/kg/h), PaO₂ ≥100, Hb ≥ 7–10, glicemia 140–180, temperatura &gt;35 °C <span class="simple">(o corpo do doador precisa continuar funcionando como se estivesse vivo para os órgãos chegarem bons ao receptor)</span>.</li>
+<li>Diabetes insípido (sódio sobe, diurese alta): <strong>desmopressina</strong>/vasopressina.</li>
+<li>Instabilidade: noradrenalina/vasopressina; considerar <strong>levotiroxina</strong> e <strong>metilprednisolona 15 mg/kg</strong>.</li>
+<li>Ventilação protetora (VC 6–8 mL/kg, PEEP 8–10) para preservar pulmões.</li></ul>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">3</span> Captação, preservação &amp; tempos de isquemia <span class="chev">▶</span></summary>
+  <div class="body">
+
+<ul><li>Incisão xifopúbica + esternotomia. Ordem de <strong>retirada</strong>: <strong>coração → pulmões → fígado → pâncreas → rins</strong> (rins por último: maior tolerância), depois vasos, córneas, ossos.</li>
+<li>Canulação da <strong>aorta distal</strong> (e da porta/mesentérica superior), clampeamento da aorta supracelíaca, perfusão com solução de preservação fria (Custodiol/HTK, Wisconsin/UW, Celsior) + gelo na cavidade.</li>
+<li><strong>Isquemia quente</strong>: do clampeamento até o resfriamento (e de novo durante as anastomoses no receptor). <strong>Isquemia fria</strong>: período em solução gelada até reperfusão.</li></ul>
+<div class="tbl"><table><tr><th>Órgão</th><th>Isquemia fria tolerada (ideal)</th></tr>
+<tr><td>Coração</td><td>4–6 h</td></tr><tr><td>Pulmão</td><td>6–8 h</td></tr><tr><td>Fígado</td><td>8–12 h</td></tr><tr><td>Pâncreas</td><td>12–18 h</td></tr><tr><td>Rim</td><td><strong>24–36 h</strong> (até 48)</td></tr><tr><td>Córnea</td><td>até 7–14 dias (retirar até 6 h pós-óbito)</td></tr></table></div>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">4</span> Imunologia, rejeição &amp; imunossupressão <span class="chev">▶</span></summary>
+  <div class="body">
+
+<div class="tbl"><table><tr><th>Rejeição</th><th>Tempo</th><th>Mecanismo</th><th>Tratamento</th></tr>
+<tr><td><strong>Hiperaguda</strong></td><td>minutos</td><td>anticorpos pré-formados (ABO, anti-HLA) → trombose</td><td>retirar o enxerto; prevenir com <strong>prova cruzada</strong></td></tr>
+<tr><td>Aguda acelerada</td><td>2–5 dias</td><td>memória imunológica</td><td>—</td></tr>
+<tr><td><strong>Aguda celular</strong></td><td>1ª semana–meses (mais comum)</td><td>linfócitos T</td><td><strong>pulso de corticoide</strong>; timoglobulina se refratária</td></tr>
+<tr><td>Aguda humoral</td><td>semanas–meses</td><td>anticorpos doador-específicos (C4d)</td><td>plasmaférese, IVIG, rituximabe</td></tr>
+<tr><td>Crônica</td><td>meses–anos</td><td>fibrose/vasculopatia</td><td>sem tratamento eficaz</td></tr></table></div>
+<ul><li>Imunossupressão: <strong>inibidor de calcineurina (tacrolimo</strong> &gt; ciclosporina) + antiproliferativo (micofenolato/azatioprina) + corticoide; mTOR (sirolimo, everolimo) — prejudica cicatrização. Indução: basiliximabe/timoglobulina.</li>
+<li>Toxicidade: tacrolimo/ciclosporina → <strong>nefrotoxicidade</strong>, HAS, DM, neurotoxicidade, hipercalemia, hipomagnesemia.</li>
+<li>Infecções: 1º mês nosocomiais; 1–6 meses oportunistas (<strong>CMV</strong>, Pneumocystis — profilaxia com SMX-TMP, valganciclovir); vacinas de vírus vivo contraindicadas. Neoplasias: pele (CEC), PTLD (EBV).</li></ul>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">5</span> Transplante hepático: indicação &amp; alocação <span class="chev">▶</span></summary>
+  <div class="body">
+
+<ul><li>Indicações: cirrose descompensada (ascite, PBE, HDA varicosa, encefalopatia, <strong>síndrome hepatorrenal</strong>), <strong>CHC dentro de Milão</strong>, insuficiência hepática aguda, colestáticas (CBP, CEP; atresia biliar é a principal na criança), metabólicas.</li>
+<li>Alocação por <strong>MELD-Na</strong> (bilirrubina, INR, creatinina, sódio) <span class="simple">(uma nota de gravidade: quanto maior, mais urgente e mais na frente da fila)</span>; listar a partir de <strong>MELD ≥15</strong> (benefício supera o risco); pontuação especial: CHC, síndrome hepatopulmonar, hipertensão portopulmonar, polineuropatia amiloidótica.</li>
+<li><strong>Critérios de Milão</strong>: <strong>1 nódulo ≤5 cm</strong> ou <strong>até 3 nódulos ≤3 cm</strong>, sem invasão vascular macroscópica nem doença extra-hepática. Expandidos: UCSF, "Up-to-7"; downstaging com TACE/ablação.</li>
+<li><strong>King's College</strong> (insuficiência hepática aguda) — paracetamol: pH &lt;7,3 após ressuscitação <strong>ou</strong> (INR &gt;6,5 + creatinina &gt;3,4 + encefalopatia III–IV). Não paracetamol: INR &gt;6,5 <strong>ou</strong> 3 de 5 (idade &lt;10 ou &gt;40, etiologia desfavorável, icterícia → encefalopatia &gt;7 dias, INR &gt;3,5, bilirrubina &gt;17,5). Clichy: encefalopatia + fator V &lt;20% (&lt;30 anos: &lt;30%).</li>
+<li>Contraindicações: <strong>etilismo ativo</strong> (abstinência e avaliação psiquiátrica), neoplasia extra-hepática, sepse, doença cardiopulmonar grave, <strong>trombose portal tumoral</strong> (a não tumoral não contraindica — trombectomia/anastomose alternativa).</li></ul>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">6</span> Transplante hepático: técnica <span class="chev">▶</span></summary>
+  <div class="body">
+
+<div class="steps">
+<div class="step"><b>Incisão</b>: subcostal bilateral com extensão xifoide (<strong>Mercedes</strong>) ou em "J"/Makuuchi.</div>
+<div class="step"><b>Hepatectomia do receptor</b> (fase mais sangrante — hipertensão portal): liberar ligamentos, dissecar o hilo (artéria, porta, colédoco alto).</div>
+<div class="step"><b>Técnica clássica</b>: retirada do fígado <strong>com a veia cava retro-hepática</strong> → clampeamento total da cava (pode precisar de <strong>bypass venovenoso</strong> porto-femoro-axilar). <b>Piggyback</b> <span class="simple">(o fígado novo vai 'de cavalinho' sobre a veia cava do paciente, que é preservada)</span>: <strong>preserva a cava</strong>, anastomose das veias hepáticas do receptor com a cava do doador — menos instabilidade, dispensa bypass, mais usada hoje.</div>
+<div class="step"><b>Fase anepática</b> → anastomoses: <strong>cava supra-hepática</strong> (ou cavo-cava) → <strong>porta</strong> → reperfusão (síndrome de reperfusão: hipotensão, hipercalemia, arritmia) → <strong>artéria hepática</strong> → <strong>via biliar</strong> (colédoco-colédoco termino-terminal; hepaticojejunostomia em Y de Roux se ducto doente/CEP).</div>
+<div class="step"><b>Doador vivo</b>: lobo direito (adulto) ou segmentos II–III (criança); mais complicações biliares; volume do enxerto ≥0,8% do peso do receptor (risco de "small-for-size").</div></div>
+<div class="tbl fio"><table><tr><th>Fio</th><th>Anastomose</th></tr>
+<tr><td>Prolene 3-0/4-0</td><td>cava, porta (com "growth factor" — folga para não estenosar)</td></tr>
+<tr><td>Prolene 7-0/8-0</td><td>artéria hepática (lupa)</td></tr>
+<tr><td>PDS 5-0/6-0</td><td>via biliar (absorvível monofilamentar)</td></tr></table></div>
+<div class="tbl"><table><tr><th>Complicação</th><th>Pista</th><th>Conduta</th></tr>
+<tr><td><strong>Trombose da artéria hepática</strong> (mais temida, precoce)</td><td>↑ transaminases, bilioma/necrose biliar, fístula; Doppler sem fluxo</td><td>trombectomia/revisão; <strong>retransplante</strong></td></tr>
+<tr><td>Não função primária</td><td>primeiros dias: acidose, coagulopatia, sem bile</td><td>retransplante urgente</td></tr>
+<tr><td>Trombose portal</td><td>ascite, varizes, insuficiência</td><td>trombectomia/anticoagulação</td></tr>
+<tr><td>Complicações biliares (as mais comuns)</td><td>fístula, estenose anastomótica/isquêmica</td><td>CPRE/prótese, drenagem, hepaticojejunostomia</td></tr></table></div>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">7</span> Transplante renal: técnica &amp; complicações <span class="chev">▶</span></summary>
+  <div class="body">
+
+<p>Indicação: DRC estágio 5 (TFG &lt;15) — <strong>preemptivo</strong> (antes da diálise) tem melhor resultado. Doador vivo &gt; falecido em sobrevida do enxerto.</p>
+<div class="steps">
+<div class="step"><b>Posição</b>: dorsal; sonda vesical com clamp para encher a bexiga com soro (facilita a anastomose ureteral).</div>
+<div class="step"><b>Incisão de Gibson/Rutherford-Morison</b> em fossa ilíaca (direita preferida: vasos ilíacos mais superficiais), acesso <strong>extraperitoneal</strong>.</div>
+<div class="step"><b>Anastomose venosa</b>: veia renal → <strong>ilíaca externa</strong> termino-lateral.</div>
+<div class="step"><b>Anastomose arterial</b>: artéria renal (com patch de Carrel no falecido) → <strong>ilíaca externa</strong> T-L (ou ilíaca interna T-T).</div>
+<div class="step"><b>Reperfusão</b> e checagem de fluxo/diurese.</div>
+<div class="step"><b>Ureteroneocistostomia extravesical (Lich-Gregoir)</b> com mecanismo antirrefluxo (túnel no detrusor) + cateter duplo J por 2–6 semanas.</div></div>
+<div class="tbl"><table><tr><th>Complicação</th><th>Pista</th><th>Conduta</th></tr>
+<tr><td>Função tardia do enxerto (necrose tubular aguda)</td><td>diálise na 1ª semana</td><td>suporte; descartar trombose/rejeição</td></tr>
+<tr><td>Trombose arterial/venosa</td><td>anúria súbita, dor, hematúria; Doppler</td><td>reexploração (geralmente perda do enxerto)</td></tr>
+<tr><td><strong>Fístula urinária</strong></td><td>dor, débito no dreno com <strong>creatinina do líquido ≫ sérica</strong></td><td>sonda, nefrostomia/duplo J, reimplante</td></tr>
+<tr><td><strong>Linfocele</strong> (mais comum coleção)</td><td>semanas; compressão do ureter/veia, creatinina do líquido = sérica</td><td>punção; <strong>marsupialização peritoneal</strong> (laparoscópica) se recidiva</td></tr>
+<tr><td>Estenose da artéria renal</td><td>HAS refratária, sopro, piora de função</td><td>angioplastia com stent</td></tr></table></div>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">8</span> Questões de banca, pega-ratões &amp; mnemônicos <span class="chev">▶</span></summary>
+  <div class="body">
+<h4>10 questões representativas (originais, estilo das 5 bancas)</h4>
+<div class="box prova"><span class="lbl">Q1 <span class="banca">HCPA</span></span><strong>Qual lei acabou com a doação presumida no Brasil?</strong><br>Resposta: <strong>Lei 10.211/2001</strong> — exige autorização familiar.</div>
+<div class="box prova"><span class="lbl">Q2 <span class="banca">GHC</span></span><strong>Qual neoplasia do potencial doador não contraindica a doação?</strong><br>Resposta: <strong>Carcinoma basocelular de pele</strong> (também in situ de colo e alguns primários de SNC).</div>
+<div class="box prova"><span class="lbl">Q3 <span class="banca">AMRIGS</span></span><strong>Paciente cirrótico com CHC: 1 nódulo de 4,5 cm, sem invasão vascular. Dentro de Milão?</strong><br>Resposta: <strong>Sim</strong> (nódulo único ≤5 cm).</div>
+<div class="box prova"><span class="lbl">Q4 <span class="banca">PUC-RS</span></span><strong>Qual a principal vantagem da técnica piggyback?</strong><br>Resposta: <strong>Preserva a veia cava</strong> do receptor → menos instabilidade hemodinâmica, sem bypass venovenoso.</div>
+<div class="box prova"><span class="lbl">Q5 <span class="banca">SC-POA</span></span><strong>Elevação súbita de transaminases e fístula biliar no 5º PO de transplante hepático. Primeiro exame?</strong><br>Resposta: <strong>Doppler</strong> da artéria hepática — suspeita de <strong>trombose arterial</strong> (via biliar depende da artéria).</div>
+<div class="box prova"><span class="lbl">Q6 <span class="banca">HCPA</span></span><strong>Ordem habitual de retirada dos órgãos na captação de múltiplos órgãos?</strong><br>Resposta: Coração → pulmões → fígado → pâncreas → <strong>rins</strong> (último, maior tolerância à isquemia).</div>
+<div class="box prova"><span class="lbl">Q7 <span class="banca">GHC</span></span><strong>Coleção perirrenal 6 semanas após transplante renal com creatinina do líquido igual à sérica. Diagnóstico e tratamento?</strong><br>Resposta: <strong>Linfocele</strong>; punção e, se recidiva, <strong>marsupialização peritoneal</strong>.</div>
+<div class="box prova"><span class="lbl">Q8 <span class="banca">AMRIGS</span></span><strong>Intoxicação por paracetamol com pH 7,2 após ressuscitação volêmica. Indicação?</strong><br>Resposta: <strong>Transplante hepático</strong> (King's College).</div>
+<div class="box prova"><span class="lbl">Q9 <span class="banca">PUC-RS</span></span><strong>Rejeição que ocorre minutos após a reperfusão. Mecanismo e prevenção?</strong><br>Resposta: <strong>Hiperaguda</strong>, por anticorpos pré-formados; prevenida pela <strong>prova cruzada</strong> e compatibilidade ABO.</div>
+<div class="box prova"><span class="lbl">Q10 <span class="banca">SC-POA</span></span><strong>Em qual vaso se anastomosa a artéria do rim transplantado de doador falecido?</strong><br>Resposta: <strong>Ilíaca externa</strong>, termino-lateral, com patch de Carrel.</div>
+<h4>Pega-ratões (as armadilhas clássicas)</h4>
+<div class="box warn"><span class="lbl">☠ trap 1</span>Trombose portal <strong>não tumoral</strong> não contraindica transplante hepático.</div>
+<div class="box warn"><span class="lbl">☠ trap 2</span>Rim é retirado por último e tolera mais isquemia fria (24–36 h); coração o mínimo (4–6 h).</div>
+<div class="box warn"><span class="lbl">☠ trap 3</span>Piggyback preserva a cava; clássica retira a cava e pode exigir bypass.</div>
+<div class="box warn"><span class="lbl">☠ trap 4</span>Fístula urinária: creatinina do líquido ≫ sérica · linfocele: igual à sérica.</div>
+<div class="box warn"><span class="lbl">☠ trap 5</span>Trombose da artéria hepática se manifesta como problema biliar.</div>
+<div class="box warn"><span class="lbl">☠ trap 6</span>Doação de falecido depende da família, mesmo que a pessoa tenha documento.</div>
+<div class="box warn"><span class="lbl">☠ trap 7</span>HTLV é contraindicação absoluta; hepatite B/C não.</div>
+<h4>Mnemônicos-resumo</h4>
+<div class="box mac"><span class="lbl">Milão = "1-5, 3-3"</span><strong>1</strong> nódulo até <strong>5</strong> cm ou <strong>3</strong> nódulos até <strong>3</strong> cm, sem invasão vascular nem metástase.</div>
+<div class="box mac"><span class="lbl">ordem das anastomoses (fígado)</span><strong>C-P-A-B</strong>: Cava → Porta → (reperfusão) → Artéria → Bile.</div>
+  </div>
+</details>
+
+<footer>
+  <div><strong>carolzita</strong> · Transplantes: Doação, Fígado & Rim · referência completa</div>
+  <div class="ref">Fontes: Sabiston 21ª ed. (Transplantation) · Zollinger 11ª ed. (Liver and Kidney Transplantation) · Lei 9.434/1997, Lei 10.211/2001, Decreto 9.175/2017 · Resolução CFM 2.173/2017 · AASLD/AST Liver Transplant Evaluation Guideline · KDIGO Kidney Transplant Recipient Guideline · Mazzaferro V et al. NEJM 1996 (Milão). Conteúdo educacional; questões são itens representativos originais no estilo das bancas, não reprodução de provas.</div>
+</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Câncer de Tireoide & Tireoidectomia — carolzita</title>
+<meta name="cz-tema" content="Câncer de Tireoide &amp; Tireoidectomia">
+<meta name="cz-grupo" content="Cabeça &amp; Pescoço">
+<meta name="cz-tags" content="ATA 2025, Bethesda, Medular/NEM 2, Tireoidectomia, Laríngeo recorrente">
+<meta name="cz-tipo" content="Full">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0f; --bg2:#12121a; --card:#16161f; --card2:#1c1c27;
+  --line:#2a2a38; --txt:#e6e6ef; --muted:#9a9ab0;
+  --laranja:#f97316; --laranja-bg:rgba(249,115,22,.10);
+  --roxo:#a855f7; --roxo-bg:rgba(168,85,247,.10);
+  --ciano:#22d3ee; --ciano-bg:rgba(34,211,238,.10);
+  --verde:#34d399; --vermelho:#f87171; --amarelo:#fbbf24;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(1200px 600px at 50% -10%,#15151f 0%,var(--bg) 60%);color:var(--txt);font-family:'Inter',sans-serif;line-height:1.55;padding:0 0 80px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px}
+header{padding:40px 0 24px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(30px,6vw,46px);line-height:1.05;margin:8px 0 6px;letter-spacing:-.02em}
+.sub{color:var(--muted);font-size:15px;max-width:700px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tag{font-family:'JetBrains Mono',monospace;font-size:11px;padding:5px 10px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted)}
+.tag.r{color:var(--roxo);border-color:rgba(168,85,247,.35);background:var(--roxo-bg)}
+section{margin-top:14px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:12px;overflow:hidden;transition:border-color .2s}
+details[open]{border-color:rgba(249,115,22,.30)}
+summary{cursor:pointer;list-style:none;padding:18px 20px;display:flex;align-items:center;gap:13px;font-family:'Syne',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em;user-select:none}
+summary::-webkit-details-marker{display:none}
+.num{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--bg);background:var(--laranja);width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:0 0 auto}
+.chev{margin-left:auto;color:var(--muted);transition:transform .25s;font-size:14px}
+details[open] .chev{transform:rotate(90deg)}
+.body{padding:4px 22px 24px;font-size:15px}
+.body p{margin:10px 0}
+.body h4{font-family:'Syne',sans-serif;font-size:16px;color:var(--laranja);margin:20px 0 8px;letter-spacing:-.01em}
+.body ul{margin:8px 0 8px 4px;list-style:none}
+.body li{padding:4px 0 4px 20px;position:relative}
+.body li::before{content:"▸";position:absolute;left:0;color:var(--laranja);font-size:12px;top:6px}
+.body strong{color:#fff;font-weight:600}
+.simple{color:var(--ciano);font-style:italic;font-size:.94em}
+.box{border-radius:12px;padding:13px 15px;margin:14px 0;font-size:14px;border:1px solid}
+.box.prova{background:var(--roxo-bg);border-color:rgba(168,85,247,.35)}
+.box.prova .lbl{color:var(--roxo)}
+.box.mac{background:var(--ciano-bg);border-color:rgba(34,211,238,.35)}
+.box.mac .lbl{color:var(--ciano)}
+.box.warn{background:rgba(248,113,113,.08);border-color:rgba(248,113,113,.3)}
+.box.warn .lbl{color:var(--vermelho)}
+.lbl{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-family:'JetBrains Mono',monospace;font-size:10px;background:rgba(168,85,247,.2);color:var(--roxo);padding:2px 7px;border-radius:6px;margin-left:6px;white-space:nowrap}
+.tbl{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
+.tbl table{width:100%;border-collapse:collapse;min-width:520px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--laranja);background:var(--card2)}
+td strong{color:#fff}
+.fio td:first-child{color:var(--ciano);font-family:'JetBrains Mono',monospace;font-weight:500}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin:14px 0}
+.gcard{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+.gcard .t{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--ciano);margin-bottom:4px}
+.gcard .d{font-size:13px;color:var(--muted)}
+.hands{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.hand{border-radius:12px;padding:14px;border:1px solid var(--line)}
+.hand.e{background:rgba(34,211,238,.06);border-color:rgba(34,211,238,.25)}
+.hand.d{background:rgba(249,115,22,.06);border-color:rgba(249,115,22,.25)}
+.hand .ht{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;font-weight:700}
+.hand.e .ht{color:var(--ciano)} .hand.d .ht{color:var(--laranja)}
+.hand li{font-size:13px}
+.steps{counter-reset:s;margin:10px 0}
+.step{counter-increment:s;position:relative;padding:11px 0 11px 46px;border-bottom:1px dashed var(--line)}
+.step:last-child{border-bottom:none}
+.step::before{content:counter(s);position:absolute;left:0;top:9px;width:30px;height:30px;border-radius:9px;background:var(--laranja-bg);border:1px solid rgba(249,115,22,.4);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:grid;place-items:center}
+.step b{color:#fff}
+svg{max-width:100%;height:auto;display:block;margin:16px auto}
+.fig{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.fig .cap{font-size:12px;color:var(--muted);text-align:center;margin-top:8px;font-family:'JetBrains Mono',monospace}
+footer{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+footer .ref{font-family:'JetBrains Mono',monospace;font-size:12px;margin-top:8px}
+a{color:var(--laranja)}
+@media(max-width:560px){.hands{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">carolzita · cabeça e pescoço · cirurgia endócrina</div>
+  <h1>Câncer de Tireoide & Tireoidectomia</h1>
+  <p class="sub">Papilífero, folicular, oncocítico (Hürthle), medular e anaplásico · estratificação de risco · extensão da cirurgia pela <strong>ATA 2025</strong> (lobectomia como padrão nos tumores de baixo risco ≤2 cm) · esvaziamentos cervicais · tireoidectomia passo a passo · nervos laríngeos e paratireoides · complicações. Base: Sabiston, Zollinger, ATA 2025 (Ringel et al., Thyroid 2025), Bethesda 2023.</p>
+  <div class="tags"><span class="tag">ATA 2025</span><span class="tag">Bethesda</span><span class="tag">Medular/NEM 2</span><span class="tag">Tireoidectomia</span><span class="tag">Laríngeo recorrente</span><span class="tag r">HCPA · GHC · SC-POA · PUC · AMRIGS</span></div>
+</header>
+
+<details open>
+  <summary><span class="num">1</span> Quadro clínico, tipos histológicos &amp; diagnóstico <span class="chev">▶</span></summary>
+  <div class="body">
+
+<p>O câncer de tireoide geralmente se apresenta como <strong>nódulo assintomático, eutireoidiano</strong> <span class="simple">(a glândula continua funcionando normal — os exames de TSH e T4 vêm normais)</span>. Sinais de alarme: crescimento rápido, nódulo endurecido/fixo, <strong>rouquidão</strong> (invasão do recorrente), disfagia, estridor, linfonodo cervical, história de <strong>radiação cervical na infância</strong> e história familiar (NEM 2, CMT familiar).</p>
+<div class="tbl"><table><tr><th>Tipo</th><th>Freq.</th><th>Célula / marcador</th><th>Disseminação</th><th>Pontos de prova</th></tr>
+<tr><td><strong>Papilífero</strong></td><td>80–85%</td><td>folicular · tireoglobulina</td><td><strong>Linfática</strong> (cadeia VI)</td><td>corpos psamomatosos, núcleos em "olho de órfã Annie", multifocal, radiação ↑ risco, BRAF V600E</td></tr>
+<tr><td><strong>Folicular</strong></td><td>10%</td><td>folicular · tireoglobulina</td><td><strong>Hematogênica</strong> (osso, pulmão)</td><td>PAAF não diferencia adenoma × carcinoma — exige <strong>invasão capsular/vascular</strong> na histologia; carência de iodo</td></tr>
+<tr><td><strong>Oncocítico (Hürthle)</strong></td><td>3–5%</td><td>oncócitos</td><td>linfática + hematogênica</td><td>capta <strong>pouco iodo</strong>, mais recidiva, idosos — agora categoria separada na OMS/ATA 2025</td></tr>
+<tr><td><strong>Medular (CMT)</strong></td><td>2–4%</td><td>célula <strong>C parafolicular</strong> · calcitonina + CEA</td><td>linfática precoce</td><td>RET; 25% hereditário (NEM 2A/2B); não capta iodo; flush/diarreia</td></tr>
+<tr><td><strong>Anaplásico</strong></td><td>&lt;2%</td><td>indiferenciado</td><td>local agressiva</td><td>idoso, massa de crescimento em semanas, sobrevida mediana meses; todo é T4</td></tr>
+<tr><td><strong>Linfoma</strong></td><td>raro</td><td>B grandes células</td><td>—</td><td>associado a <strong>Hashimoto</strong>; tratamento é QT (R-CHOP), não cirurgia ampla</td></tr></table></div>
+<h4>Investigação do nódulo</h4>
+<ul><li><strong>TSH primeiro</strong>: se suprimido → cintilografia (nódulo quente raramente é câncer, não punciona).</li>
+<li><strong>Ultrassom</strong> com classificação de risco (ACR TI-RADS): sólido hipoecoico, mais alto que largo, margens irregulares, <strong>microcalcificações</strong>, extensão extratireoidiana.</li>
+<li><strong>PAAF</strong> <span class="simple">(punção com agulha fina, tira umas células com uma agulhinha)</span> conforme tamanho e risco ultrassonográfico → laudo <strong>Bethesda</strong>:</li></ul>
+<div class="tbl"><table><tr><th>Bethesda</th><th>Categoria</th><th>Risco de malignidade</th><th>Conduta</th></tr>
+<tr><td>I</td><td>Não diagnóstico</td><td>~13%</td><td>repetir PAAF guiada</td></tr>
+<tr><td>II</td><td>Benigno</td><td>~4%</td><td>seguimento US</td></tr>
+<tr><td>III</td><td>AUS (atipia indeterminada)</td><td>~22%</td><td>repetir PAAF / teste molecular / lobectomia diagnóstica</td></tr>
+<tr><td>IV</td><td>Neoplasia folicular</td><td>~30%</td><td>teste molecular ou <strong>lobectomia diagnóstica</strong></td></tr>
+<tr><td>V</td><td>Suspeito de malignidade</td><td>~74%</td><td>cirurgia</td></tr>
+<tr><td>VI</td><td>Maligno</td><td>~97%</td><td>cirurgia (ou vigilância ativa no microcarcinoma selecionado)</td></tr></table></div>
+<div class="box prova"><span class="lbl">high-yield <span class="banca">HCPA</span><span class="banca">AMRIGS</span></span>Medular: dosar <strong>calcitonina e CEA</strong>, pesquisar <strong>RET</strong> e <strong>excluir feocromocitoma ANTES da cirurgia</strong> (metanefrinas) — operar o feo primeiro. NEM 2A = CMT + feo + hiperparatireoidismo · NEM 2B = CMT + feo + neuromas mucosos + hábito marfanoide (sem hiperpara).</div>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">2</span> Anatomia &amp; vascularização (o que muda a cirurgia) <span class="chev">▶</span></summary>
+  <div class="body">
+
+<div class="grid">
+<div class="gcard"><div class="t">Artéria tireoidiana superior</div><div class="d">1º ramo da <strong>carótida externa</strong>. Corre junto ao <strong>nervo laríngeo superior (ramo externo)</strong> → ligar <strong>rente à cápsula</strong>, ramo a ramo, no polo superior.</div></div>
+<div class="gcard"><div class="t">Artéria tireoidiana inferior</div><div class="d">Ramo do <strong>tronco tireocervical</strong> (subclávia). Cruza o <strong>nervo laríngeo recorrente</strong> → ligar ramos terminais, não o tronco, para preservar a irrigação das paratireoides.</div></div>
+<div class="gcard"><div class="t">A. tireoidiana ima</div><div class="d">Inconstante (~3–10%), sobe do tronco braquiocefálico/arco até o istmo — sangra na traqueostomia e no istmo.</div></div>
+<div class="gcard"><div class="t">Veias</div><div class="d">Superior e média → <strong>jugular interna</strong> (a média é a 1ª a ligar na mobilização lateral); inferiores → braquiocefálicas.</div></div>
+</div>
+<h4>Nervos</h4>
+<ul><li><strong>Laríngeo recorrente (NLR)</strong> <span class="simple">(o fio que manda a corda vocal se mexer — se cortar, a voz fica rouca)</span>: à <strong>direita</strong> contorna a subclávia (mais oblíquo/lateral); à <strong>esquerda</strong> contorna o arco aórtico (mais vertical, no sulco traqueoesofágico). Entra na laringe atrás do <strong>ligamento de Berry</strong> — ponto de maior risco. Inerva todos os músculos intrínsecos <strong>exceto o cricotireóideo</strong>.</li>
+<li><strong>Nervo laríngeo não recorrente</strong>: ~0,5–1% à direita, associado à <strong>artéria subclávia direita aberrante (lusória)</strong>.</li>
+<li><strong>Laríngeo superior, ramo externo</strong>: motor do <strong>cricotireóideo</strong> → lesão = perda dos <strong>agudos</strong>/fadiga vocal (cantores).</li>
+<li><strong>Triângulo de Beahrs</strong> (carótida comum, a. tireoidiana inferior, NLR) e <strong>tubérculo de Zuckerkandl</strong> (o nervo passa medial/profundo a ele) ajudam a achar o NLR.</li></ul>
+<h4>Paratireoides</h4>
+<p>Superiores (origem na <strong>4ª bolsa</strong>): posição constante, dorsal, próximas ao cruzamento NLR × a. tireoidiana inferior. Inferiores (<strong>3ª bolsa</strong>, junto com o timo): posição variável, podem estar no ligamento tireotímico. Ambas irrigadas principalmente pela <strong>a. tireoidiana inferior</strong>.</p>
+<h4>Compartimentos linfonodais</h4>
+<div class="tbl"><table><tr><th>Nível</th><th>Limites / conteúdo</th></tr>
+<tr><td>I</td><td>submentoniano (Ia) e submandibular (Ib)</td></tr>
+<tr><td>II–IV</td><td>jugular superior, médio, inferior (cadeia lateral)</td></tr>
+<tr><td>V</td><td>triângulo posterior (n. acessório)</td></tr>
+<tr><td><strong>VI</strong></td><td><strong>central</strong>: hioide → fúrcula, entre as carótidas (pré/paratraqueais, pré-laríngeo/Delphiano)</td></tr>
+<tr><td>VII</td><td>mediastino superior até o tronco braquiocefálico</td></tr></table></div>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">3</span> Tratamento: extensão da cirurgia (ATA 2025) <span class="chev">▶</span></summary>
+  <div class="body">
+
+<div class="box mac"><span class="lbl">mudança de paradigma</span>A ATA 2025 desescalonou o tratamento: <strong>lobectomia é a cirurgia recomendada</strong> para carcinoma diferenciado unifocal <strong>≤2 cm</strong>, sem extensão extratireoidiana e sem linfonodo (cN0); pode ser considerada entre <strong>&gt;2 e ≤4 cm</strong>. Microcarcinoma papilífero de baixo risco: <strong>vigilância ativa</strong> ou ablação são opções.</div>
+<div class="tbl"><table><tr><th>Cenário</th><th>Cirurgia</th></tr>
+<tr><td>CDT ≤2 cm, intratireoidiano, cN0</td><td><strong>Lobectomia + istmectomia</strong></td></tr>
+<tr><td>CDT &gt;2–≤4 cm, cN0</td><td>lobectomia <strong>ou</strong> tireoidectomia total (nódulos contralaterais, preferência, necessidade de RAI)</td></tr>
+<tr><td>&gt;4 cm, extensão extratireoidiana macroscópica, cN1, M1, radiação prévia</td><td><strong>Tireoidectomia total</strong> ± esvaziamento</td></tr>
+<tr><td>Linfonodo central clínico (cN1a)</td><td>TT + <strong>esvaziamento central terapêutico</strong> (VI)</td></tr>
+<tr><td>Linfonodo lateral (cN1b)</td><td>TT + esvaziamento <strong>lateral seletivo II–IV(V)</strong> + central</td></tr>
+<tr><td>Medular</td><td>TT + <strong>esvaziamento central sempre</strong>; lateral se positivo ou calcitonina muito alta</td></tr>
+<tr><td>RET positivo sem tumor (NEM 2)</td><td><strong>Tireoidectomia profilática</strong> — idade conforme risco do códon (2B/M918T: 1º ano de vida)</td></tr>
+<tr><td>Anaplásico</td><td>ressecção só se R0/R1 possível; estudar BRAF (dabrafenibe+trametinibe); traqueostomia só se necessário</td></tr></table></div>
+<ul><li><strong>Esvaziamento central profilático</strong>: não recomendado em T1–T2 cN0; considerar em T3–T4.</li>
+<li><strong>Totalização (completion)</strong> após lobectomia: se doença persistente, se for indicado iodo radioativo ou para facilitar seguimento com tireoglobulina.</li>
+<li><strong>Iodo-131 (RAI)</strong>: não de rotina no baixo risco; indicado no risco alto/intermediário-alto. Precisa de TSH &gt;30 (suspensão de levotiroxina ou <strong>TSH recombinante</strong>).</li>
+<li><strong>Seguimento</strong>: tireoglobulina + anti-Tg + US cervical; supressão de TSH só nos de maior risco.</li>
+<li><strong>Linfadenectomia radical</strong> (retira ECM, VJI, n. acessório) × <strong>radical modificada</strong> (preserva ≥1) × <strong>seletiva</strong> (só os níveis indicados — padrão na tireoide).</li></ul>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">4</span> Posicionamento &amp; preparo <span class="chev">▶</span></summary>
+  <div class="body">
+
+<ul><li>Decúbito dorsal, <strong>coxim sob os ombros</strong> e cabeça em leve <strong>hiperextensão</strong> em rodilha <span class="simple">(um travesseiro embaixo dos ombros para o pescoço esticar e a tireoide ficar mais para frente)</span>; braços ao longo do corpo; cefaloaclive 15–20° (diminui congestão venosa).</li>
+<li>Anestesia geral, IOT com tubo de <strong>monitorização do NLR (eletrodos)</strong> se disponível → evitar bloqueador neuromuscular de longa duração após a indução.</li>
+<li><strong>Laringoscopia pré-operatória</strong> <span class="simple">(olhar as cordas vocais antes de operar para saber se já havia rouquidão)</span> em todos com alteração vocal, câncer invasivo ou cirurgia cervical prévia.</li>
+<li>Dosar <strong>cálcio, PTH e vitamina D</strong> pré-op; corrigir deficiência de vitamina D (menos hipocalcemia pós-op).</li>
+<li>Antibioticoprofilaxia: <strong>não rotineira</strong> (cirurgia limpa).</li></ul>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">5</span> Tireoidectomia passo a passo (Zollinger) <span class="chev">▶</span></summary>
+  <div class="body">
+
+<div class="steps">
+<div class="step"><b>Incisão de Kocher</b>: transversa, em prega cutânea, ~2 dedos acima da fúrcula, 4–6 cm. <span class="simple">(um corte deitado na dobrinha do pescoço para a cicatriz sumir)</span></div>
+<div class="step"><b>Retalhos subplatismais</b>: dissecção acima (até a cartilagem tireoide) e abaixo (até a fúrcula), no plano avascular sob o platisma, preservando as jugulares anteriores. Afastador autoestático (<strong>Mahorner</strong>/Weitlaner).</div>
+<div class="step"><b>Abertura da rafe mediana</b> entre esterno-hióideos (linha alba cervical) e afastamento lateral dos <strong>esterno-hióideo e esternotireóideo</strong> (seccionar os pré-tireoidianos no alto se bócio grande/tumor aderido).</div>
+<div class="step"><b>Mobilização lateral</b>: tração medial do lobo; ligar a <strong>veia tireoidiana média</strong>.</div>
+<div class="step"><b>Polo superior</b>: tracionar para baixo e lateral, abrir o espaço cricotireóideo (de Reeve) e ligar os <strong>ramos da a. tireoidiana superior rente à cápsula</strong>, individualmente — protege o ramo externo do laríngeo superior.</div>
+<div class="step"><b>Paratireoide superior</b>: identificar e rebater lateralmente com seu pedículo.</div>
+<div class="step"><b>Identificar o NLR</b> no sulco traqueoesofágico/triângulo de Beahrs ou abaixo do tubérculo de Zuckerkandl; seguir até a entrada na laringe. Estimular com neuromonitor (sinal V1 → R1 → R2 → V2).</div>
+<div class="step"><b>Paratireoide inferior</b>: preservar com irrigação; se desvascularizada → <strong>autotransplante</strong> picada em bolsa no esternocleidomastóideo.</div>
+<div class="step"><b>Ligadura dos ramos terminais</b> da a. tireoidiana inferior junto à cápsula (não o tronco) e das veias inferiores.</div>
+<div class="step"><b>Ligamento de Berry</b>: secção cuidadosa com bisturi/tesoura fina — sem energia junto ao nervo (zona de dano térmico de 2–5 mm).</div>
+<div class="step"><b>Istmectomia</b> e liberação da traqueia; na total, repetir do outro lado. Neuromonitorizar antes de iniciar o 2º lado: <strong>perda de sinal no 1º lado → considerar parar (tireoidectomia estagiada)</strong> para evitar paralisia bilateral.</div>
+<div class="step"><b>Hemostasia</b> com Valsalva (aumentar pressão intratorácica), revisão das paratireoides; dreno não é rotina.</div>
+<div class="step"><b>Fechamento</b>: rafe dos pré-tireoidianos com absorvível, platisma, pele intradérmica.</div>
+</div>
+<div class="hands">
+<div class="hand e"><div class="ht">✋ mão esquerda</div><ul><li>Pinça de dissecção de Adson/DeBakey (traciona a cápsula)</li><li>Gaze montada / "peanut" para afastar delicadamente</li><li>Afastador de Langenbeck/Green (auxiliar)</li><li>Tração do lobo com pinça de Babcock ou Allis na glândula</li></ul></div>
+<div class="hand d"><div class="ht">✋ mão direita</div><ul><li>Bisturi lâmina 15 (pele) · tesoura de Metzenbaum fina</li><li>Pinça de Mixter/hemostática mosquito (passar ligaduras nos ramos)</li><li>Bisturi ultrassônico/seladora (Harmonic, LigaSure) longe do nervo</li><li>Bipolar fina · sonda do neuromonitor</li><li>Porta-agulha de Webster/Mayo-Hegar</li></ul></div></div>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">6</span> Fios &amp; momento cirúrgico <span class="chev">▶</span></summary>
+  <div class="body">
+
+<div class="tbl fio"><table><tr><th>Fio</th><th>Onde / quando</th><th>Por quê</th></tr>
+<tr><td>Algodão / poliglactina 3-0</td><td>ligadura de ramos dos pedículos superior/inferior</td><td>segurança na ligadura vascular (ou clipes/energia)</td></tr>
+<tr><td>Poliglactina (Vicryl) 3-0/4-0</td><td>aproximação da rafe dos pré-tireoidianos e do platisma</td><td>absorvível, mantém plano anatômico</td></tr>
+<tr><td>Poliglecaprona (Monocryl) 4-0/5-0</td><td>sutura intradérmica da pele</td><td>melhor cosmético <span class="simple">(cicatriz fininha, sem pontos para tirar)</span></td></tr>
+<tr><td>Prolene 5-0</td><td>sutura de lesão de veia jugular/vaso</td><td>monofilamentar inabsorvível vascular</td></tr>
+<tr><td>Nylon 6-0/Prolene 7-0–8-0</td><td>reparo primário de NLR seccionado (neurorrafia)</td><td>epineural sem tensão — ou interposição de alça cervical</td></tr></table></div>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">7</span> Complicações <span class="chev">▶</span></summary>
+  <div class="body">
+
+<div class="tbl"><table><tr><th>Complicação</th><th>Quando</th><th>Conduta</th></tr>
+<tr><td><strong>Hematoma cervical compressivo</strong></td><td>primeiras 6–24 h</td><td>estridor/desconforto respiratório → <strong>abrir a ferida à beira do leito</strong> (pele + rafe) e evacuar, depois centro cirúrgico</td></tr>
+<tr><td><strong>Hipocalcemia</strong> (hipoparatireoidismo)</td><td>24–72 h; transitória em até 30%, definitiva 1–3%</td><td>Chvostek/Trousseau, parestesia perioral; PTH pós-op baixo prediz; cálcio VO + calcitriol; <strong>gluconato de cálcio EV</strong> se grave; corrigir <strong>magnésio</strong></td></tr>
+<tr><td>Lesão NLR unilateral</td><td>pós-extubação</td><td>rouquidão, aspiração; fono; maioria neuropraxia (recupera em 6–12 meses)</td></tr>
+<tr><td><strong>Lesão NLR bilateral</strong></td><td>na extubação</td><td>cordas em <strong>adução/paramediana</strong> → voz até razoável mas <strong>estridor e insuficiência respiratória</strong> → reintubar/traqueostomia</td></tr>
+<tr><td>Laríngeo superior (ramo externo)</td><td>tardio</td><td>perda dos agudos, fadiga vocal</td></tr>
+<tr><td>Fístula quilosa</td><td>esvaziamento lateral à esquerda (ducto torácico)</td><td>dieta com TCM, octreotide, compressão; reoperar se alto débito</td></tr>
+<tr><td>Tempestade tireotóxica</td><td>Graves mal preparado</td><td>β-bloqueador, tionamida, iodo, corticoide, suporte</td></tr>
+<tr><td>Hipotireoidismo</td><td>tireoidectomia total (100%)</td><td>levotiroxina ~1,6 µg/kg/dia</td></tr></table></div>
+<div class="box warn"><span class="lbl">atenção</span>"Fome óssea" <span class="simple">(os ossos estavam com fome de cálcio e puxam todo o cálcio do sangue)</span> após operar hipertireoidismo grave → hipocalcemia profunda com PTH normal/alto, fósforo e magnésio baixos.</div>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">8</span> Questões de banca, pega-ratões &amp; mnemônicos <span class="chev">▶</span></summary>
+  <div class="body">
+<h4>10 questões representativas (originais, estilo das 5 bancas)</h4>
+<div class="box prova"><span class="lbl">Q1 <span class="banca">HCPA</span></span><strong>Mulher de 38 anos, carcinoma papilífero de 1,6 cm, unifocal, sem linfonodos ao US. Conduta cirúrgica preferencial pela ATA 2025?</strong><br>Resposta: <strong>Lobectomia + istmectomia</strong> — tumor ≤2 cm, intratireoidiano, cN0.</div>
+<div class="box prova"><span class="lbl">Q2 <span class="banca">GHC</span></span><strong>Por que a PAAF não confirma carcinoma folicular?</strong><br>Resposta: O diagnóstico exige <strong>invasão capsular ou vascular</strong>, que só a histologia da peça mostra — por isso Bethesda IV vai para lobectomia diagnóstica/teste molecular.</div>
+<div class="box prova"><span class="lbl">Q3 <span class="banca">AMRIGS</span></span><strong>Paciente com carcinoma medular e HAS paroxística. Primeiro passo antes da tireoidectomia?</strong><br>Resposta: Dosar <strong>metanefrinas</strong> e, se feocromocitoma, <strong>adrenalectomia primeiro</strong> (com alfa-bloqueio).</div>
+<div class="box prova"><span class="lbl">Q4 <span class="banca">PUC-RS</span></span><strong>Após tireoidectomia total, paciente extubado com voz quase normal evolui com estridor. Diagnóstico?</strong><br>Resposta: <strong>Lesão bilateral do NLR</strong> — cordas paramedianas obstruem a via aérea. Reintubação/traqueostomia.</div>
+<div class="box prova"><span class="lbl">Q5 <span class="banca">SC-POA</span></span><strong>Qual nervo está em risco na ligadura do pedículo superior e qual a manifestação?</strong><br>Resposta: <strong>Ramo externo do laríngeo superior</strong> → paralisia do cricotireóideo: perda dos agudos e fadiga vocal.</div>
+<div class="box prova"><span class="lbl">Q6 <span class="banca">HCPA</span></span><strong>Seis horas após tireoidectomia, abaulamento cervical e dispneia progressiva. Conduta imediata?</strong><br>Resposta: <strong>Abrir a incisão à beira do leito</strong> e evacuar o hematoma; não aguardar exame de imagem.</div>
+<div class="box prova"><span class="lbl">Q7 <span class="banca">GHC</span></span><strong>Qual célula origina o carcinoma medular e qual o marcador de seguimento?</strong><br>Resposta: <strong>Célula C (parafolicular)</strong>; seguimento com <strong>calcitonina e CEA</strong> (tireoglobulina e iodo não servem).</div>
+<div class="box prova"><span class="lbl">Q8 <span class="banca">AMRIGS</span></span><strong>Variação anatômica associada ao nervo laríngeo não recorrente?</strong><br>Resposta: <strong>Artéria subclávia direita aberrante</strong> (lusória) — ocorre à direita.</div>
+<div class="box prova"><span class="lbl">Q9 <span class="banca">PUC-RS</span></span><strong>Linfoma primário de tireoide associa-se a qual doença e como se trata?</strong><br>Resposta: <strong>Tireoidite de Hashimoto</strong>; tratamento com quimioterapia (R-CHOP) ± radioterapia — cirurgia só para biópsia/via aérea.</div>
+<div class="box prova"><span class="lbl">Q10 <span class="banca">SC-POA</span></span><strong>Criança com NEM 2B (RET M918T). Quando fazer a tireoidectomia?</strong><br>Resposta: <strong>Profilática no 1º ano de vida</strong> (risco mais alto).</div>
+<h4>Pega-ratões (as armadilhas clássicas)</h4>
+<div class="box warn"><span class="lbl">☠ trap 1</span>Nódulo quente na cintilografia (TSH suprimido) <strong>não</strong> precisa de PAAF de rotina.</div>
+<div class="box warn"><span class="lbl">☠ trap 2</span>Lobectomia é <strong>padrão</strong> no CDT ≤2 cm cN0 (ATA 2025) — tireoidectomia total para todo câncer &gt;1 cm é conceito antigo.</div>
+<div class="box warn"><span class="lbl">☠ trap 3</span>Medular <strong>não capta iodo</strong> e não usa tireoglobulina; feocromocitoma é operado <strong>antes</strong>.</div>
+<div class="box warn"><span class="lbl">☠ trap 4</span>NLR <strong>bilateral</strong> = voz relativamente boa + estridor (paramediana); unilateral = rouquidão.</div>
+<div class="box warn"><span class="lbl">☠ trap 5</span>Laríngeo superior = <strong>agudos</strong>; recorrente = rouquidão/via aérea.</div>
+<div class="box warn"><span class="lbl">☠ trap 6</span>Hipocalcemia refratária → checar <strong>magnésio</strong>.</div>
+<div class="box warn"><span class="lbl">☠ trap 7</span>Paratireoide superior = 4ª bolsa (posição constante); inferior = 3ª bolsa com o timo (ectópica).</div>
+<div class="box warn"><span class="lbl">☠ trap 8</span>Ligar a <strong>a. tireoidiana inferior nos ramos terminais</strong>, não no tronco (paratireoides).</div>
+<h4>Mnemônicos-resumo</h4>
+<div class="box mac"><span class="lbl">macete dos tipos</span><strong>P</strong>apilífero = <strong>P</strong>opular, <strong>P</strong>samoma, <strong>P</strong>escoço (linfonodo) · <strong>F</strong>olicular = <strong>F</strong>ora pelo sangue (hematogênico) · <strong>M</strong>edular = <strong>M</strong>arcador calcitonina + <strong>M</strong>EN 2 · <strong>A</strong>naplásico = <strong>A</strong>vô, <strong>A</strong>gressivo.</div>
+<div class="box mac"><span class="lbl">NEM</span>NEM 1 = 3 P (Pituitária, Paratireoide, Pâncreas) · NEM 2A = medular + feo + Paratireoide · NEM 2B = medular + feo + neuromas + Marfanoide (sem paratireoide).</div>
+  </div>
+</details>
+
+<footer>
+  <div><strong>carolzita</strong> · Câncer de Tireoide & Tireoidectomia · referência completa</div>
+  <div class="ref">Fontes: Sabiston Textbook of Surgery 21ª ed. · Zollinger Atlas of Surgical Operations 11ª ed. · Netter · Ringel MD et al. 2025 ATA Management Guidelines for Adult Patients with DTC (Thyroid 2025;35:841-985) · The Bethesda System for Reporting Thyroid Cytopathology 3ª ed. (2023) · ATA Guidelines for Medullary Thyroid Carcinoma (2015). Conteúdo educacional; questões são itens representativos originais no estilo das bancas, não reprodução de provas.</div>
+</footer>
+</div>
+</body>
+</html>

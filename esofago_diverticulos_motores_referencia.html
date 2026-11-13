@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Esôfago: Divertículos, Distúrbios Motores & Perfurações — carolzita</title>
+<meta name="cz-tema" content="Esôfago: Divertículos, Distúrbios Motores &amp; Perfurações">
+<meta name="cz-grupo" content="Esôfago">
+<meta name="cz-tags" content="Zenker, Chicago 4.0, Boerhaave, Mallory-Weiss, Schatzki, Leiomioma">
+<meta name="cz-tipo" content="Full">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0f; --bg2:#12121a; --card:#16161f; --card2:#1c1c27;
+  --line:#2a2a38; --txt:#e6e6ef; --muted:#9a9ab0;
+  --laranja:#f97316; --laranja-bg:rgba(249,115,22,.10);
+  --roxo:#a855f7; --roxo-bg:rgba(168,85,247,.10);
+  --ciano:#22d3ee; --ciano-bg:rgba(34,211,238,.10);
+  --verde:#34d399; --vermelho:#f87171; --amarelo:#fbbf24;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(1200px 600px at 50% -10%,#15151f 0%,var(--bg) 60%);color:var(--txt);font-family:'Inter',sans-serif;line-height:1.55;padding:0 0 80px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px}
+header{padding:40px 0 24px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(30px,6vw,46px);line-height:1.05;margin:8px 0 6px;letter-spacing:-.02em}
+.sub{color:var(--muted);font-size:15px;max-width:700px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tag{font-family:'JetBrains Mono',monospace;font-size:11px;padding:5px 10px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted)}
+.tag.r{color:var(--roxo);border-color:rgba(168,85,247,.35);background:var(--roxo-bg)}
+section{margin-top:14px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:12px;overflow:hidden;transition:border-color .2s}
+details[open]{border-color:rgba(249,115,22,.30)}
+summary{cursor:pointer;list-style:none;padding:18px 20px;display:flex;align-items:center;gap:13px;font-family:'Syne',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em;user-select:none}
+summary::-webkit-details-marker{display:none}
+.num{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--bg);background:var(--laranja);width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:0 0 auto}
+.chev{margin-left:auto;color:var(--muted);transition:transform .25s;font-size:14px}
+details[open] .chev{transform:rotate(90deg)}
+.body{padding:4px 22px 24px;font-size:15px}
+.body p{margin:10px 0}
+.body h4{font-family:'Syne',sans-serif;font-size:16px;color:var(--laranja);margin:20px 0 8px;letter-spacing:-.01em}
+.body ul{margin:8px 0 8px 4px;list-style:none}
+.body li{padding:4px 0 4px 20px;position:relative}
+.body li::before{content:"▸";position:absolute;left:0;color:var(--laranja);font-size:12px;top:6px}
+.body strong{color:#fff;font-weight:600}
+.simple{color:var(--ciano);font-style:italic;font-size:.94em}
+.box{border-radius:12px;padding:13px 15px;margin:14px 0;font-size:14px;border:1px solid}
+.box.prova{background:var(--roxo-bg);border-color:rgba(168,85,247,.35)}
+.box.prova .lbl{color:var(--roxo)}
+.box.mac{background:var(--ciano-bg);border-color:rgba(34,211,238,.35)}
+.box.mac .lbl{color:var(--ciano)}
+.box.warn{background:rgba(248,113,113,.08);border-color:rgba(248,113,113,.3)}
+.box.warn .lbl{color:var(--vermelho)}
+.lbl{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-family:'JetBrains Mono',monospace;font-size:10px;background:rgba(168,85,247,.2);color:var(--roxo);padding:2px 7px;border-radius:6px;margin-left:6px;white-space:nowrap}
+.tbl{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
+.tbl table{width:100%;border-collapse:collapse;min-width:520px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--laranja);background:var(--card2)}
+td strong{color:#fff}
+.fio td:first-child{color:var(--ciano);font-family:'JetBrains Mono',monospace;font-weight:500}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin:14px 0}
+.gcard{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+.gcard .t{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--ciano);margin-bottom:4px}
+.gcard .d{font-size:13px;color:var(--muted)}
+.hands{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.hand{border-radius:12px;padding:14px;border:1px solid var(--line)}
+.hand.e{background:rgba(34,211,238,.06);border-color:rgba(34,211,238,.25)}
+.hand.d{background:rgba(249,115,22,.06);border-color:rgba(249,115,22,.25)}
+.hand .ht{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;font-weight:700}
+.hand.e .ht{color:var(--ciano)} .hand.d .ht{color:var(--laranja)}
+.hand li{font-size:13px}
+.steps{counter-reset:s;margin:10px 0}
+.step{counter-increment:s;position:relative;padding:11px 0 11px 46px;border-bottom:1px dashed var(--line)}
+.step:last-child{border-bottom:none}
+.step::before{content:counter(s);position:absolute;left:0;top:9px;width:30px;height:30px;border-radius:9px;background:var(--laranja-bg);border:1px solid rgba(249,115,22,.4);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:grid;place-items:center}
+.step b{color:#fff}
+svg{max-width:100%;height:auto;display:block;margin:16px auto}
+.fig{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.fig .cap{font-size:12px;color:var(--muted);text-align:center;margin-top:8px;font-family:'JetBrains Mono',monospace}
+footer{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+footer .ref{font-family:'JetBrains Mono',monospace;font-size:12px;margin-top:8px}
+a{color:var(--laranja)}
+@media(max-width:560px){.hands{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">carolzita · esôfago · cirurgia benigna</div>
+  <h1>Esôfago: Divertículos, Distúrbios Motores & Perfurações</h1>
+  <p class="sub">Divertículo de Zenker (cricofaríngeo), médio-esofágico de tração e epifrênico · distúrbios motores pela classificação de Chicago 4.0 (espasmo distal, jackhammer, obstrução da JEG) · anéis e membranas (Schatzki, Plummer-Vinson) · Mallory-Weiss × Boerhaave × perfuração iatrogênica · esofagite eosinofílica · leiomioma · Savary-Miller.</p>
+  <div class="tags"><span class="tag">Zenker</span><span class="tag">Chicago 4.0</span><span class="tag">Boerhaave</span><span class="tag">Mallory-Weiss</span><span class="tag">Schatzki</span><span class="tag">Leiomioma</span><span class="tag r">HCPA · GHC · SC-POA · PUC · AMRIGS</span></div>
+</header>
+
+<details open>
+  <summary><span class="num">1</span> Anatomia aplicada <span class="chev">▶</span></summary>
+  <div class="body">
+
+<ul><li>Esôfago ~25 cm, de C6 (cricoide) a T11; três estreitamentos: <strong>cricofaríngeo (EES)</strong>, arco aórtico/brônquio principal E, hiato diafragmático.</li>
+<li><strong>Sem serosa</strong> <span class="simple">(o esôfago não tem a 'capa' que os outros órgãos do intestino têm, por isso a costura vaza mais e a infecção espalha rápido)</span> → anastomoses e perfurações mais perigosas.</li>
+<li>Irrigação segmentar: cervical — <strong>tireoidiana inferior</strong>; torácico — ramos da <strong>aorta</strong> e brônquicas; abdominal — <strong>gástrica esquerda</strong> e frênica inferior. Drenagem venosa: tireoidianas, ázigos/hemiázigos, gástrica esquerda (porta — varizes).</li>
+<li><strong>Triângulo de Killian</strong>: área de fraqueza na parede posterior da hipofaringe entre as fibras oblíquas do constritor inferior (tireofaríngeo) e as fibras transversas do <strong>cricofaríngeo</strong> — local do Zenker.</li>
+<li>Abordagens: esôfago cervical pela <strong>cervicotomia esquerda</strong> (o esôfago desvia para a esquerda); torácico superior/médio pela <strong>toracotomia direita</strong> (aorta à esquerda); distal pela <strong>toracotomia esquerda</strong> (7º–8º EIC).</li></ul>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">2</span> Divertículos esofágicos <span class="chev">▶</span></summary>
+  <div class="body">
+
+<div class="tbl"><table><tr><th></th><th><strong>Zenker</strong> (faringoesofágico)</th><th>Médio-esofágico</th><th><strong>Epifrênico</strong></th></tr>
+<tr><td>Mecanismo</td><td><strong>pulsão</strong> (falso — só mucosa/submucosa), disfunção do cricofaríngeo</td><td><strong>tração</strong> (verdadeiro — todas as camadas), linfonodo inflamado (TB, histoplasmose)</td><td><strong>pulsão</strong> (falso), associado a <strong>distúrbio motor</strong> (acalasia, espasmo)</td></tr>
+<tr><td>Local</td><td>parede posterior, triângulo de Killian, à <strong>esquerda</strong></td><td>médio, perto da carina</td><td>10 cm distais, geralmente à direita</td></tr>
+<tr><td>Clínica</td><td>idoso; disfagia alta, <strong>regurgitação de comida não digerida</strong>, halitose, gorgolejo, aspiração/pneumonia</td><td>geralmente assintomático; fístula esofagobrônquica</td><td>disfagia, regurgitação (sintomas do distúrbio motor)</td></tr>
+<tr><td>Diagnóstico</td><td><strong>esofagograma baritado</strong> (EDA tem risco de perfurar)</td><td>esofagograma/TC</td><td>esofagograma + <strong>manometria</strong></td></tr>
+<tr><td>Tratamento</td><td>sintomático: <strong>miotomia do cricofaríngeo</strong> + diverticulectomia (&gt;2 cm) ou diverticulopexia; ou <strong>endoscópico</strong> (septotomia/Z-POEM)</td><td>sintomático/fístula: ressecção + tratar o linfonodo</td><td><strong>miotomia longa</strong> (até a JEG) + diverticulectomia + <strong>fundoplicatura parcial</strong></td></tr></table></div>
+<div class="box mac"><span class="lbl">regra de ouro</span>Divertículo de pulsão = tratar a <strong>causa funcional</strong>: sempre <strong>miotomia</strong> (cricofaríngeo no Zenker; esofágica distal no epifrênico). Diverticulectomia isolada → fístula e recidiva.</div>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">3</span> Zenker: técnica aberta passo a passo <span class="chev">▶</span></summary>
+  <div class="body">
+
+<ul><li>Posição: supina, coxim nos ombros, cabeça rodada para a <strong>direita</strong>; SNG/sonda de Maloney ou bougie no esôfago; dieta líquida/jejum prolongado pré-op (resíduo no divertículo).</li></ul>
+<div class="steps">
+<div class="step"><b>Cervicotomia esquerda</b> ao longo da borda anterior do <strong>esternocleidomastóideo</strong> (ou transversa).</div>
+<div class="step"><b>Afastar</b> ECM e bainha carotídea lateralmente, tireoide e traqueia medialmente; ligar a <strong>veia tireoidiana média</strong> e o músculo omo-hióideo se necessário.</div>
+<div class="step"><b>Espaço retrofaríngeo</b>: identificar o divertículo atrás do esôfago; <strong>preservar o nervo laríngeo recorrente</strong> no sulco traqueoesofágico.</div>
+<div class="step"><b>Dissecar o saco</b> até o colo; tracionar com Babcock.</div>
+<div class="step"><b>Miotomia do cricofaríngeo</b> <span class="simple">(cortar o músculo apertado que não deixa a comida descer — é ele que causa o divertículo)</span>: secção longitudinal das fibras musculares do colo até ~3–5 cm no esôfago, preservando a mucosa.</div>
+<div class="step"><b>Diverticulectomia</b> com grampeador linear (TA/GIA 30) aplicado sobre a bougie (evita estenose) — ou <b>diverticulopexia</b> (fixar o saco invertido na fáscia pré-vertebral) se pequeno/idoso frágil.</div>
+<div class="step"><b>Teste</b> com ar/azul de metileno; dreno de Penrose; fechar platisma e pele.</div></div>
+<div class="hands"><div class="hand e"><div class="ht">✋ mão esquerda</div><ul><li>Babcock no saco (tração)</li><li>Pinça de dissecção atraumática</li><li>Afastador de Farabeuf/Langenbeck (auxiliar)</li></ul></div>
+<div class="hand d"><div class="ht">✋ mão direita</div><ul><li>Tesoura de Metzenbaum / bisturi lâmina 15 (miotomia)</li><li>Pinça de Mixter / dissector</li><li>Grampeador linear (TA 30)</li><li>Bisturi elétrico em baixa potência</li></ul></div></div>
+<div class="tbl fio"><table><tr><th>Fio</th><th>Uso</th></tr><tr><td>Grampeador 3,5 mm</td><td>colo do divertículo</td></tr><tr><td>PDS/Vicryl 4-0</td><td>reforço/sutura manual mucosa-muscular</td></tr><tr><td>Prolene 3-0</td><td>diverticulopexia à fáscia pré-vertebral</td></tr></table></div>
+<p>Complicações: <strong>fístula</strong> (geralmente fecha com drenagem e jejum), paralisia de NLR, mediastinite, estenose, recidiva (miotomia incompleta).</p>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">4</span> Distúrbios motores (Chicago 4.0) <span class="chev">▶</span></summary>
+  <div class="body">
+
+<p>Diagnóstico por <strong>manometria de alta resolução</strong>; parâmetro-chave: <strong>IRP</strong> (pressão de relaxamento integrada da JEG; elevada &gt;15 mmHg = obstrução de saída).</p>
+<div class="tbl"><table><tr><th>Distúrbio</th><th>Critério</th><th>Tratamento</th></tr>
+<tr><td><strong>Acalasia</strong> I / II / III</td><td>IRP ↑ + 100% falha peristáltica; II pressurização pan-esofágica (melhor resposta); III espástica</td><td>Heller + Dor, dilatação, <strong>POEM</strong> (preferido no tipo III)</td></tr>
+<tr><td>Obstrução do fluxo da JEG</td><td>IRP ↑ com peristalse preservada</td><td>investigar causa mecânica (EDA, TC, ecoendo)</td></tr>
+<tr><td><strong>Espasmo esofagiano distal</strong></td><td>IRP normal + <strong>≥20% contrações prematuras</strong> (latência distal &lt;4,5 s)</td><td>clínico (nitrato, BCC, sildenafil, toxina botulínica); POEM em refratários</td></tr>
+<tr><td><strong>Jackhammer</strong> (hipercontrátil)</td><td><strong>≥20% de deglutições com DCI &gt;8.000</strong> mmHg·s·cm ("quebra-nozes" é termo antigo)</td><td>clínico; POEM se refratário</td></tr>
+<tr><td>Motilidade ineficaz / ausência de contratilidade</td><td>contrações fracas/ausentes (esclerodermia)</td><td>tratar refluxo; evitar fundoplicatura total (preferir parcial)</td></tr></table></div>
+<p>Esofagograma do espasmo: "<strong>saca-rolhas/contas de rosário</strong>"; acalasia: "<strong>bico de pássaro</strong>".</p>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">5</span> Anéis, membranas, esofagite eosinofílica &amp; leiomioma <span class="chev">▶</span></summary>
+  <div class="body">
+
+<ul><li><strong>Anel de Schatzki</strong> (anel B, mucoso, na JEC): disfagia episódica para sólidos ("síndrome do <strong>steakhouse</strong>"), associado a hérnia de hiato → dilatação + IBP.</li>
+<li><strong>Plummer-Vinson</strong> (Paterson-Kelly): <strong>membrana esofágica cervical + anemia ferropriva + glossite</strong>, mulher; risco de <strong>CEC</strong> de hipofaringe/esôfago → ferro + dilatação + vigilância.</li>
+<li><strong>Esofagite eosinofílica</strong>: homem jovem atópico, impactação alimentar; EDA com <strong>anéis concêntricos ("traqueização")</strong>, sulcos longitudinais; biópsia ≥15 eosinófilos/CGA (6 biópsias em 2 níveis) → IBP, corticoide tópico deglutido (budesonida), dieta de eliminação, dupilumabe; dilatação cuidadosa (risco de laceração).</li>
+<li><strong>Leiomioma</strong>: tumor benigno mais comum do esôfago (terço distal/médio), submucoso, mucosa normal; ecoendoscopia (hipoecoico da muscular própria). <strong>Não biopsiar</strong> pela mucosa (dificulta a enucleação). Sintomático ou &gt;5 cm → <strong>enucleação</strong> por toracoscopia preservando mucosa. Diferencial: GIST (CD117, raro no esôfago).</li>
+<li><strong>Cáustico</strong>: álcali → necrose de liquefação (esôfago); EDA em 12–48 h (Zargar); não induzir vômito; risco tardio de estenose e <strong>CEC</strong> (décadas).</li></ul>
+<div class="tbl"><table><tr><th>Savary-Miller (esofagite péptica)</th><th>Achado</th></tr>
+<tr><td>I</td><td>erosão única/isolada</td></tr><tr><td>II</td><td>erosões confluentes não circunferenciais</td></tr><tr><td>III</td><td>circunferenciais</td></tr><tr><td>IV</td><td>úlcera, estenose, encurtamento</td></tr><tr><td>V</td><td>Barrett</td></tr></table></div>
+<p>(Hoje se prefere <strong>Los Angeles</strong> A–D.)</p>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">6</span> Mallory-Weiss, Boerhaave &amp; perfuração <span class="chev">▶</span></summary>
+  <div class="body">
+
+<div class="tbl"><table><tr><th></th><th><strong>Mallory-Weiss</strong></th><th><strong>Boerhaave</strong></th></tr>
+<tr><td>Lesão</td><td>laceração da <strong>mucosa</strong> na JEG/cárdia</td><td>ruptura <strong>transmural</strong> espontânea (barotrauma)</td></tr>
+<tr><td>Clínica</td><td>vômitos/ânsia (etilista) → <strong>hematêmese</strong></td><td>vômito → <strong>dor torácica intensa</strong> + enfisema subcutâneo (<strong>tríade de Mackler</strong>: vômito, dor torácica, enfisema subcutâneo); sepse</td></tr>
+<tr><td>Local</td><td>pequena curvatura/JEG</td><td><strong>parede posterolateral ESQUERDA do esôfago distal</strong> (2–3 cm acima da JEG)</td></tr>
+<tr><td>Diagnóstico</td><td>EDA</td><td><strong>TC com contraste oral hidrossolúvel</strong>/esofagograma; derrame pleural E, pneumomediastino; sinal de Hamman (crepitação pericárdica); amilase no líquido pleural</td></tr>
+<tr><td>Tratamento</td><td>suporte, IBP; 90% param sozinhos; EDA terapêutica (clip, adrenalina)</td><td>emergência — ver abaixo</td></tr></table></div>
+<h4>Perfuração esofágica (WSES 2019)</h4>
+<ul><li>Causa mais comum: <strong>iatrogênica</strong> (EDA/dilatação — esôfago cervical/cricofaríngeo).</li>
+<li><strong>Conservador</strong> (jejum, ATB amplo + antifúngico, IBP, nutrição, drenagem): perfuração <strong>contida</strong>, cervical ou pequena, paciente estável, sem sepse.</li>
+<li><strong>Endoscópico</strong>: stent recoberto, clipes OTSC, vácuo endoscópico em defeitos selecionados + drenagem.</li>
+<li><strong>Cirurgia</strong> (instáveis, não contida, Boerhaave): <strong>toracotomia esquerda (7º EIC) para distal</strong>/direita para médio → desbridamento, <strong>miotomia para expor toda a extensão da lesão mucosa</strong> (é maior que a muscular), <strong>rafia primária em 2 camadas</strong> (mucosa Vicryl/PDS 3-0, muscular 3-0) <strong>reforçada com retalho</strong> (pleura, intercostal, diafragma, fundo gástrico) + drenagem torácica ampla + jejunostomia. Tempo não é contraindicação absoluta ao reparo; esôfago doente (câncer, acalasia avançada) ou destruído → <strong>esofagectomia</strong> ou exclusão/esofagostomia cervical.</li></ul>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">7</span> Questões de banca, pega-ratões &amp; mnemônicos <span class="chev">▶</span></summary>
+  <div class="body">
+<h4>10 questões representativas (originais, estilo das 5 bancas)</h4>
+<div class="box prova"><span class="lbl">Q1 <span class="banca">HCPA</span></span><strong>Idoso com halitose, regurgitação de comida não digerida e gorgolejo cervical. Exame inicial?</strong><br>Resposta: <strong>Esofagograma baritado</strong> — suspeita de Zenker (EDA com risco de perfuração).</div>
+<div class="box prova"><span class="lbl">Q2 <span class="banca">GHC</span></span><strong>Qual o passo essencial na cirurgia do divertículo de Zenker?</strong><br>Resposta: <strong>Miotomia do cricofaríngeo</strong> (com diverticulectomia ou pexia).</div>
+<div class="box prova"><span class="lbl">Q3 <span class="banca">AMRIGS</span></span><strong>Divertículo epifrênico sintomático. O que sempre associar à diverticulectomia?</strong><br>Resposta: <strong>Miotomia longa até a JEG + fundoplicatura parcial</strong> (doença motora de base).</div>
+<div class="box prova"><span class="lbl">Q4 <span class="banca">PUC-RS</span></span><strong>Etilista vomita repetidamente e evolui com dor torácica intensa e enfisema subcutâneo. Diagnóstico e local mais comum?</strong><br>Resposta: <strong>Síndrome de Boerhaave</strong>; parede <strong>posterolateral esquerda do esôfago distal</strong>.</div>
+<div class="box prova"><span class="lbl">Q5 <span class="banca">SC-POA</span></span><strong>Disfagia episódica para carne, com anel na JEC na EDA. Diagnóstico e tratamento?</strong><br>Resposta: <strong>Anel de Schatzki</strong> → dilatação + IBP.</div>
+<div class="box prova"><span class="lbl">Q6 <span class="banca">HCPA</span></span><strong>Mulher com anemia ferropriva, glossite e disfagia alta. Síndrome e risco?</strong><br>Resposta: <strong>Plummer-Vinson</strong>; risco de <strong>CEC</strong> de hipofaringe/esôfago.</div>
+<div class="box prova"><span class="lbl">Q7 <span class="banca">GHC</span></span><strong>Manometria com IRP normal e ≥20% de contrações prematuras. Diagnóstico?</strong><br>Resposta: <strong>Espasmo esofagiano distal</strong>.</div>
+<div class="box prova"><span class="lbl">Q8 <span class="banca">AMRIGS</span></span><strong>Lesão submucosa de 6 cm no esôfago médio, mucosa íntegra, hipoecoica na muscular própria. Conduta?</strong><br>Resposta: <strong>Leiomioma</strong> → <strong>enucleação</strong> (sem biópsia pela mucosa).</div>
+<div class="box prova"><span class="lbl">Q9 <span class="banca">PUC-RS</span></span><strong>Por que fazer miotomia longitudinal no reparo do Boerhaave?</strong><br>Resposta: A <strong>lesão mucosa é maior que a muscular</strong> — expor toda a extensão para suturar.</div>
+<div class="box prova"><span class="lbl">Q10 <span class="banca">SC-POA</span></span><strong>Hematêmese após vômitos em etilista, EDA com laceração da mucosa da cárdia sem sangramento ativo. Conduta?</strong><br>Resposta: <strong>Mallory-Weiss</strong> → suporte + IBP (para espontaneamente).</div>
+<h4>Pega-ratões (as armadilhas clássicas)</h4>
+<div class="box warn"><span class="lbl">☠ trap 1</span>Zenker é divertículo <strong>falso</strong> de <strong>pulsão</strong>; médio-esofágico é <strong>verdadeiro</strong> de <strong>tração</strong>.</div>
+<div class="box warn"><span class="lbl">☠ trap 2</span>Abordagem do Zenker pela <strong>esquerda</strong>.</div>
+<div class="box warn"><span class="lbl">☠ trap 3</span>Diverticulectomia sem miotomia = recidiva/fístula.</div>
+<div class="box warn"><span class="lbl">☠ trap 4</span>Boerhaave = transmural, esquerda distal · Mallory-Weiss = mucosa, sangra.</div>
+<div class="box warn"><span class="lbl">☠ trap 5</span>Contraste na suspeita de perfuração: <strong>hidrossolúvel</strong>, nunca bário primeiro.</div>
+<div class="box warn"><span class="lbl">☠ trap 6</span>"Quebra-nozes" virou <strong>jackhammer</strong> (DCI &gt;8.000).</div>
+<div class="box warn"><span class="lbl">☠ trap 7</span>Leiomioma não se biopsia pela mucosa.</div>
+<div class="box warn"><span class="lbl">☠ trap 8</span>Esofagite eosinofílica: anéis concêntricos, ≥15 eos/CGA.</div>
+<h4>Mnemônicos-resumo</h4>
+<div class="box mac"><span class="lbl">divertículos</span><strong>Z</strong>enker = <strong>Z</strong>ona alta, falso, pulsão, Killian, <strong>esquerda</strong> · <strong>M</strong>édio = <strong>M</strong>anchado por linfonodo (tração, verdadeiro) · <strong>E</strong>pifrênico = <strong>E</strong>m cima do diafragma, motor.</div>
+<div class="box mac"><span class="lbl">Mackler</span><strong>V-D-E</strong>: Vômito + Dor torácica + Enfisema subcutâneo = Boerhaave.</div>
+  </div>
+</details>
+
+<footer>
+  <div><strong>carolzita</strong> · Esôfago: Divertículos, Distúrbios Motores & Perfurações · referência completa</div>
+  <div class="ref">Fontes: Sabiston 21ª ed. (Esophagus) · Zollinger 11ª ed. (Esophageal Diverticulectomy; Cricopharyngeal Myotomy) · Netter · Yadlapati R et al. Chicago Classification v4.0 (Neurogastroenterol Motil 2021) · Chirica M et al. WSES guidelines esophageal perforation (2019) · Dellon ES et al. ACG EoE guideline (2025). Conteúdo educacional; questões são itens representativos originais no estilo das bancas, não reprodução de provas.</div>
+</footer>
+</div>
+</body>
+</html>

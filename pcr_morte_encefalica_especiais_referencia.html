@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PCR (AHA 2025), Morte Encefálica & Trauma em Populações Especiais — carolzita</title>
+<meta name="cz-tema" content="PCR (AHA 2025), Morte Encefálica &amp; Trauma em Populações Especiais">
+<meta name="cz-grupo" content="Trauma">
+<meta name="cz-tags" content="AHA 2025, 5H 5T, CFM 2.173/2017, Cesárea perimortem, Trauma gestante, Trauma pediátrico">
+<meta name="cz-tipo" content="Full">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0f; --bg2:#12121a; --card:#16161f; --card2:#1c1c27;
+  --line:#2a2a38; --txt:#e6e6ef; --muted:#9a9ab0;
+  --laranja:#f97316; --laranja-bg:rgba(249,115,22,.10);
+  --roxo:#a855f7; --roxo-bg:rgba(168,85,247,.10);
+  --ciano:#22d3ee; --ciano-bg:rgba(34,211,238,.10);
+  --verde:#34d399; --vermelho:#f87171; --amarelo:#fbbf24;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(1200px 600px at 50% -10%,#15151f 0%,var(--bg) 60%);color:var(--txt);font-family:'Inter',sans-serif;line-height:1.55;padding:0 0 80px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px}
+header{padding:40px 0 24px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(30px,6vw,46px);line-height:1.05;margin:8px 0 6px;letter-spacing:-.02em}
+.sub{color:var(--muted);font-size:15px;max-width:700px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tag{font-family:'JetBrains Mono',monospace;font-size:11px;padding:5px 10px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted)}
+.tag.r{color:var(--roxo);border-color:rgba(168,85,247,.35);background:var(--roxo-bg)}
+section{margin-top:14px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:12px;overflow:hidden;transition:border-color .2s}
+details[open]{border-color:rgba(249,115,22,.30)}
+summary{cursor:pointer;list-style:none;padding:18px 20px;display:flex;align-items:center;gap:13px;font-family:'Syne',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em;user-select:none}
+summary::-webkit-details-marker{display:none}
+.num{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--bg);background:var(--laranja);width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:0 0 auto}
+.chev{margin-left:auto;color:var(--muted);transition:transform .25s;font-size:14px}
+details[open] .chev{transform:rotate(90deg)}
+.body{padding:4px 22px 24px;font-size:15px}
+.body p{margin:10px 0}
+.body h4{font-family:'Syne',sans-serif;font-size:16px;color:var(--laranja);margin:20px 0 8px;letter-spacing:-.01em}
+.body ul{margin:8px 0 8px 4px;list-style:none}
+.body li{padding:4px 0 4px 20px;position:relative}
+.body li::before{content:"▸";position:absolute;left:0;color:var(--laranja);font-size:12px;top:6px}
+.body strong{color:#fff;font-weight:600}
+.simple{color:var(--ciano);font-style:italic;font-size:.94em}
+.box{border-radius:12px;padding:13px 15px;margin:14px 0;font-size:14px;border:1px solid}
+.box.prova{background:var(--roxo-bg);border-color:rgba(168,85,247,.35)}
+.box.prova .lbl{color:var(--roxo)}
+.box.mac{background:var(--ciano-bg);border-color:rgba(34,211,238,.35)}
+.box.mac .lbl{color:var(--ciano)}
+.box.warn{background:rgba(248,113,113,.08);border-color:rgba(248,113,113,.3)}
+.box.warn .lbl{color:var(--vermelho)}
+.lbl{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-family:'JetBrains Mono',monospace;font-size:10px;background:rgba(168,85,247,.2);color:var(--roxo);padding:2px 7px;border-radius:6px;margin-left:6px;white-space:nowrap}
+.tbl{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
+.tbl table{width:100%;border-collapse:collapse;min-width:520px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--laranja);background:var(--card2)}
+td strong{color:#fff}
+.fio td:first-child{color:var(--ciano);font-family:'JetBrains Mono',monospace;font-weight:500}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin:14px 0}
+.gcard{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+.gcard .t{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--ciano);margin-bottom:4px}
+.gcard .d{font-size:13px;color:var(--muted)}
+.hands{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.hand{border-radius:12px;padding:14px;border:1px solid var(--line)}
+.hand.e{background:rgba(34,211,238,.06);border-color:rgba(34,211,238,.25)}
+.hand.d{background:rgba(249,115,22,.06);border-color:rgba(249,115,22,.25)}
+.hand .ht{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;font-weight:700}
+.hand.e .ht{color:var(--ciano)} .hand.d .ht{color:var(--laranja)}
+.hand li{font-size:13px}
+.steps{counter-reset:s;margin:10px 0}
+.step{counter-increment:s;position:relative;padding:11px 0 11px 46px;border-bottom:1px dashed var(--line)}
+.step:last-child{border-bottom:none}
+.step::before{content:counter(s);position:absolute;left:0;top:9px;width:30px;height:30px;border-radius:9px;background:var(--laranja-bg);border:1px solid rgba(249,115,22,.4);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:grid;place-items:center}
+.step b{color:#fff}
+svg{max-width:100%;height:auto;display:block;margin:16px auto}
+.fig{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.fig .cap{font-size:12px;color:var(--muted);text-align:center;margin-top:8px;font-family:'JetBrains Mono',monospace}
+footer{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+footer .ref{font-family:'JetBrains Mono',monospace;font-size:12px;margin-top:8px}
+a{color:var(--laranja)}
+@media(max-width:560px){.hands{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">carolzita · emergência · ressuscitação</div>
+  <h1>PCR (AHA 2025), Morte Encefálica & Trauma em Populações Especiais</h1>
+  <p class="sub">Suporte básico e avançado (AHA 2025): ritmos chocáveis × não chocáveis, drogas, 5H/5T, cuidados pós-PCR e controle de temperatura · PCR na gestante e cesárea perimortem · PCR traumática · morte encefálica pela Resolução CFM 2.173/2017 · trauma na gestante, no idoso e na criança (ATLS 11ª ed.).</p>
+  <div class="tags"><span class="tag">AHA 2025</span><span class="tag">5H 5T</span><span class="tag">CFM 2.173/2017</span><span class="tag">Cesárea perimortem</span><span class="tag">Trauma gestante</span><span class="tag">Trauma pediátrico</span><span class="tag r">HCPA · GHC · SC-POA · PUC · AMRIGS</span></div>
+</header>
+
+<details open>
+  <summary><span class="num">1</span> Suporte básico de vida (BLS) <span class="chev">▶</span></summary>
+  <div class="body">
+
+<div class="steps">
+<div class="step"><b>Segurança da cena</b> → checar responsividade → chamar ajuda/DEA.</div>
+<div class="step"><b>Checar respiração e pulso</b> (carotídeo) simultaneamente em <strong>≤10 s</strong>; gasping = PCR.</div>
+<div class="step"><b>Compressões</b>: 100–120/min, profundidade <strong>5–6 cm</strong>, retorno total do tórax, interrupções &lt;10 s, fração de compressão &gt;80% <span class="simple">(empurrar o peito com força e rápido, no ritmo de uma música animada, deixando o peito voltar todo)</span>.</div>
+<div class="step"><b>Relação 30:2</b> sem via aérea avançada; com via aérea avançada: compressão contínua + <strong>1 ventilação a cada 6 s</strong> (10/min).</div>
+<div class="step"><b>DEA</b> assim que disponível; trocar o compressor a cada 2 min.</div></div>
+<p>AHA 2025: RCP com ventilações volta a ser enfatizada para socorristas treinados; dispositivo mecânico de compressão pode ser considerado quando a compressão manual de qualidade é difícil/perigosa (transporte, hemodinâmica). Naloxona na suspeita de opioide.</p>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">2</span> ACLS: algoritmo de PCR <span class="chev">▶</span></summary>
+  <div class="body">
+
+<div class="tbl"><table><tr><th></th><th><strong>Chocáveis</strong>: FV / TV sem pulso</th><th><strong>Não chocáveis</strong>: AESP / assistolia</th></tr>
+<tr><td>1º</td><td><strong>choque</strong> imediato (bifásico 120–200 J; monofásico 360 J) → RCP 2 min</td><td>RCP + <strong>adrenalina o mais cedo possível</strong></td></tr>
+<tr><td>Adrenalina</td><td><strong>1 mg após o 2º choque</strong>, depois a cada 3–5 min</td><td>1 mg a cada 3–5 min</td></tr>
+<tr><td>Antiarrítmico</td><td>após o 3º choque: <strong>amiodarona 300 mg</strong> → 150 mg; ou <strong>lidocaína</strong> 1–1,5 mg/kg → 0,5–0,75 mg/kg</td><td>—</td></tr>
+<tr><td>Refratária</td><td>AHA 2025: <strong>mudança de vetor (anteroposterior)</strong> ou <strong>desfibrilação sequencial dupla</strong> podem ser consideradas</td><td>buscar e tratar causa reversível</td></tr></table></div>
+<ul><li>Acesso: AHA 2025 recomenda <strong>tentar acesso EV primeiro</strong>; intraósseo se EV não for obtido rapidamente.</li>
+<li>Capnografia: ETCO₂ &lt;10 mmHg após 20 min de RCP de qualidade sugere mau prognóstico (não usar isoladamente); <strong>aumento súbito para &gt;35–40</strong> sugere RCE.</li>
+<li>Assistolia: confirmar em 2 derivações, checar cabos e ganho ("protocolo da linha reta" — CAGADA: Cabos, Ganho, Derivação).</li>
+<li>Não usar de rotina: bicarbonato, cálcio, atropina na PCR. Bicarbonato em hipercalemia/intoxicação por tricíclico; cálcio em hipercalemia.</li></ul>
+<div class="tbl"><table><tr><th>5 H</th><th>5 T</th></tr>
+<tr><td><strong>H</strong>ipovolemia · <strong>H</strong>ipóxia · <strong>H</strong>⁺ (acidose) · <strong>H</strong>ipo/hipercalemia · <strong>H</strong>ipotermia</td><td><strong>T</strong>ensão (pneumotórax hipertensivo) · <strong>T</strong>amponamento · <strong>T</strong>oxinas · <strong>T</strong>rombose pulmonar · <strong>T</strong>rombose coronária</td></tr></table></div>
+<h4>Peri-PCR (AHA 2025)</h4>
+<ul><li><strong>Bradicardia instável</strong>: atropina 1 mg (até 3 mg) → marcapasso transcutâneo ou adrenalina/dopamina em infusão.</li>
+<li><strong>Taquicardia instável com pulso</strong>: cardioversão sincronizada; <strong>FA/flutter: começar com ≥200 J</strong> bifásico (mudança 2025).</li></ul>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">3</span> Cuidados pós-PCR <span class="chev">▶</span></summary>
+  <div class="body">
+
+<ul><li>Via aérea definitiva; <strong>SpO₂ 92–98%</strong> (evitar hiperóxia), <strong>PaCO₂ 35–45</strong>.</li>
+<li><strong>PAM ≥65 mmHg</strong> (PAS ≥90); vasopressor se necessário.</li>
+<li><strong>ECG de 12 derivações</strong>: supra de ST → cateterismo de emergência; sem supra e choque/instabilidade elétrica → considerar.</li>
+<li><strong>Controle de temperatura</strong> em todos que não obedecem comandos: alvo deliberado entre <strong>32 e 37,5 °C</strong>, mantido por ≥24–36 h, e <strong>evitar febre</strong> por pelo menos 72 h <span class="simple">(esfriar ou pelo menos não deixar o corpo esquentar para proteger o cérebro)</span>.</li>
+<li>EEG se coma (convulsões não convulsivas); não tratar mioclonia sem correlato no EEG (AHA 2025).</li>
+<li>Glicemia 140–180; tratar a causa.</li>
+<li><strong>Prognóstico neurológico</strong>: multimodal e <strong>não antes de 72 h</strong> após normotermia (exame, EEG, potencial evocado N20, enolase, TC/RM).</li></ul>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">4</span> PCR na gestante &amp; PCR traumática <span class="chev">▶</span></summary>
+  <div class="body">
+
+<ul><li><strong>Deslocamento uterino manual para a esquerda</strong> <span class="simple">(empurrar a barriga para a esquerda para o útero sair de cima da veia cava e o sangue voltar ao coração)</span> (útero ≥20 semanas — fundo na cicatriz umbilical ou acima); compressões na posição habitual; via aérea precoce (via aérea difícil, aspiração).</li>
+<li>Drogas e desfibrilação nas mesmas doses; retirar monitor fetal antes do choque; acesso <strong>acima do diafragma</strong>.</li>
+<li><strong>Cesárea perimortem</strong> (histerotomia de ressuscitação): se não houver RCE em <strong>4 minutos</strong>, iniciar para extrair o feto em até <strong>5 minutos</strong> — melhora a ressuscitação materna (e fetal se ≥24 semanas). Feita no local, sem transporte; incisão mediana xifopúbica.</li>
+<li>Causas específicas: hemorragia, embolia amniótica, eclâmpsia, <strong>toxicidade por magnésio (gluconato de cálcio)</strong>, anestésica (LAST — lipídio), TEP, cardiomiopatia.</li></ul>
+<h4>PCR traumática</h4>
+<ul><li>Prioridade é <strong>tratar as causas reversíveis</strong> (hipovolemia, pneumotórax hipertensivo, tamponamento, hipóxia), mais que compressões e adrenalina: controlar hemorragia, transfundir, <strong>descompressão torácica bilateral</strong> (toracostomia digital/agulha no 4º–5º EIC na linha axilar média), via aérea.</li>
+<li><strong>Toracotomia de reanimação</strong> (anterolateral esquerda): <strong>trauma penetrante torácico com sinais de vida</strong> e PCR testemunhada &lt;15 min de RCP (melhor resultado em ferimento cardíaco); trauma contuso &lt;10 min; objetivos: liberar tamponamento, controlar sangramento cardíaco/pulmonar, clampear aorta descendente, massagem interna.</li></ul>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">5</span> Morte encefálica (Resolução CFM 2.173/2017) <span class="chev">▶</span></summary>
+  <div class="body">
+
+<div class="box prova"><span class="lbl">pré-requisitos (todos)</span>Coma não perceptivo, apneico, de <strong>causa conhecida e irreversível</strong>; ausência de fatores tratáveis que confundam (distúrbio metabólico grave, intoxicação, sedativos/bloqueadores); <strong>tratamento e observação hospitalar ≥6 h</strong> (≥<strong>24 h</strong> se encefalopatia hipóxico-isquêmica); <strong>temperatura &gt;35 °C</strong>, <strong>SatO₂ &gt;94%</strong>, <strong>PAS ≥100 ou PAM ≥65</strong> no adulto.</div>
+<div class="steps">
+<div class="step"><b>Dois exames clínicos</b> por <strong>médicos diferentes</strong>, capacitados, sem vínculo com a equipe de transplante (um deles intensivista, neurologista, neurocirurgião ou emergencista).</div>
+<div class="step"><b>Intervalo entre os exames</b>: 7 dias–2 meses: <strong>24 h</strong> · 2–24 meses: <strong>12 h</strong> · <strong>&gt;2 anos: 1 h</strong>.</div>
+<div class="step"><b>Exame clínico</b>: coma sem resposta motora supraespinhal; ausência de <strong>reflexos de tronco</strong>: fotomotor, corneopalpebral, oculocefálico, <strong>vestíbulo-calórico</strong> (50 mL de água a ~4 °C), de tosse (traqueal). Reflexos medulares (de Lázaro, tendinosos) podem persistir.</div>
+<div class="step"><b>Teste de apneia</b> (uma única vez): pré-oxigenação O₂ 100%, desconectar com cateter de O₂ na traqueia, observar ~8–10 min; positivo se <strong>PaCO₂ &gt;55 mmHg</strong> sem movimento respiratório. Interromper se instabilidade.</div>
+<div class="step"><b>Exame complementar</b> obrigatório: ausência de <strong>perfusão</strong> (angiografia, cintilografia, Doppler transcraniano) ou de <strong>atividade elétrica</strong> (EEG) ou metabólica.</div>
+<div class="step"><b>Comunicar a família</b> e notificar compulsoriamente a <strong>Central de Transplantes</strong> (CNCDO/OPO), mesmo sem intenção de doação; o horário do óbito é o da conclusão do último exame.</div></div>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">6</span> Trauma em populações especiais (ATLS 11ª ed.) <span class="chev">▶</span></summary>
+  <div class="body">
+
+<h4>Gestante</h4>
+<ul><li>Fisiologia: volemia ↑ até 50% → perde <strong>30–35% do volume antes de ter hipotensão</strong>; FC ↑ 10–15; PaCO₂ normal ~30 (PaCO₂ de 40 = insuficiência respiratória iminente); anemia dilucional; leucocitose; útero comprime a cava.</li>
+<li><strong>Tratar a mãe trata o feto</strong>; deslocar o útero para a esquerda (prancha inclinada 15–30°); exames de imagem necessários <strong>não devem ser negados</strong> (TC se indicada).</li>
+<li><strong>Descolamento de placenta</strong> (dor, sangramento, hipertonia, útero maior) e ruptura uterina; monitorização fetal (cardiotocografia) <strong>≥4–6 h</strong> se ≥20–24 semanas.</li>
+<li><strong>Imunoglobulina anti-D</strong> em toda gestante Rh negativo com trauma abdominal (teste de Kleihauer-Betke).</li>
+<li>Cinto de três pontos: faixa abaixo do útero, sobre as cristas ilíacas.</li></ul>
+<h4>Idoso</h4>
+<ul><li>Reserva menor; β-bloqueador mascara taquicardia → "normotensão" pode ser choque (PAS &lt;110 já é hipotensão relativa); <strong>anticoagulante</strong> ↑ hemorragia intracraniana → TC de crânio liberal e reversão rápida.</li>
+<li>Queda da própria altura é o mecanismo mais comum; fraturas de costela (≥3) → mortalidade alta, analgesia agressiva (bloqueio).</li>
+<li>Considerar decisões de cuidado e fragilidade.</li></ul>
+<h4>Criança</h4>
+<div class="tbl"><table><tr><th>Ponto</th><th>Detalhe</th></tr>
+<tr><td>Via aérea</td><td>occipital grande (coxim sob os ombros), língua grande, laringe anterior; tubo = idade/4 + 4 (com balonete: +3,5); <strong>crico cirúrgica contraindicada &lt;12 anos</strong> (punção)</td></tr>
+<tr><td>Circulação</td><td>taquicardia é o sinal precoce; hipotensão = perda &gt;30–45% (tardia); acesso IO se 2 tentativas EV falham</td></tr>
+<tr><td>Volume</td><td>cristaloide <strong>20 mL/kg</strong> (até 2×) → concentrado de hemácias 10–20 mL/kg; transfusão precoce</td></tr>
+<tr><td>Diurese</td><td>lactente 2 mL/kg/h · criança 1 mL/kg/h · adolescente 0,5</td></tr>
+<tr><td>Tórax</td><td>costelas complacentes → contusão pulmonar sem fratura; fratura de costela = trauma de alta energia</td></tr>
+<tr><td>Abdome</td><td>tratamento não operatório de baço/fígado na criança estável é o padrão</td></tr>
+<tr><td>SCIWORA</td><td>lesão medular sem alteração radiológica → RM</td></tr>
+<tr><td>Maus-tratos</td><td>história incompatível, fraturas de idades diferentes, de costelas posteriores, metafisárias, queimadura em luva/meia, hemorragia retiniana</td></tr></table></div>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">7</span> Questões de banca, pega-ratões &amp; mnemônicos <span class="chev">▶</span></summary>
+  <div class="body">
+<h4>10 questões representativas (originais, estilo das 5 bancas)</h4>
+<div class="box prova"><span class="lbl">Q1 <span class="banca">HCPA</span></span><strong>FV refratária após 3 choques e 1 dose de adrenalina. Próxima droga e dose?</strong><br>Resposta: <strong>Amiodarona 300 mg</strong> EV/IO (ou lidocaína 1–1,5 mg/kg).</div>
+<div class="box prova"><span class="lbl">Q2 <span class="banca">GHC</span></span><strong>Em assistolia, quando fazer a adrenalina?</strong><br>Resposta: <strong>O mais cedo possível</strong>, depois a cada 3–5 min.</div>
+<div class="box prova"><span class="lbl">Q3 <span class="banca">AMRIGS</span></span><strong>Energia inicial recomendada pela AHA 2025 para cardioversão de FA instável?</strong><br>Resposta: <strong>≥200 J</strong> bifásico.</div>
+<div class="box prova"><span class="lbl">Q4 <span class="banca">PUC-RS</span></span><strong>Gestante de 32 semanas em PCR sem RCE após 4 minutos de RCP. Conduta?</strong><br>Resposta: <strong>Cesárea perimortem</strong> no local, extração até 5 min, com deslocamento uterino.</div>
+<div class="box prova"><span class="lbl">Q5 <span class="banca">SC-POA</span></span><strong>Intervalo mínimo entre os dois exames clínicos de ME em adulto?</strong><br>Resposta: <strong>1 hora</strong>.</div>
+<div class="box prova"><span class="lbl">Q6 <span class="banca">HCPA</span></span><strong>Teste de apneia é positivo com qual valor de PaCO₂?</strong><br>Resposta: <strong>&gt;55 mmHg</strong> sem movimentos respiratórios.</div>
+<div class="box prova"><span class="lbl">Q7 <span class="banca">GHC</span></span><strong>Tempo mínimo de observação hospitalar antes de iniciar o protocolo de ME após PCR (hipóxico-isquêmica)?</strong><br>Resposta: <strong>24 horas</strong> (demais causas: 6 h).</div>
+<div class="box prova"><span class="lbl">Q8 <span class="banca">AMRIGS</span></span><strong>Gestante de 30 semanas, trauma abdominal fechado, Rh negativo, estável. Condutas obrigatórias?</strong><br>Resposta: <strong>Monitorização fetal ≥4–6 h</strong> e <strong>imunoglobulina anti-D</strong>.</div>
+<div class="box prova"><span class="lbl">Q9 <span class="banca">PUC-RS</span></span><strong>Criança com trauma, sem acesso venoso após duas tentativas. Próximo passo?</strong><br>Resposta: <strong>Acesso intraósseo</strong>.</div>
+<div class="box prova"><span class="lbl">Q10 <span class="banca">SC-POA</span></span><strong>Indicação clássica de toracotomia de reanimação na sala de trauma?</strong><br>Resposta: <strong>Trauma penetrante de tórax com sinais de vida</strong> e PCR testemunhada recente (RCP &lt;15 min).</div>
+<h4>Pega-ratões (as armadilhas clássicas)</h4>
+<div class="box warn"><span class="lbl">☠ trap 1</span>Chocável: adrenalina só <strong>depois do 2º choque</strong>; não chocável: <strong>já</strong>.</div>
+<div class="box warn"><span class="lbl">☠ trap 2</span>AHA 2025: acesso <strong>EV antes do IO</strong>; FA instável começa com ≥200 J.</div>
+<div class="box warn"><span class="lbl">☠ trap 3</span>Atropina não é droga de PCR.</div>
+<div class="box warn"><span class="lbl">☠ trap 4</span>Controle de temperatura: 32–37,5 °C e <strong>evitar febre</strong>; prognóstico só após 72 h.</div>
+<div class="box warn"><span class="lbl">☠ trap 5</span>ME: dois médicos diferentes, teste de apneia <strong>uma vez</strong>, exame complementar sempre; notificação compulsória.</div>
+<div class="box warn"><span class="lbl">☠ trap 6</span>Reflexos medulares (Lázaro) não excluem ME.</div>
+<div class="box warn"><span class="lbl">☠ trap 7</span>Gestante perde 30–35% da volemia antes de hipotensão; PaCO₂ 40 é alarmante.</div>
+<div class="box warn"><span class="lbl">☠ trap 8</span>PCR traumática: tratar hipovolemia/pneumotórax/tamponamento antes de "adrenalina".</div>
+<h4>Mnemônicos-resumo</h4>
+<div class="box mac"><span class="lbl">5H 5T</span>Hipovolemia · Hipóxia · H⁺ · Hipo/hiperK · Hipotermia | Tensão · Tamponamento · Toxinas · TEP · Trombose coronária.</div>
+<div class="box mac"><span class="lbl">ME — intervalos</span><strong>24 h</strong> (7 d–2 m) · <strong>12 h</strong> (2–24 m) · <strong>1 h</strong> (&gt;2 anos) · observação 6 h (24 h se anóxia) · PaCO₂ &gt;55.</div>
+  </div>
+</details>
+
+<footer>
+  <div><strong>carolzita</strong> · PCR (AHA 2025), Morte Encefálica & Trauma em Populações Especiais · referência completa</div>
+  <div class="ref">Fontes: 2025 American Heart Association Guidelines for CPR and ECC (Circulation 2025;152 suppl 2 — Part 9 Adult ALS, Part 11 Post-Cardiac Arrest Care) · Resolução CFM nº 2.173/2017 · ATLS 11ª ed. (ACS 2025) · Sabiston 21ª ed. · Jeejeebhoy FM et al. AHA Cardiac Arrest in Pregnancy (2015/2025). Conteúdo educacional; questões são itens representativos originais no estilo das bancas, não reprodução de provas.</div>
+</footer>
+</div>
+</body>
+</html>

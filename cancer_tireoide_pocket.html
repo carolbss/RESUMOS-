@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Câncer de Tireoide & Tireoidectomia · pocket</title>
+<meta name="cz-tema" content="Câncer de Tireoide &amp; Tireoidectomia">
+<meta name="cz-grupo" content="Cabeça &amp; Pescoço">
+<meta name="cz-tags" content="ATA 2025, Bethesda, Medular/NEM 2, Tireoidectomia, Laríngeo recorrente">
+<meta name="cz-tipo" content="Pocket">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d1117;--card:#16161f;--card2:#1c1c27;--line:#2a2a38;
+  --txt:#ececf4;--muted:#9a9ab0;
+  --laranja:#f97316;--roxo:#a855f7;--ciano:#22d3ee;--vermelho:#f87171;--amarelo:#fbbf24;--verde:#34d399;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{overflow-x:hidden}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;font-size:17px;line-height:1.6;padding-bottom:30px}
+.top{padding:22px 18px 12px;position:sticky;top:0;background:linear-gradient(180deg,var(--bg) 70%,transparent);z-index:5}
+.kick{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:29px;line-height:1.05;margin-top:4px}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:6px 18px 12px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;padding:9px 15px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted);white-space:nowrap;cursor:pointer;transition:.15s}
+.tab.on{background:var(--laranja);border-color:var(--laranja);color:#0a0a0f}
+.panel{display:none;padding:6px 18px 40px;animation:f .25s}
+.panel.on{display:block}
+@keyframes f{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+h2{font-family:'Syne',sans-serif;font-size:21px;color:var(--laranja);margin:18px 0 10px}
+h3{font-family:'Syne',sans-serif;font-size:16px;color:#fff;margin:16px 0 6px}
+p{margin:10px 0}
+ul{list-style:none;margin:8px 0}
+li{padding:6px 0 6px 22px;position:relative}
+li::before{content:"▸";position:absolute;left:0;top:7px;color:var(--laranja);font-size:13px}
+strong{color:#fff;font-weight:600}
+.s{color:var(--ciano);font-style:italic;font-size:.92em}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0}
+.box{border-radius:12px;padding:13px 15px;margin:13px 0;border:1px solid;font-size:15px}
+.prova{background:rgba(168,85,247,.1);border-color:rgba(168,85,247,.4)}
+.prova .l{color:var(--roxo)}
+.mac{background:rgba(34,211,238,.1);border-color:rgba(34,211,238,.4)}
+.mac .l{color:var(--ciano)}
+.warn{background:rgba(248,113,113,.1);border-color:rgba(248,113,113,.4)}
+.warn .l{color:var(--vermelho)}
+.l{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-size:10px;background:rgba(168,85,247,.25);color:var(--roxo);padding:2px 6px;border-radius:5px;margin-left:5px;font-family:'JetBrains Mono',monospace}
+.kv{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)}
+.kv:last-child{border:none}
+.kv .k{flex:0 0 42%;color:var(--ciano);font-family:'JetBrains Mono',monospace;font-size:13px}
+.kv .v{flex:1;font-size:15px}
+.step{display:flex;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line)}
+.step:last-child{border:none}
+.step .n{flex:0 0 30px;height:30px;border-radius:9px;background:rgba(249,115,22,.15);border:1px solid rgba(249,115,22,.45);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;display:grid;place-items:center;font-size:14px}
+.step .x{flex:1}
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="kick">carolzita · pocket 🚑</div>
+  <h1>Tireoide 🦋</h1>
+</div>
+<div class="tabs">
+  <div class="tab on" data-t="0">🦋 Tipos</div>
+  <div class="tab" data-t="1">✂️ Extensão</div>
+  <div class="tab" data-t="2">🧠 Nervos</div>
+  <div class="tab" data-t="3">🔪 Técnica</div>
+  <div class="tab" data-t="4">☠️ Complic.</div>
+</div>
+
+<div class="panel on" data-p="0">
+<h2>🦋 Tipos</h2><div class="card">
+<div class="kv"><div class="k">Papilífero 85%</div><div class="v">linfático · psamoma · radiação · BRAF</div></div>
+<div class="kv"><div class="k">Folicular 10%</div><div class="v">hematogênico (osso/pulmão) · PAAF não diferencia</div></div>
+<div class="kv"><div class="k">Oncocítico</div><div class="v">pouco iodo · recidiva</div></div>
+<div class="kv"><div class="k">Medular</div><div class="v">célula C · calcitonina/CEA · RET · <strong>excluir feo antes</strong></div></div>
+<div class="kv"><div class="k">Anaplásico</div><div class="v">idoso · semanas · todo T4</div></div>
+<div class="kv"><div class="k">Linfoma</div><div class="v">Hashimoto · R-CHOP</div></div></div>
+<div class="box prova"><span class="l">Bethesda</span>I repetir · II seguir · III repetir/molecular · IV lobectomia diagnóstica · V–VI cirurgia</div>
+</div>
+
+<div class="panel" data-p="1">
+<h2>✂️ ATA 2025</h2><div class="card">
+<div class="kv"><div class="k">≤2 cm cN0</div><div class="v"><strong>Lobectomia</strong></div></div>
+<div class="kv"><div class="k">2–4 cm cN0</div><div class="v">lobectomia ou total</div></div>
+<div class="kv"><div class="k">&gt;4 cm / EET / N1 / M1</div><div class="v">Total ± esvaziamento</div></div>
+<div class="kv"><div class="k">cN1a</div><div class="v">+ central (VI)</div></div>
+<div class="kv"><div class="k">cN1b</div><div class="v">+ lateral II–IV + central</div></div>
+<div class="kv"><div class="k">Medular</div><div class="v">Total + central sempre</div></div>
+<div class="kv"><div class="k">RET 2B</div><div class="v">profilática &lt;1 ano</div></div></div>
+</div>
+
+<div class="panel" data-p="2">
+<h2>🧠 Anatomia de risco</h2><ul>
+<li><strong>NLR</strong>: D contorna subclávia · E contorna arco · entra atrás do <strong>lig. de Berry</strong></li>
+<li>Não recorrente → subclávia D aberrante</li>
+<li><strong>Laríngeo sup. externo</strong> → cricotireóideo (agudos) · ligar polo sup. rente à cápsula</li>
+<li>A. tireoidiana sup. (carótida ext.) · inf. (tronco tireocervical) · ima (inconstante)</li>
+<li>Paratireoide sup = 4ª bolsa · inf = 3ª bolsa</li></ul>
+</div>
+
+<div class="panel" data-p="3">
+<h2>🔪 Passo a passo</h2><div class="card">
+<div class="step"><div class="n">1</div><div class="x">Coxim nos ombros · Kocher 2 dedos acima da fúrcula</div></div>
+<div class="step"><div class="n">2</div><div class="x">Retalho subplatismal · abre rafe dos pré-tireoidianos</div></div>
+<div class="step"><div class="n">3</div><div class="x">Liga v. tireoidiana média</div></div>
+<div class="step"><div class="n">4</div><div class="x">Polo superior ramo a ramo, rente à cápsula</div></div>
+<div class="step"><div class="n">5</div><div class="x">Acha NLR + paratireoides (Beahrs/Zuckerkandl)</div></div>
+<div class="step"><div class="n">6</div><div class="x">Ramos terminais da tireoidiana inf.</div></div>
+<div class="step"><div class="n">7</div><div class="x">Berry com tesoura (sem energia) · istmo</div></div>
+<div class="step"><div class="n">8</div><div class="x">Perdeu sinal no 1º lado → para</div></div></div>
+<p>ME: Adson, gaze, Babcock · MD: Metzenbaum, mosquito/Mixter, Harmonic, neuromonitor</p>
+<p>Fios: ligadura 3-0 · rafe/platisma Vicryl 3-0 · pele Monocryl 4-0 intradérmico</p>
+</div>
+
+<div class="panel" data-p="4">
+<h2>☠️ Complicações</h2><div class="card">
+<div class="kv"><div class="k">Hematoma</div><div class="v">estridor → <strong>abrir à beira do leito</strong></div></div>
+<div class="kv"><div class="k">Hipocalcemia</div><div class="v">24–72 h · gluconato EV · ver Mg</div></div>
+<div class="kv"><div class="k">NLR uni</div><div class="v">rouquidão</div></div>
+<div class="kv"><div class="k">NLR bilateral</div><div class="v">estridor na extubação → via aérea</div></div>
+<div class="kv"><div class="k">Laríngeo sup.</div><div class="v">perde agudos</div></div>
+<div class="kv"><div class="k">Quilo</div><div class="v">esvaziamento lateral E</div></div></div>
+<div class="box mac"><span class="l">✅ bolso</span>Papilífero=Pescoço · Folicular=Fora pelo sangue · Medular=calcitonina+feo antes · NEM2B sem paratireoide 🎓</div>
+</div>
+
+<script>
+var tabs=document.querySelectorAll('.tab'),panels=document.querySelectorAll('.panel');
+tabs.forEach(function(t){t.addEventListener('click',function(){
+  tabs.forEach(function(x){x.classList.remove('on')});
+  panels.forEach(function(x){x.classList.remove('on')});
+  t.classList.add('on');
+  document.querySelector('.panel[data-p="'+t.dataset.t+'"]').classList.add('on');
+})});
+</script>
+</body>
+</html>

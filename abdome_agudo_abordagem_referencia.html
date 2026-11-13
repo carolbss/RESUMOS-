@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abdome Agudo: Abordagem Sindrômica — carolzita</title>
+<meta name="cz-tema" content="Abdome Agudo: Abordagem Sindrômica">
+<meta name="cz-grupo" content="Abdome Agudo">
+<meta name="cz-tags" content="5 tipos, Sinais epônimos, Rigler, PBE × PBS, Gestante, Meckel">
+<meta name="cz-tipo" content="Full">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0f; --bg2:#12121a; --card:#16161f; --card2:#1c1c27;
+  --line:#2a2a38; --txt:#e6e6ef; --muted:#9a9ab0;
+  --laranja:#f97316; --laranja-bg:rgba(249,115,22,.10);
+  --roxo:#a855f7; --roxo-bg:rgba(168,85,247,.10);
+  --ciano:#22d3ee; --ciano-bg:rgba(34,211,238,.10);
+  --verde:#34d399; --vermelho:#f87171; --amarelo:#fbbf24;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(1200px 600px at 50% -10%,#15151f 0%,var(--bg) 60%);color:var(--txt);font-family:'Inter',sans-serif;line-height:1.55;padding:0 0 80px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px}
+header{padding:40px 0 24px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--laranja)}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(30px,6vw,46px);line-height:1.05;margin:8px 0 6px;letter-spacing:-.02em}
+.sub{color:var(--muted);font-size:15px;max-width:700px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tag{font-family:'JetBrains Mono',monospace;font-size:11px;padding:5px 10px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted)}
+.tag.r{color:var(--roxo);border-color:rgba(168,85,247,.35);background:var(--roxo-bg)}
+section{margin-top:14px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:12px;overflow:hidden;transition:border-color .2s}
+details[open]{border-color:rgba(249,115,22,.30)}
+summary{cursor:pointer;list-style:none;padding:18px 20px;display:flex;align-items:center;gap:13px;font-family:'Syne',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em;user-select:none}
+summary::-webkit-details-marker{display:none}
+.num{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--bg);background:var(--laranja);width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:0 0 auto}
+.chev{margin-left:auto;color:var(--muted);transition:transform .25s;font-size:14px}
+details[open] .chev{transform:rotate(90deg)}
+.body{padding:4px 22px 24px;font-size:15px}
+.body p{margin:10px 0}
+.body h4{font-family:'Syne',sans-serif;font-size:16px;color:var(--laranja);margin:20px 0 8px;letter-spacing:-.01em}
+.body ul{margin:8px 0 8px 4px;list-style:none}
+.body li{padding:4px 0 4px 20px;position:relative}
+.body li::before{content:"▸";position:absolute;left:0;color:var(--laranja);font-size:12px;top:6px}
+.body strong{color:#fff;font-weight:600}
+.simple{color:var(--ciano);font-style:italic;font-size:.94em}
+.box{border-radius:12px;padding:13px 15px;margin:14px 0;font-size:14px;border:1px solid}
+.box.prova{background:var(--roxo-bg);border-color:rgba(168,85,247,.35)}
+.box.prova .lbl{color:var(--roxo)}
+.box.mac{background:var(--ciano-bg);border-color:rgba(34,211,238,.35)}
+.box.mac .lbl{color:var(--ciano)}
+.box.warn{background:rgba(248,113,113,.08);border-color:rgba(248,113,113,.3)}
+.box.warn .lbl{color:var(--vermelho)}
+.lbl{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px}
+.banca{font-family:'JetBrains Mono',monospace;font-size:10px;background:rgba(168,85,247,.2);color:var(--roxo);padding:2px 7px;border-radius:6px;margin-left:6px;white-space:nowrap}
+.tbl{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
+.tbl table{width:100%;border-collapse:collapse;min-width:520px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--laranja);background:var(--card2)}
+td strong{color:#fff}
+.fio td:first-child{color:var(--ciano);font-family:'JetBrains Mono',monospace;font-weight:500}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin:14px 0}
+.gcard{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+.gcard .t{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--ciano);margin-bottom:4px}
+.gcard .d{font-size:13px;color:var(--muted)}
+.hands{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.hand{border-radius:12px;padding:14px;border:1px solid var(--line)}
+.hand.e{background:rgba(34,211,238,.06);border-color:rgba(34,211,238,.25)}
+.hand.d{background:rgba(249,115,22,.06);border-color:rgba(249,115,22,.25)}
+.hand .ht{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;font-weight:700}
+.hand.e .ht{color:var(--ciano)} .hand.d .ht{color:var(--laranja)}
+.hand li{font-size:13px}
+.steps{counter-reset:s;margin:10px 0}
+.step{counter-increment:s;position:relative;padding:11px 0 11px 46px;border-bottom:1px dashed var(--line)}
+.step:last-child{border-bottom:none}
+.step::before{content:counter(s);position:absolute;left:0;top:9px;width:30px;height:30px;border-radius:9px;background:var(--laranja-bg);border:1px solid rgba(249,115,22,.4);color:var(--laranja);font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:grid;place-items:center}
+.step b{color:#fff}
+svg{max-width:100%;height:auto;display:block;margin:16px auto}
+.fig{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.fig .cap{font-size:12px;color:var(--muted);text-align:center;margin-top:8px;font-family:'JetBrains Mono',monospace}
+footer{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+footer .ref{font-family:'JetBrains Mono',monospace;font-size:12px;margin-top:8px}
+a{color:var(--laranja)}
+@media(max-width:560px){.hands{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">carolzita · emergência cirúrgica · raciocínio clínico</div>
+  <h1>Abdome Agudo: Abordagem Sindrômica</h1>
+  <p class="sub">Dor visceral × somática × referida · os 5 tipos (inflamatório, perfurativo, obstrutivo, vascular, hemorrágico) · diferencial por quadrante · epônimos do exame físico · laboratório e imagem (RX de abdome agudo, US, TC) · peritonite primária × secundária × terciária · populações especiais (gestante, idoso, imunossuprimido, UTI) · causas pediátricas (intussuscepção, Meckel).</p>
+  <div class="tags"><span class="tag">5 tipos</span><span class="tag">Sinais epônimos</span><span class="tag">Rigler</span><span class="tag">PBE × PBS</span><span class="tag">Gestante</span><span class="tag">Meckel</span><span class="tag r">HCPA · GHC · SC-POA · PUC · AMRIGS</span></div>
+</header>
+
+<details open>
+  <summary><span class="num">1</span> Definição &amp; fisiologia da dor <span class="chev">▶</span></summary>
+  <div class="body">
+
+<p><strong>Abdome agudo</strong>: dor abdominal de início recente (horas a poucos dias), geralmente intensa, não traumática, que exige decisão diagnóstica/terapêutica rápida — possivelmente cirúrgica. Apendicite é a causa cirúrgica mais comum; <strong>dor abdominal inespecífica</strong> é o diagnóstico de alta mais comum.</p>
+<div class="tbl"><table><tr><th>Dor</th><th>Via</th><th>Característica</th><th>Exemplo</th></tr>
+<tr><td><strong>Visceral</strong></td><td>fibras C autonômicas, bilateral</td><td>surda, mal localizada, na linha média, com náusea/sudorese <span class="simple">(dor de dentro do órgão: o paciente não sabe apontar onde dói)</span></td><td>periumbilical no início da apendicite</td></tr>
+<tr><td><strong>Somática/parietal</strong></td><td>fibras Aδ do peritônio parietal</td><td>aguda, localizada, piora com movimento → paciente imóvel</td><td>FID com Blumberg</td></tr>
+<tr><td><strong>Referida</strong></td><td>dermátomo compartilhado</td><td>longe da origem</td><td>ombro (Kehr, frênico C3–C5), escápula D na cólica biliar, testículo na litíase ureteral</td></tr></table></div>
+<p>Segmentos embriológicos: <strong>intestino anterior</strong> (esôfago até 2ª porção do duodeno, fígado, vias biliares, pâncreas) → epigástrio · <strong>médio</strong> (até 2/3 do transverso) → periumbilical · <strong>posterior</strong> → hipogástrio.</p>
+<div class="box mac"><span class="lbl">sequência</span><strong>Dor antes do vômito</strong> → pensar em causa cirúrgica · vômito antes da dor → gastroenterite/clínica.</div>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">2</span> Os 5 tipos de abdome agudo <span class="chev">▶</span></summary>
+  <div class="body">
+
+<div class="tbl"><table><tr><th>Tipo</th><th>Padrão</th><th>Causas</th><th>Pista</th></tr>
+<tr><td><strong>Inflamatório</strong> (mais comum)</td><td>início insidioso, piora progressiva, febre, visceral → parietal</td><td>apendicite, colecistite, diverticulite, pancreatite, DIP, abscesso</td><td>leucocitose, PCR, irritação localizada</td></tr>
+<tr><td><strong>Perfurativo</strong></td><td>súbito, lancinante, <strong>abdome em tábua</strong></td><td>úlcera péptica, divertículo, neoplasia, corpo estranho, apendicite perfurada, Boerhaave</td><td>pneumoperitônio; <strong>sinal de Joubert</strong> (timpanismo na loja hepática)</td></tr>
+<tr><td><strong>Obstrutivo</strong></td><td>cólica, distensão, vômitos, parada de gases/fezes</td><td>bridas (delgado), hérnias, neoplasia (cólon), volvo, íleo biliar, fecaloma</td><td>RHA metálicos → silêncio; níveis hidroaéreos</td></tr>
+<tr><td><strong>Vascular</strong></td><td>dor <strong>desproporcional ao exame físico</strong></td><td>isquemia mesentérica (embolia por FA, trombose, venosa, não oclusiva), volvo estrangulado</td><td>lactato, acidose, idoso cardiopata; angioTC</td></tr>
+<tr><td><strong>Hemorrágico</strong></td><td>súbito + choque</td><td>gravidez ectópica rota, AAA roto, aneurisma esplênico (gestação), adenoma hepático/CHC roto, cisto de corpo lúteo</td><td>Hb ↓, β-hCG, FAST; dor no ombro (<strong>Danforth</strong>)</td></tr></table></div>
+<div class="box prova"><span class="lbl">abordagem em 4 perguntas <span class="banca">PUC-RS</span></span>1) Está <strong>instável</strong>? (ABC, ressuscitar) · 2) Tem <strong>peritonite difusa</strong>/pneumoperitônio? (cirurgia) · 3) É <strong>gestante</strong> ou mulher em idade fértil? (β-hCG) · 4) É cirúrgico ou clínico? Analgesia precoce <strong>não mascara</strong> o diagnóstico.</div>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">3</span> Diferencial por quadrante &amp; causas clínicas <span class="chev">▶</span></summary>
+  <div class="body">
+
+<div class="grid">
+<div class="gcard"><div class="t">QSD</div><div class="d">colecistite, colangite, cólica biliar, hepatite, abscesso hepático, úlcera perfurada, pneumonia de base D, pielonefrite</div></div>
+<div class="gcard"><div class="t">Epigástrio</div><div class="d">úlcera, pancreatite, gastrite, <strong>IAM inferior</strong>, dissecção/AAA</div></div>
+<div class="gcard"><div class="t">QSE</div><div class="d">infarto/ruptura esplênica, pancreatite, gastrite, pneumonia</div></div>
+<div class="gcard"><div class="t">QID</div><div class="d">apendicite, ileíte (Crohn, Yersinia), Meckel, ovário (torção/cisto/ectópica), cálculo ureteral, adenite mesentérica</div></div>
+<div class="gcard"><div class="t">QIE</div><div class="d">diverticulite, colite, ectópica, ovário, cálculo, hérnia</div></div>
+<div class="gcard"><div class="t">Difusa</div><div class="d">peritonite, isquemia, obstrução, gastroenterite, pancreatite</div></div></div>
+<p><strong>Causas clínicas que imitam abdome cirúrgico</strong>: <strong>cetoacidose diabética</strong>, IAM inferior, pneumonia de base, porfiria aguda intermitente, crise falciforme, uremia, insuficiência adrenal, intoxicação por chumbo, febre familiar do Mediterrâneo, herpes-zóster, tabes, hipercalcemia, PBE.</p>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">4</span> Exame físico: epônimos <span class="chev">▶</span></summary>
+  <div class="body">
+
+<div class="tbl"><table><tr><th>Sinal</th><th>Achado</th><th>Sugere</th></tr>
+<tr><td><strong>Blumberg</strong></td><td>dor à descompressão súbita no ponto de McBurney</td><td>peritonite localizada (apendicite)</td></tr>
+<tr><td><strong>Rovsing</strong></td><td>compressão da FIE → dor na FID</td><td>apendicite</td></tr>
+<tr><td><strong>Psoas</strong></td><td>dor à extensão da coxa D (decúbito lateral E)</td><td>apêndice retrocecal</td></tr>
+<tr><td><strong>Obturador</strong></td><td>dor à rotação interna da coxa fletida</td><td>apêndice pélvico</td></tr>
+<tr><td><strong>Lapinsky</strong></td><td>dor à compressão da FID com perna D elevada</td><td>apendicite retrocecal</td></tr>
+<tr><td><strong>Dunphy</strong></td><td>dor na FID que piora com a tosse</td><td>apendicite</td></tr>
+<tr><td><strong>Lenander</strong></td><td>T retal − T axilar &gt;1 °C</td><td>apendicite/inflamação pélvica</td></tr>
+<tr><td><strong>Aaron</strong></td><td>dor epigástrica ao comprimir McBurney</td><td>apendicite</td></tr>
+<tr><td><strong>Ten Horn</strong></td><td>dor à tração do cordão espermático D</td><td>apendicite</td></tr>
+<tr><td><strong>Murphy</strong></td><td>interrupção da inspiração à palpação do HD</td><td>colecistite</td></tr>
+<tr><td><strong>Joubert</strong></td><td>timpanismo na loja hepática</td><td>pneumoperitônio</td></tr>
+<tr><td><strong>Kehr</strong></td><td>dor no ombro E</td><td>ruptura esplênica/hemoperitônio</td></tr>
+<tr><td><strong>Danforth</strong></td><td>dor no ombro à inspiração</td><td>hemoperitônio (ectópica)</td></tr>
+<tr><td><strong>Cullen / Grey-Turner</strong></td><td>equimose periumbilical / flancos</td><td>hemorragia retroperitoneal (pancreatite necrohemorrágica, ectópica)</td></tr>
+<tr><td><strong>Fox</strong></td><td>equimose na base do pênis/ligamento inguinal</td><td>hemorragia retroperitoneal</td></tr>
+<tr><td><strong>Carnett</strong></td><td>dor persiste/piora com contração da parede</td><td>origem <strong>na parede</strong> (hematoma do reto, hérnia, síndrome do nervo cutâneo)</td></tr>
+<tr><td><strong>Fothergill</strong></td><td>massa palpável que não ultrapassa a linha média e persiste à contração</td><td>hematoma da bainha do reto</td></tr>
+<tr><td><strong>Torres-Homem</strong></td><td>dor à percussão do HD</td><td>abscesso hepático</td></tr>
+<tr><td><strong>Chandelier</strong></td><td>dor intensa à mobilização do colo</td><td>DIP</td></tr>
+<tr><td><strong>Howship-Romberg</strong></td><td>dor na face medial da coxa</td><td>hérnia obturadora</td></tr></table></div>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">5</span> Laboratório &amp; imagem <span class="chev">▶</span></summary>
+  <div class="body">
+
+<ul><li><strong>Sempre</strong>: hemograma, PCR, eletrólitos, função renal, glicemia, lipase, hepatograma, EQU, <strong>β-hCG</strong> em mulher em idade fértil; lactato e gasometria se suspeita de isquemia/sepse; ECG em idoso com dor alta.</li></ul>
+<div class="tbl"><table><tr><th>Exame</th><th>Uso</th></tr>
+<tr><td><strong>RX de abdome agudo</strong> (tórax PA ortostático + abdome em pé e deitado)</td><td>pneumoperitônio (subdiafragmático), obstrução (empilhamento de moedas, níveis hidroaéreos), volvo (<strong>grão de café</strong>/"U invertido" no sigmoide), aerobilia, cálculos radiopacos</td></tr>
+<tr><td>Sinais de pneumoperitônio</td><td><strong>Rigler</strong> (dupla parede da alça), sinal do ligamento falciforme, "futebol americano" (criança), triângulo de Rigler; <strong>Chilaiditi</strong> = interposição do cólon (não é pneumoperitônio!)</td></tr>
+<tr><td><strong>Tríade de Rigler</strong></td><td>íleo biliar: pneumobilia + obstrução de delgado + cálculo ectópico</td></tr>
+<tr><td><strong>US</strong></td><td>1ª linha em vias biliares, ginecológico, gestante, criança, FAST</td></tr>
+<tr><td><strong>TC com contraste EV</strong></td><td>padrão no adulto com dor não localizada; diverticulite, obstrução (zona de transição, alça fechada, sinal do redemoinho), perfuração</td></tr>
+<tr><td>AngioTC</td><td>isquemia mesentérica (não esperar creatinina)</td></tr>
+<tr><td><strong>RM sem gadolínio</strong></td><td>gestante com US inconclusivo</td></tr>
+<tr><td>Laparoscopia diagnóstica</td><td>dúvida persistente, UTI, mulher jovem com dor em FID</td></tr></table></div>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">6</span> Peritonites <span class="chev">▶</span></summary>
+  <div class="body">
+
+<div class="tbl"><table><tr><th></th><th>Primária (PBE)</th><th>Secundária</th><th>Terciária</th></tr>
+<tr><td>Contexto</td><td>cirrótico com ascite, sem foco intra-abdominal</td><td>perfuração/foco intra-abdominal</td><td>persistente após tratamento adequado da secundária (UTI, imunodeprimido)</td></tr>
+<tr><td>Germe</td><td><strong>monomicrobiana</strong> (E. coli, Klebsiella, pneumococo)</td><td><strong>polimicrobiana</strong> (BGN + anaeróbios)</td><td>Enterococcus, Candida, Staphylococcus, Pseudomonas</td></tr>
+<tr><td>Diagnóstico</td><td><strong>PMN ≥250/mm³</strong> no líquido ascítico</td><td>Runyon: ≥2 de proteína &gt;1 g/dL, glicose &lt;50 mg/dL, LDH &gt; limite sérico; polimicrobiano no Gram</td><td>—</td></tr>
+<tr><td>Tratamento</td><td><strong>ceftriaxona/cefotaxima + albumina</strong> (1,5 g/kg D1 e 1 g/kg D3); <strong>não opera</strong></td><td><strong>controle do foco</strong> (cirurgia/drenagem) + ATB</td><td>controle de foco, antifúngico, ATB ampliado</td></tr></table></div>
+<p>Profilaxia de PBE (norfloxacino/ciprofloxacino): após 1º episódio, HDA em cirrótico (ceftriaxona 7 dias), proteína no líquido &lt;1,5 g/dL com critérios.</p>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">7</span> Populações especiais &amp; pediatria <span class="chev">▶</span></summary>
+  <div class="body">
+
+<ul><li><strong>Gestante</strong>: apendicite é a causa cirúrgica não obstétrica mais comum; útero desloca o apêndice para cima (HD no 3º trimestre); leucocitose fisiológica. US → <strong>RM</strong>. <strong>Laparoscopia é segura em qualquer trimestre</strong> (SAGES): decúbito lateral E, pneumoperitônio 10–15 mmHg, entrada aberta/supraumbilical. Atraso → perfuração → perda fetal 20–35%. Também pensar: descolamento de placenta, rotura uterina, torção anexial, pielonefrite, HELLP, colecistite.</li>
+<li><strong>Idoso</strong>: apresentação atípica, menos febre/leucocitose, mortalidade alta; pensar em isquemia mesentérica, AAA, diverticulite, neoplasia, volvo; TC precoce.</li>
+<li><strong>Imunossuprimido/HIV/transplantado</strong>: sinais peritoneais mascarados; CMV (colite/perfuração), micobactéria, linfoma, Kaposi, colite neutropênica (<strong>tiflite</strong>), Clostridioides.</li>
+<li><strong>UTI</strong>: colecistite alitiásica, isquemia não oclusiva, úlcera de estresse perfurada, Ogilvie, síndrome compartimental abdominal.</li></ul>
+<h4>Criança</h4>
+<div class="tbl"><table><tr><th>Doença</th><th>Idade</th><th>Pista</th><th>Conduta</th></tr>
+<tr><td><strong>Intussuscepção</strong> (ileocólica)</td><td>3 meses–3 anos</td><td>cólica intermitente, massa "em salsicha", <strong>fezes em geleia de framboesa</strong>; US com <strong>alvo/pseudo-rim</strong></td><td><strong>redução por enema</strong> (ar/hidrostático) guiado; cirurgia se peritonite/falha; no adulto há ponto de reparo (tumor) → ressecção</td></tr>
+<tr><td><strong>Meckel</strong></td><td>&lt;2 anos (sintomático)</td><td>regra dos 2 (2%, 2 pés da válvula, 2 polegadas, 2 tipos de mucosa ectópica, 2 anos); <strong>sangramento indolor</strong></td><td>cintilografia com <strong>pertecnetato Tc-99m</strong>; sangramento → <strong>ressecção segmentar</strong> (a úlcera está no íleo adjacente)</td></tr>
+<tr><td>Estenose hipertrófica do piloro</td><td>2–8 semanas</td><td>vômito em jato não bilioso, "oliva", alcalose hipoclorêmica hipocalêmica</td><td>corrigir distúrbio → piloromiotomia de Ramstedt</td></tr>
+<tr><td>Má rotação com volvo</td><td>neonato</td><td><strong>vômito bilioso</strong> = emergência</td><td>Ladd</td></tr>
+<tr><td>Bolo de áscaris</td><td>criança, área endêmica</td><td>"miolo de pão"/feixe na imagem</td><td>SNG, <strong>óleo mineral</strong>; anti-helmíntico só depois (evita obstrução por vermes mortos)</td></tr></table></div>
+
+  </div>
+</details>
+
+<details>
+  <summary><span class="num">8</span> Questões de banca, pega-ratões &amp; mnemônicos <span class="chev">▶</span></summary>
+  <div class="body">
+<h4>10 questões representativas (originais, estilo das 5 bancas)</h4>
+<div class="box prova"><span class="lbl">Q1 <span class="banca">HCPA</span></span><strong>Idoso com FA, dor abdominal intensa e abdome flácido sem defesa, lactato elevado. Hipótese e exame?</strong><br>Resposta: <strong>Isquemia mesentérica aguda (embólica)</strong>; <strong>angioTC</strong> imediata.</div>
+<div class="box prova"><span class="lbl">Q2 <span class="banca">GHC</span></span><strong>Dor à extensão da coxa direita com paciente em decúbito lateral esquerdo. Sinal e posição do apêndice?</strong><br>Resposta: <strong>Sinal do psoas</strong>; apêndice <strong>retrocecal</strong>.</div>
+<div class="box prova"><span class="lbl">Q3 <span class="banca">AMRIGS</span></span><strong>Cirrótico com ascite, febre e líquido com 480 PMN/mm³, cultura monomicrobiana. Conduta?</strong><br>Resposta: <strong>PBE</strong>: ceftriaxona/cefotaxima + <strong>albumina</strong>; sem cirurgia.</div>
+<div class="box prova"><span class="lbl">Q4 <span class="banca">PUC-RS</span></span><strong>Gestante de 30 semanas com suspeita de apendicite e US inconclusivo. Próximo exame e via cirúrgica?</strong><br>Resposta: <strong>RM sem gadolínio</strong>; laparoscopia é segura em qualquer trimestre.</div>
+<div class="box prova"><span class="lbl">Q5 <span class="banca">SC-POA</span></span><strong>RX com visualização das duas faces da parede intestinal. Nome do sinal?</strong><br>Resposta: <strong>Sinal de Rigler</strong> (pneumoperitônio).</div>
+<div class="box prova"><span class="lbl">Q6 <span class="banca">HCPA</span></span><strong>Lactente de 9 meses com choro intermitente, fezes em geleia de framboesa e massa em salsicha. Conduta inicial?</strong><br>Resposta: <strong>Intussuscepção</strong> → redução por enema guiado (US/radioscopia), se sem peritonite.</div>
+<div class="box prova"><span class="lbl">Q7 <span class="banca">GHC</span></span><strong>Criança com sangramento retal indolor volumoso; cintilografia com pertecnetato positiva em FID. Cirurgia?</strong><br>Resposta: <strong>Divertículo de Meckel</strong> → <strong>ressecção segmentar</strong> do íleo (úlcera na mucosa ileal adjacente).</div>
+<div class="box prova"><span class="lbl">Q8 <span class="banca">AMRIGS</span></span><strong>Dor abdominal que piora quando o paciente contrai a musculatura abdominal. Sinal e significado?</strong><br>Resposta: <strong>Carnett positivo</strong> → origem na <strong>parede</strong> abdominal.</div>
+<div class="box prova"><span class="lbl">Q9 <span class="banca">PUC-RS</span></span><strong>Paciente com CAD e dor abdominal difusa intensa. Conduta antes de pensar em laparotomia?</strong><br>Resposta: Tratar a <strong>cetoacidose</strong> e reavaliar — causa clínica clássica de pseudoabdome agudo.</div>
+<div class="box prova"><span class="lbl">Q10 <span class="banca">SC-POA</span></span><strong>Peritonite persistente após 2 relaparotomias, com Candida e Enterococcus. Classificação?</strong><br>Resposta: <strong>Peritonite terciária</strong>.</div>
+<h4>Pega-ratões (as armadilhas clássicas)</h4>
+<div class="box warn"><span class="lbl">☠ trap 1</span>Analgesia precoce <strong>não</strong> atrapalha o diagnóstico.</div>
+<div class="box warn"><span class="lbl">☠ trap 2</span>Chilaiditi é <strong>falso pneumoperitônio</strong>.</div>
+<div class="box warn"><span class="lbl">☠ trap 3</span>Dor desproporcional ao exame = isquemia até prova em contrário.</div>
+<div class="box warn"><span class="lbl">☠ trap 4</span>Vômito bilioso no neonato = má rotação/volvo (emergência).</div>
+<div class="box warn"><span class="lbl">☠ trap 5</span>Meckel sangrante: ressecção <strong>segmentar</strong>, não só diverticulectomia.</div>
+<div class="box warn"><span class="lbl">☠ trap 6</span>Gestante: laparoscopia em qualquer trimestre; não atrasar.</div>
+<div class="box warn"><span class="lbl">☠ trap 7</span>PBE não se opera; polimicrobiana = secundária (cirurgia).</div>
+<div class="box warn"><span class="lbl">☠ trap 8</span>IAM inferior, CAD, pneumonia e porfiria imitam abdome cirúrgico.</div>
+<h4>Mnemônicos-resumo</h4>
+<div class="box mac"><span class="lbl">5 tipos</span><strong>I-P-O-V-H</strong>: Inflamatório (lento, febre) · Perfurativo (tábua) · Obstrutivo (cólica + parada) · Vascular (dor &gt; exame) · Hemorrágico (choque).</div>
+<div class="box mac"><span class="lbl">Meckel — regra dos 2</span>2% da população · 2 pés da válvula ileocecal · 2 polegadas · 2 mucosas ectópicas (gástrica, pancreática) · sintoma até 2 anos · 2:1 meninos.</div>
+  </div>
+</details>
+
+<footer>
+  <div><strong>carolzita</strong> · Abdome Agudo: Abordagem Sindrômica · referência completa</div>
+  <div class="ref">Fontes: Sabiston 21ª ed. (Acute Abdomen) · Zollinger 11ª ed. · Netter · ACR Appropriateness Criteria — Acute Nonlocalized Abdominal Pain (2023) · SAGES guidelines for laparoscopy during pregnancy (2017) · Di Saverio S et al. WSES Jerusalem guidelines appendicitis (2020) · AASLD guidance on ascites and SBP (2021). Conteúdo educacional; questões são itens representativos originais no estilo das bancas, não reprodução de provas.</div>
+</footer>
+</div>
+</body>
+</html>
