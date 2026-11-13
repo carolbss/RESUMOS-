@@ -234,5 +234,45 @@ var s=[['def','🧭 Def'],['anat','🫀 Anatomia'],['dx','🔬 Dx'],['cond','�
 var n=document.getElementById('nav');
 s.forEach(function(x,i){var b=document.createElement('button');b.textContent=x[1];if(i===0)b.className='on';b.onclick=function(){document.querySelectorAll('nav button').forEach(function(y){y.classList.remove('on')});b.classList.add('on');document.querySelectorAll('section').forEach(function(y){y.classList.remove('on')});document.getElementById(x[0]).classList.add('on');document.querySelector('.sheet').scrollIntoView()};n.appendChild(b)});
 </script>
+<!-- czx-complementos -->
+<style>
+.czx{max-width:920px;margin:18px auto 30px;padding:0 18px;font-family:'Inter',sans-serif;color:#e6e6ef;line-height:1.55}
+.czx details{background:#16161f;border:1px solid rgba(34,211,238,.35);border-radius:16px;margin-bottom:12px;overflow:hidden}
+.czx summary{cursor:pointer;list-style:none;padding:16px 18px;display:flex;align-items:center;gap:12px;font-family:'Syne',sans-serif;font-weight:700;font-size:18px}
+.czx summary::-webkit-details-marker{display:none}
+.czx .n{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;color:#0a0a0f;background:#22d3ee;min-width:30px;height:30px;padding:0 6px;border-radius:9px;display:grid;place-items:center}
+.czx .bd{padding:2px 20px 22px;font-size:15px}
+.czx h4{font-family:'Syne',sans-serif;font-size:16px;color:#f97316;margin:18px 0 8px}
+.czx p{margin:9px 0}
+.czx ul{list-style:none;margin:8px 0}
+.czx li{padding:4px 0 4px 20px;position:relative}
+.czx li::before{content:"▸";position:absolute;left:0;top:6px;color:#f97316;font-size:12px}
+.czx strong{color:#fff;font-weight:600}
+.czx .s{color:#22d3ee;font-style:italic;font-size:.94em}
+.czx .tw{overflow-x:auto;margin:12px 0}
+.czx table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:480px}
+.czx th,.czx td{text-align:left;padding:8px 10px;border-bottom:1px solid #2a2a38;vertical-align:top}
+.czx th{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#f97316;background:#1c1c27}
+.czx .bx{border-radius:12px;padding:12px 14px;margin:12px 0;font-size:14px;border:1px solid}
+.czx .pv{background:rgba(168,85,247,.10);border-color:rgba(168,85,247,.35)}
+.czx .mc{background:rgba(34,211,238,.10);border-color:rgba(34,211,238,.35)}
+.czx .wr{background:rgba(248,113,113,.08);border-color:rgba(248,113,113,.3)}
+.czx .lb{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:4px}
+.czx .pv .lb{color:#a855f7}.czx .mc .lb{color:#22d3ee}.czx .wr .lb{color:#f87171}
+.czx .fig{background:#1c1c27;border:1px solid #2a2a38;border-radius:14px;padding:12px;margin:14px 0}
+.czx .fig svg{max-width:100%;height:auto;display:block;margin:0 auto}
+.czx .cap{font-size:12px;color:#9a9ab0;text-align:center;margin-top:6px;font-family:'JetBrains Mono',monospace}
+.czx .hd{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#22d3ee;margin:6px 0 10px}
+</style>
+
+<style>.czxbtn{position:fixed;right:14px;bottom:14px;z-index:9998;background:#22d3ee;color:#0b0d12;border:0;border-radius:999px;padding:10px 16px;font:700 14px Inter,sans-serif;box-shadow:0 4px 16px #0008;cursor:pointer}
+.czxov{display:none;position:fixed;inset:0;z-index:9999;background:#0b0d12;overflow:auto;padding:14px 14px 70px}.czxov.open{display:block}.czxov section.czx{display:block!important;opacity:1!important;animation:none!important;padding:0}
+.czxov .czxcl{position:sticky;top:0;float:right;background:#a855f7;color:#fff;border:0;border-radius:8px;padding:6px 12px;font:700 13px Inter,sans-serif;cursor:pointer;z-index:2}</style><button class="czxbtn" onclick="document.getElementById('czxov').classList.add('open')">➕ Extra</button>
+<div class="czxov" id="czxov"><button class="czxcl" onclick="this.parentNode.classList.remove('open')">✕ fechar</button><section class="czx">
+<div class="hd">➕ complementos (Notion + atualização)</div>
+<details open><summary><span class="n">+1</span>Johnson &amp; extra</summary><div class="bd">
+<ul><li>I pequena curvatura · ácido normal · antrectomia + BI</li><li>II corpo + duodeno · III pré-pilórica · ácido ↑ → + vagotomia</li><li>IV alta (JEG) · Pauchet/Csendes</li><li>V AINE</li><li>Dispepsia ≥40–45 a ou alarme → EDA · jovem → testar/tratar H. pylori</li><li>Sakita A ativa · H cicatrizando · S cicatriz</li><li>Alça eferente: vômito com comida · aferente: bile em jato sem comida</li><li>Dunbar: tronco celíaco comprimido → liberar ligamento</li></ul>
+</div></details>
+</section></div>
 </body>
 </html>

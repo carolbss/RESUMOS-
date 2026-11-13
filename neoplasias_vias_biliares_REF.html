@@ -574,5 +574,44 @@ const tabs=[
 const nav=document.getElementById('nav');
 tabs.forEach((t,i)=>{const b=document.createElement('button');b.textContent=t[1];b.dataset.id=t[0];if(i===0)b.classList.add('active');b.onclick=()=>{document.querySelectorAll('nav button').forEach(x=>x.classList.remove('active'));document.querySelectorAll('section').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById(t[0]).classList.add('active');window.scrollTo({top:0,behavior:'smooth'});};nav.appendChild(b);});
 </script>
+<!-- czx-complementos --><style>section.czx{display:block!important;opacity:1!important;visibility:visible!important}</style>
+<style>
+.czx{max-width:920px;margin:18px auto 30px;padding:0 18px;font-family:'Inter',sans-serif;color:#e6e6ef;line-height:1.55}
+.czx details{background:#16161f;border:1px solid rgba(34,211,238,.35);border-radius:16px;margin-bottom:12px;overflow:hidden}
+.czx summary{cursor:pointer;list-style:none;padding:16px 18px;display:flex;align-items:center;gap:12px;font-family:'Syne',sans-serif;font-weight:700;font-size:18px}
+.czx summary::-webkit-details-marker{display:none}
+.czx .n{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;color:#0a0a0f;background:#22d3ee;min-width:30px;height:30px;padding:0 6px;border-radius:9px;display:grid;place-items:center}
+.czx .bd{padding:2px 20px 22px;font-size:15px}
+.czx h4{font-family:'Syne',sans-serif;font-size:16px;color:#f97316;margin:18px 0 8px}
+.czx p{margin:9px 0}
+.czx ul{list-style:none;margin:8px 0}
+.czx li{padding:4px 0 4px 20px;position:relative}
+.czx li::before{content:"▸";position:absolute;left:0;top:6px;color:#f97316;font-size:12px}
+.czx strong{color:#fff;font-weight:600}
+.czx .s{color:#22d3ee;font-style:italic;font-size:.94em}
+.czx .tw{overflow-x:auto;margin:12px 0}
+.czx table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:480px}
+.czx th,.czx td{text-align:left;padding:8px 10px;border-bottom:1px solid #2a2a38;vertical-align:top}
+.czx th{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#f97316;background:#1c1c27}
+.czx .bx{border-radius:12px;padding:12px 14px;margin:12px 0;font-size:14px;border:1px solid}
+.czx .pv{background:rgba(168,85,247,.10);border-color:rgba(168,85,247,.35)}
+.czx .mc{background:rgba(34,211,238,.10);border-color:rgba(34,211,238,.35)}
+.czx .wr{background:rgba(248,113,113,.08);border-color:rgba(248,113,113,.3)}
+.czx .lb{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:4px}
+.czx .pv .lb{color:#a855f7}.czx .mc .lb{color:#22d3ee}.czx .wr .lb{color:#f87171}
+.czx .fig{background:#1c1c27;border:1px solid #2a2a38;border-radius:14px;padding:12px;margin:14px 0}
+.czx .fig svg{max-width:100%;height:auto;display:block;margin:0 auto}
+.czx .cap{font-size:12px;color:#9a9ab0;text-align:center;margin-top:6px;font-family:'JetBrains Mono',monospace}
+.czx .hd{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#22d3ee;margin:6px 0 10px}
+</style>
+<section class="czx">
+<div class="hd">➕ complementos (Notion + atualização)</div>
+<details><summary><span class="n">+1</span>Reconstruções complexas &amp; ALPPS</summary><div class="bd">
+
+<ul><li><strong>Hepp-Couinaud</strong> <span class="s">(um 'atalho' para costurar o intestino no canal da bile do lado esquerdo do fígado, que fica fora do fígado e é mais comprido)</span>: abordagem do <strong>ducto hepático esquerdo extra-hepático</strong> na base do segmento IV (abaixando a placa hilar) → hepaticojejunostomia látero-lateral em Y de Roux ampla. Usada em estenoses altas/lesões iatrogênicas (Bismuth III–IV) e Klatskin; o ducto esquerdo tem trajeto extra-hepático longo (2–3 cm) e horizontal — o direito é curto.</li>
+<li><strong>ALPPS</strong> (associating liver partition and portal vein ligation for staged hepatectomy): 1º tempo = <strong>ligadura do ramo portal</strong> do lado doente + <strong>partição do parênquima</strong>; hipertrofia rápida do remanescente (60–90% em 7–14 dias); 2º tempo = hepatectomia. Mais hipertrofia e mais rápida que embolização portal, porém <strong>maior morbimortalidade</strong> (reservar a centros/selecionados; na colorretal resultados melhores que no colangiocarcinoma).</li>
+<li><strong>Colecistite xantogranulomatosa</strong>: inflamação crônica destrutiva com macrófagos espumosos (bile extravasada de Rokitansky-Aschoff), parede muito espessada com nódulos hipodensos, aderência a órgãos vizinhos → <strong>imita câncer de vesícula</strong> na imagem e no intraoperatório; associação controversa com carcinoma → biópsia de congelação antes de cirurgia radical.</li></ul>
+</div></details>
+</section>
 </body>
 </html>
