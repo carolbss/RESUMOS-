@@ -706,5 +706,92 @@
   renderFooter();
   buildKeymap();
 </script>
+<!-- czb-global:start -->
+<style>
+.gs-wrap{margin:0 0 1.25rem}
+.gs-box{display:flex;align-items:center;gap:.6rem;background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:.35rem .5rem .35rem .9rem;transition:border-color .2s}
+.gs-box:focus-within{border-color:var(--orange)}
+.gs-ico{font-size:1.05rem;opacity:.85}
+#gsIn{flex:1;min-width:0;background:transparent;border:0;outline:0;color:#fff;font:500 16px 'Inter',sans-serif;padding:.65rem 0}
+#gsIn::-webkit-search-cancel-button{-webkit-appearance:none;appearance:none}
+#gsIn::placeholder{color:var(--text-dim)}
+.gs-x{background:var(--bg3);border:1px solid var(--border);color:var(--text);border-radius:9px;width:34px;height:34px;cursor:pointer;display:none}
+.gs-st{font:500 11px 'JetBrains Mono',monospace;color:var(--text-dim);margin:.5rem .2rem 0;min-height:14px}
+#gsRes{margin-top:.6rem;display:flex;flex-direction:column;gap:.55rem}
+.gs-card{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--c,#f97316);border-radius:12px;padding:.75rem .9rem}
+.gs-hd{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;cursor:pointer}
+.gs-tt{font-family:'Syne',sans-serif;font-weight:700;color:#fff;font-size:15px}
+.gs-tp{font:600 10px 'JetBrains Mono',monospace;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:999px;border:1px solid var(--border);color:var(--text-dim)}
+.gs-n{margin-left:auto;font:700 11px 'JetBrains Mono',monospace;color:var(--orange)}
+.gs-gr{font:500 10.5px 'JetBrains Mono',monospace;color:#a855f7;width:100%}
+.gs-sn{display:block;width:100%;text-align:left;background:var(--bg3);border:1px solid transparent;border-radius:9px;color:var(--text);font:400 13px/1.45 'Inter',sans-serif;padding:.5rem .65rem;margin-top:.4rem;cursor:pointer}
+.gs-sn:hover{border-color:var(--orange)}
+.gs-sn b{background:#fbbf24;color:#0d0f14;border-radius:3px;padding:0 2px;font-weight:600}
+.gs-more{font:500 11px 'JetBrains Mono',monospace;color:var(--text-dim);margin-top:.35rem}
+</style>
+<div class="gs-wrap" id="gsWrap">
+  <div class="gs-box">
+    <span class="gs-ico">🔍</span>
+    <input id="gsIn" type="search" placeholder="Buscar em todos os resumos… (ex.: Luschka, Strasberg, Fontaine)" autocomplete="off" autocapitalize="off" spellcheck="false">
+    <button class="gs-x" id="gsX" type="button" aria-label="Limpar">✕</button>
+  </div>
+  <div class="gs-st" id="gsSt"></div>
+  <div id="gsRes"></div>
+</div>
+<script>
+(function(){
+  var wrap=document.getElementById('gsWrap'),anchor=document.querySelector('.bancas');
+  if(anchor)anchor.parentNode.insertBefore(wrap,anchor);
+  var inp=document.getElementById('gsIn'),res=document.getElementById('gsRes'),st=document.getElementById('gsSt'),bx=document.getElementById('gsX');
+  var LIST=(typeof RESUMOS!=='undefined'?RESUMOS:[]).filter(function(r){return r.status!=='pendente'&&r.arquivo});
+  var cache=null,loading=null,ta=document.createElement('textarea');
+  function nc(c){var n=c.normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();return n.length===1?n:c.toLowerCase().charAt(0)||c}
+  function norm(s){var o='';for(var i=0;i<s.length;i++)o+=nc(s[i]);return o}
+  function esc(s){return s.replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  function toText(h){h=h.replace(/<(script|style|noscript)[\s\S]*?<\/\1>/gi,' ').replace(/<br\s*\/?>/gi,' ').replace(/<\/(p|li|div|td|th|h\d|summary|section)>/gi,' · ').replace(/<[^>]+>/g,' ');ta.innerHTML=h;return ta.value.replace(/\s*·\s*(·\s*)+/g,' · ').replace(/\s+/g,' ').trim()}
+  function load(){
+    if(cache)return Promise.resolve(cache);if(loading)return loading;
+    st.textContent='carregando '+LIST.length+' resumos…';
+    loading=Promise.all(LIST.map(function(r){return fetch(r.arquivo).then(function(x){if(!x.ok)throw 0;return x.text()}).then(function(h){var t=toText(h);return{r:r,t:t,n:norm(t)}}).catch(function(){return null})}))
+      .then(function(a){cache=a.filter(Boolean);if(!cache.length)st.textContent='A busca global funciona no site (carolbss.github.io/RESUMOS-). Dentro de cada resumo, use a 🔍 do canto.';return cache});
+    return loading;
+  }
+  function run(q){
+    var nq=norm(q.trim());res.innerHTML='';
+    bx.style.display=q?'block':'none';
+    if(nq.length<2){st.textContent='';return}
+    load().then(function(docs){
+      if(norm(inp.value.trim())!==nq||!docs.length)return;
+      var out=[],tot=0;
+      docs.forEach(function(d){
+        var idx=[],k=d.n.indexOf(nq);while(k>-1&&idx.length<400){idx.push(k);k=d.n.indexOf(nq,k+nq.length)}
+        var meta=norm(d.r.titulo+' '+(d.r.tags||[]).join(' ')+' '+(d.r.subtitulo||'')).indexOf(nq)>-1;
+        if(idx.length||meta){out.push({d:d,idx:idx,meta:meta});tot+=idx.length}
+      });
+      out.sort(function(a,b){return (b.meta-a.meta)||(b.idx.length-a.idx.length)||((a.d.r.tipo==='Pocket')-(b.d.r.tipo==='Pocket'))});
+      st.textContent=out.length?(tot+' ocorrência'+(tot===1?'':'s')+' em '+out.length+' resumo'+(out.length===1?'':'s')):'nada encontrado para “'+q.trim()+'”';
+      var h='';
+      out.slice(0,40).forEach(function(o){
+        var r=o.d.r,t=o.d.t,href=r.arquivo+'#busca='+encodeURIComponent(q.trim());
+        h+='<div class="gs-card" style="--c:'+esc(r.cor||'#f97316')+'"><div class="gs-hd" data-h="'+esc(href)+'"><span class="gs-tt">'+esc(r.titulo)+'</span><span class="gs-tp">'+esc(r.tipo||'')+'</span><span class="gs-n">'+o.idx.length+'×</span><span class="gs-gr">'+esc(r.grupo||'')+'</span></div>';
+        var last=-999;var shown=0;
+        o.idx.forEach(function(i,j){if(shown>=3||i-last<120)return;last=i;shown++;
+          var a=Math.max(0,i-70),b=Math.min(t.length,i+nq.length+90);
+          h+='<button class="gs-sn" type="button" data-h="'+esc(href+'&n='+j)+'">'+(a?'…':'')+esc(t.slice(a,i))+'<b>'+esc(t.slice(i,i+nq.length))+'</b>'+esc(t.slice(i+nq.length,b))+(b<t.length?'…':'')+'</button>'});
+        if(o.idx.length>shown)h+='<div class="gs-more">+'+(o.idx.length-shown)+' no resumo — abra para navegar ▲▼</div>';
+        h+='</div>';
+      });
+      res.innerHTML=h;
+    });
+  }
+  res.addEventListener('click',function(e){var el=e.target.closest('[data-h]');if(el)window.open(el.getAttribute('data-h'),'_blank')});
+  var tm;inp.addEventListener('input',function(){clearTimeout(tm);tm=setTimeout(function(){run(inp.value)},250)});
+  inp.addEventListener('focus',function(){load()},{once:true});
+  inp.addEventListener('keydown',function(e){if(e.key==='Escape'){inp.value='';run('');inp.blur()}});
+  bx.addEventListener('click',function(){inp.value='';run('');inp.focus()});
+  document.addEventListener('keydown',function(e){if(e.key==='/'&&!/INPUT|TEXTAREA/.test(e.target.tagName)){e.preventDefault();if(typeof show==='function')show('home');inp.focus()}});
+})();
+</script>
+<!-- czb-global:end -->
 </body>
 </html>
